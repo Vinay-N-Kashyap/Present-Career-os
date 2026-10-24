@@ -1,0 +1,391 @@
+{
+  "prefix": "bcom-finance",
+  "day": 55,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Five billion dollar global syndicate capital stack.",
+      "data": {
+        "title": "Day 55 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Twenty year sculpted senior debt amortization.",
+      "data": {
+        "title": "Day 55 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Regulated utility and YieldCo dual monetization.",
+      "data": {
+        "title": "Day 55 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Green bond greenium and margin ratchet savings.",
+      "data": {
+        "title": "Day 55 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Master sovereign infrastructure balance sheet.",
+      "data": {
+        "title": "Day 55 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+        "verified": true
+      }
+    }
+  ]
+}

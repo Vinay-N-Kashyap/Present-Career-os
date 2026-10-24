@@ -1,0 +1,366 @@
+{
+  "prefix": "bcom-finance",
+  "day": 52,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Special purpose vehicle ring fenced boundary.",
+      "data": {
+        "title": "Day 52 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Turnkey lump sum engineering contract nexus.",
+      "data": {
+        "title": "Day 52 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Sculpted senior debt amortization schedule.",
+      "data": {
+        "title": "Day 52 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Multilateral political risk guarantee coverage.",
+      "data": {
+        "title": "Day 52 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Trust and retention account cash flow waterfall.",
+      "data": {
+        "title": "Day 52 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+        "verified": true
+      }
+    }
+  ]
+}
