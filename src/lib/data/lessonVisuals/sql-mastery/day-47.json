@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 47,
+  "promptSha": "f43993b3d01d77ffe89ca9c133c7a25534ec19c5a4d3f92817d8a9aa4130dcbf",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Plan-Time Static Pruning vs Run-Time Dynamic Partition Pruning",
+      "codeHash": "7d6d9d949ef6a8665fd3fdb70c19c576606cb7285987d837c7fceba05b285dbd",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 1",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic partition pruning optimizes query execution plans.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Partition pruning skips unneeded physical table partitions.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport passenger checks digital monitors to locate flight gates.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition pruning diagnostics and predicate evaluation phases.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 1",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic partition pruning optimizes query execution plans.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Partition pruning skips unneeded physical table partitions.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport passenger checks digital monitors to locate flight gates.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition pruning diagnostics and predicate evaluation phases.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition-Wise Joins (enable_partitionwise_join) & Parallel Execution Topologies",
+      "codeHash": "d83153d73b25cd6ea35dbc7951d1aedaf82062e311b5a889392a1d623d1035f6",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 2",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed query optimization capabilities enable partition wise joins.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transactional queries join massive relational tables across parent models.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate accountants reconcile employee reports in regional rooms.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitionwise join benchmarks and memory allocation profiles.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 2",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed query optimization capabilities enable partition wise joins.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transactional queries join massive relational tables across parent models.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate accountants reconcile employee reports in regional rooms.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitionwise join benchmarks and memory allocation profiles.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition-Wise Aggregate & Group By Operations (enable_partitionwise_aggregate)",
+      "codeHash": "33cddebdcc4ad98b54180a5aff73de1b77ef021bf31b5b2a7ed4b4c4a4545830",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 3",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query optimization engine introduces partition aggregations.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Business intelligence platforms aggregate millions of financial records.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Electoral districts count regional paper ballots in parallel locally.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitionwise aggregate metrics and processor saturation levels.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 3",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query optimization engine introduces partition aggregations.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Business intelligence platforms aggregate millions of financial records.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Electoral districts count regional paper ballots in parallel locally.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partitionwise aggregate metrics and processor saturation levels.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Query Planner Execution Analysis: Append, MergeAppend, Subplan Elimination & EXPLAIN Internals",
+      "codeHash": "35653be860935f1bf3a0657dfbe12758958c495e8017837c026b56559e8a274d",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 4",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diagnostic tools inspect execution plans across partitioned tables.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Site reliability engineers verify query planner optimization plans.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Harbor dispatcher guides river boats into organized parade lines.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect explain partition plan nodes and pruning indicator signatures.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 4",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diagnostic tools inspect execution plans across partitioned tables.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Site reliability engineers verify query planner optimization plans.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Harbor dispatcher guides river boats into organized parade lines.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect explain partition plan nodes and pruning indicator signatures.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Anti-Patterns in Partition Queries: Function Wrapping, Missing Keys & Performance Traps",
+      "codeHash": "4a8f816105149c9b3f8f2cda45d353f5bee4a3ab8b3621bd5d71079a9a2b3d67",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 5",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query anti patterns secretly sabotage partition pruning in production.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative partitioning depends on mathematical predicate analysis.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital pharmacist searches color coded cabinets for medical vials.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition antipattern remediation and sargable query syntaxes.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Pruning & Optimization - Part 5",
+        "leftLabel": "Unoptimized Full Table Scan",
+        "rightLabel": "Optimized Partition Pruning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Query anti patterns secretly sabotage partition pruning in production.",
+            "left": {
+              "code": "Scans all attached child partitions",
+              "result": {
+                "text": "high latency disk reads and buffer thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes irrelevant child partitions",
+              "result": {
+                "text": "sub-millisecond lookups on target partition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative partitioning depends on mathematical predicate analysis.",
+            "left": {
+              "code": "Centralized coordinator join/aggregate",
+              "result": {
+                "text": "spills temporary batch files to physical disk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partition-wise pairwise join/aggregate",
+              "result": {
+                "text": "in-memory execution with zero disk spilling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital pharmacist searches color coded cabinets for medical vials.",
+            "left": {
+              "code": "Global sort over appended partitions",
+              "result": {
+                "text": "CPU saturation and memory exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "MergeAppend priority queue merge",
+              "result": {
+                "text": "streaming sorted output with constant RAM"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition antipattern remediation and sargable query syntaxes.",
+            "left": {
+              "code": "Function wrapping on partition key",
+              "result": {
+                "text": "WHERE DATE(order_date) forces full scan"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SARGable range predicate",
+              "result": {
+                "text": "WHERE order_date >= ... enables pruning"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
