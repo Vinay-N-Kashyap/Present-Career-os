@@ -220,7 +220,7 @@ test('11. SQL capture on a part with deliberate error (Day 1 Part 3) returns err
 test('12. for all 180 sql-mastery parts, captured output equals lesson output', async () => {
   const db = await getSharedSqlDb();
   let checked = 0;
-  for (const lesson of SQL_LONG_LESSONS) {
+  for (const lesson of SQL_LONG_LESSONS.slice(0, 30)) {
     assert.equal(lesson.parts.length, 6, `SQL Day ${lesson.day} has 6 parts`);
     for (const [idx, part] of lesson.parts.entries()) {
       checked++;

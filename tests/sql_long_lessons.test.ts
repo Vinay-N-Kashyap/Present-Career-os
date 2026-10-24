@@ -29,15 +29,22 @@ test('SQL long lessons are complete 20-30 minute classes with at least 14 minute
   assert.equal(getLongLessonLanguage('sql-mastery'), 'sql');
   const days = SQL_LONG_LESSONS.map((l) => l.day);
   assert.equal(new Set(days).size, days.length, 'a day is written twice');
-  assert.equal(SQL_LONG_LESSONS.length, DATABASE_30_DAYS_CONFIGS.length, 'every course day has a long lesson');
+  assert.ok(SQL_LONG_LESSONS.length >= DATABASE_30_DAYS_CONFIGS.length, 'every course day has a long lesson');
   for (const lesson of SQL_LONG_LESSONS) {
     const where = `Day ${lesson.day}`;
-    assert.equal(DATABASE_30_DAYS_CONFIGS[lesson.day - 1]?.title, lesson.title, `${where}: title differs from the course day`);
+    if (lesson.day <= 30) {
+      assert.equal(DATABASE_30_DAYS_CONFIGS[lesson.day - 1]?.title, lesson.title, `${where}: title differs from the course day`);
+    }
     assert.ok(lesson.parts.length >= 5 && lesson.parts.length <= 7, `${where}: needs 5 to 7 parts`);
     const spoken = estimateSpokenMinutes(lesson);
     const total = estimateLessonMinutes(lesson);
-    assert.ok(spoken >= 14, `${where}: only ${spoken} minutes of teaching`);
-    assert.ok(total >= 20 && total <= 30, `${where}: ${total} minutes in total`);
+    if (lesson.day <= 30) {
+      assert.ok(spoken >= 14, `${where}: only ${spoken} minutes of teaching`);
+      assert.ok(total >= 20 && total <= 30, `${where}: ${total} minutes in total`);
+    } else {
+      assert.ok(spoken >= 20, `${where}: only ${spoken} minutes of teaching for Month 2`);
+      assert.ok(total >= 30, `${where}: ${total} minutes in total for Month 2`);
+    }
     assert.ok(lesson.summary.length >= 3, `${where}: summary too short`);
     assert.ok(lesson.projectStep && lesson.projectStep.steps.length > 0, `${where}: missing project step`);
     for (const part of lesson.parts) {
