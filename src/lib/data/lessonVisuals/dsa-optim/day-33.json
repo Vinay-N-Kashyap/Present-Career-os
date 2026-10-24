@@ -1,0 +1,869 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 33,
+  "promptSha": "cf53bd65f3c96ca218f94c9c03dbf7f11a0d9af2638b81963e6d372ea18f1b20",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Max-Flow Min-Cut Theorem: Duality, s-t Cuts, and Capacity Bounds",
+      "codeHash": "e82c394b3e25022224223b40f2b2dafc969ff832603941d68841ec8e37d29ede",
+      "filled": {
+        "template": "table",
+        "title": "The Max-Flow Min-Cut Theorem: Duality, s Duality Matrix",
+        "columns": [
+          "Cut Partition Pair",
+          "Crossing Conduit",
+          "Edge Capacity",
+          "Duality Role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fundamental duality connects maximum flow and cut capacity.",
+            "rows": [
+              [
+                "Source to TransitB",
+                "Forward Edge",
+                "Ten Units",
+                "Bottleneck Bound"
+              ],
+              [
+                "TransitA to TransitB",
+                "Cross Branch",
+                "Two Units",
+                "Internal Divert"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Partition divides vertices into disjoint source and sink subsets.",
+            "rows": [
+              [
+                "TransitA to Sink",
+                "Egress Channel",
+                "Four Units",
+                "Direct Output"
+              ],
+              [
+                "Total Cut Capacity",
+                "Summed Crossing",
+                "Sixteen Units",
+                "Upper Bound Verified"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Electrical grid transmission substations deliver industrial power.",
+            "rows": [
+              [
+                "Substation Alpha",
+                "Direct Conduit",
+                "Hydro Electric",
+                "Primary Feeder"
+              ],
+              [
+                "Substation Beta",
+                "Cross Feeder",
+                "Industrial Zone",
+                "Balanced Load"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Partition shifts confirm cut capacity remains upper bound.",
+            "rows": [
+              [
+                "Alternative Cut",
+                "Shifted Partition",
+                "Eighteen Units",
+                "Relaxed Bound"
+              ],
+              [
+                "Minimum Cut",
+                "Optimal Partition",
+                "Thirteen Units",
+                "Exact Equality"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "The Max-Flow Min-Cut Theorem: Duality, s Duality Matrix",
+        "columns": [
+          "Cut Partition Pair",
+          "Crossing Conduit",
+          "Edge Capacity",
+          "Duality Role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fundamental duality connects maximum flow and cut capacity.",
+            "rows": [
+              [
+                "Source to TransitB",
+                "Forward Edge",
+                "Ten Units",
+                "Bottleneck Bound"
+              ],
+              [
+                "TransitA to TransitB",
+                "Cross Branch",
+                "Two Units",
+                "Internal Divert"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Partition divides vertices into disjoint source and sink subsets.",
+            "rows": [
+              [
+                "TransitA to Sink",
+                "Egress Channel",
+                "Four Units",
+                "Direct Output"
+              ],
+              [
+                "Total Cut Capacity",
+                "Summed Crossing",
+                "Sixteen Units",
+                "Upper Bound Verified"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Electrical grid transmission substations deliver industrial power.",
+            "rows": [
+              [
+                "Substation Alpha",
+                "Direct Conduit",
+                "Hydro Electric",
+                "Primary Feeder"
+              ],
+              [
+                "Substation Beta",
+                "Cross Feeder",
+                "Industrial Zone",
+                "Balanced Load"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Partition shifts confirm cut capacity remains upper bound.",
+            "rows": [
+              [
+                "Alternative Cut",
+                "Shifted Partition",
+                "Eighteen Units",
+                "Relaxed Bound"
+              ],
+              [
+                "Minimum Cut",
+                "Optimal Partition",
+                "Thirteen Units",
+                "Exact Equality"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extracting the Minimum Cut via Residual Reachability in O(V + E) Time",
+      "codeHash": "1a338599f10a893e497dbd751e7b7ec87ada76ea8dd08d77c84c8bc1e01d3e6a",
+      "filled": {
+        "template": "table",
+        "title": "Extracting the Minimum Cut via Residual  Duality Matrix",
+        "columns": [
+          "Vertex Group",
+          "Residual Reachability",
+          "Boundary Status",
+          "Saturated Edges"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Residual graph reachability extracts minimum cut partition.",
+            "rows": [
+              [
+                "Partition Set S",
+                "Reachable From Source",
+                "Active Domain",
+                "Forward Conduits"
+              ],
+              [
+                "Partition Set T",
+                "Unreachable Nodes",
+                "Sink Boundary",
+                "Zero Residual"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Source traversal identifies all reachable residual vertices.",
+            "rows": [
+              [
+                "Node A to Node T",
+                "Capacity Four",
+                "Flow Four",
+                "Saturated Crossing"
+              ],
+              [
+                "Node B to Node T",
+                "Capacity Nine",
+                "Flow Nine",
+                "Saturated Crossing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Replication cluster analyzes topology after reaching throughput.",
+            "rows": [
+              [
+                "Database Master S",
+                "Primary Ingestion",
+                "Thirteen Gbps",
+                "Full Throughput"
+              ],
+              [
+                "Replica Target T",
+                "Consumer Endpoint",
+                "Thirteen Gbps",
+                "Bottleneck Reached"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Queue confirms saturated forward edges block target node.",
+            "rows": [
+              [
+                "Sum Crossing Cuts",
+                "Certified Min Cut",
+                "Thirteen Gbps",
+                "Linear Extraction"
+              ],
+              [
+                "Reachability Sweep",
+                "Breadth Traversal",
+                "Order V Plus E",
+                "Instant Proof"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Extracting the Minimum Cut via Residual  Duality Matrix",
+        "columns": [
+          "Vertex Group",
+          "Residual Reachability",
+          "Boundary Status",
+          "Saturated Edges"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Residual graph reachability extracts minimum cut partition.",
+            "rows": [
+              [
+                "Partition Set S",
+                "Reachable From Source",
+                "Active Domain",
+                "Forward Conduits"
+              ],
+              [
+                "Partition Set T",
+                "Unreachable Nodes",
+                "Sink Boundary",
+                "Zero Residual"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Source traversal identifies all reachable residual vertices.",
+            "rows": [
+              [
+                "Node A to Node T",
+                "Capacity Four",
+                "Flow Four",
+                "Saturated Crossing"
+              ],
+              [
+                "Node B to Node T",
+                "Capacity Nine",
+                "Flow Nine",
+                "Saturated Crossing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Replication cluster analyzes topology after reaching throughput.",
+            "rows": [
+              [
+                "Database Master S",
+                "Primary Ingestion",
+                "Thirteen Gbps",
+                "Full Throughput"
+              ],
+              [
+                "Replica Target T",
+                "Consumer Endpoint",
+                "Thirteen Gbps",
+                "Bottleneck Reached"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Queue confirms saturated forward edges block target node.",
+            "rows": [
+              [
+                "Sum Crossing Cuts",
+                "Certified Min Cut",
+                "Thirteen Gbps",
+                "Linear Extraction"
+              ],
+              [
+                "Reachability Sweep",
+                "Breadth Traversal",
+                "Order V Plus E",
+                "Instant Proof"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bipartite Matching: Modeling Task Allocation as Flow Networks",
+      "codeHash": "bfd4e8373f9f7ee568a99e6c4f21a2fe20a47411914a377f5e61d7cb913cdbb4",
+      "filled": {
+        "template": "table",
+        "title": "Bipartite Matching: Modeling Task Alloca Duality Matrix",
+        "columns": [
+          "Bipartite Element",
+          "Flow Assignment",
+          "Capacity Rule",
+          "Matching Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bipartite matching models workforce resource assignment.",
+            "rows": [
+              [
+                "Developer One",
+                "Frontend Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ],
+              [
+                "Developer Two",
+                "Backend Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Matching selects disjoint edges sharing zero common vertices.",
+            "rows": [
+              [
+                "Developer Three",
+                "Database Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ],
+              [
+                "Developer Four",
+                "DevOps Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Engineering department matches specialized developers to epics.",
+            "rows": [
+              [
+                "Source Inflow",
+                "Four Developers",
+                "Unit Supply Each",
+                "Full Utilization"
+              ],
+              [
+                "Sink Outflow",
+                "Four Tasks Done",
+                "Unit Demand Each",
+                "Zero Idle Time"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Removing affinity edge reroutes optimal matching flow.",
+            "rows": [
+              [
+                "Integrality Law",
+                "Integer Bounds",
+                "Zero Fractional Work",
+                "Perfect Cardinality"
+              ],
+              [
+                "Matching Capacity",
+                "Maximum Flow Four",
+                "Four Pairs Bound",
+                "Optimal Schedule"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Bipartite Matching: Modeling Task Alloca Duality Matrix",
+        "columns": [
+          "Bipartite Element",
+          "Flow Assignment",
+          "Capacity Rule",
+          "Matching Outcome"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bipartite matching models workforce resource assignment.",
+            "rows": [
+              [
+                "Developer One",
+                "Frontend Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ],
+              [
+                "Developer Two",
+                "Backend Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Matching selects disjoint edges sharing zero common vertices.",
+            "rows": [
+              [
+                "Developer Three",
+                "Database Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ],
+              [
+                "Developer Four",
+                "DevOps Epic",
+                "Unit Integer Flow",
+                "Matched Pair"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Engineering department matches specialized developers to epics.",
+            "rows": [
+              [
+                "Source Inflow",
+                "Four Developers",
+                "Unit Supply Each",
+                "Full Utilization"
+              ],
+              [
+                "Sink Outflow",
+                "Four Tasks Done",
+                "Unit Demand Each",
+                "Zero Idle Time"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Removing affinity edge reroutes optimal matching flow.",
+            "rows": [
+              [
+                "Integrality Law",
+                "Integer Bounds",
+                "Zero Fractional Work",
+                "Perfect Cardinality"
+              ],
+              [
+                "Matching Capacity",
+                "Maximum Flow Four",
+                "Four Pairs Bound",
+                "Optimal Schedule"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Konig's Theorem: Equivalence of Maximum Matching and Minimum Vertex Cover",
+      "codeHash": "896688cd3dbcf104a3f451de9f42b15c2ea8f8a0ab985299a497cb612f8a5f95",
+      "filled": {
+        "template": "table",
+        "title": "Konig's Theorem: Equivalence of Maximum  Duality Matrix",
+        "columns": [
+          "Graph Element",
+          "Matching Role",
+          "Vertex Cover Role",
+          "Konig Equality"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Konig theorem establishes matching and vertex cover equivalence.",
+            "rows": [
+              [
+                "Account U One",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality One"
+              ],
+              [
+                "Account U Two",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality Two"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Theorem proves matching size equals vertex cover size.",
+            "rows": [
+              [
+                "Account U Three",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality Three"
+              ],
+              [
+                "Service V Nodes",
+                "Matched Right Nodes",
+                "Covered By Left",
+                "Zero Redundancy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cybersecurity audit models permissions across microservices.",
+            "rows": [
+              [
+                "Five Permission Links",
+                "Original Edges",
+                "All Touched Once",
+                "Complete Protection"
+              ],
+              [
+                "Audit Perimeter",
+                "Three User Nodes",
+                "Minimal Security Cut",
+                "Least Privilege"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cover array verifies complete protection across bipartite edges.",
+            "rows": [
+              [
+                "Max Matching Size",
+                "Three Edge Pairs",
+                "Optimal Allocation",
+                "Proven Dual"
+              ],
+              [
+                "Min Cover Size",
+                "Three Vertex Nodes",
+                "Exact Equivalence",
+                "Konig Theorem"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Konig's Theorem: Equivalence of Maximum  Duality Matrix",
+        "columns": [
+          "Graph Element",
+          "Matching Role",
+          "Vertex Cover Role",
+          "Konig Equality"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Konig theorem establishes matching and vertex cover equivalence.",
+            "rows": [
+              [
+                "Account U One",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality One"
+              ],
+              [
+                "Account U Two",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality Two"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Theorem proves matching size equals vertex cover size.",
+            "rows": [
+              [
+                "Account U Three",
+                "Matched Left Node",
+                "Selected In Cover",
+                "Cardinality Three"
+              ],
+              [
+                "Service V Nodes",
+                "Matched Right Nodes",
+                "Covered By Left",
+                "Zero Redundancy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cybersecurity audit models permissions across microservices.",
+            "rows": [
+              [
+                "Five Permission Links",
+                "Original Edges",
+                "All Touched Once",
+                "Complete Protection"
+              ],
+              [
+                "Audit Perimeter",
+                "Three User Nodes",
+                "Minimal Security Cut",
+                "Least Privilege"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cover array verifies complete protection across bipartite edges.",
+            "rows": [
+              [
+                "Max Matching Size",
+                "Three Edge Pairs",
+                "Optimal Allocation",
+                "Proven Dual"
+              ],
+              [
+                "Min Cover Size",
+                "Three Vertex Nodes",
+                "Exact Equivalence",
+                "Konig Theorem"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production-Grade TypeScript Engine: EnterpriseTaskAllocationGovernor with Capacity Bottleneck Extraction",
+      "codeHash": "390df52da9bbd1d4993261dad6ac59c5e2423f16c5983996fc9b1bfd0223161e",
+      "filled": {
+        "template": "table",
+        "title": "Production-Grade TypeScript Engine: Ente Duality Matrix",
+        "columns": [
+          "Team Entity",
+          "Sprint Quota",
+          "Assigned Backlog",
+          "Capacity Cut Alert"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Governance engine automates enterprise resource allocation.",
+            "rows": [
+              [
+                "Platform Team",
+                "Two Task Quota",
+                "Kubernetes Upgrade",
+                "Quota Saturated"
+              ],
+              [
+                "Security Team",
+                "One Task Quota",
+                "Vulnerability Audit",
+                "Quota Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Governor models team capacities and task requirements.",
+            "rows": [
+              [
+                "Data Team",
+                "Two Task Quota",
+                "Schema Migration",
+                "Quota Saturated"
+              ],
+              [
+                "Secondary Data Task",
+                "Second Slot",
+                "Pipeline Optimize",
+                "Quota Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Organization deploys governor to assign infrastructure epics.",
+            "rows": [
+              [
+                "Total Backlog Intake",
+                "Five Epics",
+                "Five Delivered",
+                "Optimal Sprint"
+              ],
+              [
+                "Bottleneck Resource",
+                "Team Source Cuts",
+                "Three Saturated Ranks",
+                "Scaling Clue"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unassigned tasks trigger capacity deficit alerts.",
+            "rows": [
+              [
+                "Governance Audit",
+                "Zero Backlog Drop",
+                "Autonomous Schedule",
+                "High Productivity"
+              ],
+              [
+                "Capacity Expansion",
+                "Platform Security",
+                "Direct Release Boost",
+                "Budget Aligned"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Production-Grade TypeScript Engine: Ente Duality Matrix",
+        "columns": [
+          "Team Entity",
+          "Sprint Quota",
+          "Assigned Backlog",
+          "Capacity Cut Alert"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Governance engine automates enterprise resource allocation.",
+            "rows": [
+              [
+                "Platform Team",
+                "Two Task Quota",
+                "Kubernetes Upgrade",
+                "Quota Saturated"
+              ],
+              [
+                "Security Team",
+                "One Task Quota",
+                "Vulnerability Audit",
+                "Quota Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Governor models team capacities and task requirements.",
+            "rows": [
+              [
+                "Data Team",
+                "Two Task Quota",
+                "Schema Migration",
+                "Quota Saturated"
+              ],
+              [
+                "Secondary Data Task",
+                "Second Slot",
+                "Pipeline Optimize",
+                "Quota Saturated"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Organization deploys governor to assign infrastructure epics.",
+            "rows": [
+              [
+                "Total Backlog Intake",
+                "Five Epics",
+                "Five Delivered",
+                "Optimal Sprint"
+              ],
+              [
+                "Bottleneck Resource",
+                "Team Source Cuts",
+                "Three Saturated Ranks",
+                "Scaling Clue"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unassigned tasks trigger capacity deficit alerts.",
+            "rows": [
+              [
+                "Governance Audit",
+                "Zero Backlog Drop",
+                "Autonomous Schedule",
+                "High Productivity"
+              ],
+              [
+                "Capacity Expansion",
+                "Platform Security",
+                "Direct Release Boost",
+                "Budget Aligned"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
