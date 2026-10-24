@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 33,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Residence Rules, Source vs. Residence Taxation & Section 90 vs. Section 91 Relief",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Place of effective management tests determine corporate tax residence."
+          },
+          {
+            "step": "say2",
+            "caption": "Bilateral double tax treaties prevail whenever domestic tax is higher."
+          },
+          {
+            "step": "example",
+            "caption": "Valid residency certificates unlock preferential cross border rates."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Unilateral credits protect domestic firms in non treaty zones."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Permanent Establishment (PE) Dynamics: Fixed Place, Agency & Service PE Risks (Article 5)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Source countries tax business profits only through permanent presence."
+          },
+          {
+            "step": "say2",
+            "caption": "Fixed places of business require physical premises and disposal power."
+          },
+          {
+            "step": "example",
+            "caption": "Construction projects trigger permanent establishment past time limits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Dependent agents habitually concluding sales create taxable presence."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Taxation of Royalties & Fees for Technical Services (FTS) under Article 12 vs. Section 115A",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Narrow treaty definitions shield software from royalty tax."
+          },
+          {
+            "step": "say2",
+            "caption": "Purchasing copyrighted articles does not transfer underlying copyright."
+          },
+          {
+            "step": "example",
+            "caption": "Technical services require making available technical skills to buyers."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Certified withholding certificates support cross border remittances."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "BEPS Action Plans & Multilateral Instrument (MLI): Principal Purpose Test (PPT) & LOB",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Multilateral conventions modernize treaties against erosion."
+          },
+          {
+            "step": "say2",
+            "caption": "Principal purpose tests deny treaty relief to artificial holding shells."
+          },
+          {
+            "step": "example",
+            "caption": "Regional operating headquarters require genuine physical substance."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Limitation on benefits rules restrict treaty claims."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Equalisation Levy & Significant Economic Presence (SEP) for Digital Business Models",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Digital taxes capture revenues from non resident technology platforms."
+          },
+          {
+            "step": "say2",
+            "caption": "Equalisation levies apply against online advertising and marketplaces."
+          },
+          {
+            "step": "example",
+            "caption": "Transaction value and user count thresholds establish digital nexus."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Global tax agreements aim to replace unilateral digital taxes over time."
+          }
+        ]
+      }
+    }
+  ]
+}

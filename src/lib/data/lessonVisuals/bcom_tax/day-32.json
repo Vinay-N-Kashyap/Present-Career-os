@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 32,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Legislative Intent and Scope of Section 115JB: Domestic vs. Foreign Companies",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Minimum alternate tax prevents profitable firms from paying zero taxes."
+          },
+          {
+            "step": "say2",
+            "caption": "Assessing officers cannot rewrite audited company profit statements."
+          },
+          {
+            "step": "example",
+            "caption": "Fifteen percent book tax applies against adjusted book profits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Foreign portfolio investors without permanent presence avoid book tax."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Book Profit Adjustments: Mandatory Additions and Permissible Reductions",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Statutory additions restore corporate tax provisions to book profits."
+          },
+          {
+            "step": "say2",
+            "caption": "Doubtful debt provisions add back to net profit unless written off."
+          },
+          {
+            "step": "example",
+            "caption": "Deductions permit lower of past loss or book depreciation."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Insolvent corporate debtors deduct aggregate losses and depreciation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Treatment of Ind AS Adjustments, OCI Items & Transition Reserves under Section 115JB(2A)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Convergence adjustments reconcile fair value accounting with book tax."
+          },
+          {
+            "step": "say2",
+            "caption": "Other comprehensive income items phase into book profits systematically."
+          },
+          {
+            "step": "example",
+            "caption": "Transition reserves spread evenly over five consecutive fiscal years."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Unrealized equity swings remain deferred until investments are sold."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "MAT Credit Entitlement (Section 115JAA), 15-Year Carryforward & Utilization Waterfalls",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Excess book tax paid generates a balance sheet credit entitlement."
+          },
+          {
+            "step": "say2",
+            "caption": "Fifteen year carryforward windows allow future normal tax offset."
+          },
+          {
+            "step": "example",
+            "caption": "Credit utilization caps at the spread between normal tax and book tax."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Audited projections verify deferred tax asset recoverability tests."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Interplay between Section 115JB and Concessional Regimes (Section 115BAA/115BAB)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Electing twenty two percent concessional tax abolishes book tax forever."
+          },
+          {
+            "step": "say2",
+            "caption": "Accumulated credit balances forfeit permanently upon regime transition."
+          },
+          {
+            "step": "example",
+            "caption": "Discounted cash flow models optimize the multi year transition point."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Corporate reorganizations isolate credit balances in separate entities."
+          }
+        ]
+      }
+    }
+  ]
+}
