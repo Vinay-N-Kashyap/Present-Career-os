@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 59,
+  "promptSha": "b18efe198cf9f04c6236a5f75d105e62e64c52e4638d08f500822af101ed6c6c",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Write-Ahead Log (WAL) Streaming & Logical Decoding Internals",
+      "codeHash": "07d199a2e321fdbe74169a268552fb6ae1a9a894fce4501cfeb0055fa58aadee",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 1",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real time architectures extract streaming mutations from internal logs.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical decoding subsystems decode physical log records into row events.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Court stenographer records legal testimony in shorthand phonetics.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical decoding architecture matrix and streaming semantics.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 1",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real time architectures extract streaming mutations from internal logs.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical decoding subsystems decode physical log records into row events.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Court stenographer records legal testimony in shorthand phonetics.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical decoding architecture matrix and streaming semantics.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Logical Replication Slots, Publications & Subscriptions",
+      "codeHash": "19835732c7f82884b60de7a0225249c8a95374bf388ae89825cb8d9ac9e77867",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 2",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL coordinates distributed synchronization using publications.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Native logical replication provides publisher and subscriber interfaces.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "National news wire syndication service distributes breaking news.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical replication benchmarks and enterprise production roles.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 2",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL coordinates distributed synchronization using publications.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Native logical replication provides publisher and subscriber interfaces.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "National news wire syndication service distributes breaking news.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical replication benchmarks and enterprise production roles.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CDC Integration Architectures & Event Streaming Pipelines",
+      "codeHash": "c16a575f351ab7d77baacb26036efed317d76297ac7af1486b8450d54c67f226",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 3",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Change data capture extends across distributed event streaming systems.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transactional outbox patterns guarantee atomic event publishing.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal postal dispatch centers process registered parcel shipments.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect event streaming matrix and data lakehouse ingestion roles.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 3",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Change data capture extends across distributed event streaming systems.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Transactional outbox patterns guarantee atomic event publishing.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal postal dispatch centers process registered parcel shipments.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect event streaming matrix and data lakehouse ingestion roles.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replication Conflicts, Replication Origins & Multi-Master Geodistribution",
+      "codeHash": "2ac204768e3488644f1733a8c4fa9940bec3a14729f15661556f1ccd8ddaa334",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 4",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active active distributed databases encounter replication conflicts.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Distributed database nodes accept concurrent transactional mutations.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International currency trading desks update corporate treasury ledgers.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication conflict matrix and multi master applicabilities.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 4",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Active active distributed databases encounter replication conflicts.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Distributed database nodes accept concurrent transactional mutations.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International currency trading desks update corporate treasury ledgers.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication conflict matrix and multi master applicabilities.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Forensics, EXPLAIN Telemetry & Replication Lag Monitoring Runbooks",
+      "codeHash": "402e2b0f51a702f38f6b76eabf315f55961a0cfb55f5bb05b5fb8ab89d6b6905",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 5",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics monitor replication lag and throughput.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical replication slots introduce operational risks of disk exhaustion.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal water reservoir manages mountain snowmelt runoff gates.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication monitoring runbook and system availability impacts.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication & CDC - Part 5",
+        "leftLabel": "Polling & Dual-Write Architecture",
+        "rightLabel": "Log-Based CDC & Logical Replication",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic forensics monitor replication lag and throughput.",
+            "left": {
+              "code": "Application dual-write to DB and Kafka",
+              "result": {
+                "text": "network failure causes lost events or phantom state"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Transactional outbox with WAL log-tailing",
+              "result": {
+                "text": "ACID atomicity; guaranteed at-least-once delivery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical replication slots introduce operational risks of disk exhaustion.",
+            "left": {
+              "code": "Batch polling queries (SELECT * WHERE status)",
+              "result": {
+                "text": "heavy table locks; high CPU; misses rapid updates"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Asynchronous logical decoding from WAL",
+              "result": {
+                "text": "zero table locks; sub-second streaming throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal water reservoir manages mountain snowmelt runoff gates.",
+            "left": {
+              "code": "Unmonitored replication slot on crashed worker",
+              "result": {
+                "text": "retained WAL fills disk volume; server crashes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Configured max_slot_wal_keep_size = 50GB",
+              "result": {
+                "text": "safely invalidates lagging slot; protects disk"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication monitoring runbook and system availability impacts.",
+            "left": {
+              "code": "Active-active mesh without origin tracking",
+              "result": {
+                "text": "circular echo loop cascades infinitely across nodes"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_replication_origin session tracking",
+              "result": {
+                "text": "filters local echoes; clean conflict resolution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
