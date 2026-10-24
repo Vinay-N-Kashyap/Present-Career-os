@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "prefix": "iot_net",
+  "coursePrefix": "iot_net",
+  "day": 60,
+  "title": "Milestone 12 Capstone: Production Enterprise Edge-to-Cloud Digital Twin & Security Mesh Engine",
+  "promptSha": "milestone-12-master-capstone-day60-v2",
+  "model": "gpt-4o",
+  "codeHash": "9b4e53c0804efea8cdc646bbfc7307c078beb326f7ab4514eeb03efae9bc5e36",
+  "spec": {
+    "template": "register-bits"
+  },
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture: End-to-End Enterprise Edge-to-Cloud Protocol Mesh Topology",
+      "codeHash": "9b4e53c0804efea8cdc646bbfc7307c078beb326f7ab4514eeb03efae9bc5e36",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 60 Part 1 — Capstone Architecture: End-to-End Enterprise Edge-to-Cloud Protocol Mesh Topology",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize ProtocolMeshTopologyRouter: Instantiate cross-protocol ring buffers on edge gateway.",
+            "registerName": "MESH_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH_TOPOLOGY_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CLOUD_UPLINK_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BURST_BACKPRESSURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BUFFER_RING_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_SN_6LOWPAN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TSN_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_BRIDGE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MESH_ROUTER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Activate industrial Modbus RTU/TCP bridge and TSN OPC UA deterministic automation channel.",
+            "registerName": "MESH_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH_TOPOLOGY_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CLOUD_UPLINK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BURST_BACKPRESSURE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BUFFER_RING_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_SN_6LOWPAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TSN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_BRIDGE_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MESH_ROUTER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Register 6LoWPAN wireless sensor subnets via lightweight 2-byte Topic ID MQTT-SN bridge.",
+            "registerName": "MESH_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBE",
+            "decimalValue": 190,
+            "maskApplied": "0xBE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH_TOPOLOGY_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CLOUD_UPLINK_SYNC",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BURST_BACKPRESSURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BUFFER_RING_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_SN_6LOWPAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TSN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_BRIDGE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MESH_ROUTER_EN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Synchronize multi-protocol pipelines to AWS and Azure cloud brokers with zero packet loss.",
+            "registerName": "MESH_ROUTER_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "MESH_TOPOLOGY_READY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "CLOUD_UPLINK_SYNC",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "BURST_BACKPRESSURE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BUFFER_RING_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MQTT_SN_6LOWPAN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OPC_UA_TSN_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MODBUS_BRIDGE_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MESH_ROUTER_EN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware-Anchored Identity & Zero-Trust Provisioning Pipeline Integration",
+      "codeHash": "b15dc1384a490ae26d7e9533bbf9bd4b6b1a65788f0788518367a72456055434",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 60 Part 2 — Hardware-Anchored Identity & Zero-Trust Provisioning Pipeline Integration",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize SovereignHardwareSecurityPipeline: Confirm permanent silicon hardware lock on Slot 0.",
+            "registerName": "SOVEREIGN_SEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SOVEREIGN_MESH_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AUDIT_JOURNAL_SIGN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OCSP_STATUS_GOOD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "EST_ENROLL_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_13_MUTUAL_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRNG_ENTROPY_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SLOT0_FUSE_LOCKED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SOVEREIGN_SEC_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute on-chip ECDSA CertificateVerify signature delegation via PKCS#11 token interface.",
+            "registerName": "SOVEREIGN_SEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SOVEREIGN_MESH_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AUDIT_JOURNAL_SIGN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OCSP_STATUS_GOOD",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "EST_ENROLL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_13_MUTUAL_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRNG_ENTROPY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SLOT0_FUSE_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SOVEREIGN_SEC_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Query live OCSP responder: Confirm device leaf certificate status is cryptographically 'GOOD'.",
+            "registerName": "SOVEREIGN_SEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SOVEREIGN_MESH_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AUDIT_JOURNAL_SIGN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OCSP_STATUS_GOOD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "EST_ENROLL_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_13_MUTUAL_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRNG_ENTROPY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SLOT0_FUSE_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SOVEREIGN_SEC_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Establish authenticated mutual TLS 1.3 session and commit signed entry to immutable audit journal.",
+            "registerName": "SOVEREIGN_SEC_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "SOVEREIGN_MESH_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "AUDIT_JOURNAL_SIGN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "OCSP_STATUS_GOOD",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "EST_ENROLL_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "MTLS_13_MUTUAL_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "TRNG_ENTROPY_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "SLOT0_FUSE_LOCKED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "SOVEREIGN_SEC_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bidirectional Device Shadow & Closed-Loop Digital Twin Actuation Mesh",
+      "codeHash": "3fa503cccc17b41c86ed1d8a6873addb13cab23cd76b93b1392b42860850eff3",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 60 Part 3 — Bidirectional Device Shadow & Closed-Loop Digital Twin Actuation Mesh",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize ClosedLoopDigitalTwinMesh: Subscribe to cloud desired state document at Version 10.",
+            "registerName": "TWIN_CLOSED_LOOP_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_CONVERGED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_DELTA_REPORT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TACH_RPM_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "LIMIT_SWITCH_CONFIRM",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ACTUATOR_DRIVE_SET",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_LOCK_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MESH_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Parse desired setpoints: Accelerate spindle to 3600 RPM and energize pneumatic cooling valve relay.",
+            "registerName": "TWIN_CLOSED_LOOP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDC",
+            "decimalValue": 220,
+            "maskApplied": "0xDC",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_CONVERGED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_DELTA_REPORT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TACH_RPM_VERIFIED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "LIMIT_SWITCH_CONFIRM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ACTUATOR_DRIVE_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_LOCK_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MESH_ENABLE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Wait for physical sensor feedback: Confirm optical tachometer 3600 RPM and limit switch closure.",
+            "registerName": "TWIN_CLOSED_LOOP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xBE",
+            "decimalValue": 190,
+            "maskApplied": "0xBE",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_CONVERGED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_DELTA_REPORT",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TACH_RPM_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "LIMIT_SWITCH_CONFIRM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ACTUATOR_DRIVE_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_LOCK_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MESH_ENABLE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Confirm physical convergence: Publish updated reported state and advance twin to Version 11.",
+            "registerName": "TWIN_CLOSED_LOOP_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "TWIN_CONVERGED_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "ZERO_DELTA_REPORT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "TACH_RPM_VERIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "LIMIT_SWITCH_CONFIRM",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ACTUATOR_DRIVE_SET",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "VERSION_LOCK_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DESIRED_PATCH_IN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "TWIN_MESH_ENABLE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Resilient Dual-Bank Secure OTA Deployment & Fleet Rollback Guardian",
+      "codeHash": "607aff08fc4df63934c4f8fa7a3386252c6337aa607b826a7c7277ea2e0cc10d",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 60 Part 4 — Resilient Dual-Bank Secure OTA Deployment & Fleet Rollback Guardian",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Initialize FleetOtaRollbackGuardian: Monitor dual-bank flash partitions from running Bank A.",
+            "registerName": "OTA_GUARDIAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FLEET_ROLLBACK_SAFE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EFUSE_EPOCH_BLOWN",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "WDT_CONFIRM_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BOOT_SLOT_SWAPPED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ANTI_ROLLBACK_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OEM_ECDSA_VALID",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DUAL_BANK_STAGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTA_GUARDIAN_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Verify OEM cryptographic signature and evaluate Security Epoch against hardware monotonic counter.",
+            "registerName": "OTA_GUARDIAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FLEET_ROLLBACK_SAFE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EFUSE_EPOCH_BLOWN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "WDT_CONFIRM_PASS",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BOOT_SLOT_SWAPPED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ANTI_ROLLBACK_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OEM_ECDSA_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DUAL_BANK_STAGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTA_GUARDIAN_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Execute atomic bootloader swap to Bank B and arm 60-second hardware watchdog countdown timer.",
+            "registerName": "OTA_GUARDIAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FLEET_ROLLBACK_SAFE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EFUSE_EPOCH_BLOWN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "WDT_CONFIRM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BOOT_SLOT_SWAPPED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ANTI_ROLLBACK_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OEM_ECDSA_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DUAL_BANK_STAGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTA_GUARDIAN_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Pass post-boot self-tests: Permanently blow eFuse to advance epoch and confirm Bank B operational status.",
+            "registerName": "OTA_GUARDIAN_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "FLEET_ROLLBACK_SAFE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "EFUSE_EPOCH_BLOWN",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "WDT_CONFIRM_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "BOOT_SLOT_SWAPPED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "ANTI_ROLLBACK_PASS",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "OEM_ECDSA_VALID",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "DUAL_BANK_STAGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "OTA_GUARDIAN_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Masterclass Capstone Synthesis: Production Enterprise Edge-to-Cloud Digital Twin & Security Mesh Engine",
+      "codeHash": "6034b1849f0d4d78a6915def8232edd8c0e27a89da3ab6f90a7dbe46d71510a9",
+      "spec": {
+        "template": "register-bits",
+        "title": "Day 60 Part 5 — Grand Masterclass Capstone Synthesis: Production Enterprise Edge-to-Cloud Digital Twin & Security Mesh Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "step": "say1",
+            "caption": "Instantiate EnterpriseEdgeCloudMasterEngine: Orchestrate multi-protocol, security, and twin subsystems.",
+            "registerName": "GRAND_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0x81",
+            "decimalValue": 129,
+            "maskApplied": "0x81",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COURSE_18_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENTERPRISE_TELEMETRY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OTA_DUAL_BANK_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TWIN_100PCT_CONVERGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SOVEREIGN_MTLS_SEALED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_PROTO_BRIDGED",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MASTER_PLATFORM_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "step": "say2",
+            "caption": "Execute full-stack cyber-physical synchronization across industrial fieldbuses and hyperscale clouds.",
+            "registerName": "GRAND_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xDF",
+            "decimalValue": 223,
+            "maskApplied": "0xDF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COURSE_18_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENTERPRISE_TELEMETRY",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OTA_DUAL_BANK_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TWIN_100PCT_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SOVEREIGN_MTLS_SEALED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_PROTO_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MASTER_PLATFORM_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "step": "example",
+            "caption": "Verify zero delta twin tracking, hardware key isolation, and brick-proof dual-bank OTA protection.",
+            "registerName": "GRAND_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xEF",
+            "decimalValue": 239,
+            "maskApplied": "0xEF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COURSE_18_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENTERPRISE_TELEMETRY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OTA_DUAL_BANK_ACTIVE",
+                "value": 0,
+                "tone": "idle",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TWIN_100PCT_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SOVEREIGN_MTLS_SEALED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_PROTO_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MASTER_PLATFORM_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "step": "tryIt",
+            "caption": "Assert OPERATIONAL_SOVEREIGN_MESH and latch COURSE_18_IOT_NET_MASTER_CAPSTONE_GRADE_A_PLUS_CERTIFIED.",
+            "registerName": "GRAND_CAPSTONE_REG",
+            "bitWidth": 8,
+            "hexValue": "0xFF",
+            "decimalValue": 255,
+            "maskApplied": "0xFF",
+            "bits": [
+              {
+                "index": 7,
+                "name": "COURSE_18_CERTIFIED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": true
+              },
+              {
+                "index": 6,
+                "name": "TOKEN_LATCH_OK",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 5,
+                "name": "ENTERPRISE_TELEMETRY",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 4,
+                "name": "OTA_DUAL_BANK_ACTIVE",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 3,
+                "name": "TWIN_100PCT_CONVERGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 2,
+                "name": "SOVEREIGN_MTLS_SEALED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 1,
+                "name": "MULTI_PROTO_BRIDGED",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              },
+              {
+                "index": 0,
+                "name": "MASTER_PLATFORM_INIT",
+                "value": 1,
+                "tone": "ok",
+                "highlighted": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
