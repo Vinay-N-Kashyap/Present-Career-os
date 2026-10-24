@@ -1,0 +1,391 @@
+{
+  "prefix": "bcom-finance",
+  "day": 57,
+  "visuals": [
+    {
+      "part": 1,
+      "template": "ledger-sheet",
+      "caption": "Real estate investment trust pass through structure.",
+      "data": {
+        "title": "Day 57 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+        "verified": true
+      }
+    },
+    {
+      "part": 2,
+      "template": "ledger-sheet",
+      "caption": "Property net operating income to cash affo waterfall.",
+      "data": {
+        "title": "Day 57 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+        "verified": true
+      }
+    },
+    {
+      "part": 3,
+      "template": "ledger-sheet",
+      "caption": "Commercial mortgage backed securities subordination.",
+      "data": {
+        "title": "Day 57 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+        "verified": true
+      }
+    },
+    {
+      "part": 4,
+      "template": "ledger-sheet",
+      "caption": "Commercial property debt yield refinancing boundaries.",
+      "data": {
+        "title": "Day 57 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+        "verified": true
+      }
+    },
+    {
+      "part": 5,
+      "template": "ledger-sheet",
+      "caption": "Real estate investment trust net asset balance sheet.",
+      "data": {
+        "title": "Day 57 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4
+          }
+        ]
+      },
+      "codeBinding": {
+        "language": "python",
+        "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+        "verified": true
+      }
+    }
+  ]
+}
