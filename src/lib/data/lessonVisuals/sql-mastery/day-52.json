@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 52,
+  "promptSha": "0efc54777db83eaab99e460ecefd4af51fe466261a0b9047d885f24c90446041",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Prepared Statements Lifecycle: The Five-Execution Custom Plan Rule",
+      "codeHash": "3973e0210c606383134845caeb5d8e32c6dc607e9f840789221a0d34813224c9",
+      "spec": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 1",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engines evaluate query execution plans over repeated runs.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "High throughput database applications execute parameterized queries.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Barista serves commuter customers personalized beverage drinks.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement lifecycle mechanics and execution phases.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 1",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database engines evaluate query execution plans over repeated runs.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "High throughput database applications execute parameterized queries.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Barista serves commuter customers personalized beverage drinks.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement lifecycle mechanics and execution phases.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parameter Sniffing & Data Skew Disasters: When Generic Plans Fail",
+      "codeHash": "dc1443eed0badd8b1562d0ca158aa3643cb32781f61458976d84bb32bb486364",
+      "spec": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 2",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transition to generic execution plans causes parameter sniffing.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise databases distribute records across non uniform values.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Clinic nurse prepares emergency first aid equipment for patients.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect parameter sniffing skew scenarios and execution strategies.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 2",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transition to generic execution plans causes parameter sniffing.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise databases distribute records across non uniform values.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Clinic nurse prepares emergency first aid equipment for patients.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect parameter sniffing skew scenarios and execution strategies.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "plan_cache_mode Deep Dive: auto vs force_custom_plan vs force_generic_plan",
+      "codeHash": "9fcdd53320dfaf629775c30eef4dbfb909675919d7faa06236cb411aca96a009",
+      "spec": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 3",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database configuration parameters control prepared statement caching.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planners accept explicit configuration settings for session caching.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Professional tailor measures clients for bespoke garments and suits.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect plan cache mode configurations and planner decision logics.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 3",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Database configuration parameters control prepared statement caching.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planners accept explicit configuration settings for session caching.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Professional tailor measures clients for bespoke garments and suits.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect plan cache mode configurations and planner decision logics.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "DDL Schema Alterations, Catalog Locks & Plan Cache Invalidation",
+      "codeHash": "04c8f0ac94fd51a0fda6450faf62584f3b8cc0ba1a730fd9bea8437358f9fe0b",
+      "spec": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 4",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Catalog invalidation queues force cached execution plans to discard.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines guarantee cached plans reflect evolving schemas.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport terminal traffic controller broadcasts departure schedule alerts.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect plan invalidation events and shared invalidation mechanisms.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 4",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Catalog invalidation queues force cached execution plans to discard.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines guarantee cached plans reflect evolving schemas.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport terminal traffic controller broadcasts departure schedule alerts.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect plan invalidation events and shared invalidation mechanisms.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Forensics: pg_prepared_statements, Plan Drift & SRE Runbooks",
+      "codeHash": "943fd4980d4d35df1876a19d55269c5334d935015201c6c8fc760777113d1297",
+      "spec": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 5",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic tooling monitors prepared statement performance.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Mission critical production environments inspect session cache state.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital medical unit displays cardiac telemetry monitors for patients.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement diagnostic runbook and monitoring metrics.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Plan Invalidation & Caching - Part 5",
+        "leftLabel": "Vulnerable Uncalibrated Caching",
+        "rightLabel": "Hardened Plan Management",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production diagnostic tooling monitors prepared statement performance.",
+            "left": {
+              "code": "Generic plan on skewed table",
+              "result": {
+                "text": "locks in index scan for 98% completed status; stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "plan_cache_mode = force_custom_plan",
+              "result": {
+                "text": "re-plans with literal parameter; picks optimal scan"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Mission critical production environments inspect session cache state.",
+            "left": {
+              "code": "Repeated ad-hoc raw SQL strings",
+              "result": {
+                "text": "wastes 30% server CPU on parsing and query planning"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Parameterized prepared statement",
+              "result": {
+                "text": "eliminates parse latency; reuses generic plan cache"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital medical unit displays cardiac telemetry monitors for patients.",
+            "left": {
+              "code": "Stale plan retained post-DDL",
+              "result": {
+                "text": "executes against modified schema; risk of memory fault"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "sinval shared invalidation queue",
+              "result": {
+                "text": "flags and purges obsolete plan before execution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect prepared statement diagnostic runbook and monitoring metrics.",
+            "left": {
+              "code": "Unmonitored execution time variance",
+              "result": {
+                "text": "hidden parameter sniffing latency spikes unnoticed"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_stat_statements stddev monitoring",
+              "result": {
+                "text": "automated alert detects plan drift for instant triage"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

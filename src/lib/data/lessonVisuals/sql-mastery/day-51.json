@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 51,
+  "promptSha": "a3629627996cd35d5b9737ea66196b74c7fa5f232b0fa8cf7001819d0c451e27",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Cost-Based Optimizer Philosophy: Total Cost vs Startup Cost",
+      "codeHash": "25365b414cbb4982d8b6df2b98e109f9c31d2c6a6fd932844cc5e2eb24f41ec8",
+      "spec": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 1",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cost based query optimizers evaluate execution plan computational costs.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative relational database systems transform client query strings.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Logistics company dispatcher calculates delivery miles across city routes.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cost based optimizer cost metric fundamentals and baseline units.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 1",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cost based query optimizers evaluate execution plan computational costs.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative relational database systems transform client query strings.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Logistics company dispatcher calculates delivery miles across city routes.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect cost based optimizer cost metric fundamentals and baseline units.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Disk I/O Cost Models: random_page_cost vs seq_page_cost & NVMe Hardware Tuning",
+      "codeHash": "6060172a857a99a0bf851ace02a6f193a26c6172bdef5b29887dc46ddd79e390",
+      "spec": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 2",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Disk page cost parameters govern index scan selection in database systems.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Critical planner decisions balance index scans against sequential scans.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated warehouse workers retrieve orders across storage shelves.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect disk page cost model benchmarks across hardware generations.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 2",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Disk page cost parameters govern index scan selection in database systems.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Critical planner decisions balance index scans against sequential scans.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated warehouse workers retrieve orders across storage shelves.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect disk page cost model benchmarks across hardware generations.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPU Operator & Tuple Cost Tuning: cpu_tuple_cost, operator_cost & Indexes",
+      "codeHash": "7d052b521e4fc724c57be4c0cf86fb0dfb0c7f82a5181c32a28b47eeb0df36c4",
+      "spec": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 3",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Computational expression evaluation work is governed by cost parameters.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines model tuple processing using memory parameters.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Immigration control agent verifies passport barcodes and biometric scans.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect processor cost parameter specifications and decision impacts.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 3",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Computational expression evaluation work is governed by cost parameters.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines model tuple processing using memory parameters.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Immigration control agent verifies passport barcodes and biometric scans.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect processor cost parameter specifications and decision impacts.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Join Cost Calculation Internals: Nested Loop vs Hash Join vs Merge Join",
+      "codeHash": "be3790a9d24aa1b1391366dfe973104bd282985f2930c5530bb998ae1ef3c3b8",
+      "spec": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 4",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational join algorithm selection depends on mathematical cost models.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query planner evaluates candidate join algorithms across input relations.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Laundry student matches sorted socks across organized wash baskets.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect join algorithm cost models and computational complexity classes.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 4",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational join algorithm selection depends on mathematical cost models.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Query planner evaluates candidate join algorithms across input relations.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Laundry student matches sorted socks across organized wash baskets.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect join algorithm cost models and computational complexity classes.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Cost Verification: Inspecting pg_stats, reltuples & Plan Tuning",
+      "codeHash": "0351898a5491ea986113709d010e9c090a905d2e6bde397c66aefdf3dc1c2099",
+      "spec": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 5",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System catalog statistics verify optimizer cost accuracy in production.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cost based optimizers depend on accurate statistical distribution models.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Artillery gunner calibrates ballistic computer sensors for wind speed.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect optimizer catalog statistics and staleness remediation commands.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Optimizer Cost Models - Part 5",
+        "leftLabel": "Uncalibrated Legacy Default",
+        "rightLabel": "Hardware-Calibrated Cost Model",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "System catalog statistics verify optimizer cost accuracy in production.",
+            "left": {
+              "code": "random_page_cost = 4.0 on NVMe",
+              "result": {
+                "text": "severe index bias forces slow sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "random_page_cost = 1.1 on NVMe",
+              "result": {
+                "text": "accurate flash cost model unlocks B-tree indexes"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Cost based optimizers depend on accurate statistical distribution models.",
+            "left": {
+              "code": "Uncosted complex user function",
+              "result": {
+                "text": "planner executes expensive function on all rows"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Explicit COST 500 attribute",
+              "result": {
+                "text": "planner evaluates cheap native filters first"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Artillery gunner calibrates ballistic computer sensors for wind speed.",
+            "left": {
+              "code": "Stale statistics in pg_class",
+              "result": {
+                "text": "underestimates rows 1000x; picks nested loops"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Fresh statistics via ANALYZE",
+              "result": {
+                "text": "accurate row estimates yield optimal hash joins"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect optimizer catalog statistics and staleness remediation commands.",
+            "left": {
+              "code": "Default statistics target (100)",
+              "result": {
+                "text": "blurry histograms on skewed data distributions"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SET STATISTICS 1000",
+              "result": {
+                "text": "high-resolution MCV list eliminates plan drift"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

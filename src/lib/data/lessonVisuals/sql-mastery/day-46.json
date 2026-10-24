@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 46,
+  "promptSha": "b592a0a494a14466d3cfa0ebba598ddea2dc0558a233a68fffeae93d404fbab7",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Monolithic Table Limit & Declarative Partitioning Fundamentals",
+      "codeHash": "bb0b483af36dbee67c9fd3e45dae657d4fbe150894f8ffc659c3b024b23c9b25",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 1",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Declarative table partitioning scales relational architectures.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Monolithic table model encounters brutal physical scaling limits.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse archive divides storage bays for historical records.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect monolithic versus partitioned metrics query results.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 1",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Declarative table partitioning scales relational architectures.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Monolithic table model encounters brutal physical scaling limits.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse archive divides storage bays for historical records.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect monolithic versus partitioned metrics query results.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Range Partitioning (PARTITION BY RANGE): Time-Series & Temporal Data Engineering",
+      "codeHash": "f60285d5bece28431410068805f6fb75f61cb3c2d4b0df1c0a3030ed42728bd3",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 2",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Range partitioning maps ordered values to physical partitions.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Temporal streams and financial transactions accumulate naturally.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Registrar archives academic transcripts into designated filing drawers.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect range partitioning specifications and interval bounds.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 2",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Range partitioning maps ordered values to physical partitions.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Temporal streams and financial transactions accumulate naturally.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Registrar archives academic transcripts into designated filing drawers.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect range partitioning specifications and interval bounds.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "List Partitioning (PARTITION BY LIST): Discrete Categorical & Multi-Tenant Partitioning",
+      "codeHash": "8ab68a7efd13b76fe5e93300c27d3756e2ece99ea56c3b3ba3a851a69f182f50",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 3",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "List partitioning organizes discrete categorical attributes.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "List partition leaf tables explicitly enumerate literal key values.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal sorting facility routes outbound packages into regional bins.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect list partitioning specifications and regional mappings.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 3",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "List partitioning organizes discrete categorical attributes.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "List partition leaf tables explicitly enumerate literal key values.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal sorting facility routes outbound packages into regional bins.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect list partitioning specifications and regional mappings.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash Partitioning (PARTITION BY HASH): Uniform Key Distribution & Parallel I/O",
+      "codeHash": "a43503651c8c9d24df20fe3e84af28ba52081ab1cec8ab603647899b08f59d4d",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 4",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Session tracking platforms distribute high velocity operations.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Range bounds on sequential keys create physical write hotspots.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Supermarket opens multiple checkout lanes to divide customer queues.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hash partitioning specifications and concurrency profiles.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 4",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Session tracking platforms distribute high velocity operations.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Range bounds on sequential keys create physical write hotspots.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Supermarket opens multiple checkout lanes to divide customer queues.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hash partitioning specifications and concurrency profiles.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Storage Layout Internals & Partitioned Indexes: Catalog Architecture & Tuple Routing",
+      "codeHash": "02ee38b416d32f43d429537f873baccd65546cf95109792f8c466e43b8f9ab86",
+      "spec": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 5",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Internal engine architecture governs storage layout and catalogs.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "System catalog metadata records partitioned table specifications.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport conveyor routes luggage baggage to designated flight gates.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition catalog internals and index propagation behaviors.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Declarative Partitioning Architecture - Part 5",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Internal engine architecture governs storage layout and catalogs.",
+            "left": {
+              "code": "Massive monolithic B-tree index",
+              "result": {
+                "text": "exceeds RAM cache causing disk thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned local B-tree indexes",
+              "result": {
+                "text": "fits entirely in RAM for microsecond queries"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "System catalog metadata records partitioned table specifications.",
+            "left": {
+              "code": "Multi-million row DELETE query",
+              "result": {
+                "text": "massive WAL bloat and hours of lockup"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Instant DROP TABLE partition",
+              "result": {
+                "text": "sub-second file unlink with zero WAL bloat"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport conveyor routes luggage baggage to designated flight gates.",
+            "left": {
+              "code": "Single table write lock contention",
+              "result": {
+                "text": "localized page latch insert bottlenecks"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Hash or range distributed writes",
+              "result": {
+                "text": "parallel non-contending multi-disk throughput"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition catalog internals and index propagation behaviors.",
+            "left": {
+              "code": "Commingled cross-border data",
+              "result": {
+                "text": "severe GDPR sovereignty compliance risk"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "List partition with tablespaces",
+              "result": {
+                "text": "physically isolated sovereign data residency"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

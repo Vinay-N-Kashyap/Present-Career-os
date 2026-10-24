@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 43,
+  "promptSha": "68ac5d21c0520bf7f8445a02690d9e28f55a4ddbd53583b035e23a80677c3488",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Logical Replication Architecture: Publications, Subscriptions & Logical Decoding",
+      "codeHash": "33896ecc09e3991c56ff02c67576381b26d7c3f4502a2057a184f130552b9721",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 1",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Logical replication streams table row changes across versions.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical replication decodes Write Ahead Log into discrete row mutations.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International trade treaty translates cargo manifests between languages.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical replication architecture components and decoding layers.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 1",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Logical replication streams table row changes across versions.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Logical replication decodes Write Ahead Log into discrete row mutations.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International trade treaty translates cargo manifests between languages.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect logical replication architecture components and decoding layers.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replica Identity & Primary Key Contracts (DEFAULT, USING INDEX, FULL)",
+      "codeHash": "150b84491d0c61c65177fcacee13e264b3c9210138b4c9f5a503e36f63c5011a",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 2",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Replica identity contracts govern update and delete operations.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Adequate replica identity prevents update execution failures.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse inventory clerks match serial barcode labels on storage crates.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replica identity specifications and lookup mechanisms.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 2",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Replica identity contracts govern update and delete operations.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Adequate replica identity prevents update execution failures.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse inventory clerks match serial barcode labels on storage crates.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replica identity specifications and lookup mechanisms.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Row Filters & Column Filtering: Selective Data Distribution & Tenant Sharding",
+      "codeHash": "90d77379ee0c2827d1c52f593bca2626fc42bb2530cdc421720a3f7fd1018335",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 3",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise data architectures partition customer records across regions.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rigorous enterprise security mandates selective replication filters.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Geneva headquarters publishes selective banking records to branches.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect selective publication filters and compliance classifications.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 3",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise data architectures partition customer records across regions.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rigorous enterprise security mandates selective replication filters.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Geneva headquarters publishes selective banking records to branches.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect selective publication filters and compliance classifications.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Replication Conflict Resolution: Unique Violations, Missing Tuples & Skip LSN",
+      "codeHash": "6a20d0fe9575f4f37e40adebbf30cf624cf4ab934d2047cf15721dfd2500e6b0",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 4",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Logical replication encounters distinct operational replication conflicts.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Constraint violations trigger dangerous replication conflict scenarios.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport baggage handler flags duplicate luggage barcode tags.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication conflict catalog and automated remediation actions.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 4",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Logical replication encounters distinct operational replication conflicts.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Constraint violations trigger dangerous replication conflict scenarios.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport baggage handler flags duplicate luggage barcode tags.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect replication conflict catalog and automated remediation actions.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Change Data Capture (CDC) & Microservice Event Streaming: Debezium & Kafka Pipelines",
+      "codeHash": "b9d21ecc51057bc6f9f07d58e131966372b2d66dae57d0d763c8b46ff2520a52",
+      "spec": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 5",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Change data capture pipelines stream relational state modifications.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dual writing to databases and message queues introduces fatal hazards.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal telegraph clerk drops outgoing message into locked mailbox.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect change data capture pipeline architecture and delivery guarantees.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logical Replication Architecture - Part 5",
+        "leftLabel": "Rigid Physical / Naive Dual-Write",
+        "rightLabel": "Resilient Logical CDC Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Change data capture pipelines stream relational state modifications.",
+            "left": {
+              "code": "Rigid version locked replica",
+              "result": {
+                "text": "blocks cross version cloud migrations"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Logical publication subscriber",
+              "result": {
+                "text": "cross version zero downtime upgrades"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dual writing to databases and message queues introduces fatal hazards.",
+            "left": {
+              "code": "Missing replica identity index",
+              "result": {
+                "text": "catastrophic sequential scan stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enforced primary key identity",
+              "result": {
+                "text": "microsecond indexed tuple updates"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Postal telegraph clerk drops outgoing message into locked mailbox.",
+            "left": {
+              "code": "Unmonitored conflict crash loop",
+              "result": {
+                "text": "permanent subscriber thread death"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "SRE skip LSN override",
+              "result": {
+                "text": "sub second pipeline stream recovery"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect change data capture pipeline architecture and delivery guarantees.",
+            "left": {
+              "code": "Application level dual writing",
+              "result": {
+                "text": "silent phantom message corruption"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Transactional outbox CDC",
+              "result": {
+                "text": "atomic at least once event streaming"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

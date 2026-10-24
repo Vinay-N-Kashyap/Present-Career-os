@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 48,
+  "promptSha": "d098a64b14e2b793f30a3a137a266465abf7e6adb3bae25c787a22144d37c0b6",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Partition Lifecycle Management: Rolling Time Windows & Storage Tiering",
+      "codeHash": "61870a267f1435c74ed267463821c5f29b87963a22b89a52e57021c0133453ea",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 1",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition maintenance automation governs enterprise database lifecycles.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational tables ingest millions of rows daily across high volume streams.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal library organizes book stacks across archival storage floors.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect data lifecycle tier policies and automated action triggers.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 1",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition maintenance automation governs enterprise database lifecycles.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational tables ingest millions of rows daily across high volume streams.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Municipal library organizes book stacks across archival storage floors.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect data lifecycle tier policies and automated action triggers.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Downtime Detach Operations: ALTER TABLE DETACH PARTITION CONCURRENTLY",
+      "codeHash": "965424fbe6500eb91a58820b9270995964a730c6a97f67aadf486856df6f6f06",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 2",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition detach operations eliminate operational lock contention risks.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive locking commands block concurrent client application queries.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway authority directs approaching cars away from closed detour ramps.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect detach concurrency mechanics and lock level acquired profiles.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 2",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition detach operations eliminate operational lock contention risks.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive locking commands block concurrent client application queries.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway authority directs approaching cars away from closed detour ramps.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect detach concurrency mechanics and lock level acquired profiles.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safe Partition Attachment: Pre-validating Constraints & Lock-Free Table Ingestion",
+      "codeHash": "5e9c313fb9ad041c9909cd8c679cc8b0bdfc92604b1dbe84e3fa2bae9ea96ea3",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 3",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safe table attachment workflows link active partitions into schemas.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise pipelines ingest massive external batch datasets into staging.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Astronauts dock certified science modules to international space stations.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect attach partition protocols and check constraint requirements.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 3",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Safe table attachment workflows link active partitions into schemas.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise pipelines ingest massive external batch datasets into staging.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Astronauts dock certified science modules to international space stations.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect attach partition protocols and check constraint requirements.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Partition Pre-Creation & Rolling Retention: Scheduled Pipelines (pg_partman)",
+      "codeHash": "71ce2ce43210d9a53983b7fde80c4ad6a244f9785f43763d620257f6d9c31a27",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 4",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated partition management eliminates human operational error.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unattended database operations require automated partition pipelines.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated commercial bakery monitors flour reserves to prevent shortages.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partman automation configurations and failure prevention mechanics.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 4",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated partition management eliminates human operational error.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Unattended database operations require automated partition pipelines.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated commercial bakery monitors flour reserves to prevent shortages.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partman automation configurations and failure prevention mechanics.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition-Level Maintenance: Vacuum, Reindex, Freezing & Lock-Free Isolation",
+      "codeHash": "2aa358d2e2674e8149674ae6b4b3c678404b2d8a4dd403dc492156d3b3d903e7",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 5",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition level vacuuming and reindexing provide maintenance isolation.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional monolithic tables demand extensive maintenance windows.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital maintenance workers repaint individual rooms without closures.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition maintenance isolation and visibility map benefits.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Maintenance & Lifecycle - Part 5",
+        "leftLabel": "Blocking Manual Maintenance",
+        "rightLabel": "Zero-Downtime Automated Maintenance",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition level vacuuming and reindexing provide maintenance isolation.",
+            "left": {
+              "code": "Unmanaged monolithic growth",
+              "result": {
+                "text": "disk space exhaustion and slow backups"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Rolling time windows",
+              "result": {
+                "text": "automated tiering and instant DDL purges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional monolithic tables demand extensive maintenance windows.",
+            "left": {
+              "code": "Blocking ALTER TABLE DETACH",
+              "result": {
+                "text": "AccessExclusiveLock blocks all client queries"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "DETACH CONCURRENTLY",
+              "result": {
+                "text": "non-blocking detach with live read/write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital maintenance workers repaint individual rooms without closures.",
+            "left": {
+              "code": "Direct ATTACH sequential scan",
+              "result": {
+                "text": "multi-gigabyte table scan blocks writes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Pre-validated CHECK constraint",
+              "result": {
+                "text": "instantaneous attach in sub-five milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect partition maintenance isolation and visibility map benefits.",
+            "left": {
+              "code": "Manual partition creation",
+              "result": {
+                "text": "midnight insertion failures when bounds missing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "pg_partman premake automation",
+              "result": {
+                "text": "continuous lookahead buffer prevents failures"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

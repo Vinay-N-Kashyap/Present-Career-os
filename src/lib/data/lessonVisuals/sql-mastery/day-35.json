@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 35,
+  "promptSha": "bf8ff9697a9fcf9a7d0c783ef88ab8041633135c1addc17f898a05be60d92420",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Disaster Triage: Saturated CPU, Storage Thrashing & Query Fingerprint Identification",
+      "codeHash": "74ecd14f2e196ebcd6d80969dee0dd16bcde98e1743ce9ec962cb8ed07ab32a2",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Triage Workload Identification",
+        "leftLabel": "Saturated Unindexed Query",
+        "rightLabel": "Primary Transactional Query",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Welcome to the milestone architectural capstone post-mortem.",
+            "left": {
+              "code": "SELECT FROM order_items WHERE unindexed_sku",
+              "result": {
+                "text": "consumes total database load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SELECT FROM orders WHERE customer_id",
+              "result": {
+                "text": "starved for processor cycles"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "An enterprise fintech core banking engine experiences sudden paralysis.",
+            "left": {
+              "code": "Latency surges past seconds",
+              "result": {
+                "text": "connection pools exhausted"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Target latency under milliseconds",
+              "result": {
+                "text": "sub-millisecond target"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An international airport where the automated conveyor system halts completely.",
+            "left": {
+              "code": "Oversized container jams junction",
+              "result": {
+                "text": "entire runway gridlock"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Diverting problematic container",
+              "result": {
+                "text": "instant luggage clearance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the query outage triage query to identify the offending fingerprint.",
+            "left": {
+              "code": "Unindexed SKU query pattern",
+              "result": {
+                "text": "ninety-eight percent total load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Indexed payment transactions",
+              "result": {
+                "text": "negligible execution impact"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Triage Workload Identification",
+        "leftLabel": "Saturated Unindexed Query",
+        "rightLabel": "Primary Transactional Query",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Welcome to the milestone architectural capstone post-mortem.",
+            "left": {
+              "code": "SELECT FROM order_items WHERE unindexed_sku",
+              "result": {
+                "text": "consumes total database load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "SELECT FROM orders WHERE customer_id",
+              "result": {
+                "text": "starved for processor cycles"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "An enterprise fintech core banking engine experiences sudden paralysis.",
+            "left": {
+              "code": "Latency surges past seconds",
+              "result": {
+                "text": "connection pools exhausted"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Target latency under milliseconds",
+              "result": {
+                "text": "sub-millisecond target"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An international airport where the automated conveyor system halts completely.",
+            "left": {
+              "code": "Oversized container jams junction",
+              "result": {
+                "text": "entire runway gridlock"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Diverting problematic container",
+              "result": {
+                "text": "instant luggage clearance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the query outage triage query to identify the offending fingerprint.",
+            "left": {
+              "code": "Unindexed SKU query pattern",
+              "result": {
+                "text": "ninety-eight percent total load"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Indexed payment transactions",
+              "result": {
+                "text": "negligible execution impact"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dissecting the Toxic Execution Plan: Unindexed Nested Loops and Work_Mem Disk Spills",
+      "codeHash": "9ce80e436ae357683cb7c14f334d30ad7f9426527ac58fcf3796323dc699a6a6",
+      "spec": {
+        "template": "compare",
+        "title": "Join Execution Mechanics Remediation",
+        "leftLabel": "Quadratic Nested Loop Join",
+        "rightLabel": "Linear In-Memory Hash Join",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The architecture team moves into dissecting the toxic execution plan.",
+            "left": {
+              "code": "Nested Loop across millions of tuples",
+              "result": {
+                "text": "quadratic comparison explosion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hash Join across indexed keys",
+              "result": {
+                "text": "linear single-pass processing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The explain plan reveals an engineering nightmare across customer shipments.",
+            "left": {
+              "code": "Quadrillion tuple comparisons",
+              "result": {
+                "text": "CPU instruction saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-memory hash table lookup",
+              "result": {
+                "text": "instant key match resolution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A warehouse shipping department matching outgoing boxes with address labels.",
+            "left": {
+              "code": "Walking through pile repeatedly",
+              "result": {
+                "text": "million steps wasted"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Alphabetical sorting on table",
+              "result": {
+                "text": "instant matching pass"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the customer orders join query to verify clean linear join execution.",
+            "left": {
+              "code": "Stale table statistics",
+              "result": {
+                "text": "false nested loop cost model"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Fresh statistics and join indexes",
+              "result": {
+                "text": "optimal hash execution plan"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Join Execution Mechanics Remediation",
+        "leftLabel": "Quadratic Nested Loop Join",
+        "rightLabel": "Linear In-Memory Hash Join",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The architecture team moves into dissecting the toxic execution plan.",
+            "left": {
+              "code": "Nested Loop across millions of tuples",
+              "result": {
+                "text": "quadratic comparison explosion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hash Join across indexed keys",
+              "result": {
+                "text": "linear single-pass processing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The explain plan reveals an engineering nightmare across customer shipments.",
+            "left": {
+              "code": "Quadrillion tuple comparisons",
+              "result": {
+                "text": "CPU instruction saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-memory hash table lookup",
+              "result": {
+                "text": "instant key match resolution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A warehouse shipping department matching outgoing boxes with address labels.",
+            "left": {
+              "code": "Walking through pile repeatedly",
+              "result": {
+                "text": "million steps wasted"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Alphabetical sorting on table",
+              "result": {
+                "text": "instant matching pass"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the customer orders join query to verify clean linear join execution.",
+            "left": {
+              "code": "Stale table statistics",
+              "result": {
+                "text": "false nested loop cost model"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Fresh statistics and join indexes",
+              "result": {
+                "text": "optimal hash execution plan"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Covering Indexes with INCLUDE Clauses: Eliminating Heap Fetches via Index-Only Scans",
+      "codeHash": "b7f19ae8962334cad940b11e68cd30d1d8ac26874453a908f0e6c8bde08a9584",
+      "spec": {
+        "template": "compare",
+        "title": "Heap Fetch Elimination via Covering Indexes",
+        "leftLabel": "Standard Index Scan with Heap Fetches",
+        "rightLabel": "Covering Index with Index-Only Scan",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High-throughput systems hit a hidden scaling ceiling in heap fetches.",
+            "left": {
+              "code": "B-tree lookup followed by heap read",
+              "result": {
+                "text": "random disk block thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Index satisfies filter and projection",
+              "result": {
+                "text": "zero heap visits required"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "These heap fetches generate massive random disk reads across storage.",
+            "left": {
+              "code": "Uncached heap block fetch cycles",
+              "result": {
+                "text": "storage queue depth explosion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Covering index payload read",
+              "result": {
+                "text": "sub-millisecond RAM retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A library where the card catalog lists book titles and call numbers.",
+            "left": {
+              "code": "Walking into warehouse book stacks",
+              "result": {
+                "text": "manual walking delay"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Reading summary on catalog card",
+              "result": {
+                "text": "instant desk retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the covering index query to observe efficient payload projection.",
+            "left": {
+              "code": "Standard composite index",
+              "result": {
+                "text": "requires table page lookup"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Covering index with INCLUDE clause",
+              "result": {
+                "text": "pure index-only scan execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Heap Fetch Elimination via Covering Indexes",
+        "leftLabel": "Standard Index Scan with Heap Fetches",
+        "rightLabel": "Covering Index with Index-Only Scan",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High-throughput systems hit a hidden scaling ceiling in heap fetches.",
+            "left": {
+              "code": "B-tree lookup followed by heap read",
+              "result": {
+                "text": "random disk block thrashing"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Index satisfies filter and projection",
+              "result": {
+                "text": "zero heap visits required"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "These heap fetches generate massive random disk reads across storage.",
+            "left": {
+              "code": "Uncached heap block fetch cycles",
+              "result": {
+                "text": "storage queue depth explosion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Covering index payload read",
+              "result": {
+                "text": "sub-millisecond RAM retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A library where the card catalog lists book titles and call numbers.",
+            "left": {
+              "code": "Walking into warehouse book stacks",
+              "result": {
+                "text": "manual walking delay"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Reading summary on catalog card",
+              "result": {
+                "text": "instant desk retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the covering index query to observe efficient payload projection.",
+            "left": {
+              "code": "Standard composite index",
+              "result": {
+                "text": "requires table page lookup"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Covering index with INCLUDE clause",
+              "result": {
+                "text": "pure index-only scan execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autovacuum Tuning, Dead Tuple Bloat Elimination & Transaction Wraparound Resilience",
+      "codeHash": "ebb28b74b545a8fe577098a8a5045df7d3c8b9d3d58329b2d06baf5cf5768d37",
+      "spec": {
+        "template": "compare",
+        "title": "Autovacuum Tuning and Bloat Remediation",
+        "leftLabel": "Throttled Default Autovacuum",
+        "rightLabel": "NVMe Tuned Zero-Delay Autovacuum",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The fourth pillar addresses dead tuple bloat and autovacuum starvation.",
+            "left": {
+              "code": "Autovacuum cost delay throttled",
+              "result": {
+                "text": "accumulates millions of dead tuples"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cost delay set to zero on NVMe",
+              "result": {
+                "text": "cleans dead tuples at wire speed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Under normal operations the autovacuum daemon sweeps through heap pages.",
+            "left": {
+              "code": "Unvacuumed dead tuple space bloat",
+              "result": {
+                "text": "dilutes memory cache density"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Pristine visibility maps maintained",
+              "result": {
+                "text": "preserves high cache hit ratio"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A busy restaurant kitchen producing hundreds of plates of food an hour.",
+            "left": {
+              "code": "Dishwasher takes continuous breaks",
+              "result": {
+                "text": "dirty pans block cooking"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Continuous cleaning line active",
+              "result": {
+                "text": "prep counters spotless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the table bloat diagnosis query to calculate dead tuple metrics.",
+            "left": {
+              "code": "Seventy-four percent wasted space",
+              "result": {
+                "text": "imminent wraparound risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Online table compaction active",
+              "result": {
+                "text": "space reclaimed permanently"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Autovacuum Tuning and Bloat Remediation",
+        "leftLabel": "Throttled Default Autovacuum",
+        "rightLabel": "NVMe Tuned Zero-Delay Autovacuum",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The fourth pillar addresses dead tuple bloat and autovacuum starvation.",
+            "left": {
+              "code": "Autovacuum cost delay throttled",
+              "result": {
+                "text": "accumulates millions of dead tuples"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cost delay set to zero on NVMe",
+              "result": {
+                "text": "cleans dead tuples at wire speed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Under normal operations the autovacuum daemon sweeps through heap pages.",
+            "left": {
+              "code": "Unvacuumed dead tuple space bloat",
+              "result": {
+                "text": "dilutes memory cache density"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Pristine visibility maps maintained",
+              "result": {
+                "text": "preserves high cache hit ratio"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A busy restaurant kitchen producing hundreds of plates of food an hour.",
+            "left": {
+              "code": "Dishwasher takes continuous breaks",
+              "result": {
+                "text": "dirty pans block cooking"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Continuous cleaning line active",
+              "result": {
+                "text": "prep counters spotless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the table bloat diagnosis query to calculate dead tuple metrics.",
+            "left": {
+              "code": "Seventy-four percent wasted space",
+              "result": {
+                "text": "imminent wraparound risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Online table compaction active",
+              "result": {
+                "text": "space reclaimed permanently"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 7 Capstone Verification: Disaster Recovery Watchdog & System Health Assertions",
+      "codeHash": "21bf40e39d340d6a77d5f0c64a68d848a46a3f33d2f1a612c44d9ebdfe9ba110",
+      "spec": {
+        "template": "compare",
+        "title": "Capstone Watchdog Metric Verification",
+        "leftLabel": "Outage Incident Baseline",
+        "rightLabel": "Remediated Production State",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "We culminate milestone seven with disaster recovery watchdog verification.",
+            "left": {
+              "code": "Latency over four thousand milliseconds",
+              "result": {
+                "text": "system-wide platform outage"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Latency stabilized under four milliseconds",
+              "result": {
+                "text": "ninety-nine percent improvement"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The disaster recovery watchdog audit reveals a complete platform recovery.",
+            "left": {
+              "code": "Twelve hundred queued connections",
+              "result": {
+                "text": "connection pool starvation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Forty-five healthy active connections",
+              "result": {
+                "text": "plentiful connection headroom"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A high-tech naval submarine emerging from a deep-sea emergency dive.",
+            "left": {
+              "code": "Unmonitored warning indicators",
+              "result": {
+                "text": "unforeseen equipment failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated diagnostic watchdog console",
+              "result": {
+                "text": "all green instrument verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the outage watchdog metrics query to verify system health assertions.",
+            "left": {
+              "code": "Unverified recovery assumptions",
+              "result": {
+                "text": "hidden performance regression"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated watchdog CI/CD gates",
+              "result": {
+                "text": "guaranteed five-nines availability"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Capstone Watchdog Metric Verification",
+        "leftLabel": "Outage Incident Baseline",
+        "rightLabel": "Remediated Production State",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "We culminate milestone seven with disaster recovery watchdog verification.",
+            "left": {
+              "code": "Latency over four thousand milliseconds",
+              "result": {
+                "text": "system-wide platform outage"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Latency stabilized under four milliseconds",
+              "result": {
+                "text": "ninety-nine percent improvement"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The disaster recovery watchdog audit reveals a complete platform recovery.",
+            "left": {
+              "code": "Twelve hundred queued connections",
+              "result": {
+                "text": "connection pool starvation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Forty-five healthy active connections",
+              "result": {
+                "text": "plentiful connection headroom"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A high-tech naval submarine emerging from a deep-sea emergency dive.",
+            "left": {
+              "code": "Unmonitored warning indicators",
+              "result": {
+                "text": "unforeseen equipment failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated diagnostic watchdog console",
+              "result": {
+                "text": "all green instrument verification"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the outage watchdog metrics query to verify system health assertions.",
+            "left": {
+              "code": "Unverified recovery assumptions",
+              "result": {
+                "text": "hidden performance regression"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Automated watchdog CI/CD gates",
+              "result": {
+                "text": "guaranteed five-nines availability"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

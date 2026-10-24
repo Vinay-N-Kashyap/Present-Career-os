@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 60,
+  "promptSha": "3a3478ebe830a3757601b670ca939b5a5c84015d26e710f2826a1289f1cdc4e9",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Planetary-Scale Architecture: Multi-Region Partitioning, Global Sharding & Distributed Relational Engines",
+      "codeHash": "9cf21e499d278470d1171e898c15620b311323a261d5768a8466f1b5c2468c22",
+      "spec": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 1",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Planetary architectures synthesize enterprise database engineering.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise platforms implement distributed relational architectures.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Global telecommunications satellite networks provide continuous coverage.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect planetary architecture tier matrix and availability slas.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 1",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Planetary architectures synthesize enterprise database engineering.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Modern enterprise platforms implement distributed relational architectures.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Global telecommunications satellite networks provide continuous coverage.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect planetary architecture tier matrix and availability slas.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Double-Entry Financial Ledger: ACID Guarantees, Immutable Cryptographic Chaining & Concurrency Serialization",
+      "codeHash": "097bdd8346f809d26d29fbee807fa68a134cba2869087ec845346825aa2ff039",
+      "spec": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 2",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mission critical financial ledgers record user payments and escrows.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise financial systems enforce strict balance integrity standards.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Ancient private banking vaults record double entry ledger transfers.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect financial ledger integrity benchmarks and compliance mandates.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 2",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Mission critical financial ledgers record user payments and escrows.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise financial systems enforce strict balance integrity standards.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Ancient private banking vaults record double entry ledger transfers.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect financial ledger integrity benchmarks and compliance mandates.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Temporal Graph Traversal & Transitive Closure: Multi-Tier Organization Trees & Cycle Detection Analytics",
+      "codeHash": "71205d316284d3fc1e3817c48d8d4393604a071468abfc8215f68d6f41db4195",
+      "spec": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 3",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational engines manage complex graph networks and organizational trees.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Engineers execute recursive traversals using common table expressions.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "National power grid operators route electricity across regional networks.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect temporal graph traversal matrix and business intelligence impacts.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 3",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational engines manage complex graph networks and organizational trees.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Engineers execute recursive traversals using common table expressions.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "National power grid operators route electricity across regional networks.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect temporal graph traversal matrix and business intelligence impacts.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Vector Search & Relational RAG: IVFFlat/HNSW Indexing, Cosine Distance & Semantic SQL Fusion",
+      "codeHash": "554d78f6462f80d01471f31f24e8079fd07c29f85f78aa13e56e6b731ca89324",
+      "spec": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 4",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational database engines fuse classical structured data with vectors.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional systems require external vector databases for semantic search.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate executive recruitment firms match candidates with vacancies.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hybrid vector search architecture and generative roles.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 4",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational database engines fuse classical structured data with vectors.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Traditional systems require external vector databases for semantic search.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Corporate executive recruitment firms match candidates with vacancies.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hybrid vector search architecture and generative roles.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous Query Performance Tuner, Adaptive Cost Modeling & Disaster Recovery Runbooks",
+      "codeHash": "4441d6a3eb8d1a7b05de43f227d6ecd7df06fa1ed223e6f7d611043660b49257",
+      "spec": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 5",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autonomous query tuners monitor execution telemetry and cost models.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary enterprise databases automate operational tuning requirements.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated avionics flight management computers monitor flight telemetry.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect autonomous query tuning runbook and planetary career impacts.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Planetary Career OS - Part 5",
+        "leftLabel": "Monolithic Legacy Architecture",
+        "rightLabel": "Planetary-Scale Enterprise SQL",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autonomous query tuners monitor execution telemetry and cost models.",
+            "left": {
+              "code": "Single un-partitioned database instance",
+              "result": {
+                "text": "cross-regional latency bottlenecks and single point of failure"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Geographic list & hash sub-partitioning",
+              "result": {
+                "text": "data residency compliance; sub-millisecond local reads"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary enterprise databases automate operational tuning requirements.",
+            "left": {
+              "code": "External vector database with batch ETL",
+              "result": {
+                "text": "stale embeddings; dual-write consistency failure risks"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "In-database pgvector HNSW & hybrid fusion",
+              "result": {
+                "text": "semantic vector search joined with scalar SQL filters"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automated avionics flight management computers monitor flight telemetry.",
+            "left": {
+              "code": "Unbounded recursive query on talent graph",
+              "result": {
+                "text": "infinite loop; 100% CPU lock on circular cross-holdings"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CYCLE clause with path array tracking",
+              "result": {
+                "text": "detects cycles automatically; deterministic graph traversal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect autonomous query tuning runbook and planetary career impacts.",
+            "left": {
+              "code": "Mutable audit table without cryptographic proofs",
+              "result": {
+                "text": "rogue DBA can alter historical transactions undetected"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Cryptographic SHA-256 HMAC hash chaining",
+              "result": {
+                "text": "mathematically immutable tamper-evident financial ledger"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

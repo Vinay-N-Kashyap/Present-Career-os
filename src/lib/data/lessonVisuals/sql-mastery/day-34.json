@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 34,
+  "promptSha": "ab7f36be58f89228dbaae2855bfbd5d5a8d4f81ed85ce0f7e1592cbc9b889466",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Declarative Table Partitioning: Range, List and Hash Routing Architecture",
+      "codeHash": "b1c06907ea8930bed771d62f9fc14a7f55fec2b7bcb0711e5dca7d2c31c78a3e",
+      "spec": {
+        "template": "compare",
+        "title": "Monolithic Table vs Declarative Partition Routing",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational databases scaling into petabyte domains encounter bottlenecks.",
+            "left": {
+              "code": "Single massive heap relfilenode",
+              "result": {
+                "text": "multi-gigabyte index bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned child table cluster",
+              "result": {
+                "text": "compact independent heaps"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL supports three primary declarative partitioning methods.",
+            "left": {
+              "code": "Unpartitioned linear table storage",
+              "result": {
+                "text": "unstructured data growth"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Range list and hash partitions",
+              "result": {
+                "text": "deterministic boundary routing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A central post office handling mail letters for an entire nation.",
+            "left": {
+              "code": "Single gigantic warehouse room",
+              "result": {
+                "text": "chaotic search delay"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dedicated regional sorting bays",
+              "result": {
+                "text": "instant mailbag dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the metric log query to verify transparent routing to partitions.",
+            "left": {
+              "code": "Unchecked record insertion",
+              "result": {
+                "text": "unrouted partition error"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative boundary matching",
+              "result": {
+                "text": "clean child partition routing"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Monolithic Table vs Declarative Partition Routing",
+        "leftLabel": "Monolithic Unpartitioned Table",
+        "rightLabel": "Declarative Partitioned Table",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Relational databases scaling into petabyte domains encounter bottlenecks.",
+            "left": {
+              "code": "Single massive heap relfilenode",
+              "result": {
+                "text": "multi-gigabyte index bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Partitioned child table cluster",
+              "result": {
+                "text": "compact independent heaps"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL supports three primary declarative partitioning methods.",
+            "left": {
+              "code": "Unpartitioned linear table storage",
+              "result": {
+                "text": "unstructured data growth"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Range list and hash partitions",
+              "result": {
+                "text": "deterministic boundary routing"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A central post office handling mail letters for an entire nation.",
+            "left": {
+              "code": "Single gigantic warehouse room",
+              "result": {
+                "text": "chaotic search delay"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dedicated regional sorting bays",
+              "result": {
+                "text": "instant mailbag dispatch"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the metric log query to verify transparent routing to partitions.",
+            "left": {
+              "code": "Unchecked record insertion",
+              "result": {
+                "text": "unrouted partition error"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Declarative boundary matching",
+              "result": {
+                "text": "clean child partition routing"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Static and Run-Time Partition Pruning: Query Planner and Executor Optimization",
+      "codeHash": "8c5cc2ee51590ecf51f65bc55e9936d98144021c310496685e8475a115a2a0e5",
+      "spec": {
+        "template": "compare",
+        "title": "Query Execution Partition Pruning Mechanics",
+        "leftLabel": "Unpruned Full Table Scan",
+        "rightLabel": "Pruned Targeted Partition Scan",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition pruning is an advanced query optimization technique.",
+            "left": {
+              "code": "Scans all child table partitions",
+              "result": {
+                "text": "severe storage I/O waste"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes non-matching partitions",
+              "result": {
+                "text": "scans target partition only"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL implements partition pruning in distinct execution phases.",
+            "left": {
+              "code": "Static planner evaluation",
+              "result": {
+                "text": "prunes constant literal filters"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Run-time executor evaluation",
+              "result": {
+                "text": "prunes dynamic bound variables"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A municipal archive storing property deeds in individual filing cabinets.",
+            "left": {
+              "code": "Searching all fifty cabinets",
+              "result": {
+                "text": "hours of manual labor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Opening only target decade cabinet",
+              "result": {
+                "text": "instant document retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the warehouse sensor query to verify single partition routing.",
+            "left": {
+              "code": "Disabled partition pruning",
+              "result": {
+                "text": "scans all three sensor tables"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enabled partition pruning",
+              "result": {
+                "text": "reads February partition only"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Query Execution Partition Pruning Mechanics",
+        "leftLabel": "Unpruned Full Table Scan",
+        "rightLabel": "Pruned Targeted Partition Scan",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Partition pruning is an advanced query optimization technique.",
+            "left": {
+              "code": "Scans all child table partitions",
+              "result": {
+                "text": "severe storage I/O waste"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Prunes non-matching partitions",
+              "result": {
+                "text": "scans target partition only"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "PostgreSQL implements partition pruning in distinct execution phases.",
+            "left": {
+              "code": "Static planner evaluation",
+              "result": {
+                "text": "prunes constant literal filters"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Run-time executor evaluation",
+              "result": {
+                "text": "prunes dynamic bound variables"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A municipal archive storing property deeds in individual filing cabinets.",
+            "left": {
+              "code": "Searching all fifty cabinets",
+              "result": {
+                "text": "hours of manual labor"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Opening only target decade cabinet",
+              "result": {
+                "text": "instant document retrieval"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the warehouse sensor query to verify single partition routing.",
+            "left": {
+              "code": "Disabled partition pruning",
+              "result": {
+                "text": "scans all three sensor tables"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Enabled partition pruning",
+              "result": {
+                "text": "reads February partition only"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash Partitioning for High-Concurrency Write Scaling & Partition-Wise Joins",
+      "codeHash": "34759e5e245f520f7399f87c60bc6714c435710408ed681a7595d5dbff02c01f",
+      "spec": {
+        "template": "compare",
+        "title": "Write Hotspotting vs Hash Sharded Ingestion",
+        "leftLabel": "Sequential Key Range Hotspotting",
+        "rightLabel": "Uniform Hash Partitioning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transactional systems processing high inserts face write hotspotting.",
+            "left": {
+              "code": "All inserts hit single current partition",
+              "result": {
+                "text": "controller queue saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Inserts hashed across modular shards",
+              "result": {
+                "text": "balanced concurrent write load"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The rightmost page split bottleneck creates severe latch contention.",
+            "left": {
+              "code": "B-tree rightmost leaf split thrashing",
+              "result": {
+                "text": "write throughput collapse"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed modulus hash buckets",
+              "result": {
+                "text": "independent concurrent buffers"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A stadium entrance where attendees enter through multiple turnstiles.",
+            "left": {
+              "code": "All attendees crowd single gate",
+              "result": {
+                "text": "dangerous crush bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Barcode modulus directs to ten gates",
+              "result": {
+                "text": "smooth distributed entry"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the high-throughput events query to observe uniform distribution.",
+            "left": {
+              "code": "Monolithic unpartitioned table",
+              "result": {
+                "text": "single disk queue bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-way modulus hash partitions",
+              "result": {
+                "text": "linear throughput scaling"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Write Hotspotting vs Hash Sharded Ingestion",
+        "leftLabel": "Sequential Key Range Hotspotting",
+        "rightLabel": "Uniform Hash Partitioning",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Transactional systems processing high inserts face write hotspotting.",
+            "left": {
+              "code": "All inserts hit single current partition",
+              "result": {
+                "text": "controller queue saturation"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Inserts hashed across modular shards",
+              "result": {
+                "text": "balanced concurrent write load"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The rightmost page split bottleneck creates severe latch contention.",
+            "left": {
+              "code": "B-tree rightmost leaf split thrashing",
+              "result": {
+                "text": "write throughput collapse"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Distributed modulus hash buckets",
+              "result": {
+                "text": "independent concurrent buffers"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A stadium entrance where attendees enter through multiple turnstiles.",
+            "left": {
+              "code": "All attendees crowd single gate",
+              "result": {
+                "text": "dangerous crush bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Barcode modulus directs to ten gates",
+              "result": {
+                "text": "smooth distributed entry"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the high-throughput events query to observe uniform distribution.",
+            "left": {
+              "code": "Monolithic unpartitioned table",
+              "result": {
+                "text": "single disk queue bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-way modulus hash partitions",
+              "result": {
+                "text": "linear throughput scaling"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Downtime Partition Lifecycle Management: Detaching and Attaching Partitions Concurrently",
+      "codeHash": "d0d9199cec211c658f9feff0555cc7d55bfaf21c7b660f9a8b3db31217570db6",
+      "spec": {
+        "template": "compare",
+        "title": "Partition Detachment Concurrency Tradeoffs",
+        "leftLabel": "Standard Blocking Detach",
+        "rightLabel": "Non-Blocking Concurrent Detach",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data lifecycle management enables zero-downtime maintenance operations.",
+            "left": {
+              "code": "DELETE FROM table WHERE date < cutoff",
+              "result": {
+                "text": "massive dead tuple bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ALTER TABLE DETACH PARTITION",
+              "result": {
+                "text": "instantaneous metadata uncoupling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dropping or archiving an entire seasonal partition requires no row deletion.",
+            "left": {
+              "code": "Row by row heap deletion",
+              "result": {
+                "text": "gigabytes of WAL churn"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Direct filesystem unlinking",
+              "result": {
+                "text": "zero WAL churn in milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A high-speed passenger train traveling on an express railway track.",
+            "left": {
+              "code": "Stopping train on main line for crane",
+              "result": {
+                "text": "strands all active passengers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "High-speed switching turnout spur",
+              "result": {
+                "text": "uncouples while running full speed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the financial archive query to verify detaching the first partition.",
+            "left": {
+              "code": "AccessExclusiveLock contention",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Concurrent metadata detachment",
+              "result": {
+                "text": "standalone table conversion"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Partition Detachment Concurrency Tradeoffs",
+        "leftLabel": "Standard Blocking Detach",
+        "rightLabel": "Non-Blocking Concurrent Detach",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Data lifecycle management enables zero-downtime maintenance operations.",
+            "left": {
+              "code": "DELETE FROM table WHERE date < cutoff",
+              "result": {
+                "text": "massive dead tuple bloat"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ALTER TABLE DETACH PARTITION",
+              "result": {
+                "text": "instantaneous metadata uncoupling"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dropping or archiving an entire seasonal partition requires no row deletion.",
+            "left": {
+              "code": "Row by row heap deletion",
+              "result": {
+                "text": "gigabytes of WAL churn"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Direct filesystem unlinking",
+              "result": {
+                "text": "zero WAL churn in milliseconds"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A high-speed passenger train traveling on an express railway track.",
+            "left": {
+              "code": "Stopping train on main line for crane",
+              "result": {
+                "text": "strands all active passengers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "High-speed switching turnout spur",
+              "result": {
+                "text": "uncouples while running full speed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the financial archive query to verify detaching the first partition.",
+            "left": {
+              "code": "AccessExclusiveLock contention",
+              "result": {
+                "text": "connection pool exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Concurrent metadata detachment",
+              "result": {
+                "text": "standalone table conversion"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Architecture Puzzle: Unpartitioned Billing Ledger Lock Saturation and Wraparound Freeze",
+      "codeHash": "808d663b6a2c270e2aa14016487fadf11cad7e8348c6e50768ee465074c3d613",
+      "spec": {
+        "template": "compare",
+        "title": "Wraparound Freeze Incident Architectural Remediation",
+        "leftLabel": "Monolithic 800M Row Ledger",
+        "rightLabel": "Declarative Range Partitioned Ledger",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An infrastructure provider operated a centralized billing ledger table.",
+            "left": {
+              "code": "Monolithic unpartitioned heap",
+              "result": {
+                "text": "emergency wraparound freeze"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Monthly declarative range partitions",
+              "result": {
+                "text": "localized four minute freeze"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The billing ledger table remained a single monolithic unpartitioned table.",
+            "left": {
+              "code": "Seven-hour autovacuum disk lock",
+              "result": {
+                "text": "global invoicing stall"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Isolated independent child tables",
+              "result": {
+                "text": "zero live transaction blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A university library keeping a single ledger book recording every book.",
+            "left": {
+              "code": "Hoisting eight-foot volume on crane",
+              "result": {
+                "text": "blocks checkout desk until noon"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dusting slim annual 2026 volume",
+              "result": {
+                "text": "two minute routine maintenance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the enterprise billing ledger query to verify monthly isolation.",
+            "left": {
+              "code": "Monolithic full table scan",
+              "result": {
+                "text": "eighteen second query latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Pruned monthly child partition scan",
+              "result": {
+                "text": "two millisecond response time"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Wraparound Freeze Incident Architectural Remediation",
+        "leftLabel": "Monolithic 800M Row Ledger",
+        "rightLabel": "Declarative Range Partitioned Ledger",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An infrastructure provider operated a centralized billing ledger table.",
+            "left": {
+              "code": "Monolithic unpartitioned heap",
+              "result": {
+                "text": "emergency wraparound freeze"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Monthly declarative range partitions",
+              "result": {
+                "text": "localized four minute freeze"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The billing ledger table remained a single monolithic unpartitioned table.",
+            "left": {
+              "code": "Seven-hour autovacuum disk lock",
+              "result": {
+                "text": "global invoicing stall"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Isolated independent child tables",
+              "result": {
+                "text": "zero live transaction blocking"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A university library keeping a single ledger book recording every book.",
+            "left": {
+              "code": "Hoisting eight-foot volume on crane",
+              "result": {
+                "text": "blocks checkout desk until noon"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Dusting slim annual 2026 volume",
+              "result": {
+                "text": "two minute routine maintenance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the enterprise billing ledger query to verify monthly isolation.",
+            "left": {
+              "code": "Monolithic full table scan",
+              "result": {
+                "text": "eighteen second query latency"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Pruned monthly child partition scan",
+              "result": {
+                "text": "two millisecond response time"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 45,
+  "promptSha": "38e5c6cb4636d27518881f728d808533a6072eb232a3ff537869ab37e12dfdb3",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Transatlantic Fiber Severance & Uncoordinated Promotion Incident",
+      "codeHash": "c519c713c2ab6af7ecca66e186a34774cf828913f1d8b68ed1f06c735f89552d",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 1",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone simulates multi region disaster recovery outage.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Submarine optical fiber trunk cut isolates primary cloud data center.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Naval cruiser captain verifies contradictory fleet commands.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect incident timeline telemetry and divergent cluster states.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 1",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone simulates multi region disaster recovery outage.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Submarine optical fiber trunk cut isolates primary cloud data center.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Naval cruiser captain verifies contradictory fleet commands.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect incident timeline telemetry and divergent cluster states.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Split-Brain Anomaly Analysis: Divergent Timelines & Conflicting Transactions",
+      "codeHash": "b2c352834f1ec39671ca37ba234dcc9e97b7c5e4d1ff93d741b90a9e8c0eebb8",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 2",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forensic engineers analyze split brain data divergence across clusters.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Physical heap pages store row tuple modifications within database blocks.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Two court scribes record contradictory deeds into royal parchment sheets.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect split brain divergence matrix and conflicting block transactions.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 2",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Forensic engineers analyze split brain data divergence across clusters.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Physical heap pages store row tuple modifications within database blocks.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Two court scribes record contradictory deeds into royal parchment sheets.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect split brain divergence matrix and conflicting block transactions.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Reconciliation & Reintegration with pg_rewind: Block-Level WAL Auditing",
+      "codeHash": "1a6a206b281950b87c434a4c2f3da6b709e1a6ae2fcccbd7666da6469e1285ea",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 3",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leadership ratifies physical cluster resynchronization and recovery.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Full database basebackup over wide area network consumes fourteen hours.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Tower clockmaker inspects escapement gears to restore synchronization.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect rewind execution metrics and surgical block synchronization.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 3",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Leadership ratifies physical cluster resynchronization and recovery.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Full database basebackup over wide area network consumes fourteen hours.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Tower clockmaker inspects escapement gears to restore synchronization.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect rewind execution metrics and surgical block synchronization.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Architecting Resilient Multi-Region Quorums: Patroni, Raft & DCS Fencing",
+      "codeHash": "72767591728b71d55fd6e1753ed9e25644d722d8f67137265736604a15f95f49",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 4",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post mortem analysis mandates permanent root cause architectural fixes.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Point to point heartbeat monitoring introduces classic distributed flaws.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Three sovereign ambassadors vote to authorize joint military actions.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect patroni consensus topology and majority quorum validations.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 4",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post mortem analysis mandates permanent root cause architectural fixes.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Point to point heartbeat monitoring introduces classic distributed flaws.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Three sovereign ambassadors vote to authorize joint military actions.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect patroni consensus topology and majority quorum validations.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Post-Mortem Runbook & Architectural Commandments for Multi-Region Relational Systems",
+      "codeHash": "889522d8ccbc42ddb3b45c2807d0f36a2a7de5485b81d48d4049d6d9941fe145",
+      "spec": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 5",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineering leadership ratifies permanent disaster recovery runbooks.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "War room post mortem documents quantitative incident recovery telemetry.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Suspension bridge engineers install seismic dampers into tower pilings.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect disaster recovery runbook audit and compliance standards.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Disaster Recovery Engineering - Part 5",
+        "leftLabel": "Vulnerable Uncoordinated Architecture",
+        "rightLabel": "Resilient Consensus Driven Architecture",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Engineering leadership ratifies permanent disaster recovery runbooks.",
+            "left": {
+              "code": "Naive point to point monitoring",
+              "result": {
+                "text": "uncoordinated split-brain primary promotion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Raft majority consensus store",
+              "result": {
+                "text": "mathematically guaranteed single writer lease"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "War room post mortem documents quantitative incident recovery telemetry.",
+            "left": {
+              "code": "Unfenced isolated primary",
+              "result": {
+                "text": "divergent physical block disk corruption"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Automated STONITH node fencing",
+              "result": {
+                "text": "immediate power off before standby promotion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Suspension bridge engineers install seismic dampers into tower pilings.",
+            "left": {
+              "code": "Full database re-clone",
+              "result": {
+                "text": "fourteen hour multi-terabyte outage window"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Precision pg_rewind block sync",
+              "result": {
+                "text": "two minute surgical storage reconciliation"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect disaster recovery runbook audit and compliance standards.",
+            "left": {
+              "code": "Unverified recovery runbooks",
+              "result": {
+                "text": "untested disaster recovery assumptions"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Quarterly Chaos GameDays",
+              "result": {
+                "text": "proven continuous five nines platform uptime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

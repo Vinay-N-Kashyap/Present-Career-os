@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 33,
+  "promptSha": "3ee188cb6a32e8a8daea122c73ce459dfc93b8c97875fb33b3cec753a5ed33ad",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Window Framing Fundamentals: Physical ROWS vs Logical RANGE vs GROUPS Peer Offsets",
+      "codeHash": "ba6a10ecab5ca7d0a63e8cc362da6cf2c0a573056d0dc99cb625a69f9f3158f7",
+      "spec": {
+        "template": "compare",
+        "title": "Window Framing Mode Behavioral Comparison",
+        "leftLabel": "Physical Offset Framing",
+        "rightLabel": "Logical Value Offset Framing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Window functions evaluate an aggregation across a moving set of rows.",
+            "left": {
+              "code": "ROWS BETWEEN 1 PRECEDING AND CURRENT ROW",
+              "result": {
+                "text": "exact tuple step count"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANGE BETWEEN 1 PRECEDING AND CURRENT ROW",
+              "result": {
+                "text": "logical value evaluation"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The fundamental divergence lies in how offsets are interpreted relative to rows.",
+            "left": {
+              "code": "Physical row counts evaluated",
+              "result": {
+                "text": "constant single row step"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Numeric timestamp boundaries checked",
+              "result": {
+                "text": "variable interval width"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A passenger train traveling down a track where each railcar represents a row.",
+            "left": {
+              "code": "Inspector checks preceding railcar doorway",
+              "result": {
+                "text": "physical car count"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Digital manifest checks arrival seconds",
+              "result": {
+                "text": "peer car grouping"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the ticker feed query to observe peer duplicates under different frames.",
+            "left": {
+              "code": "ROWS produces independent averages",
+              "result": {
+                "text": "distinct row values"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANGE groups duplicate peers together",
+              "result": {
+                "text": "identical peer averages"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Window Framing Mode Behavioral Comparison",
+        "leftLabel": "Physical Offset Framing",
+        "rightLabel": "Logical Value Offset Framing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Window functions evaluate an aggregation across a moving set of rows.",
+            "left": {
+              "code": "ROWS BETWEEN 1 PRECEDING AND CURRENT ROW",
+              "result": {
+                "text": "exact tuple step count"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANGE BETWEEN 1 PRECEDING AND CURRENT ROW",
+              "result": {
+                "text": "logical value evaluation"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The fundamental divergence lies in how offsets are interpreted relative to rows.",
+            "left": {
+              "code": "Physical row counts evaluated",
+              "result": {
+                "text": "constant single row step"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Numeric timestamp boundaries checked",
+              "result": {
+                "text": "variable interval width"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A passenger train traveling down a track where each railcar represents a row.",
+            "left": {
+              "code": "Inspector checks preceding railcar doorway",
+              "result": {
+                "text": "physical car count"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Digital manifest checks arrival seconds",
+              "result": {
+                "text": "peer car grouping"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the ticker feed query to observe peer duplicates under different frames.",
+            "left": {
+              "code": "ROWS produces independent averages",
+              "result": {
+                "text": "distinct row values"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANGE groups duplicate peers together",
+              "result": {
+                "text": "identical peer averages"
+              },
+              "tone": "error"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance Moving Windows: Rolling Volatility, Bollinger Bands & Exponential Weighting",
+      "codeHash": "c687fd58a865056567cc21af22a995d9a24abe1162cc1767d35a3ae0fc90221b",
+      "spec": {
+        "template": "compare",
+        "title": "Rolling Statistical Metric Evaluation",
+        "leftLabel": "Rolling Moving Average",
+        "rightLabel": "Sample Standard Deviation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Moving window aggregations form the algorithmic backbone of trading systems.",
+            "left": {
+              "code": "AVG(close_price) OVER w3",
+              "result": {
+                "text": "filters market noise"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "STDDEV_SAMP(close_price) OVER w3",
+              "result": {
+                "text": "measures price dispersion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A premier quantitative tool built directly on window framing is Bollinger Bands.",
+            "left": {
+              "code": "Middle band baseline moving average",
+              "result": {
+                "text": "trend direction indicator"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Upper band two standard deviations",
+              "result": {
+                "text": "dynamic volatility boundary"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An airport security scanner measuring passenger throughput pace continuously.",
+            "left": {
+              "code": "Cumulative counter since midnight",
+              "result": {
+                "text": "obscures recent spikes"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Rotating turnstile three minute window",
+              "result": {
+                "text": "alerts on throughput surges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Run the daily trades query to inspect rolling mean and upper Bollinger Band.",
+            "left": {
+              "code": "Initial row warmup period",
+              "result": {
+                "text": "coalesce substitutes zero"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Active trading expansion",
+              "result": {
+                "text": "bands adapt dynamically"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Rolling Statistical Metric Evaluation",
+        "leftLabel": "Rolling Moving Average",
+        "rightLabel": "Sample Standard Deviation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Moving window aggregations form the algorithmic backbone of trading systems.",
+            "left": {
+              "code": "AVG(close_price) OVER w3",
+              "result": {
+                "text": "filters market noise"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "STDDEV_SAMP(close_price) OVER w3",
+              "result": {
+                "text": "measures price dispersion"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "A premier quantitative tool built directly on window framing is Bollinger Bands.",
+            "left": {
+              "code": "Middle band baseline moving average",
+              "result": {
+                "text": "trend direction indicator"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Upper band two standard deviations",
+              "result": {
+                "text": "dynamic volatility boundary"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An airport security scanner measuring passenger throughput pace continuously.",
+            "left": {
+              "code": "Cumulative counter since midnight",
+              "result": {
+                "text": "obscures recent spikes"
+              },
+              "tone": "idle"
+            },
+            "right": {
+              "code": "Rotating turnstile three minute window",
+              "result": {
+                "text": "alerts on throughput surges"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Run the daily trades query to inspect rolling mean and upper Bollinger Band.",
+            "left": {
+              "code": "Initial row warmup period",
+              "result": {
+                "text": "coalesce substitutes zero"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Active trading expansion",
+              "result": {
+                "text": "bands adapt dynamically"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ranking, Lead/Lag, Offsets & Value Navigation: DENSE_RANK, NTILE and Partition Cohorts",
+      "codeHash": "93135e4242f9c19cad719c6cb7985e081ecb4250a0cbe37f07e7841d66755f8d",
+      "spec": {
+        "template": "compare",
+        "title": "Ranking and Navigation Function Behavioral Comparison",
+        "leftLabel": "Contiguous Ranking",
+        "rightLabel": "Gap Ranking",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Window functions provide value navigation and relative ranking primitives.",
+            "left": {
+              "code": "DENSE_RANK() OVER w",
+              "result": {
+                "text": "contiguous rank integers"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANK() OVER w",
+              "result": {
+                "text": "skips ranks on ties"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Understanding differences among ranking functions is essential for reporting.",
+            "left": {
+              "code": "Tied peers receive equal rank",
+              "result": {
+                "text": "sequential integer stream"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Duplicate peers skip next ranks",
+              "result": {
+                "text": "gap reflects peer count"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A marathon race leaderboard where runners cross the finish timing gate.",
+            "left": {
+              "code": "Tied silver medalists",
+              "result": {
+                "text": "next runner gets bronze"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Shared second place",
+              "result": {
+                "text": "next runner takes fourth"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the trader performance query to verify ranking tie behaviors.",
+            "left": {
+              "code": "Elena and Marcus tied at top",
+              "result": {
+                "text": "dense ranking holds contiguity"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Aarav follows after tied peers",
+              "result": {
+                "text": "standard rank shows gap"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ranking and Navigation Function Behavioral Comparison",
+        "leftLabel": "Contiguous Ranking",
+        "rightLabel": "Gap Ranking",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Window functions provide value navigation and relative ranking primitives.",
+            "left": {
+              "code": "DENSE_RANK() OVER w",
+              "result": {
+                "text": "contiguous rank integers"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "RANK() OVER w",
+              "result": {
+                "text": "skips ranks on ties"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Understanding differences among ranking functions is essential for reporting.",
+            "left": {
+              "code": "Tied peers receive equal rank",
+              "result": {
+                "text": "sequential integer stream"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Duplicate peers skip next ranks",
+              "result": {
+                "text": "gap reflects peer count"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A marathon race leaderboard where runners cross the finish timing gate.",
+            "left": {
+              "code": "Tied silver medalists",
+              "result": {
+                "text": "next runner gets bronze"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Shared second place",
+              "result": {
+                "text": "next runner takes fourth"
+              },
+              "tone": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the trader performance query to verify ranking tie behaviors.",
+            "left": {
+              "code": "Elena and Marcus tied at top",
+              "result": {
+                "text": "dense ranking holds contiguity"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "Aarav follows after tied peers",
+              "result": {
+                "text": "standard rank shows gap"
+              },
+              "tone": "data"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Named Window Clauses & WindowAgg Optimizer Mechanics: Multi-Window Consolidation and Memory Buffering",
+      "codeHash": "c910c32f3fe0a9f9a0972af7e629efd9e3aa16c4e453cbfd6c4a17ee3ee6c86e",
+      "spec": {
+        "template": "compare",
+        "title": "Named Window Clauses and Optimizer Execution",
+        "leftLabel": "Inline Redundant Window Clauses",
+        "rightLabel": "Consolidated Named Window Clause",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In analytical queries invoking multiple functions identical framing recurs.",
+            "left": {
+              "code": "Redundant OVER clauses across columns",
+              "result": {
+                "text": "brittle copy-paste syntax"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "WINDOW w AS (PARTITION BY ...)",
+              "result": {
+                "text": "centralized single definition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The syntax allows multiple window functions to reference a single definition.",
+            "left": {
+              "code": "Inconsistent partition definitions",
+              "result": {
+                "text": "logic drift across metrics"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Named window inheritance and reuse",
+              "result": {
+                "text": "guaranteed metric consistency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An architectural drafting firm creating blueprints for a skyscraper building.",
+            "left": {
+              "code": "Redrawing grid coordinates by hand",
+              "result": {
+                "text": "duplicate drafting error risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Master CAD grid template overlay",
+              "result": {
+                "text": "perfect geometric alignment"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the portfolio ledger query to observe named window definitions.",
+            "left": {
+              "code": "Multiple conflicting sort passes",
+              "result": {
+                "text": "spills to temporary files"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Unified WindowAgg pipeline pass",
+              "result": {
+                "text": "zero disk I/O overhead"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Named Window Clauses and Optimizer Execution",
+        "leftLabel": "Inline Redundant Window Clauses",
+        "rightLabel": "Consolidated Named Window Clause",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "In analytical queries invoking multiple functions identical framing recurs.",
+            "left": {
+              "code": "Redundant OVER clauses across columns",
+              "result": {
+                "text": "brittle copy-paste syntax"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "WINDOW w AS (PARTITION BY ...)",
+              "result": {
+                "text": "centralized single definition"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "The syntax allows multiple window functions to reference a single definition.",
+            "left": {
+              "code": "Inconsistent partition definitions",
+              "result": {
+                "text": "logic drift across metrics"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Named window inheritance and reuse",
+              "result": {
+                "text": "guaranteed metric consistency"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "An architectural drafting firm creating blueprints for a skyscraper building.",
+            "left": {
+              "code": "Redrawing grid coordinates by hand",
+              "result": {
+                "text": "duplicate drafting error risk"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Master CAD grid template overlay",
+              "result": {
+                "text": "perfect geometric alignment"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the portfolio ledger query to observe named window definitions.",
+            "left": {
+              "code": "Multiple conflicting sort passes",
+              "result": {
+                "text": "spills to temporary files"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Unified WindowAgg pipeline pass",
+              "result": {
+                "text": "zero disk I/O overhead"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Architecture Puzzle: High-Frequency FinTech Execution Slippage \u2014 Debugging WindowAgg Unbounded Buffer Spills",
+      "codeHash": "e4236838256d7ed452e8f7013b5369f49cd622f6bbf10717a5ce1a7781d7b2fb",
+      "spec": {
+        "template": "compare",
+        "title": "Execution Incident Window Frame Remediation",
+        "leftLabel": "Unbounded RANGE Frame",
+        "rightLabel": "Bounded ROWS Frame",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An institutional trading desk operated a risk engine during market close.",
+            "left": {
+              "code": "RANGE BETWEEN UNBOUNDED PRECEDING",
+              "result": {
+                "text": "spills to disk arrays"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ROWS BETWEEN 2 PRECEDING AND CURRENT",
+              "result": {
+                "text": "pure in-memory streaming"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "During the market closing cross execution volume surged to high rates.",
+            "left": {
+              "code": "Latency surges to forty-two seconds",
+              "result": {
+                "text": "stalls risk pipelines"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Latency drops to sub-millisecond",
+              "result": {
+                "text": "instant order clearance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A conveyor belt at an airport luggage carousel where handlers tally weight.",
+            "left": {
+              "code": "Holding pen halts luggage conveyor",
+              "result": {
+                "text": "tarmac overflow bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Continuous weighing on moving belt",
+              "result": {
+                "text": "smooth baggage distribution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the execution stream audit to verify streaming VWAP calculation.",
+            "left": {
+              "code": "Unbounded peer group buffering",
+              "result": {
+                "text": "memory quota exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Deterministic bounded streaming",
+              "result": {
+                "text": "zero disk buffer thrashing"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Execution Incident Window Frame Remediation",
+        "leftLabel": "Unbounded RANGE Frame",
+        "rightLabel": "Bounded ROWS Frame",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "An institutional trading desk operated a risk engine during market close.",
+            "left": {
+              "code": "RANGE BETWEEN UNBOUNDED PRECEDING",
+              "result": {
+                "text": "spills to disk arrays"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ROWS BETWEEN 2 PRECEDING AND CURRENT",
+              "result": {
+                "text": "pure in-memory streaming"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "During the market closing cross execution volume surged to high rates.",
+            "left": {
+              "code": "Latency surges to forty-two seconds",
+              "result": {
+                "text": "stalls risk pipelines"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Latency drops to sub-millisecond",
+              "result": {
+                "text": "instant order clearance"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "A conveyor belt at an airport luggage carousel where handlers tally weight.",
+            "left": {
+              "code": "Holding pen halts luggage conveyor",
+              "result": {
+                "text": "tarmac overflow bottleneck"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Continuous weighing on moving belt",
+              "result": {
+                "text": "smooth baggage distribution"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute the execution stream audit to verify streaming VWAP calculation.",
+            "left": {
+              "code": "Unbounded peer group buffering",
+              "result": {
+                "text": "memory quota exhaustion"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Deterministic bounded streaming",
+              "result": {
+                "text": "zero disk buffer thrashing"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

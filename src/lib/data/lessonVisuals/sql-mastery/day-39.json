@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 39,
+  "promptSha": "b4c5e29aa5597c1c5c9d9aa219f071d2d98c3dd0371ad5c71e84af7b79034d54",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Zero-Downtime Index Engineering: The Internal Mechanics of CREATE INDEX CONCURRENTLY",
+      "codeHash": "a69745c6102626cd155ebd2debfaa43bfcf830c320535cd38d3c36bfaabf5298",
+      "spec": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 1",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced index concurrency enables online storage maintenance.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive table locks halt active production user traffic.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway express lane construction proceeds alongside live traffic.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect concurrent build lock modes and catalog valid bits.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 1",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced index concurrency enables online storage maintenance.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Exclusive table locks halt active production user traffic.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Highway express lane construction proceeds alongside live traffic.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect concurrent build lock modes and catalog valid bits.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GiST Index Concurrency: R-Tree Balancing, Lock Coupling & Spatial Query Concurrency",
+      "codeHash": "9e1a55ff3033ac4bdcd78c90f348ea14e156689684322013c16857182b9acda5",
+      "spec": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 2",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multidimensional indexing requires generalized search tree architectures.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spatial search trees evaluate bounding box coordinate intersections.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Cartographer inspects regional nested maps without blocking others.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect spatial index types and lock coupling protocols.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 2",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multidimensional indexing requires generalized search tree architectures.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Spatial search trees evaluate bounding box coordinate intersections.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Cartographer inspects regional nested maps without blocking others.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect spatial index types and lock coupling protocols.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BRIN Index Concurrency: Block Range Indexing, Summary Pages & Zero-Contention Append-Only Workloads",
+      "codeHash": "adb742c975233f6b992815b1020195a38c941890b0cdd58cbde3ee90422fe915",
+      "spec": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 3",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High velocity event ingestion confronts index write amplification.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Block range indexing summarizes sequential physical disk pages.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Encyclopedia spine labels indicate alphabetical book volume contents.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect block range summaries and append concurrency modes.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 3",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High velocity event ingestion confronts index write amplification.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Block range indexing summarizes sequential physical disk pages.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Encyclopedia spine labels indicate alphabetical book volume contents.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect block range summaries and append concurrency modes.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GIN Fastupdate Buffers: Pending List Concurrency, Auto-Vacuum Inlining & Write Optimization",
+      "codeHash": "0d80b7d54307fc6ec68c88c391057cb06377812ec24cf46b6afcd6e8d54565a9",
+      "spec": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 4",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inverted document indexing powers multi element container queries.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi key document writes create heavy index write amplification.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital postal sorting room buffers incoming delivery letters.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect pending list buffer entries and inlining status metrics.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 4",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Inverted document indexing powers multi element container queries.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi key document writes create heavy index write amplification.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Hospital postal sorting room buffers incoming delivery letters.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect pending list buffer entries and inlining status metrics.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Index Bloat Mitigation: REINDEX CONCURRENTLY, Page Compaction & Zero-Interruption Swapping",
+      "codeHash": "dc87e8045566d27361c914a873978d1205c0e8cfcdfbe1c23989aaf3b4fdb9fc",
+      "spec": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 5",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heavy production transaction volume induces physical index bloat.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fragmented index pages collapse shared buffer memory cache hits.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport terminal builds replacement moving walkway without delays.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect relfilenode swap status and zero interruption guarantees.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Index Concurrency & Maintenance - Part 5",
+        "leftLabel": "Coarse Exclusive Index Maintenance",
+        "rightLabel": "Zero-Downtime Concurrent Engineering",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heavy production transaction volume induces physical index bloat.",
+            "left": {
+              "code": "AccessExclusiveLock blocks reads",
+              "result": {
+                "text": "production service downtime"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "ShareUpdateExclusiveLock build",
+              "result": {
+                "text": "permits full concurrent read write traffic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Fragmented index pages collapse shared buffer memory cache hits.",
+            "left": {
+              "code": "Unbounded table locking duration",
+              "result": {
+                "text": "exhausts backend connection pools"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Three-phase state machine build",
+              "result": {
+                "text": "atomic validation and safe cutover"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Airport terminal builds replacement moving walkway without delays.",
+            "left": {
+              "code": "Total roadway shutdown block",
+              "result": {
+                "text": "traffic gridlock across all lanes"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Parallel construction safety lane",
+              "result": {
+                "text": "continuous uninterrupted vehicle flow"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect relfilenode swap status and zero interruption guarantees.",
+            "left": {
+              "code": "Unmonitored index maintenance",
+              "result": {
+                "text": "hidden bloat and performance decay"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Telemetry-driven online reindexing",
+              "result": {
+                "text": "sustained sub-millisecond query execution"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

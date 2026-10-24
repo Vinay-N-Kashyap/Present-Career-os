@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 50,
+  "promptSha": "33a5cf6e71166442f8530970aa781cfa19e7df36bef2bd9fdf4a1e1f3f7fad71",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architecture Blueprint: Hybrid Temporal & Multi-Tenant Partitioning",
+      "codeHash": "e9dcd3904787a1c266f0b5465742acbb1e38973d7b5a3c8d88ec38586acca36a",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 1",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone synthesizes hybrid partitioning architectures.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary scale software architectures resolve temporal volume challenges.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International shipping hub organizes cargo containers across bays.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hybrid partitioning blueprint and hierarchy tier strategies.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 1",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone synthesizes hybrid partitioning architectures.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Planetary scale software architectures resolve temporal volume challenges.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "International shipping hub organizes cargo containers across bays.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect hybrid partitioning blueprint and hierarchy tier strategies.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Foreign Worker Cluster Topology: Coordinator & 4 Shard Nodes",
+      "codeHash": "ad633083db712ebc46eccd98c2d689e072dc3b6911ed1d50c5155f7c99346788",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 2",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed foreign worker cluster topologies scale hardware resources.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Single server hardware configurations bound physical compute capacity.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Publishing conglomerate transmits print plates to regional plants.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed cluster topology and hardware tier profiles.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 2",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed foreign worker cluster topologies scale hardware resources.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Single server hardware configurations bound physical compute capacity.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Publishing conglomerate transmits print plates to regional plants.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed cluster topology and hardware tier profiles.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Stream Ingestion & Pushdown: High-Throughput Batching & 2PC",
+      "codeHash": "30ccb4255ea2b82c94d40a5fa9150eac3b52ee37f9333e210c9ee1c431aad096",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 3",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real time stream ingestion pipelines optimize distributed query pushdown.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Torrential event streams generate hundreds of thousands of inserts.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Package delivery distribution network groups regional parcels into vans.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed ingestion benchmarks and commit latency profiles.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 3",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Real time stream ingestion pipelines optimize distributed query pushdown.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Torrential event streams generate hundreds of thousands of inserts.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Package delivery distribution network groups regional parcels into vans.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect distributed ingestion benchmarks and commit latency profiles.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Velocity Simulation: Shard Failover, Rebalancing & Zero-Downtime Detach",
+      "codeHash": "b7b549ec6d2d9ca983d10c597f14fc9f6252a24123fe3a2990f71d37a6eea669",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 4",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High velocity simulations test shard failover and partition detach.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise database reliability engineering tests failure recovery.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial airline pilots train in flight simulators for engine failures.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect chaos recovery simulation matrix and production status.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 4",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "High velocity simulations test shard failover and partition detach.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise database reliability engineering tests failure recovery.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Commercial airline pilots train in flight simulators for engine failures.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect chaos recovery simulation matrix and production status.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise SRE Production Verification: Latency Benchmarks, SLAs & Capstone Review",
+      "codeHash": "cc2bc02d0517c5bb684cae968374eb73dbf4bda92d0a63729c9df05fc706e609",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 5",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise verification suites certify end to end production latencies.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Technology leadership delivers provable business value across systems.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Formula one racing team tests telemetry sensors in advanced wind tunnels.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect production verification suite and performance acceleration factors.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone Architecture - Part 5",
+        "leftLabel": "Monolithic Legacy Database",
+        "rightLabel": "Distributed Sharded Partition Engine",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise verification suites certify end to end production latencies.",
+            "left": {
+              "code": "Unpartitioned monolithic table",
+              "result": {
+                "text": "catastrophic table bloat and memory bus stalls"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Hybrid range root with hash sub-partitions",
+              "result": {
+                "text": "temporal pruning and zero write latch contention"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Technology leadership delivers provable business value across systems.",
+            "left": {
+              "code": "Single server WAL serialization limit",
+              "result": {
+                "text": "write saturation at 8,500 writes per second"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Four distributed shard workers (postgres_fdw)",
+              "result": {
+                "text": "sustained 265,000 writes/sec across NVMe arrays"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Formula one racing team tests telemetry sensors in advanced wind tunnels.",
+            "left": {
+              "code": "Cross-network raw tuple streaming",
+              "result": {
+                "text": "network congestion and coordinator RAM exhaustion"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "Distributed query pushdown + 2PC",
+              "result": {
+                "text": "local execution returns compact summary rows"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect production verification suite and performance acceleration factors.",
+            "left": {
+              "code": "Un-replicated single point of failure",
+              "result": {
+                "text": "eighteen minute outage during hardware crash"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Patroni Raft consensus + CDC rebalancing",
+              "result": {
+                "text": "sub-four-second auto-failover with RPO=0"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
