@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 47,
+  "promptSha": "prompt_sha_bcom_accounting_day47_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Foundations of ROE & The 3-Stage DuPont Architecture",
+      "codeHash": "65675dbdd488a8cafb491cac75397ac2d0c3eeb46c010625647ae1ca07663d5a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Foundations of ROE & The 3-Sta... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,005,000) for Strategic Foundations of ROE & The 3-Sta...",
+            "title": "Day 47 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94005000,
+            "totalCredit": 94005000,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 47"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 94005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 47 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 47 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 47 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101154680,
+            "totalCredit": 101154680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94005000,
+                "balance": 94005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101154680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101154680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "5-Stage Extended DuPont Model: Operating Margin, Financing Burden & Tax Drag",
+      "codeHash": "65675dbdd488a8cafb491cac75397ac2d0c3eeb46c010625647ae1ca07663d5a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "5-Stage Extended DuPont Model: Operating... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,010,000) for 5-Stage Extended DuPont Model: Operating...",
+            "title": "Day 47 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94010000,
+            "totalCredit": 94010000,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 47"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 94010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 47 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 47 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 47 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101159680,
+            "totalCredit": 101159680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94010000,
+                "balance": 94010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101159680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101159680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ROIC vs ROE: The Neutrality of Capital Structure & The Hurdle Rate Rule",
+      "codeHash": "65675dbdd488a8cafb491cac75397ac2d0c3eeb46c010625647ae1ca07663d5a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "ROIC vs ROE: The Neutrality of Capital S... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,015,000) for ROIC vs ROE: The Neutrality of Capital S...",
+            "title": "Day 47 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94015000,
+            "totalCredit": 94015000,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 47"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 94015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 47 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 47 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 47 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101164680,
+            "totalCredit": 101164680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94015000,
+                "balance": 94015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101164680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101164680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Economic Value Added (EVA) & Value-Based Management Frameworks",
+      "codeHash": "65675dbdd488a8cafb491cac75397ac2d0c3eeb46c010625647ae1ca07663d5a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Economic Value Added (EVA) & Value-Based... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,020,000) for Economic Value Added (EVA) & Value-Based...",
+            "title": "Day 47 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94020000,
+            "totalCredit": 94020000,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 47"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 94020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 47 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 47 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 47 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101169680,
+            "totalCredit": 101169680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94020000,
+                "balance": 94020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101169680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101169680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python DuPont & EVA Decomposition Suite Execution & Controllership Verification",
+      "codeHash": "65675dbdd488a8cafb491cac75397ac2d0c3eeb46c010625647ae1ca07663d5a",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python DuPont & EVA Decomposition Suite ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($94,025,000) for Python DuPont & EVA Decomposition Suite ...",
+            "title": "Day 47 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 94025000,
+            "totalCredit": 94025000,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 47"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 94025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($7,149,680).",
+            "title": "Day 47 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 47 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 47 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 101174680,
+            "totalCredit": 101174680,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Net Operating Assets & Invested Capital",
+                "debit": 94025000,
+                "balance": 94025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 7149680,
+                "balance": 101174680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Shareholders' Equity & Value-Added Reserves",
+                "credit": 101174680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

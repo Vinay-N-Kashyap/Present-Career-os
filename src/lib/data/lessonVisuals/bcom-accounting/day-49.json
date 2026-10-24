@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 49,
+  "promptSha": "prompt_sha_bcom_accounting_day49_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Strategic Principles of Earnings Quality & Cash Flow Realism",
+      "codeHash": "735d76ecfd4c7c65350e39d730bcc93794e36e71119be91ec273a8ad6dde58dc",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Strategic Principles of Earnings Quality... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($18,005,000) for Strategic Principles of Earnings Quality...",
+            "title": "Day 49 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 18005000,
+            "totalCredit": 18005000,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18005000,
+                "balance": 18005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 49"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 18005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,033,600).",
+            "title": "Day 49 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21038600,
+            "totalCredit": 21038600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18005000,
+                "balance": 18005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21038600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21038600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 49 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21038600,
+            "totalCredit": 21038600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18005000,
+                "balance": 18005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21038600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21038600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 49 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21038600,
+            "totalCredit": 21038600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18005000,
+                "balance": 18005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21038600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21038600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Richard Sloan's Accrual Anomaly & Earnings Persistence Modeling",
+      "codeHash": "735d76ecfd4c7c65350e39d730bcc93794e36e71119be91ec273a8ad6dde58dc",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Richard Sloan's Accrual Anomaly & Earnin... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($18,010,000) for Richard Sloan's Accrual Anomaly & Earnin...",
+            "title": "Day 49 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 18010000,
+            "totalCredit": 18010000,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18010000,
+                "balance": 18010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 49"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 18010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,033,600).",
+            "title": "Day 49 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21043600,
+            "totalCredit": 21043600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18010000,
+                "balance": 18010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21043600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21043600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 49 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21043600,
+            "totalCredit": 21043600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18010000,
+                "balance": 18010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21043600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21043600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 49 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21043600,
+            "totalCredit": 21043600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18010000,
+                "balance": 18010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21043600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21043600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Messod Beneish's 8-Variable M-Score Forensic Architecture",
+      "codeHash": "735d76ecfd4c7c65350e39d730bcc93794e36e71119be91ec273a8ad6dde58dc",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Messod Beneish's 8-Variable M-Score Fore... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($18,015,000) for Messod Beneish's 8-Variable M-Score Fore...",
+            "title": "Day 49 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 18015000,
+            "totalCredit": 18015000,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18015000,
+                "balance": 18015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 49"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 18015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,033,600).",
+            "title": "Day 49 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21048600,
+            "totalCredit": 21048600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18015000,
+                "balance": 18015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21048600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21048600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 49 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21048600,
+            "totalCredit": 21048600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18015000,
+                "balance": 18015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21048600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21048600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 49 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21048600,
+            "totalCredit": 21048600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18015000,
+                "balance": 18015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21048600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21048600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic Auditing Standards, NFRA Inspections & CARO 2020 Fraud Governance",
+      "codeHash": "735d76ecfd4c7c65350e39d730bcc93794e36e71119be91ec273a8ad6dde58dc",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Forensic Auditing Standards, NFRA Inspec... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($18,020,000) for Forensic Auditing Standards, NFRA Inspec...",
+            "title": "Day 49 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 18020000,
+            "totalCredit": 18020000,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18020000,
+                "balance": 18020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 49"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 18020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,033,600).",
+            "title": "Day 49 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21053600,
+            "totalCredit": 21053600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18020000,
+                "balance": 18020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21053600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21053600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 49 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21053600,
+            "totalCredit": 21053600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18020000,
+                "balance": 18020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21053600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21053600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 49 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21053600,
+            "totalCredit": 21053600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18020000,
+                "balance": 18020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21053600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21053600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Forensic Suite Execution & Quality Certification",
+      "codeHash": "735d76ecfd4c7c65350e39d730bcc93794e36e71119be91ec273a8ad6dde58dc",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Forensic Suite Execution & Qualit... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($18,025,000) for Python Forensic Suite Execution & Qualit...",
+            "title": "Day 49 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 18025000,
+            "totalCredit": 18025000,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18025000,
+                "balance": 18025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 49"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 18025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,033,600).",
+            "title": "Day 49 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 21058600,
+            "totalCredit": 21058600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18025000,
+                "balance": 18025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21058600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21058600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 49 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 21058600,
+            "totalCredit": 21058600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18025000,
+                "balance": 18025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21058600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21058600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 49 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 21058600,
+            "totalCredit": 21058600,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Operating Cash Flow & Performing Assets",
+                "debit": 18025000,
+                "balance": 18025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3033600,
+                "balance": 21058600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrual Discretion Liabilities & Retained Reserves",
+                "credit": 21058600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

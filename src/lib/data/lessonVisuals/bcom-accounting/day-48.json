@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 48,
+  "promptSha": "prompt_sha_bcom_accounting_day48_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Operating Leverage (DOL) & Cost Structure Elasticity",
+      "codeHash": "5012ed4836c04250dd927558937f36576eb43d5c452d2ab573485536084581b4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Operating Leverage (DOL) & Cost Structur... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($40,005,000) for Operating Leverage (DOL) & Cost Structur...",
+            "title": "Day 48 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 40005000,
+            "totalCredit": 40005000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40005000,
+                "balance": 40005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 48"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 40005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($5,000,000).",
+            "title": "Day 48 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 45005000,
+            "totalCredit": 45005000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40005000,
+                "balance": 40005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45005000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 48 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 45005000,
+            "totalCredit": 45005000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40005000,
+                "balance": 40005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 48 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 45005000,
+            "totalCredit": 45005000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40005000,
+                "balance": 40005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Leverage (DFL), Capital Structure Risk & Tax Shields",
+      "codeHash": "5012ed4836c04250dd927558937f36576eb43d5c452d2ab573485536084581b4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Financial Leverage (DFL), Capital Struct... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($40,010,000) for Financial Leverage (DFL), Capital Struct...",
+            "title": "Day 48 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 40010000,
+            "totalCredit": 40010000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40010000,
+                "balance": 40010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 48"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 40010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($5,000,000).",
+            "title": "Day 48 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 45010000,
+            "totalCredit": 45010000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40010000,
+                "balance": 40010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45010000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 48 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 45010000,
+            "totalCredit": 45010000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40010000,
+                "balance": 40010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 48 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 45010000,
+            "totalCredit": 45010000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40010000,
+                "balance": 40010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Degree of Combined Leverage (DCL) & The Law of Inverse Leverage",
+      "codeHash": "5012ed4836c04250dd927558937f36576eb43d5c452d2ab573485536084581b4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Degree of Combined Leverage (DCL) & The ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($40,015,000) for Degree of Combined Leverage (DCL) & The ...",
+            "title": "Day 48 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 40015000,
+            "totalCredit": 40015000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40015000,
+                "balance": 40015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 48"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 40015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($5,000,000).",
+            "title": "Day 48 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 45015000,
+            "totalCredit": 45015000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40015000,
+                "balance": 40015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45015000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 48 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 45015000,
+            "totalCredit": 45015000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40015000,
+                "balance": 40015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 48 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 45015000,
+            "totalCredit": 45015000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40015000,
+                "balance": 40015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "EBIT-EPS Indifference Analysis & The Altman Z-Score Insolvency Model",
+      "codeHash": "5012ed4836c04250dd927558937f36576eb43d5c452d2ab573485536084581b4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "EBIT-EPS Indifference Analysis & The Alt... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($40,020,000) for EBIT-EPS Indifference Analysis & The Alt...",
+            "title": "Day 48 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 40020000,
+            "totalCredit": 40020000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40020000,
+                "balance": 40020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 48"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 40020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($5,000,000).",
+            "title": "Day 48 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 45020000,
+            "totalCredit": 45020000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40020000,
+                "balance": 40020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45020000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 48 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 45020000,
+            "totalCredit": 45020000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40020000,
+                "balance": 40020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 48 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 45020000,
+            "totalCredit": 45020000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40020000,
+                "balance": 40020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Leverage & Distress Engine Execution & Controllership Verification",
+      "codeHash": "5012ed4836c04250dd927558937f36576eb43d5c452d2ab573485536084581b4",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Leverage & Distress Engine Execut... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($40,025,000) for Python Leverage & Distress Engine Execut...",
+            "title": "Day 48 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 40025000,
+            "totalCredit": 40025000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40025000,
+                "balance": 40025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 48"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 40025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($5,000,000).",
+            "title": "Day 48 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 45025000,
+            "totalCredit": 45025000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40025000,
+                "balance": 40025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45025000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 48 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 45025000,
+            "totalCredit": 45025000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40025000,
+                "balance": 40025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 48 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 45025000,
+            "totalCredit": 45025000,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Gross Contribution Assets & Operating Reserves",
+                "debit": 40025000,
+                "balance": 40025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 5000000,
+                "balance": 45025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Fixed Debt Obligations & Equity Cushion",
+                "credit": 45025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

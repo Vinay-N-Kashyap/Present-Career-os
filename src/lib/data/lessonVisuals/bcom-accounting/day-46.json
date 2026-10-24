@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 46,
+  "promptSha": "prompt_sha_bcom_accounting_day46_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Corporate Liquidity Architecture & Defensive Interval Metrics",
+      "codeHash": "dffbb2b87bd6aac329a2741aa1de1c3b693fd6b5598650f2bff6b7df283ac81b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Corporate Liquidity Architecture & Defen... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($44,005,000) for Corporate Liquidity Architecture & Defen...",
+            "title": "Day 46 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 44005000,
+            "totalCredit": 44005000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44005000,
+                "balance": 44005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 46"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 44005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,000,000).",
+            "title": "Day 46 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 47005000,
+            "totalCredit": 47005000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44005000,
+                "balance": 44005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47005000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 46 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 47005000,
+            "totalCredit": 47005000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44005000,
+                "balance": 44005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 46 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 47005000,
+            "totalCredit": 47005000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44005000,
+                "balance": 44005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47005000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Long-Term Solvency, Debt Structure & DSCR Gross-Up Mechanics",
+      "codeHash": "dffbb2b87bd6aac329a2741aa1de1c3b693fd6b5598650f2bff6b7df283ac81b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Long-Term Solvency, Debt Structure & DSC... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($44,010,000) for Long-Term Solvency, Debt Structure & DSC...",
+            "title": "Day 46 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 44010000,
+            "totalCredit": 44010000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44010000,
+                "balance": 44010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 46"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 44010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,000,000).",
+            "title": "Day 46 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 47010000,
+            "totalCredit": 47010000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44010000,
+                "balance": 44010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47010000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 46 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 47010000,
+            "totalCredit": 47010000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44010000,
+                "balance": 44010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 46 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 47010000,
+            "totalCredit": 47010000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44010000,
+                "balance": 44010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47010000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operational Efficiency, Velocity & the Cash Conversion Cycle (CCC)",
+      "codeHash": "dffbb2b87bd6aac329a2741aa1de1c3b693fd6b5598650f2bff6b7df283ac81b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Operational Efficiency, Velocity & the C... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($44,015,000) for Operational Efficiency, Velocity & the C...",
+            "title": "Day 46 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 44015000,
+            "totalCredit": 44015000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44015000,
+                "balance": 44015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 46"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 44015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,000,000).",
+            "title": "Day 46 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 47015000,
+            "totalCredit": 47015000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44015000,
+                "balance": 44015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47015000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 46 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 47015000,
+            "totalCredit": 47015000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44015000,
+                "balance": 44015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 46 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 47015000,
+            "totalCredit": 47015000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44015000,
+                "balance": 44015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47015000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mandatory Schedule III Disclosures & CARO 2020 Audit Verification",
+      "codeHash": "dffbb2b87bd6aac329a2741aa1de1c3b693fd6b5598650f2bff6b7df283ac81b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Mandatory Schedule III Disclosures & CAR... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($44,020,000) for Mandatory Schedule III Disclosures & CAR...",
+            "title": "Day 46 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 44020000,
+            "totalCredit": 44020000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44020000,
+                "balance": 44020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 46"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 44020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,000,000).",
+            "title": "Day 46 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 47020000,
+            "totalCredit": 47020000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44020000,
+                "balance": 44020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47020000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 46 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 47020000,
+            "totalCredit": 47020000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44020000,
+                "balance": 44020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 46 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 47020000,
+            "totalCredit": 47020000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44020000,
+                "balance": 44020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47020000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Python Ratio Diagnostics Engine Execution & Controllership Verification",
+      "codeHash": "dffbb2b87bd6aac329a2741aa1de1c3b693fd6b5598650f2bff6b7df283ac81b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Python Ratio Diagnostics Engine Executio... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($44,025,000) for Python Ratio Diagnostics Engine Executio...",
+            "title": "Day 46 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 44025000,
+            "totalCredit": 44025000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44025000,
+                "balance": 44025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 46"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 44025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & diagnostic adjustment accrual ($3,000,000).",
+            "title": "Day 46 Journal \u2014 Diagnostic & Adjustment Posting",
+            "isBalanced": true,
+            "totalDebit": 47025000,
+            "totalCredit": 47025000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44025000,
+                "balance": 44025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47025000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory group disclosures.",
+            "title": "Day 46 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 47025000,
+            "totalCredit": 47025000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44025000,
+                "balance": 44025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 46 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 47025000,
+            "totalCredit": 47025000,
+            "entries": [
+              {
+                "id": "JNL-4601",
+                "account": "Current Assets & Operating Cash Reserves",
+                "debit": 44025000,
+                "balance": 44025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4603",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 3000000,
+                "balance": 47025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4602",
+                "account": "Short-Term Liabilities & Debt Service Reserves",
+                "credit": 47025000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
