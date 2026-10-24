@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 32,
+  "promptSha": "prompt_sha_bcom_accounting_day32_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Demise of Off-Balance-Sheet Leases: The Single Lessee Model & Lease Definition",
+      "codeHash": "929d38d0c6c23db0d70f1ad671b78de0584a359f041363f2f960babbab9420c8",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Demise of Off-Balance-Sheet Leases: The ... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($522,024) for Demise of Off-Balance-Sheet Leases: The ...",
+            "title": "Day 32 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 522024,
+            "totalCredit": 522024,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 522024,
+                "balance": 522024,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 32"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 522024,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($34,442).",
+            "title": "Day 32 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 556466,
+            "totalCredit": 556466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 522024,
+                "balance": 522024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 556466,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 556466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 32 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 556466,
+            "totalCredit": 556466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 522024,
+                "balance": 522024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 556466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 556466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 32 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 556466,
+            "totalCredit": 556466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 522024,
+                "balance": 522024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 556466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 556466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Initial Measurement of Lease Liabilities & Right-of-Use (ROU) Assets",
+      "codeHash": "929d38d0c6c23db0d70f1ad671b78de0584a359f041363f2f960babbab9420c8",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Initial Measurement of Lease Liabilities... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($527,024) for Initial Measurement of Lease Liabilities...",
+            "title": "Day 32 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 527024,
+            "totalCredit": 527024,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 527024,
+                "balance": 527024,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 32"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 527024,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($34,442).",
+            "title": "Day 32 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 561466,
+            "totalCredit": 561466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 527024,
+                "balance": 527024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 561466,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 561466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 32 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 561466,
+            "totalCredit": 561466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 527024,
+                "balance": 527024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 561466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 561466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 32 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 561466,
+            "totalCredit": 561466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 527024,
+                "balance": 527024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 561466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 561466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subsequent Measurement & The P&L Front-Loading Phenomenon",
+      "codeHash": "929d38d0c6c23db0d70f1ad671b78de0584a359f041363f2f960babbab9420c8",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Subsequent Measurement & The P&L Front-L... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($532,024) for Subsequent Measurement & The P&L Front-L...",
+            "title": "Day 32 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 532024,
+            "totalCredit": 532024,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 532024,
+                "balance": 532024,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 32"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 532024,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($34,442).",
+            "title": "Day 32 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 566466,
+            "totalCredit": 566466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 532024,
+                "balance": 532024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 566466,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 566466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 32 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 566466,
+            "totalCredit": 566466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 532024,
+                "balance": 532024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 566466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 566466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 32 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 566466,
+            "totalCredit": 566466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 532024,
+                "balance": 532024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 566466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 566466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Metric Transformations (EBITDA, Cash Flows & Debt Covenants) and Recognition Exemptions",
+      "codeHash": "929d38d0c6c23db0d70f1ad671b78de0584a359f041363f2f960babbab9420c8",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Financial Metric Transformations (EBITDA... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($537,024) for Financial Metric Transformations (EBITDA...",
+            "title": "Day 32 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 537024,
+            "totalCredit": 537024,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 537024,
+                "balance": 537024,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 32"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 537024,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($34,442).",
+            "title": "Day 32 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 571466,
+            "totalCredit": 571466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 537024,
+                "balance": 537024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 571466,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 571466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 32 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 571466,
+            "totalCredit": 571466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 537024,
+                "balance": 537024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 571466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 571466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 32 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 571466,
+            "totalCredit": 571466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 537024,
+                "balance": 537024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 571466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 571466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lessor Accounting, Sale-and-Leaseback Transactions & Ind AS 116 Engine Execution",
+      "codeHash": "929d38d0c6c23db0d70f1ad671b78de0584a359f041363f2f960babbab9420c8",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Lessor Accounting, Sale-and-Leaseback Tr... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($542,024) for Lessor Accounting, Sale-and-Leaseback Tr...",
+            "title": "Day 32 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 542024,
+            "totalCredit": 542024,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 542024,
+                "balance": 542024,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 32"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 542024,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($34,442).",
+            "title": "Day 32 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 576466,
+            "totalCredit": 576466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 542024,
+                "balance": 542024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 576466,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 576466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 32 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 576466,
+            "totalCredit": 576466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 542024,
+                "balance": 542024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 576466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 576466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 32 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 576466,
+            "totalCredit": 576466,
+            "entries": [
+              {
+                "id": "JNL-3201",
+                "account": "Right-of-Use (ROU) Property Asset",
+                "debit": 542024,
+                "balance": 542024,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3203",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 34442,
+                "balance": 576466,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3202",
+                "account": "Commercial Lease Liability (Non-Current)",
+                "credit": 576466,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

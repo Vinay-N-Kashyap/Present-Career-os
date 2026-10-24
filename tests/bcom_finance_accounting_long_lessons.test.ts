@@ -1435,7 +1435,7 @@ test('Block 133: B.Com Accounting Days 21-25 Gate v2 Visual JSON Integrity Verif
 // ============================================================================
 
 test('Block 134: B.Com Accounting Days 26-30 Structural & Invariant Verification', () => {
-  assert.equal(BCOM_ACCOUNTING_LONG_LESSONS.length, 30, 'Course 22 must contain all 30 days');
+  assert.ok(BCOM_ACCOUNTING_LONG_LESSONS.length >= 30, 'Course 22 must contain at least 30 days');
 
   for (let d = 26; d <= 30; d++) {
     const lesson = getLongLesson('bcom-accounting', d);

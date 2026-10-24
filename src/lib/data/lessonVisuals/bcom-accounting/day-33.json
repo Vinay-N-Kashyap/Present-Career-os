@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 33,
+  "promptSha": "prompt_sha_bcom_accounting_day33_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Foundations of Fair Value Measurement: Exit Price, Orderly Transactions & Market Participants",
+      "codeHash": "4c818ae5227a8053c699bf90d8ec14bcc47853ca33a88f476cb4b1b2388d3e70",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Foundations of Fair Value Measurement: E... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($596,404) for Foundations of Fair Value Measurement: E...",
+            "title": "Day 33 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 596404,
+            "totalCredit": 596404,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 596404,
+                "balance": 596404,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 33"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 596404,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($11,828).",
+            "title": "Day 33 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 608232,
+            "totalCredit": 608232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 596404,
+                "balance": 596404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 608232,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 608232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 33 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 608232,
+            "totalCredit": 608232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 596404,
+                "balance": 596404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 608232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 608232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 33 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 608232,
+            "totalCredit": 608232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 596404,
+                "balance": 596404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 608232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 608232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Market Selection Mechanics: Principal Market vs Most Advantageous Market & Cost Treatment",
+      "codeHash": "4c818ae5227a8053c699bf90d8ec14bcc47853ca33a88f476cb4b1b2388d3e70",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Market Selection Mechanics: Principal Ma... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($601,404) for Market Selection Mechanics: Principal Ma...",
+            "title": "Day 33 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 601404,
+            "totalCredit": 601404,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 601404,
+                "balance": 601404,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 33"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 601404,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($11,828).",
+            "title": "Day 33 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 613232,
+            "totalCredit": 613232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 601404,
+                "balance": 601404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 613232,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 613232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 33 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 613232,
+            "totalCredit": 613232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 601404,
+                "balance": 601404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 613232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 613232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 33 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 613232,
+            "totalCredit": 613232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 601404,
+                "balance": 601404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 613232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 613232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Highest and Best Use (HBU) for Non-Financial Assets & The Three Valuation Approaches",
+      "codeHash": "4c818ae5227a8053c699bf90d8ec14bcc47853ca33a88f476cb4b1b2388d3e70",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Highest and Best Use (HBU) for Non-Finan... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($606,404) for Highest and Best Use (HBU) for Non-Finan...",
+            "title": "Day 33 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 606404,
+            "totalCredit": 606404,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 606404,
+                "balance": 606404,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 33"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 606404,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($11,828).",
+            "title": "Day 33 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 618232,
+            "totalCredit": 618232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 606404,
+                "balance": 606404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 618232,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 618232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 33 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 618232,
+            "totalCredit": 618232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 606404,
+                "balance": 606404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 618232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 618232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 33 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 618232,
+            "totalCredit": 618232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 606404,
+                "balance": 606404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 618232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 618232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three-Level Fair Value Hierarchy (Levels 1, 2, and 3) & Non-Performance Risk",
+      "codeHash": "4c818ae5227a8053c699bf90d8ec14bcc47853ca33a88f476cb4b1b2388d3e70",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Three-Level Fair Value Hierarchy (Le... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($611,404) for The Three-Level Fair Value Hierarchy (Le...",
+            "title": "Day 33 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 611404,
+            "totalCredit": 611404,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 611404,
+                "balance": 611404,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 33"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 611404,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($11,828).",
+            "title": "Day 33 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 623232,
+            "totalCredit": 623232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 611404,
+                "balance": 611404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 623232,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 623232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 33 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 623232,
+            "totalCredit": 623232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 611404,
+                "balance": 611404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 623232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 623232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 33 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 623232,
+            "totalCredit": 623232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 611404,
+                "balance": 611404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 623232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 623232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fair Value Disclosures, Level 3 Sensitivity Analysis & Ind AS 113 Engine Execution",
+      "codeHash": "4c818ae5227a8053c699bf90d8ec14bcc47853ca33a88f476cb4b1b2388d3e70",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Fair Value Disclosures, Level 3 Sensitiv... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($616,404) for Fair Value Disclosures, Level 3 Sensitiv...",
+            "title": "Day 33 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 616404,
+            "totalCredit": 616404,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 616404,
+                "balance": 616404,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 33"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 616404,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($11,828).",
+            "title": "Day 33 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 628232,
+            "totalCredit": 628232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 616404,
+                "balance": 616404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 628232,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 628232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 33 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 628232,
+            "totalCredit": 628232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 616404,
+                "balance": 616404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 628232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 628232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 33 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 628232,
+            "totalCredit": 628232,
+            "entries": [
+              {
+                "id": "JNL-3301",
+                "account": "Unquoted Equity Investments (Level 3 FVTOCI)",
+                "debit": 616404,
+                "balance": 616404,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3303",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 11828,
+                "balance": 628232,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3302",
+                "account": "Fair Value Reserve / OCI & CVA Adjustment",
+                "credit": 628232,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

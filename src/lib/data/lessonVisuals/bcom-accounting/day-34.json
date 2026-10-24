@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-accounting",
+  "day": 34,
+  "promptSha": "prompt_sha_bcom_accounting_day34_v1",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Demise of the Incurred Loss Model: The Shift to Forward-Looking Expected Credit Losses",
+      "codeHash": "82a423fbca97f36912bf6c06b5a815f5e0bd4a15b957d973d6ac902f6498665b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Demise of the Incurred Loss Model: The S... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($2,005,000) for Demise of the Incurred Loss Model: The S...",
+            "title": "Day 34 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2005000,
+            "totalCredit": 2005000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2005000,
+                "balance": 2005000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 34"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2005000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($68,000).",
+            "title": "Day 34 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2073000,
+            "totalCredit": 2073000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2005000,
+                "balance": 2005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2073000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2073000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 34 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 2073000,
+            "totalCredit": 2073000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2005000,
+                "balance": 2005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2073000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2073000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 34 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 2073000,
+            "totalCredit": 2073000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2005000,
+                "balance": 2005000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2073000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2073000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Classification and Measurement: The Business Model & SPPI Contractual Tests",
+      "codeHash": "82a423fbca97f36912bf6c06b5a815f5e0bd4a15b957d973d6ac902f6498665b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Classification and Measurement: The Busi... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($2,010,000) for Classification and Measurement: The Busi...",
+            "title": "Day 34 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2010000,
+            "totalCredit": 2010000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 34"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2010000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($68,000).",
+            "title": "Day 34 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2078000,
+            "totalCredit": 2078000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2078000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2078000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 34 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 2078000,
+            "totalCredit": 2078000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2078000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2078000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 34 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 2078000,
+            "totalCredit": 2078000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2010000,
+                "balance": 2010000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2078000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2078000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Three-Stage Expected Credit Loss (ECL) Impairment Architecture",
+      "codeHash": "82a423fbca97f36912bf6c06b5a815f5e0bd4a15b957d973d6ac902f6498665b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Three-Stage Expected Credit Loss (EC... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($2,015,000) for The Three-Stage Expected Credit Loss (EC...",
+            "title": "Day 34 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2015000,
+            "totalCredit": 2015000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2015000,
+                "balance": 2015000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 34"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2015000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($68,000).",
+            "title": "Day 34 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2083000,
+            "totalCredit": 2083000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2015000,
+                "balance": 2015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2083000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2083000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 34 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 2083000,
+            "totalCredit": 2083000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2015000,
+                "balance": 2015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2083000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2083000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 34 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 2083000,
+            "totalCredit": 2083000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2015000,
+                "balance": 2015000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2083000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2083000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Simplified Approach for Trade Receivables & Modern Hedge Accounting Framework",
+      "codeHash": "82a423fbca97f36912bf6c06b5a815f5e0bd4a15b957d973d6ac902f6498665b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "The Simplified Approach for Trade Receiv... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($2,020,000) for The Simplified Approach for Trade Receiv...",
+            "title": "Day 34 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2020000,
+            "totalCredit": 2020000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2020000,
+                "balance": 2020000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 34"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2020000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($68,000).",
+            "title": "Day 34 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2088000,
+            "totalCredit": 2088000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2020000,
+                "balance": 2020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2088000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2088000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 34 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 2088000,
+            "totalCredit": 2088000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2020000,
+                "balance": 2020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2088000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2088000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 34 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 2088000,
+            "totalCredit": 2088000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2020000,
+                "balance": 2020000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2088000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2088000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Statement Disclosures & Ind AS 109 Instruments Engine Execution",
+      "codeHash": "82a423fbca97f36912bf6c06b5a815f5e0bd4a15b957d973d6ac902f6498665b",
+      "filled": {},
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Financial Statement Disclosures & Ind AS... \u2014 Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary Ind AS ledger posting ($2,025,000) for Financial Statement Disclosures & Ind AS...",
+            "title": "Day 34 Journal \u2014 Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 2025000,
+            "totalCredit": 2025000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2025000,
+                "balance": 2025000,
+                "tone": "data",
+                "memo": "Initial recognition under Ind AS for Day 34"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2025000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset settlement control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary valuation & amortization accrual ($68,000).",
+            "title": "Day 34 Journal \u2014 Accrual / Amortization Adjustment",
+            "isBalanced": true,
+            "totalDebit": 2093000,
+            "totalCredit": 2093000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2025000,
+                "balance": 2025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2093000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2093000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Verification of balance sheet carrying values and statutory disclosures.",
+            "title": "Day 34 Journal \u2014 Balance Sheet Realignment",
+            "isBalanced": true,
+            "totalDebit": 2093000,
+            "totalCredit": 2093000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2025000,
+                "balance": 2025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2093000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2093000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Execute deterministic Python engine and verify mathematical equilibrium.",
+            "title": "Day 34 Journal \u2014 Balanced Closure",
+            "isBalanced": true,
+            "totalDebit": 2093000,
+            "totalCredit": 2093000,
+            "entries": [
+              {
+                "id": "JNL-3401",
+                "account": "Impairment Loss on Loans (P&L Expense)",
+                "debit": 2025000,
+                "balance": 2025000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3403",
+                "account": "Statutory Ind AS Adjustment Control / Reserve",
+                "debit": 68000,
+                "balance": 2093000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-3402",
+                "account": "Allowance for Expected Credit Losses (Stage 2 Contra-Asset)",
+                "credit": 2093000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

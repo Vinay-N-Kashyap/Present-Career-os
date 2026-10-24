@@ -1,0 +1,351 @@
+import json
+import re
+
+def count_words(text):
+    return len(re.findall(r'\b[A-Za-z0-9_-]+\b', text))
+
+day35_code = """# Day 35: Milestone 7 Capstone - Enterprise Financial Controller Ind AS Suite
+# Integrated corporate financial reporting simulator combining Ind AS 115 Revenue Allocation,
+# Ind AS 116 ROU Leases Amortization, Ind AS 113 Level 3 Fair Value DCF, and Ind AS 109 3-Stage ECL.
+
+from dataclasses import dataclass
+from typing import List, Dict
+
+class EnterpriseFinancialControllerSuite:
+    def __init__(self, enterprise_name: str):
+        self.enterprise_name = enterprise_name
+
+    def process_ind_as_115_revenue(self, bundled_price: float, ssp_hw: float, ssp_cloud: float) -> Dict[str, float]:
+        \"\"\"Module 1: Ind AS 115 Relative Standalone Selling Price Allocation\"\"\"
+        total_ssp = ssp_hw + ssp_cloud
+        alloc_hw = round(bundled_price * (ssp_hw / total_ssp), 2)
+        alloc_cloud = round(bundled_price * (ssp_cloud / total_ssp), 2)
+        rev_y1 = round(alloc_hw + (alloc_cloud * 0.5), 2)
+        deferred_y1 = round(alloc_cloud * 0.5, 2)
+        return {
+            "alloc_hw": alloc_hw,
+            "alloc_cloud": alloc_cloud,
+            "recognized_revenue_y1": rev_y1,
+            "deferred_revenue_liability": deferred_y1
+        }
+
+    def process_ind_as_116_lease(self, annual_rent: float, term_years: int, ibr: float, direct_costs: float) -> Dict[str, float]:
+        \"\"\"Module 2: Ind AS 116 Lease Liability & ROU Asset Schedule\"\"\"
+        pv_liability = sum(annual_rent / ((1.0 + ibr) ** y) for y in range(1, term_years + 1))
+        initial_liability = round(pv_liability, 2)
+        initial_rou = round(initial_liability + direct_costs, 2)
+        interest_y1 = round(initial_liability * ibr, 2)
+        deprec_y1 = round(initial_rou / term_years, 2)
+        total_pl_charge = round(interest_y1 + deprec_y1, 2)
+        ebitda_benefit = annual_rent
+        return {
+            "initial_lease_liability": initial_liability,
+            "initial_rou_asset": initial_rou,
+            "year1_interest_expense": interest_y1,
+            "year1_rou_depreciation": deprec_y1,
+            "year1_total_pl_charge": total_pl_charge,
+            "ebitda_benefit": ebitda_benefit
+        }
+
+    def process_ind_as_113_fair_value(self, cash_flows: List[float], discount_rate: float, cva_pct: float) -> Dict[str, float]:
+        \"\"\"Module 3: Ind AS 113 Level 3 Fair Value with CVA Credit Adjustment\"\"\"
+        raw_pv = sum(cf / ((1.0 + discount_rate) ** t) for t, cf in enumerate(cash_flows, 1))
+        cva_amount = raw_pv * (cva_pct / 100.0)
+        final_fv = raw_pv - cva_amount
+        return {
+            "unadjusted_level3_dcf": round(raw_pv, 2),
+            "cva_deduction": round(cva_amount, 2),
+            "level3_fair_value": round(final_fv, 2)
+        }
+
+    def process_ind_as_109_ecl(self, gross_loan_usd: float, stage: int, pd_pct: float, lgd_pct: float) -> Dict[str, float]:
+        \"\"\"Module 4: Ind AS 109 Expected Credit Loss Allowance\"\"\"
+        pd = pd_pct / 100.0
+        lgd = lgd_pct / 100.0
+        ecl_allowance = round(gross_loan_usd * pd * lgd, 2)
+        net_carrying = round(gross_loan_usd - ecl_allowance, 2)
+        return {
+            "gross_exposure": gross_loan_usd,
+            "stage": stage,
+            "ecl_allowance": ecl_allowance,
+            "net_carrying_amount": net_carrying
+        }
+
+controller = EnterpriseFinancialControllerSuite("Apex Global Enterprise Corp")
+
+rev_mod = controller.process_ind_as_115_revenue(100000.0, 75000.0, 50000.0)
+assert rev_mod["alloc_hw"] == 60000.0
+assert rev_mod["alloc_cloud"] == 40000.0
+assert rev_mod["recognized_revenue_y1"] == 80000.0
+assert rev_mod["deferred_revenue_liability"] == 20000.0
+
+lease_mod = controller.process_ind_as_116_lease(120000.0, 5, 0.07, 25000.0)
+assert lease_mod["initial_lease_liability"] == 492023.69
+assert lease_mod["initial_rou_asset"] == 517023.69
+assert lease_mod["year1_interest_expense"] == 34441.66
+assert lease_mod["year1_rou_depreciation"] == 103404.74
+
+fv_mod = controller.process_ind_as_113_fair_value([200000.0, 250000.0, 300000.0], 0.12, 2.0)
+assert fv_mod["unadjusted_level3_dcf"] == 591403.97
+assert fv_mod["cva_deduction"] == 11828.08
+assert fv_mod["level3_fair_value"] == 579575.89
+
+ecl_mod = controller.process_ind_as_109_ecl(2000000.0, 2, 8.5, 40.0)
+assert ecl_mod["ecl_allowance"] == 68000.0
+assert ecl_mod["net_carrying_amount"] == 1932000.0
+
+print(f"Enterprise: {controller.enterprise_name}")
+print(f"Ind AS 115 Year 1 Recognized Revenue: ${rev_mod['recognized_revenue_y1']} (Deferred: ${rev_mod['deferred_revenue_liability']})")
+print(f"Ind AS 116 Initial ROU Asset: ${lease_mod['initial_rou_asset']} | Y1 Total P&L Charge: ${lease_mod['year1_total_pl_charge']}")
+print(f"Ind AS 113 Level 3 Fair Value (Post-CVA): ${fv_mod['level3_fair_value']}")
+print(f"Ind AS 109 Stage 2 ECL Allowance: ${ecl_mod['ecl_allowance']} | Net Loan Carrying Amount: ${ecl_mod['net_carrying_amount']}")
+print("ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS")
+"""
+
+day35_output = """Enterprise: Apex Global Enterprise Corp
+Ind AS 115 Year 1 Recognized Revenue: $80000.0 (Deferred: $20000.0)
+Ind AS 116 Initial ROU Asset: $517023.69 | Y1 Total P&L Charge: $137846.4
+Ind AS 113 Level 3 Fair Value (Post-CVA): $579575.89
+Ind AS 109 Stage 2 ECL Allowance: $68000.0 | Net Loan Carrying Amount: $1932000.0
+ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS"""
+
+part1_say = r"""Welcome to Day 35—the Milestone 7 Capstone of Corporate & Financial Accounting. Today you assume the executive position of Group Financial Controller and Chief Accounting Officer of Apex Global Enterprise Corp, a diversified multinational conglomerate preparing its consolidated financial statements under Indian Accounting Standards (Ind AS) converged with IFRS.
+
+The role of the modern Financial Controller extends far beyond supervising day-to-day general ledger reconciliations or approving vendor payment vouchers. In listed enterprise environments, the Controller is the ultimate steward of financial integrity, statutory compliance, and capital market credibility. The Controller sits at the intersection of business strategy and accounting law, ensuring that multi-billion-dollar commercial contracts, complex real estate leasing structures, proprietary investment portfolios, and enterprise credit exposures are measured and reported with uncompromising precision.
+
+Throughout Block 7, we dismantled and mastered the four pillars of modern converged financial reporting:
+1. Ind AS 115 (Revenue from Contracts with Customers): Establishing control-based revenue recognition, multi-element standalone selling price allocations, variable consideration constraints, and contract liability accounting.
+2. Ind AS 116 (Leases): Overhauling lessee accounting through the single on-balance-sheet model, capitalizing Right-of-Use (ROU) assets, amortizing lease liabilities via the effective interest rate method, and managing P&L front-loading dynamics.
+3. Ind AS 113 (Fair Value Measurement): Navigating the three-level fair value hierarchy, evaluating principal versus most advantageous markets, applying Highest and Best Use (HBU) to non-financial assets, and incorporating Credit Valuation Adjustments (CVA) for non-performance risk.
+4. Ind AS 109 (Financial Instruments): Executing the dual business model and SPPI classification tests, implementing the forward-looking Three-Stage Expected Credit Loss (ECL) impairment model, and designing trade receivables provision matrices under the simplified approach.
+
+In multi-entity global enterprises, the Financial Controller must establish an integrated Chart of Accounts and financial reporting calendar that ensures smooth monthly and annual financial closes across diverse subsidiaries, associates, and joint ventures. Under Section 134(5) of the Companies Act 2013, the Directors' Responsibility Statement requires the board to state that directors have selected such accounting policies and applied them consistently and made judgments and estimates that are reasonable and prudent so as to give a true and fair view of the state of affairs of the company. The Controller is the operational executive charged with fulfilling this statutory mandate.
+
+Furthermore, corporate governance requires the Controller to maintain strict Internal Financial Controls over Financial Reporting (IFC-FR). Every accounting policy choice under Ind AS—from selecting standalone selling price estimation methodologies under Ind AS 115, to determining discount rate IBR curves under Ind AS 116, documenting Level 3 DCF assumptions under Ind AS 113, and calibrating forward-looking macro scalars under Ind AS 109—must be governed by formal internal control documentation audited by independent statutory auditors under Section 143(3)(i) of the Act.
+
+The Controller must also interface with the National Financial Reporting Authority (NFRA), India's independent accounting and audit regulator established under Section 132 of the Companies Act. In recent regulatory enforcement orders, NFRA has penalized corporate management and statutory auditors for non-compliance with fundamental Ind AS principles, specifically targeting opaque revenue recognition practices, unverified management estimates, and inadequate fair value documentation. Under Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, the Chief Executive Officer and Chief Financial Officer must sign off on quarterly financial results, certifying that the financial statements contain no materially untrue statements and represent an accurate, true, and fair view. 
+
+Furthermore, the Controller orchestrates the interface between enterprise enterprise resource planning (ERP) architectures—such as SAP S/4HANA Finance and Oracle Cloud ERP—and statutory disclosure preparation engines. Because modern accounting standards demand extensive qualitative and quantitative disclosures regarding valuation techniques, discount rate curves, credit risk migration tables, and remaining performance obligations, automated sub-ledger accounting rules must be calibrated with rigorous data governance. Maintaining unimpeachable audit trails, reconciliations, and documented accounting judgment memos is therefore both an urgent statutory necessity and an enduring institutional safeguard for corporate reputation and stakeholder trust."""
+
+part2_say = r"""In Part 2 of our Milestone 7 Capstone, we execute Module 1: Enterprise Multi-Element Contract Revenue Architecture under Ind AS 115.
+
+Apex Global Enterprise Corp enters into an enterprise technology transformation contract with a global client for a bundled contract price of $100,000. The contract encompasses two distinct performance obligations:
+- Performance Obligation 1: Enterprise Hardware System (Standalone Selling Price / SSP = $75,000).
+- Performance Obligation 2: 24-Month Cloud Management Platform Subscription (Standalone Selling Price / SSP = $50,000).
+
+The aggregate standalone selling price of the individual components is $125,000 ($75,000 + $50,000). The client negotiates an enterprise package price of $100,000—representing a $25,000 (20%) bundled discount across the transaction.
+As Financial Controller, you apply the mandatory Ind AS 115 5-Step Model to structure this enterprise arrangement:
+- Step 1: Identify the contract with the customer. The contract is fully executed, legally enforceable, specifies payment terms, has commercial substance, and collection of consideration is probable.
+- Step 2: Identify the performance obligations. The hardware and cloud subscription are distinct: the customer can benefit from each good or service on its own, and the promise to transfer each item is separately identifiable within the contract.
+- Step 3: Determine the transaction price. The contractual transaction price is $100,000 fixed consideration with no variable penalties or financing components exceeding 12 months.
+- Step 4: Allocate the transaction price strictly in proportion to relative standalone selling prices:
+  * Hardware Allocation: $100,000 * ($75,000 / $125,000) = $60,000.
+  * Cloud SaaS Allocation: $100,000 * ($50,000 / $125,000) = $40,000.
+- Step 5: Recognize revenue when or as performance obligations are satisfied:
+  * Hardware is delivered and accepted at inception (Point in Time): 100% of the allocated consideration ($60,000) is recognized as earned revenue in Year 1.
+  * Cloud Platform Subscription is satisfied Over Time across 24 months ($1,666.67 per month):
+    - In Year 1 (first 12 months): 12 / 24 of $40,000 = $20,000 is recognized as earned revenue.
+    - The remaining $20,000 for Year 2 is recognized on the balance sheet as a Contract Liability (Deferred Revenue).
+Consequently, total Year 1 Recognized Revenue from the contract equals $80,000.0 ($60,000 hardware + $20,000 cloud), and Contract Liability equals $20,000.0.
+
+The operational integration between commercial sales contracting and financial accounting requires the Controller to establish strict pre-execution contract review workflows. Commercial enterprise sales teams frequently negotiate non-standard contract clauses—such as performance liquidated damages, extended payment credit terms, customer acceptance trial periods, or price protection clauses. Each of these non-standard clauses has profound Ind AS 115 implications: liquidated damages represent variable consideration requiring the application of the reversal constraint; extended credit terms exceeding 12 months trigger significant financing component discounting; and conditional customer acceptance periods prevent point-in-time revenue recognition until formal engineering sign-off is obtained.
+
+Under Ind AS 115, the Controller must also enforce rigorous contract modification governance. If the contract is subsequently amended to add additional software licenses or cloud modules, the Controller must determine whether the amendment is accounted for as a separate contract (if additional distinct goods are added at their standalone selling prices), a prospective termination and replacement of the original contract, or a cumulative catch-up adjustment to recognized revenue. Furthermore, financial controllers must distinguish between 'Contract Assets' (unconditional right to consideration subject only to passage of time vs conditional rights based on milestone performance) and 'Trade Receivables', ensuring appropriate classification and separate disclosure on the face of the balance sheet.
+
+By embedding financial controllership checkpoints directly into the Salesforce and ERP CPQ (Configure, Price, Quote) pipeline, the enterprise eliminates unrecorded revenue liabilities and restatement risks. In high-tech and enterprise software, companies frequently sell bespoke customizations where no standalone market exists. Under Ind AS 115, controllers must maintain structured 'Expected Cost Plus Margin' schedules, documenting the labor hours, engineering overhead rates, and historical margin benchmarks used to derive synthetic Standalone Selling Prices."""
+
+part3_say = r"""In Part 3 of the Capstone, we execute Module 2: Enterprise Lease Portfolio Capitalization and EBITDA Normalization under Ind AS 116.
+
+Simultaneously, Apex Global Enterprise Corp leases a corporate research and development facility under a 5-year commercial lease contract. The contractual terms dictate annual lease payments of $120,000 paid at the end of each year. Treasury determines the Incremental Borrowing Rate (IBR) to be 7.0%. In addition, Apex incurs $25,000 in initial direct legal and brokerage fees required to secure the facility.
+
+As Controller, you execute the Ind AS 116 single lessee capitalization schedule:
+1. Initial Lease Liability: Present value of 5 annual installments of $120,000 discounted at the Incremental Borrowing Rate of 7.0%:
+   $PV = \sum_{t=1}^{5} \frac{\$120,000}{(1.07)^t} = \$492,023.69$
+2. Initial Right-of-Use (ROU) Asset: Initial lease liability plus initial direct costs:
+   $ROU Asset = \$492,023.69 + \$25,000.00 = \$517,023.69$
+3. Year 1 P&L Charges:
+   - Interest Expense on Lease Liability: $\$492,023.69 \times 7.0\% = \$34,441.66$ (recorded under Finance Costs).
+   - Straight-Line Depreciation of ROU Asset: $\$517,023.69 / 5 = \$103,404.74$ (recorded under Depreciation & Amortization).
+   - Total Year 1 P&L Charge = $\$34,441.66 + \$103,404.74 = \$137,846.40$.
+
+Compare this against legacy accounting: under AS 19, Apex would have reported $120,000 in operating rent directly inside Operating Expenses. Under Ind AS 116, the total P&L charge in Year 1 is $137,846.40—representing an initial front-loaded P&L drag of $17,846.40!
+However, you present the crucial operational counterweight to the Board of Directors and institutional equity analysts:
+Operating Profit / EBITDA expands by exactly $120,000, because operating rental expense is eliminated from EBITDA and shifted below the operating profit line into depreciation and financing interest. Furthermore, Operating Cash Flow increases by $120,000 minus the interest payment, as principal repayment is classified under Financing Cash Flows in the Statement of Cash Flows.
+
+The strategic management of corporate leasing portfolios under Ind AS 116 directly impacts executive compensation and corporate credit ratings. Because Ind AS 116 increases reported EBITDA while increasing reported gross debt, rating agencies (such as CRISIL, ICRA, S&P, and Moody's) adjust their credit assessment models. Credit rating analysts calculate 'Adjusted Debt' by treating lease liabilities as financial debt, while simultaneously adjusting interest coverage metrics (EBITDA / Total Interest Expense including lease interest).
+
+In addition, controllers must manage complex deferred tax interactions under Ind AS 12. In India, tax deductions under the Income Tax Act, 1961 (Section 32 and Section 37) are granted based on actual contractual rent paid ($120,000), rather than accounting depreciation and interest ($137,846.40). This creates a temporary deductible difference of $17,846.40 in Year 1, resulting in the recognition of a Deferred Tax Asset (DTA) that reverses in later years of the lease.
+
+Furthermore, when renegotiating bank borrowing facilities, corporate controllers must ensure that debt covenants specify whether financial ratios are calculated on an 'Ind AS basis' or a 'Frozen GAAP / Pre-Ind AS 116 basis', preventing technical covenant defaults caused solely by accounting standard transitions. In addition, controllers must oversee the annual impairment testing of ROU assets under Ind AS 36 'Impairment of Assets'. If an economic downturn reduces customer footfalls in leased retail locations or changes office utilization, the ROU asset must be evaluated for impairment at the Cash-Generating Unit (CGU) level. Entities must also track restoration and decommissioning provisions under Ind AS 37, adding the present value of expected site dismantling costs to the initial ROU asset cost basis at lease inception."""
+
+part4_say = r"""In Part 4 of the Capstone, we execute Module 3 & Module 4: Valuation Governance under Ind AS 113 and Expected Credit Loss (ECL) Impairment under Ind AS 109.
+
+Module 3: Level 3 Fair Value Measurement (Ind AS 113):
+Apex holds a strategic minority equity investment in an unquoted fintech enterprise. Because there are no observable Level 1 market quotes or Level 2 comparable inputs, you deploy an Income Approach using an unobservable Level 3 Discounted Cash Flow (DCF) model.
+- Projected net cash flows across the 3-year investment horizon: [$200,000, $250,000, $300,000].
+- Risk-adjusted discount rate incorporating liquidity risk premiums = 12.0%.
+- Raw unadjusted present value:
+  $PV = \frac{\$200,000}{1.12} + \frac{\$250,000}{(1.12)^2} + \frac{\$300,000}{(1.12)^3} = \$178,571.43 + \$199,298.47 + \$213,534.07 = \$591,403.97$
+- Under Ind AS 113, you incorporate counterparty credit risk via a 2.0% Credit Valuation Adjustment (CVA):
+  $CVA = \$591,403.97 \times 2.0\% = \$11,828.08$
+- Final Level 3 Fair Value recognized on the balance sheet = $\$591,403.97 - \$11,828.08 = \$579,575.89$.
+
+Module 4: 3-Stage Expected Credit Loss (ECL) Impairment (Ind AS 109):
+Apex maintains a corporate financing arm with a $2,000,000 senior secured loan facility extended to an industrial client. During annual review, credit risk surveillance identifies a Significant Increase in Credit Risk (SICR): the borrower's debt-service coverage ratio breached loan covenants, triggering an internal credit downgrade (transitioning from Stage 1 into Stage 2).
+Under Ind AS 109, you immediately reclassify the loan into Stage 2 (Underperforming), mandating Lifetime Expected Credit Losses:
+- Exposure at Default (EAD) = $2,000,000.
+- Lifetime Probability of Default (PD) = 8.5%.
+- Loss Given Default (LGD) reflecting collateral liquidation values = 40.0%.
+- Total Stage 2 ECL Allowance:
+  $ECL = \$2,000,000 \times 8.5\% \times 40.0\% = \$68,000.00$
+- Net Carrying Amount reported on the Balance Sheet:
+  $Net Carrying Amount = \$2,000,000 - \$68,000 = \$1,932,000.00$.
+Because the loan is in Stage 2 (not credit-impaired), interest revenue for the subsequent period continues to be recognized on the Gross Carrying Amount of $2,000,000.
+
+The governance of Level 3 fair value models under Ind AS 113 and Stage 2 ECL allowances under Ind AS 109 requires active collaboration between the financial controllership, treasury, and enterprise risk management divisions. Under Ind AS 107 disclosures, financial controllers must present comprehensive sensitivity analyses showing the impact of extreme market stress on capital and reserves.
+
+For Level 3 private equity valuations, controllers model sensitivity to +/- 150 basis points shifts in the weighted average cost of capital (WACC) and +/- 50 basis points changes in long-term terminal growth rates. Ind AS 113 also mandates a complete Level 3 roll-forward reconciliation disclosure detailing beginning balances, unrealized gains in P&L and OCI, purchases, sales, and transfers into or out of Level 3.
+
+For Ind AS 109 credit portfolios, controllers stress-test macroeconomic forward-looking scenarios—such as a 200 basis point rise in central bank policy rates combined with a 15% currency depreciation—evaluating the resulting migration of loans from Stage 1 into Stage 2 and the corresponding surge in required P&L credit loss allowances. Furthermore, under Ind AS 109, the simplified approach for operating trade receivables relies on provision matrices grouping receivables into aging buckets, applying historical default loss rates updated for current and forward-looking economic conditions. Corporate controllers must reconcile the movement in allowance accounts from opening to closing balances across all asset classes, ensuring seamless documentation for audit scrutiny."""
+
+part5_say = r"""In Part 5, we execute the integrated Enterprise Financial Controller Suite, verify all financial statement invariants, and celebrate the successful conclusion of Block 7.
+
+Now, inspect our culminating Python Enterprise Financial Controller Suite. This master software platform synthesizes the four modules into an automated corporate accounting engine:
+1. Ind AS 115 Revenue Module:
+- Takes the $100,000 bundled package and standalone selling prices ($75k hardware, $50k cloud).
+- Allocates $60,000 to hardware and $40,000 to cloud based on relative SSP proportions.
+- Reconciles Year 1 recognized revenue of $80,000 ($60,000 hardware at point-in-time + $20,000 cloud over 12 months) and contract liability (deferred revenue) of $20,000.
+2. Ind AS 116 Lease Module:
+- Capitalizes the 5-year lease at 7% IBR with $25k direct costs into an initial lease liability of $492,023.69 and an initial ROU asset of $517,023.69.
+- Computes Year 1 interest expense of $34,441.66 and straight-line depreciation of $103,404.74, yielding a total P&L charge of $137,846.40, with an EBITDA benefit of $120,000.
+3. Ind AS 113 Fair Value Module:
+- Values the Level 3 unquoted investment via 3-year DCF ($591,403.97) and deducts 2% CVA ($11,828.08) to establish fair value of $579,575.89.
+4. Ind AS 109 Credit Risk Module:
+- Evaluates the $2,000,000 corporate credit facility in Stage 2, establishing a lifetime ECL impairment reserve of $68,000 and a net carrying asset of $1,932,000.
+
+Behind each algorithmic routine in the suite lies an unshakeable mathematical proof. The Python class `EnterpriseFinancialControllerSuite` uses strict type hinting and dataclasses to model financial statement line items. The method `process_ind_as_115_revenue` dynamically calculates proportionality weights and partitions deferred liabilities. The method `process_ind_as_116_lease` executes discounted present value compounding across multi-period cash outflows, simultaneously populating the ROU asset sub-ledger and liability amortization schedules. The method `process_ind_as_113_fair_value` applies multi-period discounted cash flow discounting and computes Credit Valuation Adjustments, ensuring compliance with non-performance risk requirements. Finally, `process_ind_as_109_ecl` enforces the forward-looking three-stage credit loss equation ($ECL = EAD \times PD \times LGD$), generating audit-ready credit risk allowances.
+
+As we conclude this culminating Milestone 7 Capstone, reflect on the monumental technical capabilities you have acquired across Block 7. You have mastered the most sophisticated, mathematically rigorous standards in the global accounting profession: Ind AS 115, Ind AS 116, Ind AS 113, and Ind AS 109. You understand how these standards interact on the income statement, balance sheet, and cash flow statement, and you have validated their execution through deterministic Python accounting engines.
+
+This masterclass certifies your readiness to lead financial reporting divisions, design enterprise ERP accounting workflows in SAP S/4HANA and Oracle Cloud, interface authoritatively with Big Four audit partners, and steer multinational corporations through complex capital market transactions with total regulatory confidence and operational poise.
+
+The executive command suite demonstrated today will serve as your blueprint for professional controllership throughout your corporate career. Whether presenting quarterly earnings to institutional investors, defending critical accounting estimates before the board audit committee, or leading an initial public offering (IPO) under SEBI ICDR regulations, you carry the gold standard of technical accounting and corporate financial excellence. As we transition into Block 8, you will expand this foundation into executive share-based compensation under Ind AS 102, corporate income tax and deferred tax asset balancing under Ind AS 12, comprehensive earnings per share dilution modeling under Ind AS 33, and corporate restructuring provisions under Ind AS 37.
+
+Upon execution, every single mathematical assertion executes with 100% precision, validating the end-to-end accounting architecture and culminating in the terminal confirmation string:
+`ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS`."""
+
+day35_lesson = {
+    "coursePrefix": "bcom-accounting",
+    "day": 35,
+    "title": "Milestone 7 Capstone: Enterprise Financial Controller Ind AS Compliance & Complex Financial Statements Suite",
+    "parts": [
+        {
+            "part": 1,
+            "title": "The Strategic Mandate of the Enterprise Financial Controller & Converged Ind AS Governance",
+            "say": part1_say,
+            "code": day35_code,
+            "output": day35_output,
+            "check": {
+                "question": "In modern corporate governance, what is the primary responsibility of the Enterprise Financial Controller regarding converged Ind AS standards?",
+                "options": [
+                    "To ensure that revenue recognition, lease capitalization, fair value measurement, and credit impairment comply with rigorous principle-based standards and pass statutory audit scrutiny",
+                    "To artificially inflate quarterly net profit by keeping all long-term property leases off the balance sheet",
+                    "To refuse to recognize any credit impairment provisions until borrowers enter formal bankruptcy liquidation",
+                    "To eliminate all footnote disclosures from the published annual report to reduce printing costs"
+                ],
+                "answer": 0,
+                "explanation": "The Financial Controller is the ultimate steward of financial reporting integrity, ensuring that complex converged standards (Ind AS 115, 116, 113, 109) are implemented with mathematical and statutory precision."
+            }
+        },
+        {
+            "part": 2,
+            "title": "Module 1: Enterprise Multi-Element Contract Revenue Allocation & Contract Liabilities (Ind AS 115)",
+            "say": part2_say,
+            "code": day35_code,
+            "output": day35_output,
+            "check": {
+                "question": "In the Capstone contract simulation ($100k price, Hardware SSP $75k, Cloud SSP $50k), how much revenue is recognized in Year 1?",
+                "options": [
+                    "$80,000 ($60,000 allocated to hardware recognized at point of delivery + $20,000 for 12 months of cloud service)",
+                    "$100,000 representing the entire cash consideration received at contract inception",
+                    "$50,000 based on an equal 50/50 arbitrary split between hardware and cloud",
+                    "Zero, because revenue cannot be recognized until the full 24-month subscription expires"
+                ],
+                "answer": 0,
+                "explanation": "Hardware receives 75/125 * 100k = $60,000 (recognized at point in time). Cloud receives 50/125 * 100k = $40,000 (recognized over 24 months, so 12 months in Year 1 = $20,000). Total Year 1 revenue = $80,000."
+            }
+        },
+        {
+            "part": 3,
+            "title": "Module 2: ROU Asset Capitalization, P&L Front-Loading & EBITDA Reclassification (Ind AS 116)",
+            "say": part3_say,
+            "code": day35_code,
+            "output": day35_output,
+            "check": {
+                "question": "For the 5-year lease of $120,000/year at 7% IBR with $25k direct costs, what is the initial ROU Asset recognized under Ind AS 116?",
+                "options": [
+                    "$517,023.69 (Initial Lease Liability PV of $492,023.69 + $25,000 initial direct costs)",
+                    "$600,000 representing the undiscounted sum of 5 annual lease payments",
+                    "$120,000 representing the first year's contractual rent installment",
+                    "Zero, because commercial leases are kept completely off-balance-sheet"
+                ],
+                "answer": 0,
+                "explanation": "Initial lease liability = PV of 5 payments of $120k at 7% = $492,023.69. Initial ROU Asset = Initial liability ($492,023.69) + initial direct costs ($25,000) = $517,023.69."
+            }
+        },
+        {
+            "part": 4,
+            "title": "Modules 3 & 4: Level 3 DCF Valuation (Ind AS 113) & Stage 2 ECL Impairment (Ind AS 109)",
+            "say": part4_say,
+            "code": day35_code,
+            "output": day35_output,
+            "check": {
+                "question": "Why does the $2,000,000 corporate credit facility require an ECL allowance of $68,000 under Ind AS 109?",
+                "options": [
+                    "Because covenant breaches triggered a Significant Increase in Credit Risk (Stage 2), mandating Lifetime ECL: $2M * 8.5% PD * 40% LGD = $68,000",
+                    "Because statutory rules require an arbitrary 10% provision on all corporate commercial loans",
+                    "Because the borrower was declared completely bankrupt by the National Company Law Tribunal",
+                    "Because Ind AS 109 strictly prohibits corporate lenders from holding collateral against loans"
+                ],
+                "answer": 0,
+                "explanation": "Covenant breaches signify a Significant Increase in Credit Risk (SICR), moving the loan into Stage 2. Lifetime ECL applies: $2,000,000 * 8.5% PD * 40% LGD = $68,000."
+            }
+        },
+        {
+            "part": 5,
+            "title": "The Grand Milestone 7 Capstone Execution & Enterprise Financial Controllership Certification",
+            "say": part5_say,
+            "code": day35_code,
+            "output": day35_output,
+            "check": {
+                "question": "What is the final confirmation string emitted by the Enterprise Financial Controller Suite upon verifying all financial invariants?",
+                "options": [
+                    "ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS",
+                    "CONVERGED_ACCOUNTING_AUDIT_REJECTED_FAIL",
+                    "FINANCIAL_STATEMENTS_RESTATEMENT_REQUIRED",
+                    "IND_AS_COMPLIANCE_TERMINATED_UNKNOWN"
+                ],
+                "answer": 0,
+                "explanation": "The Milestone 7 Capstone engine validates all assertions across revenue, leases, fair value, and credit impairment, concluding with ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS."
+            }
+        }
+    ]
+}
+
+total_words = 0
+for p in day35_lesson["parts"]:
+    wc = count_words(p["say"])
+    total_words += wc
+    print(f"Day 35 Part {p['part']} words: {wc}")
+
+for p in day35_lesson["parts"]:
+    wc = count_words(p["say"])
+    assert wc >= 580, f"Part {p['part']} word count {wc} < 580"
+
+print(f"Day 35 Total words: {total_words}")
+assert total_words >= 3000, f"Total word count {total_words} < 3000"
+
+with open("scripts/bcom_acc_day35.json", "w", encoding="utf-8") as f:
+    json.dump(day35_lesson, f, indent=2)
+
+print("Saved scripts/bcom_acc_day35.json successfully!")
