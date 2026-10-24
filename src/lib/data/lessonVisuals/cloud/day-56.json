@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 56,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Serverless Event Topology: Amazon EventBridge Bus, Filtering & Rule Routing",
+      "codeHash": "790c12a12a58dd326e636ce1cae00550b11d2d32ee3cbefed4d03c1192136065",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Synchronous Coupling",
+          "badge": "Brittle Rest Calls",
+          "items": [
+            "Direct HTTP calls cause cascading timeouts.",
+            "Connection exhaustion under heavy traffic.",
+            "Producers tightly coupled to consumer endpoints."
+          ]
+        },
+        "right": {
+          "title": "EventBridge Bus",
+          "badge": "Decoupled Routing",
+          "items": [
+            "Asynchronous serverless event bus ingestion.",
+            "Content-based declarative filter rules.",
+            "Eliminates unnecessary downstream invocations."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Direct synchronous HTTP calls risk cascading service timeouts."
+          },
+          {
+            "at": "say2",
+            "annotation": "EventBridge decouples publishers from consumers via event buses."
+          },
+          {
+            "at": "example",
+            "annotation": "Router directs standard and vip orders to appropriate queues."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Declarative filter rules eliminate unnecessary compute invocations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "High-Fanout Broadcasts: Amazon SNS Topic Subscriptions & Filter Policies",
+      "codeHash": "eb78c6e7b2d700444f4ce0e8e6bd91fd94b86144382d8b31531826ddcc33b461",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Point-to-Point Notify",
+          "badge": "High Network Latency",
+          "items": [
+            "Sequential notification calls inflate latency.",
+            "Adding new consumers requires code changes.",
+            "Single subscriber failure impacts all endpoints."
+          ]
+        },
+        "right": {
+          "title": "SNS Fan-Out Hub",
+          "badge": "Instant Broadcast",
+          "items": [
+            "Broadcasts events to thousands of queues in parallel.",
+            "Subscription filter policies route relevant data.",
+            "Raw message delivery strips envelope overhead."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Sequential consumer notifications introduce high transaction latency."
+          },
+          {
+            "at": "say2",
+            "annotation": "SNS topic fans out broadcast messages to multiple endpoints."
+          },
+          {
+            "at": "example",
+            "annotation": "Topic applies attribute filter policies to route dispatch events."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Subscription filters ensure subscribers receive only relevant data."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Ordered Processing: Amazon SQS FIFO Queues, Message Groups & Deduplication",
+      "codeHash": "e1e5fe40f189274af9385092f719371d5f0f57b81871fe1e8fefafb4bf5e05e5",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Standard Queues",
+          "badge": "Out-of-Order Risk",
+          "items": [
+            "At-least-once delivery can introduce duplicates.",
+            "Messages may arrive out of chronological order.",
+            "State machines risk data corruption on retries."
+          ]
+        },
+        "right": {
+          "title": "SQS FIFO Queues",
+          "badge": "Strict Order & Dedup",
+          "items": [
+            "Guarantees exact First-In First-Out delivery.",
+            "MessageGroupId preserves order per account.",
+            "Automatic deduplication discards network retries."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Standard queues risk out of order delivery and duplicate messages."
+          },
+          {
+            "at": "say2",
+            "annotation": "FIFO queues guarantee strict chronological message delivery order."
+          },
+          {
+            "at": "example",
+            "annotation": "Queue executes sequential transactions with message deduplication."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Message groups enable parallel processing across independent accounts."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Fault Isolation: SQS Dead Letter Queues, Redrive Mechanics & Poison-Pill Defense",
+      "codeHash": "a608c2517f0e7a49cafec37bcdc3b835f4659cb31d0f8c765e3a62f046c8150f",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unmanaged Retries",
+          "badge": "Poison Pill Blockage",
+          "items": [
+            "Malformed messages crash workers repeatedly.",
+            "Infinite retry loops exhaust compute resources.",
+            "Healthy messages trapped behind failing payloads."
+          ]
+        },
+        "right": {
+          "title": "Dead Letter Queue",
+          "badge": "Poison Isolation",
+          "items": [
+            "Evicts failing messages after max receive threshold.",
+            "Isolates poison pills to protect queue throughput.",
+            "Automated redrive tasks reprocess patched items."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Malformed poison pill payloads cause repeated consumer worker crashes."
+          },
+          {
+            "at": "say2",
+            "annotation": "Dead letter queues isolate unprocessable messages after retry limits."
+          },
+          {
+            "at": "example",
+            "annotation": "Queue isolates poison payload while allowing healthy items to proceed."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Automated redrive tasks return quarantined messages once resolved."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Enterprise Synthesis: End-to-End Serverless Event Pipeline & Verification",
+      "codeHash": "e84ac07fc1cd523b1cc6e660cbccf388c7316d6d3e51f346d0d3f9481d34fbeb",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Monolithic Pipeline",
+          "badge": "Cascading Failures",
+          "items": [
+            "Direct component coupling magnifies downtime.",
+            "Traffic spikes overwhelm downstream databases.",
+            "Lacks end-to-end tracing and verification token."
+          ]
+        },
+        "right": {
+          "title": "Choreographed Event Tier",
+          "badge": "Resilient Synthesis",
+          "items": [
+            "EventBridge, SNS, SQS FIFO, and DLQs synthesized.",
+            "Backpressure buffering absorbs sudden order spikes.",
+            "Emits cryptographic confirmation token upon test."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Direct component coupling causes cascading failures under heavy load."
+          },
+          {
+            "at": "say2",
+            "annotation": "Choreographed event architecture decouples producers from consumers."
+          },
+          {
+            "at": "example",
+            "annotation": "Pipeline synthesizes routing fanout buffering and fault isolation."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Synthesis confirms end to end pipeline operational and emits token."
+          }
+        ]
+      }
+    }
+  ]
+}
