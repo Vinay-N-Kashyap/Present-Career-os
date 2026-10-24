@@ -1,0 +1,291 @@
+{
+  "prefix": "bcom-finance",
+  "day": 42,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Black-Scholes-Merton Mechanics",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: First-Order Greeks: Delta (Del",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Second-Order & Cross Greeks: G",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Dynamic Delta-Gamma-Vega Neutr",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Production Greeks Hedging Engi",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}

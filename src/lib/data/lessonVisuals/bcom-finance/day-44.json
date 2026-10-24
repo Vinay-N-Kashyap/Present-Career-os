@@ -1,0 +1,291 @@
+{
+  "prefix": "bcom-finance",
+  "day": 44,
+  "visuals": [
+    {
+      "step": "part-1",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Path-Dependent Exotics: Barrie",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-2",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Asian Options & Averaging Mech",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-3",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Structured Equity-Linked Notes",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-4",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Volatility as an Asset Class: ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "step": "part-5",
+      "template": "ledger-sheet",
+      "data": {
+        "title": "Risk Ledger: Production Exotic Structuring ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000.0,
+          "totalCredit": 1000000.0,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000.0,
+              "credit": 0.0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0.0,
+              "credit": 1000000.0
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token."
+          }
+        ]
+      },
+      "codeBindings": [
+        {
+          "sourceCodeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+          "variablePath": "engine.run",
+          "highlightLines": [
+            1,
+            10
+          ]
+        }
+      ]
+    }
+  ]
+}
