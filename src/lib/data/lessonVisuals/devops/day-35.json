@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 35,
+  "promptSha": "ebb19a5fdaa131dd11a407cae35ed38c01a8a8d2ac5da7681e7d11ed086ed61b",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Argo Rollouts Architecture: Canary Traffic Splitting, AnalysisTemplates & Automated Weight Promotion",
+      "codeHash": "74e29fb008dc41ca072bc5df3c4f5c570b6d7310e1600e03189d7e013f6865dc",
+      "spec": {
+        "template": "compare",
+        "title": "Argo Rollouts canary progressive delivery",
+        "leftLabel": "Stable Production ReplicaSet",
+        "rightLabel": "Canary Rollout Stage",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard rolling updates replace pods blindly regardless of errors.",
+            "left": {
+              "code": "standardDeployment",
+              "result": {
+                "text": "unaware"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "argoRollout",
+              "result": {
+                "text": "metric-driven"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Canary deployments split live traffic across independent replica sets.",
+            "left": {
+              "code": "stableReplicaSet",
+              "result": {
+                "text": "baseline"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "canaryReplicaSet",
+              "result": {
+                "text": "candidate"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Banking application aborted canary release when error rates spiked.",
+            "left": {
+              "code": "canarySpike",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "automatedRollback",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Supervisor immediately aborts rollout when analysis fails.",
+            "left": {
+              "code": "analysisOutcome",
+              "result": {
+                "text": "failed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "trafficWeight",
+              "result": {
+                "text": "zeroed"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Argo Rollouts canary progressive delivery",
+        "leftLabel": "Stable Production ReplicaSet",
+        "rightLabel": "Canary Rollout Stage",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard rolling updates replace pods blindly regardless of errors.",
+            "left": {
+              "code": "standardDeployment",
+              "result": {
+                "text": "unaware"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "argoRollout",
+              "result": {
+                "text": "metric-driven"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Canary deployments split live traffic across independent replica sets.",
+            "left": {
+              "code": "stableReplicaSet",
+              "result": {
+                "text": "baseline"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "canaryReplicaSet",
+              "result": {
+                "text": "candidate"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Banking application aborted canary release when error rates spiked.",
+            "left": {
+              "code": "canarySpike",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "automatedRollback",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Supervisor immediately aborts rollout when analysis fails.",
+            "left": {
+              "code": "analysisOutcome",
+              "result": {
+                "text": "failed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "trafficWeight",
+              "result": {
+                "text": "zeroed"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Observability Integration: Prometheus Metric Analysis, Webhook Notifications & Instant Rollback Mitigation",
+      "codeHash": "ee880d779d3173a84d4e36d9e0a3b043d3ff63eb15b1cbb15990e07c0738c771",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus automated metric analysis and rollback",
+        "leftLabel": "Canary Telemetry Stream",
+        "rightLabel": "Automated Mitigation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Progressive delivery relies on rigorous automated observability metrics.",
+            "left": {
+              "code": "canaryTelemetry",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "decisionEngine",
+              "result": {
+                "text": "automated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Breached thresholds trigger instantaneous traffic restoration sequence.",
+            "left": {
+              "code": "breachedThreshold",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "trafficRestoration",
+              "result": {
+                "text": "sub-second"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Analysis template detected latency regression and rolled back version.",
+            "left": {
+              "code": "latencyRegression",
+              "result": {
+                "text": "flagged"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "stableVersion",
+              "result": {
+                "text": "active"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify that abortTriggered is false and restored version promotes.",
+            "left": {
+              "code": "measuredErrorRate",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "rolloutPromotion",
+              "result": {
+                "text": "promoted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Prometheus automated metric analysis and rollback",
+        "leftLabel": "Canary Telemetry Stream",
+        "rightLabel": "Automated Mitigation",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Progressive delivery relies on rigorous automated observability metrics.",
+            "left": {
+              "code": "canaryTelemetry",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "decisionEngine",
+              "result": {
+                "text": "automated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Breached thresholds trigger instantaneous traffic restoration sequence.",
+            "left": {
+              "code": "breachedThreshold",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "trafficRestoration",
+              "result": {
+                "text": "sub-second"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Analysis template detected latency regression and rolled back version.",
+            "left": {
+              "code": "latencyRegression",
+              "result": {
+                "text": "flagged"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "stableVersion",
+              "result": {
+                "text": "active"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify that abortTriggered is false and restored version promotes.",
+            "left": {
+              "code": "measuredErrorRate",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "rolloutPromotion",
+              "result": {
+                "text": "promoted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Secret Management in GitOps: External Secrets Operator, AWS Secrets Manager & SealedSecrets Cryptography",
+      "codeHash": "b54a2c793d358b813e4c8ca229e6061e0541681ab25c483a57f21841946de48e",
+      "spec": {
+        "template": "compare",
+        "title": "External Secrets Operator vault orchestration",
+        "leftLabel": "Cloud Provider Secret Vault",
+        "rightLabel": "Native Kubernetes Secret",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Committing raw secret credentials to Git creates security vulnerabilities.",
+            "left": {
+              "code": "cleartextSecrets",
+              "result": {
+                "text": "unsecured"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "vaultedSecrets",
+              "result": {
+                "text": "encrypted"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "External secrets operator synchronizes credentials into cluster RAM.",
+            "left": {
+              "code": "secretStore",
+              "result": {
+                "text": "authenticated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "clusterSecret",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform synchronized database credentials with zero exposure.",
+            "left": {
+              "code": "vaultCredentials",
+              "result": {
+                "text": "rotated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "gitRepositories",
+              "result": {
+                "text": "clean"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Updating vault secret versions syncs payload to cluster secret store.",
+            "left": {
+              "code": "vaultUpdate",
+              "result": {
+                "text": "updated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "k8sSecretStore",
+              "result": {
+                "text": "refreshed"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "External Secrets Operator vault orchestration",
+        "leftLabel": "Cloud Provider Secret Vault",
+        "rightLabel": "Native Kubernetes Secret",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Committing raw secret credentials to Git creates security vulnerabilities.",
+            "left": {
+              "code": "cleartextSecrets",
+              "result": {
+                "text": "unsecured"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "vaultedSecrets",
+              "result": {
+                "text": "encrypted"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "External secrets operator synchronizes credentials into cluster RAM.",
+            "left": {
+              "code": "secretStore",
+              "result": {
+                "text": "authenticated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "clusterSecret",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform synchronized database credentials with zero exposure.",
+            "left": {
+              "code": "vaultCredentials",
+              "result": {
+                "text": "rotated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "gitRepositories",
+              "result": {
+                "text": "clean"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Updating vault secret versions syncs payload to cluster secret store.",
+            "left": {
+              "code": "vaultUpdate",
+              "result": {
+                "text": "updated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "k8sSecretStore",
+              "result": {
+                "text": "refreshed"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Cluster Disaster Recovery: GitOps-Driven Failover, Velero Backup Restores & DNS Geo-Routing Steering",
+      "codeHash": "a69c3a6a5c8a756a59a2f2aec16ad3a2a23dc4594b547c884884bcb67139b0e8",
+      "spec": {
+        "template": "compare",
+        "title": "Multi-region disaster recovery and DNS steering",
+        "leftLabel": "Failed Primary Region",
+        "rightLabel": "Active Standby Cluster",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Platforms must survive total regional outages through disaster recovery.",
+            "left": {
+              "code": "catastrophicOutage",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "disasterRecovery",
+              "result": {
+                "text": "resilient"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Backup operators restore volume snapshots and persistent state data.",
+            "left": {
+              "code": "veleroRestore",
+              "result": {
+                "text": "hydrated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "volumeSnapshots",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Healthcare system shifted traffic to secondary region during disaster.",
+            "left": {
+              "code": "primaryOutage",
+              "result": {
+                "text": "diverted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "secondaryTraffic",
+              "result": {
+                "text": "operational"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Healthy primary clusters anchor traffic without failover disruption.",
+            "left": {
+              "code": "primaryHealth",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trafficSteering",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multi-region disaster recovery and DNS steering",
+        "leftLabel": "Failed Primary Region",
+        "rightLabel": "Active Standby Cluster",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Platforms must survive total regional outages through disaster recovery.",
+            "left": {
+              "code": "catastrophicOutage",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "disasterRecovery",
+              "result": {
+                "text": "resilient"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Backup operators restore volume snapshots and persistent state data.",
+            "left": {
+              "code": "veleroRestore",
+              "result": {
+                "text": "hydrated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "volumeSnapshots",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Healthcare system shifted traffic to secondary region during disaster.",
+            "left": {
+              "code": "primaryOutage",
+              "result": {
+                "text": "diverted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "secondaryTraffic",
+              "result": {
+                "text": "operational"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Healthy primary clusters anchor traffic without failover disruption.",
+            "left": {
+              "code": "primaryHealth",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "trafficSteering",
+              "result": {
+                "text": "stable"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 7 Capstone Synthesis: Enterprise Zero-Trust GitOps Platform Audit & Production Readiness Certification",
+      "codeHash": "665f9976577fb774b341d71a0676048ff8f34da72742ef0d96666c51ffbd1d3c",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone seven grand capstone platform audit",
+        "leftLabel": "Ten Architecture Controls",
+        "rightLabel": "Accredited Zero Trust",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synthesis verifies mastery across cloud native systems architecture.",
+            "left": {
+              "code": "systemsMastery",
+              "result": {
+                "text": "synthesized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "platformArchitecture",
+              "result": {
+                "text": "accredited"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated scorecards verify platform integrity and zero trust controls.",
+            "left": {
+              "code": "platformScorecard",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "securityPosture",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise audit verified platform controls achieving accreditation.",
+            "left": {
+              "code": "platformAudit",
+              "result": {
+                "text": "conducted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "accreditationScore",
+              "result": {
+                "text": "perfect"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Failing any architecture pillar revokes production accreditation score.",
+            "left": {
+              "code": "pillarVerification",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "certificationStatus",
+              "result": {
+                "text": "governed"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone seven grand capstone platform audit",
+        "leftLabel": "Ten Architecture Controls",
+        "rightLabel": "Accredited Zero Trust",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Synthesis verifies mastery across cloud native systems architecture.",
+            "left": {
+              "code": "systemsMastery",
+              "result": {
+                "text": "synthesized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "platformArchitecture",
+              "result": {
+                "text": "accredited"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Automated scorecards verify platform integrity and zero trust controls.",
+            "left": {
+              "code": "platformScorecard",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "securityPosture",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise audit verified platform controls achieving accreditation.",
+            "left": {
+              "code": "platformAudit",
+              "result": {
+                "text": "conducted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "accreditationScore",
+              "result": {
+                "text": "perfect"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Failing any architecture pillar revokes production accreditation score.",
+            "left": {
+              "code": "pillarVerification",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "certificationStatus",
+              "result": {
+                "text": "governed"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

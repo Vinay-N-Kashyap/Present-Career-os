@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 31,
+  "promptSha": "aacbd56119d2ee0d06bb44f6e6e0ba7bc5bb5143d661c4d03376b6baf86315e4",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Container Storage Mechanics: OverlayFS Layers, Copy-on-Write Inodes & Upper Lower Directory Merging",
+      "codeHash": "9eee06cb0752354507b44b2f848cca8a5e161c91712f1642c0d1b13af8727d25",
+      "spec": {
+        "template": "compare",
+        "title": "OverlayFS upper and lower directory comparison",
+        "leftLabel": "Read-Only Lower Directory",
+        "rightLabel": "Mutable Upper Directory",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linux containers rely on union filesystem drivers to assemble directories.",
+            "left": {
+              "code": "lowerdirLayers",
+              "result": {
+                "text": "immutable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overlayFsDriver",
+              "result": {
+                "text": "runtime"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Container engine lower layers are strictly read only on host storage.",
+            "left": {
+              "code": "imageLayers",
+              "result": {
+                "text": "read-only"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hostFilesystem",
+              "result": {
+                "text": "shared"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Shifting large dataset files to external volume mounts avoids penalty.",
+            "left": {
+              "code": "datasetStorage",
+              "result": {
+                "text": "external"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "volumeMounts",
+              "result": {
+                "text": "zero-cow"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Adding large memory files triggers duplicate allocation in upper layer.",
+            "left": {
+              "code": "lowerMemoryFile",
+              "result": {
+                "text": "allocated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "upperDuplication",
+              "result": {
+                "text": "copied"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "OverlayFS upper and lower directory comparison",
+        "leftLabel": "Read-Only Lower Directory",
+        "rightLabel": "Mutable Upper Directory",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linux containers rely on union filesystem drivers to assemble directories.",
+            "left": {
+              "code": "lowerdirLayers",
+              "result": {
+                "text": "immutable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overlayFsDriver",
+              "result": {
+                "text": "runtime"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Container engine lower layers are strictly read only on host storage.",
+            "left": {
+              "code": "imageLayers",
+              "result": {
+                "text": "read-only"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hostFilesystem",
+              "result": {
+                "text": "shared"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Shifting large dataset files to external volume mounts avoids penalty.",
+            "left": {
+              "code": "datasetStorage",
+              "result": {
+                "text": "external"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "volumeMounts",
+              "result": {
+                "text": "zero-cow"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Adding large memory files triggers duplicate allocation in upper layer.",
+            "left": {
+              "code": "lowerMemoryFile",
+              "result": {
+                "text": "allocated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "upperDuplication",
+              "result": {
+                "text": "copied"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "BuildKit Pipeline Optimization: Secret Mounts, SSH Agent Forwarding & Multi-Platform Cache Exporting",
+      "codeHash": "b9f7bc15bf86aacb35b33a6feef8140a174cba3c3d4cf75d21993d939ca5808b",
+      "spec": {
+        "template": "compare",
+        "title": "BuildKit parallel execution and secret mounts",
+        "leftLabel": "Legacy Docker Builder",
+        "rightLabel": "Modern BuildKit LLB",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Legacy Docker builders executed instructions sequentially line by line.",
+            "left": {
+              "code": "legacyBuilder",
+              "result": {
+                "text": "sequential"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "buildKitEngine",
+              "result": {
+                "text": "parallel"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Mounting private tokens directly into run instructions leaves zero trace.",
+            "left": {
+              "code": "dockerfileArgs",
+              "result": {
+                "text": "leaked"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "secretMounts",
+              "result": {
+                "text": "in-memory"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform microservices cut build duration using remote caching.",
+            "left": {
+              "code": "legacyDuration",
+              "result": {
+                "text": "slow"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "cachedDuration",
+              "result": {
+                "text": "ninety-sec"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Uncached stages extend execution while preserving zero secret exposure.",
+            "left": {
+              "code": "stageDuration",
+              "result": {
+                "text": "extended"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "secretExposure",
+              "result": {
+                "text": "zero"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "BuildKit parallel execution and secret mounts",
+        "leftLabel": "Legacy Docker Builder",
+        "rightLabel": "Modern BuildKit LLB",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Legacy Docker builders executed instructions sequentially line by line.",
+            "left": {
+              "code": "legacyBuilder",
+              "result": {
+                "text": "sequential"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "buildKitEngine",
+              "result": {
+                "text": "parallel"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Mounting private tokens directly into run instructions leaves zero trace.",
+            "left": {
+              "code": "dockerfileArgs",
+              "result": {
+                "text": "leaked"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "secretMounts",
+              "result": {
+                "text": "in-memory"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform microservices cut build duration using remote caching.",
+            "left": {
+              "code": "legacyDuration",
+              "result": {
+                "text": "slow"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "cachedDuration",
+              "result": {
+                "text": "ninety-sec"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Uncached stages extend execution while preserving zero secret exposure.",
+            "left": {
+              "code": "stageDuration",
+              "result": {
+                "text": "extended"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "secretExposure",
+              "result": {
+                "text": "zero"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rootless Container Engine Security: User Namespaces, subuid subgid Mapping & Slirp4netns Network Emulation",
+      "codeHash": "39c4acf620782d7c1e5c050d4b07511ff812e41a0abbaa9fcd41f7395ba8a3da",
+      "spec": {
+        "template": "compare",
+        "title": "Rootless user namespace credential mapping",
+        "leftLabel": "Host User Credentials",
+        "rightLabel": "Container Namespace",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional container runtimes execute with full host root privileges.",
+            "left": {
+              "code": "dockerDaemon",
+              "result": {
+                "text": "host-root"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "rootlessDaemon",
+              "result": {
+                "text": "unprivileged"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rootless container technology allows unprivileged users to run daemons.",
+            "left": {
+              "code": "standardUser",
+              "result": {
+                "text": "unprivileged"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "userNamespace",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Shared student laboratory prevented breakout using rootless podman.",
+            "left": {
+              "code": "studentExploit",
+              "result": {
+                "text": "contained"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hostSecurity",
+              "result": {
+                "text": "protected"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Target host file owner permissions determine container access rights.",
+            "left": {
+              "code": "fileOwnership",
+              "result": {
+                "text": "validated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kernelAccess",
+              "result": {
+                "text": "restricted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Rootless user namespace credential mapping",
+        "leftLabel": "Host User Credentials",
+        "rightLabel": "Container Namespace",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional container runtimes execute with full host root privileges.",
+            "left": {
+              "code": "dockerDaemon",
+              "result": {
+                "text": "host-root"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "rootlessDaemon",
+              "result": {
+                "text": "unprivileged"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Rootless container technology allows unprivileged users to run daemons.",
+            "left": {
+              "code": "standardUser",
+              "result": {
+                "text": "unprivileged"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "userNamespace",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Shared student laboratory prevented breakout using rootless podman.",
+            "left": {
+              "code": "studentExploit",
+              "result": {
+                "text": "contained"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "hostSecurity",
+              "result": {
+                "text": "protected"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Target host file owner permissions determine container access rights.",
+            "left": {
+              "code": "fileOwnership",
+              "result": {
+                "text": "validated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kernelAccess",
+              "result": {
+                "text": "restricted"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distroless and Scratch Minimal Runtimes: Stripping Package Managers, Dynamic Linkers & Hermetic Packaging",
+      "codeHash": "3dcc2219d3a26b660f5b6af8a8a70c8f3a76d547291e9ca3a6781135de6fb18a",
+      "spec": {
+        "template": "compare",
+        "title": "Distroless runtime minimal image footprint",
+        "leftLabel": "General Distribution Image",
+        "rightLabel": "Hardened Distroless Base",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "General purpose distribution images package unnecessary utility binaries.",
+            "left": {
+              "code": "ubuntuBase",
+              "result": {
+                "text": "bloated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "distrolessBase",
+              "result": {
+                "text": "minimal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Absence of shell binaries prevents remote command injection attacks.",
+            "left": {
+              "code": "shellPresent",
+              "result": {
+                "text": "vulnerable"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "zeroShells",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Payment gateway microservice thwarted intrusion by omitting shells.",
+            "left": {
+              "code": "intrusionAttempt",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "distrolessNode",
+              "result": {
+                "text": "protected"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Auditor inspects container manifest to detect active shell presence.",
+            "left": {
+              "code": "manifestAudit",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "securityVerdict",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Distroless runtime minimal image footprint",
+        "leftLabel": "General Distribution Image",
+        "rightLabel": "Hardened Distroless Base",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "General purpose distribution images package unnecessary utility binaries.",
+            "left": {
+              "code": "ubuntuBase",
+              "result": {
+                "text": "bloated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "distrolessBase",
+              "result": {
+                "text": "minimal"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Absence of shell binaries prevents remote command injection attacks.",
+            "left": {
+              "code": "shellPresent",
+              "result": {
+                "text": "vulnerable"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "zeroShells",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Payment gateway microservice thwarted intrusion by omitting shells.",
+            "left": {
+              "code": "intrusionAttempt",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "distrolessNode",
+              "result": {
+                "text": "protected"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Auditor inspects container manifest to detect active shell presence.",
+            "left": {
+              "code": "manifestAudit",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "securityVerdict",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Container Security Profiling: Seccomp BPF Filters, AppArmor Profiles & Linux Capabilities Drop",
+      "codeHash": "e3af6904ff2d60077e91d7ba44737bf408de2b4af5302e0fff20e3e026e2359f",
+      "spec": {
+        "template": "compare",
+        "title": "Seccomp BPF filter and capability restrictions",
+        "leftLabel": "Default System Calls",
+        "rightLabel": "Filtered Seccomp BPF",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard Linux kernel exposes numerous system calls to applications.",
+            "left": {
+              "code": "rawKernelCalls",
+              "result": {
+                "text": "unrestricted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "seccompFilter",
+              "result": {
+                "text": "restricted"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Seccomp inspects system calls to intercept unauthorized invocations.",
+            "left": {
+              "code": "blockedSyscalls",
+              "result": {
+                "text": "killed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "whitelistedCalls",
+              "result": {
+                "text": "allowed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Strict seccomp filters protected containers from memory vulnerability.",
+            "left": {
+              "code": "dirtyCowExploit",
+              "result": {
+                "text": "neutralized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bpfProtection",
+              "result": {
+                "text": "shielded"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Hardened seccomp profile immediately terminates unauthorized calls.",
+            "left": {
+              "code": "evaluatedSyscall",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "defenseAction",
+              "result": {
+                "text": "terminated"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Seccomp BPF filter and capability restrictions",
+        "leftLabel": "Default System Calls",
+        "rightLabel": "Filtered Seccomp BPF",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Standard Linux kernel exposes numerous system calls to applications.",
+            "left": {
+              "code": "rawKernelCalls",
+              "result": {
+                "text": "unrestricted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "seccompFilter",
+              "result": {
+                "text": "restricted"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Seccomp inspects system calls to intercept unauthorized invocations.",
+            "left": {
+              "code": "blockedSyscalls",
+              "result": {
+                "text": "killed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "whitelistedCalls",
+              "result": {
+                "text": "allowed"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Strict seccomp filters protected containers from memory vulnerability.",
+            "left": {
+              "code": "dirtyCowExploit",
+              "result": {
+                "text": "neutralized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "bpfProtection",
+              "result": {
+                "text": "shielded"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Hardened seccomp profile immediately terminates unauthorized calls.",
+            "left": {
+              "code": "evaluatedSyscall",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "defenseAction",
+              "result": {
+                "text": "terminated"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 34,
+  "promptSha": "5af3a5ca29f66b82c44eb5d974b324c27aa510743d5fc920caf47296c2e37592",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Declarative GitOps Core Tenets: Git as Single Source of Truth, Pull-Based Reconciliation & Drift Detection",
+      "codeHash": "efff47095412f7f84c9c142924036a003715e00c5456284399ea07e67aff7eb5",
+      "spec": {
+        "template": "compare",
+        "title": "GitOps declarative three-way merge reconciliation",
+        "leftLabel": "Live Cluster Drift",
+        "rightLabel": "Git Source of Truth",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional push pipelines require high privilege cluster credentials.",
+            "left": {
+              "code": "pushPipeline",
+              "result": {
+                "text": "vulnerable"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "pullGitOps",
+              "result": {
+                "text": "hardened"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Three way merge algorithm compares desired Git state with live state.",
+            "left": {
+              "code": "liveClusterState",
+              "result": {
+                "text": "inspected"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "gitDesiredState",
+              "result": {
+                "text": "reconciled"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Operator corrected manual live modifications via automated healing.",
+            "left": {
+              "code": "manualDrift",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gitRestoration",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Set live replicas to match git desired state and observe sync.",
+            "left": {
+              "code": "desiredReplicas",
+              "result": {
+                "text": "aligned"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reconciliationState",
+              "result": {
+                "text": "in-sync"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "GitOps declarative three-way merge reconciliation",
+        "leftLabel": "Live Cluster Drift",
+        "rightLabel": "Git Source of Truth",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Traditional push pipelines require high privilege cluster credentials.",
+            "left": {
+              "code": "pushPipeline",
+              "result": {
+                "text": "vulnerable"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "pullGitOps",
+              "result": {
+                "text": "hardened"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Three way merge algorithm compares desired Git state with live state.",
+            "left": {
+              "code": "liveClusterState",
+              "result": {
+                "text": "inspected"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "gitDesiredState",
+              "result": {
+                "text": "reconciled"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Operator corrected manual live modifications via automated healing.",
+            "left": {
+              "code": "manualDrift",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gitRestoration",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Set live replicas to match git desired state and observe sync.",
+            "left": {
+              "code": "desiredReplicas",
+              "result": {
+                "text": "aligned"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reconciliationState",
+              "result": {
+                "text": "in-sync"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ArgoCD ApplicationSet & App-of-Apps Pattern: Dynamic Cluster Generators & Multi-Environment Templating",
+      "codeHash": "255b0aee20a7e43dd01372d31ef9eb9985abc8aa1dea4a8b5b6be181ad817ed1",
+      "spec": {
+        "template": "compare",
+        "title": "ArgoCD ApplicationSet Cartesian matrix generator",
+        "leftLabel": "Target Cluster Registry",
+        "rightLabel": "Automated Applications",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managing individual application manifests manually is unsustainable.",
+            "left": {
+              "code": "manualManifests",
+              "result": {
+                "text": "repetitive"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "applicationSets",
+              "result": {
+                "text": "automated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Matrix generator combines cluster lists with microservice manifests.",
+            "left": {
+              "code": "clusterGenerator",
+              "result": {
+                "text": "discovered"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "matrixProduct",
+              "result": {
+                "text": "templated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Media platform deployed recommendation engines across global fleet.",
+            "left": {
+              "code": "globalClusters",
+              "result": {
+                "text": "hydrated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "deployedServices",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add cluster target to generator and verify matrix scales.",
+            "left": {
+              "code": "clusterRegistry",
+              "result": {
+                "text": "expanded"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "generatedApplications",
+              "result": {
+                "text": "scaled"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ArgoCD ApplicationSet Cartesian matrix generator",
+        "leftLabel": "Target Cluster Registry",
+        "rightLabel": "Automated Applications",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managing individual application manifests manually is unsustainable.",
+            "left": {
+              "code": "manualManifests",
+              "result": {
+                "text": "repetitive"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "applicationSets",
+              "result": {
+                "text": "automated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Matrix generator combines cluster lists with microservice manifests.",
+            "left": {
+              "code": "clusterGenerator",
+              "result": {
+                "text": "discovered"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "matrixProduct",
+              "result": {
+                "text": "templated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Media platform deployed recommendation engines across global fleet.",
+            "left": {
+              "code": "globalClusters",
+              "result": {
+                "text": "hydrated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "deployedServices",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Add cluster target to generator and verify matrix scales.",
+            "left": {
+              "code": "clusterRegistry",
+              "result": {
+                "text": "expanded"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "generatedApplications",
+              "result": {
+                "text": "scaled"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kustomize Architecture: Overlays, Strategic Merge Patches, JSON 6902 Patches & ConfigMap Generator Hashes",
+      "codeHash": "ea6aafc2e1100ac1ef57d1d0094f97d325a914eaa2813463bd14a1277c2c01de",
+      "spec": {
+        "template": "compare",
+        "title": "Kustomize strategic merge overlays and hashing",
+        "leftLabel": "Base Deployment Manifest",
+        "rightLabel": "Environment Overlay",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managing configurations across diverse environments poses challenges.",
+            "left": {
+              "code": "environmentConfigs",
+              "result": {
+                "text": "diverse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "kustomizeEngine",
+              "result": {
+                "text": "declarative"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Strategic merge patches override specific replica fields cleanly.",
+            "left": {
+              "code": "baseReplicas",
+              "result": {
+                "text": "defaults"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "overlayReplicas",
+              "result": {
+                "text": "overridden"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform updated logging configurations across environments.",
+            "left": {
+              "code": "baseEdits",
+              "result": {
+                "text": "centralized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overlayPropagation",
+              "result": {
+                "text": "harmonized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Staging overlays generate distinct environment configuration files.",
+            "left": {
+              "code": "overlayDefinition",
+              "result": {
+                "text": "synthesized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "environmentArtifact",
+              "result": {
+                "text": "customized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kustomize strategic merge overlays and hashing",
+        "leftLabel": "Base Deployment Manifest",
+        "rightLabel": "Environment Overlay",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Managing configurations across diverse environments poses challenges.",
+            "left": {
+              "code": "environmentConfigs",
+              "result": {
+                "text": "diverse"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "kustomizeEngine",
+              "result": {
+                "text": "declarative"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Strategic merge patches override specific replica fields cleanly.",
+            "left": {
+              "code": "baseReplicas",
+              "result": {
+                "text": "defaults"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "overlayReplicas",
+              "result": {
+                "text": "overridden"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Fintech platform updated logging configurations across environments.",
+            "left": {
+              "code": "baseEdits",
+              "result": {
+                "text": "centralized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "overlayPropagation",
+              "result": {
+                "text": "harmonized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Staging overlays generate distinct environment configuration files.",
+            "left": {
+              "code": "overlayDefinition",
+              "result": {
+                "text": "synthesized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "environmentArtifact",
+              "result": {
+                "text": "customized"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Helm 3 OCI Registries & Chart Hooks: Pre-Install Database Schema Migrations & Automated Rollback Triggers",
+      "codeHash": "0cf7bb8fe21bd6a1c5c69db029fb5166bc0e231bf51ab4275e96f7d2646f311c",
+      "spec": {
+        "template": "compare",
+        "title": "Helm OCI packaging and pre-upgrade hooks",
+        "leftLabel": "Upstream Chart Artifact",
+        "rightLabel": "Pre-Upgrade Hook Job",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Helm package manager distributes software across cloud native ecosystem.",
+            "left": {
+              "code": "helmCharts",
+              "result": {
+                "text": "packaged"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ociRegistries",
+              "result": {
+                "text": "versioned"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Lifecycle hooks execute database migrations before workloads boot.",
+            "left": {
+              "code": "preUpgradeHook",
+              "result": {
+                "text": "executed"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "schemaMigration",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Billing system aborted upgrade and rolled back after migration error.",
+            "left": {
+              "code": "migrationFailure",
+              "result": {
+                "text": "caught"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "atomicRollback",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Failed schema migrations immediately trigger atomic release rollbacks.",
+            "left": {
+              "code": "jobOutcome",
+              "result": {
+                "text": "failed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "releaseRollback",
+              "result": {
+                "text": "reverted"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Helm OCI packaging and pre-upgrade hooks",
+        "leftLabel": "Upstream Chart Artifact",
+        "rightLabel": "Pre-Upgrade Hook Job",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Helm package manager distributes software across cloud native ecosystem.",
+            "left": {
+              "code": "helmCharts",
+              "result": {
+                "text": "packaged"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "ociRegistries",
+              "result": {
+                "text": "versioned"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "Lifecycle hooks execute database migrations before workloads boot.",
+            "left": {
+              "code": "preUpgradeHook",
+              "result": {
+                "text": "executed"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "schemaMigration",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Billing system aborted upgrade and rolled back after migration error.",
+            "left": {
+              "code": "migrationFailure",
+              "result": {
+                "text": "caught"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "atomicRollback",
+              "result": {
+                "text": "restored"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Failed schema migrations immediately trigger atomic release rollbacks.",
+            "left": {
+              "code": "jobOutcome",
+              "result": {
+                "text": "failed"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "releaseRollback",
+              "result": {
+                "text": "reverted"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ArgoCD Security & RBAC Hardening: Project Isolation, Repository Credentials Vault & Automated Sync Windows",
+      "codeHash": "5a87e694c75c58a61c5c4234ee305f8cc25886fd2356352ab0c4f8e18c1dcb18",
+      "spec": {
+        "template": "compare",
+        "title": "ArgoCD AppProject isolation and sync windows",
+        "leftLabel": "Project Security Policies",
+        "rightLabel": "Authorized Deployments",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ArgoCD operates with extensive administrative permissions on clusters.",
+            "left": {
+              "code": "gitOpsController",
+              "result": {
+                "text": "privileged"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "appProjectSecurity",
+              "result": {
+                "text": "hardened"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "AppProjects restrict target clusters and allowed source repositories.",
+            "left": {
+              "code": "repoWhitelists",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationNamespaces",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Multi tenant platform blocked unauthorized deployment attempts safely.",
+            "left": {
+              "code": "unauthorizedNamespace",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "projectBoundary",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unauthorized destination namespaces are denied by policy auditor.",
+            "left": {
+              "code": "requestedNamespace",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "auditorVerdict",
+              "result": {
+                "text": "denied"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "ArgoCD AppProject isolation and sync windows",
+        "leftLabel": "Project Security Policies",
+        "rightLabel": "Authorized Deployments",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ArgoCD operates with extensive administrative permissions on clusters.",
+            "left": {
+              "code": "gitOpsController",
+              "result": {
+                "text": "privileged"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "appProjectSecurity",
+              "result": {
+                "text": "hardened"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "AppProjects restrict target clusters and allowed source repositories.",
+            "left": {
+              "code": "repoWhitelists",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "destinationNamespaces",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Multi tenant platform blocked unauthorized deployment attempts safely.",
+            "left": {
+              "code": "unauthorizedNamespace",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "projectBoundary",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unauthorized destination namespaces are denied by policy auditor.",
+            "left": {
+              "code": "requestedNamespace",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "auditorVerdict",
+              "result": {
+                "text": "denied"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 32,
+  "promptSha": "659fab4d9a0df28b54499e4e5285c6f93e2e18bffcfa74898f33678c826a9f0e",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Kube-APIServer Request Pipeline: Authentication Webhooks, Mutating Validating Admission & CRD Versioning",
+      "codeHash": "49c1b574b774637f1430379a2866f65f81525d1f5446a657bd15893316d08715",
+      "spec": {
+        "template": "compare",
+        "title": "Kube-APIServer admission webhook pipeline",
+        "leftLabel": "Incoming REST Request",
+        "rightLabel": "Validated etcd Persistence",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every client interaction passes through the API server request pipeline.",
+            "left": {
+              "code": "clientRequest",
+              "result": {
+                "text": "incoming"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "apiServerPipeline",
+              "result": {
+                "text": "stateless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Authentication plugins extract verified user identity from credentials.",
+            "left": {
+              "code": "clientToken",
+              "result": {
+                "text": "presented"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "authenticatedUser",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Validating admission webhook rejected invalid deployment image tag.",
+            "left": {
+              "code": "latestImageTag",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gatekeeperPolicy",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating admission phase rejects forbidden image tags with error.",
+            "left": {
+              "code": "submittedRequest",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "validationVerdict",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kube-APIServer admission webhook pipeline",
+        "leftLabel": "Incoming REST Request",
+        "rightLabel": "Validated etcd Persistence",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every client interaction passes through the API server request pipeline.",
+            "left": {
+              "code": "clientRequest",
+              "result": {
+                "text": "incoming"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "apiServerPipeline",
+              "result": {
+                "text": "stateless"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Authentication plugins extract verified user identity from credentials.",
+            "left": {
+              "code": "clientToken",
+              "result": {
+                "text": "presented"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "authenticatedUser",
+              "result": {
+                "text": "verified"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Validating admission webhook rejected invalid deployment image tag.",
+            "left": {
+              "code": "latestImageTag",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gatekeeperPolicy",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating admission phase rejects forbidden image tags with error.",
+            "left": {
+              "code": "submittedRequest",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "validationVerdict",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "etcd v3 Multi-Raft Consensus: MVCC Revisions, BoltDB Storage & Watch Stream Multiplexing",
+      "codeHash": "96eb63bf8a6af8e73cd0c953e4340bc16956ca0b44b216013f02432bcb04b3ae",
+      "spec": {
+        "template": "compare",
+        "title": "etcd v3 multi-version concurrency control",
+        "leftLabel": "Historical Revisions",
+        "rightLabel": "Latest Quorum State",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed state storage guarantees linearizable operations for cluster.",
+            "left": {
+              "code": "clusterRegistry",
+              "result": {
+                "text": "serialized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "etcdConsensus",
+              "result": {
+                "text": "strongly-consistent"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi version concurrency control appends revision records to storage.",
+            "left": {
+              "code": "pastRevisions",
+              "result": {
+                "text": "preserved"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "globalCounter",
+              "result": {
+                "text": "incremented"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Surviving quorum nodes preserved linearizable reads during outage.",
+            "left": {
+              "code": "failedNode",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "quorumMajority",
+              "result": {
+                "text": "operational"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Database compaction safely purges older revisions up to boundary.",
+            "left": {
+              "code": "compactBoundary",
+              "result": {
+                "text": "specified"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "purgedRevisions",
+              "result": {
+                "text": "reclaimed"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "etcd v3 multi-version concurrency control",
+        "leftLabel": "Historical Revisions",
+        "rightLabel": "Latest Quorum State",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed state storage guarantees linearizable operations for cluster.",
+            "left": {
+              "code": "clusterRegistry",
+              "result": {
+                "text": "serialized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "etcdConsensus",
+              "result": {
+                "text": "strongly-consistent"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Multi version concurrency control appends revision records to storage.",
+            "left": {
+              "code": "pastRevisions",
+              "result": {
+                "text": "preserved"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "globalCounter",
+              "result": {
+                "text": "incremented"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Surviving quorum nodes preserved linearizable reads during outage.",
+            "left": {
+              "code": "failedNode",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "quorumMajority",
+              "result": {
+                "text": "operational"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Database compaction safely purges older revisions up to boundary.",
+            "left": {
+              "code": "compactBoundary",
+              "result": {
+                "text": "specified"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "purgedRevisions",
+              "result": {
+                "text": "reclaimed"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kube-Scheduler Algorithm: Filtering Predicates, Scoring Priorities, Node Affinity & Taint Toleration Matching",
+      "codeHash": "11ef09718d91190f7fb91e5c96aaa38afe454857bfb8b29592131018f12cd664",
+      "spec": {
+        "template": "compare",
+        "title": "Kube-Scheduler filtering and scoring phases",
+        "leftLabel": "Candidate Worker Nodes",
+        "rightLabel": "Optimal Target Host",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scheduler executes deterministic cycles to assign pods to worker nodes.",
+            "left": {
+              "code": "pendingPods",
+              "result": {
+                "text": "queued"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "schedulerEngine",
+              "result": {
+                "text": "deterministic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering phase evaluates binary predicates to eliminate nodes.",
+            "left": {
+              "code": "candidateNodes",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "feasibleNodes",
+              "result": {
+                "text": "filtered"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Scheduler filtered incompatible machines and scored cached image nodes.",
+            "left": {
+              "code": "filteredNodes",
+              "result": {
+                "text": "discarded"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "bestCandidate",
+              "result": {
+                "text": "assigned"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tainted nodes repel unmatching pods and reduce feasible node counts.",
+            "left": {
+              "code": "nodeTolerations",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "selectedWorker",
+              "result": {
+                "text": "fallback"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kube-Scheduler filtering and scoring phases",
+        "leftLabel": "Candidate Worker Nodes",
+        "rightLabel": "Optimal Target Host",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Scheduler executes deterministic cycles to assign pods to worker nodes.",
+            "left": {
+              "code": "pendingPods",
+              "result": {
+                "text": "queued"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "schedulerEngine",
+              "result": {
+                "text": "deterministic"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Filtering phase evaluates binary predicates to eliminate nodes.",
+            "left": {
+              "code": "candidateNodes",
+              "result": {
+                "text": "evaluated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "feasibleNodes",
+              "result": {
+                "text": "filtered"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Scheduler filtered incompatible machines and scored cached image nodes.",
+            "left": {
+              "code": "filteredNodes",
+              "result": {
+                "text": "discarded"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "bestCandidate",
+              "result": {
+                "text": "assigned"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tainted nodes repel unmatching pods and reduce feasible node counts.",
+            "left": {
+              "code": "nodeTolerations",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "selectedWorker",
+              "result": {
+                "text": "fallback"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubelet Architecture: PLEG (Pod Lifecycle Event Generator), CAdvisor Metrics & CRI CNI Shim Invocation",
+      "codeHash": "1f96c1b437ef53bc732bd223c2c1469b5afc70447015390f1f2e37c35a6335f6",
+      "spec": {
+        "template": "compare",
+        "title": "Kubelet PLEG event synchronization cycle",
+        "leftLabel": "CRI Container Runtime",
+        "rightLabel": "Kubelet In-Memory Cache",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Node agent translates desired state into physical container execution.",
+            "left": {
+              "code": "kubeletAgent",
+              "result": {
+                "text": "authoritative"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "runtimeContainers",
+              "result": {
+                "text": "managed"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "PLEG compares current container runtime states against cached records.",
+            "left": {
+              "code": "runtimeListing",
+              "result": {
+                "text": "polled"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "lifecycleEvents",
+              "result": {
+                "text": "generated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Kubelet detected unhealthy relist duration and rescheduled busy pods.",
+            "left": {
+              "code": "throttledStorage",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "podRescheduling",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate unresponding runtime duration triggering status changes.",
+            "left": {
+              "code": "relistDuration",
+              "result": {
+                "text": "exceeded"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "nodeCondition",
+              "result": {
+                "text": "not-ready"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Kubelet PLEG event synchronization cycle",
+        "leftLabel": "CRI Container Runtime",
+        "rightLabel": "Kubelet In-Memory Cache",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Node agent translates desired state into physical container execution.",
+            "left": {
+              "code": "kubeletAgent",
+              "result": {
+                "text": "authoritative"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "runtimeContainers",
+              "result": {
+                "text": "managed"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "PLEG compares current container runtime states against cached records.",
+            "left": {
+              "code": "runtimeListing",
+              "result": {
+                "text": "polled"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "lifecycleEvents",
+              "result": {
+                "text": "generated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Kubelet detected unhealthy relist duration and rescheduled busy pods.",
+            "left": {
+              "code": "throttledStorage",
+              "result": {
+                "text": "detected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "podRescheduling",
+              "result": {
+                "text": "healthy"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate unresponding runtime duration triggering status changes.",
+            "left": {
+              "code": "relistDuration",
+              "result": {
+                "text": "exceeded"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "nodeCondition",
+              "result": {
+                "text": "not-ready"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Custom Resource Definitions & Controller Reconciliation Loops: Informers, Lister Indexing & WorkQueues",
+      "codeHash": "905acd694a726593221a9f298c769b3b9b790af8b4a6c1090c3383e88d12399d",
+      "spec": {
+        "template": "compare",
+        "title": "Custom resource reconciliation workqueue",
+        "leftLabel": "Shared Informer Lister",
+        "rightLabel": "Reconciliation WorkQueue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom controllers observe live resources and eliminate cluster drift.",
+            "left": {
+              "code": "desiredState",
+              "result": {
+                "text": "declarative"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reconcilerLoop",
+              "result": {
+                "text": "converging"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Informer consumes watch events and updates local in memory indexer.",
+            "left": {
+              "code": "streamEvents",
+              "result": {
+                "text": "consumed"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "localIndexer",
+              "result": {
+                "text": "cached"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Operator queued reconciliation key and scaled replica set smoothly.",
+            "left": {
+              "code": "databaseOperator",
+              "result": {
+                "text": "triggered"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "replicaState",
+              "result": {
+                "text": "reconciled"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "WorkQueue deduplication ensures unique resource keys process cleanly.",
+            "left": {
+              "code": "enqueuedKeys",
+              "result": {
+                "text": "deduplicated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "workerThread",
+              "result": {
+                "text": "processed"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom resource reconciliation workqueue",
+        "leftLabel": "Shared Informer Lister",
+        "rightLabel": "Reconciliation WorkQueue",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Custom controllers observe live resources and eliminate cluster drift.",
+            "left": {
+              "code": "desiredState",
+              "result": {
+                "text": "declarative"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "reconcilerLoop",
+              "result": {
+                "text": "converging"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Informer consumes watch events and updates local in memory indexer.",
+            "left": {
+              "code": "streamEvents",
+              "result": {
+                "text": "consumed"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "localIndexer",
+              "result": {
+                "text": "cached"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Operator queued reconciliation key and scaled replica set smoothly.",
+            "left": {
+              "code": "databaseOperator",
+              "result": {
+                "text": "triggered"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "replicaState",
+              "result": {
+                "text": "reconciled"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "WorkQueue deduplication ensures unique resource keys process cleanly.",
+            "left": {
+              "code": "enqueuedKeys",
+              "result": {
+                "text": "deduplicated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "workerThread",
+              "result": {
+                "text": "processed"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

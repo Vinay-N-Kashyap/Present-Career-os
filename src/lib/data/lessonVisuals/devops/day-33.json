@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 2,
+  "prefix": "devops",
+  "day": 33,
+  "promptSha": "1c6afe4546782ba59a883f0a16ec561d67f70a9949b4bcbd2b0320b7dd807af2",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Kubernetes Networking Deep-Dive: IPAM, veth Pairs, Bridge Routing & Kube-Proxy IPVS vs iptables",
+      "codeHash": "1ac16d3f83940856091351908996b6cef4e8ad39261728af9c34d157d4728b98",
+      "spec": {
+        "template": "compare",
+        "title": "IPVS constant-time service packet routing",
+        "leftLabel": "Linear iptables Chains",
+        "rightLabel": "Kernel IPVS Hash Tables",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every pod receives unique routable network address from IPAM pool.",
+            "left": {
+              "code": "podNetworkInterface",
+              "result": {
+                "text": "routable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "vethPair",
+              "result": {
+                "text": "bridged"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "IPVS stores backend service endpoints inside in memory hash tables.",
+            "left": {
+              "code": "linearIptables",
+              "result": {
+                "text": "sequential"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "kernelIpvs",
+              "result": {
+                "text": "constant-time"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Platform cut packet lookup latency by migrating to kernel IPVS mode.",
+            "left": {
+              "code": "iptablesDelay",
+              "result": {
+                "text": "spiking"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "ipvsSpeedup",
+              "result": {
+                "text": "ultra-fast"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Scaling backend endpoint counts leaves IPVS packet latency flat.",
+            "left": {
+              "code": "endpointScaling",
+              "result": {
+                "text": "expanded"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "lookupLatency",
+              "result": {
+                "text": "constant"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "IPVS constant-time service packet routing",
+        "leftLabel": "Linear iptables Chains",
+        "rightLabel": "Kernel IPVS Hash Tables",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Every pod receives unique routable network address from IPAM pool.",
+            "left": {
+              "code": "podNetworkInterface",
+              "result": {
+                "text": "routable"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "vethPair",
+              "result": {
+                "text": "bridged"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say5",
+            "caption": "IPVS stores backend service endpoints inside in memory hash tables.",
+            "left": {
+              "code": "linearIptables",
+              "result": {
+                "text": "sequential"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "kernelIpvs",
+              "result": {
+                "text": "constant-time"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Platform cut packet lookup latency by migrating to kernel IPVS mode.",
+            "left": {
+              "code": "iptablesDelay",
+              "result": {
+                "text": "spiking"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "ipvsSpeedup",
+              "result": {
+                "text": "ultra-fast"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Scaling backend endpoint counts leaves IPVS packet latency flat.",
+            "left": {
+              "code": "endpointScaling",
+              "result": {
+                "text": "expanded"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "lookupLatency",
+              "result": {
+                "text": "constant"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CoreDNS Resolution Optimization: Autopath Plugin, ndots:5 Query Amplification Mitigation & Local Node Caching",
+      "codeHash": "7769f34173fa5422a789ccbea465cacb809e95dfa35b3bbf5b346628d6adacc0",
+      "spec": {
+        "template": "compare",
+        "title": "CoreDNS query amplification mitigation",
+        "leftLabel": "Standard ndots:5 Resolv",
+        "rightLabel": "Optimized NodeLocal Cache",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Domain name resolution translates hostnames into service virtual IPs.",
+            "left": {
+              "code": "domainQuery",
+              "result": {
+                "text": "translated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "coreDnsServer",
+              "result": {
+                "text": "resolved"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Resolver sequentially appends each cluster search path to queries.",
+            "left": {
+              "code": "searchDomains",
+              "result": {
+                "text": "amplified"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "absoluteQuery",
+              "result": {
+                "text": "delayed"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Deploying local node caching reduced upstream query volume safely.",
+            "left": {
+              "code": "conntrackExhaustion",
+              "result": {
+                "text": "mitigated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "upstreamReduction",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trailing dots instruct resolver to treat domain queries as absolute.",
+            "left": {
+              "code": "trailingDot",
+              "result": {
+                "text": "appended"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "queryCount",
+              "result": {
+                "text": "single"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "CoreDNS query amplification mitigation",
+        "leftLabel": "Standard ndots:5 Resolv",
+        "rightLabel": "Optimized NodeLocal Cache",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Domain name resolution translates hostnames into service virtual IPs.",
+            "left": {
+              "code": "domainQuery",
+              "result": {
+                "text": "translated"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "coreDnsServer",
+              "result": {
+                "text": "resolved"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say3",
+            "caption": "Resolver sequentially appends each cluster search path to queries.",
+            "left": {
+              "code": "searchDomains",
+              "result": {
+                "text": "amplified"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "absoluteQuery",
+              "result": {
+                "text": "delayed"
+              },
+              "tone": "warn"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Deploying local node caching reduced upstream query volume safely.",
+            "left": {
+              "code": "conntrackExhaustion",
+              "result": {
+                "text": "mitigated"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "upstreamReduction",
+              "result": {
+                "text": "optimized"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trailing dots instruct resolver to treat domain queries as absolute.",
+            "left": {
+              "code": "trailingDot",
+              "result": {
+                "text": "appended"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "queryCount",
+              "result": {
+                "text": "single"
+              },
+              "tone": "accent"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ingress Controllers: Envoy Proxy Internals, Dynamic xDS Protocol & HTTP 2 gRPC Routing Mechanics",
+      "codeHash": "e3b066f048c7befbffd0c141536c6b1cf05adf4921dec0cbc5d1aff364e3c3b4",
+      "spec": {
+        "template": "compare",
+        "title": "Envoy proxy dynamic xDS routing protocol",
+        "leftLabel": "Static Process Reloads",
+        "rightLabel": "Dynamic xDS Stream",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern services require sophisticated Layer seven application routing.",
+            "left": {
+              "code": "applicationRouting",
+              "result": {
+                "text": "layer-seven"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "envoyDataPlane",
+              "result": {
+                "text": "performant"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic discovery APIs update configuration state without restarts.",
+            "left": {
+              "code": "processReloads",
+              "result": {
+                "text": "disruptive"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "dynamicXds",
+              "result": {
+                "text": "zero-downtime"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Ingress gateway synchronized new endpoints without dropped calls.",
+            "left": {
+              "code": "scaleUpBatch",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "connectionDrops",
+              "result": {
+                "text": "zero"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unhealthy upstream endpoints return gateway error gracefully.",
+            "left": {
+              "code": "unhealthyBackends",
+              "result": {
+                "text": "evicted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gatewayResponse",
+              "result": {
+                "text": "handled"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Envoy proxy dynamic xDS routing protocol",
+        "leftLabel": "Static Process Reloads",
+        "rightLabel": "Dynamic xDS Stream",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern services require sophisticated Layer seven application routing.",
+            "left": {
+              "code": "applicationRouting",
+              "result": {
+                "text": "layer-seven"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "envoyDataPlane",
+              "result": {
+                "text": "performant"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic discovery APIs update configuration state without restarts.",
+            "left": {
+              "code": "processReloads",
+              "result": {
+                "text": "disruptive"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "dynamicXds",
+              "result": {
+                "text": "zero-downtime"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Ingress gateway synchronized new endpoints without dropped calls.",
+            "left": {
+              "code": "scaleUpBatch",
+              "result": {
+                "text": "synchronized"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "connectionDrops",
+              "result": {
+                "text": "zero"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unhealthy upstream endpoints return gateway error gracefully.",
+            "left": {
+              "code": "unhealthyBackends",
+              "result": {
+                "text": "evicted"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "gatewayResponse",
+              "result": {
+                "text": "handled"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Istio Service Mesh Architecture: Envoy Sidecar Injection, mTLS Strict Mode & Citadel Certificate Rotation",
+      "codeHash": "ce8e11ba12d8c0a5e22bdeb2d1690ac58aa5b6bb8d9c4116421ff763a2c799fa",
+      "spec": {
+        "template": "compare",
+        "title": "Istio mutual TLS and SPIFFE workload identity",
+        "leftLabel": "Cleartext HTTP Traffic",
+        "rightLabel": "Encrypted Strict mTLS",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Service mesh architecture addresses operational networking complexity.",
+            "left": {
+              "code": "distributedServices",
+              "result": {
+                "text": "decoupled"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "serviceMesh",
+              "result": {
+                "text": "orchestrated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Cryptographic workload identity adheres to standard SPIFFE format.",
+            "left": {
+              "code": "serviceAccount",
+              "result": {
+                "text": "mapped"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "spiffeIdentity",
+              "result": {
+                "text": "verifiable"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Strict mutual TLS policy rejected connection from unauthenticated pod.",
+            "left": {
+              "code": "unauthorizedCaller",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "meshSecurity",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Permissive modes permit legacy unauthenticated traffic during migration.",
+            "left": {
+              "code": "permissiveMode",
+              "result": {
+                "text": "flexible"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "handshakeVerdict",
+              "result": {
+                "text": "connected"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Istio mutual TLS and SPIFFE workload identity",
+        "leftLabel": "Cleartext HTTP Traffic",
+        "rightLabel": "Encrypted Strict mTLS",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Service mesh architecture addresses operational networking complexity.",
+            "left": {
+              "code": "distributedServices",
+              "result": {
+                "text": "decoupled"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "serviceMesh",
+              "result": {
+                "text": "orchestrated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Cryptographic workload identity adheres to standard SPIFFE format.",
+            "left": {
+              "code": "serviceAccount",
+              "result": {
+                "text": "mapped"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "spiffeIdentity",
+              "result": {
+                "text": "verifiable"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Strict mutual TLS policy rejected connection from unauthenticated pod.",
+            "left": {
+              "code": "unauthorizedCaller",
+              "result": {
+                "text": "rejected"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "meshSecurity",
+              "result": {
+                "text": "enforced"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Permissive modes permit legacy unauthenticated traffic during migration.",
+            "left": {
+              "code": "permissiveMode",
+              "result": {
+                "text": "flexible"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "handshakeVerdict",
+              "result": {
+                "text": "connected"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calico eBPF NetworkPolicies: Kernel Socket Filtering, Zero-Trust Microsegmentation & Global NetworkSets",
+      "codeHash": "1648eba00ddb01362c9558be0097c5537b0fa98262b04e5a8adb75557e27316a",
+      "spec": {
+        "template": "compare",
+        "title": "Calico eBPF kernel network policy firewall",
+        "leftLabel": "Default Open Network",
+        "rightLabel": "Kernel eBPF Sandboxing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Default clusters allow unrestricted communication between all pods.",
+            "left": {
+              "code": "flatNetworking",
+              "result": {
+                "text": "open"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "networkPolicy",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Kernel programs evaluate network packets and drop unauthorized calls.",
+            "left": {
+              "code": "trafficHook",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "bpfMapLookup",
+              "result": {
+                "text": "instant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Traffic control hook dropped unauthorized metadata requests quickly.",
+            "left": {
+              "code": "exploitAttempt",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kernelFirewall",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Blocked subnets reject unauthorized network traffic immediately.",
+            "left": {
+              "code": "blockedDestination",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "packetVerdict",
+              "result": {
+                "text": "dropped"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Calico eBPF kernel network policy firewall",
+        "leftLabel": "Default Open Network",
+        "rightLabel": "Kernel eBPF Sandboxing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Default clusters allow unrestricted communication between all pods.",
+            "left": {
+              "code": "flatNetworking",
+              "result": {
+                "text": "open"
+              },
+              "tone": "warn"
+            },
+            "right": {
+              "code": "networkPolicy",
+              "result": {
+                "text": "isolated"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say4",
+            "caption": "Kernel programs evaluate network packets and drop unauthorized calls.",
+            "left": {
+              "code": "trafficHook",
+              "result": {
+                "text": "intercepted"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "bpfMapLookup",
+              "result": {
+                "text": "instant"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Traffic control hook dropped unauthorized metadata requests quickly.",
+            "left": {
+              "code": "exploitAttempt",
+              "result": {
+                "text": "blocked"
+              },
+              "tone": "ok"
+            },
+            "right": {
+              "code": "kernelFirewall",
+              "result": {
+                "text": "defended"
+              },
+              "tone": "accent"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Blocked subnets reject unauthorized network traffic immediately.",
+            "left": {
+              "code": "blockedDestination",
+              "result": {
+                "text": "checked"
+              },
+              "tone": "data"
+            },
+            "right": {
+              "code": "packetVerdict",
+              "result": {
+                "text": "dropped"
+              },
+              "tone": "warn"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
