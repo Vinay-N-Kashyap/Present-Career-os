@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 41,
+  "visuals": [
+    {
+      "visualId": "design-d41-p1",
+      "partNumber": 1,
+      "title": "Form State Dynamics: Re-render Cascades, Input Lag & The Native DOM Event Loop",
+      "template": "compare",
+      "prompt": "Design Systems Day 41 Part 1 Visual: Form State Dynamics: Re-render Cascades, Input Lag & The Native DOM Event Loop",
+      "promptSha": "0c83b8333d028f3fae1a8ead0b819e9cba044346605af490c73a9e5b10c8f27d",
+      "codeHash": "d0326663323e52d2e78b02d7745ee7bc4ea0e68b5c4baf37d77232ac7dc2bc8c",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Native Event Loop Interception",
+          "caption": "The browser hardware input pipeline registers physical keyboard scan codes directly."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Local Buffer Direct Mutating",
+          "caption": "Native input element buffers capture transient character glyphs without framework delay."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Decoupled Store Broadcast",
+          "caption": "Observable store cells receive debounced notification signals without cascade re-renders."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Batched Reconciling",
+          "caption": "Transactional form subscribers update authoritative records during idle frame periods."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d41-p2",
+      "partNumber": 2,
+      "title": "Controlled vs Uncontrolled Components: React State vs Native Ref Value Synchronization",
+      "template": "compare",
+      "prompt": "Design Systems Day 41 Part 2 Visual: Controlled vs Uncontrolled Components: React State vs Native Ref Value Synchronization",
+      "promptSha": "9dd0183a69a8051a5273a5fa2bba03b747ccdd2cf7bd1fc6379665c95df78c92",
+      "codeHash": "1f0ffd61031d5ea9c0e6eeed1ff84d6ef4b0f6fd9a623c4f58e533f206002cdf",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Controlled Prop Evaluation",
+          "caption": "The component inspects initialization properties to select controlled or uncontrolled mode."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Uncontrolled Ref Binding",
+          "caption": "Uncontrolled mode creates an internal reference directly to the native input element."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Transient Typing In Native DOM",
+          "caption": "Local typing executes with zero framework memory allocations or reconciliation cycles."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Transactional Commit Synchronization",
+          "caption": "Field blur events trigger transactional state synchronization with the external store."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d41-p3",
+      "partNumber": 3,
+      "title": "Form Control Inversion: useFormField, Context Bridges & Decoupling Labels from Inputs",
+      "template": "compare",
+      "prompt": "Design Systems Day 41 Part 3 Visual: Form Control Inversion: useFormField, Context Bridges & Decoupling Labels from Inputs",
+      "promptSha": "09df8747c12726fe47bf408a65d549f6c1e8008d8e14800110263ea166cebcd6",
+      "codeHash": "3e6601f7dac8fd8dc5949b0d8860b2b9ecb38f80b939df82ad139263a758d5b2",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Context Bridge Initialization",
+          "caption": "The form field context bridge initializes unique deterministic identifier namespaces."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Deterministic ID Generation",
+          "caption": "Deterministic identifiers link labels and inputs via standard document attributes."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Label For Attribute Binding",
+          "caption": "Form label primitives bind the target identifier to ensure full assistive accessibility."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Chained DescribedBy Composition",
+          "caption": "Chained description elements combine hints and errors into space-delimited string tokens."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d41-p4",
+      "partNumber": 4,
+      "title": "High-Performance Form State Engine: Transient Updates, Subscription Selectors & Batched Commits",
+      "template": "compare",
+      "prompt": "Design Systems Day 41 Part 4 Visual: High-Performance Form State Engine: Transient Updates, Subscription Selectors & Batched Commits",
+      "promptSha": "56d298f72d133e493eb1403535f77792a8bbe539b73d3f7639d87d67d57d79e6",
+      "codeHash": "50acd167eaa1b900bffd83ed09fbd6179990378330868db0492c395fb93873f4",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Subscription Store Allocation",
+          "caption": "The reactive form engine creates isolated observable cells outside the component tree."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Field Selector Registration",
+          "caption": "Field components register precise selector callbacks targeting individual form values."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Selective Equality Evaluating",
+          "caption": "Strict equality checks prevent component re-renders when other fields are modified."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Isolated Render Dispatching",
+          "caption": "Targeted subscribers execute swift updates while all sibling inputs remain idle."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 42,
+  "visuals": [
+    {
+      "visualId": "design-d42-p1",
+      "partNumber": 1,
+      "title": "The HTML5 Constraint Validation API: ValidityState, setCustomValidity & Browser Defenses",
+      "template": "compare",
+      "prompt": "Design Systems Day 42 Part 1 Visual: The HTML5 Constraint Validation API: ValidityState, setCustomValidity & Browser Defenses",
+      "promptSha": "57a02cc7b024b9b236480b39bd29d276fbbb1ff6b3821275c07c7ade00d175d3",
+      "codeHash": "843f2853196c5fc65c9d538299c1c7684a86c1498e0e4e26c73ac1eb2227033e",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Browser Constraint Evaluation",
+          "caption": "Browser native validity state flags evaluate required and pattern constraint attributes."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Custom Validity Synchronization",
+          "caption": "Custom business error strings synchronize directly with native element validity state."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Invalid Event Interception",
+          "caption": "Form event listeners intercept native invalid events to prevent ugly system bubbles."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Accessible State Reflection",
+          "caption": "Target elements reflect valid or invalid pseudo-classes for styled design tokens."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d42-p2",
+      "partNumber": 2,
+      "title": "Schema Compilation & Runtime Parsing: Pure Validation Functions, Type Narrowing & Error Maps",
+      "template": "compare",
+      "prompt": "Design Systems Day 42 Part 2 Visual: Schema Compilation & Runtime Parsing: Pure Validation Functions, Type Narrowing & Error Maps",
+      "promptSha": "c64b6e57f30234b398121ce5ee5faa98c947ecff722c5e67ba02e763233b14af",
+      "codeHash": "448b88797551bf321812c40ee21477c66befe338b0cd78b168ccdf8537b6f811",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Declarative Schema Parsing",
+          "caption": "The schema parser accepts untrusted input structures for systematic functional evaluation."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Pure Function Rule Execution",
+          "caption": "Pure functional validation rules execute without mutation or external side effects."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Error Map Key Indexing",
+          "caption": "Validation failures compile into an indexed error map for constant-time field lookups."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Narrowed Type Generation",
+          "caption": "Successful evaluations yield fully typed and narrowed data payloads for submission."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d42-p3",
+      "partNumber": 3,
+      "title": "Asynchronous Validation & Race Condition Guards: AbortController, Debounced Network Probes & Sequence Tokens",
+      "template": "compare",
+      "prompt": "Design Systems Day 42 Part 3 Visual: Asynchronous Validation & Race Condition Guards: AbortController, Debounced Network Probes & Sequence Tokens",
+      "promptSha": "c781fc490a842ad5d9118cea16b8d0d79b942be7308bf6bfe79f1d3eb840f9a9",
+      "codeHash": "88d84f3720046c63b9ff7ad7e1c2060a5b28d5639819f4efc40bef9a41d31064",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Keystroke Debounce Dispatch",
+          "caption": "Debounced input handlers defer asynchronous network requests until typing pauses."
+        },
+        {
+          "stepNumber": 2,
+          "label": "In-Flight Request Aborting",
+          "caption": "Active abort controllers immediately cancel previous in-flight validation requests."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Monotonic Token Generation",
+          "caption": "Monotonic sequence tokens capture increasing generation counters on every dispatch."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Out-Of-Order Guarding",
+          "caption": "Stale asynchronous responses are discarded silently to prevent race condition bugs."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d42-p4",
+      "partNumber": 4,
+      "title": "Form Error Telemetry & Aggregation: Field-Level Touched/Dirty Tracking vs Form-Level Purity",
+      "template": "compare",
+      "prompt": "Design Systems Day 42 Part 4 Visual: Form Error Telemetry & Aggregation: Field-Level Touched/Dirty Tracking vs Form-Level Purity",
+      "promptSha": "8ad18857831a208b399db848da705ef7c846760a0817236082107d1b5899105d",
+      "codeHash": "578c6eb6a8e9f3a467b60f3f1087df6f4cfb93d66c3545a40516e84fa9889b86",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Pristine State Isolation",
+          "caption": "Pristine form inputs suppress validation error banners during initial interaction."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Touched Flag Blur Activation",
+          "caption": "Input blur events mark fields as touched to trigger timely error banner display."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Reward Early Error Clearance",
+          "caption": "Subsequent valid keystrokes immediately clear error messages without waiting for blur."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Submission Error Revealing",
+          "caption": "Form submission attempts transition all fields to touched to reveal complete error lists."
+        }
+      ]
+    }
+  ]
+}

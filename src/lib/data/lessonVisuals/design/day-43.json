@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 43,
+  "visuals": [
+    {
+      "visualId": "design-d43-p1",
+      "partNumber": 1,
+      "title": "The WAI-ARIA Combobox Pattern: Roles, Active-Descendant Mechanics & Listbox Popups",
+      "template": "compare",
+      "prompt": "Design Systems Day 43 Part 1 Visual: The WAI-ARIA Combobox Pattern: Roles, Active-Descendant Mechanics & Listbox Popups",
+      "promptSha": "cb0e97cb25fc95fd4b2d756ae0e3801d529eebe744fa88b088e467fbf74a1ba0",
+      "codeHash": "37d48f038cc7dcc4d695ef4a4b734820bb2fb1e0611dbf18ee505db33442feda",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Combobox Role Binding",
+          "caption": "The combobox primitive binds proper roles and relationship attributes to the input."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Input Anchor Focus Retention",
+          "caption": "Hardware keyboard focus remains anchored on the text input during suggestion browsing."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Virtual Descendant Highlighting",
+          "caption": "Virtual focus highlights candidate options using dynamic active descendant attributes."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Listbox Popup Expanding",
+          "caption": "The listbox popup opens smoothly while maintaining uninterrupted keyboard filter typing."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d43-p2",
+      "partNumber": 2,
+      "title": "Tokenized Input Architecture: Chip Arrays, Backspace Deletion Loops & Inline Filter Buffers",
+      "template": "compare",
+      "prompt": "Design Systems Day 43 Part 2 Visual: Tokenized Input Architecture: Chip Arrays, Backspace Deletion Loops & Inline Filter Buffers",
+      "promptSha": "ffd07c8767708d0ed3df812324257539b43ecbdcf1c81de1e5e6411ec472ea4d",
+      "codeHash": "98d37cb6b405271556a06030626efdf8e778d3d9274e97ca42ad5cd926471e1b",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Tokenized Chip Mounting",
+          "caption": "Selected entities render as discrete interactive chips alongside the text caret."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Inline Buffer Synchronizing",
+          "caption": "The inline input buffer adjusts width dynamically as token chips wrap vertically."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Pending Delete Highlighting",
+          "caption": "Initial backspace keypress highlights the preceding chip in an amber warning state."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Defensive Chip Removal",
+          "caption": "Secondary backspace confirmation cleanly removes the token and announces deletion."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d43-p3",
+      "partNumber": 3,
+      "title": "Keyboard Navigation & Selection Matrix: Arrow Navigation, Page-Up/Down & Multi-Select Toggles",
+      "template": "compare",
+      "prompt": "Design Systems Day 43 Part 3 Visual: Keyboard Navigation & Selection Matrix: Arrow Navigation, Page-Up/Down & Multi-Select Toggles",
+      "promptSha": "cee8ef7adbbc2c8c4c000b71a7bf10b1178eb3d5fc57be1c77fece983f8e24ce",
+      "codeHash": "12645f654cd1b391ea84386fc70d2eb1a64fb5a1e03ee16a978fdab9c1ae9423",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Arrow Key Single Traversal",
+          "caption": "Arrow keys navigate option candidates with circular boundary wrapping mechanics."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Page Key Chunk Navigation",
+          "caption": "Page up and page down keys advance the highlighted index in ten-item chunks."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Boundary Extreme Jumping",
+          "caption": "Home and end keys trigger instantaneous jumping to the first and last options."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Space Key Selection Toggling",
+          "caption": "The space key toggles candidate selection without closing the active dropdown popup."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d43-p4",
+      "partNumber": 4,
+      "title": "Virtualized Option Lists: Handling Ten Thousand Options Without Main Thread Dropped Frames",
+      "template": "compare",
+      "prompt": "Design Systems Day 43 Part 4 Visual: Virtualized Option Lists: Handling Ten Thousand Options Without Main Thread Dropped Frames",
+      "promptSha": "ac07f95b05075d4f0dd881af5d76a5481e441cdeb41554aae706b2e83b976a77",
+      "codeHash": "aaf76a57ebf1d22a239f31e94b0fc73f764ee3169d71856ed22f986bb10d344e",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Viewport Capacity Computing",
+          "caption": "The virtualization engine calculates viewport capacity and total phantom scroll height."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Overscan Window Slicing",
+          "caption": "The active rendering slice extracts only the visible items plus overscan buffers."
+        },
+        {
+          "stepNumber": 3,
+          "label": "CSS Translate Positioning",
+          "caption": "CSS translate coordinates position the small rendered slice smoothly within the container."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Assistive Position Annotation",
+          "caption": "Explicit set size and position attributes preserve full screen reader dataset context."
+        }
+      ]
+    }
+  ]
+}

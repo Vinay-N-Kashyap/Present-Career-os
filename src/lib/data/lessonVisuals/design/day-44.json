@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 44,
+  "visuals": [
+    {
+      "visualId": "design-d44-p1",
+      "partNumber": 1,
+      "title": "Calendar Grid Mathematics: ISO-8601 Day Offsets, First Day of Week & 6x7 Matrix Construction",
+      "template": "compare",
+      "prompt": "Design Systems Day 44 Part 1 Visual: Calendar Grid Mathematics: ISO-8601 Day Offsets, First Day of Week & 6x7 Matrix Construction",
+      "promptSha": "ac574eee6419c3c9b843c4c7a9adaa3b5317e97bac8f20ec9c707f9d29a6923f",
+      "codeHash": "92ec2ee0c9317713497ac198f24936e62a3e555a7b45b6858181e84b539ab194",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "First Day Offset Derivation",
+          "caption": "The calendar engine derives the first day offset using international standard conventions."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Previous Month Leading Padding",
+          "caption": "Leading cells are populated with trailing dates from the preceding calendar month."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Current Month Date Populating",
+          "caption": "Current month dates populate sequentially from the first to the final calendar day."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Uniform Matrix Completing",
+          "caption": "Trailing placeholder cells complete the uniform forty-two cell matrix layout."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d44-p2",
+      "partNumber": 2,
+      "title": "Date Cell Keyboard Navigation: Grid Navigation (aria-activedescendant), Row Jumping & Month Flipping",
+      "template": "compare",
+      "prompt": "Design Systems Day 44 Part 2 Visual: Date Cell Keyboard Navigation: Grid Navigation (aria-activedescendant), Row Jumping & Month Flipping",
+      "promptSha": "96c35ac17cdc86b7986b5318a0ee5b6e79356bbea1ee403bfedd467c04423a2f",
+      "codeHash": "ebb97e542c4fcefb20ea7cd63f30abc2fb260be7cb90f4cbf4adc2ece547ef69",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Two-Dimensional Grid Traversal",
+          "caption": "Keyboard arrow keys navigate horizontally across days and vertically across weeks."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Weekly Seven-Day Vertical Jumps",
+          "caption": "Vertical navigation advances or retreats by exactly seven days across calendar rows."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Automated Month Transitioning",
+          "caption": "Boundary arrow keystrokes flip months automatically while maintaining day coordinates."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Year-Level Leap Jumping",
+          "caption": "Shift and page keys provide instantaneous twelve-month year jumping transitions."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d44-p3",
+      "partNumber": 3,
+      "title": "Date Range Selection Geometry: Start Date, End Date, Hover Range Highlighting & Min/Max Constraints",
+      "template": "compare",
+      "prompt": "Design Systems Day 44 Part 3 Visual: Date Range Selection Geometry: Start Date, End Date, Hover Range Highlighting & Min/Max Constraints",
+      "promptSha": "12c33633bdcabe758c0b09f16925a0f41ce2a4f4f2edfb21d5d50a72eab44a44",
+      "codeHash": "f9533eb85de5aa37a546fe0ba0f0dd98fd3243b93459cfdd75dccb7d2806fbe6",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Initial Start Date Anchoring",
+          "caption": "Clicking an initial date cell anchors the start date and enters selecting phase."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Transient Hover Preview Tinting",
+          "caption": "Hovering over adjacent cells generates a transient visual range highlight preview."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Inverted Selection Swapping",
+          "caption": "Inverted date selections automatically swap coordinates to preserve logical ranges."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Continuous Range Highlighting",
+          "caption": "Completed ranges render with continuous background tints between start and end pills."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d44-p4",
+      "partNumber": 4,
+      "title": "Time Selection & Timezone Normalization: UTC Offsets, DST Jumps & ISO Date Serialization",
+      "template": "compare",
+      "prompt": "Design Systems Day 44 Part 4 Visual: Time Selection & Timezone Normalization: UTC Offsets, DST Jumps & ISO Date Serialization",
+      "promptSha": "fe6599548a6a2386608ad6d591bd8756c17a834024718924e93ff52bf9f36ec8",
+      "codeHash": "28fd0efe1b963909c084794eb11b896634a4076074fbced88b60fdc1d8d69b91",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Local Civil Date Composing",
+          "caption": "Civil date components combine with local hour and minute values into date instances."
+        },
+        {
+          "stepNumber": 2,
+          "label": "UTC Instant Canonicalizing",
+          "caption": "Local timestamps serialize into canonical universal time strings terminating with Z."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Intl Timezone Projecting",
+          "caption": "Modern formatting APIs project universal instants accurately into local timezones."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Boundary Session Clamping",
+          "caption": "Business rules clamp time values within official exchange session trading hours."
+        }
+      ]
+    }
+  ]
+}

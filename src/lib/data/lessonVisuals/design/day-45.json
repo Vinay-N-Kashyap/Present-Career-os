@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 45,
+  "visuals": [
+    {
+      "visualId": "design-d45-p1",
+      "partNumber": 1,
+      "title": "Trading Form System Blueprint: High-Frequency Order Entry, Validation Pipeline & Live Feeds",
+      "template": "compare",
+      "prompt": "Design Systems Day 45 Part 1 Visual: Trading Form System Blueprint: High-Frequency Order Entry, Validation Pipeline & Live Feeds",
+      "promptSha": "7892571a4605100955c765c15460f9eea8a6839c66ccb869270c6f275516ea53",
+      "codeHash": "7d742c1737ffeb3dca76250e2bcd105a622a67b51b3b36c0e7127553807d7477",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Order Ticket Initializing",
+          "caption": "The order blueprint establishes strongly typed data contracts for trading tickets."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Reactive Core Subscribing",
+          "caption": "High-frequency reactive inputs process rapid typing without virtual DOM cascades."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Synchronous Risk Auditing",
+          "caption": "Synchronous risk rules verify order notional and collateral before submission."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Settlement Window Verifying",
+          "caption": "Settlement coordinators calculate compliant clearing windows under regulatory rules."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d45-p2",
+      "partNumber": 2,
+      "title": "Real-Time Margin & Buying Power Validation: Precision Decimal Arithmetic & Synchronous Circuit Breakers",
+      "template": "compare",
+      "prompt": "Design Systems Day 45 Part 2 Visual: Real-Time Margin & Buying Power Validation: Precision Decimal Arithmetic & Synchronous Circuit Breakers",
+      "promptSha": "8d8ed1b075ad92adb2b1d18451e4936a250e58ada751f246d649ae4f8250bba5",
+      "codeHash": "28c79105530281f5e4d2db9af6fdcfaf8fd95550d01d3a38156e40c52707dd1a",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Scaled Integer Arithmetic",
+          "caption": "The financial calculation engine uses scaled integer cents to eliminate drift."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Buying Power Verifying",
+          "caption": "Buying power algorithms verify settled cash and margin leverage against order value."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Collar Band Auditing",
+          "caption": "Price collar checks prevent execution of orders outside five percent market bands."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Circuit Breaker Tripping",
+          "caption": "Violations immediately trip circuit breakers and lock primary submission triggers."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d45-p3",
+      "partNumber": 3,
+      "title": "Asset Class Combobox & Order Type Multi-Select with Tokenized Execution Directives",
+      "template": "compare",
+      "prompt": "Design Systems Day 45 Part 3 Visual: Asset Class Combobox & Order Type Multi-Select with Tokenized Execution Directives",
+      "promptSha": "13f89a2fb0e03bd8eac15f5e4b5b2fad11774d21413dc5c6c1d9141658b9b73f",
+      "codeHash": "5ec128feb1dbb6e6b89940c9b8e88fc431e5e582d7f5539edaff5627c5980e56",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Asset Combobox Filtering",
+          "caption": "The asset combobox filters across thousands of ticker symbols with virtual focus."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Virtual Descendant Selecting",
+          "caption": "Traders select target instruments with arrow keys while typing remains active."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Execution Directive Tokenizing",
+          "caption": "Execution strategies render as discrete interactive chips with removal buttons."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Mutual Exclusion Enforcing",
+          "caption": "Contradictory directives are detected and rejected to prevent exchange mismatches."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d45-p4",
+      "partNumber": 4,
+      "title": "Settlement Date Range Picker Integration with Market Holiday Constraints",
+      "template": "compare",
+      "prompt": "Design Systems Day 45 Part 4 Visual: Settlement Date Range Picker Integration with Market Holiday Constraints",
+      "promptSha": "008b6570e10802ea8efbbe22310049414c7c88e02027710219fbe7ea21fe0ba9",
+      "codeHash": "9e87c2a1414f808fdbff4ebf15c1ac2f3ac203e13d60db6f194552d0d0d6d1ea",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Market Calendar Consulting",
+          "caption": "The settlement engine consults official exchange holiday calendars for clearing."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Holiday Ledger Cross-Checking",
+          "caption": "Federal holidays and market closures are flagged as disabled on the calendar grid."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Weekend Exclusion Computing",
+          "caption": "Weekend days are automatically excluded from allowable settlement clearing dates."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Business Day Accruing",
+          "caption": "Net business settlement days accrue deterministically under official market rules."
+        }
+      ]
+    }
+  ]
+}
