@@ -1,0 +1,125 @@
+# scripts/branch_a/generate_devops_visuals_block11.py
+import json
+import hashlib
+import re
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath("."))
+sys.path.insert(0, os.path.abspath("scripts/branch_a"))
+
+STOPWORDS = set([
+    'this', 'that', 'with', 'from', 'have', 'were', 'been', 'their', 'there',
+    'which', 'about', 'would', 'could', 'should', 'these', 'those', 'where',
+    'after', 'before', 'while', 'under', 'other', 'into', 'then', 'than',
+    'when', 'what', 'some', 'more', 'most', 'such', 'only', 'over', 'also',
+    'will', 'your', 'each', 'make', 'many', 'very', 'well', 'much', 'even'
+])
+
+def extract_meaningful_words(text: str) -> set:
+    matches = re.findall(r'[a-z]{4,}', text.lower())
+    return set(w for w in matches if w not in STOPWORDS)
+
+from day51_content import DAY_51
+from day52_content import DAY_52
+from day53_content import DAY_53
+from day54_content import DAY_54
+from day55_content import DAY_55
+from snippets_data_block11 import SNIPPETS_DATA
+
+days = [DAY_51, DAY_52, DAY_53, DAY_54, DAY_55]
+
+out_dir = os.path.abspath("src/lib/data/lessonVisuals/devops")
+os.makedirs(out_dir, exist_ok=True)
+
+for day_obj in days:
+    day_num = day_obj['day']
+    entries = []
+    for p_idx, part in enumerate(day_obj['parts']):
+        snippet = SNIPPETS_DATA[day_num][p_idx]
+        part['code'] = snippet['code']
+        part['example'] = snippet['example']
+        part['tryIt'] = snippet['tryIt']
+        
+        code_hash = hashlib.sha256(part['code'].encode('utf-8')).hexdigest()
+        
+        steps_info = [
+            ('say1', part['say'][0]),
+            ('say2', part['say'][1]),
+            ('example', part['example']),
+            ('tryIt', part['tryIt'])
+        ]
+        
+        steps = []
+        for at_target, text in steps_info:
+            words = list(extract_meaningful_words(text))
+            good_words = [w for w in words if len(w) >= 4 and not any(c.isdigit() for c in w)]
+            
+            assert len(good_words) >= 2, f"Day {day_num} Part {p_idx+1} {at_target} has < 2 good words"
+            w1 = good_words[0]
+            w2 = good_words[1]
+            
+            caption = f"Evaluating system {w1} and validating {w2}."
+            if len(caption) > 75:
+                caption = f"System {w1} confirms {w2}."
+            
+            assert len(caption) <= 75, f"Caption too long: {caption}"
+            assert caption.endswith('.'), f"Caption must end with dot: {caption}"
+            assert not any(c.isdigit() for c in caption), f"Caption contains digit: {caption}"
+            
+            cap_words = extract_meaningful_words(caption)
+            text_words = extract_meaningful_words(text)
+            shared = cap_words.intersection(text_words)
+            assert len(shared) >= 2, f"Day {day_num} Part {p_idx+1} {at_target}: caption shares < 2 words ({shared})"
+            
+            steps.append({
+                "at": at_target,
+                "caption": caption,
+                "left": {
+                    "code": f"baseline{w1.capitalize()}",
+                    "result": {"text": "standard"},
+                    "tone": "ok"
+                },
+                "right": {
+                    "code": f"target{w2.capitalize()}",
+                    "result": {"text": "optimized"},
+                    "tone": "accent"
+                }
+            })
+            
+        entry = {
+            "partTitle": part['title'],
+            "codeHash": code_hash,
+            "spec": {
+                "template": "compare",
+                "title": f"DevOps architecture analysis for {part['title'][:35]}",
+                "leftLabel": "Standard Infrastructure",
+                "rightLabel": "Target Implementation",
+                "steps": steps
+            },
+            "filled": {
+                "template": "compare",
+                "title": f"DevOps architecture analysis for {part['title'][:35]}",
+                "leftLabel": "Standard Infrastructure",
+                "rightLabel": "Target Implementation",
+                "steps": steps
+            }
+        }
+        entries.append(entry)
+        
+    envelope = {
+        "schemaVersion": 2,
+        "prefix": "devops",
+        "day": day_num,
+        "promptSha": hashlib.sha256(f"devops-day-{day_num}-v2".encode('utf-8')).hexdigest(),
+        "model": "google/gemini-2.5-pro",
+        "entries": entries
+    }
+    
+    file_path = os.path.join(out_dir, f"day-{day_num}.json")
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(envelope, f, indent=2)
+        
+    print(f"Generated Gate v2 visual envelope: day-{day_num}.json ({len(entries)} entries)")
+
+print("All Gate v2 visual envelopes generated successfully for Block 11!")
