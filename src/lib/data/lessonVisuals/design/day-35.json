@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "prefix": "design",
+  "day": 35,
+  "promptSha": "a491d997ba3f86a87156d31a3165a6b5034c2ad65da3917ce5f4ce810b6875a0",
+  "model": "google/gemini-pro",
+  "entries": [
+    {
+      "partTitle": "Architecture Review: Headless Primitives as the Foundation of Multi-Brand Systems",
+      "codeHash": "c07053d539ca6f7b5a449cebb534bf15010286d94f259e6b5cb18db02b05dbd4",
+      "spec": {
+        "template": "compare",
+        "title": "Architecture Review: Headless Primitives as the Foundation of Multi-Brand Systems - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Architecture Foundation",
+            "leftCaption": "Tightly coupled components bundle styles and business state together.",
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Accessibility Standards",
+            "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Real World Systems",
+            "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Interactive Verification",
+            "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Compound Component Orchestration: Assembling Complex Widget Trees from Atomic Headless Parts",
+      "codeHash": "b3f64ac6e2c3d1f960792fcf4921ad3e5b55f92768555dfd0183cdfe6ae66835",
+      "spec": {
+        "template": "compare",
+        "title": "Compound Component Orchestration: Assembling Complex Widget Trees from Atomic Headless Parts - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Architecture Foundation",
+            "leftCaption": "Tightly coupled components bundle styles and business state together.",
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Accessibility Standards",
+            "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Real World Systems",
+            "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Interactive Verification",
+            "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Polymorphic Rendering Pipeline: Type-Safe Element Morphing Across Navigation & Action Components",
+      "codeHash": "72721eec5453ff82a602080a5448e2d1c6fd6181f738daab4476628dd19987e9",
+      "spec": {
+        "template": "compare",
+        "title": "Polymorphic Rendering Pipeline: Type-Safe Element Morphing Across Navigation & Action Components - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Architecture Foundation",
+            "leftCaption": "Tightly coupled components bundle styles and business state together.",
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Accessibility Standards",
+            "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Real World Systems",
+            "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Interactive Verification",
+            "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Controlled/Uncontrolled Adapter Integration: Universal Form Compatibility Engine",
+      "codeHash": "fb79c6974308569d6b9e001928ccaecddccb9d0875eaea8671d055bc707da4ff",
+      "spec": {
+        "template": "compare",
+        "title": "Controlled/Uncontrolled Adapter Integration: Universal Form Compatibility Engine - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Architecture Foundation",
+            "leftCaption": "Tightly coupled components bundle styles and business state together.",
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Accessibility Standards",
+            "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Real World Systems",
+            "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Interactive Verification",
+            "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Certification: Multi-Brand Headless Enterprise Design System Release Gate",
+      "codeHash": "bcea94be34ef42ab0052a6201928d3f0a51d59ad1e395719166eebcdbcd64e31",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Certification: Multi-Brand Headless Enterprise Design System Release Gate - Comparison Analysis",
+        "leftLabel": "Monolithic Legacy Model",
+        "rightLabel": "Sovereign Enterprise Model",
+        "steps": [
+          {
+            "stepNumber": 1,
+            "label": "Architecture Foundation",
+            "leftCaption": "Tightly coupled components bundle styles and business state together.",
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+          },
+          {
+            "stepNumber": 2,
+            "label": "Accessibility Standards",
+            "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+          },
+          {
+            "stepNumber": 3,
+            "label": "Real World Systems",
+            "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+          },
+          {
+            "stepNumber": 4,
+            "label": "Interactive Verification",
+            "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+          }
+        ]
+      }
+    }
+  ]
+}
