@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 36,
+  "promptSha": "cc1bc85022a9eb59c59eb5a3dd441340199f59d56bb2095322d0b482c0b10dff",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Foundations of String Hashing, Polynomial Rolling Hashes & Prime Base Selection",
+      "codeHash": "50ed8ac7f3ed7f5f40b9533376f37bf529bf3475084e562a160e0f735dbbed66",
+      "filled": {
+        "template": "table",
+        "title": "Foundations of String Hashing, Polynomia Matrix",
+        "columns": [
+          "Sub-String Range",
+          "Polynomial Formula",
+          "Evaluated Hash"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large scale genomic comparisons execute constant time substring checks.",
+            "rows": [
+              [
+                "Prefix Range s[0..2]",
+                "Horner Polynomial mod m",
+                "1024 Hash Token"
+              ],
+              [
+                "Prefix Range s[4..6]",
+                "Horner Polynomial mod m",
+                "1024 Hash Token"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "String polynomial hash maps character values into finite modulus.",
+            "rows": [
+              [
+                "Shifted Range s[1..3]",
+                "Exponent Aligned Subtraction",
+                "1956 Hash Token"
+              ],
+              [
+                "Full String s[0..6]",
+                "Base 31 Modulo 10^9+7",
+                "Composite Value"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud platform indexing pipeline analyzes millions of code tokens.",
+            "rows": [
+              [
+                "Source Code Block A",
+                "Linear Prefix Accumulator",
+                "Deterministic ID"
+              ],
+              [
+                "Source Code Block B",
+                "Independent Function Token",
+                "Identical Fingerprint"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Hasher precomputes powers producing distinct substring fingerprints.",
+            "rows": [
+              [
+                "Precomputed Powers",
+                "Modular Power Array",
+                "Sub-nanosecond Fetch"
+              ],
+              [
+                "Arbitrary Substring",
+                "O(1) Modular Arithmetic",
+                "Immediate Verification"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Foundations of String Hashing, Polynomia Matrix",
+        "columns": [
+          "Sub-String Range",
+          "Polynomial Formula",
+          "Evaluated Hash"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large scale genomic comparisons execute constant time substring checks.",
+            "rows": [
+              [
+                "Prefix Range s[0..2]",
+                "Horner Polynomial mod m",
+                "1024 Hash Token"
+              ],
+              [
+                "Prefix Range s[4..6]",
+                "Horner Polynomial mod m",
+                "1024 Hash Token"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "String polynomial hash maps character values into finite modulus.",
+            "rows": [
+              [
+                "Shifted Range s[1..3]",
+                "Exponent Aligned Subtraction",
+                "1956 Hash Token"
+              ],
+              [
+                "Full String s[0..6]",
+                "Base 31 Modulo 10^9+7",
+                "Composite Value"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud platform indexing pipeline analyzes millions of code tokens.",
+            "rows": [
+              [
+                "Source Code Block A",
+                "Linear Prefix Accumulator",
+                "Deterministic ID"
+              ],
+              [
+                "Source Code Block B",
+                "Independent Function Token",
+                "Identical Fingerprint"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Hasher precomputes powers producing distinct substring fingerprints.",
+            "rows": [
+              [
+                "Precomputed Powers",
+                "Modular Power Array",
+                "Sub-nanosecond Fetch"
+              ],
+              [
+                "Arbitrary Substring",
+                "O(1) Modular Arithmetic",
+                "Immediate Verification"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collision Probabilities, The Birthday Paradox & 64-Bit Double Rolling Hashing",
+      "codeHash": "3ee9275a6bf4f998446bff20aaa30e017559207e89e2be0b55ff9a882abb8e2d",
+      "filled": {
+        "template": "table",
+        "title": "Collision Probabilities, The Birthday Pa Matrix",
+        "columns": [
+          "Hash Configuration",
+          "Prime Modulus",
+          "Collision Immunity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Single hash comparisons risk silent data corruption on distinct strings.",
+            "rows": [
+              [
+                "Single Prime Hash",
+                "10^9+7 Modulus",
+                "50% Risk at 37k Keys"
+              ],
+              [
+                "Single Non-Prime",
+                "2^64 Unsigned Overflow",
+                "Vulnerable to Exploit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Birthday paradox triggers collisions across finite hash space.",
+            "rows": [
+              [
+                "Double Hash Mod 1",
+                "1,000,000,007 Prime",
+                "First Parallel Coordinate"
+              ],
+              [
+                "Double Hash Mod 2",
+                "1,000,000,009 Prime",
+                "Second Parallel Coordinate"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise security gateway inspects packet payloads without false alarms.",
+            "rows": [
+              [
+                "Dual Coordinate Pair",
+                "Combined 10^18 Space",
+                "Collision Safe >1B Keys"
+              ],
+              [
+                "Threat Inspection",
+                "Dual-Key Exact Match",
+                "Zero False Alarms"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Double string hasher extracts dual hash tuples for distinct phrases.",
+            "rows": [
+              [
+                "Verification Engine",
+                "Two 64-bit Comparisons",
+                "Sub-microsecond Check"
+              ],
+              [
+                "Industrial SLA",
+                "Carrier-grade Protection",
+                "Deterministic Safety"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Collision Probabilities, The Birthday Pa Matrix",
+        "columns": [
+          "Hash Configuration",
+          "Prime Modulus",
+          "Collision Immunity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Single hash comparisons risk silent data corruption on distinct strings.",
+            "rows": [
+              [
+                "Single Prime Hash",
+                "10^9+7 Modulus",
+                "50% Risk at 37k Keys"
+              ],
+              [
+                "Single Non-Prime",
+                "2^64 Unsigned Overflow",
+                "Vulnerable to Exploit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Birthday paradox triggers collisions across finite hash space.",
+            "rows": [
+              [
+                "Double Hash Mod 1",
+                "1,000,000,007 Prime",
+                "First Parallel Coordinate"
+              ],
+              [
+                "Double Hash Mod 2",
+                "1,000,000,009 Prime",
+                "Second Parallel Coordinate"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise security gateway inspects packet payloads without false alarms.",
+            "rows": [
+              [
+                "Dual Coordinate Pair",
+                "Combined 10^18 Space",
+                "Collision Safe >1B Keys"
+              ],
+              [
+                "Threat Inspection",
+                "Dual-Key Exact Match",
+                "Zero False Alarms"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Double string hasher extracts dual hash tuples for distinct phrases.",
+            "rows": [
+              [
+                "Verification Engine",
+                "Two 64-bit Comparisons",
+                "Sub-microsecond Check"
+              ],
+              [
+                "Industrial SLA",
+                "Carrier-grade Protection",
+                "Deterministic Safety"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Rabin-Karp Substring Search Algorithm & Sliding Window Hashes",
+      "codeHash": "6f4760d37c0a3db23065239fe155661d1b2e936803d091d43dde15b87b00e3be",
+      "filled": {
+        "template": "table",
+        "title": "The Rabin-Karp Substring Search Algorith Matrix",
+        "columns": [
+          "Window Metric",
+          "Leading/Trailing Action",
+          "Window Hash Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rabin Karp locates pattern occurrences within text without quadratic cost.",
+            "rows": [
+              [
+                "Target Pattern P",
+                "Length M Precomputation",
+                "Constant Target Hash"
+              ],
+              [
+                "Initial Window 0",
+                "First M Characters",
+                "Initial Window State"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sliding window updates rolling hash as trailing character enters.",
+            "rows": [
+              [
+                "Window Step i -> i+1",
+                "Subtract Leading Char",
+                "Modulo Intermediate"
+              ],
+              [
+                "Window Step i -> i+1",
+                "Add Incoming Char",
+                "O(1) Rolling Update"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Database firewall scans incoming network packets for injection strings.",
+            "rows": [
+              [
+                "Network Stream Scan",
+                "100 Gbps Packet Buffer",
+                "Streaming Payload"
+              ],
+              [
+                "SQL Injection Rule",
+                "Dual-Hash Pattern Match",
+                "Firewall Intercept"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Searcher matches pattern hash finding all motif occurrences cleanly.",
+            "rows": [
+              [
+                "Verification Pass",
+                "True Positive Confirmation",
+                "Zero False Drops"
+              ],
+              [
+                "Search Throughput",
+                "Linear O(N+M) Runtime",
+                "Wire-speed Processing"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "The Rabin-Karp Substring Search Algorith Matrix",
+        "columns": [
+          "Window Metric",
+          "Leading/Trailing Action",
+          "Window Hash Value"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rabin Karp locates pattern occurrences within text without quadratic cost.",
+            "rows": [
+              [
+                "Target Pattern P",
+                "Length M Precomputation",
+                "Constant Target Hash"
+              ],
+              [
+                "Initial Window 0",
+                "First M Characters",
+                "Initial Window State"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sliding window updates rolling hash as trailing character enters.",
+            "rows": [
+              [
+                "Window Step i -> i+1",
+                "Subtract Leading Char",
+                "Modulo Intermediate"
+              ],
+              [
+                "Window Step i -> i+1",
+                "Add Incoming Char",
+                "O(1) Rolling Update"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Database firewall scans incoming network packets for injection strings.",
+            "rows": [
+              [
+                "Network Stream Scan",
+                "100 Gbps Packet Buffer",
+                "Streaming Payload"
+              ],
+              [
+                "SQL Injection Rule",
+                "Dual-Hash Pattern Match",
+                "Firewall Intercept"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Searcher matches pattern hash finding all motif occurrences cleanly.",
+            "rows": [
+              [
+                "Verification Pass",
+                "True Positive Confirmation",
+                "Zero False Drops"
+              ],
+              [
+                "Search Throughput",
+                "Linear O(N+M) Runtime",
+                "Wire-speed Processing"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance Substring Equality, O(log N) LCP & O(1) Palindrome Verification",
+      "codeHash": "df8457f0e0690989faa1d5a20732c3bfb152cdf16b00c3da4db9174bb862572c",
+      "filled": {
+        "template": "table",
+        "title": "High-Performance Substring Equality, O(l Matrix",
+        "columns": [
+          "Query Primitive",
+          "Evaluation Routine",
+          "Asymptotic Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hashing accelerates longest common prefix and palindrome queries.",
+            "rows": [
+              [
+                "Forward Hash Range",
+                "Prefix Array Lookup",
+                "O(1) Substring Hash"
+              ],
+              [
+                "Reverse Hash Range",
+                "Reversed Prefix Lookup",
+                "O(1) Substring Hash"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Binary search evaluates suffix equality across prefix length intervals.",
+            "rows": [
+              [
+                "Palindrome Check",
+                "H_forward === H_reverse",
+                "Strict O(1) Time"
+              ],
+              [
+                "LCP Search Probe",
+                "Binary Search on Length",
+                "O(log N) Time"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Genomic engine identifies palindromic hairpin repeats in chromosome.",
+            "rows": [
+              [
+                "Hairpin Stem Loop",
+                "Inverted Repeat Probe",
+                "Palindromic Match"
+              ],
+              [
+                "Chromosome Interval",
+                "100k Base Pair Scope",
+                "Sub-millisecond SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "String oracle computes longest common prefix and checks radar symmetry.",
+            "rows": [
+              [
+                "Suffix Array Speedup",
+                "LCP-Assisted Mergesort",
+                "O(N log^2 N) Bound"
+              ],
+              [
+                "Maximal Palindromes",
+                "Radius Binary Search",
+                "O(N log N) Complete"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "High-Performance Substring Equality, O(l Matrix",
+        "columns": [
+          "Query Primitive",
+          "Evaluation Routine",
+          "Asymptotic Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hashing accelerates longest common prefix and palindrome queries.",
+            "rows": [
+              [
+                "Forward Hash Range",
+                "Prefix Array Lookup",
+                "O(1) Substring Hash"
+              ],
+              [
+                "Reverse Hash Range",
+                "Reversed Prefix Lookup",
+                "O(1) Substring Hash"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Binary search evaluates suffix equality across prefix length intervals.",
+            "rows": [
+              [
+                "Palindrome Check",
+                "H_forward === H_reverse",
+                "Strict O(1) Time"
+              ],
+              [
+                "LCP Search Probe",
+                "Binary Search on Length",
+                "O(log N) Time"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Genomic engine identifies palindromic hairpin repeats in chromosome.",
+            "rows": [
+              [
+                "Hairpin Stem Loop",
+                "Inverted Repeat Probe",
+                "Palindromic Match"
+              ],
+              [
+                "Chromosome Interval",
+                "100k Base Pair Scope",
+                "Sub-millisecond SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "String oracle computes longest common prefix and checks radar symmetry.",
+            "rows": [
+              [
+                "Suffix Array Speedup",
+                "LCP-Assisted Mergesort",
+                "O(N log^2 N) Bound"
+              ],
+              [
+                "Maximal Palindromes",
+                "Radius Binary Search",
+                "O(N log N) Complete"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Genomic Sequence Alignment & Deduplication Engine",
+      "codeHash": "5fd96e80f179f490ec84e7634ff87b7cba007dec2f719a3246e1d61208e47407",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Application: Genomic Sequence Matrix",
+        "columns": [
+          "Bio-Informatics Tier",
+          "Algorithmic Primitive",
+          "Operational SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Genomic sequencing pipeline deduplicates nucleotide fragments.",
+            "rows": [
+              [
+                "DNA Base Encoding",
+                "Dense 1-4 Integer Map",
+                "Entropy Maximization"
+              ],
+              [
+                "Coprime Prime Bases",
+                "Bases 5 and 7 Assigned",
+                "Overflow Prevention"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Oracle maps nucleotide alphabet to dense integers with dual prime bases.",
+            "rows": [
+              [
+                "K-Mer Extraction",
+                "Length 10 Sliding Window",
+                "O(1) Rolling Hash"
+              ],
+              [
+                "Duplicate Detection",
+                "Hash Map Multi-set Entry",
+                "High Repetition Flag"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Oncology pipeline detects repetitive promoter duplications across genome.",
+            "rows": [
+              [
+                "Genomic Fragment A",
+                "Offset 0 Promoters",
+                "ATGCGATCGT Identified"
+              ],
+              [
+                "Genomic Fragment B",
+                "Offset 32 Promoters",
+                "Exact Match Confirmed"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Suite extracts duplicate genomic promoters and confirms exact match.",
+            "rows": [
+              [
+                "Oncology Diagnostic",
+                "Translocation Discovery",
+                "Sub-microsecond SLA"
+              ],
+              [
+                "Whole-Genome Screen",
+                "Multi-megabase Sequence",
+                "Carrier-grade Pass"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Application: Genomic Sequence Matrix",
+        "columns": [
+          "Bio-Informatics Tier",
+          "Algorithmic Primitive",
+          "Operational SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Genomic sequencing pipeline deduplicates nucleotide fragments.",
+            "rows": [
+              [
+                "DNA Base Encoding",
+                "Dense 1-4 Integer Map",
+                "Entropy Maximization"
+              ],
+              [
+                "Coprime Prime Bases",
+                "Bases 5 and 7 Assigned",
+                "Overflow Prevention"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Oracle maps nucleotide alphabet to dense integers with dual prime bases.",
+            "rows": [
+              [
+                "K-Mer Extraction",
+                "Length 10 Sliding Window",
+                "O(1) Rolling Hash"
+              ],
+              [
+                "Duplicate Detection",
+                "Hash Map Multi-set Entry",
+                "High Repetition Flag"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Oncology pipeline detects repetitive promoter duplications across genome.",
+            "rows": [
+              [
+                "Genomic Fragment A",
+                "Offset 0 Promoters",
+                "ATGCGATCGT Identified"
+              ],
+              [
+                "Genomic Fragment B",
+                "Offset 32 Promoters",
+                "Exact Match Confirmed"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Suite extracts duplicate genomic promoters and confirms exact match.",
+            "rows": [
+              [
+                "Oncology Diagnostic",
+                "Translocation Discovery",
+                "Sub-microsecond SLA"
+              ],
+              [
+                "Whole-Genome Screen",
+                "Multi-megabase Sequence",
+                "Carrier-grade Pass"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
