@@ -1,0 +1,829 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "sql-mastery",
+  "day": 53,
+  "promptSha": "b04bb703d5316998a03a8385ea6453bd81f2b2117ba523b43655c29125aed542",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Index Access Method Architecture: The Operator Family & Class Hierarchy",
+      "codeHash": "11f6ed72ef196398bb92a5c5f2ccf90fb3da3d4faf151f99b346e372b1dbe307",
+      "spec": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 1",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL access method architecture unlocks extensible custom indexing.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational database systems index standard integers and text strings.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automotive technician organizes specialized mechanical tools on racks.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect index access method architectures and storage structure models.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 1",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PostgreSQL access method architecture unlocks extensible custom indexing.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Relational database systems index standard integers and text strings.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Automotive technician organizes specialized mechanical tools on racks.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect index access method architectures and storage structure models.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Custom B-Tree Operator Classes: Strategy Numbers & Specialized Collation",
+      "codeHash": "e7ee08335227d7fe3a271a9ea265daa0aec581ae2a616e48b7146dd1f580fbd4",
+      "spec": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 2",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Author custom operator classes using strategy numbers and functions.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines require strict mathematical ordering for elements.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Diamond gemologist sorts precious gemstones by clarity and weight.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect operator class specifications and relational operator symbols.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 2",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Author custom operator classes using strategy numbers and functions.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Database engines require strict mathematical ordering for elements.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Diamond gemologist sorts precious gemstones by clarity and weight.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect operator class specifications and relational operator symbols.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GiST Index Internals: Consistent, Penalty, Union & Picksplit Support Functions",
+      "codeHash": "eac537fa58ed369ae9691b8c7a9920140432ee2e37968887ac4670ea5733f84c",
+      "spec": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 3",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Generalized search tree operator classes query multi dimensional data.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Internal tree nodes store bounding keys that enclose child subtrees.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Urban municipal postal planner organizes city residential districts.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect support function internals and algorithmic responsibilities.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 3",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Generalized search tree operator classes query multi dimensional data.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Internal tree nodes store bounding keys that enclose child subtrees.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Urban municipal postal planner organizes city residential districts.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect support function internals and algorithmic responsibilities.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GIN and BRIN Custom Operator Classes: Inverted Indexes & Block Range Summaries",
+      "codeHash": "1391c80d6cf7c3f4b30f0ac92807c150a2d06a5015b1c3fa1422fb6703506e8a",
+      "spec": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 4",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise workloads require specialized index access methods for data.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Generalized inverted indexes store multiple index entries for columns.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Librarian creates inverted index card files for manuscripts and books.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect specialized index opclass matrix and enterprise use cases.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 4",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise workloads require specialized index access methods for data.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Generalized inverted indexes store multiple index entries for columns.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Librarian creates inverted index card files for manuscripts and books.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect specialized index opclass matrix and enterprise use cases.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnostic Inspection: pg_opclass Forensics, Index Integrity & SRE Runbooks",
+      "codeHash": "e7ede8edd691f6e8b27a496a5212b4bc0c5b168dac08b9aea8628b6a1a267b90",
+      "spec": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 5",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diagnostic tooling and catalog forensics verify operator class rules.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Auditing registered operator classes ensures query correctness on disk.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aviation certification authority inspects high performance engines.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect opclass diagnostic verification runbook and mitigation actions.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Custom Operator Classes - Part 5",
+        "leftLabel": "Standard Unindexed Domain Type",
+        "rightLabel": "Custom Operator Class Indexing",
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Diagnostic tooling and catalog forensics verify operator class rules.",
+            "left": {
+              "code": "Unindexed proprietary data type",
+              "result": {
+                "text": "planner forced into slow full sequential scans"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "CREATE OPERATOR CLASS on type",
+              "result": {
+                "text": "binds type to B-tree or GiST for microsecond lookups"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "say2",
+            "caption": "Auditing registered operator classes ensures query correctness on disk.",
+            "left": {
+              "code": "Non-transitive custom comparator",
+              "result": {
+                "text": "breaks B-tree ordering; missing rows during search"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "Strict 3-way btcompare comparator",
+              "result": {
+                "text": "guarantees mathematical transitivity and order"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Aviation certification authority inspects high performance engines.",
+            "left": {
+              "code": "Unmonitored GiST tree bloat",
+              "result": {
+                "text": "overlapping bounding boxes degrade scan speeds"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "penalty support function calibration",
+              "result": {
+                "text": "minimizes bounding box overlap across index pages"
+              },
+              "tone": "ok"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect opclass diagnostic verification runbook and mitigation actions.",
+            "left": {
+              "code": "Unchecked physical index corruption",
+              "result": {
+                "text": "silent query failures and corrupted leaf pointers"
+              },
+              "tone": "error"
+            },
+            "right": {
+              "code": "amcheck & REINDEX CONCURRENTLY",
+              "result": {
+                "text": "detects invariant violations; rebuilds zero downtime"
+              },
+              "tone": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
