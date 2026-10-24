@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 34,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Service Mesh Architecture: Control Plane Separation, Transparent Envoy Proxy Injection & iptables Packet Interception",
+      "codeHash": "bae3416571b0965d6052e75aa72a7f2cbb06c15a6a729d0740ea99839abd5cba",
+      "spec": {
+        "template": "workflow",
+        "title": "Service Mesh Architecture & Envoy Interception Flow",
+        "description": "Trace how istiod compiles xDS configs and Linux iptables intercepts TCP packets into Envoy sidecars.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Castle-and-Moat Failure",
+            "description": "Legacy perimeter security assumes internal VPC is safe; compromised pod sniffs plaintext traffic.",
+            "data": {
+              "active": "perimeter_failure",
+              "nodes": [
+                "edge_firewall",
+                "vpc_subnet",
+                "compromised_pod",
+                "plaintext_sniffed"
+              ],
+              "status": "PLAINTEXT_VULNERABILITY"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Zero-Trust Mesh Separation",
+            "description": "Istiod control plane streams dynamic xDS configs over gRPC to Envoy C++ sidecars.",
+            "data": {
+              "active": "xds_streaming",
+              "nodes": [
+                "istiod_control",
+                "grpc_xds",
+                "envoy_sidecar",
+                "dynamic_listeners"
+              ],
+              "status": "XDS_CONFIG_STREAMED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "iptables Packet Trapping",
+            "description": "Istio-init configures PREROUTING and OUTPUT chains redirecting TCP to ports 15006 and 15001.",
+            "data": {
+              "active": "iptables_redirection",
+              "nodes": [
+                "app_socket",
+                "iptables_chain",
+                "envoy_15006",
+                "envoy_15001"
+              ],
+              "status": "PACKETS_INTERCEPTED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Transparent Mesh Ingestion",
+            "description": "Microservices communicate normally while Envoy sidecars handle encryption and telemetry transparently.",
+            "data": {
+              "active": "transparent_mesh",
+              "nodes": [
+                "injected_pod",
+                "envoy_proxy",
+                "mesh_data_plane",
+                "transparent_flow"
+              ],
+              "status": "MESH_INGESTION_ACTIVE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "Mutual TLS (mTLS) Deep Dive: Cryptographic SPIFFE Identity, Automated Cert Rotation & STRICT Mode Enforcement",
+      "codeHash": "098a16542f44b74357d0aaf7ce2f54ad3098d0a4c1fe9ca4947f24a1b982ed82",
+      "spec": {
+        "template": "workflow",
+        "title": "Mutual TLS & Cryptographic SPIFFE Identity",
+        "description": "Examine bidirectional X.509 authentication, automated 12-hour certificate rotation, and STRICT mode.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Bidirectional mTLS Handshake",
+            "description": "Client and server Envoys present X.509 certs, verifying identities before data exchange.",
+            "data": {
+              "active": "mtls_handshake",
+              "nodes": [
+                "client_envoy",
+                "server_envoy",
+                "x509_exchange",
+                "ec_diffie_hellman"
+              ],
+              "status": "MTLS_ESTABLISHED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "SPIFFE URI Identity",
+            "description": "Citadel CA issues short-lived certs with SPIFFE SANs (spiffe://cluster.local/ns/sa).",
+            "data": {
+              "active": "spiffe_issuance",
+              "nodes": [
+                "k8s_jwt",
+                "citadel_ca",
+                "spiffe_san",
+                "sds_unix_socket"
+              ],
+              "status": "SPIFFE_CERT_ISSUED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "STRICT Mode Enforcement",
+            "description": "STRICT PeerAuthentication terminates unencrypted plaintext with an immediate connection reset.",
+            "data": {
+              "active": "strict_enforcement",
+              "nodes": [
+                "plaintext_attempt",
+                "peer_auth_strict",
+                "connection_reset",
+                "traffic_blocked"
+              ],
+              "status": "PLAINTEXT_DROPPED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Zero-Trust PKI Compliance",
+            "description": "Automated 12-hour rotation guarantees in-memory cryptographic freshness without downtime.",
+            "data": {
+              "active": "zero_trust_pki",
+              "nodes": [
+                "root_ca",
+                "short_lived_cert",
+                "in_memory_keys",
+                "soc2_compliant"
+              ],
+              "status": "STRICT_MTLS_CERTIFIED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Traffic Shifting, Canary Deployments & Resilience Engineering: VirtualServices, DestinationRules & Circuit Breaking",
+      "codeHash": "5142a48be029a49f862bea02f51f43768e27f89c62da359fcb8decaf3b225360",
+      "spec": {
+        "template": "workflow",
+        "title": "Traffic Shifting, Canary Routing & Circuit Breaking",
+        "description": "Analyze dynamic Layer 7 weighted routing and consecutive 5xx error outlier detection.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Decoupled Scaling vs Routing",
+            "description": "DestinationRule defines v1/v2 subsets while VirtualService splits traffic by weight percentage.",
+            "data": {
+              "active": "virtual_service_split",
+              "nodes": [
+                "client_req",
+                "virtual_service",
+                "subset_v1_90",
+                "subset_v2_10"
+              ],
+              "status": "WEIGHT_SPLIT_APPLIED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "Header-Based Testing",
+            "description": "Beta tester headers or cookies route directly to v2 while standard users remain on v1.",
+            "data": {
+              "active": "header_routing",
+              "nodes": [
+                "beta_header",
+                "rule_matcher",
+                "canary_v2",
+                "zero_prod_impact"
+              ],
+              "status": "HEADER_MATCH_ROUTED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Circuit Breaker Trip",
+            "description": "Envoy detects 3 consecutive 5xx errors and immediately ejects the failing pod instance.",
+            "data": {
+              "active": "circuit_breaker",
+              "nodes": [
+                "consecutive_5xx",
+                "outlier_detector",
+                "eject_pod",
+                "fail_fast_503"
+              ],
+              "status": "CIRCUIT_TRIPPED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Self-Healing Resilience",
+            "description": "Automatic retries and timeouts insulate upstream services from cascading outages.",
+            "data": {
+              "active": "self_healing",
+              "nodes": [
+                "upstream_call",
+                "envoy_timeout",
+                "auto_retry",
+                "resilient_system"
+              ],
+              "status": "HIGH_AVAILABILITY_SECURED"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Layer 7 Authorization Policies & Observability: SPIFFE-Based RBAC, JWT Claim Verification & Distributed Tracing",
+      "codeHash": "0cd14cfc01b4d15339d858ee4d2122140c2b7da817e51d2d4d7409d44f4adcba",
+      "spec": {
+        "template": "workflow",
+        "title": "Layer 7 Authorization Policies & Observability",
+        "description": "Enforce declarative SPIFFE RBAC, JWT claim inspection, and end-to-end distributed tracing.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Declarative Layer 7 RBAC",
+            "description": "AuthorizationPolicy matches SPIFFE source principal and HTTP paths directly in Envoy.",
+            "data": {
+              "active": "authz_policy",
+              "nodes": [
+                "incoming_mtls",
+                "source_spiffe",
+                "authz_rules",
+                "rbac_eval"
+              ],
+              "status": "RBAC_EVALUATED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "JWT Claim Verification",
+            "description": "Envoy validates external JWT signature and role claims before allowing state mutations.",
+            "data": {
+              "active": "jwt_verification",
+              "nodes": [
+                "bearer_token",
+                "jwt_claims",
+                "role_admin_check",
+                "auth_allowed"
+              ],
+              "status": "JWT_CLAIMS_VERIFIED"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Edge 403 Forbidden Drop",
+            "description": "Unauthorized calls receive an immediate 403 Forbidden without reaching the container.",
+            "data": {
+              "active": "forbidden_drop",
+              "nodes": [
+                "unauthorized_pod",
+                "policy_mismatch",
+                "http_403_drop",
+                "container_protected"
+              ],
+              "status": "UNAUTHORIZED_BLOCKED"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Distributed Telemetry & Kiali",
+            "description": "Envoy injects W3C traceparent headers, streaming real-time topologies and metrics.",
+            "data": {
+              "active": "distributed_tracing",
+              "nodes": [
+                "traceparent_hdr",
+                "opentelemetry",
+                "prometheus_metrics",
+                "kiali_topology"
+              ],
+              "status": "OBSERVABILITY_LIVE"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "Masterclass Synthesis: Production Istio Zero-Trust Service Mesh & Envoy Traffic Governance Engine",
+      "codeHash": "720388b1ebf039258968b5a75edb8e2a8e75a1848a27d86f2069379addf632d7",
+      "spec": {
+        "template": "workflow",
+        "title": "Enterprise Zero-Trust Service Mesh Engine",
+        "description": "Comprehensive synthesis of transparent interception, STRICT mTLS, canary shifting, and RBAC.",
+        "steps": [
+          {
+            "at": "say1",
+            "title": "Kernel Interception",
+            "description": "Linux iptables traps outbound TCP calls, handing raw byte streams to local Envoy.",
+            "data": {
+              "active": "kernel_trapping",
+              "nodes": [
+                "app_process",
+                "kernel_output",
+                "envoy_port_15001",
+                "mesh_pipeline"
+              ],
+              "status": "PACKET_TRAPPED"
+            }
+          },
+          {
+            "at": "say2",
+            "title": "STRICT mTLS Verification",
+            "description": "Cryptographic SPIFFE X.509 handshake authenticates client/server with zero plaintext.",
+            "data": {
+              "active": "strict_mtls_flow",
+              "nodes": [
+                "spiffe_identity",
+                "strict_peer_auth",
+                "tls_crypto_tunnel",
+                "plaintext_rejected"
+              ],
+              "status": "MTLS_VERIFIED_STRICT"
+            }
+          },
+          {
+            "at": "example",
+            "title": "Canary Traffic Shift",
+            "description": "VirtualService routes 90% to stable v1 and 10% to canary v2 with 1.25ms transit.",
+            "data": {
+              "active": "canary_execution",
+              "nodes": [
+                "canary_router",
+                "subset_v1",
+                "subset_v2",
+                "latency_1_25ms"
+              ],
+              "status": "TRAFFIC_SPLIT_10_90"
+            }
+          },
+          {
+            "at": "tryIt",
+            "title": "Grade A+ Production Certification",
+            "description": "Zero-trust service mesh engine certified with 100% test coverage and resilience.",
+            "data": {
+              "active": "mesh_certification",
+              "nodes": [
+                "authz_engine",
+                "circuit_breaker",
+                "telemetry_collector",
+                "grade_a_certified"
+              ],
+              "status": "GRADE_A_PLUS_CERTIFIED"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
