@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 47,
+  "entries": [
+    {
+      "partTitle": "The GitOps Paradigm: Declarative In-Cluster Pull vs Imperative Push & Security Boundaries",
+      "codeHash": "842c0966701059763882a54827a8a0c184a5fff1168f15eb2c4a67abd3c680d6",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "The GitOps Paradigm: Declarative In-Cluster Pull vs Imperative Push & Security Boundaries",
+          "leftLabel": "Imperative Push Model",
+          "rightLabel": "Declarative In-Cluster Pull",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Exposed API endpoint."
+            },
+            {
+              "name": "Feature",
+              "value": "External admin credentials."
+            },
+            {
+              "name": "Feature",
+              "value": "Untracked manual changes."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Private cluster endpoint."
+            },
+            {
+              "name": "Feature",
+              "value": "In-cluster operator."
+            },
+            {
+              "name": "Feature",
+              "value": "Git as single truth."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "In-cluster GitOps operators pull state securely without external access."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ArgoCD Application Architecture: Controller Loops & Automated Self-Healing Enforcement",
+      "codeHash": "d04de415857d4611df52e407fc144f1fb2969ad588687eef05585043398b6b22",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "ArgoCD Application Architecture: Controller Loops & Automated Self-Healing Enforcement",
+          "leftLabel": "Unmanaged Manual Drift",
+          "rightLabel": "Automated Self-Healing",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Manual kubectl edits."
+            },
+            {
+              "name": "Feature",
+              "value": "Silent production drift."
+            },
+            {
+              "name": "Feature",
+              "value": "Indeterminate cluster state."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Automated drift detection."
+            },
+            {
+              "name": "Feature",
+              "value": "Instant overwrite to Git."
+            },
+            {
+              "name": "Feature",
+              "value": "Deterministic state."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Self-healing controllers detect uncommitted mutations and revert them."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Cluster GitOps Orchestration: ApplicationSets & Matrix Generators across AWS Accounts",
+      "codeHash": "13823861c0c7413f63906acebb2be4c55a77b18a5617d272256bd1cf8dd7dc44",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Multi-Cluster GitOps Orchestration: ApplicationSets & Matrix Generators across AWS Accounts",
+          "leftLabel": "Sprawling Duplicate Files",
+          "rightLabel": "ApplicationSet Matrix",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Hundreds of duplicate YAMLs."
+            },
+            {
+              "name": "Feature",
+              "value": "Severe version drift."
+            },
+            {
+              "name": "Feature",
+              "value": "Manual multi-cluster edits."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Single templated generator."
+            },
+            {
+              "name": "Feature",
+              "value": "Automated cluster discovery."
+            },
+            {
+              "name": "Feature",
+              "value": "Dynamic environment matrix."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Matrix generators provision microservices across clusters without duplication."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Progressive Delivery with Argo Rollouts: Automated Canary Analysis & Instant Rollback",
+      "codeHash": "f92c00c485b96ce2e12b01e151e27fe54c4bc42426e1850e4ca5078100ee5f16",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Progressive Delivery with Argo Rollouts: Automated Canary Analysis & Instant Rollback",
+          "leftLabel": "Blind Rolling Updates",
+          "rightLabel": "Argo Canary Rollouts",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "All-or-nothing promotion."
+            },
+            {
+              "name": "Feature",
+              "value": "Zero metric awareness."
+            },
+            {
+              "name": "Feature",
+              "value": "Human debugging delays."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Gradual traffic shifting."
+            },
+            {
+              "name": "Feature",
+              "value": "Continuous metric checks."
+            },
+            {
+              "name": "Feature",
+              "value": "Instant automated rollback."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Metric analysis templates abort canary releases if error thresholds breach."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Enterprise GitOps Governance, SRE Incident Runbook & Auditability",
+      "codeHash": "d650d604e3d5f128e7f8b260c6fd36cc399361364ee3d9ee9547b3c95b1d590d",
+      "spec": {
+        "template": "compare",
+        "compare": {
+          "title": "Masterclass Synthesis: Enterprise GitOps Governance, SRE Incident Runbook & Auditability",
+          "leftLabel": "Ad-Hoc Cluster Access",
+          "rightLabel": "Enterprise GitOps Governance",
+          "leftAttributes": [
+            {
+              "name": "Feature",
+              "value": "Direct kubectl writes."
+            },
+            {
+              "name": "Feature",
+              "value": "Unsigned commit deployments."
+            },
+            {
+              "name": "Feature",
+              "value": "Manual audit binder prep."
+            }
+          ],
+          "rightAttributes": [
+            {
+              "name": "Feature",
+              "value": "Read-only human access."
+            },
+            {
+              "name": "Feature",
+              "value": "Signed cryptographic commits."
+            },
+            {
+              "name": "Feature",
+              "value": "Automated compliance proof."
+            }
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "focus": "left",
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+          },
+          {
+            "at": "say2",
+            "focus": "right",
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+          },
+          {
+            "at": "example",
+            "focus": "both",
+            "annotation": "Enterprise GitOps enforces signed commits and auditable deployments."
+          },
+          {
+            "at": "tryIt",
+            "focus": "right",
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+          }
+        ]
+      }
+    }
+  ]
+}
