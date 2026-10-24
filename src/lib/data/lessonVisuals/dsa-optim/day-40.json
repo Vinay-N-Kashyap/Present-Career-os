@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 40,
+  "promptSha": "dsa-optim-day-40-dpi-capstone-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architecture of Enterprise DPI & Threat Signature Detection: Combining String Algorithms",
+      "codeHash": "272c4f41be637c0ae0328469f992dd26df1c2d9e17838d376b01fdcb191b1158",
+      "filled": {
+        "template": "table",
+        "title": "Unified Threat Signature Taxonomy.",
+        "columns": [
+          "Signature Category",
+          "Severity Rating",
+          "Pattern Format"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone unifies string algorithms into threat engine.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threat signatures categorize malicious patterns across taxonomy.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Perimeter firewall correlates threat signatures across packet streams.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Signature registry tracks threat category and severity metrics.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Unified Threat Signature Taxonomy.",
+        "columns": [
+          "Signature Category",
+          "Severity Rating",
+          "Pattern Format"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Milestone capstone unifies string algorithms into threat engine.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Threat signatures categorize malicious patterns across taxonomy.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Perimeter firewall correlates threat signatures across packet streams.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Signature registry tracks threat category and severity metrics.",
+            "rows": [
+              [
+                "SQL Injection Exploit",
+                "Critical Severity Rating",
+                "Exact String Pattern"
+              ],
+              [
+                "Binary Shellcode Sled",
+                "Critical Execution Hazard",
+                "Byte Sequence Signature"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Tier Filtering Pipeline: Fast Hash Screening (Tier 1) & Automaton In-Depth Signature Matching (Tier 2)",
+      "codeHash": "bff16eef95912fc526264252ba58cdee0123bf0a674e0db59b6e53f3922ba7cb",
+      "filled": {
+        "template": "table",
+        "title": "Multi Tier Packet Screening Architecture.",
+        "columns": [
+          "Inspection Tier",
+          "Screening Mechanism",
+          "Throughput Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi tier screening filters benign traffic using sliding tokens.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rolling hash prefilter identifies candidate threats in streams.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Carrier backbone filter bypasses benign traffic at line rate.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Token prefilter screens payload buffers extracting candidate hits.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Multi Tier Packet Screening Architecture.",
+        "columns": [
+          "Inspection Tier",
+          "Screening Mechanism",
+          "Throughput Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi tier screening filters benign traffic using sliding tokens.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rolling hash prefilter identifies candidate threats in streams.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Carrier backbone filter bypasses benign traffic at line rate.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Token prefilter screens payload buffers extracting candidate hits.",
+            "rows": [
+              [
+                "Tier One Fast Screening",
+                "Rolling Prefix Token Set",
+                "Sub Nanosecond Bypass"
+              ],
+              [
+                "Tier Two Deep Scan",
+                "Aho Corasick Automaton",
+                "Exact Threat Pinpointing"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Copy Packet Stream Buffer Ingestion & Circular Ring Buffer Boundary Continuity",
+      "codeHash": "2c82f79c8ffb7464c9ab6363693789b9b69556ceccfd2ce3fed86d7a075ca34e",
+      "filled": {
+        "template": "table",
+        "title": "Circular Ring Buffer Boundary Continuity.",
+        "columns": [
+          "Packet Segment",
+          "Overlap Tail Retention",
+          "Reconstruction Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Circular buffer maintains boundary continuity across data packets.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Network gateway inspects packets maintaining session continuity.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network sensor inspects segmented payloads across transport boundaries.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Ring buffer retains tail bytes connecting split attack fragments.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Circular Ring Buffer Boundary Continuity.",
+        "columns": [
+          "Packet Segment",
+          "Overlap Tail Retention",
+          "Reconstruction Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Circular buffer maintains boundary continuity across data packets.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Network gateway inspects packets maintaining session continuity.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network sensor inspects segmented payloads across transport boundaries.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Ring buffer retains tail bytes connecting split attack fragments.",
+            "rows": [
+              [
+                "Preceding Network Packet",
+                "Trailing Overlap Tail Retained",
+                "Boundary Context Preserved"
+              ],
+              [
+                "Subsequent Ingress Frame",
+                "Overlap Prepend Operation",
+                "Contiguous String Evaluation"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Line-Rate Threat Classification: CVE Exploits, SQL Injection, XSS & Binary Shellcode Signatures",
+      "codeHash": "bc818742fad199eaae1b6fae80e19686109551b52900049d8269c38f85220d9d",
+      "filled": {
+        "template": "table",
+        "title": "Line Rate Threat Classification Matrix.",
+        "columns": [
+          "Detected Exploit Class",
+          "Severity Level",
+          "Mitigation Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Threat classification engine analyzes payload security telemetry.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Automaton scanner correlates matched patterns with threat metadata.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Security operations center ingests structured incident alerts.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automaton scanner extracts threat detections with exact offsets.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Line Rate Threat Classification Matrix.",
+        "columns": [
+          "Detected Exploit Class",
+          "Severity Level",
+          "Mitigation Verdict"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Threat classification engine analyzes payload security telemetry.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Automaton scanner correlates matched patterns with threat metadata.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Security operations center ingests structured incident alerts.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automaton scanner extracts threat detections with exact offsets.",
+            "rows": [
+              [
+                "Remote Code Execution",
+                "Critical Exploit Hazard",
+                "Instant Drop Action"
+              ],
+              [
+                "Anomalous Query Parameter",
+                "Medium Security Alert",
+                "Audit Log Telemetry"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Capstone Project: End-to-End Enterprise Deep Packet Inspection & Autonomous Intrusion Prevention Engine",
+      "codeHash": "4faa8c521a3598c21d284ea29e5e54748093e5e03af4a9a346fe066150e38bd5",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Deep Packet Inspection Engine.",
+        "columns": [
+          "Engine Pipeline Phase",
+          "Autonomous Decision",
+          "Telemetry Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grand capstone deploys enterprise deep packet inspection engine.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inspection engine evaluates packet payload returning verdict.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud defense cluster sanitizes ingress transit streams in real time.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Enterprise engine evaluates simulated network packets and exploits.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Deep Packet Inspection Engine.",
+        "columns": [
+          "Engine Pipeline Phase",
+          "Autonomous Decision",
+          "Telemetry Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Grand capstone deploys enterprise deep packet inspection engine.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inspection engine evaluates packet payload returning verdict.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud defense cluster sanitizes ingress transit streams in real time.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Enterprise engine evaluates simulated network packets and exploits.",
+            "rows": [
+              [
+                "Legitimate Packet Scan",
+                "Immediate Allow Forwarding",
+                "Zero Overhead Telemetry"
+              ],
+              [
+                "Critical Exploit Detection",
+                "Wire Speed Drop Action",
+                "Security Incident Alert"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
