@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 31,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "google/gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "EKS Managed Control Plane Architecture & etcd Quorum Mechanics",
+      "codeHash": "94139a0565bd51431de119f98ce2f653dbffaa207da791855af7aa38d459d446",
+      "spec": {
+        "template": "workflow",
+        "title": "EKS Managed Control Plane & Cross-AZ etcd Quorum Architecture",
+        "stages": [
+          {
+            "id": "nlb",
+            "name": "Control Plane NLB",
+            "subtext": "Cross-Account Ingress"
+          },
+          {
+            "id": "apiserver",
+            "name": "kube-apiserver",
+            "subtext": "Active Replicas across 3 AZs"
+          },
+          {
+            "id": "etcd",
+            "name": "etcd Quorum Ring",
+            "subtext": "Raft Consensus (2N+1)"
+          },
+          {
+            "id": "workerEni",
+            "name": "Cross-Account ENI",
+            "subtext": "Private Subnet Peering"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "EKS provisions a single-tenant managed control plane inside an AWS-managed VPC.",
+            "activeStageId": "nlb",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "etcd replicates linearizable cluster state across three independent Availability Zones.",
+            "activeStageId": "etcd",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Raft quorum guarantees cluster operation as long as a majority of nodes survive.",
+            "activeStageId": "etcd",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulated single-AZ outage proves zero downtime under 99.95% SLA.",
+            "activeStageId": "workerEni",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "AWS VPC CNI Plugin & Secondary ENI IPAM Allocation Mechanics",
+      "codeHash": "85594c36d920e006d874f209ce239326bc49612546301b49ed0d267129a218be",
+      "spec": {
+        "template": "workflow",
+        "title": "AWS VPC CNI Secondary ENI & Pod IPAM Architecture",
+        "stages": [
+          {
+            "id": "daemon",
+            "name": "aws-node DaemonSet",
+            "subtext": "Local Node IPAM Daemon"
+          },
+          {
+            "id": "ec2api",
+            "name": "EC2 ENI Attach API",
+            "subtext": "Secondary Network Interfaces"
+          },
+          {
+            "id": "secIp",
+            "name": "Secondary IP Pool",
+            "subtext": "Warm IP Target Allocation"
+          },
+          {
+            "id": "veth",
+            "name": "Linux veth Pair",
+            "subtext": "Direct Pod eth0 Binding"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The AWS VPC CNI allocates native VPC private IPv4 addresses directly to Pods.",
+            "activeStageId": "daemon",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Secondary ENIs attach to the EC2 worker node to provide IP allocation slots.",
+            "activeStageId": "ec2api",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Pods communicate across VPCs and on-premises without overlay SNAT bottlenecks.",
+            "activeStageId": "secIp",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Prefix Delegation assigns /28 blocks expanding m5.large density to 432 pods.",
+            "activeStageId": "veth",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "VPC CNI Custom Networking & Secondary CGNAT CIDR Subnetting",
+      "codeHash": "f1058959a6da351d93daf84142df63d11fa6ca6d324aa25dcc416edd11746776",
+      "spec": {
+        "template": "workflow",
+        "title": "VPC CNI Custom Networking & Secondary CGNAT Subnetting",
+        "stages": [
+          {
+            "id": "cgnat",
+            "name": "Secondary CIDR Block",
+            "subtext": "100.64.0.0/16 CGNAT Range"
+          },
+          {
+            "id": "subnets",
+            "name": "Dedicated Pod Subnets",
+            "subtext": "65,000 Non-Routable IPs"
+          },
+          {
+            "id": "eniconfig",
+            "name": "ENIConfig CRD",
+            "subtext": "AZ-to-Subnet Binding Spec"
+          },
+          {
+            "id": "podNet",
+            "name": "Custom Pod Routing",
+            "subtext": "RFC 1918 Space Preserved"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Large EKS clusters quickly exhaust private RFC 1918 corporate IP subnets.",
+            "activeStageId": "cgnat",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Secondary 100.64.0.0/16 CGNAT address block provides over 65,000 dedicated Pod IPs.",
+            "activeStageId": "subnets",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "ENIConfig custom resources map worker node AZs to dedicated Pod subnets.",
+            "activeStageId": "eniconfig",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Worker nodes retain corporate IPs while all Pods draw from the CGNAT pool.",
+            "activeStageId": "podNet",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "EKS Pod Identity & IRSA (IAM Roles for Service Accounts) OIDC Federation",
+      "codeHash": "240ff544dd9c90041ae1de80425b45cc7e3841ebc997016f1b3b835c7f20f927",
+      "spec": {
+        "template": "workflow",
+        "title": "EKS Pod Identity & IRSA OIDC Token Federation",
+        "stages": [
+          {
+            "id": "sa",
+            "name": "Kubernetes ServiceAccount",
+            "subtext": "Namespace & Name Binding"
+          },
+          {
+            "id": "jwt",
+            "name": "Projected OIDC JWT",
+            "subtext": "Cryptographically Signed Token"
+          },
+          {
+            "id": "sts",
+            "name": "AWS STS AssumeRole",
+            "subtext": "WebIdentity Verification"
+          },
+          {
+            "id": "imds",
+            "name": "IMDSv2 Hop Limit = 1",
+            "subtext": "Host Credential Isolation"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "IRSA decouples microservice AWS permissions from the worker node EC2 role.",
+            "activeStageId": "sa",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Kubernetes projects an OIDC JWT token directly into the container filesystem.",
+            "activeStageId": "jwt",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "AWS STS validates token claims and issues 1-hour temporary scoped credentials.",
+            "activeStageId": "sts",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "IMDSv2 hop limit 1 prevents containers from querying host EC2 metadata.",
+            "activeStageId": "imds",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Production EKS VPC CNI & Custom Pod IPAM Engine",
+      "codeHash": "80a67b1d8c1dce7d32b07fbd61eaffc06476631cf58834277f06b07cf5eecd94",
+      "spec": {
+        "template": "workflow",
+        "title": "Enterprise EKS VPC CNI IPAM & Custom Subnetting Simulation Engine",
+        "stages": [
+          {
+            "id": "engine",
+            "name": "EKS IPAM Engine Core",
+            "subtext": "Multi-AZ Pod Provisioner"
+          },
+          {
+            "id": "dualEni",
+            "name": "Secondary ENI Scheduler",
+            "subtext": "Round-Robin Interface Balancing"
+          },
+          {
+            "id": "cgnatAlloc",
+            "name": "CGNAT IP Allocator",
+            "subtext": "100.64.10.x Address Resolution"
+          },
+          {
+            "id": "gradeA",
+            "name": "Enterprise Certification",
+            "subtext": "EKS_VPC_CNI_IPAM_ENGINE_CERTIFIED"
+          }
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The simulation engine manages high-velocity pod allocation during scale events.",
+            "activeStageId": "engine",
+            "statusBadge": "active"
+          },
+          {
+            "at": "say2",
+            "caption": "Secondary ENIs are balanced to avoid network interface queue saturation.",
+            "activeStageId": "dualEni",
+            "statusBadge": "active"
+          },
+          {
+            "at": "example",
+            "caption": "Pods receive isolated CGNAT addresses with zero RFC 1918 consumption.",
+            "activeStageId": "cgnatAlloc",
+            "statusBadge": "verified"
+          },
+          {
+            "at": "tryIt",
+            "caption": "Full platform test confirms 100% deterministic execution and health status.",
+            "activeStageId": "gradeA",
+            "statusBadge": "verified"
+          }
+        ]
+      },
+      "filled": {
+        "active": true
+      }
+    }
+  ]
+}
