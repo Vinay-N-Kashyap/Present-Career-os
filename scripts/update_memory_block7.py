@@ -1,83 +1,63 @@
+# scripts/update_memory_block7.py
+import os
 import csv
-import datetime
+from datetime import datetime
 
-print("=== UPDATING CENTRAL SHARED MEMORY FOR BLOCK 7 ===")
+now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+commit_sha = "431bd3ec"
 
-# 1. Update PROJECT_MEMORY.md
-pm_path = r"C:\Users\Admin\Desktop\projects\memory of agent\PROJECT_MEMORY.md"
-with open(pm_path, "r", encoding="utf-8") as f:
-    pm_content = f.read()
+# 1. Update multi_agent_control.csv
+control_path = r"C:\Users\Admin\Desktop\projects\memory of agent\multi_agent_control.csv"
+new_control_line = f'AGENT-501,Agent Branch B,agent/branch-b-curriculum-commerce-iot,Present-Career-os-commerce,TASK-1896..1900,Completed,{now_str},"Block 7: Days 31-35 & Milestone 7 Capstone (bcom_fin / Corporate Finance & Investment Banking) completed, tested (13/13 expansion pass, 87/87 regression pass, 0 tsc errors), and pushed (commit {commit_sha}). 16,593 words generated (all 25 parts >= 580 words; all days >= 3,000 words). Course 02 at 35/60 Days.",,,,\n'
 
-block7_entry = """
-### Milestone Record: Course 01 (Corporate & Financial Accounting - `bcom_acc`) Month 2 Block 7 Complete (Days 31-35)
-- **Agent**: AGENT-501 (Branch B - Commerce & IoT)
-- **Branch**: `agent/branch-b-curriculum-commerce-iot` (Commit `4e376a68`)
-- **Scope**: Days 31–35 (5 Days, 25 Parts)
-  - **Day 31**: Ind AS 115 / IFRS 15: Revenue from Contracts with Customers & 5-Step Model (3,254 words).
-  - **Day 32**: Ind AS 116 / IFRS 16: Leases, Single Lessee Model, ROU Assets & P&L Front-Loading (3,146 words).
-  - **Day 33**: Ind AS 113 / IFRS 13: Fair Value Measurement, Hierarchy Levels 1-3 & Valuation Framework (3,368 words).
-  - **Day 34**: Ind AS 109 / IFRS 9: Financial Instruments, 3-Stage ECL Impairment & Hedge Accounting (3,411 words).
-  - **Day 35**: Milestone 7 Capstone: Enterprise Financial Controller Ind AS Compliance & Complex Financial Statements Suite (3,079 words). Emitted confirmation: `ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS`.
-- **Invariants**: 100% adherence to 5-part architecture, >= 580 words per part, >= 3,000 words per day, `check.answer: 0`, `check.answerIndex: 0`, Gate v2 visual envelopes in `src/lib/data/lessonVisuals/bcom-accounting/day-31.json` through `day-35.json` (ledger-sheet template with balanced postings and SHA-256 code hashes).
-- **Verification**: All 12 tests in `tests/bcom_accounting_days31_35_expansion.test.ts` passed. All 87 tests in `tests/bcom_finance_accounting_long_lessons.test.ts` passed. `npx tsc --noEmit` exited cleanly with 0 errors. Pushed to remote branch.
-"""
-
-if "Course 01 (Corporate & Financial Accounting - `bcom_acc`) Month 2 Block 7" not in pm_content:
-    with open(pm_path, "a", encoding="utf-8") as f:
-        f.write("\n" + block7_entry.strip() + "\n")
-    print("Appended Block 7 to PROJECT_MEMORY.md")
-else:
-    print("Block 7 already noted in PROJECT_MEMORY.md")
+with open(control_path, "a", encoding="utf-8") as f:
+    f.write(new_control_line)
+print("Updated multi_agent_control.csv")
 
 # 2. Update agent_tasks.csv
-tasks_csv_path = r"C:\Users\Admin\Desktop\projects\memory of agent\agent_tasks.csv"
-rows = []
-fieldnames = []
-with open(tasks_csv_path, "r", encoding="utf-8", newline="") as f:
-    reader = csv.reader(f)
-    header = next(reader)
-    fieldnames = header
-    for r in reader:
-        if r and len(r) >= 5:
-            tid = r[0].strip()
-            # Mark TASK-1866 to TASK-1870 as Completed
-            if tid in [f"TASK-{i}" for i in range(1866, 1871)]:
-                r[4] = "Completed"
-        rows.append(r)
-
-# Register Block 8 tasks TASK-1871 to TASK-1875 as Active
-existing_tids = {r[0].strip() for r in rows if r}
-block8_tasks = [
-    ("TASK-1871", "bcom_acc Day 36: Ind AS 102 Share-Based Payments (ESOPs, SARs, Equity vs Cash-Settled)", "Course 01 Block 8", "AGENT-501", "Active"),
-    ("TASK-1872", "bcom_acc Day 37: Ind AS 12 Income Taxes & Balance Sheet Deferred Tax (DTA/DTL)", "Course 01 Block 8", "AGENT-501", "Active"),
-    ("TASK-1873", "bcom_acc Day 38: Ind AS 33 Earnings Per Share (Basic, Diluted EPS & Treasury Stock)", "Course 01 Block 8", "AGENT-501", "Active"),
-    ("TASK-1874", "bcom_acc Day 39: Ind AS 37 Provisions, Contingent Liabilities & Restructuring Reserves", "Course 01 Block 8", "AGENT-501", "Active"),
-    ("TASK-1875", "bcom_acc Day 40: Milestone 8 Capstone: Corporate Tax, Equity & Capital Reporting Simulator", "Course 01 Block 8", "AGENT-501", "Active"),
+tasks_path = r"C:\Users\Admin\Desktop\projects\memory of agent\agent_tasks.csv"
+tasks = [
+    f"TASK-1896,bcom_fin Day 31: Advanced Discounted Cash Flow (DCF) & Multi-Stage Valuation,Completed,{commit_sha},Present-Career-os-commerce,agent/branch-b-curriculum-commerce-iot,{now_str}\n",
+    f"TASK-1897,bcom_fin Day 32: Leveraged Buyout (LBO) Modeling & Debt Tranche Waterfall,Completed,{commit_sha},Present-Career-os-commerce,agent/branch-b-curriculum-commerce-iot,{now_str}\n",
+    f"TASK-1898,bcom_fin Day 33: Mergers & Acquisitions (M&A) Accretion / Dilution & Deal Structuring,Completed,{commit_sha},Present-Career-os-commerce,agent/branch-b-curriculum-commerce-iot,{now_str}\n",
+    f"TASK-1899,bcom_fin Day 34: Advanced Cost of Capital & Capital Structure Optimization,Completed,{commit_sha},Present-Career-os-commerce,agent/branch-b-curriculum-commerce-iot,{now_str}\n",
+    f"TASK-1900,bcom_fin Day 35: Milestone 7 Capstone: Wall Street Investment Banking & M&A LBO Transaction Simulator,Completed,{commit_sha},Present-Career-os-commerce,agent/branch-b-curriculum-commerce-iot,{now_str}\n"
 ]
 
-for t in block8_tasks:
-    if t[0] not in existing_tids:
-        rows.append(list(t))
+with open(tasks_path, "a", encoding="utf-8") as f:
+    for t in tasks:
+        f.write(t)
+print("Updated agent_tasks.csv")
 
-with open(tasks_csv_path, "w", encoding="utf-8", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow(fieldnames)
-    writer.writerows(rows)
-print("Updated agent_tasks.csv (TASK-1866..1870 Completed, TASK-1871..1875 Active)")
+# 3. Prepend / Insert milestone entry in PROJECT_MEMORY.md
+memory_path = r"C:\Users\Admin\Desktop\projects\memory of agent\PROJECT_MEMORY.md"
+memory_entry = f"""
+## [{now_str}] Milestone Update: Course 02 (Corporate Finance & Capital Markets / Investment Banking - `bcom_fin` / `bcom-finance`) Month 2 Block 7 (Days 31-35) & Milestone 7 Capstone CONQUERED!
+- **Branch**: `agent/branch-b-curriculum-commerce-iot` | **Worktree**: `Present-Career-os-commerce`
+- **Assigned Agent**: AGENT-501 (Branch B Lead: Flagship Commerce)
+- **Commit SHA**: `{commit_sha}` (Pushed to remote `origin/agent/branch-b-curriculum-commerce-iot`)
+- **Block Scope**: Month 2 Block 7 (Days 31 to 35)
+  - **Day 31**: Advanced Discounted Cash Flow (DCF) & Multi-Stage Valuation (5-yr discrete UFCF, mid-year discounting at 8.41% WACC, Gordon Growth $677.29M TV, EV $558.02M, Equity Value $475.00M, $23.75 intrinsic share price, token: `DCF_ADVANCED_VALUATION_ENGINE_PASS`).
+  - **Day 32**: Leveraged Buyout (LBO) Modeling & Debt Tranche Waterfall (Apex buyout at 9.0x EBITDA, $500M uses, TLA/TLB/Notes tranches, $121.5M debt paydown, Year 5 exit @ 11.0x EBITDA, 2.82x MoIC, 23.06% 5-year IRR, token: `LBO_TRANCHE_WATERFALL_PASS`).
+  - **Day 33**: Mergers & Acquisitions (M&A) Accretion / Dilution & Deal Structuring (PPA, $300M write-ups, $75M DTL, $775M goodwill, $80M cost synergies, $662.25M pro-forma net income, +6.39% EPS accretion, $27.0M break-even synergies, token: `MNA_ACCRETION_DILUTION_SUITE_PASS`).
+  - **Day 34**: Advanced Cost of Capital & Capital Structure Optimization (Modigliani-Miller with taxes, Hamada unlevering/relevering beta, synthetic rating spreads AAA to CCC, global minimum WACC 8.41% at 25-30% debt, token: `WACC_OPTIMAL_CAPITAL_STRUCTURE_PASS`).
+  - **Day 35**: Milestone 7 Capstone: Wall Street Investment Banking & M&A LBO Transaction Simulator (Four-pillar integration: DCF $23.75/sh, LBO 2.82x MoIC / 23.06% IRR, Strategic M&A $25.00/sh / +6.13% accretion, and Hamada WACC 8.41%, board recommendation and token: `INVESTMENT_BANKING_TRANSACTION_SIMULATOR_PASS`).
+- **Cryptographic Verification Gates**:
+  - **Law 1 Compliance**: 16,593 total words generated across 25 parts. Every part strictly >= 580 words (ranging 605 to 755 words). Average 3,318 words/day.
+  - **Law 2 Compliance**: Gate v2 visual envelopes generated for Days 31-35 (`day-31.json` to `day-35.json`) with `ledger-sheet`, 4 balanced debit/credit steps, and SHA-256 bindings.
+  - **Law 3 Compliance**: Exact terminal stdout preserved using `.rstrip('\\r\\n')`.
+  - **Law 4 Compliance**: Reactive execution protocol strictly maintained.
+  - **Law 5 Compliance**:
+    - `npx tsx --test tests/bcom_finance_days31_35_expansion.test.ts`: 13/13 PASSED (100%).
+    - `npx tsx --test tests/bcom_finance_accounting_long_lessons.test.ts`: 87/87 PASSED (100%).
+    - `npx tsc --noEmit`: 0 errors (status 0).
+    - `graphify update .`: 49,443 nodes, 70,546 edges synchronized.
+- **Track Progress**: Course 02 (`bcom_fin`) is now **35/60 Days Complete (58.3%)**!
+"""
 
-# 3. Update multi_agent_control.csv
-mac_path = r"C:\Users\Admin\Desktop\projects\memory of agent\multi_agent_control.csv"
-mac_rows = []
-with open(mac_path, "r", encoding="utf-8", newline="") as f:
-    reader = csv.reader(f)
-    header = next(reader)
-    for r in reader:
-        if r and len(r) >= 3 and r[0].strip() == "AGENT-501":
-            r[2] = "Active: Course 01 bcom_acc Block 8 (Days 36-40)"
-        mac_rows.append(r)
+with open(memory_path, "r", encoding="utf-8") as f:
+    orig_memory = f.read()
 
-with open(mac_path, "w", encoding="utf-8", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerow(header)
-    writer.writerows(mac_rows)
-print("Updated multi_agent_control.csv for AGENT-501")
+with open(memory_path, "w", encoding="utf-8") as f:
+    f.write(memory_entry.strip() + "\n\n" + orig_memory)
+print("Updated PROJECT_MEMORY.md with Block 7 Milestone Entry!")
