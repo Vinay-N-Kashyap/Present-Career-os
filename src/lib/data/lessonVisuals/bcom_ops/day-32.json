@@ -1,0 +1,764 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 32,
+  "promptSha": "146b81ba28f8fb9e4fe397d5c1e6e119b43fd9bc6bf0958ad3764a5f6e194e52",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Multi-Echelon Network Topologies: Serial, Distribution & Assembly Systems",
+      "codeHash": "e8020a1ea9e9bae716750fdef89a3b765cc81de5a2e0afc536d725c9611973f8",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Echelon Network Topologies: Serial Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Physical goods flow through interconnected supply hierarchies.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Operations research formalizes network graph topologies.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Consumer electronics multinational operates packaging hub.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase assembly plant parameters to observe echelon holding cost.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Clark-Scarf Recursive Decomposition Algorithm",
+      "codeHash": "cc5542a249197bd7703a96300cfaf8d61f9fbad54ec9d549e4abdc9dbf22915c",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "The Clark-Scarf Recursive Decomposition  Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Solving multi-echelon inventory systems with stochastic demand.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Mathematical elegance relies on backward induction algorithm.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automotive transmission manufacturer decomposes three tier chain.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase lead time parameters to observe upstream echelon target.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Guaranteed Service Model (GSM) vs. Stochastic Service Model (SSM)",
+      "codeHash": "94b19b7cf813d1f5a97db35a6f2e4ebd3a3c6d1fd766299524e59b0efcf43eb0",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "The Guaranteed Service Model (GSM) vs. S Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise multi-echelon inventory engineering frameworks.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Guaranteed service model establishes deterministic paradigm.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Precision robotics manufacturer sources custom titanium joints.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase promised outbound service time to eliminate safety stock.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Risk Pooling & Safety Stock Centralization Economics (Square Root Law)",
+      "codeHash": "338192ab954c46f5dd9a4be2667761cad8e26f041fa3db6b0d2dfe29ffb1d97f",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Risk Pooling & Safety Stock Centralizati Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Mathematical principles in operations management and risk pooling.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Classical formulation governing risk pooling centralization.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "European apparel distributor operates regional warehouses.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Adjust correlation coefficient parameter to verify centralization.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise MEIO Simulator: Multi-Tier Distribution & Upstream Backorder Propagation",
+      "codeHash": "01f94fd58627872aaccbbc0ec69c09c7fb08297a38ddb017cd01641507b4b70c",
+      "filled": {},
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise MEIO Simulator: Multi-Tier Di Execution Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Synthesize principles into multi-tier discrete event simulation.",
+            "activeStageId": "stage_1",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Canonical distribution network models central warehouse replenishment.",
+            "activeStageId": "stage_2",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Consumer healthcare distributor runs multi-echelon simulation.",
+            "activeStageId": "stage_3",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Increase order quantity parameters to observe warehouse stockouts.",
+            "activeStageId": "stage_4",
+            "stages": [
+              {
+                "id": "stage_1",
+                "label": "Network Ingress",
+                "value": 100,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "stage_2",
+                "label": "Echelon Modeling",
+                "value": 75,
+                "percentage": 75,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_3",
+                "label": "Buffer Allocation",
+                "value": 50,
+                "percentage": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "stage_4",
+                "label": "Fulfillment Sync",
+                "value": 25,
+                "percentage": 25,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
