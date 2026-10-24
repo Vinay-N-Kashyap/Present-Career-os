@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "prefix": "cloud",
+  "day": 54,
+  "entries": [
+    {
+      "partIndex": 1,
+      "partTitle": "Modern Data Lakehouse Architecture: S3 Object Storage, Columnar Parquet & Scan Reduction",
+      "codeHash": "e9e028cdd2880f2b06958ab76f17ecd1f4bb7d7b0d0937244e4eadcc00cbdfe6",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Row-Based Format",
+          "badge": "I/O Inefficiency",
+          "items": [
+            "Reads entire rows containing all unused columns.",
+            "Saturates storage input output bandwidth during scans.",
+            "Higher cloud storage costs for uncompressed data."
+          ]
+        },
+        "right": {
+          "title": "Columnar Parquet",
+          "badge": "Projected Efficiency",
+          "items": [
+            "Columnar projection reads strictly requested columns.",
+            "Snappy compression shrinks storage by seventy-five percent.",
+            "Reduces scan volume by ninety percent on analytical queries."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Monolithic row storage scans all columns regardless of query filters."
+          },
+          {
+            "at": "say2",
+            "annotation": "Columnar Parquet organizes analytical data into discrete column chunks."
+          },
+          {
+            "at": "example",
+            "annotation": "Simulator projects required columns to cut scan volume by ninety percent."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Column projection saves storage bandwidth and reduces analytics spend."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "AWS Glue Data Catalog & Automated Schema Evolution: Crawlers & Partition Pruning",
+      "codeHash": "ebbbb47a4eea956d4173b76a6f47d58555367e2b0cda082d6b19c052990cb49d",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Unpartitioned Data",
+          "badge": "Full Bucket Scan",
+          "items": [
+            "Queries scan all files across historical archives.",
+            "Slow directory listing degrades query responsiveness.",
+            "Multiplies compute query billing significantly."
+          ]
+        },
+        "right": {
+          "title": "Glue Partitioning",
+          "badge": "Targeted Pruning",
+          "items": [
+            "Hierarchical prefix partitions isolate daily datasets.",
+            "Partition pruning skips ninety-one percent of partitions.",
+            "Partition indexes accelerate metadata resolution."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Unpartitioned storage forces query engines to scan full lakehouse volumes."
+          },
+          {
+            "at": "say2",
+            "annotation": "Glue data catalog maintains partition metadata for targeted query pruning."
+          },
+          {
+            "at": "example",
+            "annotation": "Partition engine skips non matching folders to reduce scanned partitions."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Targeted partition pruning slashes analytical execution time and expense."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Amazon Athena Serverless Query Engine: Trino Execution, CTAS & Cost Optimization",
+      "codeHash": "b13fe0e6fc3078c75414cf3bb3d131d69924ae394b9d4071b94da1a932bfaf4a",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Raw CSV Querying",
+          "badge": "Expensive Scan Burden",
+          "items": [
+            "Ten terabytes scanned costs fifty dollars per query.",
+            "Repetitive dashboard queries generate massive costs.",
+            "No compression or columnar optimization applied."
+          ]
+        },
+        "right": {
+          "title": "CTAS Parquet Tier",
+          "badge": "Serverless Optimization",
+          "items": [
+            "Partitioned compressed Parquet scans under one percent.",
+            "Reduces query expense to sixty cents per run.",
+            "Ninety-eight percent total query cost savings."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Querying raw uncompressed files incurs massive per terabyte billing spend."
+          },
+          {
+            "at": "say2",
+            "annotation": "Serverless Athena queries scan only compressed partitioned columnar blocks."
+          },
+          {
+            "at": "example",
+            "annotation": "Optimizer calculates ninety-eight percent savings using structured formats."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Partitioned Parquet optimization delivers sub dollar query executions."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Apache Iceberg Open Table Format on AWS: ACID Transactions, Time Travel & Schema Evolution",
+      "codeHash": "ff2b70bc3e09159b64c544ea07e4061f290697eeb157a8d2a3e3124de09e75cc",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Legacy Hive Format",
+          "badge": "No Transaction Safety",
+          "items": [
+            "Directory based tracking causes write race conditions.",
+            "Updates require rewriting entire partition directories.",
+            "Lacks historical snapshot isolation and time travel."
+          ]
+        },
+        "right": {
+          "title": "Apache Iceberg",
+          "badge": "ACID Lakehouse Platform",
+          "items": [
+            "Hierarchical metadata tree coordinates atomic snapshots.",
+            "Time travel queries inspect historical committed states.",
+            "Hidden partitioning isolates users from directory layout."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Legacy hive tables suffer concurrency corruption and slow listings."
+          },
+          {
+            "at": "say2",
+            "annotation": "Apache Iceberg provides atomic transaction safety using metadata trees."
+          },
+          {
+            "at": "example",
+            "annotation": "Table engine queries historical snapshots using time travel capabilities."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Snapshot isolation guarantees reproducible machine learning audits."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 5,
+      "partTitle": "S3 Intelligent-Tiering & Enterprise Lifecycle Automation: Storage Economics & Object Lock",
+      "codeHash": "feb79bb6a805e63d506466fc8ff2336592a49c5de2c3844d77f7c842189045b1",
+      "spec": {
+        "template": "compare",
+        "left": {
+          "title": "Static S3 Standard",
+          "badge": "Dormant Spend Waste",
+          "items": [
+            "Historical cold data sits in high cost standard tier.",
+            "Monthly storage bills grow unbounded over time.",
+            "Manual tier transitions require complex engineering."
+          ]
+        },
+        "right": {
+          "title": "Intelligent-Tiering",
+          "badge": "Automated Economics",
+          "items": [
+            "Automatically shifts unaccessed objects to cooler tiers.",
+            "Zero operational retrieval fees on historical queries.",
+            "Seventy percent monthly storage savings on aged data."
+          ]
+        },
+        "steps": [
+          {
+            "at": "say1",
+            "annotation": "Dormant historical data in standard storage causes runaway expenditure."
+          },
+          {
+            "at": "say2",
+            "annotation": "Intelligent tiering moves unaccessed objects automatically to cooler tiers."
+          },
+          {
+            "at": "example",
+            "annotation": "Simulator proves seventy percent storage savings across aged partitions."
+          },
+          {
+            "at": "tryIt",
+            "annotation": "Automated lifecycle tiering reduces costs while preserving instant access."
+          }
+        ]
+      }
+    }
+  ]
+}
