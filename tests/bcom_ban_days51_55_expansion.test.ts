@@ -2,6 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { BCOM_BAN_LONG_LESSONS } from '../src/lib/data/bcomBanLongLessons';
 
 describe('BCOM Banking Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 Capstone)', () => {
@@ -86,6 +87,12 @@ describe('BCOM Banking Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 Cap
       assert.strictEqual(visual.entries.length, 5, `Day ${dayNum} must have 5 visual entries`);
 
       visual.entries.forEach((entry: any, eIdx: number) => {
+        const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
+        const part = lesson.parts[eIdx];
+        const partStr = part.title + (Array.isArray(part.say) ? part.say.join('') : part.say) + (part.code || '');
+        const expectedHash = crypto.createHash('sha256').update(partStr).digest('hex');
+        assert.strictEqual(entry.codeHash, expectedHash, `Day ${dayNum} Part ${eIdx + 1} codeHash mismatch`);
+
         assert(entry.partTitle, `Day ${dayNum} Entry ${eIdx} missing partTitle`);
         assert(entry.codeHash && entry.codeHash.length === 64, `Day ${dayNum} Entry ${eIdx} invalid codeHash`);
         assert.strictEqual(entry.spec.template, 'funnel');
