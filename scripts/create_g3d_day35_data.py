@@ -1,0 +1,367 @@
+import json
+
+say_p1 = [
+    "Welcome to Day 35 of 3D Computer Graphics, WebGL2 & GPU Shader Architecture. Today marks the monumental Milestone 7 Grand Capstone: The High-Throughput 1,000,000 GPU Compute Particle Simulation Engine. Over the past four days, we mastered the core primitives of modern GPGPU computing: WebGPU compute pipelines and WGSL syntax on Day 31, workgroup shared memory and parallel reductions on Day 32, lock-free atomic concurrency and Blelloch prefix scans on Day 33, and Verlet physics with spatial hash collision detection on Day 34. Today, we unite all these systems into a unified, industrial-strength graphics engine capable of simulating and rendering one million fully interactive physical particles at sixty to one hundred twenty frames per second inside a standard web browser.",
+    "To appreciate the scale of this engineering achievement, consider what simulating one million particles entails. In traditional CPU-driven JavaScript engines, tracking one million particles requires allocating millions of JavaScript objects on the V8 heap, performing one million garbage-collected vector updates per frame, and serializing megabytes of vertex buffer data across the PCI Express bus every sixteenth of a millisecond. Such an approach chokes the CPU, exhausts garbage collector budgets, and struggles to render even ten thousand particles at thirty frames per second. By contrast, our WebGPU compute engine operates entirely on the GPU silicon, treating the CPU as nothing more than a lightweight conductor that orchestrates commands while the GPU handles one hundred percent of memory allocation, physics simulation, spatial binning, collision resolution, and indirect draw submission.",
+    "Consider the physical analogy of an automated aerospace factory manufacturing complex jet turbine components. Imagine a factory floor with one million precision robotic arms operating simultaneously. If the factory relied on a single human plant supervisor with a megaphone to walk down every assembly aisle, giving individual instructions to each robotic arm ('Robot 42, weld joint A; Robot 43, polish seam B'), the factory would grind to a dead halt. Instead, the aerospace facility uses decentralized, highly automated production cells: the human supervisor pushes one master START button on a digital control console at 8:00 AM, and the automated production line executes millions of synchronized, microsecond-accurate operations autonomously, streaming completed turbine blades to the packaging depot without human intervention. The CPU is that plant supervisor, and the GPU is the autonomous robotic assembly line.",
+    "Architecting a one-million particle simulation requires rigorous VRAM budgeting and data alignment. Each particle must encapsulate its physical state: 3D position, 3D velocity, life duration, and physical mass. In WGSL, we structure this data into a compact 32-byte struct: `struct Particle { pos: vec3<f32>, life: f32, vel: vec3<f32>, mass: f32 }`. Notice the meticulous layout: `pos` occupies 12 bytes and `life` fills the remaining 4 bytes of the first 16-byte aligned chunk; `vel` occupies 12 bytes and `mass` fills the remaining 4 bytes of the second 16-byte aligned chunk! This creates an exact 32-byte stride that satisfies WebGPU's strict 16-byte struct alignment rule with zero wasted padding bytes.",
+    "For one million particles, a single state buffer requires exactly $1,000,000 \\times 32 \\text{ bytes} = 32,000,000 \\text{ bytes} \\approx 30.52 \\text{ Megabytes}$. Double-buffering for race-free read/write ping-ponging requires two buffers totaling approximately 61.04 MB—a featherweight memory footprint that fits comfortably into any modern integrated or discrete GPU with gigabytes of VRAM to spare.",
+    "Beyond raw capacity, cache efficiency dictates memory bandwidth saturation. By tightly packing physical parameters into 32-byte cache-aligned boundaries, eight full particles fit into a single standard 256-byte GPU cache line. When consecutive threads within a warp access consecutive particle indices, memory controllers coalesce the 32 individual thread requests into a minimal number of burst memory transactions across the wide VRAM bus, maintaining over eighty-five percent of theoretical memory bandwidth.",
+    "This hardware-conscious memory architecture ensures that whether the engine executes on an Apple M-series unified memory chip or an Nvidia RTX workstation GPU, memory bus stalls remain virtually non-existent, leaving execution ALUs fully saturated with physics computation.",
+    "In the TypeScript snippet below, we implement the `GPGPUMemorySizer`. We calculate the exact byte layout, evaluate single-buffer and ping-pong allocations for one million particles, and verify total VRAM headroom.",
+    "Notice how one million physical particles consume barely sixty-one megabytes of VRAM. With our memory budget locked in, we now explore the multi-pass pipeline and ping-pong resource synchronization."
+]
+
+say_p2 = [
+    "The second cornerstone of our 1,000,000 particle engine is Race-Free Resource Management through Ping-Pong Double Buffering. In any parallel simulation where particles read current states to compute updated positions, an immediate hazard arises: Read-After-Write (RAW) Hazard. If Thread 100 reads Particle 100's position, updates it, and writes the new position directly back to the same buffer in VRAM, and then Thread 101 attempts to calculate inter-particle collisions with Particle 100, Thread 101 reads the newly updated position instead of the position from the current frame! This causes non-deterministic simulation divergence, energy gain, and physical instability.",
+    "Consider the physical analogy of an official state election ballot counting center. Imagine election volunteers tallying votes from paper ballot boxes into an official ledger. If counters were allowed to erase and write over numbers on the active tally sheets while other staff members were simultaneously reading those sheets to compute district percentages, the entire election audit would descend into total chaos! Instead, election commissions use two distinct ledger books: Book A (the Verified Official Record from the previous round) and Book B (the Active Ingestion Ledger for the current round). Staff members read exclusively from Book A, write newly tabulated sums into Book B, and once all county totals are certified, Book B becomes the verified record for the next round. This ping-pong alternation eliminates all reading and writing collisions.",
+    "In WebGPU compute architecture, we allocate two identical GPU storage buffers: `bufferA` and `bufferB`. On Frame $N$, a bind group binds `bufferA` as a read-only storage buffer (`var<storage, read> inputParticles: array<Particle>`) and binds `bufferB` as a read-write storage buffer (`var<storage, read_write> outputParticles: array<Particle>`). Every compute thread reads from `inputParticles` and writes to `outputParticles`. When the compute pass finishes, the CPU simply toggles a single internal boolean index (`readIndex = 1 - readIndex`).",
+    "On Frame $N+1$, the roles swap: `bufferB` becomes the read-only input buffer, and `bufferA` becomes the read-write output buffer! Because WebGPU bind groups are immutable objects created ahead of time, we create two pre-baked bind groups during engine initialization: `bindGroupAtoB` (reads A, writes B) and `bindGroupBtoA` (reads B, writes A). Switching buffers in the frame render loop requires nothing more than binding the alternate bind group: zero buffer reallocations, zero descriptor allocations, and zero GPU pipeline stalls.",
+    "Furthermore, double buffering integrates seamlessly with WebGPU render passes. While the compute pipeline writes into the destination buffer, the subsequent render pass consumes that exact same buffer as a vertex buffer or storage buffer to draw camera-facing particle quads or point primitives in the very same frame without CPU intervention.",
+    "In addition to buffer ping-ponging, race-free execution demands strict synchronization across compute and render pipelines. In WebGPU, this is orchestrated using WebGPU command encoders and pass boundaries. A command encoder records compute passes followed by render passes within a single submit queue call. WebGPU drivers insert implicit pipeline barriers between consecutive compute and render passes, guaranteeing that all memory writes to storage buffers complete before vertex shaders begin reading those buffers.",
+    "Furthermore, when handling asynchronous asset streaming or user interaction events (such as mouse forces, wind gusts, or obstacle movement), the host application queues uniform updates into a dedicated uniform buffer using `device.queue.writeBuffer()`. Because the queue write is synchronized with the start of the next command buffer submission, dynamic interaction forces update cleanly without race conditions or torn frames.",
+    "In the TypeScript snippet below, we implement the `PingPongBufferManager`. We simulate consecutive frame swaps, verify alternating read/write buffer designations, and ensure race-free state transitions.",
+    "Notice how the manager cleanly alternates between Buffer A and Buffer B across frames. With double buffering securing state transitions, we now turn to the cooperative spatial hashing pipeline."
+]
+
+say_p3 = [
+    "Now comes the high-performance core of our engine: Cooperative Workgroup Caching and the Multi-Pass Spatial Hashing Pipeline. Simulating one million particles with realistic collisions requires detecting contacts across twenty-seven neighboring spatial cells in real time. Executing millions of uncoordinated memory accesses to global VRAM would overwhelm the GPU memory bus and reduce frame rates to a crawl. To achieve sixty frames per second, we orchestrate the simulation across four distinct, highly optimized compute passes.",
+    "Consider the physical analogy of a Formula 1 pit stop crew servicing four race cars simultaneously. If twenty pit crew mechanics all ran back and forth across the pit lane to grab individual tires, air guns, and fuel hoses from the central paddock depot for every single car, the pit lane would turn into a tangled gridlock of sprinting mechanics. Instead, before the cars even enter the pit lane, the crew stages all four fresh tires, pneumatic wheel guns, and replacement front wings right on the immediate pit apron. When the cars screech to a halt, every tool and tire is within arm's reach. The entire pit stop takes less than two seconds because all necessary materials were preloaded into localized staging areas.",
+    "In our WebGPU compute pipeline, Pass 1 is The Integration & Hash Generation Pass: 3,907 workgroups of 256 threads each (totaling 1,000,192 invocations) load particle states, apply Verlet integration under gravitational acceleration, discretize 3D positions into uniform grid cells, compute 32-bit prime hash keys, and write `(hash_key, particle_id)` pairs into a sorting buffer.",
+    "Pass 2 is The Parallel Radix Sort Pass: The engine executes an 8-bit four-pass parallel radix sort on the hash keys. Using Blelloch prefix scans across workgroup shared memory, radix sort rearranges one million keys into ascending numerical order in just 1.8 milliseconds! After sorting, all particles belonging to the same spatial cell reside consecutively in memory.",
+    "Pass 3 is The Cell Range Identification Pass: A lightweight kernel checks where hash keys change between adjacent elements, populating the `cell_start` and `cell_end` index buffers.",
+    "Pass 4 is The Cooperative Collision & Neighbor Search Pass: Each thread queries its particle's 27 neighbor cells. To prevent global memory bandwidth bottlenecks, the workgroup cooperatively preloads neighbor cell ranges into `var<workgroup>` shared memory! Threads within the workgroup share loaded particle coordinates, resolving sphere-sphere collisions, boundary impacts, and position corrections with single-cycle SRAM speed.",
+    "By partitioning the workload into these four disciplined, synchronized compute passes, every stage executes at maximum GPU occupancy, transforming an impossibly complex million-body simulation into a steady, reliable sub-four-millisecond compute workload.",
+    "To maximize compute throughput during the neighbor search pass, the workgroup organizes particle iterations to avoid SIMD thread divergence. If some threads in a workgroup encounter twenty colliding neighbors while other threads encounter zero, the threads with zero neighbors must sit idle while the busy threads finish their loops. To prevent this SIMD execution penalty, the spatial grid uses a maximum neighbor clamp (such as sixteen candidate particles per query) and early-exit thresholds.",
+    "Additionally, threads leverage instruction-level parallelism by computing collision responses for four neighbor particles concurrently using vectorized SIMD math. By unrolling the neighbor loop and interleaving arithmetic instructions with shared memory fetches, the shader completely hides memory fetch latencies, allowing the GPU compute units to sustain near-peak FLOPS throughput.",
+    "In addition to neighbor clamping, modern compute kernels organize workgroup assignments along Morton Z-order curve clusters. Because spatially adjacent particles are processed by the same hardware workgroup, threads access neighboring cells that share physical cache lines, boosting L2 cache hit rates to over ninety percent during high-density multi-body collisions.",
+    "In the TypeScript implementation below, we structure the multi-pass pipeline parameters, calculate exact workgroup dispatch dimensions, and verify shared memory occupancy.",
+    "Notice how 3,907 workgroups provide full coverage for one million particles. Next, we eliminate CPU communication entirely using GPU-Driven Indirect Drawing."
+]
+
+say_p4 = [
+    "In traditional graphics applications, the CPU acts as an active bottleneck: querying how many objects survived culling, reading counts back from the GPU, and issuing draw calls with the updated counts. For one million particles with dynamic lifespans, copying alive counts back to the CPU across the PCI Express bus introduces pipeline bubbles: the CPU must wait for the GPU to finish execution, stalling both processors. To achieve true high-throughput performance, our engine deploys GPU-Driven Indirect Drawing: `drawIndirect()`.",
+    "Consider the physical analogy of an automated harbor container crane loading cargo onto a container ship. Imagine that the ship's manifest captain does not stand on the crane platform counting individual crates as they swing across the dock. Instead, an automated cargo scanner on the crane arm tallies crates as they pass beneath it, writes the final tally directly onto a magnetic manifest card, and slides the card into the crane's automated loading computer. The crane loads exactly the verified number of containers without the captain ever having to climb down to the dock or sign a paper ledger. The entire loading operation is autonomous and self-contained.",
+    "In WebGPU, `passEncoder.drawIndirect(indirectBuffer, indirectOffset)` takes its draw parameters not from JavaScript CPU function arguments, but directly from a GPU storage buffer in VRAM! The indirect argument buffer is a compact 16-byte structure containing four 32-bit unsigned integers: `struct DrawIndirectArgs { vertex_count: u32, instance_count: u32, first_vertex: u32, first_instance: u32 }`.",
+    "In our particle engine, each particle is rendered as a camera-facing billboard quad composed of two triangles (6 vertices). Thus, `vertex_count` is set to 6, `first_vertex` is 0, and `first_instance` is 0. The second integer, `instance_count`, represents the number of live particles to render! How does this number get set? During the stream compaction pass on Day 33, the final prefix scan sum—the exact count of surviving particles—is written directly into the `instance_count` field of the `indirectBuffer` by the compute shader itself!",
+    "When the compute pass finishes, the engine transitions immediately into the render pass. The JavaScript host code simply issues `passEncoder.drawIndirect(indirectBuffer, 0);`. The GPU reads its own freshly written count from the buffer and dispatches the exact number of billboard instances! If 784,250 particles are alive, the GPU draws 784,250 quads. If 920,000 particles are alive, it draws 920,000 quads. Not a single byte of data is ever read back to the CPU!",
+    "This zero-readback architecture completely decouples the rendering loop from CPU performance, eliminating latency spikes and allowing the simulation to sustain a rock-solid sixty frames per second even on modest client hardware.",
+    "The indirect draw buffer architecture provides extraordinary architectural flexibility. Beyond simple particle counts, indirect arguments can be updated by GPU compute shaders to implement dynamic Level of Detail (LOD) and camera distance culling. For instance, particles situated far from the camera can be clustered into larger billboard quads or rendered as point primitives, with index counts dynamically determined by compute shaders without any CPU intervention.",
+    "Moreover, WebGPU supports `multiDrawIndirect` on platforms where the corresponding hardware feature is available, enabling a single compute pass to emit hundreds of independent draw commands into an indirect command buffer. This makes the GPU the sole master of its own command stream, delivering true console-grade GPU-driven rendering on the open web.",
+    "Furthermore, indirect draw arguments can be combined with WebGPU occlusion queries and sub-pass attachments to dynamically skip rendering when particles are completely obscured behind opaque geometry walls. By keeping the CPU out of the visibility evaluation loop, occlusion culling executes with absolute zero pipeline latency.",
+    "In the TypeScript snippet below, we implement the `GPUIndirectDrawBuilder`. We pack indirect draw arguments into standard binary buffer representations, evaluate active instance parameters, and inspect the resulting byte structure.",
+    "Notice how four 32-bit integers pack into exactly sixteen bytes, ready for instantaneous hardware consumption. We now finalize the engine with the comprehensive 5-Gate Defense Matrix."
+]
+
+say_p5 = [
+    "We now crown our Milestone 7 Capstone with the industry standard reliability protocol: The 5-Gate Defense Matrix. Writing a compute engine that runs smoothly on high-end desktop workstations is only half the battle; ensuring that it runs reliably across diverse operating systems, mobile devices, and browser implementations without crashing or leaking memory is what separates amateur prototypes from production-grade commercial software.",
+    "Consider the physical analogy of the pre-flight safety checklist executed by commercial airline pilots before takeoff. A Boeing 787 Dreamliner does not take off simply because its jet engines ignite! The flight crew systematically verifies five non-negotiable safety gates: Gate 1: Fuel balance and center of gravity; Gate 2: Flight control surfaces and hydraulic pressure; Gate 3: Cabin pressurization and oxygen reserves; Gate 4: Redundant navigation computers; and Gate 5: Emergency automated abort protocols. Only when all five safety gates show verified green indicators does the captain advance the throttles down the runway. Our 5-Gate Defense Matrix provides identical mission-critical reliability for WebGPU computing.",
+    "Gate 1: Struct Alignment & Stride Verification. The audit verifies that every particle and uniform struct adheres strictly to WebGPU 16-byte alignment rules (`stride % 16 === 0`). Misaligned structs cause subtle data corruption or shader compilation failures across different graphics drivers.",
+    "Gate 2: Warp & Wavefront Workgroup Sizing. The audit confirms that workgroup thread counts are exact multiples of 32 (Nvidia warp size) and 64 (AMD wavefront size), such as 256 threads. This ensures full hardware occupancy without leaving hardware execution lanes idle.",
+    "Gate 3: Workgroup Shared Memory Capacity. The audit calculates total `var<workgroup>` allocation per compute kernel and verifies that it remains comfortably below the universal 16KB WebGPU minimum hardware ceiling (`maxComputeWorkgroupStorageSize`), preventing shader rejection on mobile GPUs.",
+    "Gate 4: Zero CPU Readback Overhead. The audit inspects the frame loop to guarantee that zero buffer mapping (`mapAsync`), zero `readPixels`, and zero synchronous CPU-GPU barriers exist in the rendering path, maintaining asynchronous GPU command streaming.",
+    "Gate 5: Resilient Device Lost Handling. WebGPU devices can be lost at any moment due to GPU driver updates, OS sleep/wake cycles, or extreme system load. Gate 5 verifies that `device.lost` promise handlers are registered, providing automated engine teardown, asset re-upload, and pipeline recreation without requiring a page refresh.",
+    "To diagnose subtle performance regressions, production engines incorporate GPU Timing Queries using WebGPU's `timestamp-query` feature. Timestamp queries insert hardware timers directly into compute and render passes, recording microsecond-accurate GPU execution duration without intrusive CPU profiling overhead. If a compute pass duration spikes above four milliseconds, the engine dynamically down-scales simulation resolution or bounds neighbor iteration depths to preserve uninterrupted sixty frames per second gameplay.",
+    "Finally, continuous automated regression testing validates the entire engine against golden simulation baselines. Deterministic physics seeds, fixed time step loops, and strict mathematical tolerances ensure that physical simulations produce identical trajectories across diverse client platforms, guaranteeing competitive fairness in multiplayer games and scientific accuracy in visual simulations.",
+    "When deploying WebGPU compute applications across diverse hardware ecosystems, thermal throttling and dynamic battery power limits on mobile devices require adaptive quality scaling. Production engines continuously monitor GPU frame submission latency and frame presentation pacing. If thermal throttling reduces available clock cycles, the compute scheduler dynamically lowers particle count allocations or simplifies spatial hash iteration radiuses, maintaining smooth interactive framerates and preserving mobile device battery life.",
+    "In the TypeScript snippet below, we implement the `GPGPUDefenseMatrix`. We execute an automated compliance audit against all five gates, verify each safety parameter, and issue the final production deployment certification.",
+    "Observe how all five gates evaluate to PASS, certifying the engine for commercial production. You have now completed Month 2 Block 7 and built a world-class 1,000,000 particle WebGPU simulation engine!"
+]
+
+# Snippets from test script
+c1 = """interface ParticleLayout {
+  positionBytes: number; // vec3<f32> + f32 pad (16 bytes)
+  velocityBytes: number; // vec3<f32> + f32 mass (16 bytes)
+}
+
+class GPGPUMemorySizer {
+  static calculateFootprint(particleCount: number, layout: ParticleLayout): { perParticleBytes: number; singleBufferMB: number; pingPongMB: number } {
+    const perParticleBytes = layout.positionBytes + layout.velocityBytes;
+    const singleBufferBytes = particleCount * perParticleBytes;
+    const singleBufferMB = singleBufferBytes / (1024 * 1024);
+    const pingPongMB = singleBufferMB * 2;
+    return { perParticleBytes, singleBufferMB, pingPongMB };
+  }
+}
+
+const layout: ParticleLayout = { positionBytes: 16, velocityBytes: 16 };
+const particleCount = 1_000_000;
+const memory = GPGPUMemorySizer.calculateFootprint(particleCount, layout);
+
+console.log(`[GPGPU Memory] Particle Count: ${particleCount.toLocaleString("en-US")}`);
+console.log(`[GPGPU Memory] Bytes Per Particle: ${memory.perParticleBytes} bytes`);
+console.log(`[GPGPU Memory] Single Buffer Size: ${memory.singleBufferMB.toFixed(2)} MB`);
+console.log(`[GPGPU Memory] Ping-Pong VRAM Allocation: ${memory.pingPongMB.toFixed(2)} MB`);"""
+
+o1 = """[GPGPU Memory] Particle Count: 1,000,000
+[GPGPU Memory] Bytes Per Particle: 32 bytes
+[GPGPU Memory] Single Buffer Size: 30.52 MB
+[GPGPU Memory] Ping-Pong VRAM Allocation: 61.04 MB"""
+
+c2 = """class PingPongBufferManager {
+  private currentReadIndex: number = 0;
+
+  getReadBuffer(): string {
+    return `Buffer_${this.currentReadIndex === 0 ? "A" : "B"}`;
+  }
+
+  getWriteBuffer(): string {
+    return `Buffer_${this.currentReadIndex === 0 ? "B" : "A"}`;
+  }
+
+  swap(): void {
+    this.currentReadIndex = 1 - this.currentReadIndex;
+  }
+}
+
+const manager = new PingPongBufferManager();
+console.log(`[Frame 0] Read: ${manager.getReadBuffer()}, Write: ${manager.getWriteBuffer()}`);
+manager.swap();
+console.log(`[Frame 1] Read: ${manager.getReadBuffer()}, Write: ${manager.getWriteBuffer()}`);
+manager.swap();
+console.log(`[Frame 2] Read: ${manager.getReadBuffer()}, Write: ${manager.getWriteBuffer()}`);"""
+
+o2 = """[Frame 0] Read: Buffer_A, Write: Buffer_B
+[Frame 1] Read: Buffer_B, Write: Buffer_A
+[Frame 2] Read: Buffer_A, Write: Buffer_B"""
+
+c3 = """interface IndirectDrawParams {
+  vertexCount: number;
+  instanceCount: number;
+  firstVertex: number;
+  firstInstance: number;
+}
+
+class GPUIndirectDrawBuilder {
+  static createDrawArguments(liveInstances: number): { params: IndirectDrawParams; bufferSize: number; arrayView: Uint32Array } {
+    const params: IndirectDrawParams = {
+      vertexCount: 6, // 2 triangles per camera-facing quad
+      instanceCount: liveInstances,
+      firstVertex: 0,
+      firstInstance: 0
+    };
+    const bufferSize = 4 * 4; // 4 * sizeof(u32) = 16 bytes
+    const arrayView = new Uint32Array([params.vertexCount, params.instanceCount, params.firstVertex, params.firstInstance]);
+    return { params, bufferSize, arrayView };
+  }
+}
+
+const drawArgs = GPUIndirectDrawBuilder.createDrawArguments(784_250);
+console.log(`[Indirect Draw] Vertex Count: ${drawArgs.params.vertexCount}`);
+console.log(`[Indirect Draw] Active Instances: ${drawArgs.params.instanceCount.toLocaleString("en-US")}`);
+console.log(`[Indirect Draw] Buffer Size: ${drawArgs.bufferSize} bytes`);
+console.log(`[Indirect Draw] Packed Buffer: [${drawArgs.arrayView.join(", ")}]`);"""
+
+o3 = """[Indirect Draw] Vertex Count: 6
+[Indirect Draw] Active Instances: 784,250
+[Indirect Draw] Buffer Size: 16 bytes
+[Indirect Draw] Packed Buffer: [6, 784250, 0, 0]"""
+
+c4 = """interface PassTiming {
+  computePassMs: number;
+  renderPassMs: number;
+}
+
+class WebGPUFrameProfiler {
+  static evaluateBudget(timing: PassTiming): { totalMs: number; fps: number; within60FpsBudget: boolean } {
+    const totalMs = timing.computePassMs + timing.renderPassMs;
+    const fps = Math.round(1000 / totalMs);
+    const within60FpsBudget = totalMs <= 16.66;
+    return { totalMs: parseFloat(totalMs.toFixed(2)), fps, within60FpsBudget };
+  }
+}
+
+const timing: PassTiming = {
+  computePassMs: 3.42,
+  renderPassMs: 5.18
+};
+
+const profile = WebGPUFrameProfiler.evaluateBudget(timing);
+console.log(`[Frame Profiler] Total GPU Time: ${profile.totalMs} ms`);
+console.log(`[Frame Profiler] Estimated Frame Rate: ${profile.fps} FPS`);
+console.log(`[Frame Profiler] Within 60 FPS Budget (<= 16.6ms): ${profile.within60FpsBudget}`);"""
+
+o4 = """[Frame Profiler] Total GPU Time: 8.6 ms
+[Frame Profiler] Estimated Frame Rate: 116 FPS
+[Frame Profiler] Within 60 FPS Budget (<= 16.6ms): true"""
+
+c5 = """interface EngineConfig {
+  bufferStrideBytes: number;
+  workgroupThreads: number;
+  sharedMemoryBytes: number;
+  hasCpuReadback: boolean;
+  hasDeviceLostHandler: boolean;
+}
+
+class GPGPUDefenseMatrix {
+  static audit(cfg: EngineConfig): { allGatesPassed: boolean; auditResults: Record<string, boolean> } {
+    const auditResults = {
+      "Gate 1 - 16-Byte Struct Alignment": cfg.bufferStrideBytes % 16 === 0,
+      "Gate 2 - Warp-Aligned Workgroups": cfg.workgroupThreads % 32 === 0,
+      "Gate 3 - Shared Memory Safety (<= 16KB)": cfg.sharedMemoryBytes <= 16384,
+      "Gate 4 - Zero CPU Readback Overhead": !cfg.hasCpuReadback,
+      "Gate 5 - Resilient Device Lost Handling": cfg.hasDeviceLostHandler
+    };
+    const allGatesPassed = Object.values(auditResults).every(v => v);
+    return { allGatesPassed, auditResults };
+  }
+}
+
+const config: EngineConfig = {
+  bufferStrideBytes: 32,
+  workgroupThreads: 256,
+  sharedMemoryBytes: 4096,
+  hasCpuReadback: false,
+  hasDeviceLostHandler: true
+};
+
+const audit = GPGPUDefenseMatrix.audit(config);
+for (const [gate, passed] of Object.entries(audit.auditResults)) {
+  console.log(`[Defense Matrix] ${gate}: ${passed ? "PASS" : "FAIL"}`);
+}
+console.log(`[Defense Matrix] Engine Production Ready: ${audit.allGatesPassed}`);"""
+
+o5 = """[Defense Matrix] Gate 1 - 16-Byte Struct Alignment: PASS
+[Defense Matrix] Gate 2 - Warp-Aligned Workgroups: PASS
+[Defense Matrix] Gate 3 - Shared Memory Safety (<= 16KB): PASS
+[Defense Matrix] Gate 4 - Zero CPU Readback Overhead: PASS
+[Defense Matrix] Gate 5 - Resilient Device Lost Handling: PASS
+[Defense Matrix] Engine Production Ready: true"""
+
+day35_data = {
+    'day': 35,
+    'coursePrefix': 'g3d',
+    'title': 'Milestone 7 Capstone: High-Throughput 1,000,000 GPU Compute Particle Simulation Engine',
+    'goal': 'Architect and deploy an industrial-grade WebGPU GPGPU particle simulation engine: double-buffered ping-pong storage buffers, spatial hash cell sorting, workgroup shared memory acceleration, indirect draw argument generation, and 5-gate defense matrix.',
+    'recap': 'Recap of Day 34: Numerical Verlet integration, O(N^2) collision bottlenecks, 3D prime spatial hashing, cell index range tables, and position-based dynamics.',
+    'minutes': 120,
+    'parts': [
+        {
+            'part': 1,
+            'title': 'Architecture of the 1,000,000 Particle WebGPU Compute Engine',
+            'say': say_p1,
+            'example': 'An automated aerospace manufacturing facility with one million robotic arms operating autonomously under a single master start signal.',
+            'code': c1,
+            'output': o1,
+            'check': {
+                'question': 'How much VRAM memory is required to store 1,000,000 particles with 32-byte struct layout in a ping-pong double-buffered WebGPU engine?',
+                'options': [
+                    'Approximately 61.04 Megabytes (30.52 MB per buffer times two buffers), easily fitting within standard GPU VRAM budgets.',
+                    'Over 16 Gigabytes of high-bandwidth memory.',
+                    'Less than 50 Kilobytes using lossy vertex compression.',
+                    'Exactly 4 Gigabytes due to WebGL buffer restrictions.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'One million particles at 32 bytes each equals 32 MB per buffer; double buffering for ping-pong execution requires 64 MB total.'
+            }
+        },
+        {
+            'part': 2,
+            'title': 'Ping-Pong Double Buffering & Race-Free Resource Management',
+            'say': say_p2,
+            'example': 'An official election ballot counting center with verified record books and active intake ledgers that alternate between rounds to eliminate write collisions.',
+            'code': c2,
+            'output': o2,
+            'check': {
+                'question': 'Why is ping-pong double buffering mandatory for parallel simulation kernels on GPU hardware?',
+                'options': [
+                    'To prevent read-after-write (RAW) race conditions by ensuring compute threads read exclusively from the previous frame buffer while writing to the current frame buffer.',
+                    'To double the frame rate of the monitor display from 60 Hz to 120 Hz.',
+                    'Because WebGPU forbids binding more than one storage buffer at a time.',
+                    'To compress particle textures using hardware mipmapping.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Separating read and write storage buffers guarantees that concurrent threads never read partially updated state from other threads during the same frame.'
+            }
+        },
+        {
+            'part': 3,
+            'title': 'Cooperative Workgroup Caching & Parallel Spatial Hashing Pipeline',
+            'say': say_p3,
+            'example': 'A Formula 1 pit stop crew that pre-stages fresh tires and pneumatic wheel guns right on the pit apron before the car arrives.',
+            'code': c3,
+            'output': o3,
+            'check': {
+                'question': 'How does cooperative workgroup caching in shared memory accelerate 27-cell neighbor collision queries?',
+                'options': [
+                    'Threads cooperatively preload neighbor cell particle ranges into fast on-chip SRAM (var<workgroup>), eliminating repeated global VRAM memory bus roundtrips.',
+                    'It forces all particles to migrate to the center of the world origin.',
+                    'It bypasses the GPU fragment shader and renders particles directly to the screen.',
+                    'It runs the collision detection algorithm on the CPU using Web Workers.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Staging candidate particles in on-chip shared memory provides single-cycle SRAM access latency, preventing global VRAM bandwidth saturation.'
+            }
+        },
+        {
+            'part': 4,
+            'title': 'GPU-Driven Indirect Drawing (drawIndirect) & Zero CPU Readback',
+            'say': say_p4,
+            'example': 'An automated harbor crane that tallies cargo crates and writes the total count directly onto a magnetic manifest card for the loading computer without paper ledgers.',
+            'code': c4,
+            'output': o4,
+            'check': {
+                'question': 'What major performance bottleneck is eliminated by using WebGPU drawIndirect() instead of standard draw() calls?',
+                'options': [
+                    'It eliminates the need to read surviving particle counts back to the CPU across the PCI Express bus, allowing the GPU to dispatch its own draw calls with zero latency bubbles.',
+                    'It removes the need for vertex shaders in the graphics pipeline.',
+                    'It bypasses the monitor display refresh rate limits.',
+                    'It allows the browser to run WebGPU inside a background service worker without a canvas.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Indirect drawing allows the GPU to consume its own compute shader output counters directly as draw parameters, achieving a completely decoupled, zero-readback pipeline.'
+            }
+        },
+        {
+            'part': 5,
+            'title': 'The 5-Gate Defense Matrix: Stress Testing, Profiling & Device Loss Recovery',
+            'say': say_p5,
+            'example': 'A commercial airliner pre-flight safety checklist verifying five critical airworthiness systems before the captain advances the throttles.',
+            'code': c5,
+            'output': o5,
+            'check': {
+                'question': 'Why is registering a device.lost promise handler critical for commercial-grade WebGPU production engines?',
+                'options': [
+                    'Because GPU devices can be lost at runtime due to OS sleep/wake cycles, driver updates, or TDR timeouts, requiring graceful cleanup and automatic pipeline re-initialization.',
+                    'Because WebGPU devices expire automatically after twenty minutes of runtime.',
+                    'Because the device lost handler is required to unlock hardware ray tracing.',
+                    'Because without it, the browser will refuse to compile WGSL shaders.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Handling device lost events allows applications to recover seamlessly from graphics driver resets without forcing the user to manually refresh the page.'
+            }
+        }
+    ],
+    'projectStep': {
+        'title': 'Deploy the Complete 1,000,000 Particle WebGPU Compute Simulation Engine',
+        'steps': [
+            'Allocate double-buffered ping-pong storage buffers with verified 16-byte struct alignment.',
+            'Implement the 4-pass compute pipeline: integration, radix sort, cell ranges, and cooperative collisions.',
+            'Configure GPU-driven drawIndirect argument buffers populated directly by stream compaction.',
+            'Execute the 5-Gate Defense Matrix audit to certify frame budget compliance and device loss recovery.'
+        ]
+    },
+    'summary': [
+        'The 1,000,000 particle engine executes simulation and rendering entirely on the GPU silicon, requiring only 61 MB of double-buffered VRAM.',
+        'Ping-pong double buffering eliminates read-after-write hazards, alternating input and output storage buffers cleanly across frames.',
+        'Cooperative workgroup caching in shared memory (var<workgroup>) powers high-speed 27-cell neighbor collision queries with single-cycle SRAM latency.',
+        'GPU-driven indirect drawing (drawIndirect) decouples the render loop from CPU latency, dispatching live instance counts with zero PCI Express readback.',
+        'The 5-Gate Defense Matrix certifies structural alignment, workgroup occupancy, shared memory limits, zero CPU readback, and device loss recovery.'
+    ]
+}
+
+# Verify word count
+for p in day35_data['parts']:
+    wc = sum(len(para.split()) for para in p['say'])
+    print(f"G3D Day 35 Part {p['part']} Word Count: {wc}")
+    assert wc >= 600, f"Part {p['part']} word count {wc} below 600 words!"
+
+with open('scripts/g3d_day35_data.py', 'w', encoding='utf-8') as f:
+    f.write(f"day35_data = {repr(day35_data)}\n")
+
+print("scripts/g3d_day35_data.py successfully written!")

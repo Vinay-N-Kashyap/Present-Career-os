@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 31,
+  "promptSha": "f2885490b93a0b8bd8853eeacbfd1483382c77f5abc73c9a6ea90a7edcbc113d",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Evolution from Fixed Graphics Pipelines to General-Purpose GPU Compute",
+      "codeHash": "db07662f117c7a0f62231aed7e234566dffd151060dd8d53577b4de0f6325b9c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Evolution from Fixed Graphics Pipelines to General-Purpose GPU Compute",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational compute pipeline boundaries and execution pathways across the WebGPU hardware grid environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal workgroup invocation hierarchies, memory layout alignments, and compute shader bind group configurations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights memory latency tradeoffs, bandwidth utilization efficiency, and parallel arithmetic throughput gains."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic shader execution, boundary memory safety, and complete adherence to WebGPU compute invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "WebGPU Device Initialization, Adapter Selection & Feature Limits",
+      "codeHash": "193ca56918ffe5796fe818bc8544f7a29e2c79a080064ba3da51faae5ac4a1a5",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: WebGPU Device Initialization, Adapter Selection & Feature Limits",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational compute pipeline boundaries and execution pathways across the WebGPU hardware grid environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal workgroup invocation hierarchies, memory layout alignments, and compute shader bind group configurations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights memory latency tradeoffs, bandwidth utilization efficiency, and parallel arithmetic throughput gains."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic shader execution, boundary memory safety, and complete adherence to WebGPU compute invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "WGSL Type System, Memory Spaces & Struct Layouts",
+      "codeHash": "536c73a2bce061022b1d323d2ddbe8bec5c6bcb3dcc33bc99d254e4eb903d63b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: WGSL Type System, Memory Spaces & Struct Layouts",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational compute pipeline boundaries and execution pathways across the WebGPU hardware grid environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal workgroup invocation hierarchies, memory layout alignments, and compute shader bind group configurations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights memory latency tradeoffs, bandwidth utilization efficiency, and parallel arithmetic throughput gains."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic shader execution, boundary memory safety, and complete adherence to WebGPU compute invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Bind Groups, Bind Group Layouts & Resource Binding Model",
+      "codeHash": "fd957a403349840ee1e05fdb16b8b9a6bd258e10625c5a98a7bb845cd52a080c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Bind Groups, Bind Group Layouts & Resource Binding Model",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational compute pipeline boundaries and execution pathways across the WebGPU hardware grid environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal workgroup invocation hierarchies, memory layout alignments, and compute shader bind group configurations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights memory latency tradeoffs, bandwidth utilization efficiency, and parallel arithmetic throughput gains."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic shader execution, boundary memory safety, and complete adherence to WebGPU compute invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Compute Command Encoder, Dispatch Invocations & Execution Synchronization",
+      "codeHash": "ff2ed046e379c594b4e356c811b42da510df18b77e7a6872abab4d3566f8272e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Compute Command Encoder, Dispatch Invocations & Execution Synchronization",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational compute pipeline boundaries and execution pathways across the WebGPU hardware grid environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal workgroup invocation hierarchies, memory layout alignments, and compute shader bind group configurations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights memory latency tradeoffs, bandwidth utilization efficiency, and parallel arithmetic throughput gains."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic shader execution, boundary memory safety, and complete adherence to WebGPU compute invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    }
+  ]
+}

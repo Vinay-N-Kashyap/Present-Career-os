@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 33,
+  "promptSha": "cab21f599a8b88b3f56ad215c721a20cf3d1d7d35e98fd2f145cfe51259ee3b0",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Atomic Primitives in WGSL: atomicAdd, atomicSub & Append Buffers",
+      "codeHash": "987b6c8e171048d5fe6c1d48461bd77164378f981262fb364c3e8d3febfe285f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Atomic Primitives in WGSL: atomicAdd, atomicSub & Append Buffers",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Concurrency overview displays lock-free atomic memory transactions and append buffer allocation mechanisms in global storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic compare-and-swap retry loops and exclusive parallel prefix scan up-sweep and down-sweep tree passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation measures atomic memory contention tradeoffs against hierarchical workgroup aggregation speedups."
+          },
+          {
+            "at": "verify",
+            "caption": "Exhaustive verification guarantees collision-free dynamic memory allocations, valid bounding volume bounds, and perfect stream compaction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Atomic Min/Max & Parallel Bounding Volume Hierarchy (BVH) Construction",
+      "codeHash": "4f39e969ea61cdc1d8ab057e60c6f1e4b7e2c9af55a3c824358983a6c8f3389e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Atomic Min/Max & Parallel Bounding Volume Hierarchy (BVH) Construction",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Concurrency overview displays lock-free atomic memory transactions and append buffer allocation mechanisms in global storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic compare-and-swap retry loops and exclusive parallel prefix scan up-sweep and down-sweep tree passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation measures atomic memory contention tradeoffs against hierarchical workgroup aggregation speedups."
+          },
+          {
+            "at": "verify",
+            "caption": "Exhaustive verification guarantees collision-free dynamic memory allocations, valid bounding volume bounds, and perfect stream compaction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Lock-Free Synchronization with atomicCompareExchangeWeak (CAS)",
+      "codeHash": "c1381451abbf06fee7c03d18627e44b750112ccf1e8e0a65b53282fa3400d9f5",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Lock-Free Synchronization with atomicCompareExchangeWeak (CAS)",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Concurrency overview displays lock-free atomic memory transactions and append buffer allocation mechanisms in global storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic compare-and-swap retry loops and exclusive parallel prefix scan up-sweep and down-sweep tree passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation measures atomic memory contention tradeoffs against hierarchical workgroup aggregation speedups."
+          },
+          {
+            "at": "verify",
+            "caption": "Exhaustive verification guarantees collision-free dynamic memory allocations, valid bounding volume bounds, and perfect stream compaction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Work-Efficient Parallel Prefix Sum (Scan): Blelloch Algorithm",
+      "codeHash": "440f4952572b54c1779b6d75cf401f92fe2700b1dd76f75378ede3ecf5e57dd7",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Work-Efficient Parallel Prefix Sum (Scan): Blelloch Algorithm",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Concurrency overview displays lock-free atomic memory transactions and append buffer allocation mechanisms in global storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic compare-and-swap retry loops and exclusive parallel prefix scan up-sweep and down-sweep tree passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation measures atomic memory contention tradeoffs against hierarchical workgroup aggregation speedups."
+          },
+          {
+            "at": "verify",
+            "caption": "Exhaustive verification guarantees collision-free dynamic memory allocations, valid bounding volume bounds, and perfect stream compaction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "GPU Stream Compaction: Dynamic Filtering Without CPU Roundtrips",
+      "codeHash": "fb44c77a15eff34950587604a4a95082e546b7a498639c58fff04cf9b4f1a646",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GPU Stream Compaction: Dynamic Filtering Without CPU Roundtrips",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Concurrency overview displays lock-free atomic memory transactions and append buffer allocation mechanisms in global storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic compare-and-swap retry loops and exclusive parallel prefix scan up-sweep and down-sweep tree passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation measures atomic memory contention tradeoffs against hierarchical workgroup aggregation speedups."
+          },
+          {
+            "at": "verify",
+            "caption": "Exhaustive verification guarantees collision-free dynamic memory allocations, valid bounding volume bounds, and perfect stream compaction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    }
+  ]
+}

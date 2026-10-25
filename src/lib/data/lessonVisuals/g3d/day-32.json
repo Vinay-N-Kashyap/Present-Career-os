@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 32,
+  "promptSha": "fb199755343217be473edc653ef5b7913a99d16bc2466a048b56ff9a074da2fe",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Anatomy of a GPU Workgroup: Grid, Workgroups, Invocations & Builtin Variables",
+      "codeHash": "030e9d11abaa4a0d3b6ec4a1fc62ab030bc2df1cbe500ea6fa027db60945ecc3",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Anatomy of a GPU Workgroup: Grid, Workgroups, Invocations & Builtin Variables",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview illustrates memory hierarchy levels, from on-chip workgroup shared memory down to external storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces workgroup barrier synchronization fences and shared memory access patterns across active hardware execution lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis measures bank conflict serialization stalls against stride-padded frictionless parallel streaming memory access."
+          },
+          {
+            "at": "verify",
+            "caption": "Rigorous verification confirms race-free execution, zero thread deadlock hazards, and logarithmic parallel reduction tree convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Workgroup Shared Memory (var<workgroup>): The L1/L2 On-Chip VRAM Hierarchy",
+      "codeHash": "c792f708bf825afc84523f4e4ef6f5708b4845f163e0c497aa0abc3d113e088c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Workgroup Shared Memory (var<workgroup>): The L1/L2 On-Chip VRAM Hierarchy",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview illustrates memory hierarchy levels, from on-chip workgroup shared memory down to external storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces workgroup barrier synchronization fences and shared memory access patterns across active hardware execution lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis measures bank conflict serialization stalls against stride-padded frictionless parallel streaming memory access."
+          },
+          {
+            "at": "verify",
+            "caption": "Rigorous verification confirms race-free execution, zero thread deadlock hazards, and logarithmic parallel reduction tree convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Workgroup Synchronization Barriers: workgroupBarrier() & storageBarrier()",
+      "codeHash": "5d990f2abfb0ee1c5f8d34b17a564f21f2578a3e4fad8f9a7eca23e8aaeaaf04",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Workgroup Synchronization Barriers: workgroupBarrier() & storageBarrier()",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview illustrates memory hierarchy levels, from on-chip workgroup shared memory down to external storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces workgroup barrier synchronization fences and shared memory access patterns across active hardware execution lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis measures bank conflict serialization stalls against stride-padded frictionless parallel streaming memory access."
+          },
+          {
+            "at": "verify",
+            "caption": "Rigorous verification confirms race-free execution, zero thread deadlock hazards, and logarithmic parallel reduction tree convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Memory Coalescing & Bank Conflicts: Aligning Warp/Wavefront Memory Access",
+      "codeHash": "53b978909712f309f1e74255fd4a86e23781f8c29b64868f9727f51d4d5b7b49",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Memory Coalescing & Bank Conflicts: Aligning Warp/Wavefront Memory Access",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview illustrates memory hierarchy levels, from on-chip workgroup shared memory down to external storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces workgroup barrier synchronization fences and shared memory access patterns across active hardware execution lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis measures bank conflict serialization stalls against stride-padded frictionless parallel streaming memory access."
+          },
+          {
+            "at": "verify",
+            "caption": "Rigorous verification confirms race-free execution, zero thread deadlock hazards, and logarithmic parallel reduction tree convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Building a High-Throughput Parallel Reduction Kernel",
+      "codeHash": "6c06e936a3c39e6d99d2c758fa305f53e30d04d154c0e3d97442a8beb75bad00",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Building a High-Throughput Parallel Reduction Kernel",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview illustrates memory hierarchy levels, from on-chip workgroup shared memory down to external storage buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces workgroup barrier synchronization fences and shared memory access patterns across active hardware execution lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis measures bank conflict serialization stalls against stride-padded frictionless parallel streaming memory access."
+          },
+          {
+            "at": "verify",
+            "caption": "Rigorous verification confirms race-free execution, zero thread deadlock hazards, and logarithmic parallel reduction tree convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    }
+  ]
+}

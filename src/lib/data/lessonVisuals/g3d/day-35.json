@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 35,
+  "promptSha": "e091a3dea1123a36d9f8ea6483ff342543ddb1bd1c0d61a70292b0081e434abc",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architecture of the 1,000,000 Particle WebGPU Compute Engine",
+      "codeHash": "268566903d7c4288691237abecd52544804df2ce5111638b55be66487afd30cb",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Architecture of the 1,000,000 Particle WebGPU Compute Engine",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master system overview illustrates the complete million-particle WebGPU compute pipeline, from physics simulation to indirect draw dispatch."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines ping-pong double buffer alternation, cooperative workgroup shared memory caching, and indirect argument buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative profiling evaluates compute pass duration, render pass rasterization overhead, and sixty frames per second frame budget margins."
+          },
+          {
+            "at": "verify",
+            "caption": "Final defense matrix audit certifies struct byte alignments, warp thread sizing, shared memory limits, and automated device loss recovery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Ping-Pong Double Buffering & Race-Free Resource Management",
+      "codeHash": "cedf239bcebf8e5bd372ce9697bbdb3de3e7fa4f4c3e1f99644c24a24f3a24a4",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Ping-Pong Double Buffering & Race-Free Resource Management",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master system overview illustrates the complete million-particle WebGPU compute pipeline, from physics simulation to indirect draw dispatch."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines ping-pong double buffer alternation, cooperative workgroup shared memory caching, and indirect argument buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative profiling evaluates compute pass duration, render pass rasterization overhead, and sixty frames per second frame budget margins."
+          },
+          {
+            "at": "verify",
+            "caption": "Final defense matrix audit certifies struct byte alignments, warp thread sizing, shared memory limits, and automated device loss recovery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Cooperative Workgroup Caching & Parallel Spatial Hashing Pipeline",
+      "codeHash": "69054d6f832d0b027433e1b8c953fffede1ab28a998fc3f4c35725832e12f72d",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Cooperative Workgroup Caching & Parallel Spatial Hashing Pipeline",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master system overview illustrates the complete million-particle WebGPU compute pipeline, from physics simulation to indirect draw dispatch."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines ping-pong double buffer alternation, cooperative workgroup shared memory caching, and indirect argument buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative profiling evaluates compute pass duration, render pass rasterization overhead, and sixty frames per second frame budget margins."
+          },
+          {
+            "at": "verify",
+            "caption": "Final defense matrix audit certifies struct byte alignments, warp thread sizing, shared memory limits, and automated device loss recovery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "GPU-Driven Indirect Drawing (drawIndirect) & Zero CPU Readback",
+      "codeHash": "8a6dd0bb478a09748de91e8dca1d0cbb1be7d52f26e4d85fb5582d3af8fdfd44",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GPU-Driven Indirect Drawing (drawIndirect) & Zero CPU Readback",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master system overview illustrates the complete million-particle WebGPU compute pipeline, from physics simulation to indirect draw dispatch."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines ping-pong double buffer alternation, cooperative workgroup shared memory caching, and indirect argument buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative profiling evaluates compute pass duration, render pass rasterization overhead, and sixty frames per second frame budget margins."
+          },
+          {
+            "at": "verify",
+            "caption": "Final defense matrix audit certifies struct byte alignments, warp thread sizing, shared memory limits, and automated device loss recovery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The 5-Gate Defense Matrix: Stress Testing, Profiling & Device Loss Recovery",
+      "codeHash": "9d25963953ad8710c4a87bd3c0acdc01f0ec0933a611ee31b65b01b7a95bb786",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The 5-Gate Defense Matrix: Stress Testing, Profiling & Device Loss Recovery",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master system overview illustrates the complete million-particle WebGPU compute pipeline, from physics simulation to indirect draw dispatch."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines ping-pong double buffer alternation, cooperative workgroup shared memory caching, and indirect argument buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative profiling evaluates compute pass duration, render pass rasterization overhead, and sixty frames per second frame budget margins."
+          },
+          {
+            "at": "verify",
+            "caption": "Final defense matrix audit certifies struct byte alignments, warp thread sizing, shared memory limits, and automated device loss recovery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+import json
+
+say_p1 = [
+    "Welcome to Day 33 of 3D Computer Graphics, WebGL2 & GPU Shader Architecture. Yesterday, we conquered workgroup shared memory, memory fences, and parallel reduction trees. Today, we step into the highest tier of GPU concurrency engineering: Atomic Operations, Race Conditions, and Work-Efficient Parallel Prefix Sums.",
+    "When thousands of GPU threads execute simultaneously, they frequently need to modify shared data structures: allocating memory slots in an append buffer, incrementing histogram counters, or tracking surviving particles. If two threads read a memory location containing the number 5, both add 1 to it locally in their register files, and both write 6 back to memory, one of the increments is completely obliterated! This is a classic Read-Modify-Write Race Condition. In a particle system emitting one hundred thousand particles per frame, race conditions corrupt buffer counters, scramble particle indices, and produce visual artifacts or buffer overflow memory corruptions.",
+    "Consider the physical analogy of an automated deli counter ticket dispenser at a busy supermarket. Imagine fifty customers rushing toward the counter simultaneously to grab the next sequential order number. If the machine were a simple printed roll of paper that everyone yanked at the same time, two or three customers would rip off the exact same ticket number, leading to angry arguments at the deli counter! Instead, modern automated dispensers use an electronic turnstile mechanism with an unbreakable physical ratchet: only one customer can turn the wheel at any microsecond. Turning the wheel locks out all other mechanical inputs, dispenses ticket number 42, increments the internal register to 43, and releases the wheel for the next customer in line. The ticket number allocation is completely indivisible, instantaneous, and conflict-free.",
+    "In WebGPU compute shaders, WGSL provides this hardware-level indivisibility through the `atomic<u32>` and `atomic<i32>` types, manipulated using dedicated atomic built-in functions: `atomicAdd()`, `atomicSub()`, `atomicMin()`, `atomicMax()`, `atomicAnd()`, `atomicOr()`, `atomicXor()`, and `atomicExchange()`. In modern graphics hardware, atomic operations on shared memory or global memory are implemented directly in on-chip memory controllers and L2 cache logic. When a thread calls `atomicAdd(&counter, 1u)`, the hardware memory controller executes the read, increment, and write sequence in an uninterruptible hardware transaction, guaranteeing that every single increment is counted without any data loss.",
+    "Crucially, `atomicAdd()` returns the OLD value of the memory location immediately prior to the addition! This return value is the key that unlocks high-performance GPU Append Buffers. When a compute thread determines that a new particle should be spawned, it calls `let slot = atomicAdd(&global_counter, 1u);`. The thread receives its own unique, private index `slot` into the global particle buffer. Thread A gets 42, Thread B gets 43, and Thread C gets 44—even if all three threads executed the instruction at the exact same physical nanosecond! No threads ever overwrite each other, and no CPU intervention or thread locking is required.",
+    "However, atomic operations must be used with architectural discipline. Because atomic operations serialize memory requests at the target memory controller, having ten thousand threads concurrently hammer the exact same atomic variable causes Memory Controller Contention (atomic throttling). To prevent serialization stalls, senior GPU architects use Hierarchical Atomic Aggregation: threads first accumulate increments locally within workgroup shared memory using `atomicAdd(&workgroup_counter, 1u)`, and then a single elected thread executes one atomic addition against the global memory buffer (`atomicAdd(&global_counter, workgroup_total)`), reducing global memory contention by ninety-nine percent.",
+    "In production particle simulation engines, append buffers allow thousands of emitter kernels to stream arbitrary numbers of new particles, debris fragments, and lighting sparks directly into persistent VRAM without costly CPU buffer resizing. The GPU becomes completely self-sufficient, managing its own memory allocation lifetimes at sixty frames per second.",
+    "In the TypeScript snippet below, we implement the `AtomicCounterSimulator`. We model concurrent threads submitting variable allocation requests, execute atomic additions to generate unique non-colliding buffer offsets, and verify total allocated counts.",
+    "Notice how each thread receives a distinct, collision-free offset range. Mastering atomic primitives gives you the power to coordinate massive parallel GPU threads without locks or stalls."
+]
+
+say_p2 = [
+    "Having mastered atomic additions for append buffers, we now examine atomic bounding volume operations: `atomicMin()` and `atomicMax()`. In modern real-time graphics pipelines—including GPU-driven bounding volume hierarchy (BVH) generation for hardware ray tracing, frustum culling, and shadow map cascades—the engine must compute the tight Axis-Aligned Bounding Box (AABB) enclosing millions of dynamic vertices or particles every single frame.",
+    "Consider the physical analogy of an automated cargo shipping container facility. Imagine hundreds of delivery vans arriving with packages of irregular shapes and sizes. To determine the minimum dimensions of the shipping crate required to enclose the entire shipment, the dock manager does not need to measure packages one by one in a serial queue. Instead, as each van pulls up to the intake dock, automated laser calipers record the extreme coordinates: if a package extends further north than the current northernmost coordinate, the northern laser line expands; if a package extends further west, the western line adjusts. By the time the last van unloads, the bounding dimensions of the entire shipment have been continuously updated in real time without a single moment of stalled sorting.",
+    "In WGSL, an Axis-Aligned Bounding Box is defined by two three-dimensional points: `min_point` and `max_point`. Finding these bounds sequentially on a CPU for ten million particles requires looping over every particle and executing six comparison operations, consuming tens of milliseconds of precious frame time. On the GPU, we can compute the exact bounding box in a single compute pass using atomic minima and maxima. Every thread computes the position of its assigned particle and calls `atomicMin(&bounds.min_x, px)`, `atomicMax(&bounds.max_x, px)`, and so forth for all three axes.",
+    "However, a critical limitation of GPU hardware must be addressed: WGSL atomic functions only operate on integer types (`u32` and `i32`). GPUs do not support native atomic operations on 32-bit floating-point numbers (`f32`) because IEEE 754 floating-point numbers have variable exponents and signs that cannot be easily updated with simple integer ALU logic without complex hardware silicon! How do graphics engineers compute floating-point bounding boxes using integer atomics?",
+    "The industry standard solution is Fixed-Point Quantization or Monotonic Floating-Point Bitcasting. Because IEEE 754 positive floating-point bit representations preserve their natural ordering when interpreted as unsigned integers, we can cast positive floats directly to `u32` using `bitcast<u32>(float_val)`. For signed coordinates that span negative values, engineers apply a monotonic transform: if the float is positive, flip the sign bit; if negative, invert all bits! This transforms any 32-bit float into an order-preserving unsigned integer. The compute shader executes `atomicMin` and `atomicMax` on these integer representations, and the resulting bounding box is bitcast back to `f32` in the host renderer.",
+    "Alternatively, Fixed-Point Quantization scales the world-space bounding domain into a large integer grid (e.g. multiplying floating-point meters by one thousand to obtain millimeter integers). This integer quantization allows `atomicMin` and `atomicMax` to execute at maximum hardware speed with zero floating-point precision hazards or NaN divergence.",
+    "In large-scale production architectures, bounding volume reduction is executed hierarchically across multiple compute tiers. Each workgroup calculates a local bounding box in shared memory using workgroup-level reductions, and then writes a single atomic minimum and maximum to the global bounding structure in VRAM. This prevents thousands of threads from saturating the memory bus on a single global coordinate.",
+    "Once the global bounding box is computed on the GPU, downstream rendering systems immediately consume it to configure directional light shadow projection matrices, discard non-visible particle clusters before rasterization, or build dynamic BVH acceleration structures for path tracing.",
+    "In the TypeScript snippet below, we implement the `AtomicAABBSimulator`. We process a stream of 3D spatial coordinates, update bounding volume extrema using simulated atomic min/max logic, and extract the resulting bounding volume extents.",
+    "Notice how the bounding box tightens around the extreme coordinates `[-5, 99]` on X and `[-12, 88]` on Y. Understanding how to reformulate continuous geometric problems into discrete atomic operations is a hallmark of elite graphics systems design."
+]
+
+say_p3 = [
+    "While built-in operations like `atomicAdd()` and `atomicMin()` handle straightforward arithmetic, advanced GPU algorithms often require updating complex data structures atomically: inserting nodes into lock-free linked lists, modifying packed bitfields, or updating floating-point values that cannot use simple integer atomics. To solve arbitrary synchronization challenges without hardware locks, modern graphics architectures provide the king of lock-free concurrency: Compare-and-Swap (CAS), exposed in WGSL as `atomicCompareExchangeWeak()`.",
+    "Consider the physical analogy of an old-fashioned real estate deed registry office. Imagine an official land ledger where the title to a historic estate is recorded. Buyer Alice arrives with a proposed contract to purchase the estate from Owner Bob for one million dollars. The county registrar opens the ledger and inspects the current recorded owner. The registrar says: 'I will only execute your new deed if the current owner listed in the book is Bob! If somebody else bought the estate ten minutes ago while you were walking to the office, your transaction is rejected immediately, and you must review the updated title.' The trade only happens if the existing reality exactly matches the buyer's expectation. This is the exact definition of atomic Compare-and-Swap.",
+    "In WGSL, `atomicCompareExchangeWeak(&atomic_var, expected_val, desired_val)` takes three arguments: the pointer to the atomic variable, the expected current value, and the new desired value. In a single hardware cycle, the memory controller checks: if `*atomic_var == expected_val`, it writes `desired_val` into `*atomic_var` and returns `{ old_value: expected_val, exchanged: true }`. If another thread modified the variable in the interim, the check fails: `*atomic_var` is left untouched, and the function returns `{ old_value: current_val, exchanged: false }`.",
+    "The word 'Weak' in `atomicCompareExchangeWeak` signifies that the hardware operation is permitted to fail spuriously on certain architectures (such as ARM and Apple Silicon using load-linked/store-conditional LL/SC instructions) even if the value matched, which allows maximum hardware throughput. Because of this, Compare-and-Swap is always structured inside a retry loop called a CAS Loop: `loop { let current = atomicLoad(&atomic_var); let next_val = compute_next(current); let res = atomicCompareExchangeWeak(&atomic_var, current, next_val); if (res.exchanged) { break; } }`.",
+    "With a CAS loop, you can implement arbitrary lock-free operations on GPU memory. For example, to perform an atomic floating-point maximum without fixed-point quantization: a thread reads the current float bitcast as a `u32`, computes the maximum with its local float, and attempts `atomicCompareExchangeWeak`. If another thread updated the maximum simultaneously, the CAS loop simply rereads the updated float and recalculates, ensuring mathematically flawless updates under heavy multi-threaded contention.",
+    "Furthermore, CAS loops enable lock-free memory allocation pools and GPU-driven task queues. Workgroup threads can pop work items from a shared lock-free stack in VRAM, execute ray marching workloads, and push secondary ray queries back onto the queue without ever stalling the CPU or locking the graphics pipeline.",
+    "Engineers must ensure that CAS loops are bounded and guaranteed to terminate. In high-contention scenarios with thousands of threads competing for the same word, exponential backoff or hierarchical tree distribution prevents thread starvation and preserves predictable frame rendering budgets.",
+    "In multi-agent simulation workloads, CAS loops manage lock-free spatial binning pointers. When a particle enters a spatial cell, a CAS loop atomically swaps the head pointer of the cell linked list, prepending the new particle index in a single instruction. This lock-free linked list construction executes entirely in parallel across one million active entities without CPU stalls.",
+    "In the TypeScript snippet below, we construct the `AtomicCompareExchangeSimulator`. We simulate atomic memory locations, test conditional exchanges under matching and mismatched expectations, and observe the resulting state transitions.",
+    "Notice how Attempt 1 is rejected because the expected value did not match, while Attempt 2 succeeds and commits the updated value. Compare-and-Swap is the ultimate Swiss Army knife of GPU concurrency, enabling completely lock-free algorithms in high-throughput compute pipelines."
+]
+
+say_p4 = [
+    "We now arrive at one of the crowning algorithmic triumphs of parallel computing: The Work-Efficient Parallel Prefix Sum, universally known in graphics engineering as Parallel Scan. Prefix sum takes an input array of numbers $[x_0, x_1, x_2, \\dots]$ and produces an output array $[y_0, y_1, y_2, \\dots]$ where each element $y_k$ is the sum of all preceding elements up to index $k$. In an Exclusive Scan, $y_k = \\sum_{i=0}^{k-1} x_i$ with $y_0 = 0$. For example, given $[3, 1, 7, 0, 4, 1, 6, 3]$, its exclusive scan is $[0, 3, 4, 11, 11, 15, 16, 22]$.",
+    "On a serial CPU, calculating a prefix sum takes trivial linear $O(N)$ work: you maintain a running total and add each number in a single pass. However, a single CPU core processing ten million elements takes hundreds of milliseconds. In early parallel computing, Hillis and Steele devised a parallel scan taking $O(\\log N)$ steps, but it executed $O(N \\log N)$ total additions—doing far more total work than the serial algorithm and wasting massive GPU memory bandwidth. In 1990, Guy Blelloch designed the Work-Efficient Parallel Scan: an algorithm that executes in $O(\\log N)$ time steps while performing exactly $O(N)$ total operations—the theoretical algorithmic optimum!",
+    "Consider the physical analogy of an electrical power grid substation hierarchy managing regional meter readings. Imagine eight neighborhood substations reporting electrical kilowatt consumption to a regional headquarters. If every substation tried to compute running totals by phoning every other substation directly, telephone lines would overload in chaotic cross-talk. Instead, the grid uses a two-phase tree protocol: In Phase 1 (Up-Sweep), pairs of neighborhood substations aggregate their numbers up to district hubs, district hubs aggregate to regional stations, and regional stations report the grand total to the state headquarters. In Phase 2 (Down-Sweep), the state headquarters sends running cumulative allocations back down the tree, splitting and broadcasting sums until every neighborhood substation knows its exact cumulative offset in the state-wide ledger.",
+    "Blelloch's algorithm mirrors this exact structure in GPU shared memory using two distinct phases: The Up-Sweep (Reduction) Phase and The Down-Sweep Phase. In the Up-Sweep phase, the array is reduced like a binary tree: at step $d$, elements separated by stride $2^{d+1}$ are added together. At the end of $\\log_2 N$ steps, the root of the tree contains the total sum of all elements.",
+    "Next comes the algorithmic magic of Blelloch Scan: The last element is explicitly set to ZERO ($a[N-1] = 0$). Then begins the Down-Sweep Phase: we traverse back down the tree from the root. At each step, a thread saves the left child's value in a temporary variable, sets the left child equal to the right child, and sets the right child equal to the sum of the old left child and the right child! By the time the down-sweep reaches the leaf nodes, the original array has been transformed in-place into the exact Exclusive Prefix Sum with zero extra buffer allocations!",
+    "Every step in both the up-sweep and down-sweep is synchronized with `workgroupBarrier()`. Because Blelloch scan operates entirely in on-chip `var<workgroup>` shared memory, a workgroup of 256 or 512 threads can scan thousands of elements in under two microseconds, providing the foundational engine for particle sorting, radix sort, and dynamic memory allocation.",
+    "In the TypeScript snippet below, we implement the `BlellochScanSimulator`. We execute the up-sweep reduction, zero the root, execute the down-sweep distribution, and verify the resulting exclusive prefix sum and total sum.",
+    "Notice how the input array $[3, 1, 7, 0, 4, 1, 6, 3]$ is transformed into $[0, 3, 4, 11, 11, 15, 16, 22]$ with a total sum of 25. Blelloch parallel scan is the engine that powers dynamic GPU geometry allocation, and next we use it to build GPU Stream Compaction."
+]
+
+say_p5 = [
+    "We now synthesize atomic operations, barriers, and parallel prefix sums to solve one of the most critical challenges in game engine architecture: GPU Stream Compaction. In large-scale particle systems, fluid simulations, and geometry culling pipelines, thousands of elements become invalid or die every frame: smoke particles fade out, water droplets exit the simulation volume, or triangles fall outside the camera's view frustum. If your particle buffer contains one million particles, but only eighty thousand are currently alive, rendering the entire buffer wastes over ninety percent of your vertex shader and rasterizer bandwidth on invisible debris!",
+    "Historically, legacy engines resolved this by copying particle state back to the CPU via `readPixels` or buffer mapping, filtering the array using JavaScript or C++, and uploading the compacted buffer back to the GPU. This CPU-GPU synchronization stalls the pipeline, destroys framerates, and introduces multiple frames of latency. Modern GPU-driven pipelines perform Stream Compaction entirely on the GPU in three ultra-fast parallel steps without a single byte crossing the PCI Express bus.",
+    "Consider the physical analogy of an airport customs security checkpoint with ten thousand arriving passengers. Imagine passengers carrying blue boarding passes (connecting domestic flights) and red boarding passes (international arrivals exiting the terminal). To herd international arrivals into a dedicated express concourse, airport security does not send the passenger manifest to a central city office for manual filtering! Instead, as passengers approach the concourse entrance, electronic gates flash green for international passengers, an automated counter instantly assigns them consecutive lane numbers from 1 to N, and passengers smoothly file into the express concourse without a single moment of pedestrian gridlock.",
+    "On the GPU, Stream Compaction executes across three distinct compute stages: Stage 1 (Predicate Generation): A compute kernel evaluates every particle's state in parallel. If the particle is alive, it outputs a `1`; if dead, it outputs a `0`. This produces a boolean predicate array $[1, 0, 1, 1, 0, 1, 0, 1]$. Stage 2 (Exclusive Prefix Scan): The engine runs Blelloch Parallel Scan on the predicate array. The scan outputs exclusive offsets: $[0, 1, 1, 2, 3, 3, 4, 4]$. Notice the mathematical beauty: for every alive particle (where flag is 1), the scanned value is its EXACT unique destination index in the compacted output buffer! Stage 3 (Parallel Scatter): Each thread checks its predicate. If alive, it writes its particle data directly to `output[offset]`. Dead particles are silently ignored with zero branching stalls.",
+    "At the conclusion of Stage 3, the final element of the scan plus its predicate yields the exact count of living particles. The GPU writes this count directly into an Indirect Draw Argument Buffer (`drawIndirect`), enabling the graphics pipeline to draw exactly the live particles in the very next draw call without the CPU ever needing to know how many particles survived!",
+    "This is the holy grail of GPU-Driven Rendering: the GPU updates simulation physics, culls dead particles, compacts memory buffers, and dispatches its own rendering commands in a self-contained, closed-loop pipeline running at blistering frame rates.",
+    "Furthermore, stream compaction serves as the backbone of modern GPU-driven frustum culling and occlusion culling in AAA game engines. Meshes with hundreds of thousands of sub-instances are tested against bounding view frustums in compute kernels, and the compacted surviving mesh instances are written directly into persistent draw parameter buffers, eliminating CPU command submission overhead entirely.",
+    "In the TypeScript snippet below, we implement the `GPUStreamCompactor`. We evaluate alive predicates, compute exclusive prefix offsets, scatter live particles into contiguous destination memory, and verify compacted counts.",
+    "Notice how eight fragmented particles are compacted into five contiguous indices `[101, 103, 104, 106, 108]` in linear parallel time. Tomorrow, in Day 34, we will use these spatial primitives to build full GPU Spatial Hashing and Parallel Particle Physics."
+]
+
+# Read snippets from test script
+with open('scripts/test_g3d_day33_snippets.py', 'r') as f:
+    snippets_code = f.read()
+
+# Snippet 1
+c1 = """interface AllocationRequest {
+  threadId: number;
+  count: number;
+}
+
+class AtomicCounterSimulator {
+  private counter: number = 0;
+
+  atomicAdd(amount: number): number {
+    const oldVal = this.counter;
+    this.counter += amount;
+    return oldVal;
+  }
+
+  getTotal(): number {
+    return this.counter;
+  }
+}
+
+const allocator = new AtomicCounterSimulator();
+const requests: AllocationRequest[] = [
+  { threadId: 0, count: 1 },
+  { threadId: 1, count: 2 },
+  { threadId: 2, count: 1 },
+  { threadId: 3, count: 3 }
+];
+
+const allocations = requests.map(req => ({
+  threadId: req.threadId,
+  startOffset: allocator.atomicAdd(req.count),
+  count: req.count
+}));
+
+allocations.forEach(a => {
+  console.log(`[Atomic Counter] Thread ${a.threadId}: Allocated offset ${a.startOffset} (count ${a.count})`);
+});
+console.log(`[Atomic Counter] Total Elements Allocated: ${allocator.getTotal()}`);"""
+
+o1 = """[Atomic Counter] Thread 0: Allocated offset 0 (count 1)
+[Atomic Counter] Thread 1: Allocated offset 1 (count 2)
+[Atomic Counter] Thread 2: Allocated offset 3 (count 1)
+[Atomic Counter] Thread 3: Allocated offset 4 (count 3)
+[Atomic Counter] Total Elements Allocated: 7"""
+
+c2 = """interface Point3D {
+  x: number;
+  y: number;
+  z: number;
+}
+
+class AtomicAABBSimulator {
+  minX: number = 10000;
+  minY: number = 10000;
+  maxX: number = -10000;
+  maxY: number = -10000;
+
+  update(p: Point3D): void {
+    // Simulating atomicMin and atomicMax
+    if (p.x < this.minX) this.minX = p.x;
+    if (p.y < this.minY) this.minY = p.y;
+    if (p.x > this.maxX) this.maxX = p.x;
+    if (p.y > this.maxY) this.maxY = p.y;
+  }
+}
+
+const aabb = new AtomicAABBSimulator();
+const points: Point3D[] = [
+  { x: 12, y: 45, z: 0 },
+  { x: -5, y: 88, z: 0 },
+  { x: 34, y: -12, z: 0 },
+  { x: 99, y: 3, z: 0 }
+];
+
+points.forEach(p => aabb.update(p));
+
+console.log(`[Atomic AABB] Bounds X: [${aabb.minX}, ${aabb.maxX}]`);
+console.log(`[Atomic AABB] Bounds Y: [${aabb.minY}, ${aabb.maxY}]`);"""
+
+o2 = """[Atomic AABB] Bounds X: [-5, 99]
+[Atomic AABB] Bounds Y: [-12, 88]"""
+
+c3 = """interface CASResult {
+  oldValue: number;
+  exchanged: boolean;
+}
+
+class AtomicCompareExchangeSimulator {
+  private value: number;
+
+  constructor(initial: number) {
+    this.value = initial;
+  }
+
+  compareExchange(expected: number, desired: number): CASResult {
+    if (this.value === expected) {
+      this.value = desired;
+      return { oldValue: expected, exchanged: true };
+    }
+    return { oldValue: this.value, exchanged: false };
+  }
+
+  getValue(): number {
+    return this.value;
+  }
+}
+
+const memory = new AtomicCompareExchangeSimulator(100);
+// Thread attempts atomic CAS update: exchange 100 -> 250
+const attempt1 = memory.compareExchange(99, 250); // Mismatched expected
+const attempt2 = memory.compareExchange(100, 250); // Matches expected
+
+console.log(`[Atomic CAS] Attempt 1 (expected 99): Exchanged=${attempt1.exchanged}, Value=${attempt1.oldValue}`);
+console.log(`[Atomic CAS] Attempt 2 (expected 100): Exchanged=${attempt2.exchanged}, NewValue=${memory.getValue()}`);"""
+
+o3 = """[Atomic CAS] Attempt 1 (expected 99): Exchanged=false, Value=100
+[Atomic CAS] Attempt 2 (expected 100): Exchanged=true, NewValue=250"""
+
+c4 = """class BlellochScanSimulator {
+  static exclusiveScan(arr: number[]): { prefixSum: number[]; totalSum: number } {
+    const a = [...arr];
+    const n = a.length;
+
+    // Up-sweep (reduce) phase
+    for (let d = 0; d < Math.log2(n); d++) {
+      const stride = 1 << (d + 1);
+      for (let k = 0; k < n; k += stride) {
+        a[k + stride - 1] += a[k + (1 << d) - 1];
+      }
+    }
+
+    const totalSum = a[n - 1];
+    a[n - 1] = 0; // Clear the last element
+
+    // Down-sweep phase
+    for (let d = Math.log2(n) - 1; d >= 0; d--) {
+      const stride = 1 << (d + 1);
+      for (let k = 0; k < n; k += stride) {
+        const leftIdx = k + (1 << d) - 1;
+        const rightIdx = k + stride - 1;
+        const temp = a[leftIdx];
+        a[leftIdx] = a[rightIdx];
+        a[rightIdx] += temp;
+      }
+    }
+
+    return { prefixSum: a, totalSum };
+  }
+}
+
+const inputValues = [3, 1, 7, 0, 4, 1, 6, 3];
+const result = BlellochScanSimulator.exclusiveScan(inputValues);
+
+console.log(`[Blelloch Scan] Input: [${inputValues.join(", ")}]`);
+console.log(`[Blelloch Scan] Exclusive Prefix Sum: [${result.prefixSum.join(", ")}]`);
+console.log(`[Blelloch Scan] Total Sum: ${result.totalSum}`);"""
+
+o4 = """[Blelloch Scan] Input: [3, 1, 7, 0, 4, 1, 6, 3]
+[Blelloch Scan] Exclusive Prefix Sum: [0, 3, 4, 11, 11, 15, 16, 22]
+[Blelloch Scan] Total Sum: 25"""
+
+c5 = """interface Particle {
+  id: number;
+  alive: boolean;
+}
+
+class GPUStreamCompactor {
+  static compactAliveParticles(particles: Particle[]): { compactedIds: number[]; count: number } {
+    // Step 1: Generate predicate flags (1 if alive, 0 if dead)
+    const flags = particles.map(p => (p.alive ? 1 : 0));
+    
+    // Step 2: Compute exclusive prefix sum on flags
+    const offsets: number[] = [];
+    let currentOffset = 0;
+    for (const f of flags) {
+      offsets.push(currentOffset);
+      currentOffset += f;
+    }
+    const totalAlive = currentOffset;
+
+    // Step 3: Scatter alive elements into compacted output buffer
+    const compacted: number[] = new Array(totalAlive);
+    for (let i = 0; i < particles.length; i++) {
+      if (flags[i] === 1) {
+        compacted[offsets[i]] = particles[i].id;
+      }
+    }
+
+    return { compactedIds: compacted, count: totalAlive };
+  }
+}
+
+const testParticles: Particle[] = [
+  { id: 101, alive: true },
+  { id: 102, alive: false },
+  { id: 103, alive: true },
+  { id: 104, alive: true },
+  { id: 105, alive: false },
+  { id: 106, alive: true },
+  { id: 107, alive: false },
+  { id: 108, alive: true }
+];
+
+const compaction = GPUStreamCompactor.compactAliveParticles(testParticles);
+console.log(`[Stream Compaction] Alive Particles Count: ${compaction.count}`);
+console.log(`[Stream Compaction] Compacted Output IDs: [${compaction.compactedIds.join(", ")}]`);"""
+
+o5 = """[Stream Compaction] Alive Particles Count: 5
+[Stream Compaction] Compacted Output IDs: [101, 103, 104, 106, 108]"""
+
+day33_data = {
+    'day': 33,
+    'coursePrefix': 'g3d',
+    'title': 'Atomic Operations, Race Conditions & Parallel Prefix Sum (Scan) on GPU',
+    'goal': 'Master lock-free atomic concurrency in WGSL, eliminate memory race conditions, implement Blelloch work-efficient parallel prefix sums, and deploy GPU stream compaction.',
+    'recap': 'Recap of Day 32: GPU workgroups, invocations, shared memory var<workgroup>, workgroupBarrier(), bank conflict elimination, and logarithmic parallel reduction trees.',
+    'minutes': 120,
+    'parts': [
+        {
+            'part': 1,
+            'title': 'Atomic Primitives in WGSL: atomicAdd, atomicSub & Append Buffers',
+            'say': say_p1,
+            'example': 'An electronic turnstile at an airport security gate that dispenses consecutive boarding sequence tokens without passenger collisions.',
+            'code': c1,
+            'output': o1,
+            'check': {
+                'question': 'What value is returned by the WGSL built-in function atomicAdd(&atomic_var, value)?',
+                'options': [
+                    'The original value held in the atomic variable immediately prior to the addition operation.',
+                    'The new incremented value after the addition completes.',
+                    'A boolean flag indicating whether the hardware memory controller succeeded.',
+                    'The number of hardware threads currently waiting for the atomic lock.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Returning the pre-addition value allows threads to immediately use the old value as their own unique, non-colliding offset into dynamic append buffers.'
+            }
+        },
+        {
+            'part': 2,
+            'title': 'Atomic Min/Max & Parallel Bounding Volume Hierarchy (BVH) Construction',
+            'say': say_p2,
+            'example': 'Automated laser calipers on a shipping dock that expand bounding box dimensions in real-time as cargo containers unload.',
+            'code': c2,
+            'output': o2,
+            'check': {
+                'question': 'Why must floating-point values be quantized or bitcast before applying atomicMin or atomicMax in WGSL?',
+                'options': [
+                    'Because WGSL atomic primitives natively support only integer types (u32 and i32), requiring order-preserving integer encoding for continuous floating-point coordinates.',
+                    'Because floating-point numbers do not exist in the GPU ALU architecture.',
+                    'Because the WebGPU specification forbids bounding box calculations in compute shaders.',
+                    'Because atomicMin requires double-precision 64-bit floating point hardware.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'GPU memory controllers execute atomic comparisons using integer arithmetic units, necessitating monotonic integer encoding for float coordinates.'
+            }
+        },
+        {
+            'part': 3,
+            'title': 'Lock-Free Synchronization with atomicCompareExchangeWeak (CAS)',
+            'say': say_p3,
+            'example': 'A county title registry clerk who only registers a new land deed if the recorded owner still matches the expected seller.',
+            'code': c3,
+            'output': o3,
+            'check': {
+                'question': 'How does a GPU thread handle a failed exchange when executing atomicCompareExchangeWeak inside a CAS loop?',
+                'options': [
+                    'The thread reads the newly returned current value, recomputes its desired update based on the updated state, and re-attempts the compare-exchange in the next iteration of the loop.',
+                    'The thread halts execution and triggers an unrecoverable graphics driver reset.',
+                    'The thread notifies the CPU via an interrupt to lock the global memory bus.',
+                    'The thread skips the update and discards the computation permanently.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'A CAS loop repeatedly retries the atomic comparison until the memory matches expectation and commits the update, ensuring lock-free safety.'
+            }
+        },
+        {
+            'part': 4,
+            'title': 'Work-Efficient Parallel Prefix Sum (Scan): Blelloch Algorithm',
+            'say': say_p4,
+            'example': 'An electrical grid substation network that aggregates consumption upwards in an up-sweep tree and distributes cumulative allocations downward in a down-sweep tree.',
+            'code': c4,
+            'output': o4,
+            'check': {
+                'question': 'What are the time and work complexities of Guy Blelloch Work-Efficient Parallel Prefix Scan on an array of N elements?',
+                'options': [
+                    'O(log N) parallel time steps and O(N) total addition operations, matching optimal serial work efficiency.',
+                    'O(N) parallel time steps and O(N^2) total addition operations.',
+                    'O(1) constant time steps and O(N log N) total operations.',
+                    'O(N log N) time steps and O(log N) total operations.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Blelloch algorithm uses a binary tree up-sweep and down-sweep to achieve logarithmic execution time without doing more total operations than a serial scan.'
+            }
+        },
+        {
+            'part': 5,
+            'title': 'GPU Stream Compaction: Dynamic Filtering Without CPU Roundtrips',
+            'say': say_p5,
+            'example': 'An automated airport customs biometric gate system that filters and herds international arrivals into dedicated express lanes without human bottlenecks.',
+            'code': c5,
+            'output': o5,
+            'check': {
+                'question': 'What role does the exclusive prefix sum array play during the scatter phase of GPU stream compaction?',
+                'options': [
+                    'It provides each active element with its exact, unique, contiguous destination memory index in the compacted output buffer.',
+                    'It calculates the physical velocity of each particle for the physics engine.',
+                    'It verifies that the graphics card driver has not encountered a timeout detection reset.',
+                    'It sorts the particles in descending order of their floating-point life values.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'The exclusive prefix sum of predicate flags directly yields the zero-based output array slot for every valid element, enabling collision-free parallel scattering.'
+            }
+        }
+    ],
+    'projectStep': {
+        'title': 'Implement GPU Atomic Append Buffers & Blelloch Parallel Stream Compaction',
+        'steps': [
+            'Deploy atomicAdd() append counters to allocate collision-free particle slots in global VRAM.',
+            'Implement fixed-point integer bitcasting with atomicMin/Max to calculate dynamic bounding volumes.',
+            'Construct the two-phase Blelloch parallel prefix scan kernel using workgroup shared memory.',
+            'Execute GPU stream compaction to filter active simulation elements directly into indirect draw buffers.'
+        ]
+    },
+    'summary': [
+        'Atomic operations in WGSL (atomicAdd, atomicSub) guarantee indivisible memory updates, eliminating race conditions in parallel GPU pipelines.',
+        'Append buffers leverage the pre-increment return value of atomicAdd() to allocate unique storage slots without CPU locks.',
+        'Dynamic bounding volumes are computed using atomicMin() and atomicMax() by bitcasting floating-point coordinates into monotonic integer domains.',
+        'atomicCompareExchangeWeak() enables arbitrary lock-free data structures through bounded CAS retry loops.',
+        'Blelloch work-efficient parallel scan and stream compaction filter and compact millions of active simulation elements entirely on the GPU.'
+    ]
+}
+
+# Verify word count
+for p in day33_data['parts']:
+    wc = sum(len(para.split()) for para in p['say'])
+    print(f"G3D Day 33 Part {p['part']} Word Count: {wc}")
+    assert wc >= 600, f"Part {p['part']} word count {wc} below 600 words!"
+
+with open('scripts/g3d_day33_data.py', 'w', encoding='utf-8') as f:
+    f.write(f"day33_data = {repr(day33_data)}\n")
+
+print("scripts/g3d_day33_data.py successfully written!")

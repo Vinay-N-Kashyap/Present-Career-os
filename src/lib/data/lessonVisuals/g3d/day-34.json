@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 34,
+  "promptSha": "de5b228eb2e409eaf43090a9a87d500b35c879c5ae23b1f6aaac3cf2de3d4b5c",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Numerical Integration on GPU: Euler vs Verlet Integration",
+      "codeHash": "1e131b76b6a45df4477d0221618436f4646bee15b7f996baee21978ef92d4a0c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Numerical Integration on GPU: Euler vs Verlet Integration",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Simulation overview diagrams symplectic Verlet numerical integration and discrete spatial hash cell partitioning across continuous world space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces prime XOR spatial hash generation, cell bucket range tables, and twenty-seven neighbor cell candidate stencils."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts quadratic pairwise collision bottlenecks against linear amortized spatial grid neighborhood queries."
+          },
+          {
+            "at": "verify",
+            "caption": "Physical verification confirms momentum conservation, impulse exchange accuracy, and zero inter-particle penetration overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The O(N^2) Pairwise Collision Bottleneck & Spatial Partitioning",
+      "codeHash": "b462c1be23c9b00113461ade4fe50e374e0eae51329e73d19efd9c37f400323b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The O(N^2) Pairwise Collision Bottleneck & Spatial Partitioning",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Simulation overview diagrams symplectic Verlet numerical integration and discrete spatial hash cell partitioning across continuous world space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces prime XOR spatial hash generation, cell bucket range tables, and twenty-seven neighbor cell candidate stencils."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts quadratic pairwise collision bottlenecks against linear amortized spatial grid neighborhood queries."
+          },
+          {
+            "at": "verify",
+            "caption": "Physical verification confirms momentum conservation, impulse exchange accuracy, and zero inter-particle penetration overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Spatial Hash Mapping: 3D Discrete Cell Coordinates to 1D Hash Keys",
+      "codeHash": "e43784ff80a5ef96cdfbe5cd2cef2036cb99057f74d046ed8a9579ea625c628a",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Spatial Hash Mapping: 3D Discrete Cell Coordinates to 1D Hash Keys",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Simulation overview diagrams symplectic Verlet numerical integration and discrete spatial hash cell partitioning across continuous world space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces prime XOR spatial hash generation, cell bucket range tables, and twenty-seven neighbor cell candidate stencils."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts quadratic pairwise collision bottlenecks against linear amortized spatial grid neighborhood queries."
+          },
+          {
+            "at": "verify",
+            "caption": "Physical verification confirms momentum conservation, impulse exchange accuracy, and zero inter-particle penetration overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Building the GPU Spatial Cell Bucket & Particle Linked List / Index Table",
+      "codeHash": "4d607d576924921ecaeff6b392f40d8b39fa288fcbda8fdbf645fc61bdbbc83f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Building the GPU Spatial Cell Bucket & Particle Linked List / Index Table",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Simulation overview diagrams symplectic Verlet numerical integration and discrete spatial hash cell partitioning across continuous world space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces prime XOR spatial hash generation, cell bucket range tables, and twenty-seven neighbor cell candidate stencils."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts quadratic pairwise collision bottlenecks against linear amortized spatial grid neighborhood queries."
+          },
+          {
+            "at": "verify",
+            "caption": "Physical verification confirms momentum conservation, impulse exchange accuracy, and zero inter-particle penetration overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Resolving Elastic Particle-Particle Collisions & Boundary Restitution",
+      "codeHash": "19f065ba844efc0f62f1f27b03992b42a99d5dcc72038036960d63614b94c960",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Resolving Elastic Particle-Particle Collisions & Boundary Restitution",
+        "left": {
+          "label": "Legacy CPU Pipeline",
+          "content": [
+            "Serial CPU execution bottleneck",
+            "High PCI-Express bus transfer latency",
+            "Frequent garbage collection pauses",
+            "Unsynchronized memory write races"
+          ]
+        },
+        "right": {
+          "label": "Modern WebGPU Compute Pipeline",
+          "content": [
+            "Massive SIMD parallel hardware invocations",
+            "Zero-copy on-chip storage and shared memory",
+            "Deterministic GPU memory fence synchronization",
+            "Decoupled GPU-driven indirect draw dispatch"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Simulation overview diagrams symplectic Verlet numerical integration and discrete spatial hash cell partitioning across continuous world space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection traces prime XOR spatial hash generation, cell bucket range tables, and twenty-seven neighbor cell candidate stencils."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts quadratic pairwise collision bottlenecks against linear amortized spatial grid neighborhood queries."
+          },
+          {
+            "at": "verify",
+            "caption": "Physical verification confirms momentum conservation, impulse exchange accuracy, and zero inter-particle penetration overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy CPU Pipeline",
+        "rightLabel": "Modern WebGPU Compute Pipeline"
+      }
+    }
+  ]
+}
