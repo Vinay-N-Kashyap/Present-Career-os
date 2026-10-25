@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 57,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 57 Part 1: The Governance Dilemma: Measuring Adoption in Multi-Repository Organizations. Visualizing step progression with compare template.",
+      "promptSha": "b7bfbd71ece1d0115ccfd1b2a15a6e2110de4e29e3a43caacd81cb2d9d76dca6",
+      "codeHash": "b8019c2a9568c25b99a852374f120a2b43cebde1ca2fbd4a443a57c54cdab303",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Unmonitored Component Fleet",
+          "caption": "Enterprise software fleets frequently lack visibility into component usage."
+        },
+        {
+          "step": 2,
+          "title": "Abstract Syntax Tree Parsing",
+          "caption": "Static analyzers convert consumer source files into abstract syntax trees."
+        },
+        {
+          "step": 3,
+          "title": "JSX Tag and Prop Extraction",
+          "caption": "Crawlers catalog component import specifiers and passed property values."
+        },
+        {
+          "step": 4,
+          "title": "Institutional Adoption Score",
+          "caption": "Executive scorecards compute institutional adoption ratios across repositories."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 57 Part 2: Abstract Syntax Tree (AST) Parsing: Crawling TypeScript & JSX Usages. Visualizing step progression with compare template.",
+      "promptSha": "a2c091c1393819a6ab09c4e0096006f2f6ff27a348f8709f20df00c171923b74",
+      "codeHash": "e2ea38446b500e694a7b4bca16a6a6a6268b5e945ef6628e3140b31e717c4d10",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Source Code String Stream",
+          "caption": "Primitive regex searches cannot distinguish between comments and code."
+        },
+        {
+          "step": 2,
+          "title": "Lexical Tokenizing Pass",
+          "caption": "Compiler tokenizers decompose source text into structured language tokens."
+        },
+        {
+          "step": 3,
+          "title": "AST Import Resolution",
+          "caption": "Import declarations map local component aliases back to official package origins."
+        },
+        {
+          "step": 4,
+          "title": "Canonical Component Mapping",
+          "caption": "AST visitors catalogue exact component invocations without false positives."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 57 Part 3: Deprecation Tracking & Automated Migration Linting. Visualizing step progression with compare template.",
+      "promptSha": "ecd6159c7f3701da6c7415b96318a3108af74514a07198aa4f1b76b779d612c2",
+      "codeHash": "09f437963ac06a5d94875a50dcb7874f2c4944164f26aa0004274971b243cdab",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Marking JSDoc Deprecation",
+          "caption": "Deprecated interfaces display warning strikethroughs in developer editors."
+        },
+        {
+          "step": 2,
+          "title": "Measuring Enterprise Debt",
+          "caption": "Static crawlers measure deprecation debt to populate burn-down charts."
+        },
+        {
+          "step": 3,
+          "title": "Automated Codemod Transform",
+          "caption": "Automated ESLint rules rewrite deprecated properties directly in source files."
+        },
+        {
+          "step": 4,
+          "title": "Sunsetted API Elimination",
+          "caption": "Product squads eliminate legacy APIs safely ahead of scheduled sunset deadlines."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 57 Part 4: Runtime Observational Telemetry: High-Frequency Event Beaconing. Visualizing step progression with compare template.",
+      "promptSha": "0ae9b1754f3431dc1709db0e623379b5bcb1aa2695b6582f1b615c0ad802f5ac",
+      "codeHash": "03859771117422fa3cc216eb62593a3cf2c75e571ab8d9f14e92384a0f6993c0",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Client Component Interaction",
+          "caption": "End users trigger component interactions during live production sessions."
+        },
+        {
+          "step": 2,
+          "title": "In-Memory Ring Buffer",
+          "caption": "Lightweight hooks queue telemetry events into in-memory ring buffers."
+        },
+        {
+          "step": 3,
+          "title": "Idle Period Scheduling",
+          "caption": "Batch schedulers wait for browser idle periods before transmitting data."
+        },
+        {
+          "step": 4,
+          "title": "Non-Blocking Beacon Transport",
+          "caption": "Asynchronous beacon APIs deliver telemetry without blocking user navigation."
+        }
+      ]
+    }
+  ]
+}

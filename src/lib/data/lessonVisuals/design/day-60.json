@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 60,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 60 Part 1: Master Platform Architecture: The Sovereign Design System Operating System. Visualizing step progression with compare template.",
+      "promptSha": "4aee800fb2ea8818325622c87462b0ae77959365b1c59dbb8c695b299467a884",
+      "codeHash": "a9b11caa7343ac939820ae05ca61502da61da0990057ffefae1e26245438027e",
+      "steps": [
+        {
+          "step": 1,
+          "title": "DTCG Design Token Manifesto",
+          "caption": "Foundational design tokens define spatial scales and brand identities."
+        },
+        {
+          "step": 2,
+          "title": "Headless Accessible Component Engine",
+          "caption": "Headless component state machines enforce accessible interaction patterns."
+        },
+        {
+          "step": 3,
+          "title": "Perceptual Visual Regression Firewall",
+          "caption": "Visual regression pipelines prevent subtle pixel regressions in production."
+        },
+        {
+          "step": 4,
+          "title": "Enterprise Autonomous Design System",
+          "caption": "The autonomous platform unifies all subsystems into an enterprise standard."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 60 Part 2: Autonomous DTCG Multi-Brand Token Compiler & APCA Contrast Verifier. Visualizing step progression with compare template.",
+      "promptSha": "9a2fffa486792e240470dd8cbe5271f0974c51c36a6e9b395d917e270c486b6e",
+      "codeHash": "904106fb8faa4cce634c3e4e9f6e3b5c5d8d54c439ccad11cd80923c4677353a",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raw Token Schema Input",
+          "caption": "Multi-brand manifests declare design tokens following community standards."
+        },
+        {
+          "step": 2,
+          "title": "Directed Acyclic Alias Graph",
+          "caption": "Dependency compilers resolve token aliases down to concrete primitive values."
+        },
+        {
+          "step": 3,
+          "title": "Perceptual APCA Contrast Check",
+          "caption": "Automated algorithms verify text contrast against background color surfaces."
+        },
+        {
+          "step": 4,
+          "title": "Multi-Platform Asset Emission",
+          "caption": "Emitters generate synchronized assets for web, native mobile, and desktop."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 60 Part 3: Headless Accessible Component Engine: State Machines & Virtualized Grids. Visualizing step progression with compare template.",
+      "promptSha": "69780be0becf852609105ba38449b83ea2c0ac9d41e6bd36fd2a24f35dd0809a",
+      "codeHash": "245b3ee227dd4969e04ac0525b6c44363ce717448d4d9e9cfe75be5c8f1718fc",
+      "steps": [
+        {
+          "step": 1,
+          "title": "WAI-ARIA State Machine Hook",
+          "caption": "Decoupled state hooks manage focus rings and keyboard navigation matrices."
+        },
+        {
+          "step": 2,
+          "title": "Focus Trapping and Restoring",
+          "caption": "Focus traps keep keyboard navigation safely contained inside modal overlays."
+        },
+        {
+          "step": 3,
+          "title": "Dual-Axis Virtual Grid Windowing",
+          "caption": "Virtualization algorithms render minimal DOM nodes across massive data tables."
+        },
+        {
+          "step": 4,
+          "title": "Certified WCAG AAA Primitives",
+          "caption": "Component suites guarantee dignified access for all users across assistive devices."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 60 Part 4: Perceptual Visual Regression CI & AST Telemetry Governance. Visualizing step progression with compare template.",
+      "promptSha": "6bfb7d86b3f1557f949bfe59c0085311ce7f326148dd9c36cd49a94f696f13c5",
+      "codeHash": "e663f65ceb317e075869ce61310ed95cbb9aa682efff1d0f5122ed354ea38665",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Static AST Adoption Crawling",
+          "caption": "AST analyzers monitor component adoption across enterprise repositories."
+        },
+        {
+          "step": 2,
+          "title": "Deprecation Burn-Down Gating",
+          "caption": "Automated codemod tools eliminate technical debt ahead of sunset schedules."
+        },
+        {
+          "step": 3,
+          "title": "Non-Blocking Telemetry Beaconing",
+          "caption": "Client beacons record real-world usage frequencies without performance lag."
+        },
+        {
+          "step": 4,
+          "title": "Institutional Excellence Dashboard",
+          "caption": "Governance dashboards certify enterprise design system health and reliability."
+        }
+      ]
+    }
+  ]
+}

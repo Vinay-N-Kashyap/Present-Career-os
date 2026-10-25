@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 56,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 56 Part 1: The Visual Regression Imperative: Why Functional Tests Miss UI Breakage. Visualizing step progression with compare template.",
+      "promptSha": "c8b17f9da62a8c24c1765309028ed57132fffc0ace3bf29c7d1bb6f58947ab54",
+      "codeHash": "ce14c14dcde635f2ec2f1ce9f843221c1a0bd5851c0e836e208257e0de7c144d",
+      "steps": [
+        {
+          "step": 1,
+          "title": "DOM Structure Verification",
+          "caption": "Traditional unit tests evaluate DOM attributes without detecting visual shifts."
+        },
+        {
+          "step": 2,
+          "title": "Pixel Rasterization Canvas",
+          "caption": "Headless Chromium renders component pixels directly onto an image canvas."
+        },
+        {
+          "step": 3,
+          "title": "CIELAB Delta Calculation",
+          "caption": "Color distances are calculated in uniform perceptual color space."
+        },
+        {
+          "step": 4,
+          "title": "Visual Regression Gating",
+          "caption": "Automated gates block pull requests that introduce layout regressions."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 56 Part 2: Pixel Comparison Mathematics: CIELAB, YIQ & Anti-Aliasing Masks. Visualizing step progression with compare template.",
+      "promptSha": "d27e2b11118ede94c4a5b498bc5209601971aa3c7dc01156553224db162fe5eb",
+      "codeHash": "5487592052005c18af04857f95d6342887bd9ef003e8cd802cb9c9778e9ba1d9",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raw Pixel Array",
+          "caption": "Raw bitmap arrays contain thousands of individual subpixel values."
+        },
+        {
+          "step": 2,
+          "title": "Spatial Neighborhood Sampling",
+          "caption": "Spatial algorithms inspect neighboring pixels across high-contrast edges."
+        },
+        {
+          "step": 3,
+          "title": "Luminance Gradient Mask",
+          "caption": "Luminance gradient masks isolate natural font smoothing variations."
+        },
+        {
+          "step": 4,
+          "title": "Anti-Aliasing Tolerance",
+          "caption": "Acceptable anti-aliasing artifacts are forgiven while true defects are flagged."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 56 Part 3: Deterministic Capture Pipelines: Eliminating Flakiness in Headless Chromium. Visualizing step progression with compare template.",
+      "promptSha": "a526f45b6ddbb0d08badaaaf04873ab9595128977e6fe4d220296023b1266ee8",
+      "codeHash": "6b07524cea5c98e5567d5fa36e7e0935735e7a08b8e28507fd30042ebb007564",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Asynchronous Frame Capture",
+          "caption": "Asynchronous CSS animations introduce timing flakiness in automated runs."
+        },
+        {
+          "step": 2,
+          "title": "Transition and Timer Freeze",
+          "caption": "Injected freeze scripts pause all animations and lock system clocks to constant epochs."
+        },
+        {
+          "step": 3,
+          "title": "Font Ready Promise Resolution",
+          "caption": "Harnesses await font rasterization completion before taking snapshots."
+        },
+        {
+          "step": 4,
+          "title": "Deterministic Snapshot Output",
+          "caption": "Deterministic captures produce identical pixel bitmaps across all environments."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 56 Part 4: CI/CD Integration & Triage: Baseline Updating & Pull Request Review Workflows. Visualizing step progression with compare template.",
+      "promptSha": "9e09bfe792ababe7d30b2f3aaa0e66376096feb087c50a358d2cb2e93030ff5c",
+      "codeHash": "908f3477c875a49066831593de615bebad64d1350d4417434ab87251db82e1a8",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Continuous Integration Detection",
+          "caption": "Continuous integration pipelines capture candidate screenshots on pull requests."
+        },
+        {
+          "step": 2,
+          "title": "Side-by-Side Swipe Comparison",
+          "caption": "Interactive review widgets display side-by-side swipe diff overlays."
+        },
+        {
+          "step": 3,
+          "title": "Design Team Visual Review",
+          "caption": "Design team leads audit and approve intended visual modifications."
+        },
+        {
+          "step": 4,
+          "title": "Promoted Golden Baseline",
+          "caption": "Approved candidate images are promoted into official golden baseline storage."
+        }
+      ]
+    }
+  ]
+}

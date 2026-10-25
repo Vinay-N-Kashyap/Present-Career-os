@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 58,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 58 Part 1: Semantic Versioning in Design Systems: Beyond Traditional SemVer. Visualizing step progression with compare template.",
+      "promptSha": "42237488c24d4b8f792f193ed0f303448f2f40f6685c34843ad0e193cd1c30de",
+      "codeHash": "2744f66022dfa1add1796a9fda9b4812ffec527fcba276f56cd757999b7a0d93",
+      "steps": [
+        {
+          "step": 1,
+          "title": "API Contract Evaluation",
+          "caption": "Design system versioning governs visual and accessibility contracts."
+        },
+        {
+          "step": 2,
+          "title": "Layout Geometry Inspection",
+          "caption": "Visual padding alterations that shift page layouts require major increments."
+        },
+        {
+          "step": 3,
+          "title": "Accessibility Tree Audit",
+          "caption": "Altering keyboard focus or ARIA attributes triggers major version classification."
+        },
+        {
+          "step": 4,
+          "title": "SemVer Major Release Signal",
+          "caption": "Semantic version numbers signal breaking changes clearly to consumer teams."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 58 Part 2: Monorepo Changesets Architecture: Automated Release Governance. Visualizing step progression with compare template.",
+      "promptSha": "e5cc6fc239656b2b290bd25827f37d839992230c2247aa470bf7c1c55208cd0c",
+      "codeHash": "fecee5b42ac69741ba7f821c3962f95e0e9230013d26034813e688baa9c4e9cb",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Feature Pull Request Changeset",
+          "caption": "Developers author atomic changeset markdown files on pull requests."
+        },
+        {
+          "step": 2,
+          "title": "Monorepo Package Dependency Graph",
+          "caption": "Monorepo tools resolve package dependency hierarchies automatically."
+        },
+        {
+          "step": 3,
+          "title": "Automated Version Bumping",
+          "caption": "Automated actions update version numbers across all affected manifests."
+        },
+        {
+          "step": 4,
+          "title": "Private NPM Package Publishing",
+          "caption": "Continuous release pipelines publish packages with verified provenance."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 58 Part 3: Automated Codemods with jscodeshift: Painless Enterprise Migrations. Visualizing step progression with compare template.",
+      "promptSha": "25b8ccaae04bfd4f6bf6c96c75536aa029b7569a9a8329f19694c26dc2a06900",
+      "codeHash": "f591a58d809c838d75a6e00e8b83ab24d3590a36556a97a76b28b56d79eb27a4",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Legacy Monolithic Invocation",
+          "caption": "Legacy component calls bundle complex layouts into monolithic elements."
+        },
+        {
+          "step": 2,
+          "title": "jscodeshift AST Walker",
+          "caption": "AST manipulation scripts traverse syntax trees to locate target nodes."
+        },
+        {
+          "step": 3,
+          "title": "Compound Sub-Component Restructuring",
+          "caption": "Codemods restructure monolithic props into flexible compound elements."
+        },
+        {
+          "step": 4,
+          "title": "Clean Transformed Output",
+          "caption": "Automated formatting hooks produce clean code matching project style guidelines."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 58 Part 4: Multi-Version Coexistence: Scoped Namespaces & Gradual Migration. Visualizing step progression with compare template.",
+      "promptSha": "551876bb63012fe2242dd69d6e240e1822bfb780282dae0f67f38831ad05deed",
+      "codeHash": "59ab128ca3f8697d3614bf5ac369bec6cb868be5f562d85af57b7fa9f7a67294",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Global Stylesheet Collision",
+          "caption": "Loading multiple unisolated stylesheets causes variable overwrite conflicts."
+        },
+        {
+          "step": 2,
+          "title": "Version Scoped Namespace",
+          "caption": "Scoped namespaces isolate design tokens under versioned container selectors."
+        },
+        {
+          "step": 3,
+          "title": "Dual Package Aliasing",
+          "caption": "Package manager aliases allow multiple major versions to install side-by-side."
+        },
+        {
+          "step": 4,
+          "title": "Seamless In-Page Coexistence",
+          "caption": "Legacy and modern components render harmoniously within the same document body."
+        }
+      ]
+    }
+  ]
+}

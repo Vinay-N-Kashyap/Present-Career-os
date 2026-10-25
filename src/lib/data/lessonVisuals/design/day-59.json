@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 59,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 59 Part 1: The Micro-Frontend Styling Dilemma: Global CSS Leakage & Bundle Bloat. Visualizing step progression with compare template.",
+      "promptSha": "3aefa7f1aafd09de5e794477748f901e0c8eedb7c01c0b6fb5e210eb3df71ebb",
+      "codeHash": "da91e05a9b3f8aecbe0c272056dd668cccfc6faa76923001bd8b76368a106af0",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Independent Micro-Frontend Silos",
+          "caption": "Distributed teams develop micro-frontends with independent deployment schedules."
+        },
+        {
+          "step": 2,
+          "title": "Global Stylesheet Bleeding",
+          "caption": "Unconstrained CSS stylesheets risk overriding adjacent application components."
+        },
+        {
+          "step": 3,
+          "title": "Module Federation Shell",
+          "caption": "Module Federation dynamically composes remote modules into an enterprise shell."
+        },
+        {
+          "step": 4,
+          "title": "Unified Enterprise Platform",
+          "caption": "Shared design system infrastructure guarantees visual unity across applications."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 59 Part 2: CSS Encapsulation Technologies: Shadow DOM vs Scoped Cascade Layers. Visualizing step progression with compare template.",
+      "promptSha": "8ffaf03373070835c2ca79e55e8c3fa28df0e78b1771e3499f4361761e680abb",
+      "codeHash": "833006c5134a1a39ed12f4b2d4533cc762d403c04b6f0db6be15b44463bc37cc",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Global Document Head Scope",
+          "caption": "Global styling rules penetrate nested containers without boundaries."
+        },
+        {
+          "step": 2,
+          "title": "Shadow Root DOM Boundary",
+          "caption": "Shadow roots isolate DOM nodes but introduce modal portal hoisting hurdles."
+        },
+        {
+          "step": 3,
+          "title": "CSS Cascade Layer Priority",
+          "caption": "Cascade layers establish clear specificity hierarchies for design tokens."
+        },
+        {
+          "step": 4,
+          "title": "Container Attribute Isolation",
+          "caption": "Container attribute selectors keep styling confined to target micro-apps."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 59 Part 3: Module Federation Shared Dependency Contracts: Singleton Governance. Visualizing step progression with compare template.",
+      "promptSha": "f5947c0d57d1ed7b959d2f6cee19a37dd89fa6c13a283750c404614b0d6a82e3",
+      "codeHash": "e397abc2057a233899e854c4d6eff6f1df59098dda6b9bc9dfa8e982d63ef5e0",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Multiple Duplicate Packages",
+          "caption": "Bundling multiple copies of React causes hook dispatcher crashes."
+        },
+        {
+          "step": 2,
+          "title": "Singleton Contract Validation",
+          "caption": "Federation configurations declare singleton requirements for critical libraries."
+        },
+        {
+          "step": 3,
+          "title": "Shared Memory Dispatcher",
+          "caption": "The host container shares its active runtime instance with all remotes."
+        },
+        {
+          "step": 4,
+          "title": "Lean Single-Instance Runtime",
+          "caption": "Single-instance execution eliminates memory bloat and prevents hook exceptions."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 59 Part 4: Cross-Micro-Frontend Event Bus: Theme Synchronization & Live A11y Announcements. Visualizing step progression with compare template.",
+      "promptSha": "bc9102499267f106fad1c798e684f8dd47ec6b2a7ab4b3bd7331a0c9bccea1b8",
+      "codeHash": "adee2fc7da9d2e710a01211307f855fcad6aa729a17ddf710250b112a26c14c7",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Shell Header Theme Toggle",
+          "caption": "Users trigger brand theme transitions in global navigation headers."
+        },
+        {
+          "step": 2,
+          "title": "CustomEvent Bus Dispatch",
+          "caption": "The shell dispatches custom events across the browser window bus."
+        },
+        {
+          "step": 3,
+          "title": "Cross-App Token Propagation",
+          "caption": "Autonomous remote micro-frontends receive payloads and update container tokens."
+        },
+        {
+          "step": 4,
+          "title": "Synchronized Dark Mode Transition",
+          "caption": "All viewport sections transition to dark mode simultaneously without refreshing."
+        }
+      ]
+    }
+  ]
+}
