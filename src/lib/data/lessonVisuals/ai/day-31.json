@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 31,
+  "entries": [
+    {
+      "partTitle": "GPU Memory Hierarchy & The Memory-Bound Attention Bottleneck",
+      "codeHash": "199b633fcdb6c2e63d9bd91d35fc5ef6639cad69081176e9c966b32c1e4a90d2",
+      "filled": {
+        "template": "table",
+        "title": "GPU Memory Hierarchy and High Bandwidth Memory Bottleneck.",
+        "columns": [
+          "Architecture Tier",
+          "Bandwidth",
+          "Physical Storage"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern datacenter graphics hardware exhibits memory hierarchy bottlenecks.",
+            "rows": [
+              [
+                "High Bandwidth Memory",
+                "Two Terabytes Per Second",
+                "Global Device DRAM"
+              ],
+              [
+                "Static Random Access",
+                "Nineteen Terabytes Per Second",
+                "Streaming Multiprocessor SRAM"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard attention sequentially computes quadratic intermediate matrices.",
+            "rows": [
+              [
+                "Tensor Core Multiply",
+                "Compute Bound Peak Floating Points",
+                "Extremely Low"
+              ],
+              [
+                "Intermediate Softmax",
+                "Memory Bound Bandwidth Bottleneck",
+                "High Stall Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Standard attention transfers raw matrices across distant storage.",
+            "rows": [
+              [
+                "Score Matrix Multiply",
+                "Global High Bandwidth Memory",
+                "Quadratic Footprint"
+              ],
+              [
+                "Softmax Exponentiation",
+                "Repeated Global Reads and Writes",
+                "Quadratic Bandwidth"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate memory access comparing sequence length and memory traffic.",
+            "rows": [
+              [
+                "Vanilla PyTorch Attention",
+                "Materialized In Global Memory",
+                "Quadratic Latency Scaling"
+              ],
+              [
+                "FlashAttention Fused",
+                "Confined Strictly To SRAM Cache",
+                "Linear Latency Scaling"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "GPU Memory Hierarchy and High Bandwidth Memory Bottleneck.",
+        "columns": [
+          "Architecture Tier",
+          "Bandwidth",
+          "Physical Storage"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Modern datacenter graphics hardware exhibits memory hierarchy bottlenecks.",
+            "rows": [
+              [
+                "High Bandwidth Memory",
+                "Two Terabytes Per Second",
+                "Global Device DRAM"
+              ],
+              [
+                "Static Random Access",
+                "Nineteen Terabytes Per Second",
+                "Streaming Multiprocessor SRAM"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Standard attention sequentially computes quadratic intermediate matrices.",
+            "rows": [
+              [
+                "Tensor Core Multiply",
+                "Compute Bound Peak Floating Points",
+                "Extremely Low"
+              ],
+              [
+                "Intermediate Softmax",
+                "Memory Bound Bandwidth Bottleneck",
+                "High Stall Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Standard attention transfers raw matrices across distant storage.",
+            "rows": [
+              [
+                "Score Matrix Multiply",
+                "Global High Bandwidth Memory",
+                "Quadratic Footprint"
+              ],
+              [
+                "Softmax Exponentiation",
+                "Repeated Global Reads and Writes",
+                "Quadratic Bandwidth"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate memory access comparing sequence length and memory traffic.",
+            "rows": [
+              [
+                "Vanilla PyTorch Attention",
+                "Materialized In Global Memory",
+                "Quadratic Latency Scaling"
+              ],
+              [
+                "FlashAttention Fused",
+                "Confined Strictly To SRAM Cache",
+                "Linear Latency Scaling"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Online Softmax Algorithm: Streaming Normalization without Global Maxima",
+      "codeHash": "d608694f2895b74551c82e2bdf6b1d5ff3c1aa64f4b068144ab71ce46f18aa21",
+      "filled": {
+        "template": "table",
+        "title": "Online Softmax Recurrence and Streaming Numerical Normalization.",
+        "columns": [
+          "Softmax Pass",
+          "Required Operation",
+          "Memory Access Pattern"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Global nature of standard softmax operator prevents direct kernel fusion.",
+            "rows": [
+              [
+                "First Global Pass",
+                "Find Maximum Scalar Across All Elements",
+                "Read Entire Sequence"
+              ],
+              [
+                "Second Global Pass",
+                "Sum Exponentials And Normalize Weights",
+                "Read And Write All Elements"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Online softmax algorithm incrementally updates running maximum and divisor.",
+            "rows": [
+              [
+                "Standard Softmax",
+                "Full Intermediate Array In Memory",
+                "Requires All Elements Present"
+              ],
+              [
+                "Milakov Gimelshein",
+                "Running Scalar Maximum And Denominator",
+                "Streaming Tile Increments"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Online softmax dynamically updates running score without reading past data.",
+            "rows": [
+              [
+                "Running Maximum Shift",
+                "Multiply Previous Sum By Rescale Factor",
+                "Prevent Floating Point Overflow"
+              ],
+              [
+                "Tile Contribution",
+                "Accumulate New Exponentiated Logits",
+                "Maintain Exact Sum"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify online softmax avoids numerical overflow on extreme outlier logits.",
+            "rows": [
+              [
+                "Floating Point Difference",
+                "Zero Bitwise Divergence",
+                "Exact Standard Equivalence"
+              ],
+              [
+                "Intermediate Memory",
+                "Zero Intermediate HBM Allocation",
+                "Constant Register Usage"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Online Softmax Recurrence and Streaming Numerical Normalization.",
+        "columns": [
+          "Softmax Pass",
+          "Required Operation",
+          "Memory Access Pattern"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Global nature of standard softmax operator prevents direct kernel fusion.",
+            "rows": [
+              [
+                "First Global Pass",
+                "Find Maximum Scalar Across All Elements",
+                "Read Entire Sequence"
+              ],
+              [
+                "Second Global Pass",
+                "Sum Exponentials And Normalize Weights",
+                "Read And Write All Elements"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Online softmax algorithm incrementally updates running maximum and divisor.",
+            "rows": [
+              [
+                "Standard Softmax",
+                "Full Intermediate Array In Memory",
+                "Requires All Elements Present"
+              ],
+              [
+                "Milakov Gimelshein",
+                "Running Scalar Maximum And Denominator",
+                "Streaming Tile Increments"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Online softmax dynamically updates running score without reading past data.",
+            "rows": [
+              [
+                "Running Maximum Shift",
+                "Multiply Previous Sum By Rescale Factor",
+                "Prevent Floating Point Overflow"
+              ],
+              [
+                "Tile Contribution",
+                "Accumulate New Exponentiated Logits",
+                "Maintain Exact Sum"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify online softmax avoids numerical overflow on extreme outlier logits.",
+            "rows": [
+              [
+                "Floating Point Difference",
+                "Zero Bitwise Divergence",
+                "Exact Standard Equivalence"
+              ],
+              [
+                "Intermediate Memory",
+                "Zero Intermediate HBM Allocation",
+                "Constant Register Usage"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FlashAttention-1 & FlashAttention-2: Block-Wise Tiling & Forward Pass Loop Inversion",
+      "codeHash": "18bfbe93c7975ae55aa7f975bf1597534ee7f6786d1afb2f7429cfebef748803",
+      "filled": {
+        "template": "table",
+        "title": "FlashAttention Loop Inversion and Warp Matrix Multiply Scheduling.",
+        "columns": [
+          "Kernel Version",
+          "Outer Loop Variable",
+          "Inner Loop Variable"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Initial attention kernel suffered architectural nesting inefficiencies.",
+            "rows": [
+              [
+                "FlashAttention One",
+                "Key And Value Blocks Streamed",
+                "Query Blocks In Inner Loop"
+              ],
+              [
+                "FlashAttention Two",
+                "Query Blocks In Outer Loop",
+                "Key And Value Blocks Streamed"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inverted loop hierarchy assigns distinct query token blocks to threads.",
+            "rows": [
+              [
+                "FlashAttention One",
+                "Atomic Adds Across Thread Blocks",
+                "Intermittent Pipeline Locks"
+              ],
+              [
+                "FlashAttention Two",
+                "Zero Inter Block Synchronization",
+                "Uncontended Independent Execution"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Assigning dedicated desks prevents clerks from colliding during execution.",
+            "rows": [
+              [
+                "Warp Group Partitioning",
+                "Dedicated Query Key Sub Tiles",
+                "Maximum Tensor Core Usage"
+              ],
+              [
+                "Shared Memory Stride",
+                "Conflict Free Bank Offsets",
+                "Full Register Reuse"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Observe reduction in outer and inner loop iteration steps across tiles.",
+            "rows": [
+              [
+                "Strictly Above Diagonal",
+                "Completely Bypass Matrix Multiplication",
+                "Fifty Percent Compute Savings"
+              ],
+              [
+                "Intersecting Diagonal",
+                "Apply In Register Masking Directly",
+                "Zero Extraneous HBM Traffic"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "FlashAttention Loop Inversion and Warp Matrix Multiply Scheduling.",
+        "columns": [
+          "Kernel Version",
+          "Outer Loop Variable",
+          "Inner Loop Variable"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Initial attention kernel suffered architectural nesting inefficiencies.",
+            "rows": [
+              [
+                "FlashAttention One",
+                "Key And Value Blocks Streamed",
+                "Query Blocks In Inner Loop"
+              ],
+              [
+                "FlashAttention Two",
+                "Query Blocks In Outer Loop",
+                "Key And Value Blocks Streamed"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Inverted loop hierarchy assigns distinct query token blocks to threads.",
+            "rows": [
+              [
+                "FlashAttention One",
+                "Atomic Adds Across Thread Blocks",
+                "Intermittent Pipeline Locks"
+              ],
+              [
+                "FlashAttention Two",
+                "Zero Inter Block Synchronization",
+                "Uncontended Independent Execution"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Assigning dedicated desks prevents clerks from colliding during execution.",
+            "rows": [
+              [
+                "Warp Group Partitioning",
+                "Dedicated Query Key Sub Tiles",
+                "Maximum Tensor Core Usage"
+              ],
+              [
+                "Shared Memory Stride",
+                "Conflict Free Bank Offsets",
+                "Full Register Reuse"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Observe reduction in outer and inner loop iteration steps across tiles.",
+            "rows": [
+              [
+                "Strictly Above Diagonal",
+                "Completely Bypass Matrix Multiplication",
+                "Fifty Percent Compute Savings"
+              ],
+              [
+                "Intersecting Diagonal",
+                "Apply In Register Masking Directly",
+                "Zero Extraneous HBM Traffic"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "FlashAttention-3: Asynchronous Warpgroup GEMMs & FP8 Tensor Core Pipeline",
+      "codeHash": "b8f28ffc962d9287883dccdf79febb9cf45f29d596e7a0bc402cf163c2449e5c",
+      "filled": {
+        "template": "table",
+        "title": "Hopper Architecture Asynchronous Pipeline and FP Eight Execution.",
+        "columns": [
+          "Generation Hardware",
+          "Memory Transfer Mechanism",
+          "Core Utilization"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hopper architecture introduces asynchronous hardware tensor accelerator.",
+            "rows": [
+              [
+                "Ampere Architecture",
+                "Software Thread Load Instructions",
+                "ALU Cycles Consumed"
+              ],
+              [
+                "Hopper Architecture",
+                "Hardware Tensor Memory Accelerator",
+                "Zero ALU Cycle Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous bulk transfers stream tensor tiles directly into shared cache.",
+            "rows": [
+              [
+                "Legacy Tensor Core",
+                "Thread Register Fragments Required",
+                "High Register Allocation"
+              ],
+              [
+                "Hopper Warpgroup",
+                "Direct Shared Memory Tensor Pointers",
+                "Minimal Register Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated conveyor belts unload while robotic arms assemble continuously.",
+            "rows": [
+              [
+                "Software Barrier",
+                "Thread Block Syncthreads Lock",
+                "Hundreds Of Wasted Cycles"
+              ],
+              [
+                "Hardware Transaction Barrier",
+                "Hardware Decremented Byte Counter",
+                "Immediate Microsecond Wakeup"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Recalculate total pipeline latency across dynamic scaling stages.",
+            "rows": [
+              [
+                "Sixteen Bit Floating Point",
+                "Static Global Scaling Factor",
+                "Baseline Numerical Precision"
+              ],
+              [
+                "Eight Bit Floating Point",
+                "Per Block Dynamic Rescaling Factor",
+                "Full Baseline Accuracy Maintained"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Hopper Architecture Asynchronous Pipeline and FP Eight Execution.",
+        "columns": [
+          "Generation Hardware",
+          "Memory Transfer Mechanism",
+          "Core Utilization"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hopper architecture introduces asynchronous hardware tensor accelerator.",
+            "rows": [
+              [
+                "Ampere Architecture",
+                "Software Thread Load Instructions",
+                "ALU Cycles Consumed"
+              ],
+              [
+                "Hopper Architecture",
+                "Hardware Tensor Memory Accelerator",
+                "Zero ALU Cycle Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Asynchronous bulk transfers stream tensor tiles directly into shared cache.",
+            "rows": [
+              [
+                "Legacy Tensor Core",
+                "Thread Register Fragments Required",
+                "High Register Allocation"
+              ],
+              [
+                "Hopper Warpgroup",
+                "Direct Shared Memory Tensor Pointers",
+                "Minimal Register Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated conveyor belts unload while robotic arms assemble continuously.",
+            "rows": [
+              [
+                "Software Barrier",
+                "Thread Block Syncthreads Lock",
+                "Hundreds Of Wasted Cycles"
+              ],
+              [
+                "Hardware Transaction Barrier",
+                "Hardware Decremented Byte Counter",
+                "Immediate Microsecond Wakeup"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Recalculate total pipeline latency across dynamic scaling stages.",
+            "rows": [
+              [
+                "Sixteen Bit Floating Point",
+                "Static Global Scaling Factor",
+                "Baseline Numerical Precision"
+              ],
+              [
+                "Eight Bit Floating Point",
+                "Per Block Dynamic Rescaling Factor",
+                "Full Baseline Accuracy Maintained"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Production Kernel Benchmarking & End-to-End FlashAttention Inference Simulator",
+      "codeHash": "8ca05376c4b36971b56cb5d1983bab7abcdede9d2a17048c8575fe4224f82f64",
+      "filled": {
+        "template": "table",
+        "title": "Production Serving Benchmarks and Kernel Telemetry Dispatch.",
+        "columns": [
+          "Dispatch Metric",
+          "Evaluated Parameter",
+          "Selected Kernel"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Kernel dispatch manager inspects incoming request batch metrics.",
+            "rows": [
+              [
+                "Short Prompt Prefill",
+                "Sequence Below Threshold",
+                "Padded Vector Attention"
+              ],
+              [
+                "Long Context Inference",
+                "Sequence Exceeding Block Tile",
+                "FlashAttention Kernel Dispatch"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Profiling production inference servers under heavy concurrent query loads.",
+            "rows": [
+              [
+                "Memory Traffic At Eight K",
+                "Sixteen Gigabytes Transferred",
+                "Under Half Gigabyte Transferred"
+              ],
+              [
+                "Time To First Token",
+                "Four Hundred Milliseconds",
+                "One Hundred Fourteen Milliseconds"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Keeping processing planes cruising at speed with minimal turnaround delay.",
+            "rows": [
+              [
+                "Aligned Multiple Of Sixty Four",
+                "Coalesced One Hundred Twenty Eight Bit",
+                "Peak Hardware Saturation"
+              ],
+              [
+                "Unaligned Arbitrary Dimension",
+                "Split Uncoalesced Transactions",
+                "Forty Percent Throughput Penalty"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute kernel benchmark comparing sequence length and speedup ratios.",
+            "rows": [
+              [
+                "Model Flops Utilization",
+                "Above Sixty Percent Peak",
+                "Investigate Compute Bottlenecks"
+              ],
+              [
+                "Memory Bandwidth Saturation",
+                "Below Twenty Percent During Attention",
+                "Verify Kernel Tiling Integrity"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Production Serving Benchmarks and Kernel Telemetry Dispatch.",
+        "columns": [
+          "Dispatch Metric",
+          "Evaluated Parameter",
+          "Selected Kernel"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Kernel dispatch manager inspects incoming request batch metrics.",
+            "rows": [
+              [
+                "Short Prompt Prefill",
+                "Sequence Below Threshold",
+                "Padded Vector Attention"
+              ],
+              [
+                "Long Context Inference",
+                "Sequence Exceeding Block Tile",
+                "FlashAttention Kernel Dispatch"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Profiling production inference servers under heavy concurrent query loads.",
+            "rows": [
+              [
+                "Memory Traffic At Eight K",
+                "Sixteen Gigabytes Transferred",
+                "Under Half Gigabyte Transferred"
+              ],
+              [
+                "Time To First Token",
+                "Four Hundred Milliseconds",
+                "One Hundred Fourteen Milliseconds"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Keeping processing planes cruising at speed with minimal turnaround delay.",
+            "rows": [
+              [
+                "Aligned Multiple Of Sixty Four",
+                "Coalesced One Hundred Twenty Eight Bit",
+                "Peak Hardware Saturation"
+              ],
+              [
+                "Unaligned Arbitrary Dimension",
+                "Split Uncoalesced Transactions",
+                "Forty Percent Throughput Penalty"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute kernel benchmark comparing sequence length and speedup ratios.",
+            "rows": [
+              [
+                "Model Flops Utilization",
+                "Above Sixty Percent Peak",
+                "Investigate Compute Bottlenecks"
+              ],
+              [
+                "Memory Bandwidth Saturation",
+                "Below Twenty Percent During Attention",
+                "Verify Kernel Tiling Integrity"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
