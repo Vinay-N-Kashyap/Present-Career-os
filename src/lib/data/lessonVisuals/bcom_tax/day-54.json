@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 54,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "High Court Appeal Gateway",
+        "steps": [
+          {
+            "label": "Tribunal Order Service",
+            "caption": "Party receives final appellate tribunal order initiating timeline."
+          },
+          {
+            "label": "Substantial Law Filter",
+            "caption": "Court admits appeal strictly on substantial questions of law."
+          },
+          {
+            "label": "Question Formulation",
+            "caption": "High court formulates specific question of law for formal hearing."
+          },
+          {
+            "label": "Factual Immunity",
+            "caption": "Court declines to reweigh pure findings of fact absent perversity."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Litigation Policy Limits",
+        "steps": [
+          {
+            "label": "Tax Effect Analysis",
+            "caption": "Revenue calculates disputed tax effect excluding interest and penalty."
+          },
+          {
+            "label": "Monetary Filter",
+            "caption": "Appeal is barred if tax effect is below statutory board limits."
+          },
+          {
+            "label": "Carve Out Verification",
+            "caption": "Authorities check for constitutional challenges or audit objections."
+          },
+          {
+            "label": "Summary Dismissal",
+            "caption": "Court dismisses low tax effect appeals in limine preserving capital."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Apex Court Jurisdiction",
+        "steps": [
+          {
+            "label": "Certificate of Fitness",
+            "caption": "High court considers whether case is fit for supreme court appeal."
+          },
+          {
+            "label": "Special Leave Petition",
+            "caption": "Appellant petitions apex court within ninety days under constitution."
+          },
+          {
+            "label": "Preliminary Hearing",
+            "caption": "Court evaluates whether special leave should be granted for hearing."
+          },
+          {
+            "label": "Law of the Land",
+            "caption": "Final apex judgment merges lower order and binds all national courts."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Constitutional Writ Shield",
+        "steps": [
+          {
+            "label": "Jurisdictional Excess",
+            "caption": "Tax authority issues patently illegal order without statutory power."
+          },
+          {
+            "label": "Natural Justice Breach",
+            "caption": "Officer fails to grant mandatory electronic personal video hearing."
+          },
+          {
+            "label": "Writ of Certiorari",
+            "caption": "Taxpayer petitions high court to quash ultra vires assessment order."
+          },
+          {
+            "label": "Immediate Injunction",
+            "caption": "High court stays recovery proceedings restoring corporate rights."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Judicial Litigation Engine",
+        "steps": [
+          {
+            "label": "High Court Deadline",
+            "caption": "Engine tracks one hundred twenty day limitation for statutory appeal."
+          },
+          {
+            "label": "Monetary Limit Audit",
+            "caption": "System verifies whether departmental appeal complies with board policy."
+          },
+          {
+            "label": "Writ Prerequisite Check",
+            "caption": "Module vets natural justice violations for constitutional filings."
+          },
+          {
+            "label": "Precedent Alignment",
+            "caption": "Platform links corporate arguments with landmark apex court doctrines."
+          }
+        ]
+      }
+    }
+  ]
+}

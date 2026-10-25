@@ -18,8 +18,5 @@ def check_day(module_name, func_name):
     print(f"Total words: {total_words}\n")
 
 if __name__ == "__main__":
-    check_day("create_day46_tax", "get_day46_data")
-    check_day("create_day47_tax", "get_day47_data")
-    check_day("create_day48_tax", "get_day48_data")
-    check_day("create_day49_tax", "get_day49_data")
-    check_day("create_day50_tax", "get_day50_data")
+    check_day("create_day51_tax", "get_day51_data")
+    check_day("create_day52_tax", "get_day52_data")

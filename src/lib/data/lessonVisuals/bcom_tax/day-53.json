@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 53,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Tribunal Hierarchy",
+        "steps": [
+          {
+            "label": "Judicial Composition",
+            "caption": "Division bench combines judicial member and accountant member."
+          },
+          {
+            "label": "Fact Finding Finality",
+            "caption": "Findings of fact recorded by tribunal are conclusive and binding."
+          },
+          {
+            "label": "Special Bench Power",
+            "caption": "President constitutes larger bench to resolve coordinate conflicts."
+          },
+          {
+            "label": "Independent Forum",
+            "caption": "Tribunal functions under ministry of law guaranteeing judicial neutrality."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Tribunal Appeal Mechanics",
+        "steps": [
+          {
+            "label": "Form Thirty Six",
+            "caption": "Appellant files electronic memorandum of appeal within sixty days."
+          },
+          {
+            "label": "Graduated Filing Fee",
+            "caption": "Fee scales with assessed income subject to statutory maximum cap."
+          },
+          {
+            "label": "Grounds Formulation",
+            "caption": "Counsel drafts distinct grounds challenging specific legal additions."
+          },
+          {
+            "label": "Cross Objections",
+            "caption": "Respondent files cross objections in form thirty six A within thirty days."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Stay of Demand Regime",
+        "steps": [
+          {
+            "label": "Disputed Liability",
+            "caption": "Assessee faces coercive recovery under statutory demand notice."
+          },
+          {
+            "label": "Twenty Percent Deposit",
+            "caption": "Assessee deposits statutory twenty percent into central tax treasury."
+          },
+          {
+            "label": "Stay Application",
+            "caption": "Counsel presents prima facie case and balance of convenience."
+          },
+          {
+            "label": "Constitutional Shield",
+            "caption": "Stay continues beyond statutory period if delay is not from assessee."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Rectification Architecture",
+        "steps": [
+          {
+            "label": "Patent Mistake Discovery",
+            "caption": "Counsel identifies obvious error apparent from the judicial record."
+          },
+          {
+            "label": "Six Month Limitation",
+            "caption": "Application must be submitted within six months from order month end."
+          },
+          {
+            "label": "Bench Listing",
+            "caption": "Specific division bench that passed order considers rectification memo."
+          },
+          {
+            "label": "Operative Amendment",
+            "caption": "Tribunal corrects computational error or recalls order for rehearing."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Tribunal Portfolio Engine",
+        "steps": [
+          {
+            "label": "Limitation Tracking",
+            "caption": "System alerts counsel to sixty day deadline from order communication."
+          },
+          {
+            "label": "Fee Calculation",
+            "caption": "Engine computes graduated tribunal fee based on assessed corporate income."
+          },
+          {
+            "label": "Stay Monitor",
+            "caption": "Module tracks elapsed stay duration and flags constitutional extension."
+          },
+          {
+            "label": "Precedent Indexing",
+            "caption": "Knowledge base organizes jurisdictional high court binding authorities."
+          }
+        ]
+      }
+    }
+  ]
+}

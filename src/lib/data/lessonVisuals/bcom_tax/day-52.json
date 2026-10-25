@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 52,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Draft Order Gateway",
+        "steps": [
+          {
+            "label": "Eligible Entity Check",
+            "caption": "System validates foreign corporation status or transfer pricing scope."
+          },
+          {
+            "label": "Draft Formulation",
+            "caption": "Assessing officer prepares proposed variations with tax schedules."
+          },
+          {
+            "label": "Mandatory Forwarding",
+            "caption": "Officer transmits statutory draft order without demand notice."
+          },
+          {
+            "label": "Statutory Protection",
+            "caption": "Omission of draft order renders entire assessment void ab initio."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Strategic Path Selection",
+        "steps": [
+          {
+            "label": "Draft Order Receipt",
+            "caption": "Corporate assessee receives draft assessment order via tax portal."
+          },
+          {
+            "label": "Thirty Day Window",
+            "caption": "Assessee reviews proposed adjustments within thirty calendar days."
+          },
+          {
+            "label": "Form Thirty Five A",
+            "caption": "Appellant prepares electronic objections with economic paper book."
+          },
+          {
+            "label": "Parallel Lodgment",
+            "caption": "Objections are lodged simultaneously with panel secretariat and officer."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Collegiate Panel Review",
+        "steps": [
+          {
+            "label": "Collegiate Intake",
+            "caption": "Three senior commissioners assemble to evaluate corporate objections."
+          },
+          {
+            "label": "Oral Hearing",
+            "caption": "Taxpayer counsel argues economic comparability before collegiate bench."
+          },
+          {
+            "label": "Enhancement Safeguard",
+            "caption": "Panel gives reasonable opportunity before enhancing any variation."
+          },
+          {
+            "label": "Statutory Limitation",
+            "caption": "Panel must issue binding directions within nine months of draft month."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Directions Implementation",
+        "steps": [
+          {
+            "label": "Directions Receipt",
+            "caption": "Assessing officer receives binding directions from panel secretariat."
+          },
+          {
+            "label": "One Month Deadline",
+            "caption": "Officer must complete assessment within one month from receipt month."
+          },
+          {
+            "label": "Final Assessment",
+            "caption": "Officer passes final order in strict conformity with directions."
+          },
+          {
+            "label": "Tribunal Gateway",
+            "caption": "Taxpayer appeals directly to appellate tribunal without first appeal."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Dispute Resolution Engine",
+        "steps": [
+          {
+            "label": "Limitation Watchdog",
+            "caption": "Engine calculates precise deadline for collegiate panel directions."
+          },
+          {
+            "label": "Draft Order Audit",
+            "caption": "System flags illegal premature assessment orders with demand notices."
+          },
+          {
+            "label": "Economic Verification",
+            "caption": "Engine compares transfer pricing adjustments against arm length margins."
+          },
+          {
+            "label": "Tribunal Notice Alert",
+            "caption": "Platform schedules direct tribunal appeal upon final order delivery."
+          }
+        ]
+      }
+    }
+  ]
+}
