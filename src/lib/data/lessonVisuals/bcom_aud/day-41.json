@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 41,
+  "entries": [
+    {
+      "partTitle": "The Fiduciary & Regulatory Architecture of Modern Corporate Governance",
+      "codeHash": "55881f9aa0182bad8bcfaedebae581c313f90d5c243728e3fc3198150c8cf18e",
+      "spec": {
+        "template": "funnel",
+        "title": "The Fiduciary & Regulatory Architectur... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate governance mandates established across public exchanges.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Board oversight structures holding management strictly accountable.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executive certifications enforcing direct officer legal responsibility.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Ethical tone at the top safeguarding transparent capital markets.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Sarbanes-Oxley Act of 2002: Sections 302 & 404 Statutory Mechanics",
+      "codeHash": "6dcc9025bce1b76c6b6ac54a6f3b248a4632c24d33ff3b777d74a6b7091a0502",
+      "spec": {
+        "template": "funnel",
+        "title": "The Sarbanes-Oxley Act of 2002: Sectio... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive quarterly certification workflows submitted for assurance.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating disclosure controls and procedures for operational rigor.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Subsidiary controllers submitting formal quarterly sign-offs.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Uncompromised corporate certifications submitted to regulators.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Board Audit Committee: Composition, Financial Literacy, Mandates & Independent Oversight",
+      "codeHash": "16fd2f558dd055ccbd9df1639903c70c0521bcaf7dece0d1c4ec6a47dae2f5ed",
+      "spec": {
+        "template": "funnel",
+        "title": "The Board Audit Committee: Composition... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Annual management assessment of internal control frameworks.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Direct testing of design adequacy and operational effectiveness.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Independent external auditor attestation verifying assertions.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transparent internal control reporting clearing public filings.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Internal Audit vs External Audit: The Three Lines Model (IIA) & Fiduciary Coordination",
+      "codeHash": "f443633868a8fb7f0be95c87813ab98c00c4d2f8c3dab4cc9c3468fb0f87bc02",
+      "spec": {
+        "template": "funnel",
+        "title": "Internal Audit vs External Audit: The ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "International corporate governance models emphasizing stakeholder trust.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Comparing comply-or-explain principles against statutory mandates.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Integrated sustainability reporting aligning societal outcomes.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive ethical governance protecting global stakeholders.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Corporate Governance & SOX Regulatory Compliance Simulator",
+      "codeHash": "58470b86afab5b0ab48c0c6257c60f73623f8e97aba12bba2363f9634fa1dc71",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Corporate Governance & S... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi-jurisdictional compliance data ingested by governance engines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated scoring of board composition and committee independence.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating quarterly sub-certifications across global subsidiaries.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Flawless governance dossier ready for audit committee inspection.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

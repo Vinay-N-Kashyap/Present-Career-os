@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 45,
+  "entries": [
+    {
+      "partTitle": "War Room Briefing: The $14.8B Global Enterprise Integrated SOX 404 & ICFR Audit Mandate",
+      "codeHash": "132e923556d8b4ef71c9a2d2752150c3f46d89741cd1336b3cac0f55f5ab59da",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Briefing: The $14.8B Global E... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global aerospace conglomerate launching integrated assurance review.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Establishing planning and performance materiality across accounts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Deploying integrated audit teams across three global service hubs.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive war room framework directing multi-domain fieldwork.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Phase 1 & 2: Entity-Level Governance, Fraud Risk Assessment & ITGC Deep-Dive Interrogation",
+      "codeHash": "f29f240b49e9aa96dcc91342e1e520a14901a90f991d0fbf3c81254b90aab3b6",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Phase 1 & 2: Entity-Level Gov... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate governance structures and digital infrastructure audited.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Reconciling active user populations against personnel terminations.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Flagging emergency code transports deployed without formal review.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Technical audit findings defining downstream testing requirements.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Phase 3 & 4: Business Process Walkthroughs, TOE & Multi-Cycle Deficiency Discovery",
+      "codeHash": "cd31e87b8305314261fc2df3c1aef3b39908c762d01dcca7feab4b274c41e9c4",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Phase 3 & 4: Business Process... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Core business process transactions traced through ledger systems.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Uncovering automated matching breakdowns and unapproved journals.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rejecting imprecise executive flux analyses as compensating controls.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Rigorous process testing substantiating operational vulnerabilities.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Phase 5 & 6: Deficiency Severity Triage, Cross-Cycle Aggregation & Remediation Seasoning Audit",
+      "codeHash": "98f7ebdf43d2b0453ce9c9cf77f849a724620c15b765d80668bb2a6c1d5b4968",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Phase 5 & 6: Deficiency Sever... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi-cycle control exceptions triaged through severity matrices.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Aggregating unapproved manual journal entries into a major defect.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Testing automated hard-lock remediation over adequate seasoning.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verified year-end remediation extinguishing the material weakness.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Master Simulator: The Enterprise ICFR Integrated Assurance Engine & Audit Committee Defense",
+      "codeHash": "a220a8b9c02fbf7949f11ae95e7b7463f4fe22dc1aa6cbeff9f71a44efd47869",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Master Simulator: The Enterpr... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Consolidated audit telemetry synthesized across five audit phases.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Presenting authoritative audit conclusions to the audit committee.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Certifying clean opinions on financial statements and controls.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Elite capstone assurance dossier proving uncompromised quality.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

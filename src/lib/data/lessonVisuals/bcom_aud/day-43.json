@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 43,
+  "entries": [
+    {
+      "partTitle": "The Critical Foundation of IT General Controls (ITGC) in Financial Assurance",
+      "codeHash": "bb116004a78abbe4eda780521598ea7a62658ac9f8cdda11316abf9c68cab340",
+      "spec": {
+        "template": "funnel",
+        "title": "The Critical Foundation of IT General ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise digital architecture supporting corporate ledger balances.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Symbiotic relationship connecting technical and business controls.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Scoping applications databases operating systems and cloud hosts.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Robust technical foundation ensuring automated control reliance.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain 1: Access to Programs & Data (Logical Security) & Segregation of Incompatible Duties (SOD)",
+      "codeHash": "5b170245bafdf8b28c26e072d1ca946c8d80cff4afe71ed4cccd694a0aa5d450",
+      "spec": {
+        "template": "funnel",
+        "title": "Domain 1: Access to Programs & Data (L... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "User access permissions granted across enterprise financial systems.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Testing user provisioning de-provisioning and periodic reviews.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Detecting toxic role conflicts between master files and payments.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Segregated logical access preventing internal ledger manipulation.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain 2 & 3: Program Changes & System Development Life Cycle (SDLC)",
+      "codeHash": "56c9860a438bd66c82cc3c7b410b51396d166315b38ac5ab8c53b5f208877f81",
+      "spec": {
+        "template": "funnel",
+        "title": "Domain 2 & 3: Program Changes & System... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Software code modifications submitted for production migration.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Enforcing segregated development environments and approval boards.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Prohibiting direct developer code transports into live ledgers.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Mathematical code integrity preserved through controlled releases.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain 4: Computer Operations, Job Scheduling, Backup Restores & IPE Dependencies",
+      "codeHash": "6ed3c9ab5c7be809046b0f5cfe91e43d5356da9b14367e19ae83a739c2994d1a",
+      "spec": {
+        "template": "funnel",
+        "title": "Domain 4: Computer Operations, Job Sch... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Automated batch processing jobs executing overnight ledger runs.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Monitoring job execution alerts and annual backup restore drills.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating third-party cloud service organization control reports.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Resilient continuous operations ensuring uninterrupted reporting.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive ITGC Multi-Domain Audit & SOD Conflict Simulator",
+      "codeHash": "498057a4010b82fa2c5f5e40b9eff11d9cd4a9463d7d3d9a6382ba4f785a26af",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive ITGC Multi-Domain Audit ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive enterprise IT infrastructure scanned by audit tools.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Cross-referencing human resources records against active users.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconciling production transports against authorized tickets.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Uncompromised technical assurance dossier clearing inspections.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
