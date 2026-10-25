@@ -1,0 +1,30 @@
+Day 1: Ad Auction Mechanics, Multi-Touch Attribution & Marketing Efficiency Math
+Day 2: Marketing Mix Modeling (MMM), CAC Payback Physics & Bayesian Uplift Experimentation
+Day 3: Programmatic Display, Real-Time Bidding (RTB), Viewability & Ad Fraud Detection
+Day 4: Cross-Channel Bayesian Attribution, Incrementality Testing & CDP Identity Resolution
+Day 5: Milestone 1 Capstone: Chief Marketing Officer (CMO) War Room & Brand Equity Accreditation
+Day 6: Topic Clusters, Pillar Pages, Internal Link Equity & Google E-E-A-T Architecture
+Day 7: Google Ads Search Architecture: Generalized Second-Price (GSP), Quality Score Mechanics & Negative Matching
+Day 8: Paid Social Media Advertising (Meta Ads): Auction Mechanics, Break-Even ROAS & Creative Fatigue
+Day 9: First-Party Audience Segmentation, Lookalike Modeling & Algorithmic Seed Scaling
+Day 10: Milestone 2 Capstone: Account-Based Marketing (ABM) Intent Engine & Performance Acquisition Master Defense
+Day 11: Performance Video Marketing: Hook Rates & View-Through Retention
+Day 12: Email Marketing & Deliverability: SPF, DKIM, DMARC, BIMI & List Hygiene
+Day 13: Marketing Automation & Drip Sequences: Cart Abandonment Workflows
+Day 14: Conversion Rate Optimization (CRO) & A/B Split Testing Statistics
+Day 15: ⭐ MILESTONE 3 CAPSTONE: Autonomous Full-Funnel Performance Video, Lifecycle Automation & CRO Engine
+Day 16: Google Analytics 4 (GA4): Event-Driven Data Model & Exploration Reports
+Day 17: Multi-Touch Marketing Attribution: U-Shaped (Position-Based) & DDA
+Day 18: Growth Hacking & The Pirate Metrics Funnel (AARRR)
+Day 19: App Store Optimization (ASO) & Mobile User Acquisition
+Day 20: ⭐ Milestone 4 Capstone: Programmatic Advertising, RTB & Growth Analytics Engine
+Day 21: Dynamic Retargeting & Ad Fatigue Frequency Capping Architecture
+Day 22: Customer Lifetime Value to CAC Ratio (CLV:CAC >= 3:1) Architecture
+Day 23: Community & Conversational Social Commerce Architecture
+Day 24: Marketing Mix Modeling (MMM) & Incrementality Geo-Testing Architecture
+Day 25: \u2b50 MILESTONE 5 CAPSTONE: Advanced Retargeting, Unit Economics, Conversational Commerce & Econometric MMM Engine
+Day 26: AI in Digital Marketing: Generative Creative Generation & Predictive Churn Architecture
+Day 27: Data Privacy, Cookie Deprecation & First-Party Data Architecture
+Day 28: Digital Marketing Budgeting & Annual Media Planning: Share of Voice (SOV) Architecture
+Day 29: Omnichannel Customer Journey & Full-Funnel Growth Orchestration Architecture
+Day 30: \ud83c\udfc6 COURSE 28 GRAND FINAL CAPSTONE: Enterprise Digital Marketing & Autonomous Growth Hacking Suite
