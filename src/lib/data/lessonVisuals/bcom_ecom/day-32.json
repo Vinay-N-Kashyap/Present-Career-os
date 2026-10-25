@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 32,
+  "entries": [
+    {
+      "partTitle": "The Monolithic GraphQL Bottleneck & Apollo Federation v2 Declarative Architecture",
+      "codeHash": "d7ecd40f377431b256916181c50ef02d0bfa75fb480b0491a1362aba92f92452",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 32 Part 1 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Distributed engineering squads manage domain specific GraphQL schemas.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Apollo Federation stitches independent subgraphs into a supergraph.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Catalog pricing and inventory teams deploy without schema conflicts.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Run schema composition verification to confirm conflict free types.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Federated Entity Directives: @key, @shareable, @external & Product Graph Unification",
+      "codeHash": "f878e4b5311f4ec4ba048739557e573b06b72901da1b4c5592536d1580b59ef9",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 32 Part 2 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Entity directives establish primary keys across distributed subgraphs.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Key and shareable directives unify product entities across services.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reviews and inventory subgraphs extend core product types cleanly.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validate entity resolver references across distinct microservices.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Query Plan Analysis, Router Execution Graphs & Cross-Subgraph Network Latency Mitigation",
+      "codeHash": "9c406f077bdc7c84479850d0e0cc3e0953aaf9fc2d54bdf7ccbb383ca0e76ec7",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 32 Part 3 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Router query compiler constructs execution plans for incoming queries.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Query planning decomposes nested selections into parallel fetch steps.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Parallel requests bound latency to the slowest individual service.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect query execution plans to identify optimization bottlenecks.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Concurrency Batching with DataLoader & Database Round-Trip Optimization",
+      "codeHash": "2a137eadd9776c516841680946b629daea53f164ddcf46c0950996c039d276e1",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 32 Part 4 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multiple nested resolvers request related entities from databases.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "DataLoader batches individual lookups into single database queries.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Collapsing nested queries eliminates catastrophic query storms.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify batch loader execution and cache memoization within requests.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Federated Commerce Subgraph Router & Query Planner in Python",
+      "codeHash": "e74f68d89763c42556d2ee4c7c274032e5d1a4b6b69c99bf4a34a1a776a970fb",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 32 Part 5 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Federated commerce router suite executes comprehensive graph checks.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Router coordinates schema composition query planning and batching.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Unified API gateway serves mobile and web clients with low latency.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute end to end federated graph simulation in Python.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
