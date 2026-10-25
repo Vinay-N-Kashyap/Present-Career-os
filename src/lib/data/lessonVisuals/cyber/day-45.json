@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 45,
+  "promptSha": "c31e09778fdeb3b09ece4894d099fcfac738009386d118b821517142345e91fe",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture: The Unified WAF & RASP Ingress Defense Pipeline",
+      "codeHash": "35b57b2d804529800d028d5f2e069a8702639a161575d291e6050b6b73e1f0f8",
+      "spec": {
+        "template": "compare",
+        "title": "WAF & RASP Defense: Capstone Architecture: The Unified WAF & RASP Ingress Defense Pipeline",
+        "left": {
+          "label": "Vulnerable Application Infrastructure",
+          "content": [
+            "Direct uninspected HTTP traffic reaches application servers without edge filtering",
+            "Pure signature blacklists fail against novel zero-day obfuscation and encoding tricks",
+            "Application runtime cannot detect hostile execution occurring within valid database queries",
+            "Unmitigated automated botnets execute distributed credential stuffing across rotating proxies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise WAF & RASP Architecture",
+          "content": [
+            "Edge WAF inspects and scores requests across URIs, headers, and bodies in microseconds",
+            "Hybrid security model pairs positive OpenAPI schema enforcement with threat signatures",
+            "Embedded RASP hooks inspect database query ASTs and memory sinks to neutralize zero-days",
+            "Behavioral bot mitigation and TLS/JA4 fingerprinting throttle distributed automation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates unified perimeter web application firewall and embedded runtime self-protection."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates multi-threat signature matching across uris, headers, and request bodies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates edge traffic filtering combined with internal application memory introspection."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms threat signature detection, cumulative score calculation, and ingress request blocking."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Application Infrastructure",
+        "rightLabel": "Enterprise WAF & RASP Architecture",
+        "leftHighlights": [
+          "Uninspected edge traffic",
+          "Signature evasion vulnerability",
+          "Blind runtime execution",
+          "Botnet credential stuffing"
+        ],
+        "rightHighlights": [
+          "Microsecond edge filtering",
+          "Hybrid schema enforcement",
+          "Contextual RASP introspection",
+          "Behavioral bot mitigation"
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance WAF Inspection Engine: Regex Compilation & Negative vs Positive Security Models",
+      "codeHash": "ba603cc930e4d7ab90587059b8d6e29e994b326a7c11539398f5727f7726d4c0",
+      "spec": {
+        "template": "compare",
+        "title": "WAF & RASP Defense: High-Performance WAF Inspection Engine: Regex Compilation & Negative vs Positive Security Models",
+        "left": {
+          "label": "Vulnerable Application Infrastructure",
+          "content": [
+            "Direct uninspected HTTP traffic reaches application servers without edge filtering",
+            "Pure signature blacklists fail against novel zero-day obfuscation and encoding tricks",
+            "Application runtime cannot detect hostile execution occurring within valid database queries",
+            "Unmitigated automated botnets execute distributed credential stuffing across rotating proxies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise WAF & RASP Architecture",
+          "content": [
+            "Edge WAF inspects and scores requests across URIs, headers, and bodies in microseconds",
+            "Hybrid security model pairs positive OpenAPI schema enforcement with threat signatures",
+            "Embedded RASP hooks inspect database query ASTs and memory sinks to neutralize zero-days",
+            "Behavioral bot mitigation and TLS/JA4 fingerprinting throttle distributed automation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays high-performance multi-rule signature scanning using compiled regular expressions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates positive openapi schema validation paired with negative threat pattern blacklisting."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates microsecond threat scoring over vulnerable uninspected request pipelines."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms multi-rule execution, threat classification, and deterministic ingress filtering."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Application Infrastructure",
+        "rightLabel": "Enterprise WAF & RASP Architecture",
+        "leftHighlights": [
+          "Uninspected edge traffic",
+          "Signature evasion vulnerability",
+          "Blind runtime execution",
+          "Botnet credential stuffing"
+        ],
+        "rightHighlights": [
+          "Microsecond edge filtering",
+          "Hybrid schema enforcement",
+          "Contextual RASP introspection",
+          "Behavioral bot mitigation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Runtime Application Self-Protection (RASP): Contextual Hooking & Query AST Interception",
+      "codeHash": "768497affe6cc36685c2d4559116940769573f4d6132d7a25548e318267129a3",
+      "spec": {
+        "template": "compare",
+        "title": "WAF & RASP Defense: Runtime Application Self-Protection (RASP): Contextual Hooking & Query AST Interception",
+        "left": {
+          "label": "Vulnerable Application Infrastructure",
+          "content": [
+            "Direct uninspected HTTP traffic reaches application servers without edge filtering",
+            "Pure signature blacklists fail against novel zero-day obfuscation and encoding tricks",
+            "Application runtime cannot detect hostile execution occurring within valid database queries",
+            "Unmitigated automated botnets execute distributed credential stuffing across rotating proxies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise WAF & RASP Architecture",
+          "content": [
+            "Edge WAF inspects and scores requests across URIs, headers, and bodies in microseconds",
+            "Hybrid security model pairs positive OpenAPI schema enforcement with threat signatures",
+            "Embedded RASP hooks inspect database query ASTs and memory sinks to neutralize zero-days",
+            "Behavioral bot mitigation and TLS/JA4 fingerprinting throttle distributed automation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates runtime application self-protection hooks embedded inside system sinks."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors database driver query abstract syntax trees for suspicious time-delay functions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates internal exploit neutralization even when payloads evade external edge firewalls."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms query ast inspection, sleep function interception, and runtime memory defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Application Infrastructure",
+        "rightLabel": "Enterprise WAF & RASP Architecture",
+        "leftHighlights": [
+          "Uninspected edge traffic",
+          "Signature evasion vulnerability",
+          "Blind runtime execution",
+          "Botnet credential stuffing"
+        ],
+        "rightHighlights": [
+          "Microsecond edge filtering",
+          "Hybrid schema enforcement",
+          "Contextual RASP introspection",
+          "Behavioral bot mitigation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Threat Intelligence & Behavioral Bot Mitigation: Fingerprinting & Anomaly Telemetry",
+      "codeHash": "f7ce3df538e55a8e6bdfcc74b428f07fc017993d4d9ea7da4cc033e594ae0727",
+      "spec": {
+        "template": "compare",
+        "title": "WAF & RASP Defense: Dynamic Threat Intelligence & Behavioral Bot Mitigation: Fingerprinting & Anomaly Telemetry",
+        "left": {
+          "label": "Vulnerable Application Infrastructure",
+          "content": [
+            "Direct uninspected HTTP traffic reaches application servers without edge filtering",
+            "Pure signature blacklists fail against novel zero-day obfuscation and encoding tricks",
+            "Application runtime cannot detect hostile execution occurring within valid database queries",
+            "Unmitigated automated botnets execute distributed credential stuffing across rotating proxies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise WAF & RASP Architecture",
+          "content": [
+            "Edge WAF inspects and scores requests across URIs, headers, and bodies in microseconds",
+            "Hybrid security model pairs positive OpenAPI schema enforcement with threat signatures",
+            "Embedded RASP hooks inspect database query ASTs and memory sinks to neutralize zero-days",
+            "Behavioral bot mitigation and TLS/JA4 fingerprinting throttle distributed automation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays behavioral bot anomaly detection tracking request velocity per client address."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates client fingerprinting signatures and dynamic threat intelligence telemetry feeds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates automated mitigation against distributed residential proxy scraping campaigns."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms request burst tracking, anomaly threshold enforcement, and automated bot containment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Application Infrastructure",
+        "rightLabel": "Enterprise WAF & RASP Architecture",
+        "leftHighlights": [
+          "Uninspected edge traffic",
+          "Signature evasion vulnerability",
+          "Blind runtime execution",
+          "Botnet credential stuffing"
+        ],
+        "rightHighlights": [
+          "Microsecond edge filtering",
+          "Hybrid schema enforcement",
+          "Contextual RASP introspection",
+          "Behavioral bot mitigation"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Grand Milestone 9 Verification Engine & Enterprise Application Security Mastery",
+      "codeHash": "b831f9be5c7b6e892a38b522d530d32ebe50213b49eef4de71e8076d84053052",
+      "spec": {
+        "template": "compare",
+        "title": "WAF & RASP Defense: The Grand Milestone 9 Verification Engine & Enterprise Application Security Mastery",
+        "left": {
+          "label": "Vulnerable Application Infrastructure",
+          "content": [
+            "Direct uninspected HTTP traffic reaches application servers without edge filtering",
+            "Pure signature blacklists fail against novel zero-day obfuscation and encoding tricks",
+            "Application runtime cannot detect hostile execution occurring within valid database queries",
+            "Unmitigated automated botnets execute distributed credential stuffing across rotating proxies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise WAF & RASP Architecture",
+          "content": [
+            "Edge WAF inspects and scores requests across URIs, headers, and bodies in microseconds",
+            "Hybrid security model pairs positive OpenAPI schema enforcement with threat signatures",
+            "Embedded RASP hooks inspect database query ASTs and memory sinks to neutralize zero-days",
+            "Behavioral bot mitigation and TLS/JA4 fingerprinting throttle distributed automation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the grand milestone capstone audit certifying sovereign application security."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates complete five-dimension compliance across injection, xss, cross-origin, api, and waf."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete mathematical compliance across all enterprise application benchmarks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms grand milestone capstone certification, zero security regressions, and application security mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Application Infrastructure",
+        "rightLabel": "Enterprise WAF & RASP Architecture",
+        "leftHighlights": [
+          "Uninspected edge traffic",
+          "Signature evasion vulnerability",
+          "Blind runtime execution",
+          "Botnet credential stuffing"
+        ],
+        "rightHighlights": [
+          "Microsecond edge filtering",
+          "Hybrid schema enforcement",
+          "Contextual RASP introspection",
+          "Behavioral bot mitigation"
+        ]
+      }
+    }
+  ]
+}

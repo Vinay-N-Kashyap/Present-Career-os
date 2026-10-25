@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 44,
+  "promptSha": "1a7ce07bfd24ee2ff8a414f1535f0b4e2de48bdf134058551f07611e3580ec85",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "OWASP API Security Top 10 & Broken Object Level Authorization (BOLA / IDOR Mechanics)",
+      "codeHash": "7fdb36fc06ddcab754aaed84fb223cb7da1fc3dac37340ce2aa08029bf379366",
+      "spec": {
+        "template": "compare",
+        "title": "API Security & BOLA: OWASP API Security Top 10 & Broken Object Level Authorization (BOLA / IDOR Mechanics)",
+        "left": {
+          "label": "Vulnerable API Architecture",
+          "content": [
+            "Direct object lookups by ID without verifying user ownership permits massive BOLA data theft",
+            "Ad-hoc authorization checks in controller code lead to missed checks on new endpoints",
+            "Binding client request bodies directly to database entities allows mass assignment privilege escalation",
+            "Unthrottled endpoints permit automated credential stuffing, scraping, and enumeration attacks"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened API Architecture",
+          "content": [
+            "Tenant-scoped and user-scoped database queries mathematically prevent cross-tenant record leakage",
+            "Centralized Policy Decision Points (PDP) decouple and standardize declarative access rules",
+            "Strict Data Transfer Object (DTO) schemas strip unapproved properties before entity persistence",
+            "Token bucket rate limiting meters traffic throughput, protecting endpoints from automated abuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates broken object level authorization vulnerabilities across exposed api endpoints."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates direct object identifier references lacking tenant and user ownership verification."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates tenant-scoped document access enforcement over vulnerable direct lookups."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms tenant boundary validation, unauthorized cross-tenant blocking, and object safety."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable API Architecture",
+        "rightLabel": "Enterprise Hardened API Architecture",
+        "leftHighlights": [
+          "BOLA IDOR data theft",
+          "Ad-hoc authorization gaps",
+          "Mass assignment escalation",
+          "Unthrottled scraping abuse"
+        ],
+        "rightHighlights": [
+          "Tenant-scoped query isolation",
+          "Centralized PDP governance",
+          "Strict DTO property filtering",
+          "Token bucket rate limiting"
+        ]
+      }
+    },
+    {
+      "partTitle": "Object-Level Authorization Engines: Tenant Scoping, Ownership Context & Policy Decision Points",
+      "codeHash": "55b3f50734b34c9bb1391f28d817d507664d65edc5b1dcff910713ad21f41f47",
+      "spec": {
+        "template": "compare",
+        "title": "API Security & BOLA: Object-Level Authorization Engines: Tenant Scoping, Ownership Context & Policy Decision Points",
+        "left": {
+          "label": "Vulnerable API Architecture",
+          "content": [
+            "Direct object lookups by ID without verifying user ownership permits massive BOLA data theft",
+            "Ad-hoc authorization checks in controller code lead to missed checks on new endpoints",
+            "Binding client request bodies directly to database entities allows mass assignment privilege escalation",
+            "Unthrottled endpoints permit automated credential stuffing, scraping, and enumeration attacks"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened API Architecture",
+          "content": [
+            "Tenant-scoped and user-scoped database queries mathematically prevent cross-tenant record leakage",
+            "Centralized Policy Decision Points (PDP) decouple and standardize declarative access rules",
+            "Strict Data Transfer Object (DTO) schemas strip unapproved properties before entity persistence",
+            "Token bucket rate limiting meters traffic throughput, protecting endpoints from automated abuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays centralized policy decision points evaluating multi-attribute access context."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates subject credentials, target resource metadata, and requested action permissions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates declarative policy enforcement over ad-hoc controller conditional statements."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms owner authorization, administrator override grants, and non-owner access denial."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable API Architecture",
+        "rightLabel": "Enterprise Hardened API Architecture",
+        "leftHighlights": [
+          "BOLA IDOR data theft",
+          "Ad-hoc authorization gaps",
+          "Mass assignment escalation",
+          "Unthrottled scraping abuse"
+        ],
+        "rightHighlights": [
+          "Tenant-scoped query isolation",
+          "Centralized PDP governance",
+          "Strict DTO property filtering",
+          "Token bucket rate limiting"
+        ]
+      }
+    },
+    {
+      "partTitle": "Mass Assignment Vulnerabilities: DTO Schemas & Strict Property Whitelisting",
+      "codeHash": "b48b069dbc2f0945dd6340809d866f0c5eabbf779c0fd117503ce475725b4327",
+      "spec": {
+        "template": "compare",
+        "title": "API Security & BOLA: Mass Assignment Vulnerabilities: DTO Schemas & Strict Property Whitelisting",
+        "left": {
+          "label": "Vulnerable API Architecture",
+          "content": [
+            "Direct object lookups by ID without verifying user ownership permits massive BOLA data theft",
+            "Ad-hoc authorization checks in controller code lead to missed checks on new endpoints",
+            "Binding client request bodies directly to database entities allows mass assignment privilege escalation",
+            "Unthrottled endpoints permit automated credential stuffing, scraping, and enumeration attacks"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened API Architecture",
+          "content": [
+            "Tenant-scoped and user-scoped database queries mathematically prevent cross-tenant record leakage",
+            "Centralized Policy Decision Points (PDP) decouple and standardize declarative access rules",
+            "Strict Data Transfer Object (DTO) schemas strip unapproved properties before entity persistence",
+            "Token bucket rate limiting meters traffic throughput, protecting endpoints from automated abuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates mass assignment defense pipelines filtering client request bodies."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates data transfer object schemas and strict property whitelisting enforcement."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates automatic stripping of injected administrative fields over naive orm binding."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms permitted profile property retention and complete privileged role removal."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable API Architecture",
+        "rightLabel": "Enterprise Hardened API Architecture",
+        "leftHighlights": [
+          "BOLA IDOR data theft",
+          "Ad-hoc authorization gaps",
+          "Mass assignment escalation",
+          "Unthrottled scraping abuse"
+        ],
+        "rightHighlights": [
+          "Tenant-scoped query isolation",
+          "Centralized PDP governance",
+          "Strict DTO property filtering",
+          "Token bucket rate limiting"
+        ]
+      }
+    },
+    {
+      "partTitle": "API Rate Limiting, Throttling & Leaky Payload Defense: Token Bucket & Data Minimization",
+      "codeHash": "afeacc3e0ec80538e0a3a834203bb075ebfbd1625bce7788b34ff820a4594b8a",
+      "spec": {
+        "template": "compare",
+        "title": "API Security & BOLA: API Rate Limiting, Throttling & Leaky Payload Defense: Token Bucket & Data Minimization",
+        "left": {
+          "label": "Vulnerable API Architecture",
+          "content": [
+            "Direct object lookups by ID without verifying user ownership permits massive BOLA data theft",
+            "Ad-hoc authorization checks in controller code lead to missed checks on new endpoints",
+            "Binding client request bodies directly to database entities allows mass assignment privilege escalation",
+            "Unthrottled endpoints permit automated credential stuffing, scraping, and enumeration attacks"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened API Architecture",
+          "content": [
+            "Tenant-scoped and user-scoped database queries mathematically prevent cross-tenant record leakage",
+            "Centralized Policy Decision Points (PDP) decouple and standardize declarative access rules",
+            "Strict Data Transfer Object (DTO) schemas strip unapproved properties before entity persistence",
+            "Token bucket rate limiting meters traffic throughput, protecting endpoints from automated abuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays token bucket rate limiting pipelines governing api traffic throughput."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates continuous time-based token refilling and atomic burst consumption mechanics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates disciplined traffic throttling over vulnerable unthrottled endpoints."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms burst request approval, rate threshold enforcement, and automated scraping defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable API Architecture",
+        "rightLabel": "Enterprise Hardened API Architecture",
+        "leftHighlights": [
+          "BOLA IDOR data theft",
+          "Ad-hoc authorization gaps",
+          "Mass assignment escalation",
+          "Unthrottled scraping abuse"
+        ],
+        "rightHighlights": [
+          "Tenant-scoped query isolation",
+          "Centralized PDP governance",
+          "Strict DTO property filtering",
+          "Token bucket rate limiting"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production API Security Gateway Benchmark: Multi-Layered Ingress & Enforcement",
+      "codeHash": "ce2013d63827cc77171423eac90cea5debef934d5c94f976fbc59da6cfc8682a",
+      "spec": {
+        "template": "compare",
+        "title": "API Security & BOLA: Production API Security Gateway Benchmark: Multi-Layered Ingress & Enforcement",
+        "left": {
+          "label": "Vulnerable API Architecture",
+          "content": [
+            "Direct object lookups by ID without verifying user ownership permits massive BOLA data theft",
+            "Ad-hoc authorization checks in controller code lead to missed checks on new endpoints",
+            "Binding client request bodies directly to database entities allows mass assignment privilege escalation",
+            "Unthrottled endpoints permit automated credential stuffing, scraping, and enumeration attacks"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened API Architecture",
+          "content": [
+            "Tenant-scoped and user-scoped database queries mathematically prevent cross-tenant record leakage",
+            "Centralized Policy Decision Points (PDP) decouple and standardize declarative access rules",
+            "Strict Data Transfer Object (DTO) schemas strip unapproved properties before entity persistence",
+            "Token bucket rate limiting meters traffic throughput, protecting endpoints from automated abuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end api security gateway benchmark across enterprise microservices."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates concurrent rate limiting, tenant-scoped authorization, and payload sanitization."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive enterprise api security certification over ad-hoc filters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full api defense compliance certification, zero security regressions, and runtime security."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable API Architecture",
+        "rightLabel": "Enterprise Hardened API Architecture",
+        "leftHighlights": [
+          "BOLA IDOR data theft",
+          "Ad-hoc authorization gaps",
+          "Mass assignment escalation",
+          "Unthrottled scraping abuse"
+        ],
+        "rightHighlights": [
+          "Tenant-scoped query isolation",
+          "Centralized PDP governance",
+          "Strict DTO property filtering",
+          "Token bucket rate limiting"
+        ]
+      }
+    }
+  ]
+}

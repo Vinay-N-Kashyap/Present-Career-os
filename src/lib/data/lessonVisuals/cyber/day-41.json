@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 41,
+  "promptSha": "f378cecc8fdcee9253f588e6acc22ec094811941b77f4114fbc635cd8769b4ac",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Injection Threat Modeling: SQL Injection (SQLi) Mechanics, Union-Based vs Blind SQLi & SQL Tokenizers",
+      "codeHash": "91f03d18c21b4500acdbb8f4bcc62db96ba7b32c2e37510085b547946105e259",
+      "spec": {
+        "template": "compare",
+        "title": "Injection Defense: Injection Threat Modeling: SQL Injection (SQLi) Mechanics, Union-Based vs Blind SQLi & SQL Tokenizers",
+        "left": {
+          "label": "Vulnerable / Unhardened Application",
+          "content": [
+            "Direct string concatenation into SQL queries allows complete logic breakout",
+            "Naive raw ORM queries without parameterization expose database tables",
+            "Direct JSON query body forwarding allows NoSQL operator injection bypass",
+            "Spawning system commands through shell strings permits metacharacter injection"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened Injection Defense",
+          "content": [
+            "Pre-compiled prepared statements treat user input strictly as literal data",
+            "Abstract syntax tree freezing permanently prevents SQL query restructuring",
+            "Recursive object sanitization strips dollar-prefixed NoSQL query operators",
+            "Subprocess argument vectorization executes binaries without shell interpreters"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates injection boundaries between untrusted inputs and interpreter execution engines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates taint detection rules intercepting string concatenation breakout syntax."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete separation of data literals from executable database commands."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms pattern detection, taint alert generation, and vulnerable query interception."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable / Unhardened Application",
+        "rightLabel": "Enterprise Hardened Injection Defense",
+        "leftHighlights": [
+          "Raw string concatenation",
+          "Query logic breakout",
+          "NoSQL operator injection",
+          "Shell command injection"
+        ],
+        "rightHighlights": [
+          "Prepared statement compilation",
+          "AST structural immutability",
+          "Recursive operator sanitization",
+          "Shell-free argument vectors"
+        ]
+      }
+    },
+    {
+      "partTitle": "Defense-in-Depth Parameterization: Prepared Statements, Abstract Syntax Trees & Whitelisting",
+      "codeHash": "cf0a7c2978a30d1b2ddae95d7acdfc5b2a6738a83b7e0bd7e23f7a6409876a20",
+      "spec": {
+        "template": "compare",
+        "title": "Injection Defense: Defense-in-Depth Parameterization: Prepared Statements, Abstract Syntax Trees & Whitelisting",
+        "left": {
+          "label": "Vulnerable / Unhardened Application",
+          "content": [
+            "Direct string concatenation into SQL queries allows complete logic breakout",
+            "Naive raw ORM queries without parameterization expose database tables",
+            "Direct JSON query body forwarding allows NoSQL operator injection bypass",
+            "Spawning system commands through shell strings permits metacharacter injection"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened Injection Defense",
+          "content": [
+            "Pre-compiled prepared statements treat user input strictly as literal data",
+            "Abstract syntax tree freezing permanently prevents SQL query restructuring",
+            "Recursive object sanitization strips dollar-prefixed NoSQL query operators",
+            "Subprocess argument vectorization executes binaries without shell interpreters"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays prepared statement execution plans frozen in abstract syntax tree memory."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates safe parameter vector binding treating hostile strings strictly as literal data."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total immunity against query logic manipulation compared to dynamic sql."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms abstract syntax tree immutability, parameter isolation, and safe query execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable / Unhardened Application",
+        "rightLabel": "Enterprise Hardened Injection Defense",
+        "leftHighlights": [
+          "Raw string concatenation",
+          "Query logic breakout",
+          "NoSQL operator injection",
+          "Shell command injection"
+        ],
+        "rightHighlights": [
+          "Prepared statement compilation",
+          "AST structural immutability",
+          "Recursive operator sanitization",
+          "Shell-free argument vectors"
+        ]
+      }
+    },
+    {
+      "partTitle": "NoSQL Injection & Query Object Tampering: MongoDB Operator Injection ($ne, $gt, $where) & Sanitization",
+      "codeHash": "3d65a4a16c6ae78e2696fb806603a97240eacc19b07d18a7d24988307b6e1216",
+      "spec": {
+        "template": "compare",
+        "title": "Injection Defense: NoSQL Injection & Query Object Tampering: MongoDB Operator Injection ($ne, $gt, $where) & Sanitization",
+        "left": {
+          "label": "Vulnerable / Unhardened Application",
+          "content": [
+            "Direct string concatenation into SQL queries allows complete logic breakout",
+            "Naive raw ORM queries without parameterization expose database tables",
+            "Direct JSON query body forwarding allows NoSQL operator injection bypass",
+            "Spawning system commands through shell strings permits metacharacter injection"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened Injection Defense",
+          "content": [
+            "Pre-compiled prepared statements treat user input strictly as literal data",
+            "Abstract syntax tree freezing permanently prevents SQL query restructuring",
+            "Recursive object sanitization strips dollar-prefixed NoSQL query operators",
+            "Subprocess argument vectorization executes binaries without shell interpreters"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates document query sanitization pipelines stripping nosql injection operators."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors recursive object traversal and immediate blocking of dollar prefixed parameters."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total interception of unauthorized boolean operator bypass exploits."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms operator rejection, safe primitive query validation, and database security."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable / Unhardened Application",
+        "rightLabel": "Enterprise Hardened Injection Defense",
+        "leftHighlights": [
+          "Raw string concatenation",
+          "Query logic breakout",
+          "NoSQL operator injection",
+          "Shell command injection"
+        ],
+        "rightHighlights": [
+          "Prepared statement compilation",
+          "AST structural immutability",
+          "Recursive operator sanitization",
+          "Shell-free argument vectors"
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating System Command Injection: Shell Metacharacters, Subprocess Spawning & Argument Vectorization",
+      "codeHash": "eba1ff2fcd9c27a00234362554cba6a226176412bd6201847e6b048b89ea0bfa",
+      "spec": {
+        "template": "compare",
+        "title": "Injection Defense: Operating System Command Injection: Shell Metacharacters, Subprocess Spawning & Argument Vectorization",
+        "left": {
+          "label": "Vulnerable / Unhardened Application",
+          "content": [
+            "Direct string concatenation into SQL queries allows complete logic breakout",
+            "Naive raw ORM queries without parameterization expose database tables",
+            "Direct JSON query body forwarding allows NoSQL operator injection bypass",
+            "Spawning system commands through shell strings permits metacharacter injection"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened Injection Defense",
+          "content": [
+            "Pre-compiled prepared statements treat user input strictly as literal data",
+            "Abstract syntax tree freezing permanently prevents SQL query restructuring",
+            "Recursive object sanitization strips dollar-prefixed NoSQL query operators",
+            "Subprocess argument vectorization executes binaries without shell interpreters"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays shell-free subprocess invocation pipelines utilizing discrete argument vectors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates input whitelisting regex rules blocking semicolons, pipes, and redirection operators."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total immunity to shell metacharacter injection over string command execution."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms vectorized argument creation, direct binary execution, and shell bypass defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable / Unhardened Application",
+        "rightLabel": "Enterprise Hardened Injection Defense",
+        "leftHighlights": [
+          "Raw string concatenation",
+          "Query logic breakout",
+          "NoSQL operator injection",
+          "Shell command injection"
+        ],
+        "rightHighlights": [
+          "Prepared statement compilation",
+          "AST structural immutability",
+          "Recursive operator sanitization",
+          "Shell-free argument vectors"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SQLi & Command Injection Gateway Filter & Enterprise Vulnerability Benchmark",
+      "codeHash": "164396f8d851917c9145c883341d167b0ac981d5858bf13c8fa3d23ee8af213f",
+      "spec": {
+        "template": "compare",
+        "title": "Injection Defense: Production SQLi & Command Injection Gateway Filter & Enterprise Vulnerability Benchmark",
+        "left": {
+          "label": "Vulnerable / Unhardened Application",
+          "content": [
+            "Direct string concatenation into SQL queries allows complete logic breakout",
+            "Naive raw ORM queries without parameterization expose database tables",
+            "Direct JSON query body forwarding allows NoSQL operator injection bypass",
+            "Spawning system commands through shell strings permits metacharacter injection"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened Injection Defense",
+          "content": [
+            "Pre-compiled prepared statements treat user input strictly as literal data",
+            "Abstract syntax tree freezing permanently prevents SQL query restructuring",
+            "Recursive object sanitization strips dollar-prefixed NoSQL query operators",
+            "Subprocess argument vectorization executes binaries without shell interpreters"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end multi-layer injection defense gateway across enterprise applications."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates concurrent inspection of relational sql, document nosql, and host system commands."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive enterprise application security certification over ad-hoc filters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full injection defense certification, zero security regressions, and robust runtime protection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable / Unhardened Application",
+        "rightLabel": "Enterprise Hardened Injection Defense",
+        "leftHighlights": [
+          "Raw string concatenation",
+          "Query logic breakout",
+          "NoSQL operator injection",
+          "Shell command injection"
+        ],
+        "rightHighlights": [
+          "Prepared statement compilation",
+          "AST structural immutability",
+          "Recursive operator sanitization",
+          "Shell-free argument vectors"
+        ]
+      }
+    }
+  ]
+}
