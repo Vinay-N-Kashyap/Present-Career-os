@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 37,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "The Evolution Of LLM Function Calling: From Single-Turn Tool Invocation To Autonomous Agent Meshes",
+      "codeHash": "68ac7645e57d7d95683dec08fbbbe1a954f1640b798d9ff3036e25ea1972fad1",
+      "spec": {
+        "template": "table",
+        "title": "Function Calling Evolution And Parallel Tool Execution Fundamentals.",
+        "columns": [
+          "Orchestration Mode",
+          "Execution Trajectory Profile",
+          "Enterprise Latency Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sequential tool invocations compound network latency across workflows.",
+            "rows": [
+              [
+                "Sequential Single Tool Mode",
+                "Serial Blocking Invocations Across APIs",
+                "Severe Compounding Network Latency"
+              ],
+              [
+                "Parallel Multi Tool Mesh",
+                "Concurrent Asynchronous Invocations",
+                "Compresses Latency To Slowest Call"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compounding network latency creates severe operational bottlenecks.",
+            "rows": [
+              [
+                "Compounding Latency Risk",
+                "Cumulative Idle Network Waiting Times",
+                "Frequent Gateway Timeout Disconnects"
+              ],
+              [
+                "Asynchronous Concurrency",
+                "Simultaneous Non Blocking Socket Execution",
+                "Preserves Interactive Sub Second Speeds"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Travel booking assistants check flights and hotel databases concurrently.",
+            "rows": [
+              [
+                "Partial Information Gap",
+                "Incremental Reasoning With Incomplete Data",
+                "Early Misconceptions Warping Later Calls"
+              ],
+              [
+                "Holistic Multi Source Turn",
+                "Cross Reference Facts Simultaneously",
+                "Suppresses Intermediate Hallucinations"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare serial synchronous tool latency against parallel dispatching.",
+            "rows": [
+              [
+                "Passive HTTP Dispatcher",
+                "Simple Synchronous Request Forwarding",
+                "Zero Protection Against Slow Endpoints"
+              ],
+              [
+                "Active Execution Supervisor",
+                "Coordinate Timeouts And Parameter Validation",
+                "Guarantees Predictable API Economics"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Function Calling Evolution And Parallel Tool Execution Fundamentals.",
+        "columns": [
+          "Orchestration Mode",
+          "Execution Trajectory Profile",
+          "Enterprise Latency Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Sequential tool invocations compound network latency across workflows.",
+            "rows": [
+              [
+                "Sequential Single Tool Mode",
+                "Serial Blocking Invocations Across APIs",
+                "Severe Compounding Network Latency"
+              ],
+              [
+                "Parallel Multi Tool Mesh",
+                "Concurrent Asynchronous Invocations",
+                "Compresses Latency To Slowest Call"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Compounding network latency creates severe operational bottlenecks.",
+            "rows": [
+              [
+                "Compounding Latency Risk",
+                "Cumulative Idle Network Waiting Times",
+                "Frequent Gateway Timeout Disconnects"
+              ],
+              [
+                "Asynchronous Concurrency",
+                "Simultaneous Non Blocking Socket Execution",
+                "Preserves Interactive Sub Second Speeds"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Travel booking assistants check flights and hotel databases concurrently.",
+            "rows": [
+              [
+                "Partial Information Gap",
+                "Incremental Reasoning With Incomplete Data",
+                "Early Misconceptions Warping Later Calls"
+              ],
+              [
+                "Holistic Multi Source Turn",
+                "Cross Reference Facts Simultaneously",
+                "Suppresses Intermediate Hallucinations"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare serial synchronous tool latency against parallel dispatching.",
+            "rows": [
+              [
+                "Passive HTTP Dispatcher",
+                "Simple Synchronous Request Forwarding",
+                "Zero Protection Against Slow Endpoints"
+              ],
+              [
+                "Active Execution Supervisor",
+                "Coordinate Timeouts And Parameter Validation",
+                "Guarantees Predictable API Economics"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parallel Tool Execution Architecture: Asynchronous Worker Pools & Concurrency Optimization",
+      "codeHash": "68ac7645e57d7d95683dec08fbbbe1a954f1640b798d9ff3036e25ea1972fad1",
+      "spec": {
+        "template": "table",
+        "title": "Asynchronous Worker Pools And Concurrency Optimization Architectures.",
+        "columns": [
+          "Concurrency Primitive",
+          "Runtime Mechanism",
+          "System Resource Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asynchronous worker pools multiplex concurrent network sockets efficiently.",
+            "rows": [
+              [
+                "Asynchronous Event Loop",
+                "Multiplex Sockets Across Compact Workers",
+                "Minimal Memory And Context Switch Cost"
+              ],
+              [
+                "Asyncio Gather Primitive",
+                "Concurrent Coroutine Execution Pattern",
+                "Non Blocking Batch Task Dispatching"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The Python asyncio gather pattern serves as primary concurrency primitive.",
+            "rows": [
+              [
+                "Per Tool Timeout Shield",
+                "Granular Latency Deadlines Per Endpoint",
+                "Prevents Cascading Worker Pool Freezes"
+              ],
+              [
+                "Bounded Semaphore Lock",
+                "Token Aware Rate Limiting Throttles",
+                "Protects Downstream Internal APIs"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Async worker pools execute three database lookups under strict timeouts.",
+            "rows": [
+              [
+                "Idempotency Key Manager",
+                "Hash Session Tool And Argument Parameters",
+                "Guarantees State Modifying Safety"
+              ],
+              [
+                "Multi Observation Turn",
+                "Align Tool Call Identifiers With Results",
+                "Preserves Strict Causal Provenance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement an asyncio gather dispatcher wrapping coroutines with timeouts.",
+            "rows": [
+              [
+                "Distributed Tracer Core",
+                "OpenTelemetry Spans On Tool Waterfalls",
+                "Real Time Visibility Across Dependencies"
+              ],
+              [
+                "Non Blocking Task Worker",
+                "Lightweight Asynchronous Coroutine Pool",
+                "High Throughput Multi Tenant Scaling"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Asynchronous Worker Pools And Concurrency Optimization Architectures.",
+        "columns": [
+          "Concurrency Primitive",
+          "Runtime Mechanism",
+          "System Resource Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asynchronous worker pools multiplex concurrent network sockets efficiently.",
+            "rows": [
+              [
+                "Asynchronous Event Loop",
+                "Multiplex Sockets Across Compact Workers",
+                "Minimal Memory And Context Switch Cost"
+              ],
+              [
+                "Asyncio Gather Primitive",
+                "Concurrent Coroutine Execution Pattern",
+                "Non Blocking Batch Task Dispatching"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The Python asyncio gather pattern serves as primary concurrency primitive.",
+            "rows": [
+              [
+                "Per Tool Timeout Shield",
+                "Granular Latency Deadlines Per Endpoint",
+                "Prevents Cascading Worker Pool Freezes"
+              ],
+              [
+                "Bounded Semaphore Lock",
+                "Token Aware Rate Limiting Throttles",
+                "Protects Downstream Internal APIs"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Async worker pools execute three database lookups under strict timeouts.",
+            "rows": [
+              [
+                "Idempotency Key Manager",
+                "Hash Session Tool And Argument Parameters",
+                "Guarantees State Modifying Safety"
+              ],
+              [
+                "Multi Observation Turn",
+                "Align Tool Call Identifiers With Results",
+                "Preserves Strict Causal Provenance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement an asyncio gather dispatcher wrapping coroutines with timeouts.",
+            "rows": [
+              [
+                "Distributed Tracer Core",
+                "OpenTelemetry Spans On Tool Waterfalls",
+                "Real Time Visibility Across Dependencies"
+              ],
+              [
+                "Non Blocking Task Worker",
+                "Lightweight Asynchronous Coroutine Pool",
+                "High Throughput Multi Tenant Scaling"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Parameter Schema Validation: Pydantic Contracts, Type Coercion & Zero-Shot Tool Arguments",
+      "codeHash": "68ac7645e57d7d95683dec08fbbbe1a954f1640b798d9ff3036e25ea1972fad1",
+      "spec": {
+        "template": "table",
+        "title": "Parameter Schema Validation And Pydantic Type Coercion Contracts.",
+        "columns": [
+          "Validation Layer",
+          "Contract Specification",
+          "Data Integrity Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameter schema validation represents primary defense against errors.",
+            "rows": [
+              [
+                "Pydantic Contract Validator",
+                "Declarative Strongly Typed Schema Models",
+                "Single Source Of Truth For APIs"
+              ],
+              [
+                "Runtime Parameter Coercion",
+                "Convert String Primitives Into True Types",
+                "Eliminates Schema Mismatch Exceptions"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative schema definition via Pydantic provides type safe contracts.",
+            "rows": [
+              [
+                "Security Boundary Sanitizer",
+                "Enforce Regex Enums And Length Bounds",
+                "Disarms Parameter Injection Attacks"
+              ],
+              [
+                "Zero Shot Semantic Guidance",
+                "Field Descriptions Acting As Prompt Cues",
+                "Maximizes Initial Parameter Accuracy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Pydantic validators coerce string postal codes and block injections.",
+            "rows": [
+              [
+                "Dynamic Schema Filter",
+                "Context Aware Tool Catalog Subsetting",
+                "Preserves Precious Context Window Tokens"
+              ],
+              [
+                "Schema Versioning Manager",
+                "Maintain Backward Compatible Signatures",
+                "Smooth Transition Across API Updates"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Define a strongly typed Pydantic tool model with field descriptions.",
+            "rows": [
+              [
+                "Type Safe Execution Gateway",
+                "Strict Type Checking On Function Arguments",
+                "Prevents Backend Database Corruption"
+              ],
+              [
+                "JSON Schema Transpiler",
+                "Convert Models Into OpenAPI Specifications",
+                "Standardizes Model Tool Definitions"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Parameter Schema Validation And Pydantic Type Coercion Contracts.",
+        "columns": [
+          "Validation Layer",
+          "Contract Specification",
+          "Data Integrity Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Parameter schema validation represents primary defense against errors.",
+            "rows": [
+              [
+                "Pydantic Contract Validator",
+                "Declarative Strongly Typed Schema Models",
+                "Single Source Of Truth For APIs"
+              ],
+              [
+                "Runtime Parameter Coercion",
+                "Convert String Primitives Into True Types",
+                "Eliminates Schema Mismatch Exceptions"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative schema definition via Pydantic provides type safe contracts.",
+            "rows": [
+              [
+                "Security Boundary Sanitizer",
+                "Enforce Regex Enums And Length Bounds",
+                "Disarms Parameter Injection Attacks"
+              ],
+              [
+                "Zero Shot Semantic Guidance",
+                "Field Descriptions Acting As Prompt Cues",
+                "Maximizes Initial Parameter Accuracy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Pydantic validators coerce string postal codes and block injections.",
+            "rows": [
+              [
+                "Dynamic Schema Filter",
+                "Context Aware Tool Catalog Subsetting",
+                "Preserves Precious Context Window Tokens"
+              ],
+              [
+                "Schema Versioning Manager",
+                "Maintain Backward Compatible Signatures",
+                "Smooth Transition Across API Updates"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Define a strongly typed Pydantic tool model with field descriptions.",
+            "rows": [
+              [
+                "Type Safe Execution Gateway",
+                "Strict Type Checking On Function Arguments",
+                "Prevents Backend Database Corruption"
+              ],
+              [
+                "JSON Schema Transpiler",
+                "Convert Models Into OpenAPI Specifications",
+                "Standardizes Model Tool Definitions"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Tool Error Recovery: Self-Correction Loops, Idempotency Keys & Fault Handlers",
+      "codeHash": "68ac7645e57d7d95683dec08fbbbe1a954f1640b798d9ff3036e25ea1972fad1",
+      "spec": {
+        "template": "table",
+        "title": "Automated Error Recovery Handlers And Dynamic Self Correction Loops.",
+        "columns": [
+          "Fault Handling Mode",
+          "Diagnostic Feedback Pattern",
+          "System Resilience Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise computing environments inevitably encounter tool errors.",
+            "rows": [
+              [
+                "Socratic Feedback Loop",
+                "Inject Structured Errors Back As Observations",
+                "Enables Autonomous Dynamic Correction"
+              ],
+              [
+                "Structured Diagnostic Payload",
+                "Specify Exact Failed Field And Expected Type",
+                "Ninety Percent Second Turn Recovery Rate"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The core architectural pattern is the Socratic error feedback loop.",
+            "rows": [
+              [
+                "Transient Error Handler",
+                "Exponential Backoff With Jitter Retries",
+                "Absorbs Network Drops Transparently"
+              ],
+              [
+                "Permanent Error Classifier",
+                "Surface Business Logic Flaws To Model",
+                "Guides Model To Adjust Strategy Intelligently"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents correct invalid date formats after receiving schema diagnostics.",
+            "rows": [
+              [
+                "Circuit Breaker Pattern",
+                "Stateful Monitoring Tripping On Outages",
+                "Halts Invocations To Downstream Outages"
+              ],
+              [
+                "Fallback Tool Routing",
+                "Dynamic Redirection To Secondary Tools",
+                "Maintains Uptime During Provider Outages"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an error recovery handler catching API errors with hints.",
+            "rows": [
+              [
+                "Forensic Audit Logger",
+                "Tamper Evident Storage Of Error Traces",
+                "Enables Continuous Connector Hardening"
+              ],
+              [
+                "Self Healing Agent Mesh",
+                "In Flight Argument And Strategy Adaptation",
+                "Delivers Unbroken Enterprise Availability"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated Error Recovery Handlers And Dynamic Self Correction Loops.",
+        "columns": [
+          "Fault Handling Mode",
+          "Diagnostic Feedback Pattern",
+          "System Resilience Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise computing environments inevitably encounter tool errors.",
+            "rows": [
+              [
+                "Socratic Feedback Loop",
+                "Inject Structured Errors Back As Observations",
+                "Enables Autonomous Dynamic Correction"
+              ],
+              [
+                "Structured Diagnostic Payload",
+                "Specify Exact Failed Field And Expected Type",
+                "Ninety Percent Second Turn Recovery Rate"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The core architectural pattern is the Socratic error feedback loop.",
+            "rows": [
+              [
+                "Transient Error Handler",
+                "Exponential Backoff With Jitter Retries",
+                "Absorbs Network Drops Transparently"
+              ],
+              [
+                "Permanent Error Classifier",
+                "Surface Business Logic Flaws To Model",
+                "Guides Model To Adjust Strategy Intelligently"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents correct invalid date formats after receiving schema diagnostics.",
+            "rows": [
+              [
+                "Circuit Breaker Pattern",
+                "Stateful Monitoring Tripping On Outages",
+                "Halts Invocations To Downstream Outages"
+              ],
+              [
+                "Fallback Tool Routing",
+                "Dynamic Redirection To Secondary Tools",
+                "Maintains Uptime During Provider Outages"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an error recovery handler catching API errors with hints.",
+            "rows": [
+              [
+                "Forensic Audit Logger",
+                "Tamper Evident Storage Of Error Traces",
+                "Enables Continuous Connector Hardening"
+              ],
+              [
+                "Self Healing Agent Mesh",
+                "In Flight Argument And Strategy Adaptation",
+                "Delivers Unbroken Enterprise Availability"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Orchestration Engineering: Building A Resilient Multi-Tool Python Engine",
+      "codeHash": "68ac7645e57d7d95683dec08fbbbe1a954f1640b798d9ff3036e25ea1972fad1",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Multi Tool Orchestration And Production System Deployment.",
+        "columns": [
+          "Platform Service Layer",
+          "Component Implementation",
+          "Production Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise orchestration engineering translates principles into systems.",
+            "rows": [
+              [
+                "Tool Registry Microservice",
+                "Repository Of Pydantic Tools And Schemas",
+                "Standardizes Enterprise Tool Assets"
+              ],
+              [
+                "Async Worker Pool Manager",
+                "Bounded Concurrency And Connection Pools",
+                "Maintains Predictable Infrastructure Load"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The software architecture comprises four decoupled microservice layers.",
+            "rows": [
+              [
+                "Validation Sandbox Kernel",
+                "Isolated Pre Execution Schema Validation",
+                "Protects Business Logic From Bad Inputs"
+              ],
+              [
+                "Error Recovery Gateway",
+                "Synthesize Structured Diagnostic Feedback",
+                "Guides Real Time Model Self Healing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi tool gateways route parallel queries across banking services.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Emitter",
+                "Granular Distributed Spans Across Calls",
+                "Real Time Observability And Monitoring"
+              ],
+              [
+                "Role Based Access Guard",
+                "Validate Identity Tokens And Scopes",
+                "Enforces Strict Tenant Data Boundaries"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a modular Python class with asynchronous dispatching and tracing.",
+            "rows": [
+              [
+                "Synthetic Chaos Runner",
+                "Automated Fault Injection Stress Testing",
+                "Certifies Production Readiness Under Load"
+              ],
+              [
+                "Enterprise Service SLA",
+                "Sub Second Parallel Execution Guarantee",
+                "Maintains High Availability Platform SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Multi Tool Orchestration And Production System Deployment.",
+        "columns": [
+          "Platform Service Layer",
+          "Component Implementation",
+          "Production Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise orchestration engineering translates principles into systems.",
+            "rows": [
+              [
+                "Tool Registry Microservice",
+                "Repository Of Pydantic Tools And Schemas",
+                "Standardizes Enterprise Tool Assets"
+              ],
+              [
+                "Async Worker Pool Manager",
+                "Bounded Concurrency And Connection Pools",
+                "Maintains Predictable Infrastructure Load"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The software architecture comprises four decoupled microservice layers.",
+            "rows": [
+              [
+                "Validation Sandbox Kernel",
+                "Isolated Pre Execution Schema Validation",
+                "Protects Business Logic From Bad Inputs"
+              ],
+              [
+                "Error Recovery Gateway",
+                "Synthesize Structured Diagnostic Feedback",
+                "Guides Real Time Model Self Healing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi tool gateways route parallel queries across banking services.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Emitter",
+                "Granular Distributed Spans Across Calls",
+                "Real Time Observability And Monitoring"
+              ],
+              [
+                "Role Based Access Guard",
+                "Validate Identity Tokens And Scopes",
+                "Enforces Strict Tenant Data Boundaries"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a modular Python class with asynchronous dispatching and tracing.",
+            "rows": [
+              [
+                "Synthetic Chaos Runner",
+                "Automated Fault Injection Stress Testing",
+                "Certifies Production Readiness Under Load"
+              ],
+              [
+                "Enterprise Service SLA",
+                "Sub Second Parallel Execution Guarantee",
+                "Maintains High Availability Platform SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
