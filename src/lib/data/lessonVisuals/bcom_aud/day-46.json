@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 46,
+  "entries": [
+    {
+      "partTitle": "Auditing the Five-Step Revenue Model under ASC 606 / IFRS 15 & Multi-Element Contracts",
+      "codeHash": "e83794b1355935c4b7581db14f05e090bce359c9e323a4a66dbbdba661f278b3",
+      "spec": {
+        "template": "funnel",
+        "title": "Auditing the Five-Step Revenue Model u... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi-element customer contracts evaluated under statutory standards.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Bifurcating distinct performance deliverables across the contract.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Allocating consideration based on relative standalone selling prices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Appropriate deferral of service revenues preserving reporting rigor.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sales Cut-Off Testing, Shipping Terms (FOB) & Channel Stuffing / Bill-and-Hold Irregularities",
+      "codeHash": "1ef502e82b08a553921544618b727379d86ae45d5491a2c40a704d8ca0cb809f",
+      "spec": {
+        "template": "funnel",
+        "title": "Sales Cut-Off Testing, Shipping Terms ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Dual-direction shipping cut-off procedures executed across year-end.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Inspecting carrier bills of lading and electronic dispatch stamps.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Identifying premature billing on shipments prior to destination.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Derecognition of unearned sales entries correcting trade receivables.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gross vs. Net Revenue Auditing: Principal vs. Agent Indicators in Digital & Platform Models",
+      "codeHash": "d4433b9ef38f8a1e24231ee095a1814f897bf3ab65779d455617c516af08365d",
+      "spec": {
+        "template": "funnel",
+        "title": "Gross vs. Net Revenue Auditing: Princi... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Third-party customer accounts selected for direct verification.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Positive confirmation requests dispatched to major trade debtors.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Alternative procedures validating subsequent cash receipts in bank.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trade receivable balances verified through independent confirmations.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantive Testing of Accounts Receivable, Unbilled Contract Assets & CECL / IFRS 9 Allowances",
+      "codeHash": "37e8c47274fdf98729f09d2eda8ef9d73bf45cbceb3351bc613155b30ac23cdf",
+      "spec": {
+        "template": "funnel",
+        "title": "Substantive Testing of Accounts Receiv... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Current expected credit loss econometric models scrutinized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating lifetime default probabilities and economic forecasts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Auditor model identifying reserve shortfall across trade balances.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Statutory credit loss allowances fully booked in financial ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Substantive Revenue & Receivables Audit Simulator",
+      "codeHash": "c1c4fa630e566f3e23daa4e03dd5dac55cb052da3064193e1e617cf3bf32260e",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Substantive Revenue & Re... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Automated substantive revenue testing engine launched across ledgers.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Ingesting transaction populations across enterprise resource systems.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quantifying aggregate cut-off and standalone price misstatements.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Proposed revenue audit adjustments compiled for governance review.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
