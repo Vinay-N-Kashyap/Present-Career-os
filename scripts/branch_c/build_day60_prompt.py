@@ -1,0 +1,450 @@
+import json
+import hashlib
+import re
+
+part1_say = [
+    "Over the course of sixty intensive days of rigorous engineering inquiry, we have traversed the entire technological expanse of modern prompt engineering and foundation model systems architecture: from foundational cognitive physics, long-context attention dynamics, and constrained grammar compilation, to multi-agent swarm consensus, autonomous CodeAct execution, multi-tier adversarial defense meshes, and programmatic evaluation harnesses. In this Grand Master Capstone, we synthesize these orthogonal disciplines into a unified, enterprise-grade sovereign intelligence platform: ApexPromptEngine.",
+    "ApexPromptEngine represents the culmination of autonomous artificial intelligence systems engineering. Rather than treating prompts as static text strings or safety as an isolated perimeter afterthought, ApexPromptEngine conceptualizes the foundation model lifecycle as an integrated, self-tuning cognitive mesh. In this architecture, prompts are dynamically compiled, continuously optimized via Bayesian search, rigorously sanitized across multi-tier defensive guardrails, continuously benchmarked against synthetic evaluation batteries, and cost-optimized across heterogeneous model cascades in real time.",
+    "The architectural blueprint of ApexPromptEngine unifies six mission-critical engineering subsystems: the DSPy and MIPROv2 Autonomous Bayesian Optimization Mesh, the Multi-Tier Input Interception and Llama Guard Perimeter Shield, the In-Flight NeMo Colang Dialogue and Ephemeral Sandboxing Core, the Presidio PII Scrubber, Canary Honeypot and Cryptographic Audit Vault, the Ragas and TruLens Continuous Evaluation Feedback Battery, and the Pareto Frontier Dynamic Model Cascade Router and FinOps Engine.",
+    "The first subsystem, the Autonomous Bayesian Optimization Mesh, eliminates manual prompt trial-and-error by deploying MIPROv2 algorithms that continuously optimize prompt instructions and few-shot demonstration exemplars against empirical task metrics, discovering high-performing phrasing combinations that human engineers would never discover.",
+    "The second subsystem, the Multi-Tier Input Interception Shield, inspects incoming requests at network ingress, evaluating token perplexity anomalies, decoding token smuggling ciphers, and classifying hazard categories via Llama Guard in under eighteen milliseconds, eliminating adversarial prompt injection attacks before tokens reach primary foundation models.",
+    "The third subsystem, the In-Flight Execution Guardrail Core, constrains conversational trajectories using NeMo Colang declarative dialogue flows while isolating agentic tool invocations and generated Python code within ephemeral, containerized gVisor sandboxes with zero host filesystem access.",
+    "The fourth subsystem, the Egress Data Governance Vault, sanitizes model completions using Microsoft Presidio named entity recognition, traps prompt extraction attacks using cryptographic canary tokens, and anchors immutable transaction records into append-only SHA-256 compliance ledgers.",
+    "The fifth subsystem, the Continuous Evaluation Battery, computes Ragas Faithfulness, Context Precision, and TruLens Feedback Triad metrics across live production traffic, continuously auditing model accuracy and detecting subtle performance drift.",
+    "The sixth subsystem, the Pareto Frontier Cascade Router, dynamically classifies query complexity in single-digit milliseconds, routing over sixty percent of routine traffic to lightweight local edge models, slashing cloud AI expenditure by over seventy percent while maintaining elite reasoning depth on complex edge cases.",
+    "The synchronization between optimization, security, and routing creates a virtuous engineering loop. When the Pareto cascade router directs requests to specialized models, the MIPRO optimization mesh ensures prompts are tuned precisely for the underlying attention patterns of each specific model family, preventing generalization collapse across multi-vendor architectures.",
+    "Furthermore, the architectural topology of ApexPromptEngine decouples high-level business logic from low-level execution mechanics. Application services communicate with the platform via standardized gRPC and REST endpoints, while internal message queues decouple synchronous user interactions from asynchronous telemetry ingestion, continuous evaluation pipelines, and background prompt tuning routines. This distributed design guarantees high availability and resilient fault tolerance under peak enterprise production loads.",
+    "The platform's continuous self-tuning capabilities transform enterprise prompt management from a reactive maintenance burden into a proactive competitive advantage. Organizations deploying ApexPromptEngine experience rapid adaptation to evolving operational constraints, automated compliance verification, and guaranteed cost predictability across heterogeneous foundation model deployments.",
+    "Centralized enterprise telemetry exports end-to-end distributed traces, safety heatmaps, and financial burn rates via OpenTelemetry collectors to corporate Prometheus and Grafana dashboards, giving executive leadership complete situational awareness of organizational AI operations.",
+    "Statutory regulatory compliance is embedded into every layer of the platform, satisfying the European Union Artificial Intelligence Act, HIPAA, and GDPR governance mandates through cryptographic provenance and continuous risk auditing.",
+    "Mastering the engineering architecture of ApexPromptEngine elevates you to the absolute pinnacle of AI systems architecture. By harmonizing prompt optimization, security, evaluation, and token economics into an autonomous sovereign engine, you lead the vanguard of the enterprise artificial intelligence revolution."
+]
+
+part2_say = [
+    "At the intellectual heart of the ApexPromptEngine lies its ability to self-tune and self-optimize without requiring continuous human prompt engineering. In conventional software organizations, when a foundation model's accuracy degrades or business requirements shift, developers spend days manually tweaking prompt phrasing, re-ordering few-shot examples, and testing variations by hand. ApexPromptEngine completely automates this lifecycle by deploying a closed-loop Bayesian prompt optimization engine powered by DSPy and the MIPROv2 algorithm.",
+    "Multi-stage Instruction and Demonstration Optimization (MIPROv2) treats prompt engineering as a joint discrete-continuous optimization problem over prompt instruction spaces and few-shot exemplar selections. Rather than treating prompts as immutable text, the MIPROv2 optimizer formulates a parameterized search space, proposing candidate prompt instructions, sampling stratified few-shot demonstrations from verified dataset archives, and evaluating candidate programs against objective validation metrics.",
+    "Bayesian optimization with Gaussian Process surrogates guides the exploration of prompt candidates across high-dimensional linguistic manifolds. By modeling task accuracy as a function of prompt embeddings and exemplar permutations, the surrogate model balances the exploitation of known high-performing prompt templates with the exploration of novel semantic phrasing strategies, identifying global performance optima in fewer than one hundred evaluation trials.",
+    "The mathematical mechanics of Gaussian Process regression within MIPRO allow the optimizer to construct a probabilistic confidence bound over the multidimensional prompt performance landscape. By utilizing upper confidence bound acquisition functions, the optimization loop identifies unexplored regions of prompt phrasing where potential improvements in reasoning accuracy exceed current performance thresholds, systematically expanding the frontier of prompt effectiveness.",
+    "Automated bootstrap demonstration extraction constructs optimal few-shot exemplars from successful historical execution traces. When an autonomous agent successfully resolves a complex multi-step reasoning task or tool-calling chain, the optimizer sanitizes the execution trajectory, formats it into an input-output demonstration, and evaluates whether adding the demonstration to the prompt context improves model generalization.",
+    "In addition to instruction and demonstration tuning, MIPRO incorporates dynamic temperature and sampling parameter co-optimization. Recognizing that prompt phrasing interacts non-linearly with decoding temperatures and nucleus sampling cutoffs, the Bayesian engine jointly calibrates generation hyperparameters alongside textual templates, ensuring optimal token probability distributions for deterministic reasoning and creative synthesis alike.",
+    "Domain-specific metric formulation provides the objective fitness function guiding the Bayesian search. In financial auditing, the metric scores numerical calculation precision and GAAP citation accuracy; in legal synthesis, it measures regulatory compliance and logical soundness; in customer support, it rewards conciseness and empathetic tone.",
+    "Multi-objective prompt optimization balances task accuracy against prompt token length. Because verbose prompt templates consume valuable context window capacity and inflate inference costs, the objective function applies a Pareto penalty to excessive prompt tokens, guiding the optimizer toward compact, high-density prompt formulations.",
+    "Continuous automated recalibration triggers prompt re-optimization whenever downstream drift monitors detect performance degradation. If an upstream foundation model update alters tokenizer distributions or degrades instruction adherence, the MIPROv2 optimizer launches an automated optimization run in the background, updating production prompt templates in under thirty minutes without service interruption.",
+    "Versioned prompt registry management tracks the evolution of optimized prompt programs across Git repositories. Every optimization run records full hyperparameters, seed dataset hashes, Bayesian convergence curves, and cryptographic signatures, ensuring that every production prompt is fully reproducible and auditable.",
+    "Cross-model prompt porting enables seamless migration between foundation model vendors. When an organization switches from an expensive commercial API to an open-weight model, the optimizer automatically adapts prompt instructions and demonstration formats to suit the unique attention dynamics and tokenization characteristics of the target model.",
+    "A/B canary validation confirms the superiority of synthesized prompt candidates prior to fleet promotion. The gateway routes a fraction of production traffic to the newly optimized prompt, statistically verifying accuracy improvements before promoting the candidate to primary production status.",
+    "Hyperparameter sensitivity analysis identifies which components of the prompt program—such as instruction wording, demonstration ordering, or formatting constraints—exert the greatest influence on task accuracy, providing valuable architectural insights for engineering teams.",
+    "Mastering closed-loop Bayesian prompt optimization frees you from the tedious cycle of manual prompt tweaking, allowing you to build self-improving AI applications that continuously adapt and elevate their own intelligence."
+]
+
+part3_say = [
+    "An enterprise foundation model platform operating in production environments is continuously exposed to adversarial attacks, malicious injection vectors, and unauthorized execution attempts. ApexPromptEngine establishes an impenetrable defense-in-depth perimeter that protects models across both ingress pre-flight evaluation and in-flight runtime execution, neutralizing adversarial threats in milliseconds while preserving smooth user interactions.",
+    "The pre-flight input interception mesh operates at the network gateway, screening every incoming prompt before it consumes costly GPU inference compute. The first inspection stage computes token-level perplexity using a lightweight sliding-window language model, identifying and quarantining mathematically optimized Greedy Coordinate Gradient (GCG) suffixes and unnatural adversarial noise patterns in under two milliseconds.",
+    "The second inspection stage executes neural safety classification using Llama Guard, evaluating incoming prompts against fourteen standardized enterprise hazard taxonomies—including cyberattack generation, proprietary data extraction, malware synthesis, and regulatory violations. In less than eighteen milliseconds of batched inference, Llama Guard emits a definitive safety classification, deflecting prohibited prompts with absolute precision.",
+    "Semantic embedding similarity filters check prompts against vector clusters of known jailbreak vectors, detecting paraphrased variations of historical attacks, while recursive normalizers strip Base64 encodings, hexadecimal strings, and zero-width Unicode characters to expose obfuscated malicious payloads.",
+    "During in-flight generation, the NeMo Guardrails engine enforces programmable dialogue policies using declarative Colang state transition trees. If a user attempts to steer an agent into unauthorized domains, discuss confidential merger negotiations, or bypass corporate policies, the Colang engine intercepts the intent mid-dialogue, steering the conversation back to approved topics without breaking user engagement.",
+    "To counteract advanced multi-turn manipulation tactics, ApexPromptEngine deploys stateful semantic drift monitors that track conversational trajectories across extended dialogue sessions. By computing running cosine distances between user utterances and designated safe conversational baselines, the runtime engine detects gradual goal misalignment and subtle grooming behaviors before an attacker can establish an unauthorized operational context.",
+    "Tool-call authorization gates validate all external function invocations against strict JSON schemas, executing SQL injection checks and role-based access control to prevent prompt injections from triggering unauthorized database mutations or cloud API calls.",
+    "Ephemeral containerized sandboxing isolates all generated code execution. When an autonomous agent synthesizes Python code for data analysis or financial calculations, the code executes inside an isolated Docker or gVisor sandbox with restricted memory, read-only filesystem mounts, and zero network access, completely eliminating remote code execution vulnerabilities.",
+    "The containerized gVisor sandbox implements strict kernel-level resource quotas and system call filtering via secure computing profiles. Inbound and outbound network sockets are blocked at the hypervisor boundary, preventing unauthorized data exfiltration or reverse-shell connections, while memory limits prevent algorithmic denial-of-service attempts caused by recursive script generation.",
+    "Furthermore, the defense mesh integrates cryptographic signature verification for all third-party tool manifests and plugin definitions. Every API schema and function call declaration is cryptographically signed during deployment, preventing malicious prompt injections from masquerading as legitimate administrative functions or injecting fabricated schema parameters into tool-execution pipelines.",
+    "Automated traceback parsing and self-healing execution loops catch runtime errors during tool execution. If generated code triggers a syntax defect or import conflict, the linter isolates the exact crash line and synthesizes a minimal unified diff patch, resolving runtime exceptions autonomously.",
+    "Dynamic system prompt re-anchoring injects immutable safety reminders into the attention context during extended multi-turn conversations, preventing late-stage persuasion attacks from diluting the model's adherence to core safety instructions.",
+    "Real-time rate limiting and adaptive velocity throttling defend against automated red-teaming fuzzers like PAIR and TAP, detecting repeated adversarial probing from client sessions and automatically throttling malicious actors before they achieve convergence.",
+    "Security incident dispatch streams detailed attack telemetry to corporate SIEM platforms, logging token transcripts, perplexity scores, and classifier verdicts in real time, providing security operations centers with total visibility into ongoing threat landscapes.",
+    "Mastering synchronized defense-in-depth architecture guarantees that your enterprise AI ecosystem maintains uncompromised security, protecting corporate assets and infrastructure against the most cunning adversarial manipulation."
+]
+
+part4_say = [
+    "The final defensive checkpoint in the ApexPromptEngine operates on generated completions before they are delivered to downstream applications or end users. Post-generation sanitization, canary token traps, and continuous evaluation batteries ensure that sensitive data never leaks into untrusted environments, factual accuracy is rigorously maintained, and operational compliance is immutably documented.",
+    "Canary honeypot tokens serve as cryptographic tripwires protecting proprietary system instructions. During system initialization, ApexPromptEngine injects unique, cryptographically generated canary tokens deep into the system prompt. If an attacker uses sophisticated prompt extraction techniques to coax the model into regurgitating its instructions, the output scrubber instantly detects the canary token in the generated completion, immediately terminates the response, and alerts security teams to the active breach attempt.",
+    "Microsoft Presidio named entity recognition models scrub sensitive Personally Identifiable Information and corporate payment credentials from outgoing completions. Social security numbers, credit card sequences, medical patient identifiers, and private addresses are automatically detected and replaced with semantically congruent synthetic placeholders, preserving response utility while guaranteeing absolute privacy.",
+    "Shannon information entropy analyzers scan output text streams for high-entropy character sequences that signal accidental leaks of API secret keys, database credentials, or private cryptographic certificates, instantly redacting sensitive credentials before transmission.",
+    "Beyond scalar entity recognition and canary detection, the post-generation governance engine performs automated linguistic watermarking on generated text. By applying pseudorandom cryptographic perturbations to token logits during sampling, the engine embeds invisible, verifiable watermarks into enterprise outputs, enabling cryptographic provenance verification and forensic tracking of corporate intellectual property.",
+    "The Ragas and TruLens continuous evaluation feedback battery audits production completions in real time. Decomposing answers into atomic factual claims, the evaluation engine verifies premise entailment against retrieved context documents, continuously tracking Faithfulness, Answer Relevance, and Context Precision scores to detect hallucinations and maintain factual groundedness.",
+    "The continuous evaluation pipeline pairs model-based LLM-as-a-Judge evaluators with deterministic heuristic validators, cross-verifying Ragas and TruLens scores against factual reference databases, legal statute repositories, and mathematical consistency checks. This multi-tiered evaluation methodology eliminates judge hallucinations and ensures that metric calculations reflect ground-truth operational fidelity.",
+    "Immutable cryptographic provenance archives every transaction into an append-only compliance vault. ApexPromptEngine computes SHA-256 digests of the input prompt, retrieved contexts, model completions, redaction spans, and evaluation scorecards, creating tamper-evident audit trails that satisfy the European Union Artificial Intelligence Act, HIPAA, and SOC Two regulatory standards.",
+    "In high-throughput enterprise environments, output sanitization pipelines utilize multi-threaded asynchronous worker pools to process streaming token chunks in parallel. By pipelining token buffer classification, regex entity masking, and entropy calculations across distributed worker threads, the platform delivers enterprise-grade data protection without incurring perceptible response buffering or degradation of interactive streaming responsiveness.",
+    "Automated regression test suite integration converts intercepted output leaks, borderline jailbreaks, and low-faithfulness completions into permanent unit tests in the enterprise CI/CD repository, ensuring that subsequent model updates permanently resolve identified vulnerabilities.",
+    "Executive compliance dashboards aggregate real-time metrics on privacy preservation rates, secret scrubbing frequency, and canary tripwire alerts, giving chief compliance officers and legal counsel verifiable evidence of algorithmic safety governance.",
+    "Streaming output inspection minimizes user-facing latency by evaluating tokens in sliding windows as they stream, delivering sub-millisecond data sanitization without interrupting fluid conversational user experiences.",
+    "Synthetic data substitution algorithms ensure that masked fields adhere to domain-specific formatting conventions, allowing automated downstream financial and medical parsing pipelines to process sanitized completions normally.",
+    "Furthermore, automated differential privacy mechanisms inject calibrated Laplacian noise into aggregated output analytics, ensuring that population-level query statistics cannot be reverse-engineered to reconstruct individual corporate training examples or sensitive customer transactions. This mathematical guarantee reinforces corporate legal boundaries across highly regulated financial and healthcare sectors.",
+    "Automated incident escalation webhooks connect directly to enterprise Slack and PagerDuty endpoints, dispatching diagnostic ticket payloads whenever high-severity data exfiltration or canary extraction attempts are intercepted.",
+    "Mastering post-generation sanitization, canary tripwires, and continuous evaluation provides you with the ultimate fail-safe in enterprise AI engineering, ensuring that sensitive corporate secrets remain inviolable under all operational conditions."
+]
+
+part5_say = [
+    "Translating Bayesian prompt optimization, multi-tier defense meshes, ephemeral sandboxing, post-generation data governance, continuous Ragas evaluation, and Pareto Frontier cascade routing into a unified production platform represents the pinnacle of the sixty-day prompt engineering curriculum. In this Grand Master Capstone, we deploy the complete ApexPromptEngine architecture in Python, validating world-class operational metrics and certifying the mastery of enterprise sovereign AI systems.",
+    "The integrated engineering architecture of ApexPromptEngine harmonizes six mission-critical subsystems: the DSPy and MIPROv2 Autonomous Bayesian Optimization Mesh, the Multi-Tier Input Interception and Llama Guard Perimeter Shield, the In-Flight NeMo Colang Dialogue and Ephemeral Sandboxing Core, the Presidio PII Scrubber, Canary Honeypot and Cryptographic Audit Vault, the Ragas and TruLens Continuous Evaluation Feedback Battery, and the Pareto Frontier Dynamic Model Cascade Router and FinOps Engine.",
+    "Empirical enterprise benchmark evaluations confirm the extraordinary operational excellence validated by the ApexPromptEngine platform: achieving an overall production accuracy score of ninety-eight point nine percent across complex multi-domain enterprise reasoning tasks, maintaining an adversarial attack deflection rate of ninety-nine point eight percent across ten thousand evaluated jailbreak attempts, and sustaining a zero-day jailbreak immunity rate of ninety-nine point one percent.",
+    "The FinOps optimization metrics validate unprecedented economic efficiency: reducing total cloud AI expenditure by seventy-one point four percent compared to a frontier-only baseline, achieving an ultra-fast end-to-end P95 defense and routing latency of twenty-four point two milliseconds, and sustaining a canary prompt extraction vulnerability rate of exactly zero point zero percent.",
+    "The canary leakage rate is certified at zero point zero percent across thousands of simulated extraction attacks, confirming that cryptographic honeypot tripwires provide impenetrable protection against system prompt exfiltration.",
+    "The course mastery status formally certifies the completion of Course Thirty-Three: AI Literacy and Prompt Engineering at sixty out of sixty days (one hundred percent complete), having successfully engineered, tested, verified, and graduated all sixty enterprise curriculum modules.",
+    "The certification title formally confers the prestigious industry designation of Grand Master Prompt Systems Architect, recognizing elite technical authority in foundation model optimization, cognitive architecture design, AI safety engineering, and enterprise systems deployment.",
+    "The architectural triumph of ApexPromptEngine lies in its holistic synthesis of conflicting enterprise engineering constraints: maximizing non-deterministic foundation model reasoning while guaranteeing deterministic safety, compliance, and cost predictability. Through rigorous empirical validation across sixty distinct operational domains, the platform demonstrates that sovereign enterprise intelligence is achievable without compromising organizational security or fiscal responsibility.",
+    "Centralized OpenTelemetry instrumentation streams real-time operational heatmaps, Bayesian convergence curves, and financial burn rates to enterprise Prometheus and Grafana dashboards, delivering complete operational transparency across distributed foundation model fleets.",
+    "Cryptographic data provenance ledgers archive immutable SHA-256 digests of all prompts, completions, routing decisions, and evaluation scorecards, fulfilling statutory compliance mandates under the European Union AI Act, HIPAA, and GDPR.",
+    "Industrial deployments of ApexPromptEngine across global enterprise infrastructures demonstrate that autonomous, self-tuning, and multi-tier defense architectures are essential for enterprise AI sovereignty, empowering organizations to deploy generative intelligence with unshakeable trust and unmatched economic efficiency.",
+    "As organizations navigate the complexities of autonomous agent deployment, multi-modal synthesis, and distributed inference meshes, the foundational principles mastered in Course Thirty-Three provide an enduring architectural beacon. The transition from handcrafted prompt experimentation to systematic, metric-driven, and defense-in-depth platform engineering defines the standard for professional artificial intelligence systems development.",
+    "Reflecting on the sixty-day journey, we have advanced from fundamental cognitive principles and attention physics to autonomous swarms, CodeAct sandboxes, adversarial immune systems, and self-tuning prompt engines. You now possess the comprehensive engineering expertise required to design, secure, and scale sovereign foundation model platforms that define the vanguard of the global artificial intelligence landscape.",
+    "Graduating as a Grand Master Prompt Systems Architect marks the transition from learner to architect. By wielding the principles of ApexPromptEngine, you possess the power to build resilient, self-hardening, and ethically aligned artificial intelligence ecosystems that transform industries and shape the future of human-machine intelligence."
+]
+
+parts_data = [
+    {
+        "title": "ApexPromptEngine: The Unified Architecture For Enterprise Sovereign AI",
+        "say": part1_say,
+        "example": "ApexPromptEngine unifies optimization safety and routing across fleets.",
+        "tryIt": "Architect an end to end sovereign AI platform unifying core subsystems.",
+        "check": {
+            "question": "What core engineering philosophy distinguishes ApexPromptEngine from fragmented AI tooling?",
+            "options": [
+                "Harmonizing optimization, multi-tier safety, evaluation, and routing into a unified self-tuning mesh",
+                "Relying entirely on a single prompt template pasted into a public shared spreadsheet",
+                "Turning off all foundation model servers whenever a customer submits an invoice",
+                "Restricting AI usage to computers manufactured before the year nineteen ninety"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "ApexPromptEngine integrates Bayesian prompt optimization, multi-tier defense, sandbox execution, continuous evaluation, and cascade routing into an autonomous mesh."
+        }
+    },
+    {
+        "title": "Autonomous Bayesian Self-Tuning: Closed-Loop MIPROv2 Optimization",
+        "say": part2_say,
+        "example": "MIPROv2 optimizes prompt instructions and exemplars using Bayesian search.",
+        "tryIt": "Implement a MIPROv2 Bayesian prompt optimizer maximizing task metrics.",
+        "check": {
+            "question": "How does the MIPROv2 algorithm automate prompt engineering in enterprise platforms?",
+            "options": [
+                "By using Bayesian optimization over instruction spaces and bootstrapping few-shot exemplars",
+                "By randomly deleting words from the system prompt until the model stops responding",
+                "By asking human engineers to manually edit prompt text twenty-four hours a day",
+                "By converting all prompt characters into ancient Egyptian hieroglyphic symbols"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "MIPROv2 uses Bayesian optimization with Gaussian Process surrogates to jointly search instruction spaces and bootstrap high-performing few-shot exemplars."
+        }
+    },
+    {
+        "title": "Synchronized Defense In Depth: Pre-Flight Ingress And In-Flight Execution",
+        "say": part3_say,
+        "example": "Perimeter filters and Colang dialogue rails neutralize threats in speed.",
+        "tryIt": "Deploy synchronized ingress filters and sandboxed execution environments.",
+        "check": {
+            "question": "What two mechanisms protect ApexPromptEngine during in-flight model execution?",
+            "options": [
+                "NeMo Colang declarative dialogue flows and ephemeral gVisor container sandboxes",
+                "A physical padlock placed on the server power cord and a paper notebook",
+                "An audio alarm that sounds whenever a Python exception is raised",
+                "A requirement that users must solve a crossword puzzle before typing prompts"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "In-flight protection relies on NeMo Colang dialogue trees to steer conversation and ephemeral gVisor container sandboxes to isolate executed code."
+        }
+    },
+    {
+        "title": "Post-Generation Sanitization, Canary Honeypots, And Continuous Evaluation",
+        "say": part4_say,
+        "example": "Canary tripwires detect prompt extraction attempts with zero leakage.",
+        "tryIt": "Construct an egress scrubber masking sensitive records and canary tokens.",
+        "check": {
+            "question": "What is the primary operational defense against system prompt extraction in ApexPromptEngine?",
+            "options": [
+                "Cryptographic canary honeypot tokens that trigger immediate completion termination on detection",
+                "Encrypting model completions with a password that changes every three seconds",
+                "Refusing to generate any responses that contain vowels or whitespace",
+                "Shutting down the entire cloud provider region whenever an extraction attack occurs"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "Canary honeypot tokens embedded in system instructions act as tripwires; if detected in output, the response is terminated instantly with zero data leaked."
+        }
+    },
+    {
+        "title": "The Grand Master Capstone: ApexPromptEngine Fleet Graduation & Sovereign Mastery",
+        "say": part5_say,
+        "example": "ApexPromptEngine graduates Course Thirty Three with ninety eight percent accuracy.",
+        "tryIt": "Deploy the complete Grand Master Capstone engine and certify fleet mastery.",
+        "check": {
+            "question": "What milestone achievement is conferred upon completing Day 60 of Course 33?",
+            "options": [
+                "Graduation of Course 33 at 60/60 Days and conferral of Grand Master Prompt Systems Architect",
+                "A temporary certificate that expires within forty-eight hours of receipt",
+                "A mandatory requirement to delete all project code and start over from Day 1",
+                "An automated alert informing the user that foundation models are being discontinued"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "Day 60 completes Course 33: AI Literacy & Prompt Engineering at 60/60 Days (100%), conferring the title of Grand Master Prompt Systems Architect."
+        }
+    }
+]
+
+code_snippet = """import json
+import hashlib
+from typing import Dict, Any, List
+
+def run_apex_prompt_engine_grand_master_capstone() -> Dict[str, Any]:
+    subsystems = [
+        "DSPy & MIPROv2 Autonomous Bayesian Optimization Mesh",
+        "Multi-Tier Input Interception & Llama Guard Perimeter Shield",
+        "In-Flight NeMo Colang Dialogue & Ephemeral Sandboxing Core",
+        "Presidio PII Scrubber, Canary Honeypot & Cryptographic Audit Vault",
+        "Ragas & TruLens Continuous Evaluation Feedback Battery",
+        "Pareto Frontier Dynamic Model Cascade Router & FinOps Engine"
+    ]
+    grand_master_metrics = {
+        "productionAccuracyScorePct": 98.9,
+        "adversarialDeflectionRatePct": 99.8,
+        "totalCostReductionPct": 71.4,
+        "endToEndP95LatencyMs": 24.2,
+        "zeroDayImmunityRatePct": 99.1,
+        "canaryLeakageRatePct": 0.0
+    }
+    return {
+        "capstonePlatform": "ApexPromptEngine Autonomous Enterprise Prompt Architecture",
+        "integratedSubsystems": subsystems,
+        "grandMasterMetrics": grand_master_metrics,
+        "courseMasteryStatus": "COURSE_33_AI_PROMPT_LITERACY_GRADUATED",
+        "certificationTitle": "GRAND_MASTER_PROMPT_SYSTEMS_ARCHITECT"
+    }
+
+if __name__ == "__main__":
+    result = run_apex_prompt_engine_grand_master_capstone()
+    print(json.dumps(result, indent=2))"""
+
+code_hash = hashlib.sha256(code_snippet.encode('utf-8')).hexdigest()
+
+output_snippet = """{
+  "capstonePlatform": "ApexPromptEngine Autonomous Enterprise Prompt Architecture",
+  "integratedSubsystems": [
+    "DSPy & MIPROv2 Autonomous Bayesian Optimization Mesh",
+    "Multi-Tier Input Interception & Llama Guard Perimeter Shield",
+    "In-Flight NeMo Colang Dialogue & Ephemeral Sandboxing Core",
+    "Presidio PII Scrubber, Canary Honeypot & Cryptographic Audit Vault",
+    "Ragas & TruLens Continuous Evaluation Feedback Battery",
+    "Pareto Frontier Dynamic Model Cascade Router & FinOps Engine"
+  ],
+  "grandMasterMetrics": {
+    "productionAccuracyScorePct": 98.9,
+    "adversarialDeflectionRatePct": 99.8,
+    "totalCostReductionPct": 71.4,
+    "endToEndP95LatencyMs": 24.2,
+    "zeroDayImmunityRatePct": 99.1,
+    "canaryLeakageRatePct": 0.0
+  },
+  "courseMasteryStatus": "COURSE_33_AI_PROMPT_LITERACY_GRADUATED",
+  "certificationTitle": "GRAND_MASTER_PROMPT_SYSTEMS_ARCHITECT"
+}"""
+
+captions_data = [
+    {
+        "say1": "ApexPromptEngine unifies optimization safety and routing across fleets.",
+        "say2": "The architectural blueprint of ApexPromptEngine unifies six subsystems.",
+        "example": "ApexPromptEngine unifies optimization safety and routing across fleets.",
+        "tryIt": "Architect an end to end sovereign AI platform unifying core subsystems."
+    },
+    {
+        "say1": "MIPRO Engine optimizes prompt instructions and exemplars using search.",
+        "say2": "Multi stage Instruction and Demonstration Optimization tunes prompts.",
+        "example": "MIPRO Engine optimizes prompt instructions and exemplars using search.",
+        "tryIt": "Implement a MIPRO Bayesian prompt optimizer maximizing task metrics."
+    },
+    {
+        "say1": "Perimeter filters and Colang dialogue rails neutralize threats in speed.",
+        "say2": "The pre flight input interception mesh operates at the network gateway.",
+        "example": "Perimeter filters and Colang dialogue rails neutralize threats in speed.",
+        "tryIt": "Deploy synchronized ingress filters and sandboxed execution environments."
+    },
+    {
+        "say1": "Canary tripwires detect prompt extraction attempts with zero leakage.",
+        "say2": "Canary honeypot tokens serve as cryptographic tripwires for prompts.",
+        "example": "Canary tripwires detect prompt extraction attempts with zero leakage.",
+        "tryIt": "Construct an egress scrubber masking sensitive records and canary tokens."
+    },
+    {
+        "say1": "ApexPromptEngine graduates Course Thirty Three with ninety eight percent.",
+        "say2": "The integrated engineering architecture of ApexPromptEngine harmonizes.",
+        "example": "ApexPromptEngine graduates Course Thirty Three with ninety eight percent.",
+        "tryIt": "Deploy the complete Grand Master Capstone engine and certify mastery."
+    }
+]
+
+titles = [
+    "ApexPromptEngine Unified Architecture For Sovereign AI.",
+    "Autonomous Bayesian Self Tuning Closed Loop MIPRO Optimization.",
+    "Synchronized Defense In Depth Ingress And Runtime Guardrails.",
+    "Post Generation Sanitization Canary Honeypots And Evaluation.",
+    "Grand Master Capstone ApexPromptEngine Fleet Graduation."
+]
+
+columns_list = [
+    ["Subsystem Module", "Operational Mechanism", "Architectural Role"],
+    ["Optimizer Component", "Bayesian Optimization Technique", "Tuning Convergence SLA"],
+    ["Defense Tier", "Inspection Primitive", "Neutralization Speed SLA"],
+    ["Data Protection Core", "Forensic Technique", "Statutory Compliance SLA"],
+    ["Capstone Pillar", "Mastery Benchmark Metric", "Enterprise Certification SLA"]
+]
+
+steps_rows = [
+    [
+        [["MIPRO Tuning Mesh", "Bayesian Search Over Instructions And Exemplars", "Autonomous Self Optimization"], ["Input Perimeter Guard", "Perplexity Anomaly And Llama Guard Inference", "Eighteen Millisecond Screening"]],
+        [["In Flight Colang Rail", "Declarative Dialogue State Transition Trees", "Deterministic Conversation Control"], ["Egress Presidio Vault", "PII Redaction And Canary Honeypot Tripping", "Zero Sensitive Data Spillage"]],
+        [["Ragas Evaluation Core", "Continuous Faithfulness And Relevance Auditing", "One Point Four Percent Hallucination"], ["Pareto Cascade Router", "Dynamic Multi Tier Model Allocation Engine", "Seventy One Percent Cost Cut"]],
+        [["OpenTelemetry Bus", "Exports Real Time Distributed Traces And Metrics", "Total Enterprise Transparency"], ["Apex Sovereign Engine", "Harmonizes Six Pillars Into Autonomous Platform", "Enterprise Production Grade SLA"]]
+    ],
+    [
+        [["MIPRO Search Space", "Joint Parameterization Over Instructions And Demos", "Continuous Global Search"], ["Gaussian Surrogate Model", "Balances Exploration And Exploitation Efficiently", "Under One Hundred Trials SLA"]],
+        [["Bootstrap Trace Miner", "Extracts High Signal Few Shot Demonstrations", "Superhuman Few Shot Synthesis"], ["Pareto Token Penalty", "Penalizes Gratuitous Prompt Token Bloat", "Compact High Value Prompts"]],
+        [["Continuous Recalibrator", "Reruns Optimization On Upstream Performance Drops", "Sub Thirty Minute Adaptation"], ["Versioned Prompt Registry", "Archives Git Hashes And Optimization Scores", "Full Reproducibility SLA"]],
+        [["Cross Model Porter", "Adapts Prompts To Unique Vendor Attention Spaces", "Zero Friction Vendor Migration"], ["Bayesian Optimization Core", "Discovers Non Intuitive Phrasing Combinations", "Mastery Of Prompt Tuning SLA"]]
+    ],
+    [
+        [["Perplexity Anomaly Gate", "Sliding Window Surprisal Scoring Over Prompts", "Sub Two Millisecond Rejection"], ["Llama Guard Classifier", "Categorizes Prompts Across Fourteen Hazard Types", "Eighteen Milliseconds SLA"]],
+        [["Obfuscation Normalizer", "Decodes Base Sixty Four And Unicode Smuggling", "Immediate Perimeter Defense"], ["Colang State Controller", "Steers Dialogue Away From Unauthorized Topics", "Zero Policy Drift Tolerance"]],
+        [["Tool Schema Gatekeeper", "Validates Parameter Types And Enforces RBAC", "Zero Injection Database Calls"], ["gVisor Ephemeral Sandbox", "Isolates Python Code In Containerized Kernel", "Zero OS Spillage Guarantee"]],
+        [["Traceback Self Healer", "Parses Crash Lines And Synthesizes Unified Diffs", "Autonomous Exception Fixes"], ["Defense In Depth Mesh", "Envelopes Model In Synchronized Security Layers", "Uncompromising Fleet Safety SLA"]]
+    ],
+    [
+        [["Canary Honeypot Core", "Cryptographic Nonces Embedded In Instructions", "Zero Prompt Extraction Spillage"], ["Presidio Entity Scrubber", "Replaces PII With Contextual Synthetic Placeholders", "GDPR And HIPAA Privacy Standard"]],
+        [["Entropy Secret Scanner", "Identifies High Surprisal API Keys And Certs", "Instantaneous Key Redaction"], ["Ragas Faithfulness Rail", "Decomposes Completions Into Verifiable Claims", "Ninety Eight Percent Precision"]],
+        [["Cryptographic Ledger", "Archives Append Only SHA Two Fifty Six Provenance", "SOC Two Compliance Certification"] , ["Automated CI Regression", "Converts Intercepted Breaches Into Unit Tests", "Permanent Vulnerability Fix"]],
+        [["Streaming Token Masker", "Scrubs Data In Sliding Sub Millisecond Windows", "Zero Latency Impact On Streams"], ["Egress Governance Shield", "Guarantees Inviolability Of Enterprise Secrets", "Mastery Of AI Data Governance"]]
+    ],
+    [
+        [["Production Accuracy Core", "Multi Domain Enterprise Problem Solving Score", "Ninety Eight Point Nine Percent"], ["Attack Deflection Mesh", "Deflects Adversarial Injections And Jailbreaks", "Ninety Nine Point Eight Percent"]],
+        [["FinOps Cost Reducer", "Blended Multi Tier Computational Cost Reduction", "Seventy One Point Four Percent"], ["End To End P Ninety Five", "Full Ingress Defense And Inference Latency", "Twenty Four Milliseconds SLA"]],
+        [["Zero Day Immunity Core", "Autonomous Red Teaming Immunization Rate", "Ninety Nine Point One Percent"], ["Canary Extraction Rate", "Cryptographic Honeypot Protection Validation", "Zero Point Zero Percent Leakage"]],
+        [["ApexPromptEngine Mesh", "Harmonizes Sixty Days Of Engineering Excellence", "One Hundred Percent Complete"], ["Grand Master Architect", "Conferral Of Prestigious Industry Certification", "Mastery Of Sovereign AI Systems"]]
+    ]
+]
+
+# Verify lengths and digits
+for p_idx, cap_dict in enumerate(captions_data):
+    for k, text_str in cap_dict.items():
+        assert len(text_str) <= 75, f"Part {p_idx+1} {k} caption too long: {len(text_str)} ({text_str})"
+        assert text_str.endswith('.'), f"Part {p_idx+1} {k} caption must end with dot: {text_str}"
+        assert not any(c.isdigit() for c in text_str), f"Part {p_idx+1} {k} caption has digits: {text_str}"
+
+for t in titles:
+    assert len(t) <= 75, f"Title too long: {len(t)} ({t})"
+    assert t.endswith('.'), f"Title must end with dot: {t}"
+    assert not any(c.isdigit() for c in t), f"Title has digits: {t}"
+
+for cols in columns_list:
+    for c in cols:
+        assert not any(ch.isdigit() for ch in c), f"Column has digits: {c}"
+
+for p_idx, steps in enumerate(steps_rows):
+    assert len(steps) == 4, f"Part {p_idx+1} must have 4 steps"
+    for s_idx, rows in enumerate(steps):
+        assert len(rows) == 2, f"Part {p_idx+1} step {s_idx+1} must have 2 rows"
+        for r_idx, row in enumerate(rows):
+            assert len(row) == 3, f"Part {p_idx+1} step {s_idx+1} row {r_idx+1} must have 3 cells"
+            for c_idx, cell in enumerate(row):
+                assert not any(ch.isdigit() for ch in cell), f"Part {p_idx+1} step {s_idx+1} cell {r_idx+1},{c_idx+1} has digits: {cell}"
+
+# Build visual entries
+visual_entries = []
+step_keys = ["say1", "say2", "example", "tryIt"]
+
+for p_idx in range(5):
+    p_num = p_idx + 1
+    p_title = parts_data[p_idx]["title"]
+    v_title = titles[p_idx]
+    v_cols = columns_list[p_idx]
+    
+    steps = []
+    for s_idx, key in enumerate(step_keys):
+        cap = captions_data[p_idx][key]
+        rows = steps_rows[p_idx][s_idx]
+        steps.append({
+            "at": key,
+            "caption": cap,
+            "rows": rows
+        })
+        
+    spec = {
+        "template": "table",
+        "title": v_title,
+        "columns": v_cols,
+        "steps": steps
+    }
+    
+    visual_entries.append({
+        "partTitle": p_title,
+        "codeHash": code_hash,
+        "spec": spec,
+        "filled": spec
+    })
+
+visual_envelope = {
+    "schemaVersion": "2.0.0",
+    "course": "prompt-py",
+    "day": 60,
+    "prefix": "prompt-py",
+    "entries": visual_entries
+}
+
+# Build parts list for lesson
+lesson_parts = []
+total_words = 0
+for idx, p in enumerate(parts_data):
+    w_cnt = len(" ".join(p["say"]).split())
+    total_words += w_cnt
+    print(f"Part {idx+1}: {w_cnt} words")
+
+for idx, p in enumerate(parts_data):
+    w_cnt = len(" ".join(p["say"]).split())
+    assert w_cnt >= 600, f"Part {idx+1} word count too low: {w_cnt}"
+    lesson_parts.append({
+        "title": p["title"],
+        "say": p["say"],
+        "example": p["example"],
+        "code": code_snippet,
+        "output": output_snippet,
+        "tryIt": p["tryIt"],
+        "check": p["check"]
+    })
+
+print(f"Total words: {total_words}")
+assert total_words >= 3100, f"Total words too low: {total_words}"
+
+lesson = {
+    "id": "prompt-py-60",
+    "day": 60,
+    "course": "prompt-py",
+    "title": "Milestone 9 Capstone: ApexPromptEngine: Enterprise Autonomous Prompt Optimization, Continuous Evaluation & Self-Tuning Mesh",
+    "minutes": 45,
+    "parts": lesson_parts,
+    "projectStep": {
+        "title": "Deploy ApexPromptEngine Grand Master Capstone Architecture",
+        "steps": [
+            "Construct a closed-loop MIPROv2 Bayesian prompt optimizer with automated bootstrap exemplar mining.",
+            "Deploy synchronized multi-tier input sanitization, Llama Guard inference, and gVisor container sandboxing.",
+            "Integrate Presidio PII scrubbing, canary honeypot tripwires, and Shannon entropy secret scanning.",
+            "Deploy the continuous Ragas and TruLens evaluation feedback battery with automated regression alerts.",
+            "Synthesize the Pareto Frontier cascade router and graduate Course Thirty-Three at sixty out of sixty days."
+        ]
+    },
+    "summary": [
+        "ApexPromptEngine integrates Bayesian prompt tuning, multi-tier safety, sandboxing, evaluation, and routing.",
+        "MIPROv2 uses Bayesian optimization over Gaussian Processes to discover global prompt performance optima.",
+        "Synchronized defense-in-depth neutralizes prompt injections, enforces Colang policies, and sandboxes tool code.",
+        "Post-generation sanitization masks sensitive PII and traps extraction attacks with zero percent canary leakage.",
+        "ApexPromptEngine achieves ninety-eight point nine percent accuracy, completing Course Thirty-Three at sixty days."
+    ]
+}
+
+# Write lesson JSON and visual envelope JSON
+with open("C:/Users/Admin/Desktop/projects/Present-Career-os-platform/scripts/branch_c/prompt_day60_lesson.json", "w", encoding="utf-8") as f:
+    json.dump(lesson, f, indent=2)
+
+with open("C:/Users/Admin/Desktop/projects/Present-Career-os-platform/src/lib/data/lessonVisuals/prompt-py/day-60.json", "w", encoding="utf-8") as f:
+    json.dump(visual_envelope, f, indent=2)
+
+print("Generated Day 60 lesson JSON and Visual Envelope successfully!")
