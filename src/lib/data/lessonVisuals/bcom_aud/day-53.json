@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 53,
+  "entries": [
+    {
+      "partTitle": "The Statutory Going Concern Framework under ISA 570 & ASC 205-40",
+      "codeHash": "087d2841a0b10569952b6e036127686c3f91e0f894ba9cb8f543f2acb53876b9",
+      "spec": {
+        "template": "funnel",
+        "title": "The Statutory Going Concern Framework ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory going concern evaluation initiated over prospective horizon.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating cash runway and operational burn across upcoming periods.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Identifying negative operating cash flows raising substantial doubt.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Baseline liquidity runway models establish prospective going concern risk.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auditing Negative Financial Indicators & Operational Warning Signals",
+      "codeHash": "e28f7bc5666beece657c7c71efa18a32e671059220a44253f61cc8d706d2607a",
+      "spec": {
+        "template": "funnel",
+        "title": "Auditing Negative Financial Indicators... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate debt covenants inspected across syndicated credit facilities.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Testing leverage and interest coverage against contractual ceilings.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Debt covenant breach requiring balance sheet liability reclassification.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unwaived debt defaults reclassified to current liabilities on ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Evaluating Management's Mitigating Plans under ASC 205-40-50",
+      "codeHash": "7762ded40bfe1be72decfcfe5fbfb3aa74ebe968cc70b89122e16560fa7a7b42",
+      "spec": {
+        "template": "funnel",
+        "title": "Evaluating Management's Mitigating Pla... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Management prospective mitigating plans scrutinized under standards.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Differentiating legally binding agreements from speculative intent.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executed debt refinancing qualified while unapproved asset sales fail.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Only probable management plans accepted to alleviate substantial doubt.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Audit Reporting Architecture: Explanatory Paragraphs vs. Modified Opinions",
+      "codeHash": "76906126e9727d658d043a08510e8e4055191cd8b94f6c2400c81b161ca7693c",
+      "spec": {
+        "template": "funnel",
+        "title": "Audit Reporting Architecture: Explanat... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory audit report explanatory wording drafted under standards.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Emphasizing substantial doubt without modifying the audit opinion.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Referencing comprehensive liquidity footnote disclosures in reports.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Mandatory statutory phrases embedded in auditor report paragraphs.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Going Concern Liquidity Stress & Survival Simulator",
+      "codeHash": "0a893fb6dbd7b9a5bc8de043fc55496df9626c52e97ff10b1035e7ba247dcc86",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Going Concern Liquidity ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise going concern liquidity stress defense platform executed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Synthesizing baseline cash deficits with qualified mitigating inflows.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Determining whether remaining unmitigated deficit triggers disclosure.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Going concern lead schedules approved for engagement quality review.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

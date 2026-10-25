@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "Final Concluding Analytical Procedures under PCAOB AS 2810 & ISA 520",
+      "codeHash": "e73d3c9cb2b5c003655dd89058356ae9360399bdc1328659612967a5388b69f1",
+      "spec": {
+        "template": "funnel",
+        "title": "Final Concluding Analytical Procedures... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory completion phase launched across corporate financial ledgers.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Reviewing closing trial balances against prior periods and forecast.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Investigating unexpected variances between operating results and budget.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Corroborated analytical conclusions documented in final audit files.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Dual-Window Subsequent Events Audit Framework under ISA 560 & PCAOB AS 2801",
+      "codeHash": "ca9b3f9ed0dc8bdd36767022b88a2706a214ad9914fa71afccda8bd3be1a9a20",
+      "spec": {
+        "template": "funnel",
+        "title": "The Dual-Window Subsequent Events Audi... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive financial ratios calculated across all operating cycles.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating gross margins and turnover across balance sheet lines.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Confirming ratio movements align with substantive audit working papers.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Auditor analytical review provides overall financial statement comfort.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Subsequent Period Substantive Fieldwork: Minutes, Cash & Interim Statements",
+      "codeHash": "9301e82930ab41d1a495e282c540fa6abcef07220f7bbb1e3b538ed2b567dcd1",
+      "spec": {
+        "template": "funnel",
+        "title": "Subsequent Period Substantive Fieldwor... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Subsequent transactions investigated following balance sheet closure.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Distinguishing conditions existing at year end from subsequent shocks.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Customer insolvency confirming pre existing bad debt reserve needs.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Adjusting subsequent events recorded directly to general ledger balances.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Dating the Auditor's Report vs. Reissuance for Post-Report Events",
+      "codeHash": "5d17a5545feb1935a6c36f76ed37ea3ca0a22fc1fd64017962eb8101226f2498",
+      "spec": {
+        "template": "funnel",
+        "title": "Dual-Dating the Auditor's Report vs. R... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Post year end events evaluated for transparent footnote disclosures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Reviewing casualty losses and debt refinancing agreements after year end.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Footnote disclosures structured to prevent misleading financial reports.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dual dating restricts post closing auditor liability to specific notes.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Concluding Analytics & Subsequent Events Assurance Simulator",
+      "codeHash": "1346b8fcf111c7b6c94119e203127e43529ecfd17240bef5ab2f3bf094267c7f",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Concluding Analytics & S... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory subsequent events engine auditing post balance sheet journals.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Scanning board meeting minutes and subsequent bank cash receipts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Compiling proposed audit adjustments for recognized subsequent events.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Subsequent events lead schedules cleared for partner sign off.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
