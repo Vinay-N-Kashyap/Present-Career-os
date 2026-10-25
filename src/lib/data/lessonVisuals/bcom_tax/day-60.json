@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 60,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Global Command Overview",
+        "steps": [
+          {
+            "label": "Multinational Enterprise",
+            "caption": "Conglomerate coordinates cross border hubs across four territories."
+          },
+          {
+            "label": "Regulatory Convergence",
+            "caption": "Enterprise confronts simultaneous direct and indirect tax audits."
+          },
+          {
+            "label": "Statutory Evidence",
+            "caption": "Executive command mobilizes contemporaneous transfer pricing files."
+          },
+          {
+            "label": "Integrated Strategy",
+            "caption": "Chief tax officer orchestrates comprehensive multilateral defense."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Anti Avoidance Panel Victory",
+        "steps": [
+          {
+            "label": "Arrangement Challenge",
+            "caption": "Revenue questions commercial substance of overseas financing hub."
+          },
+          {
+            "label": "Substance Validation",
+            "caption": "Defense establishes local office operations and third party credit."
+          },
+          {
+            "label": "Panel Hearing",
+            "caption": "Counsel presents economic paper book before three member panel."
+          },
+          {
+            "label": "Total Vindication",
+            "caption": "Approving panel rejects tax challenge and confirms validity of hub."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Global Minimum Tax Shield",
+        "steps": [
+          {
+            "label": "Jurisdictional Audit",
+            "caption": "System computes effective tax rates across global corporate network."
+          },
+          {
+            "label": "Substance Carve Out",
+            "caption": "Payroll and manufacturing assets shield core industrial profits."
+          },
+          {
+            "label": "Domestic Tax Priority",
+            "caption": "Home exchequer collects top up tax under domestic minimum rules."
+          },
+          {
+            "label": "Multilateral Immunity",
+            "caption": "Safe harbour status shields enterprise from foreign tax clawback."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Restructuring and Indirect Victory",
+        "steps": [
+          {
+            "label": "Merger Loss Absorption",
+            "caption": "Scheme of arrangement absorbs target business losses tax free."
+          },
+          {
+            "label": "Secondment Defense",
+            "caption": "Dual contracts and full input credit defeat tax penalty demands."
+          },
+          {
+            "label": "Statutory Cash Shield",
+            "caption": "Approved loss set offs deliver multi crore corporate tax savings."
+          },
+          {
+            "label": "Case Closure",
+            "caption": "Tax authorities drop disputed additions and close audit files."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Grand Master Simulator",
+        "steps": [
+          {
+            "label": "Command Simulation",
+            "caption": "Simulator executes complete lifecycle of global tax optimization."
+          },
+          {
+            "label": "Exposure Mitigation",
+            "caption": "Platform quantifies total corporate tax shields and penalties saved."
+          },
+          {
+            "label": "Enterprise Protection",
+            "caption": "Multi tier algorithms shield corporate balance sheet capital."
+          },
+          {
+            "label": "Grand Accreditation",
+            "caption": "System awards supreme master credential on triumphant conclusion."
+          }
+        ]
+      }
+    }
+  ]
+}

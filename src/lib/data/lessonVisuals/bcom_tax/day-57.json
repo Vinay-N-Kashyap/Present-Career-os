@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 57,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Minimum Tax Scope",
+        "steps": [
+          {
+            "label": "Consolidated Revenue",
+            "caption": "System verifies group revenue against global reporting threshold."
+          },
+          {
+            "label": "Excluded Entity Filter",
+            "caption": "Platform excludes sovereign funds and non profit entities from scope."
+          },
+          {
+            "label": "Constituent Mapping",
+            "caption": "Engine maps all cross border subsidiaries and joint ventures."
+          },
+          {
+            "label": "Multilateral Scope",
+            "caption": "Group enters mandatory compliance under global anti base erosion rules."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Interlocking Charging Rules",
+        "steps": [
+          {
+            "label": "Income Inclusion Rule",
+            "caption": "Ultimate parent entity pays top up tax on low taxed foreign income."
+          },
+          {
+            "label": "Top Down Application",
+            "caption": "Taxing right cascades to intermediate entity if parent does not act."
+          },
+          {
+            "label": "Undertaxed Profits Rule",
+            "caption": "Operating entities deny local deductions to collect residual tax."
+          },
+          {
+            "label": "Substance Allocation",
+            "caption": "Residual tax is allocated by relative employee headcount and assets."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Domestic Minimum Tax",
+        "steps": [
+          {
+            "label": "Low Tax Calculation",
+            "caption": "Source jurisdiction detects effective tax rate below fifteen percent."
+          },
+          {
+            "label": "Domestic Levy",
+            "caption": "Host nation levies qualified domestic minimum top up tax locally."
+          },
+          {
+            "label": "Priority Absorption",
+            "caption": "Domestic payment reduces parent top up liability down to zero."
+          },
+          {
+            "label": "Safe Harbour Status",
+            "caption": "Certified domestic tax eliminates complex foreign filing obligations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Effective Tax Rate Math",
+        "steps": [
+          {
+            "label": "Net Income Adjustment",
+            "caption": "Accounting profit is adjusted for excluded dividends and net taxes."
+          },
+          {
+            "label": "Covered Tax Audit",
+            "caption": "System calculates adjusted corporate taxes and recapped deferrals."
+          },
+          {
+            "label": "Rate Determination",
+            "caption": "Covered taxes are divided by net income to yield jurisdictional rate."
+          },
+          {
+            "label": "Substance Carve Out",
+            "caption": "Payroll and tangible asset carve outs protect routine profit base."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Global Minimum Tax Engine",
+        "steps": [
+          {
+            "label": "Threshold Monitoring",
+            "caption": "Engine audits consolidated revenues across preceding fiscal years."
+          },
+          {
+            "label": "Effective Rate Calculator",
+            "caption": "Platform computes jurisdictional rates for each operating nation."
+          },
+          {
+            "label": "Substance Modeling",
+            "caption": "System applies payroll and plant carve outs to isolate excess profit."
+          },
+          {
+            "label": "Priority Allocator",
+            "caption": "Module directs top up payments to domestic treasury under safe harbour."
+          }
+        ]
+      }
+    }
+  ]
+}

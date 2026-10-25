@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 59,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Expat Secondment Defense",
+        "steps": [
+          {
+            "label": "Overseas Deployment",
+            "caption": "Foreign parent deploys technical specialists to local production."
+          },
+          {
+            "label": "Lien Examination",
+            "caption": "Authorities inspect whether overseas employment lien remains active."
+          },
+          {
+            "label": "Reverse Charge Notice",
+            "caption": "Revenue demands indirect tax on salary reimbursements under mandate."
+          },
+          {
+            "label": "Revenue Neutrality",
+            "caption": "Full input tax credit eligibility negates corporate tax liability."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Inverted Duty Refund Math",
+        "steps": [
+          {
+            "label": "Rate Inversion",
+            "caption": "Higher tax rate on raw materials generates unabsorbed input credit."
+          },
+          {
+            "label": "Formula Application",
+            "caption": "Refund is computed by apportioning output tax against input goods."
+          },
+          {
+            "label": "Service Exclusion",
+            "caption": "Input tax credit on services is statutorily excluded from refund."
+          },
+          {
+            "label": "Treasury Disbursement",
+            "caption": "Verified refund amount is credited directly to enterprise account."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Works Contract Tax Mechanics",
+        "steps": [
+          {
+            "label": "Composite Supply",
+            "caption": "Civil construction is classified as a composite supply of service."
+          },
+          {
+            "label": "Credit Block Review",
+            "caption": "Statute blocks input tax credit on construction of civil structures."
+          },
+          {
+            "label": "Functionality Doctrine",
+            "caption": "Court applies functionality test to identify industrial plant items."
+          },
+          {
+            "label": "Deferred Time of Supply",
+            "caption": "Tax liability on development agreements matures upon completion."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Anti Profiteering Compliance",
+        "steps": [
+          {
+            "label": "Statutory Rate Cut",
+            "caption": "Tax council notifies official reduction in indirect tax rates."
+          },
+          {
+            "label": "Mandatory Price Cut",
+            "caption": "Enterprise must pass on exact tax saving via reduced retail prices."
+          },
+          {
+            "label": "Regulatory Audit",
+            "caption": "Competition commission investigates pricing records per product line."
+          },
+          {
+            "label": "Consumer Refund Order",
+            "caption": "Authority orders refund of retained gains into consumer welfare fund."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Advanced Indirect Tax Engine",
+        "steps": [
+          {
+            "label": "Expat RCM Calculator",
+            "caption": "Engine calculates reverse charge exposure on foreign reimbursements."
+          },
+          {
+            "label": "Inverted Duty Estimator",
+            "caption": "Module models maximum cash refund under amended statutory formula."
+          },
+          {
+            "label": "Guarantee Valuation",
+            "caption": "System computes deemed service values for corporate bank guarantees."
+          },
+          {
+            "label": "Dynamic Price Monitor",
+            "caption": "Platform recalibrates retail prices to guarantee statutory compliance."
+          }
+        ]
+      }
+    }
+  ]
+}

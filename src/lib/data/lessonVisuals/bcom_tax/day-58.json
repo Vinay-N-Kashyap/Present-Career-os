@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 58,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Amalgamation Architecture",
+        "steps": [
+          {
+            "label": "Asset Transfer",
+            "caption": "All properties and liabilities transfer to the amalgamated company."
+          },
+          {
+            "label": "Shareholder Continuity",
+            "caption": "Three fourths of shareholders in value become continuing owners."
+          },
+          {
+            "label": "Capital Gains Exemption",
+            "caption": "Asset transfers and share exchanges enjoy full statutory exemption."
+          },
+          {
+            "label": "Loss Carry Forward",
+            "caption": "Amalgamated entity inherits accumulated business losses and allowances."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Demerger Undertaking Spin Off",
+        "steps": [
+          {
+            "label": "Undertaking Definition",
+            "caption": "Corporate unit transfers as an autonomous viable going concern."
+          },
+          {
+            "label": "Book Value Transfer",
+            "caption": "Assets and liabilities transfer at historic book values without markup."
+          },
+          {
+            "label": "Proportionate Allotment",
+            "caption": "Resulting entity issues shares directly to parent shareholders."
+          },
+          {
+            "label": "Apportioned Tax Shield",
+            "caption": "Accumulated losses are divided proportionately between companies."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Slump Sale Mechanics",
+        "steps": [
+          {
+            "label": "Lump Sum Transfer",
+            "caption": "Business undertaking transfers for single unassigned consideration."
+          },
+          {
+            "label": "Net Worth Calculation",
+            "caption": "Depreciable assets at written down value form cost of acquisition."
+          },
+          {
+            "label": "Fair Value Comparison",
+            "caption": "Consideration is benchmarked against market value of assets sold."
+          },
+          {
+            "label": "Capital Gain Assessment",
+            "caption": "Gain is computed without indexation benefit under special code."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Reorganization Clawback Rules",
+        "steps": [
+          {
+            "label": "Wholly Owned Exemption",
+            "caption": "Asset transfer between parent and subsidiary is exempt from tax."
+          },
+          {
+            "label": "Eight Year Limitation",
+            "caption": "Holding company must maintain full ownership for eight full years."
+          },
+          {
+            "label": "Share Dilution Event",
+            "caption": "Reduction of equity holding triggers statutory clawback of relief."
+          },
+          {
+            "label": "Retroactive Charge",
+            "caption": "Originally exempt gain becomes taxable income in year of dilution."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Corporate Restructuring Engine",
+        "steps": [
+          {
+            "label": "Merger Qualification",
+            "caption": "System verifies statutory asset and shareholder continuity tests."
+          },
+          {
+            "label": "Loss Schedule Audit",
+            "caption": "Engine projects cash tax savings from absorbed industrial losses."
+          },
+          {
+            "label": "Slump Sale Valuation",
+            "caption": "Module calculates net worth and fair market value capital gains."
+          },
+          {
+            "label": "Clawback Watchdog",
+            "caption": "Platform monitors equity retention to prevent statutory tax clawback."
+          }
+        ]
+      }
+    }
+  ]
+}

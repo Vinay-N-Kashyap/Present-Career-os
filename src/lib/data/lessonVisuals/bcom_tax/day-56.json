@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 56,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Anti Avoidance Threshold",
+        "steps": [
+          {
+            "label": "Arrangement Review",
+            "caption": "Assessing authority identifies complex corporate restructuring steps."
+          },
+          {
+            "label": "Tax Benefit Check",
+            "caption": "System verifies reduction or deferral of statutory tax liabilities."
+          },
+          {
+            "label": "Safe Harbour Audit",
+            "caption": "Authority checks aggregate tax benefit against statutory threshold."
+          },
+          {
+            "label": "Notice Formulation",
+            "caption": "Officer drafts statutory notice to invoke general anti avoidance rules."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Tainted Element Matrix",
+        "steps": [
+          {
+            "label": "Substance Test",
+            "caption": "Panel evaluates whether form differs from true economic reality."
+          },
+          {
+            "label": "Round Trip Analysis",
+            "caption": "System traces circular transfer of funds across offshore accounts."
+          },
+          {
+            "label": "Conduit Detection",
+            "caption": "Authority identifies accommodating entities lacking business substance."
+          },
+          {
+            "label": "Tainted Element Finding",
+            "caption": "Panel confirms presence of statutorily tainted transaction element."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Recharacterization Powers",
+        "steps": [
+          {
+            "label": "Look Through Order",
+            "caption": "Officer disregards intermediary corporate step in transaction chain."
+          },
+          {
+            "label": "Party Consolidation",
+            "caption": "Authority treats accommodating conduit and parent as identical entity."
+          },
+          {
+            "label": "Hybrid Reclassification",
+            "caption": "Officer recharacterizes hybrid debt instrument into taxable equity."
+          },
+          {
+            "label": "Treaty Denial",
+            "caption": "Domestic anti avoidance rules override bilateral treaty exemptions."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Approving Panel Procedure",
+        "steps": [
+          {
+            "label": "Officer Reference",
+            "caption": "Assessing officer submits formal reference to principal commissioner."
+          },
+          {
+            "label": "Statutory Notice",
+            "caption": "Commissioner issues show cause notice granting sixty days for response."
+          },
+          {
+            "label": "Collegiate Hearing",
+            "caption": "Three member panel chaired by high court judge hears oral arguments."
+          },
+          {
+            "label": "Binding Directions",
+            "caption": "Approving panel issues binding directions within six months of receipt."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Anti Avoidance Engine",
+        "steps": [
+          {
+            "label": "Safe Harbour Clock",
+            "caption": "Engine verifies whether tax exposure falls below statutory threshold."
+          },
+          {
+            "label": "Substance Indexing",
+            "caption": "Platform scores corporate office leases and local employment records."
+          },
+          {
+            "label": "Recharacterization Model",
+            "caption": "Simulator computes tax adjustments from proposed step disregards."
+          },
+          {
+            "label": "Statutory Docket",
+            "caption": "Module compiles contemporaneous business defense for approving panel."
+          }
+        ]
+      }
+    }
+  ]
+}
