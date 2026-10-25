@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 36,
+  "entries": [
+    {
+      "partTitle": "The Geometric Limitations of Absolute and Additive Position Embeddings",
+      "codeHash": "f17dbc17277f2ff7999216f0531517ca7b03d81ac1fd6d7771bb1178e5fe04aa",
+      "filled": {
+        "template": "table",
+        "title": "Geometric Limitations of Additive Position Embeddings.",
+        "columns": [
+          "Positional Scheme",
+          "Vector Norm Stability",
+          "Relative Distance Invariance"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Original transformers operate with fundamental permutation invariance.",
+            "rows": [
+              [
+                "Learnable Absolute Embeddings",
+                "Vector Norm Perturbed",
+                "Zero Relative Invariance"
+              ],
+              [
+                "Sinusoidal Additive Fixed",
+                "Hypersphere Distortion",
+                "Rigid Periodic Decay"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Early generative architectures utilize additive position embeddings.",
+            "rows": [
+              [
+                "ALiBi Linear Attention Slopes",
+                "Strict Monotonic Penalty",
+                "Damaged Long Range Reasoning"
+              ],
+              [
+                "Multiplicative Rotary RoPE",
+                "Norm Perfectly Preserved",
+                "Complete Relative Invariance"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Additive coordinates resemble writing text across delicate paintings.",
+            "rows": [
+              [
+                "Writing Across Paintings",
+                "Damaged Underlying Artwork",
+                "Severe Visual Artifacts"
+              ],
+              [
+                "Clean Coordinate Frames",
+                "Preserved Original Canvas",
+                "Flawless Image Quality"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate additive position perturbation across high dimensional vectors.",
+            "rows": [
+              [
+                "Short Pretraining Limit",
+                "Four Thousand Tokens",
+                "Uninitialized High Indices"
+              ],
+              [
+                "Extended Enterprise Context",
+                "Thirty Two Thousand Tokens",
+                "Catastrophic Perplexity Explosion"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Geometric Limitations of Additive Position Embeddings.",
+        "columns": [
+          "Positional Scheme",
+          "Vector Norm Stability",
+          "Relative Distance Invariance"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Original transformers operate with fundamental permutation invariance.",
+            "rows": [
+              [
+                "Learnable Absolute Embeddings",
+                "Vector Norm Perturbed",
+                "Zero Relative Invariance"
+              ],
+              [
+                "Sinusoidal Additive Fixed",
+                "Hypersphere Distortion",
+                "Rigid Periodic Decay"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Early generative architectures utilize additive position embeddings.",
+            "rows": [
+              [
+                "ALiBi Linear Attention Slopes",
+                "Strict Monotonic Penalty",
+                "Damaged Long Range Reasoning"
+              ],
+              [
+                "Multiplicative Rotary RoPE",
+                "Norm Perfectly Preserved",
+                "Complete Relative Invariance"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Additive coordinates resemble writing text across delicate paintings.",
+            "rows": [
+              [
+                "Writing Across Paintings",
+                "Damaged Underlying Artwork",
+                "Severe Visual Artifacts"
+              ],
+              [
+                "Clean Coordinate Frames",
+                "Preserved Original Canvas",
+                "Flawless Image Quality"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate additive position perturbation across high dimensional vectors.",
+            "rows": [
+              [
+                "Short Pretraining Limit",
+                "Four Thousand Tokens",
+                "Uninitialized High Indices"
+              ],
+              [
+                "Extended Enterprise Context",
+                "Thirty Two Thousand Tokens",
+                "Catastrophic Perplexity Explosion"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mathematical Foundations of RoPE: 2D Complex Subspace Rotations",
+      "codeHash": "2bb6dde58375519939ceb90108c1369d9c62187f6342151e0bce1646b73144e0",
+      "filled": {
+        "template": "table",
+        "title": "Mathematical Foundations of Rotary Complex Subspace Rotation.",
+        "columns": [
+          "Coordinate Subspace",
+          "Rotation Matrix Structure",
+          "Inner Product Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotary position embeddings rotate vectors in complex geometric space.",
+            "rows": [
+              [
+                "Two Dimensional Subspaces",
+                "Complex Coordinate Pairs",
+                "Orthogonal Block Diagonal"
+              ],
+              [
+                "Query Projection Vector",
+                "Key Projection Vector",
+                "Value Vector Left Pristine"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hidden dimensions partition into two dimensional coordinate pairs.",
+            "rows": [
+              [
+                "Position M Rotation Matrix",
+                "Position N Rotation Matrix",
+                "Exact Angle Cancellation"
+              ],
+              [
+                "Real Conjugate Inner Product",
+                "Pure Relative Distance",
+                "Invariant Attention Scores"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rotary embedding resembles adjusting compass needle angles on maps.",
+            "rows": [
+              [
+                "Navigational Compass Heading",
+                "Relative Degrees Measured",
+                "Independent Of Map Origin"
+              ],
+              [
+                "Rigid Cartesian Offsets",
+                "Absolute Coordinate Drifts",
+                "Erratic Spatial Distortions"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute rotary coordinate rotations and verify dot product invariance.",
+            "rows": [
+              [
+                "Head Level Application",
+                "Sixty Four Dimension Heads",
+                "Subspace Autonomy Maintained"
+              ],
+              [
+                "Dot Product Scaling",
+                "Symmetric Inner Product",
+                "Flawless Numerical Stability"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Mathematical Foundations of Rotary Complex Subspace Rotation.",
+        "columns": [
+          "Coordinate Subspace",
+          "Rotation Matrix Structure",
+          "Inner Product Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotary position embeddings rotate vectors in complex geometric space.",
+            "rows": [
+              [
+                "Two Dimensional Subspaces",
+                "Complex Coordinate Pairs",
+                "Orthogonal Block Diagonal"
+              ],
+              [
+                "Query Projection Vector",
+                "Key Projection Vector",
+                "Value Vector Left Pristine"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hidden dimensions partition into two dimensional coordinate pairs.",
+            "rows": [
+              [
+                "Position M Rotation Matrix",
+                "Position N Rotation Matrix",
+                "Exact Angle Cancellation"
+              ],
+              [
+                "Real Conjugate Inner Product",
+                "Pure Relative Distance",
+                "Invariant Attention Scores"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rotary embedding resembles adjusting compass needle angles on maps.",
+            "rows": [
+              [
+                "Navigational Compass Heading",
+                "Relative Degrees Measured",
+                "Independent Of Map Origin"
+              ],
+              [
+                "Rigid Cartesian Offsets",
+                "Absolute Coordinate Drifts",
+                "Erratic Spatial Distortions"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute rotary coordinate rotations and verify dot product invariance.",
+            "rows": [
+              [
+                "Head Level Application",
+                "Sixty Four Dimension Heads",
+                "Subspace Autonomy Maintained"
+              ],
+              [
+                "Dot Product Scaling",
+                "Symmetric Inner Product",
+                "Flawless Numerical Stability"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Frequency Spectrum Decay & The Natural Long-Term Decay Property",
+      "codeHash": "303f92b1212be32cb566ba8c43e5a8f417b8f0cdcb132987e4dbe123a191a4e4",
+      "filled": {
+        "template": "table",
+        "title": "Frequency Spectrum Decay and Natural Long Term Decay Property.",
+        "columns": [
+          "Frequency Tier",
+          "Rotational Velocity",
+          "Linguistic Context Role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotational frequencies decay geometrically across coordinate pairs.",
+            "rows": [
+              [
+                "Lowest Index Pair Zero",
+                "Rapid Rotational Cadence",
+                "Fine Grained Local Syntax"
+              ],
+              [
+                "Highest Index Pair Thirty One",
+                "Infinitesimal Radial Shift",
+                "Global Document Anchoring"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Low index coordinate pairs advance rapidly with every token increment.",
+            "rows": [
+              [
+                "Geometric Theta Spectrum",
+                "Theta Negative Exponent",
+                "Natural Riemann Interference"
+              ],
+              [
+                "Long Term Distance Growth",
+                "Destructive Harmonic Decay",
+                "Local Information Priority"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi scale frequencies resemble rapid seconds hands and slow hour hands.",
+            "rows": [
+              [
+                "Stopwatch Millisecond Hand",
+                "Rapid Transient Cycles",
+                "Fine Local Measurement"
+              ],
+              [
+                "Astronomical Planetary Gear",
+                "Centuries Per Revolution",
+                "Macroscopic Context Tracking"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze geometric frequency progression and evaluate long term decay.",
+            "rows": [
+              [
+                "Parenthesis Matching Head",
+                "High Frequency Focus",
+                "Sub Token Accuracy Verified"
+              ],
+              [
+                "Document Topic Routing",
+                "Low Frequency Coherence",
+                "Zero Context Window Thrashing"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Frequency Spectrum Decay and Natural Long Term Decay Property.",
+        "columns": [
+          "Frequency Tier",
+          "Rotational Velocity",
+          "Linguistic Context Role"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotational frequencies decay geometrically across coordinate pairs.",
+            "rows": [
+              [
+                "Lowest Index Pair Zero",
+                "Rapid Rotational Cadence",
+                "Fine Grained Local Syntax"
+              ],
+              [
+                "Highest Index Pair Thirty One",
+                "Infinitesimal Radial Shift",
+                "Global Document Anchoring"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Low index coordinate pairs advance rapidly with every token increment.",
+            "rows": [
+              [
+                "Geometric Theta Spectrum",
+                "Theta Negative Exponent",
+                "Natural Riemann Interference"
+              ],
+              [
+                "Long Term Distance Growth",
+                "Destructive Harmonic Decay",
+                "Local Information Priority"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi scale frequencies resemble rapid seconds hands and slow hour hands.",
+            "rows": [
+              [
+                "Stopwatch Millisecond Hand",
+                "Rapid Transient Cycles",
+                "Fine Local Measurement"
+              ],
+              [
+                "Astronomical Planetary Gear",
+                "Centuries Per Revolution",
+                "Macroscopic Context Tracking"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze geometric frequency progression and evaluate long term decay.",
+            "rows": [
+              [
+                "Parenthesis Matching Head",
+                "High Frequency Focus",
+                "Sub Token Accuracy Verified"
+              ],
+              [
+                "Document Topic Routing",
+                "Low Frequency Coherence",
+                "Zero Context Window Thrashing"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Window Extrapolation & Base Theta Scaling Dynamics",
+      "codeHash": "c03cfc99977375cb003f28ff0624a12f90299b7e1a2f389921c506a1482c1991",
+      "filled": {
+        "template": "table",
+        "title": "Context Extrapolation Dynamics and Base Theta Scaling.",
+        "columns": [
+          "Model Architecture",
+          "Base Theta Parameter",
+          "Maximum Context Window"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deploying pre trained models on extended contexts exposes boundaries.",
+            "rows": [
+              [
+                "LLaMA One Base Model",
+                "Ten Thousand Theta Base",
+                "Two Thousand Context Limit"
+              ],
+              [
+                "LLaMA Two Base Model",
+                "Ten Thousand Theta Base",
+                "Four Thousand Context Limit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unobserved rotation angles produce distorted query and key dot products.",
+            "rows": [
+              [
+                "LLaMA Three Scaled Model",
+                "Five Hundred Thousand Theta",
+                "One Hundred Twenty Eight Context"
+              ],
+              [
+                "CodeLLaMA Deep System",
+                "Eight Million Theta Base",
+                "One Million Token Extrapolation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Extending base theta resembles winding musical instrument strings loosely.",
+            "rows": [
+              [
+                "Loosely Wound Strings",
+                "Lower Musical Frequencies",
+                "Vastly Expanded Octave Range"
+              ],
+              [
+                "Tightly Strained Cables",
+                "Extreme Frequency Stress",
+                "Premature Structural Snap"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate base theta scaling impact across extended context lengths.",
+            "rows": [
+              [
+                "Resolution Tradeoff Impact",
+                "Minor Adjacent Blurring",
+                "Brief Continual Tuning Required"
+              ],
+              [
+                "Curriculum Training Protocol",
+                "Mixed Document Lengths",
+                "Preserved Core Knowledge Base"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Context Extrapolation Dynamics and Base Theta Scaling.",
+        "columns": [
+          "Model Architecture",
+          "Base Theta Parameter",
+          "Maximum Context Window"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deploying pre trained models on extended contexts exposes boundaries.",
+            "rows": [
+              [
+                "LLaMA One Base Model",
+                "Ten Thousand Theta Base",
+                "Two Thousand Context Limit"
+              ],
+              [
+                "LLaMA Two Base Model",
+                "Ten Thousand Theta Base",
+                "Four Thousand Context Limit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Unobserved rotation angles produce distorted query and key dot products.",
+            "rows": [
+              [
+                "LLaMA Three Scaled Model",
+                "Five Hundred Thousand Theta",
+                "One Hundred Twenty Eight Context"
+              ],
+              [
+                "CodeLLaMA Deep System",
+                "Eight Million Theta Base",
+                "One Million Token Extrapolation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Extending base theta resembles winding musical instrument strings loosely.",
+            "rows": [
+              [
+                "Loosely Wound Strings",
+                "Lower Musical Frequencies",
+                "Vastly Expanded Octave Range"
+              ],
+              [
+                "Tightly Strained Cables",
+                "Extreme Frequency Stress",
+                "Premature Structural Snap"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate base theta scaling impact across extended context lengths.",
+            "rows": [
+              [
+                "Resolution Tradeoff Impact",
+                "Minor Adjacent Blurring",
+                "Brief Continual Tuning Required"
+              ],
+              [
+                "Curriculum Training Protocol",
+                "Mixed Document Lengths",
+                "Preserved Core Knowledge Base"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production CUDA Kernel Implementation: Fused RoPE & Hardware Tiling",
+      "codeHash": "d5021b57c5871a13d12ffac4cbb4b050558e42105cff88e043a09f7bc132f09c",
+      "filled": {
+        "template": "table",
+        "title": "Fused Kernel Optimization and Hardware Tiling Implementation.",
+        "columns": [
+          "Kernel Implementation",
+          "Memory Bus Throughput",
+          "DRAM Traffic Footprint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production deployment demands high performance kernel engineering.",
+            "rows": [
+              [
+                "Naive PyTorch Framework",
+                "Four Hundred Fifty GBs",
+                "Eighty Five Microseconds Latency"
+              ],
+              [
+                "Fused CUDA Vectorized Half Two",
+                "One Thousand Eight Hundred GBs",
+                "Fourteen Microseconds Latency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Naive positional embedding launches multiple memory bound kernels.",
+            "rows": [
+              [
+                "FlashAttention Integrated",
+                "Two Thousand GBs Peak",
+                "Zero Positional Overhead"
+              ],
+              [
+                "Register SRAM Processing",
+                "Coalesced Cache Access",
+                "Zero Intermediate Global Writes"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Fused kernel execution resembles assembling precision machinery on site.",
+            "rows": [
+              [
+                "On Site Machine Assembly",
+                "Immediate Part Integration",
+                "Zero Transit Bottlenecks"
+              ],
+              [
+                "Distant Factory Shuttling",
+                "Massive Transport Delay",
+                "Damaged Delicate Assemblies"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Benchmark fused rotary execution latency against naive framework methods.",
+            "rows": [
+              [
+                "Continuous Integration Suite",
+                "Double Precision Parity",
+                "Sub Thousandth Absolute Error"
+              ],
+              [
+                "Distributed Tensor Parallel",
+                "Local Head Processing",
+                "Zero Inter GPU Communication Bubble"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Fused Kernel Optimization and Hardware Tiling Implementation.",
+        "columns": [
+          "Kernel Implementation",
+          "Memory Bus Throughput",
+          "DRAM Traffic Footprint"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production deployment demands high performance kernel engineering.",
+            "rows": [
+              [
+                "Naive PyTorch Framework",
+                "Four Hundred Fifty GBs",
+                "Eighty Five Microseconds Latency"
+              ],
+              [
+                "Fused CUDA Vectorized Half Two",
+                "One Thousand Eight Hundred GBs",
+                "Fourteen Microseconds Latency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Naive positional embedding launches multiple memory bound kernels.",
+            "rows": [
+              [
+                "FlashAttention Integrated",
+                "Two Thousand GBs Peak",
+                "Zero Positional Overhead"
+              ],
+              [
+                "Register SRAM Processing",
+                "Coalesced Cache Access",
+                "Zero Intermediate Global Writes"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Fused kernel execution resembles assembling precision machinery on site.",
+            "rows": [
+              [
+                "On Site Machine Assembly",
+                "Immediate Part Integration",
+                "Zero Transit Bottlenecks"
+              ],
+              [
+                "Distant Factory Shuttling",
+                "Massive Transport Delay",
+                "Damaged Delicate Assemblies"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Benchmark fused rotary execution latency against naive framework methods.",
+            "rows": [
+              [
+                "Continuous Integration Suite",
+                "Double Precision Parity",
+                "Sub Thousandth Absolute Error"
+              ],
+              [
+                "Distributed Tensor Parallel",
+                "Local Head Processing",
+                "Zero Inter GPU Communication Bubble"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 37,
+  "entries": [
+    {
+      "partTitle": "The Failure of Linear Positional Interpolation (PI)",
+      "codeHash": "d82f7f4ea84b5b742af151f2c899a805e664627c938eac2117c954e9eb591c4d",
+      "filled": {
+        "template": "table",
+        "title": "Limitations of Linear Positional Interpolation Frameworks.",
+        "columns": [
+          "Context Strategy",
+          "High Frequency Impact",
+          "Fine Tuning Requirement"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise document processing requires extending fixed context windows.",
+            "rows": [
+              [
+                "Linear Position Interpolation",
+                "Uniform Compression Seventy Five Percent",
+                "Extensive Fine Tuning Needed"
+              ],
+              [
+                "Pretrained Fixed Context",
+                "Zero Out Of Domain Coverage",
+                "Severe Perplexity Spikes"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Linear position interpolation scales sequence coordinates by factor s.",
+            "rows": [
+              [
+                "Local Grammatical Agreement",
+                "Crowded Adjacent Angles",
+                "Damaged Word Order Resolution"
+              ],
+              [
+                "Full Context Coverage",
+                "Constrained Coordinate Bounds",
+                "Eliminated Numerical Overflow"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Linear position interpolation resembles shrinking font sizes on pages.",
+            "rows": [
+              [
+                "Shrunk Microscopic Font",
+                "Illegible Overlapping Text",
+                "Severe Visual Degradation"
+              ],
+              [
+                "Properly Scaled Printing",
+                "Crisp Distinct Typography",
+                "Flawless Document Readability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate position interpolation and observe uniform angular compression.",
+            "rows": [
+              [
+                "WikiText Evaluation Spikes",
+                "Perplexity Exceeds Thirty Five",
+                "Coherence Completely Collapses"
+              ],
+              [
+                "Fourfold Context Extension",
+                "Sixteen Thousand Tokens",
+                "High Compute Retraining Cost"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Limitations of Linear Positional Interpolation Frameworks.",
+        "columns": [
+          "Context Strategy",
+          "High Frequency Impact",
+          "Fine Tuning Requirement"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise document processing requires extending fixed context windows.",
+            "rows": [
+              [
+                "Linear Position Interpolation",
+                "Uniform Compression Seventy Five Percent",
+                "Extensive Fine Tuning Needed"
+              ],
+              [
+                "Pretrained Fixed Context",
+                "Zero Out Of Domain Coverage",
+                "Severe Perplexity Spikes"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Linear position interpolation scales sequence coordinates by factor s.",
+            "rows": [
+              [
+                "Local Grammatical Agreement",
+                "Crowded Adjacent Angles",
+                "Damaged Word Order Resolution"
+              ],
+              [
+                "Full Context Coverage",
+                "Constrained Coordinate Bounds",
+                "Eliminated Numerical Overflow"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Linear position interpolation resembles shrinking font sizes on pages.",
+            "rows": [
+              [
+                "Shrunk Microscopic Font",
+                "Illegible Overlapping Text",
+                "Severe Visual Degradation"
+              ],
+              [
+                "Properly Scaled Printing",
+                "Crisp Distinct Typography",
+                "Flawless Document Readability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate position interpolation and observe uniform angular compression.",
+            "rows": [
+              [
+                "WikiText Evaluation Spikes",
+                "Perplexity Exceeds Thirty Five",
+                "Coherence Completely Collapses"
+              ],
+              [
+                "Fourfold Context Extension",
+                "Sixteen Thousand Tokens",
+                "High Compute Retraining Cost"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Neural Tangent Kernel (NTK) Theory & NTK-Aware Interpolation",
+      "codeHash": "b2c6d46f92147518222b343dded6d429a5dc67375c5df9fc5184ac236c57e54b",
+      "filled": {
+        "template": "table",
+        "title": "Neural Tangent Kernel Theory and Asymmetric Frequency Scaling.",
+        "columns": [
+          "Frequency Regime",
+          "Rotational Velocity Scaling",
+          "Syntactic Resolution Preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural tangent kernel theory analyzes spectral learning biases in networks.",
+            "rows": [
+              [
+                "High Frequency Pair Zero",
+                "Scale Factor Exactly One",
+                "Complete Syntactic Preservation"
+              ],
+              [
+                "Low Frequency Pair Thirty One",
+                "Scale Factor Down To Zero",
+                "Stretched Long Distance Horizon"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Deep networks learn low frequency smooth functions with remarkable speed.",
+            "rows": [
+              [
+                "Neural Tangent Kernel Theory",
+                "Smooth Function Preference",
+                "Asymmetric Frequency Scaling"
+              ],
+              [
+                "Closed Form Formula Exponent",
+                "D Divided By D Minus Two",
+                "Matched Geometric Boundaries"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Adaptive transmission gears shift smoothly across changing road speeds.",
+            "rows": [
+              [
+                "Adaptive Transmission Gears",
+                "High Torque At Low Velocity",
+                "Smooth Cruising At Top Speeds"
+              ],
+              [
+                "Rigid Fixed Gearbox",
+                "Engine Stalls On Steep Inclines",
+                "Severe Mechanical Strain"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calculate NTK aware theta scaling and contrast frequency ratios.",
+            "rows": [
+              [
+                "Zero Shot Deployment Ready",
+                "Zero Gradient Steps Required",
+                "Preserved Core Reasoning Benchmark"
+              ],
+              [
+                "Long Term Attention Decay",
+                "Active Harmonic Interference",
+                "Natural Inductive Bias Maintained"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Neural Tangent Kernel Theory and Asymmetric Frequency Scaling.",
+        "columns": [
+          "Frequency Regime",
+          "Rotational Velocity Scaling",
+          "Syntactic Resolution Preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural tangent kernel theory analyzes spectral learning biases in networks.",
+            "rows": [
+              [
+                "High Frequency Pair Zero",
+                "Scale Factor Exactly One",
+                "Complete Syntactic Preservation"
+              ],
+              [
+                "Low Frequency Pair Thirty One",
+                "Scale Factor Down To Zero",
+                "Stretched Long Distance Horizon"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Deep networks learn low frequency smooth functions with remarkable speed.",
+            "rows": [
+              [
+                "Neural Tangent Kernel Theory",
+                "Smooth Function Preference",
+                "Asymmetric Frequency Scaling"
+              ],
+              [
+                "Closed Form Formula Exponent",
+                "D Divided By D Minus Two",
+                "Matched Geometric Boundaries"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Adaptive transmission gears shift smoothly across changing road speeds.",
+            "rows": [
+              [
+                "Adaptive Transmission Gears",
+                "High Torque At Low Velocity",
+                "Smooth Cruising At Top Speeds"
+              ],
+              [
+                "Rigid Fixed Gearbox",
+                "Engine Stalls On Steep Inclines",
+                "Severe Mechanical Strain"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calculate NTK aware theta scaling and contrast frequency ratios.",
+            "rows": [
+              [
+                "Zero Shot Deployment Ready",
+                "Zero Gradient Steps Required",
+                "Preserved Core Reasoning Benchmark"
+              ],
+              [
+                "Long Term Attention Decay",
+                "Active Harmonic Interference",
+                "Natural Inductive Bias Maintained"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "YaRN: Yet another RoPE extensioN & Tri-Band Frequency Partitioning",
+      "codeHash": "bc8cd29af7ee3190fb11484b9da1c54d1bc6a7d9978e706490e5d420020481ad",
+      "filled": {
+        "template": "table",
+        "title": "YaRN Tri Band Frequency Partitioning and Ramp Transitions.",
+        "columns": [
+          "YaRN Band Allocation",
+          "Wavelength Condition",
+          "Mathematical Transformation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extreme context horizons reveal subtle residual interpolation distortions.",
+            "rows": [
+              [
+                "Short Wavelength High Band",
+                "Wavelength Less Than Thirty Two",
+                "Pure Extrapolation Applied"
+              ],
+              [
+                "Long Wavelength Low Band",
+                "Wavelength Greater Than Length",
+                "Pure Linear Interpolation Applied"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tri band frequency partitioning divides dimensions by wavelength.",
+            "rows": [
+              [
+                "Intermediate Ramp Band",
+                "Alpha Beta Boundary Interval",
+                "Smooth Linear Blending Function"
+              ],
+              [
+                "Piecewise Continuous Math",
+                "Zero Step Function Cliffs",
+                "Stable Gradient Optimization"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi band audio equalizers balance bass notes while preserving trebles.",
+            "rows": [
+              [
+                "Multi Band Equalizer",
+                "Deep Extended Bass Frequencies",
+                "Pristine Crisp Treble Harmonics"
+              ],
+              [
+                "Crude Tone Knob Filter",
+                "Muffled Midrange Resonance",
+                "Severe Acoustic Distortion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect YaRN wavelength audit and evaluate tri band frequency assignment.",
+            "rows": [
+              [
+                "Fine Tuning Efficiency",
+                "Under Four Hundred Steps",
+                "Tenfold Compute Savings Realized"
+              ],
+              [
+                "Enterprise Model Adoption",
+                "Mistral And Qwen Integration",
+                "Planetary Scale Long Context"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "YaRN Tri Band Frequency Partitioning and Ramp Transitions.",
+        "columns": [
+          "YaRN Band Allocation",
+          "Wavelength Condition",
+          "Mathematical Transformation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extreme context horizons reveal subtle residual interpolation distortions.",
+            "rows": [
+              [
+                "Short Wavelength High Band",
+                "Wavelength Less Than Thirty Two",
+                "Pure Extrapolation Applied"
+              ],
+              [
+                "Long Wavelength Low Band",
+                "Wavelength Greater Than Length",
+                "Pure Linear Interpolation Applied"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Tri band frequency partitioning divides dimensions by wavelength.",
+            "rows": [
+              [
+                "Intermediate Ramp Band",
+                "Alpha Beta Boundary Interval",
+                "Smooth Linear Blending Function"
+              ],
+              [
+                "Piecewise Continuous Math",
+                "Zero Step Function Cliffs",
+                "Stable Gradient Optimization"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi band audio equalizers balance bass notes while preserving trebles.",
+            "rows": [
+              [
+                "Multi Band Equalizer",
+                "Deep Extended Bass Frequencies",
+                "Pristine Crisp Treble Harmonics"
+              ],
+              [
+                "Crude Tone Knob Filter",
+                "Muffled Midrange Resonance",
+                "Severe Acoustic Distortion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect YaRN wavelength audit and evaluate tri band frequency assignment.",
+            "rows": [
+              [
+                "Fine Tuning Efficiency",
+                "Under Four Hundred Steps",
+                "Tenfold Compute Savings Realized"
+              ],
+              [
+                "Enterprise Model Adoption",
+                "Mistral And Qwen Integration",
+                "Planetary Scale Long Context"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Attention Entropy Scaling & Temperature Correction",
+      "codeHash": "6c956fbc955b45b4323152cace0163530ad96ac003e58f00fd1c475d31899118",
+      "filled": {
+        "template": "table",
+        "title": "Attention Entropy Dispersion and Temperature Correction.",
+        "columns": [
+          "Sequence Length Tier",
+          "Attention Entropy Profile",
+          "Temperature Multiplier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extending context windows introduces attention entropy dispersion issues.",
+            "rows": [
+              [
+                "Four Thousand Token Baseline",
+                "Focused Sharp Attention Peak",
+                "Temperature Factor Exactly One"
+              ],
+              [
+                "Sixty Four Thousand Tokens",
+                "Diffuse High Entropy Smear",
+                "Diluted Fact Retrieval Failure"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scaled dot product self attention computes softmax probabilities.",
+            "rows": [
+              [
+                "YaRN Temperature Correction",
+                "Formula Zero Point One Ln S",
+                "Logit Multiplication Applied"
+              ],
+              [
+                "Restored Attention Entropy",
+                "Sharp Crystalline Probability",
+                "Flawless Needle In Haystack Retrieval"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Temperature correction resembles cooling scattered steam back into water.",
+            "rows": [
+              [
+                "Scattered Thermal Vapor",
+                "High Entropy Kinetic Chaos",
+                "Zero Focused Structural Work"
+              ],
+              [
+                "Cryogenic Liquid Droplet",
+                "Dense Ordered Lattice State",
+                "Maximum Thermodynamic Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute temperature correction multipliers across context expansion.",
+            "rows": [
+              [
+                "Cross Entropy Loss Auditing",
+                "Loss Drift Below Zero Point Zero Five",
+                "Strict SLA Compliance Maintained"
+              ],
+              [
+                "Evidentiary Document Extraction",
+                "Zero Hallucinatory Dilution",
+                "Mission Critical Legal Precision"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Attention Entropy Dispersion and Temperature Correction.",
+        "columns": [
+          "Sequence Length Tier",
+          "Attention Entropy Profile",
+          "Temperature Multiplier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Extending context windows introduces attention entropy dispersion issues.",
+            "rows": [
+              [
+                "Four Thousand Token Baseline",
+                "Focused Sharp Attention Peak",
+                "Temperature Factor Exactly One"
+              ],
+              [
+                "Sixty Four Thousand Tokens",
+                "Diffuse High Entropy Smear",
+                "Diluted Fact Retrieval Failure"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Scaled dot product self attention computes softmax probabilities.",
+            "rows": [
+              [
+                "YaRN Temperature Correction",
+                "Formula Zero Point One Ln S",
+                "Logit Multiplication Applied"
+              ],
+              [
+                "Restored Attention Entropy",
+                "Sharp Crystalline Probability",
+                "Flawless Needle In Haystack Retrieval"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Temperature correction resembles cooling scattered steam back into water.",
+            "rows": [
+              [
+                "Scattered Thermal Vapor",
+                "High Entropy Kinetic Chaos",
+                "Zero Focused Structural Work"
+              ],
+              [
+                "Cryogenic Liquid Droplet",
+                "Dense Ordered Lattice State",
+                "Maximum Thermodynamic Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute temperature correction multipliers across context expansion.",
+            "rows": [
+              [
+                "Cross Entropy Loss Auditing",
+                "Loss Drift Below Zero Point Zero Five",
+                "Strict SLA Compliance Maintained"
+              ],
+              [
+                "Evidentiary Document Extraction",
+                "Zero Hallucinatory Dilution",
+                "Mission Critical Legal Precision"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic NTK-Aware Scaling in Production Inference Runtimes",
+      "codeHash": "7e768ec37b0e05739850231e3b091c5995c3259a8950bd4937597332402c0a8f",
+      "filled": {
+        "template": "table",
+        "title": "Dynamic NTK Aware Runtime Scaling in Production Inference.",
+        "columns": [
+          "Request Classification",
+          "Runtime Scale Factor",
+          "Serving Latency Penalty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heterogeneous enterprise traffic demands adaptive runtime scaling policies.",
+            "rows": [
+              [
+                "Short Conversational Query",
+                "Scale Clamped To One Point Zero",
+                "Zero Overhead Baseline Precision"
+              ],
+              [
+                "Massive Document Briefing",
+                "Dynamic Scale Factor Seven",
+                "Seamless Context Expansion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic NTK scaling calculates expansion ratios per request length.",
+            "rows": [
+              [
+                "PagedAttention Constant Memory",
+                "Cached Sine Cosine Tiers",
+                "Zero Runtime Kernel Latency"
+              ],
+              [
+                "Dynamic Continuous Batching",
+                "Grouped Scale Executions",
+                "Optimal GPU Warp Occupancy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic scaling resembles automatic transmissions shifting on highways.",
+            "rows": [
+              [
+                "Automatic Car Transmission",
+                "Instantaneous Gear Adaptation",
+                "Flawless Fuel Efficiency"
+              ],
+              [
+                "Manual Stalled Clutch",
+                "Jarring Velocity Shocks",
+                "Severe Highway Congestion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate dynamic NTK scaling across varying user request sequence lengths.",
+            "rows": [
+              [
+                "Production Real Time Monitors",
+                "Sub Thirty Millisecond SLA",
+                "Verified Token Acceptance Rate"
+              ],
+              [
+                "Multimodal Vision Extension",
+                "Two Dimensional Patch Scaling",
+                "Ultra High Resolution Blueprints"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Dynamic NTK Aware Runtime Scaling in Production Inference.",
+        "columns": [
+          "Request Classification",
+          "Runtime Scale Factor",
+          "Serving Latency Penalty"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Heterogeneous enterprise traffic demands adaptive runtime scaling policies.",
+            "rows": [
+              [
+                "Short Conversational Query",
+                "Scale Clamped To One Point Zero",
+                "Zero Overhead Baseline Precision"
+              ],
+              [
+                "Massive Document Briefing",
+                "Dynamic Scale Factor Seven",
+                "Seamless Context Expansion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic NTK scaling calculates expansion ratios per request length.",
+            "rows": [
+              [
+                "PagedAttention Constant Memory",
+                "Cached Sine Cosine Tiers",
+                "Zero Runtime Kernel Latency"
+              ],
+              [
+                "Dynamic Continuous Batching",
+                "Grouped Scale Executions",
+                "Optimal GPU Warp Occupancy"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic scaling resembles automatic transmissions shifting on highways.",
+            "rows": [
+              [
+                "Automatic Car Transmission",
+                "Instantaneous Gear Adaptation",
+                "Flawless Fuel Efficiency"
+              ],
+              [
+                "Manual Stalled Clutch",
+                "Jarring Velocity Shocks",
+                "Severe Highway Congestion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate dynamic NTK scaling across varying user request sequence lengths.",
+            "rows": [
+              [
+                "Production Real Time Monitors",
+                "Sub Thirty Millisecond SLA",
+                "Verified Token Acceptance Rate"
+              ],
+              [
+                "Multimodal Vision Extension",
+                "Two Dimensional Patch Scaling",
+                "Ultra High Resolution Blueprints"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
