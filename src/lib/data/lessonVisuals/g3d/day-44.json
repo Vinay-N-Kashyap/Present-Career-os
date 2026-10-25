@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 44,
+  "promptSha": "c0ec0e6ed562e790a7a0968133c5be786c0817782c833e8b319697727dcf6f6d",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Rendering Equation & Monte Carlo Numerical Integration",
+      "codeHash": "941dd35e850d21109ae2a62f97bbe40a3f9da76227f1580c7ed9f4b69849d74b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Rendering Equation & Monte Carlo Numerical Integration",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the continuous rendering equation formulated as a hemispherical radiance integral."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks numerical Monte Carlo estimation using low-discrepancy stratified sample sequences."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts unbiased random sampling against biased analytical lighting approximations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms mathematical estimator convergence and zero systematic energy bias."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Cosine-Weighted Hemisphere Sampling & Concentric Disk Transformations",
+      "codeHash": "3654985a4826efd43855bca10e641bf9cc2eed7743dbc459f6172cb4ee5f4e91",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Cosine-Weighted Hemisphere Sampling & Concentric Disk Transformations",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates cosine-weighted hemisphere importance sampling utilizing concentric disk mapping."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates probability density functions canceling the geometric Lambertian foreshortening term."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates significant variance reduction of cosine sampling over uniform hemisphere rays."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms unit vector normalization, tangent space transformation, and low-noise diffuse lighting."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "GGX Microfacet Specular Importance Sampling & Half-Vector Distributions",
+      "codeHash": "96c2184efb3507dc20dd5278036146d7c14e7b1e01bcdf6aec58596ff17f3c13",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GGX Microfacet Specular Importance Sampling & Half-Vector Distributions",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays GGX microfacet specular sampling generating half-vectors along reflection lobes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks normal distribution function probability density and incident ray reflection angles."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete eradication of firefly speckles on polished glossy surfaces."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms half-vector alignment, analytical PDF evaluation, and smooth specular highlights."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Multiple Importance Sampling (MIS) & The Balance and Power Heuristics",
+      "codeHash": "d9a12d334e4aecd0046d2f17408d6a6642c4325526e50801f51e9d676c877944",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Multiple Importance Sampling (MIS) & The Balance and Power Heuristics",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Multiple Importance Sampling combining light source and BRDF sampling strategies."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates the balance and power heuristics weighting complementary probability density functions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates optimal low-variance convergence across small bright lights and broad reflections."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms heuristic weight conservation summing to unity across all light interactions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Multi-Bounce Wavefront Path Tracing, Russian Roulette & 60 FPS Convergence",
+      "codeHash": "3c12ec3188ab05bd2793f71ea9e73cad27cfb8ace8c22b1cef20bbc0803d8512",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Multi-Bounce Wavefront Path Tracing, Russian Roulette & 60 FPS Convergence",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays multi-bounce wavefront path tracing with unbiased Russian Roulette path termination."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks path throughput attenuation, survival probability clamping, and stream compaction."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts energy-preserving probabilistic termination against arbitrary fixed-depth cutoffs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms thermodynamic energy conservation and real-time sixty frames per second execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

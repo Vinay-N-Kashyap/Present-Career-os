@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 42,
+  "promptSha": "62806ab0933541421f8852bb81363ce83d03fa2c3dfc981d84d92dcc1a4e75a5",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Spatial vs Object Partitioning: Axis-Aligned Bounding Box (AABB) Trees",
+      "codeHash": "950a387c5d4c79a4e9603e532af0afc384966a5e0f7615509f31ec1972e2f35c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Spatial vs Object Partitioning: Axis-Aligned Bounding Box (AABB) Trees",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the hierarchical bounding volume hierarchy organizing scene triangles into compact bounding boxes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates minimum and maximum axis-aligned extents enclosing complex geometric clusters."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts bounding volume hierarchies against uniform grid voxel structures for sparse scenes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies tight bounding box surface areas and complete geometric containment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Surface Area Heuristic (SAH) & Fast Binned Axis Splitting",
+      "codeHash": "b0207c797b4aca42b783876a178f664d935ac5fb7b89ddf76b79a5753957a674",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Surface Area Heuristic (SAH) & Fast Binned Axis Splitting",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates binned surface area heuristic partitioning dividing spatial bounding boxes into candidate splits."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates traversal costs versus intersection probabilities across spatial partition planes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how binned evaluation reduces partition time from quadratic to linear complexity."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms optimal split axis selection and minimal total tree traversal cost."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Linear BVH (LBVH) & 30-Bit Morton Codes (Z-Order Space-Filling Curves)",
+      "codeHash": "260b551cd3e892d2f569b4c34478c9773f8a05d6ad3d28117b6be44aaeb4408a",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Linear BVH (LBVH) & 30-Bit Morton Codes (Z-Order Space-Filling Curves)",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays linear bounding volume hierarchy construction using thirty-bit Morton space-filling curves."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks bit-interleaving coordinate mapping and high-speed radix sorting of primitive centroids."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks parallel GPU linear hierarchy sorting against single-threaded CPU recursive splits."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies Morton code ordering, hierarchical parent-child pointers, and tree topology."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Flat 32-Byte BVH Compaction & Cache-Line Memory Alignment",
+      "codeHash": "6f9076dea2f5b6ea928bce75fc26d57c788bf837c46ba2449bb18d717bcaf567",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Flat 32-Byte BVH Compaction & Cache-Line Memory Alignment",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the flattened thirty-two-byte node layout engineered for maximum cache line alignment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks axis-aligned minimum and maximum vector packing alongside primitive count offsets."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts compact linear array storage against fragmented pointer-linked tree nodes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms thirty-two-byte struct alignment, zero memory padding, and peak GPU cache bandwidth."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Iterative Register-Stack GPU Traversal & Tree Quality Certification",
+      "codeHash": "83bdf6d4cb6bc8244f4575196f96c95035aa879fa3f34d92a000e31a75651a95",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Iterative Register-Stack GPU Traversal & Tree Quality Certification",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates short-stack bounding volume hierarchy traversal utilizing a private register stack."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks front-to-back child node ordering based on ray direction signs."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of global memory spilling through thirty-two-entry register stacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero stack overflow, optimal ray early-exit, and high-speed traversal throughput."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

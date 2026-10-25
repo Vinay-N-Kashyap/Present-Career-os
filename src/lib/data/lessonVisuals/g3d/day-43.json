@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 43,
+  "promptSha": "0b3d7f7231d3ada9181ff2df02380eae9be6f6835a85c2b3d1f78b229aaa6da0",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Non-Opaque Geometry & Any-Hit Alpha Testing Shaders",
+      "codeHash": "4bcceb605e2550b97611cf85bde3e108fa85eab213e9e07ee988ea3a89501fd2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Non-Opaque Geometry & Any-Hit Alpha Testing Shaders",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays non-opaque geometry handling utilizing any-hit shaders for alpha-tested cutouts."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks barycentric texture coordinate interpolation and alpha texture map sampling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts hardware any-hit alpha testing against naive solid polygon collision testing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms accurate cutout transparency, proper alpha cutoff thresholds, and ray traversal continuation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Stochastic Dithered Transparency & Halftone Screen Sampling",
+      "codeHash": "d7e43c2611233d3982e0102b25d2ef84858be152970fb5fa939fdb11aaba00cf",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Stochastic Dithered Transparency & Halftone Screen Sampling",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates stochastic dithered transparency translating material opacity into binary hit decisions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates screen-space Bayer threshold matrix comparisons across four-by-four pixel neighborhoods."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of complex multi-hit depth sorting via stochastic sampling."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms correct statistical light transmission and temporal filter convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Ray-Traced Hard Shadows: Terminate-On-First-Hit & Zero-Bias Precision",
+      "codeHash": "3bce90facebd4837751d79bdd331eba9074df6f6f98c07f721a9269beea1f006",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Ray-Traced Hard Shadows: Terminate-On-First-Hit & Zero-Bias Precision",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays ray-traced hard shadows launching direct visibility rays toward light sources."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks terminate-on-first-hit ray flags and dual normal and light direction bias offsets."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete elimination of shadow map acne, peter panning, and perspective aliasing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies pin-sharp contact shadows and zero self-shadowing artifacts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Ray-Traced Soft Shadows: Light Source Sampling & Physical Penumbra Widths",
+      "codeHash": "6a5f5a68d4fd01fb25c02deb44d402c0a3c826e58171fd9fe5c867067cb8ffd1",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Ray-Traced Soft Shadows: Light Source Sampling & Physical Penumbra Widths",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates physical area light sampling generating soft shadows with natural contact hardening."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates similar-triangle penumbra expansion ratios across near and distant occluders."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts ray-traced penumbra diffusion against uniform artificial screen-space blurs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms razor-sharp contact shadows near surfaces and smooth broad diffusion at distance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Shadow Mask Buffer Packing, SVGF Denoising & 60 FPS Performance SLA",
+      "codeHash": "89fe1958950c865991c4b255efb7bafc7b1dfebb908131f7fa5126c57f5e58fa",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Shadow Mask Buffer Packing, SVGF Denoising & 60 FPS Performance SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows shadow mask buffer packing and edge-stopping bilateral filtering under strict budgets."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles ray query dispatch, any-hit alpha evaluation, and wavelet filtering passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms full shadow pipeline completion within two milliseconds on modern hardware."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sixty frames per second frame rate compliance and cinema-grade shadow fidelity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

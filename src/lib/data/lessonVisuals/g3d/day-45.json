@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 45,
+  "promptSha": "7c50b7da0ae1c9179adfa6e3c5655dae48e28c962c009c649c6f398aa85f2a93",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Hybrid Pipeline Topology: Rasterized Visibility & Asynchronous Ray Queries",
+      "codeHash": "48a9df9a1feff2e3253b0240fb92fd7b4e13ba7bd6b4fd37eb35e426794fd0a6",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Hybrid Pipeline Topology: Rasterized Visibility & Asynchronous Ray Queries",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the hybrid pipeline topology fusing rasterized visibility with compute ray queries."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks primary G-Buffer rasterization followed by asynchronous compute ray query execution."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts pure ray tracing overhead against optimal hybrid load balancing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sixty frames per second compliance and efficient GPU core utilization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Top-Level Acceleration Structure (TLAS) Dynamic Instancing & Matrix Updates",
+      "codeHash": "d8d2f589fa99fe34ca7fab76a38e933d25eb01a0705ad8e28551e8379d57f351",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Top-Level Acceleration Structure (TLAS) Dynamic Instancing & Matrix Updates",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates dynamic top-level acceleration structure management updating instance matrices."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks sixty-four-byte instance descriptor updates and high-speed top-level hierarchy rebuilds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-millisecond instance refitting versus costly bottom-level geometry rebuilds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms dynamic entity transformations, instance visibility masks, and memory bounds."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Multi-Pass SVGF Spatio-Temporal Wavelet Denoiser Engine",
+      "codeHash": "fd844a90ccf4dd5f2cae78f8878fb60b71887268ac73e5472a9583563f5edc28",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Multi-Pass SVGF Spatio-Temporal Wavelet Denoiser Engine",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the multi-pass spatio-temporal wavelet denoiser filtering raw stochastic noise."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks five-tap \u00e0-trous cross-bilateral kernels with normal and depth edge-stopping weights."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates effective noise elimination while preserving razor-sharp geometric silhouettes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero shadow bleed across silhouettes and rapid temporal history convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The 5-Gate Quality & Regression Defense Matrix",
+      "codeHash": "f91d4d15dcc9642e3db7b3e40b55ca2b075811d3fceb9ebe9f616577f41d5c62",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The 5-Gate Quality & Regression Defense Matrix",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the five-gate quality defense matrix verifying telemetry across all subsystems."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits BVH integrity, MIS energy conservation, edge preservation, SLAs, and memory limits."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms one hundred percent certification across all five architectural defense gates."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification issues final capstone production certificate locking real-time hybrid ray tracing performance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Capstone Production Deployment, VRAM Telemetry & Certification",
+      "codeHash": "dfbdbcf7dfd01f8a18a74502794f7c64f6ab17028991ac4f353d838a6f5d6994",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Capstone Production Deployment, VRAM Telemetry & Certification",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays full production telemetry monitoring VRAM allocation, BLAS counts, and framerates."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks memory headroom, GPU timestamp queries, and sustained frame rates under heavy load."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis certifies AAA game engine deployment standards with substantial performance headroom."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms successful milestone completion and locks cinema-grade real-time graphics."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

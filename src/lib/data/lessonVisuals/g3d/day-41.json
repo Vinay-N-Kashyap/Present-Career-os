@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 41,
+  "promptSha": "ea07fec35ca7bcd2e94523b395313187be86ecdf7b2cbbafb01144db4ffb8797",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Evolution of Ray Tracing Hardware: RT Cores, ASIC Units & Ray Queries",
+      "codeHash": "ef422b475014cd8b6383664c87573ae87bc088d5b7642afdddf3f218ae2889f8",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Evolution of Ray Tracing Hardware: RT Cores, ASIC Units & Ray Queries",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates dedicated hardware ray tracing cores embedded alongside streaming multiprocessor pipelines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks ray query execution through fixed-function box and triangle intersection testing units."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts hardware-accelerated bounding box intersection against software compute loop emulation."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies hardware instruction dispatch and latency reduction on modern graphics processors."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Two-Level Acceleration Structures (TLAS/BLAS) & Ray Query Configuration",
+      "codeHash": "0c3e1bea45684d5e2a3183d98502cfcfce2d2dfa4235ba5632a69f061b502539",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Two-Level Acceleration Structures (TLAS/BLAS) & Ray Query Configuration",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays primary camera ray generation mapping normalized device coordinates into world space vectors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks inverse view projection matrix multiplication and camera origin offsets."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks camera ray dispatch against traditional rasterized vertex transformation passes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms ray direction normalization and pinhole camera perspective correctness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "M\u00f6ller-Trumbore Ray-Triangle Intersections & Barycentric Normal Interpolation",
+      "codeHash": "1259adbe7e699993d3e89b93a745d8bd755f5177769e33f466d860b008350591",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: M\u00f6ller-Trumbore Ray-Triangle Intersections & Barycentric Normal Interpolation",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the M\u00f6ller-Trumbore ray triangle intersection algorithm evaluating barycentric coordinates."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates determinant culling, edge vectors, and ray parameter boundary conditions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts fast ray triangle intersection against costly plane equation projections."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies valid barycentric weights, unit coordinate bounds, and accurate surface normals."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Ray-Traced Ambient Occlusion (RTAO) & Cosine Hemisphere Sampling",
+      "codeHash": "8327c6df0b0b94d0c57c67133346f0b9fa0a141c8bf3d7e5b9e8fe00153c4aa2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Ray-Traced Ambient Occlusion (RTAO) & Cosine Hemisphere Sampling",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the two-level acceleration structure separating static bottom-level geometry from dynamic top-level instances."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks top-level instance transform descriptors pointing to bottom-level triangle hierarchies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dramatic memory savings of instanced geometry over flattened world meshes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms instance affine matrix validity, visibility mask bits, and proper memory alignment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Ray Budgeting, Wavefront Scheduling & 60 FPS Hybrid Rendering SLA",
+      "codeHash": "8134d56b3c9f5f498ecbd4f952c301debe5f92b1996d1d12b377dab383603628",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Ray Budgeting, Wavefront Scheduling & 60 FPS Hybrid Rendering SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows inline ray query loop dispatch in compute shaders evaluating ambient occlusion visibility."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors ray traversal candidate states and confirmed surface hit records."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts inline compute ray queries against complex ray tracing pipeline state objects."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms compute workgroup occupancy, memory barrier safety, and sub-millisecond execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

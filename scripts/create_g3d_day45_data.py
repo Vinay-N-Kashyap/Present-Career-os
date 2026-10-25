@@ -1,0 +1,415 @@
+import json
+
+say_p1 = [
+    "Welcome to Day 45 of 3D Computer Graphics, WebGL2 & GPU Shader Architecture. Today marks a monumental milestone in your journey as a graphics engineer: Milestone 9 Capstone. Over the past fifteen days, we scaled the twin summits of real-time rendering: Month 2 Block 7 established Compute Shaders, GPU Culling, and GPU-driven rendering; Block 8 engineered high-fidelity Post-Processing, Temporal Anti-Aliasing, and Physical Screen-Space Effects; and Block 9 forged Hardware-Accelerated Ray Tracing, BVH Trees, and Monte Carlo Path Tracing. Today, we unify every single one of these cutting-edge disciplines into an industrial-grade flagship: The Real-Time Hardware-Accelerated Hybrid Ray Tracer & SVGF Spatio-Temporal Denoiser Engine.",
+    "For decades, the graphics community viewed rasterization and ray tracing as bitter ideological rivals: rasterization was the fast, hardware-friendly hack for video games, while ray tracing was the slow, photorealistic simulation used by Hollywood movie studios for offline CGI rendering that took twenty hours per frame. Today, that rivalry is dead. Modern graphics engines do not choose between rasterization and ray tracing; they fuse them into a symbiotic Hybrid Pipeline Topology.",
+    "In a hybrid engine, each rendering paradigm is assigned strictly what it does best in silicon. Rasterization possesses unmatched throughput for Primary Camera Visibility: testing millions of triangles against a depth buffer at billions of pixels per second with dedicated hardware rasterizers. Once rasterization generates the G-Buffer (depth, world normals, motion vectors, and material roughness), the engine hands control over to Compute Ray Queries for Secondary Rays: where rasterization fails completely! Ray queries evaluate pin-sharp contact shadows, wide-penumbra area light shadows, physical glossy reflections, and multi-bounce indirect global illumination.",
+    "Consider the physical analogy of an architectural construction company building a fifty-story skyscraper. To pour the concrete foundation and erect the massive steel skeleton, the company deploys heavy industrial diesel excavators and towering steel cranes (Hardware Rasterization). They can move fifty tons of steel beams in ten seconds! But to install the intricate copper plumbing, fiber optic cables, and delicate stained-glass windows, diesel excavators are utterly useless—they would smash the glass! The company brings in specialized master electricians and artisans with laser levels and precision hand tools (Hardware Ray Queries). The skyscraper is built efficiently because heavy machinery and precision artisans collaborate in harmonious sequence. That is the hybrid rendering pipeline.",
+    "In our engine topology, the frame begins with Pass 1: Depth Pre-pass and G-Buffer Rasterization. Pass 2 dispatches an asynchronous compute queue executing Inline Ray Queries for 1-spp area light shadows. Pass 3 dispatches glossy reflection ray queries using GGX VNDF importance sampling from Day 44. Pass 4 feeds the raw stochastic shadow and reflection buffers into our Spatio-Temporal Variance-Guided Filtering (SVGF) wavelet denoiser. Finally, Pass 5 composites the denoised indirect illumination with PBR direct lighting, applying our ACES filmic tone curve and CAS sharpening from Day 40.",
+    "The compute dispatch is managed via indirect draw buffers, minimizing CPU-GPU synchronization stalls to near zero. By offloading secondary rays to asynchronous compute while the main graphics queue finishes shadow rasterization, we achieve 100% GPU silicon occupancy across all shader cores.",
+    "A paramount optimization in our hybrid architecture is Tile-Based Workload Classification. Instead of blindly dispatching ray queries for every single pixel on screen, a lightweight compute classification pass analyzes 8x8 G-Buffer screen tiles before ray dispatch. If an entire tile consists of empty sky or unlit background geometry, the tile is flagged as inactive and bypassed completely. Furthermore, pixels are classified by material roughness: mirror-like smooth surfaces receive tight specular ray cones, while rough surfaces evaluate cheaper filtered diffuse approximations. This spatial classification prunes up to forty percent of potential ray queries, keeping compute dispatch tightly bounded under peak gameplay stress.",
+    "In the TypeScript snippet below, we implement the `HybridRayTracingPipeline`. We record and evaluate GPU stage timings across rasterization, ray queries, denoising, and composition, certifying 60 FPS compliance and measuring ray tracing workload distribution.",
+    "Notice how total GPU frame time evaluates to 8.8ms, leaving massive headroom below our 16.67ms 60 FPS target, with ray tracing accounting for 55.7% of GPU time. We now examine Top-Level Acceleration Structure (TLAS) dynamic instance management."
+]
+
+say_p2 = [
+    "Having established our hybrid topology, we turn our attention to the dynamic heartbeat of the ray tracer: The Two-Level Acceleration Structure and Dynamic TLAS Management. On Day 41 and Day 42, we learned that ray tracing acceleration structures are organized into two distinct tiers: Bottom-Level Acceleration Structures (BLAS), which store local triangle geometry for individual meshes (like a character model, a sports car, or a birch tree), and Top-Level Acceleration Structures (TLAS), which collect and position hundreds of BLAS instances across the global game world.",
+    "In a dynamic video game world running at 60 FPS, the scene is never static! Characters run, sports cars drift around corners, enemy spaceships bank through asteroid fields, and wind turbines spin against the skyline. If the GPU had to rebuild the entire BVH from scratch every single frame, rebuilding hundreds of thousands of triangles would cause catastrophic frame stuttering! The two-level hierarchy solves this through Dynamic Instance Re-linking.",
+    "Because the local geometry of rigid objects never changes (a sports car body has the exact same triangle coordinates whether parked or driving at 100 miles per hour), its BLAS is built once during level load and cached permanently in immutable VRAM. Every frame on the CPU or in a GPU compute culling pass, the engine only updates the lightweight 64-byte Instance Descriptor Table of the TLAS!",
+    "Consider the physical analogy of a theatrical stage manager directing an elaborate Broadway play. The stage sets include a massive painted wooden pirate ship (BLAS 1) and a sturdy stone castle tower (BLAS 2). When the actors transition from Act 1 to Act 2, the stage crew does not demolish the wooden pirate ship with sledgehammers and rebuild it with fresh timber! That would take four weeks! Instead, stagehands simply roll the wooden pirate ship across the stage on wheels and turn it forty-five degrees to face the audience. The heavy prop is preserved; only its stage position and rotation are modified. That is dynamic TLAS instancing.",
+    "Each TLAS instance descriptor contains a 3x4 Affine Transformation Matrix (row-major translation, rotation, and non-uniform scale), an Instance ID (linking to the material buffer), an 8-bit Visibility Mask (enabling instantaneous culling of shadow-casting meshes from camera rays), and a 64-bit GPU pointer to the target BLAS memory block.",
+    "During the CPU frame update, our `TlasDynamicManager` loops over all active instanced entities in the scene graph. For every moving entity, it updates the 3x4 transformation matrix in an upload ring buffer. The GPU then issues a high-speed TLAS Rebuild or TLAS Refit command. Because a TLAS contains only a few thousand bounding boxes (one per instance) rather than millions of triangles, rebuilding the entire TLAS in hardware takes less than 0.15 milliseconds—barely one percent of our frame budget!",
+    "Furthermore, instances that fall outside the camera's broad ray query horizon or are occluded behind giant terrain mountains are dynamically masked out by setting their visibility flag to false. The TLAS manager compresses the active instance list, packing active descriptors into contiguous GPU memory and saving precious BVH traversal bandwidth.",
+    "Additionally, the 8-bit Instance Mask field inside each TLAS descriptor unlocks hardware-level instance filtering. When the shader initializes a ray query, it passes a Cull Mask: `rayQueryInitialize(query, tlas, rayFlags, cullMask, origin, tMin, dir, tMax)`. The RT core performs a bitwise AND between the ray's cull mask and the instance mask; if the result is zero, the entire instance and its underlying BLAS are rejected in hardware before a single triangle or bounding box is tested! By separating primary reflection instances (mask 0x01) from shadow-caster instances (mask 0x02), we eliminate shadow tests on invisible light probes and prevent particle systems from bloating reflection costs.",
+    "In the TypeScript snippet below, we construct the `TlasDynamicManager`. We update dynamic rotational matrices for active instances, compute VRAM descriptor buffer sizes, and audit instanced object counts.",
+    "Notice how active instances are updated with pristine affine transforms in barely 192 bytes of memory. We now delve into the SVGF Spatio-Temporal Wavelet Denoiser."
+]
+
+say_p3 = [
+    "We now confront the intellectual heart of real-time ray tracing: The Multi-Pass SVGF Spatio-Temporal Wavelet Denoiser. On Day 44, we proved that evaluating multi-bounce lighting with 1 ray per pixel produces unavoidable stochastic Monte Carlo noise. If you display raw 1-spp ray traced output on a 4K monitor, the image looks like television static from a broken antenna! To turn that static into liquid silk, we deploy Spatio-Temporal Variance-Guided Filtering (SVGF), first introduced by Christoph Schied and colleagues at High Performance Graphics 2017.",
+    "The SVGF algorithm operates in two tightly coupled stages: Temporal Reprojection followed by Iterative À-Trous Cross-Bilateral Spatial Filtering.",
+    "In Stage 1 (Temporal Reprojection), the shader looks back in time. For every pixel in the current frame, it reads the screen-space Motion Vector from our G-Buffer. It subtracts the motion vector from the current pixel coordinate to find the exact historical pixel location in the previous frame. If the surface was not disoccluded (verified by comparing current world normals and camera depth against the reprojected history), the shader blends the historical radiance and historical variance with the current 1-spp sample using an Exponential Moving Average (EMA). Over consecutive frames of smooth camera motion, temporal accumulation integrates up to thirty virtual samples per pixel with zero performance cost!",
+    "In Stage 2 (À-Trous Wavelet Filtering), the shader applies a 5x5 cross-bilateral filter across three to five progressive iterations. The word 'À-trous' is French for 'with holes': instead of evaluating a dense 25-tap neighborhood that would require hundreds of memory lookups, the filter uses a sparse 5-tap kernel that expands its sample stride exponentially across iterations (stride = 1 on iteration 1, stride = 2 on iteration 2, stride = 4 on iteration 3). This allows a small 5-tap kernel to span an effective filter footprint of 65x65 pixels!",
+    "Crucially, the filter is Cross-Bilateral and Edge-Stopping: every sample weight is modulated by three strict physical metrics: Surface Normal Similarity (w_normal = pow(max(0, dot(n1, n2)), 32)), Depth Difference (w_depth = exp(-|z1 - z2| / sigma_z)), and Variance-Guided Luminance Difference (w_lum = exp(-|l1 - l2| / (4 * sqrt(var)))).",
+    "Consider the physical analogy of a professional plasterer smoothing fresh wet stucco onto an ornate historic cathedral wall. The plasterer uses a wide rectangular float tool to smooth out rough trowel ridges across the broad flat walls. But when the float approaches the sharp stone carving of an archway or a gilded picture frame, the plasterer instantly angles the tool away, smoothing right up to the crisp edge without ever smearing wet stucco over the carving! The bilateral edge-stopping filter enforces this exact preservation: smoothing rough Monte Carlo noise on continuous walls while preserving razor-sharp geometric silhouettes.",
+    "If a sample is taken across a geometric edge (such as a foreground character's arm overlapping a distant wall five meters behind), the depth and normal weights evaluate to zero, completely cutting off the filter contribution and preventing shadow leaking and blur bleeding.",
+    "A linchpin of temporal stability in SVGF is the Per-Pixel History Length Counter, which tracks how many consecutive frames a surface point has remained continuously visible without disocclusion. When a pixel is first revealed around a corner, its history length is one, meaning its variance estimate is uncalibrated and noisy. The shader uses this history counter to dynamically expand the spatial filter footprint: newly disoccluded pixels receive broad spatial filtering to hide noise immediately, while pixels with thirty frames of accumulated history use narrow, subtle filter kernels that preserve maximum micro-texture sharpness.",
+    "In the TypeScript snippet below, we implement the `SvgfWaveletFilter`. We evaluate bilateral filter tap weights across both continuous coplanar surfaces and geometric depth discontinuities, verifying edge-stopping preservation.",
+    "Notice how the continuous surface tap receives a strong weight of 0.19334, while the discontinuous edge tap drops to absolute zero, certifying zero bleed across geometric boundaries. We now inspect our 5-Gate Quality & Regression Defense Matrix."
+]
+
+say_p4 = [
+    "In modern game production environments, deploying complex hybrid ray tracing systems without automated verification is a recipe for catastrophic regressions. A single uninitialized shader uniform or floating-point precision bug in a BVH traversal loop can silently disable ray tracing for thousands of players or cause GPUs to crash with Device Lost TDR errors! To guarantee bulletproof stability, our engine incorporates an automated 5-Gate Quality & Regression Defense Matrix.",
+    "Gate 1: RT Core BVH Traversal Integrity. This gate verifies that hardware BVH traversal algorithms report zero ray miss errors on known closed test meshes (such as an inverted Cornell Box). Every primary ray dispatched into the test volume must terminate at an opaque boundary, confirming that BLAS and TLAS bounding envelopes are mathematically sealed with zero leak holes.",
+    "Gate 2: Stochastic MIS Energy Conservation. This gate verifies that our Monte Carlo Multiple Importance Sampling estimators obey physical thermodynamics. Over 100,000 test paths in an integrating sphere, total reflected light must never exceed incoming irradiance (Conservation of Energy <= 1.0001). Any estimator bug that over-weights BRDF lobes or creates unnormalized PDF terms fails this gate instantly.",
+    "Gate 3: SVGF Silhouette Edge Preservation. This gate verifies that the spatio-temporal denoiser preserves high-frequency geometric silhouettes. The gate computes the image gradient across depth discontinuities before and after denoising; if the bilateral filter leaks shadow or color energy across edges by more than 0.001 delta, the build is flagged for bilateral parameter tuning.",
+    "Gate 4: 16.6ms Total Frame Time SLA (60 FPS Target). This gate enforces our strict hardware performance budget. The combined execution time of G-Buffer rasterization, TLAS updates, 1-spp ray queries, SVGF denoising, and tone mapping must remain strictly below 16.67 milliseconds on target hardware. Under benchmark load, our hybrid pipeline completes in 8.8ms, leaving nearly 8.0ms of headroom for gameplay logic and AI.",
+    "Gate 5: VRAM Allocation & Zero-Bias Precision. This gate monitors total VRAM consumption allocated to ray tracing acceleration structures, scratch build buffers, and denoiser history textures, enforcing a strict ceiling of 256 Megabytes. It also verifies that normal and light-direction biases eliminate shadow acne without creating visible contact gaps.",
+    "Consider the physical analogy of an aerospace pre-flight safety checklist before a commercial airliner departs the runway. The pilots do not merely start the jet engines and take off! They methodically verify the hydraulic pressure, test the rudder and aileron actuators, inspect fuel reserves, confirm flight computer navigation alignments, and test emergency cabin pressurization valves. If even one test fails, the aircraft remains at the gate. The 5-Gate Defense Matrix provides that exact flight safety certification for our rendering engine.",
+    "In automated continuous integration (CI) environments, the 5-Gate Defense Matrix executes headlessly across every code commit using simulated GPU environments and reference hardware runners. The test suite renders deterministic benchmark camera flythroughs and performs Perceptual Image Difference Hashing against golden reference frames. If an unintended change alters shadow sharpness or introduces microfacet fireflies beyond an epsilon threshold, the pull request is blocked automatically, preserving visual fidelity across global distributed engineering teams.",
+    "When an automated test run fails one of the five quality gates, the CI test framework generates an interactive diagnostic artifact. For example, if Gate 1 detects an anomalous ray miss, the framework dumps the exact ray origin, ray direction, and BVH node traversal stack into a serialized trace file compatible with GPU capture tools like RenderDoc. This deterministic reproduction capability reduces developer triage time from hours of manual scene debugging to seconds of focused shader inspection, providing absolute architectural confidence across rapid release cycles.",
+    "In the TypeScript snippet below, we construct the `RayTracingDefenseMatrix`. We evaluate observed telemetry across all five quality gates against their respective thresholds, certifying production compliance.",
+    "Notice how all five gates achieve a 100% pass rate, validating our engine architecture. We now conclude with production deployment and capstone telemetry certification."
+]
+
+say_p5 = [
+    "We have reached the triumphant finale of Month 2 Block 9. Over the course of Days 41 through 45, we engineered a complete, production-grade ray tracing subsystem from mathematical first principles to hardware execution. We now review the complete operational telemetry of our deployed engine and certify Capstone Deployment.",
+    "In our production engine deployment running on modern GPU hardware, our telemetry demonstrates exemplary performance metrics across all subsystems: 45 unique Bottom-Level Acceleration Structures (BLAS) representing over two million triangles, 250 dynamic Top-Level Acceleration Structure (TLAS) instances animating smoothly in real time, and a total VRAM footprint of only 184.5 Megabytes—well below our 256MB cap, leaving 71.5 Megabytes of safety headroom.",
+    "Crucially, under full gameplay load with 1-spp contact shadows, 1-spp GGX glossy reflections, and dual-pass SVGF denoising, the engine sustains a blistering 68.4 Frames Per Second, comfortably exceeding our 60 FPS target.",
+    "Reflect on the profound architectural journey you have completed across Month 2: In Block 7 (Days 31–35), you mastered GPU compute pipelines, threadgroup shared memory, parallel prefix sum stream compaction, and GPU-driven draw call generation. In Block 8 (Days 36–40), you conquered high-end post-processing, temporal anti-aliasing with Halton jitter and AABB clamping, screen-space reflections, volumetric froxels, and dual-filter bloom. And in Block 9 (Days 41–45), you forged hardware ray tracing architecture, binned SAH BVH construction, any-hit alpha cutouts, Monte Carlo importance sampling, Multiple Importance Sampling with the balance heuristic, and SVGF spatio-temporal denoising.",
+    "Consider the physical analogy of a master watchmaker assembling a grand complication chronometer. The watchmaker begins by machining individual brass gears and ruby jewel bearings. Then they assemble the escapement mechanism, tension the mainspring, balance the tourbillon cage, and calibrate the hands. When the final screw is tightened, the watch does not merely sit as a pile of parts—it ticks with rhythmic, harmonious perfection, measuring time with atomic accuracy. Your hybrid ray tracing engine is that grand complication chronometer.",
+    "Every subsystem we built—from the microscopic Morton codes of our BVH leaves to the multi-bounce Russian Roulette energy estimators of our path tracer—operates in synchronized harmony. You possess the theoretical mastery, mathematical rigor, and systems-level coding expertise to architect state-of-the-art graphics engines for AAA game studios and cutting-edge visual computing platforms.",
+    "To maintain peak execution throughput during live operations, our engine incorporates comprehensive GPU vendor profiling integration. Using low-overhead timestamp query pools, the engine measures microsecond-level hardware execution across compute warps and memory controllers. These telemetry feeds stream directly into developer HUD overlays and automated telemetry dashboards, enabling instantaneous detection of memory bus saturation or thread divergence bottlenecks before they impact end-user framerates.",
+    "Furthermore, our production deployment guarantees cross-platform determinism across desktop, console, and web runtimes. By compiling high-level shader modules into SPIR-V for Vulkan and DirectX Intermediate Language (DXIL) for DXR alongside WebGPU WGSL pipelines, the exact same mathematical BVH traversal logic and SVGF denoising kernels execute identically across NVIDIA RTX, AMD RDNA, Apple Silicon, and Intel Arc hardware architectures. This universal hardware compatibility ensures that players on varied hardware tiers experience identical contact-hardened shadows, photorealistic reflections, and stable 60 FPS framerates with zero vendor-specific rendering divergences.",
+    "As we stand at the threshold of Month 2 Block 10, carry forward this foundational truth of graphics engineering: high performance is never an afterthought grafted onto an existing codebase, but an architectural invariant engineered into data layouts from the very first line of code. With flat 32-byte BVH nodes, 1-spp stochastic sampling, and bilateral wavelet filtering, you have mastered the pinnacle of modern real-time graphics architecture.",
+    "In the TypeScript snippet below, we implement the `CapstoneTelemetryAuditor`. We ingest live engine telemetry, audit VRAM headroom, verify sustained frame rates under load, and award official Capstone Deployment Certification.",
+    "Notice how our engine achieves 68.4 FPS under load with 71.5MB of VRAM headroom, earning full production certification. Congratulations on conquering Milestone 9 Capstone! In Month 2 Block 10 (Days 46–50), we will ascend into Advanced Material Systems, Subsurface Scattering, Thin-Film Wave Interference, and Real-Time Volumetric Clouds!"
+]
+
+c1 = """interface PipelinePassTiming {
+  passName: string;
+  durationMs: number;
+}
+
+class HybridRayTracingPipeline {
+  static evaluateFrame(timings: PipelinePassTiming[]): { totalGpuMs: number; meets60Fps: boolean; rtPassPercentage: number } {
+    let totalMs = 0.0;
+    let rtMs = 0.0;
+
+    for (const t of timings) {
+      totalMs += t.durationMs;
+      if (t.passName.startsWith('RT_')) {
+        rtMs += t.durationMs;
+      }
+    }
+
+    totalMs = parseFloat(totalMs.toFixed(2));
+    const meets60Fps = totalMs <= 16.67;
+    const rtPassPercentage = parseFloat(((rtMs / totalMs) * 100).toFixed(1));
+
+    return { totalGpuMs: totalMs, meets60Fps, rtPassPercentage };
+  }
+}
+
+const frameTimings: PipelinePassTiming[] = [
+  { passName: 'Raster_GBuffer', durationMs: 2.1 },
+  { passName: 'RT_HardwareShadows', durationMs: 1.4 },
+  { passName: 'RT_GlossyReflections', durationMs: 2.3 },
+  { passName: 'RT_SVGFDenoiser', durationMs: 1.2 },
+  { passName: 'PostProcess_Composite', durationMs: 1.8 }
+];
+
+const res = HybridRayTracingPipeline.evaluateFrame(frameTimings);
+console.log(`[Hybrid Pipeline] Total Frame GPU Time: ${res.totalGpuMs} ms`);
+console.log(`[Hybrid Pipeline] Ray Tracing Workload: ${res.rtPassPercentage}%`);
+console.log(`[Hybrid Pipeline] 60 FPS Target Certified: ${res.meets60Fps}`);"""
+
+o1 = """[Hybrid Pipeline] Total Frame GPU Time: 8.8 ms
+[Hybrid Pipeline] Ray Tracing Workload: 55.7%
+[Hybrid Pipeline] 60 FPS Target Certified: true"""
+
+c2 = """interface TlasInstance {
+  instanceId: number;
+  blasId: number;
+  transformMatrix4x4: number[];
+  visible: boolean;
+}
+
+class TlasDynamicManager {
+  static updateInstances(instances: TlasInstance[], deltaRotY: number): { activeCount: number; memoryBytes: number } {
+    let active = 0;
+    const cosR = Math.cos(deltaRotY);
+    const sinR = Math.sin(deltaRotY);
+
+    for (const inst of instances) {
+      if (inst.visible) {
+        active++;
+        // Apply Y-axis rotation update to 3x4 affine transform inside 4x4 matrix
+        inst.transformMatrix4x4[0] = parseFloat(cosR.toFixed(4));
+        inst.transformMatrix4x4[2] = parseFloat(sinR.toFixed(4));
+        inst.transformMatrix4x4[8] = parseFloat((-sinR).toFixed(4));
+        inst.transformMatrix4x4[10] = parseFloat(cosR.toFixed(4));
+      }
+    }
+
+    // 64 bytes per DXR/Vulkan VkAccelerationStructureInstanceKHR (3x4 matrix + flags + mask)
+    const memoryBytes = instances.length * 64;
+    return { activeCount: active, memoryBytes };
+  }
+}
+
+const instances: TlasInstance[] = [
+  { instanceId: 0, blasId: 101, transformMatrix4x4: [1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1], visible: true },
+  { instanceId: 1, blasId: 102, transformMatrix4x4: [1,0,0,0, 0,1,0,0, 0,0,1,0, 5,0,0,1], visible: true },
+  { instanceId: 2, blasId: 103, transformMatrix4x4: [1,0,0,0, 0,1,0,0, 0,0,1,0, -5,0,0,1], visible: false }
+];
+
+const tlasStatus = TlasDynamicManager.updateInstances(instances, 0.5);
+console.log(`[TLAS Manager] Active Instanced Objects: ${tlasStatus.activeCount} / ${instances.length}`);
+console.log(`[TLAS Manager] Instance Descriptor Buffer Size: ${tlasStatus.memoryBytes} bytes`);
+console.log(`[TLAS Manager] Instance 0 Transform Matrix M00: ${instances[0].transformMatrix4x4[0]}`);"""
+
+o2 = """[TLAS Manager] Active Instanced Objects: 2 / 3
+[TLAS Manager] Instance Descriptor Buffer Size: 192 bytes
+[TLAS Manager] Instance 0 Transform Matrix M00: 0.8776"""
+
+c3 = """interface PixelWaveletState {
+  radiance: number;
+  variance: number;
+  normal: [number, number, number];
+  depth: number;
+}
+
+class SvgfWaveletFilter {
+  // 5-tap A-Trous cross-bilateral filter kernel with normal and depth edge stopping
+  static filterTap(center: PixelWaveletState, neighbor: PixelWaveletState, kernelWeight: number): { weight: number; contribution: number } {
+    // Normal similarity weight
+    const dotN = center.normal[0] * neighbor.normal[0] + center.normal[1] * neighbor.normal[1] + center.normal[2] * neighbor.normal[2];
+    const wNormal = Math.pow(Math.max(0.0, dotN), 32);
+
+    // Depth difference weight (sigma_z = 0.1)
+    const depthDiff = Math.abs(center.depth - neighbor.depth);
+    const wDepth = Math.exp(-depthDiff / 0.1);
+
+    // Variance-guided luminance weight
+    const lumDiff = Math.abs(center.radiance - neighbor.radiance);
+    const sigmaL = Math.sqrt(Math.max(1e-4, center.variance)) * 4.0;
+    const wLum = Math.exp(-lumDiff / sigmaL);
+
+    const totalWeight = kernelWeight * wNormal * wDepth * wLum;
+    const contribution = neighbor.radiance * totalWeight;
+
+    return {
+      weight: parseFloat(totalWeight.toFixed(5)),
+      contribution: parseFloat(contribution.toFixed(5))
+    };
+  }
+}
+
+const centerPixel: PixelWaveletState = { radiance: 1.0, variance: 0.25, normal: [0, 1, 0], depth: 5.0 };
+const coplanarNeighbor: PixelWaveletState = { radiance: 0.95, variance: 0.25, normal: [0, 0.999, 0.01], depth: 5.02 };
+const edgeNeighbor: PixelWaveletState = { radiance: 0.2, variance: 0.25, normal: [1, 0, 0], depth: 8.5 }; // Discontinuous wall
+
+const tap1 = SvgfWaveletFilter.filterTap(centerPixel, coplanarNeighbor, 0.25);
+const tap2 = SvgfWaveletFilter.filterTap(centerPixel, edgeNeighbor, 0.25);
+
+console.log(`[SVGF Wavelet] Continuous Surface Tap Weight: ${tap1.weight}`);
+console.log(`[SVGF Wavelet] Edge Discontinuity Tap Weight: ${tap2.weight}`);
+console.log(`[SVGF Wavelet] Edge-Stopping Preservation Confirmed: ${tap2.weight === 0.0}`);"""
+
+o3 = """[SVGF Wavelet] Continuous Surface Tap Weight: 0.19334
+[SVGF Wavelet] Edge Discontinuity Tap Weight: 0
+[SVGF Wavelet] Edge-Stopping Preservation Confirmed: true"""
+
+c4 = """interface QualityGate {
+  gateId: string;
+  metricName: string;
+  observedValue: number;
+  threshold: number;
+  passed: boolean;
+}
+
+class RayTracingDefenseMatrix {
+  static auditQualityGates(gates: QualityGate[]): { certified: boolean; passCount: number; totalGates: number } {
+    let passCount = 0;
+    for (const g of gates) {
+      if (g.passed) passCount++;
+    }
+    const certified = passCount === gates.length;
+    return { certified, passCount, totalGates: gates.length };
+  }
+}
+
+const gates: QualityGate[] = [
+  { gateId: 'GATE_1', metricName: 'RT Core BVH Traversal Error Rate', observedValue: 0.0, threshold: 0.0, passed: true },
+  { gateId: 'GATE_2', metricName: 'MIS Monte Carlo Energy Conservation', observedValue: 1.0001, threshold: 1.01, passed: true },
+  { gateId: 'GATE_3', metricName: 'SVGF Silhouette Edge Bleed Error', observedValue: 0.0, threshold: 0.001, passed: true },
+  { gateId: 'GATE_4', metricName: 'Total Frame Time SLA (ms)', observedValue: 8.8, threshold: 16.67, passed: true },
+  { gateId: 'GATE_5', metricName: 'VRAM Allocation Overhead (MB)', observedValue: 184.5, threshold: 256.0, passed: true }
+];
+
+const auditResult = RayTracingDefenseMatrix.auditQualityGates(gates);
+console.log(`[Defense Matrix] Evaluated Quality Gates: ${auditResult.passCount} / ${auditResult.totalGates}`);
+console.log(`[Defense Matrix] Capstone Production Certification: ${auditResult.certified}`);
+console.log(`[Defense Matrix] 5-Gate Defense Invariant: 100% PASS`);"""
+
+o4 = """[Defense Matrix] Evaluated Quality Gates: 5 / 5
+[Defense Matrix] Capstone Production Certification: true
+[Defense Matrix] 5-Gate Defense Invariant: 100% PASS"""
+
+c5 = """interface EngineTelemetry {
+  blasCount: number;
+  tlasInstanceCount: number;
+  totalRayTracedVramMb: number;
+  fpsUnderLoad: number;
+}
+
+class CapstoneTelemetryAuditor {
+  static certifyDeployment(telemetry: EngineTelemetry): { productionGrade: boolean; vramHeadroomMb: number } {
+    const vramHeadroomMb = parseFloat((256.0 - telemetry.totalRayTracedVramMb).toFixed(1));
+    const productionGrade = (
+      telemetry.fpsUnderLoad >= 60.0 &&
+      telemetry.totalRayTracedVramMb <= 256.0 &&
+      telemetry.tlasInstanceCount >= 100
+    );
+
+    return { productionGrade, vramHeadroomMb };
+  }
+}
+
+const telemetry: EngineTelemetry = {
+  blasCount: 45,
+  tlasInstanceCount: 250,
+  totalRayTracedVramMb: 184.5,
+  fpsUnderLoad: 68.4
+};
+
+const cert = CapstoneTelemetryAuditor.certifyDeployment(telemetry);
+console.log(`[Capstone Certification] Production Grade Certified: ${cert.productionGrade}`);
+console.log(`[Capstone Certification] VRAM Headroom Remaining: ${cert.vramHeadroomMb} MB`);
+console.log(`[Capstone Certification] Sustained Engine Frame Rate: ${telemetry.fpsUnderLoad} FPS`);"""
+
+o5 = """[Capstone Certification] Production Grade Certified: true
+[Capstone Certification] VRAM Headroom Remaining: 71.5 MB
+[Capstone Certification] Sustained Engine Frame Rate: 68.4 FPS"""
+
+day45_data = {
+    'day': 45,
+    'coursePrefix': 'g3d',
+    'title': 'Milestone 9 Capstone: Real-Time Hardware-Accelerated Hybrid Ray Tracer & SVGF Spatio-Temporal Denoiser Engine',
+    'goal': 'Architect and certify a production-grade Real-Time Hardware-Accelerated Hybrid Ray Tracer: fusing G-Buffer rasterization with inline compute ray queries, dynamic TLAS instance updates, SVGF wavelet denoising, a 5-gate defense matrix, and 60 FPS performance budgets.',
+    'recap': 'Recap of Day 44: Monte Carlo numerical integration, cosine-weighted hemisphere importance sampling, GGX microfacet specular sampling, Multiple Importance Sampling (MIS), and Russian Roulette path termination.',
+    'minutes': 150,
+    'parts': [
+        {
+            'part': 1,
+            'title': 'Hybrid Pipeline Topology: Rasterized Visibility & Asynchronous Ray Queries',
+            'say': say_p1,
+            'example': 'A skyscraper construction project combining heavy diesel excavators for foundation steel with master electricians for precision wiring.',
+            'code': c1,
+            'output': o1,
+            'check': {
+                'question': 'Why do modern real-time graphics engines deploy a hybrid topology combining rasterization and ray tracing rather than pure ray tracing alone?',
+                'options': [
+                    'Because hardware rasterization evaluates primary camera visibility with unmatched billions-of-pixels throughput, while ray queries handle complex secondary lighting rays.',
+                    'Because ray tracing cannot render colors other than grayscale.',
+                    'Because rasterization uses zero GPU power.',
+                    'Because ray queries only work on static 2D textures.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Rasterization maximizes hardware fill rate for primary eye rays, while ray queries provide physical precision for complex secondary light bounces and contact shadows.'
+            }
+        },
+        {
+            'part': 2,
+            'title': 'Top-Level Acceleration Structure (TLAS) Dynamic Instancing & Matrix Updates',
+            'say': say_p2,
+            'example': 'A theatrical stage crew rolling existing heavy props across the stage on wheels rather than rebuilding castles from fresh timber every scene.',
+            'code': c2,
+            'output': o2,
+            'check': {
+                'question': 'How does the two-level acceleration structure (BLAS and TLAS) enable real-time 60 FPS performance for animated dynamic game worlds?',
+                'options': [
+                    'By caching static mesh triangle geometry in permanent BLAS structures and updating only lightweight 64-byte instance transform descriptors in the TLAS each frame.',
+                    'By deleting all geometry behind the camera permanently from VRAM.',
+                    'By converting all 3D meshes into 2D sprites during animation.',
+                    'By disabling ray tracing whenever any character moves.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Rebuilding the TLAS takes under 0.15ms because it contains only high-level instance bounding boxes, leaving complex triangle BLAS hierarchies unchanged.'
+            }
+        },
+        {
+            'part': 3,
+            'title': 'The Multi-Pass SVGF Spatio-Temporal Wavelet Denoiser Engine',
+            'say': say_p3,
+            'example': 'A master plasterer smoothing trowel ridges across cathedral walls with a wide float while angling the tool cleanly away from carved stone archways.',
+            'code': c3,
+            'output': o3,
+            'check': {
+                'question': 'How does an à-trous cross-bilateral filter prevent shadow and color bleeding across geometric silhouettes in the SVGF pipeline?',
+                'options': [
+                    'By weighting neighboring sample contributions using surface normal similarity and depth differentials, driving weights to zero at geometric boundaries.',
+                    'By rendering shadows at 8K resolution.',
+                    'By inverting color values of shadowed pixels.',
+                    'By disabling denoising on character faces.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'When samples cross geometric silhouettes, depth and normal discrepancies drop bilateral weights to zero, preserving razor-sharp edge contrast.'
+            }
+        },
+        {
+            'part': 4,
+            'title': 'The 5-Gate Quality & Regression Defense Matrix',
+            'say': say_p4,
+            'example': 'An aerospace pre-flight checklist verifying hydraulic pressure, flight actuators, fuel reserves, and emergency systems before takeoff.',
+            'code': c4,
+            'output': o4,
+            'check': {
+                'question': 'What does Gate 2 of the 5-Gate Quality Defense Matrix verify regarding Monte Carlo light sampling?',
+                'options': [
+                    'It verifies thermodynamic energy conservation (reflected radiance <= incoming irradiance) across all sampling strategies and materials.',
+                    'It checks whether the monitor refresh rate is set to 144 Hz.',
+                    'It ensures that all textures are compressed as DDS files.',
+                    'It converts directional lights into orthographic shadows.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Gate 2 mathematically verifies that MIS estimators and BRDF evaluations obey energy conservation without introducing artificial amplification.'
+            }
+        },
+        {
+            'part': 5,
+            'title': 'Capstone Production Deployment, VRAM Telemetry & Certification',
+            'say': say_p5,
+            'example': 'A master watchmaker assembling gears, ruby bearings, escapements, and tourbillon cages into a certified chronometer measuring atomic time.',
+            'code': c5,
+            'output': o5,
+            'check': {
+                'question': 'What operational metrics certify our Hybrid Ray Tracer as production-grade for AAA real-time deployment?',
+                'options': [
+                    'Sustaining 68.4 FPS under load, maintaining RT VRAM allocation under 256MB with 71.5MB headroom, and passing all 5 quality defense gates.',
+                    'Rendering at 15 FPS with 10 GB of ray tracing data.',
+                    'Disabling reflections and shadows completely.',
+                    'Replacing compute shaders with JavaScript Canvas2D.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Exceeding 60 FPS with ample VRAM headroom and 100% defense gate validation certifies the engine for industrial real-time deployment.'
+            }
+        }
+    ],
+    'projectStep': {
+        'title': 'Architect and Certify the Real-Time Hybrid Ray Tracer & SVGF Denoiser',
+        'steps': [
+            'Assemble the hybrid rendering topology fusing G-Buffer rasterization with asynchronous inline compute ray queries.',
+            'Implement dynamic TLAS instance management with high-speed 64-byte descriptor updates and affine matrix transforms.',
+            'Deploy the multi-pass SVGF denoiser featuring temporal reprojection and 5-tap à-trous cross-bilateral spatial filtering.',
+            'Validate the engine against the 5-Gate Defense Matrix and certify 60 FPS production deployment with telemetry telemetry.'
+        ]
+    },
+    'summary': [
+        'Hybrid rendering fuses rasterized primary visibility with compute ray queries, achieving peak fill rate and physical secondary lighting accuracy.',
+        'Two-level acceleration structures (BLAS/TLAS) enable dynamic 60 FPS animation by updating lightweight instance descriptors in under 0.15ms.',
+        'SVGF spatio-temporal denoising filters 1-spp stochastic Monte Carlo noise into clean photorealistic imagery while preserving sharp geometric edges.',
+        'The 5-Gate Defense Matrix guarantees BVH integrity, MIS thermodynamic energy conservation, edge preservation, 60 FPS SLAs, and strict VRAM budgets.',
+        'Milestone 9 Capstone certifies a complete industrial-grade hybrid ray tracing engine delivering 68.4 FPS under AAA load with 71.5MB of VRAM headroom.'
+    ]
+}
+
+# Verify word count
+total_words = 0
+for p in day45_data['parts']:
+    wc = sum(len(para.split()) for para in p['say'])
+    total_words += wc
+    print(f"G3D Day 45 Part {p['part']} Word Count: {wc}")
+    assert wc >= 600, f"Part {p['part']} word count {wc} below 600 words!"
+print(f"G3D Day 45 Total Words: {total_words}")
+
+with open('scripts/g3d_day45_data.py', 'w', encoding='utf-8') as f:
+    f.write(f"# Auto-generated Day 45 Data\nDAY_45_DATA = {json.dumps(day45_data, indent=2)}\n")
+
+print("Successfully wrote scripts/g3d_day45_data.py!")

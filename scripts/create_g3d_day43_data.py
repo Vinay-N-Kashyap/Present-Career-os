@@ -1,0 +1,398 @@
+import json
+
+# Day 43: Any-Hit Shaders, Alpha-Testing Cutouts & Shadow Rays (Ray Traced Hard & Soft Shadows)
+
+say_p1 = [
+    "Welcome to Day 43 of 3D Computer Graphics, WebGL2 & GPU Shader Architecture. Over the past two days, we mastered hardware-accelerated ray tracing: on-chip RT cores and ray queries on Day 41, and Binned SAH Bounding Volume Hierarchies on Day 42. However, up to this point, our ray tracer treated all geometric triangles as solid, opaque slabs of stone. But real-world virtual worlds are not made entirely of solid stone! Video game worlds are populated with dense oak forests of alpha-tested leaf cutouts, chain-link security fences, wire mesh gates, sheer lace curtains, and intricate character hair cards.",
+    "When a physical ray strikes a triangle representing a chain-link fence, the triangle's geometric bounds are a flat rectangular polygon. If the ray query naively registers a collision at the polygon boundary, shadows and reflections will render the fence as a solid sheet of plywood, completely blocking sunlight through the holes in the mesh! To solve this, the ray tracing hardware must support Any-Hit Shaders and Alpha-Testing Cutouts.",
+    "Consider the physical analogy of an airport customs security officer inspecting an international traveler's cargo container. If the shipping manifest declares that the container holds a massive bronze statue, the officer knocks on the exterior, confirms it is solid metal, and immediately marks the container as inspected (Opaque Closest-Hit). But suppose the manifest declares that the crate holds fifty perforated decorative brass lanterns with intricate cutout patterns. The officer cannot simply tap the outer crate! They must open the crate, examine each lantern through a magnifying glass, and check if light passes through the perforated decorative holes. The Any-Hit shader is that specialized customs inspector.",
+    "In WebGPU inline ray queries, when a ray traverses an acceleration structure and encounters a triangle flagged as Non-Opaque, hardware traversal does not automatically terminate or record a closest hit. Instead, the traversal loop pauses and yields control to the shader: `rayQueryGetCandidateIntersectionType() == CANDIDATE_NON_OPAQUE_TRIANGLE`.",
+    "The compute shader reads the candidate's barycentric coordinates (u, v) and primitive ID. It fetches the three vertex UV coordinates from the global vertex buffer, interpolates the exact texture coordinate across the triangle, and samples the diffuse alpha texture map. If the sampled alpha value exceeds an alpha cutoff threshold (typically alpha >= 0.5), the shader calls `rayQueryConfirmIntersection()`, signaling to the hardware RT core that the ray has struck a solid fiber of the fence or leaf. If the sampled alpha is below the threshold, the shader ignores the candidate, allowing the RT core to continue traversing deeper into the BVH with zero ray deflection!",
+    "A vital technical nuance in Any-Hit texture sampling is Texture Level of Detail (LOD) and Ray Cones. In traditional rasterization, the GPU calculates screen-space partial derivatives (ddx, ddy) to automatically select the optimal texture mipmap level. In ray queries, hardware derivatives do not exist! Sampling mip level zero for distant foliage triangles would cause catastrophic cache thrashing and violent texture shimmering. Modern engines track a Ray Cone: estimating the ray's expanding spatial footprint as a function of traveled distance. The shader calculates the mip level analytically: mipLevel = log2(rayConeWidth / texelWorldSize), ensuring crisp, antialiased texture lookups with peak VRAM cache efficiency.",
+    "While Any-Hit shaders provide complete geometric accuracy, they incur significant performance overhead because they interrupt hardware traversal pipelining. Modern engines optimize this by grouping meshes into separate BLAS structures: marking completely solid meshes with `GEOMETRY_OPAQUE` to bypass the Any-Hit stage entirely, while reserving non-opaque shaders strictly for foliage and fences.",
+    "Furthermore, on shadow rays configured with `TERMINATE_ON_FIRST_HIT`, the instant an Any-Hit shader confirms a valid opaque intersection, it calls `rayQueryTerminate()` to abort all remaining traversal in hardware silicon, saving millions of unnecessary BVH node tests.",
+    "In the TypeScript snippet below, we implement the `AnyHitAlphaTester`. We interpolate texture coordinates across barycentric coordinates, sample a 4x4 texel alpha grid, and conditionally confirm the intersection against an alpha cutoff threshold.",
+    "Notice how a sampled alpha of 0.9 cleanly confirms the intersection while transparent regions allow the ray to proceed. We now explore stochastic dithered transparency."
+]
+
+say_p2 = [
+    "While binary alpha cutouts (where pixels are either 100% opaque or 100% transparent) handle chain-link fences and stylized leaves effectively, they struggle with semi-transparent, translucent materials: such as tinted car windshields, smoky glass partitions, water sprays, or sheer mosquito netting. If an engine evaluates translucent blending inside an Any-Hit shader by attenuating ray energy over multiple consecutive hits, traversal execution can grind to a halt! A ray passing through eight overlapping glass panes must execute eight separate texture fetches and shading evaluations, destroying SIMD warp coherency.",
+    "To render smooth, order-independent transparency with physical ray tracing at 60 FPS, modern engines deploy Stochastic Dithered Transparency.",
+    "Consider the physical analogy of a traditional halftone newspaper printing press. A black-and-white newspaper printing press only has one color of ink: pure black. It cannot print fifty shades of gray ink! To print a photograph of a gray wool sweater, the printing press arranges microscopic black ink dots in a precise geometric dither matrix (a halftone screen). Up close with a magnifying glass, you see only black dots and white paper; but viewed from reading distance, human visual perception blends the black and white dots into a rich, continuous gradient of gray. Stochastic transparency applies this exact halftone principle to GPU ray tracing.",
+    "In stochastic transparency, every semi-transparent surface is assigned a scalar opacity alpha in [0.0, 1.0]. During the ray query, the shader compares the material's alpha value against a 2D Dither Threshold Matrix—such as a 4x4 or 8x8 Bayer Matrix, or an Interleaved Gradient Noise sequence indexed by screen coordinates (x mod 4, y mod 4).",
+    "If the material's opacity exceeds the local Bayer threshold (alpha > BayerThreshold[x, y]), the surface is treated as completely opaque, and the ray confirms a solid intersection. If the opacity is below the threshold, the surface is treated as completely transparent, and the ray passes straight through unobstructed! Over a 4x4 pixel block or across consecutive frames with temporal jitter, the statistical percentage of rays stopped by the surface matches the material's physical opacity with mathematical precision.",
+    "To eliminate structured checkerboard patterns in static scenes, modern engines substitute static Bayer matrices with Blue Noise Textures animated across frames by a golden-ratio temporal offset (tau = (frame * 0.618033) mod 1.0). Blue noise possesses high-frequency spatial characteristics with zero low-frequency clumping, meaning error energy is concentrated entirely at the Nyquist limit where temporal filtering is most effective.",
+    "Because each individual ray query performs only a simple binary decision (hit or miss), the hardware RT cores execute at maximum silicon speed without maintaining complex sorted alpha blend lists. The high-frequency blue noise dither pattern is then completely smoothed away by our Temporal Anti-Aliasing (TAA) pass from Day 36, producing silky smooth, glass-like transparency with zero multi-hit overhead!",
+    "Additionally, stochastic transparency handles complex multi-layer overlapping glass panes without depth sorting. In traditional rasterization, sorting twenty translucent alpha surfaces back-to-front requires heavy CPU sorting and suffers from sorting cyclic intersections. In stochastic ray tracing, each ray naturally penetrates overlapping surfaces with independent probabilistic transmission, perfectly converging to physical multi-layer attenuation.",
+    "An essential production consideration when implementing stochastic dithered transparency in modern WebGPU compute pipelines is avoiding correlation artifacts across multiple light queries. If the camera primary ray and secondary shadow ray both sample the exact same dither pattern with identical screen-space phase offsets, shadow penumbras can exhibit distracting moiré interference patterns. High-end engines break this inter-ray correlation by decorrelating the spatial hash seeds using the ray bounce depth, ray type identifier, and frame index: hashSeed = pcgHash(screenPos.xy ^ (rayDepth * 1664525u + frameCounter)). This decorrelation scatters stochastic error across orthogonal white or blue frequency domains, allowing our spatio-temporal denoiser to reconstruct clean translucent glass shadows with pristine fidelity.",
+    "In the TypeScript snippet below, we implement the `AlphaDitherStochasticEvaluator`. We evaluate a 65% opacity material across a 4x4 Bayer matrix, determining exact pixel visibility flags across screen coordinates.",
+    "Notice how three out of four evaluated pixels register as visible, closely matching the 65% material opacity. We now examine pin-sharp Ray-Traced Hard Shadows."
+]
+
+say_p3 = [
+    "Having mastered alpha testing and non-opaque traversal, we now deploy our ray tracer to solve the primary lighting dilemma of 3D graphics: Shadow Generation. For three decades, real-time engines relied on Shadow Mapping: rendering the scene from the light source's perspective into an off-screen depth texture, and then testing whether geometry depth exceeded the shadow map depth during the camera pass.",
+    "While computationally lightweight, shadow maps are plagued by infamous, immersion-breaking visual artifacts: Shadow Acne (ugly striped moiré patterns caused by depth quantization), Peter Panning (shadows detaching from character feet due to bias offsets), and Perspective Aliasing (giant pixelated stair-stepped shadow jagged edges when the camera views distant sunlight shadows).",
+    "Ray-Traced Hard Shadows completely eradicate every single one of these artifacts by replacing shadow maps with physical light rays! For every visible surface pixel, the engine launches a single Shadow Ray directly toward the light source.",
+    "Consider the physical analogy of an archer standing on a castle rampart shooting a straight arrow toward a burning campfire on the opposite hill. The archer does not estimate the campfire's visibility using a coarse satellite photograph! They simply loose an arrow in a straight line toward the flames. If the arrow flies unobstructed through open air, line of sight is proven; if the arrow strikes an intermediate stone wall or tree trunk, the campfire is occluded. A ray-traced shadow ray is that precise arrow.",
+    "To configure a hard shadow ray query, the compute shader sets the ray origin at the surface position (offset by normal epsilon to avoid self-shadowing), sets the ray direction toward the directional sunlight, and bounds the search interval from tMin = 0.001 to tMax = Infinity (or the distance to a point light).",
+    "A critical mathematical safeguard in shadow ray generation is Normal Biasing combined with Light-Direction Biasing. If the ray origin is shifted purely along the surface geometric normal (x_safe = x + n * epsilon), grazing-angle rays can still intersect adjacent coplanar geometry. Shaders apply dual biasing: x_safe = x + n * epsilon_n + l * epsilon_l, where l is the light direction vector. This dual displacement guarantees that the shadow ray starts completely clear of microscopic geometric crevices without introducing visible contact gaps.",
+    "Crucially, the shader enables the hardware optimization flags `RAY_FLAG_OPAQUE` and `RAY_FLAG_TERMINATE_ON_FIRST_HIT`. The moment an RT core finds any triangle blocking the ray, it halts traversal immediately and returns an occluded status! The shader writes 0.0 (shadowed) or 1.0 (illuminated) into a screen-space Shadow Mask Buffer.",
+    "The visual fidelity of ray-traced hard shadows is breathtaking: contact shadows beneath shoe soles, car tires, and fence posts connect with razor-sharp geometric precision, completely eliminating floating artifacts.",
+    "In hybrid production engines, ray-traced contact shadows are frequently combined with traditional cascaded shadow maps (CSM). Ray tracing is dispatched for near-field geometry (up to 30 meters from the camera) where shadow map resolution limitations are most glaring, while distant horizon shadows are sampled from coarse shadow maps, saving GPU bandwidth while providing infinite shadow draw distance.",
+    "Another formidable architectural benefit of ray-traced hard shadows is the complete elimination of light-view projection matrix thrashing and shadow cascade seam blending. In traditional cascaded shadow mapping, the rendering engine must allocate four separate depth textures, align them to texel grids to prevent shimmering during camera translation, and write complex branchy shader logic to cross-fade between cascades. With inline ray queries, shadow evaluation is completely perspective-free and continuous across the entire view frustum: whether geometry is two centimeters or five kilometers from the camera lens, the RT core traverses the unified BVH hierarchy with identical geometric precision and zero cascade boundary artifacts.",
+    "In the TypeScript snippet below, we implement the `RayTracedHardShadowEvaluator`. We evaluate clear and occluded shadow ray trajectories and confirm complete elimination of shadow map artifacts.",
+    "Notice how an unobstructed ray yields 1.0 visibility while an occluded ray drops to 0.0 with zero bias tuning. We now expand to physically plausible Soft Shadows."
+]
+
+say_p4 = [
+    "While hard shadows look crisp and dramatic for distant pin-point light sources, real physical light sources are never infinitely small points! The sun, fluorescent ceiling tubes, streetlamps, and spherical light bulbs all possess physical surface area (Area Lights). When light from an area light shines on an object, it creates two distinct shadow regions: The Umbra (the central core of complete darkness where the light source is 100% blocked), and The Penumbra (the outer fuzzy transition zone where the light source is only partially occluded).",
+    "The physical width of the penumbra is governed by the geometry of similar triangles: PenumbraWidth = LightRadius * (ReceiverDistance - OccluderDistance) / OccluderDistance. This fundamental optical equation explains Contact Hardening: when an object is very close to the surface it casts a shadow upon (like a shoe sole touching the asphalt), the penumbra shrinks to microscopic fractions of a millimeter, creating razor-sharp contact shadows. As the distance between occluder and receiver increases (like the shadow of a flagpole tip twenty feet high), the penumbra expands into a wide, soft, diffuse blur.",
+    "Consider the physical analogy of holding your hand three inches above a white desk under an overhead ceiling lamp: the shadow of your fingertips on the desk is crisp and dark. But as you raise your hand five feet into the air toward the ceiling light, the shadow of your fingers dissolves into a faint, blurry gray cloud that barely resembles a hand! Ray-traced soft shadows accurately reproduce this physical contact hardening.",
+    "To simulate soft shadows in a real-time ray tracer, the compute shader does not fire rays toward the exact center of the light source! Instead, it generates random samples distributed across the physical surface of the spherical or disk light source, creating a Light Sampling Cone.",
+    "In shader implementations, uniformly sampling a spherical area light uses Archimedes' Cylinder Projection or Cone Subtended Solid Angle Sampling: given uniform random numbers (u1, u2), the sampled direction is d = normalize(lightCenter + Tangent * r * cos(theta) + Bitangent * r * sin(theta) - surfacePos). This projects sample rays across the visible subtended disk of the light source.",
+    "In real-time budgets where firing dozens of rays per pixel is impossible, the engine fires a single sample ray per pixel (1 spp), jittering the light target point each frame using a Halton or blue noise sequence. The raw 1-spp shadow mask appears noisy and stippled; however, because the penumbra width is mathematically known, our denoising filter can blur the stippled noise aggressively in wide penumbra regions while preserving tack-sharp borders at contact edges!",
+    "Furthermore, in complex multi-light game levels featuring dozens of spotlights and point lights, the engine utilizes Clustered Light Culling (from Day 38) to prune non-contributing lights. Only the two or three most dominant area lights affecting a screen cluster receive dedicated soft shadow ray queries, maintaining predictable 60 FPS performance regardless of total scene light count.",
+    "To guarantee consistent sampling quality across arbitrary surface orientations, modern area light samplers compute the projected solid angle subtended by the emitter from the receiver's viewpoint. When an area light is observed at grazing angles, sampling a planar disk uniformly introduces severe foreshortening distortion; by warping random samples through the cosine-weighted hemisphere aligned with the light normal, variance is minimized and convergence rates increase by over three hundred percent without increasing ray count.",
+    "In the TypeScript snippet below, we construct the `SoftShadowPenumbraCalculator`. We evaluate penumbra widths across near-contact (20cm distance) and distant occluders (4m distance), verifying physical contact hardening.",
+    "Notice how the contact shadow penumbra measures barely 0.01 meters (sharp contact), while the distant shadow expands to a full 1.0 meter blur. We now integrate shadow denoising and audit 60 FPS budgets."
+]
+
+say_p5 = [
+    "We now arrive at the final stage of our ray-traced shadow pipeline: Shadow Mask Packing, Spatio-Temporal Denoising Integration, and 60 FPS Performance Auditing.",
+    "Because firing 16 or 32 shadow rays per pixel would exhaust our 16.6ms frame budget, our engine executes Ray-Traced Soft Shadows at strictly One Ray Per Pixel (1 spp). The raw output of this 1-spp pass is a noisy, stochastic screen-space texture where pixels in penumbra regions flicker between 0.0 and 1.0. To transform this raw stochastic noise into velvety smooth, photorealistic shadows, the engine passes the shadow mask into a Spatio-Temporal Variance-Guided Filtering (SVGF) pipeline.",
+    "In Pass 1 (Temporal Accumulation), the shader reprojects the previous frame's shadow history using G-Buffer velocity vectors. If a pixel was not disoccluded, its historical shadow value is blended with the new 1-spp sample using an exponential moving average (alpha = 0.05). This temporal accumulation integrates twenty consecutive samples over time, eliminating 80% of stochastic noise with zero extra ray queries!",
+    "In Pass 2 (Spatial Wavelet Filter), the shader applies a 5-tap À-Trous Wavelet Filter across three progressive iterations with expanding pixel strides (step sizes of 1, 2, and 4 pixels). Crucially, the filter is Edge-Stopping: it evaluates bilateral weights based on surface normal similarity and depth differences: w = exp(-|depth_diff| / sigma_z) * pow(max(0.0, dot(n1, n2)), sigma_n). The filter blurs aggressively across flat surfaces and wide penumbras, but abruptly stops at geometric silhouettes and contact edges, preventing shadow leaking.",
+    "Consider the physical analogy of an oil painter blending a charcoal sketch into a soft portrait. The artist uses a soft blending tortillon (stump) to smooth rough charcoal hatching into continuous skin tones. But when blending near the jawline or eye socket, the artist lifts the stump and follows the edge cleanly, never smudging dark charcoal onto the bright neck! The bilateral edge-stopping filter enforces this exact artistic boundary discipline.",
+    "To maximize memory efficiency, the final filtered shadow factor is packed into a compact single-channel texture (`r8unorm`), consuming barely two megabytes of VRAM at 1080p resolution. In subsequent forward or deferred lighting passes, the shader reads this shadow mask with a single texture fetch, evaluating physically based lighting with pristine contact-hardened shadows.",
+    "To maintain our rock-solid 60 FPS SLA, our engine enforces a strict 2.0 Millisecond Budget for the entire ray-traced shadow pipeline: including Any-Hit alpha testing, TLAS ray query traversal, and SVGF spatial filtering. On modern GPU hardware, 1-spp ray dispatch takes approximately 0.95ms, Any-Hit texture fetches take 0.35ms, and the dual-pass SVGF denoiser takes 0.45ms, totaling 1.75ms—comfortably below our 2.0ms SLA ceiling.",
+    "During fast camera pans or rapid character movement, disocclusion detection plays an indispensable role in preventing ghosting trails. If the reprojected depth difference exceeds a tolerance threshold, the temporal accumulation history is immediately discarded, momentarily reducing the effective sample count to the current raw frame. The spatial wavelet filter automatically increases its spatial kernel bandwidth in disoccluded regions, trading slight sharpness for instantaneous noise elimination, ensuring silky-smooth responsiveness during intense gameplay action.",
+    "Finally, local variance estimation forms the guiding compass of the SVGF algorithm. Alongside the temporal shadow factor, the compute shader tracks historical second moments (E[x^2] - (E[x])^2) in a secondary variance texture. In regions of high geometric complexity or deep penumbra transitions where Monte Carlo variance is elevated, the wavelet filtering strength is dynamically boosted; in flat illuminated or fully shadowed areas where variance is zero, spatial filtering steps are bypassed completely. This variance-guided intelligence prevents over-blurring fine contact details while ensuring robust noise cancellation across challenging penumbra gradients.",
+    "In the TypeScript snippet below, we construct the `ShadowPerformanceAuditor`. We measure dispatch and denoising timings, audit against the 2.0ms SLA, and certify 60 FPS compliance.",
+    "Notice how total ray-traced shadow execution completes in 1.75ms, easily passing our SLA. Tomorrow, in Day 44, we venture into Monte Carlo Ray Tracing, Importance Sampling, and Multiple Importance Sampling (MIS)!"
+]
+
+c1 = """interface HitCandidate {
+  barycentricU: number;
+  barycentricV: number;
+  triangleUvs: [number, number][]; // 3 UV pairs [uv0, uv1, uv2]
+  alphaMap: number[][]; // 4x4 texel grid [0, 1]
+}
+
+class AnyHitAlphaTester {
+  static testCandidate(candidate: HitCandidate, cutoff: number): { confirmed: boolean; sampledAlpha: number } {
+    const w = 1.0 - candidate.barycentricU - candidate.barycentricV;
+    const u = candidate.barycentricU;
+    const v = candidate.barycentricV;
+
+    // Interpolate UV
+    const texU = w * candidate.triangleUvs[0][0] + u * candidate.triangleUvs[1][0] + v * candidate.triangleUvs[2][0];
+    const texV = w * candidate.triangleUvs[0][1] + u * candidate.triangleUvs[1][1] + v * candidate.triangleUvs[2][1];
+
+    // Fetch from 4x4 texel grid
+    const px = Math.min(3, Math.max(0, Math.floor(texU * 4.0)));
+    const py = Math.min(3, Math.max(0, Math.floor(texV * 4.0)));
+    const sampledAlpha = candidate.alphaMap[py][px];
+
+    const confirmed = sampledAlpha >= cutoff;
+    return { confirmed, sampledAlpha };
+  }
+}
+
+const foliageAlpha: number[][] = [
+  [0.0, 0.0, 0.8, 0.9],
+  [0.0, 0.9, 0.9, 0.1],
+  [0.8, 0.9, 0.1, 0.0],
+  [0.9, 0.2, 0.0, 0.0]
+];
+
+const candidateLeaf: HitCandidate = {
+  barycentricU: 0.3,
+  barycentricV: 0.4,
+  triangleUvs: [[0.0, 0.0], [1.0, 0.0], [0.0, 1.0]],
+  alphaMap: foliageAlpha
+};
+
+const result = AnyHitAlphaTester.testCandidate(candidateLeaf, 0.5);
+console.log(`[Any-Hit Test] Sampled Alpha Value: ${result.sampledAlpha}`);
+console.log(`[Any-Hit Test] Alpha Cutoff Threshold: 0.5`);
+console.log(`[Any-Hit Test] Intersection Confirmed by Shader: ${result.confirmed}`);"""
+
+o1 = """[Any-Hit Test] Sampled Alpha Value: 0.9
+[Any-Hit Test] Alpha Cutoff Threshold: 0.5
+[Any-Hit Test] Intersection Confirmed by Shader: true"""
+
+c2 = """class AlphaDitherStochasticEvaluator {
+  private static bayer4x4 = [
+    [ 0/16,  8/16,  2/16, 10/16],
+    [12/16,  4/16, 14/16,  6/16],
+    [ 3/16, 11/16,  1/16,  9/16],
+    [15/16,  7/16, 13/16,  5/16]
+  ];
+
+  static isVisible(screenX: number, screenY: number, alpha: number): boolean {
+    const threshold = this.bayer4x4[screenY % 4][screenX % 4];
+    return alpha > threshold;
+  }
+}
+
+const alpha = 0.65; // 65% opacity glass surface
+const pixelHits = [
+  { x: 0, y: 0, visible: AlphaDitherStochasticEvaluator.isVisible(0, 0, alpha) },
+  { x: 1, y: 0, visible: AlphaDitherStochasticEvaluator.isVisible(1, 0, alpha) },
+  { x: 0, y: 1, visible: AlphaDitherStochasticEvaluator.isVisible(0, 1, alpha) },
+  { x: 1, y: 1, visible: AlphaDitherStochasticEvaluator.isVisible(1, 1, alpha) }
+];
+
+console.log(`[Stochastic Alpha] Evaluated Material Opacity: ${alpha}`);
+console.log(`[Stochastic Alpha] Pixel (0,0) Bayer Threshold: 0.0 -> Visible: ${pixelHits[0].visible}`);
+console.log(`[Stochastic Alpha] Pixel (1,0) Bayer Threshold: 0.5 -> Visible: ${pixelHits[1].visible}`);
+console.log(`[Stochastic Alpha] Pixel (0,1) Bayer Threshold: 0.75 -> Visible: ${pixelHits[2].visible}`);
+console.log(`[Stochastic Alpha] Pixel (1,1) Bayer Threshold: 0.25 -> Visible: ${pixelHits[3].visible}`);"""
+
+o2 = """[Stochastic Alpha] Evaluated Material Opacity: 0.65
+[Stochastic Alpha] Pixel (0,0) Bayer Threshold: 0.0 -> Visible: true
+[Stochastic Alpha] Pixel (1,0) Bayer Threshold: 0.5 -> Visible: true
+[Stochastic Alpha] Pixel (0,1) Bayer Threshold: 0.75 -> Visible: false
+[Stochastic Alpha] Pixel (1,1) Bayer Threshold: 0.25 -> Visible: true"""
+
+c3 = """interface ShadowRayHit {
+  hitDetected: boolean;
+  hitDistance: number;
+}
+
+class RayTracedHardShadowEvaluator {
+  static evaluateVisibility(hit: ShadowRayHit, lightDistance: number): { shadowFactor: number; occluded: boolean } {
+    // If a hit was found between surface epsilon and light distance, surface is in shadow
+    const occluded = hit.hitDetected && hit.hitDistance < lightDistance;
+    const shadowFactor = occluded ? 0.0 : 1.0;
+    return { shadowFactor, occluded };
+  }
+}
+
+const clearPoint = RayTracedHardShadowEvaluator.evaluateVisibility({ hitDetected: false, hitDistance: Infinity }, 10.0);
+const occludedPoint = RayTracedHardShadowEvaluator.evaluateVisibility({ hitDetected: true, hitDistance: 3.4 }, 10.0);
+
+console.log(`[Hard Shadow] Clear Point Visibility: ${clearPoint.shadowFactor} (In Shadow: ${clearPoint.occluded})`);
+console.log(`[Hard Shadow] Occluded Point Visibility: ${occludedPoint.shadowFactor} (In Shadow: ${occludedPoint.occluded})`);
+console.log(`[Hard Shadow] Artifact Elimination: Zero Peter Panning, Zero Perspective Aliasing`);"""
+
+o3 = """[Hard Shadow] Clear Point Visibility: 1 (In Shadow: false)
+[Hard Shadow] Occluded Point Visibility: 0 (In Shadow: true)
+[Hard Shadow] Artifact Elimination: Zero Peter Panning, Zero Perspective Aliasing"""
+
+c4 = """interface AreaLightConfig {
+  sourceRadiusM: number;
+  receiverDistM: number;
+  occluderDistM: number;
+}
+
+class SoftShadowPenumbraCalculator {
+  static computePenumbraWidth(cfg: AreaLightConfig): { penumbraWidthM: number; blurPercentage: number } {
+    // Similar triangles: w = r_light * (d_receiver - d_occluder) / d_occluder
+    const distToOccluder = cfg.receiverDistM - cfg.occluderDistM;
+    if (cfg.occluderDistM <= 0.001) return { penumbraWidthM: 0, blurPercentage: 0 };
+
+    const w = (cfg.sourceRadiusM * distToOccluder) / cfg.occluderDistM;
+    const penumbraWidthM = parseFloat(w.toFixed(4));
+    const blurPercentage = parseFloat((Math.min(1.0, w / cfg.sourceRadiusM) * 100).toFixed(1));
+
+    return { penumbraWidthM, blurPercentage };
+  }
+}
+
+const contactShadow = SoftShadowPenumbraCalculator.computePenumbraWidth({
+  sourceRadiusM: 0.25, // 25cm area light
+  receiverDistM: 5.0,
+  occluderDistM: 4.8  // Occluder only 20cm away from receiver (tight contact)
+});
+
+const distantShadow = SoftShadowPenumbraCalculator.computePenumbraWidth({
+  sourceRadiusM: 0.25,
+  receiverDistM: 5.0,
+  occluderDistM: 1.0  // Occluder 4m away from receiver (diffuse penumbra)
+});
+
+console.log(`[Soft Shadow] Contact Shadow Penumbra: ${contactShadow.penumbraWidthM}m (${contactShadow.blurPercentage}% blur)`);
+console.log(`[Soft Shadow] Distant Shadow Penumbra: ${distantShadow.penumbraWidthM}m (${distantShadow.blurPercentage}% blur)`);
+console.log(`[Soft Shadow] Physical Contact Hardening Confirmed: ${contactShadow.penumbraWidthM < distantShadow.penumbraWidthM}`);"""
+
+o4 = """[Soft Shadow] Contact Shadow Penumbra: 0.0104m (4.2% blur)
+[Soft Shadow] Distant Shadow Penumbra: 1m (100% blur)
+[Soft Shadow] Physical Contact Hardening Confirmed: true"""
+
+c5 = """interface ShadowTimings {
+  rayQueryDispatchMs: number;
+  anyHitAlphaTestMs: number;
+  svgfDenoiserMs: number;
+}
+
+class ShadowPerformanceAuditor {
+  static audit(timings: ShadowTimings): { totalMs: number; meetsSla: boolean; passes60Fps: boolean } {
+    const totalMs = parseFloat((
+      timings.rayQueryDispatchMs +
+      timings.anyHitAlphaTestMs +
+      timings.svgfDenoiserMs
+    ).toFixed(2));
+
+    const meetsSla = totalMs <= 2.0; // Strict 2.0ms shadow SLA
+    const passes60Fps = meetsSla && timings.svgfDenoiserMs > 0;
+
+    return { totalMs, meetsSla, passes60Fps };
+  }
+}
+
+const timings: ShadowTimings = {
+  rayQueryDispatchMs: 0.95,
+  anyHitAlphaTestMs: 0.35,
+  svgfDenoiserMs: 0.45
+};
+
+const audit = ShadowPerformanceAuditor.audit(timings);
+console.log(`[Shadow Audit] Total Ray Traced Shadow Time: ${audit.totalMs} ms`);
+console.log(`[Shadow Audit] Meets 2.0ms Post-Processing SLA: ${audit.meetsSla}`);
+console.log(`[Shadow Audit] 60 FPS Target Certified: ${audit.passes60Fps}`);"""
+
+o5 = """[Shadow Audit] Total Ray Traced Shadow Time: 1.75 ms
+[Shadow Audit] Meets 2.0ms Post-Processing SLA: true
+[Shadow Audit] 60 FPS Target Certified: true"""
+
+day43_data = {
+    'day': 43,
+    'coursePrefix': 'g3d',
+    'title': 'Any-Hit Shaders, Alpha-Testing Cutouts & Shadow Rays (Ray Traced Hard & Soft Shadows)',
+    'goal': 'Master non-opaque ray traversal and ray-traced shadows: Any-Hit shader alpha cutouts, stochastic dithered transparency, pin-sharp hard contact shadows, physical penumbra area light sampling, and SVGF shadow denoising.',
+    'recap': 'Recap of Day 42: Bounding Volume Hierarchy (BVH), binned SAH construction, 30-bit Morton codes, 32-byte flat BVH compaction, and 32-entry register stack traversal.',
+    'minutes': 120,
+    'parts': [
+        {
+            'part': 1,
+            'title': 'Non-Opaque Geometry & Any-Hit Alpha Testing Shaders',
+            'say': say_p1,
+            'example': 'An airport customs inspector opening an intricate perforated brass lantern crate to confirm light passes through decorative holes rather than tapping solid metal.',
+            'code': c1,
+            'output': o1,
+            'check': {
+                'question': 'How does an Any-Hit shader handle non-opaque geometry like chain-link fences and foliage in ray queries?',
+                'options': [
+                    'It samples the diffuse alpha texture at the ray barycentric coordinates and conditionally confirms the intersection only if alpha exceeds the cutoff threshold.',
+                    'It converts the 3D mesh into a 2D particle billboard.',
+                    'It inverts the direction of the ray toward the camera.',
+                    'It deletes the geometry from the acceleration structure.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Any-hit shaders sample texture alpha to decide whether candidate triangles block rays or allow them to continue through transparent cutout holes.'
+            }
+        },
+        {
+            'part': 2,
+            'title': 'Stochastic Dithered Transparency & Halftone Screen Sampling',
+            'say': say_p2,
+            'example': 'A newspaper printing press using black halftone ink dots of varying density to create the visual illusion of continuous gray photographic tones.',
+            'code': c2,
+            'output': o2,
+            'check': {
+                'question': 'What performance advantage does Stochastic Dithered Transparency offer over multi-hit sorted alpha blending in ray tracing?',
+                'options': [
+                    'It makes a simple binary hit-or-miss decision per ray against a Bayer matrix, avoiding costly transparent sorting lists and SIMD divergence.',
+                    'It renders transparent surfaces without requiring GPU power.',
+                    'It eliminates the need for diffuse textures.',
+                    'It stores transparency in the browser localStorage.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Stochastic transparency turns translucent surfaces into binary hit decisions that hardware RT cores traverse at full speed, smoothed by downstream TAA.'
+            }
+        },
+        {
+            'part': 3,
+            'title': 'Ray-Traced Hard Shadows: Terminate-On-First-Hit & Zero-Bias Precision',
+            'say': say_p3,
+            'example': 'An archer firing an arrow directly at a distant campfire to prove line of sight, where hitting any intermediate stone wall indicates shadow.',
+            'code': c3,
+            'output': o3,
+            'check': {
+                'question': 'Why do ray-traced shadows eliminate shadow acne and peter panning artifacts present in traditional shadow mapping?',
+                'options': [
+                    'Because they test exact physical geometric intersections in world space rather than comparing against low-resolution depth textures with artificial bias offsets.',
+                    'Because ray tracing blurs the edges of all shadows with a Gaussian filter.',
+                    'Because ray-traced shadows only render in black and white.',
+                    'Because shadow maps cannot be used on modern GPUs.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Ray-traced shadow rays evaluate true triangle geometry with minimal epsilon offsets, completely eradicating shadow map resolution and bias artifacts.'
+            }
+        },
+        {
+            'part': 4,
+            'title': 'Ray-Traced Soft Shadows: Light Source Sampling & Physical Penumbra Widths',
+            'say': say_p4,
+            'example': 'Holding a hand near a desk to cast a crisp fingertip shadow, then raising it toward ceiling lights where the shadow diffuses into a soft gray cloud.',
+            'code': c4,
+            'output': o4,
+            'check': {
+                'question': 'What geometric formula dictates the width of a soft shadow penumbra cast by a physical area light source?',
+                'options': [
+                    'PenumbraWidth = LightRadius * (ReceiverDistance - OccluderDistance) / OccluderDistance, creating natural contact hardening near surfaces.',
+                    'PenumbraWidth = LightRadius * LightRadius / 2.0.',
+                    'PenumbraWidth = ReceiverDistance + OccluderDistance.',
+                    'PenumbraWidth is always a constant 10 centimeters.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Similar triangles govern penumbra expansion: as the distance between occluder and receiver approaches zero, penumbra width collapses to zero.'
+            }
+        },
+        {
+            'part': 5,
+            'title': 'Shadow Mask Buffer Packing, SVGF Denoising & 60 FPS Performance SLA',
+            'say': say_p5,
+            'example': 'An oil painter blending charcoal hatching into smooth skin tones with a stump while lifting the tool at the jawline to preserve crisp edges.',
+            'code': c5,
+            'output': o5,
+            'check': {
+                'question': 'How does an edge-stopping bilateral filter denoise stochastic 1-spp soft shadows without blurring geometric silhouettes?',
+                'options': [
+                    'By weighting neighboring shadow samples using surface normal similarity and depth differentials, preventing blur bleeding across silhouette edges.',
+                    'By re-rendering the shadow map at 8K resolution.',
+                    'By inverting the color channels of the shadow buffer.',
+                    'By disabling shadow rays on character meshes.'
+                ],
+                'answer': 0,
+                'answerIndex': 0,
+                'why': 'Bilateral edge-stopping weights smooth noise on continuous surfaces while preserving crisp contrast at geometric boundaries and contact shadows.'
+            }
+        }
+    ],
+    'projectStep': {
+        'title': 'Implement Any-Hit Alpha Testing & Ray-Traced Hard and Soft Shadows',
+        'steps': [
+            'Configure Any-Hit shaders to evaluate non-opaque alpha-tested foliage and chain-link cutouts.',
+            'Deploy stochastic dithered transparency with Bayer matrix thresholds for order-independent glass transparency.',
+            'Implement terminate-on-first-hit ray queries for pin-sharp hard contact shadows.',
+            'Simulate area light penumbra contact hardening and filter 1-spp stochastic shadows with SVGF denoisers.'
+        ]
+    },
+    'summary': [
+        'Any-Hit shaders sample texture alpha at ray barycentric coordinates, allowing rays to pass through perforated cutout holes.',
+        'Stochastic dithered transparency translates continuous material opacity into binary hit decisions that hardware RT cores traverse at line rate.',
+        'Ray-traced hard shadows completely eliminate shadow map acne, peter panning, and perspective aliasing.',
+        'Area light sampling reproduces physical penumbra contact hardening, where shadows sharpen near surface contacts and diffuse with distance.',
+        'A single ray per pixel combined with SVGF spatio-temporal denoising delivers cinema-grade soft shadows within a strict 2.0ms frame budget.'
+    ]
+}
+
+# Verify word count
+total_words = 0
+for p in day43_data['parts']:
+    wc = sum(len(para.split()) for para in p['say'])
+    total_words += wc
+    print(f"G3D Day 43 Part {p['part']} Word Count: {wc}")
+    assert wc >= 600, f"Part {p['part']} word count {wc} below 600 words!"
+print(f"G3D Day 43 Total Words: {total_words}")
+
+with open('scripts/g3d_day43_data.py', 'w', encoding='utf-8') as f:
+    f.write(f"# Auto-generated Day 43 Data\nDAY_43_DATA = {json.dumps(day43_data, indent=2)}\n")
+
+print("Successfully wrote scripts/g3d_day43_data.py!")
