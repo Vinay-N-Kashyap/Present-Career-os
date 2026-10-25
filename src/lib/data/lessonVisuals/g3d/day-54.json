@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 54,
+  "promptSha": "3b1215b331a3679cb88e44cad4504b54810129034b5fe4fc76dc35df29ec168e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "N^2 Bottleneck, 3D Uniform Grids & Large Prime XOR Spatial Hashing",
+      "codeHash": "fe01a49427558d1e1819e71a6f5161ae976c6c96fa2e9438e7592067ee0091c3",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: N^2 Bottleneck, 3D Uniform Grids & Large Prime XOR Spatial Hashing",
+        "left": {
+          "label": "Legacy Pairwise Search",
+          "content": [
+            "Disastrous two billion distance tests",
+            "Scattered random VRAM thrashing",
+            "Severe thread execution divergence",
+            "Catastrophic framerate collapse"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Spatial Hashing",
+          "content": [
+            "Strict twenty-seven cell local bounds",
+            "Coalesced contiguous cache lines",
+            "Uniform workgroup SIMD execution",
+            "One point five millisecond pipeline"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays spatial hashing discretizing three-dimensional coordinates into cubic grid cells."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates large prime exclusive-or hash mapping bounding infinite domains into power-of-two tables."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total eradication of the quadratic distance evaluation bottleneck."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies uniform spatial dispersion, minimal collision clustering, and sub-millisecond hash execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Pairwise Search",
+        "rightLabel": "Modern GPU Spatial Hashing"
+      }
+    },
+    {
+      "partTitle": "GPU Parallel Radix Sort & Bitonic Merge Sort for Contiguous Particle Packing",
+      "codeHash": "1d68e984b7a8d33de954023180ce26ab4a3fc41c19261dd1adb7971376bb2725",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GPU Parallel Radix Sort & Bitonic Merge Sort for Contiguous Particle Packing",
+        "left": {
+          "label": "Legacy Pairwise Search",
+          "content": [
+            "Disastrous two billion distance tests",
+            "Scattered random VRAM thrashing",
+            "Severe thread execution divergence",
+            "Catastrophic framerate collapse"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Spatial Hashing",
+          "content": [
+            "Strict twenty-seven cell local bounds",
+            "Coalesced contiguous cache lines",
+            "Uniform workgroup SIMD execution",
+            "One point five millisecond pipeline"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates parallel radix and bitonic merge sorting networks grouping particles by cell key."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks four-pass eight-bit radix lookback streaming sorted key-value pairs into destination buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates contiguous memory packing over fragmented linked-list architectures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms strictly monotonic key ordering, zero thread divergence, and linear sorting complexity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Pairwise Search",
+        "rightLabel": "Modern GPU Spatial Hashing"
+      }
+    },
+    {
+      "partTitle": "Cell Offset Tables & Parallel Boundary Detection via Prefix Scans",
+      "codeHash": "5cb1483e5a047c72045e059960b1ffb357a76c9b5f039efe5f3e99f289becc0e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Cell Offset Tables & Parallel Boundary Detection via Prefix Scans",
+        "left": {
+          "label": "Legacy Pairwise Search",
+          "content": [
+            "Disastrous two billion distance tests",
+            "Scattered random VRAM thrashing",
+            "Severe thread execution divergence",
+            "Catastrophic framerate collapse"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Spatial Hashing",
+          "content": [
+            "Strict twenty-seven cell local bounds",
+            "Coalesced contiguous cache lines",
+            "Uniform workgroup SIMD execution",
+            "One point five millisecond pipeline"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Cell Offset Tables recording contiguous start and end indices for active cells."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks parallel boundary detection threads identifying cell transitions without atomic locks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates constant-time random cell access over linear sequential array searches."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms accurate particle counts, valid index ranges, and zero shared memory bank conflicts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Pairwise Search",
+        "rightLabel": "Modern GPU Spatial Hashing"
+      }
+    },
+    {
+      "partTitle": "27-Neighborhood Search Query & Coalesced Memory Access in Compute Workgroups",
+      "codeHash": "3e339e58608058346e6edcf39a70c2e70adfdd61b53f4a0d7c4b2e16f1c19316",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: 27-Neighborhood Search Query & Coalesced Memory Access in Compute Workgroups",
+        "left": {
+          "label": "Legacy Pairwise Search",
+          "content": [
+            "Disastrous two billion distance tests",
+            "Scattered random VRAM thrashing",
+            "Severe thread execution divergence",
+            "Catastrophic framerate collapse"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Spatial Hashing",
+          "content": [
+            "Strict twenty-seven cell local bounds",
+            "Coalesced contiguous cache lines",
+            "Uniform workgroup SIMD execution",
+            "One point five millisecond pipeline"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays twenty-seven neighborhood queries evaluating adjacent cubic cells in three dimensions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks coalesced memory fetches reading contiguous one-hundred-twenty-eight-byte cache lines."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates maximum memory bandwidth utilization over scattered random lookups."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sub-millisecond query execution, threadgroup early exits, and zero warp divergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Pairwise Search",
+        "rightLabel": "Modern GPU Spatial Hashing"
+      }
+    },
+    {
+      "partTitle": "Spatial Indexing Pipeline Architecture, Radix Profiling & 60 FPS Telemetry",
+      "codeHash": "e4e1438414a2c60c60425052ac3e0e9f50bfe765ffad2a92b31e4383d4df5152",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Spatial Indexing Pipeline Architecture, Radix Profiling & 60 FPS Telemetry",
+        "left": {
+          "label": "Legacy Pairwise Search",
+          "content": [
+            "Disastrous two billion distance tests",
+            "Scattered random VRAM thrashing",
+            "Severe thread execution divergence",
+            "Catastrophic framerate collapse"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Spatial Hashing",
+          "content": [
+            "Strict twenty-seven cell local bounds",
+            "Coalesced contiguous cache lines",
+            "Uniform workgroup SIMD execution",
+            "One point five millisecond pipeline"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the four-pass spatial indexing pipeline coordinating hash calculation, sorting, and queries."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles double-buffered ping-pong storage buffers and GPU timestamp query calibrations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms sixty-five thousand particle indexing execution within one point six milliseconds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies compliance with the two-millisecond performance budget at sixty frames per second."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Pairwise Search",
+        "rightLabel": "Modern GPU Spatial Hashing"
+      }
+    }
+  ]
+}

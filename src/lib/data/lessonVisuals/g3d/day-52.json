@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 52,
+  "promptSha": "35331f8b049cfa087815b605dfcaad393b840299cb03965d5b2af606ae0a0d38",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "PBD Foundations, Constraint Manifolds & Distance Constraint Projection",
+      "codeHash": "72ec2ce6d0cb7e80a325d477e735c3253f2b8a7edb2dc79eb13ddaebb2e79612",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: PBD Foundations, Constraint Manifolds & Distance Constraint Projection",
+        "left": {
+          "label": "Legacy Mass-Spring Solver",
+          "content": [
+            "Explosive high-stiffness blowups",
+            "Severe time-step stretching drift",
+            "Unnatural paper-like crease pinching",
+            "Jittery penalty spring collisions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU XPBD Engine",
+          "content": [
+            "Unconditionally stable position projection",
+            "Time-step independent compliance alpha",
+            "Realistic isometric dihedral bending",
+            "Jitter-free inequality contact manifolds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Position Based Dynamics bypassing force layers to project positions directly onto constraint manifolds."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates distance constraint projection calculating geometric displacement vectors between vertices."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unconditional stability of geometric projection over explosive mass-spring oscillations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies exact inelastic edge resolution, inverse mass weighting, and zero numerical energy drift."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Mass-Spring Solver",
+        "rightLabel": "Modern GPU XPBD Engine"
+      }
+    },
+    {
+      "partTitle": "Extended PBD (XPBD), Physical Compliance & Time-Step Independence",
+      "codeHash": "0f85450e5a06c0a0841e67a371c08eebb96f99dc6d1d19d557a64f6e23e1c5ef",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Extended PBD (XPBD), Physical Compliance & Time-Step Independence",
+        "left": {
+          "label": "Legacy Mass-Spring Solver",
+          "content": [
+            "Explosive high-stiffness blowups",
+            "Severe time-step stretching drift",
+            "Unnatural paper-like crease pinching",
+            "Jittery penalty spring collisions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU XPBD Engine",
+          "content": [
+            "Unconditionally stable position projection",
+            "Time-step independent compliance alpha",
+            "Realistic isometric dihedral bending",
+            "Jitter-free inequality contact manifolds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Extended Position Based Dynamics connecting constraint projections to continuum mechanics."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks compliance alpha scaled by time step duration squared maintaining physical stiffness invariance."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete decoupling of material stiffness from simulation sub-stepping frequencies."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms Lagrange multiplier accumulation and accurate structural stress force evaluation in Newtons."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Mass-Spring Solver",
+        "rightLabel": "Modern GPU XPBD Engine"
+      }
+    },
+    {
+      "partTitle": "Isometric Bending Constraints & Dihedral Angle Energy",
+      "codeHash": "b01b6f7e7083fe34a657c59918ce861d459f88ffc2345d04086e9300badb9cb0",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Isometric Bending Constraints & Dihedral Angle Energy",
+        "left": {
+          "label": "Legacy Mass-Spring Solver",
+          "content": [
+            "Explosive high-stiffness blowups",
+            "Severe time-step stretching drift",
+            "Unnatural paper-like crease pinching",
+            "Jittery penalty spring collisions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU XPBD Engine",
+          "content": [
+            "Unconditionally stable position projection",
+            "Time-step independent compliance alpha",
+            "Realistic isometric dihedral bending",
+            "Jitter-free inequality contact manifolds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays isometric dihedral bending constraints formulated across adjacent triangle pairs sharing hinge edges."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates dihedral angle differentials and restorative out-of-plane bending energy."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates natural flowing textile creases versus unnatural paper-like triangle creasing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms elastic recovery forces, Laplacian curvature operators, and smooth drapery deformation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Mass-Spring Solver",
+        "rightLabel": "Modern GPU XPBD Engine"
+      }
+    },
+    {
+      "partTitle": "Kinematic Obstacle Collision, Coulomb Friction & Spatial Hashing",
+      "codeHash": "b7848c1358a11b313aad4e237bd81bb86cfe4e0c975d485bb858d33fd0c97b6b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Kinematic Obstacle Collision, Coulomb Friction & Spatial Hashing",
+        "left": {
+          "label": "Legacy Mass-Spring Solver",
+          "content": [
+            "Explosive high-stiffness blowups",
+            "Severe time-step stretching drift",
+            "Unnatural paper-like crease pinching",
+            "Jittery penalty spring collisions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU XPBD Engine",
+          "content": [
+            "Unconditionally stable position projection",
+            "Time-step independent compliance alpha",
+            "Realistic isometric dihedral bending",
+            "Jitter-free inequality contact manifolds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays inequality constraint projection resolving collisions against character kinematic capsules."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates swept sphere penetration depths, outward normal projection, and Coulomb friction impulses."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts instantaneous inequality projection against jittery penalty spring forces."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies zero obstacle penetration, realistic contact grip, and spatial hashing self-collision culling."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Mass-Spring Solver",
+        "rightLabel": "Modern GPU XPBD Engine"
+      }
+    },
+    {
+      "partTitle": "GPU Cloth Pipeline Architecture, Graph Coloring & Convergence Telemetry",
+      "codeHash": "8e788710bbaa2f45b856fb6bb77147706b3713e347f3d799b70065408926d905",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GPU Cloth Pipeline Architecture, Graph Coloring & Convergence Telemetry",
+        "left": {
+          "label": "Legacy Mass-Spring Solver",
+          "content": [
+            "Explosive high-stiffness blowups",
+            "Severe time-step stretching drift",
+            "Unnatural paper-like crease pinching",
+            "Jittery penalty spring collisions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU XPBD Engine",
+          "content": [
+            "Unconditionally stable position projection",
+            "Time-step independent compliance alpha",
+            "Realistic isometric dihedral bending",
+            "Jitter-free inequality contact manifolds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays GPU compute shader pipeline architecture executing graph-colored constraint batches."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles memory coalescence, storage buffer layouts, and sub-step iteration convergence."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms four thousand vertex cloth simulation execution within two milliseconds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sub-millimeter constraint error convergence and locked sixty frames per second performance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Mass-Spring Solver",
+        "rightLabel": "Modern GPU XPBD Engine"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 53,
+  "promptSha": "0c0bf33a2eb6b62e87329460c7a94b2403557bd5cc52e1e19f036178e78d18a6",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Continuous Collision Detection (CCD), Swept Volumes & Time of Impact (TOI)",
+      "codeHash": "5e7d61e7f226e80401813ba8ae04c6126515fd8aae126486732248b78def0b9c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Continuous Collision Detection (CCD), Swept Volumes & Time of Impact (TOI)",
+        "left": {
+          "label": "Legacy Discrete Collision",
+          "content": [
+            "Severe high-speed bullet tunneling",
+            "Costly polygonal pairwise tests",
+            "Single-point unstable rocking",
+            "Vibrational penalty spring bounce"
+          ]
+        },
+        "right": {
+          "label": "Modern GJK/EPA CCD Pipeline",
+          "content": [
+            "Continuous swept Time of Impact",
+            "Sub-millisecond simplex support queries",
+            "Stable multi-point contact manifolds",
+            "Jitter-free sequential impulses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Continuous Collision Detection sweeping geometric volumes across discrete time steps."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates swept sphere quadratic root solving determining exact sub-millisecond Time of Impact."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total eradication of the bullet-through-paper tunneling problem."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies non-negative Time of Impact roots, safe trajectory advance, and zero geometry penetration."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Discrete Collision",
+        "rightLabel": "Modern GJK/EPA CCD Pipeline"
+      }
+    },
+    {
+      "partTitle": "Minkowski Difference & Gilbert-Johnson-Keerthi (GJK) Convex Hull Intersection",
+      "codeHash": "fd9f2426e85062bfcee0abb582662ed6c1f20c1ff2ed5b6d9416519be374b17f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Minkowski Difference & Gilbert-Johnson-Keerthi (GJK) Convex Hull Intersection",
+        "left": {
+          "label": "Legacy Discrete Collision",
+          "content": [
+            "Severe high-speed bullet tunneling",
+            "Costly polygonal pairwise tests",
+            "Single-point unstable rocking",
+            "Vibrational penalty spring bounce"
+          ]
+        },
+        "right": {
+          "label": "Modern GJK/EPA CCD Pipeline",
+          "content": [
+            "Continuous swept Time of Impact",
+            "Sub-millisecond simplex support queries",
+            "Stable multi-point contact manifolds",
+            "Jitter-free sequential impulses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Minkowski difference vector sets mapping relative convex hull separations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks Gilbert-Johnson-Keerthi simplex iterations querying extreme boundary support points."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-millisecond convergence of simplex searching over costly polygonal mesh checks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms origin enclosure detection, minimal simplex sizes, and bounded iteration counts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Discrete Collision",
+        "rightLabel": "Modern GJK/EPA CCD Pipeline"
+      }
+    },
+    {
+      "partTitle": "Expanding Polytope Algorithm (EPA) for Contact Normal & Penetration Depth",
+      "codeHash": "14de3318f6f3a1c58d3645dc5bc9779728d7041460ebe7244aafddf8bdc393f3",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Expanding Polytope Algorithm (EPA) for Contact Normal & Penetration Depth",
+        "left": {
+          "label": "Legacy Discrete Collision",
+          "content": [
+            "Severe high-speed bullet tunneling",
+            "Costly polygonal pairwise tests",
+            "Single-point unstable rocking",
+            "Vibrational penalty spring bounce"
+          ]
+        },
+        "right": {
+          "label": "Modern GJK/EPA CCD Pipeline",
+          "content": [
+            "Continuous swept Time of Impact",
+            "Sub-millisecond simplex support queries",
+            "Stable multi-point contact manifolds",
+            "Jitter-free sequential impulses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Expanding Polytope Algorithm growing the terminating simplex toward Minkowski boundaries."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates closest triangular face normals, horizon loop culling, and support point insertion."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-millimeter contact normal and penetration depth extraction precision."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms strictly convex polytope expansion, non-negative depth metrics, and robust convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Discrete Collision",
+        "rightLabel": "Modern GJK/EPA CCD Pipeline"
+      }
+    },
+    {
+      "partTitle": "Persistent Contact Manifolds & Sequential Impulse Resolution",
+      "codeHash": "714deebcb3d7a7a9455940cbf5390e5fb766570cfb8eda8ecd371a799568ebb4",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Persistent Contact Manifolds & Sequential Impulse Resolution",
+        "left": {
+          "label": "Legacy Discrete Collision",
+          "content": [
+            "Severe high-speed bullet tunneling",
+            "Costly polygonal pairwise tests",
+            "Single-point unstable rocking",
+            "Vibrational penalty spring bounce"
+          ]
+        },
+        "right": {
+          "label": "Modern GJK/EPA CCD Pipeline",
+          "content": [
+            "Continuous swept Time of Impact",
+            "Sub-millisecond simplex support queries",
+            "Stable multi-point contact manifolds",
+            "Jitter-free sequential impulses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays persistent contact manifolds caching up to four contact points across consecutive frames."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks sequential impulse resolution applying normal restitution and Coulomb friction impulses."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates rock-solid stacking stability without solving expensive global matrix systems."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies warm starting impulse inheritance, zero table wobbling, and realistic sliding friction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Discrete Collision",
+        "rightLabel": "Modern GJK/EPA CCD Pipeline"
+      }
+    },
+    {
+      "partTitle": "Three-Tier Physics Pipeline, Island Sleeping & Tunneling Elimination Telemetry",
+      "codeHash": "ff6b70ce4094ed775857dd7b947189b55e93e6c9db7493aa850c952a075d1b00",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Three-Tier Physics Pipeline, Island Sleeping & Tunneling Elimination Telemetry",
+        "left": {
+          "label": "Legacy Discrete Collision",
+          "content": [
+            "Severe high-speed bullet tunneling",
+            "Costly polygonal pairwise tests",
+            "Single-point unstable rocking",
+            "Vibrational penalty spring bounce"
+          ]
+        },
+        "right": {
+          "label": "Modern GJK/EPA CCD Pipeline",
+          "content": [
+            "Continuous swept Time of Impact",
+            "Sub-millisecond simplex support queries",
+            "Stable multi-point contact manifolds",
+            "Jitter-free sequential impulses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the three-tier collision architecture coordinating broad-phase BVH and narrow-phase solvers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles dynamic simulation island generation, quiescent body sleeping, and GPU workgroup dispatch."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms one thousand rigid body simulation execution within one point five milliseconds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies zero tunneling across millions of steps and locked sixty frames per second compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Discrete Collision",
+        "rightLabel": "Modern GJK/EPA CCD Pipeline"
+      }
+    }
+  ]
+}

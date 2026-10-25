@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 51,
+  "promptSha": "3926b14ea3fd07182f4a124a27a061764a4ea348b346156e5fdf56ed6554a3cb",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "SPH Foundation, Navier-Stokes Decomposition & Poly6 Density Kernel",
+      "codeHash": "48a77ffdd28a26ad383f296aa255397696d78bb9434150390c021cf0ecd69377",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: SPH Foundation, Navier-Stokes Decomposition & Poly6 Density Kernel",
+        "left": {
+          "label": "Legacy Fluid Representation",
+          "content": [
+            "Flat 2D scrolling textures",
+            "Zero true volumetric splashing",
+            "Explosive Forward Euler instability",
+            "Non-physical mass dissipation"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU SPH Solver",
+          "content": [
+            "Tens of thousands of 3D particles",
+            "Visceral 3D splash & crest dynamics",
+            "Symplectic phase-space preservation",
+            "Rigorous mass-density conservation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Smoothed Particle Hydrodynamics discretizing continuous fluid volumes into moving particles."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates the M\u00fcller Poly six radial smoothing kernel for continuous density interpolation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts meshless particle fluid representation against fixed Eulerian grid techniques."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies boundary value decay, smooth kernel gradients, and zero acceleration spikes."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Fluid Representation",
+        "rightLabel": "Modern GPU SPH Solver"
+      }
+    },
+    {
+      "partTitle": "Spiky Gradient Kernel & Tait Equation of State for Pressure Computation",
+      "codeHash": "f7f1a7aea9b4b32fab8c78e6a293696b28adfa29a5747498ac17638c2184ea16",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Spiky Gradient Kernel & Tait Equation of State for Pressure Computation",
+        "left": {
+          "label": "Legacy Fluid Representation",
+          "content": [
+            "Flat 2D scrolling textures",
+            "Zero true volumetric splashing",
+            "Explosive Forward Euler instability",
+            "Non-physical mass dissipation"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU SPH Solver",
+          "content": [
+            "Tens of thousands of 3D particles",
+            "Visceral 3D splash & crest dynamics",
+            "Symplectic phase-space preservation",
+            "Rigorous mass-density conservation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Tait equation of state modeling fluid incompressibility through density ratios."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks the Spiky kernel gradient maintaining non-vanishing repulsive separation forces."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total eradication of particle clustering and tensile instability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms stiff restorative pressure response and robust constant volume preservation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Fluid Representation",
+        "rightLabel": "Modern GPU SPH Solver"
+      }
+    },
+    {
+      "partTitle": "Viscosity Laplacians & Artificial Surface Tension Forces",
+      "codeHash": "2e516c60824ce393c7b16e306b2e0621615ebcf5cb9ee02a069b80593d3b7a0e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Viscosity Laplacians & Artificial Surface Tension Forces",
+        "left": {
+          "label": "Legacy Fluid Representation",
+          "content": [
+            "Flat 2D scrolling textures",
+            "Zero true volumetric splashing",
+            "Explosive Forward Euler instability",
+            "Non-physical mass dissipation"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU SPH Solver",
+          "content": [
+            "Tens of thousands of 3D particles",
+            "Visceral 3D splash & crest dynamics",
+            "Symplectic phase-space preservation",
+            "Rigorous mass-density conservation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Viscosity Laplacians evaluating internal fluid shear stress and thermal dissipation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks strictly positive Viscosity kernel Laplacians damping high-frequency velocity oscillations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts unconditionally stable viscous dissipation against unstable signed operators."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms smooth laminar flow transitions and realistic artificial surface tension cohesion."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Fluid Representation",
+        "rightLabel": "Modern GPU SPH Solver"
+      }
+    },
+    {
+      "partTitle": "Symplectic Euler Integration, Boundary Particles & CFL Stability Condition",
+      "codeHash": "493d66a677eb0b26984bf537d7bd5502a7b325588f84540ec87b86e0b04fa2b1",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Symplectic Euler Integration, Boundary Particles & CFL Stability Condition",
+        "left": {
+          "label": "Legacy Fluid Representation",
+          "content": [
+            "Flat 2D scrolling textures",
+            "Zero true volumetric splashing",
+            "Explosive Forward Euler instability",
+            "Non-physical mass dissipation"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU SPH Solver",
+          "content": [
+            "Tens of thousands of 3D particles",
+            "Visceral 3D splash & crest dynamics",
+            "Symplectic phase-space preservation",
+            "Rigorous mass-density conservation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Symplectic Euler integration advancing particle velocity prior to spatial position."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates Courant-Friedrichs-Lewy time-step constraints preventing particle tunneling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates long-term phase space conservation over explosive Forward Euler drift."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies energy bounds, boundary particle repulsion, and rock-solid simulation stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Fluid Representation",
+        "rightLabel": "Modern GPU SPH Solver"
+      }
+    },
+    {
+      "partTitle": "3D SPH Particle System Architecture & Mass-Momentum Conservation Benchmarks",
+      "codeHash": "6ac5c7ca5c558fa4d2801ee4f2da8d30e0dd47b09572083b1fa58b568c6c33ea",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: 3D SPH Particle System Architecture & Mass-Momentum Conservation Benchmarks",
+        "left": {
+          "label": "Legacy Fluid Representation",
+          "content": [
+            "Flat 2D scrolling textures",
+            "Zero true volumetric splashing",
+            "Explosive Forward Euler instability",
+            "Non-physical mass dissipation"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU SPH Solver",
+          "content": [
+            "Tens of thousands of 3D particles",
+            "Visceral 3D splash & crest dynamics",
+            "Symplectic phase-space preservation",
+            "Rigorous mass-density conservation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays four-pass GPU compute shader dispatch executing spatial hashing and integration."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles memory coalescence, radix sorting, and threadgroup shared memory caching."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis certifies sixteen thousand particle execution within three point five milliseconds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total mass conservation, density incompressibility, and sixty frames per second performance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Fluid Representation",
+        "rightLabel": "Modern GPU SPH Solver"
+      }
+    }
+  ]
+}
