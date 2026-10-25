@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 39,
+  "entries": [
+    {
+      "partTitle": "Group vs Component Auditor Dynamics & Governance under ISA 600 (Revised) & PCAOB AS 1205/1206",
+      "codeHash": "675e5110336a3422898d1ff543ec036f357c7f94befd4250d476a287cf94afa8",
+      "spec": {
+        "template": "funnel",
+        "title": "Group vs Component Auditor Dynamics & ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multinational group entities operating across foreign territories.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Single undivided statutory responsibility of group auditors.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Evaluating component auditor ethical independence and competence.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Structured group audit instructions directing overseas teams.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Component Materiality & Maximum Aggregate Component Materiality (MACM) Allocation Models",
+      "codeHash": "1e3e343b2cffb2cb494309bf049f768d15687463fea8d656c8b86d028b46d49d",
+      "spec": {
+        "template": "funnel",
+        "title": "Component Materiality & Maximum Aggreg... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Group overall materiality established for consolidated reporting.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Managing aggregation risk across multiple operating subsidiaries.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Applying square root allocation rules to derive component limits.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Defensible component materiality protecting consolidated accounts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scoping Significant Components: Financial Significance vs Significant Risk Profiling",
+      "codeHash": "4f0b9f66a50446f34b4ce870dd4c2f73be7d13262298f62cf72a99e03f17dd1b",
+      "spec": {
+        "template": "funnel",
+        "title": "Scoping Significant Components: Financ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global corporate network analyzed for statutory audit scoping.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Categorizing entities by financial benchmark contributions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Isolating complex treasury units for specific risk procedures.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive substantive coverage across multinational units.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Consolidation Workpapers, Inter-Company Eliminations & Foreign Currency Translation Auditing",
+      "codeHash": "e45411eec292781a2889d4fe7d8baa3e0428efb5b364e3128a1558c1a098c757",
+      "spec": {
+        "template": "funnel",
+        "title": "Consolidation Workpapers, Inter-Compan... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Consolidation schedules combining subsidiary trial balances.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Testing top-side journal entries and management adjustments.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Eliminating internal trading volumes and unrealized markups.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Accurate consolidated financial reports reflecting third parties.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Global Multinational Group Audit & Consolidation Review Simulator",
+      "codeHash": "33039cb745bb743a163891b481891cc89f0e59498a7bb0e75d6ac8484639c4a2",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Global Multinational Gro... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi-jurisdictional financial data processed by group engines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Real-time tracking of component audit packs and misstatements.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconciling inter-company mismatches and eliminating profits.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unmodified group clearance memorandum approved for audit boards.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

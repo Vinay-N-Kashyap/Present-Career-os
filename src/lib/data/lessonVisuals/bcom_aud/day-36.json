@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 36,
+  "entries": [
+    {
+      "partTitle": "Conceptual Foundations of Audit Evidence: Sufficiency & Appropriateness (Relevance & Reliability)",
+      "codeHash": "f617d7a1439e706264037e5692e7ccaebad25fad82592c2257d6865fc3964f56",
+      "spec": {
+        "template": "funnel",
+        "title": "Conceptual Foundations of Audit Eviden... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Raw documentation submitted for external assurance verification.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating evidentiary hierarchy and independent source credibility.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Direct counterparty confirmation establishing factual validity.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Uncompromised audit evidence supporting statutory audit conclusions.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Hierarchy of Evidence Reliability: External Third-Party Sources vs Internal Client Records",
+      "codeHash": "78d49a991639b27c90628f1442f181b800a59f84a5b85d9e101bfd956363caaf",
+      "spec": {
+        "template": "funnel",
+        "title": "The Hierarchy of Evidence Reliability:... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Complex electronic data queries extracted from enterprise systems.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Testing report logic and query parameters for completeness.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconciling extracted sub-ledger reports to core general ledgers.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verified management information forming sound evidentiary files.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Management's Specialist vs Auditor's Specialist: Competence, Capability & Work Evaluation",
+      "codeHash": "4677736ab05cb5812e25857c9005a846ef77441b9a15e8c97645a374d77a009f",
+      "spec": {
+        "template": "funnel",
+        "title": "Management's Specialist vs Auditor's S... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Subjective actuarial valuations and asset appraisal reports.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Assessing specialist objectivity competence and underlying models.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Independent sensitivity testing challenging valuation assumptions.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Objective valuation assurance shielding financial reports.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Electronic Evidence & Information Produced by the Entity (IPE): Completeness & Accuracy",
+      "codeHash": "1972f9dcf70ffa10fab51ccf05a0aa6fcd9743eb58e3387b3bda11578f975bad",
+      "spec": {
+        "template": "funnel",
+        "title": "Electronic Evidence & Information Prod... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Millions of transactional journals ingested into analytics tools.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated anomaly detection screening for weekend postings.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Forensic pattern matching isolating unauthorized manual entries.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive electronic testing replacing haphazard sampling.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Audit Evidence Evaluation & IPE Verification Engine Simulator",
+      "codeHash": "d5b2c80438145388f86df38a4f9597faa6e1874fdb7f0c1e6c10871ce6221748",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Audit Evidence Evaluatio... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate ledger populations processed through assurance engines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Scoring evidentiary reliability across distinct assurance streams.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Corroborating documentary streams against third-party records.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Mathematically defensible evidentiary files clearing inspections.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Population Intake",
+                "color": "blue"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Screening",
+                "color": "amber"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Execution",
+                "color": "purple"
+              },
+              {
+                "id": "final",
+                "label": "Audit Clearance",
+                "color": "emerald"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
