@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 44,
+  "entries": [
+    {
+      "partTitle": "Limitations of Vector Search on Global Sensemaking",
+      "codeHash": "bcbd6f8143f2412c87d2acaaa0f64635c4de297fcb8d4431075d89fb1efce21d",
+      "spec": {
+        "template": "table",
+        "title": "Vector Search Sensemaking Limitations and Holistic Reasoning Failure.",
+        "columns": [
+          "Retrieval Architecture",
+          "Query Analytical Scope",
+          "Corpus Topology Awareness"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector search fails on overarching holistic questions across archives.",
+            "rows": [
+              [
+                "Standard Vector RAG",
+                "Localized Factual Passages",
+                "Zero Global Topology Memory"
+              ],
+              [
+                "Hierarchical GraphRAG",
+                "Global Thematic Synthesis",
+                "Full Entity Graph Connectivity"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Localized retrieval operates flawlessly on explicit targeted questions.",
+            "rows": [
+              [
+                "Chunk Embedding Vector",
+                "Isolated Geometric Coordinate",
+                "Zero Cross Document Link"
+              ],
+              [
+                "Entity Relational Edge",
+                "Typed Semantic Interaction",
+                "Direct Inter Document Path"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Understanding a war requires more than reading twenty random clippings.",
+            "rows": [
+              [
+                "Random News Clippings",
+                "Fragmented Article Sampling",
+                "Severe Contextual Blindness"
+              ],
+              [
+                "Strategic War Map",
+                "Coordinated Alliances And Fronts",
+                "Comprehensive Battlefield Vision"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze how localized vector retrieval fails on overarching inquiries.",
+            "rows": [
+              [
+                "Holistic Analytical Query",
+                "Broad Strategic Evaluation",
+                "High Hallucination Risk"
+              ],
+              [
+                "Graph Topological Search",
+                "Hierarchical Summary Map",
+                "Executive Grade Precision"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Vector Search Sensemaking Limitations and Holistic Reasoning Failure.",
+        "columns": [
+          "Retrieval Architecture",
+          "Query Analytical Scope",
+          "Corpus Topology Awareness"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Vector search fails on overarching holistic questions across archives.",
+            "rows": [
+              [
+                "Standard Vector RAG",
+                "Localized Factual Passages",
+                "Zero Global Topology Memory"
+              ],
+              [
+                "Hierarchical GraphRAG",
+                "Global Thematic Synthesis",
+                "Full Entity Graph Connectivity"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Localized retrieval operates flawlessly on explicit targeted questions.",
+            "rows": [
+              [
+                "Chunk Embedding Vector",
+                "Isolated Geometric Coordinate",
+                "Zero Cross Document Link"
+              ],
+              [
+                "Entity Relational Edge",
+                "Typed Semantic Interaction",
+                "Direct Inter Document Path"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Understanding a war requires more than reading twenty random clippings.",
+            "rows": [
+              [
+                "Random News Clippings",
+                "Fragmented Article Sampling",
+                "Severe Contextual Blindness"
+              ],
+              [
+                "Strategic War Map",
+                "Coordinated Alliances And Fronts",
+                "Comprehensive Battlefield Vision"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze how localized vector retrieval fails on overarching inquiries.",
+            "rows": [
+              [
+                "Holistic Analytical Query",
+                "Broad Strategic Evaluation",
+                "High Hallucination Risk"
+              ],
+              [
+                "Graph Topological Search",
+                "Hierarchical Summary Map",
+                "Executive Grade Precision"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Knowledge Graph Extraction from Unstructured Text",
+      "codeHash": "bcbd6f8143f2412c87d2acaaa0f64635c4de297fcb8d4431075d89fb1efce21d",
+      "spec": {
+        "template": "table",
+        "title": "Automated LLM Knowledge Graph Extraction and Provenance Tagging.",
+        "columns": [
+          "Extracted Element Type",
+          "Extracted Metadata Schema",
+          "Provenance Tracking Precision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated knowledge graph extraction mines entities and relationships.",
+            "rows": [
+              [
+                "Extracted Named Entity",
+                "Name Type And Description",
+                "Direct Document Chunk Offset"
+              ],
+              [
+                "Typed Relational Edge",
+                "Predicate Strength And Context",
+                "Source And Target Chunk Proof"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extracted relationships record predicates and source chunk provenance.",
+            "rows": [
+              [
+                "Covariate Fact Claim",
+                "Conditionality Time Validity",
+                "Exact Character Span Metadata"
+              ],
+              [
+                "Entity Disambiguation",
+                "Cosine Merged Synonym Nodes",
+                "Unified Global Graph Schema"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Legal assistants extract contracts and signatories into interactive maps.",
+            "rows": [
+              [
+                "Legal Document Portfolio",
+                "Complex Multi Page Contracts",
+                "Dense Unstructured Clauses"
+              ],
+              [
+                "Interactive Entity Graph",
+                "Mapped Corporate Entities",
+                "Auditable Provenance Trails"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate entity extraction and inspect source chunk provenance metadata.",
+            "rows": [
+              [
+                "Property Graph Generation",
+                "Hundreds Of Edges Per Thousand",
+                "Dense Semantic Graph Fabric"
+              ],
+              [
+                "Multi Modal Extraction",
+                "Tabular And Diagram Metadata",
+                "Unified Enterprise Ontology"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Automated LLM Knowledge Graph Extraction and Provenance Tagging.",
+        "columns": [
+          "Extracted Element Type",
+          "Extracted Metadata Schema",
+          "Provenance Tracking Precision"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Automated knowledge graph extraction mines entities and relationships.",
+            "rows": [
+              [
+                "Extracted Named Entity",
+                "Name Type And Description",
+                "Direct Document Chunk Offset"
+              ],
+              [
+                "Typed Relational Edge",
+                "Predicate Strength And Context",
+                "Source And Target Chunk Proof"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extracted relationships record predicates and source chunk provenance.",
+            "rows": [
+              [
+                "Covariate Fact Claim",
+                "Conditionality Time Validity",
+                "Exact Character Span Metadata"
+              ],
+              [
+                "Entity Disambiguation",
+                "Cosine Merged Synonym Nodes",
+                "Unified Global Graph Schema"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Legal assistants extract contracts and signatories into interactive maps.",
+            "rows": [
+              [
+                "Legal Document Portfolio",
+                "Complex Multi Page Contracts",
+                "Dense Unstructured Clauses"
+              ],
+              [
+                "Interactive Entity Graph",
+                "Mapped Corporate Entities",
+                "Auditable Provenance Trails"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate entity extraction and inspect source chunk provenance metadata.",
+            "rows": [
+              [
+                "Property Graph Generation",
+                "Hundreds Of Edges Per Thousand",
+                "Dense Semantic Graph Fabric"
+              ],
+              [
+                "Multi Modal Extraction",
+                "Tabular And Diagram Metadata",
+                "Unified Enterprise Ontology"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Graph Partitioning via the Leiden Algorithm",
+      "codeHash": "bcbd6f8143f2412c87d2acaaa0f64635c4de297fcb8d4431075d89fb1efce21d",
+      "spec": {
+        "template": "table",
+        "title": "Hierarchical Graph Partitioning Architecture via Leiden Algorithm.",
+        "columns": [
+          "Community Partition Tier",
+          "Cluster Granularity Scope",
+          "Network Modularity Quality"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw enterprise knowledge graphs require structured hierarchical models.",
+            "rows": [
+              [
+                "Level Zero Micro Tier",
+                "Fine Grained Entity Clusters",
+                "High Internal Connectivity"
+              ],
+              [
+                "Level One Domain Tier",
+                "Intermediate Departmental Groups",
+                "Cross Functional Connections"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hierarchical community trees organize knowledge across macro tiers.",
+            "rows": [
+              [
+                "Level Two Macro Pillar",
+                "High Level Enterprise Themes",
+                "Strategic Holistic Abstraction"
+              ],
+              [
+                "Leiden Quality Guarantee",
+                "Zero Disconnected Subgroups",
+                "Strict Local Modularity"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Decomposing cities into neighborhoods and administrative districts.",
+            "rows": [
+              [
+                "Residential Neighborhood",
+                "Local Community Street Grid",
+                "Tight Municipal Association"
+              ],
+              [
+                "Metropolitan Territory",
+                "Consolidated Urban Counties",
+                "Integrated Regional Transit"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute graph density and inspect hierarchical community partitions.",
+            "rows": [
+              [
+                "Network Modularity Metric",
+                "Zero Point Seven Five Score",
+                "Near Optimal Cluster Separation"
+              ],
+              [
+                "Role Based Access Boundary",
+                "Restricted Community Subtrees",
+                "Enterprise Security Control"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hierarchical Graph Partitioning Architecture via Leiden Algorithm.",
+        "columns": [
+          "Community Partition Tier",
+          "Cluster Granularity Scope",
+          "Network Modularity Quality"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Raw enterprise knowledge graphs require structured hierarchical models.",
+            "rows": [
+              [
+                "Level Zero Micro Tier",
+                "Fine Grained Entity Clusters",
+                "High Internal Connectivity"
+              ],
+              [
+                "Level One Domain Tier",
+                "Intermediate Departmental Groups",
+                "Cross Functional Connections"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hierarchical community trees organize knowledge across macro tiers.",
+            "rows": [
+              [
+                "Level Two Macro Pillar",
+                "High Level Enterprise Themes",
+                "Strategic Holistic Abstraction"
+              ],
+              [
+                "Leiden Quality Guarantee",
+                "Zero Disconnected Subgroups",
+                "Strict Local Modularity"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Decomposing cities into neighborhoods and administrative districts.",
+            "rows": [
+              [
+                "Residential Neighborhood",
+                "Local Community Street Grid",
+                "Tight Municipal Association"
+              ],
+              [
+                "Metropolitan Territory",
+                "Consolidated Urban Counties",
+                "Integrated Regional Transit"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute graph density and inspect hierarchical community partitions.",
+            "rows": [
+              [
+                "Network Modularity Metric",
+                "Zero Point Seven Five Score",
+                "Near Optimal Cluster Separation"
+              ],
+              [
+                "Role Based Access Boundary",
+                "Restricted Community Subtrees",
+                "Enterprise Security Control"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bottom-Up Community Summarization",
+      "codeHash": "bcbd6f8143f2412c87d2acaaa0f64635c4de297fcb8d4431075d89fb1efce21d",
+      "spec": {
+        "template": "table",
+        "title": "Bottom Up Hierarchical Community Summarization and Pre Computation.",
+        "columns": [
+          "Hierarchy Summary Level",
+          "Source Input Knowledge Base",
+          "Thematic Synthesis Depth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bottom up community summarization synthesizes themes hierarchically.",
+            "rows": [
+              [
+                "Level Zero Micro Summary",
+                "Raw Graph Nodes And Edges",
+                "Exhaustive Local Theme Report"
+              ],
+              [
+                "Level One Domain Summary",
+                "Child Community Micro Reports",
+                "Departmental Narrative Synthesis"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precomputed summaries eliminate online latency bottlenecks during search.",
+            "rows": [
+              [
+                "Level Two Macro Summary",
+                "Intermediate Domain Summaries",
+                "Master Strategic Enterprise Brief"
+              ],
+              [
+                "Provenance Citation Footnotes",
+                "Bracketed Chunk Identifiers",
+                "One Hundred Percent Auditable"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Incident reports become regional briefs before executive daily reviews.",
+            "rows": [
+              [
+                "Field Agent Incident Log",
+                "Granular Operational Reports",
+                "Raw Tactical Intelligence Data"
+              ],
+              [
+                "Presidential Daily Brief",
+                "Consolidated Executive Briefing",
+                "Strategic Global Clarity"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace bottom up summary aggregation from micro to macro summaries.",
+            "rows": [
+              [
+                "Offline Index Pre Compute",
+                "Zero Runtime Delay Penalty",
+                "High Precision Foundation Models"
+              ],
+              [
+                "Full Corpus Theme Coverage",
+                "Zero Information Blind Spots",
+                "Complete Entity Visibility"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bottom Up Hierarchical Community Summarization and Pre Computation.",
+        "columns": [
+          "Hierarchy Summary Level",
+          "Source Input Knowledge Base",
+          "Thematic Synthesis Depth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bottom up community summarization synthesizes themes hierarchically.",
+            "rows": [
+              [
+                "Level Zero Micro Summary",
+                "Raw Graph Nodes And Edges",
+                "Exhaustive Local Theme Report"
+              ],
+              [
+                "Level One Domain Summary",
+                "Child Community Micro Reports",
+                "Departmental Narrative Synthesis"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Precomputed summaries eliminate online latency bottlenecks during search.",
+            "rows": [
+              [
+                "Level Two Macro Summary",
+                "Intermediate Domain Summaries",
+                "Master Strategic Enterprise Brief"
+              ],
+              [
+                "Provenance Citation Footnotes",
+                "Bracketed Chunk Identifiers",
+                "One Hundred Percent Auditable"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Incident reports become regional briefs before executive daily reviews.",
+            "rows": [
+              [
+                "Field Agent Incident Log",
+                "Granular Operational Reports",
+                "Raw Tactical Intelligence Data"
+              ],
+              [
+                "Presidential Daily Brief",
+                "Consolidated Executive Briefing",
+                "Strategic Global Clarity"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace bottom up summary aggregation from micro to macro summaries.",
+            "rows": [
+              [
+                "Offline Index Pre Compute",
+                "Zero Runtime Delay Penalty",
+                "High Precision Foundation Models"
+              ],
+              [
+                "Full Corpus Theme Coverage",
+                "Zero Information Blind Spots",
+                "Complete Entity Visibility"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Global Query vs Local Query Routing in GraphRAG",
+      "codeHash": "bcbd6f8143f2412c87d2acaaa0f64635c4de297fcb8d4431075d89fb1efce21d",
+      "spec": {
+        "template": "table",
+        "title": "Global Map Reduce Search Architecture and Query Routing Engine.",
+        "columns": [
+          "Query Processing Mode",
+          "Information Aggregation Pattern",
+          "Target Inquiry Topology"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Global search executes distributed map reduce on community summaries.",
+            "rows": [
+              [
+                "Local Entity Search",
+                "Two Hop Graph Traversal",
+                "Targeted Entity Centric Inquiries"
+              ],
+              [
+                "Global Thematic Search",
+                "Distributed Map Reduce Hierarchy",
+                "Overarching Strategic Synthesis"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Local search traverses entity neighborhoods for specific factual queries.",
+            "rows": [
+              [
+                "Map Phase Summary Evaluation",
+                "Parallel Community Scoring",
+                "Independent Intermediate Points"
+              ],
+              [
+                "Reduce Phase Consolidation",
+                "Prioritized Point Clustering",
+                "Consolidated Executive Report"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dispatchers route ambulances locally or coordinate regional epidemics.",
+            "rows": [
+              [
+                "Local Ambulance Dispatch",
+                "Targeted Immediate Transport",
+                "Pinpoint Hospital Delivery"
+              ],
+              [
+                "Regional Epidemic Response",
+                "City Wide Resource Routing",
+                "Coordinated Pandemic Strategy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate Map Reduce summarization architecture across community levels.",
+            "rows": [
+              [
+                "Corpus Comprehension Lift",
+                "Eighty Percent More Detailed",
+                "Seventy Two Percent Diversity"
+              ],
+              [
+                "Token Consumption Reduction",
+                "Seventy Percent Prompt Savings",
+                "Low Latency Enterprise Answers"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Global Map Reduce Search Architecture and Query Routing Engine.",
+        "columns": [
+          "Query Processing Mode",
+          "Information Aggregation Pattern",
+          "Target Inquiry Topology"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Global search executes distributed map reduce on community summaries.",
+            "rows": [
+              [
+                "Local Entity Search",
+                "Two Hop Graph Traversal",
+                "Targeted Entity Centric Inquiries"
+              ],
+              [
+                "Global Thematic Search",
+                "Distributed Map Reduce Hierarchy",
+                "Overarching Strategic Synthesis"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Local search traverses entity neighborhoods for specific factual queries.",
+            "rows": [
+              [
+                "Map Phase Summary Evaluation",
+                "Parallel Community Scoring",
+                "Independent Intermediate Points"
+              ],
+              [
+                "Reduce Phase Consolidation",
+                "Prioritized Point Clustering",
+                "Consolidated Executive Report"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dispatchers route ambulances locally or coordinate regional epidemics.",
+            "rows": [
+              [
+                "Local Ambulance Dispatch",
+                "Targeted Immediate Transport",
+                "Pinpoint Hospital Delivery"
+              ],
+              [
+                "Regional Epidemic Response",
+                "City Wide Resource Routing",
+                "Coordinated Pandemic Strategy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate Map Reduce summarization architecture across community levels.",
+            "rows": [
+              [
+                "Corpus Comprehension Lift",
+                "Eighty Percent More Detailed",
+                "Seventy Two Percent Diversity"
+              ],
+              [
+                "Token Consumption Reduction",
+                "Seventy Percent Prompt Savings",
+                "Low Latency Enterprise Answers"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
