@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 39,
+  "promptSha": "2c4a7409de26765b71995a784cb92144e2019ec5b0ed8ab27651fb0e31b30668",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Dual-Write Hazard: Why Database Updates & Message Publishing Inevitably Diverge",
+      "codeHash": "1c91087a17628606f1f2ecfa3e1d18ed1670acd92f0101f6556169a605771a37",
+      "spec": {
+        "template": "compare",
+        "title": "Transactional Outbox & CDC: The Dual-Write Hazard: Why Database Updates & Message Publishing Inevitably Diverge",
+        "left": {
+          "label": "Dual-Write Anti-Pattern",
+          "content": [
+            "Database commits but message broker network call times out",
+            "Message broker accepts event but local database transaction deadlocks",
+            "Silent data divergence between core databases and downstream views",
+            "Requires costly offline manual reconciliations to fix balances"
+          ]
+        },
+        "right": {
+          "label": "Transactional Outbox & CDC Pipeline",
+          "content": [
+            "Business data and outbox event commit in single local ACID transaction",
+            "Debezium tails binary database WAL with sub-ten millisecond latency",
+            "Kafka Connect guarantees durable at-least-once message streaming",
+            "Idempotent consumer deduplication guarantees exactly-once semantics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the fatal dual-write anti-pattern causing database and event bus divergence."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors uncoordinated sequential updates failing during network timeouts and process crashes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates inevitable data loss over atomic single-boundary transaction execution."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms detection of dual-write divergence hazards and reinforces the necessity of unified transactions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Dual-Write Anti-Pattern",
+        "rightLabel": "Transactional Outbox & CDC Pipeline",
+        "leftHighlights": [
+          "Broker network call times out",
+          "Local transaction deadlocks",
+          "Silent data divergence",
+          "Costly manual reconciliations"
+        ],
+        "rightHighlights": [
+          "Single local ACID transaction",
+          "Debezium tails binary WAL",
+          "At-least-once streaming",
+          "Idempotent consumer deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Transactional Outbox Pattern: Atomic Local Database State & Outbox Tables",
+      "codeHash": "372b667aada3949a324012a67ef823f4187c5a49af4c27f9d3392cf88a56ad35",
+      "spec": {
+        "template": "compare",
+        "title": "Transactional Outbox & CDC: The Transactional Outbox Pattern: Atomic Local Database State & Outbox Tables",
+        "left": {
+          "label": "Dual-Write Anti-Pattern",
+          "content": [
+            "Database commits but message broker network call times out",
+            "Message broker accepts event but local database transaction deadlocks",
+            "Silent data divergence between core databases and downstream views",
+            "Requires costly offline manual reconciliations to fix balances"
+          ]
+        },
+        "right": {
+          "label": "Transactional Outbox & CDC Pipeline",
+          "content": [
+            "Business data and outbox event commit in single local ACID transaction",
+            "Debezium tails binary database WAL with sub-ten millisecond latency",
+            "Kafka Connect guarantees durable at-least-once message streaming",
+            "Idempotent consumer deduplication guarantees exactly-once semantics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Transactional Outbox pattern executing local atomic database commitments."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors business state inserts paired simultaneously with outbox table event descriptors."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unshakeable local durability over fragile uncoordinated network calls."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms unified local transaction execution, permanent outbox logging, and zero event loss."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Dual-Write Anti-Pattern",
+        "rightLabel": "Transactional Outbox & CDC Pipeline",
+        "leftHighlights": [
+          "Broker network call times out",
+          "Local transaction deadlocks",
+          "Silent data divergence",
+          "Costly manual reconciliations"
+        ],
+        "rightHighlights": [
+          "Single local ACID transaction",
+          "Debezium tails binary WAL",
+          "At-least-once streaming",
+          "Idempotent consumer deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Change Data Capture (CDC) Architecture: Debezium, Kafka Connect & Database WAL Tailing",
+      "codeHash": "2d2eb656b598c45bcf707223a3adfe3e006ce2c853f54e44ffa17158749f9905",
+      "spec": {
+        "template": "compare",
+        "title": "Transactional Outbox & CDC: Change Data Capture (CDC) Architecture: Debezium, Kafka Connect & Database WAL Tailing",
+        "left": {
+          "label": "Dual-Write Anti-Pattern",
+          "content": [
+            "Database commits but message broker network call times out",
+            "Message broker accepts event but local database transaction deadlocks",
+            "Silent data divergence between core databases and downstream views",
+            "Requires costly offline manual reconciliations to fix balances"
+          ]
+        },
+        "right": {
+          "label": "Transactional Outbox & CDC Pipeline",
+          "content": [
+            "Business data and outbox event commit in single local ACID transaction",
+            "Debezium tails binary database WAL with sub-ten millisecond latency",
+            "Kafka Connect guarantees durable at-least-once message streaming",
+            "Idempotent consumer deduplication guarantees exactly-once semantics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Change Data Capture tailing the internal database write-ahead log in real time."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors binary log sequence numbers and automated streaming directly into distributed topics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-millisecond streaming velocity over costly polling queries and index bloat."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms write-ahead log tailing, committed offset tracking, and asynchronous event streaming."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Dual-Write Anti-Pattern",
+        "rightLabel": "Transactional Outbox & CDC Pipeline",
+        "leftHighlights": [
+          "Broker network call times out",
+          "Local transaction deadlocks",
+          "Silent data divergence",
+          "Costly manual reconciliations"
+        ],
+        "rightHighlights": [
+          "Single local ACID transaction",
+          "Debezium tails binary WAL",
+          "At-least-once streaming",
+          "Idempotent consumer deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Idempotent Consumer Mechanics, Deduplication Stores & Monotonic Sequence Fencing",
+      "codeHash": "a08791993544f2ef3720f2ea34249f745d7cb52c4f490744b16bed03dc3702a7",
+      "spec": {
+        "template": "compare",
+        "title": "Transactional Outbox & CDC: Idempotent Consumer Mechanics, Deduplication Stores & Monotonic Sequence Fencing",
+        "left": {
+          "label": "Dual-Write Anti-Pattern",
+          "content": [
+            "Database commits but message broker network call times out",
+            "Message broker accepts event but local database transaction deadlocks",
+            "Silent data divergence between core databases and downstream views",
+            "Requires costly offline manual reconciliations to fix balances"
+          ]
+        },
+        "right": {
+          "label": "Transactional Outbox & CDC Pipeline",
+          "content": [
+            "Business data and outbox event commit in single local ACID transaction",
+            "Debezium tails binary database WAL with sub-ten millisecond latency",
+            "Kafka Connect guarantees durable at-least-once message streaming",
+            "Idempotent consumer deduplication guarantees exactly-once semantics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays idempotent consumer mechanics and message deduplication stores."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unique message identifiers and atomic inbox checks suppressing redundant deliveries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates guaranteed exactly-once processing semantics over duplicate side-effect bugs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms duplicate message suppression, invariant preservation, and clean idempotent consumption."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Dual-Write Anti-Pattern",
+        "rightLabel": "Transactional Outbox & CDC Pipeline",
+        "leftHighlights": [
+          "Broker network call times out",
+          "Local transaction deadlocks",
+          "Silent data divergence",
+          "Costly manual reconciliations"
+        ],
+        "rightHighlights": [
+          "Single local ACID transaction",
+          "Debezium tails binary WAL",
+          "At-least-once streaming",
+          "Idempotent consumer deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Outbox & CDC Pipeline Implementation & End-to-End Delivery Verification",
+      "codeHash": "322826d400fc52f9916a3dc820e9650d55d8b46743bb8572bbe7693ca48e489c",
+      "spec": {
+        "template": "compare",
+        "title": "Transactional Outbox & CDC: Production Outbox & CDC Pipeline Implementation & End-to-End Delivery Verification",
+        "left": {
+          "label": "Dual-Write Anti-Pattern",
+          "content": [
+            "Database commits but message broker network call times out",
+            "Message broker accepts event but local database transaction deadlocks",
+            "Silent data divergence between core databases and downstream views",
+            "Requires costly offline manual reconciliations to fix balances"
+          ]
+        },
+        "right": {
+          "label": "Transactional Outbox & CDC Pipeline",
+          "content": [
+            "Business data and outbox event commit in single local ACID transaction",
+            "Debezium tails binary database WAL with sub-ten millisecond latency",
+            "Kafka Connect guarantees durable at-least-once message streaming",
+            "Idempotent consumer deduplication guarantees exactly-once semantics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production Change Data Capture pipeline telemetry and audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-ten millisecond write-ahead log streaming lag and zero dual-write error metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates astronautical-grade consistency across databases and downstream stream consumers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies total dual-write eradication, one hundred percent state parity, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Dual-Write Anti-Pattern",
+        "rightLabel": "Transactional Outbox & CDC Pipeline",
+        "leftHighlights": [
+          "Broker network call times out",
+          "Local transaction deadlocks",
+          "Silent data divergence",
+          "Costly manual reconciliations"
+        ],
+        "rightHighlights": [
+          "Single local ACID transaction",
+          "Debezium tails binary WAL",
+          "At-least-once streaming",
+          "Idempotent consumer deduplication"
+        ]
+      }
+    }
+  ]
+}

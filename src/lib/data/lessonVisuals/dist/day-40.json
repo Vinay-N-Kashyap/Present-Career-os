@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 40,
+  "promptSha": "956608611ef523c33e2b921eb778881c0660af2ca2dc23ffc2078e23f7cdbd3e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architectural Convergence: Unifying 2PC, Sagas, Outbox & CDC into the Master Platform",
+      "codeHash": "8f5d1c709e73e5591bb2025c9c3af9936b336d20248c35ad27cabe4e78132db7",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 8 Capstone Platform: Architectural Convergence: Unifying 2PC, Sagas, Outbox & CDC into the Master Platform",
+        "left": {
+          "label": "Fragile Monolithic or Ad-Hoc Architectures",
+          "content": [
+            "Wide-area 2PC locks collapsing throughput across services",
+            "Dual-write bugs causing silent data divergence between DB and Kafka",
+            "Orphaned reservations and inconsistent states after service crashes",
+            "Uncoordinated event loops causing infinite cascade ping-pong"
+          ]
+        },
+        "right": {
+          "label": "Milestone 8 Enterprise Transaction Platform",
+          "content": [
+            "Hybrid Master Router selecting 2PC or Sagas by semantic need",
+            "Durable state orchestrator with append-only event sourcing",
+            "Transactional Outbox and Debezium CDC eliminating dual writes",
+            "Automated reverse semantic rollbacks with 100% parity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the master transaction platform routing intents to appropriate consensus engines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors dynamic evaluation routing strict ledger writes to atomic commit and workflows to sagas."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates hybrid consistency efficiency over rigid single-engine architectural designs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms intelligent transaction routing, semantic classification, and optimal resource allocation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Monolithic or Ad-Hoc Architectures",
+        "rightLabel": "Milestone 8 Enterprise Transaction Platform",
+        "leftHighlights": [
+          "Wide-area 2PC locks",
+          "Dual-write bugs",
+          "Orphaned reservations",
+          "Uncoordinated event loops"
+        ],
+        "rightHighlights": [
+          "Hybrid Master Router",
+          "Durable state orchestrator",
+          "Transactional Outbox and CDC",
+          "Automated reverse semantic rollbacks"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Enterprise Saga Orchestration Engine: State Graphs & Context Routing",
+      "codeHash": "c69a25938aea6a3662002e9116d44b4ec717fb0da5b6042c8c498cd9630c5554",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 8 Capstone Platform: The Enterprise Saga Orchestration Engine: State Graphs & Context Routing",
+        "left": {
+          "label": "Fragile Monolithic or Ad-Hoc Architectures",
+          "content": [
+            "Wide-area 2PC locks collapsing throughput across services",
+            "Dual-write bugs causing silent data divergence between DB and Kafka",
+            "Orphaned reservations and inconsistent states after service crashes",
+            "Uncoordinated event loops causing infinite cascade ping-pong"
+          ]
+        },
+        "right": {
+          "label": "Milestone 8 Enterprise Transaction Platform",
+          "content": [
+            "Hybrid Master Router selecting 2PC or Sagas by semantic need",
+            "Durable state orchestrator with append-only event sourcing",
+            "Transactional Outbox and Debezium CDC eliminating dual writes",
+            "Automated reverse semantic rollbacks with 100% parity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the durable Saga orchestration engine and persistent state transition graph."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors append-only event sourcing logs, step context propagation, and crash-recovery rehydration."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates astronautical-grade workflow durability over fragile volatile in-memory queues."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms state graph execution, deterministic step advancement, and immutable audit trails."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Monolithic or Ad-Hoc Architectures",
+        "rightLabel": "Milestone 8 Enterprise Transaction Platform",
+        "leftHighlights": [
+          "Wide-area 2PC locks",
+          "Dual-write bugs",
+          "Orphaned reservations",
+          "Uncoordinated event loops"
+        ],
+        "rightHighlights": [
+          "Hybrid Master Router",
+          "Durable state orchestrator",
+          "Transactional Outbox and CDC",
+          "Automated reverse semantic rollbacks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Engine Coordination: Layering 2PC Atomic Commits Inside Asynchronous Saga Stages",
+      "codeHash": "8e585d0511b13ea6a02205d9ac72a917bb112a7a2ab4937fb52062f3d1f7cfe9",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 8 Capstone Platform: Dual-Engine Coordination: Layering 2PC Atomic Commits Inside Asynchronous Saga Stages",
+        "left": {
+          "label": "Fragile Monolithic or Ad-Hoc Architectures",
+          "content": [
+            "Wide-area 2PC locks collapsing throughput across services",
+            "Dual-write bugs causing silent data divergence between DB and Kafka",
+            "Orphaned reservations and inconsistent states after service crashes",
+            "Uncoordinated event loops causing infinite cascade ping-pong"
+          ]
+        },
+        "right": {
+          "label": "Milestone 8 Enterprise Transaction Platform",
+          "content": [
+            "Hybrid Master Router selecting 2PC or Sagas by semantic need",
+            "Durable state orchestrator with append-only event sourcing",
+            "Transactional Outbox and Debezium CDC eliminating dual writes",
+            "Automated reverse semantic rollbacks with 100% parity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates dual-engine coordination layering internal atomic commits inside Saga steps."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors localized shard prepare phases delivering strict serializability without global stalls."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates high throughput and localized lock scopes over wide-area blocking protocols."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms localized shard atomicity, low-latency execution, and seamless workflow stage handoffs."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Monolithic or Ad-Hoc Architectures",
+        "rightLabel": "Milestone 8 Enterprise Transaction Platform",
+        "leftHighlights": [
+          "Wide-area 2PC locks",
+          "Dual-write bugs",
+          "Orphaned reservations",
+          "Uncoordinated event loops"
+        ],
+        "rightHighlights": [
+          "Hybrid Master Router",
+          "Durable state orchestrator",
+          "Transactional Outbox and CDC",
+          "Automated reverse semantic rollbacks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Chaos Injection: Downstream Timeouts & Backward Compensations",
+      "codeHash": "02347562e8f03db9a3939e43992a2cc34d3de7f1742e97ad140159d5d181f026",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 8 Capstone Platform: Automated Chaos Injection: Downstream Timeouts & Backward Compensations",
+        "left": {
+          "label": "Fragile Monolithic or Ad-Hoc Architectures",
+          "content": [
+            "Wide-area 2PC locks collapsing throughput across services",
+            "Dual-write bugs causing silent data divergence between DB and Kafka",
+            "Orphaned reservations and inconsistent states after service crashes",
+            "Uncoordinated event loops causing infinite cascade ping-pong"
+          ]
+        },
+        "right": {
+          "label": "Milestone 8 Enterprise Transaction Platform",
+          "content": [
+            "Hybrid Master Router selecting 2PC or Sagas by semantic need",
+            "Durable state orchestrator with append-only event sourcing",
+            "Transactional Outbox and Debezium CDC eliminating dual writes",
+            "Automated reverse semantic rollbacks with 100% parity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the automated chaos injection harness triggering downstream service failures."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors immediate forward execution halts and reverse idempotent semantic compensation triggers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates bulletproof fault recovery over uncoordinated dirty reads and orphan holds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms reverse compensation order, full semantic rollback execution, and zero orphaned resources."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Monolithic or Ad-Hoc Architectures",
+        "rightLabel": "Milestone 8 Enterprise Transaction Platform",
+        "leftHighlights": [
+          "Wide-area 2PC locks",
+          "Dual-write bugs",
+          "Orphaned reservations",
+          "Uncoordinated event loops"
+        ],
+        "rightHighlights": [
+          "Hybrid Master Router",
+          "Durable state orchestrator",
+          "Transactional Outbox and CDC",
+          "Automated reverse semantic rollbacks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 8 Capstone Benchmark, Telemetry & Production Enterprise Certification",
+      "codeHash": "67ef35d49a4adf8eea1e7826c329229eb2e2324633813ee6ff838e6d3b84de77",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 8 Capstone Platform: Milestone 8 Capstone Benchmark, Telemetry & Production Enterprise Certification",
+        "left": {
+          "label": "Fragile Monolithic or Ad-Hoc Architectures",
+          "content": [
+            "Wide-area 2PC locks collapsing throughput across services",
+            "Dual-write bugs causing silent data divergence between DB and Kafka",
+            "Orphaned reservations and inconsistent states after service crashes",
+            "Uncoordinated event loops causing infinite cascade ping-pong"
+          ]
+        },
+        "right": {
+          "label": "Milestone 8 Enterprise Transaction Platform",
+          "content": [
+            "Hybrid Master Router selecting 2PC or Sagas by semantic need",
+            "Durable state orchestrator with append-only event sourcing",
+            "Transactional Outbox and Debezium CDC eliminating dual writes",
+            "Automated reverse semantic rollbacks with 100% parity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Milestone Eight Capstone telemetry dashboard under sustained enterprise load."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors one hundred thousand workflows, sub-twenty-five millisecond latency, and zero anomalies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates astronautical-grade consistency over fragile uncertified distributed systems."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total dual-write eradication, one hundred percent parity, and full Milestone Eight certification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Monolithic or Ad-Hoc Architectures",
+        "rightLabel": "Milestone 8 Enterprise Transaction Platform",
+        "leftHighlights": [
+          "Wide-area 2PC locks",
+          "Dual-write bugs",
+          "Orphaned reservations",
+          "Uncoordinated event loops"
+        ],
+        "rightHighlights": [
+          "Hybrid Master Router",
+          "Durable state orchestrator",
+          "Transactional Outbox and CDC",
+          "Automated reverse semantic rollbacks"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 38,
+  "promptSha": "f1290cbf449b4132586ad48c0b381c5e7cbae5a385c13fe18cbe402aa04dfa0c",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Sagas vs 2PC: Long-Lived Transactions (LLTs) & Eventual Consistency",
+      "codeHash": "2938ce12bd150223fdd28ee059edc26bbf8f66f11c13477075edf775a78aa1df",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Saga Architecture: Sagas vs 2PC: Long-Lived Transactions (LLTs) & Eventual Consistency",
+        "left": {
+          "label": "Blocking Distributed ACID (2PC)",
+          "content": [
+            "Exclusive row locks held across wide area network boundaries",
+            "Cascading wait queues collapsing transactional throughput",
+            "Indefinite liveness stalls during partial coordinator crashes",
+            "Unsuitable for long-running multi-stage business workflows"
+          ]
+        },
+        "right": {
+          "label": "The Saga Pattern (Eventual Consistency)",
+          "content": [
+            "Local transactions commit immediately, releasing locks in milliseconds",
+            "Eventual consistency guaranteed through compensating transactions",
+            "High availability and fault isolation across microservice domains",
+            "Durable state orchestrators tracking long-lived business workflows"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the Saga pattern replacing distributed database locks with local commit sequences."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors paired forward actions and compensating transactions preserving eventual business consistency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates high throughput and immediate lock release over blocking two-phase commit protocols."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms configuration of long-lived transaction steps, local commits, and eventual consistency contracts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Blocking Distributed ACID (2PC)",
+        "rightLabel": "The Saga Pattern (Eventual Consistency)",
+        "leftHighlights": [
+          "Exclusive row locks held",
+          "Cascading wait queues",
+          "Indefinite liveness stalls",
+          "Unsuitable for long-running workflows"
+        ],
+        "rightHighlights": [
+          "Local transactions commit immediately",
+          "Eventual consistency guaranteed",
+          "High availability and fault isolation",
+          "Durable state orchestrators"
+        ]
+      }
+    },
+    {
+      "partTitle": "Choreography-Based Sagas: Event-Driven State Decoupling & Reactive Loops",
+      "codeHash": "6f4a57c2d7170d2da5a3e6dcb7024b9f14bbe9af44947a1bee9c604dde8fceff",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Saga Architecture: Choreography-Based Sagas: Event-Driven State Decoupling & Reactive Loops",
+        "left": {
+          "label": "Blocking Distributed ACID (2PC)",
+          "content": [
+            "Exclusive row locks held across wide area network boundaries",
+            "Cascading wait queues collapsing transactional throughput",
+            "Indefinite liveness stalls during partial coordinator crashes",
+            "Unsuitable for long-running multi-stage business workflows"
+          ]
+        },
+        "right": {
+          "label": "The Saga Pattern (Eventual Consistency)",
+          "content": [
+            "Local transactions commit immediately, releasing locks in milliseconds",
+            "Eventual consistency guaranteed through compensating transactions",
+            "High availability and fault isolation across microservice domains",
+            "Durable state orchestrators tracking long-lived business workflows"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Choreography-based Sagas executing reactive event decoupling across domain services."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors asynchronous domain event publication and reactive message handler triggers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates autonomous service boundaries over fragile point-to-point synchronous RPC coupling."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms reactive event bus subscriptions, zero direct service coupling, and decoupled state progression."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Blocking Distributed ACID (2PC)",
+        "rightLabel": "The Saga Pattern (Eventual Consistency)",
+        "leftHighlights": [
+          "Exclusive row locks held",
+          "Cascading wait queues",
+          "Indefinite liveness stalls",
+          "Unsuitable for long-running workflows"
+        ],
+        "rightHighlights": [
+          "Local transactions commit immediately",
+          "Eventual consistency guaranteed",
+          "High availability and fault isolation",
+          "Durable state orchestrators"
+        ]
+      }
+    },
+    {
+      "partTitle": "Orchestration-Based Sagas: The Centralized State Machine Coordinator",
+      "codeHash": "b4ec0c39919019adf34b6409aefc39b16f4fb58b482416b7ac4d81e813c7c34d",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Saga Architecture: Orchestration-Based Sagas: The Centralized State Machine Coordinator",
+        "left": {
+          "label": "Blocking Distributed ACID (2PC)",
+          "content": [
+            "Exclusive row locks held across wide area network boundaries",
+            "Cascading wait queues collapsing transactional throughput",
+            "Indefinite liveness stalls during partial coordinator crashes",
+            "Unsuitable for long-running multi-stage business workflows"
+          ]
+        },
+        "right": {
+          "label": "The Saga Pattern (Eventual Consistency)",
+          "content": [
+            "Local transactions commit immediately, releasing locks in milliseconds",
+            "Eventual consistency guaranteed through compensating transactions",
+            "High availability and fault isolation across microservice domains",
+            "Durable state orchestrators tracking long-lived business workflows"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Orchestration-based Sagas driven by a centralized finite state machine coordinator."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors durable execution logging, step command serialization, and failure detection telemetry."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive end-to-end workflow visibility over fragmented choreography topologies."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms durable event logging, step execution tracking, and centralized workflow state management."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Blocking Distributed ACID (2PC)",
+        "rightLabel": "The Saga Pattern (Eventual Consistency)",
+        "leftHighlights": [
+          "Exclusive row locks held",
+          "Cascading wait queues",
+          "Indefinite liveness stalls",
+          "Unsuitable for long-running workflows"
+        ],
+        "rightHighlights": [
+          "Local transactions commit immediately",
+          "Eventual consistency guaranteed",
+          "High availability and fault isolation",
+          "Durable state orchestrators"
+        ]
+      }
+    },
+    {
+      "partTitle": "Compensating Transactions, Semantic Rollbacks & Pivot Transactions",
+      "codeHash": "b3bc69c0309090b61448df4b56356ef3e44b02dc6b7db60aee8cae324135700b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Saga Architecture: Compensating Transactions, Semantic Rollbacks & Pivot Transactions",
+        "left": {
+          "label": "Blocking Distributed ACID (2PC)",
+          "content": [
+            "Exclusive row locks held across wide area network boundaries",
+            "Cascading wait queues collapsing transactional throughput",
+            "Indefinite liveness stalls during partial coordinator crashes",
+            "Unsuitable for long-running multi-stage business workflows"
+          ]
+        },
+        "right": {
+          "label": "The Saga Pattern (Eventual Consistency)",
+          "content": [
+            "Local transactions commit immediately, releasing locks in milliseconds",
+            "Eventual consistency guaranteed through compensating transactions",
+            "High availability and fault isolation across microservice domains",
+            "Durable state orchestrators tracking long-lived business workflows"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays semantic rollbacks executing idempotent compensating transactions in reverse sequence."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors reverse compensation triggers and financial audit ledger immutability across cohorts."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates safe semantic undo operations over impossible physical database block rollbacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms reverse compensation order, pivot boundary safety, and certified semantic rollback completion."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Blocking Distributed ACID (2PC)",
+        "rightLabel": "The Saga Pattern (Eventual Consistency)",
+        "leftHighlights": [
+          "Exclusive row locks held",
+          "Cascading wait queues",
+          "Indefinite liveness stalls",
+          "Unsuitable for long-running workflows"
+        ],
+        "rightHighlights": [
+          "Local transactions commit immediately",
+          "Eventual consistency guaranteed",
+          "High availability and fault isolation",
+          "Durable state orchestrators"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Saga Workflow Engine Implementation & Telemetry Certification",
+      "codeHash": "f43a9a66b1a37c4ce0d612bcea9feb3c1b02899383b2613e623f5138426cd7ce",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Saga Architecture: Production Saga Workflow Engine Implementation & Telemetry Certification",
+        "left": {
+          "label": "Blocking Distributed ACID (2PC)",
+          "content": [
+            "Exclusive row locks held across wide area network boundaries",
+            "Cascading wait queues collapsing transactional throughput",
+            "Indefinite liveness stalls during partial coordinator crashes",
+            "Unsuitable for long-running multi-stage business workflows"
+          ]
+        },
+        "right": {
+          "label": "The Saga Pattern (Eventual Consistency)",
+          "content": [
+            "Local transactions commit immediately, releasing locks in milliseconds",
+            "Eventual consistency guaranteed through compensating transactions",
+            "High availability and fault isolation across microservice domains",
+            "Durable state orchestrators tracking long-lived business workflows"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production Saga workflow engine and telemetry dashboard under enterprise load."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-twenty millisecond execution latency and automated failure compensation handling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise resilience and fault recovery under simulated downstream service failures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies eventual business consistency, zero orphaned reservations, and full production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Blocking Distributed ACID (2PC)",
+        "rightLabel": "The Saga Pattern (Eventual Consistency)",
+        "leftHighlights": [
+          "Exclusive row locks held",
+          "Cascading wait queues",
+          "Indefinite liveness stalls",
+          "Unsuitable for long-running workflows"
+        ],
+        "rightHighlights": [
+          "Local transactions commit immediately",
+          "Eventual consistency guaranteed",
+          "High availability and fault isolation",
+          "Durable state orchestrators"
+        ]
+      }
+    }
+  ]
+}

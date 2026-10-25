@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 36,
+  "promptSha": "6eec2f1946ccaa5d45ca0483948db8b97cb13cf927838416fc22918d20e6dcd7",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Foundations of Atomic Commitment & The Two-Phase Commit (2PC) Protocol",
+      "codeHash": "c383cf0333feb849cc8c306aa4f2b4c87e2fe0fd6d0408de976d98112875ab3b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Atomic Commitment: Foundations of Atomic Commitment & The Two-Phase Commit (2PC) Protocol",
+        "left": {
+          "label": "Uncoordinated Distributed Writes",
+          "content": [
+            "Partial updates corrupting cross-database customer balances",
+            "Dirty reads exposing uncommitted intermediate state",
+            "Silent node failures causing split transaction state",
+            "Permanent financial ledger inconsistencies requiring audits"
+          ]
+        },
+        "right": {
+          "label": "Two-Phase Commit Protocol",
+          "content": [
+            "Unanimous voting protocol enforcing all-or-nothing atomicity",
+            "Strict exclusive resource locking preserving isolation",
+            "Presumed Abort optimization minimizing disk fsync overhead",
+            "Sub-ten millisecond distributed commit latency across cohorts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Two-Phase Commit coordinator collecting unanimous votes from distributed cohorts."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors participant voting evaluations ensuring that any single abort ballot forces global rollback."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates guaranteed atomic consistency over fragmented uncoordinated local writes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms unanimous participant agreement, global commit decision logging, and atomic execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Distributed Writes",
+        "rightLabel": "Two-Phase Commit Protocol",
+        "leftHighlights": [
+          "Partial updates corrupting balances",
+          "Dirty reads exposing state",
+          "Silent node failures",
+          "Ledger inconsistencies"
+        ],
+        "rightHighlights": [
+          "Unanimous voting protocol",
+          "Strict exclusive locking",
+          "Presumed Abort optimization",
+          "Sub-ten millisecond latency"
+        ]
+      }
+    },
+    {
+      "partTitle": "2PC Prepare Phase, Resource Locking & The Prepared Promise Contract",
+      "codeHash": "6efebe9d9dfb440a06ad2a10812bdf8ba0d68ef2fa4d9523053aeaad7f55e068",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Atomic Commitment: 2PC Prepare Phase, Resource Locking & The Prepared Promise Contract",
+        "left": {
+          "label": "Uncoordinated Distributed Writes",
+          "content": [
+            "Partial updates corrupting cross-database customer balances",
+            "Dirty reads exposing uncommitted intermediate state",
+            "Silent node failures causing split transaction state",
+            "Permanent financial ledger inconsistencies requiring audits"
+          ]
+        },
+        "right": {
+          "label": "Two-Phase Commit Protocol",
+          "content": [
+            "Unanimous voting protocol enforcing all-or-nothing atomicity",
+            "Strict exclusive resource locking preserving isolation",
+            "Presumed Abort optimization minimizing disk fsync overhead",
+            "Sub-ten millisecond distributed commit latency across cohorts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays participant resource locking and local write-ahead log persistence during prepare."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors exclusive row lock acquisition and durable write-ahead log fsync before casting commit votes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates strict isolation integrity over vulnerable dirty reads and lost updates."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms resource reservation, prepared state durability, and conflicting transaction rejection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Distributed Writes",
+        "rightLabel": "Two-Phase Commit Protocol",
+        "leftHighlights": [
+          "Partial updates corrupting balances",
+          "Dirty reads exposing state",
+          "Silent node failures",
+          "Ledger inconsistencies"
+        ],
+        "rightHighlights": [
+          "Unanimous voting protocol",
+          "Strict exclusive locking",
+          "Presumed Abort optimization",
+          "Sub-ten millisecond latency"
+        ]
+      }
+    },
+    {
+      "partTitle": "2PC Commit Dissemination & The Catastrophic Blocking Dilemma",
+      "codeHash": "62c35ddd0874651ece74bab68055004ee8bb96ef47375b01477ef488b63992d0",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Atomic Commitment: 2PC Commit Dissemination & The Catastrophic Blocking Dilemma",
+        "left": {
+          "label": "Uncoordinated Distributed Writes",
+          "content": [
+            "Partial updates corrupting cross-database customer balances",
+            "Dirty reads exposing uncommitted intermediate state",
+            "Silent node failures causing split transaction state",
+            "Permanent financial ledger inconsistencies requiring audits"
+          ]
+        },
+        "right": {
+          "label": "Two-Phase Commit Protocol",
+          "content": [
+            "Unanimous voting protocol enforcing all-or-nothing atomicity",
+            "Strict exclusive resource locking preserving isolation",
+            "Presumed Abort optimization minimizing disk fsync overhead",
+            "Sub-ten millisecond distributed commit latency across cohorts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the catastrophic Two-Phase Commit coordinator crash during decision dissemination."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates prepared participants trapped in epistemic uncertainty unable to commit or abort safely."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates severe liveness blocking risks over modern non-blocking consensus topologies."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms detection of stalled nodes, lock retention, and autonomous termination impossibility."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Distributed Writes",
+        "rightLabel": "Two-Phase Commit Protocol",
+        "leftHighlights": [
+          "Partial updates corrupting balances",
+          "Dirty reads exposing state",
+          "Silent node failures",
+          "Ledger inconsistencies"
+        ],
+        "rightHighlights": [
+          "Unanimous voting protocol",
+          "Strict exclusive locking",
+          "Presumed Abort optimization",
+          "Sub-ten millisecond latency"
+        ]
+      }
+    },
+    {
+      "partTitle": "Write-Ahead Logging (WAL) in 2PC & Presumed Abort Optimization",
+      "codeHash": "34e69b71bf2ed97569fd8384e4da69ad76dce33b42f860dea660e050bedef2ad",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Atomic Commitment: Write-Ahead Logging (WAL) in 2PC & Presumed Abort Optimization",
+        "left": {
+          "label": "Uncoordinated Distributed Writes",
+          "content": [
+            "Partial updates corrupting cross-database customer balances",
+            "Dirty reads exposing uncommitted intermediate state",
+            "Silent node failures causing split transaction state",
+            "Permanent financial ledger inconsistencies requiring audits"
+          ]
+        },
+        "right": {
+          "label": "Two-Phase Commit Protocol",
+          "content": [
+            "Unanimous voting protocol enforcing all-or-nothing atomicity",
+            "Strict exclusive resource locking preserving isolation",
+            "Presumed Abort optimization minimizing disk fsync overhead",
+            "Sub-ten millisecond distributed commit latency across cohorts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Presumed Abort optimization eliminating disk fsync for aborted transactions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates durable commit log flushing versus zero-disk in-memory abort state management."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates substantial disk input output savings over classic symmetric logging protocols."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms commit durability enforcement, recovery presumption safety, and bounded memory buffers."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Distributed Writes",
+        "rightLabel": "Two-Phase Commit Protocol",
+        "leftHighlights": [
+          "Partial updates corrupting balances",
+          "Dirty reads exposing state",
+          "Silent node failures",
+          "Ledger inconsistencies"
+        ],
+        "rightHighlights": [
+          "Unanimous voting protocol",
+          "Strict exclusive locking",
+          "Presumed Abort optimization",
+          "Sub-ten millisecond latency"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production 2PC Transaction Engine Implementation & Invariant Verification",
+      "codeHash": "352fd4fc88bb7a318321191c33c774ac5ad8bbb2b996da28f4e31953cd22c430",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Atomic Commitment: Production 2PC Transaction Engine Implementation & Invariant Verification",
+        "left": {
+          "label": "Uncoordinated Distributed Writes",
+          "content": [
+            "Partial updates corrupting cross-database customer balances",
+            "Dirty reads exposing uncommitted intermediate state",
+            "Silent node failures causing split transaction state",
+            "Permanent financial ledger inconsistencies requiring audits"
+          ]
+        },
+        "right": {
+          "label": "Two-Phase Commit Protocol",
+          "content": [
+            "Unanimous voting protocol enforcing all-or-nothing atomicity",
+            "Strict exclusive resource locking preserving isolation",
+            "Presumed Abort optimization minimizing disk fsync overhead",
+            "Sub-ten millisecond distributed commit latency across cohorts"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production Two-Phase Commit distributed transaction engine and telemetry dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-ten millisecond end-to-end execution latency across payment and ledger cohorts."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade atomic reliability over fragile ad hoc distributed scripts."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies complete atomic commitment, zero partial state updates, and full production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Distributed Writes",
+        "rightLabel": "Two-Phase Commit Protocol",
+        "leftHighlights": [
+          "Partial updates corrupting balances",
+          "Dirty reads exposing state",
+          "Silent node failures",
+          "Ledger inconsistencies"
+        ],
+        "rightHighlights": [
+          "Unanimous voting protocol",
+          "Strict exclusive locking",
+          "Presumed Abort optimization",
+          "Sub-ten millisecond latency"
+        ]
+      }
+    }
+  ]
+}
