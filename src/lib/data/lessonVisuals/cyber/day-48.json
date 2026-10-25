@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 48,
+  "promptSha": "d932a0f119ae711b56856a3c9abd07252fdf851739eed18cf23d42cc43ea5fd6",
+  "entries": [
+    {
+      "partTitle": "Kubernetes Attack Surface & API Server Authentication/Authorization: Control Plane Defense & Etcd Encryption",
+      "codeHash": "195c5f3474013bcc3719d87ac53495ff6c5f533b60b54f923099f1ff241ea9c5",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes Security: Kubernetes Attack Surface & API Server Authentication/Authorization: Control Plane Defense & Etcd Encryption",
+        "left": {
+          "label": "Vulnerable Kubernetes Cluster",
+          "content": [
+            "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+            "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+            "Pods execute as root with privileged capabilities and access to host namespaces",
+            "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+          ]
+        },
+        "right": {
+          "label": "Hardened Kubernetes Architecture",
+          "content": [
+            "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+            "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+            "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+            "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates kubernetes control plane request admission traversing authentication, authorization, and admission."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates client credentials and role bindings before granting persistent datastore storage access."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates multi-stage control plane validation over unauthenticated direct storage access."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms authentication success, role authorization, admission gate clearance, and datastore persistence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Kubernetes Cluster",
+        "rightLabel": "Hardened Kubernetes Architecture",
+        "leftContent": [
+          "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+          "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+          "Pods execute as root with privileged capabilities and access to host namespaces",
+          "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+        ],
+        "rightContent": [
+          "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+          "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+          "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+          "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes RBAC & Least Privilege Service Accounts: Roles, ClusterRoles & Token Automounting Defense",
+      "codeHash": "123901e24ea4ce4b3df6b7112fd69187391949ccf28f0b02a07ba26cbfdb38a9",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes Security: Kubernetes RBAC & Least Privilege Service Accounts: Roles, ClusterRoles & Token Automounting Defense",
+        "left": {
+          "label": "Vulnerable Kubernetes Cluster",
+          "content": [
+            "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+            "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+            "Pods execute as root with privileged capabilities and access to host namespaces",
+            "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+          ]
+        },
+        "right": {
+          "label": "Hardened Kubernetes Architecture",
+          "content": [
+            "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+            "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+            "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+            "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays role-based access control structures enforcing least privilege permissions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits roles and service accounts to detect wildcard resources and broad secrets access."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates granular namespaced scoping over overly broad administrative access."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms absence of wildcard grants, restricted secrets access, and secure token configuration."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Kubernetes Cluster",
+        "rightLabel": "Hardened Kubernetes Architecture",
+        "leftContent": [
+          "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+          "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+          "Pods execute as root with privileged capabilities and access to host namespaces",
+          "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+        ],
+        "rightContent": [
+          "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+          "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+          "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+          "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+        ]
+      }
+    },
+    {
+      "partTitle": "Pod Security Standards (PSS) & Admission Controllers: Privileged, Baseline & Restricted Governance",
+      "codeHash": "773882027d82615bc1c0d1e83058e1a5548510f2ade5dc306ffd3e34bcb64138",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes Security: Pod Security Standards (PSS) & Admission Controllers: Privileged, Baseline & Restricted Governance",
+        "left": {
+          "label": "Vulnerable Kubernetes Cluster",
+          "content": [
+            "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+            "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+            "Pods execute as root with privileged capabilities and access to host namespaces",
+            "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+          ]
+        },
+        "right": {
+          "label": "Hardened Kubernetes Architecture",
+          "content": [
+            "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+            "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+            "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+            "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates pod security admission evaluating workloads against the restricted standard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors pod security contexts to enforce non-root execution and read-only filesystems."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates kernel-level container confinement over unhardened privileged pod execution."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms non-root user enforcement, read-only rootfs compliance, and capability dropping."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Kubernetes Cluster",
+        "rightLabel": "Hardened Kubernetes Architecture",
+        "leftContent": [
+          "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+          "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+          "Pods execute as root with privileged capabilities and access to host namespaces",
+          "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+        ],
+        "rightContent": [
+          "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+          "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+          "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+          "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+        ]
+      }
+    },
+    {
+      "partTitle": "Kubernetes Network Policies & CNI Microsegmentation: Default-Deny Ingress/Egress & Metadata IP Defense",
+      "codeHash": "5f0fd1a5e52426f8a35d23437cf03585937aebacec6918bc25bd987f008dd96f",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes Security: Kubernetes Network Policies & CNI Microsegmentation: Default-Deny Ingress/Egress & Metadata IP Defense",
+        "left": {
+          "label": "Vulnerable Kubernetes Cluster",
+          "content": [
+            "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+            "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+            "Pods execute as root with privileged capabilities and access to host namespaces",
+            "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+          ]
+        },
+        "right": {
+          "label": "Hardened Kubernetes Architecture",
+          "content": [
+            "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+            "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+            "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+            "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays cluster network microsegmentation enforcing default-deny ingress and egress rules."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes network policies to block lateral movement and isolate link-local metadata endpoints."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates isolated workload networking over default flat cluster connectivity."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms default-deny enforcement, metadata service isolation, and permitted microsegmentation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Kubernetes Cluster",
+        "rightLabel": "Hardened Kubernetes Architecture",
+        "leftContent": [
+          "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+          "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+          "Pods execute as root with privileged capabilities and access to host namespaces",
+          "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+        ],
+        "rightContent": [
+          "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+          "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+          "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+          "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Kubernetes Cluster Security Auditor",
+      "codeHash": "cdd6d9ed339e8c3d91edeecfa719d3f2146418acda5799bef86ba099bd73e7b5",
+      "spec": {
+        "template": "compare",
+        "title": "Kubernetes Security: Production Kubernetes Cluster Security Auditor",
+        "left": {
+          "label": "Vulnerable Kubernetes Cluster",
+          "content": [
+            "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+            "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+            "Pods execute as root with privileged capabilities and access to host namespaces",
+            "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+          ]
+        },
+        "right": {
+          "label": "Hardened Kubernetes Architecture",
+          "content": [
+            "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+            "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+            "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+            "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete kubernetes cluster security auditor coordinating multi-checkpoint evaluation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified compliance across control planes, role permissions, pod standards, and network policies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates defense in depth across distributed container orchestration clusters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full cluster certification, zero security defects, and verified cloud infrastructure defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Kubernetes Cluster",
+        "rightLabel": "Hardened Kubernetes Architecture",
+        "leftContent": [
+          "Control plane allows anonymous access and stores secrets in unencrypted plaintext on disk",
+          "Service accounts possess wildcard cluster-admin permissions and auto-mount API tokens",
+          "Pods execute as root with privileged capabilities and access to host namespaces",
+          "Flat unsegmented network allows arbitrary cross-namespace traffic and cloud metadata access"
+        ],
+        "rightContent": [
+          "Control plane enforces mTLS, etcd encryption at rest, and validating admission controllers",
+          "Least-privilege RBAC eliminates wildcards and disables automated ServiceAccount token mounting",
+          "Pod Security Admission Restricted standard mandates non-root execution and read-only rootfs",
+          "Default-deny network policies enforce microsegmentation and block cloud metadata IP egress"
+        ]
+      }
+    }
+  ]
+}

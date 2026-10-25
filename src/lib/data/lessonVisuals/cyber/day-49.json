@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 49,
+  "promptSha": "82c919fd8e3028089789a34d845352808b9fef0e0d9193ce197bf4e656573e5b",
+  "entries": [
+    {
+      "partTitle": "Cloud IAM Foundations & Cross-Account Role Assumption: STS AssumeRole, External IDs & Confused Deputy Defense",
+      "codeHash": "8661f779b33626803ff2522e091506adc212a41182a1fd2e0ea28f6b3ac33ff6",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud IAM & IaC Hardening: Cloud IAM Foundations & Cross-Account Role Assumption: STS AssumeRole, External IDs & Confused Deputy Defense",
+        "left": {
+          "label": "Vulnerable Cloud Infrastructure",
+          "content": [
+            "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+            "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+            "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+            "Insecure infrastructure definitions with open administrative ports are committed and applied"
+          ]
+        },
+        "right": {
+          "label": "Hardened Cloud Architecture",
+          "content": [
+            "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+            "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+            "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+            "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates cross-account role assumption protected by unique external identifier tokens."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates trust policies to ensure mandatory validation of secret client tokens before credential issuance."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates confused deputy exploit mitigation over unrestricted cross-account trust relationships."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms external token validation, assume-role authorization, and temporary credential generation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Cloud Infrastructure",
+        "rightLabel": "Hardened Cloud Architecture",
+        "leftContent": [
+          "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+          "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+          "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+          "Insecure infrastructure definitions with open administrative ports are committed and applied"
+        ],
+        "rightContent": [
+          "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+          "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+          "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+          "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Account Governance & Service Control Policies (SCPs): Organizational Guardrails & Region Confinement",
+      "codeHash": "6891609619446e21c76850cf54daed4a93b6660924053a15dda97f1f16df1791",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud IAM & IaC Hardening: Multi-Account Governance & Service Control Policies (SCPs): Organizational Guardrails & Region Confinement",
+        "left": {
+          "label": "Vulnerable Cloud Infrastructure",
+          "content": [
+            "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+            "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+            "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+            "Insecure infrastructure definitions with open administrative ports are committed and applied"
+          ]
+        },
+        "right": {
+          "label": "Hardened Cloud Architecture",
+          "content": [
+            "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+            "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+            "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+            "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays organization service control policies enforcing immutable administrative guardrails."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors organization hierarchies to block unapproved regions and protect audit trails."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates organization-level permission boundaries overriding local account administrative privileges."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms audit trail preservation, security detector protection, and geographic region confinement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Cloud Infrastructure",
+        "rightLabel": "Hardened Cloud Architecture",
+        "leftContent": [
+          "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+          "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+          "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+          "Insecure infrastructure definitions with open administrative ports are committed and applied"
+        ],
+        "rightContent": [
+          "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+          "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+          "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+          "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+        ]
+      }
+    },
+    {
+      "partTitle": "Infrastructure as Code (IaC) Security: Terraform/OpenTofu State File Protection & Remote Backend KMS Hardening",
+      "codeHash": "e69c2a604718a93215e91e8aae7a3ba07090e96a13928ba4e9448a379a6a0ee7",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud IAM & IaC Hardening: Infrastructure as Code (IaC) Security: Terraform/OpenTofu State File Protection & Remote Backend KMS Hardening",
+        "left": {
+          "label": "Vulnerable Cloud Infrastructure",
+          "content": [
+            "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+            "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+            "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+            "Insecure infrastructure definitions with open administrative ports are committed and applied"
+          ]
+        },
+        "right": {
+          "label": "Hardened Cloud Architecture",
+          "content": [
+            "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+            "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+            "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+            "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates infrastructure as code state file protection utilizing customer-managed cryptographic keys."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection verifies server-side encryption and distributed locking tables to prevent state corruption."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates secure remote state backends over unencrypted local developer state files."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms cryptographic state encryption, distributed lock coordination, and state confidentiality defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Cloud Infrastructure",
+        "rightLabel": "Hardened Cloud Architecture",
+        "leftContent": [
+          "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+          "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+          "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+          "Insecure infrastructure definitions with open administrative ports are committed and applied"
+        ],
+        "rightContent": [
+          "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+          "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+          "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+          "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+        ]
+      }
+    },
+    {
+      "partTitle": "Static Infrastructure as Code (IaC) Security Analysis: Checkov, Tfsec & Automated Policy as Code (PaC)",
+      "codeHash": "d4bdb9b29cb66bae1e2e97d12819c4e37eab6dfd8234fbbfa320b19cb43ee36c",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud IAM & IaC Hardening: Static Infrastructure as Code (IaC) Security Analysis: Checkov, Tfsec & Automated Policy as Code (PaC)",
+        "left": {
+          "label": "Vulnerable Cloud Infrastructure",
+          "content": [
+            "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+            "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+            "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+            "Insecure infrastructure definitions with open administrative ports are committed and applied"
+          ]
+        },
+        "right": {
+          "label": "Hardened Cloud Architecture",
+          "content": [
+            "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+            "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+            "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+            "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays shift-left static infrastructure analysis scanning blueprints before cloud provisioning."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes resource blocks to detect open administrative ports and unencrypted storage volumes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates pre-deployment misconfiguration interception over reactive post-deployment remediation."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms policy violation detection, automated pipeline failure, and insecure manifest rejection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Cloud Infrastructure",
+        "rightLabel": "Hardened Cloud Architecture",
+        "leftContent": [
+          "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+          "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+          "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+          "Insecure infrastructure definitions with open administrative ports are committed and applied"
+        ],
+        "rightContent": [
+          "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+          "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+          "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+          "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Cloud IAM & IaC Security Policy Engine",
+      "codeHash": "fef452b682df22d3db3a417fd89b60085c993b1dbe0a16a4def784476b3a8c8a",
+      "spec": {
+        "template": "compare",
+        "title": "Cloud IAM & IaC Hardening: Production Cloud IAM & IaC Security Policy Engine",
+        "left": {
+          "label": "Vulnerable Cloud Infrastructure",
+          "content": [
+            "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+            "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+            "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+            "Insecure infrastructure definitions with open administrative ports are committed and applied"
+          ]
+        },
+        "right": {
+          "label": "Hardened Cloud Architecture",
+          "content": [
+            "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+            "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+            "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+            "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete cloud identity and infrastructure policy engine coordinating deployment gates."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified compliance across trust policies, organizational guardrails, state encryption, and scans."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive multi-account governance against configuration drift and lateral pivots."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full deployment plan certification, zero critical findings, and authorized infrastructure release."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Cloud Infrastructure",
+        "rightLabel": "Hardened Cloud Architecture",
+        "leftContent": [
+          "Cross-account trust policies omit external IDs, exposing accounts to confused deputy exploits",
+          "Child accounts lack organizational guardrails and can disable audit logging and detectors",
+          "Terraform state files reside unencrypted on local disks containing plaintext passwords and keys",
+          "Insecure infrastructure definitions with open administrative ports are committed and applied"
+        ],
+        "rightContent": [
+          "Cryptographically verified external IDs neutralize confused deputy vulnerabilities in trust policies",
+          "Service Control Policies enforce immutable guardrails protecting audit trails and restricting regions",
+          "Remote state backends enforce customer-managed KMS encryption and distributed DynamoDB state locking",
+          "Static IaC scanners (Checkov, Tfsec) block pull requests with high or critical misconfigurations"
+        ]
+      }
+    }
+  ]
+}

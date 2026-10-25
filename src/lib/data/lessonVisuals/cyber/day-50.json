@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 50,
+  "promptSha": "2d8003065b7f62dd5605cfa455951b3381461f7abef49b0003564167f0967e8f",
+  "entries": [
+    {
+      "partTitle": "Milestone 10 Architectural Foundation: SPIFFE Workload Identity & Multi-Cloud Zero-Trust Mesh",
+      "codeHash": "7bdc8657ac770963303fa56bdc7d86478e9cb8961fd732f9ac233065cbd8b0c8",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone: Milestone 10 Architectural Foundation: SPIFFE Workload Identity & Multi-Cloud Zero-Trust Mesh",
+        "left": {
+          "label": "Vulnerable Multi-Cloud Infrastructure",
+          "content": [
+            "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+            "Single-barrier security models collapse completely when application-level exploits succeed",
+            "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+            "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+          ]
+        },
+        "right": {
+          "label": "Zero-Trust Mesh & Continuous Compliance",
+          "content": [
+            "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+            "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+            "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+            "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates multi-cloud zero-trust workload identity federated through cryptographic credentials."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates workload identity documents and trust domain bundles across heterogeneous cloud environments."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates cryptographic workload identity over perimeter network access controls."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms workload attestation, cryptographic token validation, and mutual transport layer security defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Multi-Cloud Infrastructure",
+        "rightLabel": "Zero-Trust Mesh & Continuous Compliance",
+        "leftContent": [
+          "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+          "Single-barrier security models collapse completely when application-level exploits succeed",
+          "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+          "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+        ],
+        "rightContent": [
+          "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+          "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+          "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+          "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+        ]
+      }
+    },
+    {
+      "partTitle": "Defense-in-Depth Pipeline Integration: Kernel to Cloud Control Plane Boundary Defense",
+      "codeHash": "8c78d98cab257a921d163eeff19e36e2250127a4e411be5079196998c62e4407",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone: Defense-in-Depth Pipeline Integration: Kernel to Cloud Control Plane Boundary Defense",
+        "left": {
+          "label": "Vulnerable Multi-Cloud Infrastructure",
+          "content": [
+            "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+            "Single-barrier security models collapse completely when application-level exploits succeed",
+            "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+            "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+          ]
+        },
+        "right": {
+          "label": "Zero-Trust Mesh & Continuous Compliance",
+          "content": [
+            "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+            "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+            "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+            "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays concentric defense-in-depth layers connecting host kernels to cloud control planes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection traces multi-layer containment boundaries across namespaces, containers, pods, and cloud policies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates non-aligned defensive layers neutralizing multi-stage intrusion chains."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full pipeline compliance, zero defensive gaps, and verified multi-layer containment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Multi-Cloud Infrastructure",
+        "rightLabel": "Zero-Trust Mesh & Continuous Compliance",
+        "leftContent": [
+          "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+          "Single-barrier security models collapse completely when application-level exploits succeed",
+          "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+          "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+        ],
+        "rightContent": [
+          "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+          "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+          "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+          "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Cloud Compliance & Runtime Threat Detection: CSPM Telemetry & eBPF Kernel Auditing",
+      "codeHash": "708c2f260414cf8b01eb4a214f2be755bcf3ab746c495f3bfe150255bdc3645b",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone: Continuous Cloud Compliance & Runtime Threat Detection: CSPM Telemetry & eBPF Kernel Auditing",
+        "left": {
+          "label": "Vulnerable Multi-Cloud Infrastructure",
+          "content": [
+            "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+            "Single-barrier security models collapse completely when application-level exploits succeed",
+            "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+            "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+          ]
+        },
+        "right": {
+          "label": "Zero-Trust Mesh & Continuous Compliance",
+          "content": [
+            "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+            "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+            "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+            "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates continuous compliance telemetry fusing cloud posture management with kernel probes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes real-time system call streams and cloud events to trigger automated remediation workflows."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-second automated threat containment over reactive human incident response."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms anomaly detection, automated policy enforcement, and continuous runtime health."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Multi-Cloud Infrastructure",
+        "rightLabel": "Zero-Trust Mesh & Continuous Compliance",
+        "leftContent": [
+          "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+          "Single-barrier security models collapse completely when application-level exploits succeed",
+          "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+          "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+        ],
+        "rightContent": [
+          "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+          "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+          "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+          "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+        ]
+      }
+    },
+    {
+      "partTitle": "Adversary Simulation & Failure Mode Verification: Multi-Stage Breach Containment Testing",
+      "codeHash": "fadf745a47a914a19d04d332c7f0e78f1a2bec7262c9b9414de335b9753cbde2",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone: Adversary Simulation & Failure Mode Verification: Multi-Stage Breach Containment Testing",
+        "left": {
+          "label": "Vulnerable Multi-Cloud Infrastructure",
+          "content": [
+            "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+            "Single-barrier security models collapse completely when application-level exploits succeed",
+            "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+            "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+          ]
+        },
+        "right": {
+          "label": "Zero-Trust Mesh & Continuous Compliance",
+          "content": [
+            "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+            "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+            "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+            "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays automated adversary breach simulation testing multi-stage attack scenarios."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates containment rate against container breakouts, confused deputy attacks, and data exfiltration."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates empirical red-team verification over theoretical compliance checklists."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms simulated threat interception, complete attack containment, and zero compromise."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Multi-Cloud Infrastructure",
+        "rightLabel": "Zero-Trust Mesh & Continuous Compliance",
+        "leftContent": [
+          "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+          "Single-barrier security models collapse completely when application-level exploits succeed",
+          "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+          "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+        ],
+        "rightContent": [
+          "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+          "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+          "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+          "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Milestone 10 Capstone Certification Engine & Block 10 Cloud Security Graduation",
+      "codeHash": "cabbe7a05605ff393ab2743ad6ab9d872130ca25f9df952ce973d3f45040d9d8",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 10 Capstone: Grand Milestone 10 Capstone Certification Engine & Block 10 Cloud Security Graduation",
+        "left": {
+          "label": "Vulnerable Multi-Cloud Infrastructure",
+          "content": [
+            "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+            "Single-barrier security models collapse completely when application-level exploits succeed",
+            "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+            "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+          ]
+        },
+        "right": {
+          "label": "Zero-Trust Mesh & Continuous Compliance",
+          "content": [
+            "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+            "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+            "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+            "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the grand milestone capstone audit certifying sovereign multi-cloud security."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates complete five-dimension compliance across hosts, containers, clusters, identities, and meshes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete mathematical compliance across all enterprise cloud security benchmarks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms grand milestone capstone certification, zero security regressions, and cloud defense mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Multi-Cloud Infrastructure",
+        "rightLabel": "Zero-Trust Mesh & Continuous Compliance",
+        "leftContent": [
+          "Implicit trust on internal networks exposes microservices to lateral compromise and packet sniffing",
+          "Single-barrier security models collapse completely when application-level exploits succeed",
+          "Reactive human ticket queues result in multi-hour delay before responding to active intrusions",
+          "Unverified theoretical security checklists fail silently under real-world adversary attack chains"
+        ],
+        "rightContent": [
+          "SPIFFE verifiable workload identity and mutual TLS enforce cryptographic identity per RPC",
+          "Concentric five-layer defense-in-depth pipeline contains breakouts from kernel to cloud IAM",
+          "Continuous telemetry and event-driven automation trigger sub-second remediation playbooks",
+          "Automated adversary breach simulation proves one hundred percent containment across attack scenarios"
+        ]
+      }
+    }
+  ]
+}

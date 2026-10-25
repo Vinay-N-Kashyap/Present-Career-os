@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 47,
+  "promptSha": "c6303f3919313af628154f685feb2151f2f738d0c0f0da9082083f1c5bf29aaf",
+  "entries": [
+    {
+      "partTitle": "Container Threat Vectors & Daemon Hardening: Rootless Docker, Daemon Socket Security & Inter-Container Isolation",
+      "codeHash": "05d65ce928dce281a44c0a6c2883789eb561c8e35c412fd9258b7f61bb3412c3",
+      "spec": {
+        "template": "compare",
+        "title": "Container Security: Container Threat Vectors & Daemon Hardening: Rootless Docker, Daemon Socket Security & Inter-Container Isolation",
+        "left": {
+          "label": "Vulnerable Container Deployment",
+          "content": [
+            "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+            "Bloated distribution images bundle package managers, compilers, and interactive shells",
+            "Writable container filesystems permit runtime malware persistence and binary modification",
+            "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+          ]
+        },
+        "right": {
+          "label": "Hardened Container Architecture",
+          "content": [
+            "Rootless container engines drop root privileges and disable inter-container communication",
+            "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+            "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+            "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates container daemon isolation boundaries and unprivileged socket protection."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits daemon settings to disable inter-container communication and enforce user namespace mapping."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unprivileged daemon execution over default monolithic root socket access."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms daemon hardening, inter-container traffic blocking, and host isolation defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Container Deployment",
+        "rightLabel": "Hardened Container Architecture",
+        "leftContent": [
+          "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+          "Bloated distribution images bundle package managers, compilers, and interactive shells",
+          "Writable container filesystems permit runtime malware persistence and binary modification",
+          "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+        ],
+        "rightContent": [
+          "Rootless container engines drop root privileges and disable inter-container communication",
+          "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+          "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+          "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+        ]
+      }
+    },
+    {
+      "partTitle": "Minimal Base Images & Distroless: Attack Surface Reduction, Shell Stripping & Multi-Stage Builds",
+      "codeHash": "3b7dc9837909db2a5ffb6e9dce5c804a92b17b221ec3d27c563a303954112dd8",
+      "spec": {
+        "template": "compare",
+        "title": "Container Security: Minimal Base Images & Distroless: Attack Surface Reduction, Shell Stripping & Multi-Stage Builds",
+        "left": {
+          "label": "Vulnerable Container Deployment",
+          "content": [
+            "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+            "Bloated distribution images bundle package managers, compilers, and interactive shells",
+            "Writable container filesystems permit runtime malware persistence and binary modification",
+            "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+          ]
+        },
+        "right": {
+          "label": "Hardened Container Architecture",
+          "content": [
+            "Rootless container engines drop root privileges and disable inter-container communication",
+            "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+            "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+            "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays minimal distroless base image composition stripping unnecessary tools."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates image layers to ensure complete removal of interactive shells and package managers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates attack surface reduction over bloated distribution base image layers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms non-root user execution, shell absence, and distroless runtime compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Container Deployment",
+        "rightLabel": "Hardened Container Architecture",
+        "leftContent": [
+          "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+          "Bloated distribution images bundle package managers, compilers, and interactive shells",
+          "Writable container filesystems permit runtime malware persistence and binary modification",
+          "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+        ],
+        "rightContent": [
+          "Rootless container engines drop root privileges and disable inter-container communication",
+          "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+          "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+          "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+        ]
+      }
+    },
+    {
+      "partTitle": "Read-Only Filesystems & Ephemeral Volumes: Immutable Rootfs, Tmpfs Mounts & Runtime Integrity",
+      "codeHash": "b65b242db2e58f3d59ff08f0b0427b8bf7ef2ee093214662c053d001b907721a",
+      "spec": {
+        "template": "compare",
+        "title": "Container Security: Read-Only Filesystems & Ephemeral Volumes: Immutable Rootfs, Tmpfs Mounts & Runtime Integrity",
+        "left": {
+          "label": "Vulnerable Container Deployment",
+          "content": [
+            "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+            "Bloated distribution images bundle package managers, compilers, and interactive shells",
+            "Writable container filesystems permit runtime malware persistence and binary modification",
+            "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+          ]
+        },
+        "right": {
+          "label": "Hardened Container Architecture",
+          "content": [
+            "Rootless container engines drop root privileges and disable inter-container communication",
+            "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+            "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+            "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates immutable read-only container root filesystems paired with ephemeral memory storage."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors storage mounts to enforce read-only flags and secure temporary filesystem options."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates runtime tamper resistance over writable container storage layers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms read-only rootfs enforcement, temporary memory boundary compliance, and filesystem integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Container Deployment",
+        "rightLabel": "Hardened Container Architecture",
+        "leftContent": [
+          "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+          "Bloated distribution images bundle package managers, compilers, and interactive shells",
+          "Writable container filesystems permit runtime malware persistence and binary modification",
+          "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+        ],
+        "rightContent": [
+          "Rootless container engines drop root privileges and disable inter-container communication",
+          "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+          "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+          "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Container Vulnerability Scanning: Software Bill of Materials (SBOM), Trivy/Grype & CVSS/EPSS Triage",
+      "codeHash": "bf45aadf7cf8f871b46e0d1f6b81d2c43ff2a8620e39130a23fcb095004a8760",
+      "spec": {
+        "template": "compare",
+        "title": "Container Security: Automated Container Vulnerability Scanning: Software Bill of Materials (SBOM), Trivy/Grype & CVSS/EPSS Triage",
+        "left": {
+          "label": "Vulnerable Container Deployment",
+          "content": [
+            "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+            "Bloated distribution images bundle package managers, compilers, and interactive shells",
+            "Writable container filesystems permit runtime malware persistence and binary modification",
+            "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+          ]
+        },
+        "right": {
+          "label": "Hardened Container Architecture",
+          "content": [
+            "Rootless container engines drop root privileges and disable inter-container communication",
+            "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+            "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+            "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays automated vulnerability scanning pipelines evaluating software bills of materials."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes package inventories against vulnerability registries using severity and exploit prediction scores."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates proactive vulnerability gatekeeping over uninspected container deployments."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms blocking vulnerability detection, severity threshold enforcement, and registry isolation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Container Deployment",
+        "rightLabel": "Hardened Container Architecture",
+        "leftContent": [
+          "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+          "Bloated distribution images bundle package managers, compilers, and interactive shells",
+          "Writable container filesystems permit runtime malware persistence and binary modification",
+          "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+        ],
+        "rightContent": [
+          "Rootless container engines drop root privileges and disable inter-container communication",
+          "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+          "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+          "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Container Security Policy Engine & CI/CD Gatekeeper",
+      "codeHash": "145b0ff3b3378d9848e7cb8945307fb6312463c18208cc312a2053f520127256",
+      "spec": {
+        "template": "compare",
+        "title": "Container Security: Production Container Security Policy Engine & CI/CD Gatekeeper",
+        "left": {
+          "label": "Vulnerable Container Deployment",
+          "content": [
+            "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+            "Bloated distribution images bundle package managers, compilers, and interactive shells",
+            "Writable container filesystems permit runtime malware persistence and binary modification",
+            "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+          ]
+        },
+        "right": {
+          "label": "Hardened Container Architecture",
+          "content": [
+            "Rootless container engines drop root privileges and disable inter-container communication",
+            "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+            "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+            "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete container security policy engine coordinating multi-checkpoint evaluation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified compliance across non-root execution, immutable storage, and vulnerability scans."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive container supply chain defense against deployment risks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full policy certification, zero security regressions, and production container authorization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Vulnerable Container Deployment",
+        "rightLabel": "Hardened Container Architecture",
+        "leftContent": [
+          "Containers execute as root UID zero with direct access to the unhardened Docker daemon socket",
+          "Bloated distribution images bundle package managers, compilers, and interactive shells",
+          "Writable container filesystems permit runtime malware persistence and binary modification",
+          "Uninspected image layers carry unpatched critical vulnerabilities into production registries"
+        ],
+        "rightContent": [
+          "Rootless container engines drop root privileges and disable inter-container communication",
+          "Distroless minimal base images strip package managers and shells to shrink attack surfaces",
+          "Read-only root filesystems and hardened ephemeral tmpfs mounts enforce runtime immutability",
+          "Automated vulnerability scanners and SBOM analyzers block images with critical CVEs"
+        ]
+      }
+    }
+  ]
+}

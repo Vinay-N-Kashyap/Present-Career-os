@@ -1,70 +1,56 @@
-# scripts/update_central_memory_block10.py
-import csv
-import datetime
 import os
+import datetime
 
-now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-# 1. Update agent_tasks.csv
-tasks_file = r"C:\Users\Admin\Desktop\projects\memory of agent\agent_tasks.csv"
-new_tasks = [
-    ["TASK-2153", "dist Day 46: Distributed Message Brokers: Append-Only Commit Logs, Partitioning, Offsets & High Watermarks", "Completed", "HEAD", "Present-Career-os", "main", now_str],
-    ["TASK-2154", "dist Day 47: Consumer Groups & Rebalancing Protocols: Range, RoundRobin & Cooperative Sticky Assignors", "Completed", "HEAD", "Present-Career-os", "main", now_str],
-    ["TASK-2155", "dist Day 48: Delivery Guarantees & Fault Tolerance: At-Least-Once, At-Most-Once, Idempotent Producers & Transactional IDs", "Completed", "HEAD", "Present-Career-os", "main", now_str],
-    ["TASK-2156", "dist Day 49: Stream Processing Topologies: State Stores, Tumbling/Sliding/Session Windows & Watermarks", "Completed", "HEAD", "Present-Career-os", "main", now_str],
-    ["TASK-2157", "dist Day 50: Milestone 10 Capstone: The Production Exactly-Once Real-Time Stream Analytics Engine", "Completed", "HEAD", "Present-Career-os", "main", now_str],
-]
+# 1. Update PROJECT_MEMORY.md
+project_memory_path = r"C:\Users\Admin\Desktop\projects\memory of agent\PROJECT_MEMORY.md"
 
-with open(tasks_file, "a", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    for t in new_tasks:
-        writer.writerow(t)
-
-print("Appended TASK-2153 through TASK-2157 to agent_tasks.csv!")
-
-# 2. Update PROJECT_MEMORY.md
-project_memory_file = r"C:\Users\Admin\Desktop\projects\memory of agent\PROJECT_MEMORY.md"
-with open(project_memory_file, "r", encoding="utf-8") as f:
-    pm_content = f.read()
-
-dist_entry = f"""
-### Course 16: Distributed Systems & Cloud-Native Architecture (`dist` / `course-distributed-systems`) - Branch A
-* **Current Status**: **50 / 60 Days (83.33% Complete)**
-* **Month 2 Block 7 (Days 31-35 & Milestone 7 Capstone)**: Paxos, Raft Leader Election, Log Replication, Joint Consensus & SMR Key-Value Store (16,562 words, verified, commit `9c1743f0`).
-* **Month 2 Block 8 (Days 36-40 & Milestone 8 Capstone)**: 2PC, 3PC, Saga Orchestration, Transactional Outbox, CDC Debezium & Distributed Saga Engine (16,108 words, verified, commit `a041a8de`).
-* **Month 2 Block 9 (Days 41-45 & Milestone 9 Capstone)**: Multi-Tier Distributed Caching, Cache-Aside/Write-Behind, TTLs/Lease Invalidation, Redis Sentinel/Cluster 16384 Hash Slots, Consistent Hashing Rings with Virtual Nodes, Probabilistic XFetch Stampede Prevention & Capstone Production Multi-Tier Cache Engine (15,890 words, verified, commit `0918dd3b`).
-* **Month 2 Block 10 (Days 46-50 & Milestone 10 Capstone)**: Distributed Message Brokers, Append-Only Commit Logs, Partitioning, ISR High Watermark, Linux sendfile Zero-Copy, Consumer Groups, Cooperative Sticky Assignors, Idempotent Producers (PID/Sequence), Two-Phase Transaction Coordinators, Read-Committed Isolation, Embedded RocksDB State Stores, Tumbling/Session Windows, Event-Time Watermarks & Capstone Production Exactly-Once Stream Analytics Engine (16,191 words across 25 parts, all >=600w, Gate v2 zero digits, 2/2 unit tests pass, commit in-flight, {now_str}).
-* **Next Target**: Month 2 Block 11 (Days 51-55 & Milestone 11 Capstone: Observability, Service Mesh & Chaos Engineering - Distributed Tracing, W3C TraceContext, Envoy Service Mesh, OpenTelemetry & Chaos Injection).
+entry = f"""
+## [{timestamp}] - Branch A: Course 09 (Cybersecurity Principles / cyber) Month 2 Block 10 (Days 46–50 & Milestone 10 Capstone) 100% Complete & Certified
+- **Branch**: `main` (Branch A: Tech / IoT / Systems Architecture)
+- **Worktree**: `Present-Career-os`
+- **Course**: Course 09: Cybersecurity Principles (`course-cybersecurity` / `cyber` / `src/lib/data/cyberWebLongLessons.ts`)
+- **Block**: Month 2 Block 10 (Days 46–50 & Milestone 10 Capstone: Cloud & Infrastructure Security):
+  - Day 46: Linux Kernel Hardening & Host Defense: Namespaces, cgroups v2, Capabilities, seccomp-bpf, AppArmor/SELinux & File Integrity Monitoring (FIM / auditd) (3,594 words)
+  - Day 47: Container Security & Docker Isolation: Rootless Containers, Immutable Filesystems, Distroless Images, Vulnerability Scanning (Trivy/Grype) & Docker Daemon Hardening (3,394 words)
+  - Day 48: Kubernetes Security & Pod Security Standards: Admission Controllers, Pod Security Standards (Privileged vs Baseline vs Restricted), Network Policies & RBAC Least Privilege (3,372 words)
+  - Day 49: Cloud IAM & Infrastructure as Code (IaC) Hardening: Cross-Account Role Assumption, Principle of Least Privilege, SCPs, Terraform/OpenTofu Security & Static IaC Analysis (Checkov/Tfsec) (3,327 words)
+  - Day 50: 🌟 Milestone 10 Capstone: The Multi-Cloud Zero-Trust Security Mesh & Automated Continuous Compliance Engine (3,548 words; minutes: 60)
+- **Total Block Words**: 17,235 words across 25 parts (average 689.4 words/part; all 25 parts >= 600 words)
+- **Gate v2 Visual Envelopes**: `src/lib/data/lessonVisuals/cyber/day-46.json` through `day-50.json` generated with `schemaVersion: 2`, `compare` template, 4 synchronized steps (`intro`, `inspect`, `compare`, `verify`), and ZERO numeric digits in captions (`!/\\d/`).
+- **Verification & Testing**:
+  - `tests/cyber_days46_50_expansion.test.ts`: 2/2 tests PASS (100%).
+  - Full cyber regression suite across Blocks 7-10 (`tests/cyber_days31_35_expansion.test.ts` + `tests/cyber_days36_40_expansion.test.ts` + `tests/cyber_days41_45_expansion.test.ts` + `tests/cyber_days46_50_expansion.test.ts`): 8/8 tests PASS (100%).
+  - Days 1 to 50 sequential verification in `src/lib/data/cyberWebLongLessons.ts`.
+  - TypeScript Compilation: `npx tsc --noEmit` verified with 0 errors (Exit code 0).
+- **Task Logging**: Appended non-colliding `TASK-2188` through `TASK-2192` to `agent_tasks.csv`.
+- **Course Status**: Course 09 (`cyber`) is now **50 / 60 Days (83.33% Complete)**!
+- **Next Assignment**: Advance immediately to Month 2 Block 11 (Days 51–55: Security Operations Centers - SOC, SIEM, SOAR, Threat Hunting & Digital Forensics) and Block 12 (Days 56–60 & Grand Master Capstone: Planetary Enterprise Defense Architecture).
 """
 
-if "Course 16: Distributed Systems & Cloud-Native Architecture (`dist` / `course-distributed-systems`)" in pm_content:
-    import re
-    pm_content = re.sub(
-        r"### Course 16: Distributed Systems & Cloud-Native Architecture \(`dist` / `course-distributed-systems`\)[\s\S]*?(?=\n###|\Z)",
-        dist_entry.strip(),
-        pm_content
-    )
-else:
-    pm_content += "\n" + dist_entry
+with open(project_memory_path, "a", encoding="utf-8") as f:
+    f.write(entry)
+print("Updated PROJECT_MEMORY.md successfully!")
 
-with open(project_memory_file, "w", encoding="utf-8") as f:
-    f.write(pm_content)
+# 2. Update agent_tasks.csv
+tasks_csv_path = r"C:\Users\Admin\Desktop\projects\memory of agent\agent_tasks.csv"
+tasks = [
+    f'TASK-2188,"cyber Day 46: Linux Kernel Hardening & Host Defense: Namespaces, cgroups v2, Capabilities, seccomp & FIM",Completed,PENDING_COMMIT,Present-Career-os,main,{timestamp}',
+    f'TASK-2189,"cyber Day 47: Container Security & Docker Isolation: Rootless Containers, Immutable Filesystems, Distroless & Trivy",Completed,PENDING_COMMIT,Present-Career-os,main,{timestamp}',
+    f'TASK-2190,"cyber Day 48: Kubernetes Security & Pod Security Standards: Admission Controllers, PSS, Network Policies & RBAC",Completed,PENDING_COMMIT,Present-Career-os,main,{timestamp}',
+    f'TASK-2191,"cyber Day 49: Cloud IAM & Infrastructure as Code (IaC) Hardening: Cross-Account STS, SCPs, Terraform & Checkov",Completed,PENDING_COMMIT,Present-Career-os,main,{timestamp}',
+    f'TASK-2192,"cyber Day 50: Milestone 10 Capstone: The Multi-Cloud Zero-Trust Security Mesh & Automated Continuous Compliance Engine",Completed,PENDING_COMMIT,Present-Career-os,main,{timestamp}'
+]
 
-print("Updated PROJECT_MEMORY.md with Course 16 Block 10 milestone!")
+with open(tasks_csv_path, "a", encoding="utf-8") as f:
+    f.write("\n" + "\n".join(tasks))
+print("Updated agent_tasks.csv successfully!")
 
 # 3. Update multi_agent_control.csv
-mac_file = r"C:\Users\Admin\Desktop\projects\memory of agent\multi_agent_control.csv"
-if os.path.exists(mac_file):
-    rows = []
-    with open(mac_file, "r", encoding="utf-8") as f:
-        reader = csv.reader(f)
-        for r in reader:
-            if r and r[0] == "Present-Career-os":
-                r[1] = "main"
-                r[2] = "Course 16 (dist) Block 10 Complete (50/60 Days, 83.33%) -> Starting Block 11"
-                r[3] = now_str
-            rows.append(r)
-    with open(mac_file, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerows(rows)
-    print("Updated multi_agent_control.csv!")
+mac_csv_path = r"C:\Users\Admin\Desktop\projects\memory of agent\multi_agent_control.csv"
+mac_entry = f'AGENT-531,Branch A Tech/IoT/Systems Lead,Present-Career-os,main,"Course 09: Cybersecurity Principles (cyber) Month 2 Block 10 (Days 46-50 & Milestone 10 Capstone) Complete & Verified. Progress: 50/60 Days (83.33%). Advancing to Block 11 (Days 51-55).",Active,{timestamp}'
+
+with open(mac_csv_path, "a", encoding="utf-8") as f:
+    f.write("\n" + mac_entry)
+print("Updated multi_agent_control.csv successfully!")

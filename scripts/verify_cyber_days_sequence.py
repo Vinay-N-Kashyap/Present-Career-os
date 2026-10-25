@@ -1,11 +1,10 @@
-# scripts/verify_cyber_days_sequence.py
 import re
 
 with open('src/lib/data/cyberWebLongLessons.ts', 'r', encoding='utf-8') as f:
-    text = f.read()
+    content = f.read()
 
-days = [int(m) for m in re.findall(r'"day":\s*(\d+)', text)]
+days = [int(x) for x in re.findall(r'"day":\s*(\d+)', content)]
 print(f'Found days count: {len(days)}')
-print(f'Days range: {days[0]} to {days[-1]}')
-assert days == list(range(1, 46)), f'Sequence mismatch! Expected 1..45, got {days}'
-print('All 45 days in cyberWebLongLessons.ts are perfectly sequential 1 to 45!')
+print(f'Days range: {min(days)} to {max(days)}')
+assert days == list(range(1, 51)), f'Sequence mismatch! Expected 1..50, got {days}'
+print('All days 1..50 are sequentially present and contiguous!')

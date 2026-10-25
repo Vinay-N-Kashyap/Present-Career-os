@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 46,
+  "promptSha": "02733061674b28fe36f91e38f57c1a554bf52af2055de745b36391d8180d2391",
+  "entries": [
+    {
+      "partTitle": "Linux Kernel Security Architecture: Process Isolation, Namespaces & cgroups v2 Governance",
+      "codeHash": "dcfb92ef31154c2f7b31e236baf9588c35fb7b67e96653f1398b45f297a28f55",
+      "spec": {
+        "template": "compare",
+        "title": "Linux Host Hardening: Linux Kernel Security Architecture: Process Isolation, Namespaces & cgroups v2 Governance",
+        "left": {
+          "label": "Unhardened Host Infrastructure",
+          "content": [
+            "Containers share host process tables and global resource ceilings without boundaries",
+            "Monolithic superuser processes retain omnipotent system administration privileges",
+            "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+            "Operating system binaries and configuration files lack cryptographic integrity verification"
+          ]
+        },
+        "right": {
+          "label": "Hardened Host Defense Architecture",
+          "content": [
+            "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+            "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+            "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+            "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates process isolation boundaries enforced through linux kernel namespaces and control groups."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates process identifier isolation and unified resource limits across memory, processors, and threads."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates multi-tenant host containment preventing fork bomb denial of service attacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms complete namespace separation, process ceiling enforcement, and host stability defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Unhardened Host Infrastructure",
+        "rightLabel": "Hardened Host Defense Architecture",
+        "leftContent": [
+          "Containers share host process tables and global resource ceilings without boundaries",
+          "Monolithic superuser processes retain omnipotent system administration privileges",
+          "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+          "Operating system binaries and configuration files lack cryptographic integrity verification"
+        ],
+        "rightContent": [
+          "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+          "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+          "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+          "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+        ]
+      }
+    },
+    {
+      "partTitle": "POSIX Linux Capabilities: CAP_SYS_ADMIN, CAP_NET_BIND_SERVICE & Dropping Superuser Privileges",
+      "codeHash": "52181b3e4f1d167587619598b0b88f42650c312d44b7f335050db3f89528c99c",
+      "spec": {
+        "template": "compare",
+        "title": "Linux Host Hardening: POSIX Linux Capabilities: CAP_SYS_ADMIN, CAP_NET_BIND_SERVICE & Dropping Superuser Privileges",
+        "left": {
+          "label": "Unhardened Host Infrastructure",
+          "content": [
+            "Containers share host process tables and global resource ceilings without boundaries",
+            "Monolithic superuser processes retain omnipotent system administration privileges",
+            "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+            "Operating system binaries and configuration files lack cryptographic integrity verification"
+          ]
+        },
+        "right": {
+          "label": "Hardened Host Defense Architecture",
+          "content": [
+            "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+            "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+            "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+            "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays traditional superuser privilege decomposition into fine-grained capability tokens."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits capability bounding sets to detect and purge dangerous administrative tokens."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates least privilege confinement over legacy monolithic superuser access."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms capability stripping, administrative token purge, and containment of privilege escalation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Unhardened Host Infrastructure",
+        "rightLabel": "Hardened Host Defense Architecture",
+        "leftContent": [
+          "Containers share host process tables and global resource ceilings without boundaries",
+          "Monolithic superuser processes retain omnipotent system administration privileges",
+          "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+          "Operating system binaries and configuration files lack cryptographic integrity verification"
+        ],
+        "rightContent": [
+          "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+          "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+          "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+          "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+        ]
+      }
+    },
+    {
+      "partTitle": "Syscall Sandboxing with seccomp-bpf: BPF Rules, Whitelisting & Attack Surface Reduction",
+      "codeHash": "d3d642da5263e8a75fbabfdcd8381bbb49bdef29a42ea91a2f7d0c848d95f34d",
+      "spec": {
+        "template": "compare",
+        "title": "Linux Host Hardening: Syscall Sandboxing with seccomp-bpf: BPF Rules, Whitelisting & Attack Surface Reduction",
+        "left": {
+          "label": "Unhardened Host Infrastructure",
+          "content": [
+            "Containers share host process tables and global resource ceilings without boundaries",
+            "Monolithic superuser processes retain omnipotent system administration privileges",
+            "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+            "Operating system binaries and configuration files lack cryptographic integrity verification"
+          ]
+        },
+        "right": {
+          "label": "Hardened Host Defense Architecture",
+          "content": [
+            "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+            "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+            "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+            "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates system call sandboxing utilizing berkeley packet filter bytecode filters."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates system call numbers against default-deny filtering policies and whitelists."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates kernel attack surface reduction blocking high-risk administrative routines."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms system call whitelisting, prohibited invocation interception, and kernel defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Unhardened Host Infrastructure",
+        "rightLabel": "Hardened Host Defense Architecture",
+        "leftContent": [
+          "Containers share host process tables and global resource ceilings without boundaries",
+          "Monolithic superuser processes retain omnipotent system administration privileges",
+          "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+          "Operating system binaries and configuration files lack cryptographic integrity verification"
+        ],
+        "rightContent": [
+          "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+          "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+          "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+          "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+        ]
+      }
+    },
+    {
+      "partTitle": "Mandatory Access Control (MAC) with AppArmor/SELinux & File Integrity Monitoring (FIM / auditd)",
+      "codeHash": "1daca91bea88253dbedab938900a62b2fcec748615855ad21a66fce907329eaf",
+      "spec": {
+        "template": "compare",
+        "title": "Linux Host Hardening: Mandatory Access Control (MAC) with AppArmor/SELinux & File Integrity Monitoring (FIM / auditd)",
+        "left": {
+          "label": "Unhardened Host Infrastructure",
+          "content": [
+            "Containers share host process tables and global resource ceilings without boundaries",
+            "Monolithic superuser processes retain omnipotent system administration privileges",
+            "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+            "Operating system binaries and configuration files lack cryptographic integrity verification"
+          ]
+        },
+        "right": {
+          "label": "Hardened Host Defense Architecture",
+          "content": [
+            "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+            "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+            "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+            "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays mandatory access control rules paired with cryptographic file integrity monitoring."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates baseline cryptographic hash records against live operating system binaries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates automated tamper detection over discretionary file permission models."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms cryptographic hash discrepancy detection, audit alert generation, and host defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Unhardened Host Infrastructure",
+        "rightLabel": "Hardened Host Defense Architecture",
+        "leftContent": [
+          "Containers share host process tables and global resource ceilings without boundaries",
+          "Monolithic superuser processes retain omnipotent system administration privileges",
+          "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+          "Operating system binaries and configuration files lack cryptographic integrity verification"
+        ],
+        "rightContent": [
+          "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+          "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+          "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+          "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Linux Host Hardening Engine: Multi-Checkpoint Audit & Verification Benchmark",
+      "codeHash": "dd880750470a5fba4fd5e8c4e2eab12477a5269f5ac4f697b3b483d7b8f4b944",
+      "spec": {
+        "template": "compare",
+        "title": "Linux Host Hardening: Production Linux Host Hardening Engine: Multi-Checkpoint Audit & Verification Benchmark",
+        "left": {
+          "label": "Unhardened Host Infrastructure",
+          "content": [
+            "Containers share host process tables and global resource ceilings without boundaries",
+            "Monolithic superuser processes retain omnipotent system administration privileges",
+            "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+            "Operating system binaries and configuration files lack cryptographic integrity verification"
+          ]
+        },
+        "right": {
+          "label": "Hardened Host Defense Architecture",
+          "content": [
+            "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+            "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+            "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+            "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete host hardening benchmark coordinating multi-checkpoint host validation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified compliance across namespaces, control groups, capabilities, filters, and baselines."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates defense in depth across host operating systems against multi-stage intrusions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full host hardening compliance, zero security gaps, and verified host infrastructure defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Unhardened Host Infrastructure",
+        "rightLabel": "Hardened Host Defense Architecture",
+        "leftContent": [
+          "Containers share host process tables and global resource ceilings without boundaries",
+          "Monolithic superuser processes retain omnipotent system administration privileges",
+          "Unprivileged processes freely invoke all four hundred plus kernel system calls",
+          "Operating system binaries and configuration files lack cryptographic integrity verification"
+        ],
+        "rightContent": [
+          "Complete namespace isolation and unified control groups prevent host resource exhaustion",
+          "Fine-grained capabilities drop superuser powers and strip dangerous administrative tokens",
+          "Seccomp-bpf system call sandboxing enforces strict whitelisting with default-deny policies",
+          "Cryptographic file integrity monitoring and auditd hooks detect tampering immediately"
+        ]
+      }
+    }
+  ]
+}
