@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 46,
+  "visuals": [
+    {
+      "visualId": "design-d46-p1",
+      "partNumber": 1,
+      "title": "The DOM Cost of High-Density Data Tables: Reflow Bottlenecks & Frame Budget Exhaustion",
+      "template": "compare",
+      "prompt": "Design Systems Day 46 Part 1 Visual: The DOM Cost of High-Density Data Tables: Reflow Bottlenecks & Frame Budget Exhaustion",
+      "promptSha": "e58df1e40357e25a8a1b0c9bd6ce1eef6a709d4f70e471485413d8e5a3bbaa47",
+      "codeHash": "ed0b22d5213319009297f8f7bc202ae0bd7c5bc9210c5c8940817922fef4794d",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Unbounded Table Nodes",
+          "caption": "Initial large table loads all rows directly into the document object model."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Browser Reflow Cascade",
+          "caption": "Massive element trees cause severe style recalculation and layout thrashing."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Scroll Position Measuring",
+          "caption": "Viewport scroll position is measured to compute visible row indices."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Window Bounding Box",
+          "caption": "Only visible rows are retained while offscreen nodes are unmounted."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d46-p2",
+      "partNumber": 2,
+      "title": "Two-Dimensional Windowing: Vertical Row Virtualization & Horizontal Column Windowing",
+      "template": "compare",
+      "prompt": "Design Systems Day 46 Part 2 Visual: Two-Dimensional Windowing: Vertical Row Virtualization & Horizontal Column Windowing",
+      "promptSha": "76ac91b369b79f94faa19d1b46bbda2589e97000c6b0559701b15b95e8e7ec1b",
+      "codeHash": "26b52366ec35683dedc715a32493f47259dc5d2df422ebc42c34d1035658ffff",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Vertical Row Slicing",
+          "caption": "Row indices are sliced dynamically based on current vertical scroll position."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Horizontal Column Pruning",
+          "caption": "Horizontal columns outside the visible viewport are omitted from layout."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Absolute Transform Positioning",
+          "caption": "Rendered cells are positioned via hardware accelerated translate transforms."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Overscan Buffer Padding",
+          "caption": "Extra buffer rows and columns prevent visual blanking during fast scrolling."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d46-p3",
+      "partNumber": 3,
+      "title": "Column Resizing Geometry: Pointer Capture, Delta Clamping & Min/Max Width Defenses",
+      "template": "compare",
+      "prompt": "Design Systems Day 46 Part 3 Visual: Column Resizing Geometry: Pointer Capture, Delta Clamping & Min/Max Width Defenses",
+      "promptSha": "fc7b95ed131de16fb0029006cf1834bdc2ef8bbb6da50fbf8d36375237f0bcb3",
+      "codeHash": "680a599098d02edac185dec717f31bbe28b5ae6c6b9bc9c35c2eec1d10e64758",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Pointer Capture Initiating",
+          "caption": "Pointer down on column separator initiates global pointer capture."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Delta Pixel Calculating",
+          "caption": "Mouse movement computes instantaneous horizontal pixel delta offsets."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Minimum Width Clamping",
+          "caption": "Column width clamps strictly against predefined minimum boundary limits."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Layout Shift Suppressing",
+          "caption": "Adjacent columns adjust via flex spacing without shifting global layout."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d46-p4",
+      "partNumber": 4,
+      "title": "Sticky Header & Column Pinning: Z-Index Elevation Ladders & Transform-Proof Positioning",
+      "template": "compare",
+      "prompt": "Design Systems Day 46 Part 4 Visual: Sticky Header & Column Pinning: Z-Index Elevation Ladders & Transform-Proof Positioning",
+      "promptSha": "68ac0880305b43c1e11f7c7a863c017997dcfb396207f8d229b90076301d19a1",
+      "codeHash": "1971042c0d2baffacdfc6a9628db921c01779e59ee077417ab2ea795ad2b4728",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Z-Index Layer Elevating",
+          "caption": "Pinned header row elevates z-index above virtualized scrolling body rows."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Dual-Axis Scroll Decoupling",
+          "caption": "Horizontal body scroll synchronizes with header without vertical drift."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Drop Shadow Boundary Affording",
+          "caption": "Border shadow affords depth cue when unpinned columns slide underneath."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Sticky Stacking Ordering",
+          "caption": "Pinned identifier column locks to the left margin during wide panning."
+        }
+      ]
+    }
+  ]
+}

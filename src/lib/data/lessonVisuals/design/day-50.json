@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 50,
+  "visuals": [
+    {
+      "visualId": "design-d50-p1",
+      "partNumber": 1,
+      "title": "Trade Blotter Architectural Blueprint & Multi-Asset Virtual Grid Layout",
+      "template": "compare",
+      "prompt": "Design Systems Day 50 Part 1 Visual: Trade Blotter Architectural Blueprint & Multi-Asset Virtual Grid Layout",
+      "promptSha": "6462e8fd31d9c6bf652301e09e5c241c20ecba576c6c43cae15cbaa53b4ec388",
+      "codeHash": "b05f8f432644fd72c87706f51972d4d621d74562fb150406d1acfbe516361701",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Dual-Axis Viewport Mounting",
+          "caption": "Trade blotter mounts dual-axis viewport for high-density trade items."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Symbol Column Pinning",
+          "caption": "Symbol and side columns pin securely along the left viewport margin."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Overscan Buffer Allocating",
+          "caption": "Overscan buffer rows eliminate visual clipping during fast navigation."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Virtual Height Sizing",
+          "caption": "Virtual container dimensions simulate full order book scroll height."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d50-p2",
+      "partNumber": 2,
+      "title": "60fps Streaming Order Ingestion, Ring Buffer Micro-Batching & Throttle Clamps",
+      "template": "compare",
+      "prompt": "Design Systems Day 50 Part 2 Visual: 60fps Streaming Order Ingestion, Ring Buffer Micro-Batching & Throttle Clamps",
+      "promptSha": "563dedf19e4903b27890b83a9a91f222770fffdea436f4317a7d79407c2f6876",
+      "codeHash": "8b3f63bb853c1d28728d0d3a34e1a7a9d8aed2f458f2ab99e55e7c66cfc91194",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Execution Fill Ingesting",
+          "caption": "Incoming order execution reports buffer rapidly into ingestion queue."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Order State Map Coalescing",
+          "caption": "Multiple partial execution fills for matching order ids coalesce in place."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Batch Flush Dispatching",
+          "caption": "Animation frame pulse dispatches coalesced order book to presentation."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Adaptive Clamp Regulating",
+          "caption": "Adaptive throttle clamp protects frame rates during intense market volume."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d50-p3",
+      "partNumber": 3,
+      "title": "Real-Time Sorting, Inverted Index Filtering & Multi-Column Aggregation Trees",
+      "template": "compare",
+      "prompt": "Design Systems Day 50 Part 3 Visual: Real-Time Sorting, Inverted Index Filtering & Multi-Column Aggregation Trees",
+      "promptSha": "600cb935055fd481dd075e9e560e48255adeef58bc6555a9e6a45f9ec8006b16",
+      "codeHash": "5354b77504dcb24fae8b8a4552352574676a5f7cddad31f379cdebc348c14b28",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Gross Notional Sorting",
+          "caption": "Orders sort in descending order based on total gross notional volume."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Sort Position Freezing",
+          "caption": "Sort freeze mode prevents rows from shifting positions on rapid micro-ticks."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Portfolio Summary Summing",
+          "caption": "Single-pass accumulator computes total gross notional and net portfolio profit."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Sticky Status Bar Updating",
+          "caption": "Sticky footer status bar displays real-time aggregated portfolio metrics."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d50-p4",
+      "partNumber": 4,
+      "title": "Cell Selection, Range Calculations & Inline Execution Directives",
+      "template": "compare",
+      "prompt": "Design Systems Day 50 Part 4 Visual: Cell Selection, Range Calculations & Inline Execution Directives",
+      "promptSha": "9b437901cb6e3f0c864b3feb5bb9f4794ee8841631bd6c23683b34a2cee66c48",
+      "codeHash": "9318e7d1f4f7c40aa478f1d3d38a3fc34cba2ffe553c2bf52a4eb3950c49f729",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Range Coordinates Selecting",
+          "caption": "Operator drags rectangular bounding box across multiple trade cells."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Statistical Metric Calculating",
+          "caption": "Dynamic calculation engine produces sum, average, min, and max readouts."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Inline Order Amending",
+          "caption": "Double clicking price cell allows inline limit price amendment entry."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Clipboard Matrix Exporting",
+          "caption": "Keyboard copy exports selected trade values into standard spreadsheet format."
+        }
+      ]
+    }
+  ]
+}

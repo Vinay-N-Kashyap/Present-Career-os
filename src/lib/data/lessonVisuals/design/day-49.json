@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 49,
+  "visuals": [
+    {
+      "visualId": "design-d49-p1",
+      "partNumber": 1,
+      "title": "High-Frequency WebSocket Ingestion: Backpressure, Message Framing & Ring Buffers",
+      "template": "compare",
+      "prompt": "Design Systems Day 49 Part 1 Visual: High-Frequency WebSocket Ingestion: Backpressure, Message Framing & Ring Buffers",
+      "promptSha": "4c6d2e74b5499f460c57c71fc0a7965fa0609d9aa9edd2c241415977ac7e6138",
+      "codeHash": "52c1122749176071859e48d8fc61a9a6da27dd70d58e4cca09513ce05cea4544",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Socket Frame Receiving",
+          "caption": "WebSocket connection receives streaming financial market tick frames."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Binary Message Unpacking",
+          "caption": "Binary protocol decodes price and quantity fields with zero string garbage."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Ring Buffer Inserting",
+          "caption": "Fixed ring buffer stores incoming ticks without dynamic heap expansion."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Stale Packet Overwriting",
+          "caption": "Buffer saturation safely overwrites oldest entries to keep current data."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d49-p2",
+      "partNumber": 2,
+      "title": "Micro-Batching & Animation Frame Throttling: RAF Scheduling vs Event-Driven Flooding",
+      "template": "compare",
+      "prompt": "Design Systems Day 49 Part 2 Visual: Micro-Batching & Animation Frame Throttling: RAF Scheduling vs Event-Driven Flooding",
+      "promptSha": "40f71072ea0a0a7e828a2ee32c91021c1e81665b04dc6265fd2f82db6ff068b3",
+      "codeHash": "61cc561750f5929465bcccb3cd9a406c0c27daa1c605ac5d9da4af16b98007bc",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Dirty Key Registering",
+          "caption": "Arriving ticks mark updated asset symbols in a dirty key tracking map."
+        },
+        {
+          "stepNumber": 2,
+          "label": "In-Place Value Coalescing",
+          "caption": "Rapid successive ticks for identical symbols overwrite in place."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Frame Tick Awaiting",
+          "caption": "Micro-batch scheduler awaits next animation frame synchronization pulse."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Atomic Store Committing",
+          "caption": "Coalesced state commits atomically to the grid in a single layout pass."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d49-p3",
+      "partNumber": 3,
+      "title": "Cell Flashing & Delta Visual Tokens: Temporal CSS Transitions & Price Tick Indicators",
+      "template": "compare",
+      "prompt": "Design Systems Day 49 Part 3 Visual: Cell Flashing & Delta Visual Tokens: Temporal CSS Transitions & Price Tick Indicators",
+      "promptSha": "0eeaa438df77dacbc7b788faec75e5a8b9f0b613af6fc772e66afa5be9689673",
+      "codeHash": "0b22d8bc47a4723c1e94f20064a4dc735bccbf633e071fd3380751d7c1216f16",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Price Delta Calculating",
+          "caption": "Incoming price compares with previous price to determine tick direction."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Flash Class Assigning",
+          "caption": "Temporal green or red flash styling attaches immediately to the cell."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Composited Opacity Fading",
+          "caption": "Hardware-accelerated opacity curve fades smoothly back to neutral."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Motion Preference Honoring",
+          "caption": "Static chevron icons replace flashing strobes when reduced motion is on."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d49-p4",
+      "partNumber": 4,
+      "title": "Canvas vs DOM Hybrid Rendering: OffscreenCanvas, Blitting & High-Density Heatmaps",
+      "template": "compare",
+      "prompt": "Design Systems Day 49 Part 4 Visual: Canvas vs DOM Hybrid Rendering: OffscreenCanvas, Blitting & High-Density Heatmaps",
+      "promptSha": "6c1befa4d71d55a8666f97ed07f73b3d48b0233e1e340a2ce08549c4b8ba512f",
+      "codeHash": "951b198ebecd6bca4ef08a6b26d149e3b8a0a18c13632006f14b4c50338fadc7",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Viewport Bounds Projecting",
+          "caption": "Visible cell rectangle coordinates project onto hardware canvas context."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Canvas Context Blitting",
+          "caption": "High-density numeric text and background colors draw in single blit pass."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Coordinate Hit Testing",
+          "caption": "Pointer coordinates calculate target row and column in constant time."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Transparent DOM Overlaying",
+          "caption": "Invisible semantic table elements overlay canvas for screen reader access."
+        }
+      ]
+    }
+  ]
+}

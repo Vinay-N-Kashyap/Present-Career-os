@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 48,
+  "visuals": [
+    {
+      "visualId": "design-d48-p1",
+      "partNumber": 1,
+      "title": "Spreadsheet Cell Selection Geometry: Anchor Cell, Focus Cell & Bounding Box Math",
+      "template": "compare",
+      "prompt": "Design Systems Day 48 Part 1 Visual: Spreadsheet Cell Selection Geometry: Anchor Cell, Focus Cell & Bounding Box Math",
+      "promptSha": "6c1fe3a015e3f2f8ec5bd51eed968c89602b45c7d02c7ef714cf22ea31194c3c",
+      "codeHash": "8370afc6dc5c3a0c8faaca4542024193eaa13af6113b24914ef50f9101222392",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Anchor Coordinate Setting",
+          "caption": "Mouse press establishes the primary origin anchor cell coordinate."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Active Focus Navigating",
+          "caption": "Pointer drag extends current focus coordinate across row and column spans."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Bounding Box Normalizing",
+          "caption": "Calculated bounding box normalizes regardless of drag direction."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Selection Overlay Styling",
+          "caption": "Semi-transparent brand tint highlights the active selection bounding box."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d48-p2",
+      "partNumber": 2,
+      "title": "Keyboard Matrix Navigation: Arrow Keys, Tab Loops & Formula Bar Synchronization",
+      "template": "compare",
+      "prompt": "Design Systems Day 48 Part 2 Visual: Keyboard Matrix Navigation: Arrow Keys, Tab Loops & Formula Bar Synchronization",
+      "promptSha": "2299b03e93543cf1284e79e8acf2c395d3fb624f2656bfd63f102c62ad2f1038",
+      "codeHash": "1c65f9a94b054ddb64807711831a8added477d9832defadffd73f9d83da86378",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Arrow Key Intercepting",
+          "caption": "Keyboard arrow events intercept default page scroll and navigate cells."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Matrix Coordinate Clamping",
+          "caption": "Target row and column indices clamp within valid matrix boundaries."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Shift Modifier Expanding",
+          "caption": "Shift key with directional arrows expands the rectangular selection box."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Scroll Into View Aligning",
+          "caption": "Target cell smoothly scrolls into viewport if currently positioned offscreen."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d48-p3",
+      "partNumber": 3,
+      "title": "Inline Cell Editing: Double-Click Triggers, Keydown Interception & Value Commit Lifecycles",
+      "template": "compare",
+      "prompt": "Design Systems Day 48 Part 3 Visual: Inline Cell Editing: Double-Click Triggers, Keydown Interception & Value Commit Lifecycles",
+      "promptSha": "eb1da3713604645e35e711eb346e67b3646364f18e9e46042b06005995e470dc",
+      "codeHash": "7a1a9fa59f55fb0ddf04e8ea2ccc4e197522db74ca891c316294fcd5f609fd44",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Double-Click Detecting",
+          "caption": "Double click or enter key triggers inline editable input mode."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Input Overlay Spawning",
+          "caption": "Text input mounts seamlessly matching target cell bounding box dimensions."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Keystroke Value Updating",
+          "caption": "Typing updates draft value with live constraint validation feedback."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Transactional Value Committing",
+          "caption": "Enter key commits updated value while escape key cancels the edit."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d48-p4",
+      "partNumber": 4,
+      "title": "Clipboard Integration: Tab-Delimited Copy/Paste & Multi-Cell Range Pasting",
+      "template": "compare",
+      "prompt": "Design Systems Day 48 Part 4 Visual: Clipboard Integration: Tab-Delimited Copy/Paste & Multi-Cell Range Pasting",
+      "promptSha": "8cb3b6f127d3219ab72c0a17a539f3f338060eec470c50e1cad4d8e46a8b8c65",
+      "codeHash": "02eba895c3e69685c55533c3f7aa177809c925b5c90d3cc5fdab0579d1630a8e",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Range Coordinates Serializing",
+          "caption": "Selected cell values extract in natural row and column matrix order."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Tab-Delimited String Building",
+          "caption": "Values serialize into standard tab-separated and newline-delimited text."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Clipboard Write Dispatching",
+          "caption": "System clipboard receives serialized text for spreadsheet interoperability."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Paste Ingestion Validating",
+          "caption": "Paste event parses incoming text and writes values into target range."
+        }
+      ]
+    }
+  ]
+}

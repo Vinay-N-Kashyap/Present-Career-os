@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 47,
+  "visuals": [
+    {
+      "visualId": "design-d47-p1",
+      "partNumber": 1,
+      "title": "Multi-Column Sorting Mechanics: Stable Sort Algorithms, Direction Cycling & Comparator Matrices",
+      "template": "compare",
+      "prompt": "Design Systems Day 47 Part 1 Visual: Multi-Column Sorting Mechanics: Stable Sort Algorithms, Direction Cycling & Comparator Matrices",
+      "promptSha": "524c03753fcb62e2e0485879c9d4dcf6eb088710595bb364fb3437abfad47cf3",
+      "codeHash": "0f289d390d0c502c18d90780afc1c4100922d5375472fd64401a5f0721cfdc80",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Primary Column Comparing",
+          "caption": "Primary comparator evaluates main attribute values across record pairs."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Secondary Tie Breaking",
+          "caption": "Secondary comparator resolves equal values without altering original order."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Stable Index Preserving",
+          "caption": "Stable sorting algorithms preserve initial insertion sequence for tied keys."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Sort Direction Toggling",
+          "caption": "Header click toggles between ascending, descending, and neutral sort orders."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d47-p2",
+      "partNumber": 2,
+      "title": "High-Performance Filtering Pipelines: Predicate Trees, Fuzzy String Matching & Index Inversion",
+      "template": "compare",
+      "prompt": "Design Systems Day 47 Part 2 Visual: High-Performance Filtering Pipelines: Predicate Trees, Fuzzy String Matching & Index Inversion",
+      "promptSha": "52970575c5aab3f0ac2632aaf6e890f3a2974fccd116b2580958c0ca06383b34",
+      "codeHash": "b3c6a47bc5e87369292eac6eb1408b038803cbe79284c5957f8084debc07309a",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Tokenized Query Parsing",
+          "caption": "Search string parses into discrete normalized query search tokens."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Predicate Array Compiling",
+          "caption": "Filter predicates compile into optimized single-pass evaluation routines."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Inverted Index Intersecting",
+          "caption": "Inverted index bitsets perform rapid intersection across criteria."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Filtered Subset Emitting",
+          "caption": "Matching record references emit directly to the virtual presentation view."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d47-p3",
+      "partNumber": 3,
+      "title": "Grouping & Aggregation Trees: Group-by Dimensions, Rollup Sums & Hierarchical Tree Grids",
+      "template": "compare",
+      "prompt": "Design Systems Day 47 Part 3 Visual: Grouping & Aggregation Trees: Group-by Dimensions, Rollup Sums & Hierarchical Tree Grids",
+      "promptSha": "92b43f2ed7162ed06b1ddee2d2089a4f03f8557cb63ef55fb71669ea3546d489",
+      "codeHash": "b4f78d3868bc19febe82d11c1a795477e3aa712d3d70eee5ebaea3ad36fdb416",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Dimension Key Extracting",
+          "caption": "Records are partitioned into categorical buckets by grouping dimension."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Bucketed Map Aggregating",
+          "caption": "Numeric attributes accumulate into totals, averages, and extreme values."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Summary Metric Computing",
+          "caption": "Aggregate rollups compute instantaneous summary statistics per group."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Expandable Row Nesting",
+          "caption": "Parent summary rows expand and collapse nested detail items gracefully."
+        }
+      ]
+    },
+    {
+      "visualId": "design-d47-p4",
+      "partNumber": 4,
+      "title": "Dynamic Pivot Tables: Matrix Transposition, Column Pivoting & Value Aggregation Engines",
+      "template": "compare",
+      "prompt": "Design Systems Day 47 Part 4 Visual: Dynamic Pivot Tables: Matrix Transposition, Column Pivoting & Value Aggregation Engines",
+      "promptSha": "8e49a9c3b74b846b46f43c0f00dfbde607548a65eb35ce77c43206fd241be89e",
+      "codeHash": "9c043c2df96e90870fc7b1dbfec174fa2a24830044a358ab145c3e5826709f96",
+      "steps": [
+        {
+          "stepNumber": 1,
+          "label": "Row Attribute Assigning",
+          "caption": "Unique row identifier attributes establish vertical matrix categories."
+        },
+        {
+          "stepNumber": 2,
+          "label": "Column Dimension Pivoting",
+          "caption": "Selected column dimensions rotate horizontally into column headers."
+        },
+        {
+          "stepNumber": 3,
+          "label": "Matrix Coordinate Mapping",
+          "caption": "Intersecting values resolve into coordinate cells via fast hash lookups."
+        },
+        {
+          "stepNumber": 4,
+          "label": "Cross-Tabulation Rasterizing",
+          "caption": "Two-dimensional matrix rasterizes into a clean cross-tabulated grid."
+        }
+      ]
+    }
+  ]
+}
