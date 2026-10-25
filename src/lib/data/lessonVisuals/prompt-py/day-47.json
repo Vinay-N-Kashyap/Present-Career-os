@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 47,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "Sandboxing Threat Models And System Call Attack Vectors",
+      "codeHash": "09e87c2da374a620b3ce84b7d93c6342563abc67f5a08d93357de0a3d25c23de",
+      "spec": {
+        "template": "table",
+        "title": "Sandboxing Threat Models And System Call Attack Vectors.",
+        "columns": [
+          "Attack Vector Category",
+          "Exploitation Mechanism",
+          "Defensive Control Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Security sandboxes intercept dangerous system calls to prevent escapes.",
+            "rows": [
+              [
+                "Kernel Privilege Escalation",
+                "Exploits Dirty COW And Unpatched Race Flaws",
+                "Hardware Enforced Virtual Boundaries"
+              ],
+              [
+                "Filesystem Persistence Attack",
+                "Modifies System Packages And Shell Profiles",
+                "Volatile Ephemeral OverlayFS Shredding"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sandboxing threat modeling identifies operating system kernel.",
+            "rows": [
+              [
+                "Network Egress Exfiltration",
+                "Transmits Stolen Secrets To Hostile Command Hubs",
+                "Default Deny Egress Proxy With Whitelist"
+              ],
+              [
+                "Resource Exhaustion DoS",
+                "Spawns Infinite Loops And Massive Allocations",
+                "Cgroups V Two Hardware Ceilings"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Security sandboxes intercept dangerous system calls to prevent escapes.",
+            "rows": [
+              [
+                "Seccomp Syscall Blocker",
+                "Rejects Dangerous Ptrace And Unshare Calls",
+                "Zero Attack Surface Kernel Defense"
+              ],
+              [
+                "Environment Secret Scrubber",
+                "Strips API Credentials From Container Envs",
+                "Dynamic Token Injection Proxy Standard"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze common container breakout vectors and design seccomp filters.",
+            "rows": [
+              [
+                "Adversarial Prompt Shield",
+                "Neutralizes Malicious Model Generated Scripts",
+                "Hardware Level Syscall Interception"
+              ],
+              [
+                "Sovereign Security Fortress",
+                "Guarantees Complete Enterprise Host Safety",
+                "Unbreakable Execution Isolation Mandate"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Sandboxing Threat Models And System Call Attack Vectors.",
+        "columns": [
+          "Attack Vector Category",
+          "Exploitation Mechanism",
+          "Defensive Control Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Security sandboxes intercept dangerous system calls to prevent escapes.",
+            "rows": [
+              [
+                "Kernel Privilege Escalation",
+                "Exploits Dirty COW And Unpatched Race Flaws",
+                "Hardware Enforced Virtual Boundaries"
+              ],
+              [
+                "Filesystem Persistence Attack",
+                "Modifies System Packages And Shell Profiles",
+                "Volatile Ephemeral OverlayFS Shredding"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Sandboxing threat modeling identifies operating system kernel.",
+            "rows": [
+              [
+                "Network Egress Exfiltration",
+                "Transmits Stolen Secrets To Hostile Command Hubs",
+                "Default Deny Egress Proxy With Whitelist"
+              ],
+              [
+                "Resource Exhaustion DoS",
+                "Spawns Infinite Loops And Massive Allocations",
+                "Cgroups V Two Hardware Ceilings"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Security sandboxes intercept dangerous system calls to prevent escapes.",
+            "rows": [
+              [
+                "Seccomp Syscall Blocker",
+                "Rejects Dangerous Ptrace And Unshare Calls",
+                "Zero Attack Surface Kernel Defense"
+              ],
+              [
+                "Environment Secret Scrubber",
+                "Strips API Credentials From Container Envs",
+                "Dynamic Token Injection Proxy Standard"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Analyze common container breakout vectors and design seccomp filters.",
+            "rows": [
+              [
+                "Adversarial Prompt Shield",
+                "Neutralizes Malicious Model Generated Scripts",
+                "Hardware Level Syscall Interception"
+              ],
+              [
+                "Sovereign Security Fortress",
+                "Guarantees Complete Enterprise Host Safety",
+                "Unbreakable Execution Isolation Mandate"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardened Container Isolation Runtimes gVisor And MicroVMs",
+      "codeHash": "09e87c2da374a620b3ce84b7d93c6342563abc67f5a08d93357de0a3d25c23de",
+      "spec": {
+        "template": "table",
+        "title": "Hardened Container Isolation Runtimes gVisor And MicroVMs.",
+        "columns": [
+          "Isolation Architecture",
+          "Kernel Virtualization Model",
+          "Breakout Resistance Level"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "gVisor emulates kernel system calls in user space for safe execution.",
+            "rows": [
+              [
+                "Standard Docker RunC",
+                "Shares Host Linux Kernel Across Containers",
+                "Vulnerable To Kernel Level Breakouts"
+              ],
+              [
+                "Google gVisor RunSC",
+                "Emulates Three Hundred Syscalls In User Space",
+                "Near Virtual Machine Level Isolation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hardened container runtimes virtualize operating system kernels and.",
+            "rows": [
+              [
+                "AWS Firecracker MicroVM",
+                "Boots Stripped Linux Kernel Over KVM Hardware",
+                "Absolute Cryptographic Tenant Isolation"
+              ],
+              [
+                "OverlayFS Scratch Mount",
+                "Writes Mutations To Volatile Memory Layers",
+                "Zero State Leakage Across Consecutive Runs"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "gVisor emulates Linux system calls in user space to isolate host drivers.",
+            "rows": [
+              [
+                "Cgroups Memory Ceilings",
+                "Caps RAM Allocation To Strict Megabyte Budgets",
+                "Clean Out Of Memory Process Recovery"
+              ],
+              [
+                "Extended BPF Probe Mesh",
+                "Monitors Host Filesystem And Socket Mutations",
+                "Zero Overhead Runtime Security Alerts"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configure a gVisor runsc runtime with cgroups memory limits.",
+            "rows": [
+              [
+                "Fourteen Millisecond Boot",
+                "Pre Warms Container Pools For Rapid Dispatch",
+                "Ultra Low Latency Sandbox Execution"
+              ],
+              [
+                "Sovereign Container Core",
+                "Harmonizes User Space Emulation And MicroVMs",
+                "Enterprise Grade Multi Tenant Isolation"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Hardened Container Isolation Runtimes gVisor And MicroVMs.",
+        "columns": [
+          "Isolation Architecture",
+          "Kernel Virtualization Model",
+          "Breakout Resistance Level"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "gVisor emulates kernel system calls in user space for safe execution.",
+            "rows": [
+              [
+                "Standard Docker RunC",
+                "Shares Host Linux Kernel Across Containers",
+                "Vulnerable To Kernel Level Breakouts"
+              ],
+              [
+                "Google gVisor RunSC",
+                "Emulates Three Hundred Syscalls In User Space",
+                "Near Virtual Machine Level Isolation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Hardened container runtimes virtualize operating system kernels and.",
+            "rows": [
+              [
+                "AWS Firecracker MicroVM",
+                "Boots Stripped Linux Kernel Over KVM Hardware",
+                "Absolute Cryptographic Tenant Isolation"
+              ],
+              [
+                "OverlayFS Scratch Mount",
+                "Writes Mutations To Volatile Memory Layers",
+                "Zero State Leakage Across Consecutive Runs"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "gVisor emulates Linux system calls in user space to isolate host drivers.",
+            "rows": [
+              [
+                "Cgroups Memory Ceilings",
+                "Caps RAM Allocation To Strict Megabyte Budgets",
+                "Clean Out Of Memory Process Recovery"
+              ],
+              [
+                "Extended BPF Probe Mesh",
+                "Monitors Host Filesystem And Socket Mutations",
+                "Zero Overhead Runtime Security Alerts"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configure a gVisor runsc runtime with cgroups memory limits.",
+            "rows": [
+              [
+                "Fourteen Millisecond Boot",
+                "Pre Warms Container Pools For Rapid Dispatch",
+                "Ultra Low Latency Sandbox Execution"
+              ],
+              [
+                "Sovereign Container Core",
+                "Harmonizes User Space Emulation And MicroVMs",
+                "Enterprise Grade Multi Tenant Isolation"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "WebAssembly And WASI Lightweight In Process Sandboxes",
+      "codeHash": "09e87c2da374a620b3ce84b7d93c6342563abc67f5a08d93357de0a3d25c23de",
+      "spec": {
+        "template": "table",
+        "title": "WebAssembly And WASI Lightweight In Process Sandboxes.",
+        "columns": [
+          "Runtime Paradigm",
+          "Memory Safety Mechanism",
+          "Startup Latency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "WebAssembly delivers microsecond startup with linear memory safety.",
+            "rows": [
+              [
+                "Linear Memory Sandbox",
+                "Constrains Execution To Bounds Checked Array",
+                "Mathematically Eliminates Buffer Overflows"
+              ],
+              [
+                "WASI Capability Security",
+                "Grants Zero System Permissions By Default",
+                "Strict Least Privilege Capability Model"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "WebAssembly and WASI runtimes provide lightweight in process sandboxes.",
+            "rows": [
+              [
+                "Microsecond Cold Start",
+                "Instantiates Sandboxes In Under Fifty Micros",
+                "Near Zero Latency Tool Execution SLA"
+              ],
+              [
+                "Pyodide Scientific Wasm",
+                "Compiles CPython NumPy And Pandas To WebAssembly",
+                "In Process Multi Library Scientific Tools"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "WebAssembly provides microsecond sandboxes with linear memory safety.",
+            "rows": [
+              [
+                "Fuel Instruction Metering",
+                "Injects Bytecode Execution Step Counters",
+                "Precise Algorithmic Complexity Defense"
+              ],
+              [
+                "High Density Thread Mesh",
+                "Runs Thousands Of Sandboxes Within Single Host",
+                "Maximum Cloud Hardware Resource Economy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute Python scripts inside an in process Pyodide Wasm runtime.",
+            "rows": [
+              [
+                "Zero Host Syscall Runtime",
+                "Executes Logic Without Operating System Bridges",
+                "Impervious Memory Safety By Design"
+              ],
+              [
+                "Sovereign WebAssembly Hub",
+                "Integrates In Process Sandboxes For Small Tools",
+                "Unmatched Execution Speed And Security"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "WebAssembly And WASI Lightweight In Process Sandboxes.",
+        "columns": [
+          "Runtime Paradigm",
+          "Memory Safety Mechanism",
+          "Startup Latency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "WebAssembly delivers microsecond startup with linear memory safety.",
+            "rows": [
+              [
+                "Linear Memory Sandbox",
+                "Constrains Execution To Bounds Checked Array",
+                "Mathematically Eliminates Buffer Overflows"
+              ],
+              [
+                "WASI Capability Security",
+                "Grants Zero System Permissions By Default",
+                "Strict Least Privilege Capability Model"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "WebAssembly and WASI runtimes provide lightweight in process sandboxes.",
+            "rows": [
+              [
+                "Microsecond Cold Start",
+                "Instantiates Sandboxes In Under Fifty Micros",
+                "Near Zero Latency Tool Execution SLA"
+              ],
+              [
+                "Pyodide Scientific Wasm",
+                "Compiles CPython NumPy And Pandas To WebAssembly",
+                "In Process Multi Library Scientific Tools"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "WebAssembly provides microsecond sandboxes with linear memory safety.",
+            "rows": [
+              [
+                "Fuel Instruction Metering",
+                "Injects Bytecode Execution Step Counters",
+                "Precise Algorithmic Complexity Defense"
+              ],
+              [
+                "High Density Thread Mesh",
+                "Runs Thousands Of Sandboxes Within Single Host",
+                "Maximum Cloud Hardware Resource Economy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute Python scripts inside an in process Pyodide Wasm runtime.",
+            "rows": [
+              [
+                "Zero Host Syscall Runtime",
+                "Executes Logic Without Operating System Bridges",
+                "Impervious Memory Safety By Design"
+              ],
+              [
+                "Sovereign WebAssembly Hub",
+                "Integrates In Process Sandboxes For Small Tools",
+                "Unmatched Execution Speed And Security"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cloud Sandbox Infrastructure Modal And MicroVM Pools",
+      "codeHash": "09e87c2da374a620b3ce84b7d93c6342563abc67f5a08d93357de0a3d25c23de",
+      "spec": {
+        "template": "table",
+        "title": "Cloud Sandbox Infrastructure Modal And MicroVM Pools.",
+        "columns": [
+          "Infrastructure Provider",
+          "Provisioning Technology",
+          "State Persistence Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud sandboxes provide on demand microVMs with pre warmed snapshots.",
+            "rows": [
+              [
+                "E Two B Agent Platform",
+                "Abstracts MicroVM Orchestration Behind SDKs",
+                "On Demand Isolated Cloud Sandboxes"
+              ],
+              [
+                "Stateful Session Manager",
+                "Maintains Interactive Filesystem Over Hours",
+                "Unbroken Operational Problem Solving Trace"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cloud sandbox platforms provide elastic on demand microVM execution.",
+            "rows": [
+              [
+                "Pre Warmed Snapshot Fork",
+                "Clones Paused VM Images Using Copy On Write",
+                "Sub Twenty Millisecond Sandbox Provisioning"
+              ],
+              [
+                "Terminal Multiplexer Bus",
+                "Streams Stdout Stderr And Process Exit Codes",
+                "Non Blocking Real Time Agent Observability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud sandbox platforms provision isolated on demand microVMs via SDKs.",
+            "rows": [
+              [
+                "Cloud Storage Auto Sync",
+                "Syncs Deliverable Directories To Durable Buckets",
+                "Safe Artifact Persistence After Shutdown"
+              ],
+              [
+                "Automated Egress Gateway",
+                "Restricts Network Access To Approved Package Hubs",
+                "Neutralizes External Data Exfiltration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a cloud microVM session with pre warmed snapshot fork execution.",
+            "rows": [
+              [
+                "Audit Trail Recording",
+                "Logs All Shell Commands And Filesystem Writes",
+                "Immutable Corporate Compliance Ledgers"
+              ],
+              [
+                "Sovereign Cloud Fabric",
+                "Scales Thousands Of Elastic MicroVM Instances",
+                "Zero DevOps Overhead Planetary Scale"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Cloud Sandbox Infrastructure Modal And MicroVM Pools.",
+        "columns": [
+          "Infrastructure Provider",
+          "Provisioning Technology",
+          "State Persistence Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Cloud sandboxes provide on demand microVMs with pre warmed snapshots.",
+            "rows": [
+              [
+                "E Two B Agent Platform",
+                "Abstracts MicroVM Orchestration Behind SDKs",
+                "On Demand Isolated Cloud Sandboxes"
+              ],
+              [
+                "Stateful Session Manager",
+                "Maintains Interactive Filesystem Over Hours",
+                "Unbroken Operational Problem Solving Trace"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Cloud sandbox platforms provide elastic on demand microVM execution.",
+            "rows": [
+              [
+                "Pre Warmed Snapshot Fork",
+                "Clones Paused VM Images Using Copy On Write",
+                "Sub Twenty Millisecond Sandbox Provisioning"
+              ],
+              [
+                "Terminal Multiplexer Bus",
+                "Streams Stdout Stderr And Process Exit Codes",
+                "Non Blocking Real Time Agent Observability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud sandbox platforms provision isolated on demand microVMs via SDKs.",
+            "rows": [
+              [
+                "Cloud Storage Auto Sync",
+                "Syncs Deliverable Directories To Durable Buckets",
+                "Safe Artifact Persistence After Shutdown"
+              ],
+              [
+                "Automated Egress Gateway",
+                "Restricts Network Access To Approved Package Hubs",
+                "Neutralizes External Data Exfiltration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a cloud microVM session with pre warmed snapshot fork execution.",
+            "rows": [
+              [
+                "Audit Trail Recording",
+                "Logs All Shell Commands And Filesystem Writes",
+                "Immutable Corporate Compliance Ledgers"
+              ],
+              [
+                "Sovereign Cloud Fabric",
+                "Scales Thousands Of Elastic MicroVM Instances",
+                "Zero DevOps Overhead Planetary Scale"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Hardened Sandbox Controller In Asynchronous Python",
+      "codeHash": "09e87c2da374a620b3ce84b7d93c6342563abc67f5a08d93357de0a3d25c23de",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Hardened Sandbox Controller In Asynchronous Python.",
+        "columns": [
+          "Controller Subsystem",
+          "Asynchronous Implementation",
+          "Isolation SLA Metric"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production sandbox controllers coordinate isolated execution runtimes.",
+            "rows": [
+              [
+                "Provisioning Gateway",
+                "Allocates Tokens And Provisions Ephemeral Boxes",
+                "Fourteen Millisecond Startup Latency SLA"
+              ],
+              [
+                "Security Policy Enforcer",
+                "Compiles Seccomp BPF And Cgroups RAM Ceilings",
+                "Five Hundred Twelve Megabyte Enforced Limit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise production sandbox controllers coordinate ephemeral.",
+            "rows": [
+              [
+                "Ephemeral Runtime Runner",
+                "Executes Code And Captures Asynchronous Pipes",
+                "Real Time Watchdog Execution Monitoring"
+              ],
+              [
+                "Pre Warmed Container Pool",
+                "Maintains Standby Sandboxes Across Cloud Nodes",
+                "Instantaneous Code Execution Turnaround"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Asynchronous python controllers manage isolated gVisor micro sandboxes.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Syscall Violations And Memory Profiles",
+                "Granular Production Security Observability"
+              ],
+              [
+                "Execution Attestation Sealer",
+                "Hashes Code And Observations With SHA Two Fifty",
+                "Statutory Compliance Audit Assurance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a hardened sandbox controller enforcing memory ceilings.",
+            "rows": [
+              [
+                "Zero Breach Defense Matrix",
+                "Neutralizes Multi Tenant Attack Vectors",
+                "One Hundred Percent Execution Isolation"
+              ],
+              [
+                "Sovereign Controller Platform",
+                "Unifies gVisor MicroVMs And Wasm Sandboxes",
+                "Enterprise Grade Autonomous Safety SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Hardened Sandbox Controller In Asynchronous Python.",
+        "columns": [
+          "Controller Subsystem",
+          "Asynchronous Implementation",
+          "Isolation SLA Metric"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production sandbox controllers coordinate isolated execution runtimes.",
+            "rows": [
+              [
+                "Provisioning Gateway",
+                "Allocates Tokens And Provisions Ephemeral Boxes",
+                "Fourteen Millisecond Startup Latency SLA"
+              ],
+              [
+                "Security Policy Enforcer",
+                "Compiles Seccomp BPF And Cgroups RAM Ceilings",
+                "Five Hundred Twelve Megabyte Enforced Limit"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise production sandbox controllers coordinate ephemeral.",
+            "rows": [
+              [
+                "Ephemeral Runtime Runner",
+                "Executes Code And Captures Asynchronous Pipes",
+                "Real Time Watchdog Execution Monitoring"
+              ],
+              [
+                "Pre Warmed Container Pool",
+                "Maintains Standby Sandboxes Across Cloud Nodes",
+                "Instantaneous Code Execution Turnaround"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Asynchronous python controllers manage isolated gVisor micro sandboxes.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Syscall Violations And Memory Profiles",
+                "Granular Production Security Observability"
+              ],
+              [
+                "Execution Attestation Sealer",
+                "Hashes Code And Observations With SHA Two Fifty",
+                "Statutory Compliance Audit Assurance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a hardened sandbox controller enforcing memory ceilings.",
+            "rows": [
+              [
+                "Zero Breach Defense Matrix",
+                "Neutralizes Multi Tenant Attack Vectors",
+                "One Hundred Percent Execution Isolation"
+              ],
+              [
+                "Sovereign Controller Platform",
+                "Unifies gVisor MicroVMs And Wasm Sandboxes",
+                "Enterprise Grade Autonomous Safety SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
