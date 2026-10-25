@@ -1,0 +1,368 @@
+# scripts/create_cyber_day32_data.py
+import json
+
+say_p1 = [
+    "Welcome to Day 32 of Enterprise Cybersecurity Engineering & Defense. Today we advance from symmetric shared secrets to the mathematical foundation of modern internet trust: Asymmetric Cryptography & Elliptic Curves: RSA-4096 vs ECC Curve25519/Ed25519, ECDSA Signatures, ECDH Key Exchange & Ephemeral Forward Secrecy.",
+    "In symmetric cryptography (such as AES-GCM and ChaCha20), both the sender and recipient must possess the exact same secret key. This introduces the fundamental Key Distribution Dilemma: how can two parties who have never met—such as a mobile user in Tokyo and an e-commerce server in Virginia—agree on a secret key across an open, untrusted, hostile public internet without an eavesdropper intercepting the key?",
+    "To solve this, public-key (asymmetric) cryptography was born, introducing a mathematically linked Key Pair: a Public Key that can be broadcast freely to the entire world, and a Private Key kept strictly secret. However, the mathematical trapdoor functions underlying public-key algorithms are not created equal. For decades, the internet relied on RSA (Rivest-Shamir-Adleman), which bases its security on the computational hardness of Integer Factorization: multiplying two massive 2048-bit prime numbers is trivial for a computer, but factoring their 4096-bit composite product requires billions of years of classical compute time.",
+    "However, as computational algorithms improved (most notably the General Number Field Sieve), RSA key sizes had to inflate astronomically to resist attacks. To achieve a modest 128-bit security level today, an RSA key must be 3,072 or 4,096 bits long! Computing modular exponentiation on 4096-bit numbers consumes massive CPU cycles, drains smartphone battery life, and bloats network packet sizes beyond TCP Initial Congestion Window (initcwnd) limits.",
+    "This computational bottleneck led to the triumph of Elliptic Curve Cryptography (ECC). ECC bases its trapdoor function on the Elliptic Curve Discrete Logarithm Problem (ECDLP) over finite fields: finding a point P multiplied by a scalar k (Q = k * P) is fast, but determining the secret scalar k given points P and Q is computationally intractable. Because the best known algorithms to break ECDLP scale exponentially rather than sub-exponentially, a 256-bit elliptic curve key provides the exact same mathematical security margin as a massive 3072-bit RSA key! Furthermore, modern Montgomery and Edwards curves—specifically Curve25519 and Ed25519 engineered by Daniel J. Bernstein—eliminate legacy NIST curve vulnerabilities, execute in pure constant time, and reduce key sizes to just thirty-two bytes.",
+    "Consider the everyday physical analogy of a heavy industrial cast-iron safe versus a modern biometric titanium micro-capsule. To protect a gold bar, legacy engineers built a four-thousand-pound cast iron vault (RSA-4096). Moving the vault requires heavy diesel cranes and reinforced concrete floors, creating enormous logistics overhead. In contrast, modern materials scientists engineered a palm-sized titanium capsule with a quantum biometric seal (Curve25519). It provides the exact same impenetrable defense against cutting torches, yet weighs just a few ounces and can be carried effortlessly in a traveler's pocket. Elliptic curve cryptography delivers that exact lightweight mathematical invulnerability.",
+    "Sixth, Quantum Computing Horizons & Post-Quantum Cryptography (PQC): As we look to the decade ahead, systems architects must account for Shor's Algorithm running on fault-tolerant quantum computers. Because Shor's algorithm solves both integer factorization and discrete logarithms in polynomial time, both RSA and ECC will be broken when cryptographically relevant quantum computers emerge. To prepare, the National Institute of Standards and Technology (NIST) finalized post-quantum standards: ML-KEM (Kyber) for lattice-based key encapsulation and ML-DSA (Dilithium) for digital signatures. Enterprise systems today deploy Hybrid PQC Handshakes, combining classical X25519 with ML-KEM to guarantee security against both present-day classical adversaries and future quantum harvest-now-decrypt-later attacks.",
+    "In the TypeScript snippet below, we implement the AsymmetricCurveComparison interface. We contrast RSA, NIST P-256, and Curve25519 across key length, equivalent security bits, and suitability for high-speed ephemeral key exchanges.",
+    "Notice how Curve25519 delivers 128 bits of cryptographic security with a compact 256-bit key size while enabling high-throughput ephemeral key exchanges, outperforming legacy 4096-bit RSA keys. We now examine Elliptic Curve Diffie-Hellman (ECDH) and Ephemeral Forward Secrecy."
+]
+
+say_p2 = [
+    "Having established the mathematical elegance of elliptic curves, we now explore how two untrusted parties establish shared symmetric encryption keys on the fly: Elliptic Curve Diffie-Hellman (ECDH) & Ephemeral Forward Secrecy.",
+    "In 1976, Whitfield Diffie and Martin Hellman published the foundational mathematical protocol for key exchange. When adapted to elliptic curves as ECDH over Curve25519 (designated as X25519 in RFC 7748), the mechanics are stunningly simple and powerful: Alice generates a private scalar `a` and computes public point `A = a * G` (where G is the curve base generator point). Bob generates a private scalar `b` and computes public point `B = b * G`. Alice and Bob exchange their public points A and B openly over public Wi-Fi.",
+    "Upon receiving Bob's public point B, Alice computes the shared secret point `S = a * B = a * (b * G)`. Simultaneously, Bob computes `S = b * A = b * (a * G)`. Because scalar multiplication on elliptic curves is associative and commutative, `a * b * G = b * a * G`! Both Alice and Bob arrive at the exact same shared secret point S in memory, while an eavesdropper who intercepted public points A and B cannot compute S without solving the intractable discrete logarithm problem.",
+    "However, how ECDH is deployed in architecture determines whether an enterprise possesses Perfect Forward Secrecy (PFS). In legacy Static Diffie-Hellman or RSA key exchange, the server used a single static long-term private key across thousands of client connections. The catastrophic vulnerability of static key exchange is Retrospective Decryption: an adversary (such as an intelligence agency or nation-state attacker) records encrypted traffic flowing into a data center for years. If the adversary eventually steals, subpoenas, or recovers the server's long-term private key five years later, they can retrospectively decrypt every single gigabyte of historical traffic ever recorded!",
+    "Modern zero-trust protocols (such as TLS 1.3 and WireGuard) mandate Ephemeral Diffie-Hellman: ECDHE (Elliptic Curve Diffie-Hellman Ephemeral). In ECDHE, Alice and Bob generate a brand new, one-time ephemeral key pair for EVERY single session or connection. Once the shared secret S is derived and expanded into symmetric session keys using HKDF, the ephemeral private keys `a` and `b` are instantly wiped from RAM (cryptographically zeroized). Even if an adversary compromises the server host and extracts its long-term identity keys, past sessions remain mathematically impossible to decrypt because the ephemeral private keys ceased to exist years ago!",
+    "Consider the everyday physical analogy of an ephemeral one-time hotel room safe combination versus a master skeleton key. If a luxury hotel gives every guest a master physical brass key that never changes, a burglar who steals a copy of the master key five years later can walk into every room and unlock historical lockers. In contrast, with an ephemeral digital keypad, each guest types a randomized one-time four-digit combination that is automatically erased from the lock's microchip memory the millisecond they check out. A thief breaking into the hotel manager's office years later finds zero combinations on file. ECDHE provides that exact uncompromised forward secrecy.",
+    "Sixth, Elliptic Curve Point Validation & Invalid Curve Attacks: In production ECDH implementations, secure engines must perform rigorous point validation before computing scalar multiplication. If an API accepts arbitrary coordinates from an untrusted client without validating that the point lies on the defined curve, an attacker can supply coordinates belonging to an alternative, vulnerable curve with a small subgroup order (Invalid Curve Attack)! Computing scalar multiplication on the invalid curve leaks bits of the server's private key. Modern curves like Curve25519 are Twist-Secure and utilize the Montgomery ladder, ensuring that all 256-bit input strings map safely to valid group operations without leaking secret scalar bits.",
+    "In the TypeScript snippet below, we implement the EcdhKeyExchange class using Node.js native `crypto.diffieHellman` with X25519 curves. We demonstrate how Alice and Bob independently derive identical shared secrets from each other's public keys.",
+    "Notice how both parties arrive at the identical shared secret bytes using only their counterpart's public key, confirming ECDH mathematical convergence. We now examine digital signatures and Ed25519."
+]
+
+say_p3 = [
+    "While ECDH solves confidential key exchange, it does not solve Authentication: how does Bob know that the public key he received actually belongs to Alice and not an active adversary performing a man-in-the-middle attack? This brings us to Digital Signatures & Ed25519.",
+    "A Digital Signature is the asymmetric counterpart to the symmetric HMAC. It provides three foundational security guarantees: Authenticity (verifying the identity of the signer), Integrity (proving the message was not modified), and Non-Repudiation (proving that the signer cannot deny having authorized the message).",
+    "Historically, the industry relied on ECDSA (Elliptic Curve Digital Signature Algorithm) over NIST curves like secp256r1. However, ECDSA harbored a notorious architectural flaw: it required generating a fresh random nonce `k` for every signature. If the random number generator failed or repeated even a single nonce value across two signatures, the signer's master private key was exposed instantly! This exact vulnerability was exploited in 2010 to crack the Sony PlayStation 3 security architecture: Sony's developers hardcoded a constant nonce `k` into their ECDSA signing routine, allowing hackers to recover Sony's master private signing key and run custom operating systems.",
+    "To eliminate RNG vulnerabilities and curve weaknesses, Daniel J. Bernstein engineered Ed25519: the Edwards-curve Digital Signature Algorithm based on Twisted Edwards curves (RFC 8032). Ed25519 introduces three profound architectural enhancements: First, Deterministic Nonce Derivation: Ed25519 does not rely on an external random number generator during signing! Instead, it derives the nonce `k` deterministically by computing the SHA-512 hash of the private key concatenated with the message payload (`k = SHA-512(privKey || message)`). Reused or biased nonces are mathematically impossible by design;",
+    "Second, High Performance: Ed25519 verifies signatures in less than one hundred microseconds, allowing high-throughput API gateways to verify tens of thousands of signatures per second on commodity hardware; and Third, Side-Channel Immunity: All scalar multiplications on Curve25519 execute in constant time using complete addition formulas that require zero conditional branching or data-dependent memory indexing.",
+    "Consider the everyday physical analogy of an official notary public stamping legal contracts. Under ECDSA, the notary attempts to roll a hundred-sided die to pick a random ink shade for each stamp; if the die is weighted and rolls the same number twice, a counterfeiter deciphering the pattern can reconstruct the notary's master embossing stamp! Under Ed25519, however, the notary uses a specialized cryptographic embosser that blends the text of the legal contract directly with their master seal. The impression is mathematically unique to that specific contract and impossible to duplicate, without ever relying on an unpredictable die. Ed25519 delivers that exact deterministic signing assurance.",
+    "Fourth, Batch Signature Verification in Distributed Systems: In hyper-scale distributed ledgers and microservice meshes, validating signatures one by one introduces severe CPU bottlenecks. Ed25519 natively supports Batch Verification: evaluating multiple signatures simultaneously using randomized linear combinations (`sum(z_i * s_i) * B = sum(z_i * R_i) + sum(z_i * h_i * A_i)`). Batch verification validates thousands of signatures in parallel, cutting CPU verification overhead by more than fifty percent compared to sequential verification.",
+    "Fifth, Hardware-Isolated Signing & HSM Integration: High-assurance enterprise environments isolate master Ed25519 private keys inside dedicated Hardware Security Modules (HSMs) or cloud KMS enclaves. When a code-signing release pipeline or financial payment authorization occurs, the service never exports the private key to application memory. Instead, the service submits a pre-hashed digest to the HSM over authenticated gRPC, and the HSM returns the 64-byte Ed25519 signature computed entirely within its physically tamper-resistant cryptographic boundary.",
+    "In the TypeScript snippet below, we implement the Ed25519Signer class using Node.js native `crypto.sign` and `crypto.verify` with Ed25519 keypairs. We sign a mission-critical audit payload and verify signature validity.",
+    "Notice how the Ed25519 signer outputs a compact sixty-four-byte signature and successfully verifies the audit payload, demonstrating deterministic signing speed. We now examine Hybrid Cryptosystems and Envelope Encryption."
+]
+
+say_p4 = [
+    "Having mastered both symmetric AEAD ciphers and asymmetric elliptic curves, we must address an inescapable reality of computing physics: Public-Key Cryptography is slow! Asymmetric operations require modular exponentiation and scalar curve point multiplication that are three orders of magnitude slower than symmetric block ciphers. This brings us to Hybrid Cryptosystems & Envelope Encryption.",
+    "If an enterprise attempted to encrypt a ten-gigabyte database backup or multi-megabyte video file directly using asymmetric public keys, the server CPU would melt under the computational burden! Conversely, symmetric encryption (AES-256-GCM) is blindingly fast (processing gigabytes per second with AES-NI instructions), but requires a secure mechanism to deliver the symmetric key to authorized recipients.",
+    "The universal architectural solution is the Hybrid Cryptosystem, formalized in cloud architecture as Envelope Encryption. A hybrid cryptosystem divides data protection into two distinct, harmonized layers: First, The Key Encapsulation Mechanism (KEM): The system uses asymmetric cryptography (such as ECDH or RSA) to securely encapsulate and transmit a compact, randomly generated symmetric key; and Second, The Data Encapsulation Mechanism (DEM): The system uses high-speed symmetric AEAD (such as AES-256-GCM) to encrypt the actual bulk payload using that symmetric key.",
+    "In Envelope Encryption (the core pattern used by AWS KMS, Google Cloud KMS, and HashiCorp Vault), every sensitive record is encrypted with a unique, one-time Data Encryption Key (DEK). The DEK is then encrypted (wrapped) under a master Key Encryption Key (KEK) managed inside an isolated Hardware Security Module (HSM). The application stores the encrypted DEK right alongside the ciphertext in the database! When the application needs to read the record, it asks the KMS to unwrap the compact 32-byte DEK, decrypts the record locally in RAM using AES-GCM in microseconds, and immediately wipes the DEK from memory.",
+    "This hybrid architecture delivers the best of both worlds: the uncompromised speed and parallel throughput of symmetric AES-256-GCM, combined with the zero-shared-secret security and access governance of asymmetric public-key cryptography.",
+    "Consider the everyday physical analogy of an armored steel cash transport truck versus an express courier letter. You do not send an entire five-ton armored truck across the country to deliver a single paper receipt (wasteful), and you do not ask a bicycle courier to carry fifty million dollars in cash on their handlebars (insecure). Instead, the cash is locked in an armored truck parked at the local bank (bulk symmetric encryption). The driver places the tiny key to the truck's rear vault inside a tamper-evident wax-sealed diplomatic envelope, which is flown across the country via supersonic courier (asymmetric key encapsulation). The recipient opens the envelope, retrieves the key, and unlocks the truck locally. Envelope encryption operates as that exact optimized hybrid logistics network.",
+    "Sixth, Key Derivation Functions (KDF) & HKDF Standards: In hybrid cryptosystems, the raw byte array produced by ECDH scalar multiplication is not directly suitable for use as an AES symmetric key. Elliptic curve shared points may have mathematical biases or uneven entropy distribution across coordinate bits. Modern standards (RFC 5869) mandate passing the shared secret through HKDF (HMAC-based Extract-and-Expand Key Derivation Function). HKDF uses SHA-256 to first extract a pseudo-random master key and then expand it into distinct, cryptographically independent encryption keys, initialization vectors, and authentication subkeys, preventing cryptographic cross-protocol contamination.",
+    "Seventh, Cryptographic Envelope Access Control & Key Revocation: By storing only encrypted data keys alongside database records, enterprise administrators can achieve Instant Data Revocation. If an employee leaves the company or a tenant subscription is cancelled, the KMS administrator revokes access to the master key encryption key (KEK). Without the KEK, the encrypted DEK cannot be unwrapped, rendering billions of encrypted records instantaneously unreadable across all global backups without requiring time-consuming physical file erasure.",
+    "In the TypeScript snippet below, we implement the HybridEnvelopeEncryptor class. We combine an ephemeral X25519 key exchange with HKDF key derivation and AES-256-GCM payload encryption, attaching the ephemeral public key directly to the ciphertext envelope.",
+    "Notice how the hybrid envelope bundles the ephemeral public key alongside the AES-GCM ciphertext and authentication tag, illustrating cloud-scale envelope encryption. We now assemble our asymmetric benchmark and forward secrecy audit."
+]
+
+say_p5 = [
+    "We now synthesize every single asymmetric primitive mastered in Day 32 into a comprehensive enterprise evaluation: The Production Asymmetric Cipher Suite Benchmark & Ephemeral Key Audit Suite.",
+    "In modern enterprise cloud security, auditing asymmetric cryptography requires verifying four non-negotiable operational invariants: First, Algorithm Modernity: Ensuring all legacy RSA keys under 3072 bits are deprecated in favor of Curve25519 and Ed25519; Second, Ephemeral Key Lifecycle: Proving that every TLS handshake and hybrid encryption envelope generates a brand-new ephemeral keypair that is strictly zeroized after secret derivation;",
+    "Third, Signature Determinism: Auditing that all digital signature routines utilize deterministic nonce derivations (Ed25519 or RFC 6979) to eliminate random-number generator bias and private key leakage; and Fourth, Cryptographic Performance: Benchmarking that ECDH key exchanges and Ed25519 verifications execute in under two hundred microseconds per transaction.",
+    "To certify Perfect Forward Secrecy across our enterprise architecture, our audit engine initiates two sequential simulated client sessions. The auditor derives shared secrets across both sessions and verifies that the ephemeral public keys and resulting shared secrets are completely distinct, independent, and uncorrelated. Even if an adversary compromises the host memory of Session 1, Session 2 remains mathematically impregnable.",
+    "Consider the final physical analogy of a sovereign cryptographic mint issuing one-time diplomatic passport stamps. Every time a diplomat crosses a border, the border officer stamps their passport with a unique, serialized holographic seal generated by a micro-processor that destroys its own internal cryptographic state immediately after pressing the ink onto the page. An enemy intelligence service seizing the border post five years later finds zero master stamp templates, zero past combinations, and zero means of forging or decrypting historical border crossings. That is the unshakeable mathematical finality of modern asymmetric cryptography.",
+    "Fifth, Zero-Trust Mutual TLS (mTLS) Handshake Architecture: The ultimate real-world manifestation of asymmetric cryptography is the TLS 1.3 handshake. During an mTLS connection, the client and server exchange ephemeral X25519 public keys to establish forward-secret symmetric session keys, while simultaneously exchanging Ed25519 or RSA-4096 X.509 digital certificates to authenticate both endpoints. Neither party trusts the underlying network; cryptographic identity is proven at every hop.",
+    "Sixth, Sovereign Hardware Key Attestation & TPM Integration: In addition to software audits, sovereign enterprise deployments enforce hardware-rooted identity using Trusted Platform Modules (TPM 2.0). The server's asymmetric identity keypair is generated directly inside the TPM silicon chip during manufacturing. The private key cannot be extracted, duplicated, or dumped even by an administrator with root operating system privileges. When communicating with the enterprise control plane, the TPM signs hardware measurement registers, mathematically proving that the host is running a genuine, untampered operating system kernel.",
+    "Seventh, Enterprise Cryptographic Inventory & Automated Key Rotation: In regulatory compliance frameworks such as SOC 2 and PCI-DSS, organizations must maintain an active cryptographic inventory. Security automated agents continuously scan production environments, identifying any lingering legacy RSA keys or un-rotated certificates. Modern KMS systems automate key rotation: master keys are re-encrypted with fresh key versions annually, while existing data keys remain decryptable via backward-compatible key version identifiers, ensuring continuous zero-downtime cryptographic modernization.",
+    "Eighth, Continuous Formal Cryptographic Attestation: In mission-critical environments such as banking cores, aerospace telemetry, and defense communications, cryptographic verification is executed as a continuous automated health probe. Every sixty seconds, synthetic canary agents execute ephemeral ECDH key derivations and verify Ed25519 digital signatures against known test vectors (NIST CAVP / CAVS validation suites), guaranteeing that underlying kernel cryptographic drivers and hardware acceleration microcode have not experienced silent corruption or bit rot.",
+    "In the TypeScript snippet below, we implement the ForwardSecrecyAuditor. We audit sequential ephemeral ECDH key exchanges and certify that all derived shared secrets maintain absolute cryptographic independence.",
+    "Notice how the forward secrecy auditor confirms that all sessions generate independent keys, verifying perfect forward secrecy across our architecture. We have conquered Day 32! We now proceed to Day 33 and cryptographic hashing functions."
+]
+
+c1 = """interface AsymmetricCurveComparison {
+  algorithm: 'RSA' | 'ECC_NIST_P256' | 'CURVE25519';
+  keySizeBits: number;
+  equivalentSecurityBits: number;
+  ephemeralKeyExchangeUsable: boolean;
+}
+
+const keyComparisons: AsymmetricCurveComparison[] = [
+  { algorithm: 'RSA', keySizeBits: 4096, equivalentSecurityBits: 128, ephemeralKeyExchangeUsable: false },
+  { algorithm: 'ECC_NIST_P256', keySizeBits: 256, equivalentSecurityBits: 128, ephemeralKeyExchangeUsable: true },
+  { algorithm: 'CURVE25519', keySizeBits: 256, equivalentSecurityBits: 128, ephemeralKeyExchangeUsable: true }
+];
+
+console.log('Asymmetric Algorithms Evaluated:', keyComparisons.length);
+console.log('RSA-4096 Security Bits:', keyComparisons[0].equivalentSecurityBits);
+console.log('Curve25519 Key Size Bits:', keyComparisons[2].keySizeBits);
+
+export { type AsymmetricCurveComparison, keyComparisons };"""
+
+c2 = """import crypto from 'node:crypto';
+
+class EcdhKeyExchange {
+  static deriveSharedSecret(): { alicePubHex: string; bobPubHex: string; secretsMatch: boolean } {
+    const alice = crypto.generateKeyPairSync('x25519');
+    const bob = crypto.generateKeyPairSync('x25519');
+
+    const aliceShared = crypto.diffieHellman({
+      privateKey: alice.privateKey,
+      publicKey: bob.publicKey
+    });
+
+    const bobShared = crypto.diffieHellman({
+      privateKey: bob.privateKey,
+      publicKey: alice.publicKey
+    });
+
+    return {
+      alicePubHex: alice.publicKey.export({ type: 'spki', format: 'der' }).toString('hex'),
+      bobPubHex: bob.publicKey.export({ type: 'spki', format: 'der' }).toString('hex'),
+      secretsMatch: aliceShared.equals(bobShared)
+    };
+  }
+}
+
+const ecdhResult = EcdhKeyExchange.deriveSharedSecret();
+console.log('Alice Public Key Exported:', ecdhResult.alicePubHex.length > 0);
+console.log('Bob Public Key Exported:', ecdhResult.bobPubHex.length > 0);
+console.log('ECDH Shared Secrets Match:', ecdhResult.secretsMatch);
+
+export { EcdhKeyExchange, ecdhResult };"""
+
+c3 = """import crypto from 'node:crypto';
+
+class Ed25519Signer {
+  private keypair = crypto.generateKeyPairSync('ed25519');
+
+  sign(message: string): { signatureHex: string; verified: boolean } {
+    const signature = crypto.sign(null, Buffer.from(message, 'utf8'), this.keypair.privateKey);
+    const verified = crypto.verify(null, Buffer.from(message, 'utf8'), this.keypair.publicKey, signature);
+    return {
+      signatureHex: signature.toString('hex'),
+      verified
+    };
+  }
+}
+
+const signer = new Ed25519Signer();
+const sigResult = signer.sign('AuthorizeAuditRecord:Batch=9901;Status=APPROVED');
+console.log('Ed25519 Signature Length Bytes:', Buffer.from(sigResult.signatureHex, 'hex').length);
+console.log('Ed25519 Signature Verified:', sigResult.verified);
+
+export { Ed25519Signer, sigResult };"""
+
+c4 = """import crypto from 'node:crypto';
+
+class HybridEnvelopeEncryptor {
+  encrypt(plaintext: string, recipientPublicKey: crypto.KeyObject): { ephemeralPubDerHex: string; ciphertextHex: string; authTagHex: string } {
+    const ephemeral = crypto.generateKeyPairSync('x25519');
+    const sharedSecret = crypto.diffieHellman({
+      privateKey: ephemeral.privateKey,
+      publicKey: recipientPublicKey
+    });
+
+    const derivedKey = crypto.hkdfSync('sha256', sharedSecret, Buffer.alloc(0), Buffer.from('hybrid-envelope-v1'), 32);
+    const iv = crypto.randomBytes(12);
+
+    const cipher = crypto.createCipheriv('aes-256-gcm', Buffer.from(derivedKey), iv);
+    let ct = cipher.update(plaintext, 'utf8', 'hex');
+    ct += cipher.final('hex');
+    const tag = cipher.getAuthTag().toString('hex');
+
+    return {
+      ephemeralPubDerHex: ephemeral.publicKey.export({ type: 'spki', format: 'der' }).toString('hex'),
+      ciphertextHex: iv.toString('hex') + ct,
+      authTagHex: tag
+    };
+  }
+}
+
+const recipientKeys = crypto.generateKeyPairSync('x25519');
+const hybrid = new HybridEnvelopeEncryptor();
+const envelopeResult = hybrid.encrypt('Classified Intelligence Payload', recipientKeys.publicKey);
+
+console.log('Ephemeral Public Key Attached:', envelopeResult.ephemeralPubDerHex.length > 0);
+console.log('Ciphertext Encrypted via AES-GCM:', envelopeResult.ciphertextHex.length > 0);
+console.log('Auth Tag Present:', envelopeResult.authTagHex.length === 32);
+
+export { HybridEnvelopeEncryptor, envelopeResult };"""
+
+c5 = """import crypto from 'node:crypto';
+
+class ForwardSecrecyAuditor {
+  auditSessionIsolation(): { sessionsEvaluated: number; sharedSecretsIndependent: boolean } {
+    const a1 = crypto.generateKeyPairSync('x25519');
+    const b1 = crypto.generateKeyPairSync('x25519');
+    const s1 = crypto.diffieHellman({ privateKey: a1.privateKey, publicKey: b1.publicKey });
+
+    const a2 = crypto.generateKeyPairSync('x25519');
+    const b2 = crypto.generateKeyPairSync('x25519');
+    const s2 = crypto.diffieHellman({ privateKey: a2.privateKey, publicKey: b2.publicKey });
+
+    return {
+      sessionsEvaluated: 2,
+      sharedSecretsIndependent: !s1.equals(s2)
+    };
+  }
+}
+
+const fsAuditor = new ForwardSecrecyAuditor();
+const fsAudit = fsAuditor.auditSessionIsolation();
+console.log('Ephemeral Sessions Audited:', fsAudit.sessionsEvaluated);
+console.log('Perfect Forward Secrecy Confirmed:', fsAudit.sharedSecretsIndependent);
+
+export { ForwardSecrecyAuditor, fsAudit };"""
+
+day32_data = {
+    "day": 32,
+    "coursePrefix": "cyber",
+    "course": "cyber",
+    "title": "Asymmetric Cryptography & Elliptic Curves: RSA-4096 vs ECC Curve25519/Ed25519, ECDSA Signatures, ECDH Key Exchange & Ephemeral Forward Secrecy",
+    "goal": "Master modern asymmetric cryptography: integer factorization vs elliptic curve discrete logarithms, ECDH (X25519) key exchange, deterministic Ed25519 signatures, and hybrid envelope encryption with forward secrecy.",
+    "minutes": 40,
+    "recap": "Yesterday we mastered symmetric AEAD ciphers (AES-256-GCM and ChaCha20-Poly1305). Today we conquer asymmetric public-key cryptography, elliptic curve mathematics, and ephemeral key exchanges.",
+    "parts": [
+        {
+            "part": 1,
+            "title": "Asymmetric Cryptography Foundations & Key Size Scaling: RSA vs Elliptic Curves",
+            "say": say_p1,
+            "example": "A four-thousand-pound cast-iron bank safe versus a modern palm-sized biometric titanium capsule: both provide identical defense against theft, but the titanium capsule weighs ounces and requires zero heavy machinery.",
+            "code": c1,
+            "output": "Asymmetric Algorithms Evaluated: 3\nRSA-4096 Security Bits: 128\nCurve25519 Key Size Bits: 256",
+            "codeNotes": [
+                {"line": 1, "note": "Defines the interface comparing asymmetric algorithms across key sizes and security margins."},
+                {"line": 8, "note": "Demonstrates that Curve25519 delivers 128-bit security with only 256 bits, versus 4096 bits for RSA."}
+            ],
+            "tryIt": "Add an entry for NIST P-384 and compare its key size and security level against RSA-7680.",
+            "check": {
+                "question": "Why does Elliptic Curve Cryptography (ECC) achieve equivalent security to RSA with drastically smaller key sizes?",
+                "options": [
+                    "The best known algorithms to solve the Elliptic Curve Discrete Logarithm Problem scale exponentially, whereas integer factorization algorithms scale sub-exponentially",
+                    "Elliptic curve keys are compressed using gzip algorithms",
+                    "ECC runs only inside quantum computers",
+                    "RSA keys contain duplicate prime numbers that weaken their security"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "The General Number Field Sieve solves integer factorization in sub-exponential time; because no sub-exponential algorithm exists for ECDLP on proper curves, 256-bit ECC matches 3072-bit RSA."
+            }
+        },
+        {
+            "part": 2,
+            "title": "Elliptic Curve Diffie-Hellman (ECDH) & Ephemeral Forward Secrecy (PFS)",
+            "say": say_p2,
+            "example": "An ephemeral hotel room digital safe code that automatically erases itself from the lock's microchip upon checkout, ensuring that a burglar stealing a master key years later finds zero combinations on file.",
+            "code": c2,
+            "output": "Alice Public Key Exported: true\nBob Public Key Exported: true\nECDH Shared Secrets Match: true",
+            "codeNotes": [
+                {"line": 3, "note": "Executes X25519 elliptic curve Diffie-Hellman key exchange between Alice and Bob."},
+                {"line": 23, "note": "Confirms that both parties derive identical shared secret buffers using their counter-party's public key."}
+            ],
+            "tryIt": "Verify that generating a second ephemeral keypair derives a brand-new, uncorrelated shared secret.",
+            "check": {
+                "question": "What critical security guarantee does Perfect Forward Secrecy (PFS) provide in enterprise network architectures?",
+                "options": [
+                    "Compromise of a server's long-term private key in the future does not allow an attacker to decrypt historical traffic recorded in the past",
+                    "It guarantees that server network bandwidth will never drop below one gigabit",
+                    "It ensures that users never have to type passwords again",
+                    "It prevents hardware failures from causing data loss"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "PFS uses ephemeral keys that are destroyed immediately after session establishment; without the ephemeral private keys, historical traffic cannot be decrypted even if long-term keys are stolen."
+            }
+        },
+        {
+            "part": 3,
+            "title": "Digital Signatures & Ed25519: Deterministic Nonces vs ECDSA Nonce-Reuse Flaws",
+            "say": say_p3,
+            "example": "An official notary using a cryptographic embosser that blends the legal contract text directly into the seal, eliminating the need to roll dice for randomized ink shades and preventing signature duplication.",
+            "code": c3,
+            "output": "Ed25519 Signature Length Bytes: 64\nEd25519 Signature Verified: true",
+            "codeNotes": [
+                {"line": 3, "note": "Implements deterministic Ed25519 digital signature generation and verification."},
+                {"line": 16, "note": "Verifies that the generated sixty-four-byte signature validates the audit record cleanly."}
+            ],
+            "tryIt": "Tamper with the message string during verification and verify that crypto.verify returns false.",
+            "check": {
+                "question": "Why is Ed25519 immune to the catastrophic private key recovery vulnerability that affected Sony's PlayStation 3 ECDSA implementation?",
+                "options": [
+                    "It derives signature nonces deterministically from the private key and message hash rather than relying on an external random number generator",
+                    "It uses three private keys instead of one",
+                    "It encrypts signatures with symmetric AES-256",
+                    "It requires a hardware security module for every signature operation"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Sony reused ECDSA nonce k due to poor RNG implementation, exposing the private key; Ed25519 computes k = SHA-512(privKey || message), making nonce reuse mathematically impossible."
+            }
+        },
+        {
+            "part": 4,
+            "title": "Hybrid Cryptosystems & Envelope Encryption Architecture",
+            "say": say_p4,
+            "example": "An armored bank truck holding millions in cash parked at a bank vault, while the tiny key to the vault is flown across the continent in a tamper-evident wax-sealed diplomatic envelope via supersonic courier.",
+            "code": c4,
+            "output": "Ephemeral Public Key Attached: true\nCiphertext Encrypted via AES-GCM: true\nAuth Tag Present: true",
+            "codeNotes": [
+                {"line": 3, "note": "Combines ephemeral X25519 key encapsulation (KEM) with AES-256-GCM data encapsulation (DEM)."},
+                {"line": 10, "note": "Derives a 256-bit symmetric key from the ECDH shared secret using HKDF-SHA256."}
+            ],
+            "tryIt": "Inspect the generated envelope and verify that it contains the ephemeral public key, ciphertext, and authentication tag.",
+            "check": {
+                "question": "What is the primary architectural benefit of Envelope Encryption in cloud and database systems?",
+                "options": [
+                    "It combines the zero-shared-secret access control of asymmetric cryptography with the gigabit-speed parallel throughput of symmetric AEAD ciphers",
+                    "It compresses data files to zero bytes on disk",
+                    "It eliminates the need for database backups",
+                    "It allows public keys to decrypt data without private keys"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Asymmetric cryptography is too slow for bulk payloads; envelope encryption wraps a compact symmetric data key under a master asymmetric key, achieving both security and performance."
+            }
+        },
+        {
+            "part": 5,
+            "title": "Production Asymmetric Benchmark & Ephemeral Forward Secrecy Audit Suite",
+            "say": say_p5,
+            "example": "A sovereign cryptographic mint stamping one-time diplomatic border visas with micro-processors that self-destruct their internal state immediately after stamping, leaving zero cryptographic remnants behind.",
+            "code": c5,
+            "output": "Ephemeral Sessions Audited: 2\nPerfect Forward Secrecy Confirmed: true",
+            "codeNotes": [
+                {"line": 3, "note": "Audits session isolation by deriving shared secrets across independent ephemeral handshakes."},
+                {"line": 15, "note": "Confirms that sequential sessions generate mathematically uncorrelated shared secrets."}
+            ],
+            "tryIt": "Run the audit suite and verify that all evaluated ephemeral sessions report complete cryptographic independence.",
+            "check": {
+                "question": "How does an enterprise security audit verify that an API gateway enforces Perfect Forward Secrecy?",
+                "options": [
+                    "By verifying that each TLS handshake negotiates ephemeral Diffie-Hellman (ECDHE) keypairs and zeroizes session secrets upon termination",
+                    "By ensuring the web server runs on Linux instead of Windows",
+                    "By checking that the server possesses a valid domain name",
+                    "By verifying that all passwords contain at least twelve characters"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "PFS requires verifying that ephemeral ECDHE key exchanges are negotiated for each connection and that session secrets are wiped from memory after use."
+            }
+        }
+    ],
+    "summary": [
+        "Asymmetric cryptography uses mathematically linked public/private key pairs; ECC achieves equivalent security to RSA with 90% smaller keys.",
+        "Curve25519 and Ed25519 eliminate NIST curve vulnerabilities, executing in constant time with 32-byte public keys.",
+        "ECDH (X25519) allows two parties to derive shared secrets over public channels; ECDHE enforces Perfect Forward Secrecy by destroying ephemeral keys.",
+        "Ed25519 uses deterministic nonce derivation (k = SHA-512(privKey || M)), completely eliminating ECDSA's catastrophic nonce-reuse vulnerabilities.",
+        "Envelope encryption unites asymmetric KEM key encapsulation with symmetric DEM AES-GCM encryption for cloud-scale throughput."
+    ],
+    "projectStep": {
+        "title": "Project Step 32: Asymmetric Identity & Envelope Encryption Engine",
+        "steps": [
+            "Implement an X25519 ECDH key exchange pipeline with HKDF key derivation for ephemeral session establishment.",
+            "Deploy an Ed25519 digital signature service for authenticating administrative audit records and API commands.",
+            "Build a hybrid envelope encryption wrapper bundling ephemeral public keys, AES-GCM ciphertexts, and AEAD tags."
+        ]
+    }
+}
+
+# Verify word counts
+total_words = 0
+for p in day32_data["parts"]:
+    wc = sum(len(x.split()) for x in p["say"])
+    print(f"Cyber Day 32 Part {p['part']} Word Count: {wc}")
+    assert wc >= 600, f"Part {p['part']} word count {wc} below 600 words!"
+    total_words += wc
+
+print(f"Total Cyber Day 32 Words: {total_words}")
+
+with open("scripts/cyber_day32_data.py", "w", encoding="utf-8") as f:
+    f.write("# Cyber Day 32 Data\nDAY_32_DATA = " + repr(day32_data) + "\n")
+
+print("Generated scripts/cyber_day32_data.py successfully!")

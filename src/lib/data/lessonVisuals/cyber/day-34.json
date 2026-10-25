@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 34,
+  "promptSha": "17eab3da0c68aaac7451a4795b2f2355804aed55738a089e67a2f2452dad0d09",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Web of Trust vs Hierarchical PKI & Root Certificate Authority Architecture",
+      "codeHash": "1b1cc463130e92874ca113c46bdcf237d99e9b4741125e28d7ab0673de081bcf",
+      "spec": {
+        "template": "compare",
+        "title": "Public Key Infrastructure: Web of Trust vs Hierarchical PKI & Root Certificate Authority Architecture",
+        "left": {
+          "label": "Insecure / Legacy PKI",
+          "content": [
+            "Direct root signing exposes master private keys on network interfaces",
+            "Massive revocation lists add seconds of download latency and fail soft",
+            "Direct status queries leak end-user browsing histories to third parties",
+            "Hidden rogue certificate authorities issue undetectable forged certificates"
+          ]
+        },
+        "right": {
+          "label": "Modern Sovereign PKI Architecture",
+          "content": [
+            "Hierarchical chains keep root keys in offline air-gapped vaults",
+            "OCSP stapling caches signed status assertions with zero network latency",
+            "Subject alternative names strictly validate domains without ambiguity",
+            "Certificate transparency logs every certificate in public Merkle trees"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays public key infrastructure hierarchy from root to intermediate and leaf certificates."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates self-signed root anchors and delegation constraints protecting master signing keys."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates global trust scalability over decentralized peer signing models."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms three-tier certificate chain construction, path constraints, and leaf validation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy PKI",
+        "rightLabel": "Modern Sovereign PKI Architecture",
+        "leftHighlights": [
+          "Online root exposure",
+          "Revocation list latency",
+          "Status privacy leakage",
+          "Hidden rogue certificates"
+        ],
+        "rightHighlights": [
+          "Air-gapped root security",
+          "Zero-latency stapling",
+          "Strict domain validation",
+          "Public Merkle transparency"
+        ]
+      }
+    },
+    {
+      "partTitle": "X.509 Certificate Structure & ASN.1/DER Canonical Binary Serialization",
+      "codeHash": "51e8d7de926b2ec2b7e7f01e1d848accbe9fc81a3a6f01ddca71c69e8f0b8120",
+      "spec": {
+        "template": "compare",
+        "title": "Public Key Infrastructure: X.509 Certificate Structure & ASN.1/DER Canonical Binary Serialization",
+        "left": {
+          "label": "Insecure / Legacy PKI",
+          "content": [
+            "Direct root signing exposes master private keys on network interfaces",
+            "Massive revocation lists add seconds of download latency and fail soft",
+            "Direct status queries leak end-user browsing histories to third parties",
+            "Hidden rogue certificate authorities issue undetectable forged certificates"
+          ]
+        },
+        "right": {
+          "label": "Modern Sovereign PKI Architecture",
+          "content": [
+            "Hierarchical chains keep root keys in offline air-gapped vaults",
+            "OCSP stapling caches signed status assertions with zero network latency",
+            "Subject alternative names strictly validate domains without ambiguity",
+            "Certificate transparency logs every certificate in public Merkle trees"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates structured certificate serialization using abstract syntax notation distinguished rules."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates subject alternative names and critical basic constraints preventing leaf signing attacks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates canonical binary uniqueness over ambiguous textual certificate formatting."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms public key export, standardized encoding blocks, and extension enforcement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy PKI",
+        "rightLabel": "Modern Sovereign PKI Architecture",
+        "leftHighlights": [
+          "Online root exposure",
+          "Revocation list latency",
+          "Status privacy leakage",
+          "Hidden rogue certificates"
+        ],
+        "rightHighlights": [
+          "Air-gapped root security",
+          "Zero-latency stapling",
+          "Strict domain validation",
+          "Public Merkle transparency"
+        ]
+      }
+    },
+    {
+      "partTitle": "Certificate Revocation Mechanics: CRL vs OCSP vs Zero-Latency OCSP Stapling",
+      "codeHash": "9192073abab6fb1c0d7c7bb5421d43e8308517ee30b6bcc0a031ba7016d0c2a8",
+      "spec": {
+        "template": "compare",
+        "title": "Public Key Infrastructure: Certificate Revocation Mechanics: CRL vs OCSP vs Zero-Latency OCSP Stapling",
+        "left": {
+          "label": "Insecure / Legacy PKI",
+          "content": [
+            "Direct root signing exposes master private keys on network interfaces",
+            "Massive revocation lists add seconds of download latency and fail soft",
+            "Direct status queries leak end-user browsing histories to third parties",
+            "Hidden rogue certificate authorities issue undetectable forged certificates"
+          ]
+        },
+        "right": {
+          "label": "Modern Sovereign PKI Architecture",
+          "content": [
+            "Hierarchical chains keep root keys in offline air-gapped vaults",
+            "OCSP stapling caches signed status assertions with zero network latency",
+            "Subject alternative names strictly validate domains without ambiguity",
+            "Certificate transparency logs every certificate in public Merkle trees"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays certificate revocation mechanisms and online status protocol optimizations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors cached status assertions stapled directly into initial transport layer handshakes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of user privacy tracking and connection latency overhead."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms fresh status assertions, valid signatures, and immediate interception of revoked keys."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy PKI",
+        "rightLabel": "Modern Sovereign PKI Architecture",
+        "leftHighlights": [
+          "Online root exposure",
+          "Revocation list latency",
+          "Status privacy leakage",
+          "Hidden rogue certificates"
+        ],
+        "rightHighlights": [
+          "Air-gapped root security",
+          "Zero-latency stapling",
+          "Strict domain validation",
+          "Public Merkle transparency"
+        ]
+      }
+    },
+    {
+      "partTitle": "Rogue Certificate Authorities, Man-in-the-Middle & Certificate Transparency (CT)",
+      "codeHash": "c1583b8c8e27e2aec201df9bd2dd5922d27bbd194645556b341b835da6b31ac6",
+      "spec": {
+        "template": "compare",
+        "title": "Public Key Infrastructure: Rogue Certificate Authorities, Man-in-the-Middle & Certificate Transparency (CT)",
+        "left": {
+          "label": "Insecure / Legacy PKI",
+          "content": [
+            "Direct root signing exposes master private keys on network interfaces",
+            "Massive revocation lists add seconds of download latency and fail soft",
+            "Direct status queries leak end-user browsing histories to third parties",
+            "Hidden rogue certificate authorities issue undetectable forged certificates"
+          ]
+        },
+        "right": {
+          "label": "Modern Sovereign PKI Architecture",
+          "content": [
+            "Hierarchical chains keep root keys in offline air-gapped vaults",
+            "OCSP stapling caches signed status assertions with zero network latency",
+            "Subject alternative names strictly validate domains without ambiguity",
+            "Certificate transparency logs every certificate in public Merkle trees"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates public append-only cryptographic Merkle trees and certificate transparency ledgers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates signed certificate timestamps and multi-log compliance verification policies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates public auditable visibility over hidden rogue certificate issuance risks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms multi-log timestamp inclusion, consistency proof audits, and phishing detection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy PKI",
+        "rightLabel": "Modern Sovereign PKI Architecture",
+        "leftHighlights": [
+          "Online root exposure",
+          "Revocation list latency",
+          "Status privacy leakage",
+          "Hidden rogue certificates"
+        ],
+        "rightHighlights": [
+          "Air-gapped root security",
+          "Zero-latency stapling",
+          "Strict domain validation",
+          "Public Merkle transparency"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production PKI Validation Benchmark & Certificate Chain Audit Suite",
+      "codeHash": "9f860558dc41c07f613ff9d50d44b09a55c83a33cf83e0696b13e330c589b215",
+      "spec": {
+        "template": "compare",
+        "title": "Public Key Infrastructure: Production PKI Validation Benchmark & Certificate Chain Audit Suite",
+        "left": {
+          "label": "Insecure / Legacy PKI",
+          "content": [
+            "Direct root signing exposes master private keys on network interfaces",
+            "Massive revocation lists add seconds of download latency and fail soft",
+            "Direct status queries leak end-user browsing histories to third parties",
+            "Hidden rogue certificate authorities issue undetectable forged certificates"
+          ]
+        },
+        "right": {
+          "label": "Modern Sovereign PKI Architecture",
+          "content": [
+            "Hierarchical chains keep root keys in offline air-gapped vaults",
+            "OCSP stapling caches signed status assertions with zero network latency",
+            "Subject alternative names strictly validate domains without ambiguity",
+            "Certificate transparency logs every certificate in public Merkle trees"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production public key infrastructure chain validation benchmark suite."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits full path construction, temporal expiration windows, and subject alternative name matches."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise cryptographic assurance across multi-cloud service meshes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total chain validity, domain name matches, and zero trust identity compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy PKI",
+        "rightLabel": "Modern Sovereign PKI Architecture",
+        "leftHighlights": [
+          "Online root exposure",
+          "Revocation list latency",
+          "Status privacy leakage",
+          "Hidden rogue certificates"
+        ],
+        "rightHighlights": [
+          "Air-gapped root security",
+          "Zero-latency stapling",
+          "Strict domain validation",
+          "Public Merkle transparency"
+        ]
+      }
+    }
+  ]
+}

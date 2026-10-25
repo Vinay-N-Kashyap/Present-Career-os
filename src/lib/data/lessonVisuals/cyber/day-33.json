@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 33,
+  "promptSha": "9e9d3e9cbb166ce69bfbbead39a60fa5b8c8eee312fea1dafaed52a4c8d91a52",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Cryptographic Hash Axioms & Collision Resistance: SHA-2 vs SHA-3 vs BLAKE3",
+      "codeHash": "a2449ab099da6e689d612a37139fa42ab9fb5bc7d9af75ea481184878b74c6e2",
+      "spec": {
+        "template": "compare",
+        "title": "Hashing & Credentials: Cryptographic Hash Axioms & Collision Resistance: SHA-2 vs SHA-3 vs BLAKE3",
+        "left": {
+          "label": "Legacy / Insecure Hashing",
+          "content": [
+            "Fast cryptographic hashes allow billions of password guesses per second",
+            "Naive keyed hashing allows length extension forged signatures",
+            "CPU-only algorithms fail against specialized hardware cracking arrays",
+            "Standard string comparisons leak microsecond timing signals"
+          ]
+        },
+        "right": {
+          "label": "Modern Memory-Hard Architecture",
+          "content": [
+            "Sponge and tree hashes eliminate length extension vulnerabilities",
+            "Nested HMAC uses inner and outer padded keys for unforgeable integrity",
+            "Argon2id forces sixty-four-megabyte RAM allocation to defeat GPUs",
+            "Constant-time memory comparisons neutralize side-channel timing attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays cryptographic hash properties and collision resistance mathematical axioms."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates compression functions and contrasts sponge constructions against legacy Merkle Damgard models."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of length extension risks and multi-gigabit hashing performance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms fixed digest output sizes, collision resistance margins, and hardware vectorization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy / Insecure Hashing",
+        "rightLabel": "Modern Memory-Hard Architecture",
+        "leftHighlights": [
+          "Fast hash cracking risk",
+          "Length extension vulnerability",
+          "Hardware brute-force exposure",
+          "Timing side-channel leakage"
+        ],
+        "rightHighlights": [
+          "Immune sponge construction",
+          "Nested HMAC integrity",
+          "Memory-hard Argon2id RAM",
+          "Constant-time verification"
+        ]
+      }
+    },
+    {
+      "partTitle": "Hash-based Message Authentication Codes (HMAC) & Length Extension Mitigation",
+      "codeHash": "f53df2f93a544d10ba60909029d4e222b6ebf0411d19c0d011fe28cac0a029c9",
+      "spec": {
+        "template": "compare",
+        "title": "Hashing & Credentials: Hash-based Message Authentication Codes (HMAC) & Length Extension Mitigation",
+        "left": {
+          "label": "Legacy / Insecure Hashing",
+          "content": [
+            "Fast cryptographic hashes allow billions of password guesses per second",
+            "Naive keyed hashing allows length extension forged signatures",
+            "CPU-only algorithms fail against specialized hardware cracking arrays",
+            "Standard string comparisons leak microsecond timing signals"
+          ]
+        },
+        "right": {
+          "label": "Modern Memory-Hard Architecture",
+          "content": [
+            "Sponge and tree hashes eliminate length extension vulnerabilities",
+            "Nested HMAC uses inner and outer padded keys for unforgeable integrity",
+            "Argon2id forces sixty-four-megabyte RAM allocation to defeat GPUs",
+            "Constant-time memory comparisons neutralize side-channel timing attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates nested message authentication codes preventing length extension attacks."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors inner and outer key padding and constant-time token comparison execution."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unforgeable message integrity over naive concatenated hash models."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms timing-safe verification, rejection of tampered tokens, and signature convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy / Insecure Hashing",
+        "rightLabel": "Modern Memory-Hard Architecture",
+        "leftHighlights": [
+          "Fast hash cracking risk",
+          "Length extension vulnerability",
+          "Hardware brute-force exposure",
+          "Timing side-channel leakage"
+        ],
+        "rightHighlights": [
+          "Immune sponge construction",
+          "Nested HMAC integrity",
+          "Memory-hard Argon2id RAM",
+          "Constant-time verification"
+        ]
+      }
+    },
+    {
+      "partTitle": "Password Hashing Evolution & Hardware Acceleration Vulnerabilities",
+      "codeHash": "9b8be9c4d758c59c1cbd0bb0aafb3ee37deb3b0235b594d136109aedb7377c86",
+      "spec": {
+        "template": "compare",
+        "title": "Hashing & Credentials: Password Hashing Evolution & Hardware Acceleration Vulnerabilities",
+        "left": {
+          "label": "Legacy / Insecure Hashing",
+          "content": [
+            "Fast cryptographic hashes allow billions of password guesses per second",
+            "Naive keyed hashing allows length extension forged signatures",
+            "CPU-only algorithms fail against specialized hardware cracking arrays",
+            "Standard string comparisons leak microsecond timing signals"
+          ]
+        },
+        "right": {
+          "label": "Modern Memory-Hard Architecture",
+          "content": [
+            "Sponge and tree hashes eliminate length extension vulnerabilities",
+            "Nested HMAC uses inner and outer padded keys for unforgeable integrity",
+            "Argon2id forces sixty-four-megabyte RAM allocation to defeat GPUs",
+            "Constant-time memory comparisons neutralize side-channel timing attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays password hashing evolution and hardware acceleration vulnerabilities."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates specialized parallel cracking rigs and key-stretching iteration mechanisms."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates the necessity of high computational and memory resistance in password storage."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms iteration latency stretching, salt uniqueness, and rainbow table neutralization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy / Insecure Hashing",
+        "rightLabel": "Modern Memory-Hard Architecture",
+        "leftHighlights": [
+          "Fast hash cracking risk",
+          "Length extension vulnerability",
+          "Hardware brute-force exposure",
+          "Timing side-channel leakage"
+        ],
+        "rightHighlights": [
+          "Immune sponge construction",
+          "Nested HMAC integrity",
+          "Memory-hard Argon2id RAM",
+          "Constant-time verification"
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory-Hard Key Derivation & RFC 9106 Argon2id Architecture",
+      "codeHash": "1ded9fe1d09b4aee5b79696cb142ec12ebe2ce054724044911a9f11e0f804151",
+      "spec": {
+        "template": "compare",
+        "title": "Hashing & Credentials: Memory-Hard Key Derivation & RFC 9106 Argon2id Architecture",
+        "left": {
+          "label": "Legacy / Insecure Hashing",
+          "content": [
+            "Fast cryptographic hashes allow billions of password guesses per second",
+            "Naive keyed hashing allows length extension forged signatures",
+            "CPU-only algorithms fail against specialized hardware cracking arrays",
+            "Standard string comparisons leak microsecond timing signals"
+          ]
+        },
+        "right": {
+          "label": "Modern Memory-Hard Architecture",
+          "content": [
+            "Sponge and tree hashes eliminate length extension vulnerabilities",
+            "Nested HMAC uses inner and outer padded keys for unforgeable integrity",
+            "Argon2id forces sixty-four-megabyte RAM allocation to defeat GPUs",
+            "Constant-time memory comparisons neutralize side-channel timing attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates memory-hard password derivation and multi-megabyte matrix memory allocation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates data-independent and data-dependent memory access patterns across parallel lanes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates memory bus saturation defeating massively parallel graphics hardware."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sixty-four-megabyte memory allocation, thread lane scaling, and side-channel immunity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy / Insecure Hashing",
+        "rightLabel": "Modern Memory-Hard Architecture",
+        "leftHighlights": [
+          "Fast hash cracking risk",
+          "Length extension vulnerability",
+          "Hardware brute-force exposure",
+          "Timing side-channel leakage"
+        ],
+        "rightHighlights": [
+          "Immune sponge construction",
+          "Nested HMAC integrity",
+          "Memory-hard Argon2id RAM",
+          "Constant-time verification"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Password & Token Hashing Benchmark & Authentication Audit Suite",
+      "codeHash": "a9c0195aade2ee1147f357b85482144dc732a52f220e68273d9f7c9cbf3bc5d1",
+      "spec": {
+        "template": "compare",
+        "title": "Hashing & Credentials: Production Password & Token Hashing Benchmark & Authentication Audit Suite",
+        "left": {
+          "label": "Legacy / Insecure Hashing",
+          "content": [
+            "Fast cryptographic hashes allow billions of password guesses per second",
+            "Naive keyed hashing allows length extension forged signatures",
+            "CPU-only algorithms fail against specialized hardware cracking arrays",
+            "Standard string comparisons leak microsecond timing signals"
+          ]
+        },
+        "right": {
+          "label": "Modern Memory-Hard Architecture",
+          "content": [
+            "Sponge and tree hashes eliminate length extension vulnerabilities",
+            "Nested HMAC uses inner and outer padded keys for unforgeable integrity",
+            "Argon2id forces sixty-four-megabyte RAM allocation to defeat GPUs",
+            "Constant-time memory comparisons neutralize side-channel timing attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays production credential hashing benchmarks and token tampering audit suites."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection subjects authentication tokens to intentional single-byte mutations and monitors rejection."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates cryptographic proof-of-work resistance and immutable audit logging."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms instantaneous tamper interception, zero timing leakage, and enterprise security compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy / Insecure Hashing",
+        "rightLabel": "Modern Memory-Hard Architecture",
+        "leftHighlights": [
+          "Fast hash cracking risk",
+          "Length extension vulnerability",
+          "Hardware brute-force exposure",
+          "Timing side-channel leakage"
+        ],
+        "rightHighlights": [
+          "Immune sponge construction",
+          "Nested HMAC integrity",
+          "Memory-hard Argon2id RAM",
+          "Constant-time verification"
+        ]
+      }
+    }
+  ]
+}

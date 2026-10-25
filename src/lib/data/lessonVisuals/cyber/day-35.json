@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 35,
+  "promptSha": "a687253b8a70b8b98537e6e4b5012f6efc79004615be001974b339f2d2931904",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Hardware Security Module (HSM) Architecture & FIPS 140-3 Tamper Resistance",
+      "codeHash": "8a0bc757ff55a51403f4761e2a4bd467090746da805dfe5964833da8dbf2ed54",
+      "spec": {
+        "template": "compare",
+        "title": "Hardware Security & KMS: Hardware Security Module (HSM) Architecture & FIPS 140-3 Tamper Resistance",
+        "left": {
+          "label": "Insecure / Ad-hoc Cryptography",
+          "content": [
+            "Master keys stored in plaintext configuration files or operating system RAM",
+            "Direct HSM calls create multi-second latency bottlenecks across microservices",
+            "Unauthenticated ciphers and arbitrary nonces risk catastrophic keystream reuse",
+            "Plaintext audit logs can be manipulated by attackers to erase evidence"
+          ]
+        },
+        "right": {
+          "label": "Sovereign HSM & KMS Architecture",
+          "content": [
+            "FIPS certified HSMs enforce physical tamper zeroization in microseconds",
+            "Envelope encryption wraps local data keys for gigabit-speed parallel throughput",
+            "Unified facade mandates AEAD ciphers, automatic nonces, and memory zeroization",
+            "Merkle hash chaining provides mathematically immutable tamper-evident audit logs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays hardware security module tamper boundaries and master key lifecycle state machines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates physical zeroization sensor wires and cryptoprocessor isolation mechanisms."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates physical root of trust protection over vulnerable plaintext memory storage."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms state transitions, active zeroization circuitry readiness, and cryptographic compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Cryptography",
+        "rightLabel": "Sovereign HSM & KMS Architecture",
+        "leftHighlights": [
+          "Plaintext key exposure",
+          "HSM throughput bottleneck",
+          "Keystream reuse risk",
+          "Manipulable audit logs"
+        ],
+        "rightHighlights": [
+          "Tamper zeroization",
+          "Envelope performance",
+          "Unified AEAD facade",
+          "Merkle hash immutability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Key Hierarchy & Envelope Key Derivation Pipeline",
+      "codeHash": "751d94bbfc4d9d7d84a8593e0f4df956a5d86cf8c22352e72827bdb9b2170521",
+      "spec": {
+        "template": "compare",
+        "title": "Hardware Security & KMS: Master Key Hierarchy & Envelope Key Derivation Pipeline",
+        "left": {
+          "label": "Insecure / Ad-hoc Cryptography",
+          "content": [
+            "Master keys stored in plaintext configuration files or operating system RAM",
+            "Direct HSM calls create multi-second latency bottlenecks across microservices",
+            "Unauthenticated ciphers and arbitrary nonces risk catastrophic keystream reuse",
+            "Plaintext audit logs can be manipulated by attackers to erase evidence"
+          ]
+        },
+        "right": {
+          "label": "Sovereign HSM & KMS Architecture",
+          "content": [
+            "FIPS certified HSMs enforce physical tamper zeroization in microseconds",
+            "Envelope encryption wraps local data keys for gigabit-speed parallel throughput",
+            "Unified facade mandates AEAD ciphers, automatic nonces, and memory zeroization",
+            "Merkle hash chaining provides mathematically immutable tamper-evident audit logs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates envelope key derivation pipelines and data encryption key wrapping hierarchies."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors local symmetric payload encryption and instantaneous in-memory plaintext zeroization."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates multi-gigabit throughput combined with centralized master key governance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms thirty-two-byte key wrapping, authenticated tag generation, and memory wiping."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Cryptography",
+        "rightLabel": "Sovereign HSM & KMS Architecture",
+        "leftHighlights": [
+          "Plaintext key exposure",
+          "HSM throughput bottleneck",
+          "Keystream reuse risk",
+          "Manipulable audit logs"
+        ],
+        "rightHighlights": [
+          "Tamper zeroization",
+          "Envelope performance",
+          "Unified AEAD facade",
+          "Merkle hash immutability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Cryptographic Operations Engine: Multi-Cipher AEAD & Memory Zeroization",
+      "codeHash": "31de1175ce67c8e4caf04437fc7a7b15b27678708f5ac02c574d28dd68ea52c0",
+      "spec": {
+        "template": "compare",
+        "title": "Hardware Security & KMS: Cryptographic Operations Engine: Multi-Cipher AEAD & Memory Zeroization",
+        "left": {
+          "label": "Insecure / Ad-hoc Cryptography",
+          "content": [
+            "Master keys stored in plaintext configuration files or operating system RAM",
+            "Direct HSM calls create multi-second latency bottlenecks across microservices",
+            "Unauthenticated ciphers and arbitrary nonces risk catastrophic keystream reuse",
+            "Plaintext audit logs can be manipulated by attackers to erase evidence"
+          ]
+        },
+        "right": {
+          "label": "Sovereign HSM & KMS Architecture",
+          "content": [
+            "FIPS certified HSMs enforce physical tamper zeroization in microseconds",
+            "Envelope encryption wraps local data keys for gigabit-speed parallel throughput",
+            "Unified facade mandates AEAD ciphers, automatic nonces, and memory zeroization",
+            "Merkle hash chaining provides mathematically immutable tamper-evident audit logs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays unified cryptographic operations facade enforcing authenticated encryption standards."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates mandatory associated data binding and deterministic nonce generation safeguards."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of unauthenticated ciphers and memory leakage vulnerabilities."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms authenticated tag generation, side-channel immunity, and clean memory deallocation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Cryptography",
+        "rightLabel": "Sovereign HSM & KMS Architecture",
+        "leftHighlights": [
+          "Plaintext key exposure",
+          "HSM throughput bottleneck",
+          "Keystream reuse risk",
+          "Manipulable audit logs"
+        ],
+        "rightHighlights": [
+          "Tamper zeroization",
+          "Envelope performance",
+          "Unified AEAD facade",
+          "Merkle hash immutability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Policy-Based Access Governance & Merkle Hash-Chained Audit Logging",
+      "codeHash": "86affbab1df26b87ced0c5b75980ca000bfa6c702046a4b51b673e769d8e7fa5",
+      "spec": {
+        "template": "compare",
+        "title": "Hardware Security & KMS: Policy-Based Access Governance & Merkle Hash-Chained Audit Logging",
+        "left": {
+          "label": "Insecure / Ad-hoc Cryptography",
+          "content": [
+            "Master keys stored in plaintext configuration files or operating system RAM",
+            "Direct HSM calls create multi-second latency bottlenecks across microservices",
+            "Unauthenticated ciphers and arbitrary nonces risk catastrophic keystream reuse",
+            "Plaintext audit logs can be manipulated by attackers to erase evidence"
+          ]
+        },
+        "right": {
+          "label": "Sovereign HSM & KMS Architecture",
+          "content": [
+            "FIPS certified HSMs enforce physical tamper zeroization in microseconds",
+            "Envelope encryption wraps local data keys for gigabit-speed parallel throughput",
+            "Unified facade mandates AEAD ciphers, automatic nonces, and memory zeroization",
+            "Merkle hash chaining provides mathematically immutable tamper-evident audit logs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates attribute-based access governance and immutable hash-chained audit logging."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates cryptographic context bindings and sequential Merkle hash chain link verification."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mathematical proof of audit immutability over manipulable plaintext logs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms unbroken cryptographic hash chains, contextual policy enforcement, and security alerts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Cryptography",
+        "rightLabel": "Sovereign HSM & KMS Architecture",
+        "leftHighlights": [
+          "Plaintext key exposure",
+          "HSM throughput bottleneck",
+          "Keystream reuse risk",
+          "Manipulable audit logs"
+        ],
+        "rightHighlights": [
+          "Tamper zeroization",
+          "Envelope performance",
+          "Unified AEAD facade",
+          "Merkle hash immutability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 7 Capstone Benchmark & Sovereign KMS Platform Audit",
+      "codeHash": "101ce080b00ae63407c875ea12f451146debe8618b36bc4c120bfbe091fb2028",
+      "spec": {
+        "template": "compare",
+        "title": "Hardware Security & KMS: Milestone 7 Capstone Benchmark & Sovereign KMS Platform Audit",
+        "left": {
+          "label": "Insecure / Ad-hoc Cryptography",
+          "content": [
+            "Master keys stored in plaintext configuration files or operating system RAM",
+            "Direct HSM calls create multi-second latency bottlenecks across microservices",
+            "Unauthenticated ciphers and arbitrary nonces risk catastrophic keystream reuse",
+            "Plaintext audit logs can be manipulated by attackers to erase evidence"
+          ]
+        },
+        "right": {
+          "label": "Sovereign HSM & KMS Architecture",
+          "content": [
+            "FIPS certified HSMs enforce physical tamper zeroization in microseconds",
+            "Envelope encryption wraps local data keys for gigabit-speed parallel throughput",
+            "Unified facade mandates AEAD ciphers, automatic nonces, and memory zeroization",
+            "Merkle hash chaining provides mathematically immutable tamper-evident audit logs"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the grand milestone capstone audit certifying sovereign cryptographic platform readiness."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates end-to-end symmetric authenticated encryption, elliptic curves, hashing, and hardware roots."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete mathematical compliance across all foundational security benchmarks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms milestone certification, zero security regressions, and enterprise cryptographic mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Cryptography",
+        "rightLabel": "Sovereign HSM & KMS Architecture",
+        "leftHighlights": [
+          "Plaintext key exposure",
+          "HSM throughput bottleneck",
+          "Keystream reuse risk",
+          "Manipulable audit logs"
+        ],
+        "rightHighlights": [
+          "Tamper zeroization",
+          "Envelope performance",
+          "Unified AEAD facade",
+          "Merkle hash immutability"
+        ]
+      }
+    }
+  ]
+}

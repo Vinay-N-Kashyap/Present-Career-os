@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 32,
+  "promptSha": "863f1b1029a014246b8893eea6b191550badaf0d192988b69cc0f970da6be68e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Asymmetric Cryptography Foundations & Key Size Scaling: RSA vs Elliptic Curves",
+      "codeHash": "3d81533f9c9819681cd2df23c34a56292871baa170d9f250299435a381588efa",
+      "spec": {
+        "template": "compare",
+        "title": "Asymmetric Cryptography: Asymmetric Cryptography Foundations & Key Size Scaling: RSA vs Elliptic Curves",
+        "left": {
+          "label": "Legacy Public-Key Architectures",
+          "content": [
+            "Bloated RSA keys consume excessive CPU cycles and packet bandwidth",
+            "Static key exchanges expose historical traffic to retrospective decryption",
+            "ECDSA random nonce failures leak master private signing keys",
+            "Direct asymmetric bulk encryption exhausts server compute resources"
+          ]
+        },
+        "right": {
+          "label": "Modern Elliptic Curve Architecture",
+          "content": [
+            "Curve25519 delivers high security with compact thirty-two-byte keys",
+            "Ephemeral ECDHE derives session secrets and enforces forward secrecy",
+            "Ed25519 derives nonces deterministically to eliminate RNG bias",
+            "Hybrid envelope encryption wraps symmetric keys for gigabit speed"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays asymmetric cryptography key scaling and trapdoor function mathematical foundations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates integer factorization key explosion versus elliptic curve discrete logarithm efficiency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates equivalent security margins with significantly smaller key sizes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms compact key representations, reduced network overhead, and high computational efficiency."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Public-Key Architectures",
+        "rightLabel": "Modern Elliptic Curve Architecture",
+        "leftHighlights": [
+          "Bloated key overhead",
+          "Retrospective decryption risk",
+          "ECDSA nonce leakage",
+          "Asymmetric CPU exhaustion"
+        ],
+        "rightHighlights": [
+          "Compact thirty-two-byte keys",
+          "Ephemeral forward secrecy",
+          "Deterministic Ed25519 signing",
+          "Hybrid envelope performance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Elliptic Curve Diffie-Hellman (ECDH) & Ephemeral Forward Secrecy (PFS)",
+      "codeHash": "a80a82fd4d8d4c220705a5ee9fb8bed82d4ebc16517564102db3540bb2846620",
+      "spec": {
+        "template": "compare",
+        "title": "Asymmetric Cryptography: Elliptic Curve Diffie-Hellman (ECDH) & Ephemeral Forward Secrecy (PFS)",
+        "left": {
+          "label": "Legacy Public-Key Architectures",
+          "content": [
+            "Bloated RSA keys consume excessive CPU cycles and packet bandwidth",
+            "Static key exchanges expose historical traffic to retrospective decryption",
+            "ECDSA random nonce failures leak master private signing keys",
+            "Direct asymmetric bulk encryption exhausts server compute resources"
+          ]
+        },
+        "right": {
+          "label": "Modern Elliptic Curve Architecture",
+          "content": [
+            "Curve25519 delivers high security with compact thirty-two-byte keys",
+            "Ephemeral ECDHE derives session secrets and enforces forward secrecy",
+            "Ed25519 derives nonces deterministically to eliminate RNG bias",
+            "Hybrid envelope encryption wraps symmetric keys for gigabit speed"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates ephemeral Diffie-Hellman key exchange and perfect forward secrecy guarantees."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors independent shared secret derivation and immediate zeroization of ephemeral private keys."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates protection against retrospective decryption over static key exchange models."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms shared secret convergence, ephemeral key destruction, and historical session isolation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Public-Key Architectures",
+        "rightLabel": "Modern Elliptic Curve Architecture",
+        "leftHighlights": [
+          "Bloated key overhead",
+          "Retrospective decryption risk",
+          "ECDSA nonce leakage",
+          "Asymmetric CPU exhaustion"
+        ],
+        "rightHighlights": [
+          "Compact thirty-two-byte keys",
+          "Ephemeral forward secrecy",
+          "Deterministic Ed25519 signing",
+          "Hybrid envelope performance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Digital Signatures & Ed25519: Deterministic Nonces vs ECDSA Nonce-Reuse Flaws",
+      "codeHash": "0b65d33f378876c8d6c117cc84124224f3bc77d8914c2122a5e188ec37388060",
+      "spec": {
+        "template": "compare",
+        "title": "Asymmetric Cryptography: Digital Signatures & Ed25519: Deterministic Nonces vs ECDSA Nonce-Reuse Flaws",
+        "left": {
+          "label": "Legacy Public-Key Architectures",
+          "content": [
+            "Bloated RSA keys consume excessive CPU cycles and packet bandwidth",
+            "Static key exchanges expose historical traffic to retrospective decryption",
+            "ECDSA random nonce failures leak master private signing keys",
+            "Direct asymmetric bulk encryption exhausts server compute resources"
+          ]
+        },
+        "right": {
+          "label": "Modern Elliptic Curve Architecture",
+          "content": [
+            "Curve25519 delivers high security with compact thirty-two-byte keys",
+            "Ephemeral ECDHE derives session secrets and enforces forward secrecy",
+            "Ed25519 derives nonces deterministically to eliminate RNG bias",
+            "Hybrid envelope encryption wraps symmetric keys for gigabit speed"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays deterministic digital signatures and side-channel immune curve operations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates deterministic nonce derivation from private key and message hash components."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total elimination of random number generator bias and nonce reuse vulnerabilities."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sixty-four-byte signature generation, fast verification, and tamper detection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Public-Key Architectures",
+        "rightLabel": "Modern Elliptic Curve Architecture",
+        "leftHighlights": [
+          "Bloated key overhead",
+          "Retrospective decryption risk",
+          "ECDSA nonce leakage",
+          "Asymmetric CPU exhaustion"
+        ],
+        "rightHighlights": [
+          "Compact thirty-two-byte keys",
+          "Ephemeral forward secrecy",
+          "Deterministic Ed25519 signing",
+          "Hybrid envelope performance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Hybrid Cryptosystems & Envelope Encryption Architecture",
+      "codeHash": "0d6cfe962520ea7a4a41dce6af0f0f4001fe4479160a472046f5b61ef005fad1",
+      "spec": {
+        "template": "compare",
+        "title": "Asymmetric Cryptography: Hybrid Cryptosystems & Envelope Encryption Architecture",
+        "left": {
+          "label": "Legacy Public-Key Architectures",
+          "content": [
+            "Bloated RSA keys consume excessive CPU cycles and packet bandwidth",
+            "Static key exchanges expose historical traffic to retrospective decryption",
+            "ECDSA random nonce failures leak master private signing keys",
+            "Direct asymmetric bulk encryption exhausts server compute resources"
+          ]
+        },
+        "right": {
+          "label": "Modern Elliptic Curve Architecture",
+          "content": [
+            "Curve25519 delivers high security with compact thirty-two-byte keys",
+            "Ephemeral ECDHE derives session secrets and enforces forward secrecy",
+            "Ed25519 derives nonces deterministically to eliminate RNG bias",
+            "Hybrid envelope encryption wraps symmetric keys for gigabit speed"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates hybrid cryptosystems uniting asymmetric key encapsulation with symmetric encryption."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates data encryption key wrapping under master keys and payload encryption via counter modes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates multi-gigabit throughput combined with zero-shared-secret access governance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms envelope bundling, authenticated tag attachment, and instant key revocation capabilities."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Public-Key Architectures",
+        "rightLabel": "Modern Elliptic Curve Architecture",
+        "leftHighlights": [
+          "Bloated key overhead",
+          "Retrospective decryption risk",
+          "ECDSA nonce leakage",
+          "Asymmetric CPU exhaustion"
+        ],
+        "rightHighlights": [
+          "Compact thirty-two-byte keys",
+          "Ephemeral forward secrecy",
+          "Deterministic Ed25519 signing",
+          "Hybrid envelope performance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Asymmetric Benchmark & Ephemeral Forward Secrecy Audit Suite",
+      "codeHash": "8a3f118e6f1db35dad7dc4841b1ea06b2bf754abfed9457b0c977a34549f9147",
+      "spec": {
+        "template": "compare",
+        "title": "Asymmetric Cryptography: Production Asymmetric Benchmark & Ephemeral Forward Secrecy Audit Suite",
+        "left": {
+          "label": "Legacy Public-Key Architectures",
+          "content": [
+            "Bloated RSA keys consume excessive CPU cycles and packet bandwidth",
+            "Static key exchanges expose historical traffic to retrospective decryption",
+            "ECDSA random nonce failures leak master private signing keys",
+            "Direct asymmetric bulk encryption exhausts server compute resources"
+          ]
+        },
+        "right": {
+          "label": "Modern Elliptic Curve Architecture",
+          "content": [
+            "Curve25519 delivers high security with compact thirty-two-byte keys",
+            "Ephemeral ECDHE derives session secrets and enforces forward secrecy",
+            "Ed25519 derives nonces deterministically to eliminate RNG bias",
+            "Hybrid envelope encryption wraps symmetric keys for gigabit speed"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays production asymmetric cipher benchmarks and automated forward secrecy verification."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits sequential ephemeral handshakes to confirm absolute cryptographic key independence."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates hardware-rooted identity attestation and mutual authentication compliance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero cross-session correlation, perfect forward secrecy, and enterprise readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Public-Key Architectures",
+        "rightLabel": "Modern Elliptic Curve Architecture",
+        "leftHighlights": [
+          "Bloated key overhead",
+          "Retrospective decryption risk",
+          "ECDSA nonce leakage",
+          "Asymmetric CPU exhaustion"
+        ],
+        "rightHighlights": [
+          "Compact thirty-two-byte keys",
+          "Ephemeral forward secrecy",
+          "Deterministic Ed25519 signing",
+          "Hybrid envelope performance"
+        ]
+      }
+    }
+  ]
+}

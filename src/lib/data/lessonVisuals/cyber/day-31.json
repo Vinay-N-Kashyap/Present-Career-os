@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 31,
+  "promptSha": "dd7364fe6cc78574bcea20fe32826788b5868b2348c3fcc8fcae305ad7106913",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Block Ciphers & Operational Modes: ECB Determinism, CBC Padding Oracles & CTR Streams",
+      "codeHash": "df3496f6c751075bd5065729353a2de9b4ec75bd0e2438947074d7fa90f2dfbc",
+      "spec": {
+        "template": "compare",
+        "title": "Symmetric Cryptography: Block Ciphers & Operational Modes: ECB Determinism, CBC Padding Oracles & CTR Streams",
+        "left": {
+          "label": "Insecure / Legacy Encryption",
+          "content": [
+            "Electronic codebook preserves identical ciphertext blocks and leaks patterns",
+            "Unauthenticated ciphers allow bit-flipping attacks in transit",
+            "Table-based implementations suffer cache-timing side-channel attacks",
+            "Reusing nonces cancels keystreams and completely exposes plaintexts"
+          ]
+        },
+        "right": {
+          "label": "Modern Authenticated Cryptography",
+          "content": [
+            "Counter modes transform block ciphers into parallel stream ciphers",
+            "AEAD generates unforgeable polynomial authentication tags over payload",
+            "ChaCha20 uses constant-time register operations immune to timing attacks",
+            "Atomic nonce tracking and synthetic vectors prevent keystream reuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays symmetric block cipher operational modes and pattern leakage characteristics."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates electronic codebook deterministic output versus counter mode randomized keystreams."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of structural leakage and padding oracle vulnerabilities."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms randomized keystream generation, zero padding overhead, and parallel execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy Encryption",
+        "rightLabel": "Modern Authenticated Cryptography",
+        "leftHighlights": [
+          "Deterministic pattern leakage",
+          "Bit-flipping vulnerability",
+          "Cache-timing exposure",
+          "Keystream cancellation"
+        ],
+        "rightHighlights": [
+          "Counter mode parallelism",
+          "Unforgeable AEAD tags",
+          "Constant-time register ARX",
+          "Atomic nonce enforcement"
+        ]
+      }
+    },
+    {
+      "partTitle": "Authenticated Encryption with Associated Data (AEAD) & AES-256-GCM Mathematics",
+      "codeHash": "54b0c242439bb8024482cb3a0c44cf3c4aa746aa9532f5ef8a28dfc94f90d288",
+      "spec": {
+        "template": "compare",
+        "title": "Symmetric Cryptography: Authenticated Encryption with Associated Data (AEAD) & AES-256-GCM Mathematics",
+        "left": {
+          "label": "Insecure / Legacy Encryption",
+          "content": [
+            "Electronic codebook preserves identical ciphertext blocks and leaks patterns",
+            "Unauthenticated ciphers allow bit-flipping attacks in transit",
+            "Table-based implementations suffer cache-timing side-channel attacks",
+            "Reusing nonces cancels keystreams and completely exposes plaintexts"
+          ]
+        },
+        "right": {
+          "label": "Modern Authenticated Cryptography",
+          "content": [
+            "Counter modes transform block ciphers into parallel stream ciphers",
+            "AEAD generates unforgeable polynomial authentication tags over payload",
+            "ChaCha20 uses constant-time register operations immune to timing attacks",
+            "Atomic nonce tracking and synthetic vectors prevent keystream reuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates authenticated encryption with associated data combining confidentiality and authenticity."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors polynomial authentication tag calculation over encrypted payloads and routing headers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unforgeable integrity verification over raw unauthenticated block ciphers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sixteenth-byte tag generation, associated data binding, and instantaneous tamper rejection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy Encryption",
+        "rightLabel": "Modern Authenticated Cryptography",
+        "leftHighlights": [
+          "Deterministic pattern leakage",
+          "Bit-flipping vulnerability",
+          "Cache-timing exposure",
+          "Keystream cancellation"
+        ],
+        "rightHighlights": [
+          "Counter mode parallelism",
+          "Unforgeable AEAD tags",
+          "Constant-time register ARX",
+          "Atomic nonce enforcement"
+        ]
+      }
+    },
+    {
+      "partTitle": "Software Stream Ciphers & ChaCha20-Poly1305: Constant-Time ARX Architecture",
+      "codeHash": "4cb4547830df1968edaf414bce5d16a5d2a2b873cf263fb7bd17415dc1e852bb",
+      "spec": {
+        "template": "compare",
+        "title": "Symmetric Cryptography: Software Stream Ciphers & ChaCha20-Poly1305: Constant-Time ARX Architecture",
+        "left": {
+          "label": "Insecure / Legacy Encryption",
+          "content": [
+            "Electronic codebook preserves identical ciphertext blocks and leaks patterns",
+            "Unauthenticated ciphers allow bit-flipping attacks in transit",
+            "Table-based implementations suffer cache-timing side-channel attacks",
+            "Reusing nonces cancels keystreams and completely exposes plaintexts"
+          ]
+        },
+        "right": {
+          "label": "Modern Authenticated Cryptography",
+          "content": [
+            "Counter modes transform block ciphers into parallel stream ciphers",
+            "AEAD generates unforgeable polynomial authentication tags over payload",
+            "ChaCha20 uses constant-time register operations immune to timing attacks",
+            "Atomic nonce tracking and synthetic vectors prevent keystream reuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays constant-time software stream encryption utilizing register add rotate xor operations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates state matrix mixing and polynomial authenticator evaluation without memory lookups."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete immunity to cache-timing side-channel attacks on heterogeneous hardware."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms constant execution latency, tag equivalence, and mobile battery optimization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy Encryption",
+        "rightLabel": "Modern Authenticated Cryptography",
+        "leftHighlights": [
+          "Deterministic pattern leakage",
+          "Bit-flipping vulnerability",
+          "Cache-timing exposure",
+          "Keystream cancellation"
+        ],
+        "rightHighlights": [
+          "Counter mode parallelism",
+          "Unforgeable AEAD tags",
+          "Constant-time register ARX",
+          "Atomic nonce enforcement"
+        ]
+      }
+    },
+    {
+      "partTitle": "Nonce Invariants & Catastrophic Keystream Reuse Vulnerabilities",
+      "codeHash": "5a6f291cf4de24d9b1feb54c4a883227028b23378b7a02a4857ae70fa19b8e29",
+      "spec": {
+        "template": "compare",
+        "title": "Symmetric Cryptography: Nonce Invariants & Catastrophic Keystream Reuse Vulnerabilities",
+        "left": {
+          "label": "Insecure / Legacy Encryption",
+          "content": [
+            "Electronic codebook preserves identical ciphertext blocks and leaks patterns",
+            "Unauthenticated ciphers allow bit-flipping attacks in transit",
+            "Table-based implementations suffer cache-timing side-channel attacks",
+            "Reusing nonces cancels keystreams and completely exposes plaintexts"
+          ]
+        },
+        "right": {
+          "label": "Modern Authenticated Cryptography",
+          "content": [
+            "Counter modes transform block ciphers into parallel stream ciphers",
+            "AEAD generates unforgeable polynomial authentication tags over payload",
+            "ChaCha20 uses constant-time register operations immune to timing attacks",
+            "Atomic nonce tracking and synthetic vectors prevent keystream reuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays nonce safety enforcement mechanisms and keystream collision prevention safeguards."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates duplicate nonce detection and prevents catastrophic keystream cancellation vulnerabilities."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates monotonic counter progression and synthetic initialization vector safety."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms immediate rejection of duplicate nonces, zero keystream exposure, and safety alerts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy Encryption",
+        "rightLabel": "Modern Authenticated Cryptography",
+        "leftHighlights": [
+          "Deterministic pattern leakage",
+          "Bit-flipping vulnerability",
+          "Cache-timing exposure",
+          "Keystream cancellation"
+        ],
+        "rightHighlights": [
+          "Counter mode parallelism",
+          "Unforgeable AEAD tags",
+          "Constant-time register ARX",
+          "Atomic nonce enforcement"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Symmetric Cryptography Benchmark & AEAD Tamper Audit Suite",
+      "codeHash": "3234a19851dc524b5298f6e1099b2ed4e6af8a0073641dfa24e78dc7ea23ce16",
+      "spec": {
+        "template": "compare",
+        "title": "Symmetric Cryptography: Production Symmetric Cryptography Benchmark & AEAD Tamper Audit Suite",
+        "left": {
+          "label": "Insecure / Legacy Encryption",
+          "content": [
+            "Electronic codebook preserves identical ciphertext blocks and leaks patterns",
+            "Unauthenticated ciphers allow bit-flipping attacks in transit",
+            "Table-based implementations suffer cache-timing side-channel attacks",
+            "Reusing nonces cancels keystreams and completely exposes plaintexts"
+          ]
+        },
+        "right": {
+          "label": "Modern Authenticated Cryptography",
+          "content": [
+            "Counter modes transform block ciphers into parallel stream ciphers",
+            "AEAD generates unforgeable polynomial authentication tags over payload",
+            "ChaCha20 uses constant-time register operations immune to timing attacks",
+            "Atomic nonce tracking and synthetic vectors prevent keystream reuse"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production symmetric cipher benchmark and adversarial bit-flipping audit engine."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection subjects authenticated ciphertext to intentional single-bit mutations and monitors rejection."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mathematical tamper containment and constant-time memory comparisons."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total interception of corrupted payloads, zero memory leaks, and enterprise assurance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Legacy Encryption",
+        "rightLabel": "Modern Authenticated Cryptography",
+        "leftHighlights": [
+          "Deterministic pattern leakage",
+          "Bit-flipping vulnerability",
+          "Cache-timing exposure",
+          "Keystream cancellation"
+        ],
+        "rightHighlights": [
+          "Counter mode parallelism",
+          "Unforgeable AEAD tags",
+          "Constant-time register ARX",
+          "Atomic nonce enforcement"
+        ]
+      }
+    }
+  ]
+}
