@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "fullstack-js",
+  "day": 38,
+  "promptSha": "f473d24794a4d573df9765f82e3b73f3ea479265c22dce7315638b29268e2790",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "HTTP/2 Protocol Architecture: Binary Framing, Streams, Multiplexing & HPACK Header Compression",
+      "codeHash": "5bcce2b02a3f7df39f139c9a56d2045ad6e28ad95387351bc83a938fc44fa097",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: HTTP/ Protocol Architecture: Binary Framing, Streams, Multiplexing & HPACK Header Compression",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "HPACK Static & Dynamic Tables: Differential Contextual Header Compression",
+      "codeHash": "5e17dbd16e1507ab8221713ae1059a86e5a07249256a128a0de7b02b6eeee46c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: HPACK Static & Dynamic Tables: Differential Contextual Header Compression",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "gRPC & Protocol Buffers (Protobuf) Streaming: Unary, Client-Streaming, Server-Streaming & Bidirectional RPCs",
+      "codeHash": "241db8c25d68f753be3033f651835eddb47ae7b6097791c71f97fe649d4fab36",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: gRPC & Protocol Buffers (Protobuf) Streaming: Unary, Client-Streaming, Server-Streaming & Bidirectional RPCs",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "HTTP/3 & QUIC Transports: UDP Foundations, Zero-RTT Handshakes & Head-of-Line Blocking Elimination",
+      "codeHash": "b48fc20e8f4354a7cd05ec0054b7ca70e926ea6fff0b43764d194e68f8f91480",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: HTTP/ & QUIC Transports: UDP Foundations, Zero-RTT Handshakes & Head-of-Line Blocking Elimination",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "TLS 1.3 Handshake Optimization & Session Resumption: Pre-Shared Keys (PSK) & Cryptographic Session Tickets",
+      "codeHash": "1ffb98e768d97a960b235469e8d873a353d03ae38ade1a571a91b38bf521510c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: TLS . Handshake Optimization & Session Resumption: Pre-Shared Keys (PSK) & Cryptographic Session Tickets",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    }
+  ]
+}
