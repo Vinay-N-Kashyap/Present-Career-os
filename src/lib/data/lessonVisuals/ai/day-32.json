@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 32,
+  "entries": [
+    {
+      "partTitle": "The Memory-Bandwidth Bottleneck in Autoregressive Generation & Speculative Foundations",
+      "codeHash": "318ad075b2bde4680406f62f2f8279e547fe06cb6bf4ffc7823801ce1548a667",
+      "filled": {
+        "template": "table",
+        "title": "Arithmetic Intensity of Decoding and Speculative Verification.",
+        "columns": [
+          "Execution Paradigm",
+          "Arithmetic Intensity",
+          "Hardware Limiting Factor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autoregressive token decoding exhibits severe memory bound bottlenecks.",
+            "rows": [
+              [
+                "Autoregressive Generation",
+                "One FLOP Per Byte",
+                "Memory Bandwidth Bound"
+              ],
+              [
+                "Speculative Verification",
+                "Four FLOPs Per Byte",
+                "Compute Saturation Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reading foundation model weights consumes vast memory interconnect time.",
+            "rows": [
+              [
+                "Single Token Pass",
+                "Fourteen Gigabytes Read",
+                "Seven Milliseconds Stall"
+              ],
+              [
+                "Multi Token Parallel",
+                "Fourteen Gigabytes Read",
+                "Seven Milliseconds Verified"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Speculative decoding packs multiple candidate packages for verification.",
+            "rows": [
+              [
+                "Single Item Transfer",
+                "Minimal Operational Intensity",
+                "Severely Underutilized Cores"
+              ],
+              [
+                "Batched Packet Verification",
+                "High Operational Intensity",
+                "Maximized Tensor Core Saturation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate arithmetic intensity across different batch sizes and metrics.",
+            "rows": [
+              [
+                "Batch Size One",
+                "One Point Zero FLOPs Per Byte",
+                "Pure Memory Bound"
+              ],
+              [
+                "Batch Size Four",
+                "Four Point Zero FLOPs Per Byte",
+                "Balanced Compute Pipeline"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Arithmetic Intensity of Decoding and Speculative Verification.",
+        "columns": [
+          "Execution Paradigm",
+          "Arithmetic Intensity",
+          "Hardware Limiting Factor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Autoregressive token decoding exhibits severe memory bound bottlenecks.",
+            "rows": [
+              [
+                "Autoregressive Generation",
+                "One FLOP Per Byte",
+                "Memory Bandwidth Bound"
+              ],
+              [
+                "Speculative Verification",
+                "Four FLOPs Per Byte",
+                "Compute Saturation Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reading foundation model weights consumes vast memory interconnect time.",
+            "rows": [
+              [
+                "Single Token Pass",
+                "Fourteen Gigabytes Read",
+                "Seven Milliseconds Stall"
+              ],
+              [
+                "Multi Token Parallel",
+                "Fourteen Gigabytes Read",
+                "Seven Milliseconds Verified"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Speculative decoding packs multiple candidate packages for verification.",
+            "rows": [
+              [
+                "Single Item Transfer",
+                "Minimal Operational Intensity",
+                "Severely Underutilized Cores"
+              ],
+              [
+                "Batched Packet Verification",
+                "High Operational Intensity",
+                "Maximized Tensor Core Saturation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate arithmetic intensity across different batch sizes and metrics.",
+            "rows": [
+              [
+                "Batch Size One",
+                "One Point Zero FLOPs Per Byte",
+                "Pure Memory Bound"
+              ],
+              [
+                "Batch Size Four",
+                "Four Point Zero FLOPs Per Byte",
+                "Balanced Compute Pipeline"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Speculative Rejection Sampling Mathematics & Mathematical Invariants",
+      "codeHash": "58706a224538247d0b05f167de4da759bffe9ef8ac098be507b4715580cbaacf",
+      "filled": {
+        "template": "table",
+        "title": "Speculative Rejection Sampling Mathematics and Recovery Sampling.",
+        "columns": [
+          "Sampling Stage",
+          "Governing Formula",
+          "Statistical Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rejection sampling algorithm preserves exact output target distribution.",
+            "rows": [
+              [
+                "Draft Token Proposal",
+                "Sample From Distribution q",
+                "Provisional Candidate Generated"
+              ],
+              [
+                "Target Verification",
+                "Probability Ratio Test",
+                "Exact Acceptance Gate"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Stochastic acceptance gating evaluates probability ratio across models.",
+            "rows": [
+              [
+                "Ratio Exceeds Unity",
+                "Probability Clamped To One",
+                "Deterministic Acceptance"
+              ],
+              [
+                "Fractional Ratio",
+                "Stochastic Gating Test",
+                "Fair Distribution Preserved"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quality inspector immediately validates draft items or selects fallback.",
+            "rows": [
+              [
+                "Accepted Candidate",
+                "Keep Draft Token In Sequence",
+                "Advance Generation Counter"
+              ],
+              [
+                "Rejected Candidate",
+                "Sample From Residual Distribution",
+                "Zero Distribution Divergence"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Test extreme probability divergence verifying recovery token selection.",
+            "rows": [
+              [
+                "High Divergence Test",
+                "Rejection Triggered Cleanly",
+                "Recovery Token Drawn"
+              ],
+              [
+                "Low Divergence Test",
+                "Candidate Accepted Instantly",
+                "Peak Verification Acceleration"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Speculative Rejection Sampling Mathematics and Recovery Sampling.",
+        "columns": [
+          "Sampling Stage",
+          "Governing Formula",
+          "Statistical Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rejection sampling algorithm preserves exact output target distribution.",
+            "rows": [
+              [
+                "Draft Token Proposal",
+                "Sample From Distribution q",
+                "Provisional Candidate Generated"
+              ],
+              [
+                "Target Verification",
+                "Probability Ratio Test",
+                "Exact Acceptance Gate"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Stochastic acceptance gating evaluates probability ratio across models.",
+            "rows": [
+              [
+                "Ratio Exceeds Unity",
+                "Probability Clamped To One",
+                "Deterministic Acceptance"
+              ],
+              [
+                "Fractional Ratio",
+                "Stochastic Gating Test",
+                "Fair Distribution Preserved"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quality inspector immediately validates draft items or selects fallback.",
+            "rows": [
+              [
+                "Accepted Candidate",
+                "Keep Draft Token In Sequence",
+                "Advance Generation Counter"
+              ],
+              [
+                "Rejected Candidate",
+                "Sample From Residual Distribution",
+                "Zero Distribution Divergence"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Test extreme probability divergence verifying recovery token selection.",
+            "rows": [
+              [
+                "High Divergence Test",
+                "Rejection Triggered Cleanly",
+                "Recovery Token Drawn"
+              ],
+              [
+                "Low Divergence Test",
+                "Candidate Accepted Instantly",
+                "Peak Verification Acceleration"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Medusa Multi-Head Drafting: Self-Speculative Prediction Without Auxiliary Draft Models",
+      "codeHash": "2fb8f08fb3ef09c51ede9676d48bec91e7eea4210688a0f22c118b784994dc45",
+      "filled": {
+        "template": "table",
+        "title": "Medusa Multi Head Self Speculation and Tree Attention Masking.",
+        "columns": [
+          "Draft Architecture",
+          "Memory Overhead",
+          "Candidate Topology"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Auxiliary draft models introduce operational complexity and memory cost.",
+            "rows": [
+              [
+                "Dual Model Speculation",
+                "Dual KV Cache Allocated",
+                "Linear Token Chains"
+              ],
+              [
+                "Medusa Self Speculation",
+                "Zero Auxiliary Model Footprint",
+                "Branching Candidate Tree"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Medusa architecture adds lightweight multi head predictors to backbone.",
+            "rows": [
+              [
+                "Backbone Hidden State",
+                "Shared Across All Medusa Heads",
+                "Zero Redundant Encodings"
+              ],
+              [
+                "Head Predictions",
+                "Simultaneous Parallel Emissions",
+                "Multi Token Speculation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cognitive reflexes anticipate multiple words ahead across thought branches.",
+            "rows": [
+              [
+                "Linear Candidate Chain",
+                "Single Path Evaluated",
+                "High Rejection Vulnerability"
+              ],
+              [
+                "Medusa Tree Topology",
+                "Multiple Branches Verified",
+                "High Acceptance Resilience"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect medusa candidate tree and calculate cumulative confidence.",
+            "rows": [
+              [
+                "Candidate Path One",
+                "Autonomous Agent Architecture",
+                "Fifty Four Percent Confidence"
+              ],
+              [
+                "Candidate Path Two",
+                "Autonomous Agent Framework",
+                "Fourteen Percent Confidence"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Medusa Multi Head Self Speculation and Tree Attention Masking.",
+        "columns": [
+          "Draft Architecture",
+          "Memory Overhead",
+          "Candidate Topology"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Auxiliary draft models introduce operational complexity and memory cost.",
+            "rows": [
+              [
+                "Dual Model Speculation",
+                "Dual KV Cache Allocated",
+                "Linear Token Chains"
+              ],
+              [
+                "Medusa Self Speculation",
+                "Zero Auxiliary Model Footprint",
+                "Branching Candidate Tree"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Medusa architecture adds lightweight multi head predictors to backbone.",
+            "rows": [
+              [
+                "Backbone Hidden State",
+                "Shared Across All Medusa Heads",
+                "Zero Redundant Encodings"
+              ],
+              [
+                "Head Predictions",
+                "Simultaneous Parallel Emissions",
+                "Multi Token Speculation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cognitive reflexes anticipate multiple words ahead across thought branches.",
+            "rows": [
+              [
+                "Linear Candidate Chain",
+                "Single Path Evaluated",
+                "High Rejection Vulnerability"
+              ],
+              [
+                "Medusa Tree Topology",
+                "Multiple Branches Verified",
+                "High Acceptance Resilience"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect medusa candidate tree and calculate cumulative confidence.",
+            "rows": [
+              [
+                "Candidate Path One",
+                "Autonomous Agent Architecture",
+                "Fifty Four Percent Confidence"
+              ],
+              [
+                "Candidate Path Two",
+                "Autonomous Agent Framework",
+                "Fourteen Percent Confidence"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Draft Length Control, Acceptance Rate Feedback & Tree-Attention Masking",
+      "codeHash": "dbe7ab4675fb5e2c41c16938e5ad8a9aacbbec199ee207a6b642b082b556b469",
+      "filled": {
+        "template": "table",
+        "title": "Dynamic Draft Controller and Adaptive Tree Pruning Topology.",
+        "columns": [
+          "Acceptance Level",
+          "Recommended Draft Length",
+          "Expected Speedup"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic draft controller monitors instantaneous acceptance rate telemetry.",
+            "rows": [
+              [
+                "High Acceptance Rate",
+                "Draft Length Eight Selected",
+                "Over Three Times Speedup"
+              ],
+              [
+                "Moderate Acceptance Rate",
+                "Draft Length Four Selected",
+                "Two Times Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Theoretical speedup equations balance accepted tokens against draft cost.",
+            "rows": [
+              [
+                "Low Acceptance Rate",
+                "Draft Length Two Selected",
+                "Thirty Four Percent Speedup"
+              ],
+              [
+                "Poor Alignment Regime",
+                "Fallback To Baseline Decoding",
+                "Zero Penalty Incurred"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Adaptive controllers choose wider routes only when paths are clear.",
+            "rows": [
+              [
+                "Uncongested Highway",
+                "Wide Speculative Tree Deployed",
+                "Maximum Parallel Yield"
+              ],
+              [
+                "Congested Urban Street",
+                "Narrow Direct Path Maintained",
+                "Zero Wasted Computation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tune acceptance rate parameter and observe recommended draft length.",
+            "rows": [
+              [
+                "Parameter Setting Low",
+                "Conservative Draft Budget",
+                "Safe Minimum Acceleration"
+              ],
+              [
+                "Parameter Setting High",
+                "Aggressive Tree Speculation",
+                "Peak Throughput Realization"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Dynamic Draft Controller and Adaptive Tree Pruning Topology.",
+        "columns": [
+          "Acceptance Level",
+          "Recommended Draft Length",
+          "Expected Speedup"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Dynamic draft controller monitors instantaneous acceptance rate telemetry.",
+            "rows": [
+              [
+                "High Acceptance Rate",
+                "Draft Length Eight Selected",
+                "Over Three Times Speedup"
+              ],
+              [
+                "Moderate Acceptance Rate",
+                "Draft Length Four Selected",
+                "Two Times Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Theoretical speedup equations balance accepted tokens against draft cost.",
+            "rows": [
+              [
+                "Low Acceptance Rate",
+                "Draft Length Two Selected",
+                "Thirty Four Percent Speedup"
+              ],
+              [
+                "Poor Alignment Regime",
+                "Fallback To Baseline Decoding",
+                "Zero Penalty Incurred"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Adaptive controllers choose wider routes only when paths are clear.",
+            "rows": [
+              [
+                "Uncongested Highway",
+                "Wide Speculative Tree Deployed",
+                "Maximum Parallel Yield"
+              ],
+              [
+                "Congested Urban Street",
+                "Narrow Direct Path Maintained",
+                "Zero Wasted Computation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tune acceptance rate parameter and observe recommended draft length.",
+            "rows": [
+              [
+                "Parameter Setting Low",
+                "Conservative Draft Budget",
+                "Safe Minimum Acceleration"
+              ],
+              [
+                "Parameter Setting High",
+                "Aggressive Tree Speculation",
+                "Peak Throughput Realization"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Production Serving Deployment, Telemetry Metrics & Serving Economics",
+      "codeHash": "701b57d40c6bfac06b59e3ee92a2f4f31b83060b28b5c8079df12cf42ac3d93c",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Serving Deployment Benchmarks and Observability Telemetry.",
+        "columns": [
+          "Serving Configuration",
+          "Inter Token Latency",
+          "Throughput Multiplier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise inference clusters integrate speculative decoding seamlessly.",
+            "rows": [
+              [
+                "vLLM Baseline Autoregressive",
+                "Twenty Eight Milliseconds",
+                "One Point Zero Baseline"
+              ],
+              [
+                "vLLM Dual Model Draft",
+                "Twelve Milliseconds",
+                "Two Point Three Times Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Distributed tensor parallelism synchronizes speculative tree ranks.",
+            "rows": [
+              [
+                "vLLM Medusa Tree Serving",
+                "Nine Milliseconds",
+                "Two Point Nine Times Speedup"
+              ],
+              [
+                "Tensor Parallel Eight Way",
+                "Ten Milliseconds",
+                "Synchronized Multi GPU Verification"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "High speed express train skips intermediate stops whenever verified.",
+            "rows": [
+              [
+                "Local Commuter Bus",
+                "Frequent Latency Interruptions",
+                "High Cumulative Delay"
+              ],
+              [
+                "Express Bullet Train",
+                "Continuous High Speed Transit",
+                "Minimal Turnaround Time"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Review telemetry metrics and compare wall clock speedup across engines.",
+            "rows": [
+              [
+                "Mean Acceptance Rate",
+                "Seventy Eight Percent Observed",
+                "Optimal Acceleration State"
+              ],
+              [
+                "Inter Token Latency",
+                "Sub Ten Milliseconds Stream",
+                "Zero Perceived Human Delay"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Serving Deployment Benchmarks and Observability Telemetry.",
+        "columns": [
+          "Serving Configuration",
+          "Inter Token Latency",
+          "Throughput Multiplier"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise inference clusters integrate speculative decoding seamlessly.",
+            "rows": [
+              [
+                "vLLM Baseline Autoregressive",
+                "Twenty Eight Milliseconds",
+                "One Point Zero Baseline"
+              ],
+              [
+                "vLLM Dual Model Draft",
+                "Twelve Milliseconds",
+                "Two Point Three Times Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Distributed tensor parallelism synchronizes speculative tree ranks.",
+            "rows": [
+              [
+                "vLLM Medusa Tree Serving",
+                "Nine Milliseconds",
+                "Two Point Nine Times Speedup"
+              ],
+              [
+                "Tensor Parallel Eight Way",
+                "Ten Milliseconds",
+                "Synchronized Multi GPU Verification"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "High speed express train skips intermediate stops whenever verified.",
+            "rows": [
+              [
+                "Local Commuter Bus",
+                "Frequent Latency Interruptions",
+                "High Cumulative Delay"
+              ],
+              [
+                "Express Bullet Train",
+                "Continuous High Speed Transit",
+                "Minimal Turnaround Time"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Review telemetry metrics and compare wall clock speedup across engines.",
+            "rows": [
+              [
+                "Mean Acceptance Rate",
+                "Seventy Eight Percent Observed",
+                "Optimal Acceleration State"
+              ],
+              [
+                "Inter Token Latency",
+                "Sub Ten Milliseconds Stream",
+                "Zero Perceived Human Delay"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
