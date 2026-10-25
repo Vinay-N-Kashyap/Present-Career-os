@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 34,
+  "entries": [
+    {
+      "partTitle": "Fraud Triangle, Presumed Fraud Risks in Revenue Recognition & Management Override",
+      "codeHash": "e9e244fad8d89fe122806052cf4bc58af7ddb646f607364b7ee5be50474763c5",
+      "spec": {
+        "template": "funnel",
+        "title": "Fraud Triangle, Presumed Fraud Risks i... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate financial reporting environment subject to fraud evaluation.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Fraud triangle analysis identifying executive pressures and motives.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Presumption of fraud in revenue recognition mandating forensic tests.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Heightened professional skepticism uncovering covert manipulations.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Journal Entry Testing (JET): Automated Data Analytics, Anomaly Filters & Weekend Entries",
+      "codeHash": "748f5cd1e24765cb30f00cb6467e2b913104870f39ac3dde7c6f6ab1777f818b",
+      "spec": {
+        "template": "funnel",
+        "title": "Journal Entry Testing (JET): Automated... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Massive general ledger databases containing millions of transactions.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated anomaly filters detecting weekend and executive entries.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Benford digital frequency analysis plotting leading digit patterns.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Surgically flagged journal lines subjected to voucher subpoena.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accounting Estimates & Retrospective Bias Reviews: ISA 540 / PCAOB AS 2501 Judgments",
+      "codeHash": "e97c90e750f45ed6f810fa39f9810a39681683d0cec25fb4435cb2ec5b55d1aa",
+      "spec": {
+        "template": "funnel",
+        "title": "Accounting Estimates & Retrospective B... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Subjective management accounting estimates and corporate provisions.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Retrospective reviews comparing past estimates to realized outcomes.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cookie jar reserve patterns exposed across alternating fiscal cycles.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Independent valuation ranges dismantling biased accounting reserves.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Significant Unusual Transactions & Whistleblower Inquiry Protocols",
+      "codeHash": "77e86043684aa915ca55b6693e60aa3e06c9e18bd45e3bdda3f9035b2ce02618",
+      "spec": {
+        "template": "funnel",
+        "title": "Significant Unusual Transactions & Whi... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Complex corporate transactions negotiated outside ordinary operations.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Forensic investigations scrutinizing counterparty economic substance.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Confidential whistleblower allegations corroborated by audit teams.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Decisive governance escalations shielding investors from sham schemes.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Fraud Detection & Automated Journal Entry Testing (JET) Simulator",
+      "codeHash": "740bf8139fe494205b1f13b3e1225bf8e44541283f80adc186d3372e96b3a78f",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Fraud Detection & Automa... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise transaction populations scanned by forensic engines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Multi factor algorithms synthesizing anomalies and biased reserves.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated management override alerts flagging critical exposures.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive fraud dossier empowering independent board actions.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

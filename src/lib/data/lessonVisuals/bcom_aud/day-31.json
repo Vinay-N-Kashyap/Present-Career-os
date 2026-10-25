@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 31,
+  "entries": [
+    {
+      "partTitle": "Regulatory Architecture of ISA 315 & PCAOB AS 2110: Inherent Risk Spectrum & Control Risk",
+      "codeHash": "fcb0b0fbc1cb454bad0896ac41f3eec8728d028946973deceff5e4616b954bc8",
+      "spec": {
+        "template": "funnel",
+        "title": "Regulatory Architecture of ISA 315 & P... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Gross transactional volume passing into statutory assurance reviews.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Spectrum of inherent risk mapping complexity and subjective estimates.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audit risk model deriving allowable detection risk for accounts.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Surgically focused substantive testing plans protecting public markets.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "IT Environment & General IT Controls (GITCs): Automated Logic, Interfaces & Scaled Entity Review",
+      "codeHash": "25fbf560ec3759318985f970c689d8435203b1153f44f2526c62ffe177131729",
+      "spec": {
+        "template": "funnel",
+        "title": "IT Environment & General IT Controls (... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise resource planning databases recording commercial journal lines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "General IT controls securing logical access and change authorizations.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated application controls verified through infrastructure testing.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reliable automated processing reducing substantive sample sizes.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Significant Risks, Relevant Assertions & Financial Statement Level vs Assertion Level RoMM",
+      "codeHash": "b6043c4ece000b14f7f539f1d510575a1cb3a9945e3ecacd617cfcbcadfc4a65",
+      "spec": {
+        "template": "funnel",
+        "title": "Significant Risks, Relevant Assertions... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Broad financial statement accounts evaluated by external assurance teams.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Assertion level risk traceability mapping occurrence and valuation.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Significant risks isolated for specialized forensic modeling review.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transparent audit paper trail satisfying international oversight bodies.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Business Model Risk Decomposition: Macro Pressures, Complex Financing & Related Parties",
+      "codeHash": "bb3d3dfd92ddd0369d98a3836e96179a0dbf256ac114557600aa44d687a215bc",
+      "spec": {
+        "template": "funnel",
+        "title": "Business Model Risk Decomposition: Mac... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate business model interacting with volatile market conditions.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Debt covenant headroom analysis quantifying management bias pressures.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Related party transactions screened for commercial economic substance.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Preemptive fraud risk detection penetrating aggressive reporting.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Inherent Risk Scoring & Financial Statement Level RoMM Engine Simulator",
+      "codeHash": "7438469bce431a30559b871150b9c9f2f81dbd2a216f95101ac2db8640df01fe",
+      "spec": {
+        "template": "funnel",
+        "title": "Algorithmic Inherent Risk Scoring & Fi... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi divisional general ledger balances ingested by audit engines.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Algorithmic inherent risk scoring evaluating multidimensional vectors.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic detection risk formulas allocating technical specialists.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Objective risk assessment memorandum approved by lead audit partners.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

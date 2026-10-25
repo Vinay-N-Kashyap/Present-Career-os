@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 33,
+  "entries": [
+    {
+      "partTitle": "Overall Audit Responses vs Assertion-Level Responses: Designing the Fieldwork Strategy",
+      "codeHash": "e5f44373882c1c452a4891f10d8b0f658dbdbafaf02d155e0fb0774fe107a1d9",
+      "spec": {
+        "template": "funnel",
+        "title": "Overall Audit Responses vs Assertion-L... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Assessed risks of material misstatement categorized by assurance teams.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Overall financial statement responses deploying technical specialists.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Assertion level audit programs tailoring tests of details and analytics.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive assurance framework reducing residual audit risk.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tests of Controls (ToC): Operating Effectiveness, Deviation Rates & Automated Controls",
+      "codeHash": "865bf3e4875eee7456bd707f204e4fea40e811439d1ffabcc682146cbe777c68",
+      "spec": {
+        "template": "funnel",
+        "title": "Tests of Controls (ToC): Operating Eff... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Internal accounting control procedures operating across business cycles.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Attribute sampling evaluating manual managerial approval signatures.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated controls validated via certified general computer systems.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verified control effectiveness justifying substantive work reductions.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantive Analytical Procedures (SAP): Expectations, Thresholds & Investigations (ISA 520)",
+      "codeHash": "cf41c9d002fef1ec26c3df2eee66a0ede63a6e225e9ca5054178784b3c63d914",
+      "spec": {
+        "template": "funnel",
+        "title": "Substantive Analytical Procedures (SAP... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "High volume predictable business revenues evaluated by auditors.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Independent mathematical expectations constructed from baseline data.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tolerable difference boundaries isolating material account variances.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Corroborated analytical procedures providing efficient substantive proof.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tests of Details (ToD) & Dual-Purpose Testing: Vouching, Tracing & Interim Roll-Forward",
+      "codeHash": "1bbef8dce95c7d4c6e22dc6f196c8812c592862d39bcf7a8b5b337fb5a1f3a01",
+      "spec": {
+        "template": "funnel",
+        "title": "Tests of Details (ToD) & Dual-Purpose ... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "General ledger balances requiring empirical documentary verification.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Directional testing enforcing vouching and tracing protocols.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dual purpose testing concurrently evaluating controls and balances.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unshakeable empirical evidence confirming balance sheet assertions.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Substantive Audit Strategy & Dual-Purpose Execution Simulator",
+      "codeHash": "d81f9dadbe11c5ad34fff91fb5086e53fe6e7c4fce002e7ef65c5173ed6b806e",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Substantive Audit Strate... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise operating cycles evaluated across global subsidiaries.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Dynamic testing mix balancing analytics and detailed inspection.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Statistical sampling formulas deriving required substantive sizes.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Defensible fieldwork execution plan satisfying international standards.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Gross Population Scope",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Risk Filtered Population",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Substantive Sample Focus",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Statutory Assurance",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
