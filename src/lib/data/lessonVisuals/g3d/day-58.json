@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 58,
+  "promptSha": "6a3dfa780d9aba3deb0b3941137442d262fc36fae53ea9262e4aa9493c08311f",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Render Graph Concepts, DAG Scheduling & Automated Barrier Placement",
+      "codeHash": "9b77aa4ae74440b76eb2c77dff15b9fa594409f33bf9d5afa40ff09b1c4f0275",
+      "spec": {
+        "template": "compare",
+        "title": "Render Graph Architecture: Render Graph Concepts, DAG Scheduling & Automated Barrier Placement",
+        "left": {
+          "label": "Legacy Driver-Managed Pipelines",
+          "content": [
+            "Opaque driver flushes and pipeline stalls",
+            "Uncontrolled gigabyte VRAM allocation bloat",
+            "Sequential single-queue hardware underutilization",
+            "Massive external memory bandwidth thermal throttling"
+          ]
+        },
+        "right": {
+          "label": "Modern Render Graph Engine",
+          "content": [
+            "Declarative DAG with automated minimal barriers",
+            "Transient memory aliasing cutting VRAM in half",
+            "Asynchronous compute multi-queue hardware saturation",
+            "Merged tile subpasses eradicating DDR round-trips"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays declarative render graph passes compiled into a Directed Acyclic Graph."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks automated Read-After-Write hazard detection and minimal pipeline barrier calculation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates optimal GPU execution scheduling over opaque legacy driver synchronization."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies exact five-pass dependency ordering, zero hazards, and microsecond CPU compile times."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Driver-Managed Pipelines",
+        "rightLabel": "Modern Render Graph Engine"
+      }
+    },
+    {
+      "partTitle": "Transient Resource Memory Aliasing & Virtual Memory Heaps",
+      "codeHash": "a014cf848b2ed10399d8a764487595132799c4be4aae01db41ae9c85a7a93c2d",
+      "spec": {
+        "template": "compare",
+        "title": "Render Graph Architecture: Transient Resource Memory Aliasing & Virtual Memory Heaps",
+        "left": {
+          "label": "Legacy Driver-Managed Pipelines",
+          "content": [
+            "Opaque driver flushes and pipeline stalls",
+            "Uncontrolled gigabyte VRAM allocation bloat",
+            "Sequential single-queue hardware underutilization",
+            "Massive external memory bandwidth thermal throttling"
+          ]
+        },
+        "right": {
+          "label": "Modern Render Graph Engine",
+          "content": [
+            "Declarative DAG with automated minimal barriers",
+            "Transient memory aliasing cutting VRAM in half",
+            "Asynchronous compute multi-queue hardware saturation",
+            "Merged tile subpasses eradicating DDR round-trips"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays transient resource lifetime interval mapping across the frame schedule."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors shared physical heap offset assignments for non-overlapping intermediate textures."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates fifty percent physical video memory reduction over unaliased allocations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms byte alignment compliance, memory barrier placement, and zero texture data overlap."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Driver-Managed Pipelines",
+        "rightLabel": "Modern Render Graph Engine"
+      }
+    },
+    {
+      "partTitle": "Asynchronous Compute Scheduling & Multi-Queue Synchronization",
+      "codeHash": "b542f2509e2b74c0ca2e2ef59f70143df241f18684c000189db31bc14683f9e8",
+      "spec": {
+        "template": "compare",
+        "title": "Render Graph Architecture: Asynchronous Compute Scheduling & Multi-Queue Synchronization",
+        "left": {
+          "label": "Legacy Driver-Managed Pipelines",
+          "content": [
+            "Opaque driver flushes and pipeline stalls",
+            "Uncontrolled gigabyte VRAM allocation bloat",
+            "Sequential single-queue hardware underutilization",
+            "Massive external memory bandwidth thermal throttling"
+          ]
+        },
+        "right": {
+          "label": "Modern Render Graph Engine",
+          "content": [
+            "Declarative DAG with automated minimal barriers",
+            "Transient memory aliasing cutting VRAM in half",
+            "Asynchronous compute multi-queue hardware saturation",
+            "Merged tile subpasses eradicating DDR round-trips"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates concurrent hardware execution across independent graphics and compute queues."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates timeline semaphore synchronization pipelining compute passes with rasterization."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of idle arithmetic execution bubbles for high hardware concurrency."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms significant execution time reduction and certified multi-queue performance speedup."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Driver-Managed Pipelines",
+        "rightLabel": "Modern Render Graph Engine"
+      }
+    },
+    {
+      "partTitle": "Automatic Render Pass Merging & Tile Memory Subpasses (TBDR Optimization)",
+      "codeHash": "d6b6c4b08ebe50e5ef9afd94115fc62e483b76bd59ce9f57b0a536ffd01bf823",
+      "spec": {
+        "template": "compare",
+        "title": "Render Graph Architecture: Automatic Render Pass Merging & Tile Memory Subpasses (TBDR Optimization)",
+        "left": {
+          "label": "Legacy Driver-Managed Pipelines",
+          "content": [
+            "Opaque driver flushes and pipeline stalls",
+            "Uncontrolled gigabyte VRAM allocation bloat",
+            "Sequential single-queue hardware underutilization",
+            "Massive external memory bandwidth thermal throttling"
+          ]
+        },
+        "right": {
+          "label": "Modern Render Graph Engine",
+          "content": [
+            "Declarative DAG with automated minimal barriers",
+            "Transient memory aliasing cutting VRAM in half",
+            "Asynchronous compute multi-queue hardware saturation",
+            "Merged tile subpasses eradicating DDR round-trips"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays tile-based deferred rendering merging dependent passes into hardware subpasses."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors on-chip tile SRAM retention of intermediate G-Buffer attachment fragments."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of massive external DDR memory flushes on mobile architectures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms over eighty percent bandwidth reduction and prevention of thermal clock throttling."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Driver-Managed Pipelines",
+        "rightLabel": "Modern Render Graph Engine"
+      }
+    },
+    {
+      "partTitle": "Render Graph Architecture, Memory Aliasing & 60 FPS Telemetry",
+      "codeHash": "43aede2d22b8d39fc8b6be683b2013ae6e1cee08f6ed770d4343d2ef5b17ece4",
+      "spec": {
+        "template": "compare",
+        "title": "Render Graph Architecture: Render Graph Architecture, Memory Aliasing & 60 FPS Telemetry",
+        "left": {
+          "label": "Legacy Driver-Managed Pipelines",
+          "content": [
+            "Opaque driver flushes and pipeline stalls",
+            "Uncontrolled gigabyte VRAM allocation bloat",
+            "Sequential single-queue hardware underutilization",
+            "Massive external memory bandwidth thermal throttling"
+          ]
+        },
+        "right": {
+          "label": "Modern Render Graph Engine",
+          "content": [
+            "Declarative DAG with automated minimal barriers",
+            "Transient memory aliasing cutting VRAM in half",
+            "Asynchronous compute multi-queue hardware saturation",
+            "Merged tile subpasses eradicating DDR round-trips"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the complete production render graph architecture under real-time telemetry."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits transient memory bounds, sub-millisecond graph compilation, and frame pacing."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates rock-solid frame delivery well beyond sixty frames per second standards."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies production readiness, zero validation layer errors, and strict performance compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Driver-Managed Pipelines",
+        "rightLabel": "Modern Render Graph Engine"
+      }
+    }
+  ]
+}

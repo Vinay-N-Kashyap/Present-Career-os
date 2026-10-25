@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 59,
+  "promptSha": "575b55a7bdfb310a6182b870a2861a8d5d171db601973dbe5ae203150eff19ad",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "GPU Timestamp Queries, Hardware Query Pools & Calibrated Clocks",
+      "codeHash": "d194a99b63711e4e4644dd7408190bb588c9b0b7459a8657f789cb45ed8b9a35",
+      "spec": {
+        "template": "compare",
+        "title": "Performance Telemetry Architecture: GPU Timestamp Queries, Hardware Query Pools & Calibrated Clocks",
+        "left": {
+          "label": "Naive Profiling & Thermal Guesswork",
+          "content": [
+            "Opaque CPU timers measuring driver submission stalls",
+            "Misleading average FPS hiding horrific micro-stutters",
+            "Sudden thermal runaway triggering violent DVFS drops",
+            "Heavy profiling UI allocations causing GC frame spikes"
+          ]
+        },
+        "right": {
+          "label": "Hardware Telemetry & Automated Scaling",
+          "content": [
+            "Hardware timestamp queries with nanosecond precision",
+            "Rigorous ninety-ninth percentile frame latency auditing",
+            "PID-controlled Dynamic Resolution Scaling stabilization",
+            "Zero-allocation single-draw hierarchical flamegraph HUD"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays hardware GPU timestamp queries recorded at pass boundaries without CPU stalls."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors nanosecond cycle counter readbacks converted using calibrated device timestamp periods."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates precise GPU execution timing over deceptive and asynchronous CPU driver measurements."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms nanosecond-level accuracy, non-blocking query retrieval, and zero pipeline flushes."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Profiling & Thermal Guesswork",
+        "rightLabel": "Hardware Telemetry & Automated Scaling"
+      }
+    },
+    {
+      "partTitle": "Hardware Pipeline Statistics Queries & Performance Counters",
+      "codeHash": "ac6af8827deddc056009c1818bd7725f61923de62e7ea4d5e5d993c2b046ed31",
+      "spec": {
+        "template": "compare",
+        "title": "Performance Telemetry Architecture: Hardware Pipeline Statistics Queries & Performance Counters",
+        "left": {
+          "label": "Naive Profiling & Thermal Guesswork",
+          "content": [
+            "Opaque CPU timers measuring driver submission stalls",
+            "Misleading average FPS hiding horrific micro-stutters",
+            "Sudden thermal runaway triggering violent DVFS drops",
+            "Heavy profiling UI allocations causing GC frame spikes"
+          ]
+        },
+        "right": {
+          "label": "Hardware Telemetry & Automated Scaling",
+          "content": [
+            "Hardware timestamp queries with nanosecond precision",
+            "Rigorous ninety-ninth percentile frame latency auditing",
+            "PID-controlled Dynamic Resolution Scaling stabilization",
+            "Zero-allocation single-draw hierarchical flamegraph HUD"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates GPU pipeline statistics queries sampling internal stage invocations and primitive counters."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates screen overdraw ratios derived from fragment shader invocations versus display pixel resolution."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates pinpoint bottleneck diagnosis isolating vertex processing from memory bandwidth bounds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms low overdraw ratios, efficient primitive clipping, and optimal streaming multiprocessor occupancy."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Profiling & Thermal Guesswork",
+        "rightLabel": "Hardware Telemetry & Automated Scaling"
+      }
+    },
+    {
+      "partTitle": "Thermal Throttling, DVFS & Dynamic Resolution Scaling (DRS)",
+      "codeHash": "b465a3357d5b112d76f7a9340e0abf253cbbe3b58f4be1c78118234762a8c2da",
+      "spec": {
+        "template": "compare",
+        "title": "Performance Telemetry Architecture: Thermal Throttling, DVFS & Dynamic Resolution Scaling (DRS)",
+        "left": {
+          "label": "Naive Profiling & Thermal Guesswork",
+          "content": [
+            "Opaque CPU timers measuring driver submission stalls",
+            "Misleading average FPS hiding horrific micro-stutters",
+            "Sudden thermal runaway triggering violent DVFS drops",
+            "Heavy profiling UI allocations causing GC frame spikes"
+          ]
+        },
+        "right": {
+          "label": "Hardware Telemetry & Automated Scaling",
+          "content": [
+            "Hardware timestamp queries with nanosecond precision",
+            "Rigorous ninety-ninth percentile frame latency auditing",
+            "PID-controlled Dynamic Resolution Scaling stabilization",
+            "Zero-allocation single-draw hierarchical flamegraph HUD"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Proportional-Integral-Derivative feedback loop driving dynamic resolution scaling."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors framebuffer scale modulation dampening frame spikes and preventing thermal heat soak."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates velvety-smooth frame pacing over jarring resolution oscillations and framerate drops."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms resolution bounds compliance, seamless temporal upscaler integration, and locked sixty frames per second."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Profiling & Thermal Guesswork",
+        "rightLabel": "Hardware Telemetry & Automated Scaling"
+      }
+    },
+    {
+      "partTitle": "In-Engine Profiler HUD, Flamegraphs & Percentile Latency (P50/P95/P99)",
+      "codeHash": "47feb61b68cc5bf0a45e237d09f216c8656056fcc62d975be3b27e040dbedda9",
+      "spec": {
+        "template": "compare",
+        "title": "Performance Telemetry Architecture: In-Engine Profiler HUD, Flamegraphs & Percentile Latency (P50/P95/P99)",
+        "left": {
+          "label": "Naive Profiling & Thermal Guesswork",
+          "content": [
+            "Opaque CPU timers measuring driver submission stalls",
+            "Misleading average FPS hiding horrific micro-stutters",
+            "Sudden thermal runaway triggering violent DVFS drops",
+            "Heavy profiling UI allocations causing GC frame spikes"
+          ]
+        },
+        "right": {
+          "label": "Hardware Telemetry & Automated Scaling",
+          "content": [
+            "Hardware timestamp queries with nanosecond precision",
+            "Rigorous ninety-ninth percentile frame latency auditing",
+            "PID-controlled Dynamic Resolution Scaling stabilization",
+            "Zero-allocation single-draw hierarchical flamegraph HUD"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the zero-allocation in-engine profiler HUD rendering real-time hierarchical flamegraphs."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks rolling frame time distributions calculating median and ninety-ninth percentile stutter metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates instantaneous micro-stutter exposure over misleading average framerate summaries."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero heap allocations, single-draw HUD rendering, and certified stutter-free performance delivery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Profiling & Thermal Guesswork",
+        "rightLabel": "Hardware Telemetry & Automated Scaling"
+      }
+    },
+    {
+      "partTitle": "Profiling Pipeline Architecture, Thermal Headroom & 60 FPS Telemetry",
+      "codeHash": "73098c59b13a85b52dc65eaae151e107a84cc76c559b6a0eeb703558d6334f38",
+      "spec": {
+        "template": "compare",
+        "title": "Performance Telemetry Architecture: Profiling Pipeline Architecture, Thermal Headroom & 60 FPS Telemetry",
+        "left": {
+          "label": "Naive Profiling & Thermal Guesswork",
+          "content": [
+            "Opaque CPU timers measuring driver submission stalls",
+            "Misleading average FPS hiding horrific micro-stutters",
+            "Sudden thermal runaway triggering violent DVFS drops",
+            "Heavy profiling UI allocations causing GC frame spikes"
+          ]
+        },
+        "right": {
+          "label": "Hardware Telemetry & Automated Scaling",
+          "content": [
+            "Hardware timestamp queries with nanosecond precision",
+            "Rigorous ninety-ninth percentile frame latency auditing",
+            "PID-controlled Dynamic Resolution Scaling stabilization",
+            "Zero-allocation single-draw hierarchical flamegraph HUD"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the comprehensive performance telemetry architecture under extreme multi-million polygon stress."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits nanosecond timing accuracy, dynamic scaling stability, and generous thermal headroom margins."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates flawless frame pacing and sustained eighty-plus frames per second on production hardware."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies full AAA production readiness, zero thermal throttling, and rock-solid engine stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Profiling & Thermal Guesswork",
+        "rightLabel": "Hardware Telemetry & Automated Scaling"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 56,
+  "promptSha": "d0578b50924251ca32f9da6a9ac3beb88aee02a31623389aa84fb87011007615",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Overdraw Problem, Hierarchical Z-Buffering (Hi-Z) & Conservative Downsampling",
+      "codeHash": "69c27425590769b4c840a96dad81d978b5dee0c6467b9daa7eb169e356f18585",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Overdraw Problem, Hierarchical Z-Buffering (Hi-Z) & Conservative Downsampling",
+        "left": {
+          "label": "Legacy Overdraw Rasterization",
+          "content": [
+            "Disastrous twenty million triangle overdraw",
+            "Crushing CPU draw call submission stalls",
+            "High texture cache redundant lookups",
+            "Severe framerate collapse under occlusions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Hi-Z Culling",
+          "content": [
+            "Conservative 4-tap pyramid queries",
+            "Two-phase zero pop-in latency triage",
+            "Single multi-draw indirect stream compaction",
+            "Over seventy percent overdraw elimination"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Hierarchical Z-Buffering downsampling depth buffers into conservative image pyramids."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates conservative maximum-depth filtering across two-by-two texel neighborhoods."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total eradication of redundant fragment shading overdraw in dense environments."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies conservative occluder preservation, sub-millisecond downsampling, and zero false rejections."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Overdraw Rasterization",
+        "rightLabel": "Modern GPU Hi-Z Culling"
+      }
+    },
+    {
+      "partTitle": "Bounding Box Screen Footprint Projection & Analytical Hi-Z MIP Level Selection",
+      "codeHash": "8758632b9abb2770c718c61864dc6d403185efea1bc4792c3427af7960775c15",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Bounding Box Screen Footprint Projection & Analytical Hi-Z MIP Level Selection",
+        "left": {
+          "label": "Legacy Overdraw Rasterization",
+          "content": [
+            "Disastrous twenty million triangle overdraw",
+            "Crushing CPU draw call submission stalls",
+            "High texture cache redundant lookups",
+            "Severe framerate collapse under occlusions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Hi-Z Culling",
+          "content": [
+            "Conservative 4-tap pyramid queries",
+            "Two-phase zero pop-in latency triage",
+            "Single multi-draw indirect stream compaction",
+            "Over seventy percent overdraw elimination"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates screen-space bounding box projection and analytical pyramid level selection."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection maps projected pixel footprints to matching pyramid levels for single-fetch four-tap queries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates scale-independent occlusion testing over brute-force high-resolution reads."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms reverse floating-point depth precision, near-plane clipping safety, and accurate culling."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Overdraw Rasterization",
+        "rightLabel": "Modern GPU Hi-Z Culling"
+      }
+    },
+    {
+      "partTitle": "The Two-Phase Occlusion Culling Pipeline & Temporal Coherence",
+      "codeHash": "3123ad77da535a5dd5efdc30a5a77d50c461eed2ce3db406f0dcb11a508f5631",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Two-Phase Occlusion Culling Pipeline & Temporal Coherence",
+        "left": {
+          "label": "Legacy Overdraw Rasterization",
+          "content": [
+            "Disastrous twenty million triangle overdraw",
+            "Crushing CPU draw call submission stalls",
+            "High texture cache redundant lookups",
+            "Severe framerate collapse under occlusions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Hi-Z Culling",
+          "content": [
+            "Conservative 4-tap pyramid queries",
+            "Two-phase zero pop-in latency triage",
+            "Single multi-draw indirect stream compaction",
+            "Over seventy percent overdraw elimination"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the two-phase occlusion pipeline leveraging temporal coherence between frames."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks historical visibility reprojection in phase one and newly visible discovery in phase two."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete resolution of the chicken-and-egg culling latency paradox."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies zero temporal mesh popping, seamless camera rotation, and rapid depth pre-pass convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Overdraw Rasterization",
+        "rightLabel": "Modern GPU Hi-Z Culling"
+      }
+    },
+    {
+      "partTitle": "GPU Scene Graph Traversal & Multi-Draw Indirect Stream Compaction",
+      "codeHash": "d2fb5cb5af37586da735b1c8ad62190ecfe2a4d325c4626156898181365aa0f9",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: GPU Scene Graph Traversal & Multi-Draw Indirect Stream Compaction",
+        "left": {
+          "label": "Legacy Overdraw Rasterization",
+          "content": [
+            "Disastrous twenty million triangle overdraw",
+            "Crushing CPU draw call submission stalls",
+            "High texture cache redundant lookups",
+            "Severe framerate collapse under occlusions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Hi-Z Culling",
+          "content": [
+            "Conservative 4-tap pyramid queries",
+            "Two-phase zero pop-in latency triage",
+            "Single multi-draw indirect stream compaction",
+            "Over seventy percent overdraw elimination"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays GPU multi-draw indirect stream compaction packing surviving mesh commands."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks atomic counter allocation writing dense draw parameters with zero memory holes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates single draw call scene dispatch over thousands of CPU driver submissions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms monotonic instance indexing, bindless descriptor binding, and zero host CPU bottlenecks."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Overdraw Rasterization",
+        "rightLabel": "Modern GPU Hi-Z Culling"
+      }
+    },
+    {
+      "partTitle": "Occlusion Culling Pipeline Architecture, Overdraw Reduction & 60 FPS Telemetry",
+      "codeHash": "dd6f3b922aca022eb0638ceb89c9707d689540ded3944ef63f603b9caf5889c2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Occlusion Culling Pipeline Architecture, Overdraw Reduction & 60 FPS Telemetry",
+        "left": {
+          "label": "Legacy Overdraw Rasterization",
+          "content": [
+            "Disastrous twenty million triangle overdraw",
+            "Crushing CPU draw call submission stalls",
+            "High texture cache redundant lookups",
+            "Severe framerate collapse under occlusions"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Hi-Z Culling",
+          "content": [
+            "Conservative 4-tap pyramid queries",
+            "Two-phase zero pop-in latency triage",
+            "Single multi-draw indirect stream compaction",
+            "Over seventy percent overdraw elimination"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the complete four-pass occlusion culling pipeline and GPU timestamp profiling."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits Hi-Z generation overhead, two-phase compute culling passes, and scene culling efficiency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms ten thousand mesh culling execution within zero point six milliseconds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies seventy-two percent overdraw reduction and locked sixty frames per second compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Overdraw Rasterization",
+        "rightLabel": "Modern GPU Hi-Z Culling"
+      }
+    }
+  ]
+}

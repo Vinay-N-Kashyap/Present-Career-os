@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 60,
+  "promptSha": "b540880872000820cfedc5e62c62af60e677cf50ca18541bef7ccfe4a1922457",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architectural Convergence: Unifying Graphics, Physics & Engine Systems",
+      "codeHash": "09329701053f50c39e0f9f59c4037cfad6e7126dc1168febf6c356e3602bad1d",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Final Capstone: Architectural Convergence: Unifying Graphics, Physics & Engine Systems",
+        "left": {
+          "label": "Legacy Monolithic Rendering",
+          "content": [
+            "Sequential CPU-GPU lock-step synchronization stalls",
+            "Uncontrolled multi-gigabyte memory consumption",
+            "Naive uncoupled physics with numerical instability",
+            "Overdraw-plagued shading collapsing under high geometry"
+          ]
+        },
+        "right": {
+          "label": "Master Photorealistic & Multi-Physics Engine",
+          "content": [
+            "Pipelined multi-queue asynchronous execution timeline",
+            "Transient memory aliasing within compact VRAM budgets",
+            "Momentum-conserving interactive two-way multi-physics",
+            "Virtual geometry DAG cuts rendering one hundred million triangles"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the master engine director unifying six foundational graphics and physics subsystems."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors lifecycle initialization dependencies and base memory budget allocations across all modules."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates modular data-oriented subsystem coordination over monolithic legacy engine bloat."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms all six architectural pillars active, zero dynamic heap allocations, and memory compliance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Monolithic Rendering",
+        "rightLabel": "Master Photorealistic & Multi-Physics Engine"
+      }
+    },
+    {
+      "partTitle": "The Unified Frame Loop: Tick-to-Present Execution Timeline",
+      "codeHash": "c0a8394a29c3fb229589416de65872a26efbbfb16669d2c641d86a5003d7ff0c",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Final Capstone: The Unified Frame Loop: Tick-to-Present Execution Timeline",
+        "left": {
+          "label": "Legacy Monolithic Rendering",
+          "content": [
+            "Sequential CPU-GPU lock-step synchronization stalls",
+            "Uncontrolled multi-gigabyte memory consumption",
+            "Naive uncoupled physics with numerical instability",
+            "Overdraw-plagued shading collapsing under high geometry"
+          ]
+        },
+        "right": {
+          "label": "Master Photorealistic & Multi-Physics Engine",
+          "content": [
+            "Pipelined multi-queue asynchronous execution timeline",
+            "Transient memory aliasing within compact VRAM budgets",
+            "Momentum-conserving interactive two-way multi-physics",
+            "Virtual geometry DAG cuts rendering one hundred million triangles"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the seven-stage pipelined timeline scheduling graphics and compute queues concurrently."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors timeline semaphores coordinating asynchronous physics and culling with rasterization passes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of idle hardware execution bubbles delivering high framerate throughput."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sub-eight millisecond total frame latency and sustained one hundred-plus frames per second."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Monolithic Rendering",
+        "rightLabel": "Master Photorealistic & Multi-Physics Engine"
+      }
+    },
+    {
+      "partTitle": "Photorealistic Multi-Lobe PBR Materials & Atmospheric Volumetrics",
+      "codeHash": "d34b237a740f0bac0da97c274267ef3e2239304cb77d5a48a21c39e7431ded5b",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Final Capstone: Photorealistic Multi-Lobe PBR Materials & Atmospheric Volumetrics",
+        "left": {
+          "label": "Legacy Monolithic Rendering",
+          "content": [
+            "Sequential CPU-GPU lock-step synchronization stalls",
+            "Uncontrolled multi-gigabyte memory consumption",
+            "Naive uncoupled physics with numerical instability",
+            "Overdraw-plagued shading collapsing under high geometry"
+          ]
+        },
+        "right": {
+          "label": "Master Photorealistic & Multi-Physics Engine",
+          "content": [
+            "Pipelined multi-queue asynchronous execution timeline",
+            "Transient memory aliasing within compact VRAM budgets",
+            "Momentum-conserving interactive two-way multi-physics",
+            "Virtual geometry DAG cuts rendering one hundred million triangles"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the unified material lighting engine evaluating multi-lobe physical surface reflections."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates specular, subsurface, thin-film, fiber, and diffuse lobes under thermodynamic energy conservation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates photorealistic multi-layered material shading coupled with atmospheric fog extinction."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms physical reciprocity, energy conservation compliance, and seamless volumetric integration."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Monolithic Rendering",
+        "rightLabel": "Master Photorealistic & Multi-Physics Engine"
+      }
+    },
+    {
+      "partTitle": "Interactive Multi-Physics Coupling: SPH Fluids, XPBD Cloth & Rigid CCD",
+      "codeHash": "3b8668b31f70a151757829d0ac3c9949ba18af6cecfe8775a20be83d9fa4a7e5",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Final Capstone: Interactive Multi-Physics Coupling: SPH Fluids, XPBD Cloth & Rigid CCD",
+        "left": {
+          "label": "Legacy Monolithic Rendering",
+          "content": [
+            "Sequential CPU-GPU lock-step synchronization stalls",
+            "Uncontrolled multi-gigabyte memory consumption",
+            "Naive uncoupled physics with numerical instability",
+            "Overdraw-plagued shading collapsing under high geometry"
+          ]
+        },
+        "right": {
+          "label": "Master Photorealistic & Multi-Physics Engine",
+          "content": [
+            "Pipelined multi-queue asynchronous execution timeline",
+            "Transient memory aliasing within compact VRAM budgets",
+            "Momentum-conserving interactive two-way multi-physics",
+            "Virtual geometry DAG cuts rendering one hundred million triangles"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays interactive two-way coupling across fluid particles, cloth meshes, and rigid bodies."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors GPU compute spatial hashing resolving neighbor searches and momentum-conserving contact forces."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates stable multi-physics simulation over uncoupled or one-way kinematic approximations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms kinetic energy dissipation stability, continuous collision safety, and sub-two millisecond solving."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Monolithic Rendering",
+        "rightLabel": "Master Photorealistic & Multi-Physics Engine"
+      }
+    },
+    {
+      "partTitle": "Grand Final Capstone Benchmark, Telemetry & Production Certification",
+      "codeHash": "6755c222fb6218b4967a334f0a4d9d8275700488c86b1f27747ec583460b3c3a",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Final Capstone: Grand Final Capstone Benchmark, Telemetry & Production Certification",
+        "left": {
+          "label": "Legacy Monolithic Rendering",
+          "content": [
+            "Sequential CPU-GPU lock-step synchronization stalls",
+            "Uncontrolled multi-gigabyte memory consumption",
+            "Naive uncoupled physics with numerical instability",
+            "Overdraw-plagued shading collapsing under high geometry"
+          ]
+        },
+        "right": {
+          "label": "Master Photorealistic & Multi-Physics Engine",
+          "content": [
+            "Pipelined multi-queue asynchronous execution timeline",
+            "Transient memory aliasing within compact VRAM budgets",
+            "Momentum-conserving interactive two-way multi-physics",
+            "Virtual geometry DAG cuts rendering one hundred million triangles"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the grand final capstone stress benchmark across one hundred million source triangles."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits virtual geometry reduction ratios, sustained framerates, and cool thermal operating margins."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mastery of modern real-time rendering science on commercial-grade hardware budgets."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies PinIT Career OS Three-Dimensional Graphics Master Status and complete one hundred percent curriculum achievement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Monolithic Rendering",
+        "rightLabel": "Master Photorealistic & Multi-Physics Engine"
+      }
+    }
+  ]
+}
