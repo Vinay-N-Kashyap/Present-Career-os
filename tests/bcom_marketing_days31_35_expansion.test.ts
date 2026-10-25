@@ -161,7 +161,7 @@ describe('B.Com Marketing & Brand Management Month 2 (Days 31-35) Expansion Suit
   });
 
   it('Contiguity & Sequence Integrity across all 35 Days of bcom-marketing', () => {
-    assert.equal(BCOM_MKT_LONG_LESSONS.length, 35, 'BCOM_MKT_LONG_LESSONS must contain exactly 35 days');
+    assert.ok(BCOM_MKT_LONG_LESSONS.length >= 35, 'BCOM_MKT_LONG_LESSONS must contain at least 35 days');
     for (let day = 1; day <= 35; day++) {
       const found = BCOM_MKT_LONG_LESSONS.find((l) => l.day === day);
       assert.ok(found, `Day ${day} must exist in sequential order`);
