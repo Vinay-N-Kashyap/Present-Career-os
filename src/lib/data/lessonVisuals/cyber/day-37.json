@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 37,
+  "promptSha": "f4e6a5934cd3ac919c4ce9a173646465745ef7a0f6b088fbeea9a6480395bf0d",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Anatomy of JOSE & JWS: Header, Payload, Signature & Base64URL Mechanics",
+      "codeHash": "7332c6b1873800f1c908bc606ea67ef05ade1da1b2a9a6d065cc9c6be8cb2b5a",
+      "spec": {
+        "template": "compare",
+        "title": "JOSE Standards: Anatomy of JOSE & JWS: Header, Payload, Signature & Base64URL Mechanics",
+        "left": {
+          "label": "Insecure / Naive Token Handling",
+          "content": [
+            "Treats Base64URL encoding as encryption and exposes secrets in payload",
+            "Shares symmetric HMAC secrets across dozens of downstream microservices",
+            "Blindly trusts alg header allowing alg none or HMAC key confusion bypass",
+            "Rejects valid tokens on slight sub-second NTP clock drift without skew tolerance"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened JOSE Architecture",
+          "content": [
+            "Recognizes Base64URL as encoding only and encapsulates secrets in JWE",
+            "Asymmetric RS256 or ES256 provides non-repudiation with public key verification",
+            "Strict compile-time algorithm whitelist unconditionally rejects unapproved algorithms",
+            "Controlled clock skew tolerance absorbs minor drift while strictly bounding lifetimes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates three part token layout with header payload and signature segments."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates base sixty-four url decoding without sensitive character mangling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates transparent claim readability compared to encrypted payload envelopes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms segment boundaries, claims parsing integrity, and signature isolation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive Token Handling",
+        "rightLabel": "Enterprise Hardened JOSE Architecture",
+        "leftHighlights": [
+          "Encoding mistaken for encryption",
+          "Shared symmetric secret risk",
+          "Algorithm confusion vulnerability",
+          "Clock drift rejection outage"
+        ],
+        "rightHighlights": [
+          "Explicit payload encapsulation",
+          "Asymmetric non-repudiation",
+          "Strict algorithm whitelisting",
+          "Hardened clock skew tolerance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Asymmetric JWS Signatures & Key Identification: RS256 vs ES256 & kid Resolution",
+      "codeHash": "b686036d27fae42713899f27e040995633b3a749f3541193a0849eb6382fa71f",
+      "spec": {
+        "template": "compare",
+        "title": "JOSE Standards: Asymmetric JWS Signatures & Key Identification: RS256 vs ES256 & kid Resolution",
+        "left": {
+          "label": "Insecure / Naive Token Handling",
+          "content": [
+            "Treats Base64URL encoding as encryption and exposes secrets in payload",
+            "Shares symmetric HMAC secrets across dozens of downstream microservices",
+            "Blindly trusts alg header allowing alg none or HMAC key confusion bypass",
+            "Rejects valid tokens on slight sub-second NTP clock drift without skew tolerance"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened JOSE Architecture",
+          "content": [
+            "Recognizes Base64URL as encoding only and encapsulates secrets in JWE",
+            "Asymmetric RS256 or ES256 provides non-repudiation with public key verification",
+            "Strict compile-time algorithm whitelist unconditionally rejects unapproved algorithms",
+            "Controlled clock skew tolerance absorbs minor drift while strictly bounding lifetimes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays asymmetric signing pipelines and key identifier resolution caches."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates signature generation using private keys and public key verification."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates non-repudiation and elimination of shared symmetric secrets."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms mathematical signature validity, key cache lookup, and public key binding."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive Token Handling",
+        "rightLabel": "Enterprise Hardened JOSE Architecture",
+        "leftHighlights": [
+          "Encoding mistaken for encryption",
+          "Shared symmetric secret risk",
+          "Algorithm confusion vulnerability",
+          "Clock drift rejection outage"
+        ],
+        "rightHighlights": [
+          "Explicit payload encapsulation",
+          "Asymmetric non-repudiation",
+          "Strict algorithm whitelisting",
+          "Hardened clock skew tolerance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Critical Vulnerabilities & Defenses: Algorithm Confusion (alg: none & HMAC vs Asymmetric)",
+      "codeHash": "e214011e7a8a4be8d9b7f512f3b1d07ec641283f7b383efd900e7f5caa57f581",
+      "spec": {
+        "template": "compare",
+        "title": "JOSE Standards: Critical Vulnerabilities & Defenses: Algorithm Confusion (alg: none & HMAC vs Asymmetric)",
+        "left": {
+          "label": "Insecure / Naive Token Handling",
+          "content": [
+            "Treats Base64URL encoding as encryption and exposes secrets in payload",
+            "Shares symmetric HMAC secrets across dozens of downstream microservices",
+            "Blindly trusts alg header allowing alg none or HMAC key confusion bypass",
+            "Rejects valid tokens on slight sub-second NTP clock drift without skew tolerance"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened JOSE Architecture",
+          "content": [
+            "Recognizes Base64URL as encoding only and encapsulates secrets in JWE",
+            "Asymmetric RS256 or ES256 provides non-repudiation with public key verification",
+            "Strict compile-time algorithm whitelist unconditionally rejects unapproved algorithms",
+            "Controlled clock skew tolerance absorbs minor drift while strictly bounding lifetimes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates algorithm whitelisting guard defending against algorithm confusion."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unconditional blocking of algorithm none and forged header parameters."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates strict rejection of symmetric confusion attacks on public keys."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms whitelist enforcement, tamper interception, and automated alerts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive Token Handling",
+        "rightLabel": "Enterprise Hardened JOSE Architecture",
+        "leftHighlights": [
+          "Encoding mistaken for encryption",
+          "Shared symmetric secret risk",
+          "Algorithm confusion vulnerability",
+          "Clock drift rejection outage"
+        ],
+        "rightHighlights": [
+          "Explicit payload encapsulation",
+          "Asymmetric non-repudiation",
+          "Strict algorithm whitelisting",
+          "Hardened clock skew tolerance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Claims Verification & Temporal Hardening: exp, nbf, iss, aud & Clock Skew Tolerance",
+      "codeHash": "3c763c88d44d5a93c2e5df931d2678d94af4b7fc7491d85314f8273273107525",
+      "spec": {
+        "template": "compare",
+        "title": "JOSE Standards: Claims Verification & Temporal Hardening: exp, nbf, iss, aud & Clock Skew Tolerance",
+        "left": {
+          "label": "Insecure / Naive Token Handling",
+          "content": [
+            "Treats Base64URL encoding as encryption and exposes secrets in payload",
+            "Shares symmetric HMAC secrets across dozens of downstream microservices",
+            "Blindly trusts alg header allowing alg none or HMAC key confusion bypass",
+            "Rejects valid tokens on slight sub-second NTP clock drift without skew tolerance"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened JOSE Architecture",
+          "content": [
+            "Recognizes Base64URL as encoding only and encapsulates secrets in JWE",
+            "Asymmetric RS256 or ES256 provides non-repudiation with public key verification",
+            "Strict compile-time algorithm whitelist unconditionally rejects unapproved algorithms",
+            "Controlled clock skew tolerance absorbs minor drift while strictly bounding lifetimes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays temporal claims evaluation with configurable clock skew tolerance."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors issuer and audience exact string matching alongside expiration windows."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates resilient inter-service synchronization preventing clock drift failures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms audience alignment, temporal validity within skew bounds, and expiration enforcement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive Token Handling",
+        "rightLabel": "Enterprise Hardened JOSE Architecture",
+        "leftHighlights": [
+          "Encoding mistaken for encryption",
+          "Shared symmetric secret risk",
+          "Algorithm confusion vulnerability",
+          "Clock drift rejection outage"
+        ],
+        "rightHighlights": [
+          "Explicit payload encapsulation",
+          "Asymmetric non-repudiation",
+          "Strict algorithm whitelisting",
+          "Hardened clock skew tolerance"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production JWS & Claims Audit Engine: Zero-Trust Pipeline & Defense-in-Depth",
+      "codeHash": "f2e239f3eeb71ecc707acc95b12f173eafe987d5ff37b95d561f28639d09be27",
+      "spec": {
+        "template": "compare",
+        "title": "JOSE Standards: Production JWS & Claims Audit Engine: Zero-Trust Pipeline & Defense-in-Depth",
+        "left": {
+          "label": "Insecure / Naive Token Handling",
+          "content": [
+            "Treats Base64URL encoding as encryption and exposes secrets in payload",
+            "Shares symmetric HMAC secrets across dozens of downstream microservices",
+            "Blindly trusts alg header allowing alg none or HMAC key confusion bypass",
+            "Rejects valid tokens on slight sub-second NTP clock drift without skew tolerance"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened JOSE Architecture",
+          "content": [
+            "Recognizes Base64URL as encoding only and encapsulates secrets in JWE",
+            "Asymmetric RS256 or ES256 provides non-repudiation with public key verification",
+            "Strict compile-time algorithm whitelist unconditionally rejects unapproved algorithms",
+            "Controlled clock skew tolerance absorbs minor drift while strictly bounding lifetimes"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end zero-trust token inspection across cloud api gateways."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates concurrent structure validation, signature verification, and claims auditing."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive enterprise security certification over ad-hoc verifiers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full compliance certification, zero security regressions, and identity defense mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive Token Handling",
+        "rightLabel": "Enterprise Hardened JOSE Architecture",
+        "leftHighlights": [
+          "Encoding mistaken for encryption",
+          "Shared symmetric secret risk",
+          "Algorithm confusion vulnerability",
+          "Clock drift rejection outage"
+        ],
+        "rightHighlights": [
+          "Explicit payload encapsulation",
+          "Asymmetric non-repudiation",
+          "Strict algorithm whitelisting",
+          "Hardened clock skew tolerance"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 39,
+  "promptSha": "b429437e6bdd0ffac25addaf1da4cbe2e961384f7b05a17e88ea32894fbd0fb1",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "SAML 2.0 Architecture & Protocol Flow: IdP, SP, AuthnRequest, Response & Assertion Structure",
+      "codeHash": "bb18a038bb72599209ea18f1999c73cc3a54408101b9139a671ff8f83ff30e90",
+      "spec": {
+        "template": "compare",
+        "title": "SAML Enterprise SSO: SAML 2.0 Architecture & Protocol Flow: IdP, SP, AuthnRequest, Response & Assertion Structure",
+        "left": {
+          "label": "Insecure / Naive SAML Handling",
+          "content": [
+            "Direct XML hashing without C14N fails on minor proxy whitespace changes",
+            "Naive relative XPath queries permit XML Signature Wrapping privilege escalation",
+            "Missing InResponseTo and recipient checks allow cross-site assertion injection",
+            "Uncached assertion IDs allow attackers to replay intercepted assertions indefinitely"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened SAML Architecture",
+          "content": [
+            "Exclusive C14N guarantees deterministic XML hashing across all platforms",
+            "Strict schema validation and absolute XPath enforce single assertion cardinality",
+            "Rigorous InResponseTo, recipient, and temporal boundaries bound assertion scope",
+            "Single-use assertion ID caching in distributed memory neutralizes replay attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates enterprise federation boundaries between identity providers and service providers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates saml authnrequest generation and assertion response extraction mechanics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise directory single sign-on over isolated username password databases."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms assertion issuer extraction, subject identity parsing, and unique assertion identification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive SAML Handling",
+        "rightLabel": "Enterprise Hardened SAML Architecture",
+        "leftHighlights": [
+          "Brittle whitespace hashing",
+          "Signature wrapping vulnerability",
+          "Unsolicited assertion injection",
+          "Indefinite assertion replay"
+        ],
+        "rightHighlights": [
+          "Deterministic C14N normalization",
+          "Schema cardinality enforcement",
+          "Strict contextual binding",
+          "Single-use replay neutralization"
+        ]
+      }
+    },
+    {
+      "partTitle": "XML Digital Signatures (XMLDSig) & XML Canonicalization (C14N: exc-c14n)",
+      "codeHash": "cd4784b460d2f7ff999974d97edb47a937f8d0462d72afd8acff88adaabdc009",
+      "spec": {
+        "template": "compare",
+        "title": "SAML Enterprise SSO: XML Digital Signatures (XMLDSig) & XML Canonicalization (C14N: exc-c14n)",
+        "left": {
+          "label": "Insecure / Naive SAML Handling",
+          "content": [
+            "Direct XML hashing without C14N fails on minor proxy whitespace changes",
+            "Naive relative XPath queries permit XML Signature Wrapping privilege escalation",
+            "Missing InResponseTo and recipient checks allow cross-site assertion injection",
+            "Uncached assertion IDs allow attackers to replay intercepted assertions indefinitely"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened SAML Architecture",
+          "content": [
+            "Exclusive C14N guarantees deterministic XML hashing across all platforms",
+            "Strict schema validation and absolute XPath enforce single assertion cardinality",
+            "Rigorous InResponseTo, recipient, and temporal boundaries bound assertion scope",
+            "Single-use assertion ID caching in distributed memory neutralizes replay attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays exclusive xml canonicalization pipelines transforming irregular markup into standard streams."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors deterministic attribute alphabetization, whitespace normalization, and sha hashing."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates reliable cryptographic digest generation despite transport formatting variations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms canonical stream generation, reference digest calculation, and xml signature verification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive SAML Handling",
+        "rightLabel": "Enterprise Hardened SAML Architecture",
+        "leftHighlights": [
+          "Brittle whitespace hashing",
+          "Signature wrapping vulnerability",
+          "Unsolicited assertion injection",
+          "Indefinite assertion replay"
+        ],
+        "rightHighlights": [
+          "Deterministic C14N normalization",
+          "Schema cardinality enforcement",
+          "Strict contextual binding",
+          "Single-use replay neutralization"
+        ]
+      }
+    },
+    {
+      "partTitle": "XML Signature Wrapping (XSW) Attacks & Structural Countermeasures",
+      "codeHash": "41f8980e94bdeeec111cbb538392036611f48a5ff613da2de5936b1339b8b3c1",
+      "spec": {
+        "template": "compare",
+        "title": "SAML Enterprise SSO: XML Signature Wrapping (XSW) Attacks & Structural Countermeasures",
+        "left": {
+          "label": "Insecure / Naive SAML Handling",
+          "content": [
+            "Direct XML hashing without C14N fails on minor proxy whitespace changes",
+            "Naive relative XPath queries permit XML Signature Wrapping privilege escalation",
+            "Missing InResponseTo and recipient checks allow cross-site assertion injection",
+            "Uncached assertion IDs allow attackers to replay intercepted assertions indefinitely"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened SAML Architecture",
+          "content": [
+            "Exclusive C14N guarantees deterministic XML hashing across all platforms",
+            "Strict schema validation and absolute XPath enforce single assertion cardinality",
+            "Rigorous InResponseTo, recipient, and temporal boundaries bound assertion scope",
+            "Single-use assertion ID caching in distributed memory neutralizes replay attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates structural schema validation defending against xml signature wrapping attacks."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates strict assertion cardinality enforcement and contextual identifier binding checks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total interception of cloned or nested assertion injection exploits."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms single assertion presence, absolute xpath navigation, and malicious wrapping containment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive SAML Handling",
+        "rightLabel": "Enterprise Hardened SAML Architecture",
+        "leftHighlights": [
+          "Brittle whitespace hashing",
+          "Signature wrapping vulnerability",
+          "Unsolicited assertion injection",
+          "Indefinite assertion replay"
+        ],
+        "rightHighlights": [
+          "Deterministic C14N normalization",
+          "Schema cardinality enforcement",
+          "Strict contextual binding",
+          "Single-use replay neutralization"
+        ]
+      }
+    },
+    {
+      "partTitle": "Assertion Security & Replay Mitigation: InResponseTo, NotOnOrAfter & One-Time ID Caching",
+      "codeHash": "3f874fc0f05ea20e329c4021b075dac18d80e0ce74b531fca5d4ef920a7c44af",
+      "spec": {
+        "template": "compare",
+        "title": "SAML Enterprise SSO: Assertion Security & Replay Mitigation: InResponseTo, NotOnOrAfter & One-Time ID Caching",
+        "left": {
+          "label": "Insecure / Naive SAML Handling",
+          "content": [
+            "Direct XML hashing without C14N fails on minor proxy whitespace changes",
+            "Naive relative XPath queries permit XML Signature Wrapping privilege escalation",
+            "Missing InResponseTo and recipient checks allow cross-site assertion injection",
+            "Uncached assertion IDs allow attackers to replay intercepted assertions indefinitely"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened SAML Architecture",
+          "content": [
+            "Exclusive C14N guarantees deterministic XML hashing across all platforms",
+            "Strict schema validation and absolute XPath enforce single assertion cardinality",
+            "Rigorous InResponseTo, recipient, and temporal boundaries bound assertion scope",
+            "Single-use assertion ID caching in distributed memory neutralizes replay attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays temporal assertion boundary checks and single-use identifier caching mechanisms."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors in-response-to correlation, recipient destination matching, and expiration enforcement."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mathematical interception of replayed enterprise single sign-on assertions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms original request matching, single-use assertion consumption, and immediate replay blocking."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive SAML Handling",
+        "rightLabel": "Enterprise Hardened SAML Architecture",
+        "leftHighlights": [
+          "Brittle whitespace hashing",
+          "Signature wrapping vulnerability",
+          "Unsolicited assertion injection",
+          "Indefinite assertion replay"
+        ],
+        "rightHighlights": [
+          "Deterministic C14N normalization",
+          "Schema cardinality enforcement",
+          "Strict contextual binding",
+          "Single-use replay neutralization"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production SAML 2.0 Service Provider (SP) Verification Engine & Enterprise SSO Benchmark",
+      "codeHash": "90c929c765e86b30fd873abd920e5d0a3aaa5477b4c87c8f0b9f7b21c063475f",
+      "spec": {
+        "template": "compare",
+        "title": "SAML Enterprise SSO: Production SAML 2.0 Service Provider (SP) Verification Engine & Enterprise SSO Benchmark",
+        "left": {
+          "label": "Insecure / Naive SAML Handling",
+          "content": [
+            "Direct XML hashing without C14N fails on minor proxy whitespace changes",
+            "Naive relative XPath queries permit XML Signature Wrapping privilege escalation",
+            "Missing InResponseTo and recipient checks allow cross-site assertion injection",
+            "Uncached assertion IDs allow attackers to replay intercepted assertions indefinitely"
+          ]
+        },
+        "right": {
+          "label": "Enterprise Hardened SAML Architecture",
+          "content": [
+            "Exclusive C14N guarantees deterministic XML hashing across all platforms",
+            "Strict schema validation and absolute XPath enforce single assertion cardinality",
+            "Rigorous InResponseTo, recipient, and temporal boundaries bound assertion scope",
+            "Single-use assertion ID caching in distributed memory neutralizes replay attacks"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end assertion consumer service verification gateway for enterprise sso."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates multi-checkpoint defense including entity expansion protection and signature checks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete enterprise federation compliance certification over vulnerable parsers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full enterprise single sign-on compliance certification and zero-trust identity mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Naive SAML Handling",
+        "rightLabel": "Enterprise Hardened SAML Architecture",
+        "leftHighlights": [
+          "Brittle whitespace hashing",
+          "Signature wrapping vulnerability",
+          "Unsolicited assertion injection",
+          "Indefinite assertion replay"
+        ],
+        "rightHighlights": [
+          "Deterministic C14N normalization",
+          "Schema cardinality enforcement",
+          "Strict contextual binding",
+          "Single-use replay neutralization"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 36,
+  "promptSha": "6ebf527deaae82a978cc219087071510e6dfa068ec4c84ff9cfe8822f8aabea6",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "OAuth 2.1 Framework Evolution & Deprecation of Insecure Legacy Flows",
+      "codeHash": "1c612c045d65d5d95a5e500429083cc8010e2553f2bb38955cd16676fe4ba400",
+      "spec": {
+        "template": "compare",
+        "title": "OAuth Framework: OAuth 2.1 Framework Evolution & Deprecation of Insecure Legacy Flows",
+        "left": {
+          "label": "Insecure Legacy Authorization",
+          "content": [
+            "Implicit grants expose access tokens directly in front-channel browser URLs",
+            "Password grant forces users to enter master credentials into untrusted clients",
+            "Authorization codes without challenges risk mobile redirect interception",
+            "Static long-lived refresh tokens allow indefinite unauthorized access on theft"
+          ]
+        },
+        "right": {
+          "label": "OAuth Two Point One Architecture",
+          "content": [
+            "Authorization Code grant with PKCE is mandated across all client types",
+            "Strict exact redirect matching prevents open redirector token theft",
+            "Asymmetric Private Key JWT validates confidential client identities securely",
+            "Single-use Refresh Token Rotation with automated family-wide breach revocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates delegated authorization boundaries and deprecation of insecure legacy flows."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates the universal authorization code flow and strict redirect matching policies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis highlights elimination of front-channel token leaks compared to legacy implicit grants."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms authorization code parameters, secure redirection, and zero legacy flow vulnerabilities."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure Legacy Authorization",
+        "rightLabel": "OAuth Two Point One Architecture",
+        "leftHighlights": [
+          "Front-channel URL token leakage",
+          "Password credential exposure",
+          "Authorization code interception",
+          "Static refresh token theft"
+        ],
+        "rightHighlights": [
+          "Universal PKCE enforcement",
+          "Exact redirect matching",
+          "Asymmetric client assertion",
+          "Rotated token family revocation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Proof Key for Code Exchange (PKCE - RFC 7636) & Interception Defense",
+      "codeHash": "2ff61bd65cbfc93742f22bb6a739533a1b42dc5132d1f07be8b73c5abffe75ce",
+      "spec": {
+        "template": "compare",
+        "title": "OAuth Framework: Proof Key for Code Exchange (PKCE - RFC 7636) & Interception Defense",
+        "left": {
+          "label": "Insecure Legacy Authorization",
+          "content": [
+            "Implicit grants expose access tokens directly in front-channel browser URLs",
+            "Password grant forces users to enter master credentials into untrusted clients",
+            "Authorization codes without challenges risk mobile redirect interception",
+            "Static long-lived refresh tokens allow indefinite unauthorized access on theft"
+          ]
+        },
+        "right": {
+          "label": "OAuth Two Point One Architecture",
+          "content": [
+            "Authorization Code grant with PKCE is mandated across all client types",
+            "Strict exact redirect matching prevents open redirector token theft",
+            "Asymmetric Private Key JWT validates confidential client identities securely",
+            "Single-use Refresh Token Rotation with automated family-wide breach revocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays ephemeral challenge derivation and code verifier exchange mechanics."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors secure random verifier generation and cryptographic hash transformation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete protection against mobile custom scheme code interception attacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms timing-safe challenge validation, parameter integrity, and interceptor lockout."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure Legacy Authorization",
+        "rightLabel": "OAuth Two Point One Architecture",
+        "leftHighlights": [
+          "Front-channel URL token leakage",
+          "Password credential exposure",
+          "Authorization code interception",
+          "Static refresh token theft"
+        ],
+        "rightHighlights": [
+          "Universal PKCE enforcement",
+          "Exact redirect matching",
+          "Asymmetric client assertion",
+          "Rotated token family revocation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Client Types & Asymmetric Client Authentication via Private Key JWT (RFC 7523)",
+      "codeHash": "df3e32c3b8722ba5c0600fe4538af44710d6d588fee3cb66af87a11211b15ff4",
+      "spec": {
+        "template": "compare",
+        "title": "OAuth Framework: Client Types & Asymmetric Client Authentication via Private Key JWT (RFC 7523)",
+        "left": {
+          "label": "Insecure Legacy Authorization",
+          "content": [
+            "Implicit grants expose access tokens directly in front-channel browser URLs",
+            "Password grant forces users to enter master credentials into untrusted clients",
+            "Authorization codes without challenges risk mobile redirect interception",
+            "Static long-lived refresh tokens allow indefinite unauthorized access on theft"
+          ]
+        },
+        "right": {
+          "label": "OAuth Two Point One Architecture",
+          "content": [
+            "Authorization Code grant with PKCE is mandated across all client types",
+            "Strict exact redirect matching prevents open redirector token theft",
+            "Asymmetric Private Key JWT validates confidential client identities securely",
+            "Single-use Refresh Token Rotation with automated family-wide breach revocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates confidential backend authentication using asymmetric digital signatures."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates client assertion claims, audience validation, and expiration boundaries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of static pre-shared secrets through public key infrastructure."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms asymmetric assertion signature validity, token endpoint binding, and replay immunity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure Legacy Authorization",
+        "rightLabel": "OAuth Two Point One Architecture",
+        "leftHighlights": [
+          "Front-channel URL token leakage",
+          "Password credential exposure",
+          "Authorization code interception",
+          "Static refresh token theft"
+        ],
+        "rightHighlights": [
+          "Universal PKCE enforcement",
+          "Exact redirect matching",
+          "Asymmetric client assertion",
+          "Rotated token family revocation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Token Lifecycle, Scopes & Single-Use Refresh Token Rotation (RTR)",
+      "codeHash": "8a87d5291813e1aa2b3a336f08452f0822b8f3a9b19b6d0ed8f3f214204bb0d0",
+      "spec": {
+        "template": "compare",
+        "title": "OAuth Framework: Token Lifecycle, Scopes & Single-Use Refresh Token Rotation (RTR)",
+        "left": {
+          "label": "Insecure Legacy Authorization",
+          "content": [
+            "Implicit grants expose access tokens directly in front-channel browser URLs",
+            "Password grant forces users to enter master credentials into untrusted clients",
+            "Authorization codes without challenges risk mobile redirect interception",
+            "Static long-lived refresh tokens allow indefinite unauthorized access on theft"
+          ]
+        },
+        "right": {
+          "label": "OAuth Two Point One Architecture",
+          "content": [
+            "Authorization Code grant with PKCE is mandated across all client types",
+            "Strict exact redirect matching prevents open redirector token theft",
+            "Asymmetric Private Key JWT validates confidential client identities securely",
+            "Single-use Refresh Token Rotation with automated family-wide breach revocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays single-use refresh token issuance and session family tracking pipelines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors token family state transitions and automated breach containment triggers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates instantaneous revocation of compromised token families upon duplicate reuse."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms rotated token issuance, single-use state updates, and family-wide revocation readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure Legacy Authorization",
+        "rightLabel": "OAuth Two Point One Architecture",
+        "leftHighlights": [
+          "Front-channel URL token leakage",
+          "Password credential exposure",
+          "Authorization code interception",
+          "Static refresh token theft"
+        ],
+        "rightHighlights": [
+          "Universal PKCE enforcement",
+          "Exact redirect matching",
+          "Asymmetric client assertion",
+          "Rotated token family revocation"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production OAuth 2.1 Benchmark & End-to-End Security Audit Suite",
+      "codeHash": "1ec8d66e506490eb5a71f6a0703939dec55cd430c806c873cc251f8dea7014de",
+      "spec": {
+        "template": "compare",
+        "title": "OAuth Framework: Production OAuth 2.1 Benchmark & End-to-End Security Audit Suite",
+        "left": {
+          "label": "Insecure Legacy Authorization",
+          "content": [
+            "Implicit grants expose access tokens directly in front-channel browser URLs",
+            "Password grant forces users to enter master credentials into untrusted clients",
+            "Authorization codes without challenges risk mobile redirect interception",
+            "Static long-lived refresh tokens allow indefinite unauthorized access on theft"
+          ]
+        },
+        "right": {
+          "label": "OAuth Two Point One Architecture",
+          "content": [
+            "Authorization Code grant with PKCE is mandated across all client types",
+            "Strict exact redirect matching prevents open redirector token theft",
+            "Asymmetric Private Key JWT validates confidential client identities securely",
+            "Single-use Refresh Token Rotation with automated family-wide breach revocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end authorization security audit suite across enterprise identity gateways."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates concurrent authorization code exchanges, client assertions, and rotated tokens."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates full compliance with modern delegated authorization specifications."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero legacy grant vulnerabilities, timing-safe PKCE checks, and complete breach containment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure Legacy Authorization",
+        "rightLabel": "OAuth Two Point One Architecture",
+        "leftHighlights": [
+          "Front-channel URL token leakage",
+          "Password credential exposure",
+          "Authorization code interception",
+          "Static refresh token theft"
+        ],
+        "rightHighlights": [
+          "Universal PKCE enforcement",
+          "Exact redirect matching",
+          "Asymmetric client assertion",
+          "Rotated token family revocation"
+        ]
+      }
+    }
+  ]
+}

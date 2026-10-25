@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 38,
+  "promptSha": "88a663d93193ec0a514d9e6a8271defc2bde1605eff7ede5e1d7995e25ab8bcd",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "OpenID Connect (OIDC) Core Architecture: Identity Layer on OAuth 2.0 & ID Tokens vs Access Tokens",
+      "codeHash": "4d3b5ce083c0be2e9fde39ffc470c1e716b733e3bbd1daf8911f436a0a46ac5c",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC Federation: OpenID Connect (OIDC) Core Architecture: Identity Layer on OAuth 2.0 & ID Tokens vs Access Tokens",
+        "left": {
+          "label": "Insecure / Ad-hoc Identity Federation",
+          "content": [
+            "Pseudo-authentication using access tokens risks token substitution attacks",
+            "Hardcoded provider URLs break on certificate or endpoint rotation",
+            "Static key files require server restarts during cryptographic key rollover",
+            "Bloated tokens with all profile claims exceed HTTP header size limits"
+          ]
+        },
+        "right": {
+          "label": "Standardized OIDC Enterprise Architecture",
+          "content": [
+            "Dedicated ID Tokens bind user identity and access tokens with cryptographic hashes",
+            "Standardized discovery documents allow dynamic provider configuration",
+            "In-memory JWKS cache enables zero-downtime key rotation by Key ID",
+            "Decoupled UserInfo endpoint delivers deep profile data on-demand securely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates openid connect identity layer decoupled from oauth authorization tokens."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates id token claims and cryptographic left-half hash binding over access tokens."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of pseudo-authentication vulnerabilities and token substitution."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms cryptographic nonce validation, access token hash alignment, and subject integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Identity Federation",
+        "rightLabel": "Standardized OIDC Enterprise Architecture",
+        "leftHighlights": [
+          "Token substitution risk",
+          "Fragile static endpoints",
+          "Service restart outages",
+          "HTTP header bloat"
+        ],
+        "rightHighlights": [
+          "Cryptographic ID token binding",
+          "Dynamic discovery metadata",
+          "Zero-downtime key rotation",
+          "On-demand UserInfo retrieval"
+        ]
+      }
+    },
+    {
+      "partTitle": "OIDC Discovery Document (.well-known/openid-configuration) & Dynamic Provider Metadata",
+      "codeHash": "dbe2f9b09e3237465d4c8e51c568253d7467110f6db0af079c2608c95bb96da4",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC Federation: OIDC Discovery Document (.well-known/openid-configuration) & Dynamic Provider Metadata",
+        "left": {
+          "label": "Insecure / Ad-hoc Identity Federation",
+          "content": [
+            "Pseudo-authentication using access tokens risks token substitution attacks",
+            "Hardcoded provider URLs break on certificate or endpoint rotation",
+            "Static key files require server restarts during cryptographic key rollover",
+            "Bloated tokens with all profile claims exceed HTTP header size limits"
+          ]
+        },
+        "right": {
+          "label": "Standardized OIDC Enterprise Architecture",
+          "content": [
+            "Dedicated ID Tokens bind user identity and access tokens with cryptographic hashes",
+            "Standardized discovery documents allow dynamic provider configuration",
+            "In-memory JWKS cache enables zero-downtime key rotation by Key ID",
+            "Decoupled UserInfo endpoint delivers deep profile data on-demand securely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays dynamic provider metadata discovery at standardized well-known paths."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates strict issuer domain matching and universal transport layer security prerequisites."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of brittle static configuration files through dynamic metadata."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms valid issuer matching, all secure endpoint urls, and cached metadata integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Identity Federation",
+        "rightLabel": "Standardized OIDC Enterprise Architecture",
+        "leftHighlights": [
+          "Token substitution risk",
+          "Fragile static endpoints",
+          "Service restart outages",
+          "HTTP header bloat"
+        ],
+        "rightHighlights": [
+          "Cryptographic ID token binding",
+          "Dynamic discovery metadata",
+          "Zero-downtime key rotation",
+          "On-demand UserInfo retrieval"
+        ]
+      }
+    },
+    {
+      "partTitle": "JSON Web Key Set (JWKS) Endpoint Architecture: Key Rotation, kid Matching & Caching Strategies",
+      "codeHash": "535972e7869ca7b4af4c80492d9b7f658d5640bf3aa462ae0818dce575d7f95e",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC Federation: JSON Web Key Set (JWKS) Endpoint Architecture: Key Rotation, kid Matching & Caching Strategies",
+        "left": {
+          "label": "Insecure / Ad-hoc Identity Federation",
+          "content": [
+            "Pseudo-authentication using access tokens risks token substitution attacks",
+            "Hardcoded provider URLs break on certificate or endpoint rotation",
+            "Static key files require server restarts during cryptographic key rollover",
+            "Bloated tokens with all profile claims exceed HTTP header size limits"
+          ]
+        },
+        "right": {
+          "label": "Standardized OIDC Enterprise Architecture",
+          "content": [
+            "Dedicated ID Tokens bind user identity and access tokens with cryptographic hashes",
+            "Standardized discovery documents allow dynamic provider configuration",
+            "In-memory JWKS cache enables zero-downtime key rotation by Key ID",
+            "Decoupled UserInfo endpoint delivers deep profile data on-demand securely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates key set distribution endpoints and wire-speed in-memory key resolution."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors seamless multi-key coexistence during zero-downtime cryptographic key rotation cycles."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero service disruption during planned key retirement and rollover."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms active key parsing, key identifier indexing, and fast cache lookup readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Identity Federation",
+        "rightLabel": "Standardized OIDC Enterprise Architecture",
+        "leftHighlights": [
+          "Token substitution risk",
+          "Fragile static endpoints",
+          "Service restart outages",
+          "HTTP header bloat"
+        ],
+        "rightHighlights": [
+          "Cryptographic ID token binding",
+          "Dynamic discovery metadata",
+          "Zero-downtime key rotation",
+          "On-demand UserInfo retrieval"
+        ]
+      }
+    },
+    {
+      "partTitle": "Scopes (openid, profile, email), Claims & The UserInfo Endpoint",
+      "codeHash": "c5f1aa52ffac4c6567f4e1442d0645480be64f33c109ed939b8c3a3a7a99f490",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC Federation: Scopes (openid, profile, email), Claims & The UserInfo Endpoint",
+        "left": {
+          "label": "Insecure / Ad-hoc Identity Federation",
+          "content": [
+            "Pseudo-authentication using access tokens risks token substitution attacks",
+            "Hardcoded provider URLs break on certificate or endpoint rotation",
+            "Static key files require server restarts during cryptographic key rollover",
+            "Bloated tokens with all profile claims exceed HTTP header size limits"
+          ]
+        },
+        "right": {
+          "label": "Standardized OIDC Enterprise Architecture",
+          "content": [
+            "Dedicated ID Tokens bind user identity and access tokens with cryptographic hashes",
+            "Standardized discovery documents allow dynamic provider configuration",
+            "In-memory JWKS cache enables zero-downtime key rotation by Key ID",
+            "Decoupled UserInfo endpoint delivers deep profile data on-demand securely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays userinfo API endpoint returning rich profile claims for authorized clients."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates bearer access token verification and strict scope-based claim filtering policies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates lightweight token headers combined with on-demand detailed profile retrieval."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms successful user claims retrieval, valid email verification flags, and data minimization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Identity Federation",
+        "rightLabel": "Standardized OIDC Enterprise Architecture",
+        "leftHighlights": [
+          "Token substitution risk",
+          "Fragile static endpoints",
+          "Service restart outages",
+          "HTTP header bloat"
+        ],
+        "rightHighlights": [
+          "Cryptographic ID token binding",
+          "Dynamic discovery metadata",
+          "Zero-downtime key rotation",
+          "On-demand UserInfo retrieval"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production OIDC Relying Party Engine & Cross-Domain Identity Federation Benchmark",
+      "codeHash": "ed347e65470166fd4e0cc83d91e22f540b917d2282d2aa4ac17e30bb9ecb6a0b",
+      "spec": {
+        "template": "compare",
+        "title": "OIDC Federation: Production OIDC Relying Party Engine & Cross-Domain Identity Federation Benchmark",
+        "left": {
+          "label": "Insecure / Ad-hoc Identity Federation",
+          "content": [
+            "Pseudo-authentication using access tokens risks token substitution attacks",
+            "Hardcoded provider URLs break on certificate or endpoint rotation",
+            "Static key files require server restarts during cryptographic key rollover",
+            "Bloated tokens with all profile claims exceed HTTP header size limits"
+          ]
+        },
+        "right": {
+          "label": "Standardized OIDC Enterprise Architecture",
+          "content": [
+            "Dedicated ID Tokens bind user identity and access tokens with cryptographic hashes",
+            "Standardized discovery documents allow dynamic provider configuration",
+            "In-memory JWKS cache enables zero-downtime key rotation by Key ID",
+            "Decoupled UserInfo endpoint delivers deep profile data on-demand securely"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents end-to-end relying party federation gateway across enterprise environments."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates multi-stage validation including state checks, id tokens, nonces, and access tokens."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive enterprise identity federation certification over ad-hoc setups."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full federation compliance certification, zero security regressions, and zero-trust mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Insecure / Ad-hoc Identity Federation",
+        "rightLabel": "Standardized OIDC Enterprise Architecture",
+        "leftHighlights": [
+          "Token substitution risk",
+          "Fragile static endpoints",
+          "Service restart outages",
+          "HTTP header bloat"
+        ],
+        "rightHighlights": [
+          "Cryptographic ID token binding",
+          "Dynamic discovery metadata",
+          "Zero-downtime key rotation",
+          "On-demand UserInfo retrieval"
+        ]
+      }
+    }
+  ]
+}
