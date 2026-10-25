@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 41,
+  "promptSha": "867989e8a5b52f7787a97fd83afdcf90587e74dc7b5b027441550fec0bb94560",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Distributed Caching Topology & Hardware Memory Hierarchies",
+      "codeHash": "ad5b72106329d3d87676e48c7fe348245eaf87bbac34eeca6fdbfb060965a722",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Caching Architecture: Distributed Caching Topology & Hardware Memory Hierarchies",
+        "left": {
+          "label": "Direct Database Access (No Caching)",
+          "content": [
+            "High millisecond disk I/O and query parsing on every request",
+            "Database CPU saturation and connection pool exhaustion during spikes",
+            "Cold start stalls and cascading lock contention under concurrent load",
+            "Expensive vertical database hardware upgrades required to scale"
+          ]
+        },
+        "right": {
+          "label": "Multi-Pattern Distributed Caching Tier",
+          "content": [
+            "Sub-millisecond read access directly from fast in-memory RAM",
+            "Over 90% of total read and write load offloaded from database",
+            "Flexible data access patterns: Cache-Aside, Write-Through, Write-Behind",
+            "Horizontal cluster scalability via Redis replication and partitioning"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the computer hardware memory hierarchy spanning registers to remote storage."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors electronic nanosecond RAM lookups versus millisecond persistent disk input output bottlenecks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates massive throughput acceleration via in-memory distributed cache tiers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms latency profile evaluations across hardware memory tiers and validates cache necessity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Database Access (No Caching)",
+        "rightLabel": "Multi-Pattern Distributed Caching Tier",
+        "leftHighlights": [
+          "Millisecond disk I/O latency",
+          "Database CPU saturation",
+          "Cascading lock contention",
+          "Expensive vertical hardware"
+        ],
+        "rightHighlights": [
+          "Sub-millisecond in-memory access",
+          "Over 90% load offloaded",
+          "Flexible data access patterns",
+          "Horizontal cluster scalability"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cache-Aside (Lazy-Loading) Pattern: Mechanics & Concurrency Paths",
+      "codeHash": "4d92e11d2b1dfe6eaefd37de96aebdeddf9dfbf50a5850d804137e1b8dda6fc5",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Caching Architecture: The Cache-Aside (Lazy-Loading) Pattern: Mechanics & Concurrency Paths",
+        "left": {
+          "label": "Direct Database Access (No Caching)",
+          "content": [
+            "High millisecond disk I/O and query parsing on every request",
+            "Database CPU saturation and connection pool exhaustion during spikes",
+            "Cold start stalls and cascading lock contention under concurrent load",
+            "Expensive vertical database hardware upgrades required to scale"
+          ]
+        },
+        "right": {
+          "label": "Multi-Pattern Distributed Caching Tier",
+          "content": [
+            "Sub-millisecond read access directly from fast in-memory RAM",
+            "Over 90% of total read and write load offloaded from database",
+            "Flexible data access patterns: Cache-Aside, Write-Through, Write-Behind",
+            "Horizontal cluster scalability via Redis replication and partitioning"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Cache-Aside lazy-loading pattern orchestrating reads and cache invalidations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors cache misses prompting database queries followed by immediate cache population."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of stale write races through explicit key deletion semantics."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms fifty percent initial hit ratios, lazy-loading mechanics, and clean cache invalidations."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Database Access (No Caching)",
+        "rightLabel": "Multi-Pattern Distributed Caching Tier",
+        "leftHighlights": [
+          "Millisecond disk I/O latency",
+          "Database CPU saturation",
+          "Cascading lock contention",
+          "Expensive vertical hardware"
+        ],
+        "rightHighlights": [
+          "Sub-millisecond in-memory access",
+          "Over 90% load offloaded",
+          "Flexible data access patterns",
+          "Horizontal cluster scalability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Write-Through & Write-Around Caching Patterns: Synchronization & Cold Bypass",
+      "codeHash": "306c81c6cf0543e671a665d77ce05c34690a3fca590136357fe6f9bcf281d2b0",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Caching Architecture: Write-Through & Write-Around Caching Patterns: Synchronization & Cold Bypass",
+        "left": {
+          "label": "Direct Database Access (No Caching)",
+          "content": [
+            "High millisecond disk I/O and query parsing on every request",
+            "Database CPU saturation and connection pool exhaustion during spikes",
+            "Cold start stalls and cascading lock contention under concurrent load",
+            "Expensive vertical database hardware upgrades required to scale"
+          ]
+        },
+        "right": {
+          "label": "Multi-Pattern Distributed Caching Tier",
+          "content": [
+            "Sub-millisecond read access directly from fast in-memory RAM",
+            "Over 90% of total read and write load offloaded from database",
+            "Flexible data access patterns: Cache-Aside, Write-Through, Write-Behind",
+            "Horizontal cluster scalability via Redis replication and partitioning"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Write-Through direct synchronization alongside Write-Around cold-data bypass."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic dual-writes to memory and disk versus direct database writes for cold archives."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates prevention of memory pollution while guaranteeing fresh reads for active hot keys."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms Write-Through cache population and Write-Around cold audit preservation without memory clutter."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Database Access (No Caching)",
+        "rightLabel": "Multi-Pattern Distributed Caching Tier",
+        "leftHighlights": [
+          "Millisecond disk I/O latency",
+          "Database CPU saturation",
+          "Cascading lock contention",
+          "Expensive vertical hardware"
+        ],
+        "rightHighlights": [
+          "Sub-millisecond in-memory access",
+          "Over 90% load offloaded",
+          "Flexible data access patterns",
+          "Horizontal cluster scalability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Write-Behind (Write-Back) Caching: Asynchronous Batching & Crash Hazards",
+      "codeHash": "b965f461bab1a149695e250adf94e0dac410ea33a7bdcdf446510c82f68b0c0a",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Caching Architecture: Write-Behind (Write-Back) Caching: Asynchronous Batching & Crash Hazards",
+        "left": {
+          "label": "Direct Database Access (No Caching)",
+          "content": [
+            "High millisecond disk I/O and query parsing on every request",
+            "Database CPU saturation and connection pool exhaustion during spikes",
+            "Cold start stalls and cascading lock contention under concurrent load",
+            "Expensive vertical database hardware upgrades required to scale"
+          ]
+        },
+        "right": {
+          "label": "Multi-Pattern Distributed Caching Tier",
+          "content": [
+            "Sub-millisecond read access directly from fast in-memory RAM",
+            "Over 90% of total read and write load offloaded from database",
+            "Flexible data access patterns: Cache-Aside, Write-Through, Write-Behind",
+            "Horizontal cluster scalability via Redis replication and partitioning"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Write-Behind asynchronous batching accumulating mutations in memory dirty queues."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates microsecond client acknowledgments and deferred bulk database commit flushes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates massive database write offloading alongside non-volatile memory crash protection."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms dirty queue buffering, asynchronous bulk flushing, and final database state reconciliation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Database Access (No Caching)",
+        "rightLabel": "Multi-Pattern Distributed Caching Tier",
+        "leftHighlights": [
+          "Millisecond disk I/O latency",
+          "Database CPU saturation",
+          "Cascading lock contention",
+          "Expensive vertical hardware"
+        ],
+        "rightHighlights": [
+          "Sub-millisecond in-memory access",
+          "Over 90% load offloaded",
+          "Flexible data access patterns",
+          "Horizontal cluster scalability"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Multi-Pattern Distributed Cache Engine & Telemetry Benchmarking",
+      "codeHash": "91c5788aa6a4dca991130603ae86ad005976429ac58a88cbe2bf67ad3d22f0c0",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Caching Architecture: Production Multi-Pattern Distributed Cache Engine & Telemetry Benchmarking",
+        "left": {
+          "label": "Direct Database Access (No Caching)",
+          "content": [
+            "High millisecond disk I/O and query parsing on every request",
+            "Database CPU saturation and connection pool exhaustion during spikes",
+            "Cold start stalls and cascading lock contention under concurrent load",
+            "Expensive vertical database hardware upgrades required to scale"
+          ]
+        },
+        "right": {
+          "label": "Multi-Pattern Distributed Caching Tier",
+          "content": [
+            "Sub-millisecond read access directly from fast in-memory RAM",
+            "Over 90% of total read and write load offloaded from database",
+            "Flexible data access patterns: Cache-Aside, Write-Through, Write-Behind",
+            "Horizontal cluster scalability via Redis replication and partitioning"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production multi-pattern distributed cache platform and telemetry dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-millisecond read and write latency alongside ninety-four percent hit rate metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade database offload under sustained internet-scale query traffic."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies ninety-one percent database offloading, sub-millisecond tail latencies, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Database Access (No Caching)",
+        "rightLabel": "Multi-Pattern Distributed Caching Tier",
+        "leftHighlights": [
+          "Millisecond disk I/O latency",
+          "Database CPU saturation",
+          "Cascading lock contention",
+          "Expensive vertical hardware"
+        ],
+        "rightHighlights": [
+          "Sub-millisecond in-memory access",
+          "Over 90% load offloaded",
+          "Flexible data access patterns",
+          "Horizontal cluster scalability"
+        ]
+      }
+    }
+  ]
+}

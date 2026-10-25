@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 42,
+  "promptSha": "ad1b0bad4582a5006710dd46b78fd793aac44f7eb476f7a18503cc59b5fadfd9",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Phil Karlton's Hard Problem: Cache Invalidation & Stale Read Windows",
+      "codeHash": "6a5a4367aa1142a39111ed3455f9f03388eba5250febc8ef11294ee768e6580c",
+      "spec": {
+        "template": "compare",
+        "title": "Cache Invalidation & Consistency: Phil Karlton's Hard Problem: Cache Invalidation & Stale Read Windows",
+        "left": {
+          "label": "Naive Unbounded Caching (No Stampede Guard)",
+          "content": [
+            "Stale read windows serving obsolete prices for hours",
+            "Thundering Herd crashing databases upon popular key expiration",
+            "Connection pool exhaustion causing cascading 504 gateway errors",
+            "Synchronized mass expirations spiking database CPU to 100%"
+          ]
+        },
+        "right": {
+          "label": "Production Invalidation & Stampede Engine",
+          "content": [
+            "Delayed double deletion eliminating concurrent update races",
+            "Distributed mutex locking restricting recomputations to single thread",
+            "Probabilistic XFetch algorithm pre-warming keys before expiration",
+            "99.9% database query offload preserved even during viral surges"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates cache invalidation mechanics and stale read divergence windows across nodes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors database writes followed by explicit cache key deletions eliminating stale races."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates guaranteed data freshness over vulnerable uncoordinated cached records."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms staleness detection lifecycle, clean key evictions, and cache consistency restoration."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unbounded Caching (No Stampede Guard)",
+        "rightLabel": "Production Invalidation & Stampede Engine",
+        "leftHighlights": [
+          "Stale read windows",
+          "Thundering Herd crashes",
+          "Connection pool exhaustion",
+          "Synchronized mass expirations"
+        ],
+        "rightHighlights": [
+          "Delayed double deletion",
+          "Distributed mutex locking",
+          "Probabilistic XFetch algorithm",
+          "99.9% query offload preserved"
+        ]
+      }
+    },
+    {
+      "partTitle": "Time-To-Live (TTL) Eviction Policies & Sliding vs Fixed Expirations",
+      "codeHash": "69f57f54f7ab7b4ab6622508cbfedf4ba995c67b029a8698bb089e3c089e4c4a",
+      "spec": {
+        "template": "compare",
+        "title": "Cache Invalidation & Consistency: Time-To-Live (TTL) Eviction Policies & Sliding vs Fixed Expirations",
+        "left": {
+          "label": "Naive Unbounded Caching (No Stampede Guard)",
+          "content": [
+            "Stale read windows serving obsolete prices for hours",
+            "Thundering Herd crashing databases upon popular key expiration",
+            "Connection pool exhaustion causing cascading 504 gateway errors",
+            "Synchronized mass expirations spiking database CPU to 100%"
+          ]
+        },
+        "right": {
+          "label": "Production Invalidation & Stampede Engine",
+          "content": [
+            "Delayed double deletion eliminating concurrent update races",
+            "Distributed mutex locking restricting recomputations to single thread",
+            "Probabilistic XFetch algorithm pre-warming keys before expiration",
+            "99.9% database query offload preserved even during viral surges"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Time-To-Live eviction policies contrasting fixed deadlines with sliding renewals."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors passive lazy expirations on read access alongside background active key sweeps."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates automatic memory reclamation over permanent memory leak hazards."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms immediate retrieval for active sessions and safe deletion of expired tokens on read."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unbounded Caching (No Stampede Guard)",
+        "rightLabel": "Production Invalidation & Stampede Engine",
+        "leftHighlights": [
+          "Stale read windows",
+          "Thundering Herd crashes",
+          "Connection pool exhaustion",
+          "Synchronized mass expirations"
+        ],
+        "rightHighlights": [
+          "Delayed double deletion",
+          "Distributed mutex locking",
+          "Probabilistic XFetch algorithm",
+          "99.9% query offload preserved"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Thundering Herd (Cache Stampede) Problem & Mutex Guard Protection",
+      "codeHash": "adc82f8e7209168200406088804448588d977be007d1b93c97a0e3ac6c970679",
+      "spec": {
+        "template": "compare",
+        "title": "Cache Invalidation & Consistency: The Thundering Herd (Cache Stampede) Problem & Mutex Guard Protection",
+        "left": {
+          "label": "Naive Unbounded Caching (No Stampede Guard)",
+          "content": [
+            "Stale read windows serving obsolete prices for hours",
+            "Thundering Herd crashing databases upon popular key expiration",
+            "Connection pool exhaustion causing cascading 504 gateway errors",
+            "Synchronized mass expirations spiking database CPU to 100%"
+          ]
+        },
+        "right": {
+          "label": "Production Invalidation & Stampede Engine",
+          "content": [
+            "Delayed double deletion eliminating concurrent update races",
+            "Distributed mutex locking restricting recomputations to single thread",
+            "Probabilistic XFetch algorithm pre-warming keys before expiration",
+            "99.9% database query offload preserved even during viral surges"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the catastrophic Thundering Herd stampede striking backend databases on key expiry."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates distributed mutex locking ensuring only one concurrent thread queries the database."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total database CPU protection over catastrophic connection pool exhaustion."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms mutex lock acquisition, single upstream database query, and concurrent caller shielding."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unbounded Caching (No Stampede Guard)",
+        "rightLabel": "Production Invalidation & Stampede Engine",
+        "leftHighlights": [
+          "Stale read windows",
+          "Thundering Herd crashes",
+          "Connection pool exhaustion",
+          "Synchronized mass expirations"
+        ],
+        "rightHighlights": [
+          "Delayed double deletion",
+          "Distributed mutex locking",
+          "Probabilistic XFetch algorithm",
+          "99.9% query offload preserved"
+        ]
+      }
+    },
+    {
+      "partTitle": "Lease-Based Cache Invalidation & The XFetch Early Expiration Algorithm",
+      "codeHash": "92716e314002850b93473b664a07cc455d5d9add26a13bc5045ff20df7257912",
+      "spec": {
+        "template": "compare",
+        "title": "Cache Invalidation & Consistency: Lease-Based Cache Invalidation & The XFetch Early Expiration Algorithm",
+        "left": {
+          "label": "Naive Unbounded Caching (No Stampede Guard)",
+          "content": [
+            "Stale read windows serving obsolete prices for hours",
+            "Thundering Herd crashing databases upon popular key expiration",
+            "Connection pool exhaustion causing cascading 504 gateway errors",
+            "Synchronized mass expirations spiking database CPU to 100%"
+          ]
+        },
+        "right": {
+          "label": "Production Invalidation & Stampede Engine",
+          "content": [
+            "Delayed double deletion eliminating concurrent update races",
+            "Distributed mutex locking restricting recomputations to single thread",
+            "Probabilistic XFetch algorithm pre-warming keys before expiration",
+            "99.9% database query offload preserved even during viral surges"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the probabilistic XFetch algorithm calculating early background recomputations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates dynamic probability distributions triggering asynchronous cache warming before key expiry."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero-lock stampede protection over heavyweight distributed lock contention."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms early background refreshes for near-expiry keys and zero unnecessary refreshes for fresh data."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unbounded Caching (No Stampede Guard)",
+        "rightLabel": "Production Invalidation & Stampede Engine",
+        "leftHighlights": [
+          "Stale read windows",
+          "Thundering Herd crashes",
+          "Connection pool exhaustion",
+          "Synchronized mass expirations"
+        ],
+        "rightHighlights": [
+          "Delayed double deletion",
+          "Distributed mutex locking",
+          "Probabilistic XFetch algorithm",
+          "99.9% query offload preserved"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Invalidation Engine Implementation & Stampede Protection Telemetry",
+      "codeHash": "cebae2de2613d5b6f1240ae7f8c28d96ce6297c8b1d504874bd982b34a68d817",
+      "spec": {
+        "template": "compare",
+        "title": "Cache Invalidation & Consistency: Production Invalidation Engine Implementation & Stampede Protection Telemetry",
+        "left": {
+          "label": "Naive Unbounded Caching (No Stampede Guard)",
+          "content": [
+            "Stale read windows serving obsolete prices for hours",
+            "Thundering Herd crashing databases upon popular key expiration",
+            "Connection pool exhaustion causing cascading 504 gateway errors",
+            "Synchronized mass expirations spiking database CPU to 100%"
+          ]
+        },
+        "right": {
+          "label": "Production Invalidation & Stampede Engine",
+          "content": [
+            "Delayed double deletion eliminating concurrent update races",
+            "Distributed mutex locking restricting recomputations to single thread",
+            "Probabilistic XFetch algorithm pre-warming keys before expiration",
+            "99.9% database query offload preserved even during viral surges"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production invalidation engine telemetry dashboard under simulated traffic surges."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors ten thousand concurrent requests with nine thousand nine hundred ninety-nine queries blocked."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise resilience and sub-three millisecond tail latency under extreme load."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies total stampede eradication, one hundred percent cache parity, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unbounded Caching (No Stampede Guard)",
+        "rightLabel": "Production Invalidation & Stampede Engine",
+        "leftHighlights": [
+          "Stale read windows",
+          "Thundering Herd crashes",
+          "Connection pool exhaustion",
+          "Synchronized mass expirations"
+        ],
+        "rightHighlights": [
+          "Delayed double deletion",
+          "Distributed mutex locking",
+          "Probabilistic XFetch algorithm",
+          "99.9% query offload preserved"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 45,
+  "promptSha": "b6436425e241b8d1a6cfa0c203347e6412105e9f0f317b3441059f64e32be619",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Multi-Tier Caching Architecture: L1 In-Process Memory & L2 Distributed Clustered Tier",
+      "codeHash": "b5c6f6fdf7cd4624a613c83f7ca895101919c58796811dce8ada7307f2159ef9",
+      "spec": {
+        "template": "compare",
+        "title": "Production Multi-Tier Cache Engine: Multi-Tier Caching Architecture: L1 In-Process Memory & L2 Distributed Clustered Tier",
+        "left": {
+          "label": "Naive Single-Tier Caching",
+          "content": [
+            "Single remote cache layer constrained by network interface latency floor",
+            "Hard TTL cliffs triggering catastrophic concurrent database stampedes",
+            "Synchronous writes serializing transactions and throttling cluster throughput",
+            "Severe cache churn and database saturation during sudden traffic surges"
+          ]
+        },
+        "right": {
+          "label": "Production Multi-Tier Distributed Engine",
+          "content": [
+            "In-process heap cache serving hot keys in tens of nanoseconds",
+            "Probabilistic XFetch algorithm pre-warming records prior to expiration",
+            "Dual-threshold Write-Behind buffer coalescing writes and slashing IOPS",
+            "Consistent hash ring with virtual nodes enabling elastic zero-churn scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the multi-tier hierarchy integrating in-process heap with distributed clusters."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors microsecond memory lookups and seamless backfill propagation upon cluster and database fetches."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates nanosecond edge velocity over latency-constrained remote-only cache architectures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms fifty percent initial hits on repeated reads, rapid fallback handling, and backfill integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Single-Tier Caching",
+        "rightLabel": "Production Multi-Tier Distributed Engine",
+        "leftHighlights": [
+          "Network latency floor",
+          "Catastrophic stampedes",
+          "Synchronous write bottlenecks",
+          "Severe database saturation"
+        ],
+        "rightHighlights": [
+          "Nanosecond heap cache",
+          "Probabilistic XFetch pre-warming",
+          "Dual-threshold Write-Behind",
+          "Sub-millisecond tail latencies"
+        ]
+      }
+    },
+    {
+      "partTitle": "Consistent Hashing Ring with Virtual Nodes & Binary Search Routing",
+      "codeHash": "cf97f2c4026959f9a566de07a3e54db8b81853c6fd91a36c8497b6dd066671ad",
+      "spec": {
+        "template": "compare",
+        "title": "Production Multi-Tier Cache Engine: Consistent Hashing Ring with Virtual Nodes & Binary Search Routing",
+        "left": {
+          "label": "Naive Single-Tier Caching",
+          "content": [
+            "Single remote cache layer constrained by network interface latency floor",
+            "Hard TTL cliffs triggering catastrophic concurrent database stampedes",
+            "Synchronous writes serializing transactions and throttling cluster throughput",
+            "Severe cache churn and database saturation during sudden traffic surges"
+          ]
+        },
+        "right": {
+          "label": "Production Multi-Tier Distributed Engine",
+          "content": [
+            "In-process heap cache serving hot keys in tens of nanoseconds",
+            "Probabilistic XFetch algorithm pre-warming records prior to expiration",
+            "Dual-threshold Write-Behind buffer coalescing writes and slashing IOPS",
+            "Consistent hash ring with virtual nodes enabling elastic zero-churn scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the consistent hashing ring router directing traffic across virtual node tokens."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates binary search ring traversal mapping keys to specific cluster nodes in microsecond intervals."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates resilient cluster elasticity and minimal churn over fragile static sharding."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms one hundred fifty virtual tokens, deterministic node mappings, and sub-ten microsecond lookups."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Single-Tier Caching",
+        "rightLabel": "Production Multi-Tier Distributed Engine",
+        "leftHighlights": [
+          "Network latency floor",
+          "Catastrophic stampedes",
+          "Synchronous write bottlenecks",
+          "Severe database saturation"
+        ],
+        "rightHighlights": [
+          "Nanosecond heap cache",
+          "Probabilistic XFetch pre-warming",
+          "Dual-threshold Write-Behind",
+          "Sub-millisecond tail latencies"
+        ]
+      }
+    },
+    {
+      "partTitle": "Stampede Mitigation & The XFetch Probabilistic Early Expiration Algorithm",
+      "codeHash": "78877934bfd821136e2ec04caf263abbde1a9bdbf0dc09d410188456e3ffb669",
+      "spec": {
+        "template": "compare",
+        "title": "Production Multi-Tier Cache Engine: Stampede Mitigation & The XFetch Probabilistic Early Expiration Algorithm",
+        "left": {
+          "label": "Naive Single-Tier Caching",
+          "content": [
+            "Single remote cache layer constrained by network interface latency floor",
+            "Hard TTL cliffs triggering catastrophic concurrent database stampedes",
+            "Synchronous writes serializing transactions and throttling cluster throughput",
+            "Severe cache churn and database saturation during sudden traffic surges"
+          ]
+        },
+        "right": {
+          "label": "Production Multi-Tier Distributed Engine",
+          "content": [
+            "In-process heap cache serving hot keys in tens of nanoseconds",
+            "Probabilistic XFetch algorithm pre-warming records prior to expiration",
+            "Dual-threshold Write-Behind buffer coalescing writes and slashing IOPS",
+            "Consistent hash ring with virtual nodes enabling elastic zero-churn scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the probabilistic XFetch engine mitigating catastrophic cache stampede avalanches."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates exponential threshold calculations triggering early background refreshes before key expiration."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates continuous cache availability over blocking mutex locks and database connection crashes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms early background refreshes for near-expiry records and continuous cache hits for concurrent clients."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Single-Tier Caching",
+        "rightLabel": "Production Multi-Tier Distributed Engine",
+        "leftHighlights": [
+          "Network latency floor",
+          "Catastrophic stampedes",
+          "Synchronous write bottlenecks",
+          "Severe database saturation"
+        ],
+        "rightHighlights": [
+          "Nanosecond heap cache",
+          "Probabilistic XFetch pre-warming",
+          "Dual-threshold Write-Behind",
+          "Sub-millisecond tail latencies"
+        ]
+      }
+    },
+    {
+      "partTitle": "Dual-Threshold Write-Behind Buffer with Coalescing & Batch Flushing",
+      "codeHash": "bf76eb8d372ae97f2a26794922c0dd20b81f4e79d12c50bfd01cbe114964b6c8",
+      "spec": {
+        "template": "compare",
+        "title": "Production Multi-Tier Cache Engine: Dual-Threshold Write-Behind Buffer with Coalescing & Batch Flushing",
+        "left": {
+          "label": "Naive Single-Tier Caching",
+          "content": [
+            "Single remote cache layer constrained by network interface latency floor",
+            "Hard TTL cliffs triggering catastrophic concurrent database stampedes",
+            "Synchronous writes serializing transactions and throttling cluster throughput",
+            "Severe cache churn and database saturation during sudden traffic surges"
+          ]
+        },
+        "right": {
+          "label": "Production Multi-Tier Distributed Engine",
+          "content": [
+            "In-process heap cache serving hot keys in tens of nanoseconds",
+            "Probabilistic XFetch algorithm pre-warming records prior to expiration",
+            "Dual-threshold Write-Behind buffer coalescing writes and slashing IOPS",
+            "Consistent hash ring with virtual nodes enabling elastic zero-churn scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the dual-threshold Write-Behind buffer queue coalescing mutations before database flushing."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors buffer capacity triggers and periodic debounce timers initiating atomic batch disk operations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates massive database IOPS reduction alongside sub-millisecond client write acknowledgments."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms automatic flush triggers upon capacity threshold, zero pending items, and batched write integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Single-Tier Caching",
+        "rightLabel": "Production Multi-Tier Distributed Engine",
+        "leftHighlights": [
+          "Network latency floor",
+          "Catastrophic stampedes",
+          "Synchronous write bottlenecks",
+          "Severe database saturation"
+        ],
+        "rightHighlights": [
+          "Nanosecond heap cache",
+          "Probabilistic XFetch pre-warming",
+          "Dual-threshold Write-Behind",
+          "Sub-millisecond tail latencies"
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 9 Capstone: Full Integration, Stress Benchmark & Telemetry Audit",
+      "codeHash": "25c9e9311a9d27aa8e9e32a399c2b4ad83ccfb9fe73bb38baf9d934cd11c4d64",
+      "spec": {
+        "template": "compare",
+        "title": "Production Multi-Tier Cache Engine: Milestone 9 Capstone: Full Integration, Stress Benchmark & Telemetry Audit",
+        "left": {
+          "label": "Naive Single-Tier Caching",
+          "content": [
+            "Single remote cache layer constrained by network interface latency floor",
+            "Hard TTL cliffs triggering catastrophic concurrent database stampedes",
+            "Synchronous writes serializing transactions and throttling cluster throughput",
+            "Severe cache churn and database saturation during sudden traffic surges"
+          ]
+        },
+        "right": {
+          "label": "Production Multi-Tier Distributed Engine",
+          "content": [
+            "In-process heap cache serving hot keys in tens of nanoseconds",
+            "Probabilistic XFetch algorithm pre-warming records prior to expiration",
+            "Dual-threshold Write-Behind buffer coalescing writes and slashing IOPS",
+            "Consistent hash ring with virtual nodes enabling elastic zero-churn scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Milestone Capstone production multi-tier cache telemetry audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors over ninety-two percent memory hits, ninety-nine percent cluster hits, and sub-millisecond latencies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates world-class enterprise scalability, zero cache stampedes, and extreme cloud efficiency."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies four hundred twenty microsecond tail latency, zero stampedes, and full production certification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Single-Tier Caching",
+        "rightLabel": "Production Multi-Tier Distributed Engine",
+        "leftHighlights": [
+          "Network latency floor",
+          "Catastrophic stampedes",
+          "Synchronous write bottlenecks",
+          "Severe database saturation"
+        ],
+        "rightHighlights": [
+          "Nanosecond heap cache",
+          "Probabilistic XFetch pre-warming",
+          "Dual-threshold Write-Behind",
+          "Sub-millisecond tail latencies"
+        ]
+      }
+    }
+  ]
+}

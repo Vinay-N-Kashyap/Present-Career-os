@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 43,
+  "promptSha": "ea74e8f66de7042abd1fddba9d5fa8c1272ff1f081cd5d0f2b70df833b168c96",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "High Availability via Redis Sentinel: Heartbeats & Quorum Failover",
+      "codeHash": "88f2eece19d4e47f512e0544853186bec8435cf41954ff0d86d3a7d13f90b08f",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Redis Architecture: High Availability via Redis Sentinel: Heartbeats & Quorum Failover",
+        "left": {
+          "label": "Single-Master or Proxy Sharding",
+          "content": [
+            "Single master hardware bottlenecks capping total write throughput",
+            "Manual failover requiring human engineer intervention during outages",
+            "External proxy hops adding latency and creating single points of failure",
+            "Modulo sharding forcing offline cluster rebuilds when scaling nodes"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Redis Cluster & Sentinel",
+          "content": [
+            "16,384 hash slots distributing keys uniformly across masters",
+            "Sentinel and cluster bus coordinating automated quorum failover",
+            "Smart client drivers achieving 99.9% direct single-hop routing",
+            "Online zero-downtime hash slot migration during live traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Redis Sentinel quorum failover monitoring primary master heartbeats."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors subjective down transitions escalating to objective down quorum agreements."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates automated replica promotion over manual human operational intervention."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms quorum consensus, objective down declarations, and automated master failover authorization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Single-Master or Proxy Sharding",
+        "rightLabel": "Decentralized Redis Cluster & Sentinel",
+        "leftHighlights": [
+          "Single master hardware bottlenecks",
+          "Manual failover required",
+          "External proxy hop latency",
+          "Modulo sharding offline rebuilds"
+        ],
+        "rightHighlights": [
+          "16,384 hash slots",
+          "Automated quorum failover",
+          "Smart direct single-hop routing",
+          "Online zero-downtime migration"
+        ]
+      }
+    },
+    {
+      "partTitle": "Horizontal Sharding with Redis Cluster: 16,384 Hash Slots & CRC16 Mechanics",
+      "codeHash": "74ec66de37c9b2851b0c7ee2ab228a996912dc965eaa9162b20c52f94e1450f5",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Redis Architecture: Horizontal Sharding with Redis Cluster: 16,384 Hash Slots & CRC16 Mechanics",
+        "left": {
+          "label": "Single-Master or Proxy Sharding",
+          "content": [
+            "Single master hardware bottlenecks capping total write throughput",
+            "Manual failover requiring human engineer intervention during outages",
+            "External proxy hops adding latency and creating single points of failure",
+            "Modulo sharding forcing offline cluster rebuilds when scaling nodes"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Redis Cluster & Sentinel",
+          "content": [
+            "16,384 hash slots distributing keys uniformly across masters",
+            "Sentinel and cluster bus coordinating automated quorum failover",
+            "Smart client drivers achieving 99.9% direct single-hop routing",
+            "Online zero-downtime hash slot migration during live traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Redis Cluster horizontal sharding across sixteen thousand hash slots."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors cyclic redundancy checksum hashing mapping arbitrary keys across master shards."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates uniform partition balance over fragile uncoordinated key distributions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms deterministic slot calculations, balanced master partitions, and hash tag grouping."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Single-Master or Proxy Sharding",
+        "rightLabel": "Decentralized Redis Cluster & Sentinel",
+        "leftHighlights": [
+          "Single master hardware bottlenecks",
+          "Manual failover required",
+          "External proxy hop latency",
+          "Modulo sharding offline rebuilds"
+        ],
+        "rightHighlights": [
+          "16,384 hash slots",
+          "Automated quorum failover",
+          "Smart direct single-hop routing",
+          "Online zero-downtime migration"
+        ]
+      }
+    },
+    {
+      "partTitle": "The MOVED & ASK Redirection Protocols: Client Routing & Smart Drivers",
+      "codeHash": "5535b53a7abd1ddbab23c67af3bad0aaa0ea2e468b0d5f5d906e1eec3ce70767",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Redis Architecture: The MOVED & ASK Redirection Protocols: Client Routing & Smart Drivers",
+        "left": {
+          "label": "Single-Master or Proxy Sharding",
+          "content": [
+            "Single master hardware bottlenecks capping total write throughput",
+            "Manual failover requiring human engineer intervention during outages",
+            "External proxy hops adding latency and creating single points of failure",
+            "Modulo sharding forcing offline cluster rebuilds when scaling nodes"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Redis Cluster & Sentinel",
+          "content": [
+            "16,384 hash slots distributing keys uniformly across masters",
+            "Sentinel and cluster bus coordinating automated quorum failover",
+            "Smart client drivers achieving 99.9% direct single-hop routing",
+            "Online zero-downtime hash slot migration during live traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the dual client redirection protocol contrasting permanent and temporary routes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates permanent MOVED signals alongside temporary ASK directives during live migrations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates smart client in-memory routing efficiency over costly proxy hop overhead."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms direct single-hop client access, slot map caching, and accurate redirection handling."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Single-Master or Proxy Sharding",
+        "rightLabel": "Decentralized Redis Cluster & Sentinel",
+        "leftHighlights": [
+          "Single master hardware bottlenecks",
+          "Manual failover required",
+          "External proxy hop latency",
+          "Modulo sharding offline rebuilds"
+        ],
+        "rightHighlights": [
+          "16,384 hash slots",
+          "Automated quorum failover",
+          "Smart direct single-hop routing",
+          "Online zero-downtime migration"
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Hash Slot Migration & Resharding: Online Scaling with Zero Downtime",
+      "codeHash": "fe7636558130ed83ced6a9ab2528341765575bc42b81924a59d13e7f706ef8f0",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Redis Architecture: Dynamic Hash Slot Migration & Resharding: Online Scaling with Zero Downtime",
+        "left": {
+          "label": "Single-Master or Proxy Sharding",
+          "content": [
+            "Single master hardware bottlenecks capping total write throughput",
+            "Manual failover requiring human engineer intervention during outages",
+            "External proxy hops adding latency and creating single points of failure",
+            "Modulo sharding forcing offline cluster rebuilds when scaling nodes"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Redis Cluster & Sentinel",
+          "content": [
+            "16,384 hash slots distributing keys uniformly across masters",
+            "Sentinel and cluster bus coordinating automated quorum failover",
+            "Smart client drivers achieving 99.9% direct single-hop routing",
+            "Online zero-downtime hash slot migration during live traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays dynamic hash slot migration executing online cluster scaling with zero downtime."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors chunked key transfers and cluster epoch bumps across migrating and importing nodes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates seamless in-flight cluster expansion over disruptive offline shard rebuilds."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms key batch streaming, ownership transfer finalization, and uninterrupted write availability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Single-Master or Proxy Sharding",
+        "rightLabel": "Decentralized Redis Cluster & Sentinel",
+        "leftHighlights": [
+          "Single master hardware bottlenecks",
+          "Manual failover required",
+          "External proxy hop latency",
+          "Modulo sharding offline rebuilds"
+        ],
+        "rightHighlights": [
+          "16,384 hash slots",
+          "Automated quorum failover",
+          "Smart direct single-hop routing",
+          "Online zero-downtime migration"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Redis Cluster Engine Implementation & Invariant Verification",
+      "codeHash": "fbfa2fb3741682c9af1e63584db24036ec7f24d733e4aea689e3197bd0b98a86",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Redis Architecture: Production Redis Cluster Engine Implementation & Invariant Verification",
+        "left": {
+          "label": "Single-Master or Proxy Sharding",
+          "content": [
+            "Single master hardware bottlenecks capping total write throughput",
+            "Manual failover requiring human engineer intervention during outages",
+            "External proxy hops adding latency and creating single points of failure",
+            "Modulo sharding forcing offline cluster rebuilds when scaling nodes"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Redis Cluster & Sentinel",
+          "content": [
+            "16,384 hash slots distributing keys uniformly across masters",
+            "Sentinel and cluster bus coordinating automated quorum failover",
+            "Smart client drivers achieving 99.9% direct single-hop routing",
+            "Online zero-downtime hash slot migration during live traffic"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production Redis Cluster telemetry dashboard under heavy transactional load."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors four hundred fifty thousand operations per second and near-zero client redirections."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade scalability and sub-millisecond tail latency across nodes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies complete slot coverage, automated failover protection, and full production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Single-Master or Proxy Sharding",
+        "rightLabel": "Decentralized Redis Cluster & Sentinel",
+        "leftHighlights": [
+          "Single master hardware bottlenecks",
+          "Manual failover required",
+          "External proxy hop latency",
+          "Modulo sharding offline rebuilds"
+        ],
+        "rightHighlights": [
+          "16,384 hash slots",
+          "Automated quorum failover",
+          "Smart direct single-hop routing",
+          "Online zero-downtime migration"
+        ]
+      }
+    }
+  ]
+}

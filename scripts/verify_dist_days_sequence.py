@@ -1,18 +1,11 @@
 # scripts/verify_dist_days_sequence.py
 import re
 
-file_path = "src/lib/data/distributedWebLongLessons.ts"
-with open(file_path, "r", encoding="utf-8") as f:
-    content = f.read()
+with open('src/lib/data/distributedWebLongLessons.ts', 'r', encoding='utf-8') as f:
+    text = f.read()
 
-# Match `"day": <num>`
-day_matches = re.findall(r'"day":\s*(\d+)', content)
-days = [int(x) for x in day_matches]
-
-print(f"Total days found in distributedWebLongLessons.ts: {len(days)}")
-print(f"Days sequence: {days[:10]} ... {days[-10:]}")
-
-expected = list(range(1, 41))
-assert days == expected, f"Days sequence mismatch! Expected {expected}, got {days}"
-
-print("All days 1 through 40 are present in strict sequential order with zero gaps or duplicates! PASS")
+days = [int(m) for m in re.findall(r'"day":\s*(\d+)', text)]
+print(f'Found days count: {len(days)}')
+print(f'Days range: {days[0]} to {days[-1]}')
+assert days == list(range(1, 46)), f'Sequence mismatch: {days}'
+print('All 45 days in distributedWebLongLessons.ts are perfectly sequential 1 to 45!')
