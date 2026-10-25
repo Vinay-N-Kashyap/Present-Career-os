@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 39,
+  "promptSha": "63f735c6e0cddc8eefa8a76151d09d185be58f728860ddf4cbc65ffa9206554b",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Physical Camera Optics & Signed Circle of Confusion (CoC)",
+      "codeHash": "8325a93576cd433b222b19168b11b7444f45eaaa6d16f25d2080a9cc050db43b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Physical Camera Optics & Signed Circle of Confusion (CoC)",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the thin lens camera model mapping object distance to Circle of Confusion blur radius."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks signed Circle of Confusion values distinguishing near foreground from far background."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts razor-sharp pinhole rendering against cinematic shallow depth of field focus."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms lens focal length, aperture f-stop scaling, and pixel diameter equations."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Tile-Based CoC Classification & Near/Far Field Dilatation",
+      "codeHash": "44121343d074176238cf80ccc4aeafcca4be176a8aee99d21d5b3c424e4a84fb",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Tile-Based CoC Classification & Near/Far Field Dilatation",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays tile-based Circle of Confusion classification across screen-space workgroup tiles."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks workgroup shared memory min-max reductions and near-field blur dilation bounds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates compute savings of completely bypassing sharp in-focus tiles."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms tile classification accuracy and elimination of background depth bleed."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Bokeh Aperture Simulation: Spiral Disk & Separable Hexagonal Convolution",
+      "codeHash": "c61ef86f9f7da246ed691a24a2de9638a865799d27214a534f410494d78de1c9",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Bokeh Aperture Simulation: Spiral Disk & Separable Hexagonal Convolution",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates golden-angle spiral disk sampling creating uniform circular bokeh discs."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates interleaved gradient noise rotating sample coordinates to transform banding into blue noise."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts authentic disc bokeh against muddy, unrealistic Gaussian blur filters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies uniform sample density, Poisson distribution weights, and bilateral edge rejection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "High-Energy Specular Highlights & Bokeh Sprite Stream Compaction",
+      "codeHash": "605a1af65aa8a21f122db06098eb81d265bb4a3694afb919ec3a80a5a5bea0b7",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: High-Energy Specular Highlights & Bokeh Sprite Stream Compaction",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays GPU stream compaction gathering high-energy HDR specular pixels into indirect draw buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks instanced quad expansion and custom textured polygonal bokeh aperture masks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how dedicated bokeh sprites eliminate firefly undersampling noise."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms physical energy conservation and maximum sprite count clamping safeguards."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Depth-Aware Bilateral Compositing & 60 FPS Post-Processing SLA",
+      "codeHash": "a4c416128040d8c9092a0e658a365a30cbea0cb8a5603312a0e83f20e296a2c9",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Depth-Aware Bilateral Compositing & 60 FPS Post-Processing SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows depth-aware bilateral compositing blending near field, in-focus, and far field layers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks premultiplied alpha over-blending and temporal anti-aliasing noise elimination."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis evaluates post-processing performance against the two point five millisecond budget."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies complete sixty frames per second compliance and artifact-free optical depth."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

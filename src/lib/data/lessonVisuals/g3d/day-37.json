@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 37,
+  "promptSha": "d4f1e5e26cf3888b79994faa9f6050c1c35593cd4427fe17a043dfe0f66af05a",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Physics of Specular Reflections & Screen-Space Ray Generation",
+      "codeHash": "08e6698e33eea5719ebc00fef4968ff2f1ab88aa37dcaf46f0e9842ef27d7606",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Physics of Specular Reflections & Screen-Space Ray Generation",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates camera-space reflection rays spawned from surface normal and view vectors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection examines G-Buffer depth and normal decoding into view space positions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts naive world-space ray tracing against screen-space ray reconstruction."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms normalized reflection vector orientation and camera matrix consistency."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Linear Screen-Space Ray Marching vs Hierarchical Hi-Z Traversal",
+      "codeHash": "09e3cd9251542d77e93b19352ad86d5ff71fa91cc36dd763d74ae143d0d99306",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Linear Screen-Space Ray Marching vs Hierarchical Hi-Z Traversal",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the hierarchical Hi-Z depth mipmap pyramid constructed with minimum depth reductions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks ray marching traversal across coarse mip levels skipping empty air voxels."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates substantial compute savings of cell boundary stepping over linear ray marching."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies conservative depth bounding and zero missed geometric intersections."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Binary Search Intersection Refinement & Depth Precision",
+      "codeHash": "2865b2091b86ca83c7da7301a866ddd3292ecdee27b87c0fa46ade153587074b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Binary Search Intersection Refinement & Depth Precision",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows binary search refinement narrowing coarse ray intersections down to sub-pixel accuracy."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates geometric thickness thresholds to distinguish true surface hits from background passthroughs."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts single-step linear hits against four-iteration binary boundary convergence."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms depth penetration bounds and elimination of floating mirror artifacts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Fresnel Attenuation, Surface Roughness & Screen-Edge Fade Falloff",
+      "codeHash": "3ec050124349f9e7a2b49c2e79a2f55a08d3ba03e2913c4ec18518df7991dd29",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Fresnel Attenuation, Surface Roughness & Screen-Edge Fade Falloff",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Schlick Fresnel reflectivity blending sharp specular reflections with diffuse base color."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks roughness-based ray cone expansion and specular fade at screen edges."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks pure screen-space reflections against pre-filtered environment cubemap fallbacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies seamless edge fading and smooth roughness attenuation across surfaces."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Fallback Strategies: Environment Cubemaps, Planar Probes & Denoising",
+      "codeHash": "53662f2d37f8de65e1db0802dcfbb16921b82a70372f321177feda89553506ec",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Fallback Strategies: Environment Cubemaps, Planar Probes & Denoising",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows ray traversal performance auditor tracking iteration counts and false intersection rates."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection checks execution time across high roughness and mirror specular materials."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms ray budget compliance within two milliseconds on modern graphics cards."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies complete production quality audit and sixty frames per second frame rate lock."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

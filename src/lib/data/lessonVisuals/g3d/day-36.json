@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 36,
+  "promptSha": "644028235544ede5fb34e89506657eb1880c1cabf6b7594839ebd7e07d7bfc0c",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The High-Frequency Aliasing Problem & Camera Sub-Pixel Jittering",
+      "codeHash": "6b930d3c0afc14b1421e0b27f1f5b4e591c880083817a98b6a1dff39b5c59a34",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The High-Frequency Aliasing Problem & Camera Sub-Pixel Jittering",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows full resolution post-processing compute dispatch operating directly on high dynamic range color and motion vectors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals compute thread workgroup layouts and shared memory caching across neighboring camera pixels."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks compute shader execution speed against traditional fullscreen vertex fragment passes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies memory barrier synchronization and deterministic post-processing pipeline flow."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Screen-Space Motion Vectors & Historical Frame Reprojection",
+      "codeHash": "8761ece8db7d63d4872240bc5945f89df396a4d9903d996352e775957a717d0b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Screen-Space Motion Vectors & Historical Frame Reprojection",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows sub-pixel Halton jitter sequence offsetting the perspective projection matrix each frame."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks screen-space motion vectors encoding exact pixel displacement from camera translation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts aliased stair-stepped silhouettes against smooth temporal supersampling integration."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sub-pixel jitter centering and frame-to-frame velocity accuracy."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Eliminating Ghosting Artifacts with Color Box (AABB) Clamping",
+      "codeHash": "8dfed69ae19469506ce0c3a59a7f2bd3978c539fd0f5b4dd4b10d7d944382174",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Eliminating Ghosting Artifacts with Color Box (AABB) Clamping",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows exponential moving average blending current frame samples with historical color buffers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes variance bounding box calculation across local three-by-three pixel neighborhoods."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how variance clipping eliminates temporal ghosting streaks behind fast moving objects."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies clamping bounds and color stability across high dynamic range luminance ranges."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Exponential Moving Average (EMA) Temporal Blending & Disocclusion Detection",
+      "codeHash": "a9326978a91a19326433100eabc5d374f7be926d3823f4804a10ed3ff81d3419",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Exponential Moving Average (EMA) Temporal Blending & Disocclusion Detection",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates catastrophic luminance firefly spikes caused by intense sub-pixel specular highlights."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks weighted logarithmic color space transforms dampening extreme HDR energy values."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks Karis perceptual weighting against standard linear temporal accumulation."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero temporal flickering and smooth highlight suppression under motion."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Sharpening Filters, Variance Clipping & Production TAA Verification",
+      "codeHash": "5768944b0d078c55efc793746f2e19949bbe7ba50f090f933a991f6266dd8c2c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Sharpening Filters, Variance Clipping & Production TAA Verification",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows full sixty frames per second post-processing frame budget allocation under sixteen milliseconds."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles compute pass timing, dispatch indirect call overhead, and memory bandwidth usage."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts raw shader execution against optimized subgroup warp shuffle reductions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms production certification under the strict post-processing service level agreement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

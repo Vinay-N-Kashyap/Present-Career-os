@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 40,
+  "promptSha": "763b2835205b6b1c679214515c2c456d7d1d00b30fe683d49f5c6de9f4cbd0b4",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "HDR Render Graph Architecture & Transient Resource Aliasing",
+      "codeHash": "ba08926e1af18cec14f7165d093a8611aaf4344632e1a9f25c7a7613a02aa07e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: HDR Render Graph Architecture & Transient Resource Aliasing",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the complete post-processing render graph resolving multi-stage pass dependencies."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks transient resource aliasing dynamically sharing memory across disjoint execution lifecycles."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts monolithic memory allocations against sixty percent VRAM reduction via aliasing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms topological sorting order, zero race hazards, and optimal command buffer encoding."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "ACES Filmic Tone Mapping, Photographic S-Curves & Gamma Correction",
+      "codeHash": "7343e62295db3898bb1c0ea6af2bd9e6e454d2517da8c84697315c62b76d939b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: ACES Filmic Tone Mapping, Photographic S-Curves & Gamma Correction",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the photographic ACES filmic S-curve transforming high dynamic range light into display signals."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates shadow toe rolloff, linear midtone contrast, and highlight shoulder compression."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how ACES preserves rich color saturation without harsh highlight clipping."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies analytical formula accuracy, sRGB gamma correction, and gamut safety."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Dual-Filter Bloom Pyramid: 13-Tap Downsample & Karis Anti-Flicker",
+      "codeHash": "02fea9a0ec13d726b4bb0485a15b33ba7d044b80dab725e0a38a31fa15bcaab7",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Dual-Filter Bloom Pyramid: 13-Tap Downsample & Karis Anti-Flicker",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the five-level dual-filter bloom pyramid executing downsampling and upsampling passes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks thirteen-tap tent filtering combined with Karis anti-flicker luma weighting."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts hierarchical dual filtering against sluggish wide-radius Gaussian blurs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms compact VRAM footprint, soft knee thresholding, and sub-millisecond execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "60 FPS Post-Processing SLA Enforcement & Dynamic Quality Supervisors",
+      "codeHash": "e2c718269d35c975cbd2abb55062bde4176162d18d35fb91bbd9a4a3f9882b72",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: 60 FPS Post-Processing SLA Enforcement & Dynamic Quality Supervisors",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays post-processing frame budget allocation under the strict six millisecond target."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks non-blocking GPU timestamp queries profiling each individual compute pass."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates closed-loop dynamic quality scaling preserving sixty frames per second."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms memory bus bandwidth limits and asynchronous compute queue overlapping."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The 5-Gate Post-Processing Defense Matrix & Production Engine Certification",
+      "codeHash": "38d0c167011d167ca76919fb149e2777bc521f1a028002993a01860ad0884944",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The 5-Gate Post-Processing Defense Matrix & Production Engine Certification",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the five-gate post-processing defense matrix verifying all telemetry metrics."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits temporal anti-aliasing ghosting, SSR depth hits, froxel edge bleed, and gamut safety."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms one hundred percent certification across all five critical quality gates."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification issues final production certificate locking cinema-grade graphics at sixty frames per second."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

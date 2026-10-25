@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 38,
+  "promptSha": "13600b676340a8ea562bc1448019de1c1cf3e9c2966ddf0a18a7b2f3d2d21914",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Frustum-Aligned Voxel Grids (Froxels): Dimensions, Logarithmic Slicing & VRAM Allocation",
+      "codeHash": "18850796b1cc025a73866d99480677f59704ba75f4d7267995e56f76c0d71927",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Frustum-Aligned Voxel Grids (Froxels): Dimensions, Logarithmic Slicing & VRAM Allocation",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays frustum-aligned voxel grid volume mapped along the camera viewing cone."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks logarithmic depth distribution clustering fine voxels near the camera near plane."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts screen-space froxels against uniform world-space voxel allocations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms memory allocation limits and volume slice depth boundary equations."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Henyey-Greenstein Phase Function & Anisotropic Forward Scattering",
+      "codeHash": "45a85263643c4ac674869a0a6578d768ee5d7d23227f0fb1181a0de73923b959",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Henyey-Greenstein Phase Function & Anisotropic Forward Scattering",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows Henyey-Greenstein anisotropic phase scattering concentrating radiance forward toward the viewer."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates phase asymmetry factors modeling aerosol fog droplets and dust motes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dramatic forward scattering intensity compared to isotropic side scattering."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies numerical stability and phase denominator clamping in high-energy spotlight beams."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Radiometry of Participating Media & Beer-Lambert Law Transmittance",
+      "codeHash": "a6a88773f4d669cce47c1f54e0592a8870572b56bb5b63c31e1e10c5053191fb",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Radiometry of Participating Media & Beer-Lambert Law Transmittance",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates exponential light decay through participating media governed by the Beer-Lambert law."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates optical depth and transmittance reduction across variable atmospheric distances."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis benchmarks thick fog extinction against clear atmospheric transmission curves."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms exponential transmittance limits and wavelength-dependent scatter parameters."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Front-to-Back Volume Ray Marching & In-Scatter Integration",
+      "codeHash": "a23a5e96eeea23ab3741cf8aa61d2c7534eb3bd63e9a272672522f38f30f4458",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Front-to-Back Volume Ray Marching & In-Scatter Integration",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays single compute pass front-to-back integration along froxel depth columns."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks running accumulated in-scattered light and net transmittance multiplication registers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts pre-integrated three-dimensional texture sampling against brute force per-pixel ray marching."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies analytical closed-form slice integration and zero stepping banding artifacts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Temporal Accumulation, Bilateral Upsampling & Full-Resolution Compositing",
+      "codeHash": "7c4c0dd7bee67645b80eb4acf4571ec327eaf2fb5876660315f308e9e2e4f1c0",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Temporal Accumulation, Bilateral Upsampling & Full-Resolution Compositing",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates depth-aware bilateral upsampling of downscaled froxels onto full-resolution geometry."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates bilateral depth weights rejecting froxels across geometric silhouette edges."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms total elimination of edge bleeding halos around foreground characters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies execution times under three milliseconds and cinema-grade atmospheric visuals."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}
