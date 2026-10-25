@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 49,
+  "entries": [
+    {
+      "partTitle": "The Google Search Console (GSC) API: Quotas, Dimension Filtering & Bulk Extraction Protocols",
+      "codeHash": "f1afedaea2a6dcaa3338bdb0e2dbf9c15dd3675e3f26d0c44a20ad123e18d502",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Search Console provides authoritative ground truth on search performance.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Web reporting interfaces truncate long tail search query logs.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Restricted retention horizons prevent multi year seasonal comparisons.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Bulk data pipelines export raw search telemetry directly into warehouses.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Modern Search Data Warehousing in BigQuery: Partitioned Tables, Clustering & Incremental ETL",
+      "codeHash": "fb38aed29a4e28f70dfbd99cf574174b4e06cfc300c59524d7687380128ce732",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cloud data lakehouses ingest daily partition records from search logs.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Table partitioning by date slashes query compute costs and scan latency.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi column clustering collocates queries and landing pages in storage.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Incremental merge operations ensure idempotent record updates in tables.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Organic CTR Modeling: Log-Logistic Decay Curves, SERP Feature Discounting & Position Baselines",
+      "codeHash": "75f9bed514d2fe0baf439492b2641282fb1e292cc7b289dcaf1a25258d95d2aa",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Organic search click through rates decay exponentially by ranking rank.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Top organic positions capture the dominant share of consumer clicks.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Log logistic models fit non linear attention decay across positions.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Search feature displays push organic listings downward on mobile viewports.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Keyword Cannibalization & Query Drift Detection: Variance Analysis & Page-Query Affinity Matrices",
+      "codeHash": "3b53ebb7939d7cb3d507125f26450dbc0bf5802709919c20f75741cab706cc5c",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Internal landing pages often compete for identical search keywords.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Divided impression shares create ranking volatility across search engines.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "URL splitting ratios identify severe keyword cannibalization conflicts.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Consolidating redundant pages restores authoritative search rankings.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production BigQuery Search Console ETL & Predictive CTR Modeling Engine in Python",
+      "codeHash": "2b6be835dbb0efd888ab783d9b6be0813f10b946a13551834a9a7bd1ebb5e5a7",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Automated warehouse pipelines monitor daily search rank fluctuations.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Predictive forecasting models quantify the revenue value of ranking gains.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated alert daemons flag emerging cannibalization incidents promptly.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Integrated search analytics transform raw query logs into strategic growth.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
