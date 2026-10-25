@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 56,
+  "promptSha": "dsa-optim-day-56-convex-hulls-and-orientation",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Foundations of 2D Computational Geometry: Cross Product & 2D Orientation Predicates",
+      "codeHash": "b15663bce660919f9fd2de67d37a46011569233cdb7b12dddb6c3a9a91330774",
+      "filled": {
+        "template": "table",
+        "title": "Two Dimensional Orientation Predicate Determinant Grid.",
+        "columns": [
+          "Geometric Vector Pair",
+          "Determinant Area Sign",
+          "Turn Classification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Computational geometry module analyzes spatial structures and algorithms.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orientation predicate evaluates ordered triplet of cartesian points.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Autonomous vehicle navigation evaluates trajectory steering waypoint.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing determinant and orientation values.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Two Dimensional Orientation Predicate Determinant Grid.",
+        "columns": [
+          "Geometric Vector Pair",
+          "Determinant Area Sign",
+          "Turn Classification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Computational geometry module analyzes spatial structures and algorithms.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Orientation predicate evaluates ordered triplet of cartesian points.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Autonomous vehicle navigation evaluates trajectory steering waypoint.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing determinant and orientation values.",
+            "rows": [
+              [
+                "Vector Cross Product",
+                "Positive Signed Determinant",
+                "Strict Counter Clockwise Turn"
+              ],
+              [
+                "Collinear Ray Triplet",
+                "Zero Determinant Area",
+                "Degenerate Collinear Alignment"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graham Scan Algorithm: Polar Angle Sorting & Monotonic Stack Construction",
+      "codeHash": "04f03f7953442381944490d80f517f54f488d8a00c712d687d7ed2ba4bad6920",
+      "filled": {
+        "template": "table",
+        "title": "Graham Scan Convex Hull Polar Angle Monotonic Stack.",
+        "columns": [
+          "Polar Sweep Vertex",
+          "Stack Top Orientation",
+          "Monotonic Boundary Inclusion"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Convex hull constructs minimum enclosing convex polygon of planar points.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Graham scan algorithm constructs convex hull identifying pivot vertex.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ground station tracks satellites identifying minimum convex perimeter.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code sorting points by polar angle in monotonic stack.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Graham Scan Convex Hull Polar Angle Monotonic Stack.",
+        "columns": [
+          "Polar Sweep Vertex",
+          "Stack Top Orientation",
+          "Monotonic Boundary Inclusion"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Convex hull constructs minimum enclosing convex polygon of planar points.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Graham scan algorithm constructs convex hull identifying pivot vertex.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Ground station tracks satellites identifying minimum convex perimeter.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code sorting points by polar angle in monotonic stack.",
+            "rows": [
+              [
+                "Global Pivot Vertex",
+                "Minimum Y Coordinate Point",
+                "Guaranteed Convex Extremum"
+              ],
+              [
+                "Polar Angle Sequence",
+                "Concave Right Turn Rejection",
+                "Linear Amortized Stack Pop"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Andrew's Monotone Chain: Lexicographical Point Sorting & Upper/Lower Hull Splitting",
+      "codeHash": "ac124b7d96c0e094e2d09881ede8c5309be99b080b3b5e10fd2549c9a06b6f9b",
+      "filled": {
+        "template": "table",
+        "title": "Andrews Monotone Chain Lexicographical Hull Decomposition.",
+        "columns": [
+          "Coordinate Sort Key",
+          "Monotone Chain Half",
+          "Convex Boundary Polygon"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Monotone chain algorithm sorts points lexicographically by coordinates.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Lexicographical sorting offers numerical advantages in production systems.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Mapping engine sorts coordinates lexicographically constructing perimeter.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code constructing lower and upper hull into polygon.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Andrews Monotone Chain Lexicographical Hull Decomposition.",
+        "columns": [
+          "Coordinate Sort Key",
+          "Monotone Chain Half",
+          "Convex Boundary Polygon"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Monotone chain algorithm sorts points lexicographically by coordinates.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Lexicographical sorting offers numerical advantages in production systems.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Mapping engine sorts coordinates lexicographically constructing perimeter.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code constructing lower and upper hull into polygon.",
+            "rows": [
+              [
+                "Lexicographical Sort",
+                "Lower Hull Monotone Sweep",
+                "Leftmost To Rightmost Chain"
+              ],
+              [
+                "Reverse Lexicographical",
+                "Upper Hull Monotone Sweep",
+                "Rightmost To Leftmost Return"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extreme Point Queries & Rotating Calipers: Optimal Convex Hull Diameter",
+      "codeHash": "1890c87a2bf4cad8b8ac1bb4bf82f7b62fde51272859468742784a99e839df83",
+      "filled": {
+        "template": "table",
+        "title": "Rotating Calipers Antipodal Pair Convex Hull Diameter.",
+        "columns": [
+          "Base Edge Direction",
+          "Antipodal Vertex Target",
+          "Maximum Euclidean Separation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotating calipers algorithm evaluates convex hull in linear time.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rotating calipers computes convex hull diameter between farthest vertices.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Control system tracks drones computing maximum fleet diameter distance.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code advancing antipodal caliper pointer for distance.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Rotating Calipers Antipodal Pair Convex Hull Diameter.",
+        "columns": [
+          "Base Edge Direction",
+          "Antipodal Vertex Target",
+          "Maximum Euclidean Separation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Rotating calipers algorithm evaluates convex hull in linear time.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Rotating calipers computes convex hull diameter between farthest vertices.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Control system tracks drones computing maximum fleet diameter distance.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code advancing antipodal caliper pointer for distance.",
+            "rows": [
+              [
+                "Caliper Tangent Pair",
+                "Maximized Triangle Area",
+                "Antipodal Extremum Discovery"
+              ],
+              [
+                "Parallel Support Lines",
+                "Monotonic Caliper Advance",
+                "Optimal Linear Scan Bound"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Fleet Perimeter Engine: Geospatial Geofencing & Dynamic Airspace Enclosure",
+      "codeHash": "dceb753f48c5a5cb48e42713363481a013032f000c9ebd4a5d97813469b1eed2",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Autonomous Fleet Perimeter Geospatial Enclosure.",
+        "columns": [
+          "Drone Telemetry Node",
+          "Geofence Boundary Vertex",
+          "Containment Status Verification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise geospatial engine synthesizes monotone chain and calipers.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous fleet operators maintain dynamic geofences for drone swarms.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Logistics enterprise tracks drones computing convex geofence perimeter.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise engine executing orientation containment.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Autonomous Fleet Perimeter Geospatial Enclosure.",
+        "columns": [
+          "Drone Telemetry Node",
+          "Geofence Boundary Vertex",
+          "Containment Status Verification"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise geospatial engine synthesizes monotone chain and calipers.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous fleet operators maintain dynamic geofences for drone swarms.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Logistics enterprise tracks drones computing convex geofence perimeter.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise engine executing orientation containment.",
+            "rows": [
+              [
+                "Airspace Fleet Telemetry",
+                "Convex Enclosure Boundary",
+                "Real Time Geofence Enforced"
+              ],
+              [
+                "Autonomous Patrol Drone",
+                "Counter Clockwise Test Pass",
+                "Authorized Flight Corridor"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
