@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom-marketing",
+  "day": 53,
+  "entries": [
+    {
+      "partTitle": "Causal Machine Learning & Uplift Modeling: The Four-Quadrant Matrix",
+      "codeHash": "27ffb545cdf190a91abc4b8cd6370211c1697b3703205f83fefa05cf290489fe",
+      "spec": {
+        "template": "funnel",
+        "title": "Causal Machine Learning & Uplift Model... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Subscription user engagement logs showing early attrition signals.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Semi parametric survival analysis modeling hazard rates over time.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Deep survival neural networks predicting individual defection windows.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Early warning risk scores flagging vulnerable subscriber cohorts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Uplift Modeling Architectures: T-Learner, X-Learner & Qini Curves",
+      "codeHash": "a379c754babe539f62d02c6267a29cb47f1f1a298bc0600a96a061b6aff0d59d",
+      "spec": {
+        "template": "funnel",
+        "title": "Uplift Modeling Architectures: T-Learn... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Total at risk customer base evaluated for promotional interventions.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Causal machine learning isolating true incremental treatment lift.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Two model learners separating persuadables from sleeping dogs.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Precision targeting focusing incentives strictly on responsive users.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Churn Prediction & Survival Ensembles: Cox & DeepSurv",
+      "codeHash": "49b39f9c1d9fe5eae9155def1af1f19b7f51514c2c7ee938b60d0927dfe1f38f",
+      "spec": {
+        "template": "funnel",
+        "title": "Algorithmic Churn Prediction & Surviva... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Available retention discount budgets bounded by capital limits.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Marginal treatment effect analysis ranking customers by net return.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic programming solver optimizing discount offer assignment.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Maximized retained subscriber revenue under strict budget caps.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Intervention Policy Optimization & Incremental LTV Lift",
+      "codeHash": "f38689bc3db6c75779919a34cdcb1b19202652b13a8793f9dd24917f1596d34b",
+      "spec": {
+        "template": "funnel",
+        "title": "Dynamic Intervention Policy Optimizati... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Retention campaigns launched across broad recurring subscriber bases.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Isolated holdout cohorts measuring natural unassisted renewals.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Difference in differences regression validating true causal uplift.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Empirically verified incrementality proving marketing balance value.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Uplift Modeling & Campaign Optimization Simulator",
+      "codeHash": "c1a88d25209a761ebb251f0b0be2f2f44b647bb3cac914867529c798044d4e39",
+      "spec": {
+        "template": "funnel",
+        "title": "Algorithmic Uplift Modeling & Campaign... \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive customer subscription portfolio scanned by causal logic.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated uplift classification filtering negative responder risks.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic budget rebalancing prioritizing high margin retained users.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sustainable recurring subscription revenue fortified against attrition.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Audience Reach",
+                "value": 50000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Cohort Intent",
+                "value": 25000,
+                "percentage": 50,
+                "dropoffRate": 50,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Target Segment Evaluation",
+                "value": 10000,
+                "percentage": 20,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Retained Active Customers",
+                "value": 4000,
+                "percentage": 8,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
