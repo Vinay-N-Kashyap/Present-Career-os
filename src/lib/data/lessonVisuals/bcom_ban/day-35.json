@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 35,
+  "entries": [
+    {
+      "partTitle": "Enterprise Working Capital & Tandon Method 2 MPBF Audit ($160M Conglomerate)",
+      "codeHash": "ba3e2522785721f2eb36a4896a89a7f4eb0f022bb40df8c6441540082e2efc0e",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Working Capital & Tandon Me... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Milestone seven capstone credit underwriting war room opens.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Applying second committee method to large industrial conglomerate.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Mandatory promoter net working capital margins verified.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Fund based working capital facility approved under prudential limits.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structuring Non-Fund-Based Facilities: BGs & LCs under URDG 758 / UCP 600 with Basel III CCF",
+      "codeHash": "03801188d1018e7522a9a8c4711e5d751018f61c467c5d186cbdb94aa0eb992f",
+      "spec": {
+        "template": "funnel",
+        "title": "Structuring Non-Fund-Based Facilities:... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structuring multi facility documentary credits and demand bonds.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Modeling off balance sheet equivalent exposures under global rules.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing international uniform rules for demand guarantees.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cash collateral liens provide immediate loss absorption cushions.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Establishing the 4-Bank Consortium, Pari-Passu Security Creation & ICA Governance",
+      "codeHash": "38fd33abfcbf1149ee3293bd19d86d371e60afec09a102fced21f509a8b43d84",
+      "spec": {
+        "template": "funnel",
+        "title": "Establishing the 4-Bank Consortium, Pa... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Four bank credit syndication structure finalized by lead arranger.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Apex security trustee registers first pari passu charge at registry.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Inter creditor agreement establishes statutory majority voting rules.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Pro rata syndication schedule spreads industrial exposure safely.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cash Budget Forecasting & Trust & Retention Account (TRA) 5-Tier Waterfall Simulation",
+      "codeHash": "4cf717ebb20de8078d4ef65bd9641b2be0bb55dc8842789615671c598997166b",
+      "spec": {
+        "template": "funnel",
+        "title": "Cash Budget Forecasting & Trust & Rete... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Trust and retention account five tier cash waterfall activated.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Central collection account prioritizes taxes and senior bank interest.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Quarterly cash budget verifies strong debt service coverage ratios.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automated distribution lockup protects lenders during revenue stress.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Simulator: Credit Committee Defense, Devolvement Stress Test & Loan Clearance",
+      "codeHash": "9736e4c1422c7a4ba8c847c9b8c3726b000e3a59c72a65a7fd748266617971e5",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Simulator: Credit Committee D... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive credit sanction committee convenes for docket interrogation.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Simulating severe revenue contraction and letter of credit devolvement.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cash margin reserves and debt service buffers absorb credit shocks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unanimous credit sanction approved for landmark industrial financing.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

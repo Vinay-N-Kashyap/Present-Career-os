@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 34,
+  "entries": [
+    {
+      "partTitle": "The Architecture of Project Finance: Non-Recourse Debt, SPV Ring-Fencing & The Project Contract Web",
+      "codeHash": "d4f6f0f8627244ff68f0ae1a522e3f2c667ecf256046a5da59363a05e0e3224f",
+      "spec": {
+        "template": "funnel",
+        "title": "The Architecture of Project Finance: N... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Non recourse infrastructure financing architecture initiated.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Bankruptcy remote special purpose vehicles insulate parent sponsors.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Project contract web contractually shifts construction and market risks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Direct tripartite agreements grant lenders essential step in rights.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concession Models & Revenue Risk Allocation: BOT, BOOT, Annuity & Hybrid Annuity Model (HAM)",
+      "codeHash": "bc259db3f0d59d7fc08d4c5c5480f1aa484b372f6fff9d9595c916d860de4559",
+      "spec": {
+        "template": "funnel",
+        "title": "Concession Models & Revenue Risk Alloc... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Public private partnership concession structures examined.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Hybrid annuity models allocate traffic volume risks to authorities.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Semi annual government annuities provide inflation indexed revenues.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Secondary asset recycling facilitates long term debt refinancing.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantitative Debt Sizing Metrics: DSCR, LLCR, PLCR & Debt Sculpting Mechanics",
+      "codeHash": "c3647372d777dd2c7a9b76f6017bd32fc5e6598bbb8ca5095d579edd08b648d8",
+      "spec": {
+        "template": "funnel",
+        "title": "Quantitative Debt Sizing Metrics: DSCR... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Dynamic cash flow coverage metrics computed across project lives.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Sizing senior loan debt against unencumbered project cash flows.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Sculpted amortization schedules maintain constant coverage ratios.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sculpted repayments optimize long term infrastructure debt capacity.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Managing Construction Risks: COD Delays, Cost Overrun Undertakings & EPC Liquidated Damages",
+      "codeHash": "7239b65e7a8dbf6ba3648eb6576bfa1a7cef9752af08c4f93871551130f03eaa",
+      "spec": {
+        "template": "funnel",
+        "title": "Managing Construction Risks: COD Delay... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Greenfield infrastructure construction hazard mitigations deployed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Fixed price turnkey engineering contracts enforce liquidated damages.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Parent sponsors execute unconditional cost overrun undertakings.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Independent engineers certify physical project milestones for drawdowns.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Enterprise Project Finance & Infrastructure Debt Sizing Simulator",
+      "codeHash": "7b7bc964c52b6688c4c79392cd8025d48ceec36b532e58948893a9491e555f6d",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Enterprise Project Finan... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Utility scale renewable infrastructure underwriting platform active.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Modeling multi decade cash flows under power purchase agreements.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stress testing climatic solar irradiance drops against debt reserves.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Non recourse infrastructure loan package cleared for financial close.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
