@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 34,
+  "entries": [
+    {
+      "partTitle": "Precision Anatomy, Dynamic Range & The Memory-Bandwidth Bottleneck",
+      "codeHash": "4236bb714b79caeb2e268643a789c0d35d01c83300eacfbc31488839c41ad471",
+      "filled": {
+        "template": "table",
+        "title": "Precision Anatomy and Memory Bandwidth Bottlenecks.",
+        "columns": [
+          "Precision Format",
+          "Bytes Per Parameter",
+          "Memory Bandwidth Demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different floating point precisions dictate physical memory requirements.",
+            "rows": [
+              [
+                "FP Thirty Two Single Precision",
+                "Four Bytes Per Weight",
+                "Extreme Bus Contention"
+              ],
+              [
+                "FP Sixteen Half Precision",
+                "Two Bytes Per Weight",
+                "Standard Baseline Bandwidth"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantizing weights to four bits relieves severe memory bandwidth limits.",
+            "rows": [
+              [
+                "INT Four Integer Quantization",
+                "Half Byte Per Weight",
+                "Four Times Bandwidth Reduction"
+              ],
+              [
+                "Autoregressive Decode Bound",
+                "Weight Fetch Dominated",
+                "Massive Token Generation Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Compact electronic tablets deliver text without heavy encyclopedia cargo.",
+            "rows": [
+              [
+                "Heavy Printed Encyclopedia",
+                "Bulky Shipping Crates",
+                "Slow Distribution Freight"
+              ],
+              [
+                "Compact Digital Reader",
+                "Featherweight Data File",
+                "Instant Global Delivery"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate memory footprint reduction across varying parameter dimensions.",
+            "rows": [
+              [
+                "Seventy Billion Parameter Model",
+                "One Hundred Forty Gigabyte FP Sixteen",
+                "Requires Multiple Accelerators"
+              ],
+              [
+                "Quantized Four Bit Model",
+                "Thirty Five Gigabyte DRAM",
+                "Runs On Single Physical GPU"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Precision Anatomy and Memory Bandwidth Bottlenecks.",
+        "columns": [
+          "Precision Format",
+          "Bytes Per Parameter",
+          "Memory Bandwidth Demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Different floating point precisions dictate physical memory requirements.",
+            "rows": [
+              [
+                "FP Thirty Two Single Precision",
+                "Four Bytes Per Weight",
+                "Extreme Bus Contention"
+              ],
+              [
+                "FP Sixteen Half Precision",
+                "Two Bytes Per Weight",
+                "Standard Baseline Bandwidth"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantizing weights to four bits relieves severe memory bandwidth limits.",
+            "rows": [
+              [
+                "INT Four Integer Quantization",
+                "Half Byte Per Weight",
+                "Four Times Bandwidth Reduction"
+              ],
+              [
+                "Autoregressive Decode Bound",
+                "Weight Fetch Dominated",
+                "Massive Token Generation Speedup"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Compact electronic tablets deliver text without heavy encyclopedia cargo.",
+            "rows": [
+              [
+                "Heavy Printed Encyclopedia",
+                "Bulky Shipping Crates",
+                "Slow Distribution Freight"
+              ],
+              [
+                "Compact Digital Reader",
+                "Featherweight Data File",
+                "Instant Global Delivery"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate memory footprint reduction across varying parameter dimensions.",
+            "rows": [
+              [
+                "Seventy Billion Parameter Model",
+                "One Hundred Forty Gigabyte FP Sixteen",
+                "Requires Multiple Accelerators"
+              ],
+              [
+                "Quantized Four Bit Model",
+                "Thirty Five Gigabyte DRAM",
+                "Runs On Single Physical GPU"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "GPTQ: Second-Order Error Minimization & Optimal Brain Surgeon Adaptation",
+      "codeHash": "76426f47c77b27d17b1ef75cb977a4bb387cafb18041e2f4bc70689bfec093e6",
+      "filled": {
+        "template": "table",
+        "title": "Second Order Hessian Error Minimization in GPTQ.",
+        "columns": [
+          "Quantization Approach",
+          "Weight Compensation Mechanism",
+          "Perplexity Preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimal brain surgeon algorithms compute second order error gradients.",
+            "rows": [
+              [
+                "Naive Round To Nearest",
+                "Zero Error Compensation",
+                "Severe Compounding Degradation"
+              ],
+              [
+                "Optimal Brain Surgeon",
+                "Inverse Hessian Weight Updates",
+                "Near Zero Output Distortion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Closed form inverse Hessian updates compensate neighboring weight values.",
+            "rows": [
+              [
+                "Sequential Column Quantization",
+                "Greedy Rounding Scheme",
+                "High Accumulative Error"
+              ],
+              [
+                "Cholesky Decomposition",
+                "Direct Closed Form Updates",
+                "Strict Numerical Stability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Delicate watchmaker adjustments align gears to maintain exact cadence.",
+            "rows": [
+              [
+                "Crude Gear Adjustment",
+                "Jarring Mechanical Shock",
+                "Broken Watch Movement"
+              ],
+              [
+                "Delicate Watchmaker Calibration",
+                "Harmonic Tension Balancing",
+                "Flawless Chronometer Accuracy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace residual quantization errors across unquantized weight elements.",
+            "rows": [
+              [
+                "Residual Error Propagation",
+                "Neighboring Weight Offsets",
+                "Bounded Output Deviation"
+              ],
+              [
+                "Calibration Set Tuning",
+                "One Hundred Text Samples",
+                "Rapid Two Hour Compression"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Second Order Hessian Error Minimization in GPTQ.",
+        "columns": [
+          "Quantization Approach",
+          "Weight Compensation Mechanism",
+          "Perplexity Preservation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Optimal brain surgeon algorithms compute second order error gradients.",
+            "rows": [
+              [
+                "Naive Round To Nearest",
+                "Zero Error Compensation",
+                "Severe Compounding Degradation"
+              ],
+              [
+                "Optimal Brain Surgeon",
+                "Inverse Hessian Weight Updates",
+                "Near Zero Output Distortion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Closed form inverse Hessian updates compensate neighboring weight values.",
+            "rows": [
+              [
+                "Sequential Column Quantization",
+                "Greedy Rounding Scheme",
+                "High Accumulative Error"
+              ],
+              [
+                "Cholesky Decomposition",
+                "Direct Closed Form Updates",
+                "Strict Numerical Stability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Delicate watchmaker adjustments align gears to maintain exact cadence.",
+            "rows": [
+              [
+                "Crude Gear Adjustment",
+                "Jarring Mechanical Shock",
+                "Broken Watch Movement"
+              ],
+              [
+                "Delicate Watchmaker Calibration",
+                "Harmonic Tension Balancing",
+                "Flawless Chronometer Accuracy"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace residual quantization errors across unquantized weight elements.",
+            "rows": [
+              [
+                "Residual Error Propagation",
+                "Neighboring Weight Offsets",
+                "Bounded Output Deviation"
+              ],
+              [
+                "Calibration Set Tuning",
+                "One Hundred Text Samples",
+                "Rapid Two Hour Compression"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "AWQ: Activation-Aware Weight Quantization & Per-Channel Equivalent Scaling",
+      "codeHash": "f63c60aa59c2752c77467a5c9c70d9d48904de7d4a492bb5c07e5fd731117848",
+      "filled": {
+        "template": "table",
+        "title": "Activation Aware Salient Weight Scaling in AWQ.",
+        "columns": [
+          "Weight Category",
+          "Activation Magnitude Profile",
+          "Quantization Protection Mode"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Activation aware quantization identifies salient weight channel outliers.",
+            "rows": [
+              [
+                "Top One Percent Salient Weights",
+                "Massive Hidden State Outliers",
+                "Per Channel Equivalent Scaling"
+              ],
+              [
+                "Ninety Nine Percent Standard Weights",
+                "Uniform Gaussian Distribution",
+                "Direct Four Bit Integer Grid"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Channel scaling protects critical columns while preserving uniform grids.",
+            "rows": [
+              [
+                "Mixed Precision Layouts",
+                "Hardware Divergence Latency",
+                "Fragmented Execution Warps"
+              ],
+              [
+                "Uniform INT Four Packing",
+                "Tensor Core Aligned",
+                "Peak Hardware Streaming GEMM"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reinforcing structural pillars preserves architectural stability cleanly.",
+            "rows": [
+              [
+                "Fragile Marble Columns",
+                "Carrying Massive Ceiling Load",
+                "Rigid Steel Reinforcement"
+              ],
+              [
+                "Non Structural Partitions",
+                "Lightweight Drywall Panels",
+                "Standard Framing Support"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine channel scaling factors and evaluate salient feature preservation.",
+            "rows": [
+              [
+                "Salient Channel Detection",
+                "Top Activation Thresholds",
+                "Square Root Magnitude Scaling"
+              ],
+              [
+                "Inference Normalization Folding",
+                "Zero Runtime Compute Overhead",
+                "Flawless Reasoning Accuracy"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Activation Aware Salient Weight Scaling in AWQ.",
+        "columns": [
+          "Weight Category",
+          "Activation Magnitude Profile",
+          "Quantization Protection Mode"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Activation aware quantization identifies salient weight channel outliers.",
+            "rows": [
+              [
+                "Top One Percent Salient Weights",
+                "Massive Hidden State Outliers",
+                "Per Channel Equivalent Scaling"
+              ],
+              [
+                "Ninety Nine Percent Standard Weights",
+                "Uniform Gaussian Distribution",
+                "Direct Four Bit Integer Grid"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Channel scaling protects critical columns while preserving uniform grids.",
+            "rows": [
+              [
+                "Mixed Precision Layouts",
+                "Hardware Divergence Latency",
+                "Fragmented Execution Warps"
+              ],
+              [
+                "Uniform INT Four Packing",
+                "Tensor Core Aligned",
+                "Peak Hardware Streaming GEMM"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reinforcing structural pillars preserves architectural stability cleanly.",
+            "rows": [
+              [
+                "Fragile Marble Columns",
+                "Carrying Massive Ceiling Load",
+                "Rigid Steel Reinforcement"
+              ],
+              [
+                "Non Structural Partitions",
+                "Lightweight Drywall Panels",
+                "Standard Framing Support"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine channel scaling factors and evaluate salient feature preservation.",
+            "rows": [
+              [
+                "Salient Channel Detection",
+                "Top Activation Thresholds",
+                "Square Root Magnitude Scaling"
+              ],
+              [
+                "Inference Normalization Folding",
+                "Zero Runtime Compute Overhead",
+                "Flawless Reasoning Accuracy"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware-Native FP8 Scaling: Hopper E4M3 vs E5M2 Tensor Core Kernels",
+      "codeHash": "f4147a96fd108865fe9681268a27b7d9f043f617480de25ae3e2ff0e3e75275e",
+      "filled": {
+        "template": "table",
+        "title": "Hardware Native FP Eight Floating Point Kernels.",
+        "columns": [
+          "Binary Precision Format",
+          "Bit Allocation Layout",
+          "Target Workload Application"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hopper tensor cores execute native eight bit floating point arithmetic.",
+            "rows": [
+              [
+                "FP Eight E Four M Three",
+                "Four Exponent Three Mantissa",
+                "Forward Pass Weights And Activations"
+              ],
+              [
+                "FP Eight E Five M Two",
+                "Five Exponent Two Mantissa",
+                "Backward Pass Gradients And Tuning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Delayed dynamic scaling prevents numerical overflow across dynamic ranges.",
+            "rows": [
+              [
+                "Static Quantization Range",
+                "Susceptible To Outlier Overflow",
+                "Clipping Artifacts"
+              ],
+              [
+                "Delayed Dynamic Scaling",
+                "History Based Tensor Bounds",
+                "Zero Synchronization Stalls"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Precision scalpels resolve fine detail while hammers absorb heavy loads.",
+            "rows": [
+              [
+                "Fine Precision Scalpel",
+                "Delicate Microscopic Cuts",
+                "Optimal Feature Resolution"
+              ],
+              [
+                "Heavy Duty Hammer",
+                "Wide Dynamic Force",
+                "Broad Parameter Stability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Contrast eight bit floating point formats across forward inference modes.",
+            "rows": [
+              [
+                "Hopper Tensor Core Support",
+                "Native Hardware Instructions",
+                "Two Times Compute Flops Gain"
+              ],
+              [
+                "Ada Lovelace Architecture",
+                "E Four M Three Native Execution",
+                "High Efficiency Prefill Accelerate"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Hardware Native FP Eight Floating Point Kernels.",
+        "columns": [
+          "Binary Precision Format",
+          "Bit Allocation Layout",
+          "Target Workload Application"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hopper tensor cores execute native eight bit floating point arithmetic.",
+            "rows": [
+              [
+                "FP Eight E Four M Three",
+                "Four Exponent Three Mantissa",
+                "Forward Pass Weights And Activations"
+              ],
+              [
+                "FP Eight E Five M Two",
+                "Five Exponent Two Mantissa",
+                "Backward Pass Gradients And Tuning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Delayed dynamic scaling prevents numerical overflow across dynamic ranges.",
+            "rows": [
+              [
+                "Static Quantization Range",
+                "Susceptible To Outlier Overflow",
+                "Clipping Artifacts"
+              ],
+              [
+                "Delayed Dynamic Scaling",
+                "History Based Tensor Bounds",
+                "Zero Synchronization Stalls"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Precision scalpels resolve fine detail while hammers absorb heavy loads.",
+            "rows": [
+              [
+                "Fine Precision Scalpel",
+                "Delicate Microscopic Cuts",
+                "Optimal Feature Resolution"
+              ],
+              [
+                "Heavy Duty Hammer",
+                "Wide Dynamic Force",
+                "Broad Parameter Stability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Contrast eight bit floating point formats across forward inference modes.",
+            "rows": [
+              [
+                "Hopper Tensor Core Support",
+                "Native Hardware Instructions",
+                "Two Times Compute Flops Gain"
+              ],
+              [
+                "Ada Lovelace Architecture",
+                "E Four M Three Native Execution",
+                "High Efficiency Prefill Accelerate"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Quantization Benchmarking, Perplexity Auditing & Serving Economics",
+      "codeHash": "196b1653473f515141f9d1e2a7f95d00ca20724e100aa2ce722a299e8be48bb9",
+      "filled": {
+        "template": "table",
+        "title": "Production Quantization Benchmarking and Economics.",
+        "columns": [
+          "Deployment Configuration",
+          "Physical Hardware Requirement",
+          "Per Token Hosting Cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise quality assurance validates perplexity and benchmark accuracy.",
+            "rows": [
+              [
+                "Unquantized FP Sixteen Model",
+                "Two Eight Gigabyte Nodes",
+                "High Infrastructure Expenditure"
+              ],
+              [
+                "AWQ INT Four Model",
+                "Single Physical Accelerator",
+                "Sixty Percent Cost Reduction"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantization shrinks physical hardware footprints and operational costs.",
+            "rows": [
+              [
+                "Automated Perplexity Gate",
+                "WikiText Two Cross Entropy",
+                "Strict Fifteen Point Threshold"
+              ],
+              [
+                "Continuous Task Regression",
+                "HumanEval Code Reasoning",
+                "Zero Syntax Accuracy Loss"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dense intermodal shipping maximizes cargo while cutting operational waste.",
+            "rows": [
+              [
+                "Chartering Empty Cargo Jets",
+                "Excessive Fuel Waste",
+                "Unviable Operating Margins"
+              ],
+              [
+                "Optimized Intermodal Shipping",
+                "Maximum Density Cargo",
+                "Profitable Commercial Scale"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Measure latency and throughput gains across production serving platforms.",
+            "rows": [
+              [
+                "Eighty Gigabyte A One Hundred",
+                "Hosts Seventy Billion Model",
+                "Sub Thirty Millisecond Latency"
+              ],
+              [
+                "Multi Tenant Capacity Pool",
+                "Four Times Serving Concurrency",
+                "Predictable Enterprise SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Production Quantization Benchmarking and Economics.",
+        "columns": [
+          "Deployment Configuration",
+          "Physical Hardware Requirement",
+          "Per Token Hosting Cost"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise quality assurance validates perplexity and benchmark accuracy.",
+            "rows": [
+              [
+                "Unquantized FP Sixteen Model",
+                "Two Eight Gigabyte Nodes",
+                "High Infrastructure Expenditure"
+              ],
+              [
+                "AWQ INT Four Model",
+                "Single Physical Accelerator",
+                "Sixty Percent Cost Reduction"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quantization shrinks physical hardware footprints and operational costs.",
+            "rows": [
+              [
+                "Automated Perplexity Gate",
+                "WikiText Two Cross Entropy",
+                "Strict Fifteen Point Threshold"
+              ],
+              [
+                "Continuous Task Regression",
+                "HumanEval Code Reasoning",
+                "Zero Syntax Accuracy Loss"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dense intermodal shipping maximizes cargo while cutting operational waste.",
+            "rows": [
+              [
+                "Chartering Empty Cargo Jets",
+                "Excessive Fuel Waste",
+                "Unviable Operating Margins"
+              ],
+              [
+                "Optimized Intermodal Shipping",
+                "Maximum Density Cargo",
+                "Profitable Commercial Scale"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Measure latency and throughput gains across production serving platforms.",
+            "rows": [
+              [
+                "Eighty Gigabyte A One Hundred",
+                "Hosts Seventy Billion Model",
+                "Sub Thirty Millisecond Latency"
+              ],
+              [
+                "Multi Tenant Capacity Pool",
+                "Four Times Serving Concurrency",
+                "Predictable Enterprise SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
