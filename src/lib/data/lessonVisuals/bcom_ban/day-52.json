@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 52,
+  "entries": [
+    {
+      "partTitle": "The Securitization Architecture: Originators, Bankruptcy-Remote SPVs & Servicing Protocols",
+      "codeHash": "ca3e4972dabeb7b9b6cee7ec0da665b6596303f42f25c2953be041f0393b1c76",
+      "spec": {
+        "template": "funnel",
+        "title": "The Securitization Architecture: Origi... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Asset backed securitization structural framework established.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Originators disaggregate corporate credit risk from asset cash flow.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Special purpose vehicles house loan collateral under trust law.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Independent trustees protect noteholder interests and governance.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "True Sale Legal Criteria & Bankruptcy Remoteness: Asset Isolation & Non-Consolidation",
+      "codeHash": "ce2dba9a204650387b3c92858e7c4c474f7266c1262c0cf9ebaf9e2cff4cfa09",
+      "spec": {
+        "template": "funnel",
+        "title": "True Sale Legal Criteria & Bankruptcy ... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "True sale legal doctrines and bankruptcy remoteness audited.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Unconditional asset conveyance insulates pools from originator stress.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Separateness covenants prevent judicial substantive consolidation.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Legal opinions affirm bankruptcy isolation for debt noteholders.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Credit Enhancement Mechanisms: Internal Subordination, Overcollateralization & Excess Spread",
+      "codeHash": "e0147c056e7e37d04a99439f1621b9fdd72e22fd409bd5eec69928e4ec02044b",
+      "spec": {
+        "template": "funnel",
+        "title": "Credit Enhancement Mechanisms: Interna... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Internal credit enhancement mechanisms structured across tiers.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Subordinated tranches absorb initial credit defaults in reverse order.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Overcollateralization buffers provide non debt principal cushions.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Excess spread cash reserves absorb unexpected default spikes.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cash Flow Waterfall Engineering: Sequential Pay vs Pro-Rata & Structural Performance Triggers",
+      "codeHash": "f64538c5c4a2dcd93bf2014c31d21f99af737508ddacafc94815e1f6e4998504",
+      "spec": {
+        "template": "funnel",
+        "title": "Cash Flow Waterfall Engineering: Seque... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cash flow waterfall priority of payment algorithms active.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Sequential pay structures de leverage senior debt notes rapidly.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Early amortization triggers trap excess spread during stress.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Structural performance gates defend senior note principal safety.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial Securitization Lab: Multi-Period Loan Pool Waterfall Simulator & Tranche Return Engine",
+      "codeHash": "35a3cd6f60f3ac703f7fee5f0c98b67f398ae6af52a49b87f401b26244c0ebf5",
+      "spec": {
+        "template": "funnel",
+        "title": "Industrial Securitization Lab: Multi-P... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi period asset backed loan cash flow simulation running.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Monthly prepayment and default decay curves amortize collateral.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Sequential waterfalls direct available cash to redeem senior debt.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive cash flow audits prove tranche loss resilience.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
