@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 48,
+  "promptSha": "2ba78ea1377834822964e7f44a705d067a4d9cc59f4e286fefea0daf20cd17fe",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Anisotropic Surface Reflection & Dual-Roughness GGX Formulations",
+      "codeHash": "7729c0e89d990c5ff2d3807577d2f5a2741afbd94d95b1adcc5e1753e240de5d",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Anisotropic Surface Reflection & Dual-Roughness GGX Formulations",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays anisotropic microfacets exhibiting directional groove alignment across polished surfaces."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks tangent and bitangent surface vectors guiding asymmetric specular reflection lobes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts directional anisotropic sheen against isotropic circular specular highlights."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms tangent vector normalization, coordinate frame orthogonality, and energy bounds."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Cylinder Scattering & The Kajiya-Kay Hair Tangent Model",
+      "codeHash": "b492a39283e0f302f16147b9e8b2088b08d4997e9b303d4fc0ceffa7c65881d2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Cylinder Scattering & The Kajiya-Kay Hair Tangent Model",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Kajiya-Kay fiber specular scattering reflecting light across cylindrical micro-fibers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates sine projections between tangent vectors and half-vectors along reflection cone mantles."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how cylindrical scattering generates iconic circular hair highlight rings."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies continuous specular bands, smooth angular falloff, and zero dark artifacts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Marschner Dual-Cylinder Model: Longitudinal Shift & Cuticle Scales",
+      "codeHash": "0e515bafd100fb27699c41123089012b770a0a355a5426686d903e4ea6411270",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Marschner Dual-Cylinder Model: Longitudinal Shift & Cuticle Scales",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Marschner longitudinal and azimuthal scattering lobes traversing translucent hair fibers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks primary reflection, internal transmission, and back-wall reflection ray paths."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates realistic colored secondary highlights and luminous backlit hair scattering."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms multi-path energy conservation and physically grounded cuticle tilt shifts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Multi-Scattering Energy Conservation & Biophysical Melanin Pigmentation",
+      "codeHash": "76f88cdbb700cf85762f9ba69befeeb83488ffa69164f4829817ba139071354b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Multi-Scattering Energy Conservation & Biophysical Melanin Pigmentation",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates biological melanin pigmentation absorption modeling natural hair coloration."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates spectral extinction coefficients for eumelanin and pheomelanin concentrations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts physical pigment absorption against artificial surface color tinting."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies lifelike hair tone synthesis ranging from platinum blonde to raven black."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Deep Opacity Shadow Maps, Sub-Pixel Anti-Aliasing & 2.0ms Budget SLA",
+      "codeHash": "1e928c79af6ee53ce858fa2ace2d9555fd5572117f9a5d59d1b807473ac3e8f2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Deep Opacity Shadow Maps, Sub-Pixel Anti-Aliasing & 2.0ms Budget SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows dense hair card rasterization and compute-based strand physics simulation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection profiles vertex deformation, anisotropic forward lighting, and depth pre-pass efficiency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms full character grooming execution within two milliseconds on modern graphics hardware."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sixty frames per second performance and cinema-quality character hair fidelity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

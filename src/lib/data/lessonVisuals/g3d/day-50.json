@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 50,
+  "promptSha": "a8735d39a4878d197c4a36dcd7bd34afb2be4e8c840725e52e306cd2c6f40053",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architectural Blueprint & Multi-Tier Material/Atmosphere Pipeline Specifications",
+      "codeHash": "fa10ea6b322597ed8ecc81a0df91d2d83b8490b9bdfb27014ccfab38cfcdd153",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Architectural Blueprint & Multi-Tier Material/Atmosphere Pipeline Specifications",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the unified multi-tier rendering blueprint orchestrating surface and atmospheric passes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks full-resolution G-Buffers, screen-space diffusion, and quarter-resolution sky queues."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates optimal GPU scheduling preventing stalls between surface and volumetric passes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total pass budget execution under eight point five milliseconds with generous headroom."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Screen-Space Subsurface Scattering: Separable Normalized Burley Diffusion Integration",
+      "codeHash": "0f779866862e1f219d2f7b6f511b624a167ba690b7713cb44c943bda79e6d2b5",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Screen-Space Subsurface Scattering: Separable Normalized Burley Diffusion Integration",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates screen-space subsurface integration applying separable Burley diffusion kernels."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates five-tap horizontal and vertical filtering with depth rejection thresholds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates smooth skin translucency while preserving razor-sharp geometric silhouettes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms normalized kernel tap decay, zero edge bleeding, and warm shadow penumbras."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Thin-Film Iridescence & Anisotropic Hair/Fiber Microfacet Shading",
+      "codeHash": "6900e83e77007beacee22bea889ff76ea5f86148ae458424af6bf2e46bd13c7b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Thin-Film Iridescence & Anisotropic Hair/Fiber Microfacet Shading",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays composite material shading combining thin-film iridescence with anisotropic hair models."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks optical path difference phase modulation and cylindrical fiber specular highlights."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates rich tactile realism across complex character garments and hairstyles."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms energy-conserving composite specular radiance and smooth multi-lobe transitions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Volumetric Cloudscape & Planetary Atmosphere with Early Ray Termination",
+      "codeHash": "3d51dce7da259b73520810056a6d1c3d83b45f74d9443237575bd276016cadc7",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Volumetric Cloudscape & Planetary Atmosphere with Early Ray Termination",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates real-time volumetric atmospheric ray marching with early termination and powder shading."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks step-by-step optical depth accumulation, dual-lobe scattering, and opacity thresholds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dramatic compute savings from early ray termination inside dense cloud cores."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms radiant silver linings, deep crevice shadows, and efficient volumetric traversal."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Engine Production Integration, 5-Gate Defense Matrix & Telemetry Benchmarking",
+      "codeHash": "98683595a77f69fd3cb702ce05e736cd1c51842d09cb850cdbb9c41b1ca271e4",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Engine Production Integration, 5-Gate Defense Matrix & Telemetry Benchmarking",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the automated five-gate quality defense matrix and telemetry monitoring daemon."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits SSS energy conservation, phase accuracy, specular bounds, reconstruction, and frame times."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis confirms full certification across all five defense gates at seventy-two frames per second."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification locks Milestone Ten completion, certifying cinema-quality real-time graphics production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 47,
+  "promptSha": "3f53b536c9de726d7b66b58084a9cd4cc36f8fb38924958a9d350709c8f460fd",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Wave Optics, Superposition & Optical Path Difference (OPD)",
+      "codeHash": "71b27f85795891bba5bb277d3e1e7dab52122cc2ed8fda2b414c1f90c0048563",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Wave Optics, Superposition & Optical Path Difference (OPD)",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays thin dielectric film boundaries causing light wave reflection and refractive splitting."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks electromagnetic wave propagation and boundary phase shifts across dielectric media."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts wave interference against classic geometric optics ray tracing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms wave continuity, boundary amplitude reflection, and phase coherence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Airy Formula: Multi-Beam Internal Reflection & Spectral Dispersion",
+      "codeHash": "bb276b8cd0eb5c28f05d0605241d95cef3336dcf3b3ed25f05fc8d83671c018f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Airy Formula: Multi-Beam Internal Reflection & Spectral Dispersion",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates optical path difference calculations governed by film thickness and refraction angles."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates Snell law refraction angles and extra path distance traversed by internal waves."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates wavelength-dependent constructive and destructive interference intervals."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies nanometer optical precision, accurate phase shifts, and zero path errors."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Gravitational Drainage, Soap Bubbles & The Mystery of the Black Film",
+      "codeHash": "173a44db81e1bbb2e153189cf16b2faefd965df74948445ae954bf1ef6f21c34",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Gravitational Drainage, Soap Bubbles & The Mystery of the Black Film",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Airy wave interference formula generating spectral reflection curves."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks multi-beam amplitude summation across infinite internal dielectric reflections."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how Airy equations produce rich chromatic fringes across soap film membranes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms bounded reflectance values between zero and unity across all visible wavelengths."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Destructive Cancellation: Quarter-Wave Anti-Reflective Optical Coatings",
+      "codeHash": "c98b7674b431eca4454702ea22842f4edf7a480a0e43d832b53bfcc0cca29f1a",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Destructive Cancellation: Quarter-Wave Anti-Reflective Optical Coatings",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates real-time spectral lookup tables mapping optical path difference to RGB color channels."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks precomputed chromatic phase evaluations accelerating runtime fragment shader evaluation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts high-speed texture sampling against expensive runtime spectral integration."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero texture sampling latency and smooth color gradient transitions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Precomputed 2D Spectral LUTs, WGSL Shader Evaluation & 0.8ms SLA",
+      "codeHash": "6bc5c32c6a8bbdfff505b9064415083100c4b6943fac96e28bf8bb0de38fb4d7",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Precomputed 2D Spectral LUTs, WGSL Shader Evaluation & 0.8ms SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows dynamic fluid marbling and surface tension convection advecting thickness gradients."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks two-dimensional curl noise offsets shifting thin-film thickness contours over time."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates turbulent swirling iridescence versus static artificial color patterns."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms real-time performance, continuous flow conservation, and vivid soap bubble dynamics."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 46,
+  "promptSha": "a25cee0318893a5847c7ac8f01cb44ee770a36b1601e92d27e20d857bb0ab49e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The BSSDF Formulation & Burley Normalized Diffusion Profile",
+      "codeHash": "36c62c1455782240aff34187ce427e622a310c6e63e21ed505b8086d1d034a84",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The BSSDF Formulation & Burley Normalized Diffusion Profile",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays subsurface photon transport penetrating the epidermis and scattering through dermal tissue."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks dipole diffusion profiles calculating radial light emergence across neighboring coordinates."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts translucent subsurface scattering against harsh opaque Lambertian diffuse surfaces."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies energy conservation, non-negative radiance, and natural shadow terminator softening."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Separable Screen-Space Subsurface Scattering (SSSS) & Bilateral Filtering",
+      "codeHash": "07d5f27912efa0022a699ac47eec1711da4454ac4fa1137938824c473f7330aa",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Separable Screen-Space Subsurface Scattering (SSSS) & Bilateral Filtering",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the Normalized Burley diffusion profile modeling multi-scale biological tissue scattering."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates surface shape parameter integration across short-range and long-range diffusion lobes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates significant physical realism of Burley profiles over classic Gaussian approximations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms analytical parameter normalization and smooth radial radiance decay."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Transmittance & Back-Scattering Through Thin Geometric Cartilage",
+      "codeHash": "92eee01ae8a1a0abf76fd56961f7d8d9904853cbad693e5c62789a4137b87923",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Transmittance & Back-Scattering Through Thin Geometric Cartilage",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays separable screen-space filtering decomposing two-dimensional convolution into orthogonal one-dimensional passes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks horizontal and vertical blur kernels sampling irradiance buffers with depth-rejection weights."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dramatic reduction in texture fetch complexity from quadratic down to linear taps."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sub-millisecond execution, zero edge bleeding, and crisp geometric silhouettes."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Multi-Layered Biophysical Skin Shading: Melanin, Hemoglobin & Dual-Lobe GGX",
+      "codeHash": "22f77470e1a84fa94632b8979d81036ddb8725a4699d4abd3f5ea675183c4711",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Multi-Layered Biophysical Skin Shading: Melanin, Hemoglobin & Dual-Lobe GGX",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates multi-layer skin shading combining dielectric clearcoats with subcutaneous scattering."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates specular Fresnel reflection alongside chromatic subsurface diffuse profiles."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts layered biological skin against flat plastic shading models."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms distinct epidermal highlight definition and warm red penumbra scattering."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Subsurface Profile Stenciling, Render Pass Integration & 60 FPS Performance SLA",
+      "codeHash": "60f4f91d3ed145d32b8238feb8413d3c2fda185b6ae828db7f9ede6ba99d2656",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Subsurface Profile Stenciling, Render Pass Integration & 60 FPS Performance SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows transmission thickness map sampling projecting backlit light through ears and nostrils."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates inverted local surface normal projections and exponential optical absorption."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates realistic backlit translucency versus unilluminated dark silhouettes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sixty frames per second compliance and lifelike organic character rendering."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}

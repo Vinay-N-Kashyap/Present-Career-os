@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "g3d",
+  "day": 49,
+  "promptSha": "bc71798c1c27d1d547f10a8d266e766ccbc8ff0dd578f00b720545d8eb08d121",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Radiative Transfer in Planetary Atmospheres: Rayleigh & Mie Scattering",
+      "codeHash": "1de1dbde64e1ba5e9a727355c230940cf6eb0bacad915b8f9d96fbbfeff9a366",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Radiative Transfer in Planetary Atmospheres: Rayleigh & Mie Scattering",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays planetary atmospheric scattering separating molecular gas from aerosol particles."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks Rayleigh inverse fourth-power wavelength scattering creating azure skies and crimson sunsets."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis contrasts physically based spherical atmospheres against static two-dimensional skydomes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms accurate sunset horizon reddening and exponential scale height density decay."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Procedural 3D Cloud Modeling: Perlin-Worley Shapes & Billow Erosion",
+      "codeHash": "abe0d69d27ab36816ba7b65481d5102658795191b8f525694123c214ab1bed36",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Procedural 3D Cloud Modeling: Perlin-Worley Shapes & Billow Erosion",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates procedural three-dimensional noise synthesizing cloud base shapes and billow erosion."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection samples Perlin-Worley base density textures and carves intricate edges using cellular noise octaves."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates how fractal noise creates convincing cauliflower billows without polygonal meshes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies continuous volumetric density fields and artifact-free procedural cloud boundaries."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Volumetric Ray Marching: Spherical Atmosphere Bounds & Early Termination",
+      "codeHash": "0a6def912f0613ce1c52b9dda2db1bac44ad358d3d7b62d387f55e22f9702622",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Volumetric Ray Marching: Spherical Atmosphere Bounds & Early Termination",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays volumetric ray marching taking discrete sampling steps through atmospheric volumes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks analytical ray-sphere intersections, adaptive step sizing, and early ray termination."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates eighty percent compute reduction via early termination in opaque cloud regions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms optical depth accumulation, step size stability, and zero visual banding artifacts."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "The Cloud Powder Effect & Dual-Lobe Henyey-Greenstein Scattering",
+      "codeHash": "28ef4631e78f8b1c69cd4e2f65c56f435bcf2d958d25fa24a785d65d1221ad22",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The Cloud Powder Effect & Dual-Lobe Henyey-Greenstein Scattering",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the dual-lobe Henyey-Greenstein phase function combined with the Powder Effect."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection calculates forward silver lining peaks and exponential extinction in deep cloud crevices."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dramatic volumetric contrast over flat isotropic light extinction."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms natural silver lining highlights and rich sculptural crevice self-shadowing."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    },
+    {
+      "partTitle": "Quarter-Resolution Interleaved Marching, Bilateral Upscaling & 2.5ms SLA",
+      "codeHash": "19d6016cb1634d6b8f486c7cc10ae95ca9d7d5e2981a82f99006f11f7a79384f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Quarter-Resolution Interleaved Marching, Bilateral Upscaling & 2.5ms SLA",
+        "left": {
+          "label": "Legacy Rendering Approach",
+          "content": [
+            "Fixed-function pipeline bottlenecks",
+            "High memory bandwidth redundant fetches",
+            "Severe visual artifacts under motion",
+            "Unsynchronized pipeline hazards"
+          ]
+        },
+        "right": {
+          "label": "Modern GPU Compute Pipeline",
+          "content": [
+            "Massive parallel SIMD compute dispatch",
+            "Hierarchical shared memory caching",
+            "Artifact-free temporal stabilization",
+            "Rigorous defense matrix verification"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview shows quarter-resolution interleaved ray marching stabilized via temporal history reprojection."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks motion vector reprojection, history exponential blending, and bilateral depth upscaling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates fourfold pixel fill-rate savings with zero blur across foreground silhouettes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms total atmospheric sky pass execution within two point five milliseconds at sixty frames per second."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Rendering Approach",
+        "rightLabel": "Modern GPU Compute Pipeline"
+      }
+    }
+  ]
+}
