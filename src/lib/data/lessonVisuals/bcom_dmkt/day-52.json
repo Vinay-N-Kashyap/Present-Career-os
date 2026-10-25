@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 52,
+  "entries": [
+    {
+      "partTitle": "Walmart Connect & First-Price Auction Dynamics: Bid Shading, Overbidding Hedging & Margin Preservation",
+      "codeHash": "940f5d1d41fe9ffe9bdf44e23e97e22bbae8d3969d316020133ecaaebd8cf960",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "First price auction models require strategic bid shading algorithms.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Advertisers pay their exact submitted bid upon winning ad auctions.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Bid shading protects profitability by estimating clearing thresholds.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement dynamic bid shading curves to minimize media acquisition costs.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Walmart Luminate Data Platform & Supplier Channel Intelligence: Category Share of Voice, Basket Affinities & Shelf Analytics",
+      "codeHash": "94eb61019e07460a16390cf7aa1d6a9d9e8f9b03c97a8854451ad31f171bb409",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Retail intelligence platforms unlock granular category market share.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Basket affinity analytics expose high frequency product co purchases.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Merchandising telemetry aligns paid search spend with on shelf inventory.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Extract customer journey insights to optimize retail media allocation.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Buy Box Suppression, Inventory Threshold Routing & Out-of-Stock (OOS) Ad Killswitches",
+      "codeHash": "90797b85afa71102027ed9047403562693ecdcb0586a782267b6b153e663132d",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Automated killswitches monitor real time warehouse inventory levels.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Lost buy box status triggers immediate programmatic ad suppression.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Inventory routing prevents wasting ad spend on out of stock products.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy automated webhooks to pause bids during distribution outages.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Off-Site Retail Audience Extension: The Trade Desk, UID2, RampID & Connected TV (CTV) Syndication",
+      "codeHash": "8d5921a5776e02e351bb490ac92beded566d7f457412468bc6c9e8281a4d8643",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Off site syndication extends retail shopper data to streaming video.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Deterministic purchase histories power precision open web targeting.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Connected television ads drive measurable in store grocery purchases.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Bridge retailer loyalty segments to demand side platforms using tokens.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Walmart Connect Bid Shading & Inventory Killswitch Engine in Python",
+      "codeHash": "fdb3dbdc4742a47f60b47c180be81b083e6f1ee7de52342e6ac73a93b77895db",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Production retail control towers unify first price bidding and inventory.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Real time telemetry halts campaigns when catalog supply drops low.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Bid shading engines deliver double digit cost savings on search ads.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Run the full Walmart Connect control tower to safeguard trade budgets.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
