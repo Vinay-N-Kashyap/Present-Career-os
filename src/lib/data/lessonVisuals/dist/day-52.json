@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 52,
+  "promptSha": "29ca89b21adbb96e61338f1e1851d1b931149bad5f300147f2622c908b13eb56",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Service Mesh & The Sidecar Pattern: Transparent Interception with Envoy Proxy",
+      "codeHash": "69bf4dd96e6b41df36b1194f868e1234fc5b9afb8a7fdff3820b02ee9853b357",
+      "spec": {
+        "template": "compare",
+        "title": "Service Mesh Architecture: The Service Mesh & The Sidecar Pattern: Transparent Interception with Envoy Proxy",
+        "left": {
+          "label": "Direct Service-to-Service Networking",
+          "content": [
+            "Polyglot networking libraries required in every application codebase",
+            "Plaintext network communication vulnerable to internal eavesdropping",
+            "Canary routing tied strictly to Kubernetes pod replica counts",
+            "Degraded pods continue receiving traffic until liveness probes fail"
+          ]
+        },
+        "right": {
+          "label": "Envoy Service Mesh Infrastructure",
+          "content": [
+            "Transparent sidecar interception decouples networking from code",
+            "Universal Mutual TLS authenticates peer identities and encrypts data",
+            "Declarative Layer 7 weighted routing enables fine-grained canary splits",
+            "Passive outlier detection immediately ejects pods with consecutive errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates sidecar proxy interception capturing all inbound and outbound pod traffic."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors dynamic cluster endpoint discovery and client-side load balancing to healthy backend instances."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates language-agnostic infrastructure governance over brittle polyglot library maintenance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms path-based route matching, cluster endpoint resolution, and sub-millisecond proxy forwarding."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Service-to-Service Networking",
+        "rightLabel": "Envoy Service Mesh Infrastructure",
+        "leftHighlights": [
+          "Polyglot library maintenance",
+          "Plaintext security risks",
+          "Rigid replica canaries",
+          "Cascading pod failures"
+        ],
+        "rightHighlights": [
+          "Transparent sidecar proxy",
+          "Universal mutual encryption",
+          "Fine-grained canary splits",
+          "Instant outlier ejection"
+        ]
+      }
+    },
+    {
+      "partTitle": "Mutual TLS (mTLS) & Zero-Trust Identity: SPIFFE IDs, SVIDs & Automated SDS Rotation",
+      "codeHash": "63c90eea7e16e9ce848462ccaed57a270c3c9baadf9e358db5fde3d2fa0a6852",
+      "spec": {
+        "template": "compare",
+        "title": "Service Mesh Architecture: Mutual TLS (mTLS) & Zero-Trust Identity: SPIFFE IDs, SVIDs & Automated SDS Rotation",
+        "left": {
+          "label": "Direct Service-to-Service Networking",
+          "content": [
+            "Polyglot networking libraries required in every application codebase",
+            "Plaintext network communication vulnerable to internal eavesdropping",
+            "Canary routing tied strictly to Kubernetes pod replica counts",
+            "Degraded pods continue receiving traffic until liveness probes fail"
+          ]
+        },
+        "right": {
+          "label": "Envoy Service Mesh Infrastructure",
+          "content": [
+            "Transparent sidecar interception decouples networking from code",
+            "Universal Mutual TLS authenticates peer identities and encrypts data",
+            "Declarative Layer 7 weighted routing enables fine-grained canary splits",
+            "Passive outlier detection immediately ejects pods with consecutive errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays mutual cryptographic verification establishing zero-trust peer identity between sidecars."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates dynamic certificate rotation, trust domain validation, and service account authorization."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete network encryption and identity assurance over naive perimeter security."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms valid peer identity authentication, foreign trust domain rejection, and encrypted communication."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Service-to-Service Networking",
+        "rightLabel": "Envoy Service Mesh Infrastructure",
+        "leftHighlights": [
+          "Polyglot library maintenance",
+          "Plaintext security risks",
+          "Rigid replica canaries",
+          "Cascading pod failures"
+        ],
+        "rightHighlights": [
+          "Transparent sidecar proxy",
+          "Universal mutual encryption",
+          "Fine-grained canary splits",
+          "Instant outlier ejection"
+        ]
+      }
+    },
+    {
+      "partTitle": "Declarative Traffic Shifting: Weighted Canary Deployments & Layer 7 Header Routing",
+      "codeHash": "ebef9cdfdd770170f314ad17bcfb5ebb12d354a4e1fd6cc1ff155ba5b512a176",
+      "spec": {
+        "template": "compare",
+        "title": "Service Mesh Architecture: Declarative Traffic Shifting: Weighted Canary Deployments & Layer 7 Header Routing",
+        "left": {
+          "label": "Direct Service-to-Service Networking",
+          "content": [
+            "Polyglot networking libraries required in every application codebase",
+            "Plaintext network communication vulnerable to internal eavesdropping",
+            "Canary routing tied strictly to Kubernetes pod replica counts",
+            "Degraded pods continue receiving traffic until liveness probes fail"
+          ]
+        },
+        "right": {
+          "label": "Envoy Service Mesh Infrastructure",
+          "content": [
+            "Transparent sidecar interception decouples networking from code",
+            "Universal Mutual TLS authenticates peer identities and encrypts data",
+            "Declarative Layer 7 weighted routing enables fine-grained canary splits",
+            "Passive outlier detection immediately ejects pods with consecutive errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates declarative weighted traffic shifting distributing live requests across canary releases."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates probability threshold calculations routing configured request percentages without pod scaling."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates fine-grained canary validation over resource-heavy replica ratio sharding."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms deterministic canary traffic splitting, stable baseline preservation, and route rule enforcement."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Service-to-Service Networking",
+        "rightLabel": "Envoy Service Mesh Infrastructure",
+        "leftHighlights": [
+          "Polyglot library maintenance",
+          "Plaintext security risks",
+          "Rigid replica canaries",
+          "Cascading pod failures"
+        ],
+        "rightHighlights": [
+          "Transparent sidecar proxy",
+          "Universal mutual encryption",
+          "Fine-grained canary splits",
+          "Instant outlier ejection"
+        ]
+      }
+    },
+    {
+      "partTitle": "Outlier Detection & Circuit Breaking: Passive Health Checking & Automatic Pod Eviction",
+      "codeHash": "7e8b0529f5383946566e3edddb8e3a68970b44baf884362f7604563524cb1d72",
+      "spec": {
+        "template": "compare",
+        "title": "Service Mesh Architecture: Outlier Detection & Circuit Breaking: Passive Health Checking & Automatic Pod Eviction",
+        "left": {
+          "label": "Direct Service-to-Service Networking",
+          "content": [
+            "Polyglot networking libraries required in every application codebase",
+            "Plaintext network communication vulnerable to internal eavesdropping",
+            "Canary routing tied strictly to Kubernetes pod replica counts",
+            "Degraded pods continue receiving traffic until liveness probes fail"
+          ]
+        },
+        "right": {
+          "label": "Envoy Service Mesh Infrastructure",
+          "content": [
+            "Transparent sidecar interception decouples networking from code",
+            "Universal Mutual TLS authenticates peer identities and encrypts data",
+            "Declarative Layer 7 weighted routing enables fine-grained canary splits",
+            "Passive outlier detection immediately ejects pods with consecutive errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays outlier detection circuit breaking passively monitoring live microservice error responses."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors consecutive error counters and executes automatic quarantine ejections of degraded pod endpoints."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates instantaneous self-healing platform resilience over slow external health probe checks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms consecutive error ejection triggers, routing pool pruning, and customer traffic protection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Service-to-Service Networking",
+        "rightLabel": "Envoy Service Mesh Infrastructure",
+        "leftHighlights": [
+          "Polyglot library maintenance",
+          "Plaintext security risks",
+          "Rigid replica canaries",
+          "Cascading pod failures"
+        ],
+        "rightHighlights": [
+          "Transparent sidecar proxy",
+          "Universal mutual encryption",
+          "Fine-grained canary splits",
+          "Instant outlier ejection"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Service Mesh Telemetry & Performance Audit",
+      "codeHash": "d9542d1fafb85692eb1f6c477c60c0e37b8a4e3ceac9140bf6cd5280827846b8",
+      "spec": {
+        "template": "compare",
+        "title": "Service Mesh Architecture: Production Service Mesh Telemetry & Performance Audit",
+        "left": {
+          "label": "Direct Service-to-Service Networking",
+          "content": [
+            "Polyglot networking libraries required in every application codebase",
+            "Plaintext network communication vulnerable to internal eavesdropping",
+            "Canary routing tied strictly to Kubernetes pod replica counts",
+            "Degraded pods continue receiving traffic until liveness probes fail"
+          ]
+        },
+        "right": {
+          "label": "Envoy Service Mesh Infrastructure",
+          "content": [
+            "Transparent sidecar interception decouples networking from code",
+            "Universal Mutual TLS authenticates peer identities and encrypts data",
+            "Declarative Layer 7 weighted routing enables fine-grained canary splits",
+            "Passive outlier detection immediately ejects pods with consecutive errors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production service mesh telemetry audit dashboard across high-throughput clusters."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors millions of requests, universal encryption compliance, and minimal proxy latency overhead."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade scalability, automated failure isolation, and operational efficiency."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies one point one five millisecond proxy latency, total mutual encryption, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Service-to-Service Networking",
+        "rightLabel": "Envoy Service Mesh Infrastructure",
+        "leftHighlights": [
+          "Polyglot library maintenance",
+          "Plaintext security risks",
+          "Rigid replica canaries",
+          "Cascading pod failures"
+        ],
+        "rightHighlights": [
+          "Transparent sidecar proxy",
+          "Universal mutual encryption",
+          "Fine-grained canary splits",
+          "Instant outlier ejection"
+        ]
+      }
+    }
+  ]
+}

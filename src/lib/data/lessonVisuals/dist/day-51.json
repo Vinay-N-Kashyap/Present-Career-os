@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 51,
+  "promptSha": "1602ea5878bb0796f8136422b39f223436a36e5135e26792e614a956e183e8cd",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Anatomy of a Distributed Trace: Traces, Spans, Timestamps & Call Graph DAGs",
+      "codeHash": "a4e6bd76e350835f593b8739056723d6ed1f6e51492961c37fb142afdbee694a",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Tracing: Anatomy of a Distributed Trace: Traces, Spans, Timestamps & Call Graph DAGs",
+        "left": {
+          "label": "Fragmented Microservice Logging",
+          "content": [
+            "Isolated log files with independent server clocks create blind spots",
+            "No correlation identifiers across asynchronous microservice RPC hops",
+            "Synchronous tracing calls add latency to every user request",
+            "Head-based sampling drops critical rare errors and latency outliers"
+          ]
+        },
+        "right": {
+          "label": "W3C TraceContext & OpenTelemetry",
+          "content": [
+            "Unified trace identifiers link all operations into a coherent call DAG",
+            "Standard W3C traceparent headers propagate context across clouds",
+            "BatchSpanProcessor buffers spans and flushes asynchronously via OTLP",
+            "Tail-based sampling captures all errors while discarding healthy data"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates distributed tracing data models uniting spans into directed acyclic call graphs."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors parent identifier relationships, span timestamps, and microservice execution hierarchies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates full transactional visibility over fragmented uncoordinated server log files."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms trace identifier propagation, child span parent linkage, and call tree DAG construction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragmented Microservice Logging",
+        "rightLabel": "W3C TraceContext & OpenTelemetry",
+        "leftHighlights": [
+          "Disconnected log silos",
+          "Zero RPC correlation",
+          "Synchronous export latency",
+          "Lost error traces"
+        ],
+        "rightHighlights": [
+          "Coherent call graph DAG",
+          "Universal W3C standard",
+          "Asynchronous batch flushes",
+          "Total error capture"
+        ]
+      }
+    },
+    {
+      "partTitle": "Context Propagation & The W3C TraceContext Standard: traceparent, tracestate & Baggage",
+      "codeHash": "5dc355d2e87a45b3c6ab0337ab355f7e97c0ed4b14d0c19209249569f41b2c16",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Tracing: Context Propagation & The W3C TraceContext Standard: traceparent, tracestate & Baggage",
+        "left": {
+          "label": "Fragmented Microservice Logging",
+          "content": [
+            "Isolated log files with independent server clocks create blind spots",
+            "No correlation identifiers across asynchronous microservice RPC hops",
+            "Synchronous tracing calls add latency to every user request",
+            "Head-based sampling drops critical rare errors and latency outliers"
+          ]
+        },
+        "right": {
+          "label": "W3C TraceContext & OpenTelemetry",
+          "content": [
+            "Unified trace identifiers link all operations into a coherent call DAG",
+            "Standard W3C traceparent headers propagate context across clouds",
+            "BatchSpanProcessor buffers spans and flushes asynchronously via OTLP",
+            "Tail-based sampling captures all errors while discarding healthy data"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the standard context propagation format structuring traceparent across microservices."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates header validation, hexadecimal trace coordinates, and distributed baggage injection."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates global cross-vendor interoperability over brittle proprietary tracing headers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms valid header parsing, trace coordinate preservation, and cross-service context propagation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragmented Microservice Logging",
+        "rightLabel": "W3C TraceContext & OpenTelemetry",
+        "leftHighlights": [
+          "Disconnected log silos",
+          "Zero RPC correlation",
+          "Synchronous export latency",
+          "Lost error traces"
+        ],
+        "rightHighlights": [
+          "Coherent call graph DAG",
+          "Universal W3C standard",
+          "Asynchronous batch flushes",
+          "Total error capture"
+        ]
+      }
+    },
+    {
+      "partTitle": "The OpenTelemetry SDK & The Batch Span Processor: Decoupling Tracing from User Requests",
+      "codeHash": "115c9b370b08a00fc95bd3f90dbcef4e14d590e088d18fcf56ef1ad83731f69b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Tracing: The OpenTelemetry SDK & The Batch Span Processor: Decoupling Tracing from User Requests",
+        "left": {
+          "label": "Fragmented Microservice Logging",
+          "content": [
+            "Isolated log files with independent server clocks create blind spots",
+            "No correlation identifiers across asynchronous microservice RPC hops",
+            "Synchronous tracing calls add latency to every user request",
+            "Head-based sampling drops critical rare errors and latency outliers"
+          ]
+        },
+        "right": {
+          "label": "W3C TraceContext & OpenTelemetry",
+          "content": [
+            "Unified trace identifiers link all operations into a coherent call DAG",
+            "Standard W3C traceparent headers propagate context across clouds",
+            "BatchSpanProcessor buffers spans and flushes asynchronously via OTLP",
+            "Tail-based sampling captures all errors while discarding healthy data"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the batch span processor decoupling tracing serialization from request threads."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates thread-safe ring buffering and background threshold flushes transmitting compressed batches."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero request latency degradation alongside bounded memory leak protection."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms buffer capacity triggers, background batch exports, and zero application thread pauses."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragmented Microservice Logging",
+        "rightLabel": "W3C TraceContext & OpenTelemetry",
+        "leftHighlights": [
+          "Disconnected log silos",
+          "Zero RPC correlation",
+          "Synchronous export latency",
+          "Lost error traces"
+        ],
+        "rightHighlights": [
+          "Coherent call graph DAG",
+          "Universal W3C standard",
+          "Asynchronous batch flushes",
+          "Total error capture"
+        ]
+      }
+    },
+    {
+      "partTitle": "Sampling Economics & Tail-Based Sampling: Capturing 100% of Errors & Outliers",
+      "codeHash": "c18cf9549ec9a8a19be768d04ed58435cdc71588de69a3f5955896f5b91aa230",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Tracing: Sampling Economics & Tail-Based Sampling: Capturing 100% of Errors & Outliers",
+        "left": {
+          "label": "Fragmented Microservice Logging",
+          "content": [
+            "Isolated log files with independent server clocks create blind spots",
+            "No correlation identifiers across asynchronous microservice RPC hops",
+            "Synchronous tracing calls add latency to every user request",
+            "Head-based sampling drops critical rare errors and latency outliers"
+          ]
+        },
+        "right": {
+          "label": "W3C TraceContext & OpenTelemetry",
+          "content": [
+            "Unified trace identifiers link all operations into a coherent call DAG",
+            "Standard W3C traceparent headers propagate context across clouds",
+            "BatchSpanProcessor buffers spans and flushes asynchronously via OTLP",
+            "Tail-based sampling captures all errors while discarding healthy data"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays intelligent tail-based sampling capturing one hundred percent of anomalies and errors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates collector memory buffers inspecting completed traces for error flags and latency outliers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates massive cloud storage savings alongside uncompromised failure diagnostic visibility."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms error detection sampling triggers, latency threshold evaluation, and healthy trace pruning."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragmented Microservice Logging",
+        "rightLabel": "W3C TraceContext & OpenTelemetry",
+        "leftHighlights": [
+          "Disconnected log silos",
+          "Zero RPC correlation",
+          "Synchronous export latency",
+          "Lost error traces"
+        ],
+        "rightHighlights": [
+          "Coherent call graph DAG",
+          "Universal W3C standard",
+          "Asynchronous batch flushes",
+          "Total error capture"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Distributed Tracing Telemetry & Bottleneck Root Cause Analysis",
+      "codeHash": "29f60c0ce07d68a8c18645cc58b7529036d7bebecb46e75677fdb6d2f3faa583",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Tracing: Production Distributed Tracing Telemetry & Bottleneck Root Cause Analysis",
+        "left": {
+          "label": "Fragmented Microservice Logging",
+          "content": [
+            "Isolated log files with independent server clocks create blind spots",
+            "No correlation identifiers across asynchronous microservice RPC hops",
+            "Synchronous tracing calls add latency to every user request",
+            "Head-based sampling drops critical rare errors and latency outliers"
+          ]
+        },
+        "right": {
+          "label": "W3C TraceContext & OpenTelemetry",
+          "content": [
+            "Unified trace identifiers link all operations into a coherent call DAG",
+            "Standard W3C traceparent headers propagate context across clouds",
+            "BatchSpanProcessor buffers spans and flushes asynchronously via OTLP",
+            "Tail-based sampling captures all errors while discarding healthy data"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production distributed tracing telemetry and critical path analysis dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors millions of spans, tail sampling retention rates, and latency waterfall breakdowns."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates immediate bottleneck identification over hours of manual log correlation."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies four hundred sixty millisecond tail latency, bottleneck isolation, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragmented Microservice Logging",
+        "rightLabel": "W3C TraceContext & OpenTelemetry",
+        "leftHighlights": [
+          "Disconnected log silos",
+          "Zero RPC correlation",
+          "Synchronous export latency",
+          "Lost error traces"
+        ],
+        "rightHighlights": [
+          "Coherent call graph DAG",
+          "Universal W3C standard",
+          "Asynchronous batch flushes",
+          "Total error capture"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 54,
+  "promptSha": "449853ac9f843b48e39a56a30199185c11eca7e0ba0f6e98faf71bff7df292ce",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Principles of Chaos Engineering & Defining Steady-State Hypotheses",
+      "codeHash": "852bf99dc214a8d1161ac68c01c8cb4ca617753bb54dbc67fa88ad732a4a84df",
+      "spec": {
+        "template": "compare",
+        "title": "Chaos Engineering & Fault Injection: The Principles of Chaos Engineering & Defining Steady-State Hypotheses",
+        "left": {
+          "label": "Fragile Cloud Architecture",
+          "content": [
+            "Staging tests fail to uncover chaotic production emergent behaviors",
+            "Partial grey network failures trigger unhandled thread exhaustion",
+            "Pod evictions and node drains cause service-wide availability loss",
+            "Cascading failures bring down entire microservice clusters"
+          ]
+        },
+        "right": {
+          "label": "Resilient Chaos-Hardened Architecture",
+          "content": [
+            "Steady-state hypotheses verify system behavior under controlled stress",
+            "Netem and proxy chaos validate timeout budgets and hedged retries",
+            "PodDisruptionBudgets guarantee replica availability during disruptions",
+            "Circuit breakers and graceful fallbacks halt cascading failure propagation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates steady-state hypothesis formulation establishing baseline error rate and latency guardrails."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors continuous metric streams detecting boundary deviations during controlled chaos experiments."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates empirical scientific failure verification over blind faith in staging environment tests."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms baseline metric capture, hypothesis evaluation, and automated experiment safety abort triggers."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Cloud Architecture",
+        "rightLabel": "Resilient Chaos-Hardened Architecture",
+        "leftHighlights": [
+          "Undetected emergent bugs",
+          "Grey network collapse",
+          "Uncontrolled pod eviction",
+          "Cascading thread starvation"
+        ],
+        "rightHighlights": [
+          "Steady-state guardrails",
+          "Tested timeout budgets",
+          "Disruption budget safety",
+          "Fail-fast circuit breaking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Network-Level Fault Injection: Artificial Latency & Packet Loss",
+      "codeHash": "9054a165846db16c1ae7ef086eaea97bc586c0be51224f4b8d2b9574563be177",
+      "spec": {
+        "template": "compare",
+        "title": "Chaos Engineering & Fault Injection: Network-Level Fault Injection: Artificial Latency & Packet Loss",
+        "left": {
+          "label": "Fragile Cloud Architecture",
+          "content": [
+            "Staging tests fail to uncover chaotic production emergent behaviors",
+            "Partial grey network failures trigger unhandled thread exhaustion",
+            "Pod evictions and node drains cause service-wide availability loss",
+            "Cascading failures bring down entire microservice clusters"
+          ]
+        },
+        "right": {
+          "label": "Resilient Chaos-Hardened Architecture",
+          "content": [
+            "Steady-state hypotheses verify system behavior under controlled stress",
+            "Netem and proxy chaos validate timeout budgets and hedged retries",
+            "PodDisruptionBudgets guarantee replica availability during disruptions",
+            "Circuit breakers and graceful fallbacks halt cascading failure propagation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays network-level fault injection simulating artificial latency jitter and partial packet loss."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates kernel netem queuing disciplines and application proxy filters intercepting remote RPC calls."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates discovery of thread starvation vulnerabilities over assumption of network reliability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms packet drop simulation, synthetic latency injection, and caller thread pool resilience."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Cloud Architecture",
+        "rightLabel": "Resilient Chaos-Hardened Architecture",
+        "leftHighlights": [
+          "Undetected emergent bugs",
+          "Grey network collapse",
+          "Uncontrolled pod eviction",
+          "Cascading thread starvation"
+        ],
+        "rightHighlights": [
+          "Steady-state guardrails",
+          "Tested timeout budgets",
+          "Disruption budget safety",
+          "Fail-fast circuit breaking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Infrastructure Chaos: Kubernetes Pod Eviction & PodDisruptionBudgets",
+      "codeHash": "71b0d9c12b2b901fb5af7669df7142fddb732bfc6349316e412a5aabc9a7a5a2",
+      "spec": {
+        "template": "compare",
+        "title": "Chaos Engineering & Fault Injection: Infrastructure Chaos: Kubernetes Pod Eviction & PodDisruptionBudgets",
+        "left": {
+          "label": "Fragile Cloud Architecture",
+          "content": [
+            "Staging tests fail to uncover chaotic production emergent behaviors",
+            "Partial grey network failures trigger unhandled thread exhaustion",
+            "Pod evictions and node drains cause service-wide availability loss",
+            "Cascading failures bring down entire microservice clusters"
+          ]
+        },
+        "right": {
+          "label": "Resilient Chaos-Hardened Architecture",
+          "content": [
+            "Steady-state hypotheses verify system behavior under controlled stress",
+            "Netem and proxy chaos validate timeout budgets and hedged retries",
+            "PodDisruptionBudgets guarantee replica availability during disruptions",
+            "Circuit breakers and graceful fallbacks halt cascading failure propagation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates compute-level disruption simulations evicting pods and draining Kubernetes worker nodes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates PodDisruptionBudget constraints preventing involuntary replica starvation during evictions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero-downtime rolling rebalancing over fragile single-instance service architectures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms eviction budget enforcement, graceful pod termination, and cluster replica stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Cloud Architecture",
+        "rightLabel": "Resilient Chaos-Hardened Architecture",
+        "leftHighlights": [
+          "Undetected emergent bugs",
+          "Grey network collapse",
+          "Uncontrolled pod eviction",
+          "Cascading thread starvation"
+        ],
+        "rightHighlights": [
+          "Steady-state guardrails",
+          "Tested timeout budgets",
+          "Disruption budget safety",
+          "Fail-fast circuit breaking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Cascading Failure Prevention: Circuit Breaking & Graceful Degradation",
+      "codeHash": "6dee5060e43f0486d5a6bcd3f5e7c302a7239355648d220fc53a487bf764ad55",
+      "spec": {
+        "template": "compare",
+        "title": "Chaos Engineering & Fault Injection: Cascading Failure Prevention: Circuit Breaking & Graceful Degradation",
+        "left": {
+          "label": "Fragile Cloud Architecture",
+          "content": [
+            "Staging tests fail to uncover chaotic production emergent behaviors",
+            "Partial grey network failures trigger unhandled thread exhaustion",
+            "Pod evictions and node drains cause service-wide availability loss",
+            "Cascading failures bring down entire microservice clusters"
+          ]
+        },
+        "right": {
+          "label": "Resilient Chaos-Hardened Architecture",
+          "content": [
+            "Steady-state hypotheses verify system behavior under controlled stress",
+            "Netem and proxy chaos validate timeout budgets and hedged retries",
+            "PodDisruptionBudgets guarantee replica availability during disruptions",
+            "Circuit breakers and graceful fallbacks halt cascading failure propagation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays cascading failure prevention via circuit breaking deadlines and graceful cached fallbacks."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates circuit state transitions from closed to open upon reaching consecutive failure thresholds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates immediate fail-fast protection over catastrophic upstream thread exhaustion collapse."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms failure threshold tripping, instantaneous fallback delivery, and half-open canary probes."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Cloud Architecture",
+        "rightLabel": "Resilient Chaos-Hardened Architecture",
+        "leftHighlights": [
+          "Undetected emergent bugs",
+          "Grey network collapse",
+          "Uncontrolled pod eviction",
+          "Cascading thread starvation"
+        ],
+        "rightHighlights": [
+          "Steady-state guardrails",
+          "Tested timeout budgets",
+          "Disruption budget safety",
+          "Fail-fast circuit breaking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Continuous Game Days & Chaos Resilience Certification",
+      "codeHash": "36e39e91dc39b5101a22b68db4be77f47cc5c230a666023d806efd3f1149ddc0",
+      "spec": {
+        "template": "compare",
+        "title": "Chaos Engineering & Fault Injection: Automated Continuous Game Days & Chaos Resilience Certification",
+        "left": {
+          "label": "Fragile Cloud Architecture",
+          "content": [
+            "Staging tests fail to uncover chaotic production emergent behaviors",
+            "Partial grey network failures trigger unhandled thread exhaustion",
+            "Pod evictions and node drains cause service-wide availability loss",
+            "Cascading failures bring down entire microservice clusters"
+          ]
+        },
+        "right": {
+          "label": "Resilient Chaos-Hardened Architecture",
+          "content": [
+            "Steady-state hypotheses verify system behavior under controlled stress",
+            "Netem and proxy chaos validate timeout budgets and hedged retries",
+            "PodDisruptionBudgets guarantee replica availability during disruptions",
+            "Circuit breakers and graceful fallbacks halt cascading failure propagation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production multi-zone chaos engineering game day and resilience audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors simultaneous latency faults, packet drops, and pod terminations under peak synthetic traffic."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates unshakeable enterprise resilience, minimal blast radius, and rapid autonomous recovery."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies two percent blast radius, three hundred fifty millisecond recovery, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Fragile Cloud Architecture",
+        "rightLabel": "Resilient Chaos-Hardened Architecture",
+        "leftHighlights": [
+          "Undetected emergent bugs",
+          "Grey network collapse",
+          "Uncontrolled pod eviction",
+          "Cascading thread starvation"
+        ],
+        "rightHighlights": [
+          "Steady-state guardrails",
+          "Tested timeout budgets",
+          "Disruption budget safety",
+          "Fail-fast circuit breaking"
+        ]
+      }
+    }
+  ]
+}

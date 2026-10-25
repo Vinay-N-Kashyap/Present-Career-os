@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 53,
+  "promptSha": "acc66b6d866097dea9c3094f6b7bbe1181f12d6584f7ccccb5a629adc24f7c8e",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Prometheus Metric Primitives: Counters, Gauges & Histograms",
+      "codeHash": "95cc8ee81c71961f4f04706ee8fe4f9e340bd6a30f8e0fc5148694132735c22b",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus Metrics & PromQL: Prometheus Metric Primitives: Counters, Gauges & Histograms",
+        "left": {
+          "label": "Legacy Push-Based Logging",
+          "content": [
+            "Push storms overwhelm monitoring servers during traffic surges",
+            "Arithmetic average latencies mask critical tail-latency spikes",
+            "Parsing unstructured log files is computationally prohibitive",
+            "High label cardinality crashes unindexed time-series databases"
+          ]
+        },
+        "right": {
+          "label": "Prometheus Time-Series Engine",
+          "content": [
+            "Pull-based scraping strictly rate-limits monitoring overhead",
+            "Histograms and linear interpolation compute accurate p99 quantiles",
+            "PromQL rate() computes instantaneous per-second derivatives",
+            "Gorilla double-delta compression shrinks storage footprint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Prometheus metric primitives recording counters gauges and cumulative histogram distributions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors monotonic counter increments, fluctuating gauge levels, and cumulative bucket observations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates statistical telemetry precision over unaggregated raw request logging."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms counter increments, gauge updates, and cumulative histogram bucket distributions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Push-Based Logging",
+        "rightLabel": "Prometheus Time-Series Engine",
+        "leftHighlights": [
+          "Unbounded push storms",
+          "Misleading latency averages",
+          "Prohibitive log parsing",
+          "Storage exhaustion"
+        ],
+        "rightHighlights": [
+          "Bounded pull scraping",
+          "Accurate quantile interpolation",
+          "Instant rate derivatives",
+          "Gorilla TSDB compression"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Fallacy of Average Latency & Histogram Quantile Interpolation",
+      "codeHash": "ee09c3a7c0dc26bac5c45c080ef6f94ae1de754fd4f0a2ea6580113963e2a649",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus Metrics & PromQL: The Fallacy of Average Latency & Histogram Quantile Interpolation",
+        "left": {
+          "label": "Legacy Push-Based Logging",
+          "content": [
+            "Push storms overwhelm monitoring servers during traffic surges",
+            "Arithmetic average latencies mask critical tail-latency spikes",
+            "Parsing unstructured log files is computationally prohibitive",
+            "High label cardinality crashes unindexed time-series databases"
+          ]
+        },
+        "right": {
+          "label": "Prometheus Time-Series Engine",
+          "content": [
+            "Pull-based scraping strictly rate-limits monitoring overhead",
+            "Histograms and linear interpolation compute accurate p99 quantiles",
+            "PromQL rate() computes instantaneous per-second derivatives",
+            "Gorilla double-delta compression shrinks storage footprint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the mathematical fallacy of average latency alongside histogram quantile estimation."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates target percentile ranks and linear interpolation across discrete histogram bucket boundaries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates accurate tail latency detection over deceptive arithmetic averages."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms bucket boundary identification, linear interpolation, and quantile estimation accuracy."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Push-Based Logging",
+        "rightLabel": "Prometheus Time-Series Engine",
+        "leftHighlights": [
+          "Unbounded push storms",
+          "Misleading latency averages",
+          "Prohibitive log parsing",
+          "Storage exhaustion"
+        ],
+        "rightHighlights": [
+          "Bounded pull scraping",
+          "Accurate quantile interpolation",
+          "Instant rate derivatives",
+          "Gorilla TSDB compression"
+        ]
+      }
+    },
+    {
+      "partTitle": "Pull-Based Scraping & OpenMetrics Text Exposition Architecture",
+      "codeHash": "051d8be5e56584c15f8f07cea85f1caaf02099b3c62fc0d2b0860f6985ab3447",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus Metrics & PromQL: Pull-Based Scraping & OpenMetrics Text Exposition Architecture",
+        "left": {
+          "label": "Legacy Push-Based Logging",
+          "content": [
+            "Push storms overwhelm monitoring servers during traffic surges",
+            "Arithmetic average latencies mask critical tail-latency spikes",
+            "Parsing unstructured log files is computationally prohibitive",
+            "High label cardinality crashes unindexed time-series databases"
+          ]
+        },
+        "right": {
+          "label": "Prometheus Time-Series Engine",
+          "content": [
+            "Pull-based scraping strictly rate-limits monitoring overhead",
+            "Histograms and linear interpolation compute accurate p99 quantiles",
+            "PromQL rate() computes instantaneous per-second derivatives",
+            "Gorilla double-delta compression shrinks storage footprint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the pull-based scraping model and OpenMetrics plaintext exposition standard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates HTTP metrics scraping, help documentation strings, type definitions, and label dimensions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates bounded collector overhead over chaotic push-based telemetry network storms."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms compliant OpenMetrics line formatting, multi-label serialization, and scrape reliability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Push-Based Logging",
+        "rightLabel": "Prometheus Time-Series Engine",
+        "leftHighlights": [
+          "Unbounded push storms",
+          "Misleading latency averages",
+          "Prohibitive log parsing",
+          "Storage exhaustion"
+        ],
+        "rightHighlights": [
+          "Bounded pull scraping",
+          "Accurate quantile interpolation",
+          "Instant rate derivatives",
+          "Gorilla TSDB compression"
+        ]
+      }
+    },
+    {
+      "partTitle": "PromQL Vector Mathematics & Per-Second Rate Calculations",
+      "codeHash": "0a4eba2932d23cff18805c18e02d38b17c787a4b4fe67478a6f7796593f52bc4",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus Metrics & PromQL: PromQL Vector Mathematics & Per-Second Rate Calculations",
+        "left": {
+          "label": "Legacy Push-Based Logging",
+          "content": [
+            "Push storms overwhelm monitoring servers during traffic surges",
+            "Arithmetic average latencies mask critical tail-latency spikes",
+            "Parsing unstructured log files is computationally prohibitive",
+            "High label cardinality crashes unindexed time-series databases"
+          ]
+        },
+        "right": {
+          "label": "Prometheus Time-Series Engine",
+          "content": [
+            "Pull-based scraping strictly rate-limits monitoring overhead",
+            "Histograms and linear interpolation compute accurate p99 quantiles",
+            "PromQL rate() computes instantaneous per-second derivatives",
+            "Gorilla double-delta compression shrinks storage footprint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays PromQL vector querying, range buffer evaluation, and per-second rate calculations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates counter reset detection, time delta division, and multi-service vector aggregation."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dynamic traffic throughput velocity over static cumulative counter numbers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms counter reset compensation, per-second rate calculation, and vector grouping accuracy."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Push-Based Logging",
+        "rightLabel": "Prometheus Time-Series Engine",
+        "leftHighlights": [
+          "Unbounded push storms",
+          "Misleading latency averages",
+          "Prohibitive log parsing",
+          "Storage exhaustion"
+        ],
+        "rightHighlights": [
+          "Bounded pull scraping",
+          "Accurate quantile interpolation",
+          "Instant rate derivatives",
+          "Gorilla TSDB compression"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Prometheus Grid Architecture & Telemetry Audit",
+      "codeHash": "43892e4e5b3aa7be89f3e4e83a4024ea37a3769114bea32eca8e88de398d93ac",
+      "spec": {
+        "template": "compare",
+        "title": "Prometheus Metrics & PromQL: Production Prometheus Grid Architecture & Telemetry Audit",
+        "left": {
+          "label": "Legacy Push-Based Logging",
+          "content": [
+            "Push storms overwhelm monitoring servers during traffic surges",
+            "Arithmetic average latencies mask critical tail-latency spikes",
+            "Parsing unstructured log files is computationally prohibitive",
+            "High label cardinality crashes unindexed time-series databases"
+          ]
+        },
+        "right": {
+          "label": "Prometheus Time-Series Engine",
+          "content": [
+            "Pull-based scraping strictly rate-limits monitoring overhead",
+            "Histograms and linear interpolation compute accurate p99 quantiles",
+            "PromQL rate() computes instantaneous per-second derivatives",
+            "Gorilla double-delta compression shrinks storage footprint"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production Prometheus metrics grid and time-series telemetry audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors high-throughput scrape ingestion, gorilla TSDB compression, and sub-fifty millisecond queries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates planetary telemetry scale, uncompromised cardinality controls, and flawless alerting."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies five hundred thousand samples per second, high compression, and production certification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Push-Based Logging",
+        "rightLabel": "Prometheus Time-Series Engine",
+        "leftHighlights": [
+          "Unbounded push storms",
+          "Misleading latency averages",
+          "Prohibitive log parsing",
+          "Storage exhaustion"
+        ],
+        "rightHighlights": [
+          "Bounded pull scraping",
+          "Accurate quantile interpolation",
+          "Instant rate derivatives",
+          "Gorilla TSDB compression"
+        ]
+      }
+    }
+  ]
+}
