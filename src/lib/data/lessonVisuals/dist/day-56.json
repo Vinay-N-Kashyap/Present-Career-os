@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 56,
+  "promptSha": "9a6c39fbe5520de4a6dc8893cdd92c7e56634554c35061098cbfa899f74a03b8",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Geometry of Latency: The Speed of Light, Anycast BGP Routing & Edge PoPs",
+      "codeHash": "b31aff667d5e2843a20d4be1fd4f05982537c2cff6114163ead4ab9a6578f33b",
+      "spec": {
+        "template": "compare",
+        "title": "Edge Computing & Anycast: The Geometry of Latency: The Speed of Light, Anycast BGP Routing & Edge PoPs",
+        "left": {
+          "label": "Centralized Origin Architecture",
+          "content": [
+            "Speed of light delays across transoceanic fiber degrade user experience",
+            "Global traffic spikes trigger thundering herd crashes on central origins",
+            "Serverless container runtimes suffer multi-second cold start delays",
+            "Cross-continent database queries add hundreds of milliseconds of lag"
+          ]
+        },
+        "right": {
+          "label": "Planetary Anycast Edge Grid",
+          "content": [
+            "BGP Anycast routes users to the nearest PoP within fifteen milliseconds",
+            "Tiered shields and request collapsing absorb over ninety-eight percent of traffic",
+            "V8 Isolates execute dynamic edge logic with sub-five-millisecond startup",
+            "Geo-distributed edge KV stores serve reads instantly from local memory"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates planetary Anycast routing advertising identical IP prefixes from global edge facilities."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors BGP path selection steering client connections to the topologically closest metropolitan exchange point."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates speed of light latency reduction over centralized transoceanic routing hops."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms client coordinate mapping, shortest path routing, and sub-fifteen millisecond connection establishment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Origin Architecture",
+        "rightLabel": "Planetary Anycast Edge Grid",
+        "leftHighlights": [
+          "Transoceanic light delay",
+          "Origin stampede crashes",
+          "Container cold starts",
+          "Cross-continent SQL latency"
+        ],
+        "rightHighlights": [
+          "Topological Anycast routing",
+          "Request collapsing shield",
+          "Microsecond V8 isolates",
+          "Local edge memory KV"
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge Caching Topologies & Origin Shielding: Tiered Cache Hierarchies & Cache Collapse",
+      "codeHash": "ccc7f1cc263a91d9b4a8d231d64c3df7d2cb78b9d1b9a55bd3931ff745ddf19a",
+      "spec": {
+        "template": "compare",
+        "title": "Edge Computing & Anycast: Edge Caching Topologies & Origin Shielding: Tiered Cache Hierarchies & Cache Collapse",
+        "left": {
+          "label": "Centralized Origin Architecture",
+          "content": [
+            "Speed of light delays across transoceanic fiber degrade user experience",
+            "Global traffic spikes trigger thundering herd crashes on central origins",
+            "Serverless container runtimes suffer multi-second cold start delays",
+            "Cross-continent database queries add hundreds of milliseconds of lag"
+          ]
+        },
+        "right": {
+          "label": "Planetary Anycast Edge Grid",
+          "content": [
+            "BGP Anycast routes users to the nearest PoP within fifteen milliseconds",
+            "Tiered shields and request collapsing absorb over ninety-eight percent of traffic",
+            "V8 Isolates execute dynamic edge logic with sub-five-millisecond startup",
+            "Geo-distributed edge KV stores serve reads instantly from local memory"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays tiered caching hierarchies with regional origin shields and in-flight request collapsing."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates promise deduplication merging concurrent client requests into a single upstream origin fetch."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete origin protection over catastrophic global thundering herd stampedes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms origin fetch deduplication, high cache hit rates, and calm origin revalidation traffic."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Origin Architecture",
+        "rightLabel": "Planetary Anycast Edge Grid",
+        "leftHighlights": [
+          "Transoceanic light delay",
+          "Origin stampede crashes",
+          "Container cold starts",
+          "Cross-continent SQL latency"
+        ],
+        "rightHighlights": [
+          "Topological Anycast routing",
+          "Request collapsing shield",
+          "Microsecond V8 isolates",
+          "Local edge memory KV"
+        ]
+      }
+    },
+    {
+      "partTitle": "Serverless Edge Compute & V8 Isolates: Zero-Cold-Start V8 Execution vs Container Runtimes",
+      "codeHash": "e061689a8036893d1c53485a4332c24a1551bf5cb2e3dc7d9c04bc69c586435d",
+      "spec": {
+        "template": "compare",
+        "title": "Edge Computing & Anycast: Serverless Edge Compute & V8 Isolates: Zero-Cold-Start V8 Execution vs Container Runtimes",
+        "left": {
+          "label": "Centralized Origin Architecture",
+          "content": [
+            "Speed of light delays across transoceanic fiber degrade user experience",
+            "Global traffic spikes trigger thundering herd crashes on central origins",
+            "Serverless container runtimes suffer multi-second cold start delays",
+            "Cross-continent database queries add hundreds of milliseconds of lag"
+          ]
+        },
+        "right": {
+          "label": "Planetary Anycast Edge Grid",
+          "content": [
+            "BGP Anycast routes users to the nearest PoP within fifteen milliseconds",
+            "Tiered shields and request collapsing absorb over ninety-eight percent of traffic",
+            "V8 Isolates execute dynamic edge logic with sub-five-millisecond startup",
+            "Geo-distributed edge KV stores serve reads instantly from local memory"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates serverless isolate runtimes hosting thousands of tenants inside a single operating system process."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates isolated memory heaps, instantaneous script execution, and microsecond startup velocity."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero cold start execution over heavyweight container and virtual machine boot sequences."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms isolate memory boundary enforcement, rapid script startup, and high-density multi-tenancy."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Origin Architecture",
+        "rightLabel": "Planetary Anycast Edge Grid",
+        "leftHighlights": [
+          "Transoceanic light delay",
+          "Origin stampede crashes",
+          "Container cold starts",
+          "Cross-continent SQL latency"
+        ],
+        "rightHighlights": [
+          "Topological Anycast routing",
+          "Request collapsing shield",
+          "Microsecond V8 isolates",
+          "Local edge memory KV"
+        ]
+      }
+    },
+    {
+      "partTitle": "Geo-Distributed State & Edge Consistency: Read-Replicas, Edge KV Stores & Eventual Convergence",
+      "codeHash": "8418062fc7db04e59ae7f541646c96c204a24017df0436d44558d09bef08e5ea",
+      "spec": {
+        "template": "compare",
+        "title": "Edge Computing & Anycast: Geo-Distributed State & Edge Consistency: Read-Replicas, Edge KV Stores & Eventual Convergence",
+        "left": {
+          "label": "Centralized Origin Architecture",
+          "content": [
+            "Speed of light delays across transoceanic fiber degrade user experience",
+            "Global traffic spikes trigger thundering herd crashes on central origins",
+            "Serverless container runtimes suffer multi-second cold start delays",
+            "Cross-continent database queries add hundreds of milliseconds of lag"
+          ]
+        },
+        "right": {
+          "label": "Planetary Anycast Edge Grid",
+          "content": [
+            "BGP Anycast routes users to the nearest PoP within fifteen milliseconds",
+            "Tiered shields and request collapsing absorb over ninety-eight percent of traffic",
+            "V8 Isolates execute dynamic edge logic with sub-five-millisecond startup",
+            "Geo-distributed edge KV stores serve reads instantly from local memory"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays geo-distributed read-mostly key-value storage with asynchronous global write convergence."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates monotonic version fencing, local memory cache lookups, and background edge replication."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-millisecond local reads over transoceanic database query round trips."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms versioned write propagation, local read velocity, and eventual global replica synchronization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Origin Architecture",
+        "rightLabel": "Planetary Anycast Edge Grid",
+        "leftHighlights": [
+          "Transoceanic light delay",
+          "Origin stampede crashes",
+          "Container cold starts",
+          "Cross-continent SQL latency"
+        ],
+        "rightHighlights": [
+          "Topological Anycast routing",
+          "Request collapsing shield",
+          "Microsecond V8 isolates",
+          "Local edge memory KV"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Global Edge Benchmark & Anycast Routing Audit",
+      "codeHash": "3447dbd4abecca881677f4cb54842b91c8e9aaed17140a1682b63b57a6fd3549",
+      "spec": {
+        "template": "compare",
+        "title": "Edge Computing & Anycast: Production Global Edge Benchmark & Anycast Routing Audit",
+        "left": {
+          "label": "Centralized Origin Architecture",
+          "content": [
+            "Speed of light delays across transoceanic fiber degrade user experience",
+            "Global traffic spikes trigger thundering herd crashes on central origins",
+            "Serverless container runtimes suffer multi-second cold start delays",
+            "Cross-continent database queries add hundreds of milliseconds of lag"
+          ]
+        },
+        "right": {
+          "label": "Planetary Anycast Edge Grid",
+          "content": [
+            "BGP Anycast routes users to the nearest PoP within fifteen milliseconds",
+            "Tiered shields and request collapsing absorb over ninety-eight percent of traffic",
+            "V8 Isolates execute dynamic edge logic with sub-five-millisecond startup",
+            "Geo-distributed edge KV stores serve reads instantly from local memory"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production planetary edge network telemetry and Anycast routing audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors two hundred fifty thousand requests per second across six continents with sub-fifteen millisecond latency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates planetary cloud scalability, total origin shielding, and uncompromised edge performance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies twelve millisecond median latency, ninety-eight percent shielding, and enterprise readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Origin Architecture",
+        "rightLabel": "Planetary Anycast Edge Grid",
+        "leftHighlights": [
+          "Transoceanic light delay",
+          "Origin stampede crashes",
+          "Container cold starts",
+          "Cross-continent SQL latency"
+        ],
+        "rightHighlights": [
+          "Topological Anycast routing",
+          "Request collapsing shield",
+          "Microsecond V8 isolates",
+          "Local edge memory KV"
+        ]
+      }
+    }
+  ]
+}

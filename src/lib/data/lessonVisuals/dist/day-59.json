@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 59,
+  "promptSha": "60dd28cd206f4495b9a16e8602fd7c7ec96c21e549e03eaba62512abadceb349",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Mechanical Sympathy Paradigm: CPU Cache Hierarchies, False Sharing & Lock Contention",
+      "codeHash": "ce9b0e4ccda0d3de549fca35e195d84d9aa8643e91637febe832ffc9cad7eb86",
+      "spec": {
+        "template": "compare",
+        "title": "High-Frequency Zero-Allocation: The Mechanical Sympathy Paradigm: CPU Cache Hierarchies, False Sharing & Lock Contention",
+        "left": {
+          "label": "Traditional Managed Runtimes",
+          "content": [
+            "False sharing forces continuous multi-core cache line invalidations",
+            "Blocking queues suffer high operating system mutex contention delays",
+            "Linux socket syscalls incur heavy context switches and packet copies",
+            "Garbage collection stop-the-world pauses destroy latency determinism"
+          ]
+        },
+        "right": {
+          "label": "Mechanical Sympathy Architecture",
+          "content": [
+            "Cache line padding guarantees dedicated sixty-four-byte lines per counter",
+            "Lock-free circular ring buffers use single-cycle bitmask indexing",
+            "Kernel-bypass poll-mode drivers read packets directly into user space",
+            "Off-heap memory and FlatBuffers enable zero-copy binary traversal"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates processor cache hierarchies and spatial padding separating independent worker sequences."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors memory cache line boundaries preventing cross-core cache coherence invalidation storms."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates single-digit nanosecond execution over multi-cycle bus invalidation stalls."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms memory padding alignment, zero false sharing across cores, and low latency execution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Managed Runtimes",
+        "rightLabel": "Mechanical Sympathy Architecture",
+        "leftHighlights": [
+          "False sharing stalls",
+          "Mutex queue lockups",
+          "Kernel context switches",
+          "GC stop-the-world freezes"
+        ],
+        "rightHighlights": [
+          "Cache line isolation",
+          "Pre-allocated ring buffers",
+          "Zero-syscall io_uring",
+          "Zero-copy binary layouts"
+        ]
+      }
+    },
+    {
+      "partTitle": "Lock-Free Circular Ring Buffers: Pre-Allocation & Power-of-Two Bitmasking",
+      "codeHash": "3105702856177ab0810e95c573bc50738c9b9f62904adcb23cbc3f32012f6efa",
+      "spec": {
+        "template": "compare",
+        "title": "High-Frequency Zero-Allocation: Lock-Free Circular Ring Buffers: Pre-Allocation & Power-of-Two Bitmasking",
+        "left": {
+          "label": "Traditional Managed Runtimes",
+          "content": [
+            "False sharing forces continuous multi-core cache line invalidations",
+            "Blocking queues suffer high operating system mutex contention delays",
+            "Linux socket syscalls incur heavy context switches and packet copies",
+            "Garbage collection stop-the-world pauses destroy latency determinism"
+          ]
+        },
+        "right": {
+          "label": "Mechanical Sympathy Architecture",
+          "content": [
+            "Cache line padding guarantees dedicated sixty-four-byte lines per counter",
+            "Lock-free circular ring buffers use single-cycle bitmask indexing",
+            "Kernel-bypass poll-mode drivers read packets directly into user space",
+            "Off-heap memory and FlatBuffers enable zero-copy binary traversal"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays pre-allocated circular ring buffers eliminating memory allocations during event publishing."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates power-of-two bitmask indexing and atomic sequence barriers coordinating concurrent worker threads."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates tens of millions of events per second over blocking operating system mutex queues."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms bitmask wrapping, lock-free cursor progression, and deterministic event consumption."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Managed Runtimes",
+        "rightLabel": "Mechanical Sympathy Architecture",
+        "leftHighlights": [
+          "False sharing stalls",
+          "Mutex queue lockups",
+          "Kernel context switches",
+          "GC stop-the-world freezes"
+        ],
+        "rightHighlights": [
+          "Cache line isolation",
+          "Pre-allocated ring buffers",
+          "Zero-syscall io_uring",
+          "Zero-copy binary layouts"
+        ]
+      }
+    },
+    {
+      "partTitle": "Kernel-Bypass Networking: Linux Sockets Overhead, io_uring & DPDK Architecture",
+      "codeHash": "42b7de11740d7f78e9576d75da379fde8d3d4e7b00ac03932f363903870fc131",
+      "spec": {
+        "template": "compare",
+        "title": "High-Frequency Zero-Allocation: Kernel-Bypass Networking: Linux Sockets Overhead, io_uring & DPDK Architecture",
+        "left": {
+          "label": "Traditional Managed Runtimes",
+          "content": [
+            "False sharing forces continuous multi-core cache line invalidations",
+            "Blocking queues suffer high operating system mutex contention delays",
+            "Linux socket syscalls incur heavy context switches and packet copies",
+            "Garbage collection stop-the-world pauses destroy latency determinism"
+          ]
+        },
+        "right": {
+          "label": "Mechanical Sympathy Architecture",
+          "content": [
+            "Cache line padding guarantees dedicated sixty-four-byte lines per counter",
+            "Lock-free circular ring buffers use single-cycle bitmask indexing",
+            "Kernel-bypass poll-mode drivers read packets directly into user space",
+            "Off-heap memory and FlatBuffers enable zero-copy binary traversal"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates kernel-bypass networking reading network interface buffers directly in user space."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates user-space poll-mode drivers and shared submission and completion ring queues."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero kernel context switches over traditional operating system socket interrupts."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms submission queue processing, completion queue polling, and zero-syscall performance."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Managed Runtimes",
+        "rightLabel": "Mechanical Sympathy Architecture",
+        "leftHighlights": [
+          "False sharing stalls",
+          "Mutex queue lockups",
+          "Kernel context switches",
+          "GC stop-the-world freezes"
+        ],
+        "rightHighlights": [
+          "Cache line isolation",
+          "Pre-allocated ring buffers",
+          "Zero-syscall io_uring",
+          "Zero-copy binary layouts"
+        ]
+      }
+    },
+    {
+      "partTitle": "Off-Heap Memory Management & Zero-Copy Serialization: FlatBuffers & Cap'n Proto",
+      "codeHash": "55eae0b11746bbb1c437ecabe30ca6ac8e49e77760cbf69029fa903f1f169f3a",
+      "spec": {
+        "template": "compare",
+        "title": "High-Frequency Zero-Allocation: Off-Heap Memory Management & Zero-Copy Serialization: FlatBuffers & Cap'n Proto",
+        "left": {
+          "label": "Traditional Managed Runtimes",
+          "content": [
+            "False sharing forces continuous multi-core cache line invalidations",
+            "Blocking queues suffer high operating system mutex contention delays",
+            "Linux socket syscalls incur heavy context switches and packet copies",
+            "Garbage collection stop-the-world pauses destroy latency determinism"
+          ]
+        },
+        "right": {
+          "label": "Mechanical Sympathy Architecture",
+          "content": [
+            "Cache line padding guarantees dedicated sixty-four-byte lines per counter",
+            "Lock-free circular ring buffers use single-cycle bitmask indexing",
+            "Kernel-bypass poll-mode drivers read packets directly into user space",
+            "Off-heap memory and FlatBuffers enable zero-copy binary traversal"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays off-heap memory management and zero-copy binary serialization traversing raw byte layouts."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates fixed byte offsets and direct memory pointer access without object allocations or parsing."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total elimination of garbage collection pauses over heavy JSON object parsing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms structured binary reading, zero heap allocations, and deterministic memory traversal."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Managed Runtimes",
+        "rightLabel": "Mechanical Sympathy Architecture",
+        "leftHighlights": [
+          "False sharing stalls",
+          "Mutex queue lockups",
+          "Kernel context switches",
+          "GC stop-the-world freezes"
+        ],
+        "rightHighlights": [
+          "Cache line isolation",
+          "Pre-allocated ring buffers",
+          "Zero-syscall io_uring",
+          "Zero-copy binary layouts"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production High-Frequency Zero-Allocation Benchmark & Microsecond Latency Audit",
+      "codeHash": "07a0a43d6664472b7c6e0f39f1dc980082f860c18a7073976f45d172918b1719",
+      "spec": {
+        "template": "compare",
+        "title": "High-Frequency Zero-Allocation: Production High-Frequency Zero-Allocation Benchmark & Microsecond Latency Audit",
+        "left": {
+          "label": "Traditional Managed Runtimes",
+          "content": [
+            "False sharing forces continuous multi-core cache line invalidations",
+            "Blocking queues suffer high operating system mutex contention delays",
+            "Linux socket syscalls incur heavy context switches and packet copies",
+            "Garbage collection stop-the-world pauses destroy latency determinism"
+          ]
+        },
+        "right": {
+          "label": "Mechanical Sympathy Architecture",
+          "content": [
+            "Cache line padding guarantees dedicated sixty-four-byte lines per counter",
+            "Lock-free circular ring buffers use single-cycle bitmask indexing",
+            "Kernel-bypass poll-mode drivers read packets directly into user space",
+            "Off-heap memory and FlatBuffers enable zero-copy binary traversal"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production high-frequency trading matching engine and microsecond audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors millions of orders per second executing in hundreds of nanoseconds with zero garbage collection pauses."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates absolute execution determinism, zero lock contention, and bare-metal performance."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies sub-microsecond tail latency, zero runtime allocations, and enterprise production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Managed Runtimes",
+        "rightLabel": "Mechanical Sympathy Architecture",
+        "leftHighlights": [
+          "False sharing stalls",
+          "Mutex queue lockups",
+          "Kernel context switches",
+          "GC stop-the-world freezes"
+        ],
+        "rightHighlights": [
+          "Cache line isolation",
+          "Pre-allocated ring buffers",
+          "Zero-syscall io_uring",
+          "Zero-copy binary layouts"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 58,
+  "promptSha": "17816d8ac70a9b95879847f992798fa9d7b06bf42a3d55d97251517656cf2a47",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The Geometry of Decentralized Overlays: Consistent Hash Rings vs XOR Metric (Chord vs Kademlia)",
+      "codeHash": "121398a53cec8e986d9bf3871c2cfd6403dc829c207d32eaa3d89cc62a9de9e0",
+      "spec": {
+        "template": "compare",
+        "title": "Decentralized P2P: The Geometry of Decentralized Overlays: Consistent Hash Rings vs XOR Metric (Chord vs Kademlia)",
+        "left": {
+          "label": "Centralized Location Addressing",
+          "content": [
+            "Single index servers create critical points of failure and legal chokepoints",
+            "Location-addressed URLs suffer link rot and server bankruptcy outages",
+            "Traffic spikes exhaust server bandwidth and crash download portals",
+            "Unidirectional hash rings suffer broken fingers during network churn"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Peer-to-Peer Fabric",
+          "content": [
+            "Kademlia bitwise XOR metrics guarantee logarithmic O(log N) lookup convergence",
+            "IPFS Content Identifiers address data immutably by its cryptographic hash",
+            "BitTorrent swarms download faster as popular demand increases",
+            "Merkle DAGs eliminate duplicate chunks and guarantee tamper-evident integrity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates decentralized overlay geometry comparing circular hash rings with the bitwise distance metric."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors bitwise distance calculations sorting candidate peer identifiers by proximity to target hashes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates symmetric distance calculation over brittle unidirectional chord finger table routing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms bitwise distance calculations, candidate peer sorting, and logarithmic lookup convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Location Addressing",
+        "rightLabel": "Decentralized Peer-to-Peer Fabric",
+        "leftHighlights": [
+          "Single point chokepoints",
+          "Four-zero-four link rot",
+          "Bandwidth crash under load",
+          "Brittle ring routing"
+        ],
+        "rightHighlights": [
+          "Symmetric XOR routing",
+          "Immutable CID hashing",
+          "Swarm bandwidth scaling",
+          "Merkle DAG deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Kademlia Routing Topologies: k-Buckets, Alpha Concurrency & Node Lookup Mechanics",
+      "codeHash": "57a129b79058214c280664c7d18efc117a1dd4eb1235a608b64d0e268ef7e884",
+      "spec": {
+        "template": "compare",
+        "title": "Decentralized P2P: Kademlia Routing Topologies: k-Buckets, Alpha Concurrency & Node Lookup Mechanics",
+        "left": {
+          "label": "Centralized Location Addressing",
+          "content": [
+            "Single index servers create critical points of failure and legal chokepoints",
+            "Location-addressed URLs suffer link rot and server bankruptcy outages",
+            "Traffic spikes exhaust server bandwidth and crash download portals",
+            "Unidirectional hash rings suffer broken fingers during network churn"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Peer-to-Peer Fabric",
+          "content": [
+            "Kademlia bitwise XOR metrics guarantee logarithmic O(log N) lookup convergence",
+            "IPFS Content Identifiers address data immutably by its cryptographic hash",
+            "BitTorrent swarms download faster as popular demand increases",
+            "Merkle DAGs eliminate duplicate chunks and guarantee tamper-evident integrity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays routing table organization partitioning peers across logarithmic distance buckets."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates bucket capacity limits alongside least-recently seen eviction policies favoring reliable peers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates high network churn survivability over vulnerable naive peer replacement algorithms."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms distance bucket index mapping, capacity threshold enforcement, and veteran peer retention."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Location Addressing",
+        "rightLabel": "Decentralized Peer-to-Peer Fabric",
+        "leftHighlights": [
+          "Single point chokepoints",
+          "Four-zero-four link rot",
+          "Bandwidth crash under load",
+          "Brittle ring routing"
+        ],
+        "rightHighlights": [
+          "Symmetric XOR routing",
+          "Immutable CID hashing",
+          "Swarm bandwidth scaling",
+          "Merkle DAG deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "The BitTorrent Swarm Protocol: Choking, Tit-for-Tat & Rare-Chunk-First Distribution",
+      "codeHash": "9d2a1fc457d1176f1bf2b9800548b283b6dee213666c7c88a95453ff65e92c79",
+      "spec": {
+        "template": "compare",
+        "title": "Decentralized P2P: The BitTorrent Swarm Protocol: Choking, Tit-for-Tat & Rare-Chunk-First Distribution",
+        "left": {
+          "label": "Centralized Location Addressing",
+          "content": [
+            "Single index servers create critical points of failure and legal chokepoints",
+            "Location-addressed URLs suffer link rot and server bankruptcy outages",
+            "Traffic spikes exhaust server bandwidth and crash download portals",
+            "Unidirectional hash rings suffer broken fingers during network churn"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Peer-to-Peer Fabric",
+          "content": [
+            "Kademlia bitwise XOR metrics guarantee logarithmic O(log N) lookup convergence",
+            "IPFS Content Identifiers address data immutably by its cryptographic hash",
+            "BitTorrent swarms download faster as popular demand increases",
+            "Merkle DAGs eliminate duplicate chunks and guarantee tamper-evident integrity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates swarm file distribution protocols chunking assets into cryptographically verified pieces."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates rarest-first piece scheduling, upload throughput measurements, and tit-for-tat choking algorithms."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates exponential download acceleration under high demand over client-server bandwidth crashes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms bandwidth-prioritized peer unchoking, optimistic peer exploration, and complete chunk distribution."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Location Addressing",
+        "rightLabel": "Decentralized Peer-to-Peer Fabric",
+        "leftHighlights": [
+          "Single point chokepoints",
+          "Four-zero-four link rot",
+          "Bandwidth crash under load",
+          "Brittle ring routing"
+        ],
+        "rightHighlights": [
+          "Symmetric XOR routing",
+          "Immutable CID hashing",
+          "Swarm bandwidth scaling",
+          "Merkle DAG deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Content-Addressed Storage & Merkle DAGs: IPFS, CIDs & Immutable Data Graphs",
+      "codeHash": "0f8b89cc4ae0682dc07a477b3fe2bc80146f864ac9d6fdd12407cc9104583d33",
+      "spec": {
+        "template": "compare",
+        "title": "Decentralized P2P: Content-Addressed Storage & Merkle DAGs: IPFS, CIDs & Immutable Data Graphs",
+        "left": {
+          "label": "Centralized Location Addressing",
+          "content": [
+            "Single index servers create critical points of failure and legal chokepoints",
+            "Location-addressed URLs suffer link rot and server bankruptcy outages",
+            "Traffic spikes exhaust server bandwidth and crash download portals",
+            "Unidirectional hash rings suffer broken fingers during network churn"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Peer-to-Peer Fabric",
+          "content": [
+            "Kademlia bitwise XOR metrics guarantee logarithmic O(log N) lookup convergence",
+            "IPFS Content Identifiers address data immutably by its cryptographic hash",
+            "BitTorrent swarms download faster as popular demand increases",
+            "Merkle DAGs eliminate duplicate chunks and guarantee tamper-evident integrity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays content-addressed storage structuring data into immutable Merkle directed acyclic graphs."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates cryptographic content identifiers and hierarchical parent-child DAG linkages across blocks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates permanent tamper-evident integrity over fragile location-addressed link rot and censorship."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms recursive cryptographic hash validation, automatic deduplication, and immutable graph integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Location Addressing",
+        "rightLabel": "Decentralized Peer-to-Peer Fabric",
+        "leftHighlights": [
+          "Single point chokepoints",
+          "Four-zero-four link rot",
+          "Bandwidth crash under load",
+          "Brittle ring routing"
+        ],
+        "rightHighlights": [
+          "Symmetric XOR routing",
+          "Immutable CID hashing",
+          "Swarm bandwidth scaling",
+          "Merkle DAG deduplication"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Decentralized Storage Benchmark & P2P Swarm Audit",
+      "codeHash": "ec9b15d5c7156cf6d79c2593d5022553d69c846641e661870f23bda21f013d76",
+      "spec": {
+        "template": "compare",
+        "title": "Decentralized P2P: Production Decentralized Storage Benchmark & P2P Swarm Audit",
+        "left": {
+          "label": "Centralized Location Addressing",
+          "content": [
+            "Single index servers create critical points of failure and legal chokepoints",
+            "Location-addressed URLs suffer link rot and server bankruptcy outages",
+            "Traffic spikes exhaust server bandwidth and crash download portals",
+            "Unidirectional hash rings suffer broken fingers during network churn"
+          ]
+        },
+        "right": {
+          "label": "Decentralized Peer-to-Peer Fabric",
+          "content": [
+            "Kademlia bitwise XOR metrics guarantee logarithmic O(log N) lookup convergence",
+            "IPFS Content Identifiers address data immutably by its cryptographic hash",
+            "BitTorrent swarms download faster as popular demand increases",
+            "Merkle DAGs eliminate duplicate chunks and guarantee tamper-evident integrity"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production decentralized peer swarm telemetry and storage audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors hundreds of peers distributing massive datasets under high churn with zero tracker dependencies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates true decentralized resilience, four-hop lookup convergence, and total data survivability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies logarithmic lookup hops, full piece availability, and enterprise production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Centralized Location Addressing",
+        "rightLabel": "Decentralized Peer-to-Peer Fabric",
+        "leftHighlights": [
+          "Single point chokepoints",
+          "Four-zero-four link rot",
+          "Bandwidth crash under load",
+          "Brittle ring routing"
+        ],
+        "rightHighlights": [
+          "Symmetric XOR routing",
+          "Immutable CID hashing",
+          "Swarm bandwidth scaling",
+          "Merkle DAG deduplication"
+        ]
+      }
+    }
+  ]
+}
