@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "prefix": "dist",
+  "day": 31,
+  "promptSha": "e35ad0c0d4742802a9dfdea4fa651e4410f7580d5b8fa90046a51373f9400fd5",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "State Machine Replication (SMR) & The FLP Impossibility Result",
+      "codeHash": "bec2a250a2bcdb57ba91a0cfb833888556916f748cc5219bf9aafeeac6e4d42b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Consensus Architecture: State Machine Replication (SMR) & The FLP Impossibility Result",
+        "left": {
+          "label": "Uncoordinated Replication & Split-Brain",
+          "content": [
+            "Vulnerable asynchronous writes causing data divergence",
+            "Dual-leader split-brain irreconcilable database corruption",
+            "Indefinite liveness stalls under silent crashed nodes",
+            "Ad-hoc recovery logic riddled with catastrophic edge cases"
+          ]
+        },
+        "right": {
+          "label": "State Machine Replication & Raft Consensus",
+          "content": [
+            "Deterministic write-ahead log state machine replication",
+            "Strict quorum pigeonhole mathematics preventing split-brain",
+            "Strong leader authority with terms acting as logical clocks",
+            "Formal TLA+ verified safety invariants and sub-25ms commits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays State Machine Replication applying ordered logs to independent finite state machines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors deterministic transition executions maintaining identical key-value state across replicas."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates guaranteed replica convergence over ad-hoc uncoordinated database synchronization."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms state machine parity, append-only log ordering, and full compliance with theoretical bounds."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Replication & Split-Brain",
+        "rightLabel": "State Machine Replication & Raft Consensus"
+      }
+    },
+    {
+      "partTitle": "Paxos Deconstructed: Proposers, Acceptors, Promises & Value Adoption",
+      "codeHash": "01f660ecdfe0295c466172b88c5a5c47cc0379cfd2ce444cf508db8a40386021",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Consensus Architecture: Paxos Deconstructed: Proposers, Acceptors, Promises & Value Adoption",
+        "left": {
+          "label": "Uncoordinated Replication & Split-Brain",
+          "content": [
+            "Vulnerable asynchronous writes causing data divergence",
+            "Dual-leader split-brain irreconcilable database corruption",
+            "Indefinite liveness stalls under silent crashed nodes",
+            "Ad-hoc recovery logic riddled with catastrophic edge cases"
+          ]
+        },
+        "right": {
+          "label": "State Machine Replication & Raft Consensus",
+          "content": [
+            "Deterministic write-ahead log state machine replication",
+            "Strict quorum pigeonhole mathematics preventing split-brain",
+            "Strong leader authority with terms acting as logical clocks",
+            "Formal TLA+ verified safety invariants and sub-25ms commits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Basic Paxos Phase One promise collection and Phase Two consensus value proposals."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates acceptor promise responses and mandatory adoption of highest-numbered prior accepted values."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mathematical proof of consensus safety over vulnerable uncoordinated write schemes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms majority promise quorum acquisition, value adoption invariants, and permanent consensus finality."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Replication & Split-Brain",
+        "rightLabel": "State Machine Replication & Raft Consensus"
+      }
+    },
+    {
+      "partTitle": "The Raft Revolution: Understandability & Core Safety Invariants",
+      "codeHash": "42da4d85a72378e03c8ec5f2b6df60db3405eff639b41180b9ccdf50da682c0b",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Consensus Architecture: The Raft Revolution: Understandability & Core Safety Invariants",
+        "left": {
+          "label": "Uncoordinated Replication & Split-Brain",
+          "content": [
+            "Vulnerable asynchronous writes causing data divergence",
+            "Dual-leader split-brain irreconcilable database corruption",
+            "Indefinite liveness stalls under silent crashed nodes",
+            "Ad-hoc recovery logic riddled with catastrophic edge cases"
+          ]
+        },
+        "right": {
+          "label": "State Machine Replication & Raft Consensus",
+          "content": [
+            "Deterministic write-ahead log state machine replication",
+            "Strict quorum pigeonhole mathematics preventing split-brain",
+            "Strong leader authority with terms acting as logical clocks",
+            "Formal TLA+ verified safety invariants and sub-25ms commits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Raft consensus architecture enforcing strong leader semantics and numbered terms."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors cluster state auditing election safety to ensure at most one active leader per term."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates supreme operational understandability and debuggability over complex Multi-Paxos schemes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms election safety compliance, term logical clock monotonicity, and strict leader authority."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Replication & Split-Brain",
+        "rightLabel": "State Machine Replication & Raft Consensus"
+      }
+    },
+    {
+      "partTitle": "Asynchronous Network Partitions & Split-Brain Prevention via Quorums",
+      "codeHash": "af706cd8f74bd0276d992f147d77f9da93419f2cf025ec1d9ddc3a506ec18c90",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Consensus Architecture: Asynchronous Network Partitions & Split-Brain Prevention via Quorums",
+        "left": {
+          "label": "Uncoordinated Replication & Split-Brain",
+          "content": [
+            "Vulnerable asynchronous writes causing data divergence",
+            "Dual-leader split-brain irreconcilable database corruption",
+            "Indefinite liveness stalls under silent crashed nodes",
+            "Ad-hoc recovery logic riddled with catastrophic edge cases"
+          ]
+        },
+        "right": {
+          "label": "State Machine Replication & Raft Consensus",
+          "content": [
+            "Deterministic write-ahead log state machine replication",
+            "Strict quorum pigeonhole mathematics preventing split-brain",
+            "Strong leader authority with terms acting as logical clocks",
+            "Formal TLA+ verified safety invariants and sub-25ms commits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates network partition resilience isolating minority sub-clusters from majority quorums."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates the pigeonhole principle guaranteeing that overlapping witness nodes prevent split-brain writes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates strict write rejection on minority partitions preserving global data integrity."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms majority write commitment, minority partition isolation, and zero split-brain data corruption."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Replication & Split-Brain",
+        "rightLabel": "State Machine Replication & Raft Consensus"
+      }
+    },
+    {
+      "partTitle": "Consensus Pipeline Architecture, State Parity & Production Telemetry",
+      "codeHash": "bd0a6edef6977cdfff8d0db8017fb2aef58d0c5a1be554d78c57035ce95c9eeb",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Consensus Architecture: Consensus Pipeline Architecture, State Parity & Production Telemetry",
+        "left": {
+          "label": "Uncoordinated Replication & Split-Brain",
+          "content": [
+            "Vulnerable asynchronous writes causing data divergence",
+            "Dual-leader split-brain irreconcilable database corruption",
+            "Indefinite liveness stalls under silent crashed nodes",
+            "Ad-hoc recovery logic riddled with catastrophic edge cases"
+          ]
+        },
+        "right": {
+          "label": "State Machine Replication & Raft Consensus",
+          "content": [
+            "Deterministic write-ahead log state machine replication",
+            "Strict quorum pigeonhole mathematics preventing split-brain",
+            "Strong leader authority with terms acting as logical clocks",
+            "Formal TLA+ verified safety invariants and sub-25ms commits"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production consensus telemetry pipeline auditing commit latencies and state parity."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors disk write synchronization, batched log replication, and follower convergence metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-five millisecond commit latency comfortably exceeding production service level agreements."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies full enterprise production readiness, zero unreplicated commits, and unshakeable cluster stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Uncoordinated Replication & Split-Brain",
+        "rightLabel": "State Machine Replication & Raft Consensus"
+      }
+    }
+  ],
+  "course": "dist"
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "prefix": "dist",
+  "day": 32,
+  "promptSha": "5047fcbcc9b5473854b84cd1ea741c1931427c6ee57be896ddf64bbd9bd801fe",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Raft Node State Transitions, Terms & Democratic Succession",
+      "codeHash": "42db53cdc4f63a82be55b161c930b0831852ec85720dfeac13208b398b440c67",
+      "spec": {
+        "template": "compare",
+        "title": "Leader Election Architecture: Raft Node State Transitions, Terms & Democratic Succession",
+        "left": {
+          "label": "Naive Fixed-Timeout Elections",
+          "content": [
+            "Simultaneous follower timeouts causing split-vote live-lock",
+            "Stale candidates missing committed logs winning elections",
+            "Severed followers causing massive disruptive term inflation",
+            "Unpersisted vote records leading to catastrophic double-voting"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Election",
+          "content": [
+            "Randomized election timers ensuring single-candidate priority",
+            "Strict log up-to-date completeness rule protecting committed data",
+            "Pre-Vote protocol shielding active leader leases from disruption",
+            "Crash-recovery disk persistence and sub-500ms failover"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Raft node state machine transitions across Follower, Candidate, and Leader states."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors term logical clock increments and self-vote allocations upon election timer expiration."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates clear democratic leadership succession over chaotic multi-proposer contention."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms election safety compliance, majority vote accumulation, and instantaneous leader promotion."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Fixed-Timeout Elections",
+        "rightLabel": "Production-Grade Raft Election"
+      }
+    },
+    {
+      "partTitle": "Randomized Election Timers & Split-Vote Eradication",
+      "codeHash": "ed5f49ceeabee75b162968379fcb9295eee70718a38f9c80f20feec814142db6",
+      "spec": {
+        "template": "compare",
+        "title": "Leader Election Architecture: Randomized Election Timers & Split-Vote Eradication",
+        "left": {
+          "label": "Naive Fixed-Timeout Elections",
+          "content": [
+            "Simultaneous follower timeouts causing split-vote live-lock",
+            "Stale candidates missing committed logs winning elections",
+            "Severed followers causing massive disruptive term inflation",
+            "Unpersisted vote records leading to catastrophic double-voting"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Election",
+          "content": [
+            "Randomized election timers ensuring single-candidate priority",
+            "Strict log up-to-date completeness rule protecting committed data",
+            "Pre-Vote protocol shielding active leader leases from disruption",
+            "Crash-recovery disk persistence and sub-500ms failover"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates randomized election timer generation spreading node timeout events across time."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks temporal deltas between the fastest and competing nodes to avert simultaneous elections."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates complete eradication of split-vote live-locks and wasted election cycles."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms randomized jitter bounds, single-round election resolution, and rapid cluster convergence."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Fixed-Timeout Elections",
+        "rightLabel": "Production-Grade Raft Election"
+      }
+    },
+    {
+      "partTitle": "The RequestVote RPC & Up-To-Date Log Completeness Rule",
+      "codeHash": "3f262e9bc5abf810a69e3a5f24a9627beb4c04091cf86a9f9f531eb2a813d556",
+      "spec": {
+        "template": "compare",
+        "title": "Leader Election Architecture: The RequestVote RPC & Up-To-Date Log Completeness Rule",
+        "left": {
+          "label": "Naive Fixed-Timeout Elections",
+          "content": [
+            "Simultaneous follower timeouts causing split-vote live-lock",
+            "Stale candidates missing committed logs winning elections",
+            "Severed followers causing massive disruptive term inflation",
+            "Unpersisted vote records leading to catastrophic double-voting"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Election",
+          "content": [
+            "Randomized election timers ensuring single-candidate priority",
+            "Strict log up-to-date completeness rule protecting committed data",
+            "Pre-Vote protocol shielding active leader leases from disruption",
+            "Crash-recovery disk persistence and sub-500ms failover"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the RequestVote remote procedure call enforcing the log completeness restriction rule."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors lexicographical freshness comparisons checking candidate term and index against voter records."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates permanent protection of committed log entries over naive unverified vote grants."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms rejection of stale candidates, mathematical leader completeness, and zero data loss."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Fixed-Timeout Elections",
+        "rightLabel": "Production-Grade Raft Election"
+      }
+    },
+    {
+      "partTitle": "The Pre-Vote Protocol Shield & Disrupted Follower Mitigation",
+      "codeHash": "ac3a6e046c3915d1630fc8a409da2faeeeb096c50eb3a60158d2fea045be7f78",
+      "spec": {
+        "template": "compare",
+        "title": "Leader Election Architecture: The Pre-Vote Protocol Shield & Disrupted Follower Mitigation",
+        "left": {
+          "label": "Naive Fixed-Timeout Elections",
+          "content": [
+            "Simultaneous follower timeouts causing split-vote live-lock",
+            "Stale candidates missing committed logs winning elections",
+            "Severed followers causing massive disruptive term inflation",
+            "Unpersisted vote records leading to catastrophic double-voting"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Election",
+          "content": [
+            "Randomized election timers ensuring single-candidate priority",
+            "Strict log up-to-date completeness rule protecting committed data",
+            "Pre-Vote protocol shielding active leader leases from disruption",
+            "Crash-recovery disk persistence and sub-500ms failover"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the Pre-Vote protocol shield protecting healthy clusters from partitioned followers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors speculative pre-candidate polling evaluating leader heartbeat freshness before term increments."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total prevention of spurious term inflation caused by transient network disconnections."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms active leader lease preservation, zero false elections, and unshakeable cluster stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Fixed-Timeout Elections",
+        "rightLabel": "Production-Grade Raft Election"
+      }
+    },
+    {
+      "partTitle": "Leader Election Pipeline Architecture, Failover SLAs & Telemetry",
+      "codeHash": "19c4549c06c15b52ca1effb37117ce8fcb2b0356f79779d35a1d60fbe3373e5a",
+      "spec": {
+        "template": "compare",
+        "title": "Leader Election Architecture: Leader Election Pipeline Architecture, Failover SLAs & Telemetry",
+        "left": {
+          "label": "Naive Fixed-Timeout Elections",
+          "content": [
+            "Simultaneous follower timeouts causing split-vote live-lock",
+            "Stale candidates missing committed logs winning elections",
+            "Severed followers causing massive disruptive term inflation",
+            "Unpersisted vote records leading to catastrophic double-voting"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Election",
+          "content": [
+            "Randomized election timers ensuring single-candidate priority",
+            "Strict log up-to-date completeness rule protecting committed data",
+            "Pre-Vote protocol shielding active leader leases from disruption",
+            "Crash-recovery disk persistence and sub-500ms failover"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the automated leader failover telemetry pipeline auditing crash recovery performance."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors heartbeat loss detection, randomized election timers, and new leader establishment latency."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sub-five-hundred millisecond failover recovery satisfying five-nines cloud availability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies enterprise production readiness, single-round election convergence, and zero log regression."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Fixed-Timeout Elections",
+        "rightLabel": "Production-Grade Raft Election"
+      }
+    }
+  ],
+  "course": "dist"
+}

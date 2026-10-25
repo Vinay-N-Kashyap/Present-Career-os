@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "prefix": "dist",
+  "day": 34,
+  "promptSha": "a34bd33a601ca6414852ece6b190609cd5c72d5a92abadc07cecf68f8db1b296",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Membership Transition Challenges & Split-Brain Risks in Direct Switches",
+      "codeHash": "506e5dc3f54c185cb393448dac85c94cb950206ba28405f91455822fbccd2fc2",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic Membership Architecture: Membership Transition Challenges & Split-Brain Risks in Direct Switches",
+        "left": {
+          "label": "Direct Uncoordinated Membership Changes",
+          "content": [
+            "Disjoint quorums creating dual split-brain cluster leaders",
+            "Unsynchronized nodes executing contradictory client writes",
+            "Severe cluster write stalls when adding empty un-synced nodes",
+            "Cluster crashes requiring complete manual offline rebuilds"
+          ]
+        },
+        "right": {
+          "label": "Joint Consensus & Single-Server Raft",
+          "content": [
+            "Two-Phase Joint Consensus enforcing dual-majority quorums",
+            "Serialized single-server transitions guaranteeing overlap",
+            "Non-Voting Learner staging preserving 100% write availability",
+            "Sub-20ms P99 latency and zero downtime throughout scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays dynamic cluster membership transition risks under direct uncoordinated switches."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors quorum size calculations across server sets exposing simultaneous disjoint quorums."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates fatal split-brain vulnerability over formal coordinated transition protocols."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms detection of disjoint quorum hazards and strict rejection of direct configuration changes."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Uncoordinated Membership Changes",
+        "rightLabel": "Joint Consensus & Single-Server Raft"
+      }
+    },
+    {
+      "partTitle": "Two-Phase Joint Consensus (C_old,new) & Dual-Quorum Enforcement",
+      "codeHash": "bf162ba28f4fd2af6911d607a46ce5b97e725b64eac799c6bdbcc39bc17a6184",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic Membership Architecture: Two-Phase Joint Consensus (C_old,new) & Dual-Quorum Enforcement",
+        "left": {
+          "label": "Direct Uncoordinated Membership Changes",
+          "content": [
+            "Disjoint quorums creating dual split-brain cluster leaders",
+            "Unsynchronized nodes executing contradictory client writes",
+            "Severe cluster write stalls when adding empty un-synced nodes",
+            "Cluster crashes requiring complete manual offline rebuilds"
+          ]
+        },
+        "right": {
+          "label": "Joint Consensus & Single-Server Raft",
+          "content": [
+            "Two-Phase Joint Consensus enforcing dual-majority quorums",
+            "Serialized single-server transitions guaranteeing overlap",
+            "Non-Voting Learner staging preserving 100% write availability",
+            "Sub-20ms P99 latency and zero downtime throughout scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Two-Phase Joint Consensus requiring independent majorities from old and new groups."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors dual-quorum acknowledgments during the intermediate joint configuration phase."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates mathematical prevention of split-brain decisions across arbitrary server swaps."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms dual-majority commit enforcement, configuration entry ordering, and zero downtime."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Uncoordinated Membership Changes",
+        "rightLabel": "Joint Consensus & Single-Server Raft"
+      }
+    },
+    {
+      "partTitle": "Single-Server (1-by-1) Membership Changes & Overlap Invariants",
+      "codeHash": "1a6d73c95c912ca2e74ef73a96c888ea146f8753efc79cbb83862cf3c85dc613",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic Membership Architecture: Single-Server (1-by-1) Membership Changes & Overlap Invariants",
+        "left": {
+          "label": "Direct Uncoordinated Membership Changes",
+          "content": [
+            "Disjoint quorums creating dual split-brain cluster leaders",
+            "Unsynchronized nodes executing contradictory client writes",
+            "Severe cluster write stalls when adding empty un-synced nodes",
+            "Cluster crashes requiring complete manual offline rebuilds"
+          ]
+        },
+        "right": {
+          "label": "Joint Consensus & Single-Server Raft",
+          "content": [
+            "Two-Phase Joint Consensus enforcing dual-majority quorums",
+            "Serialized single-server transitions guaranteeing overlap",
+            "Non-Voting Learner staging preserving 100% write availability",
+            "Sub-20ms P99 latency and zero downtime throughout scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Single-Server membership changes executing serialized node additions and removals."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates quorum overlap mathematics proving that single-server transitions guarantee shared witnesses."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates streamlined operational simplicity over complex bulk joint consensus protocols."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms one-by-one delta enforcement, rejection of concurrent transitions, and quorum overlap safety."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Uncoordinated Membership Changes",
+        "rightLabel": "Joint Consensus & Single-Server Raft"
+      }
+    },
+    {
+      "partTitle": "Non-Voting Learners & Staging Catch-Up Rounds",
+      "codeHash": "49000f15107e52618d8716b59dee3750990ff256e3c742587796b877b3cef7d7",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic Membership Architecture: Non-Voting Learners & Staging Catch-Up Rounds",
+        "left": {
+          "label": "Direct Uncoordinated Membership Changes",
+          "content": [
+            "Disjoint quorums creating dual split-brain cluster leaders",
+            "Unsynchronized nodes executing contradictory client writes",
+            "Severe cluster write stalls when adding empty un-synced nodes",
+            "Cluster crashes requiring complete manual offline rebuilds"
+          ]
+        },
+        "right": {
+          "label": "Joint Consensus & Single-Server Raft",
+          "content": [
+            "Two-Phase Joint Consensus enforcing dual-majority quorums",
+            "Serialized single-server transitions guaranteeing overlap",
+            "Non-Voting Learner staging preserving 100% write availability",
+            "Sub-20ms P99 latency and zero downtime throughout scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates Non-Voting Learners staging new nodes before full voting promotion."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors log replication catch-up rounds synchronizing state without increasing quorum thresholds."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates uninterrupted cluster write availability over premature voting member onboarding."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms replication lag thresholds, atomic voting promotion, and continuous cluster availability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Uncoordinated Membership Changes",
+        "rightLabel": "Joint Consensus & Single-Server Raft"
+      }
+    },
+    {
+      "partTitle": "Membership Reconfiguration Architecture, Scaling SLAs & Telemetry",
+      "codeHash": "d412a07a68b564df1b371cb131f1aee904aac93e5cea9947f5dee7b3506878b1",
+      "spec": {
+        "template": "compare",
+        "title": "Dynamic Membership Architecture: Membership Reconfiguration Architecture, Scaling SLAs & Telemetry",
+        "left": {
+          "label": "Direct Uncoordinated Membership Changes",
+          "content": [
+            "Disjoint quorums creating dual split-brain cluster leaders",
+            "Unsynchronized nodes executing contradictory client writes",
+            "Severe cluster write stalls when adding empty un-synced nodes",
+            "Cluster crashes requiring complete manual offline rebuilds"
+          ]
+        },
+        "right": {
+          "label": "Joint Consensus & Single-Server Raft",
+          "content": [
+            "Two-Phase Joint Consensus enforcing dual-majority quorums",
+            "Serialized single-server transitions guaranteeing overlap",
+            "Non-Voting Learner staging preserving 100% write availability",
+            "Sub-20ms P99 latency and zero downtime throughout scaling"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the automated cluster scaling telemetry pipeline under live transactional traffic."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors zero-error write commitments and sub-ten millisecond transaction latency during expansion."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates seamless in-flight cluster resizing satisfying enterprise cloud service level agreements."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies full production scaling readiness, zero dropped packets, and unshakeable cluster stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Direct Uncoordinated Membership Changes",
+        "rightLabel": "Joint Consensus & Single-Server Raft"
+      }
+    }
+  ],
+  "course": "dist"
+}

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 2,
+  "prefix": "dist",
+  "day": 33,
+  "promptSha": "4148c6dce224cc965388cf15627e16d0705fe74134ba78c3448138b0287f7576",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "The AppendEntries RPC & Majority Quorum Commit Indexing",
+      "codeHash": "eca16e794bfd55b6b45e3684e1f34e79768a88dfdd2de15a54cb4948619cfd4c",
+      "spec": {
+        "template": "compare",
+        "title": "Log Replication Architecture: The AppendEntries RPC & Majority Quorum Commit Indexing",
+        "left": {
+          "label": "Naive Unchecked Replication",
+          "content": [
+            "Unchecked follower append calls causing silent log corruption",
+            "Direct commits of older term entries violating Figure Eight safety",
+            "Unbounded append-only log accumulation triggering disk exhaustion",
+            "Severe fsync serialization stalls collapsing cluster throughput"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Replication",
+          "content": [
+            "Strict AppendEntries consistency checks enforcing Log Matching",
+            "Figure Eight safety guard ensuring current-term commit authority",
+            "Decentralized snapshotting pruning logs with eighty percent savings",
+            "Group commit batching delivering twenty-five thousand ops per second"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays AppendEntries remote procedure calls replicating client commands across followers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors peer match indices advancing the global commit index upon majority quorum acknowledgments."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates linearizable write progression over vulnerable uncoordinated storage writes."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms majority quorum verification, append-only log ordering, and permanent commit finality."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unchecked Replication",
+        "rightLabel": "Production-Grade Raft Replication"
+      }
+    },
+    {
+      "partTitle": "The Log Matching Invariant & Conflict Resolution Back-Off",
+      "codeHash": "dba7f4963edae20e8c976774b3f8b17035bd6e2a08a695c9f63b617c671b894c",
+      "spec": {
+        "template": "compare",
+        "title": "Log Replication Architecture: The Log Matching Invariant & Conflict Resolution Back-Off",
+        "left": {
+          "label": "Naive Unchecked Replication",
+          "content": [
+            "Unchecked follower append calls causing silent log corruption",
+            "Direct commits of older term entries violating Figure Eight safety",
+            "Unbounded append-only log accumulation triggering disk exhaustion",
+            "Severe fsync serialization stalls collapsing cluster throughput"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Replication",
+          "content": [
+            "Strict AppendEntries consistency checks enforcing Log Matching",
+            "Figure Eight safety guard ensuring current-term commit authority",
+            "Decentralized snapshotting pruning logs with eighty percent savings",
+            "Group commit batching delivering twenty-five thousand ops per second"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates the log matching invariant resolving follower log divergence onto the leader log."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors backward nextIndex probing identifying common ancestors and overwriting conflicting entries."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates rapid follower convergence over complex distributed reconciliation algorithms."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms conflict probe rejection, common ancestor alignment, and zero uncommitted entry leakage."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unchecked Replication",
+        "rightLabel": "Production-Grade Raft Replication"
+      }
+    },
+    {
+      "partTitle": "The Figure 8 Dilemma: Current-Term Commit Safety Invariant",
+      "codeHash": "89dc377bc648ad3a4bf40faa31608ed6336b933861f2ece5da9892902c688adf",
+      "spec": {
+        "template": "compare",
+        "title": "Log Replication Architecture: The Figure 8 Dilemma: Current-Term Commit Safety Invariant",
+        "left": {
+          "label": "Naive Unchecked Replication",
+          "content": [
+            "Unchecked follower append calls causing silent log corruption",
+            "Direct commits of older term entries violating Figure Eight safety",
+            "Unbounded append-only log accumulation triggering disk exhaustion",
+            "Severe fsync serialization stalls collapsing cluster throughput"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Replication",
+          "content": [
+            "Strict AppendEntries consistency checks enforcing Log Matching",
+            "Figure Eight safety guard ensuring current-term commit authority",
+            "Decentralized snapshotting pruning logs with eighty percent savings",
+            "Group commit batching delivering twenty-five thousand ops per second"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the Figure Eight safety invariant governing log entries from prior terms."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates direct commit restrictions requiring current-term entry replication before prior commits."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates total prevention of catastrophic historical log overwrites under leader churn."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms current-term guard compliance, mathematical leader completeness, and immutable data safety."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unchecked Replication",
+        "rightLabel": "Production-Grade Raft Replication"
+      }
+    },
+    {
+      "partTitle": "Raft Log Compaction, State Machine Checkpointing & Snapshotting",
+      "codeHash": "99e0534dcf083468d4118cddf324c4a056f1ddf0cadaee42a49382a515f1597d",
+      "spec": {
+        "template": "compare",
+        "title": "Log Replication Architecture: Raft Log Compaction, State Machine Checkpointing & Snapshotting",
+        "left": {
+          "label": "Naive Unchecked Replication",
+          "content": [
+            "Unchecked follower append calls causing silent log corruption",
+            "Direct commits of older term entries violating Figure Eight safety",
+            "Unbounded append-only log accumulation triggering disk exhaustion",
+            "Severe fsync serialization stalls collapsing cluster throughput"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Replication",
+          "content": [
+            "Strict AppendEntries consistency checks enforcing Log Matching",
+            "Figure Eight safety guard ensuring current-term commit authority",
+            "Decentralized snapshotting pruning logs with eighty percent savings",
+            "Group commit batching delivering twenty-five thousand ops per second"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates decentralized state machine snapshotting and InstallSnapshot chunked streaming."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors state machine checkpointing, historical log pruning, and memory compaction ratios."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates bounded physical storage consumption over unbounded historical log growth."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms snapshot index metadata preservation, eighty percent storage compaction, and rapid catch-up."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unchecked Replication",
+        "rightLabel": "Production-Grade Raft Replication"
+      }
+    },
+    {
+      "partTitle": "Replication Pipeline Architecture, Commit SLAs & Telemetry",
+      "codeHash": "7f10cccc78d1eaac2a00e0baf577308174bd1f93f9f78348620e1ae3c6e973d3",
+      "spec": {
+        "template": "compare",
+        "title": "Log Replication Architecture: Replication Pipeline Architecture, Commit SLAs & Telemetry",
+        "left": {
+          "label": "Naive Unchecked Replication",
+          "content": [
+            "Unchecked follower append calls causing silent log corruption",
+            "Direct commits of older term entries violating Figure Eight safety",
+            "Unbounded append-only log accumulation triggering disk exhaustion",
+            "Severe fsync serialization stalls collapsing cluster throughput"
+          ]
+        },
+        "right": {
+          "label": "Production-Grade Raft Replication",
+          "content": [
+            "Strict AppendEntries consistency checks enforcing Log Matching",
+            "Figure Eight safety guard ensuring current-term commit authority",
+            "Decentralized snapshotting pruning logs with eighty percent savings",
+            "Group commit batching delivering twenty-five thousand ops per second"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production log replication telemetry pipeline under sustained high-throughput load."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors group commit batching, sub-four millisecond commit latency, and zero log divergence."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade replication throughput exceeding twenty-five thousand operations per second."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies full production readiness, zero replication stalls, and unshakeable cluster stability."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Naive Unchecked Replication",
+        "rightLabel": "Production-Grade Raft Replication"
+      }
+    }
+  ],
+  "course": "dist"
+}
