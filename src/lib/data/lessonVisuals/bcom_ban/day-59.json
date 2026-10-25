@@ -8,11 +8,11 @@
       "codeHash": "d755831b7f5e847375746aa4f325d4a14ce07ec8b2e6490f621fecfdc913aaef",
       "spec": {
         "template": "funnel",
-        "title": "The Climate Risk Regulatory Imperative... \u2014 Central Banking & Treasury Operations",
+        "title": "The Climate Risk Regulatory Imperative... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Climate financial risk architecture and scenarios mapped.",
+            "caption": "Climate risk supervisory frameworks and green swan hazards reviewed.",
             "activeStageId": "top",
             "stages": [
               {
@@ -35,7 +35,7 @@
           },
           {
             "at": "say1",
-            "caption": "Physical weather extremes damage physical collateral values.",
+            "caption": "Forward looking scenario analysis models radical climate shifts.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -58,7 +58,7 @@
           },
           {
             "at": "example",
-            "caption": "Carbon taxation and policy shifts trigger transition risks.",
+            "caption": "Double materiality evaluates inside out and outside in risks.",
             "activeStageId": "target",
             "stages": [
               {
@@ -81,7 +81,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Macroeconomic scenario models evaluate bank solvency risks.",
+            "caption": "Supervisory capital buffers insulate banks against climate shocks.",
             "activeStageId": "final",
             "stages": [
               {
@@ -110,11 +110,11 @@
       "codeHash": "1e484a5e9783624692ee4c25fb63df91699dc24f23406029e7d9b32f43b2967e",
       "spec": {
         "template": "funnel",
-        "title": "Physical vs Transition Climate Risk Mo... \u2014 Central Banking & Treasury Operations",
+        "title": "Physical vs Transition Climate Risk Mo... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio financed emissions accounting framework audited.",
+            "caption": "Physical catastrophe and economic transition risk channels mapped.",
             "activeStageId": "top",
             "stages": [
               {
@@ -137,7 +137,7 @@
           },
           {
             "at": "say1",
-            "caption": "Attribution factors allocate borrower greenhouse gas totals.",
+            "caption": "Geospatial coordinate mapping assesses physical hazard exposure.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -160,7 +160,7 @@
           },
           {
             "at": "example",
-            "caption": "Audited emissions disclosures improve data quality scoring.",
+            "caption": "Carbon taxation models quantify stranded asset balance sheet hits.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Standardized carbon metrics benchmark portfolio decarbonization.",
+            "caption": "Stressed debt service ratios reveal vulnerable corporate obligors.",
             "activeStageId": "final",
             "stages": [
               {
@@ -212,11 +212,11 @@
       "codeHash": "fd93992f90bc8974eb0689342ec0a8b64aa5b03a7ee5bab7031c28fbae3d9776",
       "spec": {
         "template": "funnel",
-        "title": "Scope 3 Financed Emissions & The PCAF ... \u2014 Central Banking & Treasury Operations",
+        "title": "Scope 3 Financed Emissions & The PCAF ... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Sustainable finance classification taxonomy calibrated.",
+            "caption": "Partnership for carbon accounting financials standard deployed.",
             "activeStageId": "top",
             "stages": [
               {
@@ -239,7 +239,7 @@
           },
           {
             "at": "say1",
-            "caption": "Green asset ratios measure taxonomy aligned balance sheets.",
+            "caption": "Enterprise value attribution factors allocate client emissions.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -262,7 +262,7 @@
           },
           {
             "at": "example",
-            "caption": "Certified green bonds fund eligible environmental projects.",
+            "caption": "Weighted carbon intensity benchmarks track portfolio progress.",
             "activeStageId": "target",
             "stages": [
               {
@@ -285,7 +285,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Sustainability linked covenants align corporate incentives.",
+            "caption": "Audited greenhouse gas data improves portfolio accounting scores.",
             "activeStageId": "final",
             "stages": [
               {
@@ -314,11 +314,11 @@
       "codeHash": "4869a0dca065b0630d59d7569bd8ae292427df0e0ff9a0cd28dc3fadf7e24729",
       "spec": {
         "template": "funnel",
-        "title": "Sustainable Finance Taxonomy & Green B... \u2014 Central Banking & Treasury Operations",
+        "title": "Sustainable Finance Taxonomy & Green B... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Transition risk credit underwriting models activated.",
+            "caption": "Sustainable finance taxonomies and green bond standards audited.",
             "activeStageId": "top",
             "stages": [
               {
@@ -341,7 +341,7 @@
           },
           {
             "at": "say1",
-            "caption": "Shadow carbon pricing stress tests borrower debt capacity.",
+            "caption": "Ring fenced proceeds dedicate capital to certified green projects.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -364,7 +364,7 @@
           },
           {
             "at": "example",
-            "caption": "Stranded asset risks depress collateral liquidation values.",
+            "caption": "Second party opinions verify environmental mitigation impact.",
             "activeStageId": "target",
             "stages": [
               {
@@ -387,7 +387,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Decarbonization covenants safeguard loan portfolio quality.",
+            "caption": "Greenium pricing concessions lower sustainable borrowing costs.",
             "activeStageId": "final",
             "stages": [
               {
@@ -416,11 +416,11 @@
       "codeHash": "5633cc0f86ef915acb9ec74322df8396ec7ede147eca4c53e76c4d4a1462317d",
       "spec": {
         "template": "funnel",
-        "title": "Industrial ESG Risk Lab: Bank Financed... \u2014 Central Banking & Treasury Operations",
+        "title": "Industrial ESG Risk Lab: Bank Financed... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Industrial sustainable finance simulation completed.",
+            "caption": "Industrial climate stress testing and financed emissions lab active.",
             "activeStageId": "top",
             "stages": [
               {
@@ -443,7 +443,7 @@
           },
           {
             "at": "say1",
-            "caption": "Climate stress loss provisions deplete core equity buffers.",
+            "caption": "Disorderly transition scenarios model corporate credit impairment.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -466,7 +466,7 @@
           },
           {
             "at": "example",
-            "caption": "Green bond issuance expands sustainable asset ratios.",
+            "caption": "Green bond issuances rebalance high carbon wholesale portfolios.",
             "activeStageId": "target",
             "stages": [
               {
@@ -489,7 +489,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Mastery of climate risk and sustainable finance confirmed.",
+            "caption": "Sustainable finance frameworks defend long term banking solvency.",
             "activeStageId": "final",
             "stages": [
               {

@@ -5,7 +5,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { BCOM_BAN_LONG_LESSONS } from '../src/lib/data/bcomBanLongLessons';
 
-describe('BCOM Banking Month 2 Block 12 Expansion (Days 56-60 & Grand Master Milestone 12 Capstone)', () => {
+describe('BCOM Banking Month 2 Block 12 Expansion (Days 56-60 & Milestone 12 Grand Master Capstone)', () => {
   it('should contain Days 56 through 60 in BCOM_BAN_LONG_LESSONS', () => {
     assert(BCOM_BAN_LONG_LESSONS.length >= 60, `Expected >= 60 days, found ${BCOM_BAN_LONG_LESSONS.length}`);
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
@@ -15,11 +15,8 @@ describe('BCOM Banking Month 2 Block 12 Expansion (Days 56-60 & Grand Master Mil
       assert(lesson.title && lesson.title.length > 5, `Day ${dayNum} missing title`);
       assert(lesson.goal && lesson.goal.length > 10, `Day ${dayNum} missing goal`);
       assert(lesson.recap && lesson.recap.length > 10, `Day ${dayNum} missing recap`);
-      if (dayNum === 60) {
-        assert.strictEqual(lesson.minutes, 60, `Day 60 Grand Master Capstone must have minutes: 60`);
-      } else {
-        assert([45, 55].includes(lesson.minutes || 0), `Day ${dayNum} minutes invalid: ${lesson.minutes}`);
-      }
+      const expectedMinutes = dayNum === 60 ? 60 : 45;
+      assert.strictEqual(lesson.minutes, expectedMinutes, `Day ${dayNum} minutes invalid: ${lesson.minutes}`);
     }
   });
 
@@ -30,81 +27,100 @@ describe('BCOM Banking Month 2 Block 12 Expansion (Days 56-60 & Grand Master Mil
     }
   });
 
-  it('should satisfy pedagogical invariants: >= 600 words per part for Days 56 to 60', () => {
+  it('should satisfy strict word count threshold (>= 600 words per part) across all 25 parts', () => {
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
       let dayWords = 0;
-      lesson.parts.forEach((part, idx) => {
-        const sayText = Array.isArray(part.say) ? part.say.join(' ') : part.say;
-        const words = sayText.trim().split(/\s+/).filter(Boolean).length;
+      lesson.parts.forEach((part, pIdx) => {
+        const words = part.say.join(' ').trim().split(/\s+/).length;
         dayWords += words;
         assert(
           words >= 600,
-          `Day ${dayNum} Part ${idx + 1} (${part.title}) has ${words} words, must be >= 600`
+          `Day ${dayNum} Part ${pIdx + 1} has ${words} words, strictly under 600 words threshold!`
         );
       });
-      assert(dayWords >= 3000, `Day ${dayNum} total words (${dayWords}) must be >= 3000`);
+      assert(
+        dayWords >= 3000,
+        `Day ${dayNum} total words ${dayWords} is under 3000 words!`
+      );
     }
   });
 
-  it('should satisfy assessment invariants: 4 options, answerIndex === 0, why >= 20 chars', () => {
+  it('should enforce Socratic check quiz invariants (answer: 0, answerIndex: 0, 4 options, why >= 20)', () => {
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
-      lesson.parts.forEach((part, idx) => {
-        const check = part.check;
-        assert(check, `Day ${dayNum} Part ${idx + 1} missing check`);
-        assert(check.question && check.question.length > 10, `Day ${dayNum} Part ${idx + 1} invalid question`);
-        assert.strictEqual(check.options.length, 4, `Day ${dayNum} Part ${idx + 1} must have 4 options`);
-        assert.strictEqual(check.answerIndex, 0, `Day ${dayNum} Part ${idx + 1} answerIndex must be 0`);
-        assert(check.why && check.why.length >= 20, `Day ${dayNum} Part ${idx + 1} why must be >= 20 chars`);
+      lesson.parts.forEach((part, pIdx) => {
+        const check = (part as any).check;
+        assert(check, `Day ${dayNum} Part ${pIdx + 1} missing check`);
+        assert.strictEqual(check.options.length, 4, `Day ${dayNum} Part ${pIdx + 1} options != 4`);
+        assert.strictEqual(check.answer, 0, `Day ${dayNum} Part ${pIdx + 1} check.answer != 0`);
+        assert.strictEqual(check.answerIndex, 0, `Day ${dayNum} Part ${pIdx + 1} check.answerIndex != 0`);
+        assert(
+          check.why && check.why.length >= 20,
+          `Day ${dayNum} Part ${pIdx + 1} check.why must be >= 20 chars`
+        );
       });
     }
   });
 
-  it('should have executable code snippets and non-empty outputs in every part', () => {
+  it('should enforce presence of example, tryIt, code and output in every part', () => {
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
-      lesson.parts.forEach((part, idx) => {
-        assert(part.code && part.code.length > 20, `Day ${dayNum} Part ${idx + 1} missing code`);
-        assert(part.output && part.output.length > 5, `Day ${dayNum} Part ${idx + 1} missing output`);
-        assert(part.tryIt && part.tryIt.length > 5, `Day ${dayNum} Part ${idx + 1} missing tryIt`);
-        assert(part.example && part.example.length > 10, `Day ${dayNum} Part ${idx + 1} missing example`);
+      lesson.parts.forEach((part, pIdx) => {
+        assert(part.example && part.example.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing example`);
+        assert(part.tryIt && part.tryIt.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing tryIt`);
+        assert(part.code && part.code.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing code`);
+        assert(part.output && part.output.length > 10, `Day ${dayNum} Part ${pIdx + 1} missing output`);
       });
     }
   });
 
-  it('should have valid Gate v2 visual envelopes with cryptographic SHA-256 bindings', () => {
+  it('should have valid Gate v2 visual envelopes with matching SHA-256 codeHash bindings', () => {
     const visualsDir = path.join(process.cwd(), 'src', 'lib', 'data', 'lessonVisuals', 'bcom_ban');
+    const standardStages = [
+      'Macro Liquidity Intake',
+      'Treasury Risk Screening',
+      'Balance Sheet Allocation',
+      'Solvency Affirmation'
+    ];
+
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
-      const filePath = path.join(visualsDir, `day-${dayNum}.json`);
-      assert(fs.existsSync(filePath), `Visual file not found: ${filePath}`);
-      const raw = fs.readFileSync(filePath, 'utf-8');
+      const visualPath = path.join(visualsDir, `day-${dayNum}.json`);
+      assert(fs.existsSync(visualPath), `Visual file not found: ${visualPath}`);
+      const raw = fs.readFileSync(visualPath, 'utf-8');
       const visual = JSON.parse(raw);
 
       assert.strictEqual(visual.schemaVersion, 1);
       assert.strictEqual(visual.prefix, 'bcom_ban');
       assert.strictEqual(visual.day, dayNum);
-      assert.strictEqual(visual.entries.length, 5, `Day ${dayNum} must have 5 visual entries`);
+      assert.strictEqual(visual.entries.length, 5);
+
+      const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
 
       visual.entries.forEach((entry: any, eIdx: number) => {
-        const lesson = BCOM_BAN_LONG_LESSONS.find((l) => l.day === dayNum)!;
         const part = lesson.parts[eIdx];
-        const partStr = part.title + (Array.isArray(part.say) ? part.say.join('') : part.say) + (part.code || '');
-        const expectedHash = crypto.createHash('sha256').update(partStr).digest('hex');
-        assert.strictEqual(entry.codeHash, expectedHash, `Day ${dayNum} Part ${eIdx + 1} codeHash mismatch`);
-
-        assert(entry.partTitle, `Day ${dayNum} Entry ${eIdx} missing partTitle`);
-        assert(entry.codeHash && entry.codeHash.length === 64, `Day ${dayNum} Entry ${eIdx} invalid codeHash`);
+        assert.strictEqual(entry.partTitle, part.title);
         assert.strictEqual(entry.spec.template, 'funnel');
-        assert.strictEqual(entry.spec.steps.length, 4, `Day ${dayNum} Entry ${eIdx} must have 4 steps`);
+        assert.strictEqual(entry.spec.steps.length, 4);
 
-        const expectedSteps = ['intro', 'say1', 'example', 'tryIt'];
-        entry.spec.steps.forEach((step: any, sIdx: number) => {
-          assert.strictEqual(step.at, expectedSteps[sIdx]);
-          assert(step.caption.endsWith('.'), `Caption must end with period: '${step.caption}'`);
-          assert(step.caption.length <= 75, `Caption too long: '${step.caption}'`);
-          assert(!/\d/.test(step.caption), `Caption must contain no digits: '${step.caption}'`);
+        // Check stages and captions
+        entry.spec.steps.forEach((step: any) => {
+          assert(['intro', 'say1', 'example', 'tryIt'].includes(step.at));
+          assert(step.caption.endsWith('.'), `Caption must end with period: ${step.caption}`);
+          assert(step.caption.length <= 75, `Caption exceeds 75 chars: ${step.caption}`);
+          assert(!/\d/.test(step.caption), `Caption contains numeric digits: ${step.caption}`);
+          assert.strictEqual(step.stages.length, 4);
+          step.stages.forEach((st: any, sIdx: number) => {
+            assert.strictEqual(st.label, standardStages[sIdx]);
+          });
         });
+
+        // Verify SHA-256 hash binding
+        const expectedHash = crypto
+          .createHash('sha256')
+          .update(part.title + part.say.join('') + (part.code || ''))
+          .digest('hex');
+        assert.strictEqual(entry.codeHash, expectedHash, `Hash mismatch in Day ${dayNum} Part ${eIdx + 1}`);
       });
     }
   });

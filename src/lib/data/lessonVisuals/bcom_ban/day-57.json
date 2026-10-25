@@ -8,11 +8,11 @@
       "codeHash": "1be0ec966751d44986e9f1d03542922ada85d29de09f234559ae4845c431af71",
       "spec": {
         "template": "funnel",
-        "title": "Sovereign Debt Management & The Primar... \u2014 Central Banking & Treasury Operations",
+        "title": "Sovereign Debt Management & The Primar... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Sovereign primary dealer institutional network mobilized.",
+            "caption": "Sovereign debt issuance calendars and auction architectures set.",
             "activeStageId": "top",
             "stages": [
               {
@@ -35,7 +35,7 @@
           },
           {
             "at": "say1",
-            "caption": "Underwriting obligations ensure complete auction absorption.",
+            "caption": "Treasury bill auctions fund short term national cash deficits.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -58,7 +58,7 @@
           },
           {
             "at": "example",
-            "caption": "Mandatory market making guarantees secondary market trading.",
+            "caption": "Competitive institutional bidding establishes market discount rates.",
             "activeStageId": "target",
             "stages": [
               {
@@ -81,7 +81,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Primary dealer capital buffers absorb auction inventory risk.",
+            "caption": "Non competitive retail windows democratize government debt access.",
             "activeStageId": "final",
             "stages": [
               {
@@ -110,11 +110,11 @@
       "codeHash": "16ccb0b0f089ce4f71753107b1c93b7cdd6ab3290a62c51f1ad715172002c456",
       "spec": {
         "template": "funnel",
-        "title": "G-Sec Auction Mechanics: Uniform Price... \u2014 Central Banking & Treasury Operations",
+        "title": "G-Sec Auction Mechanics: Uniform Price... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Government debt auction bidding mechanisms evaluated.",
+            "caption": "Uniform and multiple price sovereign bond auctions evaluated.",
             "activeStageId": "top",
             "stages": [
               {
@@ -137,7 +137,7 @@
           },
           {
             "at": "say1",
-            "caption": "Uniform pricing shields competitive bidders from overpayment.",
+            "caption": "Multiple price formats incentivize aggressive yield discrimination.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -160,7 +160,7 @@
           },
           {
             "at": "example",
-            "caption": "Multiple price formats reward superior market intelligence.",
+            "caption": "Discriminatory pricing risks penalizing aggressive primary bidders.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Non competitive bidding expands retail sovereign ownership.",
+            "caption": "Dutch uniform auctions reduce strategic winner curse distortions.",
             "activeStageId": "final",
             "stages": [
               {
@@ -212,11 +212,11 @@
       "codeHash": "493cd87ecc629f456b314dea4fdfc1c843760527f16068e215685f93f2b287b7",
       "spec": {
         "template": "funnel",
-        "title": "STRIPS (Separate Trading of Registered... \u2014 Central Banking & Treasury Operations",
+        "title": "STRIPS (Separate Trading of Registered... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Coupon bond stripping and decoupling framework initiated.",
+            "caption": "Primary dealer institutional underwriting networks deployed.",
             "activeStageId": "top",
             "stages": [
               {
@@ -239,7 +239,7 @@
           },
           {
             "at": "say1",
-            "caption": "Zero coupon cash flows trade as independent securities.",
+            "caption": "Mandatory bidding quotas guarantee complete sovereign bond clearance.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -262,7 +262,7 @@
           },
           {
             "at": "example",
-            "caption": "Principal strips eliminate reinvestment risk for pensions.",
+            "caption": "Devolved auction allocations transfer unsold debt onto dealer books.",
             "activeStageId": "target",
             "stages": [
               {
@@ -285,7 +285,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Two way reconstitution maintains sovereign law of one price.",
+            "caption": "Two way market quotes provide deep secondary liquidity depth.",
             "activeStageId": "final",
             "stages": [
               {
@@ -314,11 +314,11 @@
       "codeHash": "290157160521bfabf0794206d1893d5a105c169e821facb5f7fa3446fb9fe51e",
       "spec": {
         "template": "funnel",
-        "title": "Sovereign Yield Curve Construction: Pa... \u2014 Central Banking & Treasury Operations",
+        "title": "Sovereign Yield Curve Construction: Pa... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Sovereign zero coupon spot yield curve constructed.",
+            "caption": "Nelson Siegel zero coupon yield curve modeling engine active.",
             "activeStageId": "top",
             "stages": [
               {
@@ -341,7 +341,7 @@
           },
           {
             "at": "say1",
-            "caption": "Nelson Siegel structural equations decompose yield factors.",
+            "caption": "Decoupled coupon and principal strips trade as zero coupon bonds.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -364,7 +364,7 @@
           },
           {
             "at": "example",
-            "caption": "Level slope and curvature parameters fit observed yields.",
+            "caption": "Parametric yield curves interpolate benchmark sovereign spreads.",
             "activeStageId": "target",
             "stages": [
               {
@@ -387,7 +387,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Arbitrage free discount curves price institutional debt.",
+            "caption": "Separate trading of coupon and principal strips unlocks arbitrage.",
             "activeStageId": "final",
             "stages": [
               {
@@ -416,11 +416,11 @@
       "codeHash": "a21b062df8cee997f24e0ef76bc5f26b6e62a298b17655e4d63b6b517d7861d9",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Sovereign Treasury Lab: G-S... \u2014 Central Banking & Treasury Operations",
+        "title": "Industrial Sovereign Treasury Lab: G-S... \u2014 Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
-            "caption": "Industrial sovereign treasury simulation successfully run.",
+            "caption": "Industrial sovereign bond auction and yield fitting lab running.",
             "activeStageId": "top",
             "stages": [
               {
@@ -443,7 +443,7 @@
           },
           {
             "at": "say1",
-            "caption": "Devolved primary bond inventory is converted into strips.",
+            "caption": "Primary dealer bid allocation algorithms resolve market demand.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -466,7 +466,7 @@
           },
           {
             "at": "example",
-            "caption": "Institutional placement locks in distribution trading alpha.",
+            "caption": "Fitted zero curves price sovereign securities across maturities.",
             "activeStageId": "target",
             "stages": [
               {
@@ -489,7 +489,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Mastery of sovereign primary debt architecture certified.",
+            "caption": "Comprehensive treasury auctions fund national fiscal development.",
             "activeStageId": "final",
             "stages": [
               {
