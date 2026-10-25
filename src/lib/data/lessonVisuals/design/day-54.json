@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 54,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 54 Part 1: Color Space Mathematics: sRGB Limitations, CIELAB & Perceptually Uniform Oklch/Oklab Gamuts. Visualizing step progression with compare template.",
+      "promptSha": "2479bb8bfe4a4abb58f22248cea090a5f65efe46802d361ed9a36c313b357a73",
+      "codeHash": "e38f997a2bc644d8b14ac40514d146da2f3f9e8257d1d5048e7b139d47f2dcfd",
+      "steps": [
+        {
+          "step": 1,
+          "title": "sRGB Color Gamut",
+          "caption": "Legacy color spaces exhibit non-uniform perceived lightness across hues."
+        },
+        {
+          "step": 2,
+          "title": "Oklab Color Space",
+          "caption": "Oklab establishes cylindrical coordinates with uniform lightness axes."
+        },
+        {
+          "step": 3,
+          "title": "Oklch Polar Coordinates",
+          "caption": "Oklch enables intuitive adjustments to lightness, chroma, and hue angles."
+        },
+        {
+          "step": 4,
+          "title": "Perceptually Uniform Gamut",
+          "caption": "Perceptually uniform scales ensure smooth color gradations across all themes."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 54 Part 2: APCA vs WCAG 2.1 Contrast: Advanced Perceptual Contrast Algorithm (Lc Values) & Font-Size Matrix. Visualizing step progression with compare template.",
+      "promptSha": "4fbee86ab3812104cf7584781d4fe12418e0ed6378576f5c792b789165d70d24",
+      "codeHash": "8d32930c5181b789d75d9b2be8e2a49019c85b0385272def30b09e8ef25fe5f9",
+      "steps": [
+        {
+          "step": 1,
+          "title": "WCAG Ratio Paradox",
+          "caption": "Mathematical contrast ratios fail to reflect human visual perception accurately."
+        },
+        {
+          "step": 2,
+          "title": "APCA Contrast Algorithm",
+          "caption": "The Advanced Perceptual Contrast Algorithm evaluates spatial frequency."
+        },
+        {
+          "step": 3,
+          "title": "Spatial Frequency Weight",
+          "caption": "Light text on dark surfaces is scored differently from dark on light."
+        },
+        {
+          "step": 4,
+          "title": "Polarity Aware Scoring",
+          "caption": "Accurate contrast scores eliminate false passes and unreadable text."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 54 Part 3: Algorithmic Dark Mode Inversion: Luminance Shifting, Desaturation for Glare Reduction & Elevation Tone Scaling. Visualizing step progression with compare template.",
+      "promptSha": "0a40c996c32aaa42d34700a5231ca7ab047608e440ec97f2234df5ed70ea85f2",
+      "codeHash": "71d59f0f28e70509730353fa9c8731a6e7a9eb6e7f35c2b3168ab6605162b8b5",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Manual Dark Palette",
+          "caption": "Naive color inversion produces harsh and unreadable dark interfaces."
+        },
+        {
+          "step": 2,
+          "title": "Algorithmic Luminance Invert",
+          "caption": "Luminance inversion shifts brightness while preserving relative hue contrasts."
+        },
+        {
+          "step": 3,
+          "title": "Chroma Suppression Pass",
+          "caption": "Chroma suppression softens saturated colors to prevent visual vibration."
+        },
+        {
+          "step": 4,
+          "title": "Harmonious Dark Theme",
+          "caption": "Harmonious dark themes reduce eye fatigue while maintaining brand recognition."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 54 Part 4: High-Contrast & Colorblind Simulation: Protanopia, Deuteranopia, Tritanopia & Monochromatic Fallbacks. Visualizing step progression with compare template.",
+      "promptSha": "a4fa4a6d40e6192bd74af2af7f7d07e42f073ff58abf954bfd33ad4115fdd1c7",
+      "codeHash": "b0f9adede892a70e6bc367cb9b88ae3c11c4ac7539d83499e3d44dfe19326ad7",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Standard Color Vision",
+          "caption": "Color deficiency affects a significant portion of user populations."
+        },
+        {
+          "step": 2,
+          "title": "Protanopia Simulation",
+          "caption": "Matrices simulate red-green and blue-yellow color vision deficiencies."
+        },
+        {
+          "step": 3,
+          "title": "Deuteranopia Simulation",
+          "caption": "Color palette auditing confirms sufficient lightness difference without hue cues."
+        },
+        {
+          "step": 4,
+          "title": "Universal Color Affirmation",
+          "caption": "Design systems validate multi-gamut readability before production release."
+        }
+      ]
+    }
+  ]
+}

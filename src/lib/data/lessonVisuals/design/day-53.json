@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 53,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 53 Part 1: Style Dictionary v4 Core Architecture: Ingestion, Preprocessors, Transforms & Formatters. Visualizing step progression with compare template.",
+      "promptSha": "ba4ed8a92fc05f1c36cf51813500ad05f9932f47bc02b6678a7c29c1284e4274",
+      "codeHash": "89e41f99efc1fb003b0caf216f028204fd073aa9943d2f4e4a9bc3e73d09a3ef",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raw JSON Token File",
+          "caption": "Style Dictionary consumes standardized tokens as input for automated build runs."
+        },
+        {
+          "step": 2,
+          "title": "Style Dictionary Parser",
+          "caption": "The parser validates token structure against schema specifications."
+        },
+        {
+          "step": 3,
+          "title": "Transformation Pipeline",
+          "caption": "Configured transforms adapt values to target language syntax and conventions."
+        },
+        {
+          "step": 4,
+          "title": "Platform Specific Artifact",
+          "caption": "Generators produce platform artifacts for web, mobile, and desktop runtimes."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 53 Part 2: Custom Value Transforms: Dimension Math, Color Space Conversion & Naming Casing Formats. Visualizing step progression with compare template.",
+      "promptSha": "c74940503e18a3af0f555ad26a9a9c55baa62169d0de0f789e05f0d474354365",
+      "codeHash": "15c763758f815338f5034f8d0727aa8a594d1e7466594358b52ceeb5b4b3701b",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Pixel Unit Tokens",
+          "caption": "Web platforms require rem units while mobile native frameworks demand pixels."
+        },
+        {
+          "step": 2,
+          "title": "Rem Unit Converter",
+          "caption": "Value transformers calculate rem dimensions based on root font size."
+        },
+        {
+          "step": 3,
+          "title": "Oklch to Hex Converter",
+          "caption": "Color formatters convert advanced color spaces into compatible hex codes."
+        },
+        {
+          "step": 4,
+          "title": "Transformed Value Objects",
+          "caption": "Clean transformed values feed directly into native code templates."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 53 Part 3: Multi-Platform Outputs: CSS Custom Properties, SCSS Maps, iOS Swift Enums & Android Kotlin Singletons. Visualizing step progression with compare template.",
+      "promptSha": "b0bee5a4884c460ee32495d71384eae80305ef279e70cdb54e99a14a085f7142",
+      "codeHash": "9f0e01b61efe27cbd4272a5881b745ef07289c2ecde81526ba9ae5fca377aba8",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Manual Multi-Platform Setup",
+          "caption": "Engineers traditionally duplicate design tokens across separate codebases."
+        },
+        {
+          "step": 2,
+          "title": "CSS Custom Properties",
+          "caption": "Web outputs generate CSS custom property declarations within root rules."
+        },
+        {
+          "step": 3,
+          "title": "Swift Struct Declaration",
+          "caption": "iOS targets receive Swift structs with static color and dimension constants."
+        },
+        {
+          "step": 4,
+          "title": "Kotlin Compose Object",
+          "caption": "Android targets receive Kotlin Compose objects for Jetpack user interfaces."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 53 Part 4: Automated CI/CD Token Distribution: NPM Packages, Cocoapods & Maven Artifact Publishing. Visualizing step progression with compare template.",
+      "promptSha": "eff0b40d27982ae5ad90dcce2b1ca12c107c1dab7016fe4288a6290b92076361",
+      "codeHash": "12d49003b3a6290580f0a444913ccf54e88af5b946b1bc0afad861cc1e355b0e",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Manual File Copying",
+          "caption": "Manual token maintenance causes synchronization drift between platforms."
+        },
+        {
+          "step": 2,
+          "title": "Automated Token Build",
+          "caption": "Automated pipelines trigger token compilation upon every repository push."
+        },
+        {
+          "step": 3,
+          "title": "Package Version Bumping",
+          "caption": "Semantic release tooling computes automated version numbers from commits."
+        },
+        {
+          "step": 4,
+          "title": "NPM and Maven Publishing",
+          "caption": "Distributed packages publish simultaneously to web and mobile package managers."
+        }
+      ]
+    }
+  ]
+}

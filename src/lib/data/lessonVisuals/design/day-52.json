@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 52,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 52 Part 1: Tiered Token Architecture: Global Primitives, Semantic System Tokens & Component Scoped Tokens. Visualizing step progression with compare template.",
+      "promptSha": "341adb6a011cfaa96af45c456516f9f179442f51f30711b95de6bf7293ccd666",
+      "codeHash": "b7bd7941e2731393159227e3bb90a72a7b5958c4df9f21411d2e5fd5ec05beda",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Single Flat Palette",
+          "caption": "Monolithic styling bundles color primitives directly into visual components."
+        },
+        {
+          "step": 2,
+          "title": "Global Primitive Tier",
+          "caption": "Global primitives define base scales independent of brand or intent."
+        },
+        {
+          "step": 3,
+          "title": "Semantic Purpose Tier",
+          "caption": "Semantic tokens map primitive values to specific user interface roles."
+        },
+        {
+          "step": 4,
+          "title": "Component Scoped Tier",
+          "caption": "Component tokens encapsulate private styles for targeted local overrides."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 52 Part 2: Cross-Brand Overrides: Brand Theme Manifests, Delta Token Sets & Layered Cascades. Visualizing step progression with compare template.",
+      "promptSha": "75e32619f4584b528a893d8cf5148d9ffe0d4e3fb82e95013df6542e7a2b5149",
+      "codeHash": "8627ab894d10a0313696f6c72643eeaf5f034e8d49670b982d942186d78e1f37",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Hardcoded Brand Styles",
+          "caption": "Enterprise ecosystems demand multiple unique brand identities from one codebase."
+        },
+        {
+          "step": 2,
+          "title": "Brand Delta Manifest",
+          "caption": "Brand manifests define surgical delta overrides atop common foundations."
+        },
+        {
+          "step": 3,
+          "title": "Recursive Token Merge",
+          "caption": "Deep recursive merging combines baseline primitives with brand tokens."
+        },
+        {
+          "step": 4,
+          "title": "Branded Design System",
+          "caption": "Consumer applications inherit unique branding without duplicating core layouts."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 52 Part 3: Theming Namespaces: CSS Variable Scope Isolation, Data Attributes & DOM Class Injection. Visualizing step progression with compare template.",
+      "promptSha": "74e7ad0e3808576c6caa1d90a14940a807ddbd47bf0ef0c3039dbe4d2e3696c3",
+      "codeHash": "2852073a2380157eccafa8af8aa03809920d0730957062eb2ac1b825238da5b7",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Global Window Pollution",
+          "caption": "Unscoped global variables create collision hazards across nested widgets."
+        },
+        {
+          "step": 2,
+          "title": "Data Theme Attribute",
+          "caption": "Data theme attributes define isolated scopes on parent container nodes."
+        },
+        {
+          "step": 3,
+          "title": "CSS Custom Property Scope",
+          "caption": "Scoped custom properties restrict variable overrides to target subtrees."
+        },
+        {
+          "step": 4,
+          "title": "Nested Subtree Override",
+          "caption": "Nested elements reflect contextual brand styling without side effects."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 52 Part 4: High-Contrast & Brand Tone Inversion: Accessibility Contrast Matrix & Automated Palette Scaling. Visualizing step progression with compare template.",
+      "promptSha": "d38cedd7ef0f38d7ad8efb9dc298eeb2ccbdf8588fdab9c0699fd99c6082a76c",
+      "codeHash": "d646c0df4e8ed4eeddab8159c1e5114f0434374820a7b34d3e2e4ede1f9ae565",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Standard Color Palette",
+          "caption": "Standard brand palettes may fail strict regulatory contrast standards."
+        },
+        {
+          "step": 2,
+          "title": "High Contrast Palette",
+          "caption": "High contrast mode overrides semantic tokens with maximized luminance."
+        },
+        {
+          "step": 3,
+          "title": "Perceptual Contrast Calculation",
+          "caption": "Algorithmic validation verifies high text contrast against solid surfaces."
+        },
+        {
+          "step": 4,
+          "title": "Accessible Color Palette",
+          "caption": "Accessible themes preserve brand essence while ensuring universal readability."
+        }
+      ]
+    }
+  ]
+}

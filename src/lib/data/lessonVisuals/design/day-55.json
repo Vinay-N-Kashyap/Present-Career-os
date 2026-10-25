@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 55,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 55 Part 1: Master Token Architecture Blueprint & Tri-Tier Hierarchy Manifests. Visualizing step progression with compare template.",
+      "promptSha": "424932c0faff6f2df74ae4f8072777858c421432df7cd4b02110116405b2b706",
+      "codeHash": "8b5f45230b7e1cb292ec3c839004b6b3a4840e2f7e98d778e3d73033cc39b002",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Multi-Brand Token Architecture",
+          "caption": "Enterprise systems unify cross-platform tokens into a single pipeline."
+        },
+        {
+          "step": 2,
+          "title": "DTCG Parser and Cycle Resolver",
+          "caption": "Token parsers validate types and resolve reference aliases across brands."
+        },
+        {
+          "step": 3,
+          "title": "Style Dictionary Multi-Platform",
+          "caption": "Build pipelines emit target assets for web and native mobile clients."
+        },
+        {
+          "step": 4,
+          "title": "Live DOM CSS Variable Injection",
+          "caption": "Client runtimes inject custom properties dynamically upon theme selection."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 55 Part 2: W3C DTCG Automated Compiler Pipeline & Circular-Safe Alias Resolvers. Visualizing step progression with compare template.",
+      "promptSha": "ac8457e0f7b71595b5576d2bdddb6260cc70427dfc227beb5a4f2a4ae5f22da2",
+      "codeHash": "f8bc5e037ac3a2c8dc9c53b966eb51e611767611609e3047c0bfd64bfd896f1b",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Unparsed Token JSON Streams",
+          "caption": "Token files stream into the compiler from multiple brand repositories."
+        },
+        {
+          "step": 2,
+          "title": "AST Generation and Type Checking",
+          "caption": "Syntax parsers validate property schemas and token type declarations."
+        },
+        {
+          "step": 3,
+          "title": "Cyclic Reference Detection",
+          "caption": "Graph traversal detects and flags recursive circular alias dependencies."
+        },
+        {
+          "step": 4,
+          "title": "Compiled Token Tree",
+          "caption": "Compiled token dictionaries feed downstream code generation targets."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 55 Part 3: Cross-Brand Delta Inversion & Live CSS Custom Property Injector. Visualizing step progression with compare template.",
+      "promptSha": "1e2bf07c528314911e8b472368bba409686fe3aba437070cb1af146387c20ac7",
+      "codeHash": "123bbb7ca6115f7b38df7b559746649588d4f1475f751486b5a55bee69c1bcad",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Base Foundation Primitives",
+          "caption": "Base themes establish foundational spacing, typography, and core elevations."
+        },
+        {
+          "step": 2,
+          "title": "Brand Delta Overrides",
+          "caption": "Brand overrides swap semantic color values without altering structural metrics."
+        },
+        {
+          "step": 3,
+          "title": "Runtime Theme Switcher",
+          "caption": "Runtime managers toggle data theme attributes on document root elements."
+        },
+        {
+          "step": 4,
+          "title": "Live CSS Property Updates",
+          "caption": "Targeted stylesheets update visual appearance instantaneously without reloading."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 55 Part 4: Oklch Colorimetry, APCA Contrast Auditing & Colorblind Validation. Visualizing step progression with compare template.",
+      "promptSha": "f526788ddaf7c5c8f134b52d69c59834b8da2a43bf447dc6a08ac5650f86ce44",
+      "codeHash": "9d2b236894d515ad76896b99da214729db0c3482ef2666e562d1a9192fa9622a",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Color Theme Palette",
+          "caption": "Dynamic themes undergo real-time perceptual contrast verification."
+        },
+        {
+          "step": 2,
+          "title": "Perceptual Contrast Calculation",
+          "caption": "Calculators evaluate contrast scores across all text and background pairings."
+        },
+        {
+          "step": 3,
+          "title": "Automated APCA Verification",
+          "caption": "Automated assertion checks fail builds that violate accessibility thresholds."
+        },
+        {
+          "step": 4,
+          "title": "Accessible Production Release",
+          "caption": "Certified multi-brand token suites guarantee compliance and brand fidelity."
+        }
+      ]
+    }
+  ]
+}

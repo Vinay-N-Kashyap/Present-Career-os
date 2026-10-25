@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "2.0",
+  "courseId": "course-design-systems",
+  "day": 51,
+  "visuals": [
+    {
+      "partIndex": 1,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 51 Part 1: The W3C DTCG Standard: $value, $type, $description & JSON Schema Validation. Visualizing step progression with compare template.",
+      "promptSha": "be4e02efc139bdefeddb34cb67170783e00120c089830b9ea3e52381ef8e81b4",
+      "codeHash": "ad56793936b8533f24068d40aa9682a17e9fd0c686891d2e60e363bcff24c84a",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Unstructured JSON Map",
+          "caption": "Legacy designs store arbitrary key value pairs without standard semantics."
+        },
+        {
+          "step": 2,
+          "title": "DTCG Dollar Schema",
+          "caption": "The Community Group standard enforces dollar value and dollar type properties."
+        },
+        {
+          "step": 3,
+          "title": "Type Metadata Declaration",
+          "caption": "Explicit token types enable automated validation and multi-platform compilation."
+        },
+        {
+          "step": 4,
+          "title": "Normalized Token Tree",
+          "caption": "Normalized design token trees establish a single deterministic source of truth."
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 51 Part 2: Atomic Token Types: Colors, Dimensions, Durations, Cubic B\u00e9zier Curves & Font Families. Visualizing step progression with compare template.",
+      "promptSha": "d8fe5ddad789282f3384b4e05aaefa6abace829a01f684f2bc9a02087728650f",
+      "codeHash": "c0b7f042613a9b9531020e5ef38e3d40dd245e736b9f43604dbe3adf015d616f",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raw Hex Color Strings",
+          "caption": "Primitive visual constants are represented as strongly typed token objects."
+        },
+        {
+          "step": 2,
+          "title": "Standard DTCG Color Object",
+          "caption": "Color definitions specify color spaces and explicit hex or oklch values."
+        },
+        {
+          "step": 3,
+          "title": "Dimension Value and Unit",
+          "caption": "Dimension tokens declare explicit unit values such as pixels or rem units."
+        },
+        {
+          "step": 4,
+          "title": "Validated Primitive Node",
+          "caption": "Strong typing prevents runtime CSS parsing failures across consumer applications."
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 51 Part 3: Composite Design Tokens: Typography, Box Shadows & Multi-Layer Gradients. Visualizing step progression with compare template.",
+      "promptSha": "fef4935e019ea0b3207a2a4dd72721c7eb18a96cfd78c7d30bc144ea60d13b8d",
+      "codeHash": "2fcde4e41a6ab51ec555b237d2405351b78c45cbb2955fef7d488d1639ea269a",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Disjoint CSS Properties",
+          "caption": "Composite tokens bundle related typography or shadow properties together."
+        },
+        {
+          "step": 2,
+          "title": "Composite Typography Token",
+          "caption": "Typography bundles font family, font size, line height, and font weight."
+        },
+        {
+          "step": 3,
+          "title": "Sub-Value Map Extraction",
+          "caption": "Compilers extract individual sub-values for targeted platform emitters."
+        },
+        {
+          "step": 4,
+          "title": "Atomic Property Expansion",
+          "caption": "Atomic expansion enables platforms to consume composite properties cleanly."
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "template": "compare",
+      "prompt": "Architectural and conceptual diagram for Day 51 Part 4: Token Reference Resolution: Alias Graph Traversal & Cycle Detection Algorithms. Visualizing step progression with compare template.",
+      "promptSha": "7dee1e4cf7f86b04550bdb32776843e84dc9991352775f08b7966102f04fef34",
+      "codeHash": "69d3202ec694e5bf1f0a3b256f1f70ba71d47a3c099b650bbc1c1218dc78803d",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Hardcoded Literal Values",
+          "caption": "Design systems link semantic tokens to primitives through alias references."
+        },
+        {
+          "step": 2,
+          "title": "Alias Reference Pointer",
+          "caption": "Curly brace pointers denote references to global foundation values."
+        },
+        {
+          "step": 3,
+          "title": "Dependency Graph Walking",
+          "caption": "Reference resolvers construct directed acyclic graphs to detect cycles."
+        },
+        {
+          "step": 4,
+          "title": "Resolved Concrete Token",
+          "caption": "Deep references resolve into concrete leaf values for runtime stylesheet injection."
+        }
+      ]
+    }
+  ]
+}
