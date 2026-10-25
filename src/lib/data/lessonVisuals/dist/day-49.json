@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 49,
+  "promptSha": "cb9b691a1665ebe329ead3f5f070654cef5007f5ae07068037cd457a7abf564d",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Stateful Stream Processing: Embedded RocksDB Stores & Durable Changelog Topics",
+      "codeHash": "daf5bf59d401fbe6e455dc9f7b27f4e135d7c7a61d5a5f0c1dc8b40b3b8fca51",
+      "spec": {
+        "template": "compare",
+        "title": "Stream Processing Topologies: Stateful Stream Processing: Embedded RocksDB Stores & Durable Changelog Topics",
+        "left": {
+          "label": "Stateless Stream Processing",
+          "content": [
+            "Individual events processed in isolation without historical context",
+            "External database queries on every event create severe network bottlenecks",
+            "Rigid wall-clock processing time invalidates window aggregations",
+            "Late-arriving events silently dropped or grouped into incorrect intervals"
+          ]
+        },
+        "right": {
+          "label": "Stateful Event-Time Topology",
+          "content": [
+            "Embedded local RocksDB stores deliver microsecond state mutations",
+            "Durable changelog topics guarantee rapid crash recovery with zero loss",
+            "Tumbling, sliding, and dynamic session windows capture authentic behavior",
+            "Event-time watermarks ensure deterministic window closure across delays"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates stateful stream processing with embedded local state stores and changelog replication."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors microsecond local state lookups alongside asynchronous changelog topic backups."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates nanosecond processing speed alongside resilient disaster recovery guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms local state mutations, changelog delta append offsets, and state recovery integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Stateless Stream Processing",
+        "rightLabel": "Stateful Event-Time Topology",
+        "leftHighlights": [
+          "Zero historical memory",
+          "External database latency",
+          "Non-deterministic clocks",
+          "Silent late-data loss"
+        ],
+        "rightHighlights": [
+          "Microsecond local state",
+          "Changelog disaster recovery",
+          "Dynamic session windows",
+          "Deterministic watermarks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Windowing Topologies: Tumbling vs Sliding Windows & Incremental Add/Subtract Optimization",
+      "codeHash": "aae6e969cfe8bc5ecd4bcdd1282709016a0e4101adc478bf7b97a401e811e393",
+      "spec": {
+        "template": "compare",
+        "title": "Stream Processing Topologies: Windowing Topologies: Tumbling vs Sliding Windows & Incremental Add/Subtract Optimization",
+        "left": {
+          "label": "Stateless Stream Processing",
+          "content": [
+            "Individual events processed in isolation without historical context",
+            "External database queries on every event create severe network bottlenecks",
+            "Rigid wall-clock processing time invalidates window aggregations",
+            "Late-arriving events silently dropped or grouped into incorrect intervals"
+          ]
+        },
+        "right": {
+          "label": "Stateful Event-Time Topology",
+          "content": [
+            "Embedded local RocksDB stores deliver microsecond state mutations",
+            "Durable changelog topics guarantee rapid crash recovery with zero loss",
+            "Tumbling, sliding, and dynamic session windows capture authentic behavior",
+            "Event-time watermarks ensure deterministic window closure across delays"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays tumbling and sliding temporal windowing slicing continuous event streams."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates fixed non-overlapping tumbling intervals alongside rolling overlapping window aggregations."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates rolling operational analytics over rigid batch database query execution."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms deterministic window start calculations, event count aggregations, and window emissions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Stateless Stream Processing",
+        "rightLabel": "Stateful Event-Time Topology",
+        "leftHighlights": [
+          "Zero historical memory",
+          "External database latency",
+          "Non-deterministic clocks",
+          "Silent late-data loss"
+        ],
+        "rightHighlights": [
+          "Microsecond local state",
+          "Changelog disaster recovery",
+          "Dynamic session windows",
+          "Deterministic watermarks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Session Windows: Data-Driven Inactivity Gaps & Dynamic Out-of-Order Session Merging",
+      "codeHash": "e2ddfcc776abaf0981875a837e97f338d1343a7fa1a7dab2040383bb09844f8a",
+      "spec": {
+        "template": "compare",
+        "title": "Stream Processing Topologies: Session Windows: Data-Driven Inactivity Gaps & Dynamic Out-of-Order Session Merging",
+        "left": {
+          "label": "Stateless Stream Processing",
+          "content": [
+            "Individual events processed in isolation without historical context",
+            "External database queries on every event create severe network bottlenecks",
+            "Rigid wall-clock processing time invalidates window aggregations",
+            "Late-arriving events silently dropped or grouped into incorrect intervals"
+          ]
+        },
+        "right": {
+          "label": "Stateful Event-Time Topology",
+          "content": [
+            "Embedded local RocksDB stores deliver microsecond state mutations",
+            "Durable changelog topics guarantee rapid crash recovery with zero loss",
+            "Tumbling, sliding, and dynamic session windows capture authentic behavior",
+            "Event-time watermarks ensure deterministic window closure across delays"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates dynamic session windowing clustering user interactions based on inactivity gaps."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates dynamic window expansion alongside out-of-order session merging algorithms."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates natural behavioral analytics over artificial clock-aligned window boundaries."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms session expansion, multi-event clustering, and gap-triggered session closures."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Stateless Stream Processing",
+        "rightLabel": "Stateful Event-Time Topology",
+        "leftHighlights": [
+          "Zero historical memory",
+          "External database latency",
+          "Non-deterministic clocks",
+          "Silent late-data loss"
+        ],
+        "rightHighlights": [
+          "Microsecond local state",
+          "Changelog disaster recovery",
+          "Dynamic session windows",
+          "Deterministic watermarks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Event Time vs Processing Time: Watermarks, Out-of-Order Records & Allowed Lateness",
+      "codeHash": "148f0cf83caf249b9be8b16318c92b3538575b3db34b12da5a1094056d0d60b5",
+      "spec": {
+        "template": "compare",
+        "title": "Stream Processing Topologies: Event Time vs Processing Time: Watermarks, Out-of-Order Records & Allowed Lateness",
+        "left": {
+          "label": "Stateless Stream Processing",
+          "content": [
+            "Individual events processed in isolation without historical context",
+            "External database queries on every event create severe network bottlenecks",
+            "Rigid wall-clock processing time invalidates window aggregations",
+            "Late-arriving events silently dropped or grouped into incorrect intervals"
+          ]
+        },
+        "right": {
+          "label": "Stateful Event-Time Topology",
+          "content": [
+            "Embedded local RocksDB stores deliver microsecond state mutations",
+            "Durable changelog topics guarantee rapid crash recovery with zero loss",
+            "Tumbling, sliding, and dynamic session windows capture authentic behavior",
+            "Event-time watermarks ensure deterministic window closure across delays"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays event-time watermarks progressing alongside out-of-order streaming records."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates bounded out-of-order delay calculations and side-output handling for late records."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates robust deterministic analytics over fragile server processing time clocks."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms watermark progression assertions, on-time event acceptance, and late record detection."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Stateless Stream Processing",
+        "rightLabel": "Stateful Event-Time Topology",
+        "leftHighlights": [
+          "Zero historical memory",
+          "External database latency",
+          "Non-deterministic clocks",
+          "Silent late-data loss"
+        ],
+        "rightHighlights": [
+          "Microsecond local state",
+          "Changelog disaster recovery",
+          "Dynamic session windows",
+          "Deterministic watermarks"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Stream Topology Telemetry & Benchmark Audit",
+      "codeHash": "ad979e3d8a824970b511e7028b16cdefd5daff44a5795eea32ecfcb41274558b",
+      "spec": {
+        "template": "compare",
+        "title": "Stream Processing Topologies: Production Stream Topology Telemetry & Benchmark Audit",
+        "left": {
+          "label": "Stateless Stream Processing",
+          "content": [
+            "Individual events processed in isolation without historical context",
+            "External database queries on every event create severe network bottlenecks",
+            "Rigid wall-clock processing time invalidates window aggregations",
+            "Late-arriving events silently dropped or grouped into incorrect intervals"
+          ]
+        },
+        "right": {
+          "label": "Stateful Event-Time Topology",
+          "content": [
+            "Embedded local RocksDB stores deliver microsecond state mutations",
+            "Durable changelog topics guarantee rapid crash recovery with zero loss",
+            "Tumbling, sliding, and dynamic session windows capture authentic behavior",
+            "Event-time watermarks ensure deterministic window closure across delays"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production stream processing topology telemetry and latency audit dashboard."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors hundreds of thousands of events per second alongside sub-twenty millisecond window latencies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade throughput, fault tolerance, and unshakeable state durability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies eighteen millisecond window latencies, thousands of active windows, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Stateless Stream Processing",
+        "rightLabel": "Stateful Event-Time Topology",
+        "leftHighlights": [
+          "Zero historical memory",
+          "External database latency",
+          "Non-deterministic clocks",
+          "Silent late-data loss"
+        ],
+        "rightHighlights": [
+          "Microsecond local state",
+          "Changelog disaster recovery",
+          "Dynamic session windows",
+          "Deterministic watermarks"
+        ]
+      }
+    }
+  ]
+}

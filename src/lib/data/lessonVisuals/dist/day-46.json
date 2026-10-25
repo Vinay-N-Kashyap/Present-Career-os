@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 46,
+  "promptSha": "131ed834e0ef87d9bf001d6decf91c6a9ad68714f40705569b9f3dbea237039b",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Append-Only Commit Logs: Immutability, Monotonic Offsets & Hardware Sequential I/O",
+      "codeHash": "89be72a4f0b90c4d5d97f5c499f2e05a49fb5e5305f0a7c5e01780d53fe0c0dc",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Message Brokers: Append-Only Commit Logs: Immutability, Monotonic Offsets & Hardware Sequential I/O",
+        "left": {
+          "label": "Traditional Ephemeral Message Broker",
+          "content": [
+            "Complex in-memory queues deleting messages upon consumer acknowledgment",
+            "Random disk seeks and B-Tree rebalancing choking storage controllers",
+            "Broker memory exhaustion when slow consumers lag behind producers",
+            "Inability to replay historical streams after downstream consumer failures"
+          ]
+        },
+        "right": {
+          "label": "Partitioned Append-Only Commit Log",
+          "content": [
+            "Immutable sequential log files achieving raw storage disk saturation",
+            "Horizontal topic partitioning enabling linear cluster throughput scaling",
+            "In-Sync Replicas and High Watermark preventing phantom read data loss",
+            "Linux sendfile zero-copy streaming data directly from page cache to NIC"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates append-only commit logs recording immutable records with sequential offsets."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sequential disk input output saturating hardware storage controller throughput."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates raw storage performance advantages over mutable queue heap deletions."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms deterministic offset allocation, sequential log end progression, and zero seek latency."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Ephemeral Message Broker",
+        "rightLabel": "Partitioned Append-Only Commit Log",
+        "leftHighlights": [
+          "Ephemeral mutable queues",
+          "Random disk seek overhead",
+          "Consumer lag memory crashes",
+          "Zero historical replay ability"
+        ],
+        "rightHighlights": [
+          "Immutable sequential logs",
+          "Horizontal topic partitions",
+          "ISR high watermark safety",
+          "Zero-copy DMA networking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Topic Partitioning: Hash Routing, Horizontal Scalability & Ordering Invariants",
+      "codeHash": "be2c5efb0baf47c71993347dfddaf49be7cc59427978092de698da58559a0c20",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Message Brokers: Topic Partitioning: Hash Routing, Horizontal Scalability & Ordering Invariants",
+        "left": {
+          "label": "Traditional Ephemeral Message Broker",
+          "content": [
+            "Complex in-memory queues deleting messages upon consumer acknowledgment",
+            "Random disk seeks and B-Tree rebalancing choking storage controllers",
+            "Broker memory exhaustion when slow consumers lag behind producers",
+            "Inability to replay historical streams after downstream consumer failures"
+          ]
+        },
+        "right": {
+          "label": "Partitioned Append-Only Commit Log",
+          "content": [
+            "Immutable sequential log files achieving raw storage disk saturation",
+            "Horizontal topic partitioning enabling linear cluster throughput scaling",
+            "In-Sync Replicas and High Watermark preventing phantom read data loss",
+            "Linux sendfile zero-copy streaming data directly from page cache to NIC"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays topic partitioning dividing high-velocity streams horizontally across broker nodes."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates key hashing routing identical keys deterministically to dedicated partition logs."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates linear cluster scaling alongside strict chronological per-key ordering invariants."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms deterministic partition routing, balanced cluster storage, and per-partition sequence integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Ephemeral Message Broker",
+        "rightLabel": "Partitioned Append-Only Commit Log",
+        "leftHighlights": [
+          "Ephemeral mutable queues",
+          "Random disk seek overhead",
+          "Consumer lag memory crashes",
+          "Zero historical replay ability"
+        ],
+        "rightHighlights": [
+          "Immutable sequential logs",
+          "Horizontal topic partitions",
+          "ISR high watermark safety",
+          "Zero-copy DMA networking"
+        ]
+      }
+    },
+    {
+      "partTitle": "In-Sync Replicas (ISR), Log End Offset (LEO) & High Watermark (HW) Commit Safety",
+      "codeHash": "6b78ac1f910e1312d8aa900d2ece8a764b07bec46e1cae23bc7420bc9ffe6f00",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Message Brokers: In-Sync Replicas (ISR), Log End Offset (LEO) & High Watermark (HW) Commit Safety",
+        "left": {
+          "label": "Traditional Ephemeral Message Broker",
+          "content": [
+            "Complex in-memory queues deleting messages upon consumer acknowledgment",
+            "Random disk seeks and B-Tree rebalancing choking storage controllers",
+            "Broker memory exhaustion when slow consumers lag behind producers",
+            "Inability to replay historical streams after downstream consumer failures"
+          ]
+        },
+        "right": {
+          "label": "Partitioned Append-Only Commit Log",
+          "content": [
+            "Immutable sequential log files achieving raw storage disk saturation",
+            "Horizontal topic partitioning enabling linear cluster throughput scaling",
+            "In-Sync Replicas and High Watermark preventing phantom read data loss",
+            "Linux sendfile zero-copy streaming data directly from page cache to NIC"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates in-sync replica replication tracking leader offsets and follower fetch requests."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates high watermark progression restricting consumer visibility to fully acknowledged offsets."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates zero phantom read hazards alongside resilient leader failover durability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms leader offset advancement, follower acknowledgment quorums, and committed high watermarks."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Ephemeral Message Broker",
+        "rightLabel": "Partitioned Append-Only Commit Log",
+        "leftHighlights": [
+          "Ephemeral mutable queues",
+          "Random disk seek overhead",
+          "Consumer lag memory crashes",
+          "Zero historical replay ability"
+        ],
+        "rightHighlights": [
+          "Immutable sequential logs",
+          "Horizontal topic partitions",
+          "ISR high watermark safety",
+          "Zero-copy DMA networking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Copy Data Transfer: Linux sendfile(), Page Cache & Eliminating Buffer Copies",
+      "codeHash": "20f5563f696d5ab0e26675771f98d40730d741481a7f255b8a9afb1f56292666",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Message Brokers: Zero-Copy Data Transfer: Linux sendfile(), Page Cache & Eliminating Buffer Copies",
+        "left": {
+          "label": "Traditional Ephemeral Message Broker",
+          "content": [
+            "Complex in-memory queues deleting messages upon consumer acknowledgment",
+            "Random disk seeks and B-Tree rebalancing choking storage controllers",
+            "Broker memory exhaustion when slow consumers lag behind producers",
+            "Inability to replay historical streams after downstream consumer failures"
+          ]
+        },
+        "right": {
+          "label": "Partitioned Append-Only Commit Log",
+          "content": [
+            "Immutable sequential log files achieving raw storage disk saturation",
+            "Horizontal topic partitioning enabling linear cluster throughput scaling",
+            "In-Sync Replicas and High Watermark preventing phantom read data loss",
+            "Linux sendfile zero-copy streaming data directly from page cache to NIC"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays Linux zero-copy transfer streaming page cache memory directly to network cards."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors direct memory access descriptors eliminating user-space memory copies and context switches."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates massive bandwidth acceleration over legacy four-copy socket write architectures."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms zero user-space memory buffer copies, reduced context switches, and line-rate network velocity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Ephemeral Message Broker",
+        "rightLabel": "Partitioned Append-Only Commit Log",
+        "leftHighlights": [
+          "Ephemeral mutable queues",
+          "Random disk seek overhead",
+          "Consumer lag memory crashes",
+          "Zero historical replay ability"
+        ],
+        "rightHighlights": [
+          "Immutable sequential logs",
+          "Horizontal topic partitions",
+          "ISR high watermark safety",
+          "Zero-copy DMA networking"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Distributed Log Engine Telemetry & Performance Audit",
+      "codeHash": "df48e7cd35ed7b55a0b4297b4d826daa2f32ef55d4eb5bae49083e058cbd86c7",
+      "spec": {
+        "template": "compare",
+        "title": "Distributed Message Brokers: Production Distributed Log Engine Telemetry & Performance Audit",
+        "left": {
+          "label": "Traditional Ephemeral Message Broker",
+          "content": [
+            "Complex in-memory queues deleting messages upon consumer acknowledgment",
+            "Random disk seeks and B-Tree rebalancing choking storage controllers",
+            "Broker memory exhaustion when slow consumers lag behind producers",
+            "Inability to replay historical streams after downstream consumer failures"
+          ]
+        },
+        "right": {
+          "label": "Partitioned Append-Only Commit Log",
+          "content": [
+            "Immutable sequential log files achieving raw storage disk saturation",
+            "Horizontal topic partitioning enabling linear cluster throughput scaling",
+            "In-Sync Replicas and High Watermark preventing phantom read data loss",
+            "Linux sendfile zero-copy streaming data directly from page cache to NIC"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production distributed commit log telemetry audit across multiple partitions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-millisecond write latencies, gigabytes per second bandwidth, and complete replica health."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade throughput, fault tolerance, and unshakeable data durability."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies three hundred forty microsecond write latencies, full replica synchronization, and readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Traditional Ephemeral Message Broker",
+        "rightLabel": "Partitioned Append-Only Commit Log",
+        "leftHighlights": [
+          "Ephemeral mutable queues",
+          "Random disk seek overhead",
+          "Consumer lag memory crashes",
+          "Zero historical replay ability"
+        ],
+        "rightHighlights": [
+          "Immutable sequential logs",
+          "Horizontal topic partitions",
+          "ISR high watermark safety",
+          "Zero-copy DMA networking"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 47,
+  "promptSha": "47f10ed590bfcdfb8c91eb056f0d2c98dd41afdcca446fb5d017dcf80efef036",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Consumer Group Coordination: Group Coordinators, JoinGroup & Monotonic Generation IDs",
+      "codeHash": "5fbfab66b04c4d94f401cd39a58295928f2823059e218f851bd4a4a5943f2617",
+      "spec": {
+        "template": "compare",
+        "title": "Consumer Groups & Rebalancing: Consumer Group Coordination: Group Coordinators, JoinGroup & Monotonic Generation IDs",
+        "left": {
+          "label": "Eager Stop-The-World Rebalancing",
+          "content": [
+            "All consumers revoke all partitions during any membership change",
+            "Entire stream processing pipeline freezes for dozens of seconds",
+            "Local in-memory state stores wiped and rebuilt across networks",
+            "Severe consumer lag accumulation during rolling container updates"
+          ]
+        },
+        "right": {
+          "label": "Cooperative Sticky Rebalance Protocol",
+          "content": [
+            "Incremental two-phase migrations revoke only excess partitions",
+            "Active consumers continue processing retained partitions uninterrupted",
+            "State store stickiness preserves hot caches and RocksDB instances",
+            "Rebalances complete in milliseconds with minimal pipeline impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates consumer group coordination electing group leaders and tracking heartbeats."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors join group protocol negotiations alongside generation epoch fencing against zombies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates dynamic self-healing worker fleets over brittle static single-worker designs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms leader election, generation identifier advancement, and heartbeat synchronization."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Eager Stop-The-World Rebalancing",
+        "rightLabel": "Cooperative Sticky Rebalance Protocol",
+        "leftHighlights": [
+          "Total cluster processing pause",
+          "State cache destruction",
+          "Massive consumer lag spikes",
+          "Destructive rolling updates"
+        ],
+        "rightHighlights": [
+          "Continuous active processing",
+          "State store stickiness preserved",
+          "Millisecond rebalance latency",
+          "Seamless rolling deployments"
+        ]
+      }
+    },
+    {
+      "partTitle": "Partition Assignment Strategies: Range vs Round-Robin Assignors & Co-Partitioning Skew",
+      "codeHash": "85f7e25ba371998f4016477f983d15329250cce39d63d70102bc63bd17f1001b",
+      "spec": {
+        "template": "compare",
+        "title": "Consumer Groups & Rebalancing: Partition Assignment Strategies: Range vs Round-Robin Assignors & Co-Partitioning Skew",
+        "left": {
+          "label": "Eager Stop-The-World Rebalancing",
+          "content": [
+            "All consumers revoke all partitions during any membership change",
+            "Entire stream processing pipeline freezes for dozens of seconds",
+            "Local in-memory state stores wiped and rebuilt across networks",
+            "Severe consumer lag accumulation during rolling container updates"
+          ]
+        },
+        "right": {
+          "label": "Cooperative Sticky Rebalance Protocol",
+          "content": [
+            "Incremental two-phase migrations revoke only excess partitions",
+            "Active consumers continue processing retained partitions uninterrupted",
+            "State store stickiness preserves hot caches and RocksDB instances",
+            "Rebalances complete in milliseconds with minimal pipeline impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays partition assignment strategies contrasting range allocation with round-robin."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors co-partitioning workload distribution across multi-topic subscription topologies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates round-robin partition equilibrium over range assignor workload skew."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms contiguous range partitions alongside cyclic round-robin balance across consumers."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Eager Stop-The-World Rebalancing",
+        "rightLabel": "Cooperative Sticky Rebalance Protocol",
+        "leftHighlights": [
+          "Total cluster processing pause",
+          "State cache destruction",
+          "Massive consumer lag spikes",
+          "Destructive rolling updates"
+        ],
+        "rightHighlights": [
+          "Continuous active processing",
+          "State store stickiness preserved",
+          "Millisecond rebalance latency",
+          "Seamless rolling deployments"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cooperative Sticky Assignor: Eliminating Stop-The-World Rebalances via Incremental Migration",
+      "codeHash": "4fd3c44677dfe2b2676e7808e3d22e79df14b6a4851914b03a6bf7a81853d94b",
+      "spec": {
+        "template": "compare",
+        "title": "Consumer Groups & Rebalancing: The Cooperative Sticky Assignor: Eliminating Stop-The-World Rebalances via Incremental Migration",
+        "left": {
+          "label": "Eager Stop-The-World Rebalancing",
+          "content": [
+            "All consumers revoke all partitions during any membership change",
+            "Entire stream processing pipeline freezes for dozens of seconds",
+            "Local in-memory state stores wiped and rebuilt across networks",
+            "Severe consumer lag accumulation during rolling container updates"
+          ]
+        },
+        "right": {
+          "label": "Cooperative Sticky Rebalance Protocol",
+          "content": [
+            "Incremental two-phase migrations revoke only excess partitions",
+            "Active consumers continue processing retained partitions uninterrupted",
+            "State store stickiness preserves hot caches and RocksDB instances",
+            "Rebalances complete in milliseconds with minimal pipeline impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates cooperative sticky rebalancing executing incremental two-phase partition migrations."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates minimal partition revocations allowing consumers to continue active processing."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates elimination of stop-the-world cluster freezes and state store rebuild delays."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms revocation of excess partitions while preserving active processing on retained partitions."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Eager Stop-The-World Rebalancing",
+        "rightLabel": "Cooperative Sticky Rebalance Protocol",
+        "leftHighlights": [
+          "Total cluster processing pause",
+          "State cache destruction",
+          "Massive consumer lag spikes",
+          "Destructive rolling updates"
+        ],
+        "rightHighlights": [
+          "Continuous active processing",
+          "State store stickiness preserved",
+          "Millisecond rebalance latency",
+          "Seamless rolling deployments"
+        ]
+      }
+    },
+    {
+      "partTitle": "Consumer Offset Commits: commitSync vs commitAsync & Delivery Semantics",
+      "codeHash": "25eb7a6bda121b2de0c89b45477a0d78f891a4e61396fae7b503c43eeb5514ca",
+      "spec": {
+        "template": "compare",
+        "title": "Consumer Groups & Rebalancing: Consumer Offset Commits: commitSync vs commitAsync & Delivery Semantics",
+        "left": {
+          "label": "Eager Stop-The-World Rebalancing",
+          "content": [
+            "All consumers revoke all partitions during any membership change",
+            "Entire stream processing pipeline freezes for dozens of seconds",
+            "Local in-memory state stores wiped and rebuilt across networks",
+            "Severe consumer lag accumulation during rolling container updates"
+          ]
+        },
+        "right": {
+          "label": "Cooperative Sticky Rebalance Protocol",
+          "content": [
+            "Incremental two-phase migrations revoke only excess partitions",
+            "Active consumers continue processing retained partitions uninterrupted",
+            "State store stickiness preserves hot caches and RocksDB instances",
+            "Rebalances complete in milliseconds with minimal pipeline impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays offset commit mechanics comparing synchronous commits with asynchronous pipelines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors internal consumer offset metadata storage preventing backward offset regressions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates at-least-once processing durability alongside high-throughput commit pipelines."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms committed offset checkpoint persistence, leader epoch tracking, and resume coordinates."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Eager Stop-The-World Rebalancing",
+        "rightLabel": "Cooperative Sticky Rebalance Protocol",
+        "leftHighlights": [
+          "Total cluster processing pause",
+          "State cache destruction",
+          "Massive consumer lag spikes",
+          "Destructive rolling updates"
+        ],
+        "rightHighlights": [
+          "Continuous active processing",
+          "State store stickiness preserved",
+          "Millisecond rebalance latency",
+          "Seamless rolling deployments"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Consumer Group Telemetry & Rebalance Audit",
+      "codeHash": "497d5b2bb82110d1b9fb9736f96257de9f7bec84c2854be433f3f2839c6d01c0",
+      "spec": {
+        "template": "compare",
+        "title": "Consumer Groups & Rebalancing: Production Consumer Group Telemetry & Rebalance Audit",
+        "left": {
+          "label": "Eager Stop-The-World Rebalancing",
+          "content": [
+            "All consumers revoke all partitions during any membership change",
+            "Entire stream processing pipeline freezes for dozens of seconds",
+            "Local in-memory state stores wiped and rebuilt across networks",
+            "Severe consumer lag accumulation during rolling container updates"
+          ]
+        },
+        "right": {
+          "label": "Cooperative Sticky Rebalance Protocol",
+          "content": [
+            "Incremental two-phase migrations revoke only excess partitions",
+            "Active consumers continue processing retained partitions uninterrupted",
+            "State store stickiness preserves hot caches and RocksDB instances",
+            "Rebalances complete in milliseconds with minimal pipeline impact"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production consumer group telemetry audit across multiple active workers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sub-fifty millisecond rebalances, balanced partition allocations, and minimal lag."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates enterprise-grade elasticity, zero zombie commits, and steady stream throughput."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies forty-two millisecond rebalance speed, balanced partitions, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Eager Stop-The-World Rebalancing",
+        "rightLabel": "Cooperative Sticky Rebalance Protocol",
+        "leftHighlights": [
+          "Total cluster processing pause",
+          "State cache destruction",
+          "Massive consumer lag spikes",
+          "Destructive rolling updates"
+        ],
+        "rightHighlights": [
+          "Continuous active processing",
+          "State store stickiness preserved",
+          "Millisecond rebalance latency",
+          "Seamless rolling deployments"
+        ]
+      }
+    }
+  ]
+}

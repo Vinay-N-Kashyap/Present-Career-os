@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 2,
+  "course": "dist",
+  "prefix": "dist",
+  "day": 48,
+  "promptSha": "2e115a68111b50a8a302d94f91a666bfed361d654a1b4a2d5864f9e8273c1d53",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Idempotent Producers: Producer IDs (PID), Monotonic Sequence Numbers & Broker Deduplication",
+      "codeHash": "c107f88d504dd3e9293394c4631b02832ae3d83a4f4d86990f6d8e8fd1645c57",
+      "spec": {
+        "template": "compare",
+        "title": "Delivery Guarantees & Fault Tolerance: Idempotent Producers: Producer IDs (PID), Monotonic Sequence Numbers & Broker Deduplication",
+        "left": {
+          "label": "At-Least-Once Delivery (No Idempotence)",
+          "content": [
+            "Network acknowledgment timeouts trigger duplicate record generation",
+            "Multi-partition operations leave partial state upon container crashes",
+            "Downstream consumers read dirty records from aborted transactions",
+            "Manual database deduplication scripts required to resolve conflicts"
+          ]
+        },
+        "right": {
+          "label": "Exactly-Once Semantics with Transactions",
+          "content": [
+            "Idempotent producers suppress network retry duplicates via sequences",
+            "Transaction coordinator guarantees atomic multi-partition commits",
+            "Read-committed consumers filter aborted records using index files",
+            "Atomic consume-transform-produce links read offsets with output topics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates idempotent producer deduplication tracking monotonic sequence numbers."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors network retry packet drops and broker sequence verification suppressing duplicate appends."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates guaranteed single-append semantics over duplicate-vulnerable naive producers."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sequence cache hits, duplicate write suppression, and clean committed log progression."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "At-Least-Once Delivery (No Idempotence)",
+        "rightLabel": "Exactly-Once Semantics with Transactions",
+        "leftHighlights": [
+          "Duplicate records on retries",
+          "Partial multi-topic writes",
+          "Dirty aborted reads",
+          "Manual ledger reconciliation"
+        ],
+        "rightHighlights": [
+          "Idempotent deduplication",
+          "Two-phase commit markers",
+          "Read-committed isolation",
+          "Sub-millisecond commit speed"
+        ]
+      }
+    },
+    {
+      "partTitle": "The Transaction Coordinator: Two-Phase Commit over Logs, Control Markers & Fencing Zombie Producers",
+      "codeHash": "5b5cce2aab45c1dca65f4d4d9d86de1f79d9c64219ba8707ac4bdd290aab2ec5",
+      "spec": {
+        "template": "compare",
+        "title": "Delivery Guarantees & Fault Tolerance: The Transaction Coordinator: Two-Phase Commit over Logs, Control Markers & Fencing Zombie Producers",
+        "left": {
+          "label": "At-Least-Once Delivery (No Idempotence)",
+          "content": [
+            "Network acknowledgment timeouts trigger duplicate record generation",
+            "Multi-partition operations leave partial state upon container crashes",
+            "Downstream consumers read dirty records from aborted transactions",
+            "Manual database deduplication scripts required to resolve conflicts"
+          ]
+        },
+        "right": {
+          "label": "Exactly-Once Semantics with Transactions",
+          "content": [
+            "Idempotent producers suppress network retry duplicates via sequences",
+            "Transaction coordinator guarantees atomic multi-partition commits",
+            "Read-committed consumers filter aborted records using index files",
+            "Atomic consume-transform-produce links read offsets with output topics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the transaction coordinator orchestrating two-phase commits across streaming partitions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates prepare markers and asynchronous commit control marker writes across data partitions."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates atomic multi-partition commits alongside zombie producer epoch fencing."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms transaction state transitions, commit marker dispatch, and atomic boundary integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "At-Least-Once Delivery (No Idempotence)",
+        "rightLabel": "Exactly-Once Semantics with Transactions",
+        "leftHighlights": [
+          "Duplicate records on retries",
+          "Partial multi-topic writes",
+          "Dirty aborted reads",
+          "Manual ledger reconciliation"
+        ],
+        "rightHighlights": [
+          "Idempotent deduplication",
+          "Two-phase commit markers",
+          "Read-committed isolation",
+          "Sub-millisecond commit speed"
+        ]
+      }
+    },
+    {
+      "partTitle": "Read-Committed Isolation: Aborted Transaction Indexes & The Last Stable Offset (LSO)",
+      "codeHash": "fd91566868c7e213c81bcb20614b4fb9d787939e1333212e66679763618c9b55",
+      "spec": {
+        "template": "compare",
+        "title": "Delivery Guarantees & Fault Tolerance: Read-Committed Isolation: Aborted Transaction Indexes & The Last Stable Offset (LSO)",
+        "left": {
+          "label": "At-Least-Once Delivery (No Idempotence)",
+          "content": [
+            "Network acknowledgment timeouts trigger duplicate record generation",
+            "Multi-partition operations leave partial state upon container crashes",
+            "Downstream consumers read dirty records from aborted transactions",
+            "Manual database deduplication scripts required to resolve conflicts"
+          ]
+        },
+        "right": {
+          "label": "Exactly-Once Semantics with Transactions",
+          "content": [
+            "Idempotent producers suppress network retry duplicates via sequences",
+            "Transaction coordinator guarantees atomic multi-partition commits",
+            "Read-committed consumers filter aborted records using index files",
+            "Atomic consume-transform-produce links read offsets with output topics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates read-committed consumer isolation utilizing the aborted transaction index."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates last stable offset progression and memory-level suppression of aborted transaction records."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates absolute downstream data purity over dirty read corruption vulnerabilities."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms aborted transaction exclusion, committed record emissions, and clean consumer isolation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "At-Least-Once Delivery (No Idempotence)",
+        "rightLabel": "Exactly-Once Semantics with Transactions",
+        "leftHighlights": [
+          "Duplicate records on retries",
+          "Partial multi-topic writes",
+          "Dirty aborted reads",
+          "Manual ledger reconciliation"
+        ],
+        "rightHighlights": [
+          "Idempotent deduplication",
+          "Two-phase commit markers",
+          "Read-committed isolation",
+          "Sub-millisecond commit speed"
+        ]
+      }
+    },
+    {
+      "partTitle": "Atomic Consume-Transform-Produce: sendOffsetsToTransaction & End-to-End Exactly-Once Semantics",
+      "codeHash": "bbec877d7b41ce0751973b878939f2576e2630da6044b61886754bafd89e282e",
+      "spec": {
+        "template": "compare",
+        "title": "Delivery Guarantees & Fault Tolerance: Atomic Consume-Transform-Produce: sendOffsetsToTransaction & End-to-End Exactly-Once Semantics",
+        "left": {
+          "label": "At-Least-Once Delivery (No Idempotence)",
+          "content": [
+            "Network acknowledgment timeouts trigger duplicate record generation",
+            "Multi-partition operations leave partial state upon container crashes",
+            "Downstream consumers read dirty records from aborted transactions",
+            "Manual database deduplication scripts required to resolve conflicts"
+          ]
+        },
+        "right": {
+          "label": "Exactly-Once Semantics with Transactions",
+          "content": [
+            "Idempotent producers suppress network retry duplicates via sequences",
+            "Transaction coordinator guarantees atomic multi-partition commits",
+            "Read-committed consumers filter aborted records using index files",
+            "Atomic consume-transform-produce links read offsets with output topics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays atomic consume-transform-produce pipelines binding consumer offsets inside transactions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors atomic commits binding destination output topics with consumer group read coordinates."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates true end-to-end exactly-once processing over at-least-once duplication hazards."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms atomic offset commits, transaction control markers, and synchronized rollback safety."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "At-Least-Once Delivery (No Idempotence)",
+        "rightLabel": "Exactly-Once Semantics with Transactions",
+        "leftHighlights": [
+          "Duplicate records on retries",
+          "Partial multi-topic writes",
+          "Dirty aborted reads",
+          "Manual ledger reconciliation"
+        ],
+        "rightHighlights": [
+          "Idempotent deduplication",
+          "Two-phase commit markers",
+          "Read-committed isolation",
+          "Sub-millisecond commit speed"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Exactly-Once Stream Telemetry & Fault Injection Audit",
+      "codeHash": "8d846d3989d36f53bdb1148a73ce5b8f6c537c4583fdae5230f5944cecd1d426",
+      "spec": {
+        "template": "compare",
+        "title": "Delivery Guarantees & Fault Tolerance: Production Exactly-Once Stream Telemetry & Fault Injection Audit",
+        "left": {
+          "label": "At-Least-Once Delivery (No Idempotence)",
+          "content": [
+            "Network acknowledgment timeouts trigger duplicate record generation",
+            "Multi-partition operations leave partial state upon container crashes",
+            "Downstream consumers read dirty records from aborted transactions",
+            "Manual database deduplication scripts required to resolve conflicts"
+          ]
+        },
+        "right": {
+          "label": "Exactly-Once Semantics with Transactions",
+          "content": [
+            "Idempotent producers suppress network retry duplicates via sequences",
+            "Transaction coordinator guarantees atomic multi-partition commits",
+            "Read-committed consumers filter aborted records using index files",
+            "Atomic consume-transform-produce links read offsets with output topics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays the production exactly-once stream processing telemetry and fault injection audit."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors thousands of duplicate retries suppressed alongside sub-millisecond transaction commit latencies."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates financial-grade data integrity, zero lost records, and extreme cloud throughput."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies four hundred eighty microsecond latencies, zero duplicate payments, and production readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "At-Least-Once Delivery (No Idempotence)",
+        "rightLabel": "Exactly-Once Semantics with Transactions",
+        "leftHighlights": [
+          "Duplicate records on retries",
+          "Partial multi-topic writes",
+          "Dirty aborted reads",
+          "Manual ledger reconciliation"
+        ],
+        "rightHighlights": [
+          "Idempotent deduplication",
+          "Two-phase commit markers",
+          "Read-committed isolation",
+          "Sub-millisecond commit speed"
+        ]
+      }
+    }
+  ]
+}
