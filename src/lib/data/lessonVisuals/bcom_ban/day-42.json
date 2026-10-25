@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 42,
+  "entries": [
+    {
+      "partTitle": "The Institutional Letter of Credit Architecture & UCP 600 Principles",
+      "codeHash": "b0a80701d442fd5532d6df50bfbdc7a15341d9bec1ee0820ee08a013168b9b6f",
+      "spec": {
+        "template": "funnel",
+        "title": "The Institutional Letter of Credit Arc... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross border trade finance instruments categorized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Balancing commercial buyer risk against supplier terms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Documentary collections route shipping bills via banks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "International sales terms define cross border obligations.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Documentary Examination, Strict Compliance & ISBP 745 Standards",
+      "codeHash": "50d2c0f9ccdd6e8ebf2e2b81f02288447413a59fa93c7487e45cc82fc36ed5d8",
+      "spec": {
+        "template": "funnel",
+        "title": "Documentary Examination, Strict Compli... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Documentary letters of credit architecture structured.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Uniform customs and practice rules govern credit operations.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Irrevocable confirmed credits guarantee exporter payment.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Doctrine of strict compliance governs documentary review.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Specialized Letter of Credit Architectures & Standby LCs (ISP98)",
+      "codeHash": "3264d1a7a85e2c76a3a68442ff1a04ceb2e22fb5197a842e81a2d2a6aa8e04bb",
+      "spec": {
+        "template": "funnel",
+        "title": "Specialized Letter of Credit Architect... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Pre shipment export credit facilities deployed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Packing credit mobilizes working capital for production.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Export orders establish borrowing limits and eligibility.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Concessional interest schemes support domestic exporters.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pre-Shipment Packing Credit, Post-Shipment Financing & Interest Subvention",
+      "codeHash": "288373963b9a7ff868c905df988aaf0ab1dd45e6a21c3ce52b3b9d254b52e6c7",
+      "spec": {
+        "template": "funnel",
+        "title": "Pre-Shipment Packing Credit, Post-Ship... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Post shipment export bill discounting executed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Discounting accepted commercial bills accelerates cash flow.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated monitoring matches export receipts with filings.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Realization tracking safeguards export proceeds repatriation.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Enterprise Trade Finance Command & ECGC Default Resolution",
+      "codeHash": "f75d88cb7573fe79e7ce4512ae9e2bfdd9ff392f4916ccc91cacbd6c58b5adbe",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Enterprise Trade Finance... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Export credit guarantee corporation claims audited.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Turnover policies protect banks against default risks.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Insolvency insurance covers political and buyer defaults.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive trade credit underwriting minimizes loss.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
