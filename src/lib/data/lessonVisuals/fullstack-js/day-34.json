@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "fullstack-js",
+  "day": 34,
+  "promptSha": "ec02af660c44c823e3aad978affaf576087afe7086e2f381b265d8aa1d2cff50",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "AsyncLocalStorage (ALS) Fundamentals: Continuation Local Storage & Contextual Scoping Across Async Boundaries",
+      "codeHash": "a2d87a72ac5df985d38940fc2d271b9277dd90811d90078800f850edfcf81c55",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: AsyncLocalStorage (ALS) Fundamentals: Continuation Local Storage & Contextual Scoping Across Async Boundaries",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "W3C Trace Context Standard: traceparent Headers, trace_id, parent_id & Trace Flags",
+      "codeHash": "1792b946173c863de2f10d475a429fa9ba2fc88767bbd4804d0e1da4f258d83b",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: WC Trace Context Standard: traceparent Headers, trace_id, parent_id & Trace Flags",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Multi-Tenant Context Propagation & Database Connection Affinity: Tenant Isolation Without Argument Drilling",
+      "codeHash": "6b7811758228a9e8cd6ca5fbeb55a161f9c6899d9becdce90bb308b6fd145db2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Multi-Tenant Context Propagation & Database Connection Affinity: Tenant Isolation Without Argument Drilling",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "OpenTelemetry Auto-Instrumentation Architecture: Monkey-Patching, Diagnostics Channels & Context Managers",
+      "codeHash": "32b54ba297ffce610dee746a3ca115429c2a39c3479a3ceb03d54ffc1b2b8b36",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: OpenTelemetry Auto-Instrumentation Architecture: Monkey-Patching, Diagnostics Channels & Context Managers",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "High-Throughput ALS Performance Optimization: Avoiding Memory Retain Cycles & Context Serialization Pitfalls",
+      "codeHash": "23335eecf924b21f3385b06b379d1a9fa83ba31436e646551ac6e1ef69ff72ef",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: High-Throughput ALS Performance Optimization: Avoiding Memory Retain Cycles & Context Serialization Pitfalls",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    }
+  ]
+}

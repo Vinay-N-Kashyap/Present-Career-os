@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "fullstack-js",
+  "day": 31,
+  "promptSha": "9bb25bde5382097e41ee3158cb4e06b40774252a94d751ca2e369429be1e7346",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "V8 Compilation Pipeline: Ignition Bytecode, Sparkplug Baseline & Maglev/TurboFan JIT Optimizations",
+      "codeHash": "685a29394d8894b5d555ff4f4d4900c7432a5b4363bca93880c9159b6f73572e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: V Compilation Pipeline: Ignition Bytecode, Sparkplug Baseline & Maglev/TurboFan JIT Optimizations",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Object Representation & Hidden Classes: Shapes, Transitions, and In-Object vs Out-of-Object Properties",
+      "codeHash": "6e38a0fb5ac3e9b1c449b5a645a321fdc9d7a8f53c4b841f775cfe7d81b46c4e",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Object Representation & Hidden Classes: Shapes, Transitions, and In-Object vs Out-of-Object Properties",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Memory Layout & Garbage Collection: Semi-Space New Space (Scavenge/Cheney's Copying) & Mark-Sweep-Compact Old Space",
+      "codeHash": "33013b5f1986c25717d4b2d7b13d042929475c936209a040c932748a91ad5d3f",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Memory Layout & Garbage Collection: Semi-Space New Space (Scavenge/Cheney's Copying) & Mark-Sweep-Compact Old Space",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "libuv Event Loop Phases & Threadpool: UV_THREADPOOL_SIZE, Worker Pool Queues & File/Crypto Async Offloading",
+      "codeHash": "414a127f317afc64ac09f0b09d991c327f26528c7c3d076cc1a8a7221f1b32a5",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: libuv Event Loop Phases & Threadpool: UV_THREADPOOL_SIZE, Worker Pool Queues & File/Crypto Async Offloading",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Microtask Queues vs Macrotask Queues: process.nextTick Priority, Promise Resolution & Starvation Safeguards",
+      "codeHash": "f4968e0106c06374759ae59e4123f40818a9b868db357a52876d44a79dc45157",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Microtask Queues vs Macrotask Queues: process.nextTick Priority, Promise Resolution & Starvation Safeguards",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    }
+  ]
+}

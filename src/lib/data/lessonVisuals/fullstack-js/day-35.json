@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "prefix": "fullstack-js",
+  "day": 35,
+  "promptSha": "ff7c0ed90bfb467587f1beaad4b6b673a72b2ac0058a8e697b59e82678a6aa04",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Architecture Blueprint: High-Throughput Node.js Enterprise Core with Native C++ Vector Processing",
+      "codeHash": "f61ad51626a441ce80636edd550b963ba0ff97f99b7814888f0872a27080b817",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Architecture Blueprint: High-Throughput Node.js Enterprise Core with Native C++ Vector Processing",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "C++ Vector Computation & Zero-Copy Batch Ingestion Engine",
+      "codeHash": "cb517bc25595f09bcf962bea31218cf3bac823a85238ffcc4cf73d039e38314c",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: C++ Vector Computation & Zero-Copy Batch Ingestion Engine",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Distributed W3C Trace Context Propagation & OpenTelemetry Exporter Pipeline",
+      "codeHash": "962a3a230b354e51fb53c1dc7dd70f714b95655c755b7cfbda1b10f5776a6cf2",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Distributed WC Trace Context Propagation & OpenTelemetry Exporter Pipeline",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "Real-Time Event Loop Lag Sentry & HDR Histogram Latency Telemetry",
+      "codeHash": "abeff7b6aab56ab695bd344eb22140fc169516d06606e67f5bebf74cb4ad63d8",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: Real-Time Event Loop Lag Sentry & HDR Histogram Latency Telemetry",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    },
+    {
+      "partTitle": "The 5-Gate Enterprise Microservices Defense Matrix & Milestone 7 Certification",
+      "codeHash": "0359932c13e6f6f5d61fcaf91a749d006ee70bee1b4a6193f68d4668f84c7fcc",
+      "spec": {
+        "template": "compare",
+        "title": "System Architecture: The -Gate Enterprise Microservices Defense Matrix & Milestone Certification",
+        "left": {
+          "label": "Baseline / Unoptimized Pattern",
+          "content": [
+            "Monolithic execution pattern",
+            "High memory allocation overhead",
+            "Potential event loop starvation",
+            "Unmonitored runtime latencies"
+          ]
+        },
+        "right": {
+          "label": "Enterprise / Accelerated Architecture",
+          "content": [
+            "Tiered native acceleration",
+            "Zero-copy memory safety",
+            "Asynchronous continuation tracing",
+            "Autonomous latency sentinels"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates foundational subsystem boundaries and core execution pathways across the enterprise runtime environment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection reveals internal state transitions, memory layout structures, and asynchronous scheduling invariants."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation highlights performance characteristics, memory overhead tradeoffs, and latency guarantees."
+          },
+          {
+            "at": "verify",
+            "caption": "Comprehensive verification confirms deterministic execution, zero memory leaks, and complete adherence to enterprise invariants."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Baseline / Unoptimized Pattern",
+        "rightLabel": "Enterprise / Accelerated Architecture"
+      }
+    }
+  ]
+}
