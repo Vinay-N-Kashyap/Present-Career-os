@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 35,
+  "entries": [
+    {
+      "partTitle": "The Commercial Malpractice of Default 0.5 Thresholds: Asymmetric Business Costs",
+      "codeHash": "f6cc586132063bd9bfbc588fdff022149fb9d119ab4f89f01e5d9aa92ba12ad9",
+      "spec": {
+        "template": "bars",
+        "title": "The Commercial Malpractice of Default ... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core commercial mechanisms and malpractic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal commercial bounds across malpractic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical commercial rules and malpractic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying commercial calculations and malpractic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Mathematical Derivation of the Profit-Maximizing Threshold p*",
+      "codeHash": "8e05525375dfc014e2975a467c007dbb05e365be1833c99a80f372a9653637ef",
+      "spec": {
+        "template": "bars",
+        "title": "The Mathematical Derivation of the Pro... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core mathematic mechanisms and derivation concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal mathematic bounds across derivation systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical mathematic rules and derivation cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying mathematic calculations and derivation outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expected Value Framework & Cost-Utility Curves: Beyond ROC-AUC",
+      "codeHash": "41a41cf94d168fe8a9d160915db7f285437d3837441cb1a46ff0f99801f315c3",
+      "spec": {
+        "template": "bars",
+        "title": "Expected Value Framework & Cost-Utilit... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core expected mechanisms and value concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal expected bounds across value systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical expected rules and value cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying expected calculations and value outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Uplift Modeling & Causal Machine Learning: Targeting the 'Persuadables'",
+      "codeHash": "134549fa80a29b3ee34286749c1990877e8491c273ecc85fe27f5ddf32b4fe14",
+      "spec": {
+        "template": "bars",
+        "title": "Uplift Modeling & Causal Machine Learn... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core uplift mechanisms and modeling concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal uplift bounds across modeling systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical uplift rules and modeling cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying uplift calculations and modeling outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Profit-Maximizing Churn & Retention Suite in Python (Milestone 7 Capstone)",
+      "codeHash": "6dd3a6d47b2380763516597437246e1aaa1feac6fe42d51d605299b7e8f7b667",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise Profit-Maximizi... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

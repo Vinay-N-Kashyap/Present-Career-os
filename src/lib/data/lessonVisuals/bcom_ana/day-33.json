@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 33,
+  "entries": [
+    {
+      "partTitle": "Recursive Binary Splitting, Gini Impurity & Information Gain in Decision Trees",
+      "codeHash": "cab8ad458ab5f4fcc3b67cc92102d9244e0d3952610b2bac402a281b4d9a1a37",
+      "spec": {
+        "template": "bars",
+        "title": "Recursive Binary Splitting, Gini Impur... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core recursive mechanisms and binary concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal recursive bounds across binary systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical recursive rules and binary cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying recursive calculations and binary outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Instability of Single Trees: High Variance, Overfitting & Cost-Complexity Pruning",
+      "codeHash": "146156ff8d9d3cde6c0157f878078353148378b3c3fd3c032663bd588303ae8e",
+      "spec": {
+        "template": "bars",
+        "title": "The Instability of Single Trees: High ... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core instabilit mechanisms and single concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal instabilit bounds across single systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical instabilit rules and single cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying instabilit calculations and single outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bootstrap Aggregation (Bagging): Mathematical Proof of Variance Reduction",
+      "codeHash": "d89a2586eb7b6cfbfeef499f90a031d15f715dad2b6a4ef8e0e8654ca5f2729a",
+      "spec": {
+        "template": "bars",
+        "title": "Bootstrap Aggregation (Bagging): Mathe... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core bootstrap mechanisms and aggregatio concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal bootstrap bounds across aggregatio systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical bootstrap rules and aggregatio cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying bootstrap calculations and aggregatio outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Random Forests & Feature Randomization: Slashing Tree Correlation rho & OOB Estimation",
+      "codeHash": "3915de1ababd583596cc0e0c0a13cfb6e9ef35c233359c0aaefc12b779a5b140",
+      "spec": {
+        "template": "bars",
+        "title": "Random Forests & Feature Randomization... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core random mechanisms and forests concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal random bounds across forests systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical random rules and forests cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying random calculations and forests outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Random Forest Classifier with OOB Scoring in Python",
+      "codeHash": "a7214242666f49c6f0e1ea29152f363e5bf3559d5605bcbc11ee349dd69a61bc",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise Random Forest C... \u2014 Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
