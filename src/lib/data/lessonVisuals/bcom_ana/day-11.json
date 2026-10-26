@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 11,
+  "entries": [
+    {
+      "partTitle": "Sigmoid Mechanics, Logit Link Function & Maximum Likelihood Estimation",
+      "codeHash": "05d703194b997cbdec32f1289366d32034d1ce6c7e19c1ab1e6079755e1c3dbc",
+      "spec": {
+        "template": "bars",
+        "title": "Sigmoid Mechanics, Logit Link Function... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core sigmoid mechanisms and mechanics concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal sigmoid bounds across mechanics systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical sigmoid rules and mechanics cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying sigmoid calculations and mechanics outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Odds Ratios, Multiplicative Risk & Exponentiated Coefficients in Credit Default",
+      "codeHash": "f11a61ec001df35e3c0f232c49ab7c9760702734b8658b67ff6d5b100cd2bb67",
+      "spec": {
+        "template": "bars",
+        "title": "Odds Ratios, Multiplicative Risk & Exp... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core odds mechanisms and ratios concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal odds bounds across ratios systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical odds rules and ratios cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying odds calculations and ratios outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Classification Thresholds, Confusion Matrix & Asymmetric Cost Optimization",
+      "codeHash": "0f578ad182b4de92bbc797bdfb9839ba01fc43f8955ee824eacb0523b84bfc38",
+      "spec": {
+        "template": "bars",
+        "title": "Classification Thresholds, Confusion M... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core classifica mechanisms and thresholds concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal classifica bounds across thresholds systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical classifica rules and thresholds cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying classifica calculations and thresholds outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ROC Curves, AUC Invariants & Precision-Recall Trade-offs in Severe Imbalance",
+      "codeHash": "105b4c8ff52c291f0c28a9e51ee91034e9a209bc38ff8eacd5249384b00efa24",
+      "spec": {
+        "template": "bars",
+        "title": "ROC Curves, AUC Invariants & Precision... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core curves mechanisms and invariants concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal curves bounds across invariants systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical curves rules and invariants cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying curves calculations and invariants outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Corporate Credit Scoring Engine, Boardroom Governance & Diagnostic Outages",
+      "codeHash": "263a40581346016721a403e7ad3c3a49083cfc4d457c5e550942d0f00910c2ec",
+      "spec": {
+        "template": "bars",
+        "title": "Corporate Credit Scoring Engine, Board... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core corporate mechanisms and credit concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal corporate bounds across credit systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical corporate rules and credit cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying corporate calculations and credit outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

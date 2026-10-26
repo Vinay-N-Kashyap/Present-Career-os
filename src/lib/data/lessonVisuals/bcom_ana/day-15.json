@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 15,
+  "entries": [
+    {
+      "partTitle": "Tufte Data-Ink Ratio, Cognitive Load & The Preattentive Processing Pipeline",
+      "codeHash": "3533697929a8ebe088c3b8118a5a25ff33167df171226e37a5f2151864b0d5ff",
+      "spec": {
+        "template": "bars",
+        "title": "Tufte Data-Ink Ratio, Cognitive Load &... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core tufte mechanisms and dataink concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal tufte bounds across dataink systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical tufte rules and dataink cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying tufte calculations and dataink outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Visual Lie Factor, Truncated Axes & Distorted Narrative Detection",
+      "codeHash": "10488e1283b2c22e9a3218a17d74e6f806fc38d5195a2c59b2a67649b959c5dd",
+      "spec": {
+        "template": "bars",
+        "title": "Visual Lie Factor, Truncated Axes & Di... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core visual mechanisms and factor concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal visual bounds across factor systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical visual rules and factor cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying visual calculations and factor outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Layout Hierarchy: 5-Second Executive Rule, F-Pattern Scanning & Micro-Charts",
+      "codeHash": "b32cd922f7c393cbd56354fd4b5359443e6dfea5de3e74332ab794d431d879c1",
+      "spec": {
+        "template": "bars",
+        "title": "Layout Hierarchy: 5-Second Executive R... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core layout mechanisms and hierarchy concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal layout bounds across hierarchy systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical layout rules and hierarchy cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying layout calculations and hierarchy outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Dashboard Architecture: Filtering, Drill-Downs & Latency Constraints",
+      "codeHash": "9736643b2526ce74ca20fb836b70ea1801feb9007dd30fda4e272801796d47e4",
+      "spec": {
+        "template": "bars",
+        "title": "Interactive Dashboard Architecture: Fi... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core interactiv mechanisms and dashboard concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal interactiv bounds across dashboard systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical interactiv rules and dashboard cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying interactiv calculations and dashboard outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 1 Grand Boardroom Review: Decision Intelligence Operating System",
+      "codeHash": "6be297a06d708f15c1ac8b3e104a2b0f197be05b72553be4fd6b1b0e087f6e41",
+      "spec": {
+        "template": "bars",
+        "title": "Milestone 1 Grand Boardroom Review: De... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core milestone mechanisms and grand concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal milestone bounds across grand systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical milestone rules and grand cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying milestone calculations and grand outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

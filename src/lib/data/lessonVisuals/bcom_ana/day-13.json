@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 13,
+  "entries": [
+    {
+      "partTitle": "Triangle Cohort Matrices & Longitudinal Retention Physics",
+      "codeHash": "4d0123d1afcea141d80e0be4b627626d88a7fc01ce746f97ff2dda626c28ec5d",
+      "spec": {
+        "template": "bars",
+        "title": "Triangle Cohort Matrices & Longitudina... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core triangle mechanisms and cohort concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal triangle bounds across cohort systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical triangle rules and cohort cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying triangle calculations and cohort outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Gross Retention Rate (GRR) vs Net Retention Rate (NRR) Compounding Dynamics",
+      "codeHash": "a6ec8ce0e34ccdc972be84769d8c616b9e529b5240de5619e812948b7deaa31b",
+      "spec": {
+        "template": "bars",
+        "title": "Gross Retention Rate (GRR) vs Net Rete... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core gross mechanisms and retention concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal gross bounds across retention systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical gross rules and retention cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying gross calculations and retention outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hazard Functions, Kaplan-Meier Survival Analysis & Churn Velocity",
+      "codeHash": "0426e727fc5bfab06f20c4b2031984726ea2bdfac025282e6e5c7c9799664191",
+      "spec": {
+        "template": "bars",
+        "title": "Hazard Functions, Kaplan-Meier Surviva... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core hazard mechanisms and functions concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal hazard bounds across functions systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical hazard rules and functions cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying hazard calculations and functions outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Negative Churn Economics, Account Expansion & Cohort Decay Anomalies",
+      "codeHash": "30e969c01b7fc161f913c940ac6d785379a490e02985e756eccbb7ff60e64bec",
+      "spec": {
+        "template": "bars",
+        "title": "Negative Churn Economics, Account Expa... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core negative mechanisms and churn concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal negative bounds across churn systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical negative rules and churn cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying negative calculations and churn outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Boardroom Retention Scorecards & Executive Churn Mitigation Playbooks",
+      "codeHash": "b31302921d73caf757b49f816fef87412519cced51f72cddd245ba5fad4938ba",
+      "spec": {
+        "template": "bars",
+        "title": "Boardroom Retention Scorecards & Execu... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core boardroom mechanisms and retention concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal boardroom bounds across retention systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical boardroom rules and retention cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying boardroom calculations and retention outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

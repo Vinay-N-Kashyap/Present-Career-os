@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 14,
+  "entries": [
+    {
+      "partTitle": "Curse of Dimensionality, Covariance Matrices & Eigen-Decomposition Physics",
+      "codeHash": "fe03ada8b0bda30f3644c4a67b10a7ed77f4f90415cb4a58ea4c4247fcb2bedb",
+      "spec": {
+        "template": "bars",
+        "title": "Curse of Dimensionality, Covariance Ma... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core curse mechanisms and dimensiona concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal curse bounds across dimensiona systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical curse rules and dimensiona cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying curse calculations and dimensiona outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum Variance Projections & Orthogonal Coordinate Transformation",
+      "codeHash": "5488722a47ed330b581203dca2bd9298601490a501ea66e610aa249908fbb219",
+      "spec": {
+        "template": "bars",
+        "title": "Maximum Variance Projections & Orthogo... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core maximum mechanisms and variance concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal maximum bounds across variance systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical maximum rules and variance cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying maximum calculations and variance outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scree Plots, Kaiser Criterion & Cumulative Explained Variance Diagnostics",
+      "codeHash": "8917faafb6d3c9a9428035832bd65577ed620aa2bc5004584f8b69795d7b0fb6",
+      "spec": {
+        "template": "bars",
+        "title": "Scree Plots, Kaiser Criterion & Cumula... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core scree mechanisms and plots concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal scree bounds across plots systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical scree rules and plots cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying scree calculations and plots outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Factor Loading Interpretability, Communalities & Varimax Rotation",
+      "codeHash": "ba983d2fe0c3bfd6081517f07f265a4d4ffd6480fddaabe8acceee4999ea6349",
+      "spec": {
+        "template": "bars",
+        "title": "Factor Loading Interpretability, Commu... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core factor mechanisms and loading concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal factor bounds across loading systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical factor rules and loading cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying factor calculations and loading outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Composite Customer Health Index Engineering & Executive Dimensional Compression",
+      "codeHash": "36ca5b0cf59348f13c80b87c6f025b9924d38a740ce33f5f8b5fbb328da0fabd",
+      "spec": {
+        "template": "bars",
+        "title": "Composite Customer Health Index Engine... \u2014 Quantitative Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core composite mechanisms and customer concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal composite bounds across customer systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 80,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 76,
+                "tone": "data"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 72,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 84,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical composite rules and customer cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 85,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 88,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying composite calculations and customer outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Precision Metric",
+                "value": 90,
+                "tone": "ok"
+              },
+              {
+                "label": "Recall Coverage",
+                "value": 88,
+                "tone": "idle"
+              },
+              {
+                "label": "Operating Margin",
+                "value": 86,
+                "tone": "ok"
+              },
+              {
+                "label": "Decision Impact",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
