@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "Counterfeit Risk Scoring & Multimodal Anomaly Detection",
-      "codeHash": "0290583b5035ecb4a26a837c4c14a5cd4e4f8b9f55915ad969e8d4ed0252e4b7",
+      "codeHash": "b064c5d74bb49816183125bfb50b3cce391c896f28521630f4b2da36774ce203",
       "spec": {
         "template": "funnel",
-        "title": "Counterfeit Risk Scoring & Multimodal Anomaly Detection",
+        "title": "Day 59 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Strategy Evaluation",
-            "caption": "Architecture strategy engines evaluate modular composability indexes.",
-            "data": {
-              "stage": "evaluation",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Counterfeit risk scoring engines evaluate multi factor threat signals.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Architecture Analysis",
-            "caption": "High scale and customization demands favor decoupled microservices.",
-            "data": {
-              "stage": "analysis",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Extreme price discounts on luxury goods trigger high severity warnings.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Migration Routing",
-            "caption": "Modular service boundaries eliminate monolithic deployment friction.",
-            "data": {
-              "stage": "migration",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "New seller tenure and suspicious shipping corridors escalate risk flags.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Scalability Verification",
-            "caption": "Configured matrices recommend optimal enterprise architectural styles.",
-            "data": {
-              "stage": "governance",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Automated quarantine protocols intercept illicit goods before publication.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Review Fraud Detection, Brushing Rings & Collusive Cluster Analysis",
-      "codeHash": "231fad738aa43b3bf0a8b11769e646129c5b77b250bcb8bcd4f9fdcea0c1e9c3",
+      "codeHash": "b09b552931065a9d64d9c5745c45c68b92357759317a6945cac10af00fcb80a5",
       "spec": {
         "template": "funnel",
-        "title": "Review Fraud Detection, Brushing Rings & Collusive Cluster Analysis",
+        "title": "Day 59 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Strategy Evaluation",
-            "caption": "Intelligent routing gateways manage incremental platform modernization.",
-            "data": {
-              "stage": "evaluation",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Review fraud detection engines uncover coordinated brushing campaigns.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Architecture Analysis",
-            "caption": "Canary traffic controllers route percentage slices to modern endpoints.",
-            "data": {
-              "stage": "analysis",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "High ratios of unverified purchases and burst review spikes raise alerts.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Migration Routing",
-            "caption": "Decoupled domain migrations proceed without downtime or service breaks.",
-            "data": {
-              "stage": "migration",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Linguistic text entropy algorithms identify duplicate template phrases.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Scalability Verification",
-            "caption": "Fallback routing rules preserve legacy monolith stability during cutovers.",
-            "data": {
-              "stage": "governance",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Graph analytics isolate and neutralize collusive review syndicates.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Automated Notice-and-Takedown Pipelines & Regulatory Compliance (DMCA / EU DSA)",
-      "codeHash": "126f2a88058ff70fd0798c193e677ed559d7736bce199f952c30039c6a5a677a",
+      "codeHash": "331344894d7c58880f64583771b6f0414f1a6fc9c675505cf6844fdbf839432f",
       "spec": {
         "template": "funnel",
-        "title": "Automated Notice-and-Takedown Pipelines & Regulatory Compliance (DMCA / EU DSA)",
+        "title": "Day 59 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Strategy Evaluation",
-            "caption": "Total cost of ownership financial models compare platform architectures.",
-            "data": {
-              "stage": "evaluation",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Notice and takedown compliance gates process formal infringement claims.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Architecture Analysis",
-            "caption": "Consumption software subscriptions lower fixed recurring annual costs.",
-            "data": {
-              "stage": "analysis",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Sworn trademark infringement declarations trigger expedited suspensions.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Migration Routing",
-            "caption": "Elastic serverless cloud hosting eliminates idle compute waste.",
-            "data": {
-              "stage": "migration",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Automated statutory notifications initiate counter notice windows.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Scalability Verification",
-            "caption": "Decoupled software architectures generate massive multi year savings.",
-            "data": {
-              "stage": "governance",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Expeditious takedown execution preserves essential safe harbor immunity.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Cryptographic Serial Number Verification & Blockchain Provenance Ledgers",
-      "codeHash": "25aa4d46ee23232edefbc27aa68d76d49ad482899f2fe152596c5fa8126c1d12",
+      "codeHash": "0a2ed3a1ab4393a7c09b989c89fc8343612e70e9d4e43bf1bb2e4c9c592a6924",
       "spec": {
         "template": "funnel",
-        "title": "Cryptographic Serial Number Verification & Blockchain Provenance Ledgers",
+        "title": "Day 59 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Strategy Evaluation",
-            "caption": "High concurrency scalability models evaluate peak holiday surge volumes.",
-            "data": {
-              "stage": "evaluation",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Cryptographic provenance verifiers inspect digital product passports.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Architecture Analysis",
-            "caption": "Global edge caching terminates static read traffic at the perimeter.",
-            "data": {
-              "stage": "analysis",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Brand master keys generate unique digital signatures for serial numbers.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Migration Routing",
-            "caption": "Asynchronous queue buffers protect transactional databases from load.",
-            "data": {
-              "stage": "migration",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Mathematical verification blocks forged counterfeit certificates easily.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Scalability Verification",
-            "caption": "Surge resilient systems maintain healthy compute capacity headroom.",
-            "data": {
-              "stage": "governance",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Digital passport ownership transfers seamlessly upon consumer checkout.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise Trust & Safety Operations Observatory & Ecosystem Health Audit",
-      "codeHash": "e51c50e7a990159f4a907efafb45812a95bf3c9e6c105e982f1f3edf08489082",
+      "codeHash": "6a25b2febb594b3955212b6ad3dc895e01f3236d7cff4aed38c9529f9552a372",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Trust & Safety Operations Observatory & Ecosystem Health Audit",
+        "title": "Day 59 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Strategy Evaluation",
-            "caption": "Architecture command towers monitor enterprise microservice portfolios.",
-            "data": {
-              "stage": "evaluation",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Trust and safety fleet observatories monitor platform health metrics.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Architecture Analysis",
-            "caption": "Rapid incident recovery maintains uninterrupted global retail uptime.",
-            "data": {
-              "stage": "analysis",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Consumer fraud dispute rates remain strictly below industry thresholds.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Migration Routing",
-            "caption": "Migration milestones track decoupling velocity toward modern stacks.",
-            "data": {
-              "stage": "migration",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Expedited takedown resolutions protect brand intellectual property.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Scalability Verification",
-            "caption": "Disciplined architecture governance certifies apex enterprise status.",
-            "data": {
-              "stage": "governance",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Comprehensive trust telemetry confers apex trusted marketplace status.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }

@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "Tier 1: Ingestion & Catalog Architecture: Multi-Vendor Ingestion, GS1 Deduplication & Canonical PIM Master Federation",
-      "codeHash": "abc81d8f4f4fd84068d2aac8265e6ea281c353ed922ace54791401cec45a58d4",
+      "codeHash": "5a8a7cf9488d79873fd2a34bf16c2da6b37fb32be9e220ecab9ce16adb7feb2c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Ingestion & Catalog Architecture: Multi-Vendor Ingestion, GS1 Deduplication & Canonical PIM Master Federation",
+        "title": "Day 60 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Synthesis Intake",
-            "caption": "Payment orchestration platforms evaluate multi acquirer approval rates.",
-            "data": {
-              "stage": "tier1",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "The grand capstone synthesizes enterprise multi vendor catalog intake.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Trade & Logistics",
-            "caption": "Multi party escrow sub accounts hold merchant disbursements securely.",
-            "data": {
-              "stage": "tier2",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Asynchronous gates isolate defective rows while accepting clean items.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Omnichannel Routing",
-            "caption": "Automated delivery confirmations release verified seller disbursements.",
-            "data": {
-              "stage": "tier3",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Universal barcode deduplication consolidates offers into master records.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Grand Defense",
-            "caption": "Integrated fraud engines eliminate unauthorized chargeback liabilities.",
-            "data": {
-              "stage": "accreditation",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Streaming change data capture maintains sub second search synchronization.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Tier 2: Marketplace Financial Clearing: Multi-Party Split Payments, Dynamic Take Rates & Regulatory Escrow",
-      "codeHash": "d1375746c3b685ecae2a1ba491ec23272f1e6b43a6f83f3c15d05a9cc4456843",
+      "codeHash": "6921c103c69b9ec55563a326b3f712463e0a49b7eee2cbcbbe4e1c0c7273abb4",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Marketplace Financial Clearing: Multi-Party Split Payments, Dynamic Take Rates & Regulatory Escrow",
+        "title": "Day 60 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Synthesis Intake",
-            "caption": "Customs classification engines determine accurate destination tariffs.",
-            "data": {
-              "stage": "tier1",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Multi party financial clearinghouses capture unified consumer payments.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Trade & Logistics",
-            "caption": "Compounded consumption tax bases ensure flawless duty paid arrivals.",
-            "data": {
-              "stage": "tier2",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Variable category waterfalls compute platform take rate commissions.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Omnichannel Routing",
-            "caption": "Electronic duty drawback dossiers recover previously paid customs fees.",
-            "data": {
-              "stage": "tier3",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Segregated custodial escrow accounts hold regulatory rolling reserves.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Grand Defense",
-            "caption": "Pre cleared air manifests deliver frictionless international fulfillment.",
-            "data": {
-              "stage": "accreditation",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Near zero clearing variances confirm exemplary financial discipline.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Tier 3: Seller Governance & Buy Box Optimization: Algorithmic Scorecards, ODR Enforcement & Multi-Factor Buy Box Allocation",
-      "codeHash": "34f648c54c14f1c7c4683309a391013f02ae4b4e7af93bb2e92cdce78ae1ebb0",
+      "codeHash": "c641e8e965ac218058ffd56913c92bea1a44d3024175d758f9e8b693638fc677",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Seller Governance & Buy Box Optimization: Algorithmic Scorecards, ODR Enforcement & Multi-Factor Buy Box Allocation",
+        "title": "Day 60 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Synthesis Intake",
-            "caption": "Omnichannel routing engines calculate single source store availability.",
-            "data": {
-              "stage": "tier1",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Algorithmic seller scorecards continuously track fulfillment defect rates.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Trade & Logistics",
-            "caption": "Localized store fulfillment slashes last mile parcel freight expenses.",
-            "data": {
-              "stage": "tier2",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Multi factor scoring functions evaluate price speed and seller reputation.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Omnichannel Routing",
-            "caption": "In store mobile apps guide associates along optimal walking paths.",
-            "data": {
-              "stage": "tier3",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Dynamic Buy Box allocations reward high performing merchant offers.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Grand Defense",
-            "caption": "Express curbside handoffs complete delivery directly into vehicle trunks.",
-            "data": {
-              "stage": "accreditation",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Meritocratic allocation algorithms drive maximum customer retention.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Tier 4: Trust & Safety, Counterfeit Defense & DSA Compliance: Pre-Publish Risk Scoring, Review Brushing Interception & Digital Product Passports",
-      "codeHash": "2af920904ae7346052118fd576adacc0154f707e7db1ee60cba9c2fcfef09d05",
+      "codeHash": "8d0fa308695799ef4fb3fbeecc6469172ec24e8eaaaba254d53c738466633f23",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Trust & Safety, Counterfeit Defense & DSA Compliance: Pre-Publish Risk Scoring, Review Brushing Interception & Digital Product Passports",
+        "title": "Day 60 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Synthesis Intake",
-            "caption": "Streaming ingestion gateways validate incoming customer click events.",
-            "data": {
-              "stage": "tier1",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Multimodal defense perimeters intercept counterfeit listings pre publish.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Trade & Logistics",
-            "caption": "Identity graph resolvers map anonymous cookies to authenticated accounts.",
-            "data": {
-              "stage": "tier2",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Review fraud algorithms dismantle collusive brushing syndicates swiftly.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Omnichannel Routing",
-            "caption": "Predictive lifetime value models project future customer margins.",
-            "data": {
-              "stage": "tier3",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Notice and takedown compliance gates resolve claims in sub four hours.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Grand Defense",
-            "caption": "Edge feature stores personalize shopping journeys with low latency.",
-            "data": {
-              "stage": "accreditation",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Cryptographic digital product passports verify authentic provenance.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Tier 5: Executive Boardroom Defense, $28.3M ROI Valuation & Grand Master DCCA-GEPA Accreditation",
-      "codeHash": "6e42dc67da0c94e6eea07c245b5560f79dd902f06067da73f5b6c01da1eed51c",
+      "codeHash": "2fb13e7b29089da4208b61e5e3c61619574b06de999df1a0088700b998aa489c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Executive Boardroom Defense, $28.3M ROI Valuation & Grand Master DCCA-GEPA Accreditation",
+        "title": "Day 60 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Synthesis Intake",
-            "caption": "The grand master capstone board evaluates total enterprise commerce yield.",
-            "data": {
-              "stage": "tier1",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "The executive boardroom defense reviews total enterprise value creation.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Trade & Logistics",
-            "caption": "Payment and trade optimization preserve multi million operating margins.",
-            "data": {
-              "stage": "tier2",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Catalog deduplication and treasury clearing deliver massive cash yields.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Omnichannel Routing",
-            "caption": "Omnichannel store fulfillment and data platforms maximize lifetime value.",
-            "data": {
-              "stage": "tier3",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Fraud dispute avoidance and regulatory shields defend operating margins.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Grand Defense",
-            "caption": "The defense certifies chief commerce technology officer grand master.",
-            "data": {
-              "stage": "accreditation",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "The defense confers distinguished chief commerce architect accreditation.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }

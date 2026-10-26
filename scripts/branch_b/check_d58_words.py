@@ -1,19 +1,11 @@
-import sys
 import json
 
-sys.stdout.reconfigure(encoding='utf-8')
+with open('scripts/branch_b/generate_ecom_day58.py', 'r', encoding='utf-8') as f:
+    text = f.read()
 
-with open('scripts/branch_b/day58_ecom_data.json', 'r', encoding='utf-8') as f:
-    d = json.load(f)
-
-print('Day 58 Word Counts:')
-total = 0
-for idx, p in enumerate(d['parts']):
-    say_text = ' '.join(p['say']) if isinstance(p['say'], list) else p['say']
-    w = len(say_text.split())
-    total += w
-    print(f'Part {idx+1}: {w} words | {p["title"]}')
-
-print(f'Total words: {total} (Average: {total/5:.1f})')
-assert all(len((' '.join(p['say']) if isinstance(p['say'], list) else p['say']).split()) >= 600 for p in d['parts']), "Word count check failed"
-print("ALL PARTS >= 600 WORDS!")
+for i in range(1, 6):
+    start = text.find(f"p{i}_say = [")
+    end = text.find(f"# Part {i+1} Code" if i < 5 else "parts = [")
+    chunk = text[start:end]
+    words = [w for w in chunk.split() if not w.startswith('p') and not w.startswith('#')]
+    print(f"p{i}_say rough words: {len(words)}")

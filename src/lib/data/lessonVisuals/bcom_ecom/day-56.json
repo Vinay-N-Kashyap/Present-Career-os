@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
-      "codeHash": "1176ea46b1d6425cbf8bcc39ac80a5133238623c6556e644d813cd1973fa3818",
+      "codeHash": "1ecbaf53b346dbfb49a0c9433ed36cb19c75dee771f85516c485da2ec6cf830c",
       "spec": {
         "template": "funnel",
-        "title": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
+        "title": "Day 56 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Identity Ingestion",
-            "caption": "Automated onboarding gates ingest prospective merchant identity data.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Marketplace onboarding gates ingest seller business attestation records.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Sanctions Verification",
-            "caption": "Real time sanctions screening filters entities against watchlists.",
-            "data": {
-              "stage": "audit",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Sanctions list screenings intercept prohibited legal entities immediately.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Performance Scoring",
-            "caption": "Corporate registries verify active business legal standing records.",
-            "data": {
-              "stage": "evaluation",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Beneficial ownership records establish verified corporate provenance.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Listing Activation",
-            "caption": "Verified banking verification unlocks approved merchant selling access.",
-            "data": {
-              "stage": "settlement",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Cleared seller entities receive automated marketplace selling status.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
-      "codeHash": "663235661924b6f7e768749841c3daab13fd1bad943fa552ba219c352c122a13",
+      "codeHash": "9afb974ada6f347674285da450e211b8d987e7cb03ca0ae35e2d9cba22c9ba9d",
       "spec": {
         "template": "funnel",
-        "title": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
+        "title": "Day 56 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Identity Ingestion",
-            "caption": "Seller scorecards calculate rolling order defect rate indicators.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Continuous seller scorecards evaluate operational fulfillment health.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Sanctions Verification",
-            "caption": "Carrier acceptance scans track physical dispatch SLA timestamps.",
-            "data": {
-              "stage": "audit",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Order defect rate metrics track cancellation and dispatch failures.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Performance Scoring",
-            "caption": "Defect rates below statutory limits preserve merchant account health.",
-            "data": {
-              "stage": "evaluation",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Breaching defect rate boundaries triggers algorithmic listing throttles.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Listing Activation",
-            "caption": "Automated warnings notify sellers of operational defect thresholds.",
-            "data": {
-              "stage": "settlement",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Probationary seller profiles require formal remediation plan approvals.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "GraphQL Federation & Distributed Subgraph Entity Resolution",
-      "codeHash": "b14c67d05c827f67809614d58659df54c1e1ffbce53844b343755fe74693d4e8",
+      "codeHash": "e722ea2d44761984b573962ed21010a66dc76437f2f5feaebf38a3cfe4f03c8f",
       "spec": {
         "template": "funnel",
-        "title": "GraphQL Federation & Distributed Subgraph Entity Resolution",
+        "title": "Day 56 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Identity Ingestion",
-            "caption": "Dynamic buy box ranking engines evaluate competitive merchant offers.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Multi factor Buy Box engines rank competing merchant offers in real time.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Sanctions Verification",
-            "caption": "Landed pricing combines base merchandise with domestic shipping cost.",
-            "data": {
-              "stage": "audit",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Landed product pricing and fast fulfillment speeds earn primary weights.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Performance Scoring",
-            "caption": "Fast delivery transit and positive feedback score higher rankings.",
-            "data": {
-              "stage": "evaluation",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Merchant reputation and pristine defect histories secure winning placement.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Listing Activation",
-            "caption": "Winning offers capture prime placement on product catalog storefronts.",
-            "data": {
-              "stage": "settlement",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Dynamic allocation algorithms drive superior customer conversion rates.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
-      "codeHash": "7d4c3e0abfe0df35d26b47d3477b203a14bf6970e95b71781a570a28a97fd1f6",
+      "codeHash": "d771abd607ec24089d6e5579d5b2ea7f420e0ecbac35e2cc231a4134ea7fa371",
       "spec": {
         "template": "funnel",
-        "title": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
+        "title": "Day 56 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Identity Ingestion",
-            "caption": "Suspension state machines hold listings upon operational SLA breaches.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Seller suspension pipelines trigger automated enforcement interventions.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Sanctions Verification",
-            "caption": "Transparent statements of reasons communicate detailed failure causes.",
-            "data": {
-              "stage": "audit",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Severe policy breaches freeze active listings and payout authorizations.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Performance Scoring",
-            "caption": "Structured plans of action detail permanent operational corrections.",
-            "data": {
-              "stage": "evaluation",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Structured appeal workflows ingest formal merchant plans of action.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Listing Activation",
-            "caption": "Approved remediation dossiers restore normal selling authorization.",
-            "data": {
-              "stage": "settlement",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Verified remediation documentation restores merchant catalog privileges.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise Composable Headless Gateway & Federation Command Tower",
-      "codeHash": "1eb1803446ae6d2bf5d1cb1a1632b5cda3d5332441b150ed11a2abb3762cf117",
+      "codeHash": "5d7d3000ac454c4c83434fbd74537815b64046eec30bd7aac2a3a24e571b6851",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Composable Headless Gateway & Federation Command Tower",
+        "title": "Day 56 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Identity Ingestion",
-            "caption": "Marketplace command towers monitor global merchant operational health.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Seller operations command towers monitor marketplace fleet compliance.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Sanctions Verification",
-            "caption": "Fleet defect rates remain below strict consumer protection targets.",
-            "data": {
-              "stage": "audit",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Automated fleet audits maintain healthy fulfillment performance levels.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Performance Scoring",
-            "caption": "High buy box health preserves customer checkout conversion velocity.",
-            "data": {
-              "stage": "evaluation",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "High performing merchant cohorts capture dominant platform sales volume.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Listing Activation",
-            "caption": "Rapid appeal resolution maintains fair merchant platform relationships.",
-            "data": {
-              "stage": "settlement",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Continuous operational reviews certify master marketplace seller health.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }

@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "Programmatic Catalog Architecture, Dynamic Faceted URLs & Canonical Indexation Controls",
-      "codeHash": "2cd656de9acdb96ff69439f2dca900e13ac5e66d2757b15ec371d48408c5d425",
+      "codeHash": "a50a05821c2203286822075390d2ce482de1d3ff8d98d0b93e76d0bbfe5d5b9b",
       "spec": {
         "template": "funnel",
-        "title": "Programmatic Catalog Architecture, Dynamic Faceted URLs & Canonical Indexation Controls",
+        "title": "Day 57 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Inventory Ingestion",
-            "caption": "Unified inventory engines aggregate real time enterprise stock pools.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Multi party checkout engines capture unified customer payment charges.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Buffer Allocation",
-            "caption": "Dynamic safety stock buffers shield store inventories from walk ins.",
-            "data": {
-              "stage": "allocation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Parent payment authorizations split into atomic child merchant transfers.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Route Optimization",
-            "caption": "Available to promise calculations reserve confirmed customer orders.",
-            "data": {
-              "stage": "routing",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Processing fees and commission deductions are allocated transparently.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Store Fulfillment",
-            "caption": "Configured thresholds prevent online stockouts and phantom orders.",
-            "data": {
-              "stage": "fulfillment",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Idempotent payment orchestrators prevent duplicate fund movements.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Schema.org Structured Data, JSON-LD Rich Snippet Generation & Product Offer Compliance",
-      "codeHash": "46fe1dc6ac16d7a09850f298562c9c400e1471f9fdbed9bc028bbd7ce9cab3d4",
+      "codeHash": "76dce3497e2d694469aa4d2df8cb8d42a79794c437edf4b1c93571387b11e9b3",
       "spec": {
         "template": "funnel",
-        "title": "Schema.org Structured Data, JSON-LD Rich Snippet Generation & Product Offer Compliance",
+        "title": "Day 57 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Inventory Ingestion",
-            "caption": "Distributed order management evaluates multi node candidate paths.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Dynamic commission waterfall engines calculate category take rates.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Buffer Allocation",
-            "caption": "Single source routing filters identify complete package fulfillment.",
-            "data": {
-              "stage": "allocation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "High margin categories absorb higher baseline platform commissions.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Route Optimization",
-            "caption": "Proximity and shipping cost ranking eliminates duplicate packages.",
-            "data": {
-              "stage": "routing",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Rolling merchant sales volume tiers unlock progressive fee rebates.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Store Fulfillment",
-            "caption": "Optimal fulfillment allocation slashes last mile parcel freight.",
-            "data": {
-              "stage": "fulfillment",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Minimum closing fee floors protect platforms on low value transactions.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Server-Side Rendering (SSR), Incremental Static Regeneration (ISR) & Edge Hydration",
-      "codeHash": "1dded6320938545e50bb09b238441160839a24c14690c79644aeec7a54bf8ce0",
+      "codeHash": "50ab90f3a53bd3fad71ac2cc03864e7b3c17c60f0800d8bb0cf861110387c47d",
       "spec": {
         "template": "funnel",
-        "title": "Server-Side Rendering (SSR), Incremental Static Regeneration (ISR) & Edge Hydration",
+        "title": "Day 57 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Inventory Ingestion",
-            "caption": "In store mobile fulfillment systems guide associates through batches.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Regulatory escrow engines segregate merchant sales funds from operations.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Buffer Allocation",
-            "caption": "Optimized walking paths streamline retail sales floor item picking.",
-            "data": {
-              "stage": "allocation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Segregated custodial trust accounts comply with statutory payment rules.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Route Optimization",
-            "caption": "Mandatory barcode scanning validates product size and color accuracy.",
-            "data": {
-              "stage": "routing",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Dynamic rolling reserve buffers absorb potential dispute liabilities.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Store Fulfillment",
-            "caption": "Rapid packing and cartonization meet scheduled carrier pickup times.",
-            "data": {
-              "stage": "fulfillment",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Matured escrow vintages release automatically into merchant balances.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Core Web Vitals Telemetry: LCP, INP, CLS & Real-User Performance Monitoring (RUM)",
-      "codeHash": "543c9a8b925ae8d682495281d1322930738f574425f2d420d04380834092d427",
+      "codeHash": "0ddbf929b0899d06f0cfa03508783c1a747ffd83ae556cb86fd1807900d8f0b8",
       "spec": {
         "template": "funnel",
-        "title": "Core Web Vitals Telemetry: LCP, INP, CLS & Real-User Performance Monitoring (RUM)",
+        "title": "Day 57 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Inventory Ingestion",
-            "caption": "Store pickup workflows coordinate digital ordering with local staging.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Merchant settlement pipelines compile consolidated daily payout batches.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Buffer Allocation",
-            "caption": "Geofencing triggers automated associate alerts upon vehicle arrival.",
-            "data": {
-              "stage": "allocation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Sales credits offset customer return debits and monthly software fees.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Route Optimization",
-            "caption": "Express curbside handoffs complete delivery directly into vehicle trunks.",
-            "data": {
-              "stage": "routing",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Automated clearinghouse transfers dispatch funds to verified accounts.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Store Fulfillment",
-            "caption": "In store returns restock inventory without reverse shipping costs.",
-            "data": {
-              "stage": "fulfillment",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Continuous tracking streamlines statutory tax information reporting.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise SEO & Edge Rendering Command Tower",
-      "codeHash": "49653d9b46a87e181e59861d309c57b8c19b185b9c57dfff13f3ddbf918c1b46",
+      "codeHash": "2f3d97526d1ce14b85749e1b1ff869543e9a722bfc8aeb654a4aaa537421f810",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise SEO & Edge Rendering Command Tower",
+        "title": "Day 57 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Inventory Ingestion",
-            "caption": "Omnichannel command towers track fleet wide store fulfillment metrics.",
-            "data": {
-              "stage": "intake",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Marketplace treasury observatories enforce daily three way balances.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Buffer Allocation",
-            "caption": "Balanced ship from store volume shortens customer delivery transit times.",
-            "data": {
-              "stage": "allocation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Internal transactional ledgers reconcile against banking cash assets.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Route Optimization",
-            "caption": "Low split shipment ratios maximize enterprise operating margins.",
-            "data": {
-              "stage": "routing",
-              "status": "verified"
-            }
+            "at": "example",
+            "caption": "Near zero clearing variance error rates defend custodial solvency.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Store Fulfillment",
-            "caption": "Unified store operations achieve apex omnichannel certification.",
-            "data": {
-              "stage": "fulfillment",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Forensic treasury audits certify pristine financial platform governance.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
