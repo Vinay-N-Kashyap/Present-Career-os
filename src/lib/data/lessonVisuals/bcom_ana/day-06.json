@@ -1,0 +1,251 @@
+{
+  "course": "bcom_ana",
+  "day": 6,
+  "entries": [
+    {
+      "partIndex": 0,
+      "title": "Analysis of Variance (ANOVA) & Between-Group F-Ratio Mechanics",
+      "template": "compare",
+      "data": {
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "action": "Highlight conceptual foundation",
+          "caption": "Reviewing core analysis mechanisms and variance concepts.",
+          "attachedTo": "say1",
+          "codeHash": "3347e6fbfc1ad2e88d581a3e074fe96cb2a5110151c0df540b64e02cb54112e9"
+        },
+        {
+          "action": "Examine mathematical boundaries",
+          "caption": "Analyzing formal analysis bounds across variance systems.",
+          "attachedTo": "say2",
+          "codeHash": "3347e6fbfc1ad2e88d581a3e074fe96cb2a5110151c0df540b64e02cb54112e9"
+        },
+        {
+          "action": "Inspect empirical demonstration",
+          "caption": "Demonstrating practical analysis rules and variance cases.",
+          "attachedTo": "example",
+          "codeHash": "3347e6fbfc1ad2e88d581a3e074fe96cb2a5110151c0df540b64e02cb54112e9"
+        },
+        {
+          "action": "Verify execution output",
+          "caption": "Verifying analysis calculations and variance outputs.",
+          "attachedTo": "tryIt",
+          "codeHash": "3347e6fbfc1ad2e88d581a3e074fe96cb2a5110151c0df540b64e02cb54112e9"
+        }
+      ]
+    },
+    {
+      "partIndex": 1,
+      "title": "The Exploration-Exploitation Dilemma & Multi-Arm Bandit Formulations",
+      "template": "compare",
+      "data": {
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "action": "Highlight conceptual foundation",
+          "caption": "Reviewing core exploratio mechanisms and dilemma concepts.",
+          "attachedTo": "say1",
+          "codeHash": "82f9ecb45b9ec24c95f4cd06b47c2899d7c3da934af059e7999c6027b39a0f76"
+        },
+        {
+          "action": "Examine mathematical boundaries",
+          "caption": "Analyzing formal exploratio bounds across dilemma systems.",
+          "attachedTo": "say2",
+          "codeHash": "82f9ecb45b9ec24c95f4cd06b47c2899d7c3da934af059e7999c6027b39a0f76"
+        },
+        {
+          "action": "Inspect empirical demonstration",
+          "caption": "Demonstrating practical exploratio rules and dilemma cases.",
+          "attachedTo": "example",
+          "codeHash": "82f9ecb45b9ec24c95f4cd06b47c2899d7c3da934af059e7999c6027b39a0f76"
+        },
+        {
+          "action": "Verify execution output",
+          "caption": "Verifying exploratio calculations and dilemma outputs.",
+          "attachedTo": "tryIt",
+          "codeHash": "82f9ecb45b9ec24c95f4cd06b47c2899d7c3da934af059e7999c6027b39a0f76"
+        }
+      ]
+    },
+    {
+      "partIndex": 2,
+      "title": "Thompson Sampling & Bayesian Posterior Probability Matching",
+      "template": "compare",
+      "data": {
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "action": "Highlight conceptual foundation",
+          "caption": "Reviewing core thompson mechanisms and sampling concepts.",
+          "attachedTo": "say1",
+          "codeHash": "b88685adc2ef19080cf60f7850982071d908bc13d1be570e9b81688c3589c09c"
+        },
+        {
+          "action": "Examine mathematical boundaries",
+          "caption": "Analyzing formal thompson bounds across sampling systems.",
+          "attachedTo": "say2",
+          "codeHash": "b88685adc2ef19080cf60f7850982071d908bc13d1be570e9b81688c3589c09c"
+        },
+        {
+          "action": "Inspect empirical demonstration",
+          "caption": "Demonstrating practical thompson rules and sampling cases.",
+          "attachedTo": "example",
+          "codeHash": "b88685adc2ef19080cf60f7850982071d908bc13d1be570e9b81688c3589c09c"
+        },
+        {
+          "action": "Verify execution output",
+          "caption": "Verifying thompson calculations and sampling outputs.",
+          "attachedTo": "tryIt",
+          "codeHash": "b88685adc2ef19080cf60f7850982071d908bc13d1be570e9b81688c3589c09c"
+        }
+      ]
+    },
+    {
+      "partIndex": 3,
+      "title": "Contextual Bandits & Real-Time Dynamic Personalization Architecture",
+      "template": "compare",
+      "data": {
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "action": "Highlight conceptual foundation",
+          "caption": "Reviewing core contextual mechanisms and bandits concepts.",
+          "attachedTo": "say1",
+          "codeHash": "5c18b7576dff58aec505b4583ef5310bd715d16a37998338b34553b7349c8844"
+        },
+        {
+          "action": "Examine mathematical boundaries",
+          "caption": "Analyzing formal contextual bounds across bandits systems.",
+          "attachedTo": "say2",
+          "codeHash": "5c18b7576dff58aec505b4583ef5310bd715d16a37998338b34553b7349c8844"
+        },
+        {
+          "action": "Inspect empirical demonstration",
+          "caption": "Demonstrating practical contextual rules and bandits cases.",
+          "attachedTo": "example",
+          "codeHash": "5c18b7576dff58aec505b4583ef5310bd715d16a37998338b34553b7349c8844"
+        },
+        {
+          "action": "Verify execution output",
+          "caption": "Verifying contextual calculations and bandits outputs.",
+          "attachedTo": "tryIt",
+          "codeHash": "5c18b7576dff58aec505b4583ef5310bd715d16a37998338b34553b7349c8844"
+        }
+      ]
+    },
+    {
+      "partIndex": 4,
+      "title": "Milestone 2 Capstone: Autonomous Adaptive Experimentation Control Tower",
+      "template": "compare",
+      "data": {
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        }
+      },
+      "steps": [
+        {
+          "action": "Highlight conceptual foundation",
+          "caption": "Reviewing core milestone mechanisms and capstone concepts.",
+          "attachedTo": "say1",
+          "codeHash": "71b734cc73ed806ff74caf48478515353c0247ae3ad61219ccba36e92f57273f"
+        },
+        {
+          "action": "Examine mathematical boundaries",
+          "caption": "Analyzing formal milestone bounds across capstone systems.",
+          "attachedTo": "say2",
+          "codeHash": "71b734cc73ed806ff74caf48478515353c0247ae3ad61219ccba36e92f57273f"
+        },
+        {
+          "action": "Inspect empirical demonstration",
+          "caption": "Demonstrating practical milestone rules and capstone cases.",
+          "attachedTo": "example",
+          "codeHash": "71b734cc73ed806ff74caf48478515353c0247ae3ad61219ccba36e92f57273f"
+        },
+        {
+          "action": "Verify execution output",
+          "caption": "Verifying milestone calculations and capstone outputs.",
+          "attachedTo": "tryIt",
+          "codeHash": "71b734cc73ed806ff74caf48478515353c0247ae3ad61219ccba36e92f57273f"
+        }
+      ]
+    }
+  ]
+}
