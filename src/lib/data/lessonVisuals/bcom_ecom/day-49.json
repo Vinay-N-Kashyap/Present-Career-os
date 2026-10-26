@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 49,
+  "entries": [
+    {
+      "partTitle": "Anatomy of the Chargeback Dispute Lifecycle: Retrieval, First Chargeback & Arbitration",
+      "codeHash": "8547606cbfffd58bc9f6458afb47a1abdc3a48e8bd310789b1b4aeee173a02d0",
+      "spec": {
+        "template": "funnel",
+        "title": "Anatomy of the Chargeback Dispute Lifecycle: Retrieval, First Chargeback & Arbitration",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Notice Ingestion",
+            "caption": "Inbound card disputes trigger strict statutory response deadlines.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Evidence Gathering",
+            "caption": "The dispute lifecycle engine monitors formal representment windows.",
+            "data": {
+              "stage": "mapping",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Dossier Compilation",
+            "caption": "Automated countdown monitors prevent catastrophic default losses.",
+            "data": {
+              "stage": "compilation",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Scheme Adjudication",
+            "caption": "State machines transition claims through representment and arbitration.",
+            "data": {
+              "stage": "ruling",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Card Network Dispute Frameworks: Visa Claims Resolution (VCR) & Mastercard Dispute Administration",
+      "codeHash": "1ecf06e47362ccd38a6ee32f1dfc90e3dbf1500632566e77e68546498f50e357",
+      "spec": {
+        "template": "funnel",
+        "title": "Card Network Dispute Frameworks: Visa Claims Resolution (VCR) & Mastercard Dispute Administration",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Notice Ingestion",
+            "caption": "Card network dispute portals enforce codified reason code frameworks.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Evidence Gathering",
+            "caption": "Reason codes map programmatically to mandatory evidentiary checklists.",
+            "data": {
+              "stage": "mapping",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Dossier Compilation",
+            "caption": "Address verification and carrier signatures satisfy card absent rules.",
+            "data": {
+              "stage": "compilation",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Scheme Adjudication",
+            "caption": "Automated scheme mappers retrieve exact rebuttal requirements.",
+            "data": {
+              "stage": "ruling",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Compelling Evidence 3.0 (CE3.0) & Modern Friendly Fraud Defense",
+      "codeHash": "7dec4fa1d6fa0dd1d8eca1fba495003d92a293b9cff34ea4dd430f1a05b8551e",
+      "spec": {
+        "template": "funnel",
+        "title": "Compelling Evidence 3.0 (CE3.0) & Modern Friendly Fraud Defense",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Notice Ingestion",
+            "caption": "Historical customer footprints establish friendly fraud defenses.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Evidence Gathering",
+            "caption": "Prior undisputed transactions are evaluated for matching identifiers.",
+            "data": {
+              "stage": "mapping",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Dossier Compilation",
+            "caption": "Matching device hashes and delivery coordinates disqualify fraud claims.",
+            "data": {
+              "stage": "compilation",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Scheme Adjudication",
+            "caption": "Compelling evidence rules automate pre arbitration dispute dismissal.",
+            "data": {
+              "stage": "ruling",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Representment Workflows: PDF Dossier Compilation & Asynchronous Ingestion",
+      "codeHash": "9d95b067139c35d975e905abc3a6ad379863ba1a98e345dc896342a94d05e254",
+      "spec": {
+        "template": "funnel",
+        "title": "Automated Representment Workflows: PDF Dossier Compilation & Asynchronous Ingestion",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Notice Ingestion",
+            "caption": "Event driven workers assemble multi document representment packets.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Evidence Gathering",
+            "caption": "Delivery proofs and checkout logs compile into structured dossiers.",
+            "data": {
+              "stage": "mapping",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Dossier Compilation",
+            "caption": "Embedded exhibits undergo optical character recognition verification.",
+            "data": {
+              "stage": "compilation",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Scheme Adjudication",
+            "caption": "Cryptographic manifests validate transmission readiness for scheme APIs.",
+            "data": {
+              "stage": "ruling",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Dispute Command Tower: Win Rates, Net Recovery & Pre-Arbitration Governance",
+      "codeHash": "4c6b630e166fbd5555877367ea65050ea080a398e62439c7a451c7f83886be90",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Dispute Command Tower: Win Rates, Net Recovery & Pre-Arbitration Governance",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Notice Ingestion",
+            "caption": "Dispute command towers monitor fleet wide win rates and recovery yield.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Evidence Gathering",
+            "caption": "Economic models balance claim values against arbitration filing fees.",
+            "data": {
+              "stage": "mapping",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Dossier Compilation",
+            "caption": "Early warning alerts resolve inquiries before formal disputes register.",
+            "data": {
+              "stage": "compilation",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Scheme Adjudication",
+            "caption": "Comprehensive dispute audits confer official legal defense accreditation.",
+            "data": {
+              "stage": "ruling",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 48,
+  "entries": [
+    {
+      "partTitle": "Enterprise Trade Credit Engines, Real-Time Exposure Scoring & Dynamic Credit Limits",
+      "codeHash": "499d0c55b0b11fb1375677141cb68096491a2ac140f6d25a793ccc5dd38e6831",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Trade Credit Engines, Real-Time Exposure Scoring & Dynamic Credit Limits",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Ingestion",
+            "caption": "Inbound transactions undergo real time velocity anomaly detection.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Analysis",
+            "caption": "Sliding time windows monitor card attempt frequency and IP bursts.",
+            "data": {
+              "stage": "entropy",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Evaluation",
+            "caption": "Rapid card rotations trigger automated account takeover alarms.",
+            "data": {
+              "stage": "scoring",
+              "status": "evaluated"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Decision",
+            "caption": "Configurable velocity thresholds isolate automated card testing runs.",
+            "data": {
+              "stage": "verdict",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commercial Invoicing, Payment Terms (Net 30/60/90, 2/10 Net 30) & Cash Discount Engines",
+      "codeHash": "4e5757609b2d0bfc9e43e1368ab67f15f8f4d44805b730286cd68b1285307423",
+      "spec": {
+        "template": "funnel",
+        "title": "Commercial Invoicing, Payment Terms (Net 30/60/90, 2/10 Net 30) & Cash Discount Engines",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Ingestion",
+            "caption": "Client browser environments emit deep hardware entropy signals.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Analysis",
+            "caption": "Canvas rendering and graphics card drivers construct unique signatures.",
+            "data": {
+              "stage": "entropy",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Evaluation",
+            "caption": "Emulated rendering environments unmask automated headless browsers.",
+            "data": {
+              "stage": "scoring",
+              "status": "evaluated"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Decision",
+            "caption": "Behavioral biometrics measure natural physical keystroke dynamics.",
+            "data": {
+              "stage": "verdict",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accounts Receivable (AR) Aging Schedules, Delinquency Buckets & CECL Loss Reserves",
+      "codeHash": "2dce5fe97f8c3ee396c53c8fd846005f6f92558d11df6ae61ce6524aba4c5ea4",
+      "spec": {
+        "template": "funnel",
+        "title": "Accounts Receivable (AR) Aging Schedules, Delinquency Buckets & CECL Loss Reserves",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Ingestion",
+            "caption": "Machine learning risk scoring ensembles ingest hundreds of features.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Analysis",
+            "caption": "Gradient boosted trees calculate calibrated fraud probabilities.",
+            "data": {
+              "stage": "entropy",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Evaluation",
+            "caption": "Graph networks detect distributed syndicates across linked entities.",
+            "data": {
+              "stage": "scoring",
+              "status": "evaluated"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Decision",
+            "caption": "Calibrated risk scores drive dynamic multi tier decision frontiers.",
+            "data": {
+              "stage": "verdict",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Stage Automated Dunning State Machines, Penalty Interest & Credit Freeze Triggers",
+      "codeHash": "a714d11ea9be91cff68eab8b47da88f9676bdce9ebd56b9c35cb7d4843eb74ea",
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Stage Automated Dunning State Machines, Penalty Interest & Credit Freeze Triggers",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Ingestion",
+            "caption": "Modern secure authentication protocols evaluate cardholder risk profiles.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Analysis",
+            "caption": "Issuer risk engines permit frictionless background authentication flows.",
+            "data": {
+              "stage": "entropy",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Evaluation",
+            "caption": "Elevated transaction risks trigger native responsive mobile challenges.",
+            "data": {
+              "stage": "scoring",
+              "status": "evaluated"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Decision",
+            "caption": "Successful authentication transfers chargeback liability to card issuers.",
+            "data": {
+              "stage": "verdict",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Accounts Receivable (AR) Treasury Command Tower & DSO Telemetry",
+      "codeHash": "7fff6d47cfd0f29a71ede73277e220b138479fde0f4088e758dcefa217d74bb1",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Accounts Receivable (AR) Treasury Command Tower & DSO Telemetry",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Ingestion",
+            "caption": "Anti fraud command towers balance loss prevention against conversion.",
+            "data": {
+              "stage": "inbound",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Analysis",
+            "caption": "Defending low false positive ratios prevents legitimate customer loss.",
+            "data": {
+              "stage": "entropy",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Evaluation",
+            "caption": "Pre dispute deflection networks resolve inquiries before chargebacks.",
+            "data": {
+              "stage": "scoring",
+              "status": "evaluated"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Decision",
+            "caption": "Comprehensive risk audits confer official fraud defense accreditation.",
+            "data": {
+              "stage": "verdict",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
