@@ -11,7 +11,7 @@
  * - Formats regulatory compliance outputs into standardized JSON and CSV audit packages.
  */
 
-import { createHash } from 'node:crypto';
+import { createHash } from 'crypto';
 
 export interface AccreditationEvidence {
   title: string;

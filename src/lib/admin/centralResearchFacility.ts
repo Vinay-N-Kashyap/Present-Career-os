@@ -22,7 +22,7 @@
  * 8. Statutory DST / I-STEM CRF slot ledger CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type InstrumentCategory =
   | 'ELECTRON_MICROSCOPY'

@@ -54,8 +54,8 @@ export function loadDayFile(prefix: string, day: number): LessonVisualDayFile | 
       // Use eval('require') so client bundlers do not try to bundle fs
       // eslint-disable-next-line @typescript-eslint/no-implied-eval
       const req = typeof require !== 'undefined' ? require : eval('require');
-      const fs = req('node:fs');
-      const path = req('node:path');
+      const fs = req('fs');
+      const path = req('path');
       const dayPadded = String(day).padStart(2, '0');
       const filePath = path.resolve(
         process.cwd(),

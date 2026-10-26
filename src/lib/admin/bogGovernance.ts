@@ -18,7 +18,7 @@
  * 7. University Governance & Board Resolution Gazette CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type StatutoryBody =
   | 'BOARD_OF_GOVERNORS'

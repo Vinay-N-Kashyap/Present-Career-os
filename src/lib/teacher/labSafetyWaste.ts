@@ -23,7 +23,7 @@
  * 7. State Pollution Control Board (SPCB) & OSHA compliance CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type WasteClass =
   | 'HALOGENATED_SOLVENTS'

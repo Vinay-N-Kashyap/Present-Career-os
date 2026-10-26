@@ -19,7 +19,7 @@
  * 7. NISP & TTO Incubator Portfolio CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type IncubationStage =
   | 'IDEA_DISCLOSURE'

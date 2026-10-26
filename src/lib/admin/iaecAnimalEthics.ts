@@ -20,7 +20,7 @@
  * 9. National CCSEA / DBT-RCGM compliance ledger CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type EthicsCommitteeType = 'IAEC' | 'IBSC' | 'IEC';
 

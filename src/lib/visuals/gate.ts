@@ -1,6 +1,6 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import crypto from 'node:crypto';
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 import { getLongLesson, type LongLesson, type LongLessonPart } from '@/lib/data/longLessons';
 import { getTappableLabelsForVisual } from '@/lib/visuals/visualRules';
 

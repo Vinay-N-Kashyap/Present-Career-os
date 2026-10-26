@@ -11,7 +11,7 @@
  * 5. Statutory CoE Examination Seating Plan and Invigilation Roster CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type ExamSessionType = 'MID_SEMESTER' | 'END_SEMESTER' | 'SUPPLEMENTARY' | 'PRACTICAL_VIVA';
 

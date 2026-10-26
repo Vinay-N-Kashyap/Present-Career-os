@@ -17,7 +17,7 @@
  * 6. Statutory Convocation Gazette & Degree Registry CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type DegreeClassification =
   | 'FIRST_CLASS_WITH_DISTINCTION'

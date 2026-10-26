@@ -112,12 +112,17 @@ const nextConfig = {
     },
   },
 
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, webpack }) => {
     const path = require('path');
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, 'src'),
     };
+    config.plugins.push(
+      new webpack.NormalModuleReplacementPlugin(/^node:/, (resource) => {
+        resource.request = resource.request.replace(/^node:/, '');
+      })
+    );
     if (!isServer) {
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -129,6 +134,15 @@ const nextConfig = {
         path: false,
         child_process: false,
         os: false,
+        crypto: false,
+      };
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        crypto: false,
+        stream: false,
+        vm: false,
       };
       config.optimization.splitChunks = {
         ...config.optimization.splitChunks,

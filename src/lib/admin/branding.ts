@@ -10,7 +10,7 @@
  * - Cryptographically signed university credential and completion certificate generator.
  */
 
-import { createHash } from 'node:crypto';
+import { createHash } from 'crypto';
 import { MOCK_INSTITUTIONS } from './tenant';
 
 export interface UniversityTheme {

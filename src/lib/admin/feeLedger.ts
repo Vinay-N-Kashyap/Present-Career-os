@@ -11,7 +11,7 @@
  * - Multi-tenant isolation with institutionId partitioning.
  */
 
-import { createHash } from 'node:crypto';
+import { createHash } from 'crypto';
 
 export type FeeCategory =
   | 'tuition'

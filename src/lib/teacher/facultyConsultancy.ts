@@ -19,7 +19,7 @@
  * 7. University SRIC Industrial Consultancy Ledger CSV export.
  */
 
-import crypto from 'node:crypto';
+import crypto from 'crypto';
 
 export type ConsultancyCategory =
   | 'RETAINER_CONSULTANCY'
