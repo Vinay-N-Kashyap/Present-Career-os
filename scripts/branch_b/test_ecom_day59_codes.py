@@ -1,193 +1,198 @@
 """
-Test and verify Python code blocks for Course 07 Day 59:
-E-Commerce Enterprise Architecture Strategy, Total Cost of Ownership (TCO), Platform Migration & Scalability Roadmaps
+Deterministic Python Code Blocks for Course 07 Day 59:
+High-Concurrency Flash Sale Architecture, Distributed Queues, Virtual Waiting Rooms & Inventory Race Condition Prevention
 """
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
+import json
+import hashlib
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Tuple
 
-print("=== PART 1: MONOLITH VS COMPOSABLE MACH ARCHITECTURE EVALUATION ===")
+print("=== PART 1: FLASH SALE CONCURRENCY & CONNECTION BOTTLENECK MODEL ===")
 @dataclass
-class ArchitectureEvaluationInput:
-    annual_gmv_usd: float
-    engineering_team_size: int
-    deployment_frequency_per_week: int
-    customization_complexity_score: float # 1.0 to 10.0
+class FlashSaleTrafficProfile:
+    peak_requests_per_second: int
+    db_connection_pool_limit: int
+    avg_db_query_latency_ms: float
 
-class ArchitectureStrategyEngine:
-    def evaluate_architectural_fit(self, inp: ArchitectureEvaluationInput) -> Tuple[str, float, str]:
-        # Weighted MACH suitability index (0 to 100)
-        mach_index = 0.0
-        mach_index += min(35.0, (inp.annual_gmv_usd / 50_000_000.0) * 35.0)
-        mach_index += min(25.0, (inp.engineering_team_size / 40.0) * 25.0)
-        mach_index += min(20.0, (inp.deployment_frequency_per_week / 20.0) * 20.0)
-        mach_index += (inp.customization_complexity_score / 10.0) * 20.0
+class ConcurrencySaturationModeler:
+    @staticmethod
+    def analyze_bottleneck(profile: FlashSaleTrafficProfile) -> Dict[str, object]:
+        # Maximum transactions per second database can sustain before starvation:
+        # Max TPS = Pool Limit / (Latency in seconds)
+        max_sustainable_tps = profile.db_connection_pool_limit / (profile.avg_db_query_latency_ms / 1000.0)
+        overload_factor = profile.peak_requests_per_second / max_sustainable_tps
         
-        mach_index = round(mach_index, 1)
-        if mach_index >= 70.0:
-            recommendation = "COMPOSABLE_MACH_HEADLESS_ARCHITECTURE"
-            rationale = "HIGH_COMPLEXITY_HIGH_SCALE_DEMANDS_MODULAR_DECOUPLING"
-        elif mach_index >= 40.0:
-            recommendation = "HYBRID_HEADLESS_MONOLITH"
-            rationale = "DECOUPLE_FRONTEND_KEEP_CORE_MONOLITH_COMMERCE_BACKEND"
+        is_saturated = overload_factor > 1.0
+        return {
+            "peak_rps": profile.peak_requests_per_second,
+            "max_db_tps": round(max_sustainable_tps, 1),
+            "overload_multiplier": round(overload_factor, 1),
+            "architectural_verdict": "CRITICAL_DATABASE_STARVATION" if is_saturated else "STABLE_TRANSACTIONAL_CORE"
+        }
+
+profile = FlashSaleTrafficProfile(peak_requests_per_second=85000, db_connection_pool_limit=250, avg_db_query_latency_ms=12.5)
+analysis = ConcurrencySaturationModeler.analyze_bottleneck(profile)
+
+print(f"Traffic Influx:  {analysis['peak_rps']} RPS | Max DB Capacity: {analysis['max_db_tps']} TPS")
+print(f"Overload Ratio:  {analysis['overload_multiplier']}x origin capacity | Verdict: [{analysis['architectural_verdict']}]")
+
+
+print("\n=== PART 2: VIRTUAL WAITING ROOM & TOKEN-BUCKET ADMISSION ===")
+@dataclass
+class QueueShopper:
+    shopper_id: str
+    arrival_timestamp: float
+
+class VirtualWaitingRoomEngine:
+    def __init__(self, admission_rate_per_sec: int, secret_signing_key: str):
+        self.admission_rate = admission_rate_per_sec
+        self.secret_key = secret_signing_key
+        self.queue: List[QueueShopper] = []
+
+    def enqueue_shopper(self, shopper: QueueShopper):
+        self.queue.append(shopper)
+
+    def admit_next_batch(self, batch_size: int, now: float) -> List[Dict[str, str]]:
+        admitted = []
+        for _ in range(min(batch_size, len(self.queue))):
+            shopper = self.queue.pop(0)
+            token_payload = f"{shopper.shopper_id}:{now}:{self.secret_key}"
+            signature = hashlib.sha256(token_payload.encode('utf-8')).hexdigest()[:16]
+            
+            admitted.append({
+                "shopper_id": shopper.shopper_id,
+                "admission_pass_token": f"pass_{shopper.shopper_id}_{signature}",
+                "admitted_at": str(now)
+            })
+        return admitted
+
+vwr = VirtualWaitingRoomEngine(admission_rate_per_sec=500, secret_signing_key="enterprise_secret_flash_2026")
+for i in range(1, 6):
+    vwr.enqueue_shopper(QueueShopper(f"USER-FL-{i:03d}", 1000.0 + i))
+
+passes = vwr.admit_next_batch(2, 1005.0)
+print(f"Queue Status: Admitted {len(passes)} shoppers, {len(vwr.queue)} remaining in FIFO queue")
+for p in passes:
+    print(f"  Issued Pass: {p['shopper_id']} -> Token: [{p['admission_pass_token']}]")
+
+
+print("\n=== PART 3: ATOMIC INVENTORY RESERVATION & ZERO-OVERSELL ===")
+@dataclass
+class AtomicInventoryItem:
+    sku: str
+    available_units: int
+    version: int
+
+class AtomicInventoryLockEngine:
+    def __init__(self, sku: str, initial_stock: int):
+        self.item = AtomicInventoryItem(sku, initial_stock, version=1)
+
+    def attempt_reservation(self, shopper_id: str, quantity: int) -> Tuple[bool, str]:
+        # Atomic decrement logic (simulating Redis Lua single-threaded atomic execution)
+        if self.item.available_units >= quantity:
+            self.item.available_units -= quantity
+            self.item.version += 1
+            return True, f"RESERVED_LOCK_ACQUIRED_V{self.item.version}"
         else:
-            recommendation = "PACKAGED_ENTERPRISE_MONOLITH"
-            rationale = "SPEED_TO_MARKET_OUTWEIGHS_MODULAR_COMPOSABILITY_OVERHEAD"
-        return recommendation, mach_index, rationale
+            return False, "REJECTED_SOLD_OUT"
 
-strat_engine = ArchitectureStrategyEngine()
-client_enterprise = ArchitectureEvaluationInput(120_000_000.0, 65, 35, 8.5)
-client_midmarket = ArchitectureEvaluationInput(15_000_000.0, 12, 2, 4.0)
+lock_engine = AtomicInventoryLockEngine("LIMITED-SNEAKER-100", 3)
+shoppers = ["SHO-ALICE", "SHO-BOB", "SHO-CHARLIE", "SHO-DAVID", "SHO-EMILY"]
 
-rec_ent, score_ent, rat_ent = strat_engine.evaluate_architectural_fit(client_enterprise)
-rec_mid, score_mid, rat_mid = strat_engine.evaluate_architectural_fit(client_midmarket)
-
-print(f"Enterprise Client ($120M GMV): Score: {score_ent}/100 -> [{rec_ent}] ({rat_ent})")
-print(f"Mid-Market Client ($15M GMV):  Score: {score_mid}/100 -> [{rec_mid}] ({rat_mid})")
+print(f"Starting Flash Inventory for {lock_engine.item.sku}: {lock_engine.item.available_units} units")
+for s in shoppers:
+    ok, msg = lock_engine.attempt_reservation(s, 1)
+    status_label = "SUCCESS" if ok else "DENIED"
+    print(f"  Shopper {s}: {status_label} -> [{msg}] (Remaining: {lock_engine.item.available_units})")
 
 
-print("\n=== PART 2: STRANGLER FIG MIGRATION TRAFFIC ROUTER ===")
+print("\n=== PART 4: ASYNCHRONOUS ORDER QUEUE & IDEMPOTENT WORKERS ===")
 @dataclass
-class MigrationRouteContext:
-    request_path: str
-    traffic_migration_pct: float # e.g. 85.0 for 85% migrated to headless
-    session_hash_value: int # 0 to 99
+class FlashOrderMessage:
+    order_id: str
+    shopper_id: str
+    sku: str
+    amount_cents: int
+    idempotency_key: str
 
-class StranglerFigTrafficGateway:
-    def route_traffic(self, ctx: MigrationRouteContext) -> Tuple[str, str]:
-        # Decoupled routes fully migrated to headless microservices
-        headless_paths = {"/cart", "/checkout", "/catalog", "/search"}
+class IdempotentOrderConsumerWorker:
+    def __init__(self):
+        self.processed_idempotency_keys: set = set()
+        self.persisted_orders: List[str] = []
+
+    def consume_order_event(self, msg: FlashOrderMessage) -> Tuple[bool, str]:
+        # Check idempotency to eliminate duplicate payment or order insertions
+        if msg.idempotency_key in self.processed_idempotency_keys:
+            return False, "DUPLICATE_EVENT_IGNORED"
         
-        is_path_migrated = any(ctx.request_path.startswith(p) for p in headless_paths)
-        if not is_path_migrated:
-            return "LEGACY_MONOLITH_CORE", "LEGACY_UNMIGRATED_PATH"
-        
-        # Canary traffic routing based on session hash
-        if ctx.session_hash_value < ctx.traffic_migration_pct:
-            return "HEADLESS_MODERN_MICROSERVICE", "CANARY_TRAFFIC_ACTIVE"
-        else:
-            return "LEGACY_MONOLITH_CORE", "CANARY_FALLBACK_ACTIVE"
+        # Persist order to database
+        self.processed_idempotency_keys.add(msg.idempotency_key)
+        self.persisted_orders.append(msg.order_id)
+        return True, "ORDER_PERSISTED_SUCCESSFULLY"
 
-strangler = StranglerFigTrafficGateway()
-route_1, msg_1 = strangler.route_traffic(MigrationRouteContext("/checkout/pay", 80.0, 42))
-route_2, msg_2 = strangler.route_traffic(MigrationRouteContext("/checkout/pay", 80.0, 92))
-route_3, msg_3 = strangler.route_traffic(MigrationRouteContext("/account/settings", 80.0, 10))
+consumer = IdempotentOrderConsumerWorker()
+order_1 = FlashOrderMessage("ORD-1001", "SHO-ALICE", "LIMITED-SNEAKER-100", 25000, "idem_key_alice_99")
+order_dup = FlashOrderMessage("ORD-1001-RETRY", "SHO-ALICE", "LIMITED-SNEAKER-100", 25000, "idem_key_alice_99")
 
-print(f"Traffic Decision 1 (/checkout/pay, Hash 42): [{route_1}] | Reason: [{msg_1}]")
-print(f"Traffic Decision 2 (/checkout/pay, Hash 92): [{route_2}] | Reason: [{msg_2}]")
-print(f"Traffic Decision 3 (/account/settings):     [{route_3}] | Reason: [{msg_3}]")
+res1, msg1 = consumer.consume_order_event(order_1)
+res2, msg2 = consumer.consume_order_event(order_dup)
+
+print(f"First Attempt:  Processed={res1} | Status: [{msg1}]")
+print(f"Retry Attempt:  Processed={res2} | Status: [{msg2}]")
+print(f"Total Unique Orders Persisted: {len(consumer.persisted_orders)}")
 
 
-print("\n=== PART 3: 5-YEAR TOTAL COST OF OWNERSHIP (TCO) MODEL ===")
+print("\n=== PART 5: ENTERPRISE FLASH SALE COMMAND TOWER ===")
 @dataclass
-class TCOParameters:
-    annual_software_license_usd: float
-    cloud_hosting_and_cdn_annual_usd: float
-    implementation_dev_capex_usd: float # Year 1 CapEx
-    annual_maintenance_dev_opex_usd: float
-    unplanned_downtime_loss_annual_usd: float
+class FlashSaleAuditTelemetry:
+    event_name: str
+    peak_concurrency_rps: int
+    total_shopper_arrivals: int
+    oversell_incidents: int
+    p99_checkout_latency_ms: float
+    gross_merchandise_value_usd: float
 
-def calculate_5year_tco(params: TCOParameters) -> Dict[str, float]:
-    year_1 = (
-        params.annual_software_license_usd +
-        params.cloud_hosting_and_cdn_annual_usd +
-        params.implementation_dev_capex_usd +
-        params.annual_maintenance_dev_opex_usd +
-        params.unplanned_downtime_loss_annual_usd
-    )
-    years_2_to_5_annual = (
-        params.annual_software_license_usd +
-        params.cloud_hosting_and_cdn_annual_usd +
-        params.annual_maintenance_dev_opex_usd +
-        params.unplanned_downtime_loss_annual_usd
-    )
-    total_5yr = year_1 + (years_2_to_5_annual * 4)
-    
-    return {
-        "year_1_cost": year_1,
-        "annual_run_cost": years_2_to_5_annual,
-        "total_5year_tco": total_5yr
-    }
+class FlashSaleCommandAuditEngine:
+    def audit_flash_event(self, tele: FlashSaleAuditTelemetry) -> Dict[str, object]:
+        score = 0.0
+        if tele.oversell_incidents == 0:
+            score += 25.0
+        if tele.peak_concurrency_rps >= 50000:
+            score += 25.0
+        if tele.p99_checkout_latency_ms <= 85.0:
+            score += 25.0
+        if tele.gross_merchandise_value_usd >= 10000000.0:
+            score += 25.0
+            
+        status = "APEX_FLASH_SALE_CONCURRENCY_CERTIFIED" if score == 100.0 else "CONCURRENCY_REMEDIATION_REQUIRED"
+        return {
+            "event": tele.event_name,
+            "composite_score": score,
+            "status": status,
+            "peak_traffic": f"{tele.peak_concurrency_rps:,} RPS",
+            "shoppers_served": f"{tele.total_shopper_arrivals:,} shoppers",
+            "oversell_defects": str(tele.oversell_incidents),
+            "p99_latency": f"{tele.p99_checkout_latency_ms} ms",
+            "total_gmv": f"${tele.gross_merchandise_value_usd:,.2f} USD"
+        }
 
-# Legacy Monolith: high licenses, high maintenance, high downtime
-tco_legacy = calculate_5year_tco(TCOParameters(450_000.0, 180_000.0, 1_200_000.0, 850_000.0, 250_000.0))
-# Modern Composable MACH: pay-as-you-go APIs, serverless hosting, low maintenance, zero downtime
-tco_mach = calculate_5year_tco(TCOParameters(180_000.0, 95_000.0, 1_500_000.0, 380_000.0, 15_000.0))
-
-savings_5yr = tco_legacy['total_5year_tco'] - tco_mach['total_5year_tco']
-print(f"5-Year TCO Comparison:")
-print(f"  Legacy Monolith 5-Year TCO:   ${tco_legacy['total_5year_tco']:,.2f} USD")
-print(f"  Composable MACH 5-Year TCO:   ${tco_mach['total_5year_tco']:,.2f} USD")
-print(f"  Net 5-Year Architecture ROI:  ${savings_5yr:,.2f} USD [MACH_FINANCIAL_SUPERIORITY]")
-
-
-print("\n=== PART 4: HIGH-CONCURRENCY SCALABILITY & PEAK LOAD ENGINE ===")
-@dataclass
-class PeakTrafficLoadProfile:
-    baseline_requests_per_sec: int
-    peak_multiplier: float
-    edge_cache_hit_ratio_pct: float # e.g. 0.92 for 92%
-    origin_server_capacity_rps: int
-
-def evaluate_peak_load_resilience(p: PeakTrafficLoadProfile) -> Tuple[bool, int, float, str]:
-    peak_ingress_rps = int(p.baseline_requests_per_sec * p.peak_multiplier)
-    # Origin load = Peak RPS * (1 - Cache Hit Ratio)
-    origin_load_rps = int(round(peak_ingress_rps * (1.0 - p.edge_cache_hit_ratio_pct)))
-    headroom_pct = round(((p.origin_server_capacity_rps - origin_load_rps) / p.origin_server_capacity_rps) * 100, 1)
-    
-    is_resilient = origin_load_rps <= p.origin_server_capacity_rps and headroom_pct >= 20.0
-    status = "SYSTEM_PEAK_CERTIFIED_SURGE_RESILIENT" if is_resilient else "CRITICAL_ORIGIN_OVERLOAD_RISK"
-    return is_resilient, origin_load_rps, headroom_pct, status
-
-# Black Friday Peak: 50,000 baseline RPS surged 12x = 600,000 ingress RPS with 95% edge caching
-profile_black_friday = PeakTrafficLoadProfile(50_000, 12.0, 0.95, 45_000)
-resilient, origin_rps, headroom, status_str = evaluate_peak_load_resilience(profile_black_friday)
-
-print(f"Peak Scalability Evaluation (Black Friday Surge):")
-print(f"  Peak Ingress Inflow:       600,000 RPS (12x Baseline)")
-print(f"  Shielded Origin Load:      {origin_rps:,} RPS (95.0% Edge Cached)")
-print(f"  Origin Server Headroom:    {headroom}% (Target >= 20.0%)")
-print(f"  Architectural Verdict:     [{status_str}]")
-
-
-print("\n=== PART 5: ENTERPRISE ARCHITECTURE COMMAND TOWER ===")
-@dataclass
-class ArchitectureGovernanceMetrics:
-    total_enterprise_systems_audited: int
-    tco_5year_savings_usd: float
-    strangler_migration_progress_pct: float
-    peak_traffic_resilience_margin_pct: float
-    mean_time_to_recovery_minutes: float
-
-def audit_enterprise_architecture_tower(m: ArchitectureGovernanceMetrics) -> Dict[str, float]:
-    score = 0.0
-    score += 35.0 if m.tco_5year_savings_usd >= 4_000_000.0 else 20.0
-    score += 35.0 if m.strangler_migration_progress_pct >= 80.0 else 20.0
-    score += 30.0 if (m.peak_traffic_resilience_margin_pct >= 25.0 and m.mean_time_to_recovery_minutes <= 10.0) else 15.0
-    
-    return {
-        "systems_audited": float(m.total_enterprise_systems_audited),
-        "tco_savings_usd": m.tco_5year_savings_usd,
-        "migration_progress_pct": m.strangler_migration_progress_pct,
-        "headroom_pct": m.peak_traffic_resilience_margin_pct,
-        "mttr_minutes": m.mean_time_to_recovery_minutes,
-        "composite_score": round(score, 1),
-        "status": "APEX_ENTERPRISE_ARCHITECTURE_CERTIFIED" if score == 100.0 else "SUBOPTIMAL"
-    }
-
-arch_metrics = ArchitectureGovernanceMetrics(
-    total_enterprise_systems_audited=48,
-    tco_5year_savings_usd=4_245_000.0,
-    strangler_migration_progress_pct=85.0,
-    peak_traffic_resilience_margin_pct=33.3,
-    mean_time_to_recovery_minutes=4.2
+audit_engine = FlashSaleCommandAuditEngine()
+tele_data = FlashSaleAuditTelemetry(
+    event_name="Global-Midnight-Black-Friday-Drop",
+    peak_concurrency_rps=85000,
+    total_shopper_arrivals=1250000,
+    oversell_incidents=0,
+    p99_checkout_latency_ms=64.2,
+    gross_merchandise_value_usd=16800000.00
 )
 
-arch_audit = audit_enterprise_architecture_tower(arch_metrics)
-print(f"Enterprise Architecture Command Tower:")
-print(f"  Enterprise Microservices Audited: {arch_audit['systems_audited']:,.0f}")
-print(f"  5-Year TCO Capital Saved:         ${arch_audit['tco_savings_usd']:,.2f} USD")
-print(f"  Strangler Migration Progress:     {arch_audit['migration_progress_pct']}% (Target >= 80.0%)")
-print(f"  Peak Traffic Resilience Margin:   {arch_audit['headroom_pct']}% (Target >= 25.0%)")
-print(f"  Mean Time to Recovery (MTTR):     {arch_audit['mttr_minutes']} min (Target <= 10.0m)")
-print(f"  Composite Architecture Score:     {arch_audit['composite_score']}/100.0 pts")
-print(f"  Accreditation Status:             [{arch_audit['status']}]")
+audit_report = audit_engine.audit_flash_event(tele_data)
+print("=== ENTERPRISE FLASH SALE COMMAND TOWER REPORT ===")
+print(f"Event Audited:     {audit_report['event']}")
+print(f"Peak Traffic:      {audit_report['peak_traffic']}")
+print(f"Shoppers Served:   {audit_report['shoppers_served']}")
+print(f"Oversell Defects:  {audit_report['oversell_defects']} (Zero-Oversell Invariant Preserved)")
+print(f"P99 Latency:       {audit_report['p99_latency']}")
+print(f"Event GMV:         {audit_report['total_gmv']}")
+print(f"Composite Score:   {audit_report['composite_score']}/100.0 pts")
+print(f"Audit Status:      [{audit_report['status']}]")
