@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 28,
+  "entries": [
+    {
+      "partTitle": "The Architecture of Prescriptive Optimization: Decision Variables, Objective Functions & Feasibility",
+      "codeHash": "76ae9139ef10425b7ba9a2ddeda19c9d1f98d1ec2f377e4420ccbe9bab471680",
+      "spec": {
+        "template": "bars",
+        "title": "The Architecture of Prescriptive Optim... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core architectu mechanisms and prescripti concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal architectu bounds across prescripti systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical architectu rules and prescripti cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying architectu calculations and prescripti outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Convex Polyhedral Geometry & The Fundamental Theorem of Linear Programming",
+      "codeHash": "ea05edaa42b835b76989086a1fa70d81fd0ece1f2275f4b884c72ccd58e7064d",
+      "spec": {
+        "template": "bars",
+        "title": "Convex Polyhedral Geometry & The Funda... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core convex mechanisms and polyhedral concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal convex bounds across polyhedral systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical convex rules and polyhedral cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying convex calculations and polyhedral outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Simplex Algorithm & Tableau Pivot Dynamics",
+      "codeHash": "53f0faeff4d757d43096dc2c9e53a217287f0dd8867675233a69d215b344c08b",
+      "spec": {
+        "template": "bars",
+        "title": "The Simplex Algorithm & Tableau Pivot ... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core simplex mechanisms and algorithm concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal simplex bounds across algorithm systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical simplex rules and algorithm cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying simplex calculations and algorithm outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Duality Theory, Shadow Prices & Post-Optimality Sensitivity Analysis",
+      "codeHash": "899fb975d342a41bba7f646de09d20f8e38e1ad7fe928c1b9f5cb937507ee2b3",
+      "spec": {
+        "template": "bars",
+        "title": "Duality Theory, Shadow Prices & Post-O... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core duality mechanisms and theory concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal duality bounds across theory systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical duality rules and theory cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying duality calculations and theory outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Linear Programming Simplex Engine in Python",
+      "codeHash": "fe488ab2cdffef6628a3d19da361ba4fc9505f4799e92801d5ca0b666d7ce44b",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise Linear Programm... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

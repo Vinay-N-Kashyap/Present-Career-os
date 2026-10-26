@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 26,
+  "entries": [
+    {
+      "partTitle": "Value Stream Mapping & Little's Law: Flow Rate, Lead Time & Work-in-Process (WIP)",
+      "codeHash": "115c61e7e599946989b94cd4242acc3e7afc72113a11a84211b831aefd811ffb",
+      "spec": {
+        "template": "bars",
+        "title": "Value Stream Mapping & Little's Law: F... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core value mechanisms and stream concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal value bounds across stream systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical value rules and stream cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying value calculations and stream outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bottleneck Identification & The Theory of Constraints (TOC)",
+      "codeHash": "3453116256aa96a27c330cdf41a57a82f4aa231319be7d48951234e8280ee87c",
+      "spec": {
+        "template": "bars",
+        "title": "Bottleneck Identification & The Theory... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core bottleneck mechanisms and identifica concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal bottleneck bounds across identifica systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical bottleneck rules and identifica cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying bottleneck calculations and identifica outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bullwhip Effect: Information Distortion & Variance Amplification",
+      "codeHash": "7ea59adc7dc5e9ef513da82fcb2e898f42125eccc80b284e27efc8f148254f16",
+      "spec": {
+        "template": "bars",
+        "title": "The Bullwhip Effect: Information Disto... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core bullwhip mechanisms and effect concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal bullwhip bounds across effect systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical bullwhip rules and effect cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying bullwhip calculations and effect outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CPFR & Information Transparency: Shared POS Telemetry",
+      "codeHash": "5ec4bdc66b58f7cd40e8fac7dab9158613cc2ddabf49b627964d7cc043aab041",
+      "spec": {
+        "template": "bars",
+        "title": "CPFR & Information Transparency: Share... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core cpfr mechanisms and informatio concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal cpfr bounds across informatio systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical cpfr rules and informatio cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying cpfr calculations and informatio outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Comprehensive Supply Chain Value Stream Engine in Python",
+      "codeHash": "6594ebf327eb836047a78d9892600f2c295e33890b61a5f0210d7e6dab67b13f",
+      "spec": {
+        "template": "bars",
+        "title": "Building a Comprehensive Supply Chain ... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and comprehens concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across comprehens systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and comprehens cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and comprehens outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 29,
+  "entries": [
+    {
+      "partTitle": "Decision Analysis Under Uncertainty: Payoff Matrices & State-of-Nature Models",
+      "codeHash": "8eb1f3685dde2bdd671246e73f121d716feb0373dcb3692133fc06a4cd5cf6dd",
+      "spec": {
+        "template": "bars",
+        "title": "Decision Analysis Under Uncertainty: P... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core decision mechanisms and under concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal decision bounds across under systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical decision rules and under cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying decision calculations and under outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Decision Trees & Backward Induction (The Rollback Method)",
+      "codeHash": "a294717973b9dcf0fcb49764c18df028f28125b796535644f2863888afd28fc9",
+      "spec": {
+        "template": "bars",
+        "title": "Decision Trees & Backward Induction (T... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core decision mechanisms and trees concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal decision bounds across trees systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical decision rules and trees cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying decision calculations and trees outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Expected Value of Perfect Information (EVPI) & Imperfect Information (EVSI)",
+      "codeHash": "6dbc697356641ab6eae0f91f4bf46c2d862a8ac13197690cee6323bcf0f1646e",
+      "spec": {
+        "template": "bars",
+        "title": "Expected Value of Perfect Information ... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core expected mechanisms and value concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal expected bounds across value systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical expected rules and value cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying expected calculations and value outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Risk Tolerance, Utility Theory & Certainty Equivalents",
+      "codeHash": "ce29790933029ecab69132fbc8a5769817ad2c395019656f72672dd378080f01",
+      "spec": {
+        "template": "bars",
+        "title": "Risk Tolerance, Utility Theory & Certa... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core risk mechanisms and tolerance concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal risk bounds across tolerance systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical risk rules and tolerance cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying risk calculations and tolerance outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Decision Tree & EVPI Analytical Engine in Python",
+      "codeHash": "f903a55dd0d4eb043a09ca4c4ba74589e2c301541f438e32d6dea7e1cdde75f5",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise Decision Tree &... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

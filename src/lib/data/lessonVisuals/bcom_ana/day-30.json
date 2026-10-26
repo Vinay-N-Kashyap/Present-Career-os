@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 30,
+  "entries": [
+    {
+      "partTitle": "Capstone System Architecture: Integrating Descriptive, Predictive & Prescriptive Intelligence",
+      "codeHash": "3c0168a3f34e1c8e32a7de434b5dc022c2b3038f3ecf308eb382a8c24e594f6a",
+      "spec": {
+        "template": "bars",
+        "title": "Capstone System Architecture: Integrat... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core capstone mechanisms and system concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal capstone bounds across system systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical capstone rules and system cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying capstone calculations and system outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Time Series Cleansing, Stationarity Transformations & Holt-Winters Forecasting",
+      "codeHash": "97c03bfc63d7113ce810c1fa0477edab964c143ecad3545b967ad4f84b833ba1",
+      "spec": {
+        "template": "bars",
+        "title": "Automated Time Series Cleansing, Stati... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core automated mechanisms and cleansing concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal automated bounds across cleansing systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical automated rules and cleansing cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying automated calculations and cleansing outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Safety Stock & Multi-Echelon Reorder Point Optimization under Lead-Time Variance",
+      "codeHash": "dede060d64e3a221df46852b0ae33f58894a67759f65be261d87804cf1a772f8",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Safety Stock & Multi-Echelon R... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core dynamic mechanisms and safety concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal dynamic bounds across safety systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical dynamic rules and safety cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying dynamic calculations and safety outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prescriptive Linear Programming Production Mix with Dual Shadow Price Capital Budgeting",
+      "codeHash": "ec1abd8fc384b0a7cc933f2f52ef47ce0d1647c1d1257de45d379dad2aa64f1e",
+      "spec": {
+        "template": "bars",
+        "title": "Prescriptive Linear Programming Produc... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core prescripti mechanisms and linear concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal prescripti bounds across linear systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical prescripti rules and linear cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying prescripti calculations and linear outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive Boardroom Decision Tree Rollback, EVPI Analysis & Milestone 2 Audit Certification",
+      "codeHash": "866702723dd0caa4df4667b4aeeb06564560c6687e6097159fe36ea97e15323f",
+      "spec": {
+        "template": "bars",
+        "title": "Executive Boardroom Decision Tree Roll... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core executive mechanisms and boardroom concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal executive bounds across boardroom systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical executive rules and boardroom cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying executive calculations and boardroom outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

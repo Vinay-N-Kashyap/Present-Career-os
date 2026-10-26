@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 27,
+  "entries": [
+    {
+      "partTitle": "The Working Capital Triad: DSO, DIO & DPO Microeconomic Foundations",
+      "codeHash": "55ec1f37273c2ddc60aa31c83d7b2b80890f2d1449bae7e0e8c2ee62a94fc1b1",
+      "spec": {
+        "template": "bars",
+        "title": "The Working Capital Triad: DSO, DIO & ... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core working mechanisms and capital concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal working bounds across capital systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical working rules and capital cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying working calculations and capital outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cash Conversion Cycle (CCC): Mathematical Formulation & Balance Sheet Mechanics",
+      "codeHash": "d58528864892189bd792d90fb646b1904239a06f8a5be8ff5dd661225706e8d8",
+      "spec": {
+        "template": "bars",
+        "title": "The Cash Conversion Cycle (CCC): Mathe... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core cash mechanisms and conversion concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal cash bounds across conversion systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical cash rules and conversion cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying cash calculations and conversion outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Phenomenon of Negative Cash Conversion Cycles: The Float Engine",
+      "codeHash": "6f95f27335aafb271de6b5aeef226fc22130973fb548a5577a2bbebd629e6f55",
+      "spec": {
+        "template": "bars",
+        "title": "The Phenomenon of Negative Cash Conver... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core phenomenon mechanisms and negative concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal phenomenon bounds across negative systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical phenomenon rules and negative cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying phenomenon calculations and negative outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantifying Operational Cash Drag & Cost of Capital Drag",
+      "codeHash": "6c59f68a716233f3fbcf1405227154a4007907c3706b5b3a0e3927d06c8e8b9c",
+      "spec": {
+        "template": "bars",
+        "title": "Quantifying Operational Cash Drag & Co... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core quantifyin mechanisms and operationa concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal quantifyin bounds across operationa systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical quantifyin rules and operationa cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying quantifyin calculations and operationa outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise Working Capital & Cash Conversion Cycle Simulation Engine in Python",
+      "codeHash": "ffd9b8cfd04239714f6e3df28684a16249b01b15022e567f16308dd09c2c2849",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise Working Capital... \u2014 Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Expected Return",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Scope",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capacity Bound",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Decision Frontier",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Expected Return",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
