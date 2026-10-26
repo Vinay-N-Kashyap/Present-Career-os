@@ -455,6 +455,8 @@ day_49_data = {
     "day": 49,
     "title": "Contract Pricing Engines, Complex Tiered Volume Rebates & Dynamic B2B Quoting Workflows (CPQ)",
     "coursePrefix": "bcom_ecom",
+    "goal": "Architect enterprise B2B contract pricing resolution engines, deterministic stepped and marginal volume calculators, retrospective rebate accrual ledgers under ASC 606, CPQ quotation workflows with automated margin hurdle approval gatekeepers, and executive pocket margin pricing waterfalls.",
+    "minutes": 38,
     "recap": "Day 49 masters enterprise B2B multi-dimensional contract pricing precedence, stepped vs marginal volume bracket calculators, retrospective annual volume rebates with ASC 606 variable consideration accruals, CPQ quoting state machines with automated margin hurdle gatekeepers, and executive pricing waterfall leakage towers.",
     "parts": parts
 }

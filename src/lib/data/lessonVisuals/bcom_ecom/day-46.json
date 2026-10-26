@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "PunchOut Catalog Architecture: cXML SetupRequest & OCI Roundtrip Protocol Handshakes",
-      "codeHash": "dac4ea7879e8b41b1123184c3ed69372ad98f726d06c3c96d00df6036cda1b41",
+      "codeHash": "c051ab4f8811f159e83977b19b6a3eeceb76a1803547917d40048a50e7b1686c",
       "spec": {
         "template": "funnel",
-        "title": "PunchOut Catalog Architecture: cXML SetupRequest & OCI Roundtrip Protocol Handshakes",
+        "title": "Day 46 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Inbound checkout transactions arrive at the payment orchestration layer.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Corporate buyers start purchasing sessions from procurement tools.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Processing",
-            "caption": "The orchestration layer canonicalizes payment request schemas.",
-            "data": {
-              "stage": "evaluation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Mutual security handshakes validate inbound corporate identity tokens.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Execution",
-            "caption": "Normalized payment tokens decouple the store from specific gateway lock in.",
-            "data": {
-              "stage": "dispatch",
-              "status": "success"
-            }
+            "at": "example",
+            "caption": "Ephemeral buyer sessions bind securely to tenant memory spaces.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Verification",
-            "caption": "Evaluating eligible payment gateways isolates the lowest cost option.",
-            "data": {
-              "stage": "certified",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Authenticated redirect links launch custom corporate catalog portals.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Dynamic B2B Custom Contract Price Lists & Account-Specific Catalog Entitlements",
-      "codeHash": "83507dc75f25e45995c9333e4ab3002d1c9b75535248085299480f9f10402a06",
+      "codeHash": "93c8566412719794094ee14206e93c83c9bcb494181b12a50e58803590ae689c",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic B2B Custom Contract Price Lists & Account-Specific Catalog Entitlements",
+        "title": "Day 46 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Smart routing algorithms evaluate active merchant acquiring channels.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Procurement systems initiate classical catalog sessions.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Processing",
-            "caption": "Cost basis points and authorization success rates are dynamically weighed.",
-            "data": {
-              "stage": "evaluation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Browsers redirect with hidden enterprise parameters and secrets.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Execution",
-            "caption": "Transactions route to localized acquirers to boost authorization yield.",
-            "data": {
-              "stage": "dispatch",
-              "status": "success"
-            }
+            "at": "example",
+            "caption": "Shopping cart contents serialize into procurement table formats.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Verification",
-            "caption": "Automated cascade sequences rank primary and secondary payment pipelines.",
-            "data": {
-              "stage": "certified",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Form postbacks dispatch line item payloads directly to buyer systems.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "PunchOut Order Message (cXML PunchOutOrderMessage) Return & Procurement Cart Injection",
-      "codeHash": "dd79ec960f1dfff706146deeb8f50f53ecc30a2efdce7d7fe3bdbd932add1c8e",
+      "codeHash": "3cbd7d2db4a8ed822c166f5b3ce353f45b63c99babfaec290cb0a7a469f17452",
       "spec": {
         "template": "funnel",
-        "title": "PunchOut Order Message (cXML PunchOutOrderMessage) Return & Procurement Cart Injection",
+        "title": "Day 46 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Card credentials exchange directly for scheme network tokens.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Catalog engines inspect active procurement master agreements.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Processing",
-            "caption": "Network tokens carry dynamic single use cryptograms for card security.",
-            "data": {
-              "stage": "evaluation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Pricing precedence rules evaluate customer price contracts first.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Execution",
-            "caption": "Interchange qualification rates improve through network token acceptance.",
-            "data": {
-              "stage": "dispatch",
-              "status": "success"
-            }
+            "at": "example",
+            "caption": "Quantity break tiers dynamically discount large industrial orders.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Verification",
-            "caption": "Automated account updater webhooks seamlessly refresh expired cards.",
-            "data": {
-              "stage": "certified",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Fallback list prices apply when custom agreements are absent.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Open Catalog Interface (SAP OCI) HTTP Form-Post Roundtrip Integration",
-      "codeHash": "6b9d9ca312a221d6b6c3e30345d6d73f324d03fd9ad501f92483aacc6a1ecbcd",
+      "codeHash": "aa124d16931c79af2fc5d0da34ae447cc4974d99dcd0c952fde1275102a39d54",
       "spec": {
         "template": "funnel",
-        "title": "Open Catalog Interface (SAP OCI) HTTP Form-Post Roundtrip Integration",
+        "title": "Day 46 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Payment gateway circuit breakers monitor outbound connection health.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Selected catalog items assemble into structured enterprise orders.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Processing",
-            "caption": "Consecutive processor timeouts trip the circuit to divert live traffic.",
-            "data": {
-              "stage": "evaluation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Commodity classification codes tag every industrial component.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Execution",
-            "caption": "Canary probes verify downstream gateway recovery before traffic resumes.",
-            "data": {
-              "stage": "dispatch",
-              "status": "success"
-            }
+            "at": "example",
+            "caption": "Accounting cost centers and project codes bind to line items.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Verification",
-            "caption": "Idempotent cascading retries transparently rescue soft decline events.",
-            "data": {
-              "stage": "certified",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Order XML envelopes transmit securely to buyer approval queues.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise PunchOut Gateway Control Tower & Integration SLA Governance",
-      "codeHash": "7cf1cfcf738309b2750a0fda15e3e68c82dba3398eb81c17dd77f35d06f7809d",
+      "codeHash": "aaaf1b6f82e5f9fc627848a058233339bcc3256f5a157d52cf7dc4e740faa49d",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise PunchOut Gateway Control Tower & Integration SLA Governance",
+        "title": "Day 46 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Payment command towers consolidate telemetry across all acquiring banks.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Integration towers monitor telemetry across procurement systems.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Processing",
-            "caption": "Dashboards monitor overall authorization rates and latency curves.",
-            "data": {
-              "stage": "evaluation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Payload validation engines trap schema errors before cart dispatch.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Execution",
-            "caption": "Cascaded recovery transactions reclaim otherwise lost checkout sales.",
-            "data": {
-              "stage": "dispatch",
-              "status": "success"
-            }
+            "at": "example",
+            "caption": "Circuit breakers protect backend catalogs from timeout delays.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Verification",
-            "caption": "Platform dispute ratios remain strictly beneath card scheme thresholds.",
-            "data": {
-              "stage": "certified",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Executive dashboards summarize order conversion and system uptime.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }

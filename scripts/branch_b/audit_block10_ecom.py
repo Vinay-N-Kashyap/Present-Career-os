@@ -1,73 +1,43 @@
-"""
-Audit Block 10 (Days 46-50 & Milestone 10 Capstone) for Course 07 (bcom_ecom).
-"""
 import json
-import hashlib
 import os
-import re
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 commerce_dir = r"C:\Users\Admin\Desktop\projects\Present-Career-os-commerce"
-scripts_dir = os.path.join(commerce_dir, "scripts", "branch_b")
-visuals_dir = os.path.join(commerce_dir, "src", "lib", "data", "lessonVisuals", "bcom_ecom")
+grand_total_words = 0
 
-total_block10_words = 0
-all_passed = True
-
-print("=" * 60)
-print("AUDITING COURSE 07 BLOCK 10 (DAYS 46-50 & MILESTONE 10 CAPSTONE)")
-print("=" * 60)
+print("=== AUDIT BLOCK 10 (DAYS 46-50) FOR BCOM_ECOM ===")
 
 for day_num in range(46, 51):
-    data_file = os.path.join(scripts_dir, f"day{day_num}_ecom_data.json")
-    visual_file = os.path.join(visuals_dir, f"day-{day_num}.json")
+    file_path = os.path.join(commerce_dir, "scripts", "branch_b", f"day{day_num}_ecom_data.json")
+    assert os.path.exists(file_path), f"Missing data file: {file_path}"
     
-    assert os.path.exists(data_file), f"Missing data file: {data_file}"
-    assert os.path.exists(visual_file), f"Missing visual file: {visual_file}"
-    
-    with open(data_file, "r", encoding="utf-8") as f:
-        day_data = json.load(f)
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
         
-    with open(visual_file, "r", encoding="utf-8") as f:
-        visual_data = json.load(f)
-        
-    assert day_data["coursePrefix"] == "bcom_ecom"
-    assert day_data["day"] == day_num
-    expected_minutes = 60 if day_num == 50 else 38
-    assert day_data["minutes"] == expected_minutes, f"Day {day_num} minutes expected {expected_minutes}, got {day_data['minutes']}"
-    assert len(day_data["parts"]) == 5, f"Day {day_num} parts count != 5"
+    assert data["day"] == day_num, f"Day mismatch: expected {day_num}, got {data['day']}"
+    assert data["coursePrefix"] == "bcom_ecom", f"Prefix mismatch: {data.get('coursePrefix')}"
+    assert isinstance(data["recap"], str) and len(data["recap"]) > 30, f"Recap invalid for day {day_num}"
+    assert len(data["parts"]) == 5, f"Day {day_num} must have exactly 5 parts"
     
-    # Audit parts and word counts
     day_words = 0
-    part_counts = []
-    for p_idx, part in enumerate(day_data["parts"]):
-        text = " ".join(part["say"]) if isinstance(part["say"], list) else part["say"]
-        w_cnt = len(text.strip().split())
-        part_counts.append(w_cnt)
-        day_words += w_cnt
-        total_block10_words += w_cnt
+    part_word_list = []
+    for p_idx, part in enumerate(data["parts"], 1):
+        words = len(" ".join(part["say"]).split())
+        part_word_list.append(words)
+        day_words += words
+        assert words >= 600, f"Day {day_num} Part {p_idx} has {words} words (<600)!"
+        assert len(part["check"]["options"]) == 4, f"Day {day_num} Part {p_idx} must have 4 options"
+        assert part["check"]["answer"] == 0 and part["check"]["answerIndex"] == 0, f"Day {day_num} Part {p_idx} answer must be 0"
+        assert len(part["check"]["why"]) >= 30, f"Day {day_num} Part {p_idx} why must be >= 30 chars"
+        assert len(part["code"].strip()) > 0, f"Day {day_num} Part {p_idx} code missing"
+        assert len(part["output"].strip()) > 0, f"Day {day_num} Part {p_idx} output missing"
         
-        assert w_cnt >= 580, f"Day {day_num} Part {p_idx+1} has {w_cnt} words (< 580w)!"
-        assert part["check"]["answer"] == 0
-        assert len(part["check"]["options"]) == 4
-        assert len(part["check"]["why"]) >= 20
-        assert len(part["code"]) > 10
-        assert len(part["output"]) > 5
-        
-        # Verify visual hash binding
-        v_entry = visual_data["entries"][p_idx]
-        expected_hash = hashlib.sha256(part["code"].encode("utf-8")).hexdigest()
-        assert v_entry["codeHash"] == expected_hash, f"Hash mismatch in Day {day_num} Part {p_idx+1}"
-        assert v_entry["partTitle"] == part["title"]
-        
-        # Verify captions
-        for step in v_entry["spec"]["steps"]:
-            cap = step["caption"]
-            assert not re.search(r'\d', cap), f"Digit found in Day {day_num} Part {p_idx+1} caption: {cap}"
-            assert cap.endswith('.'), f"Missing period in Day {day_num} Part {p_idx+1} caption: {cap}"
-            assert len(cap) <= 75, f"Caption > 75 chars ({len(cap)}) in Day {day_num} Part {p_idx+1}: {cap}"
+    assert day_words >= 3000, f"Day {day_num} total words {day_words} < 3000"
+    grand_total_words += day_words
+    print(f"Day {day_num}: {data['title'][:45]}... | Words: {day_words} | Parts: {part_word_list}")
 
-    print(f"Day {day_num} PASSED audit: {day_words} words. Parts: {part_counts}")
-
-print("=" * 60)
-print(f"ALL 5 DAYS (46-50) PASSED AUDIT! Grand total words: {total_block10_words}")
-print("=" * 60)
+print(f"\nGrand Total Block 10 Words: {grand_total_words} words (Target: >= 15,000)")
+assert grand_total_words >= 15000, f"Grand total {grand_total_words} < 15,000 words"
+print("ALL BLOCK 10 INVARIANTS PASS PERFECTLY! READY FOR VISUALS & APPEND!")

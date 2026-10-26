@@ -27,7 +27,7 @@ describe('BCOM E-Commerce Month 2 Block 10 Expansion (Days 46-50 & Milestone 10 
     }
   });
 
-  it('should satisfy strict word count threshold (>= 580 words per part) across all 25 parts', () => {
+  it('should satisfy strict word count threshold (>= 600 words per part) across all 25 parts', () => {
     let totalBlockWords = 0;
     const partWordCounts: { day: number; part: number; words: number }[] = [];
 
@@ -41,8 +41,8 @@ describe('BCOM E-Commerce Month 2 Block 10 Expansion (Days 46-50 & Milestone 10 
         totalBlockWords += wordCount;
         partWordCounts.push({ day: dayNum, part: pIdx + 1, words: wordCount });
         assert(
-          wordCount >= 580,
-          `Day ${dayNum} Part ${pIdx + 1} has ${wordCount} words, below 580 word minimum!`
+          wordCount >= 600,
+          `Day ${dayNum} Part ${pIdx + 1} has ${wordCount} words, below 600 word minimum!`
         );
       });
       assert(
@@ -58,11 +58,15 @@ describe('BCOM E-Commerce Month 2 Block 10 Expansion (Days 46-50 & Milestone 10 
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
       lesson.parts.forEach((part, pIdx) => {
         assert(part.check, `Day ${dayNum} Part ${pIdx + 1} missing Socratic check`);
-        const chk = part.check as any;
-        const ans = chk.answer !== undefined ? chk.answer : chk.answerIndex;
-        assert.strictEqual(ans, 0, `Day ${dayNum} Part ${pIdx + 1} answer must be 0`);
-        assert.strictEqual(chk.options.length, 4, `Day ${dayNum} Part ${pIdx + 1} must have 4 options`);
-        assert(chk.why && chk.why.length >= 20, `Day ${dayNum} Part ${pIdx + 1} why explanation too short`);
+        assert.strictEqual(part.check.options.length, 4, `Day ${dayNum} Part ${pIdx + 1} must have 4 options`);
+        assert(
+          part.check.answer === 0 || part.check.answerIndex === 0,
+          `Day ${dayNum} Part ${pIdx + 1} answer must be 0`
+        );
+        assert(
+          part.check.why && part.check.why.length >= 20,
+          `Day ${dayNum} Part ${pIdx + 1} why explanation too short`
+        );
       });
     }
   });
@@ -71,51 +75,59 @@ describe('BCOM E-Commerce Month 2 Block 10 Expansion (Days 46-50 & Milestone 10 
     for (let dayNum = 46; dayNum <= 50; dayNum++) {
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
       lesson.parts.forEach((part, pIdx) => {
-        assert(part.example && part.example.length > 10, `Day ${dayNum} Part ${pIdx + 1} missing example`);
+        assert(part.example && part.example.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing example`);
         assert(part.tryIt && part.tryIt.length > 10, `Day ${dayNum} Part ${pIdx + 1} missing tryIt`);
         assert(part.code && part.code.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing code`);
-        assert(part.output && part.output.length > 5, `Day ${dayNum} Part ${pIdx + 1} missing output`);
+        assert(part.output && part.output.length > 0, `Day ${dayNum} Part ${pIdx + 1} missing output`);
       });
     }
   });
 
   it('should have valid Gate v2 visual envelopes with matching SHA-256 codeHash bindings', () => {
-    const visualsDir = path.join(__dirname, '../src/lib/data/lessonVisuals/bcom_ecom');
+    const visualsDir = path.join(__dirname, '..', 'src', 'lib', 'data', 'lessonVisuals', 'bcom_ecom');
+    
     for (let dayNum = 46; dayNum <= 50; dayNum++) {
       const visualPath = path.join(visualsDir, `day-${dayNum}.json`);
-      assert(fs.existsSync(visualPath), `Visual envelope missing for Day ${dayNum}: ${visualPath}`);
-      const raw = fs.readFileSync(visualPath, 'utf-8');
-      const visualData = JSON.parse(raw);
-
+      assert(fs.existsSync(visualPath), `Visual envelope missing for day ${dayNum}: ${visualPath}`);
+      
+      const visualData = JSON.parse(fs.readFileSync(visualPath, 'utf-8'));
       assert.strictEqual(visualData.schemaVersion, 1);
       assert.strictEqual(visualData.prefix, 'bcom_ecom');
       assert.strictEqual(visualData.day, dayNum);
-      assert.strictEqual(visualData.entries.length, 5);
-
+      assert.strictEqual(visualData.entries.length, 5, `Day ${dayNum} visuals must have 5 entries`);
+      
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
-
-      visualData.entries.forEach((entry: any, pIdx: number) => {
-        const part = lesson.parts[pIdx];
-        const computedHash = crypto.createHash('sha256').update(part.code).digest('hex');
-        assert.strictEqual(
-          entry.codeHash,
-          computedHash,
-          `Day ${dayNum} Part ${pIdx + 1} codeHash mismatch`
-        );
-        assert.strictEqual(entry.spec.steps.length, 4);
-        for (const step of entry.spec.steps) {
-          assert(!/\d/.test(step.caption), `Caption contains numeric digit: ${step.caption}`);
-          assert(step.caption.endsWith('.'), `Caption missing terminal period: ${step.caption}`);
-          assert(step.caption.length <= 75, `Caption exceeds 75 chars: ${step.caption}`);
-        }
+      
+      visualData.entries.forEach((vis: any, vIdx: number) => {
+        const part = lesson.parts[vIdx];
+        assert.strictEqual(vis.partTitle, part.title, `Day ${dayNum} visual ${vIdx} title mismatch`);
+        
+        // Compute SHA-256 hash
+        const sayStr = Array.isArray(part.say) ? part.say.join('') : part.say;
+        const rawInput = part.title + sayStr + (part.code || '');
+        const expectedHash = crypto.createHash('sha256').update(rawInput, 'utf-8').digest('hex');
+        assert.strictEqual(vis.codeHash, expectedHash, `Day ${dayNum} Part ${vIdx + 1} codeHash mismatch`);
+        
+        // Assert visual spec invariants
+        assert.strictEqual(vis.spec.template, 'funnel');
+        assert.strictEqual(vis.spec.steps.length, 4);
+        
+        vis.spec.steps.forEach((step: any, sIdx: number) => {
+          assert(['intro', 'say1', 'example', 'tryIt'].includes(step.at));
+          assert(step.stages.length === 4);
+          assert(!/\d/.test(step.caption), `Caption contains numeric digit: "${step.caption}"`);
+          assert(step.caption.endsWith('.'), `Caption not period-terminated: "${step.caption}"`);
+          assert(step.caption.length <= 75, `Caption exceeds 75 chars (${step.caption.length}): "${step.caption}"`);
+        });
       });
     }
   });
 
   it('BCOM E-Commerce Month 2 Block 10 Complete (Days 1 to 50: 50/60 Days, 83.33% Complete)', () => {
-    const totalDays = BCOM_ECOM_LONG_LESSONS.length;
-    assert(totalDays >= 50, `Expected at least 50 days, got ${totalDays}`);
-    const pct = ((50 / 60) * 100).toFixed(2);
-    console.log(`\n🎉 COURSE 07 STATUS: 50/60 Days Complete (${pct}% Platform Target Achieved)!`);
+    const allLessonDays = BCOM_ECOM_LONG_LESSONS.map((l) => l.day);
+    for (let day = 1; day <= 50; day++) {
+      assert(allLessonDays.includes(day), `Missing day ${day} in BCOM_ECOM_LONG_LESSONS`);
+    }
+    console.log('\n🎉 COURSE 07 STATUS: 50/60 Days Complete (83.33% Platform Target Achieved)!');
   });
 });

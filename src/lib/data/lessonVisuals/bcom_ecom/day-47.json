@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "Recursive Corporate Account Hierarchies & Multi-Unit Organization Modeling",
-      "codeHash": "2a1cee7194e99af7566975a34211cb1da669a9f34356844d3d7fad5787e60ed2",
+      "codeHash": "c632df0b3bbaeca638028eb11be95349364ddbf00d436680fe9a45c4c3e27915",
       "spec": {
         "template": "funnel",
-        "title": "Recursive Corporate Account Hierarchies & Multi-Unit Organization Modeling",
+        "title": "Day 47 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Cart Ingestion",
-            "caption": "Multi seller shopping carts require atomic split payment allocation.",
-            "data": {
-              "stage": "cart",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Multinational corporations configure multi tier legal structures.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Splits Evaluation",
-            "caption": "The split ledger calculates item subtotals and sales tax withholdings.",
-            "data": {
-              "stage": "calculation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Global master agreements cascade down through division nodes.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Escrow Allocation",
-            "caption": "Platform commission take rates are deducted before net payouts.",
-            "data": {
-              "stage": "holding",
-              "status": "escrow"
-            }
+            "at": "example",
+            "caption": "Localized manufacturing facilities inherit negotiated contract terms.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Payout Clearance",
-            "caption": "Integer arithmetic prevents rounding leakage across multi vendor orders.",
-            "data": {
-              "stage": "payout",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Hierarchical trees partition departmental billing profiles.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Role-Based Access Control (RBAC), Granular Purchasing Permissions & Separation of Duties",
-      "codeHash": "d3289160ad56c9784770cdfaf6440216fa46c4d79696fe95c173e5cdcb2ba767",
+      "codeHash": "f11fa8175cc2e6b0d787c3b7b2d87cdd58aa276dfa405e0e2dc15fa95008add2",
       "spec": {
         "template": "funnel",
-        "title": "Role-Based Access Control (RBAC), Granular Purchasing Permissions & Separation of Duties",
+        "title": "Day 47 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Cart Ingestion",
-            "caption": "Custodial accounts segregate merchant funds from operational revenues.",
-            "data": {
-              "stage": "cart",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Statutory rules mandate separation between requisitioners and approvers.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Splits Evaluation",
-            "caption": "Compliance with money transmission laws protects customer balances.",
-            "data": {
-              "stage": "calculation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Role permissions evaluate access rights against policy tables.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Escrow Allocation",
-            "caption": "Merchant balances remain shielded in bankruptcy protected escrow vaults.",
-            "data": {
-              "stage": "holding",
-              "status": "escrow"
-            }
+            "at": "example",
+            "caption": "Self approval interceptors immediately block unauthorized releases.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Payout Clearance",
-            "caption": "Segregated depository ledgers guarantee complete financial isolation.",
-            "data": {
-              "stage": "payout",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Immutable audit journals record every organizational decision.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Multi-Tier Dynamic Approval Routing Engines & Cost Center Budget Guards",
-      "codeHash": "30dc45508086a9b7b2b694e79b24d2bd0c28146956ef6cd2b1f238453f7ba342",
+      "codeHash": "05419b72c4ade29f56d7e34d3e8c7332503612a0de58c3d920901344f40c70aa",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Tier Dynamic Approval Routing Engines & Cost Center Budget Guards",
+        "title": "Day 47 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Cart Ingestion",
-            "caption": "Rolling reserve policies mitigate counterparty fraud and default risk.",
-            "data": {
-              "stage": "cart",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Submitted requisitions enter dynamic financial routing pipelines.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Splits Evaluation",
-            "caption": "Escrow tranches lock a portion of seller funds for dispute coverage.",
-            "data": {
-              "stage": "calculation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Small departmental orders release automatically without human delay.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Escrow Allocation",
-            "caption": "Mature reserve tranches release automatically as hold windows expire.",
-            "data": {
-              "stage": "holding",
-              "status": "escrow"
-            }
+            "at": "example",
+            "caption": "Elevated transaction totals escalate to executive controllers.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Payout Clearance",
-            "caption": "Risk adjusted reserve schedules scale dynamically based on dispute rates.",
-            "data": {
-              "stage": "payout",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Electronic signatures seal approval trails for statutory review.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Delegation of Authority (DoA), SLA Escalation State Machines & Immutable Audit Trails",
-      "codeHash": "423112d49c74a6a2a9581a4f7a1095535f924be29ece8cfa80d45865c9243005",
+      "codeHash": "11eaf71a553d0a338ce5a895d81ccff5ed493d9f6eabea77147bd03836b98bb4",
       "spec": {
         "template": "funnel",
-        "title": "Delegation of Authority (DoA), SLA Escalation State Machines & Immutable Audit Trails",
+        "title": "Day 47 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Cart Ingestion",
-            "caption": "Platform payout orchestrators coordinate asynchronous merchant transfers.",
-            "data": {
-              "stage": "cart",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Corporate departments assign annual operational purchasing funds.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Splits Evaluation",
-            "caption": "Transfer jobs dispatch to verified seller connected account endpoints.",
-            "data": {
-              "stage": "calculation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Cart checkout queries available cost center reserves in real time.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Escrow Allocation",
-            "caption": "Idempotent event webhooks track payout lifecycle state transitions.",
-            "data": {
-              "stage": "holding",
-              "status": "escrow"
-            }
+            "at": "example",
+            "caption": "Requisitions exceeding available funds trigger formal budget exceptions.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Payout Clearance",
-            "caption": "Automated destination charges distribute funds without manual wiring.",
-            "data": {
-              "stage": "payout",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Automated ledger holds safeguard corporate liquidity from overdrafts.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise B2B Account Administration Console & Governance Dashboard",
-      "codeHash": "91a9aebe34b2c0007f4f564aa535a838b84975974adbe3332f6e52fba4e6dc04",
+      "codeHash": "c8d2679d602aae2defd270f208221875f05569d3640ad497e6314477a8aad46d",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise B2B Account Administration Console & Governance Dashboard",
+        "title": "Day 47 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Cart Ingestion",
-            "caption": "Marketplace treasury command towers monitor continuous platform solvency.",
-            "data": {
-              "stage": "cart",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Central procurement command centers visualize corporate spend streams.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Splits Evaluation",
-            "caption": "Three way ledger reconciliations confirm zero balance sheet variance.",
-            "data": {
-              "stage": "calculation",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Pending multi tier approvals aggregate across global operating teams.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Escrow Allocation",
-            "caption": "Annual tax reporting pipelines automate merchant compliance filings.",
-            "data": {
-              "stage": "holding",
-              "status": "escrow"
-            }
+            "at": "example",
+            "caption": "Automated timeout alerts escalate stalled approvals to managers.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Payout Clearance",
-            "caption": "Comprehensive solvency audits confer official platform accreditation.",
-            "data": {
-              "stage": "payout",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Executive analytics reveal departmental purchasing patterns.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }

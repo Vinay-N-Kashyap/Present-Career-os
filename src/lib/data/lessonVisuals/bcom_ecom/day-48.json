@@ -5,230 +5,590 @@
   "entries": [
     {
       "partTitle": "Enterprise Trade Credit Engines, Real-Time Exposure Scoring & Dynamic Credit Limits",
-      "codeHash": "499d0c55b0b11fb1375677141cb68096491a2ac140f6d25a793ccc5dd38e6831",
+      "codeHash": "687e97ac097751fc8d70764bdf35de36e738c96e654a2f70aa21fef5ad0b8cdf",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Trade Credit Engines, Real-Time Exposure Scoring & Dynamic Credit Limits",
+        "title": "Day 48 Part 1 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Inbound transactions undergo real time velocity anomaly detection.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Delivered purchase orders generate formal commercial tax invoices.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Analysis",
-            "caption": "Sliding time windows monitor card attempt frequency and IP bursts.",
-            "data": {
-              "stage": "entropy",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Standard credit agreements establish deferred payment time horizons.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Evaluation",
-            "caption": "Rapid card rotations trigger automated account takeover alarms.",
-            "data": {
-              "stage": "scoring",
-              "status": "evaluated"
-            }
+            "at": "example",
+            "caption": "Early cash discount formulas calculate prompt settlement savings.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Decision",
-            "caption": "Configurable velocity thresholds isolate automated card testing runs.",
-            "data": {
-              "stage": "verdict",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Electronic invoice records synchronize directly with buyer accounting.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Commercial Invoicing, Payment Terms (Net 30/60/90, 2/10 Net 30) & Cash Discount Engines",
-      "codeHash": "4e5757609b2d0bfc9e43e1368ab67f15f8f4d44805b730286cd68b1285307423",
+      "codeHash": "c06ad6b314330715eaf7b98dd83181209f5a177da931580d8f4c1623840544be",
       "spec": {
         "template": "funnel",
-        "title": "Commercial Invoicing, Payment Terms (Net 30/60/90, 2/10 Net 30) & Cash Discount Engines",
+        "title": "Day 48 Part 2 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Client browser environments emit deep hardware entropy signals.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Underwriting engines assess corporate financial health and history.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Analysis",
-            "caption": "Canvas rendering and graphics card drivers construct unique signatures.",
-            "data": {
-              "stage": "entropy",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Approved credit facilities establish hard aggregate spending limits.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Evaluation",
-            "caption": "Emulated rendering environments unmask automated headless browsers.",
-            "data": {
-              "stage": "scoring",
-              "status": "evaluated"
-            }
+            "at": "example",
+            "caption": "Outstanding unpaid invoices and unbilled orders sum to total exposure.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Decision",
-            "caption": "Behavioral biometrics measure natural physical keystroke dynamics.",
-            "data": {
-              "stage": "verdict",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Automated credit checks block shipment release when limits breach.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Accounts Receivable (AR) Aging Schedules, Delinquency Buckets & CECL Loss Reserves",
-      "codeHash": "2dce5fe97f8c3ee396c53c8fd846005f6f92558d11df6ae61ce6524aba4c5ea4",
+      "codeHash": "d255780e0460727a4c46534c73916dbe1b98e413163b447ca3007da9ffc3bad7",
       "spec": {
         "template": "funnel",
-        "title": "Accounts Receivable (AR) Aging Schedules, Delinquency Buckets & CECL Loss Reserves",
+        "title": "Day 48 Part 3 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Machine learning risk scoring ensembles ingest hundreds of features.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Accounts receivable ledgers categorize open invoices into aging tiers.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Analysis",
-            "caption": "Gradient boosted trees calculate calibrated fraud probabilities.",
-            "data": {
-              "stage": "entropy",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Statutory credit loss standards mandate forward risk allowances.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Evaluation",
-            "caption": "Graph networks detect distributed syndicates across linked entities.",
-            "data": {
-              "stage": "scoring",
-              "status": "evaluated"
-            }
+            "at": "example",
+            "caption": "Historical default loss matrices apply against delinquent balances.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Decision",
-            "caption": "Calibrated risk scores drive dynamic multi tier decision frontiers.",
-            "data": {
-              "stage": "verdict",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Treasury balance sheets adjust general ledger reserves for risk.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Multi-Stage Automated Dunning State Machines, Penalty Interest & Credit Freeze Triggers",
-      "codeHash": "a714d11ea9be91cff68eab8b47da88f9676bdce9ebd56b9c35cb7d4843eb74ea",
+      "codeHash": "b845a3c4bd7cb61599925e7712c4dc8da5fcfeb8195e8853866b137653f5df18",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Stage Automated Dunning State Machines, Penalty Interest & Credit Freeze Triggers",
+        "title": "Day 48 Part 4 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Modern secure authentication protocols evaluate cardholder risk profiles.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Overdue commercial invoices transition into formal dunning sequences.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Analysis",
-            "caption": "Issuer risk engines permit frictionless background authentication flows.",
-            "data": {
-              "stage": "entropy",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Courteous digital reminders notify accounts payable of due dates.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Evaluation",
-            "caption": "Elevated transaction risks trigger native responsive mobile challenges.",
-            "data": {
-              "stage": "scoring",
-              "status": "evaluated"
-            }
+            "at": "example",
+            "caption": "Formal warning statements dispatch as delinquency horizons lengthen.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Decision",
-            "caption": "Successful authentication transfers chargeback liability to card issuers.",
-            "data": {
-              "stage": "verdict",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Automated credit hold locks prevent delinquent accounts from buying.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
     },
     {
       "partTitle": "Enterprise Accounts Receivable (AR) Treasury Command Tower & DSO Telemetry",
-      "codeHash": "7fff6d47cfd0f29a71ede73277e220b138479fde0f4088e758dcefa217d74bb1",
+      "codeHash": "1efde41c6a1a36775b0adfe733446a5da56928c99462bbb07fe2400a3086f265",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Accounts Receivable (AR) Treasury Command Tower & DSO Telemetry",
+        "title": "Day 48 Part 5 Architecture Flow",
         "steps": [
           {
-            "id": "intro",
-            "label": "Ingestion",
-            "caption": "Anti fraud command towers balance loss prevention against conversion.",
-            "data": {
-              "stage": "inbound",
-              "status": "active"
-            }
+            "at": "intro",
+            "caption": "Executive treasury dashboards display trade credit portfolio health.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "say1",
-            "label": "Analysis",
-            "caption": "Defending low false positive ratios prevents legitimate customer loss.",
-            "data": {
-              "stage": "entropy",
-              "status": "processing"
-            }
+            "at": "say1",
+            "caption": "Days sales outstanding metrics measure cash collection efficiency.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "example",
-            "label": "Evaluation",
-            "caption": "Pre dispute deflection networks resolve inquiries before chargebacks.",
-            "data": {
-              "stage": "scoring",
-              "status": "evaluated"
-            }
+            "at": "example",
+            "caption": "Collection workflows prioritize high value delinquent accounts.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           },
           {
-            "id": "tryIt",
-            "label": "Decision",
-            "caption": "Comprehensive risk audits confer official fraud defense accreditation.",
-            "data": {
-              "stage": "verdict",
-              "status": "complete"
-            }
+            "at": "tryIt",
+            "caption": "Real time cash projections empower corporate liquidity optimization.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
           }
         ]
       }
