@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 42,
+  "entries": [
+    {
+      "partTitle": "Time-to-Event Physics & The Mathematics of Right-Censoring",
+      "codeHash": "73ea2b608034baaa1c94afb55ae48705c5280feb4c82bbdb3ea9ff7d616620e9",
+      "spec": {
+        "template": "bars",
+        "title": "Time-to-Event Physics & The Mathematic... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core event mechanisms and physics concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal event bounds across physics systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical event rules and physics cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying event calculations and physics outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Kaplan-Meier Product-Limit Estimator & Median Customer Lifetime",
+      "codeHash": "3765331ec2cd7ee8b4a6fce7fbcc1cdbee7a5c492d2cc27c4d4288c6e6ad6d3c",
+      "spec": {
+        "template": "bars",
+        "title": "The Kaplan-Meier Product-Limit Estimat... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core kaplan mechanisms and meier concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal kaplan bounds across meier systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical kaplan rules and meier cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying kaplan calculations and meier outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cox Proportional Hazards Model & Covariate Hazard Ratios",
+      "codeHash": "6552387ba814a0986fbc898a67132861a94f443f8e1923565f4fc0e70f520e70",
+      "spec": {
+        "template": "bars",
+        "title": "Cox Proportional Hazards Model & Covar... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core proportion mechanisms and hazards concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal proportion bounds across hazards systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical proportion rules and hazards cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying proportion calculations and hazards outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Diagnosing Non-Proportional Hazards via Schoenfeld Residuals",
+      "codeHash": "23834eb8d6c5683f9e48c54fa11587da90f1aa2535314af55ee94db0c531f831",
+      "spec": {
+        "template": "bars",
+        "title": "Diagnosing Non-Proportional Hazards vi... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core diagnosing mechanisms and proportion concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal diagnosing bounds across proportion systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical diagnosing rules and proportion cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying diagnosing calculations and proportion outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Customer Lifetime Value (CLV) Forecasting & Retention Intervention Orchestration",
+      "codeHash": "76d554caf2ecca19666a628e3a2d1c6d72cf631850f1518f59c3e94f30a9c678",
+      "spec": {
+        "template": "bars",
+        "title": "Production Customer Lifetime Value (CL... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core production mechanisms and customer concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal production bounds across customer systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical production rules and customer cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying production calculations and customer outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
