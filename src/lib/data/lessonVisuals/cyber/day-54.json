@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 54,
+  "promptSha": "079155dfd55381c1189feb59d3319bd6fa49d96abb60892af3b6e3eb169efa80",
+  "entries": [
+    {
+      "partTitle": "DFIR Foundations & The Order of Volatility: RFC 3227 Guidelines & Chain of Custody Protocols",
+      "codeHash": "8bd64cdadfb51a20fb7a5c4aedd9ccbff540e8d7415053abd34faff7e8b5061e",
+      "spec": {
+        "template": "compare",
+        "title": "Digital Forensics: DFIR Foundations & The Order of Volatility: RFC 3227 Guidelines & Chain of Custody Protocols",
+        "left": {
+          "label": "Flawed Ad-Hoc Investigation",
+          "content": [
+            "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+            "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+            "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+            "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+          ]
+        },
+        "right": {
+          "label": "Scientific DFIR Platform Architecture",
+          "content": [
+            "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+            "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+            "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+            "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates digital forensics evidence acquisition structured by the order of volatility."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection prioritizes volatile registers, memory, and network sockets ahead of persistent physical media."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates volatile evidence preservation over destructive premature system shutdowns."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms order of volatility scheduling, volatile state capture, and evidence preservation integrity."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Flawed Ad-Hoc Investigation",
+        "rightLabel": "Scientific DFIR Platform Architecture",
+        "leftContent": [
+          "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+          "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+          "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+          "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+        ],
+        "rightContent": [
+          "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+          "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+          "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+          "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+        ]
+      }
+    },
+    {
+      "partTitle": "Live Memory Forensics with Volatility 3: RAM Acquisition, Symbol Tables & In-Memory Malfind Inspection",
+      "codeHash": "76ebd0af25c8a279ea3281a80d26d9b0868ffc2d2805d24423f5274ead46056e",
+      "spec": {
+        "template": "compare",
+        "title": "Digital Forensics: Live Memory Forensics with Volatility 3: RAM Acquisition, Symbol Tables & In-Memory Malfind Inspection",
+        "left": {
+          "label": "Flawed Ad-Hoc Investigation",
+          "content": [
+            "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+            "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+            "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+            "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+          ]
+        },
+        "right": {
+          "label": "Scientific DFIR Platform Architecture",
+          "content": [
+            "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+            "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+            "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+            "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays live memory inspection using volatility symbol tables and kernel descriptors."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection scans virtual address descriptors to detect unlinked processes and injected executable memory pages."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates in-memory malware discovery over blind static file-based antivirus scanning."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms suspicious process identification, executable memory detection, and payload extraction."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Flawed Ad-Hoc Investigation",
+        "rightLabel": "Scientific DFIR Platform Architecture",
+        "leftContent": [
+          "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+          "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+          "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+          "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+        ],
+        "rightContent": [
+          "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+          "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+          "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+          "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+        ]
+      }
+    },
+    {
+      "partTitle": "Disk Image Acquisition & Filesystem Forensics: Bit-Stream Imaging, MFT Parsing & File Carving",
+      "codeHash": "4873d2f3ab2d006e0ceccbed41a758961860e7b7713d8b78e61fb52e2d6e4216",
+      "spec": {
+        "template": "compare",
+        "title": "Digital Forensics: Disk Image Acquisition & Filesystem Forensics: Bit-Stream Imaging, MFT Parsing & File Carving",
+        "left": {
+          "label": "Flawed Ad-Hoc Investigation",
+          "content": [
+            "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+            "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+            "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+            "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+          ]
+        },
+        "right": {
+          "label": "Scientific DFIR Platform Architecture",
+          "content": [
+            "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+            "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+            "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+            "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates bit-stream physical disk acquisition utilizing hardware write-blocking bridges."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors sector-by-sector copying and calculates cryptographic hash baselines to ensure evidence integrity."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates sector-accurate bit-stream imaging over incomplete file explorer copy operations."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms cryptographic hash equivalence, write-blocker enforcement, and judicial admissibility certification."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Flawed Ad-Hoc Investigation",
+        "rightLabel": "Scientific DFIR Platform Architecture",
+        "leftContent": [
+          "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+          "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+          "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+          "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+        ],
+        "rightContent": [
+          "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+          "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+          "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+          "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+        ]
+      }
+    },
+    {
+      "partTitle": "Super-Timeline Analysis & Event Reconstruction: Plaso Log2timeline & Anti-Forensic Timestomp Detection",
+      "codeHash": "e434f091047cf830b4e44785f56bfb066da4c8dd84a0a482c3b6dca0134d754f",
+      "spec": {
+        "template": "compare",
+        "title": "Digital Forensics: Super-Timeline Analysis & Event Reconstruction: Plaso Log2timeline & Anti-Forensic Timestomp Detection",
+        "left": {
+          "label": "Flawed Ad-Hoc Investigation",
+          "content": [
+            "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+            "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+            "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+            "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+          ]
+        },
+        "right": {
+          "label": "Scientific DFIR Platform Architecture",
+          "content": [
+            "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+            "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+            "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+            "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays super-timeline reconstruction aggregating timestamps across disparate system artifacts."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates master file table timestamp attributes to expose deliberate anti-forensic timestomping attempts."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates cross-artifact event reconstruction over isolated single-log investigation methods."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms chronological event sequencing, timestomping detection, and verified intrusion narrative."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Flawed Ad-Hoc Investigation",
+        "rightLabel": "Scientific DFIR Platform Architecture",
+        "leftContent": [
+          "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+          "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+          "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+          "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+        ],
+        "rightContent": [
+          "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+          "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+          "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+          "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise DFIR Investigation Engine & Benchmark",
+      "codeHash": "4b1bf35c89599c73e30caf8d160f55db029e86d15c833a673f5e3cc1803640fc",
+      "spec": {
+        "template": "compare",
+        "title": "Digital Forensics: Production Enterprise DFIR Investigation Engine & Benchmark",
+        "left": {
+          "label": "Flawed Ad-Hoc Investigation",
+          "content": [
+            "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+            "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+            "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+            "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+          ]
+        },
+        "right": {
+          "label": "Scientific DFIR Platform Architecture",
+          "content": [
+            "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+            "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+            "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+            "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete enterprise digital forensics platform certifying scientific readiness."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified performance across volatility order, memory analysis, disk imaging, and timelines."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates scientifically defensible cyber investigation across distributed enterprise assets."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full platform certification, zero forensic regressions, and verified judicial admissibility."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Flawed Ad-Hoc Investigation",
+        "rightLabel": "Scientific DFIR Platform Architecture",
+        "leftContent": [
+          "Responders pull computer power cords immediately, permanently destroying volatile RAM and decrypted keys",
+          "Analysts rely on basic file copy-paste, modifying access timestamps and omitting deleted clusters",
+          "In-memory reflective DLLs and unlinked processes remain invisible to traditional disk file scanners",
+          "Disparate artifact logs are examined in isolation without timeline synchronization or timestomp defense"
+        ],
+        "rightContent": [
+          "Order of volatility prioritizes CPU registers, physical RAM, and sockets before persistent disk storage",
+          "Hardware write-blockers and bit-stream imaging preserve exact physical sectors with cryptographic hashes",
+          "Volatility symbol tables and malfind inspection detect and extract in-memory code injection and rootkits",
+          "Super-timelines synchronize cross-artifact events while MFT attribute checks unmask timestomping"
+        ]
+      }
+    }
+  ]
+}

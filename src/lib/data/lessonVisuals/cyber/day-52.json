@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 52,
+  "promptSha": "95899d05c0d2a8df1fdb3b18e795ca7d9492b4893bf067f946a9729bddb28b6f",
+  "entries": [
+    {
+      "partTitle": "Proactive Threat Hunting vs Reactive Alerting: The Hunting Loop & The Pyramid of Pain",
+      "codeHash": "acf15750427d914a92f1dc7bb204598fb6d696d653caa6ce560682c0b5f42a67",
+      "spec": {
+        "template": "compare",
+        "title": "Threat Hunting: Proactive Threat Hunting vs Reactive Alerting: The Hunting Loop & The Pyramid of Pain",
+        "left": {
+          "label": "Reactive Alert-Driven SOC",
+          "content": [
+            "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+            "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+            "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+            "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+          ]
+        },
+        "right": {
+          "label": "Proactive Threat Hunting Engine",
+          "content": [
+            "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+            "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+            "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+            "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates proactive threat hunting tracking adversary tradecraft across the pyramid of pain."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates adversary disruption cost associated with detecting tactics, techniques, and procedures."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates high-impact behavioral tracking over fragile static indicator lookups."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms tactical indicator classification, maximum adversary disruption, and proactive hunt initiation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Reactive Alert-Driven SOC",
+        "rightLabel": "Proactive Threat Hunting Engine",
+        "leftContent": [
+          "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+          "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+          "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+          "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+        ],
+        "rightContent": [
+          "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+          "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+          "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+          "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+        ]
+      }
+    },
+    {
+      "partTitle": "MITRE ATT&CK Framework Mapping: Enterprise Matrix Hierarchy, Tactics & Coverage Heatmaps",
+      "codeHash": "d821c3ede91e146fcbd9097986d38379695c0a9540e3378e8d7130c52448e031",
+      "spec": {
+        "template": "compare",
+        "title": "Threat Hunting: MITRE ATT&CK Framework Mapping: Enterprise Matrix Hierarchy, Tactics & Coverage Heatmaps",
+        "left": {
+          "label": "Reactive Alert-Driven SOC",
+          "content": [
+            "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+            "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+            "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+            "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+          ]
+        },
+        "right": {
+          "label": "Proactive Threat Hunting Engine",
+          "content": [
+            "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+            "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+            "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+            "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays enterprise detection mapping across the adversary tactics and techniques matrix."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates coverage percentages across core tactical stages to isolate visibility blind spots."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates comprehensive kill-chain visibility over fragmented, unaligned monitoring."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms complete tactical coverage, blind spot remediation, and verified adversary tracking."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Reactive Alert-Driven SOC",
+        "rightLabel": "Proactive Threat Hunting Engine",
+        "leftContent": [
+          "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+          "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+          "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+          "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+        ],
+        "rightContent": [
+          "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+          "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+          "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+          "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+        ]
+      }
+    },
+    {
+      "partTitle": "Detection Engineering with Sigma Rules: Universal YAML Schemas & Multi-SIEM Transpilation",
+      "codeHash": "aa618fcb976e91c12162c7dd0c1808fdd8a24131626e77c5ffcfec18f826cf0a",
+      "spec": {
+        "template": "compare",
+        "title": "Threat Hunting: Detection Engineering with Sigma Rules: Universal YAML Schemas & Multi-SIEM Transpilation",
+        "left": {
+          "label": "Reactive Alert-Driven SOC",
+          "content": [
+            "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+            "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+            "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+            "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+          ]
+        },
+        "right": {
+          "label": "Proactive Threat Hunting Engine",
+          "content": [
+            "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+            "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+            "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+            "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates universal detection engineering utilizing standardized vendor-agnostic schemas."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection parses universal rule criteria and transpiles detection logic into native operational query languages."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates portable detection as code pipelines over proprietary locked query formats."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms query transpilation fidelity, filter preservation, and automated detection deployment."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Reactive Alert-Driven SOC",
+        "rightLabel": "Proactive Threat Hunting Engine",
+        "leftContent": [
+          "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+          "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+          "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+          "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+        ],
+        "rightContent": [
+          "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+          "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+          "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+          "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+        ]
+      }
+    },
+    {
+      "partTitle": "File & Memory Inspection with YARA Rules: Malware Signatures, Memory Scanning & Beacon Detection",
+      "codeHash": "7439a8f68b582bc0c0d258a068ed5657aeb67bf1fdc86c04f841b701e944fadc",
+      "spec": {
+        "template": "compare",
+        "title": "Threat Hunting: File & Memory Inspection with YARA Rules: Malware Signatures, Memory Scanning & Beacon Detection",
+        "left": {
+          "label": "Reactive Alert-Driven SOC",
+          "content": [
+            "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+            "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+            "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+            "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+          ]
+        },
+        "right": {
+          "label": "Proactive Threat Hunting Engine",
+          "content": [
+            "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+            "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+            "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+            "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays deep file and memory inspection identifying malicious implants and payloads."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes byte patterns, string signatures, and conditional logic inside binary memory buffers."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates deep in-memory implant discovery over superficial disk-only antivirus scanning."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms signature pattern matching, webshell detection, and memory threat isolation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Reactive Alert-Driven SOC",
+        "rightLabel": "Proactive Threat Hunting Engine",
+        "leftContent": [
+          "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+          "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+          "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+          "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+        ],
+        "rightContent": [
+          "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+          "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+          "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+          "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Threat Hunting & Detection Engine Benchmark",
+      "codeHash": "f1adcc23122e9d531e7cb80ffa59ab4e189ef3284ff67fe9301ae94bd0587879",
+      "spec": {
+        "template": "compare",
+        "title": "Threat Hunting: Production Threat Hunting & Detection Engine Benchmark",
+        "left": {
+          "label": "Reactive Alert-Driven SOC",
+          "content": [
+            "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+            "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+            "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+            "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+          ]
+        },
+        "right": {
+          "label": "Proactive Threat Hunting Engine",
+          "content": [
+            "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+            "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+            "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+            "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete threat hunting and detection engine certifying operational excellence."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified performance across tradecraft hunting, matrix coverage, rules, and memory scans."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates continuous proactive hunting over passive reactive alert queue monitoring."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full platform certification, zero detection regressions, and verified hunting mastery."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Reactive Alert-Driven SOC",
+        "rightLabel": "Proactive Threat Hunting Engine",
+        "leftContent": [
+          "Analysts wait passively for static hash and IP alerts while adversaries dwell undetected for months",
+          "Security coverage lacks framework alignment, leaving critical lateral movement blind spots unmonitored",
+          "Detection rules are written in proprietary locked query languages requiring manual rewrite per SIEM",
+          "Fileless in-memory implants and stealth webshells evade traditional disk-based antivirus scanners"
+        ],
+        "rightContent": [
+          "Hypothesis-driven threat hunting tracks adversary behavioral tradecraft at the top of the pyramid of pain",
+          "Systematic MITRE ATT&CK mapping ensures over ninety percent coverage across all tactical kill-chain phases",
+          "Universal Sigma YAML rules transpile automatically into native Splunk, Elastic, and Sentinel queries",
+          "YARA memory and byte pattern scanning exposes reflective DLL loaders, webshells, and beacon implants"
+        ]
+      }
+    }
+  ]
+}

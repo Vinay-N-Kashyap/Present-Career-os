@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 51,
+  "promptSha": "16150cd1ff3c33cb96697b253c91f8b9f088767ce95c03f48154f7615e52a4c4",
+  "entries": [
+    {
+      "partTitle": "SOC Operational Hierarchy & Log Ingestion: Analyst Tiers, Syslog Protocols & Semantic CEF/ECS Normalization",
+      "codeHash": "613b75d038e930fc04490f66f7d34ecc9262c56c02a994eee9316d46a0c4a907",
+      "spec": {
+        "template": "compare",
+        "title": "SOC Architecture & SIEM: SOC Operational Hierarchy & Log Ingestion: Analyst Tiers, Syslog Protocols & Semantic CEF/ECS Normalization",
+        "left": {
+          "label": "Legacy Unmanaged Log Architecture",
+          "content": [
+            "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+            "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+            "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+            "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+          ]
+        },
+        "right": {
+          "label": "Enterprise SOC & SIEM Architecture",
+          "content": [
+            "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+            "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+            "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+            "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates security operations center telemetry ingestion and semantic log normalization."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates parsing of raw syslog streams into standardized common event format records."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates semantic schema normalization over unstructured proprietary vendor logs."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms field extraction, schema conformity, and normalized telemetry pipeline streaming."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Unmanaged Log Architecture",
+        "rightLabel": "Enterprise SOC & SIEM Architecture",
+        "leftContent": [
+          "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+          "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+          "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+          "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+        ],
+        "rightContent": [
+          "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+          "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+          "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+          "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+        ]
+      }
+    },
+    {
+      "partTitle": "SIEM Event Correlation & Sliding Time Window Detection: Temporal Logic, Thresholds & Kill Chain Tracking",
+      "codeHash": "1a12ac0a26c50a1f45fe1f01bb0a0dae0c3164eb521851d951dbb1e5a1591d10",
+      "spec": {
+        "template": "compare",
+        "title": "SOC Architecture & SIEM: SIEM Event Correlation & Sliding Time Window Detection: Temporal Logic, Thresholds & Kill Chain Tracking",
+        "left": {
+          "label": "Legacy Unmanaged Log Architecture",
+          "content": [
+            "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+            "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+            "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+            "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+          ]
+        },
+        "right": {
+          "label": "Enterprise SOC & SIEM Architecture",
+          "content": [
+            "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+            "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+            "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+            "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays sliding time window correlation linking disparate security events across systems."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates temporal event counts against threshold rules to detect multi-stage brute force attacks."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates time-bounded behavioral correlation over isolated single-event alerting."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms threshold breach detection, offending source address identification, and incident generation."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Unmanaged Log Architecture",
+        "rightLabel": "Enterprise SOC & SIEM Architecture",
+        "leftContent": [
+          "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+          "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+          "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+          "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+        ],
+        "rightContent": [
+          "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+          "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+          "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+          "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+        ]
+      }
+    },
+    {
+      "partTitle": "Alert Triage, Multi-Factor Severity Classification & False Positive Elimination",
+      "codeHash": "c364bfabc18ac81244df80869e0d0e2a493a63a9c0f4611dd21ec6aee734def2",
+      "spec": {
+        "template": "compare",
+        "title": "SOC Architecture & SIEM: Alert Triage, Multi-Factor Severity Classification & False Positive Elimination",
+        "left": {
+          "label": "Legacy Unmanaged Log Architecture",
+          "content": [
+            "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+            "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+            "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+            "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+          ]
+        },
+        "right": {
+          "label": "Enterprise SOC & SIEM Architecture",
+          "content": [
+            "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+            "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+            "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+            "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview illustrates multi-factor alert triage evaluating vulnerability severity and asset criticality."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection analyzes incident priority rankings to prevent analyst alert fatigue on operational noise."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates risk-weighted triage prioritization over raw volume alert dispatching."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms emergency escalation, priority tier assignment, and focused analyst response."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Unmanaged Log Architecture",
+        "rightLabel": "Enterprise SOC & SIEM Architecture",
+        "leftContent": [
+          "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+          "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+          "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+          "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+        ],
+        "rightContent": [
+          "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+          "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+          "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+          "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+        ]
+      }
+    },
+    {
+      "partTitle": "SIEM Data Tiering & Log Retention Architectures: Hot, Warm, Cold & WORM Immutable Archiving",
+      "codeHash": "e477c5e12bd35a09c2588797e6cc25a8935781d3cb49ffda72772c8b1083d71b",
+      "spec": {
+        "template": "compare",
+        "title": "SOC Architecture & SIEM: SIEM Data Tiering & Log Retention Architectures: Hot, Warm, Cold & WORM Immutable Archiving",
+        "left": {
+          "label": "Legacy Unmanaged Log Architecture",
+          "content": [
+            "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+            "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+            "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+            "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+          ]
+        },
+        "right": {
+          "label": "Enterprise SOC & SIEM Architecture",
+          "content": [
+            "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+            "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+            "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+            "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview displays tiered storage architectures balancing real-time search with compliance archiving."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection monitors index lifecycle transitions across high-speed search tiers and immutable cold archives."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates cost-effective compliance archiving over monolithic expensive storage clusters."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms regulatory retention window compliance, immutable storage lock enforcement, and audit defense."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Unmanaged Log Architecture",
+        "rightLabel": "Enterprise SOC & SIEM Architecture",
+        "leftContent": [
+          "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+          "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+          "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+          "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+        ],
+        "rightContent": [
+          "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+          "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+          "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+          "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Enterprise SOC Platform Engine & Operational Readiness Benchmark",
+      "codeHash": "1f61d50b55a54151646bf2440ae176f3922e542b6c3dc599e7cc8a93168ec735",
+      "spec": {
+        "template": "compare",
+        "title": "SOC Architecture & SIEM: Production Enterprise SOC Platform Engine & Operational Readiness Benchmark",
+        "left": {
+          "label": "Legacy Unmanaged Log Architecture",
+          "content": [
+            "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+            "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+            "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+            "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+          ]
+        },
+        "right": {
+          "label": "Enterprise SOC & SIEM Architecture",
+          "content": [
+            "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+            "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+            "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+            "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview presents the complete enterprise security operations center platform certifying operational readiness."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection evaluates unified performance across ingestion pipelines, normalization, correlation, and storage."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis demonstrates twenty-four-seven operational defense across distributed digital infrastructure."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms full platform certification, zero monitoring defects, and verified operations readiness."
+          }
+        ]
+      },
+      "filled": {
+        "leftLabel": "Legacy Unmanaged Log Architecture",
+        "rightLabel": "Enterprise SOC & SIEM Architecture",
+        "leftContent": [
+          "Heterogeneous unstructured syslog strings are stored in disparate siloed directories without schema",
+          "Single-event alerts trigger on every failed login, flooding analyst queues with thousands of false positives",
+          "Alerts lack asset criticality context, treating developer sandbox warnings identical to production breaches",
+          "Logs are deleted after forty-eight hours to save disk space, violating mandatory compliance regulations"
+        ],
+        "rightContent": [
+          "Encrypted ingestion normalizes disparate feeds into standardized Common Event Format (CEF) schemas",
+          "Sliding time window correlation links multi-stage attack chains and detects brute force intrusions",
+          "Multi-factor triage classifies priority (P1 to P4) based on CVSS scores, asset criticality, and EPSS",
+          "Tiered storage with hot search and immutable WORM compliance archives satisfies regulatory mandates"
+        ]
+      }
+    }
+  ]
+}
