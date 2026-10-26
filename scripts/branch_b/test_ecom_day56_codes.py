@@ -1,189 +1,288 @@
 """
-Test and verify Python code blocks for Course 07 Day 56:
-Marketplace Seller Governance, Seller Scorecards, SLA Enforcement & Buy Box Algorithms
+Deterministic Python Code Blocks for Course 07 Day 56:
+Headless Commerce Architecture, BFF (Backend-for-Frontend) Pattern, GraphQL Federation & Composable Edge APIs
 """
-import math
+import json
+import hashlib
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
-print("=== PART 1: SELLER KYB ONBOARDING & SANCTIONS VERIFICATION ===")
+print("=== PART 1: DECOUPLED HEADLESS API GATEWAY ROUTING ===")
 @dataclass
-class SellerKYBVerificationRequest:
-    seller_id: str
-    legal_entity_name: str
-    tax_id: str
-    jurisdiction_country: str
-    has_valid_beneficial_ownership_registry: bool
-    is_sanctions_list_cleared: bool
-    bank_account_verified: bool
+class ClientContext:
+    client_id: str
+    device_type: str  # 'MOBILE_APP', 'DESKTOP_WEB', 'IOT_SMART_DISPLAY'
+    accept_encoding: str
+    client_ip: str
 
-class MarketplaceSellerOnboardingGate:
-    def evaluate_kyb_eligibility(self, req: SellerKYBVerificationRequest) -> Tuple[bool, str]:
-        if not req.is_sanctions_list_cleared:
-            return False, "REJECTED_OFAC_SANCTIONS_MATCH"
-        if not req.bank_account_verified:
-            return False, "HOLD_PENDING_BANK_ACCOUNT_VERIFICATION"
-        if not req.has_valid_beneficial_ownership_registry:
-            return False, "HOLD_MISSING_ULTIMATE_BENEFICIAL_OWNER_FILING"
-        return True, "APPROVED_SELLER_KYB_CLEARED"
-
-onboarding = MarketplaceSellerOnboardingGate()
-seller_good = SellerKYBVerificationRequest("SEL-8812", "Apex Retailers LLC", "US-9918231", "US", True, True, True)
-seller_bad = SellerKYBVerificationRequest("SEL-9904", "Global Cargo Ltd", "RU-110293", "CY", True, False, True)
-
-ok_good, msg_good = onboarding.evaluate_kyb_eligibility(seller_good)
-ok_bad, msg_bad = onboarding.evaluate_kyb_eligibility(seller_bad)
-
-print(f"Seller 1 ({seller_good.legal_entity_name}): Approved={ok_good} | Status: [{msg_good}]")
-print(f"Seller 2 ({seller_bad.legal_entity_name}): Approved={ok_bad} | Status: [{msg_bad}]")
-
-
-print("\n=== PART 2: SELLER PERFORMANCE SCORECARDS & SLA MONITORING ===")
 @dataclass
-class SellerPerformanceMetrics:
-    seller_id: str
-    total_orders_90d: int
-    cancelled_by_seller_orders: int
-    late_dispatch_orders: int
-    negative_feedback_orders: int
-    a_to_z_guarantee_claims: int
+class UpstreamServiceTarget:
+    service_name: str
+    endpoint_url: str
+    timeout_ms: int
 
-class SellerHealthAuditEngine:
-    def calculate_health_metrics(self, m: SellerPerformanceMetrics) -> Dict[str, float]:
-        odr_pct = round(((m.negative_feedback_orders + m.a_to_z_guarantee_claims) / m.total_orders_90d) * 100, 2)
-        cancellation_rate_pct = round((m.cancelled_by_seller_orders / m.total_orders_90d) * 100, 2)
-        late_dispatch_rate_pct = round((m.late_dispatch_orders / m.total_orders_90d) * 100, 2)
-        
-        # Marketplace SLA benchmarks: ODR < 1.0%, Cancellation < 2.5%, Late Dispatch < 4.0%
-        is_healthy = odr_pct < 1.0 and cancellation_rate_pct < 2.5 and late_dispatch_rate_pct < 4.0
-        
-        return {
-            "order_defect_rate_pct": odr_pct,
-            "cancellation_rate_pct": cancellation_rate_pct,
-            "late_dispatch_rate_pct": late_dispatch_rate_pct,
-            "is_sla_compliant": 1.0 if is_healthy else 0.0
+class HeadlessAPIGatewayRouter:
+    def __init__(self):
+        self.routes: Dict[str, UpstreamServiceTarget] = {
+            "/api/v2/products": UpstreamServiceTarget("catalog-service", "http://catalog.internal.mesh:8080/products", 150),
+            "/api/v2/pricing": UpstreamServiceTarget("pricing-engine", "http://pricing.internal.mesh:8081/calculate", 120),
+            "/api/v2/cart": UpstreamServiceTarget("cart-state-store", "http://cart.internal.mesh:8082/session", 100),
+            "/api/v2/checkout": UpstreamServiceTarget("checkout-orchestrator", "http://checkout.internal.mesh:8083/flow", 300)
         }
 
-audit_eng = SellerHealthAuditEngine()
-metrics_prime = SellerPerformanceMetrics("SEL-8812", 10000, 15, 30, 8, 2)
-metrics_flagged = SellerPerformanceMetrics("SEL-3310", 2000, 95, 120, 28, 6)
-
-res_prime = audit_eng.calculate_health_metrics(metrics_prime)
-res_flagged = audit_eng.calculate_health_metrics(metrics_flagged)
-
-print(f"Seller Prime Audit: ODR={res_prime['order_defect_rate_pct']}% | Late={res_prime['late_dispatch_rate_pct']}% | SLA_Compliant={bool(res_prime['is_sla_compliant'])}")
-print(f"Seller Flagged Audit: ODR={res_flagged['order_defect_rate_pct']}% | Late={res_flagged['late_dispatch_rate_pct']}% | SLA_Compliant={bool(res_flagged['is_sla_compliant'])}")
-
-
-print("\n=== PART 3: ALGORITHMIC BUY BOX RANKING & DYNAMIC ALLOCATION ===")
-@dataclass
-class SellerOffer:
-    seller_id: str
-    total_landed_price_usd: float
-    shipping_speed_hours: int
-    seller_feedback_score: float # 0.0 to 5.0
-    is_fba_or_managed_fulfillment: bool
-
-class BuyBoxRankingEngine:
-    def rank_offers_for_buy_box(self, offers: List[SellerOffer]) -> List[Tuple[str, float]]:
-        scores = []
-        min_price = min(o.total_landed_price_usd for o in offers)
+    def route_request(self, path: str, ctx: ClientContext) -> Dict[str, str]:
+        target = self.routes.get(path)
+        if not target:
+            return {"status": "404_NOT_FOUND", "message": f"No upstream microservice registered for {path}"}
         
-        for o in offers:
-            # Multi-variable Buy Box weighting algorithm:
-            # 50% Price Competitiveness + 25% Fulfillment Speed + 15% Feedback + 10% Managed Prime Fulfillment
-            price_score = (min_price / o.total_landed_price_usd) * 50.0
-            speed_score = max(0.0, (72.0 - min(72.0, float(o.shipping_speed_hours))) / 72.0) * 25.0
-            feedback_score = (o.seller_feedback_score / 5.0) * 15.0
-            fulfillment_score = 10.0 if o.is_fba_or_managed_fulfillment else 0.0
-            
-            total_rank = round(price_score + speed_score + feedback_score + fulfillment_score, 2)
-            scores.append((o.seller_id, total_rank))
-            
-        scores.sort(key=lambda x: x[1], reverse=True)
-        return scores
+        # Inject enterprise trace header
+        trace_seed = f"{ctx.client_id}:{ctx.client_ip}:{path}"
+        trace_id = hashlib.sha256(trace_seed.encode('utf-8')).hexdigest()[:16]
+        
+        return {
+            "status": "200_ROUTED",
+            "target_service": target.service_name,
+            "upstream_url": target.endpoint_url,
+            "allocated_timeout_ms": str(target.timeout_ms),
+            "device_profile": ctx.device_type,
+            "x_correlation_trace_id": f"trace-mesh-{trace_id}"
+        }
 
-ranking_engine = BuyBoxRankingEngine()
-offers = [
-    SellerOffer("SEL-A_DIRECT", 49.99, 48, 4.9, True),
-    SellerOffer("SEL-B_DISCOUNT", 46.50, 120, 4.4, False),
-    SellerOffer("SEL-C_SLOW", 52.00, 24, 4.8, True)
-]
+router = HeadlessAPIGatewayRouter()
+ctx_mobile = ClientContext("CLI-M-9912", "MOBILE_APP", "gzip, br", "198.51.100.42")
+ctx_web = ClientContext("CLI-W-4401", "DESKTOP_WEB", "gzip, br", "203.0.113.19")
 
-ranked = ranking_engine.rank_offers_for_buy_box(offers)
-print("Buy Box Allocation Results:")
-for rank_idx, (s_id, sc) in enumerate(ranked, start=1):
-    status = "[BUY_BOX_WINNER]" if rank_idx == 1 else "[STANDARD_OFFER]"
-    print(f"  Rank {rank_idx}: Seller: {s_id:<14} | Score: {sc:5.2f} pts {status}")
+res_mobile = router.route_request("/api/v2/products", ctx_mobile)
+res_web = router.route_request("/api/v2/checkout", ctx_web)
+
+print(f"Mobile Route: Service=[{res_mobile['target_service']}] | Trace=[{res_mobile['x_correlation_trace_id']}] | Timeout={res_mobile['allocated_timeout_ms']}ms")
+print(f"Desktop Web Route: Service=[{res_web['target_service']}] | Trace=[{res_web['x_correlation_trace_id']}] | Timeout={res_web['allocated_timeout_ms']}ms")
 
 
-print("\n=== PART 4: SELLER SUSPENSION & AUTOMATED REMEDIATION (POA) ===")
+print("\n=== PART 2: BACKEND-FOR-FRONTEND (BFF) PAYLOAD ADAPTATION ===")
 @dataclass
-class SellerRemediationPlan:
-    seller_id: str
-    root_cause_analysis_submitted: bool
-    corrective_actions_implemented: bool
-    preventive_measures_established: bool
-    has_escrow_deposit_funded: bool
+class RawProductRecord:
+    sku: str
+    title: str
+    description_full_html: str
+    base_price_cents: int
+    currency: str
+    desktop_gallery_urls: List[str]
+    mobile_thumbnail_urls: List[str]
+    technical_specifications: Dict[str, str]
 
-def evaluate_remediation_appeal(plan: SellerRemediationPlan) -> Tuple[bool, str]:
-    if not (plan.root_cause_analysis_submitted and plan.corrective_actions_implemented):
-        return False, "REJECTED_DEFICIENT_PLAN_OF_ACTION"
-    if not plan.preventive_measures_established:
-        return False, "HOLD_INSUFFICIENT_PREVENTIVE_CONTROLS"
-    if not plan.has_escrow_deposit_funded:
-        return True, "CONDITIONAL_REINSTATEMENT_ZERO_ESCROW"
-    return True, "FULL_REINSTATEMENT_AUTHORIZED"
+class BFFPayloadAdapter:
+    @staticmethod
+    def adapt_for_client(product: RawProductRecord, device_type: str) -> Dict[str, object]:
+        if device_type == "MOBILE_APP":
+            # Strip heavyweight HTML descriptions and high-res desktop galleries for bandwidth optimization
+            return {
+                "sku": product.sku,
+                "title": product.title,
+                "price": f"{product.base_price_cents / 100:.2f} {product.currency}",
+                "images": product.mobile_thumbnail_urls[:2],
+                "badge": product.technical_specifications.get("key_feature", "Standard")
+            }
+        elif device_type == "DESKTOP_WEB":
+            # Return full rich payload for desktop high-resolution screens
+            return {
+                "sku": product.sku,
+                "title": product.title,
+                "description": product.description_full_html,
+                "price": f"{product.base_price_cents / 100:.2f} {product.currency}",
+                "gallery": product.desktop_gallery_urls,
+                "specs": product.technical_specifications
+            }
+        else:
+            return {"sku": product.sku, "title": product.title}
 
-appeal_good = SellerRemediationPlan("SEL-3310", True, True, True, True)
-appeal_bad = SellerRemediationPlan("SEL-9901", True, False, False, False)
-
-ok_app_good, msg_app_good = evaluate_remediation_appeal(appeal_good)
-ok_app_bad, msg_app_bad = evaluate_remediation_appeal(appeal_bad)
-
-print(f"Remediation Appeal 1: Approved={ok_app_good} | Verdict: [{msg_app_good}]")
-print(f"Remediation Appeal 2: Approved={ok_app_bad} | Verdict: [{msg_app_bad}]")
-
-
-print("\n=== PART 5: MARKETPLACE SELLER GOVERNANCE COMMAND TOWER ===")
-@dataclass
-class MarketplaceGovernanceOverview:
-    active_sellers: int
-    total_gmv_audited_usd: float
-    platform_avg_odr_pct: float
-    buy_box_coverage_healthy_pct: float
-    appeals_turnaround_time_hours: float
-
-def audit_seller_governance_tower(gov: MarketplaceGovernanceOverview) -> Dict[str, float]:
-    score = 0.0
-    score += 30.0 if gov.platform_avg_odr_pct <= 0.8 else 15.0
-    score += 40.0 if gov.buy_box_coverage_healthy_pct >= 95.0 else 20.0
-    score += 30.0 if gov.appeals_turnaround_time_hours <= 24.0 else 15.0
-    
-    return {
-        "active_sellers": float(gov.active_sellers),
-        "total_gmv_audited": gov.total_gmv_audited_usd,
-        "platform_odr": gov.platform_avg_odr_pct,
-        "buy_box_health": gov.buy_box_coverage_healthy_pct,
-        "appeals_sla": gov.appeals_turnaround_time_hours,
-        "composite_score": round(score, 1),
-        "status": "APEX_MARKETPLACE_GOVERNANCE_CERTIFIED" if score == 100.0 else "SUBOPTIMAL"
-    }
-
-tower_metrics = MarketplaceGovernanceOverview(
-    active_sellers=14500,
-    total_gmv_audited_usd=450_000_000.0,
-    platform_avg_odr_pct=0.42,
-    buy_box_coverage_healthy_pct=98.7,
-    appeals_turnaround_time_hours=14.2
+raw_prod = RawProductRecord(
+    sku="PROD-ULTRA-88",
+    title="Titanium Enterprise Server Rack Switch",
+    description_full_html="<div><p>Enterprise grade 48-port L3 managed switch with dual hot-swap redundant PSUs.</p></div>",
+    base_price_cents=450000,
+    currency="USD",
+    desktop_gallery_urls=["https://cdn.example.com/rack_front_8k.jpg", "https://cdn.example.com/rack_rear_8k.jpg"],
+    mobile_thumbnail_urls=["https://cdn.example.com/thumb_120.webp"],
+    technical_specifications={"throughput": "1.2 Tbps", "ports": "48x 10GbE SFP+", "key_feature": "Dual-PSU Redundancy"}
 )
 
-tower_audit = audit_seller_governance_tower(tower_metrics)
-print(f"Marketplace Seller Governance Command Tower:")
-print(f"  Active Sellers Managed:      {tower_audit['active_sellers']:,.0f}")
-print(f"  Audited Marketplace GMV:     ${tower_audit['total_gmv_audited']:,.2f} USD")
-print(f"  Platform Fleet ODR:          {tower_audit['platform_odr']}% (Target <= 0.80%)")
-print(f"  Buy Box Availability Health: {tower_audit['buy_box_health']}% (Target >= 95.0%)")
-print(f"  Appeals Review Turnaround:   {tower_audit['appeals_sla']} hrs (Target <= 24.0h)")
-print(f"  Composite Governance Score:  {tower_audit['composite_score']}/100.0 pts")
-print(f"  Accreditation Status:        [{tower_audit['status']}]")
+mobile_payload = BFFPayloadAdapter.adapt_for_client(raw_prod, "MOBILE_APP")
+desktop_payload = BFFPayloadAdapter.adapt_for_client(raw_prod, "DESKTOP_WEB")
+
+mobile_bytes = len(json.dumps(mobile_payload))
+desktop_bytes = len(json.dumps(desktop_payload))
+savings_pct = ((desktop_bytes - mobile_bytes) / desktop_bytes) * 100.0
+
+print(f"Mobile Payload Size:  {mobile_bytes} bytes | Keys: {list(mobile_payload.keys())}")
+print(f"Desktop Payload Size: {desktop_bytes} bytes | Keys: {list(desktop_payload.keys())}")
+print(f"BFF Bandwidth Reduction: {savings_pct:.1f}% bandwidth saved on mobile")
+
+
+print("\n=== PART 3: GRAPHQL FEDERATION SUBGRAPH ENTITY RESOLUTION ===")
+@dataclass
+class FederatedProductKey:
+    id: str
+
+class CatalogSubgraph:
+    def resolve_product_base(self, key: FederatedProductKey) -> Dict[str, object]:
+        catalog_db = {
+            "prod-101": {"id": "prod-101", "name": "Acoustic Noise-Cancelling Headphones", "sku": "ANC-PRO-1"}
+        }
+        return catalog_db.get(key.id, {})
+
+class PricingSubgraph:
+    def resolve_product_pricing(self, key: FederatedProductKey, user_tier: str) -> Dict[str, object]:
+        pricing_matrix = {
+            "prod-101": {"RETAIL": 299.00, "VIP_B2B": 239.00}
+        }
+        prices = pricing_matrix.get(key.id, {"RETAIL": 0.0, "VIP_B2B": 0.0})
+        return {"current_price_usd": prices.get(user_tier, prices["RETAIL"]), "applied_tier": user_tier}
+
+class InventorySubgraph:
+    def resolve_product_inventory(self, key: FederatedProductKey) -> Dict[str, object]:
+        inventory_db = {
+            "prod-101": {"in_stock": True, "available_quantity": 482, "fulfillment_lead_days": 1}
+        }
+        return inventory_db.get(key.id, {"in_stock": False, "available_quantity": 0, "fulfillment_lead_days": 0})
+
+class FederatedGraphQLGateway:
+    def __init__(self):
+        self.catalog = CatalogSubgraph()
+        self.pricing = PricingSubgraph()
+        self.inventory = InventorySubgraph()
+
+    def query_federated_product(self, product_id: str, client_tier: str) -> Dict[str, object]:
+        key = FederatedProductKey(product_id)
+        base = self.catalog.resolve_product_base(key)
+        if not base:
+            return {"error": "Product not found"}
+        
+        # Parallel entity resolution across subgraphs
+        pricing_data = self.pricing.resolve_product_pricing(key, client_tier)
+        inv_data = self.inventory.resolve_product_inventory(key)
+        
+        return {
+            "id": base["id"],
+            "name": base["name"],
+            "sku": base["sku"],
+            "pricing": pricing_data,
+            "inventory": inv_data
+        }
+
+gateway = FederatedGraphQLGateway()
+federated_result = gateway.query_federated_product("prod-101", "VIP_B2B")
+
+print(f"Federated Query Result for ID: {federated_result['id']}")
+print(f"  Product:   {federated_result['name']} [{federated_result['sku']}]")
+print(f"  Pricing:   ${federated_result['pricing']['current_price_usd']:.2f} USD ({federated_result['pricing']['applied_tier']})")
+print(f"  Inventory: InStock={federated_result['inventory']['in_stock']} (Qty: {federated_result['inventory']['available_quantity']})")
+
+
+print("\n=== PART 4: EDGE CACHE STALE-WHILE-REVALIDATE & SURROGATE-KEY PURGE ===")
+@dataclass
+class EdgeCacheEntry:
+    content: str
+    surrogate_keys: List[str]
+    cached_timestamp: float
+    max_age_seconds: float
+    stale_while_revalidate_seconds: float
+
+class EdgeCDNCacheManager:
+    def __init__(self):
+        self.cache: Dict[str, EdgeCacheEntry] = {}
+
+    def put(self, uri: str, content: str, keys: List[str], now: float):
+        self.cache[uri] = EdgeCacheEntry(content, keys, now, 60.0, 120.0)
+
+    def get(self, uri: str, now: float) -> Tuple[str, Optional[str]]:
+        entry = self.cache.get(uri)
+        if not entry:
+            return "CACHE_MISS", None
+        
+        age = now - entry.cached_timestamp
+        if age <= entry.max_age_seconds:
+            return "CACHE_HIT_FRESH", entry.content
+        elif age <= (entry.max_age_seconds + entry.stale_while_revalidate_seconds):
+            # Return stale content immediately to client while triggering async background refresh
+            return "CACHE_HIT_STALE_ASYNC_REFRESH_TRIGGERED", entry.content
+        else:
+            return "CACHE_EXPIRED", None
+
+    def purge_by_surrogate_key(self, tag: str) -> int:
+        purged_count = 0
+        uris_to_remove = []
+        for uri, entry in self.cache.items():
+            if tag in entry.surrogate_keys:
+                uris_to_remove.append(uri)
+        for uri in uris_to_remove:
+            del self.cache[uri]
+            purged_count += 1
+        return purged_count
+
+cdn = EdgeCDNCacheManager()
+cdn.put("/products/anc-pro-1", '{"name": "Headphones", "price": 299.00}', ["product-101", "category-audio"], 1000.0)
+
+status_1, _ = cdn.get("/products/anc-pro-1", 1030.0)  # age 30s <= 60s
+status_2, _ = cdn.get("/products/anc-pro-1", 1080.0)  # age 80s: stale-while-revalidate
+purged = cdn.purge_by_surrogate_key("product-101")     # Instant purge on price update
+status_3, _ = cdn.get("/products/anc-pro-1", 1085.0)  # after purge: miss
+
+print(f"Request at t=30s:  Status=[{status_1}]")
+print(f"Request at t=80s:  Status=[{status_2}]")
+print(f"Purge Key 'product-101': {purged} URL invalidated instantly")
+print(f"Request at t=85s:  Status=[{status_3}]")
+
+
+print("\n=== PART 5: ENTERPRISE COMPOSABLE HEADLESS GATEWAY COMMAND TOWER ===")
+@dataclass
+class ComposableGatewayAuditRecord:
+    gateway_name: str
+    daily_request_volume: int
+    edge_cache_hit_rate_pct: float
+    p99_latency_ms: float
+    mobile_data_saved_terabytes: float
+    federated_subgraph_health_pct: float
+
+class ComposableCommerceAuditEngine:
+    def audit_architecture_tier(self, record: ComposableGatewayAuditRecord) -> Dict[str, object]:
+        score = 0.0
+        if record.edge_cache_hit_rate_pct >= 90.0:
+            score += 25.0
+        if record.p99_latency_ms <= 45.0:
+            score += 25.0
+        if record.mobile_data_saved_terabytes >= 5.0:
+            score += 25.0
+        if record.federated_subgraph_health_pct >= 99.9:
+            score += 25.0
+            
+        status = "APEX_COMPOSABLE_ARCHITECTURE_VERIFIED" if score == 100.0 else "SUBOPTIMAL_GATEWAY_PERFORMANCE"
+        return {
+            "gateway": record.gateway_name,
+            "composite_score": score,
+            "status": status,
+            "daily_volume": f"{record.daily_request_volume:,} requests",
+            "p99_latency": f"{record.p99_latency_ms} ms",
+            "edge_hit_ratio": f"{record.edge_cache_hit_rate_pct:.1f}%",
+            "mobile_data_saved": f"{record.mobile_data_saved_terabytes:.2f} TB"
+        }
+
+audit_engine = ComposableCommerceAuditEngine()
+audit_input = ComposableGatewayAuditRecord(
+    gateway_name="Apex-Composable-Headless-Mesh",
+    daily_request_volume=185000000,
+    edge_cache_hit_rate_pct=94.2,
+    p99_latency_ms=28.5,
+    mobile_data_saved_terabytes=12.4,
+    federated_subgraph_health_pct=100.0
+)
+
+audit_report = audit_engine.audit_architecture_tier(audit_input)
+print("=== COMPOSABLE COMMERCE GATEWAY AUDIT REPORT ===")
+print(f"Gateway Name:      {audit_report['gateway']}")
+print(f"Daily Volume:      {audit_report['daily_volume']}")
+print(f"Edge Hit Ratio:    {audit_report['edge_hit_ratio']}")
+print(f"P99 Edge Latency:  {audit_report['p99_latency']}")
+print(f"Mobile Bandwidth:  {audit_report['mobile_data_saved']} saved/month")
+print(f"Composite Score:   {audit_report['composite_score']}/100.0 pts")
+print(f"Audit Status:      [{audit_report['status']}]")

@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 60,
+  "entries": [
+    {
+      "partTitle": "Tier 1: Ingestion & Catalog Architecture: Multi-Vendor Ingestion, GS1 Deduplication & Canonical PIM Master Federation",
+      "codeHash": "abc81d8f4f4fd84068d2aac8265e6ea281c353ed922ace54791401cec45a58d4",
+      "spec": {
+        "template": "funnel",
+        "title": "Tier 1: Ingestion & Catalog Architecture: Multi-Vendor Ingestion, GS1 Deduplication & Canonical PIM Master Federation",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "caption": "Payment orchestration platforms evaluate multi acquirer approval rates.",
+            "data": {
+              "stage": "tier1",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Trade & Logistics",
+            "caption": "Multi party escrow sub accounts hold merchant disbursements securely.",
+            "data": {
+              "stage": "tier2",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Omnichannel Routing",
+            "caption": "Automated delivery confirmations release verified seller disbursements.",
+            "data": {
+              "stage": "tier3",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Grand Defense",
+            "caption": "Integrated fraud engines eliminate unauthorized chargeback liabilities.",
+            "data": {
+              "stage": "accreditation",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2: Marketplace Financial Clearing: Multi-Party Split Payments, Dynamic Take Rates & Regulatory Escrow",
+      "codeHash": "d1375746c3b685ecae2a1ba491ec23272f1e6b43a6f83f3c15d05a9cc4456843",
+      "spec": {
+        "template": "funnel",
+        "title": "Tier 2: Marketplace Financial Clearing: Multi-Party Split Payments, Dynamic Take Rates & Regulatory Escrow",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "caption": "Customs classification engines determine accurate destination tariffs.",
+            "data": {
+              "stage": "tier1",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Trade & Logistics",
+            "caption": "Compounded consumption tax bases ensure flawless duty paid arrivals.",
+            "data": {
+              "stage": "tier2",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Omnichannel Routing",
+            "caption": "Electronic duty drawback dossiers recover previously paid customs fees.",
+            "data": {
+              "stage": "tier3",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Grand Defense",
+            "caption": "Pre cleared air manifests deliver frictionless international fulfillment.",
+            "data": {
+              "stage": "accreditation",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3: Seller Governance & Buy Box Optimization: Algorithmic Scorecards, ODR Enforcement & Multi-Factor Buy Box Allocation",
+      "codeHash": "34f648c54c14f1c7c4683309a391013f02ae4b4e7af93bb2e92cdce78ae1ebb0",
+      "spec": {
+        "template": "funnel",
+        "title": "Tier 3: Seller Governance & Buy Box Optimization: Algorithmic Scorecards, ODR Enforcement & Multi-Factor Buy Box Allocation",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "caption": "Omnichannel routing engines calculate single source store availability.",
+            "data": {
+              "stage": "tier1",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Trade & Logistics",
+            "caption": "Localized store fulfillment slashes last mile parcel freight expenses.",
+            "data": {
+              "stage": "tier2",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Omnichannel Routing",
+            "caption": "In store mobile apps guide associates along optimal walking paths.",
+            "data": {
+              "stage": "tier3",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Grand Defense",
+            "caption": "Express curbside handoffs complete delivery directly into vehicle trunks.",
+            "data": {
+              "stage": "accreditation",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4: Trust & Safety, Counterfeit Defense & DSA Compliance: Pre-Publish Risk Scoring, Review Brushing Interception & Digital Product Passports",
+      "codeHash": "2af920904ae7346052118fd576adacc0154f707e7db1ee60cba9c2fcfef09d05",
+      "spec": {
+        "template": "funnel",
+        "title": "Tier 4: Trust & Safety, Counterfeit Defense & DSA Compliance: Pre-Publish Risk Scoring, Review Brushing Interception & Digital Product Passports",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "caption": "Streaming ingestion gateways validate incoming customer click events.",
+            "data": {
+              "stage": "tier1",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Trade & Logistics",
+            "caption": "Identity graph resolvers map anonymous cookies to authenticated accounts.",
+            "data": {
+              "stage": "tier2",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Omnichannel Routing",
+            "caption": "Predictive lifetime value models project future customer margins.",
+            "data": {
+              "stage": "tier3",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Grand Defense",
+            "caption": "Edge feature stores personalize shopping journeys with low latency.",
+            "data": {
+              "stage": "accreditation",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5: Executive Boardroom Defense, $28.3M ROI Valuation & Grand Master DCCA-GEPA Accreditation",
+      "codeHash": "6e42dc67da0c94e6eea07c245b5560f79dd902f06067da73f5b6c01da1eed51c",
+      "spec": {
+        "template": "funnel",
+        "title": "Tier 5: Executive Boardroom Defense, $28.3M ROI Valuation & Grand Master DCCA-GEPA Accreditation",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "caption": "The grand master capstone board evaluates total enterprise commerce yield.",
+            "data": {
+              "stage": "tier1",
+              "status": "active"
+            }
+          },
+          {
+            "id": "say1",
+            "label": "Trade & Logistics",
+            "caption": "Payment and trade optimization preserve multi million operating margins.",
+            "data": {
+              "stage": "tier2",
+              "status": "processing"
+            }
+          },
+          {
+            "id": "example",
+            "label": "Omnichannel Routing",
+            "caption": "Omnichannel store fulfillment and data platforms maximize lifetime value.",
+            "data": {
+              "stage": "tier3",
+              "status": "verified"
+            }
+          },
+          {
+            "id": "tryIt",
+            "label": "Grand Defense",
+            "caption": "The defense certifies chief commerce technology officer grand master.",
+            "data": {
+              "stage": "accreditation",
+              "status": "complete"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
