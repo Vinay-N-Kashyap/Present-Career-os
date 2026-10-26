@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 16,
+  "entries": [
+    {
+      "partTitle": "Time Series Anatomy: Secular Trend, Cyclical Waves, Seasonal Multipliers & Stochastic Innovations",
+      "codeHash": "760473e96e3bf965f0d398f88243dcd2edb8e19465748da1dab6a9c619b00023",
+      "spec": {
+        "template": "bars",
+        "title": "Time Series Anatomy: Secular Trend, Cy... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core anatomy mechanisms and secular concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal anatomy bounds across secular systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical anatomy rules and secular cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying anatomy calculations and secular outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Additive vs Multiplicative Decomposition Physics & Moving Median Filtering",
+      "codeHash": "d67bda58cba9345aa9d5cf1b291a126c4f8bf5b06d018d2817328eb15e61a0bc",
+      "spec": {
+        "template": "bars",
+        "title": "Additive vs Multiplicative Decompositi... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core additive mechanisms and multiplica concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal additive bounds across multiplica systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical additive rules and multiplica cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying additive calculations and multiplica outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Weak Stationarity: Constant Mean, Finite Variance & Autocovariance Invariance",
+      "codeHash": "bc92d9205bbc059e76003a32b8349abff69a75d9eb5b27b79d49cda6cbea932d",
+      "spec": {
+        "template": "bars",
+        "title": "Weak Stationarity: Constant Mean, Fini... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core weak mechanisms and stationari concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal weak bounds across stationari systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical weak rules and stationari cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying weak calculations and stationari outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unit Roots, Random Walks & The Augmented Dickey-Fuller (ADF) Statistical Test",
+      "codeHash": "d6e0ce06c810e2ff9d6f816754fd3adec69e2b35c9a83d445e64f1f31da197b7",
+      "spec": {
+        "template": "bars",
+        "title": "Unit Roots, Random Walks & The Augment... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core unit mechanisms and roots concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal unit bounds across roots systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical unit rules and roots cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying unit calculations and roots outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trend Stationary vs Difference Stationary Series: First-Differencing & Log Stabilization",
+      "codeHash": "f9c81f05f554cfab44d178f3bfc162b797ed040212771aad32d9c07179b75fd6",
+      "spec": {
+        "template": "bars",
+        "title": "Trend Stationary vs Difference Station... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core trend mechanisms and stationary concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal trend bounds across stationary systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical trend rules and stationary cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying trend calculations and stationary outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

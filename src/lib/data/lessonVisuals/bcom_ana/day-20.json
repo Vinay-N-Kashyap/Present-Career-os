@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 20,
+  "entries": [
+    {
+      "partTitle": "Simple Exponential Smoothing (SES): Memory Decay, Alpha Damping & Recursive State Updates",
+      "codeHash": "a3ff4470f07b3dbbf32a7f3e31c92a3abc51f87f0ddac961623462e64f30c236",
+      "spec": {
+        "template": "bars",
+        "title": "Simple Exponential Smoothing (SES): Me... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core simple mechanisms and exponentia concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal simple bounds across exponentia systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical simple rules and exponentia cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying simple calculations and exponentia outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Holt's Linear Trend Method: Level Equations, Slope Tracking & Beta Trend Hyperparameters",
+      "codeHash": "76af2f98f8648d1dab8a997aa975cb34c8cdffa082641e4c9667951ba711c49f",
+      "spec": {
+        "template": "bars",
+        "title": "Holt's Linear Trend Method: Level Equa... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core holts mechanisms and linear concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal holts bounds across linear systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical holts rules and linear cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying holts calculations and linear outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Damped Trend Filtering (Gardner-McKenzie): Preventing Long-Horizon Linear Explosion",
+      "codeHash": "791ad6ae6820794c4b504122f767c68a0ea073bf79c57a9faf108a25d2345979",
+      "spec": {
+        "template": "bars",
+        "title": "Damped Trend Filtering (Gardner-McKenz... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core damped mechanisms and trend concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal damped bounds across trend systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical damped rules and trend cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying damped calculations and trend outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Holt-Winters Seasonal Filtering: Additive vs Multiplicative Gamma Factors & Seasonal Anchors",
+      "codeHash": "0b57b5c897d43955541b40ce25d85bfe452ea3b0f79d10a0e776090e38b8a14c",
+      "spec": {
+        "template": "bars",
+        "title": "Holt-Winters Seasonal Filtering: Addit... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core holtwinter mechanisms and seasonal concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal holtwinter bounds across seasonal systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical holtwinter rules and seasonal cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying holtwinter calculations and seasonal outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "State-Space Innovations (ETS Models): Automated Error-Trend-Seasonal Model Selection",
+      "codeHash": "3120b589164dfeb8131f069f62ab73a87ad2eb5c821dd8a601c4b457e10fa5c7",
+      "spec": {
+        "template": "bars",
+        "title": "State-Space Innovations (ETS Models): ... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core statespace mechanisms and innovation concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal statespace bounds across innovation systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical statespace rules and innovation cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying statespace calculations and innovation outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

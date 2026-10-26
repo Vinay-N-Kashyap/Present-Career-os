@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 17,
+  "entries": [
+    {
+      "partTitle": "Autoregressive Processes (AR(p)): First-Order Memory, Persistence & Characteristic Roots",
+      "codeHash": "78ea2690a1ba94f71626d9a01f402802d670fba0c5ff315a435f7d61bab28a4d",
+      "spec": {
+        "template": "bars",
+        "title": "Autoregressive Processes (AR(p)): Firs... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core autoregres mechanisms and processes concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal autoregres bounds across processes systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical autoregres rules and processes cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying autoregres calculations and processes outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moving Average Processes (MA(q)): Finite Shock Memory, Invertibility & Error Innovations",
+      "codeHash": "0543a5b0e35349394989c5266f8786da3f4361d7836802302704f5cde1e94d26",
+      "spec": {
+        "template": "bars",
+        "title": "Moving Average Processes (MA(q)): Fini... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core moving mechanisms and average concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal moving bounds across average systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical moving rules and average cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying moving calculations and average outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autocorrelation Function (ACF) Mechanics: Geometric Decay vs Sharp Finite Cutoffs",
+      "codeHash": "7b2d763726d5fe2372011d8f0149320e7377a025e03956a28c0b1efb7251f974",
+      "spec": {
+        "template": "bars",
+        "title": "Autocorrelation Function (ACF) Mechani... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core autocorrel mechanisms and function concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal autocorrel bounds across function systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical autocorrel rules and function cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying autocorrel calculations and function outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Partial Autocorrelation Function (PACF) Mechanics: Yule-Walker Equations & Order Identification",
+      "codeHash": "deebb1f5cf18299ce1ba2acc99e09cd78f1f488f8c71dc5b37414e0f03794131",
+      "spec": {
+        "template": "bars",
+        "title": "Partial Autocorrelation Function (PACF... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core partial mechanisms and autocorrel concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal partial bounds across autocorrel systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical partial rules and autocorrel cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying partial calculations and autocorrel outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Complete Box-Jenkins Identification Protocol & Diagnostic Residual Whitening",
+      "codeHash": "7d1e172444b95c3ef8f42681c1f59ebf2162784ba503df626bb96b65a5e31c05",
+      "spec": {
+        "template": "bars",
+        "title": "The Complete Box-Jenkins Identificatio... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core complete mechanisms and boxjenkins concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal complete bounds across boxjenkins systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical complete rules and boxjenkins cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying complete calculations and boxjenkins outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

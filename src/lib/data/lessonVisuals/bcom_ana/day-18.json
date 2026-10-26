@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 18,
+  "entries": [
+    {
+      "partTitle": "AutoRegressive Integrated Moving Average (ARIMA(p,d,q)) Structural Formulation",
+      "codeHash": "5f7dbe35395492b7eaeef677a5413ead8df1ee4791a5aa426ee93fbe58508b38",
+      "spec": {
+        "template": "bars",
+        "title": "AutoRegressive Integrated Moving Avera... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core autoregres mechanisms and integrated concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal autoregres bounds across integrated systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical autoregres rules and integrated cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying autoregres calculations and integrated outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Seasonal Multiplicative Formulations (SARIMA(p,d,q)(P,D,Q)[s]) & Calendar Multipliers",
+      "codeHash": "e17478366e6c5afcd3f9bedbce67cdbfd2d93fd474c7186314bbfff8f6751e53",
+      "spec": {
+        "template": "bars",
+        "title": "Seasonal Multiplicative Formulations (... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core seasonal mechanisms and multiplica concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal seasonal bounds across multiplica systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical seasonal rules and multiplica cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying seasonal calculations and multiplica outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Information Criteria Selection: Akaike (AIC), Bayesian/Schwarz (BIC) & Parsimony Penalties",
+      "codeHash": "c9047cd6ddfc099936fc225883bc5cdc4b9a51d311630252f1552fd01d3547f5",
+      "spec": {
+        "template": "bars",
+        "title": "Information Criteria Selection: Akaike... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core informatio mechanisms and criteria concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal informatio bounds across criteria systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical informatio rules and criteria cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying informatio calculations and criteria outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum Likelihood Estimation (MLE) vs Conditional Least Squares for Time Series",
+      "codeHash": "1940071cdeed5165729190c8387cf2a769c4b6c78f83b94179f522ef7b72e1cc",
+      "spec": {
+        "template": "bars",
+        "title": "Maximum Likelihood Estimation (MLE) vs... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core maximum mechanisms and likelihood concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal maximum bounds across likelihood systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical maximum rules and likelihood cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying maximum calculations and likelihood outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Grid Search Selection Algorithm & Overfitting Guardrails in Financial Forecasting",
+      "codeHash": "9aaa4ab5cfcc201fb5576a4ccc203470ebdf807f41c87c663f1f3dca783ee25e",
+      "spec": {
+        "template": "bars",
+        "title": "Automated Grid Search Selection Algori... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core automated mechanisms and grid concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal automated bounds across grid systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical automated rules and grid cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying automated calculations and grid outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

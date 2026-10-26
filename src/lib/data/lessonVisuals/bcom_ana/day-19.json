@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 19,
+  "entries": [
+    {
+      "partTitle": "Point Forecast Accuracy Metrics: Mean Absolute Error (MAE) vs Root Mean Squared Error (RMSE)",
+      "codeHash": "945a3e1bdb1539c72045c2f556c46076ca08866e01452c0ccbaa88a8b8f3a8f6",
+      "spec": {
+        "template": "bars",
+        "title": "Point Forecast Accuracy Metrics: Mean ... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core point mechanisms and forecast concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal point bounds across forecast systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical point rules and forecast cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying point calculations and forecast outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Percentage Errors & Scale Invariance: Mean Absolute Percentage Error (MAPE) & Symmetric SMAPE",
+      "codeHash": "c3027f1642c8d96d2eb8726fc88470943a525ed444dbc7255ad35ee33cab8d95",
+      "spec": {
+        "template": "bars",
+        "title": "Percentage Errors & Scale Invariance: ... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core percentage mechanisms and errors concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal percentage bounds across errors systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical percentage rules and errors cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying percentage calculations and errors outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mean Absolute Scaled Error (MASE) & Benchmarking Against the Naive Drift Model",
+      "codeHash": "c55c225678913db350721bb95bc3c3da05ac933b763529f4aea920e77210e379",
+      "spec": {
+        "template": "bars",
+        "title": "Mean Absolute Scaled Error (MASE) & Be... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core mean mechanisms and absolute concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal mean bounds across absolute systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical mean rules and absolute cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying mean calculations and absolute outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Residual White Noise Verification: The Ljung-Box Q-Statistic & Portmanteau Hypothesis Test",
+      "codeHash": "576284e025367eb7e9abd9a83bc9c4b4cdd86b091440e1f373f106b088b6cf9d",
+      "spec": {
+        "template": "bars",
+        "title": "Residual White Noise Verification: The... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core residual mechanisms and white concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal residual bounds across white systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical residual rules and white cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying residual calculations and white outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Out-of-Sample Rolling-Window Backtesting & Expanding-Window Cross-Validation for Time Series",
+      "codeHash": "047765249b5f318860d7755d55d3868ee2c9456e3146fca03d2aa875f0081349",
+      "spec": {
+        "template": "bars",
+        "title": "Out-of-Sample Rolling-Window Backtesti... \u2014 Temporal Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core outofsampl mechanisms and rollingwin concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 72,
+                "tone": "data"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 78,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal outofsampl bounds across rollingwin systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 77,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 74,
+                "tone": "data"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 67,
+                "tone": "idle"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical outofsampl rules and rollingwin cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 82,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 74,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying outofsampl calculations and rollingwin outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Trend Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Seasonal Lift",
+                "value": 86,
+                "tone": "idle"
+              },
+              {
+                "label": "Forecast Horizon",
+                "value": 81,
+                "tone": "ok"
+              },
+              {
+                "label": "Confidence Bound",
+                "value": 90,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
