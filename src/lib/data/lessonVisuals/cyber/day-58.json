@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 58,
+  "promptSha": "c2548cad861c2d0cd2f3cb43f718b2635269f467245379da6567d125b6185ac2",
+  "entries": [
+    {
+      "partTitle": "Enterprise Adversary Emulation Frameworks: TIBER-EU & Live-Fire Range Architecture",
+      "codeHash": "5fe14d9e06750cfb273996ea6bf0375cca2fa048da4ec57b6399c8ef1d2ddc26",
+      "spec": {
+        "template": "compare",
+        "title": "TIBER-EU Threat-Informed Emulation vs Ad-Hoc Penetration Testing",
+        "left": {
+          "label": "Ad-Hoc Penetration Testing",
+          "content": [
+            "Relies on uncoordinated vulnerability scanners without realistic threat actor profiling",
+            "Tests isolated network perimeters without evaluating full multi-stage adversary paths",
+            "Delivers static post-mortem findings weeks later without collaborative remediation",
+            "Fails to measure organizational detection engineering or incident response reflexes"
+          ]
+        },
+        "right": {
+          "label": "TIBER-EU Adversary Emulation",
+          "content": [
+            "Threat intelligence profiles exact nation-state and organized cybercrime techniques",
+            "Targeted red teams execute controlled campaigns against live enterprise digital twins",
+            "Structured three-phase governance certifies threat modeling and remediation closure",
+            "Simulates authentic adversary behaviors to stress-test human and automated defenses"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural layout displays three-phase threat-informed adversary emulation campaign."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed operational inspection audits threat intelligence reports, red team logs, and remediation plans."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates structured regulatory emulation surpassing ad-hoc vulnerability assessments."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification certifies campaign compliance across white, red, and blue oversight committees."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Red Team Operations & Weaponized TTP Emulation: Living-off-the-Land & Kerberoasting",
+      "codeHash": "cc464426d89d954a47c6e48c880c4ea4d4125983aa21a549e3f8d693293bb592",
+      "spec": {
+        "template": "compare",
+        "title": "Living-off-the-Land (LotL) Exploitation vs Signature Malware",
+        "left": {
+          "label": "Signature-Based Malware",
+          "content": [
+            "Drops custom compiled executable files that trigger standard antivirus hash signatures",
+            "Easily blocked by basic operating system application control policies",
+            "Lacks capability to blend into legitimate administrative process lifecycles",
+            "Static payloads fail against modern behavioral endpoint detection engines"
+          ]
+        },
+        "right": {
+          "label": "Living-off-the-Land Binaries",
+          "content": [
+            "Weaponizes built-in, cryptographically signed administrative operating system binaries",
+            "Requests Kerberos service tickets using weak encryption for offline password cracking",
+            "Steals privileged primary tokens from memory to elevate permissions without passwords",
+            "Requires kernel call-stack inspection and anomalous ticket request monitoring to detect"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Diagram maps execution paths of cryptographically signed administrative operating system utilities."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks ticket encryption downgrade requests and privileged memory tokens."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis illustrates stealthy native binary exploitation bypassing basic whitelisting."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms behavioral detection rules intercepting anomalous ticket requests and token theft."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Blue Team Defenses & Deception Engineering: Canary Tokens & Active MITRE Shield Decoys",
+      "codeHash": "9d15a5e531f7d7db1381773dc0c5e62ed3f556d16762490683c21891a66fce31",
+      "spec": {
+        "template": "compare",
+        "title": "Canary Token Deception Mesh vs Passive Log Monitoring",
+        "left": {
+          "label": "Passive Log Monitoring",
+          "content": [
+            "Waits for known intrusion signatures while stealthy attackers discover network shares",
+            "Suffers from high alert fatigue and thousands of daily false-positive notifications",
+            "Adversaries using legitimate stolen credentials remain completely undetected",
+            "Provides zero proactive traps or automated redirection away from real customer data"
+          ]
+        },
+        "right": {
+          "label": "Active Deception & Honeynets",
+          "content": [
+            "Deploys synthetic credentials and decoy documents with zero legitimate business usage",
+            "Any access generates instantaneous high-fidelity alerts with zero false-positive rates",
+            "Software-defined networks dynamically redirect intruders into isolated honeynet sandboxes",
+            "Synthetic servers record adversary commands while wasting their operational resources"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview maps decoy canary tokens and software-defined honeynet redirection mesh."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection analyzes instant webhook triggers upon unauthorized decoy credential access."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation demonstrates proactive deception trapping attackers before data discovery."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification validates isolated honeynet confinement and automated threat containment."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Purple Team Collaboration & Continuous Security Feedback: MITRE ATT&CK Matrix Optimization",
+      "codeHash": "1cfe33ce797189de8051fb05f5f9810f057c498ed500d0300861db1ddcbbcc7d",
+      "spec": {
+        "template": "compare",
+        "title": "Purple Team Real-Time Collaboration vs Siloed Operations",
+        "left": {
+          "label": "Siloed Operations",
+          "content": [
+            "Red teams conduct clandestine exercises and deliver massive static reports months later",
+            "Blue teams struggle to interpret findings without technical context of attack mechanics",
+            "Detection gaps remain unpatched for extended periods, leaving enterprises exposed",
+            "Adversarial culture creates organizational friction between offensive and defensive units"
+          ]
+        },
+        "right": {
+          "label": "Purple Team Collaborative Loop",
+          "content": [
+            "Red and blue operators test specific matrix techniques side-by-side in real time",
+            "Engineers inspect telemetry immediately, tuning detection rules within minutes",
+            "Maturity heatmaps systematically track tactic coverage across blind, logged, and blocked states",
+            "Shared empirical data drives continuous detection engineering and architectural hardening"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Workflow diagram illustrates iterative red and blue collaborative feedback loop."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection tracks technique execution, log validation, and instant rule tuning."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates real-time purple teaming permanently closing enterprise blind spots."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms ninety-eight percent coverage across prioritized enterprise threat scenarios."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Cyber War Gaming Platform Engine: Live-Fire Exercise Benchmark",
+      "codeHash": "ef3af474a85d440bcef564c34b77490c3358f74ef88927ede7168a138014c3c0",
+      "spec": {
+        "template": "compare",
+        "title": "Production Cyber War Gaming Platform Engine",
+        "left": {
+          "label": "Unexercised Enterprise Defenses",
+          "content": [
+            "Defensive playbooks remain untested against multi-stage adversary intrusion chains",
+            "Incident response containment velocity is slow, allowing ransomware lateral spread",
+            "Executive leadership lacks visibility into technical containment capabilities",
+            "Security investments cannot be quantitatively justified against empirical threat data"
+          ]
+        },
+        "right": {
+          "label": "Unified Live-Fire War Gaming Engine",
+          "content": [
+            "Continuous automated adversary emulation stress-tests defenses across dozens of techniques",
+            "Sub-minute mean time to contain proves automated orchestration and response reflexes",
+            "Active deception meshes divert intrusions away from production databases into sandboxes",
+            "Empirical readiness index provides definitive mathematical proof of combat readiness"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive platform schematic details end-to-end live-fire adversary emulation benchmark."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks multi-stage attack campaigns, detection rates, and containment velocity."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis highlights battle-tested combat survivability over untested defensive models."
+          },
+          {
+            "at": "verify",
+            "caption": "Formal verification certifies enterprise war gaming accreditation and executive defense readiness."
+          }
+        ]
+      }
+    }
+  ]
+}

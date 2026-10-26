@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 56,
+  "promptSha": "34420b9ccb2e2757713676155a93ac435d7524921c35c8edfeb8c98206785797",
+  "entries": [
+    {
+      "partTitle": "BeyondCorp Architecture & Identity-Aware Access Proxies: Perimeterless Access & Context-Aware Trust",
+      "codeHash": "9cb44b6f657af95ef7da01500b32db352fc746f5feab2acfd7bdd800701b6326",
+      "spec": {
+        "template": "compare",
+        "title": "BeyondCorp Context-Aware Gateway vs Legacy VPN Perimeter",
+        "left": {
+          "label": "Legacy VPN Perimeter",
+          "content": [
+            "Network location grants implicit corporate trust across the entire internal network",
+            "Single compromised credential allows broad lateral movement across internal microservices",
+            "Zero continuous device health auditing after initial network tunnel establishment",
+            "Static perimeter firewall blind to dynamic device posture and endpoint telemetry"
+          ]
+        },
+        "right": {
+          "label": "BeyondCorp Identity-Aware Gateway",
+          "content": [
+            "Location does not equal trust; every request requires cryptographic context evaluation",
+            "Mutual TLS client certificates and hardware security keys enforce strict user identity",
+            "Continuous endpoint health auditing validates disk encryption and active EDR status",
+            "Dynamic context-aware policies terminate unauthorized sessions at the public edge"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural overview contrasts context-aware zero-trust access against legacy perimeter networks."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection validates cryptographic client certificates, user identity, and endpoint posture."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation demonstrates dynamic identity proxies preventing unauthorized network lateral traversal."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms perimeterless gateway policy enforcement, telemetry auditing, and session termination."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sovereign Cloud Isolation & Cross-Domain Data Diodes: Photonic Air-Gaps & Content Sanitization",
+      "codeHash": "c187d86b5376fdca671b326965e0d373f9ce3e2e2e0674920fa696a9037a7404",
+      "spec": {
+        "template": "compare",
+        "title": "Photonic Hardware Data Diode vs Bidirectional Firewall",
+        "left": {
+          "label": "Bidirectional Software Firewall",
+          "content": [
+            "Software stack vulnerable to zero-day packet parsing exploits and buffer overflows",
+            "Bidirectional TCP return paths allow compromised systems to establish reverse command shells",
+            "Operational technology enclaves exposed to malware command-and-control backchannels",
+            "Configuration drift can inadvertently open outbound egress ports to the internet"
+          ]
+        },
+        "right": {
+          "label": "Unidirectional Photonic Data Diode",
+          "content": [
+            "Physical fiber-optic link allows light to propagate in only a single physical direction",
+            "Absence of return optical detector mathematically prevents reverse data exfiltration",
+            "Protocol breaks terminate external connections and sanitize incoming payload formats",
+            "High-security enclaves receive critical threat telemetry without compromising physical isolation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural diagram illustrates physical photonic isolation separating untrusted networks from sovereign enclaves."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection analyzes unidirectional optical transmission and automated protocol payload stripping."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis highlights absolute physical unidirectionality over vulnerable stateful software inspection engines."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification asserts mathematical impossibility of reverse command channels or exfiltration paths."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Cloud Key Sovereignty & Dedicated Hardware Security Modules (HSMs): BYOK, HYOK & Cryptographic Shredding",
+      "codeHash": "c61001a08e0ac45e1c98ff1bdd22092554b87be90e35809c57a1dbaada30cdf0",
+      "spec": {
+        "template": "compare",
+        "title": "Dedicated Sovereign HSM Key Sovereignty vs Cloud-Managed KMS",
+        "left": {
+          "label": "Cloud-Provider Managed KMS",
+          "content": [
+            "Master encryption keys stored within multi-tenant cloud service provider memory systems",
+            "Foreign government subpoenas can compel cloud providers to decrypt sensitive customer data",
+            "Key destruction across distributed multi-tenant storage media is legally unverified",
+            "Lack of physical cryptographic boundary leaves master keys subject to hypervisor compromise"
+          ]
+        },
+        "right": {
+          "label": "Sovereign FIPS Level Three HSM",
+          "content": [
+            "Master cryptographic keys generated and retained exclusively within on-premises HSM hardware",
+            "Physical micro-wire tamper sensor grids zeroize volatile RAM in nanoseconds upon intrusion",
+            "Hold Your Own Key model prevents cloud providers from ever possessing plaintext master keys",
+            "Cryptographic shredding instantly renders petabytes of distributed ciphertext mathematically unrecoverable"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural layout details sovereign hardware security modules and envelope key hierarchy."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection tracks multi-party split-knowledge controls and physical tamper response sensors."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates customer-held keys preventing foreign extraterritorial jurisdictional disclosure."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification certifies instantaneous cryptographic shredding rendering distributed cloud ciphertext permanently unrecoverable."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Micro-Perimeters & Cryptographic Zoning: Software-Defined Perimeters (SDP), ZTNA & FIPS-Grade Cipher Suites",
+      "codeHash": "f49ff8d7825100a97da969b3e5b7290c6ef5ba14bf7161014a4314991ece83a9",
+      "spec": {
+        "template": "compare",
+        "title": "Micro-Perimeter SPIFFE Identity vs Coarse Enterprise VLANs",
+        "left": {
+          "label": "Coarse Enterprise VLANs",
+          "content": [
+            "Broad subnets allow unencrypted plaintext communication between internal microservices",
+            "Perimeter breach exposes all adjacent databases and workloads to sniffing and ARP poisoning",
+            "Lacks fine-grained cryptographic workload attestation between ephemeral containers",
+            "Direct network routes permit compromised web frontends to query cardholder vaults"
+          ]
+        },
+        "right": {
+          "label": "Cryptographic Micro-Perimeters",
+          "content": [
+            "Every container operates inside an isolated micro-segment with default-deny network rules",
+            "Mutual TLS handshakes enforce short-lived SPIFFE verifiable identity documents for all traffic",
+            "FIPS-grade cipher suites guarantee end-to-end forward secrecy across all internal communications",
+            "Cryptographic zoning mathematically blocks direct ingress connections into sensitive compliance vaults"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview maps micro-perimeter boundaries surrounding independent cloud-native container workloads."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection validates mutual TLS handshake parameters and ephemeral cryptographic certificates."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation shows granular identity segmentation preventing lateral pivot across corporate tiers."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification confirms kernel-level packet filtering enforcing strict default-deny zoning policies."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Sovereign Zero-Trust Mesh Platform Engine & Global Benchmark",
+      "codeHash": "c5d95d6d781a37d0e311bae58f8d1bf7b43eeb36c727afa7e1f501923b0f3fc5",
+      "spec": {
+        "template": "compare",
+        "title": "Production Sovereign Zero-Trust Mesh Platform Engine",
+        "left": {
+          "label": "Uncoordinated Defensive Silos",
+          "content": [
+            "Fragmented access gateways fail to correlate endpoint posture with cloud permissions",
+            "Sovereign data boundaries lack hardware diode enforcement, risking regulatory penalties",
+            "Keys held by multiple disparate cloud vendors without unified cryptographic governance",
+            "Unmonitored service mesh routes allow unauthorized cross-zone data transfer"
+          ]
+        },
+        "right": {
+          "label": "Unified Sovereign Zero-Trust Mesh",
+          "content": [
+            "BeyondCorp gateway continuously enforces multi-factor authentication and device certificates",
+            "Photonic diodes guarantee immutable unidirectional telemetry ingestion into sovereign enclaves",
+            "FIPS-compliant HSM infrastructure enforces customer key custody and cryptographic shredding",
+            "SPIFFE-attested micro-perimeters and eBPF kernel rules block unauthorized lateral communications"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive platform architecture displays fully integrated sovereign zero-trust defense mesh."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection tracks multi-checkpoint evaluation across identity, diodes, and cryptography."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates cohesive planetary defense posture versus fragmented legacy perimeter solutions."
+          },
+          {
+            "at": "verify",
+            "caption": "Formal verification validates full operational readiness across all international data sovereignty frameworks."
+          }
+        ]
+      }
+    }
+  ]
+}

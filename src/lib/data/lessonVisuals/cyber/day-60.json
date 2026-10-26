@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 60,
+  "promptSha": "8869c297b92843245701899590a05e47580e0a79e4118b11758c385bbba11aaf",
+  "entries": [
+    {
+      "partTitle": "Milestone 12 Capstone Architectural Foundation: Planetary Zero-Trust Mesh & Sovereign Cloud Ingestion",
+      "codeHash": "b7d9d87f7ff96820c0613175c979cfc4e0876131e1a8996da8b6c734464b6d61",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone Twelve Capstone Foundation: Planetary Zero-Trust Mesh",
+        "left": {
+          "label": "Fragmented Perimeter Architecture",
+          "content": [
+            "Implicit trust granted to internal corporate networks and virtual private network tunnels",
+            "Single compromised workstation enables unrestricted lateral traversal across cloud subnets",
+            "Unprotected sovereign data borders risk severe regulatory violations and international data leakage",
+            "Encryption keys held in cloud provider RAM subject to foreign extraterritorial subpoena"
+          ]
+        },
+        "right": {
+          "label": "Planetary Sovereign Zero-Trust Mesh",
+          "content": [
+            "BeyondCorp identity proxies continuously audit hardware tokens and real-time device health",
+            "Photonic hardware data diodes enforce immutable physical optical air-gaps for sovereign enclaves",
+            "FIPS Level Three Hardware Security Modules guarantee customer custody and instant cryptographic shredding",
+            "Mutual TLS with short-lived SPIFFE workload attestations isolates every container into a micro-perimeter"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural layout displays planetary zero-trust mesh spanning sovereign multi-cloud regions."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed operational inspection verifies context-aware gateways, optical diodes, and hardware key modules."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates uncompromising zero-trust verification surpassing vulnerable perimeter models."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification certifies baseline compliance, micro-perimeter attestation, and sovereign boundary security."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous Threat Defense & Chaos-Resilient Immune Mesh: Sub-Second Containment & Byzantine Consensus",
+      "codeHash": "a892365e0ed36c17daae202cf4768038a72cd520313b07503fd57dabc623a897",
+      "spec": {
+        "template": "compare",
+        "title": "Autonomous Cloud Immune Mesh vs Reactive Human Triage",
+        "left": {
+          "label": "Reactive Human Triage",
+          "content": [
+            "Security analysts take hours to inspect alert queues while malware spreads across production nodes",
+            "Manual firewall rule configuration introduces syntax errors and catastrophic operational outages",
+            "Compromised credentials remain active for hours during forensic incident investigations",
+            "Lacks automated closed-loop mechanisms to isolate affected hosts at cloud machine speed"
+          ]
+        },
+        "right": {
+          "label": "Autonomous Cloud Immune Mesh",
+          "content": [
+            "Extended Berkeley packet filter probes intercept and block unauthorized system calls in the kernel",
+            "Decentralized Byzantine consensus achieves supermajority quorum across independent validator nodes",
+            "Sub-second closed-loop orchestrator cordons compromised nodes and revokes certificates in milliseconds",
+            "Dynamic microsegmentation policies freeze infected containers while preserving memory for forensics"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Workflow diagram illustrates closed-loop cloud immune response pipeline and kernel interception."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection tracks system call blocking, Byzantine quorum, and automated node cordoning."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation demonstrates machine-speed remediation eliminating dangerous human triage delays."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms sub-second threat containment and tamper-evident cryptographic ledger generation."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Live-Fire War Gaming & Active Deception Grid: MITRE ATT&CK Emulation & Honeynet Redirection",
+      "codeHash": "1a7077f87074a62b8579fbf85866c1b8e643a2ead34e28e8b34457cd07f6b7dd",
+      "spec": {
+        "template": "compare",
+        "title": "Active Live-Fire Deception Grid vs Untested Security Controls",
+        "left": {
+          "label": "Untested Security Controls",
+          "content": [
+            "Defensive playbooks remain unexercised until real nation-state adversaries breach production",
+            "Passive monitoring waits for known signatures while stealthy intruders harvest internal credentials",
+            "SOC analysts suffer from high false-positive rates and alert fatigue during attacks",
+            "Enterprise lacks empirical proof of detection capabilities across common adversary techniques"
+          ]
+        },
+        "right": {
+          "label": "Active Live-Fire Deception Grid",
+          "content": [
+            "TIBER-EU digital twin ranges continuously emulate dozens of weaponized adversary techniques",
+            "Canary tokens create high-fidelity tripwires generating alerts with zero false-positive rates",
+            "Software-defined networking transparently redirects intruders into isolated synthetic honeynets",
+            "Purple team collaboration iteratively closes detection gaps to achieve over ninety-eight percent coverage"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview maps active deception traps, decoy credentials, and live-fire range pipelines."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection analyzes instant canary webhook activations and automated honeynet session redirection."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates proactive deception trapping stealthy adversaries before data discovery."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification certifies elite combat readiness and comprehensive MITRE matrix detection coverage."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive Regulatory Governance & Quantitative Risk Engine: SEC 4-Day Compliance & Board KRI Attestation",
+      "codeHash": "10c56b3196ce432f1de1f815be6fc1268ae86afb6387606517e3a8eaf3fe55a7",
+      "spec": {
+        "template": "compare",
+        "title": "Executive Fiduciary Governance vs Subjective Risk Assessment",
+        "left": {
+          "label": "Subjective Risk Heatmaps",
+          "content": [
+            "Assigns arbitrary red, amber, and green colors to vulnerabilities without financial loss figures",
+            "Fails to articulate cyber risk in business metrics understandable to executive boards of directors",
+            "Lacks automated compliance monitoring to meet strict statutory incident disclosure deadlines",
+            "Ignores software supply chain provenance, exposing production clusters to upstream attacks"
+          ]
+        },
+        "right": {
+          "label": "Quantitative Risk & Governance Engine",
+          "content": [
+            "Automated engines assess incident materiality to enforce ninety-six hour SEC disclosure compliance",
+            "FAIR methodology models loss event frequency and magnitude into exact annualized loss expectancy",
+            "Cryptographic admission controllers enforce SLSA Level Three provenance and software bills of materials",
+            "Executive boardroom dashboards map key risk indicators directly against approved risk appetite thresholds"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive dashboard layout maps quantitative risk distributions and regulatory disclosure workflows."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection audits materiality assessments, probabilistic loss curves, and supply chain gates."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis illustrates mathematical financial modeling surpassing arbitrary qualitative color matrices."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms Tier-One regulatory excellence, board appetite compliance, and fiduciary integrity."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Grand Master Defense Platform Execution: Planetary Cyber Sovereignty & CISO Accreditation",
+      "codeHash": "17d771447574b3aa06390bbe53c8a623f248240a9d6fb7d2c420b474b594951f",
+      "spec": {
+        "template": "compare",
+        "title": "Grand Master Sovereign Planetary Defense Platform Execution",
+        "left": {
+          "label": "Legacy Enterprise IT",
+          "content": [
+            "Siloed tools, manual compliance, uncoordinated defenses, and blind spots across clouds",
+            "Vulnerable to sophisticated nation-state threat actors and multi-stage supply chain breaches",
+            "Executive leadership operates in the dark without quantifiable cyber risk governance",
+            "Lacks cohesive architectural vision uniting low-level systems defense with board strategy"
+          ]
+        },
+        "right": {
+          "label": "Grand Master Cyber Defense Platform",
+          "content": [
+            "Seamlessly unites all twelve milestone disciplines from foundational cryptography to planetary zero-trust",
+            "Sub-second autonomous self-healing cloud immune mesh neutralizes advanced threats at machine speed",
+            "Live-fire deception grids and purple team feedback achieve over ninety-eight percent combat coverage",
+            "Conferences official Chief Information Security Officer Grand Master Accreditation with Highest Honors"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive capstone schematic displays fully integrated planetary sovereign cyber defense platform."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection audits all five planetary checkpoints across zero-trust, immunity, and governance."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates absolute defense supremacy across all enterprise cybersecurity domains."
+          },
+          {
+            "at": "verify",
+            "caption": "Formal verification confers Chief Information Security Officer Grand Master Accreditation with Highest Honors."
+          }
+        ]
+      }
+    }
+  ]
+}

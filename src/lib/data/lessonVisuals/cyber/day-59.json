@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "course": "cyber",
+  "prefix": "cyber",
+  "day": 59,
+  "promptSha": "a4f3ae2276979e75cfc1f16932d49a5799dba6ef76e4ccddfeba9f1ad676823a",
+  "entries": [
+    {
+      "partTitle": "Global Cybersecurity Regulatory Directives: SEC 4-Day Materiality, EU NIS2 & DORA",
+      "codeHash": "8d08b190dfa4086e8f31656b77d833292995e89f2c24d8594610c24ae0ddc33d",
+      "spec": {
+        "template": "compare",
+        "title": "SEC Four-Day Materiality Disclosure vs Delayed Reporting",
+        "left": {
+          "label": "Delayed Unregulated Reporting",
+          "content": [
+            "Conceals cyber incidents for months behind legal nondisclosure agreements",
+            "Exposes corporate executives and board members to personal civil liability",
+            "Fails to provide investors with transparent material financial impact analysis",
+            "Lacks empirical criteria to define whether technical intrusions constitute material harm"
+          ]
+        },
+        "right": {
+          "label": "Automated SEC Form Eight-K Engine",
+          "content": [
+            "Automated engines assess quantitative and qualitative incident materiality parameters",
+            "Mandates transparent disclosure within ninety-six hours of materiality determination",
+            "Harmonizes incident reporting with European early warning directives and resilience acts",
+            "Protects market integrity and investor trust through standardized public disclosures"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Architectural layout displays automated regulatory incident materiality assessment pipeline."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed operational inspection tracks financial impact, customer data leakage, and downtime metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates transparent timely regulatory disclosure surpassing dangerous reporting delays."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification certifies compliance with global reporting deadlines and executive legal standards."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantitative Cyber Risk Modeling & Financial Quantification: FAIR Methodology & ALE",
+      "codeHash": "d0144bb3586d83fa1d61071fc66b533bec5fa4b64c4679eac729e006c62add3f",
+      "spec": {
+        "template": "compare",
+        "title": "FAIR Quantitative Risk Modeling vs Qualitative Color Charts",
+        "left": {
+          "label": "Subjective Color Heatmaps",
+          "content": [
+            "Assigns arbitrary red, amber, and green colors to vulnerabilities without dollar metrics",
+            "Suffers from subjective analyst bias and creates dangerous false precision illusions",
+            "Cannot quantify how much financial capital a specific cyber intrusion will consume",
+            "Fails to demonstrate return on investment for proposed enterprise security initiatives"
+          ]
+        },
+        "right": {
+          "label": "FAIR Mathematical Risk Taxonomy",
+          "content": [
+            "Deconstructs risk into loss event frequency and expected monetary loss magnitude",
+            "Executes thousands of probabilistic simulation trials to calculate loss curves",
+            "Expresses digital risk in concrete currency figures understandable to executive boards",
+            "Empirically proves security return on investment and justifies security capital allocation"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Diagram maps quantitative loss event frequency and probabilistic financial loss distribution."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits annualized loss expectancy equations and expected loss magnitudes."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis illustrates mathematical financial precision replacing arbitrary qualitative color matrices."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms quantitative risk modeling justifying strategic capital allocation and insurance underwriting."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Third-Party & Supply Chain Risk Management (TPRM): SBOM & SLSA Provenance",
+      "codeHash": "1f98a4dd4d120d750b38768f4bd59d9f29c77998bada35bfea08f15e7e28ce71",
+      "spec": {
+        "template": "compare",
+        "title": "Supply Chain Provenance Gating vs Unverified Dependencies",
+        "left": {
+          "label": "Unverified Vendor Libraries",
+          "content": [
+            "Ingests open-source packages and commercial software without dependency inventory audits",
+            "Vulnerable to upstream build pipeline compromises and malicious package replacements",
+            "Lacks visibility into nested transitive libraries during critical zero-day discoveries",
+            "Permits software packages containing unmitigated critical vulnerabilities into production"
+          ]
+        },
+        "right": {
+          "label": "SLSA Provenance & SBOM Gating",
+          "content": [
+            "Enforces complete machine-readable software bills of materials for all dependencies",
+            "Requires verifiable cryptographic provenance attestations generated on isolated build hosts",
+            "Deployment admission controllers mathematically block packages lacking provenance manifests",
+            "Eliminates build-time injection vulnerabilities and provides instant inventory querying"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Structural overview maps software supply chain verification gates from source to deployment."
+          },
+          {
+            "at": "inspect",
+            "caption": "Detailed inspection analyzes machine-readable bill of materials inventories and provenance certificates."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative evaluation demonstrates cryptographic build gating preventing upstream dependency hijack attacks."
+          },
+          {
+            "at": "verify",
+            "caption": "Final verification validates deployment admission controllers rejecting unverified vendor packages."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive Boardroom Communication & Strategic CISO Metrics: KRIs & Risk Appetite",
+      "codeHash": "08df67f5108025e239fca06c88cdd1f3c8e4df9536a176f3dce06f6a8d8959ba",
+      "spec": {
+        "template": "compare",
+        "title": "Executive Boardroom KRI Dashboards vs Technical Vanity Metrics",
+        "left": {
+          "label": "Technical Vanity Metrics",
+          "content": [
+            "Presents irrelevant low-level counts of blocked spam emails and firewall port probes",
+            "Alienates corporate board directors and creates confusion regarding actual enterprise risk",
+            "Fails to establish clear alignment with business objectives and growth strategies",
+            "Lacks forward-looking warning signals to prevent catastrophic compliance failures"
+          ]
+        },
+        "right": {
+          "label": "Strategic Board Governance Dashboards",
+          "content": [
+            "Aligns key risk indicators with formal, board-approved cyber risk appetite statements",
+            "Provides forward-looking leading metrics that signal rising risk exposure before disasters",
+            "Tracks operational velocity through mean time to detect and remediation metrics",
+            "Transforms cybersecurity from an administrative expense into a strategic business enabler"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive dashboard layout maps key risk indicators against formal board appetite thresholds."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep operational inspection tracks unpatched vulnerabilities, remediation times, and vendor postures."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative review demonstrates strategic executive reporting surpassing technical vanity metrics."
+          },
+          {
+            "at": "verify",
+            "caption": "Verification confirms that enterprise risk posture remains strictly within approved board boundaries."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Cybersecurity Governance & Risk Architecture Platform Engine: Benchmark",
+      "codeHash": "b4b4dcdd252125a979f55841ef7982b5182b3fc08cadeed2457bde11635cbce6",
+      "spec": {
+        "template": "compare",
+        "title": "Production Cyber Governance Platform Engine",
+        "left": {
+          "label": "Fragmented Governance Silos",
+          "content": [
+            "Relies on manual paperwork and spreadsheets for periodic compliance certifications",
+            "Fails to calculate quantitative risk, exposing the enterprise to unquantified financial shocks",
+            "Third-party vendor risk remains unmonitored, risking catastrophic supply chain breaches",
+            "Executive leadership operates without real-time visibility into digital risk posture"
+          ]
+        },
+        "right": {
+          "label": "Unified Cyber Governance Platform",
+          "content": [
+            "Automated engines assess incident materiality and enforce statutory notification deadlines",
+            "Probabilistic risk quantification models millions in annualized risk reduction value",
+            "Cryptographic supply chain gates guarantee software dependency integrity across clouds",
+            "Boardroom reporting dashboards certify operational resilience and regulatory compliance"
+          ]
+        },
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive platform schematic details end-to-end cybersecurity governance and risk engine."
+          },
+          {
+            "at": "inspect",
+            "caption": "Deep inspection audits regulatory disclosure parameters, quantitative risk curves, and board metrics."
+          },
+          {
+            "at": "compare",
+            "caption": "Comparative analysis highlights institutional governance excellence over fragmented compliance workflows."
+          },
+          {
+            "at": "verify",
+            "caption": "Formal verification certifies global regulatory readiness and board-level risk governance accreditation."
+          }
+        ]
+      }
+    }
+  ]
+}
