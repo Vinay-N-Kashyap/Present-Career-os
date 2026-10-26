@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 60,
+  "entries": [
+    {
+      "partTitle": "ApexIntelligence Sovereign Architecture & Mathematical Foundations",
+      "codeHash": "58a5b97d3b72dc78438f96b34b0e93800c352171d872b5599f3613382872cd4a",
+      "spec": {
+        "template": "bars",
+        "title": "ApexIntelligence Sovereign Architectur... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core apexintell mechanisms and sovereign concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal apexintell bounds across sovereign systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical apexintell rules and sovereign cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying apexintell calculations and sovereign outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Multi-Echelon Enterprise Decision Collapse Forensic Audit ($120M Disaster)",
+      "codeHash": "de1baf36606e69dff7c95b05f842b8211b0d1be3cdf9a8bc36fd47be8da1b69a",
+      "spec": {
+        "template": "bars",
+        "title": "The Multi-Echelon Enterprise Decision ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core multi mechanisms and echelon concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal multi bounds across echelon systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical multi rules and echelon cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying multi calculations and echelon outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Causal Econometric & Operations Research Optimization Engine",
+      "codeHash": "80c812443c9573e86bbc4afba6958d495592be6ee035e2686cb86b2c0ff9d445",
+      "spec": {
+        "template": "bars",
+        "title": "Causal Econometric & Operations Resear... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core causal mechanisms and econometri concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal causal bounds across econometri systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical causal rules and econometri cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying causal calculations and econometri outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regulatory Model Risk, Algorithmic Fairness & Differential Privacy Certification",
+      "codeHash": "5d6eb0b6e46bf8b200ae66a1279469c409525bf1500919d60bdb8fbc6d596eaa",
+      "spec": {
+        "template": "bars",
+        "title": "Regulatory Model Risk, Algorithmic Fai... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core regulatory mechanisms and risk concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal regulatory bounds across risk systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical regulatory rules and risk cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying regulatory calculations and risk outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Board of Directors Master Viva Voce & Executive Command Dashboard",
+      "codeHash": "102d81ab5b1bdc5451d1ad69b1195574aa045aab9550fe0acd18081dd739a907",
+      "spec": {
+        "template": "bars",
+        "title": "The Board of Directors Master Viva Voc... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core board mechanisms and directors concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal board bounds across directors systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical board rules and directors cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying board calculations and directors outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

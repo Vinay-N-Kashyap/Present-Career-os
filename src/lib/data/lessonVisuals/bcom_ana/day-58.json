@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 58,
+  "entries": [
+    {
+      "partTitle": "Mathematical Physics of Sample Truncation & The Challenger O-Ring Disaster",
+      "codeHash": "62da32a302f79dda255b775b18c79868c4d88a82d4fdbda644cd304df1299af7",
+      "spec": {
+        "template": "bars",
+        "title": "Mathematical Physics of Sample Truncat... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core mathematic mechanisms and physics concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal mathematic bounds across physics systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical mathematic rules and physics cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying mathematic calculations and physics outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Zillow Offers $880M iBuying Algorithmic Meltdown Forensic Audit",
+      "codeHash": "55a77f9ac06faa0c8f4f1d21c92b96445d5949ee7b5f51bc02c2046aacc29614",
+      "spec": {
+        "template": "bars",
+        "title": "The Zillow Offers $880M iBuying Algori... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core zillow mechanisms and offers concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal zillow bounds across offers systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical zillow rules and offers cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying zillow calculations and offers outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Target Pregnancy Prediction Model PR Disaster",
+      "codeHash": "d03780851677fed280c34e0a49ccb14dc81963c3ed123989a47a3161ba8fb69f",
+      "spec": {
+        "template": "bars",
+        "title": "The Target Pregnancy Prediction Model ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core target mechanisms and pregnancy concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal target bounds across pregnancy systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical target rules and pregnancy cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying target calculations and pregnancy outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Model Risk Management (MRM) & Federal Reserve SR 11-7 Governance",
+      "codeHash": "6acb13d089473dab7259424672e21f9fe5060a390ca30f0173a3e484cdf33975",
+      "spec": {
+        "template": "bars",
+        "title": "Model Risk Management (MRM) & Federal ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core risk mechanisms and management concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal risk bounds across management systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical risk rules and management cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying risk calculations and management outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Model Risk Management & Catastrophe Defense Platform",
+      "codeHash": "5ee90f118db9aeaec0804a57e2f0c714eb9a52430372aaea7e0eeefd70e1af86",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Model Risk Management & Cat... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core enterprise mechanisms and risk concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal enterprise bounds across risk systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical enterprise rules and risk cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying enterprise calculations and risk outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

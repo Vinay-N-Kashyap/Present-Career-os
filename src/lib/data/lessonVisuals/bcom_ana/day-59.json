@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 59,
+  "entries": [
+    {
+      "partTitle": "Institutional Enterprise Architecture RFC Methodology & The 5-Layer Decision Stack",
+      "codeHash": "96c04e1a12c71d07d0e28d353caae898b29f0a3f99230820915197800df36e7b",
+      "spec": {
+        "template": "bars",
+        "title": "Institutional Enterprise Architecture ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core institutio mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal institutio bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical institutio rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying institutio calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Fractured $45M Corporate Data Lake Waste Forensic Audit",
+      "codeHash": "616fc27d822711a9beccfcac4e3b594fbae3ce3889022e445ec7411c8e77e9c0",
+      "spec": {
+        "template": "bars",
+        "title": "The Fractured $45M Corporate Data Lake... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core fractured mechanisms and m concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal fractured bounds across m systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical fractured rules and m cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying fractured calculations and m outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Organizational Topologies & Data Mesh with Federated Governance",
+      "codeHash": "05f064f50276db1ffe3092a1bac8a7f3cdf97b64ab1629df74e2567b458fa48a",
+      "spec": {
+        "template": "bars",
+        "title": "Organizational Topologies & Data Mesh ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core organizati mechanisms and topologies concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal organizati bounds across topologies systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical organizati rules and topologies cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying organizati calculations and topologies outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Year Capital Allocation & Decision Intelligence ROI Modeling",
+      "codeHash": "b3c5b5a6e13fc69556ebadf91d15c0b622607b52bb2dbd8fa92541a398db621a",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Year Capital Allocation & Decisi... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core multi mechanisms and year concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal multi bounds across year systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical multi rules and year cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying multi calculations and year outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Production CAO Decision Architecture & RFC Platform",
+      "codeHash": "7a3c0bba74e827a1c1c3ab2f1e1edb2738addc75255a2c5013cf187d5db1ffe8",
+      "spec": {
+        "template": "bars",
+        "title": "Building a Production CAO Decision Arc... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and production concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across production systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and production cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and production outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

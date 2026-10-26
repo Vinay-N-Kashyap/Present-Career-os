@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 57,
+  "entries": [
+    {
+      "partTitle": "Multiple Hypothesis Testing Mathematics & The Family-Wise Error Rate",
+      "codeHash": "53eece1ba2411efe9a5f807d455664b269d2f0e443b77afb2a3fa4edd958fd84",
+      "spec": {
+        "template": "bars",
+        "title": "Multiple Hypothesis Testing Mathematic... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core multiple mechanisms and hypothesis concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal multiple bounds across hypothesis systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical multiple rules and hypothesis cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying multiple calculations and hypothesis outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Flawed Growth Hack $4M Campaign Flop Forensic Audit",
+      "codeHash": "8638ad8b9d61168940fcba536bdc221a6065409b6f8ed7dba8222d6a0155b52d",
+      "spec": {
+        "template": "bars",
+        "title": "The Flawed Growth Hack $4M Campaign Fl... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core flawed mechanisms and growth concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal flawed bounds across growth systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical flawed rules and growth cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying flawed calculations and growth outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Benjamini-Hochberg Step-Up Procedure & False Discovery Rate Control",
+      "codeHash": "db4088a0f5db831287396b505af689b38d46ef251b36f4022b92a8c6311bf492",
+      "spec": {
+        "template": "bars",
+        "title": "Benjamini-Hochberg Step-Up Procedure &... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core benjamini mechanisms and hochberg concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal benjamini bounds across hochberg systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical benjamini rules and hochberg cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying benjamini calculations and hochberg outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Anatomy of P-Hacking: Peeking, Subgroup Mining & HARKing",
+      "codeHash": "7e827fc75feb48abaf28b421c627cc395e74395b24f5cc075faa1a49c9f85647",
+      "spec": {
+        "template": "bars",
+        "title": "The Anatomy of P-Hacking: Peeking, Sub... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core anatomy mechanisms and hacking concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal anatomy bounds across hacking systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical anatomy rules and hacking cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying anatomy calculations and hacking outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Experimentation Validation & False Discovery Controller",
+      "codeHash": "b3b6f1685f6513b94c12205ffda803fc6cb7ba1763628d0f3b59ab7d31c65fa9",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Experimentation Validation ... - Strategic Decision Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core enterprise mechanisms and experiment concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 68,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 74,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal enterprise bounds across experiment systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 73,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 80,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical enterprise rules and experiment cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 78,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 86,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying enterprise calculations and experiment outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Metric",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Causal Precision",
+                "value": 83,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Enterprise Governance",
+                "value": 92,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
