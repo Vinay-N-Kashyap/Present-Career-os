@@ -14,7 +14,10 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
       assert.strictEqual(lesson.coursePrefix, 'bcom_ecom');
       assert(lesson.title && lesson.title.length > 5, `Day ${dayNum} missing title`);
       assert(lesson.goal && lesson.goal.length > 10, `Day ${dayNum} missing goal`);
-      assert(lesson.recap && (typeof lesson.recap === 'string' ? lesson.recap.length > 10 : (lesson.recap as any).length > 0), `Day ${dayNum} missing recap`);
+      assert(
+        lesson.recap && (typeof lesson.recap === 'string' ? lesson.recap.length > 10 : (lesson.recap as any).length > 0),
+        `Day ${dayNum} missing recap`
+      );
       const expectedMinutes = dayNum === 55 ? 60 : 38;
       assert.strictEqual(lesson.minutes, expectedMinutes, `Day ${dayNum} minutes invalid: ${lesson.minutes}`);
     }
@@ -27,7 +30,7 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
     }
   });
 
-  it('should satisfy strict word count threshold (>= 580 words per part) across all 25 parts', () => {
+  it('should satisfy strict word count threshold (>= 600 words per part) across all 25 parts', () => {
     let totalBlockWords = 0;
     const partWordCounts: { day: number; part: number; words: number }[] = [];
 
@@ -41,8 +44,8 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
         totalBlockWords += wordCount;
         partWordCounts.push({ day: dayNum, part: pIdx + 1, words: wordCount });
         assert(
-          wordCount >= 580,
-          `Day ${dayNum} Part ${pIdx + 1} has ${wordCount} words, below 580 word minimum!`
+          wordCount >= 600,
+          `Day ${dayNum} Part ${pIdx + 1} has ${wordCount} words, below 600 word minimum!`
         );
       });
       assert(
@@ -50,7 +53,7 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
         `Day ${dayNum} has ${dayWords} total words, below 3,000 word minimum!`
       );
     }
-    console.log(`\nVerified Block 11 Total Words: ${totalBlockWords.toLocaleString()} across 25 parts.`);
+    console.log(`\n🎉 Block 11 Verified: ${totalBlockWords.toLocaleString()} total words across 25 parts.`);
   });
 
   it('should enforce Socratic check quiz invariants (answer: 0, answerIndex: 0, 4 options, why >= 20)', () => {
@@ -85,33 +88,36 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
 
   it('should have valid Gate v2 visual envelopes with matching SHA-256 codeHash bindings', () => {
     const visualsDir = path.join(__dirname, '..', 'src', 'lib', 'data', 'lessonVisuals', 'bcom_ecom');
-    
+
     for (let dayNum = 51; dayNum <= 55; dayNum++) {
       const visualPath = path.join(visualsDir, `day-${dayNum}.json`);
       assert(fs.existsSync(visualPath), `Visual envelope missing for day ${dayNum}: ${visualPath}`);
-      
+
       const visualData = JSON.parse(fs.readFileSync(visualPath, 'utf-8'));
       assert.strictEqual(visualData.schemaVersion, 1);
       assert.strictEqual(visualData.prefix, 'bcom_ecom');
       assert.strictEqual(visualData.day, dayNum);
       assert.strictEqual(visualData.entries.length, 5, `Day ${dayNum} visuals must have 5 entries`);
-      
+
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
-      
+
       visualData.entries.forEach((vis: any, vIdx: number) => {
         const part = lesson.parts[vIdx];
         assert.strictEqual(vis.partTitle, part.title, `Day ${dayNum} visual ${vIdx} title mismatch`);
-        
-        // Compute SHA-256 hash of code
-        const expectedHash = crypto.createHash('sha256').update(part.code, 'utf-8').digest('hex');
+
+        // Compute SHA-256 hash
+        const sayStr = Array.isArray(part.say) ? part.say.join('') : part.say;
+        const rawInput = part.title + sayStr + (part.code || '');
+        const expectedHash = crypto.createHash('sha256').update(rawInput, 'utf-8').digest('hex');
         assert.strictEqual(vis.codeHash, expectedHash, `Day ${dayNum} Part ${vIdx + 1} codeHash mismatch`);
-        
+
         // Assert visual spec invariants
         assert.strictEqual(vis.spec.template, 'funnel');
         assert.strictEqual(vis.spec.steps.length, 4);
-        
-        vis.spec.steps.forEach((step: any) => {
-          assert(['intro', 'say1', 'example', 'tryIt'].includes(step.id));
+
+        vis.spec.steps.forEach((step: any, sIdx: number) => {
+          assert(['intro', 'say1', 'example', 'tryIt'].includes(step.at));
+          assert(step.stages.length === 4);
           assert(!/\d/.test(step.caption), `Caption contains numeric digit: "${step.caption}"`);
           assert(step.caption.endsWith('.'), `Caption not period-terminated: "${step.caption}"`);
           assert(step.caption.length <= 75, `Caption exceeds 75 chars (${step.caption.length}): "${step.caption}"`);
@@ -125,6 +131,6 @@ describe('BCOM E-Commerce Month 2 Block 11 Expansion (Days 51-55 & Milestone 11 
     for (let day = 1; day <= 55; day++) {
       assert(allLessonDays.includes(day), `Missing day ${day} in BCOM_ECOM_LONG_LESSONS`);
     }
-    console.log('\nCOURSE 07 STATUS: 55/60 Days Complete (91.67% Platform Target Achieved)!');
+    console.log('\n🎉 COURSE 07 STATUS: 55/60 Days Complete (91.67% Platform Target Achieved)!');
   });
 });
