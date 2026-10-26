@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "Potential Outcomes Framework & The Fundamental Problem of Causal Inference",
+      "codeHash": "36714544a1a5682cb661198a1a23490f6cbc75e9ef1c86b70234c4cda90a1d44",
+      "spec": {
+        "template": "bars",
+        "title": "Potential Outcomes Framework & The Fun... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core potential mechanisms and outcomes concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal potential bounds across outcomes systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical potential rules and outcomes cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying potential calculations and outcomes outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Premium Rewards Selection Bias Illusion Forensic Audit",
+      "codeHash": "93aaf3f387f0c0fd4652ea973a2a32a689c63beb991223d4b232a1235f874c8f",
+      "spec": {
+        "template": "bars",
+        "title": "The Premium Rewards Selection Bias Ill... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core premium mechanisms and rewards concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal premium bounds across rewards systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical premium rules and rewards cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying premium calculations and rewards outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Propensity Score Matching (PSM) & Rosenbaum-Rubin Balancing Theorem",
+      "codeHash": "e68aca7e0dec498a6b365bd2e70a7b354320d49f6a48f18499495ed2028ec172",
+      "spec": {
+        "template": "bars",
+        "title": "Propensity Score Matching (PSM) & Rose... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core propensity mechanisms and score concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal propensity bounds across score systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical propensity rules and score cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying propensity calculations and score outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Inverse Probability Weighting (IPW) & Horvitz-Thompson Estimators",
+      "codeHash": "5abc53e2bb5c400bb2c8d15df21e6c02121c31e932520e4b9671de703d65c06c",
+      "spec": {
+        "template": "bars",
+        "title": "Inverse Probability Weighting (IPW) & ... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core inverse mechanisms and probabilit concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal inverse bounds across probabilit systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical inverse rules and probabilit cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying inverse calculations and probabilit outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Observational Policy Pipeline & Rosenbaum Bounds Sensitivity",
+      "codeHash": "00218ce30bee127a87f08f85a19e9c74266284bf2f6a21d565628e4d44014435",
+      "spec": {
+        "template": "bars",
+        "title": "Production Observational Policy Pipeli... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core production mechanisms and observatio concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal production bounds across observatio systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical production rules and observatio cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying production calculations and observatio outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

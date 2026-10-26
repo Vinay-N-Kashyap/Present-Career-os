@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 55,
+  "entries": [
+    {
+      "partTitle": "Cognitive Psychology of Executive Decision-Making & The Minto Pyramid Principle",
+      "codeHash": "6f1d41affc0f4a38f48ae1a9034e7639f53e3d8ffddefb83eb4e48cb5c0ad75a",
+      "spec": {
+        "template": "bars",
+        "title": "Cognitive Psychology of Executive Deci... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core cognitive mechanisms and psychology concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal cognitive bounds across psychology systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical cognitive rules and psychology cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying cognitive calculations and psychology outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Cancelled $6M Transformation Pitch Forensic Audit",
+      "codeHash": "da49eef98db766929b99542db61189f42a4c3d0179faea2a5f23f6caec061042",
+      "spec": {
+        "template": "bars",
+        "title": "The Cancelled $6M Transformation Pitch... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core cancelled mechanisms and transforma concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal cancelled bounds across transforma systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical cancelled rules and transforma cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying cancelled calculations and transforma outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tufte Visual Design Principles & High Data-Ink Ratio",
+      "codeHash": "35352747ef90111f8a568b59daac4a5d26900c1dc74a466c35e34bee6bf23615",
+      "spec": {
+        "template": "bars",
+        "title": "Tufte Visual Design Principles & High ... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core tufte mechanisms and visual concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal tufte bounds across visual systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical tufte rules and visual cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying tufte calculations and visual outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hostile Boardroom Cross-Examination Defense",
+      "codeHash": "31a99929b71039a6777b2a254d530aebf04a0679a1ddfb0cd78f5227137fed48",
+      "spec": {
+        "template": "bars",
+        "title": "Hostile Boardroom Cross-Examination De... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core hostile mechanisms and boardroom concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal hostile bounds across boardroom systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical hostile rules and boardroom cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying hostile calculations and boardroom outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Board-Ready Executive Decision Brief & Visual Intelligence Engine",
+      "codeHash": "dba61a1f256c2791d7e1f0f8e87a9cadbf493525b9281e9df779d717a6c3579c",
+      "spec": {
+        "template": "bars",
+        "title": "Building a Board-Ready Executive Decis... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and board concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across board systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and board cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and board outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 53,
+  "entries": [
+    {
+      "partTitle": "Multi-Discriminant Analysis & Edward Altman's Z-Score Formulation",
+      "codeHash": "a0051ce262d4caead516af5bd9cb50add0f89f6a745b0d3b34cfdbe4ba930def",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Discriminant Analysis & Edward A... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core multi mechanisms and discrimina concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal multi bounds across discrimina systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical multi rules and discrimina cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying multi calculations and discrimina outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bankrupt Tier-1 Supplier Trade Credit Collapse Forensic Audit",
+      "codeHash": "c6167a6021ea1ef8fe2bc7fabf7d8d98a6fb4cbe884dacbb043c23298f82aa1a",
+      "spec": {
+        "template": "bars",
+        "title": "The Bankrupt Tier-1 Supplier Trade Cre... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core bankrupt mechanisms and tier concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal bankrupt bounds across tier systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical bankrupt rules and tier cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying bankrupt calculations and tier outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "James Ohlson's O-Score & Logistic Default Probability Modeling",
+      "codeHash": "49010e62283f806f62df092806bdf3bfe19b8ef18ef8a1a6e566d11d3f07b22b",
+      "spec": {
+        "template": "bars",
+        "title": "James Ohlson's O-Score & Logistic Defa... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core james mechanisms and ohlsons concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal james bounds across ohlsons systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical james rules and ohlsons cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying james calculations and ohlsons outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Messod Beneish's M-Score: Forensic Detection of Earnings Manipulation",
+      "codeHash": "9a11fc38e05c303bb87706bb0ee563082bddf4c1340a99071f008b771e5cb176",
+      "spec": {
+        "template": "bars",
+        "title": "Messod Beneish's M-Score: Forensic Det... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core messod mechanisms and beneishs concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal messod bounds across beneishs systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical messod rules and beneishs cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying messod calculations and beneishs outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Corporate Counterparty Risk Governance Screener",
+      "codeHash": "791c2ad1383792e78dfd2d11fbb58f6d35d8bf98cb58e9fd734faa643e6ba2cc",
+      "spec": {
+        "template": "bars",
+        "title": "Production Corporate Counterparty Risk... - Strategic Governance Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core production mechanisms and corporate concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal production bounds across corporate systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Governance Index",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical production rules and corporate cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying production calculations and corporate outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Treatment Effect",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Counterfactual Metric",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Risk Mitigation",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Governance Index",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
