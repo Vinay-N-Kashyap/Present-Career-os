@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 38,
+  "entries": [
+    {
+      "partTitle": "Unsupervised Feedback Extraction & Generative Dirichlet Distribution Foundations",
+      "codeHash": "1ff7ccf8c8f22afc65694852dc222b47f915f5577e66bf4ec157113d6e79de72",
+      "spec": {
+        "template": "bars",
+        "title": "Unsupervised Feedback Extraction & Gen... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core unsupervis mechanisms and feedback concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal unsupervis bounds across feedback systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical unsupervis rules and feedback cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying unsupervis calculations and feedback outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Latent Dirichlet Allocation (LDA) & Collapsed Gibbs Sampling Mechanics",
+      "codeHash": "c8ff734d51f84abeabe8a2532e3231ade7a278adf3991bfbdeb7a0962b065d9a",
+      "spec": {
+        "template": "bars",
+        "title": "Latent Dirichlet Allocation (LDA) & Co... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core latent mechanisms and dirichlet concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal latent bounds across dirichlet systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical latent rules and dirichlet cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying latent calculations and dirichlet outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantitative Semantic Topic Coherence Metrics (C_v, U_Mass) & Optimal K Selection",
+      "codeHash": "10448ebe943c2526cd2a8ac634609afe7183a772f43576dd32a818b34acc3595",
+      "spec": {
+        "template": "bars",
+        "title": "Quantitative Semantic Topic Coherence ... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core quantitati mechanisms and semantic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal quantitati bounds across semantic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical quantitati rules and semantic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying quantitati calculations and semantic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dense Semantic Clustering with Transformers & Class-Based TF-IDF (BERTopic)",
+      "codeHash": "01e6f6a1d458da5ff3eba5bbf126e3fc4b1ca9d13ab81738f0f40f1bdd15bb86",
+      "spec": {
+        "template": "bars",
+        "title": "Dense Semantic Clustering with Transfo... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core dense mechanisms and semantic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal dense bounds across semantic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical dense rules and semantic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying dense calculations and semantic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Topic Drift Detection, Emerging Anomaly Outages & VoC Action Pipelines",
+      "codeHash": "f365134cccfa8a842a9dbe6115af79afbd8336912a1d815c4a06a1014ac3982c",
+      "spec": {
+        "template": "bars",
+        "title": "Real-Time Topic Drift Detection, Emerg... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core real mechanisms and topic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal real bounds across topic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical real rules and topic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying real calculations and topic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 37,
+  "entries": [
+    {
+      "partTitle": "The Unstructured Enterprise: Tokenization, N-Grams & Mathematical TF-IDF",
+      "codeHash": "41b5de9565ae361f464df03dcdda4cb3a9e2faafed5605ea69ddbc69327734a3",
+      "spec": {
+        "template": "bars",
+        "title": "The Unstructured Enterprise: Tokenizat... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core unstructur mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal unstructur bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical unstructur rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying unstructur calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Lexicon-Based Sentiment Mining & The Mechanics of VADER",
+      "codeHash": "53466d565a321330d188e89b6bb1ec294b4aa573cf2fec3a25a0a72d2dd9d5cb",
+      "spec": {
+        "template": "bars",
+        "title": "Lexicon-Based Sentiment Mining & The M... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core lexicon mechanisms and based concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal lexicon bounds across based systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical lexicon rules and based cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying lexicon calculations and based outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Domain-Specific Language Pitfalls & Transformer Architectures (FinBERT / RoBERTa)",
+      "codeHash": "4e3f637c37da507d964dcff363366a28720f41215d44921116e9d60ea4a71ded",
+      "spec": {
+        "template": "bars",
+        "title": "Domain-Specific Language Pitfalls & Tr... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core domain mechanisms and specific concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal domain bounds across specific systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical domain rules and specific cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying domain calculations and specific outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Enterprise Support Ticket Categorization & Multi-Class Text Routing",
+      "codeHash": "e11aeeb5573f5418284cad79f09cf5e804cacf1d059d0a5aa948bd4a08b8bd62",
+      "spec": {
+        "template": "bars",
+        "title": "End-to-End Enterprise Support Ticket C... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core enterprise mechanisms and support concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal enterprise bounds across support systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical enterprise rules and support cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying enterprise calculations and support outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Computational Throughput, Batch Inference & Mitigating Tokenizer/GPU Bottlenecks",
+      "codeHash": "b45b073b1d217898f8abbd5f7a58d617dc367b758f000551ad3c464a1c0dccae",
+      "spec": {
+        "template": "bars",
+        "title": "Computational Throughput, Batch Infere... - Learning Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core computatio mechanisms and throughput concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal computatio bounds across throughput systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical computatio rules and throughput cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying computatio calculations and throughput outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Predictive Signal",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Variance Boundary",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Loss Minimization",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Generalization Metric",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
