@@ -4,590 +4,295 @@
   "day": 56,
   "entries": [
     {
+      "partIndex": 0,
       "partTitle": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
       "codeHash": "1ecbaf53b346dbfb49a0c9433ed36cb19c75dee771f85516c485da2ec6cf830c",
       "spec": {
         "template": "funnel",
-        "title": "Day 56 Part 1 Architecture Flow",
+        "title": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Marketplace onboarding gates ingest seller business attestation records.",
-            "activeStageId": "s1",
+            "caption": "The enterprise edge gateway intercepts incoming client requests.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Sanctions list screenings intercept prohibited legal entities immediately.",
-            "activeStageId": "s2",
+            "caption": "Decoupled microservice routers dispatch endpoints across the mesh.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Beneficial ownership records establish verified corporate provenance.",
-            "activeStageId": "s3",
+            "caption": "Correlation trace headers bind distributed service executions.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Cleared seller entities receive automated marketplace selling status.",
-            "activeStageId": "s4",
+            "caption": "Service mesh proxies enforce zero trust mutual transport security.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
+      "partIndex": 1,
       "partTitle": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
       "codeHash": "9afb974ada6f347674285da450e211b8d987e7cb03ca0ae35e2d9cba22c9ba9d",
       "spec": {
         "template": "funnel",
-        "title": "Day 56 Part 2 Architecture Flow",
+        "title": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Continuous seller scorecards evaluate operational fulfillment health.",
-            "activeStageId": "s1",
+            "caption": "Backend adapters inspect incoming mobile device user agent headers.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Order defect rate metrics track cancellation and dispatch failures.",
-            "activeStageId": "s2",
+            "caption": "Heavyweight desktop markup is pruned to conserve mobile bandwidth.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Breaching defect rate boundaries triggers algorithmic listing throttles.",
-            "activeStageId": "s3",
+            "caption": "Optimized image thumbnails accelerate screen rendering on phones.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Probationary seller profiles require formal remediation plan approvals.",
-            "activeStageId": "s4",
+            "caption": "Edge compute workers dynamically negotiate modern media formats.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
+      "partIndex": 2,
       "partTitle": "GraphQL Federation & Distributed Subgraph Entity Resolution",
       "codeHash": "e722ea2d44761984b573962ed21010a66dc76437f2f5feaebf38a3cfe4f03c8f",
       "spec": {
         "template": "funnel",
-        "title": "Day 56 Part 3 Architecture Flow",
+        "title": "GraphQL Federation & Distributed Subgraph Entity Resolution",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Multi factor Buy Box engines rank competing merchant offers in real time.",
-            "activeStageId": "s1",
+            "caption": "The federated supergraph defines autonomous domain entity schemas.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Landed product pricing and fast fulfillment speeds earn primary weights.",
-            "activeStageId": "s2",
+            "caption": "Primary entity directives enable decoupled subgraph composition.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Merchant reputation and pristine defect histories secure winning placement.",
-            "activeStageId": "s3",
+            "caption": "Declarative federation routes parallel queries across microservices.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Dynamic allocation algorithms drive superior customer conversion rates.",
-            "activeStageId": "s4",
+            "caption": "Query planners batch downstream entity loaders to prevent cascades.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
+      "partIndex": 3,
       "partTitle": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
       "codeHash": "d771abd607ec24089d6e5579d5b2ea7f420e0ecbac35e2cc231a4134ea7fa371",
       "spec": {
         "template": "funnel",
-        "title": "Day 56 Part 4 Architecture Flow",
+        "title": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Seller suspension pipelines trigger automated enforcement interventions.",
-            "activeStageId": "s1",
+            "caption": "Global edge network servers cache dynamic catalog data near users.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Severe policy breaches freeze active listings and payout authorizations.",
-            "activeStageId": "s2",
+            "caption": "Stale responses serve instantly while background refreshes run.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Structured appeal workflows ingest formal merchant plans of action.",
-            "activeStageId": "s3",
+            "caption": "Surrogate cache tags invalidate outdated prices across all nodes.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Verified remediation documentation restores merchant catalog privileges.",
-            "activeStageId": "s4",
+            "caption": "Origin shield tiers collapse duplicate requests to protect databases.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
+      "partIndex": 4,
       "partTitle": "Enterprise Composable Headless Gateway & Federation Command Tower",
       "codeHash": "5d7d3000ac454c4c83434fbd74537815b64046eec30bd7aac2a3a24e571b6851",
       "spec": {
         "template": "funnel",
-        "title": "Day 56 Part 5 Architecture Flow",
+        "title": "Enterprise Composable Headless Gateway & Federation Command Tower",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Seller operations command towers monitor marketplace fleet compliance.",
-            "activeStageId": "s1",
+            "caption": "The composable architecture command tower aggregates mesh telemetry.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Automated fleet audits maintain healthy fulfillment performance levels.",
-            "activeStageId": "s2",
+            "caption": "High edge cache hit rates insulate relational database clusters.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "High performing merchant cohorts capture dominant platform sales volume.",
-            "activeStageId": "s3",
+            "caption": "Sub millisecond inter service calls eliminate cascading bottlenecks.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Continuous operational reviews certify master marketplace seller health.",
-            "activeStageId": "s4",
+            "caption": "The architectural audit confirms enterprise composable excellence.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]

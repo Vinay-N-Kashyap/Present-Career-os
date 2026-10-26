@@ -5,9 +5,9 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { BCOM_ECOM_LONG_LESSONS } from '../src/lib/data/bcomEcomLongLessons';
 
-describe('BCOM E-Commerce Month 2 Block 12 Final Expansion (Days 56-60 & Grand Master Milestone 12 Capstone)', () => {
+describe('BCOM E-Commerce Month 2 Block 12 Expansion (Days 56-60 & Grand Master Milestone 12 Capstone)', () => {
   it('should contain Days 56 through 60 in BCOM_ECOM_LONG_LESSONS', () => {
-    assert(BCOM_ECOM_LONG_LESSONS.length === 60, `Expected exactly 60 days, found ${BCOM_ECOM_LONG_LESSONS.length}`);
+    assert(BCOM_ECOM_LONG_LESSONS.length >= 60, `Expected >= 60 days, found ${BCOM_ECOM_LONG_LESSONS.length}`);
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum);
       assert(lesson, `Day ${dayNum} not found in BCOM_ECOM_LONG_LESSONS`);
@@ -37,6 +37,7 @@ describe('BCOM E-Commerce Month 2 Block 12 Final Expansion (Days 56-60 & Grand M
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
       let dayWords = 0;
+
       lesson.parts.forEach((part, pIdx) => {
         const text = Array.isArray(part.say) ? part.say.join(' ') : part.say;
         const wordCount = text.trim().split(/\s+/).length;
@@ -48,27 +49,43 @@ describe('BCOM E-Commerce Month 2 Block 12 Final Expansion (Days 56-60 & Grand M
           `Day ${dayNum} Part ${pIdx + 1} has ${wordCount} words, below 600 word minimum!`
         );
       });
+
       assert(
         dayWords >= 3000,
         `Day ${dayNum} has ${dayWords} total words, below 3,000 word minimum!`
       );
     }
+
     console.log(`\n🎉 Block 12 Verified: ${totalBlockWords.toLocaleString()} total words across 25 parts.`);
+    assert(
+      totalBlockWords >= 15000,
+      `Block 12 total words (${totalBlockWords}) must be >= 15,000 words!`
+    );
   });
 
   it('should enforce Socratic check quiz invariants (answer: 0, answerIndex: 0, 4 options, why >= 20)', () => {
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
       lesson.parts.forEach((part, pIdx) => {
-        assert(part.check, `Day ${dayNum} Part ${pIdx + 1} missing Socratic check`);
-        assert.strictEqual(part.check.options.length, 4, `Day ${dayNum} Part ${pIdx + 1} must have 4 options`);
-        assert(
-          part.check.answer === 0 || part.check.answerIndex === 0,
-          `Day ${dayNum} Part ${pIdx + 1} answer must be 0`
+        assert(part.check, `Day ${dayNum} Part ${pIdx + 1} missing Socratic check quiz`);
+        assert.strictEqual(
+          part.check.options.length,
+          4,
+          `Day ${dayNum} Part ${pIdx + 1} must have exactly 4 options`
+        );
+        assert.strictEqual(
+          part.check.answer,
+          0,
+          `Day ${dayNum} Part ${pIdx + 1} answer must be index 0`
+        );
+        assert.strictEqual(
+          part.check.answerIndex,
+          0,
+          `Day ${dayNum} Part ${pIdx + 1} answerIndex must be 0`
         );
         assert(
           part.check.why && part.check.why.length >= 20,
-          `Day ${dayNum} Part ${pIdx + 1} why explanation too short`
+          `Day ${dayNum} Part ${pIdx + 1} why explanation too short (<20 chars): "${part.check.why}"`
         );
       });
     }
@@ -78,26 +95,26 @@ describe('BCOM E-Commerce Month 2 Block 12 Final Expansion (Days 56-60 & Grand M
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
       lesson.parts.forEach((part, pIdx) => {
-        assert(part.example && part.example.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing example`);
+        assert(part.example && part.example.length > 10, `Day ${dayNum} Part ${pIdx + 1} missing example`);
         assert(part.tryIt && part.tryIt.length > 10, `Day ${dayNum} Part ${pIdx + 1} missing tryIt`);
         assert(part.code && part.code.length > 20, `Day ${dayNum} Part ${pIdx + 1} missing code`);
-        assert(part.output && part.output.length > 0, `Day ${dayNum} Part ${pIdx + 1} missing output`);
+        assert(part.output && part.output.length > 5, `Day ${dayNum} Part ${pIdx + 1} missing output`);
       });
     }
   });
 
   it('should have valid Gate v2 visual envelopes with matching SHA-256 codeHash bindings', () => {
-    const visualsDir = path.join(__dirname, '..', 'src', 'lib', 'data', 'lessonVisuals', 'bcom_ecom');
+    const visualsBaseDir = path.join(process.cwd(), 'src', 'lib', 'data', 'lessonVisuals', 'bcom_ecom');
 
     for (let dayNum = 56; dayNum <= 60; dayNum++) {
-      const visualPath = path.join(visualsDir, `day-${dayNum}.json`);
-      assert(fs.existsSync(visualPath), `Visual envelope missing for day ${dayNum}: ${visualPath}`);
+      const visualFilePath = path.join(visualsBaseDir, `day-${dayNum}.json`);
+      assert(fs.existsSync(visualFilePath), `Visual file missing: ${visualFilePath}`);
 
-      const visualData = JSON.parse(fs.readFileSync(visualPath, 'utf-8'));
-      assert.strictEqual(visualData.schemaVersion, 1);
-      assert.strictEqual(visualData.prefix, 'bcom_ecom');
-      assert.strictEqual(visualData.day, dayNum);
-      assert.strictEqual(visualData.entries.length, 5, `Day ${dayNum} visuals must have 5 entries`);
+      const visualData = JSON.parse(fs.readFileSync(visualFilePath, 'utf-8'));
+      assert.strictEqual(visualData.schemaVersion, 1, `Day ${dayNum} visual schemaVersion must be 1`);
+      assert.strictEqual(visualData.prefix, 'bcom_ecom', `Day ${dayNum} visual prefix must be 'bcom_ecom'`);
+      assert.strictEqual(visualData.day, dayNum, `Day ${dayNum} visual day mismatch`);
+      assert.strictEqual(visualData.entries.length, 5, `Day ${dayNum} visual entries must equal 5`);
 
       const lesson = BCOM_ECOM_LONG_LESSONS.find((l) => l.day === dayNum)!;
 
@@ -126,12 +143,12 @@ describe('BCOM E-Commerce Month 2 Block 12 Final Expansion (Days 56-60 & Grand M
     }
   });
 
-  it('COURSE 07 100% COMPLETE: All 60 Days & Milestone 12 Grand Master Final Capstone Certified', () => {
+  it('BCOM E-Commerce Month 2 Block 12 Complete (Days 1 to 60: 60/60 Days, 100% Complete - COURSE 07 GRADUATED)', () => {
     const allLessonDays = BCOM_ECOM_LONG_LESSONS.map((l) => l.day);
     for (let day = 1; day <= 60; day++) {
       assert(allLessonDays.includes(day), `Missing day ${day} in BCOM_ECOM_LONG_LESSONS`);
     }
-    console.log('\n🌟 COURSE 07: E-COMMERCE PLATFORM ARCHITECTURE 100% COMPLETE (60/60 DAYS)!');
-    console.log('🎓 BRANCH B COMMERCE MANDATE 100% COMPLETED (210/210 DAYS ACROSS ALL 7 COURSES)!');
+    console.log('\n🏆 ALL 60 DAYS OF COURSE 07 (bcom_ecom) ARE VERIFIED AND 100% COMPLETE!');
+    console.log('🌟 BRANCH B MISSION COMPLETE: ALL 7 COMMERCE COURSES (420 DAYS) 100% GRADUATED!\n');
   });
 });

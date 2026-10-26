@@ -4,590 +4,295 @@
   "day": 60,
   "entries": [
     {
-      "partTitle": "Tier 1: Ingestion & Catalog Architecture: Multi-Vendor Ingestion, GS1 Deduplication & Canonical PIM Master Federation",
-      "codeHash": "5a8a7cf9488d79873fd2a34bf16c2da6b37fb32be9e220ecab9ce16adb7feb2c",
+      "partIndex": 0,
+      "partTitle": "Tier 1 Capstone Defense: Composable Headless Edge Architecture & GraphQL Subgraph Federation",
+      "codeHash": "3a7b1acd3bf53519376d62015abf0620acfce7683030ca65f5f917e422ba3d03",
       "spec": {
         "template": "funnel",
-        "title": "Day 60 Part 1 Architecture Flow",
+        "title": "Tier 1 Capstone Defense: Composable Headless Edge Architecture & GraphQL Subgraph Federation",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "The grand capstone synthesizes enterprise multi vendor catalog intake.",
-            "activeStageId": "s1",
+            "caption": "The executive defense reviews the composable headless edge mesh.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Asynchronous gates isolate defective rows while accepting clean items.",
-            "activeStageId": "s2",
+            "caption": "Autonomous GraphQL subgraphs eliminate monolithic release gridlock.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Universal barcode deduplication consolidates offers into master records.",
-            "activeStageId": "s3",
+            "caption": "High edge cache hit rates insulate databases during traffic peaks.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Streaming change data capture maintains sub second search synchronization.",
-            "activeStageId": "s4",
+            "caption": "The board ratifies tier one composable architecture certification.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
-      "partTitle": "Tier 2: Marketplace Financial Clearing: Multi-Party Split Payments, Dynamic Take Rates & Regulatory Escrow",
-      "codeHash": "6921c103c69b9ec55563a326b3f712463e0a49b7eee2cbcbbe4e1c0c7273abb4",
+      "partIndex": 1,
+      "partTitle": "Tier 2 Capstone Defense: Programmatic Catalog SEO, Sub-Second Edge SSR & Core Web Vitals Governance",
+      "codeHash": "fdaab4ee1b8c011b3adbbf9d67a04e7b2e9fa2846d34f3a3ceed23881bc1a14a",
       "spec": {
         "template": "funnel",
-        "title": "Day 60 Part 2 Architecture Flow",
+        "title": "Tier 2 Capstone Defense: Programmatic Catalog SEO, Sub-Second Edge SSR & Core Web Vitals Governance",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Multi party financial clearinghouses capture unified consumer payments.",
-            "activeStageId": "s1",
+            "caption": "The committee audits programmatic catalog search engine performance.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Variable category waterfalls compute platform take rate commissions.",
-            "activeStageId": "s2",
+            "caption": "Canonical URL controls prevent duplicate indexation and crawl waste.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Segregated custodial escrow accounts hold regulatory rolling reserves.",
-            "activeStageId": "s3",
+            "caption": "Sub second edge rendering satisfies rigorous core web vitals.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Near zero clearing variances confirm exemplary financial discipline.",
-            "activeStageId": "s4",
+            "caption": "The board confirms tier two search engine optimization maturity.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
-      "partTitle": "Tier 3: Seller Governance & Buy Box Optimization: Algorithmic Scorecards, ODR Enforcement & Multi-Factor Buy Box Allocation",
-      "codeHash": "c641e8e965ac218058ffd56913c92bea1a44d3024175d758f9e8b693638fc677",
+      "partIndex": 2,
+      "partTitle": "Tier 3 Capstone Defense: Omnichannel Distributed ATP Inventory & BOPIS/BORIS State Machine",
+      "codeHash": "36af60dfba285a76955d6c634c2fd756e74289770777b141cb9e3133102c6de4",
       "spec": {
         "template": "funnel",
-        "title": "Day 60 Part 3 Architecture Flow",
+        "title": "Tier 3 Capstone Defense: Omnichannel Distributed ATP Inventory & BOPIS/BORIS State Machine",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Algorithmic seller scorecards continuously track fulfillment defect rates.",
-            "activeStageId": "s1",
+            "caption": "The candidate defends unified omnichannel retail store fulfillment.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Multi factor scoring functions evaluate price speed and seller reputation.",
-            "activeStageId": "s2",
+            "caption": "Distributed inventory buffers prevent store shelf stock depletion.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Dynamic Buy Box allocations reward high performing merchant offers.",
-            "activeStageId": "s3",
+            "caption": "Rapid curbside pickup and in store returns drive customer loyalty.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Meritocratic allocation algorithms drive maximum customer retention.",
-            "activeStageId": "s4",
+            "caption": "The board approves tier three omnichannel enterprise accreditation.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
-      "partTitle": "Tier 4: Trust & Safety, Counterfeit Defense & DSA Compliance: Pre-Publish Risk Scoring, Review Brushing Interception & Digital Product Passports",
-      "codeHash": "8d0fa308695799ef4fb3fbeecc6469172ec24e8eaaaba254d53c738466633f23",
+      "partIndex": 3,
+      "partTitle": "Tier 4 Capstone Defense: High-Concurrency Flash Sale Throttling, Virtual Waiting Rooms & Zero-Oversell Locks",
+      "codeHash": "6b9f9ec17a3a45f0a425c427d5a448e33bcc04048bf46912efa78e9dfed9b403",
       "spec": {
         "template": "funnel",
-        "title": "Day 60 Part 4 Architecture Flow",
+        "title": "Tier 4 Capstone Defense: High-Concurrency Flash Sale Throttling, Virtual Waiting Rooms & Zero-Oversell Locks",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "Multimodal defense perimeters intercept counterfeit listings pre publish.",
-            "activeStageId": "s1",
+            "caption": "The defense reviews flash sale surge handling and queue defense.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Review fraud algorithms dismantle collusive brushing syndicates swiftly.",
-            "activeStageId": "s2",
+            "caption": "Atomic in memory reservation scripts enforce zero oversell integrity.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Notice and takedown compliance gates resolve claims in sub four hours.",
-            "activeStageId": "s3",
+            "caption": "Asynchronous event queues absorb extreme purchasing avalanches.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "Cryptographic digital product passports verify authentic provenance.",
-            "activeStageId": "s4",
+            "caption": "The board ratifies tier four high concurrency system resilience.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
       }
     },
     {
-      "partTitle": "Tier 5: Executive Boardroom Defense, $28.3M ROI Valuation & Grand Master DCCA-GEPA Accreditation",
-      "codeHash": "2fb13e7b29089da4208b61e5e3c61619574b06de999df1a0088700b998aa489c",
+      "partIndex": 4,
+      "partTitle": "Tier 5 Grand Accreditation: Executive Boardroom Defense & CCO-EA Master Graduation",
+      "codeHash": "b9e342f15214862a26c454aca7c1b8f8e145014d90fc7a8b39841208eea2326d",
       "spec": {
         "template": "funnel",
-        "title": "Day 60 Part 5 Architecture Flow",
+        "title": "Tier 5 Grand Accreditation: Executive Boardroom Defense & CCO-EA Master Graduation",
         "steps": [
           {
+            "id": "intro",
+            "label": "Synthesis Intake",
             "at": "intro",
-            "caption": "The executive boardroom defense reviews total enterprise value creation.",
-            "activeStageId": "s1",
+            "caption": "The executive boardroom evaluates total enterprise commercial yield.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
             ]
           },
           {
+            "id": "say1",
+            "label": "Architectural Analysis",
             "at": "say1",
-            "caption": "Catalog deduplication and treasury clearing deliver massive cash yields.",
-            "activeStageId": "s2",
+            "caption": "Validated annual returns demonstrate superior architectural value.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
             ]
           },
           {
+            "id": "example",
+            "label": "Domain Modeling",
             "at": "example",
-            "caption": "Fraud dispute avoidance and regulatory shields defend operating margins.",
-            "activeStageId": "s3",
+            "caption": "Unanimous apex scores reward sixty days of rigorous engineering.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
             ]
           },
           {
+            "id": "tryIt",
+            "label": "Operational Validation",
             "at": "tryIt",
-            "caption": "The defense confers distinguished chief commerce architect accreditation.",
-            "activeStageId": "s4",
+            "caption": "The board confers the chief commerce officer credential with honors.",
             "stages": [
-              {
-                "id": "s1",
-                "label": "Edge Intake Stage",
-                "value": "100.0%"
-              },
-              {
-                "id": "s2",
-                "label": "Security Validation",
-                "value": "98.5%"
-              },
-              {
-                "id": "s3",
-                "label": "Transaction Processing",
-                "value": "95.2%"
-              },
-              {
-                "id": "s4",
-                "label": "Fulfillment Dispatch",
-                "value": "94.8%"
-              }
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
             ]
           }
         ]
