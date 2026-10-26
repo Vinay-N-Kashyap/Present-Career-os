@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 21,
+  "entries": [
+    {
+      "partTitle": "The Mechanics of Safety Stock: Demand Stochasticity, Service Levels & Normal Deviates (Z-Scores)",
+      "codeHash": "f7c64964aff1c1050c5dcd8a1d66cac6b91be63909c07602f73c37fd7f6bcb95",
+      "spec": {
+        "template": "bars",
+        "title": "The Mechanics of Safety Stock: Demand ... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core mechanics mechanisms and safety concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal mechanics bounds across safety systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical mechanics rules and safety cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying mechanics calculations and safety outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stochastic Lead-Time Variance: The Combined Variance Theorem & Risk Amplification",
+      "codeHash": "15af3c3aaeb975d1b0febaf7e6707bc301aad285a74effe1ba8ea9fae0d2b3d9",
+      "spec": {
+        "template": "bars",
+        "title": "Stochastic Lead-Time Variance: The Com... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core stochastic mechanisms and leadtime concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal stochastic bounds across leadtime systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical stochastic rules and leadtime cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying stochastic calculations and leadtime outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Continuous Review (s, Q) & Reorder Point (ROP) Policy Dynamics",
+      "codeHash": "a275bec265378bd3a83fa0b270a9ed7ab18434f6f46d10227f672d582368a941",
+      "spec": {
+        "template": "bars",
+        "title": "Continuous Review (s, Q) & Reorder Poi... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core continuous mechanisms and review concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal continuous bounds across review systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical continuous rules and review cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying continuous calculations and review outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Unit Shortage Economics & The Normal Loss Function G(Z)",
+      "codeHash": "f95d347608227ca1e97f1fc6fa1f27435cb61f9f05a233fad4eee8dbffe5d721",
+      "spec": {
+        "template": "bars",
+        "title": "Unit Shortage Economics & The Normal L... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core unit mechanisms and shortage concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal unit bounds across shortage systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical unit rules and shortage cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying unit calculations and shortage outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Simulating Dynamic Inventory Queuing & Stockout Costs in Python",
+      "codeHash": "df5414b420dc791cdc224c00b9d1c181e51f7f5bd7b5febff8afc0efc35df255",
+      "spec": {
+        "template": "bars",
+        "title": "Simulating Dynamic Inventory Queuing &... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core simulating mechanisms and dynamic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal simulating bounds across dynamic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical simulating rules and dynamic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying simulating calculations and dynamic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

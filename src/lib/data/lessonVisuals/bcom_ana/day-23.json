@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 23,
+  "entries": [
+    {
+      "partTitle": "Price Elasticity of Demand (PED): Microeconomic Foundations & The Midpoint Formula",
+      "codeHash": "b8e5a5706681cc1fc0aa9b8e194003baf54ae1c9e9fb4ecc6ad3d45b38c176a2",
+      "spec": {
+        "template": "bars",
+        "title": "Price Elasticity of Demand (PED): Micr... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core price mechanisms and elasticity concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal price bounds across elasticity systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical price rules and elasticity cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying price calculations and elasticity outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Linear Demand Calibration & Total Revenue Curve Geometry",
+      "codeHash": "319c717e2ef368645cf824c472c09e40da69ef0a6481dec75b27456d87ec4504",
+      "spec": {
+        "template": "bars",
+        "title": "Linear Demand Calibration & Total Reve... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core linear mechanisms and demand concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal linear bounds across demand systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical linear rules and demand cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying linear calculations and demand outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Profit Maximization vs Revenue Maximization: Marginal Cost Integration",
+      "codeHash": "a04b2640297c200d637c9973384e75a4be5eb1e91484f4bc47a741c4e21fe100",
+      "spec": {
+        "template": "bars",
+        "title": "Profit Maximization vs Revenue Maximiz... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core profit mechanisms and maximizati concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal profit bounds across maximizati systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical profit rules and maximizati cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying profit calculations and maximizati outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Price Elasticity (XED), Income Elasticity (YED) & Multi-Product Cannibalization",
+      "codeHash": "1fe1702c91dc9b299c5882b0365babe0893ac2e8762d6517c0ee01458f08646f",
+      "spec": {
+        "template": "bars",
+        "title": "Cross-Price Elasticity (XED), Income E... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core crossprice mechanisms and elasticity concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal crossprice bounds across elasticity systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical crossprice rules and elasticity cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying crossprice calculations and elasticity outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Dynamic Pricing & Revenue Optimization Engine in Python",
+      "codeHash": "2a0fdc240d8b8919ad672125897ca68bb37a80f9994923535adffecf4898949e",
+      "spec": {
+        "template": "bars",
+        "title": "Building a Dynamic Pricing & Revenue O... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and dynamic concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across dynamic systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and dynamic cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and dynamic outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

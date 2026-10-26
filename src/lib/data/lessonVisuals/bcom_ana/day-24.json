@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 24,
+  "entries": [
+    {
+      "partTitle": "The Multi-Touch Attribution Dilemma: Heuristic Attribution Models",
+      "codeHash": "7cde6737638ed4d0ecab338a5d47bd5ea7630ec9a9bc25997f1ec452bf5a27af",
+      "spec": {
+        "template": "bars",
+        "title": "The Multi-Touch Attribution Dilemma: H... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core multitouch mechanisms and attributio concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal multitouch bounds across attributio systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical multitouch rules and attributio cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying multitouch calculations and attributio outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Probabilistic Attribution via First-Order Markov Chains",
+      "codeHash": "c596e2d26c5e827357ed52b8a8bb4b43610f8a8d5999688981d5535677fdfd5e",
+      "spec": {
+        "template": "bars",
+        "title": "Probabilistic Attribution via First-Or... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core probabilis mechanisms and attributio concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal probabilis bounds across attributio systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical probabilis rules and attributio cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying probabilis calculations and attributio outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Removal Effect Algorithm & Marginal Channel Value",
+      "codeHash": "28950a6b97ae39cafbd1c1a9e2d94ea7742f9304747cbf647b36e48b2881973d",
+      "spec": {
+        "template": "bars",
+        "title": "The Removal Effect Algorithm & Margina... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core removal mechanisms and effect concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal removal bounds across effect systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical removal rules and effect cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying removal calculations and effect outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comparison with Cooperative Game Theory: Shapley Value Attribution",
+      "codeHash": "f29e73df6c4c2f7db5a4df68b68fccd8b3e7f53d95983ea7616a5420ca0f1509",
+      "spec": {
+        "template": "bars",
+        "title": "Comparison with Cooperative Game Theor... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core comparison mechanisms and cooperativ concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal comparison bounds across cooperativ systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical comparison rules and cooperativ cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying comparison calculations and cooperativ outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an End-to-End Markov Multi-Touch Attribution Engine in Python",
+      "codeHash": "e904d98f9ef6ad6a72f69cea2dc17686c985e26447a5e7816165790501c28fdf",
+      "spec": {
+        "template": "bars",
+        "title": "Building an End-to-End Markov Multi-To... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and endtoend concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across endtoend systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and endtoend cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and endtoend outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

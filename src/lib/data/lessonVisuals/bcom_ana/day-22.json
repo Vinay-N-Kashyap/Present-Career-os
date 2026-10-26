@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 22,
+  "entries": [
+    {
+      "partTitle": "The Pareto Principle in SKU Portfolio Management: Cumulative Revenue & Lorenz Asymmetry",
+      "codeHash": "c4b70016ef803b9ba40ae9141bc1529d0d95bedf004bbb83bd7d2f233cd76a38",
+      "spec": {
+        "template": "bars",
+        "title": "The Pareto Principle in SKU Portfolio ... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core pareto mechanisms and principle concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal pareto bounds across principle systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical pareto rules and principle cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying pareto calculations and principle outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "XYZ Volatility Matrix: Demand Coefficient of Variation (CV) & Predictability Thresholds",
+      "codeHash": "db6cb26d10825ea3d033d1e18d6c78db42d681c7e998649006b8cb33f7b5ff91",
+      "spec": {
+        "template": "bars",
+        "title": "XYZ Volatility Matrix: Demand Coeffici... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core volatility mechanisms and matrix concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal volatility bounds across matrix systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical volatility rules and matrix cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying volatility calculations and matrix outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The 9-Box Multi-Dimensional ABC/XYZ Governance Matrix",
+      "codeHash": "9148606d74544768ba73dc5ca1c91f3307f53628072f7f0f92c6189ce6f75d91",
+      "spec": {
+        "template": "bars",
+        "title": "The 9-Box Multi-Dimensional ABC/XYZ Go... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core box mechanisms and multidimen concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal box bounds across multidimen systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical box rules and multidimen cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying box calculations and multidimen outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Differential Service Level Optimization Across the SKU Matrix",
+      "codeHash": "eb1757b0d39eee0d943b17e25dd7321d3791bc11b2037feadd21db76a3db8c90",
+      "spec": {
+        "template": "bars",
+        "title": "Differential Service Level Optimizatio... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core differenti mechanisms and service concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal differenti bounds across service systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical differenti rules and service cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying differenti calculations and service outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building an Enterprise ABC/XYZ Matrix Engine from First Principles",
+      "codeHash": "3fc0e048d7b64b1bb9e31c9f732266df659c9e2a46b84f8098d30a8d7dfc979b",
+      "spec": {
+        "template": "bars",
+        "title": "Building an Enterprise ABC/XYZ Matrix ... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across enterprise systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and enterprise cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and enterprise outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

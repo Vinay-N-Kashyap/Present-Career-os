@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ana",
+  "day": 25,
+  "entries": [
+    {
+      "partTitle": "Unit Economics Foundations: ARPU, Gross Margin & Customer Acquisition Cost (CAC)",
+      "codeHash": "a19534b846c4984979c72f7c085768ad61f0eabbd09b6288a1a57ba3f15c1900",
+      "spec": {
+        "template": "bars",
+        "title": "Unit Economics Foundations: ARPU, Gros... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core unit mechanisms and economics concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal unit bounds across economics systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical unit rules and economics cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying unit calculations and economics outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Mathematical Modeling of Customer Lifetime Value (CLV)",
+      "codeHash": "26d30a1cce88b72c0b299c7d23b875cb1fe01f71d1eb457373ee114cf3e442d1",
+      "spec": {
+        "template": "bars",
+        "title": "Mathematical Modeling of Customer Life... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core mathematic mechanisms and modeling concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal mathematic bounds across modeling systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical mathematic rules and modeling cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying mathematic calculations and modeling outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cohort Analytics: Net Revenue Retention (NRR) & Expansion Economics",
+      "codeHash": "aa49f157129a1f0a1f5a8fbe9278a4673d5f0254bbcc4a23d5595a8b30529511",
+      "spec": {
+        "template": "bars",
+        "title": "Cohort Analytics: Net Revenue Retentio... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core cohort mechanisms and analytics concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal cohort bounds across analytics systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical cohort rules and analytics cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying cohort calculations and analytics outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Unit Economics Benchmarks: The Rule of 40 & Magic Number",
+      "codeHash": "9335c248f337d60a1d2d05bcec66e7787ffa27e3a779b0146c829e04ce197d84",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Unit Economics Benchmarks: ... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core enterprise mechanisms and unit concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal enterprise bounds across unit systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical enterprise rules and unit cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying enterprise calculations and unit outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building a Comprehensive Customer Unit Economics & CLV Simulation Model in Python",
+      "codeHash": "e609fee5ac22ef868a5b665bcd8a7460758b28bfc86d989a73041df8ee18ec9e",
+      "spec": {
+        "template": "bars",
+        "title": "Building a Comprehensive Customer Unit... \u2014 Operations Evaluation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing core building mechanisms and comprehens concepts.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 82,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 70,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Analyzing formal building bounds across comprehens systems.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 79,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 70,
+                "tone": "data"
+              },
+              {
+                "label": "Service Target",
+                "value": 85,
+                "tone": "idle"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 76,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Demonstrating practical building rules and comprehens cases.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 83,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 88,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 82,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying building calculations and comprehens outputs.",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Safety Buffer",
+                "value": 87,
+                "tone": "ok"
+              },
+              {
+                "label": "Capital Demand",
+                "value": 80,
+                "tone": "idle"
+              },
+              {
+                "label": "Service Target",
+                "value": 91,
+                "tone": "ok"
+              },
+              {
+                "label": "Economic Margin",
+                "value": 88,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
