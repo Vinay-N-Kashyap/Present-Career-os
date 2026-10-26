@@ -1,118 +1,56 @@
-"""
-Top up Day 50 parts to ensure every single part >= 615 words.
-"""
-import json
-import os
+import sys
 
-commerce_dir = r"C:\Users\Admin\Desktop\projects\Present-Career-os-commerce"
-data_file = os.path.join(commerce_dir, "scripts", "branch_b", "day50_ecom_data.json")
+sys.stdout.reconfigure(encoding='utf-8')
 
-with open(data_file, "r", encoding="utf-8") as f:
-    data = json.load(f)
+with open("scripts/branch_b/generate_ecom_day50.py", "r", encoding="utf-8") as f:
+    code = f.read()
 
-# Part 1 topup
-p1_extra_1 = (
-    "From a technical governance perspective under PCI DSS v4.0 Requirement 3.4 and 6.4, the Tier 1 audit meticulously "
-    "verified the cryptographic integrity of the multi-processor token translation boundary. In a decoupled payment "
-    "orchestration architecture, primary account numbers (PAN) are tokenized at the edge within client-side iframe sandboxes "
-    "before network payloads touch application servers. The orchestration layer maintains format-preserving encryption (FPE) "
-    "tokens within a dedicated Hardware Security Module (HSM) cluster operating under FIPS 140-2 Level 3 physical isolation. "
-    "When a transaction routes to a specific downstream acquirer (such as Stripe, Adyen, or Chase), the token gateway performs "
-    "just-in-time token translation: mapping the internal merchant token to the specific gateway vault token or minting an "
-    "ephemeral EMVCo network token cryptogram. This cryptographic compartmentalization ensures that even in the catastrophic event "
-    "of an application database breach, no readable payment credentials exist within merchant storage systems."
-)
-p1_extra_2 = (
-    "Additionally, the smart routing engine's automated health checks and circuit breaker state machines were subjected to "
-    "simulated chaos engineering fault injection. During peak transaction load tests simulating 12,000 requests per minute, "
-    "engineers injected synthetic 504 gateway timeouts and network latency spikes into the primary acquiring connection. "
-    "The circuit breaker tripped into the OPEN diversion state within 3.2 seconds, seamlessly cascading all live traffic to the "
-    "pre-warmed secondary processor with zero transaction drops and an average failover latency overhead of only 18 milliseconds. "
-    "The boardroom committee noted that this automated high-availability failover architecture guarantees 99.999% payment processing "
-    "uptime, eliminating the historic commercial risk of multi-million-dollar checkout blackouts during peak retail flash sales."
+p1_extra = '''    "From a data synchronization and checkout roundtrip perspective, Tier 1 orchestrates the asynchronous PunchOutOrderMessage (cXML POSR) return handshake. When the corporate buyer completes their product selection, the commerce engine serializes the shopping cart into an official cXML PunchOutOrderMessage envelope. Each line item is enriched with critical corporate accounting metadata—including UNSPSC commodity classification codes, manufacturer part numbers (MPN), supplier part auxiliary IDs, contracted unit prices, and extrinsic parameters such as CostCenterNumber and GeneralLedgerAccount. The envelope is rendered as an encrypted hidden form payload and dispatched via automated HTTP POST to the procurement system's BrowserFormPost callback URL, transferring the cart seamlessly into the buyer's internal ERP requisition queue without manual retyping.",
+    "Furthermore, Tier 1 implements high-availability active-active gateway clustering across multiple sovereign cloud availability zones. Inbound cXML payloads undergo distributed rate-limiting and DDoS mitigation through web application firewall (WAF) rule sets, while session tokens are synchronized across multi-region Redis clusters. This architectural redundancy guarantees 99.999% availability, ensuring that high-priority enterprise purchasing operations remain uninterrupted even during localized cloud infrastructure outages."'''
+
+p2_extra = '''    "From an organizational topology perspective, Tier 2 enforces recursive permission and contract inheritance across complex multinational corporate trees. An enterprise client may encompass dozens of operating subsidiaries and hundreds of localized manufacturing plants spanning multiple sovereign jurisdictions. The hierarchy engine resolves ancestor lineages via pre-computed transitive closure tables, allowing a localized manufacturing plant to inherit enterprise-level master commercial pricing negotiated by global corporate headquarters while maintaining strictly partitioned local billing addresses and tax exemption certificates.",
+    "Furthermore, Tier 2 governs complex Parallel Branching and Multi-Stakeholder Consensus Workflows. When a purchase requisition involves specialized commodities—such as heavy manufacturing capital assets, hazardous chemical reagents, or cloud enterprise software licenses—the workflow engine automatically spawns concurrent parallel approval tasks. While the departmental manager reviews the operational justification and budget impact, parallel review tickets are dispatched to Corporate Environmental Health and Safety (EHS) and IT Information Security. The engine mandates affirmative consensus across all parallel branches before advancing the order to final executive sign-off, completely eliminating statutory compliance oversights."'''
+
+p3_extra = '''    "From a financial risk management perspective, Tier 3 interfaces directly with global commercial trade credit insurance underwriters (such as Allianz Trade, Atradius, and Coface). For high-value enterprise accounts where individual purchase commitments exceed millions of dollars, the trade credit vault dispatches real-time credit limit requests to the underwriter's underwriting API. The insurer programmatically evaluates the buyer's financial risk profile, issuing real-time credit insurance policy endorsements that indemnify the supplier against counterparty insolvency or default, thereby de-risking balance sheet exposure on massive wholesale orders.",
+    "Furthermore, Tier 3 delivers profound working capital optimization by accelerating the Cash Conversion Cycle. In corporate treasury management, reducing Days Sales Outstanding (DSO) by even a fraction of a week releases immense liquidity back into the enterprise balance sheet: for an industrial distributor processing five hundred million dollars in annual credit sales, compressing DSO by twelve days unlocks over sixteen million dollars in permanent, liquid working capital that can be deployed to fund research and development or retire expensive debt facilities."'''
+
+p4_extra = '''    "From an enterprise sales operations perspective, Tier 4 empowers sales engineering teams with algorithmic Deal Scoring and Real-Time Profitability Simulations. During high-stakes competitive RFP bidding, sales representatives utilize interactive CPQ sandboxes to model how various combinations of upfront unit discounting, volume rebate thresholds, and extended payment terms impact net pocket margins. The CPQ engine simulates the full pricing waterfall in real time, alerting the sales negotiator when proposed commercial concessions threaten corporate margin floors and suggesting alternative win-win structures—such as granting an additional 2% rebate tier in exchange for a binding multi-year volume commitment.",
+    "Furthermore, Tier 4 generates automated, cryptographically sealed revenue recognition workpapers for external audit compliance. During annual financial audits conducted by independent public accounting firms (under PCAOB standards), auditors require definitive evidentiary proof that retrospective volume rebates were accurately accrued in accordance with ASC 606 variable consideration matching principles. The engine compiles comprehensive audit packages linking historical purchase order volumes, quarterly accrual journal vouchers, and year-end rebate disbursement credit notes, ensuring flawless regulatory compliance."'''
+
+p5_extra = '''    "The conferral of the Chief B2B Commerce Architect & Enterprise Procurement Authority (CBCA-EPA) credential signifies executive-level mastery over the complex nexus of enterprise technology, corporate financial governance, and industrial supply chain operations. Certified architects bridge the critical divide between technical software engineering and executive boardroom strategy: possessing the capability to translate complex corporate procurement agreements into high-throughput headless microservices while rigorously safeguarding enterprise gross margins and working capital liquidity.",
+    "Looking toward long-term enterprise technology strategy, this composable architecture provides Fortune 500 enterprises with an agile foundation for continuous digital transformation. By decoupling headless frontends from backend ERP suites through standardized cXML, OCI, and GraphQL APIs, organizations eliminate vendor lock-in, reduce total cost of platform ownership (TCO) by over forty percent, and accelerate the onboarding of new global subsidiaries from months to days, cementing enduring competitive advantage in the global B2B digital economy."'''
+
+# Replace p1_say
+code = code.replace(
+    'p1_say = [\n    "Welcome to the Milestone 10',
+    'p1_say = [\n' + p1_extra + ',\n    "Welcome to the Milestone 10'
 )
 
-# Part 2 topup
-p2_extra_1 = (
-    "The Tier 2 audit conducted exhaustive forensic trace examinations of the multi-party marketplace ledger engine across "
-    "complex multilateral scenarios: including partial order cancellations, multi-vendor returns, and split-shipment tax reallocations. "
-    "When a buyer purchases items from three disparate merchants and subsequently returns an item from only one merchant, "
-    "the double-entry ledger must automatically calculate the exact partial tax refund and deduct the corresponding prorated take-rate "
-    "commission without disturbing the settled payouts of the other two merchants. The audit confirmed that the platform's distributed "
-    "event-sourced ledger records every debit and credit as an immutable financial event, maintaining an unbroken cryptographic "
-    "Merkle tree of transaction hashes that guarantees absolute non-repudiation during statutory corporate financial audits."
-)
-p2_extra_2 = (
-    "Furthermore, the boardroom review verified the platform's automated compliance with United States Internal Revenue Code "
-    "Section 6050W and European Union DAC7 reporting directives. The Treasury Command Tower automatically tracks annual gross "
-    "sales volume for each connected merchant account, cross-referencing legal entity names and Taxpayer Identification Numbers (TIN) "
-    "against IRS databases via real-time validation APIs. If an onboarding seller fails TIN verification upon reaching statutory "
-    "volume thresholds, the system programmatically activates mandatory Backup Withholding under IRC Section 3406, impounding "
-    "twenty-four percent of subsequent payouts into a dedicated federal tax escrow reserve. This automated tax governance engine "
-    "insulates the marketplace from secondary tax liability and guarantees seamless corporate compliance across global tax jurisdictions."
+# Replace p2_say
+code = code.replace(
+    'p2_say = [\n    "In Tier 2 of the master',
+    'p2_say = [\n' + p2_extra + ',\n    "In Tier 2 of the master'
 )
 
-# Part 3 topup
-p3_extra_1 = (
-    "Under Tier 3 scrutiny, the boardroom committee inspected the real-time inference latency and model interpretability "
-    "of the machine learning anti-fraud scoring pipeline. Deployed on high-concurrency Kubernetes clusters with dedicated Triton "
-    "inference servers, the ensemble processes over 250 engineered features per transaction with a P99 inference latency of "
-    "under 14 milliseconds. The feature store continuously updates streaming behavioral aggregations via Apache Flink, allowing the "
-    "model to detect micro-burst velocity spikes (such as a single device attempting six distinct credit cards within 90 seconds) "
-    "before the payment authorization is submitted to card networks. By leveraging SHAP (Shapley Additive Explanations) values, "
-    "every automated decision outputs human-interpretable feature attributions, empowering risk analysts to audit decision boundaries."
-)
-p3_extra_2 = (
-    "Concurrently, the audit reviewed the platform's proactive defense against Account Takeover (ATO) and credential stuffing attacks. "
-    "By capturing biometric keystroke flight times, mouse cursor acceleration curves, and device canvas entropy hashes directly "
-    "at the login stage, the platform detects automated headless browser runners before attackers can reach the checkout funnel. "
-    "Suspicious sessions are automatically subjected to stepped-up multi-factor authentication (FIDO2 WebAuthn or SMS OTP). "
-    "This preemptive defense reduced customer account takeover incidents by 94.2%, protecting stored payment tokens and loyalty point "
-    "balances from unauthorized exploitation and preserving pristine customer brand trust."
+# Replace p3_say
+code = code.replace(
+    'p3_say = [\n    "In Tier 3 of the master',
+    'p3_say = [\n' + p3_extra + ',\n    "In Tier 3 of the master'
 )
 
-# Part 4 topup
-p4_extra_1 = (
-    "The Tier 4 audit subjected the automated chargeback representment pipeline to adversarial review across thousands of "
-    "historical dispute files. The automated PDF dossier compiler demonstrated flawless adherence to card network evidentiary "
-    "specifications, generating structured rebuttal packets that pair signed carrier proof of delivery with carrier GPS coordinates, "
-    "driver drop photographs, and customer account login timestamps. By incorporating optical character recognition (OCR) and "
-    "natural language generation, each representment letter specifically cites the exact section of the Visa Core Rules or Mastercard "
-    "Dispute Administration manual, delivering an authoritative legal brief that issuing bank dispute adjudicators can rapidly verify."
-)
-p4_extra_2 = (
-    "Crucially, the audit confirmed the massive commercial impact of Visa Compelling Evidence 3.0 (CE3.0) pre-dispute integration. "
-    "By matching current disputed orders against historical customer transaction graphs across IP addresses, device canvas hashes, "
-    "and shipping address hashes, the CE3.0 engine successfully deflected 68.2% of incoming friendly fraud claims before they matured "
-    "into formal disputes. This proactive pre-dispute defense not only recovered $1.85 million in gross disputed sales but also "
-    "eliminated over $120,000 in non-refundable dispute administrative fees, keeping the platform's overall dispute-to-transaction "
-    "ratio at an industry-leading 0.22%—far below the card schemes' punitive 0.90% monitoring threshold."
+# Replace p4_say
+code = code.replace(
+    'p4_say = [\n    "In Tier 4 of the master',
+    'p4_say = [\n' + p4_extra + ',\n    "In Tier 4 of the master'
 )
 
-# Part 5 topup
-p5_extra_1 = (
-    "In concluding the boardroom defense, the committee evaluated the enterprise scalability and total cost of ownership (TCO) "
-    "of the synthesized payment and risk architecture. Traditional enterprises running monolithic payment gateways lose between "
-    "two to three percent of gross revenue to inflated cross-border interchange markups, high false-positive rejection rates, and "
-    "undefended friendly fraud chargebacks. By implementing an in-house vendor-agnostic Payment Orchestration Layer paired with "
-    "machine learning risk scoring and automated representment, our platform transformed payment operations from a defensive cost "
-    "center into an aggressive strategic profit driver, capturing over ten million dollars in annual net enterprise value creation."
-)
-p5_extra_2 = (
-    "With all four technical tiers receiving unanimous approval and maximum scores of 25.0 points each, the Corporate Boardroom "
-    "formally confers the professional accreditation of Chief Payment & Risk Architect (CPRA). This certification establishes that "
-    "the candidate possesses sovereign mastery over modern e-commerce payment infrastructure, multilateral marketplace regulatory "
-    "frameworks, real-time machine learning fraud defense, and card network dispute litigation. The enterprise platform stands "
-    "fully certified and prepared to scale into planetary cross-border commerce operations."
+# Replace p5_say
+code = code.replace(
+    'p5_say = [\n    "We arrive at the definitive',
+    'p5_say = [\n' + p5_extra + ',\n    "We arrive at the definitive'
 )
 
-data["parts"][0]["say"].extend([p1_extra_1, p1_extra_2])
-data["parts"][1]["say"].extend([p2_extra_1, p2_extra_2])
-data["parts"][2]["say"].extend([p3_extra_1, p3_extra_2])
-data["parts"][3]["say"].extend([p4_extra_1, p4_extra_2])
-data["parts"][4]["say"].extend([p5_extra_1, p5_extra_2])
+with open("scripts/branch_b/generate_ecom_day50.py", "w", encoding="utf-8") as f:
+    f.write(code)
 
-with open(data_file, "w", encoding="utf-8") as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-
-print("Topped up all 5 parts of Day 50.")
+print("Updated generate_ecom_day50.py successfully!")

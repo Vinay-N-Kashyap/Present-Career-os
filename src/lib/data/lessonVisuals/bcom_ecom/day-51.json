@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "Cross-Border E-Commerce Economics & Local Payment Method (LPM) Penetration",
+      "codeHash": "595d2cc45d5d7261c16e8ec753e5aeb4b56b933c3a7ae5035b1a2f9187e3c417",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 51 Part 1 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Regional payment routers evaluate international market share metrics.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Dominant local clearing methods are ranked by regional penetration.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Account to account rails eliminate card scheme cross border fees.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configurable catalogs prioritize preferred payment options per country.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Currency Pricing Architectures: Base Currency, FX Buffers & Psychological Rounding",
+      "codeHash": "468a247f68c327f26c3d604e1428df39b7405cbcaf815f56ec831b3e9e9c2d71",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 51 Part 2 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi currency engines ingest base catalog prices in domestic currency.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Dynamic volatility buffers absorb foreign exchange rate fluctuations.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Psychological rounding rules produce clean localized retail price points.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Edge workers inject converted currencies while preserving cache rates.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Foreign Exchange (FX) Risk Management: Treasury Hedging & Forward Contracts",
+      "codeHash": "3d1f45cef188ca7c8f3c409cd9efe5022a87436f7b4a8159c8e67a472c0a242c",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 51 Part 3 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Corporate treasury managers initiate rolling forward hedging contracts.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Anticipated foreign sales volumes are pre sold at guaranteed rates.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Hedging gains protect operating profit when foreign currencies drop.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automated algorithmic sweeps repatriate surplus cash into base balances.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Localized Checkout UX & Guaranteed Rate Quote Locks: Eliminating Cart Abandonment",
+      "codeHash": "50e836a1d141bfe38d49089e8fbe15c3bc38963e78fa41b8fed7fdb34b398de1",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 51 Part 4 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Guaranteed quote lock sessions freeze exchange rates during checkout.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Locked quotes prevent price slippage between browsing and payment.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Localized checkout forms capture mandatory regional tax identifiers.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Quote validation prevents processing when lock window duration lapses.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Global Checkout Command Tower: FX Yield & Margin Optimization",
+      "codeHash": "b6961683fa90f3aef32456f63a26694894b7a42947fbe64d86f55a51cb5b1ddf",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 51 Part 5 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global checkout command towers monitor international payment conversion.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Real time telemetry flags routing anomalies and regional settlement gaps.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Consolidated treasury views display currency balances across world banks.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Executive reports quantify currency volatility savings and gross margins.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

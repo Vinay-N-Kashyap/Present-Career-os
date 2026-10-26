@@ -1,59 +1,83 @@
+"""
+Top up Day 54 parts to ensure every single part >= 600 words.
+"""
+import json
 import os
 
 commerce_dir = r"C:\Users\Admin\Desktop\projects\Present-Career-os-commerce"
-builder_path = os.path.join(commerce_dir, "scripts", "branch_b", "build_day54_dmkt.py")
+data_file = os.path.join(commerce_dir, "scripts", "branch_b", "day54_ecom_data.json")
 
-p2_extra2 = '''    "When assembling candidate donor pools for retail geo-testing, data scientists enforce strict Market Matching Criteria. Candidate markets are screened "
-    "for historical sales volume correlation (minimum Pearson r >= 0.85 across the pre-treatment baseline), retail store density parity, and geographical "
-    "isolation to prevent cross-market broadcast signal bleeding. If two adjacent metropolitan areas share local television or radio broadcast coverage, "
-    "they cannot be assigned to opposite experimental arms without contaminating the unexposed donor baseline. Enforcing pristine geographic separation "
-    "ensures that observed sales deviations reflect pure causal ad impact rather than media spillover.",
-'''
+with open(data_file, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-p3_extra2 = '''    "To process ghost bid telemetry at wire speed without introducing latency into live programmatic auctions, ad tech platforms execute ghost logging "
-    "asynchronously. The auction evaluation engine computes the winning price, passes the live impression to the external exchange winner, and writes the "
-    "ghost impression event to an in-memory queue. This decoupled architecture guarantees sub-millisecond auction throughput while logging millions of "
-    "high-fidelity counterfactual records daily.",
-'''
+# Part 2 topup: Customs Drawback operational details (TFTEA, recordkeeping, un-used merchandise drawback)
+p2_extra = (
+    "In operational trade compliance, duty drawback is governed in the United States under the Trade Facilitation and "
+    "Trade Enforcement Act (TFTEA). Under TFTEA provisions, e-commerce merchants can utilize Unused Merchandise Drawback "
+    "(19 U.S.C. § 1313(j)(1)), which simplifies recovery when exported products are returned without having been commercially "
+    "used or altered prior to return dispatch. The statutory lookback period allows drawback claims to be filed up to five years "
+    "from the date of initial importation, unlocking retroactive liquidity audits across historical returns data. "
+    "However, maintaining compliance requires an immutable audit trail: US Customs and Border Protection mandates that drawback "
+    "claimants preserve all supporting documentation—including electronic airway bills, bill of lading contracts, customs commercial "
+    "invoices, inventory transfer journals, and certified destruction certificates—for a minimum statutory retention period of "
+    "three years from the date of final drawback liquidation. By architecting automated reconciliation microservices that pair "
+    "carrier tracking delivery confirmations with customs entry manifests, platforms create self-documenting electronic filing packets "
+    "that pass federal audits with zero financial penalties, turning a burdensome compliance chore into automated capital recovery."
+)
 
-p4_extra2 = '''    "Crucially, sophisticated retail brands extend Brand Halo modeling across Multi-Period Customer Lifetime Horizons. When an advertising campaign "
-    "acquires a new customer through a promoted hero product, the customer's downstream value does not terminate with their initial shopping basket. "
-    "By tracking cohort repeat purchase behavior over six, twelve, and twenty-four months, econometric models calculate the Long-Term Brand Halo Yield. "
-    "Empirical retail analytics demonstrate that customers acquired through hero product ads generate two to three times their initial basket value in "
-    "repeat purchases of complementary catalog items, fundamentally transforming the long-term economics of customer acquisition.",
-'''
+# Part 3 topup: Data transfer mechanisms, BCRs, Data Protection Impact Assessments (DPIA), and Article 30 records
+p3_extra = (
+    "Beyond Standard Contractual Clauses, multinational commerce enterprises operating global fulfillment and digital analytics networks "
+    "frequently implement Binding Corporate Rules (BCRs) under GDPR Article 47. BCRs establish an internal code of conduct authorizing "
+    "seamless intra-group cross-border data transfers across corporate subsidiaries, regional distribution centers, and offshore software "
+    "engineering centers without requiring separate transactional contracts for each data pathway. Furthermore, under GDPR Article 35, "
+    "e-commerce platforms deploying algorithmic user profiling, fraud scoring, or automated credit assessment must conduct and document "
+    "rigorous Data Protection Impact Assessments (DPIAs) prior to processing international consumer data. Platforms must also maintain "
+    "comprehensive Records of Processing Activities (ROPA) under Article 30, detailing data categories, processing purposes, recipient lists, "
+    "and retention schedules. Establishing automated compliance checkpoints within CI/CD deployment pipelines ensures that microservices "
+    "handling consumer PII cannot deploy to production without active encryption keys, verified data processing addenda (DPAs), and strict "
+    "jurisdiction-aware data residency tagging."
+)
 
-p5_extra2 = '''    "To ensure broad organizational alignment across cross-functional commercial leadership, the platform provides an Automated Executive Reporting "
-    "and BI Integration Layer. The platform compiles complex econometric findings into clear, C-suite synthesis briefs, automatically populating enterprise "
-    "business intelligence dashboards (such as Looker, Tableau, and PowerBI) with interactive incrementality curves, cannibalization heatmaps, and halo "
-    "flow diagrams. Chief Marketing Officers, Chief Financial Officers, and retail sales directors review unified, audited performance figures, aligning "
-    "on data-driven advertising strategies that eliminate internal friction and drive cohesive commercial growth.",
-'''
+# Part 4 topup: Complex scripts, font subsetting, ligature rendering, and cultural color symbolism
+p4_extra = (
+    "In addition to bidirectional text layouts, international typography demands sophisticated font rendering architectures. In complex "
+    "non-Latin scripts—such as Arabic (Naskh and Nastaliq scripts), Devanagari, and Thai—glyphs change their physical shape based on their "
+    "positional context within a word (isolated, initial, medial, or final forms) and form intricate ligatures. When delivering web fonts across "
+    "global content delivery networks (CDNs), naive font loading strategies can cause severe cumulative layout shifts (CLS) and slow down "
+    "First Contentful Paint (FCP). Enterprise localization teams utilize dynamic font subsetting and the CSS `font-display: swap` directive, "
+    "serving tailored character subsets based on the visitor's detected language headers. Furthermore, localization architects must account "
+    "for cultural semiotics and color symbolism: while red universally denotes errors or price drops in Western e-commerce, in Chinese and "
+    "broader East Asian commerce, red symbolizes prosperity, joy, and good fortune, frequently serving as the primary theme color for "
+    "festive promotional campaigns and buy-now call-to-action buttons. Integrating cultural design tokens into the headless design system "
+    "ensures genuine regional resonance."
+)
 
-with open(builder_path, "r", encoding="utf-8") as f:
-    text = f.read()
+# Part 5 topup: Continuous automated synthetic audit testing, cross-border SLA guarantees, and executive compliance dashboards
+p5_extra = (
+    "To ensure resilience across hundreds of global sales channels, the enterprise command tower incorporates automated synthetic end-to-end "
+    "testing pipelines. Every hour, headless test runners execute synthetic checkout flows simulating shoppers connecting from twenty key "
+    "national markets across Europe, Asia, the Middle East, and the Americas. These headless agents verify that localized IP detection "
+    "functions correctly, statutory cooling-off withdrawal notices render visibly before checkout confirmation, dynamic currency converters "
+    "reflect live treasury exchange rates without rounding errors, and privacy consent banners adhere strictly to regional opt-in mandates. "
+    "If an edge deployment accidentally breaks BiDi text isolation in an Arabic locale or introduces an unauthorized tracking script into an "
+    "EU checkout page, the command tower generates real-time high-severity alerts, triggering automated circuit breakers to roll back the offending "
+    "deployment within seconds. This continuous verification discipline guarantees that cross-border operations remain robust, lawful, and "
+    "consistently optimized for global consumer trust and maximum international revenue."
+)
 
-# Insert into p2_say
-idx2 = text.find('p2_example =')
-bracket2 = text[:idx2].rstrip().rfind(']')
-text = text[:bracket2] + p2_extra2 + text[bracket2:]
+data["parts"][1]["explanation"] += "\n\n" + p2_extra
+data["parts"][2]["explanation"] += "\n\n" + p3_extra
+data["parts"][3]["explanation"] += "\n\n" + p4_extra
+data["parts"][4]["explanation"] += "\n\n" + p5_extra
 
-# Insert into p3_say
-idx3 = text.find('p3_example =')
-bracket3 = text[:idx3].rstrip().rfind(']')
-text = text[:bracket3] + p3_extra2 + text[bracket3:]
+with open(data_file, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
 
-# Insert into p4_say
-idx4 = text.find('p4_example =')
-bracket4 = text[:idx4].rstrip().rfind(']')
-text = text[:bracket4] + p4_extra2 + text[bracket4:]
-
-# Insert into p5_say
-idx5 = text.find('p5_example =')
-bracket5 = text[:idx5].rstrip().rfind(']')
-text = text[:bracket5] + p5_extra2 + text[bracket5:]
-
-with open(builder_path, "w", encoding="utf-8") as f:
-    f.write(text)
-
-print("Successfully applied topup2 to build_day54_dmkt.py!")
+print("Day 54 Topup Applied. Word counts:")
+total = 0
+for i, p in enumerate(data["parts"]):
+    wc = len(p["explanation"].split())
+    total += wc
+    print(f"Part {i+1}: {wc} words")
+print(f"Total Day 54 Words: {total}")

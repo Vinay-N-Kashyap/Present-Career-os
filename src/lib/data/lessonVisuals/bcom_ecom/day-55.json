@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 55,
+  "entries": [
+    {
+      "partTitle": "Tier 1 Capstone Synthesis: Multi-Currency Pricing Engines & Treasury Forward Hedging",
+      "codeHash": "950152dc1e15bd052d904b1fbb5c901efb2076167ffcb7b27fc4331241efe0e7",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 55 Part 1 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Storefront currency engines calculate localized international prices.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Volatility buffers protect edge transactions from short term shifts.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Treasury forward contracts lock guaranteed exchange rates for revenue.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Locked checkout quotes protect shoppers from foreign exchange slippage.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2 Capstone Synthesis: HS Customs Classification & Delivered Duty Paid (DDP) Architecture",
+      "codeHash": "e2ec4957d976b3cd33f0778a3be48229d5b14e0e3547ad08292be1b4473e527b",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 55 Part 2 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Customs engines classify product catalog items under tariff schedules.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Landed cost equations combine transport tariffs and import value taxes.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Guaranteed delivery duty paid locks prevent surprise courier fees.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Clearance broker integrations speed cross border customs inspections.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3 Capstone Synthesis: Section 321 / IOSS De Minimis Routing & Bonded Warehousing",
+      "codeHash": "8578e8c84e468f54a3a987a5a8d924bb500084299ce081adb74fa89f4981af2e",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 55 Part 3 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Customs routing engines evaluate consignments against de minimis rules.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Sub threshold shipments clear duty free through informal air channels.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "European import one stop shop rules streamline destination tax filing.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Bonded warehouse networks manage duty deferred inventory strategic stock.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4 Capstone Synthesis: Statutory Consumer Rights & Customs Duty Drawback Reclaim",
+      "codeHash": "4a7dd334b0cf9db2e6dfa40bf165ad7fb5716f5737b11bc6a274cd710ca3a764",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 55 Part 4 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Return engines enforce statutory cooling off rights for global buyers.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Re exported international goods qualify for customs duty drawback claims.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Government drawback forms reclaim paid import duties and tax capital.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Localized refund credits issue rapidly across world currency accounts.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5 Capstone Integration: Global Commerce Command Tower & CGCA-ITA Boardroom Accreditation",
+      "codeHash": "fc9f9869b5fefab86468c255f4098c2b2eacd93756e1c6a5d85a8e0189eee91e",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 55 Part 5 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive boardrooms evaluate comprehensive international trade systems.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Synthesized architecture pillars earn unanimous perfect audit marks.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Audited enterprise telemetry documents millions in annual return value.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Boardroom authorities formally confer sovereign global credentials.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

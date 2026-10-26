@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 52,
+  "entries": [
+    {
+      "partTitle": "Anatomy of Total Landed Cost: CIF Valuation, Compounding Tariffs & Import Taxes",
+      "codeHash": "338e0e189494f334dbf95a92cc54a312559900ad3ae95c38e7c408bae2639aaa",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 52 Part 1 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Classification engines parse catalog product descriptions and attributes.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Taxonomy trees map commercial commodities to standard tariff codes.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Regulatory updates synchronize international customs classification rules.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audited tariff code bindings guarantee accurate baseline duty schedules.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Harmonized Tariff Schedule (HTS / HS Codes) & Preferential Trade Agreements",
+      "codeHash": "c4488330ace45069bc28d8bb9e2c32b782db2cfcd431042ecc9a0e7aee841724",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 52 Part 2 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Landed cost engines evaluate total transport and import obligations.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Delivered duty paid terms collect all taxes directly within checkout.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Pre paid duties eliminate surprise delivery fees at customer doorsteps.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Clearance brokers receive advance tax guarantees for immediate release.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Incoterms 2020: Delivered Duty Paid (DDP) vs Delivered at Place (DAP / DDU)",
+      "codeHash": "268bdcf773f5696e76cced7eb8fd1f8bd13d40d44ef51f350dc24d2d1e18f1a1",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 52 Part 3 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Landed cost algorithms aggregate merchandise cost freight and insurance.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Ad valorem duty rates apply directly against total shipping valuations.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Import value added taxes calculate on duty inclusive transaction totals.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Itemized tax breakdowns provide transparent billing to global shoppers.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Customs Documentation: Commercial Invoices, EEI & AES Direct Filing",
+      "codeHash": "04047691d7f15a362678a567204a18effb47cd648d958b43b99fbc7d216512a6",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 52 Part 4 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Fulfillment gateways compile advance electronic customs declarations.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Secure automated broker interfaces transmit pre arrival manifest files.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Air cargo manifests clear customs while shipments are in transit.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automated clearance confirmations release packages for courier delivery.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Trade Compliance Command Tower: Denied Party Screening & Precision Audits",
+      "codeHash": "6cbe96e9c3e71bb9bc1f551f3fe9499d2f3b6be04cd6fb5f68116d78cec48bf7",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 52 Part 5 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Trade compliance towers screen international recipients against watchlists.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Denied party algorithms intercept orders bound for sanctioned entities.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Real time customs audits verify export documentation and tariff filings.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Executive dashboards display customs clearance speeds and compliance rates.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

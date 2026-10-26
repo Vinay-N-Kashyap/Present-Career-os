@@ -1,10 +1,20 @@
-import re
+﻿import json
 
-c = open('src/lib/data/bcomEcomLongLessons.ts', encoding='utf-8').read()
-d1_5 = [int(x) for x in re.findall(r'\bday:\s*(\d+)', c)]
-d6_50 = [int(x) for x in re.findall(r'"day":\s*(\d+)', c)]
-all_days = d1_5 + d6_50
-print('Total days:', len(all_days), 'First 5:', d1_5, 'Last 5:', d6_50[-5:])
-assert len(all_days) == 50
-assert sorted(all_days) == list(range(1, 51))
-print('DAYS 1 TO 50 ARE 100% CONTIGUOUS AND VERIFIED!')
+for d in range(46, 51):
+    fpath = f'scripts/branch_b/day{d}_ecom_data.json'
+    with open(fpath, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    print(f"=== DAY {d} ===")
+    print(f"  title: {data.get('title')[:60]}...")
+    print(f"  goal: {data.get('goal')[:60]}...")
+    print(f"  minutes: {data.get('minutes')}")
+    print(f"  parts count: {len(data.get('parts', []))}")
+    for idx, p in enumerate(data['parts']):
+        words = len((' '.join(p['say']) if isinstance(p['say'], list) else p['say']).split())
+        assert words >= 600, f"Day {d} Part {idx+1} under 600 words ({words})!"
+        assert len(p['check']['options']) == 4
+        assert p['check'].get('answer') == 0 or p['check'].get('answerIndex') == 0
+        assert len(p['check']['why']) >= 20
+        assert len(p['code']) > 20
+        assert len(p['output']) > 5
+    print(f"  All 5 parts strictly >= 600 words and validated!")
