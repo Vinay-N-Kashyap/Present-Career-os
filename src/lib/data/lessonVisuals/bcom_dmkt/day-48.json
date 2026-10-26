@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 48,
+  "entries": [
+    {
+      "partTitle": "The Anatomy of Search Queries: Intent Taxonomy (Informational, Navigational, Commercial, Transactional)",
+      "codeHash": "042de9a07117bb15fdff05b36b6e556c2d2a135d33549177785fabfdd29a14f0",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Search queries provide concise windows into complex human intent.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Informational searches demand comprehensive guides and documentation.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Commercial exploration seeks comparative reviews and feature matrices.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Transactional queries focus on frictionless checkout and fast conversion.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Query Preprocessing & Expansion: Spell Correction, Query Rewriting & Sub-Query Decomposition",
+      "codeHash": "e3897ce8d369480d956c4179f32006b7bde9268eb1480a5bf93624897f644046",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Query normalizers clean raw user input and resolve typographical errors.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Noisy channel language models suggest probabilistic spelling corrections.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Synonym expansion bridges vocabulary gaps without causing semantic drift.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Sub query decomposition splits compound searches into modular intents.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Entity Extraction & Knowledge Graphs: Named Entity Recognition (NER), Semantic Triples & Schema.org",
+      "codeHash": "a5f66f05f50064cbf65315733202265d73aa71b808a2b94edf7c3eb21068dad5",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Named entity recognition extracts products, brands, and technical terms.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Semantic knowledge graphs link extracted entities to global taxonomies.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Structured schema markup provides machine readable semantic metadata.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Entity disambiguation clarifies user intent across ambiguous terms.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Passage Ranking & Document Segmentation: BM25/Dense Hybrid Fusion & Reciprocal Rank Fusion (RRF)",
+      "codeHash": "1e330f25a6b932b9c5a3ddd2d2b25ca9edcbc6fa12218e09166cf0f7cc09e56b",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Long documents suffer from length dilution under global scoring models.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Sliding window passage segmenters isolate focused semantic chunks.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Maximum passage pooling surfaces relevant text snippets to users.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Extracting concise answer passages accelerates zero click discovery.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Query Understanding & Intent Classification Engine in Python",
+      "codeHash": "6a6d0af915c021de95d8c70746ba38bafed6df0887478c4c9da4785367ddcc67",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi stage query classification systems route searches dynamically.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Intent classifiers tag queries to apply specialized ranking formulas.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Knowledge graph lookups enrich search results with structured facts.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimized query pipelines deliver relevant category results to shoppers.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

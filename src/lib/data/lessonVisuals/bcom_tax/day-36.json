@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 36,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Architecture of Input Tax Credit & Dual-Use Apportionment under Section 17",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Input tax credit allows deductions on genuine business procurements."
+          },
+          {
+            "step": "say2",
+            "caption": "Dual use assets require strict statutory apportionment mechanisms."
+          },
+          {
+            "step": "example",
+            "caption": "Blocked credits under statutory negative lists are permanently denied."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Zero rated export supplies preserve full credit without reduction."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Rule 42 Mathematical Mechanics: Inputs & Input Services Apportionment Formulas",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Gross input tax separates into ledger deposits and blocked funds."
+          },
+          {
+            "step": "say2",
+            "caption": "Common credit pools gather shared corporate and technical overheads."
+          },
+          {
+            "step": "example",
+            "caption": "Turnover ratios allocate common credits against exempt supplies."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Monthly reversals add directly to outward commercial tax obligations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Rule 43 Capital Goods Lifecycle Apportionment & Sixty-Month Amortization Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Capital goods provide lasting economic utility across multiple years."
+          },
+          {
+            "step": "say2",
+            "caption": "Statutory useful lives span sixty months from the inward invoice date."
+          },
+          {
+            "step": "example",
+            "caption": "Monthly amortized credits divide aggregate common tax evenly."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Asset category transitions adjust historical credits systematically."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Banking & Financial Institutions Special Regime: Section 17(4) 50% Flat Forfeiture vs Actual Allocation",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Financial institutions derive revenues from exempt interest spreads."
+          },
+          {
+            "step": "say2",
+            "caption": "Banking entities may elect a flat fifty percent credit deduction."
+          },
+          {
+            "step": "example",
+            "caption": "Intra corporate branch supplies enjoy complete credit preservation."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Statutory elections bind corporate banking filings for the full year."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Implementation: Automated Multi-Plant ITC Apportionment & Monthly Reversal Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Enterprise resource planning engines ingest multi plant voucher feeds."
+          },
+          {
+            "step": "say2",
+            "caption": "Automated filters excise blocked credits before ledger entries."
+          },
+          {
+            "step": "example",
+            "caption": "Turnover algorithms compute monthly reversals across operating units."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Standard monthly returns upload verified net credits without errors."
+          }
+        ]
+      }
+    }
+  ]
+}

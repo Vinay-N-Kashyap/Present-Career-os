@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 50,
+  "entries": [
+    {
+      "partTitle": "War Room Briefing: The Multi-Cycle Substantive Audit Mandate",
+      "codeHash": "7bd9ed8f8253803acee159a6562352f9397a54c2db100bafead6fc813d77e97f",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Briefing: The Multi-Cycle Sub... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "War room briefing establishing multi-cycle quantitative governance.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Deriving planning and performance materiality across revenue.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Setting clearly trivial de minimis thresholds for tracking errors.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audit materiality boundaries guiding substantive field operations.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycle 1 Execution: Revenue, Contract Assets & Receivables Substantive Audit",
+      "codeHash": "fd459c0b0411cdf5cae5f93019f5641c27dcdcf1ea95329e66cfcd04cb1dee9e",
+      "spec": {
+        "template": "funnel",
+        "title": "Cycle 1 Execution: Revenue, Contract A... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Order-to-cash substantive testing executed across sales streams.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Bifurcating multi-element software and hardware revenue contracts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reversing premature shipping cut-offs delivered after year-end.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Credit loss allowances adjusted to reflect economic forecast risks.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycle 2 Execution: Procurement, Accounts Payable & SOUL Substantive Audit",
+      "codeHash": "759c56fd88dc4ee9c609d26a3111088e30ea1ccf2003a4a47a9a700b6c6f5bbc",
+      "spec": {
+        "template": "funnel",
+        "title": "Cycle 2 Execution: Procurement, Accoun... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Procure-to-pay substantive testing executed on liabilities.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Uncovering unrecorded liabilities through subsequent disbursements.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reversing stagnant suspense clearing items and accruing claims.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Accounts payable completeness established through rigorous testing.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cycles 3 & 4 Execution: Inventory, Fixed Assets, Leases & Impairment",
+      "codeHash": "02980c0f23e7a5fdba2dc69f7c9fbe38168efa3c5ed4f96d905c9873ebb52578",
+      "spec": {
+        "template": "funnel",
+        "title": "Cycles 3 & 4 Execution: Inventory, Fix... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Supply chain conversion and capital infrastructure cycles audited.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Reconciling physical inventory shrinkage and obsolescence reserves.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Recalculating right-of-use lease debt and impairment write-downs.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Asset valuation and lease obligations aligned with global standards.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "War Room Master Simulator: The Multi-Cycle Assurance Engine & SUD Evaluation",
+      "codeHash": "ba311b13b8d25a867a9877e8d8115504f4d34129c0a3f18bd57c357e7c3dee44",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Master Simulator: The Multi-C... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "War room master engine compiling summary of unadjusted errors.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Aggregating multi-cycle misstatements against planning materiality.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Presenting proposed adjustments to senior corporate leadership.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Flawless audit clearance and unqualified statutory opinion issued.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

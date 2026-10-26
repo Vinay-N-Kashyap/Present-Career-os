@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 34,
+  "promptSha": "2f623c71c035759126dc93293a284e91b952ab9536ef77bcee5bb5aaeb1bdc00",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "The Modern Customer Data Platform (CDP) Stack: Packaged vs Composable Architectures",
+      "codeHash": "677b9d99a87fef9ff272974f22eda02c91ed8e4a1f550758fc741dc71d38e2ca",
+      "spec": {
+        "template": "funnel",
+        "title": "The Modern Customer Data Platform (CDP) Stack: Packaged vs Composable Architectures \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Engagement qualification and intent filtering stage.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active consideration and high intent conversion checkout.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Customer lifetime value retention and advocacy expansion.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Unified Identity Graph: Nodes, Edges & Identifier Hierarchies",
+      "codeHash": "881be00cfc2f1a25dadefd5ebbbab983aa2ec1773e5a10d07ff1f2a7fcbe0a78",
+      "spec": {
+        "template": "funnel",
+        "title": "The Unified Identity Graph: Nodes, Edges & Identifier Hierarchies \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Engagement qualification and intent filtering stage.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active consideration and high intent conversion checkout.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Customer lifetime value retention and advocacy expansion.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Deterministic Identity Resolution with Disjoint-Set Union (Union-Find)",
+      "codeHash": "ddd94ba178b095bd9d9ebaf818c7dc42a14e7822d7967f19c6c3df29af1079bd",
+      "spec": {
+        "template": "funnel",
+        "title": "Deterministic Identity Resolution with Disjoint-Set Union (Union-Find) \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Engagement qualification and intent filtering stage.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active consideration and high intent conversion checkout.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Customer lifetime value retention and advocacy expansion.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Probabilistic Record Linkage: The Fellegi-Sunter Mathematical Framework",
+      "codeHash": "90f1c77734399ca23f8208d0f9f85fba40c86bae44632a21bfdcddb25688e97f",
+      "spec": {
+        "template": "funnel",
+        "title": "Probabilistic Record Linkage: The Fellegi-Sunter Mathematical Framework \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Engagement qualification and intent filtering stage.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active consideration and high intent conversion checkout.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Customer lifetime value retention and advocacy expansion.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Real-Time Event Streaming & Reverse ETL: Activating the Golden Customer Record",
+      "codeHash": "d70d39b6d251508da4e7ddc7db9425d747799029eb4e39f2c54d5096b36dc26c",
+      "spec": {
+        "template": "funnel",
+        "title": "Real-Time Event Streaming & Reverse ETL: Activating the Golden Customer Record \u2014 Conversion Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Engagement qualification and intent filtering stage.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Active consideration and high intent conversion checkout.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Customer lifetime value retention and advocacy expansion.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Traffic & Reach Discovery",
+                "value": 10000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified Intent Engagement",
+                "value": 4500,
+                "percentage": 45,
+                "dropoffRate": 55,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Consideration & Conversion",
+                "value": 1800,
+                "percentage": 18,
+                "dropoffRate": 60,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Customer Equity Retention",
+                "value": 720,
+                "percentage": 7.2,
+                "dropoffRate": 60,
+                "tone": "idle"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

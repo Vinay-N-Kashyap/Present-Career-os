@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_aud",
+  "day": 49,
+  "entries": [
+    {
+      "partTitle": "Substantive Audit of PPE Additions, Disposals & Depreciation Recalculation",
+      "codeHash": "e3ff2d55848f44a7fb448eb8b18233f19772c557f55bda4a5baa9a00fda44f42",
+      "spec": {
+        "template": "funnel",
+        "title": "Substantive Audit of PPE Additions, Di... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Capital asset additions and disposals vouched to source records.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Physical inspection of machinery confirming operating existence.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Recalculating straight-line depreciation across all asset classes.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Fixed asset registers reconciled to general ledger balance sheets.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capitalization vs. Repairs & Maintenance Expense Analysis (CapEx vs. OpEx)",
+      "codeHash": "6c1800f41e79a7c77bdf82d2f3e7cfe9ccd7a9350b989ad49cfc4ec313a14a12",
+      "spec": {
+        "template": "funnel",
+        "title": "Capitalization vs. Repairs & Maintenan... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Operating repair and maintenance ledgers scrubbed for boundaries.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating economic useful life expansion and capacity criteria.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Distinguishing routine upkeep from long-term capital enhancements.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Improperly capitalized operating costs reclassified to expenses.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Substantive Audit of Leases under IFRS 16 & ASC 842: ROU Assets & Liabilities",
+      "codeHash": "009ad90659c9b896cbcf0b7fd3d54fa4e04707d47e14f0c8836468dd3ea645a8",
+      "spec": {
+        "template": "funnel",
+        "title": "Substantive Audit of Leases under IFRS... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Right-of-use asset and lease liability agreements audited in depth.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Interrogating incremental borrowing rates and contract durations.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Recalculating present value of contractual lease obligations.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Off-balance sheet lease obligations captured on corporate ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Impairment Testing of Long-Lived Assets & Goodwill under IAS 36 & ASC 360",
+      "codeHash": "bba185e5b78f02d519e160258072977b34b1169b1f4fe8f4d229f61f7070f4b6",
+      "spec": {
+        "template": "funnel",
+        "title": "Impairment Testing of Long-Lived Asset... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cash-generating units screened for potential economic impairment.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Discounted cash flow valuation models scrutinized by specialists.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Recalculating risk-adjusted cost of capital and terminal growth.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Impairment losses allocated first to eliminate unviable goodwill.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Substantive Fixed Assets, Leases & Impairment Simulator",
+      "codeHash": "f25a3fbdb41692d01a78d7cac2c6fc409de4459ff4fb47b8dd9bd36243527c0e",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Substantive Fixed Assets... \u2014 Assurance Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master capital asset assurance engine consolidating audit findings.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Aggregating depreciation fixes lease adjustments and impairments.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Synthesizing proposed audit entries for long-lived balance items.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Capital asset audit workpapers finalized for partner clearance.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Planning & Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Audit Execution"
+              },
+              {
+                "id": "target",
+                "label": "Evidence Evaluation"
+              },
+              {
+                "id": "final",
+                "label": "Assurance Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

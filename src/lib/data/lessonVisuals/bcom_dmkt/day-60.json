@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 60,
+  "entries": [
+    {
+      "partTitle": "Tier 1: Autonomous Bidding, Reinforcement Learning & Multi-Armed Bandit Capital Allocation",
+      "codeHash": "207f248321ea536ea31519231148dd06bbdfc7e81638893d072f8afd7efd6eb9",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Tier one synthesizes multimodal generative creative with brand safety.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Low rank adapters lock corporate branding across generative models.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cryptographic manifests verify origin under synthetic media statutes.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Initialize the enterprise multimodal creative governance studio.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2: Generative Creative Engineering, Diffusion LoRA & Multimodal Brand Safety Guardrails",
+      "codeHash": "5e8106e5dc41615bf930366361a7b0628186de6596f6397124c5008107dfc1ec",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Tier two deploys autonomous demand side platforms for real time bidding.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Contextual bandit algorithms balance exploration and exploitation.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Microsecond execution optimizes bids across programmatic ad exchanges.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate real time contextual bandit bidding across programmatic auctions.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3: Autonomous Multi-Agent Marketing Swarm & Stateful LangGraph Orchestration",
+      "codeHash": "7dd60751dea17608d95783009e191ee14260c999f07bb018d3a43b40bf98cc6c",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Tier three bridges digital advertising into physical store aisles.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Edge computer vision measures shopper dwell time with zero privacy risk.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic screen controllers serve interactive content during store surges.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy edge computer vision telemetry to orchestrate retail displays.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4: Privacy-First Clean Room Attribution, Differential Privacy & Federated Edge Personalization",
+      "codeHash": "2a6f49d3cd5ba36fdef5ae798235a01c848bda7ab9bcab8c2a5b19fe8d26e446",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Tier four implements cryptographic clean rooms and causal graphs.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Shamir secret sharing reconstructs attributed revenue securely.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Pearl do calculus eliminates baseline sales confounding from ad returns.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute secure clean room secret sharing and causal lift estimation.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5: Executive Boardroom Defense, CMTO War Room & Sovereign Accreditation",
+      "codeHash": "9d74d5d64e7ce1388c5cf7c7ff2baf69c6c0f0a296f4b50609d20f71050fa1af",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Tier five unifies all subsystems into the sovereign executive engine.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Boardroom defense briefs prove causal incrementality to the director.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "The grand master capstone confers accredited corporate leadership.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Generate the official chief marketing technology officer accreditation.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

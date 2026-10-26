@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 34,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Determination of Arm's Length Price (ALP) under Section 92C: Selection of Most Appropriate Method",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Arm's length rules govern international transactions between affiliates."
+          },
+          {
+            "step": "say2",
+            "caption": "Most appropriate methods evaluate functional asset and risk profiles."
+          },
+          {
+            "step": "example",
+            "caption": "Transactional net margin methods benchmark captive service margins."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Arm's length percentile ranges establish statutory tolerance bands."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Advance Pricing Agreements (APA): Unilateral, Bilateral & Rollback Provisions (Section 92CC)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Binding pricing agreements provide prospective multi year tax certainty."
+          },
+          {
+            "step": "say2",
+            "caption": "Bilateral agreements eliminate double taxation across treaty nations."
+          },
+          {
+            "step": "example",
+            "caption": "Rollback provisions extend pricing methods retroactively."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Annual compliance audits verify adherence to agreed operational terms."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Safe Harbour Rules (Rule 10TD) for IT/ITeS, R&D Services & Auto Components",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Safe harbour regimes accept declared transfer prices without audit."
+          },
+          {
+            "step": "say2",
+            "caption": "Standard profit margins apply to eligible information technology hubs."
+          },
+          {
+            "step": "example",
+            "caption": "Contract research centers qualify under pre determined markup rates."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Formal electronic elections secure immunity from transfer adjustments."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Thin Capitalisation Rules under Section 94B: 30% EBITDA Interest Caps & Disallowance",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Interest deductions on debt from foreign affiliates face statutory caps."
+          },
+          {
+            "step": "say2",
+            "caption": "Thirty percent earnings ceilings limit cross border interest expenses."
+          },
+          {
+            "step": "example",
+            "caption": "Disallowed interest carries forward for eight consecutive fiscal years."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Banking and insurance corporations enjoy statutory carve out relief."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Three-Tier Transfer Pricing Documentation: Master File, Local File & Country-by-Country (CbCR)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Standard documentation provides macro corporate visibility."
+          },
+          {
+            "step": "say2",
+            "caption": "Local files document detailed intercompany contract pricing studies."
+          },
+          {
+            "step": "example",
+            "caption": "Master files describe global value drivers and intangibles."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Country by country reporting details profits and taxes paid globally."
+          }
+        ]
+      }
+    }
+  ]
+}

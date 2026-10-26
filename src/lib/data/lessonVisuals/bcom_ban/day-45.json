@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 45,
+  "entries": [
+    {
+      "partTitle": "War Room Briefing: The Multicurrency Cross-Border Forex & Trade Liquidity Emergency",
+      "codeHash": "f71d59c8ab4254a4ea5bf4d4de38c5de59fd8b37a0099248810aece2903b06a1",
+      "spec": {
+        "template": "funnel",
+        "title": "War Room Briefing: The Multicurrency C... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Global markets war room crisis command mobilized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Exchange rate volatility strains dealing room positions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Offshore basis dislocations test net open limits.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Emergency treasury committees coordinate market response.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Forex Dealing & Dynamic Arbitrage Engine: FEDAI Spreads & Microstructure Defense",
+      "codeHash": "5fd8e0eb3e622bb20084fa77bf14adda36ce45cb0987ae3872d1ae30adc5b301",
+      "spec": {
+        "template": "funnel",
+        "title": "Algorithmic Forex Dealing & Dynamic Ar... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Algorithmic currency quoting and arbitrage executed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Widened dealer spreads manage commercial order surges.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Triangular arbitrage captures riskless cross rate gains.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Continuous limit surveillance defends proprietary books.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Trade Finance Execution & UCP 600 Discrepancy Adjudication: LCs, Guarantees & ECGC Recovery",
+      "codeHash": "a83c31109aea8b6e9ac37c3f3ab1c8337d1bf6773f6496e3c939f0f2fd4aa46c",
+      "spec": {
+        "template": "funnel",
+        "title": "Trade Finance Execution & UCP 600 Disc... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Trade finance documentary dispute adjudication run.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Forensic documentary review identifies cargo defects.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Statutory refusal notices legally reject invalid credits.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Strict compliance protects issuing banks against losses.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "International Settlement Rails, Nostro-Vostro Mirror Book & ISO 20022 Audit",
+      "codeHash": "1fae047feadc1c9ed572ccbd87db9b9649f35b63ede3f4c91f1e82253c190406",
+      "spec": {
+        "template": "funnel",
+        "title": "International Settlement Rails, Nostro... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cross border nostro clearing and liquidity defense.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Intraday correspondent debits trigger overdraft alerts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Emergency spot currency purchases restore cash reserves.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Structured messaging formats confirm settlement balance.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master War Room Solvency Scorecard: End-to-End Orchestration & FEMA Section 15 Compounding Suite",
+      "codeHash": "2afa6fa9fda94058bc483f30fba81f5a06bf7538583914f97ae299c2407b128c",
+      "spec": {
+        "template": "funnel",
+        "title": "Master War Room Solvency Scorecard: En... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Master global markets solvency scorecard finalized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Four pillar defense synthesizes treasury and compliance.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Statutory compounding resolves capital account inquiries.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive operational controls verify bank solvency.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

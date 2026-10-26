@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_dmkt",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "The Retail Media 3.0 Revolution: First-Party SKU Point-of-Sale Data & Margin Economics",
+      "codeHash": "16340f910b697b1fe8eb26e6306010feee7ba774606d4e74ac06f66a214f96a9",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Retail media monetizes deterministic purchase data at point of sale.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "First party grocery receipts eliminate probabilistic attribution.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Trade marketing budgets shift from print circulars into digital media.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Model pre ad gross profit margins to establish target bid boundaries.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Amazon Sponsored Products Auction Architecture: GSP, Buy Box Ownership & Placement Multipliers",
+      "codeHash": "c67bb967f795b22eeec5784c4306ce708f06bb90e5a79451413b0607ab04c7d0",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Generalized second price auctions balance relevance and clearing prices.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Buy box ownership is mandatory to qualify for sponsored product auctions.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Top of search placement boosts elevate catalog discovery velocity.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compute placement multipliers to capture top page search impressions.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Dynamic Bidding Models: Dynamic Shading & Target ACoS Bidding Algebra",
+      "codeHash": "965b34df0a845254e2c43b8cd15fb4636e8a55f0e92c83687b75fa622b434e05",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Target cost of sales formulas calculate profit maximizing bid boundaries.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Dynamic bid shading models prevent margin dilution during peak hours.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Catalog flywheel dynamics expand organic ranking through paid velocity.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calibrate bid adjustment vectors against historical conversion rates.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Off-the-Shelf RMN Platforms: Criteo Retail Media, CitrusAd & Kevel Ad Server Microservices",
+      "codeHash": "5e4cc6e41da16eaa07068c7aa58807d7f92957ea6ca52c4a1aa695811437cdeb",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Modular retail ad servers empower regional chains to launch ad networks.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "White label ad engines power sponsored search and display carousels.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Standardized protocols connect brand media buyers to grocery networks.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configure enterprise retail ad server microservices for instant scale.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Sponsored Product Bidding Engine & Target ACoS Optimizer in Python",
+      "codeHash": "2047ce95a69d5fbe03bc60c066593887af8882d5f370240d25faec7893af2105",
+      "spec": {
+        "template": "funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Production bidding systems automate keyword bid adjustments at scale.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated controllers enforce bid ceilings and inventory guardrails.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Continuous optimization lifts return on ad spend across retail brands.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute autonomous bidding algorithms to preserve net operating margin.",
+            "stages": [
+              {
+                "name": "Traffic & Reach Discovery",
+                "description": "Top funnel audience reach and traffic discovery signals"
+              },
+              {
+                "name": "Qualified Intent Engagement",
+                "description": "Middle funnel interest evaluation and consideration intent"
+              },
+              {
+                "name": "Consideration & Conversion",
+                "description": "High intent conversion actions and secure transaction recording"
+              },
+              {
+                "name": "Customer Equity Retention",
+                "description": "Long term customer value optimization and predictive retention"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 39,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Electronic Commerce Operator (ECO) Architecture: Section 52 Tax Collection at Source (TCS) Mechanics",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Digital platforms connect decentralized sellers with retail buyers."
+          },
+          {
+            "step": "say2",
+            "caption": "Statutory collections at source withhold tax on net taxable supplies."
+          },
+          {
+            "step": "example",
+            "caption": "Customer sales returns deduct directly from gross order values."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Deposited taxes transfer into seller electronic cash ledgers monthly."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Section 9(5) Deemed Supplier Liabilities: Passenger Transport, Accommodation & Restaurant Services",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Deemed supplier rules shift primary tax liabilities onto platforms."
+          },
+          {
+            "step": "say2",
+            "caption": "Food delivery apps pay restaurant tax directly as deemed suppliers."
+          },
+          {
+            "step": "example",
+            "caption": "Statutory food taxes must be discharged strictly in liquid cash."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Platform convenience fees remain eligible for credit set off relief."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Online Information & Database Access or Retrieval (OIDAR) Services: Cross-Border Digital Nexus & NTOR Rules",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Cross border digital networks deliver automated software downloads."
+          },
+          {
+            "step": "say2",
+            "caption": "Place of supply rules establish tax nexus at the consumer location."
+          },
+          {
+            "step": "example",
+            "caption": "Unregistered individual buyers qualify as non taxable recipients."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Overseas vendors obtain simplified registrations to remit taxes."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Marketplace Vendor Compliance, Return Architectures (GSTR-8) & Dual-State Invoicing Conflicts",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Marketplace ecosystems generate dual commercial transaction layers."
+          },
+          {
+            "step": "say2",
+            "caption": "Inter state warehouse deliveries require localized tax registrations."
+          },
+          {
+            "step": "example",
+            "caption": "Automated portal reconciliations detect merchant turnover variances."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Unreconciled sales discrepancies trigger statutory outward additions."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Implementation: High-Throughput E-Commerce Platform Indirect Tax Settlement & OIDAR Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Event driven engines classify transaction streams in real time."
+          },
+          {
+            "step": "say2",
+            "caption": "Marketplace orders trigger automated tax withholding calculations."
+          },
+          {
+            "step": "example",
+            "caption": "Digital cross border services populate simplified return schedules."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Immutable transaction logs safeguard platforms during scrutiny."
+          }
+        ]
+      }
+    }
+  ]
+}

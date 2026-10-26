@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 42,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Harmonized System Coding Architecture",
+        "steps": [
+          {
+            "label": "Chapter Code",
+            "caption": "First two digits identify commodity chapter within tariff schedule."
+          },
+          {
+            "label": "Heading Code",
+            "caption": "Four digits designate specific heading description under convention."
+          },
+          {
+            "label": "Subheading Level",
+            "caption": "Six digits establish international standard harmonized commodity code."
+          },
+          {
+            "label": "National Tariff Line",
+            "caption": "Eight digits establish national statutory tariff item and duties."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "General Rules of Interpretation",
+        "steps": [
+          {
+            "label": "Primary Rule",
+            "caption": "Terms of headings and chapter notes govern primary classification."
+          },
+          {
+            "label": "Unassembled Articles",
+            "caption": "Unassembled knocked down kits classify under the finished article."
+          },
+          {
+            "label": "Essential Character",
+            "caption": "Composite goods classify by component providing essential character."
+          },
+          {
+            "label": "Numerical Order",
+            "caption": "Tie breaker assigns heading occurring last in numerical order."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Transaction Valuation & Mandatory Additions",
+        "steps": [
+          {
+            "label": "Commercial Invoice",
+            "caption": "Transaction value serves as statutory basis where parties are unrelated."
+          },
+          {
+            "label": "Production Assists",
+            "caption": "Engineering and design services performed overseas must be added."
+          },
+          {
+            "label": "Transport Ceiling",
+            "caption": "Air freight additions are strictly capped at twenty percent of value."
+          },
+          {
+            "label": "Insurance Provision",
+            "caption": "Unstated marine insurance defaults to statutory percentage factor."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Alternative Valuation Sequential Rules",
+        "steps": [
+          {
+            "label": "Identical Goods",
+            "caption": "Appraising officer matches transaction value of identical goods first."
+          },
+          {
+            "label": "Similar Goods",
+            "caption": "Similar merchandise with equivalent functional characteristics applies."
+          },
+          {
+            "label": "Deductive Method",
+            "caption": "Domestic resale price is adjusted backward by deducting local costs."
+          },
+          {
+            "label": "Computed Value",
+            "caption": "Production fabrication and foreign manufacturer profit are aggregated."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Algorithmic Classification Engine",
+        "steps": [
+          {
+            "label": "Heading Matching",
+            "caption": "Algorithmic decision tree checks headings and statutory exclusions."
+          },
+          {
+            "label": "Character Score",
+            "caption": "System calculates component weight and functional utility scores."
+          },
+          {
+            "label": "Statutory Duty Total",
+            "caption": "Engine computes basic duty and surcharge with rounding safeguards."
+          },
+          {
+            "label": "Audit Exhibit",
+            "caption": "Platform generates forensic valuation exhibits for customs review."
+          }
+        ]
+      }
+    }
+  ]
+}

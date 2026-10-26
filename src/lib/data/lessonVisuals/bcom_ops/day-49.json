@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 49,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "TPM Foundations and the Eight Pillars: Eliminating the Six Big Losses in Capital Equipment",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Total productive maintenance targets zero breakdowns defects and accidents."
+          },
+          {
+            "step": "say2",
+            "caption": "Eight foundational pillars address every stage of equipment asset life."
+          },
+          {
+            "step": "example",
+            "caption": "Planned maintenance executes predictive component overhauls proactively."
+          },
+          {
+            "step": "tryIt",
+            "caption": "TPM hunts down the six big equipment losses that degrade plant output."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Overall Equipment Effectiveness (OEE) Decomposition: Availability, Performance, and Quality Loss Vectors",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Availability measures operating time divided by planned production time."
+          },
+          {
+            "step": "say2",
+            "caption": "Performance evaluates operating velocity against ideal engineering speed."
+          },
+          {
+            "step": "example",
+            "caption": "Quality tracks first pass good units divided by total pieces produced."
+          },
+          {
+            "step": "tryIt",
+            "caption": "World class equipment metrics require exceeding eighty five percent."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Autonomous Maintenance (Jishuken): Step-by-Step Operator Empowerment and Initial Cleaning Inspection",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Front line operators take psychological ownership of equipment reliability."
+          },
+          {
+            "step": "say2",
+            "caption": "Initial cleaning uncovers latent mechanical defects and loose fasteners."
+          },
+          {
+            "step": "example",
+            "caption": "Teams eliminate contamination sources and simplify hard to access areas."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Operators execute daily visual maintenance routines with pride and rigor."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Single-Minute Exchange of Die (SMED): Shigeo Shingo's Internal vs. External Setup Conversion",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Internal setup operations require equipment to be shut down completely."
+          },
+          {
+            "step": "say2",
+            "caption": "External setup tasks can be performed while machines cut previous orders."
+          },
+          {
+            "step": "example",
+            "caption": "Pre staging dies and tooling cuts changeover downtime by half instantly."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Functional clamps and preset stops eliminate manual thread adjustments."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "SMED & OEE Telemetry Engine: Setup Optimization and Micro-Stoppage Pareto Analysis",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "IoT edge sensors capture motor current draw and part counter pulses live."
+          },
+          {
+            "step": "say2",
+            "caption": "Automated telemetry captures brief micro stoppages missed by manual logs."
+          },
+          {
+            "step": "example",
+            "caption": "Pareto distributions rank downtime causes to focus engineering resources."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Vibration telemetry predicts mechanical bearing wear weeks in advance."
+          }
+        ]
+      }
+    }
+  ]
+}

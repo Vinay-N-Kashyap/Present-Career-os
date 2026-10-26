@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 36,
+  "entries": [
+    {
+      "partTitle": "The Integrated Treasury Architecture: Desks, Liquidity Mandates & Front-Mid-Back Office Segregation",
+      "codeHash": "5d30502fef7cb077f111626cdda42dd87b384a7885c35209c5f874321326f630",
+      "spec": {
+        "template": "funnel",
+        "title": "The Integrated Treasury Architecture: ... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Integrated treasury operating architecture initiated.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Enforcing statutory reserve ratios and liquidity pools.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Segregating front middle and back office clearing duties.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Autonomous treasury divisions maintain institutional solvency.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statutory Reserve Physics: CRR Formulation, Maintenance Floors & Penal Structures",
+      "codeHash": "fb99c237ffebfbd606fb8c2ec3b0ccdf7dbf60b6e521971697ec3f10e154302a",
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Reserve Physics: CRR Formula... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Dealing room organizational perimeter deployed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Front office dealers execute interbank wholesale transactions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Independent middle office risk units monitor trading exposures.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Back office operations guarantee swift settlement execution.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statutory Liquidity Ratio (SLR) & Portfolio Accounting: HTM, AFS & HFT Categories",
+      "codeHash": "4d2a385cb328958d590cf10cd2cb00a0ed04d4cf1e73a0337a17c7254e69578c",
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Liquidity Ratio (SLR) & Port... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Cash reserve ratio compliance mechanisms activated.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Monitoring daily balances at the sovereign central bank.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Averaging fortnight balances avoids compounding penalty charges.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Central bank reserves anchor systemic payment clearing.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dealing Room Risk Limits: Daylight, Overnight, Stop-Loss & PV01 Governance",
+      "codeHash": "fe927ccef49cfec12c34edd37a882efbd71e952ff95a3c7b3cb561102e36d235",
+      "spec": {
+        "template": "funnel",
+        "title": "Dealing Room Risk Limits: Daylight, Ov... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Statutory liquidity ratio investment mandates enforced.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Allocating eligible sovereign paper to statutory liquidity books.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Unencumbered government securities fulfill regulatory quotas.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Pledging excess sovereign debt provides overnight liquidity.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Enterprise Bank Treasury & CRR/SLR Compliance Simulator",
+      "codeHash": "d527a693ede5c400690151305253f640eacab98bc8b46f63a0efe10080e63b30",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Enterprise Bank Treasury... \u2014 Treasury Risk Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Enterprise treasury command simulation initialized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Synthesizing reserve compliance across dealing desks.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rebalancing cash reserves mitigates liquidity deficits.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Comprehensive treasury controls ensure regulatory compliance.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

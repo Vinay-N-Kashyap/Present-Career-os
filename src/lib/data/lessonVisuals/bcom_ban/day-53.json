@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 53,
+  "entries": [
+    {
+      "partTitle": "CLO Structural Mechanics: The Collateral Manager, Warehouse Facilities & Reinvestment Lifecycle",
+      "codeHash": "2846f489792954d347d22aca0c4123558f7120c7258d8f497e6acb3ea1b61dc5",
+      "spec": {
+        "template": "funnel",
+        "title": "CLO Structural Mechanics: The Collater... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Collateralized loan obligation vehicle structure launched.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Active collateral managers trade syndicated senior secured debt.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Warehouse credit facilities fund loan portfolio accumulation.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Multi year reinvestment periods preserve asset scale and spread.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Collateral Portfolio Quality Metrics: WARF, WAS, WAC & Moody's Diversity Score",
+      "codeHash": "f8e8d06d92213952ebf08664ffe0ce7ad1dfc465e7b8acd6d9423db06a35994c",
+      "spec": {
+        "template": "funnel",
+        "title": "Collateral Portfolio Quality Metrics: ... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Collateral quality tests and portfolio profile metrics computed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Weighted average rating factors constrain aggregate default risk.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Weighted average spreads ensure sufficient interest margin safety.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Industry diversity scores measure corporate portfolio breadth.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Capital Tranche Anatomy: From Senior AAA to Subordinated Equity Arbitrage",
+      "codeHash": "2d396e7f80fc6e97b93cd1f83ff9b7136475e2221eb0b18ff6f7c706ae7c259f",
+      "spec": {
+        "template": "funnel",
+        "title": "Capital Tranche Anatomy: From Senior A... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Six tier liability capital structure engineered across ratings.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Senior triple a notes benefit from thick subordination buffers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Mezzanine tranches offer elevated floating returns to funds.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Subordinated equity notes capture residual spread arbitrage.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Par Value Coverage Tests: Overcollateralization (OC) & Interest Coverage (IC) Test Mechanics",
+      "codeHash": "7f0f14b2eecdc67a03896b4a73bd9877ac96ea0cb95353cd22b7da2f5ddc60fe",
+      "spec": {
+        "template": "funnel",
+        "title": "Par Value Coverage Tests: Overcollater... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Par value overcollateralization coverage tests audited.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Defaulted assets and excess distressed loans face price haircuts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Coverage test failures trigger automatic cash flow diversion.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Curative amortization de leverages senior debt to restore ratios.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial CLO Lab: Collateral Cash Flow Engine, Dynamic OC Curing & Equity IRR Simulator",
+      "codeHash": "4de2a2a0cbdbf57af4102e4db7d95ee9150a0549a9ff2be471b042a29df8d4fc",
+      "spec": {
+        "template": "funnel",
+        "title": "Industrial CLO Lab: Collateral Cash Fl... \u2014 Structured Credit Operations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive collateral reinvestment and equity engine executed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Quarterly floating interest collections service debt liabilities.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated test compliance protects senior debt note principal.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Lucrative cash distributions flow to subordinated equity holders.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Macro Liquidity Intake"
+              },
+              {
+                "id": "qual",
+                "label": "Treasury Risk Screening"
+              },
+              {
+                "id": "target",
+                "label": "Balance Sheet Allocation"
+              },
+              {
+                "id": "final",
+                "label": "Solvency Affirmation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

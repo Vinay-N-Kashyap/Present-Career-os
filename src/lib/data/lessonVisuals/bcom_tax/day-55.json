@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 55,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Enterprise Case Strategy",
+        "steps": [
+          {
+            "label": "Draft Order Audit",
+            "caption": "Enterprise counsel analyzes proposed transfer pricing additions."
+          },
+          {
+            "label": "Strategic Election",
+            "caption": "Counsel selects collegiate panel route over traditional first appeal."
+          },
+          {
+            "label": "Limitation Control",
+            "caption": "System enforces thirty day objection deadline from draft order receipt."
+          },
+          {
+            "label": "Paper Book Assembly",
+            "caption": "Team gathers technical logs and economic comparability studies."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Collegiate Panel Defense",
+        "steps": [
+          {
+            "label": "Collegiate Hearing",
+            "caption": "Counsel argues economic methodology before three commissioners."
+          },
+          {
+            "label": "Substantial Relief",
+            "caption": "Panel deletes majority of transfer pricing addition under precedent."
+          },
+          {
+            "label": "Binding Directions",
+            "caption": "Panel issues directions within nine months of draft forwarding month."
+          },
+          {
+            "label": "Final Assessment Order",
+            "caption": "Officer passes final order in one month without altering directions."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Tribunal Appeal and Stay",
+        "steps": [
+          {
+            "label": "Direct Tribunal Filing",
+            "caption": "Enterprise appeals sustained adjustments directly to tribunal bench."
+          },
+          {
+            "label": "Mandatory Deposit",
+            "caption": "Treasury deposits statutory twenty percent into central tax treasury."
+          },
+          {
+            "label": "Stay Injunction",
+            "caption": "Tribunal grants unconditional stay on remaining eighty percent balance."
+          },
+          {
+            "label": "Constitutional Shield",
+            "caption": "Stay remains effective beyond three hundred sixty five days."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Judicial Victory and Refund",
+        "steps": [
+          {
+            "label": "Full Tribunal Relief",
+            "caption": "Tribunal deletes all remaining adjustments applying apex precedents."
+          },
+          {
+            "label": "High Court Challenge",
+            "caption": "Revenue files appeal challenging factual transfer pricing findings."
+          },
+          {
+            "label": "Summary Dismissal",
+            "caption": "High court dismisses appeal in limine for lack of substantial law."
+          },
+          {
+            "label": "Treasury Refund",
+            "caption": "Officer refunds stay deposit with statutory interest into bank account."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Master Defense Simulator",
+        "steps": [
+          {
+            "label": "Multi Tier Simulation",
+            "caption": "Simulator executes complete lifecycle of corporate appellate defense."
+          },
+          {
+            "label": "Limitation Clock Audit",
+            "caption": "Engine validates compliance with all statutory procedural windows."
+          },
+          {
+            "label": "Financial Exposure Model",
+            "caption": "Platform calculates tax shield and interest recovery for enterprise."
+          },
+          {
+            "label": "Master Accreditation",
+            "caption": "System grants master certification upon triumphant corporate defense."
+          }
+        ]
+      }
+    }
+  ]
+}

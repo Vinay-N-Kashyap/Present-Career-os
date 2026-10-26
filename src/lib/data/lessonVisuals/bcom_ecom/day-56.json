@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 56,
+  "entries": [
+    {
+      "partIndex": 0,
+      "partTitle": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
+      "codeHash": "1ecbaf53b346dbfb49a0c9433ed36cb19c75dee771f85516c485da2ec6cf830c",
+      "spec": {
+        "template": "funnel",
+        "title": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "at": "intro",
+            "caption": "The enterprise edge gateway intercepts incoming client requests.",
+            "stages": [
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
+            ]
+          },
+          {
+            "id": "say1",
+            "label": "Architectural Analysis",
+            "at": "say1",
+            "caption": "Decoupled microservice routers dispatch endpoints across the mesh.",
+            "stages": [
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
+            ]
+          },
+          {
+            "id": "example",
+            "label": "Domain Modeling",
+            "at": "example",
+            "caption": "Correlation trace headers bind distributed service executions.",
+            "stages": [
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
+            ]
+          },
+          {
+            "id": "tryIt",
+            "label": "Operational Validation",
+            "at": "tryIt",
+            "caption": "Service mesh proxies enforce zero trust mutual transport security.",
+            "stages": [
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "partTitle": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
+      "codeHash": "9afb974ada6f347674285da450e211b8d987e7cb03ca0ae35e2d9cba22c9ba9d",
+      "spec": {
+        "template": "funnel",
+        "title": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "at": "intro",
+            "caption": "Backend adapters inspect incoming mobile device user agent headers.",
+            "stages": [
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
+            ]
+          },
+          {
+            "id": "say1",
+            "label": "Architectural Analysis",
+            "at": "say1",
+            "caption": "Heavyweight desktop markup is pruned to conserve mobile bandwidth.",
+            "stages": [
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
+            ]
+          },
+          {
+            "id": "example",
+            "label": "Domain Modeling",
+            "at": "example",
+            "caption": "Optimized image thumbnails accelerate screen rendering on phones.",
+            "stages": [
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
+            ]
+          },
+          {
+            "id": "tryIt",
+            "label": "Operational Validation",
+            "at": "tryIt",
+            "caption": "Edge compute workers dynamically negotiate modern media formats.",
+            "stages": [
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "partTitle": "GraphQL Federation & Distributed Subgraph Entity Resolution",
+      "codeHash": "e722ea2d44761984b573962ed21010a66dc76437f2f5feaebf38a3cfe4f03c8f",
+      "spec": {
+        "template": "funnel",
+        "title": "GraphQL Federation & Distributed Subgraph Entity Resolution",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "at": "intro",
+            "caption": "The federated supergraph defines autonomous domain entity schemas.",
+            "stages": [
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
+            ]
+          },
+          {
+            "id": "say1",
+            "label": "Architectural Analysis",
+            "at": "say1",
+            "caption": "Primary entity directives enable decoupled subgraph composition.",
+            "stages": [
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
+            ]
+          },
+          {
+            "id": "example",
+            "label": "Domain Modeling",
+            "at": "example",
+            "caption": "Declarative federation routes parallel queries across microservices.",
+            "stages": [
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
+            ]
+          },
+          {
+            "id": "tryIt",
+            "label": "Operational Validation",
+            "at": "tryIt",
+            "caption": "Query planners batch downstream entity loaders to prevent cascades.",
+            "stages": [
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "partTitle": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
+      "codeHash": "d771abd607ec24089d6e5579d5b2ea7f420e0ecbac35e2cc231a4134ea7fa371",
+      "spec": {
+        "template": "funnel",
+        "title": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "at": "intro",
+            "caption": "Global edge network servers cache dynamic catalog data near users.",
+            "stages": [
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
+            ]
+          },
+          {
+            "id": "say1",
+            "label": "Architectural Analysis",
+            "at": "say1",
+            "caption": "Stale responses serve instantly while background refreshes run.",
+            "stages": [
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
+            ]
+          },
+          {
+            "id": "example",
+            "label": "Domain Modeling",
+            "at": "example",
+            "caption": "Surrogate cache tags invalidate outdated prices across all nodes.",
+            "stages": [
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
+            ]
+          },
+          {
+            "id": "tryIt",
+            "label": "Operational Validation",
+            "at": "tryIt",
+            "caption": "Origin shield tiers collapse duplicate requests to protect databases.",
+            "stages": [
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "partTitle": "Enterprise Composable Headless Gateway & Federation Command Tower",
+      "codeHash": "5d7d3000ac454c4c83434fbd74537815b64046eec30bd7aac2a3a24e571b6851",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Composable Headless Gateway & Federation Command Tower",
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Synthesis Intake",
+            "at": "intro",
+            "caption": "The composable architecture command tower aggregates mesh telemetry.",
+            "stages": [
+              "Signal Ingestion",
+              "Protocol Translation",
+              "Context Normalization",
+              "Intake Ratification"
+            ]
+          },
+          {
+            "id": "say1",
+            "label": "Architectural Analysis",
+            "at": "say1",
+            "caption": "High edge cache hit rates insulate relational database clusters.",
+            "stages": [
+              "Schema Decomposition",
+              "Boundary Validation",
+              "State Synchronization",
+              "Policy Binding"
+            ]
+          },
+          {
+            "id": "example",
+            "label": "Domain Modeling",
+            "at": "example",
+            "caption": "Sub millisecond inter service calls eliminate cascading bottlenecks.",
+            "stages": [
+              "Topology Mapping",
+              "Constraint Verification",
+              "Ledger Ledgering",
+              "Audit Traceability"
+            ]
+          },
+          {
+            "id": "tryIt",
+            "label": "Operational Validation",
+            "at": "tryIt",
+            "caption": "The architectural audit confirms enterprise composable excellence.",
+            "stages": [
+              "Execution Gate",
+              "Consensus Attestation",
+              "Certification Award",
+              "Permanent Ingestion"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

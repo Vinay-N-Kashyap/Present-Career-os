@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 50,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Capstone Architecture: Integrating Monthly Demand Forecasting, Finite Resource Constraints, and Cellular Flow",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "The capstone unifies strategic planning with shop floor cellular execution."
+          },
+          {
+            "step": "say2",
+            "caption": "Four integrated modules bridge monthly consensus down to cycle seconds."
+          },
+          {
+            "step": "example",
+            "caption": "Mathematical linear programs optimize contribution margins under bounds."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Closed loop telemetry feeds shop floor asset status back to leadership."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Dynamic S&OP Consensus Optimization: Resolving Demand-Supply Volumetric Imbalances under Margin Maximization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Optimization solvers balance regular production against seasonal overtime."
+          },
+          {
+            "step": "say2",
+            "caption": "Inventory conservation equations track finished goods holding expenses."
+          },
+          {
+            "step": "example",
+            "caption": "The objective function maximizes net enterprise margins cleanly."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Working capital constraints prevent inventory from breaching debt limits."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "U-Shaped Lean Workcell Engineering: Yamazumi Balance Charts, Takt Time Synchronization, and Operator Routing",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "U shaped cellular layouts bring raw entry and finished exit together."
+          },
+          {
+            "step": "say2",
+            "caption": "Takt time and cumulative task durations determine minimum staffing needs."
+          },
+          {
+            "step": "example",
+            "caption": "Yamazumi charts stack task durations to eliminate operator cycle variance."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Circular walking paths ensure continuous single piece flow without waste."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Closed-Loop Telemetry & Exception Handling: Real-Time Machine Down Events, Re-Sequencing, and Buffer Protection",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Edge IoT telemetry layers monitor machine states and pressure vectors."
+          },
+          {
+            "step": "say2",
+            "caption": "Strategic time buffers decouple bottleneck resources from upstream faults."
+          },
+          {
+            "step": "example",
+            "caption": "Automated rope triggers halt raw material releases during long outages."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Dynamic re sequencing algorithms divert urgent jobs to secondary paths."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Production Capstone Validation: End-to-End Execution of the S&OP & Cellular Manufacturing Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Deterministic software engines validate five sequential operational stages."
+          },
+          {
+            "step": "say2",
+            "caption": "Linear solvers optimize six month production and inventory trajectories."
+          },
+          {
+            "step": "example",
+            "caption": "Yamazumi balancing algorithms achieve high line efficiency without delay."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Executive dashboards certify complete compliance across all invariants."
+          }
+        ]
+      }
+    }
+  ]
+}

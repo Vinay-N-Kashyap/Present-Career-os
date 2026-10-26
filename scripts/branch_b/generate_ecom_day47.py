@@ -1,0 +1,473 @@
+# -*- coding: utf-8 -*-
+"""
+Generate Day 47 for Course 07: bcom_ecom
+Title: Corporate Account Hierarchies, Multi-Tier Approval Workflows & Role-Based Spending Limits
+"""
+import json
+import os
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+commerce_dir = r"C:\Users\Admin\Desktop\projects\Present-Career-os-commerce"
+output_file = os.path.join(commerce_dir, "scripts", "branch_b", "day47_ecom_data.json")
+
+def make_part(title, say_paragraphs, example, try_it, code, output, question, options, why):
+    say_text = " ".join(say_paragraphs)
+    words = len(say_text.strip().split())
+    print(f"Part '{title}': {words} words")
+    assert words >= 600, f"Part '{title}' under 600 words: {words}"
+    assert len(options) == 4, f"Part '{title}' must have exactly 4 options"
+    assert len(why) >= 30, f"Part '{title}' why must be >= 30 chars"
+    
+    return {
+        "title": title,
+        "say": say_paragraphs,
+        "example": example,
+        "tryIt": try_it,
+        "code": code,
+        "output": output,
+        "check": {
+            "question": question,
+            "options": options,
+            "answer": 0,
+            "answerIndex": 0,
+            "why": why,
+            "explanation": why
+        }
+    }
+
+# ==========================================
+# PART 1: Recursive Corporate Account Hierarchies
+# ==========================================
+p1_title = "Recursive Corporate Account Hierarchies & Multi-Unit Organization Modeling"
+p1_say = [
+    "From a database architecture and query optimization standpoint, enterprise commerce engines frequently deploy Transitive Closure Tables alongside recursive adjacency structures to model B2B corporate trees. In a closure table schema, a dedicated relational table stores every ancestor-descendant pair across the entire corporate hierarchy alongside an explicit depth integer representing the path distance. When an enterprise queries all descendants of a multinational holding company or evaluates the complete ancestor lineage of a localized cost center, the database executes an indexed O(1) single-table lookup rather than an expensive recursive common table expression (CTE) with nested loops. Furthermore, closure tables enable high-concurrency tree modifications—such as corporate reorganizations or subsidiary acquisitions—by recalculating only the isolated subtree closure rows within a single transactional boundary, completely preventing table-level locking during peak checkout operations.",
+    "Additionally, multinational enterprise hierarchies must comply with international data sovereignty regulations and cross-border data transfer mandates (such as GDPR in the European Union, CCPA in the United States, and PIPL in China). When corporate holding companies span multiple sovereign jurisdictions, the commerce data tier enforces partitioned tenancy: employee PII and local payment tokens are encrypted and physically retained within localized regional data centers, while anonymized cost center identifiers and consolidated budgetary totals are replicated to global corporate headquarters for centralized financial reporting and executive governance.",
+    "In enterprise B2B composable commerce architectures, a customer entity is never a simple single user profile as found in consumer direct-to-consumer storefronts. Instead, an enterprise customer represents an intricate, multi-tiered corporate legal entity comprising multinational parent holding corporations, regional operating subsidiaries, business divisions, manufacturing plants, and granular cost centers. Architecting this organizational topology requires recursive tree data structures and nested set models capable of modeling complex organizational lineages, cross-subsidiary billing relationships, and inherited commercial privileges without introducing database lock contention or recursive querying bottlenecks.",
+    "When a multinational enterprise (such as a global aerospace manufacturer or automotive conglomerate) negotiates a multi-million-dollar master procurement agreement with an industrial supplier, the resulting commercial terms—including contractual discount schedules, volume tier rebates, negotiated payment terms, and custom catalog entitlements—apply across all subordinate entities in the hierarchy. A junior procurement technician stationed at a regional aircraft maintenance depot in North America must immediately benefit from the enterprise-level contract negotiated by corporate headquarters in Zurich, without requiring manual account-by-account configuration.",
+    "From an engineering standpoint, corporate hierarchies are structured as directed acyclic graphs (DAGs) or recursive adjacency trees. Each node within the tree represents a distinct organizational unit (OrgUnit) annotated with an explicit node type: Holding Company, Operating Subsidiary, Business Unit, Operating Division, or Departmental Cost Center. Each node maintains a nullable parent foreign key reference pointing to its immediate superior. To eliminate expensive recursive SQL common table expression (CTE) queries during high-throughput checkout evaluations, modern headless commerce platforms utilize materialized path indexing (such as ltree in PostgreSQL) or closure tables that pre-compute all ancestor-descendant relationships.",
+    "Inheritance mechanics within corporate hierarchies operate along deterministic propagation rules. Commercial attributes defined at higher-tier parent nodes—such as negotiated enterprise pricing tiers, allowed payment methods (such as Net 60 invoicing or corporate purchasing cards), and tax exemption certificates—flow downward to descendant cost centers through attribute inheritance cascades. However, the system architecture must also support surgical local overrides: an individual subsidiary located in a specific state or province may be subject to localized sales tax jurisdictions or unique environmental compliance requirements that supersede global corporate defaults.",
+    "Furthermore, corporate account modeling incorporates organizational cost center allocations. In enterprise accounting, every requisition submitted by an employee must be tagged with a valid General Ledger (GL) account code and Cost Center identifier. When an order is placed, the composable commerce platform binds the purchasing transaction directly to the buyer's cost center node, enabling automated synchronization with corporate ERP systems (such as SAP S/4HANA or Oracle Financials Cloud) and real-time validation against departmental operating expenditure (OpEx) budgets.",
+    "Additionally, the architecture accommodates federated organizational provisioning via the System for Cross-domain Identity Management (SCIM 2.0) protocol. Corporate HRIS directories (such as Workday or Microsoft Entra ID) dispatch real-time webhooks whenever new departments are established, corporate reorganizations take place, or business divisions are divested, dynamically restructuring the B2B commerce account tree without manual administrative intervention.",
+    "In the following deterministic Python implementation, we construct a Recursive Corporate Hierarchy Tree that models holding companies, subsidiaries, divisions, and cost centers, dynamically resolving ancestor lineages and evaluating inherited commercial discount tiers across organizational levels."
+]
+p1_example = "A purchasing agent at Cost Center CC-401 submits an order. The hierarchy engine traverses the lineage CC-401 -> DIV-01 -> SUB-01 -> HOLDING-01, resolving the root enterprise contract tier ENTERPRISE_PLATINUM and binding the transaction to cost center code CC-8820-AERO."
+p1_try_it = "Simulate the Corporate Hierarchy Tree, verifying that cost centers accurately resolve their full ancestor path and inherit higher-level master contract discount tiers."
+p1_code = """import sys
+from dataclasses import dataclass
+from typing import Dict, List, Optional
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+@dataclass
+class OrganizationNode:
+    node_id: str
+    name: str
+    node_type: str  # HOLDING, SUBSIDIARY, DIVISION, COST_CENTER
+    parent_id: Optional[str] = None
+    cost_center_code: Optional[str] = None
+    inherited_discount_tier: str = "TIER_1"
+
+class CorporateHierarchyTree:
+    def __init__(self):
+        self.nodes: Dict[str, OrganizationNode] = {}
+
+    def add_node(self, node: OrganizationNode):
+        self.nodes[node.node_id] = node
+
+    def resolve_lineage(self, node_id: str) -> List[str]:
+        path = []
+        curr = node_id
+        while curr:
+            path.append(curr)
+            node = self.nodes.get(curr)
+            curr = node.parent_id if node else None
+        return list(reversed(path))
+
+    def resolve_inherited_tier(self, node_id: str) -> str:
+        lineage = self.resolve_lineage(node_id)
+        for nid in lineage:
+            node = self.nodes[nid]
+            if node.inherited_discount_tier != "TIER_1":
+                return node.inherited_discount_tier
+        return "TIER_1"
+
+tree = CorporateHierarchyTree()
+tree.add_node(OrganizationNode("HOLDING-01", "Global Aerospace Corp", "HOLDING", None, inherited_discount_tier="ENTERPRISE_PLATINUM"))
+tree.add_node(OrganizationNode("SUB-01", "North America Defense Systems", "SUBSIDIARY", "HOLDING-01"))
+tree.add_node(OrganizationNode("DIV-01", "Avionics Propulsion Division", "DIVISION", "SUB-01"))
+tree.add_node(OrganizationNode("CC-401", "Jet Propulsion R&D Lab", "COST_CENTER", "DIV-01", cost_center_code="CC-8820-AERO"))
+
+lineage = tree.resolve_lineage("CC-401")
+tier = tree.resolve_inherited_tier("CC-401")
+print(f"Node: CC-401 | Path: {' -> '.join(lineage)} | Effective Contract Tier: {tier}")
+"""
+p1_output = """Node: CC-401 | Path: HOLDING-01 -> SUB-01 -> DIV-01 -> CC-401 | Effective Contract Tier: ENTERPRISE_PLATINUM"""
+p1_question = "Why do enterprise B2B composable commerce architectures utilize recursive hierarchy models with closure tables or materialized paths?"
+p1_options = [
+    "To model complex multi-subsidiary corporate structures and evaluate inherited commercial pricing tiers and cost centers without expensive recursive query latency",
+    "To force individual consumers to register corporate tax credentials before browsing public consumer goods",
+    "To replace relational SQL databases with unstructured flat files for all transactional ledger entries",
+    "To eliminate the need for enterprise resource planning (ERP) systems in Fortune 500 corporations"
+]
+p1_why = "Recursive hierarchy trees allow organizations to represent multi-tiered corporate structures, inheriting contract terms down to cost centers efficiently."
+
+# ==========================================
+# PART 2: Role-Based Access Control & Separation of Duties
+# ==========================================
+p2_title = "Role-Based Access Control (RBAC), Granular Purchasing Permissions & Separation of Duties"
+p2_say = [
+    "To complement standard role assignments, enterprise B2B authorization architectures integrate Attribute-Based Access Control (ABAC) to evaluate fine-grained environmental and contextual constraints at runtime. Under an ABAC policy engine, access decisions evaluate a tuple of subject attributes (such as user clearance level and department code), resource attributes (such as commodity category and hazard classification), action attributes (such as requisition submission), and environmental attributes (such as client IP geofence, corporate VPN status, and Multi-Factor Authentication assurance level). For instance, an employee holding the standard BUYER role may be permitted to purchase standard commercial hardware from remote locations, but requisitioning hazardous chemical reagents or aerospace-grade alloys is strictly prohibited unless the session originates from a certified on-premises corporate facility with active hardware security key verification.",
+    "Furthermore, enterprise B2B platforms integrate with Identity Governance and Administration (IGA) solutions (such as SailPoint IdentityIQ or CyberArk) to implement automated Privileged Access Management (PAM) recertification campaigns. In accordance with enterprise risk frameworks, all elevated purchasing roles and spending limit thresholds undergo mandatory periodic recertification every ninety days. If a corporate department manager fails to re-attest an employee's elevated purchasing authority before the recertification deadline, the Policy Decision Point automatically revokes the role binding and falls back to a restricted default profile, eliminating the emergence of orphaned permissions or lingering administrative privileges from past projects.",
+    "Enterprise corporate procurement operates under rigorous internal governance frameworks designed to eliminate rogue spending, prevent commercial fraud, and satisfy statutory compliance mandates—most notably the Sarbanes-Oxley Act (SOX Section 404), which mandates strict internal controls over financial reporting. Within an enterprise B2B storefront, individual users cannot be granted unilateral purchasing authority. Instead, the commerce platform must implement a sophisticated Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) policy decision framework.",
+    "A typical corporate enterprise account comprises dozens or hundreds of employees, each requiring distinct functional capabilities depending on their operational responsibilities. A factory technician may require browse-only privileges to locate machine replacement parts without viewing sensitive negotiated pricing data. A junior purchasing coordinator may possess the authority to build requisitions and add items to a corporate cart but cannot submit orders directly. A department manager may have approval jurisdiction over orders up to twenty-five thousand dollars, while a corporate treasurer alone holds authorization to manage lines of credit.",
+    "The authorization architecture is governed by a Policy Decision Point (PDP) that evaluates incoming API requests against a standardized permissions taxonomy. Key granular permissions include: browse_catalog, view_pricing, create_requisition, edit_requisition, approve_requisition, cancel_requisition, view_invoices, manage_cost_centers, and configure_punchout. When an authenticated user initiates an action, the API gateway consults the PDP to verify that the user's assigned role bindings explicitly grant the requisite permission within the scope of their assigned cost center.",
+    "Crucially, the governance engine enforces strict Separation of Duties (SoD) constraints. Under SOX compliance guidelines, the individual who authors a purchase requisition cannot serve as the approving authority for that same requisition, regardless of their hierarchical executive title. If a department director submits a purchase requisition for new engineering workstations, the system automatically disallows self-approval and diverts the requisition upward to the divisional Vice President or lateral financial controller, ensuring independent budgetary oversight.",
+    "Furthermore, the RBAC engine enforces Cost Center Jurisdiction boundaries. An approver assigned to the Avionics Propulsion Division cannot approve requisitions originating from the Cyber Defense Division, even if both users hold equivalent managerial ranks. The Policy Decision Point evaluates both the subject's role grants and the object's organizational scope (cost center ID matching), rejecting cross-departmental approval attempts with audited security exception logs.",
+    "Additionally, modern enterprise commerce platforms integrate with enterprise Single Sign-On (SSO) systems via SAML 2.0 or OIDC, where role memberships are asserted dynamically via SAML attribute statements or JWT claim tokens. This integration guarantees that when an employee changes roles or departs the corporation, their purchasing privileges and approval authorities are instantly revoked across the commerce platform without requiring manual profile updates.",
+    "In the following deterministic Python implementation, we build an Enterprise Policy Decision Point that evaluates granular user permissions and enforces statutory Separation of Duties (SoD) constraints, preventing self-approval and cross-departmental authorization breaches."
+]
+p2_example = "A buyer (USR-101) creates a requisition. The PDP validates that USR-101 can create requisitions but rejects their attempt to self-approve. When peer manager USR-202 reviews the requisition, the PDP validates the approver's role and confirms separation of duties."
+p2_try_it = "Simulate the Policy Decision Point, validating that role permissions are verified and self-approval attempts are intercepted as statutory SoD violations."
+p2_code = """import sys
+from dataclasses import dataclass
+from enum import Enum
+from typing import Dict, List, Set, Tuple
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+class Permission(Enum):
+    BROWSE_CATALOG = "browse_catalog"
+    VIEW_PRICING = "view_pricing"
+    CREATE_REQUISITION = "create_requisition"
+    APPROVE_REQUISITION = "approve_requisition"
+    MANAGE_BUDGET = "manage_budget"
+
+@dataclass
+class CorporateUser:
+    user_id: str
+    name: str
+    cost_center_id: str
+    roles: List[str]
+    individual_spending_limit: float
+
+class PolicyDecisionPoint:
+    ROLE_PERMISSIONS = {
+        "BUYER": {Permission.BROWSE_CATALOG, Permission.VIEW_PRICING, Permission.CREATE_REQUISITION},
+        "APPROVER": {Permission.BROWSE_CATALOG, Permission.VIEW_PRICING, Permission.APPROVE_REQUISITION},
+        "BUDGET_OWNER": {Permission.BROWSE_CATALOG, Permission.VIEW_PRICING, Permission.APPROVE_REQUISITION, Permission.MANAGE_BUDGET}
+    }
+
+    def has_permission(self, user: CorporateUser, permission: Permission) -> bool:
+        user_perms: Set[Permission] = set()
+        for role in user.roles:
+            user_perms.update(self.ROLE_PERMISSIONS.get(role, set()))
+        return permission in user_perms
+
+    def check_separation_of_duties(self, requester: CorporateUser, approver: CorporateUser) -> Tuple[bool, str]:
+        if requester.user_id == approver.user_id:
+            return False, "Violation: Requester cannot approve their own requisition (SOX-404 conflict)"
+        if requester.cost_center_id != approver.cost_center_id and "BUDGET_OWNER" not in approver.roles:
+            return False, "Violation: Approver lacks jurisdiction over requester cost center"
+        return True, "Separation of duties confirmed"
+
+pdp = PolicyDecisionPoint()
+buyer = CorporateUser("USR-101", "Jane Doe", "CC-401", ["BUYER"], individual_spending_limit=5000.0)
+approver = CorporateUser("USR-202", "Robert Vance", "CC-401", ["APPROVER"], individual_spending_limit=50000.0)
+
+can_create = pdp.has_permission(buyer, Permission.CREATE_REQUISITION)
+can_approve = pdp.has_permission(approver, Permission.APPROVE_REQUISITION)
+sod_valid, sod_reason = pdp.check_separation_of_duties(buyer, approver)
+self_sod, self_reason = pdp.check_separation_of_duties(buyer, buyer)
+
+print(f"Buyer Create: {can_create} | Approver Approve: {can_approve}")
+print(f"Peer Approval SoD: {sod_valid} | Reason: {sod_reason}")
+print(f"Self Approval SoD: {self_sod} | Reason: {self_reason}")
+"""
+p2_output = """Buyer Create: True | Approver Approve: True
+Peer Approval SoD: True | Reason: Separation of duties confirmed
+Self Approval SoD: False | Reason: Violation: Requester cannot approve their own requisition (SOX-404 conflict)"""
+p2_question = "Why does statutory enterprise compliance (SOX 404) prohibit self-approval of purchase requisitions in B2B commerce?"
+p2_options = [
+    "To enforce Separation of Duties (SoD), ensuring independent financial oversight and preventing unilateral misappropriation of corporate funds",
+    "To decrease checkout page loading speeds and increase shopping cart abandonment rates",
+    "To prevent buyers from saving their delivery addresses in corporate purchasing profiles",
+    "To mandate that all corporate purchases must be paid via personal cryptocurrency wallets"
+]
+p2_why = "Separation of Duties ensures that requisition authors cannot approve their own purchases, satisfying corporate governance and SOX compliance."
+
+# ==========================================
+# PART 3: Multi-Tier Dynamic Approval Routing Engines
+# ==========================================
+p3_title = "Multi-Tier Dynamic Approval Routing Engines & Cost Center Budget Guards"
+p3_say = [
+    "In global multinational enterprise commerce, the approval routing engine must resolve multi-currency exchange rate conversions in real time before evaluating Delegation of Authority thresholds. When an operating subsidiary in Germany or Japan submits a purchase requisition denominated in Euros (EUR) or Japanese Yen (JPY), but the corporate master DoA policy is standardized in United States Dollars (USD), the workflow engine invokes an internal treasury exchange rate service (backed by European Central Bank or Federal Reserve daily fixes). The foreign currency order total is dynamically converted into corporate standard USD to establish the authoritative threshold tier, preventing exchange rate volatility from causing inadvertent approval bypasses or unnecessary executive escalations.",
+    "Additionally, the routing engine accommodates non-catalog or 'free-text' requisition line items, commonly known as spot purchases or punch-in requisitions. When an enterprise buyer requires specialized equipment or custom professional services not currently cataloged in the contracted supplier inventory, the buyer submits a custom requisition specifying estimated costs, suggested suppliers, and detailed technical specifications. The routing engine intercepts free-text requisitions and injects a mandatory preliminary review gate assigned to the Strategic Sourcing and Commodity Management team, ensuring that custom vendor quotes undergo price benchmarking and contract verification prior to managerial budgetary sign-off.",
+    "Enterprise corporate spending is governed by dynamic financial thresholds. While routine, low-value consumable purchases (such as office stationery or standard laboratory reagents) can be auto-approved to minimize administrative friction, high-value capital expenditures (such as heavy manufacturing machinery or enterprise software licenses) require multi-stage managerial scrutiny. The Multi-Tier Dynamic Approval Routing Engine serves as the core workflow orchestrator, intercepting finalized requisitions, evaluating monetary thresholds and budgetary availability, and routing tasks to the appropriate executive authorities.",
+    "Approval routing is structured across progressive monetary bands, known as the Delegation of Authority (DoA) matrix. A representative enterprise configuration features four standardized tiers: Tier 0 (under five thousand dollars) allows direct auto-release or single-click peer approval; Tier 1 (five thousand to twenty-five thousand dollars) mandates department manager sign-off; Tier 2 (twenty-five thousand to one hundred thousand dollars) requires dual sign-off from the Department Director and Financial Controller; and Tier 3 (exceeding one hundred thousand dollars) demands executive authorization from the Chief Financial Officer (CFO) and Chief Procurement Officer (CPO).",
+    "Crucially, the approval routing engine incorporates real-time Departmental Budget Guards. Before any requisition is queued for managerial review, the workflow engine interrogates the Cost Center Ledger to verify whether the department possesses sufficient uncommitted budget for the current fiscal quarter. In enterprise accounting, budgets are categorized as Operating Expenditure (OpEx) for day-to-day operational supplies or Capital Expenditure (CapEx) for long-term depreciable assets. If a requisition would cause a cost center's spend to exceed its allocated budgetary ceiling, the engine immediately flags a Budget Breach, rejecting or freezing the order until a formal budgetary reallocation request is approved.",
+    "Furthermore, the routing engine supports parallel and sequential approval branch mechanics. For complex requisitions involving specialized commodities (such as hazardous materials, proprietary software tooling, or international vendor contracts), the workflow triggers conditional parallel branches. While the departmental manager reviews the operational necessity of the purchase, parallel review tasks are automatically dispatched to Corporate Environmental Health & Safety (EHS) and IT Security, requiring all branches to emit affirmative consensus before the order is released for supplier fulfillment.",
+    "Additionally, the engine evaluates cumulative spend velocity. If an individual purchasing agent submits multiple small requisitions within a twenty-four-hour window that individually fall below the Tier 0 auto-approval threshold but cumulatively exceed the Tier 1 threshold—a classic anti-pattern known as 'order splitting' or 'maverick spend evasion'—the fraud detection subsystem aggregates the orders and escalates the entire batch to senior audit review.",
+    "In the following deterministic Python implementation, we build an Enterprise Multi-Tier Approval Router that evaluates requisition amounts against corporate DoA thresholds and validates real-time cost center budget balances, deterministically assigning approval tiers and trapping budget breaches."
+]
+p3_example = "Three requisitions are evaluated: REQ-8801 ($3,450) auto-approves; REQ-8802 ($18,500) routes to Tier 1 Manager; REQ-8803 ($145,000) routes to Tier 3 Executive. When a $145,000 order is evaluated against a $100,000 budget, the engine triggers a Budget Breach rejection."
+p3_try_it = "Simulate the Multi-Tier Approval Router, verifying that monetary thresholds route requisitions to correct managerial tiers and budgetary deficits block order progression."
+p3_code = """import sys
+from dataclasses import dataclass
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+@dataclass
+class Requisition:
+    req_id: str
+    requester_id: str
+    cost_center_id: str
+    total_amount: float
+    category: str  # OPEX or CAPEX
+
+class MultiTierApprovalRouter:
+    TIERS = [
+        (5000.0, "AUTO_APPROVED", "Direct PunchOut Auto-Release"),
+        (25000.0, "TIER_1_MANAGER", "Department Manager Sign-Off Required"),
+        (100000.0, "TIER_2_DIRECTOR", "Procurement Director & Controller Review Required"),
+        (float('inf'), "TIER_3_EXECUTIVE", "CFO & Chief Procurement Officer Review Required")
+    ]
+
+    def evaluate_routing(self, req: Requisition, cost_center_budget_remaining: float) -> dict:
+        if req.total_amount > cost_center_budget_remaining:
+            return {
+                "req_id": req.req_id,
+                "status": "REJECTED_BUDGET_EXCEEDED",
+                "required_tier": None,
+                "description": f"Requisition exceeds available budget ${cost_center_budget_remaining:,.2f}"
+            }
+
+        for limit, tier_name, desc in self.TIERS:
+            if req.total_amount <= limit:
+                return {
+                    "req_id": req.req_id,
+                    "status": "PENDING_APPROVAL" if tier_name != "AUTO_APPROVED" else "AUTO_APPROVED",
+                    "required_tier": tier_name,
+                    "description": desc
+                }
+        return {"req_id": req.req_id, "status": "UNKNOWN", "required_tier": None, "description": ""}
+
+router = MultiTierApprovalRouter()
+req1 = Requisition("REQ-8801", "USR-101", "CC-401", 3450.0, "OPEX")
+req2 = Requisition("REQ-8802", "USR-101", "CC-401", 18500.0, "OPEX")
+req3 = Requisition("REQ-8803", "USR-101", "CC-401", 145000.0, "CAPEX")
+
+r1 = router.evaluate_routing(req1, cost_center_budget_remaining=250000.0)
+r2 = router.evaluate_routing(req2, cost_center_budget_remaining=250000.0)
+r3 = router.evaluate_routing(req3, cost_center_budget_remaining=250000.0)
+r_fail = router.evaluate_routing(req3, cost_center_budget_remaining=100000.0)
+
+print(f"Req1 ($3,450):  Status={r1['status']} | Tier={r1['required_tier']}")
+print(f"Req2 ($18,500): Status={r2['status']} | Tier={r2['required_tier']}")
+print(f"Req3 ($145k):   Status={r3['status']} | Tier={r3['required_tier']}")
+print(f"Budget Breach:  Status={r_fail['status']} | Msg={r_fail['description']}")
+"""
+p3_output = """Req1 ($3,450):  Status=AUTO_APPROVED | Tier=AUTO_APPROVED
+Req2 ($18,500): Status=PENDING_APPROVAL | Tier=TIER_1_MANAGER
+Req3 ($145k):   Status=PENDING_APPROVAL | Tier=TIER_3_EXECUTIVE
+Budget Breach:  Status=REJECTED_BUDGET_EXCEEDED | Msg=Requisition exceeds available budget $100,000.00"""
+p3_question = "What happens when an enterprise purchase requisition amount exceeds the remaining budget of its allocated cost center?"
+p3_options = [
+    "The approval engine halts order progress with a Budget Breach rejection or freeze until formal budgetary reallocation is authorized",
+    "The commerce engine automatically charges the difference to the purchasing employee's personal bank account",
+    "The system arbitrarily reduces product quantities to match the remaining budget without notifying the buyer",
+    "The order is converted into a retail coupon code and dispatched anonymously via public email"
+]
+p3_why = "Budget guards verify that requisitions do not exceed authorized cost center allocations, blocking unauthorized corporate spending."
+
+# ==========================================
+# PART 4: Delegation of Authority & SLA Escalation
+# ==========================================
+p4_title = "Delegation of Authority (DoA), SLA Escalation State Machines & Immutable Audit Trails"
+p4_say = [
+    "To establish unimpeachable legal non-repudiation for high-value enterprise commitments, the approval state machine incorporates Public Key Infrastructure (PKI) digital signatures for all Tier 2 and Tier 3 authorizations. When an executive approver executes a sign-off on a multi-hundred-thousand-dollar requisition, the client interface generates a cryptographic digital signature using an X.509 certificate or hardware-backed security token (such as FIDO2 WebAuthn). The resulting signature payload, containing a SHA-256 digest of the requisition line items, monetary total, approver identity, and atomic timestamp, is permanently sealed within the event-sourced audit ledger, providing immutable cryptographic proof of authorization during forensic audits or legal commercial disputes.",
+    "Furthermore, the workflow engine incorporates robust graph cycle detection algorithms (such as Tarjan's strongly connected components or depth-first cycle checks) to identify and prevent circular delegation deadlocks. In dynamic corporate environments, situations frequently arise where Manager A delegates authority to Manager B while traveling, and Manager B simultaneously designates Manager A as their proxy during an overlapping conference. Without algorithmic cycle detection, an inbound requisition routed between these managers would enter an infinite delegation loop; the state machine detects circular references at configuration time, rejecting the conflicting delegation and alerting corporate procurement administrators to establish an alternate linear proxy.",
+    "In operational enterprise commerce, purchasing workflows must remain resilient against organizational bottlenecks and personnel unavailability. When a senior department manager or procurement director goes on medical leave, business travel, or scheduled vacation, pending purchase requisitions must not languish indefinitely in approval queues. Delays in approving critical machine spare parts or raw manufacturing feedstocks can stall multimillion-dollar assembly lines. To mitigate this vulnerability, enterprise commerce platforms implement automated Delegation of Authority (DoA) and SLA Escalation State Machines.",
+    "Delegation of Authority allows an executive approver to designate a temporary proxy (such as an assistant director or designated peer manager) to exercise their approval authority during specified time windows. When a proxy is established, inbound requisitions routed to the primary approver are dynamically reassigned to the proxy's active task queue. Crucially, the system enforces authority ceiling constraints: a delegator cannot confer spending authority to a proxy that exceeds the delegator's own statutory limit, and all delegated approvals are tagged with dual-identity attribution in audit logs.",
+    "In conjunction with delegation, the workflow state machine enforces strict Service Level Agreement (SLA) timeouts. When a requisition enters the PENDING state, a distributed timer is initialized. If the designated approver fails to act within the contractual SLA window (typically twenty-four to forty-eight hours), the state machine executes an automated escalation sequence. The pending task is elevated to the approver's immediate superior in the organizational hierarchy, and urgent alert notifications are dispatched via webhooks, email, and internal messaging platforms.",
+    "Underpinning all workflow transitions is an Immutable Event-Sourced Audit Trail. Every state transition—creation, routing, proxy reassignment, approval, rejection, modification, and timeout escalation—is recorded as an append-only event log. Each audit record captures the UTC timestamp, acting user ID, originating IP address, previous state, new state, and cryptographic digital signature. This event journal satisfies the stringent non-repudiation and evidence preservation standards mandated by corporate forensic auditors and governmental regulatory agencies.",
+    "Furthermore, the state machine handles rejection and dispute lifecycles. If an approver rejects a requisition due to improper product selection or excessive pricing, the system mandates an explicit, structured rejection rationale code (such as UNAPPROVED_VENDOR, PRICE_EXCEEDS_BENCHMARK, or DUPLICATE_REQUEST). The requisition is then returned to the requester in a REJECTED_REVISE state, allowing the buyer to modify line items or upload additional business justification documentation without restarting the procurement process from scratch.",
+    "Additionally, the architecture integrates automated reminder pulses before SLA timeouts expire. At the twelve-hour mark of inactivity, an automated gentle reminder is emitted; at the six-hour mark, an urgent notification is broadcast, minimizing unnecessary escalations to busy C-suite executives.",
+    "In the following deterministic Python implementation, we build an Approval State Machine that processes delegation reassignments and timeout-triggered hierarchical escalations, recording an immutable audit journal for regulatory compliance."
+]
+p4_example = "Task 1 (12 hours pending) is automatically redirected from MGR-202 to their active proxy PROXY-303. Task 2 (52 hours pending) breaches the 48-hour SLA threshold, triggering an automated escalation from PROXY-303 up to DIR-404 with full audit log recording."
+p4_try_it = "Simulate the Approval State Machine, verifying that active proxy delegations reassign approvers and SLA timeout breaches trigger automated superior escalation."
+p4_code = """import sys
+from dataclasses import dataclass, field
+from typing import Dict, List
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+@dataclass
+class ApprovalTask:
+    task_id: str
+    req_id: str
+    assigned_approver_id: str
+    status: str  # PENDING, APPROVED, REJECTED, ESCALATED
+    hours_pending: int
+    audit_trail: List[str] = field(default_factory=list)
+
+class ApprovalStateMachine:
+    def __init__(self, escalation_threshold_hours: int = 48):
+        self.threshold = escalation_threshold_hours
+        self.delegations: Dict[str, str] = {}
+        self.escalation_hierarchy: Dict[str, str] = {}
+
+    def set_delegation(self, approver_id: str, delegate_id: str):
+        self.delegations[approver_id] = delegate_id
+
+    def set_escalation_path(self, approver_id: str, manager_id: str):
+        self.escalation_hierarchy[approver_id] = manager_id
+
+    def process_tick(self, task: ApprovalTask) -> ApprovalTask:
+        if task.assigned_approver_id in self.delegations:
+            proxy = self.delegations[task.assigned_approver_id]
+            task.audit_trail.append(f"Delegated from {task.assigned_approver_id} to proxy {proxy}")
+            task.assigned_approver_id = proxy
+
+        if task.hours_pending >= self.threshold and task.status == "PENDING":
+            superior = self.escalation_hierarchy.get(task.assigned_approver_id, "ESCALATION_DESK")
+            task.status = "ESCALATED"
+            task.audit_trail.append(f"SLA breach ({task.hours_pending}h >= {self.threshold}h): Escalated to {superior}")
+            task.assigned_approver_id = superior
+
+        return task
+
+asm = ApprovalStateMachine(escalation_threshold_hours=48)
+asm.set_delegation("MGR-202", "PROXY-303")
+asm.set_escalation_path("PROXY-303", "DIR-404")
+
+task1 = ApprovalTask("TSK-1", "REQ-8802", "MGR-202", "PENDING", hours_pending=12)
+task1 = asm.process_tick(task1)
+
+task2 = ApprovalTask("TSK-2", "REQ-8803", "PROXY-303", "PENDING", hours_pending=52)
+task2 = asm.process_tick(task2)
+
+print(f"Task 1: Approver={task1.assigned_approver_id} | Status={task1.status} | Audit={task1.audit_trail}")
+print(f"Task 2: Approver={task2.assigned_approver_id} | Status={task2.status} | Audit={task2.audit_trail}")
+"""
+p4_output = """Task 1: Approver=PROXY-303 | Status=PENDING | Audit=['Delegated from MGR-202 to proxy PROXY-303']
+Task 2: Approver=DIR-404 | Status=ESCALATED | Audit=['SLA breach (52h >= 48h): Escalated to DIR-404']"""
+p4_question = "Why are automated SLA escalation state machines essential in enterprise B2B purchasing workflows?"
+p4_options = [
+    "To prevent operational procurement bottlenecks and assembly line stoppages when approvers are unavailable by automatically escalating unreviewed requisitions to superiors",
+    "To permanently delete any purchase order that is not approved within twelve hours of submission",
+    "To automatically approve all pending requisitions without review whenever an approver logs out of the platform",
+    "To force buyers to pay expedite fees to jump ahead in the corporate approval queue"
+]
+p4_why = "SLA escalations prevent purchasing gridlock by elevating stale requisitions to higher managerial authorities before operations are impacted."
+
+# ==========================================
+# PART 5: Enterprise Account Governance Console
+# ==========================================
+p5_title = "Enterprise B2B Account Administration Console & Governance Dashboard"
+p5_say = [
+    "From a financial systems integration perspective, the B2B governance console interfaces directly with enterprise General Ledger (GL) backends to execute automated three-way matching workflows. In corporate financial accounting, payment release requires strict reconciliation across three independent commercial artifacts: the original Purchase Order (PO) issued by the commerce engine, the Receiving Goods Receipt (ASN) confirmed by the warehouse loading dock, and the Inbound Commercial Invoice submitted by the supplier. The governance console provides accounts payable specialists with real-time visual variance telemetry, automatically highlighting discrepancies exceeding corporate tolerances (such as unit price variances greater than 1% or quantity discrepancies greater than zero) and holding payments in escrow pending formal buyer resolution.",
+    "Additionally, the governance console incorporates machine-learning-driven predictive budget forecasting models that analyze historical departmental spending curves, seasonal purchasing cycles, and current unapproved requisition pipelines. By projecting spend trajectories through the end of the fiscal quarter, the console automatically flags cost centers exhibiting statistically anomalous burn rates or impending budget exhaustion weeks before actual deficits materialize, empowering financial controllers to reallocate surplus funding or adjust spending limits proactively rather than halting critical operational activities reactively.",
+    "Finally, the console provides real-time event streaming into enterprise Security Information and Event Management (SIEM) systems (such as Splunk, Datadog, or Microsoft Sentinel). All security-critical events—including policy exception overrides, repetitive after-hours login attempts, out-of-policy approval patterns, and rapid succession requisition submissions—are broadcast via Kafka topics, enabling enterprise security operations centers (SOC) to detect internal procurement fraud or compromised corporate credentials instantly.",
+    "The culmination of enterprise account hierarchies, RBAC authorization, and approval workflow automation is the Enterprise B2B Governance Console. Serving as the operational flight deck for corporate controllers, Chief Procurement Officers, and supplier account executives, the governance console aggregates real-time transactional telemetry across all organizational subsidiaries, cost centers, and purchasing divisions into actionable executive intelligence.",
+    "At the operational level, the governance console provides corporate administrators with comprehensive visibility into the active procurement pipeline. Controllers can monitor total enterprise budget allocation against actual cleared spend, track the monetary volume of orders currently frozen in approval queues, and identify specific departmental cost centers exhibiting accelerated burn rates or impending budget exhaustion. This continuous financial visibility enables proactive budgetary reallocations before operational spending is abruptly halted.",
+    "Furthermore, the governance dashboard tracks operational efficiency metrics across the approval lifecycle. Key performance indicators include: Average Approval Cycle Time (the duration from requisition creation to final order release), SLA Compliance Rate (percentage of approvals executed within the mandated twenty-four-hour window), and Escalation Incidence Rate (percentage of orders escalated due to manager inactivity). By benchmarking these metrics across divisions, enterprise leadership can pinpoint procedural bottlenecks, address chronic management delays, and streamline procurement velocity.",
+    "From an audit and compliance perspective, the governance console provides single-click export of comprehensive compliance packages for external auditors. During annual SOX 404 audits, financial examiners require complete chain-of-custody documentation verifying that every high-value purchase order was approved by an authorized manager holding requisite DoA authority, that no self-approvals occurred, and that all budget overrides were validated by corporate controllers. The console generates cryptographically verified audit dossiers linking purchase orders, cXML PunchOut payloads, approval timestamps, and ERP journal vouchers.",
+    "Additionally, supplier account executives utilize the governance console to manage customer relationship health. By monitoring corporate account order velocity, contract tier utilization, and PunchOut session drop-off rates, suppliers can identify opportunities to propose expanded master agreements, offer customized volume pricing tiers, or assist corporate clients in optimizing their internal approval routing parameters.",
+    "In the following deterministic Python implementation, we build an Executive Account Governance Tower that aggregates departmental budgets, cleared spend, open approval pipelines, and projected budget burn percentages, generating high-fidelity corporate financial telemetry."
+]
+p5_example = "The Governance Tower consolidates telemetry across three aerospace cost centers: $4.3M total corporate budget, $2.27M actual cleared spend (52.8% burn rate), $410K pending in 13 open approval tasks, resulting in a projected budget burn of 62.3%."
+p5_try_it = "Simulate the Account Governance Tower, verifying that multi-cost-center budgets, expenditures, and pending approval pipelines aggregate into executive telemetry."
+p5_code = """import sys
+from dataclasses import dataclass
+from typing import Dict
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+@dataclass
+class CostCenterMetric:
+    cost_center_code: str
+    allocated_budget: float
+    spent_amount: float
+    pending_approval_amount: float
+    open_approvals_count: int
+
+class AccountGovernanceTower:
+    def __init__(self):
+        self.metrics: Dict[str, CostCenterMetric] = {}
+
+    def record_cost_center(self, metric: CostCenterMetric):
+        self.metrics[metric.cost_center_code] = metric
+
+    def compute_executive_telemetry(self) -> dict:
+        total_budget = sum(m.allocated_budget for m in self.metrics.values())
+        total_spent = sum(m.spent_amount for m in self.metrics.values())
+        total_pipeline = sum(m.pending_approval_amount for m in self.metrics.values())
+        total_open_tasks = sum(m.open_approvals_count for m in self.metrics.values())
+        
+        burn_rate_pct = (total_spent / total_budget * 100.0) if total_budget > 0 else 0.0
+        projected_spend = total_spent + total_pipeline
+        projected_utilization_pct = (projected_spend / total_budget * 100.0) if total_budget > 0 else 0.0
+
+        return {
+            "total_budget": total_budget,
+            "total_spent": total_spent,
+            "total_pipeline": total_pipeline,
+            "total_open_tasks": total_open_tasks,
+            "burn_rate_pct": round(burn_rate_pct, 1),
+            "projected_utilization_pct": round(projected_utilization_pct, 1)
+        }
+
+tower = AccountGovernanceTower()
+tower.record_cost_center(CostCenterMetric("CC-8820-AERO", 1500000.0, 850000.0, 145000.0, 4))
+tower.record_cost_center(CostCenterMetric("CC-9930-AVIO", 2000000.0, 1100000.0, 220000.0, 7))
+tower.record_cost_center(CostCenterMetric("CC-1120-MECH", 800000.0, 320000.0, 45000.0, 2))
+
+telem = tower.compute_executive_telemetry()
+print(f"B2B Governance Tower Summary:")
+print(f"  Total Corporate Budget:     ${telem['total_budget']:,.2f}")
+print(f"  Actual Cleared Spend:       ${telem['total_spent']:,.2f} ({telem['burn_rate_pct']}%)")
+print(f"  Pending Approval Pipeline:  ${telem['total_pipeline']:,.2f} ({telem['total_open_tasks']} Open Requisitions)")
+print(f"  Projected Budget Burn:      {telem['projected_utilization_pct']}%")
+"""
+p5_output = """B2B Governance Tower Summary:
+  Total Corporate Budget:     $4,300,000.00
+  Actual Cleared Spend:       $2,270,000.00 (52.8%)
+  Pending Approval Pipeline:  $410,000.00 (13 Open Requisitions)
+  Projected Budget Burn:      62.3%"""
+p5_question = "What primary strategic value does the enterprise B2B account governance console provide to corporate financial controllers?"
+p5_options = [
+    "Comprehensive visibility into departmental spend velocity, budget burn projections, open approval bottlenecks, and auditable compliance logs across all corporate subsidiaries",
+    "Automated generation of social media marketing advertisements based on internal requisition data",
+    "A direct portal for individual employees to play multiplayer video games during business hours",
+    "A system that bypasses corporate procurement rules to allow unauthorized personal purchases"
+]
+p5_why = "The governance console delivers real-time visibility into corporate budgets, pipeline spend, approval cycle times, and compliance evidence."
+
+# Assemble Day 47
+parts = [
+    make_part(p1_title, p1_say, p1_example, p1_try_it, p1_code, p1_output, p1_question, p1_options, p1_why),
+    make_part(p2_title, p2_say, p2_example, p2_try_it, p2_code, p2_output, p2_question, p2_options, p2_why),
+    make_part(p3_title, p3_say, p3_example, p3_try_it, p3_code, p3_output, p3_question, p3_options, p3_why),
+    make_part(p4_title, p4_say, p4_example, p4_try_it, p4_code, p4_output, p4_question, p4_options, p4_why),
+    make_part(p5_title, p5_say, p5_example, p5_try_it, p5_code, p5_output, p5_question, p5_options, p5_why)
+]
+
+total_words = sum(len(" ".join(p["say"]).split()) for p in parts)
+print(f"Total Day 47 words: {total_words}")
+assert total_words >= 3000, f"Total Day 47 under 3000 words: {total_words}"
+
+day_47_data = {
+    "day": 47,
+    "title": "Corporate Account Hierarchies, Multi-Tier Approval Workflows & Role-Based Spending Limits",
+    "coursePrefix": "bcom_ecom",
+    "recap": "Day 47 masters enterprise B2B corporate organizational structures, recursive hierarchy models, RBAC authorization, statutory Separation of Duties (SOX 404), multi-tier approval routing matrices, budget guards, proxy delegations, SLA escalation state machines, and executive governance command towers.",
+    "parts": parts
+}
+
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(day_47_data, f, indent=2, ensure_ascii=False)
+
+print(f"Successfully wrote {output_file} ({total_words} words)")

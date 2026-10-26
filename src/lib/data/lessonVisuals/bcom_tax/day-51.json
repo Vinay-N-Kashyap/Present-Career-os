@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 51,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "First Appeal Gateway",
+        "steps": [
+          {
+            "label": "Adverse Order",
+            "caption": "Assessing officer transmits adverse order and statutory demand notice."
+          },
+          {
+            "label": "Form Thirty Five",
+            "caption": "Corporate appellant drafts electronic appeal memo with statement of facts."
+          },
+          {
+            "label": "Portal Upload",
+            "caption": "Appellant submits electronic appeal within thirty days of service."
+          },
+          {
+            "label": "Registry Intake",
+            "caption": "National Faceless Appeal Centre acknowledges electronic lodgment."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Tax Payment Protocols",
+        "steps": [
+          {
+            "label": "Admitted Tax Check",
+            "caption": "Appellant verifies full payment of admitted tax due on returned income."
+          },
+          {
+            "label": "Stay Application",
+            "caption": "Appellant petitions appellate authority for stay of disputed balance."
+          },
+          {
+            "label": "Discretionary Waiver",
+            "caption": "Appellate authority examines substantial hardship for partial deposit."
+          },
+          {
+            "label": "Interim Injunction",
+            "caption": "Authority grants protection against coercive bank attachment recovery."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Appellate Adjudication Powers",
+        "steps": [
+          {
+            "label": "Record Review",
+            "caption": "Appellate authority examines assessment records and grounds of appeal."
+          },
+          {
+            "label": "Confirmation or Relief",
+            "caption": "Authority decides to confirm or delete disputed assessment additions."
+          },
+          {
+            "label": "Enhancement Notice",
+            "caption": "Authority issues mandatory show cause notice prior to enhancement."
+          },
+          {
+            "label": "Final Annulment",
+            "caption": "Authority strikes down void assessment without remanding to officer."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Faceless Appellate Workflow",
+        "steps": [
+          {
+            "label": "Automated Assignment",
+            "caption": "System dynamically routes appeal to faceless appellate unit."
+          },
+          {
+            "label": "Written Submissions",
+            "caption": "Appellant submits detailed legal rebuttal and statutory authorities."
+          },
+          {
+            "label": "Virtual Hearing",
+            "caption": "Appellant presents oral arguments through secure video conference."
+          },
+          {
+            "label": "Draft Order Review",
+            "caption": "Review unit approves draft before digital signing and portal delivery."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Appellate Compliance Engine",
+        "steps": [
+          {
+            "label": "Deadline Tracking",
+            "caption": "System monitors limitation period for electronic appeal lodgment."
+          },
+          {
+            "label": "Hardship Assessment",
+            "caption": "Engine models corporate balance sheet ratios for deposit waiver."
+          },
+          {
+            "label": "Evidence Categorization",
+            "caption": "Platform indexes supporting contracts and technical affidavits."
+          },
+          {
+            "label": "Executive Dashboard",
+            "caption": "Appellate portfolio dashboard visualizes enterprise dispute status."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 59,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Cyber-Physical Production Systems (CPPS): Reference Architectural Model Industrie 4.0 (RAMI 4.0)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Cyber physical systems merge industrial automation with networks."
+          },
+          {
+            "step": "say2",
+            "caption": "Three dimensional models standardize smart plant architecture."
+          },
+          {
+            "step": "example",
+            "caption": "Asset administration shells provide digital passports for tools."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Legacy machinery receives internet of things sensor retrofits."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Industrial IoT Protocols: OPC-UA, MQTT, and Time-Sensitive Networking (TSN)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Unified open protocols replace proprietary legacy fieldbuses."
+          },
+          {
+            "step": "say2",
+            "caption": "Semantic data models provide standardized machine variable definitions."
+          },
+          {
+            "step": "example",
+            "caption": "Publish subscribe transports stream telemetry with low overhead."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Time aware shapers guarantee collision free packet windows."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Edge Computing vs. Cloud Analytics: High-Frequency Sensor Ingestion & Vibration Telemetry",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Industrial edge nodes process high frequency data with ease."
+          },
+          {
+            "step": "say2",
+            "caption": "Local spectral analysis converts vibration into clear features."
+          },
+          {
+            "step": "example",
+            "caption": "Feature extraction slashes raw sensor bandwidth consumption."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Cloud clusters train machine learning models and deploy updates to edge."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Predictive Maintenance (PdM) Algorithms: Weibull RUL, FFT Spectral Analysis & Vibration",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Predictive maintenance forecasts failure windows accurately."
+          },
+          {
+            "step": "say2",
+            "caption": "Vibration spectral peaks expose bearing defects at specific frequencies."
+          },
+          {
+            "step": "example",
+            "caption": "Weibull hazard rates model mechanical component wear and fatigue curves."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Remaining useful life metrics trigger automated work orders."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Autonomous Guided Vehicles (AGVs), Collaborative Robots (Cobots) & Smart Shop Floor",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Autonomous mobile robots navigate using spatial laser mapping."
+          },
+          {
+            "step": "say2",
+            "caption": "Collaborative robots work safely alongside human operators."
+          },
+          {
+            "step": "example",
+            "caption": "Power and force limiting mechanisms halt robot motion upon mild contact."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Execution systems orchestrate autonomous shop floor fleets."
+          }
+        ]
+      }
+    }
+  ]
+}

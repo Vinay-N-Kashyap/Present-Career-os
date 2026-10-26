@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 55,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Capstone Architecture: End-to-End International Logistics Pipeline from Factory Floor to Foreign Port of Entry",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "The capstone unifies multimodal routing with statutory customs clearance."
+          },
+          {
+            "step": "say2",
+            "caption": "Four integrated functional layers orchestrate shipments from end to end."
+          },
+          {
+            "step": "example",
+            "caption": "Mathematical models enforce international trade treaty calculations."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Closed loop telemetry feeds border exception alerts to executive teams."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Leg Intermodal Routing Engine: Dynamic Cost-Lead-Time Trade-Off Optimization across Corridors",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Directed network graphs model multimodal transit corridors across nodes."
+          },
+          {
+            "step": "say2",
+            "caption": "Optimization algorithms balance freight rates against pipeline capital."
+          },
+          {
+            "step": "example",
+            "caption": "Bunker adjustments and fuel surcharges update landed transit tariffs."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Incoterms mapping partitions freight expenses between trading partners."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Automated Customs Documentation & Duty Assessment: HS Classification, Origin Verification & Valuation Proofs",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Statutory rules classify electronic cargo under the harmonized system."
+          },
+          {
+            "step": "say2",
+            "caption": "Valuation algorithms add assists to dutiable transaction values."
+          },
+          {
+            "step": "example",
+            "caption": "Regional value content formulas verify preferential origin zero tariffs."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Electronic trade suites generate sworn invoices and certificates of origin."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Real-Time Border Exception Handling: Port Congestion Re-Routing, Customs Inspections, and Demurrage Mitigation",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Discrete simulation engines model vessel anchorage delays during storms."
+          },
+          {
+            "step": "say2",
+            "caption": "Dynamic decision models evaluate feeder diversion versus port waiting."
+          },
+          {
+            "step": "example",
+            "caption": "Off dock rail bypasses transfer boxes directly away from yard queues."
+          },
+          {
+            "step": "tryIt",
+            "caption": "IoT telemetry alarms trigger emergency work orders during thermal spikes."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Production Capstone Validation: End-to-End Execution of the Global Multimodal Logistics & Customs Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Deterministic software engines validate five sequential execution stages."
+          },
+          {
+            "step": "say2",
+            "caption": "Three dimensional packing algorithms balance container axle load weights."
+          },
+          {
+            "step": "example",
+            "caption": "Quay crane scheduling algorithms maintain mandatory safety buffers live."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Executive scorecards certify complete compliance across global treaties."
+          }
+        ]
+      }
+    }
+  ]
+}

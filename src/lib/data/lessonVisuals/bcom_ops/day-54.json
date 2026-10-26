@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 54,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Dangerous Goods Regulatory Frameworks: UN Model Regulations, IMDG Code, IATA DGR, and ADR Transport Conventions",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "United Nations model regulations harmonize global hazardous trade rules."
+          },
+          {
+            "step": "say2",
+            "caption": "The international maritime dangerous goods code governs ocean voyages."
+          },
+          {
+            "step": "example",
+            "caption": "Dangerous goods aviation regulations enforce strict aircraft cabin limits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Shippers bear strict legal responsibility for declaring hazardous goods."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "The Nine UN Hazmat Hazard Classes: Chemical Incompatibilities, Segregation Tables, and Placarding Invariants",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Nine standardized hazard classes categorize physical and chemical risks."
+          },
+          {
+            "step": "say2",
+            "caption": "Flammable liquids and oxidizers require strict chemical segregation."
+          },
+          {
+            "step": "example",
+            "caption": "Segregation tables prevent dangerous exothermic reactions inside holds."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Diamond hazmat placards communicate chemical risks to first responders."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Packaging Groups and Dangerous Goods Declarations: Performance-Oriented Packaging (POP) and UN Markings",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Packaging groups classify danger degrees from high to minor hazards."
+          },
+          {
+            "step": "say2",
+            "caption": "Performance oriented packaging undergoes certified drop and stack tests."
+          },
+          {
+            "step": "example",
+            "caption": "United Nations specification markings certify container integrity limits."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Dangerous goods declarations document proper shipping names and classes."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Pharmaceutical and Perishable Cold Chain Standards: Good Distribution Practices (GDP) and Passive vs. Active Control",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Good distribution practices preserve biopharmaceutical potency in transit."
+          },
+          {
+            "step": "say2",
+            "caption": "Standard temperature bands protect vaccines and sensitive biologics."
+          },
+          {
+            "step": "example",
+            "caption": "Passive shippers absorb ambient heat using phase change materials."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Mean kinetic temperature calculates non linear cumulative heat exposure."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Hazmat Segregation Matrix & Cold Chain Telemetry Engine: Automated Hazard Verification and Thermal Excursion Auditing",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Automated compliance engines validate chemical compatibility matrices."
+          },
+          {
+            "step": "say2",
+            "caption": "Stop shipment interlocks prevent co loading incompatible hazardous items."
+          },
+          {
+            "step": "example",
+            "caption": "Edge telemetry monitors payload temperature and geospatial coordinates."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Predictive thermal models alert command centers before phase changes melt."
+          }
+        ]
+      }
+    }
+  ]
+}

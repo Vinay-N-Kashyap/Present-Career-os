@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 44,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Foreign Trade Policy Architecture",
+        "steps": [
+          {
+            "label": "Statutory Authority",
+            "caption": "Commerce ministry formulates foreign trade policy under trade statute."
+          },
+          {
+            "label": "Dynamic Policy",
+            "caption": "Policy establishes dynamic framework supporting digital trade."
+          },
+          {
+            "label": "Input Output Norms",
+            "caption": "Standard norms establish allowable duty-free input consumption ratios."
+          },
+          {
+            "label": "Actual User Mandate",
+            "caption": "Imported duty-free raw materials must be consumed in own facility."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Advance Authorization & Transferable DFIA",
+        "steps": [
+          {
+            "label": "Duty Free Entitlement",
+            "caption": "Advance authorization permits duty-free import of physical inputs."
+          },
+          {
+            "label": "Minimum Value Addition",
+            "caption": "Exporter must achieve minimum fifteen percent value addition on inputs."
+          },
+          {
+            "label": "Export Obligation",
+            "caption": "Mandatory export obligation must be fulfilled within eighteen months."
+          },
+          {
+            "label": "Transferable Scrip",
+            "caption": "Duty free import authorization scrip becomes transferable post export."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Export Promotion Capital Goods Scheme",
+        "steps": [
+          {
+            "label": "Zero Duty Capital",
+            "caption": "Manufacturers import production machinery at zero customs duty rate."
+          },
+          {
+            "label": "Specific Obligation",
+            "caption": "Exporter must fulfill export obligation equal to six times duty saved."
+          },
+          {
+            "label": "Block Milestones",
+            "caption": "Half of export obligation must be fulfilled within first four years."
+          },
+          {
+            "label": "Average Maintenance",
+            "caption": "Company must maintain historical average export turnover alongside."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "WTO Compliant Remission Framework",
+        "steps": [
+          {
+            "label": "Embedded Tax Rebate",
+            "caption": "Scheme reimburses embedded uncredited taxes incurred on production."
+          },
+          {
+            "label": "Fuel and Power Taxes",
+            "caption": "Rebate covers non-credited fuel excise and electricity duty costs."
+          },
+          {
+            "label": "Electronic Ledger",
+            "caption": "Rebates are credited to electronic customs duty ledger on portal."
+          },
+          {
+            "label": "Scrip Transferability",
+            "caption": "Duty credit scrips are freely transferable in commercial market."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Export Incentive Monitoring Engine",
+        "steps": [
+          {
+            "label": "Value Addition Check",
+            "caption": "Engine validates statutory value addition before approving imports."
+          },
+          {
+            "label": "Obligation Ledger",
+            "caption": "System allocates export turnover to baseline average obligation first."
+          },
+          {
+            "label": "Block Deadline Tracker",
+            "caption": "Automated tracker alerts corporate treasury to milestone deadlines."
+          },
+          {
+            "label": "Redemption Package",
+            "caption": "Engine produces electronic redemption exhibits for license discharge."
+          }
+        ]
+      }
+    }
+  ]
+}

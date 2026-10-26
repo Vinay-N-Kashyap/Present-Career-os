@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 48,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Value Stream Architecture: Defining Product Families and Scoping the End-to-End Value Stream",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Value streams encompass all actions bringing products to the end customer."
+          },
+          {
+            "step": "say2",
+            "caption": "Product routing matrices identify distinct operational product families."
+          },
+          {
+            "step": "example",
+            "caption": "Black belt teams define spatial boundaries from receiving to shipping."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Practitioners walk the physical Gemba backward to observe reality clearly."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Current State Mapping: Takt Time, Cycle Time, Changeover Duration, and Work-in-Process Stagnation",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Takt time calculates the customer demand pace governing the value stream."
+          },
+          {
+            "step": "say2",
+            "caption": "Data boxes record cycle time changeover and machine uptime."
+          },
+          {
+            "step": "example",
+            "caption": "Stagnant inventory triangles reveal trapped working capital between cells."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Timelines compare total production lead time against value added seconds."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Value-Added vs. Non-Value-Added Analysis: Calculating Process Velocity and Process Cycle Efficiency (PCE)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Value added work transforms materials to satisfy customer demand."
+          },
+          {
+            "step": "say2",
+            "caption": "Type one non value added activities remain necessary for compliance."
+          },
+          {
+            "step": "example",
+            "caption": "Pure waste consumes factory resources while creating zero customer value."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Process cycle efficiency measures the percentage of lead time adding value."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Future State Design: Continuous Flow, Supermarkets, Pacemaker Processes, and Pitch Calibration",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Continuous flow cells eliminate queue delays by moving single pieces."
+          },
+          {
+            "step": "say2",
+            "caption": "Supermarkets and pull kanbans govern replenishment of unlinked machines."
+          },
+          {
+            "step": "example",
+            "caption": "The pacemaker process introduces production schedules at a single point."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Pitch intervals establish a visual heartbeat for plant material handlers."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Kaizen Execution Framework: Implementation Plan, A3 Problem Solving, and Gemba Walk Standard Work",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Structured five day kaizen events execute rapid shop floor transformations."
+          },
+          {
+            "step": "say2",
+            "caption": "A three reports standardize scientific root cause analysis on one sheet."
+          },
+          {
+            "step": "example",
+            "caption": "Implementation plans organize projects into transformation loops."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Leader standard work embeds visual audits to sustain operational progress."
+          }
+        ]
+      }
+    }
+  ]
+}

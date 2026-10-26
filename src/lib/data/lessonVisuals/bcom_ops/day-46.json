@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 46,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Foundations of Enterprise S&OP: The Five-Step Monthly Rhythm and Functional Silo Dissolution",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Leadership aligns sales forecasts with factory shop floor plans."
+          },
+          {
+            "step": "say2",
+            "caption": "Executive teams review monthly portfolio updates and product introductions."
+          },
+          {
+            "step": "example",
+            "caption": "Unconstrained demand consensus exposes market demand without plant bias."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Standard monthly cadences dismantle functional operational silos."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Unconstrained Demand Consensus: Statistical Baselines, Commercial Uplifts, and Cannibalization Modeling",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Automated econometric time series models project baseline consumer sales."
+          },
+          {
+            "step": "say2",
+            "caption": "Commercial marketing teams document promotional uplift volumes and trials."
+          },
+          {
+            "step": "example",
+            "caption": "Product managers evaluate cross SKU consumer migration and cannibalization."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Tracking signals monitor directional forecast bias across quarters."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Supply Capability Assessment: Rough-Cut Capacity Planning (RCCP) and Inventory Pre-Build Strategies",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Rough cut capacity planning algorithms translate demand into machine hours."
+          },
+          {
+            "step": "say2",
+            "caption": "Bills of resources model standard equipment run hours and setup buffers."
+          },
+          {
+            "step": "example",
+            "caption": "Operations compares required workloads against plant capability."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Hybrid strategies balance level output against seasonal overtime."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Financial Reconciliation and Gap Analysis: Reconciling Volumetric Plans with Budgetary EBITDA Targets",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Finance analysts apply standard cost models to operational volume plans."
+          },
+          {
+            "step": "say2",
+            "caption": "Forward looking income statements link shop floor batches to gross margin."
+          },
+          {
+            "step": "example",
+            "caption": "Gap analysis exposes variance between operational plans and annual budgets."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Pre S and OP teams formulate actionable scenarios for executive evaluation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Executive S&OP Escalation: Trade-Off Arbitrage, Scenario Modeling, and Consensus Sign-Off",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Executive boards arbitrate strategic operational and commercial trade offs."
+          },
+          {
+            "step": "say2",
+            "caption": "Constrained inventory is allocated to key accounts and high margin units."
+          },
+          {
+            "step": "example",
+            "caption": "Chief executive officers formally sign and ratify the operational plan."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Firm time fences freeze near term schedules to protect factory stability."
+          }
+        ]
+      }
+    }
+  ]
+}

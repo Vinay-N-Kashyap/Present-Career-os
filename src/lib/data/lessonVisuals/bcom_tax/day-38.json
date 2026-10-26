@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 38,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Valuation Framework: Section 15(1) Transaction Value Invariants & Mandatory Inclusions",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Transaction values reflect actual prices paid between unrelated parties."
+          },
+          {
+            "step": "say2",
+            "caption": "Mandatory inclusions add packing testing and municipal tax charges."
+          },
+          {
+            "step": "example",
+            "caption": "Non government price subsidies increase statutory taxable valuations."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Documented trade discounts reduce invoice values legitimately."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Related Party & Distinct Persons Valuation: Rule 28 Open Market Value, Like Kind & 90% Price Proviso",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Distinct corporate branches lack arm length commercial tension."
+          },
+          {
+            "step": "say2",
+            "caption": "Valuation rules enforce sequential statutory appraisal hierarchies."
+          },
+          {
+            "step": "example",
+            "caption": "Resale provisions permit ninety percent outward retail price options."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Manufacturing costs receive a statutory ten percent markup fallback."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Second Proviso to Rule 28: Full ITC Recipient, Zero-Valuation Liberty & Strategic Cross-Charging",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Revenue neutral inter branch transfers eliminate tax erosion risks."
+          },
+          {
+            "step": "say2",
+            "caption": "Declared invoice values are deemed to be genuine open market values."
+          },
+          {
+            "step": "example",
+            "caption": "Unbilled shared services between branches qualify for zero valuation."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Exempt recipient units disqualify suppliers from nominal valuations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Input Service Distributor (ISD) vs Cross-Charge: Mandatory ISD Registration (Finance Act 2024)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Corporate head offices procure shared vendor software and audit services."
+          },
+          {
+            "step": "say2",
+            "caption": "Statutory amendments mandate formal input service distributor setups."
+          },
+          {
+            "step": "example",
+            "caption": "Common input credits distribute pro rata across operating turnovers."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Separate monthly returns transmit verified credits to branch ledgers."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Implementation: Corporate Cross-Charge Valuation, ISD Apportionment & Cost Allocation Engine",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Dual track architectures split third party vendors from executive costs."
+          },
+          {
+            "step": "say2",
+            "caption": "Input service distributors allocate vendor credits across state units."
+          },
+          {
+            "step": "example",
+            "caption": "Internal cross charges adopt nominal values for taxable recipients."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Reconciliation schedules align general ledgers with statutory returns."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 47,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Capacity Planning Hierarchy: Resource Requirements Planning, RCCP, and Capacity Requirements Planning (CRP)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Resource requirements planning evaluates long range investments."
+          },
+          {
+            "step": "say2",
+            "caption": "Rough cut capacity planning validates master schedule feasibility."
+          },
+          {
+            "step": "example",
+            "caption": "Capacity requirements planning models every routing step and machine setup."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Finite capacity scheduling enforces hard operational throughput limits."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Bills of Resources (BOR) and Product Load Profiles: Translating Master Production Schedules into Work-Center Hours",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Bills of resources translate aggregate product demand into machine hours."
+          },
+          {
+            "step": "say2",
+            "caption": "Capacity bills evaluate specific workstation routing sheets and run times."
+          },
+          {
+            "step": "example",
+            "caption": "Resource profile methods incorporate multi stage fabrication lead times."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Engineers measure run times and amortize setup duration cleanly."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Finite vs. Infinite Loading Mechanics: Theory of Constraints and Drum-Buffer-Rope Synchronization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Infinite loading blindly piles work orders into overloaded weekly buckets."
+          },
+          {
+            "step": "say2",
+            "caption": "Finite capacity algorithms dynamically reassign jobs to open time slots."
+          },
+          {
+            "step": "example",
+            "caption": "The Drum beats the operational cadence for the primary plant constraint."
+          },
+          {
+            "step": "tryIt",
+            "caption": "The Rope synchronizes raw material release to bottleneck consumption rates."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Shifting Bottleneck Heuristics and Dynamic Job-Shop Dispatching Priority Rules (SPT, EDD, CR)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Shifting bottleneck procedures isolate critical machines on project paths."
+          },
+          {
+            "step": "say2",
+            "caption": "Shortest processing time rules minimize average shop floor completion time."
+          },
+          {
+            "step": "example",
+            "caption": "Earliest due date sequencing prioritizes orders due soonest for shipment."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Critical ratio ranking balances processing time against due dates."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Production Scheduling Engine: Multi-Machine Sequence Optimization and Setup Matrix Minimization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Sequence dependent changeovers vary across product transitions."
+          },
+          {
+            "step": "say2",
+            "caption": "Scheduling engines model setup time matrices using optimization heuristics."
+          },
+          {
+            "step": "example",
+            "caption": "Optimization algorithms balance setup times against job tardiness."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Automated systems execute local schedule repair when machines fail."
+          }
+        ]
+      }
+    }
+  ]
+}

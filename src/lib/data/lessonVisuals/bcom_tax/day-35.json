@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 35,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Cross-Border Holding Structure Design: Tax Treaty Optimization, Substance & PPT Compliance",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Strategic holding structures combine tax efficiency with treaty rules."
+          },
+          {
+            "step": "say2",
+            "caption": "Regional headquarters demonstrate genuine commercial business purpose."
+          },
+          {
+            "step": "example",
+            "caption": "Automated withholding validations ensure compliance with treaty rates."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Global minimum tax models evaluate top up liability across subsidiaries."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Jurisdictional Supply Chain Transfer Pricing & Intercompany IP Defense",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Intercompany contracts reflect functional asset and risk allocations."
+          },
+          {
+            "step": "say2",
+            "caption": "Contract research units operate under low risk cost plus arrangements."
+          },
+          {
+            "step": "example",
+            "caption": "Intangible returns belong to entities controlling functions."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Evidentiary service dossiers substantiate management fee allocations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive MAT vs. Section 115BAA Transition Modeling & Credit Monetization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Multi year cash flow simulations model the optimal regime changeover."
+          },
+          {
+            "step": "say2",
+            "caption": "Phased credit utilization monetizes balance sheet tax assets in full."
+          },
+          {
+            "step": "example",
+            "caption": "Irrevocable regime elections require formal electronic portal filings."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Corporate divisions segregate high credit assets from growth lines."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Faceless Controversy Defense: DRP Objections, Safe Harbour & ITAT Appeals",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "National faceless centres execute algorithmically allocated tax audits."
+          },
+          {
+            "step": "say2",
+            "caption": "Dispute resolution panels evaluate transfer pricing draft orders."
+          },
+          {
+            "step": "example",
+            "caption": "Contemporaneous economic benchmarking refutes arbitrary tax additions."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Statutory penalty immunity applications protect corporate leadership."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Boardroom Chief Tax Officer (CTO) Defense Dossier: ESG Tax Transparency (GRI 207)",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Boardroom dossiers show strategic tax alignment and cash preservation."
+          },
+          {
+            "step": "say2",
+            "caption": "Bilateral pricing agreements ring fence global intercompany commerce."
+          },
+          {
+            "step": "example",
+            "caption": "Sustainability tax reporting substantiates transparency."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Master tax accreditation marks complete command of direct tax systems."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 50,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Enterprise Dispute Portfolio",
+        "steps": [
+          {
+            "label": "Corporate Profile",
+            "caption": "Aerospace conglomerate manages multi year tax enforcement actions."
+          },
+          {
+            "label": "Concurrent Challenges",
+            "caption": "Tax directorate faces scrutiny, reassessment, and survey orders."
+          },
+          {
+            "label": "Governance Protocol",
+            "caption": "Audit committee establishes rigorous statutory defense strategy."
+          },
+          {
+            "label": "Value Preservation",
+            "caption": "Strategy defends shareholder capital and eliminates unjust claims."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Faceless Scrutiny Resolution",
+        "steps": [
+          {
+            "label": "Research Defense",
+            "caption": "Consumables expenditure is substantiated through approval records."
+          },
+          {
+            "label": "Benchmark Defense",
+            "caption": "Transfer pricing study establishes arm length economic terms."
+          },
+          {
+            "label": "Video Presentation",
+            "caption": "Counsel presents technical three dimensional models in hearing."
+          },
+          {
+            "label": "Variation Deletion",
+            "caption": "NeFAC drops major additions and reduces transfer pricing adjustment."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Reassessment & Survey Victory",
+        "steps": [
+          {
+            "label": "Sanction Defect",
+            "caption": "Reassessment notice is challenged for incompetent approval rank."
+          },
+          {
+            "label": "Physical Proof",
+            "caption": "Weighbridge receipts confirm physical movement of raw materials."
+          },
+          {
+            "label": "Survey Retraction",
+            "caption": "Forced survey admission is retracted under Supreme Court doctrine."
+          },
+          {
+            "label": "Asset Reconciliation",
+            "caption": "Factory spares are reconciled with audited fixed asset register."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Statutory Immunity Closure",
+        "steps": [
+          {
+            "label": "Settlement Choice",
+            "caption": "Directorate resolves warranty dispute via statutory settlement."
+          },
+          {
+            "label": "Demand Discharge",
+            "caption": "Corporate treasury deposits assessed tax demand in full."
+          },
+          {
+            "label": "Form Submission",
+            "caption": "Application in Form Sixty Eight is electronically filed on portal."
+          },
+          {
+            "label": "Immunity Order",
+            "caption": "Officer passes speaking order granting complete immunity."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Master Dispute Simulator",
+        "steps": [
+          {
+            "label": "Portfolio Ingestion",
+            "caption": "Simulator ingests dispute portfolio across all fiscal years."
+          },
+          {
+            "label": "Algorithmic Defense",
+            "caption": "Engine evaluates statutory limitation and evidentiary rules."
+          },
+          {
+            "label": "Savings Quantification",
+            "caption": "Platform calculates total tax savings exceeding crores."
+          },
+          {
+            "label": "Master Accreditation",
+            "caption": "System awards enterprise tax dispute master pass credential."
+          }
+        ]
+      }
+    }
+  ]
+}

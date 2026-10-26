@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_ops",
+  "day": 60,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Grand Master Command Tower Architecture: End-to-End Visibility, Control & Autonomous Orchestration",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Cognitive command towers integrate visibility and autonomous execution."
+          },
+          {
+            "step": "say2",
+            "caption": "Unified data fabrics connect disparate enterprise software platforms."
+          },
+          {
+            "step": "example",
+            "caption": "Management by exception routes routine flows automatically."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Real time telemetry links physical throughput with financial impact."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Unified Multi-Echelon Enterprise S&OP, Dynamic Heuristics & Network Optimization",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Integrated planning aligns commercial demand with factory limits."
+          },
+          {
+            "step": "say2",
+            "caption": "Mathematical models optimize global manufacturing footprints."
+          },
+          {
+            "step": "example",
+            "caption": "Echelon stock concepts eliminate localized inventory distortions."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Finite capacity scheduling sequences high mix production without delays."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Real-Time Disruptions Simulation: Port Blackouts, Supplier Insolvencies & Path Rerouting",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Autonomous crisis engines detect supply disruptions instantly."
+          },
+          {
+            "step": "say2",
+            "caption": "Multimodal landbridges provide options during canal closures."
+          },
+          {
+            "step": "example",
+            "caption": "Dual sourcing frameworks activate secondary component vendors."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Leveled production resequencing prevents factory shutdowns."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "High-Stakes Operations Forensic: Zero-Defect Quality, Cost-to-Serve & Variance Auditing",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Forensic quality audits combine statistical process control."
+          },
+          {
+            "step": "say2",
+            "caption": "Process capability indices quantify defect rates and process variation."
+          },
+          {
+            "step": "example",
+            "caption": "Root cause investigations deploy structured discipline steps."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Standard cost variance accounting pinpoints scrap drivers."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Grand Master Industrial Defense: Executive Operations Leadership & Boardroom Dossier",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Boardroom dossiers show supportive manufacturing maturity."
+          },
+          {
+            "step": "say2",
+            "caption": "Real time command towers protect fulfillment through crises."
+          },
+          {
+            "step": "example",
+            "caption": "Working capital optimization liberates enterprise cash for clean growth."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Grand master accreditation certifies global operations mastery."
+          }
+        ]
+      }
+    }
+  ]
+}

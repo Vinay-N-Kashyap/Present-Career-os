@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 40,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Macro Indirect Tax Architecture for Transnational Conglomerates: Multi-GSTIN Hierarchy & Supply Chains",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Multi state hierarchies organize complex corporate tax perimeters."
+          },
+          {
+            "step": "say2",
+            "caption": "Corporate hubs combine regular registrations with distributor units."
+          },
+          {
+            "step": "example",
+            "caption": "Inter unit transfers observe strict statutory valuation frameworks."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Unified tax governance shields conglomerates from state tax disputes."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Algorithmic Harmonization of ITC Rules 42/43, Cross-Charge ISD Allocations & Section 17(5) Filters",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Procurement vouchers pass through automated negative credit filters."
+          },
+          {
+            "step": "say2",
+            "caption": "Direct business credits separate cleanly from common overhead pools."
+          },
+          {
+            "step": "example",
+            "caption": "Turnover fractions compute statutory monthly credit reversals."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Consolidated monthly returns post verified reversals without delays."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Multi-Plant Inverted Duty Structure & Zero-Rated Export Refund Formulation",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Multi plant manufacturing groups coordinate export and domestic lines."
+          },
+          {
+            "step": "say2",
+            "caption": "Export refund formulas incorporate domestic benchmark ceilings."
+          },
+          {
+            "step": "example",
+            "caption": "Inverted duty structures deduct scaled outward tax liabilities."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Electronic credit ledgers validate and disburse cash refund claims."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Departmental Audit Defense: ASMT-10 Discrepancy Reconciliation & DRC-01 Formulations",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Algorithmic audit systems detect discrepancies across tax returns."
+          },
+          {
+            "step": "say2",
+            "caption": "Scrutiny notices quantify potential revenue variances systematically."
+          },
+          {
+            "step": "example",
+            "caption": "Detailed reconciliations substantiate timing differences and imports."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Exoneration orders drop formal departmental audit proceedings."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "The Grand Master Capstone Execution: Enterprise GST Optimization & Dispute Defense Command Tower",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Enterprise command towers synthesize all direct and indirect taxes."
+          },
+          {
+            "step": "say2",
+            "caption": "Automated modules execute multi plant allocations and reversals."
+          },
+          {
+            "step": "example",
+            "caption": "Liquid cash refunds convert stagnant credits into working capital."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Grand master certifications confirm total corporate tax sovereignty."
+          }
+        ]
+      }
+    }
+  ]
+}

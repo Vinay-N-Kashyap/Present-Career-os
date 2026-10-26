@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 31,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "template": "funnel",
+        "title": "Statutory Framework of Corporate Amalgamations under Section 2(1B) and Section 72A",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Statutory amalgamations transfer all assets to acquirers."
+          },
+          {
+            "step": "say2",
+            "caption": "Three fourths of target shareholders must join the amalgamated entity."
+          },
+          {
+            "step": "example",
+            "caption": "Tax neutral mergers exempt asset transfers from immediate capital gains."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Accumulated business loss clocks reset upon qualifying amalgamation."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "template": "funnel",
+        "title": "Demergers and Spinoffs: Section 2(19AA) Conditions & Tax Neutrality",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Demergers carve out operating undertakings on a going concern basis."
+          },
+          {
+            "step": "say2",
+            "caption": "Assets and liabilities transfer at historical book values."
+          },
+          {
+            "step": "example",
+            "caption": "Proportionate share issuances preserve equity ownership ratios."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Allocated business losses transfer to the resulting operating company."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "template": "funnel",
+        "title": "Slump Sale Taxation under Section 50B: Net Worth Computation & Capital Gains",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Slump sales transfer whole business undertakings for a single lump sum."
+          },
+          {
+            "step": "say2",
+            "caption": "Net worth calculations deduct book liabilities from total asset values."
+          },
+          {
+            "step": "example",
+            "caption": "Depreciable assets adopt written down values without indexation relief."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Independent accountant reports certify statutory net worth computations."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "template": "funnel",
+        "title": "Transfer of Tax Concessions, SEZ Units (Section 10AA) & Unabsorbed Depreciation",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Successor entities inherit unexpired balances of statutory tax holidays."
+          },
+          {
+            "step": "say2",
+            "caption": "Unabsorbed depreciation carries forward indefinitely without expiration."
+          },
+          {
+            "step": "example",
+            "caption": "Priority rules deduct current depreciation before past losses."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Asset depreciation splits based on operating days utilized."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "template": "funnel",
+        "title": "Anti-Abuse Provisions: Section 79 Change in Shareholding & Loss Forfeiture Exceptions",
+        "data": {
+          "stages": [
+            {
+              "name": "Stage One",
+              "value": 100
+            },
+            {
+              "name": "Stage Two",
+              "value": 75
+            },
+            {
+              "name": "Stage Three",
+              "value": 50
+            },
+            {
+              "name": "Stage Four",
+              "value": 25
+            }
+          ]
+        },
+        "steps": [
+          {
+            "step": "intro",
+            "caption": "Fifty one percent voting power continuity polices corporate tax losses."
+          },
+          {
+            "step": "say2",
+            "caption": "Private equity equity dilution risks permanent loss forfeiture."
+          },
+          {
+            "step": "example",
+            "caption": "Statutory insolvency resolutions enjoy exemptions from loss forfeiture."
+          },
+          {
+            "step": "tryIt",
+            "caption": "Unabsorbed depreciation survives corporate shareholding shifts."
+          }
+        ]
+      }
+    }
+  ]
+}

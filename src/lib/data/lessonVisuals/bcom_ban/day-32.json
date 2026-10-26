@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 32,
+  "entries": [
+    {
+      "partTitle": "Non-Fund-Based Credit Architecture: Contingent Liabilities, Off-Balance-Sheet Exposure & Credit Conversion Factors (CCF)",
+      "codeHash": "ab1d038b88807313f05cdc6dfc843385dec7e4a2fa33393e1f1b116ab3a144b3",
+      "spec": {
+        "template": "funnel",
+        "title": "Non-Fund-Based Credit Architecture: Co... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Off balance sheet credit facility frameworks structured.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Bank pledges institutional creditworthiness for corporate clients.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Converting contingent exposures under international capital rules.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Risk weighted capital reserves set aside for contingent commitments.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bank Guarantees (BGs): Financial Guarantees vs Performance Guarantees & URDG 758 Legal Doctrine",
+      "codeHash": "93ea1b628b8bab143768ec07bee67f122d7732b73387db8a1c61745365b6b5da",
+      "spec": {
+        "template": "funnel",
+        "title": "Bank Guarantees (BGs): Financial Guara... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Independent demand guarantee instruments examined.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Distinguishing direct monetary substitutes from performance bonds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing mandatory statutory claim periods under domestic contract law.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Unconditional bank guarantees protect project authorities against default.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Letters of Credit (LCs): Commercial Architecture, Parties & The Doctrine of Strict Compliance (UCP 600 / ISBP 745)",
+      "codeHash": "471bf827aa7d34e1af6c859a0cb491325d05b4a60fc52132b06ae182037e936e",
+      "spec": {
+        "template": "funnel",
+        "title": "Letters of Credit (LCs): Commercial Ar... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "International documentary trade credit mechanisms engaged.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Examining export shipping documents under standard practice.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Confirming strict compliance across invoices and bills of lading.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Irrevocable letters of credit eliminate cross border settlement risks.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Underwriting & Structuring NFB Credit Facilities: Margins, Security & Devolvement Defense",
+      "codeHash": "cf6e38d12d80f713f181036ad2cf30d649209cefd7464894f302e98f0cfe99f0",
+      "spec": {
+        "template": "funnel",
+        "title": "Underwriting & Structuring NFB Credit ... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Contingent credit devolvement risk mitigation protocols active.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Securing pre funded cash margin deposits under restricted lien.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Crystallizing defaulted trade credits into forced corporate advances.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Cash collateral reserves absorb initial letter of credit losses.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Enterprise Bank Guarantee & Letter of Credit Underwriting Simulator",
+      "codeHash": "c91e5d8393904a21639ef596f814b06b48b413a40b40df5748340e48d35b129a",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Enterprise Bank Guarante... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Comprehensive contingent credit appraisal platform activated.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Structuring mixed trade and guarantee limits for industrial clients.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Simulating supplier document presentations and guarantee calls.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Non fund based credit memorandum finalized for committee sanction.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

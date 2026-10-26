@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 49,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Penalty Taxonomy Structure",
+        "steps": [
+          {
+            "label": "Assessed Variance",
+            "caption": "Assessment order determines total additions to returned income."
+          },
+          {
+            "label": "Under Reporting",
+            "caption": "Honest errors attract fifty percent penalty on computed tax."
+          },
+          {
+            "label": "Misreporting Escalation",
+            "caption": "Fraudulent suppression attracts two hundred percent penalty."
+          },
+          {
+            "label": "Notice Specification",
+            "caption": "Show cause notice must state exact statutory limb invoked."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Misreporting Gateways & Carve-outs",
+        "steps": [
+          {
+            "label": "Six Gateways",
+            "caption": "Misreporting is strictly confined to six statutory categories."
+          },
+          {
+            "label": "Bona Fide Explanation",
+            "caption": "Substantiated explanations are fully carved out from penalty."
+          },
+          {
+            "label": "Estimate Protection",
+            "caption": "Income additions based on accounting estimates are exempt."
+          },
+          {
+            "label": "Transfer Pricing Shield",
+            "caption": "Contemporaneous economic benchmarking shields cross border terms."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Section 270AA Statutory Immunity",
+        "steps": [
+          {
+            "label": "Demand Payment",
+            "caption": "Assessee pays full tax and interest demand within thirty days."
+          },
+          {
+            "label": "Appeal Waiver",
+            "caption": "Assessee executes formal board waiver of appellate challenge."
+          },
+          {
+            "label": "Form Filing",
+            "caption": "Assessee submits electronic application in Form Sixty Eight."
+          },
+          {
+            "label": "Mandatory Grant",
+            "caption": "Officer grants absolute immunity from penalty and prosecution."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "False Entry & Prosecution Flow",
+        "steps": [
+          {
+            "label": "Fake Invoices",
+            "caption": "Accommodation entries attract hundred percent penalty on amount."
+          },
+          {
+            "label": "Intermediary Liability",
+            "caption": "Entry providers and abettors face equal financial penalties."
+          },
+          {
+            "label": "Criminal Charge",
+            "caption": "Willful tax evasion triggers rigorous imprisonment proceedings."
+          },
+          {
+            "label": "Compounding Relief",
+            "caption": "Competent authority compounds offenses upon statutory fees."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Penalty Optimization Engine",
+        "steps": [
+          {
+            "label": "Addition Ingestion",
+            "caption": "Engine catalogs assessment variations and factual disclosures."
+          },
+          {
+            "label": "Safe Harbour Audit",
+            "caption": "Algorithm identifies additions protected by statutory carve outs."
+          },
+          {
+            "label": "Immunity Evaluation",
+            "caption": "System verifies Form Sixty Eight eligibility requirements."
+          },
+          {
+            "label": "Settlement Strategy",
+            "caption": "Platform quantifies savings achieved through statutory immunity."
+          }
+        ]
+      }
+    }
+  ]
+}

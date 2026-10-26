@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ban",
+  "day": 33,
+  "entries": [
+    {
+      "partTitle": "Multi-Lender Credit Framework: Sole Banking vs Multiple Banking Arrangements (MBA) vs Consortium Lending",
+      "codeHash": "f7b3adfcb8d6ab3218c68d18bb8401d2203a0d2f52e3777c002cdea7b661298f",
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Lender Credit Framework: Sole Ba... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Multi bank syndicated credit architecture initialized.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Mandated lead arranger distributes large enterprise credit risk.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Consortium members share common loan terms and repayment schedules.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Syndicated structures distribute large industrial debt exposures.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Legal Architecture of Security Sharing: Pari-Passu Charges, Security Trustees & Inter-Creditor Agreements (ICA)",
+      "codeHash": "45bdcd37455115595224e6f67e27ae345fdf826ed36be214a7ff1afb9fe6864b",
+      "spec": {
+        "template": "funnel",
+        "title": "The Legal Architecture of Security Sha... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Unified security perimeter established for multiple lenders.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Corporate trustee holds shared mortgages over plant and equipment.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Statutory registration completed on national electronic registries.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Perfected pari passu charges grant super priority in liquidation.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Escrow Accounts & Trust & Retention Accounts (TRA): Cash Flow Waterfalls & Anti-Diversion Architecture",
+      "codeHash": "25585f765a72d07c6c039dbfbdb3165da841060f4dd26ab540309514d92a7b2d",
+      "spec": {
+        "template": "funnel",
+        "title": "Escrow Accounts & Trust & Retention Ac... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Centralized revenue escrow and distribution mechanisms deployed.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "All enterprise receivables route into single monitored accounts.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Immutable five tier waterfall protocol prioritizes senior debt.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Automated cash sweeps trap excess liquidity upon covenant breach.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Credit Monitoring & Early Distress Governance: Joint Lenders Forum (JLF) & Corrective Action Plans (CAP)",
+      "codeHash": "ce25f387c4d99066bb4b04287151074118a529004e5c9cff8d446a900300c472",
+      "spec": {
+        "template": "funnel",
+        "title": "Credit Monitoring & Early Distress Gov... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Syndicate resolution decision frameworks enacted.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Mandating qualified voting majorities by value and lender count.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Binding inter creditor agreements coordinate debt restructurings.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Dissenting lenders bound by statutory majority resolution plans.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Comprehensive Enterprise Consortium Credit & TRA Cash Waterfall Simulator",
+      "codeHash": "86fa3e88646e81503d33bedd14209509d68e7fe11184e9fe258d772e1d852122",
+      "spec": {
+        "template": "funnel",
+        "title": "Comprehensive Enterprise Consortium Cr... \u2014 Credit Underwriting Review",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Industrial syndicate structuring simulator launched.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Allocating pro rata loan tranches across participating banks.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Simulating debtor distress and escrow account cash distributions.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Syndicated loan facility agreement approved by consortium partners.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Credit Scoping"
+              },
+              {
+                "id": "qual",
+                "label": "Facility Structuring"
+              },
+              {
+                "id": "target",
+                "label": "Risk Modeling"
+              },
+              {
+                "id": "final",
+                "label": "Committee Clearance"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

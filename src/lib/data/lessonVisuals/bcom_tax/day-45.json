@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "bcom_tax",
+  "day": 45,
+  "entries": [
+    {
+      "partIndex": 0,
+      "spec": {
+        "title": "Enterprise Supply Chain Architecture",
+        "steps": [
+          {
+            "label": "Global Sourcing Hub",
+            "caption": "Enterprise imports precision components across multimodal trade lanes."
+          },
+          {
+            "label": "Tariff Engineering",
+            "caption": "Supply chain aligns knocked down assemblies with statutory rules."
+          },
+          {
+            "label": "Valuation Defense",
+            "caption": "Special valuation branch dossier substantiates transfer pricing terms."
+          },
+          {
+            "label": "Trusted Trader Tier",
+            "caption": "Accreditation grants green channel clearance and bond fee waivers."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 1,
+      "spec": {
+        "title": "Multi-Consignment Valuation Audit",
+        "steps": [
+          {
+            "label": "Firmware Assist",
+            "caption": "Foreign software development assist is added to assessable value."
+          },
+          {
+            "label": "Air Freight Cap",
+            "caption": "Excess air freight is statutorily capped at twenty percent of value."
+          },
+          {
+            "label": "High Seas Contract",
+            "caption": "Consignment is assessed on final contract price without sales tax."
+          },
+          {
+            "label": "Cumulative Duties",
+            "caption": "Engine aggregates basic duty and trade remedies before integrated tax."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 2,
+      "spec": {
+        "title": "Bonded Manufacturing Facility Ledger",
+        "steps": [
+          {
+            "label": "Perpetual Deferment",
+            "caption": "Machinery duties remain deferred throughout factory operating life."
+          },
+          {
+            "label": "Export Duty Waiver",
+            "caption": "Sixty percent of production exported receives complete duty waiver."
+          },
+          {
+            "label": "Domestic Tax Base",
+            "caption": "Domestic clearances pay customs duty solely on raw material content."
+          },
+          {
+            "label": "Industrial Scrap",
+            "caption": "Scrap metal clearances pay duty at lower waste tariff rates."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 3,
+      "spec": {
+        "title": "Export Incentive Portfolio Audit",
+        "steps": [
+          {
+            "label": "Capital Scheme Audit",
+            "caption": "Export realization exceeds block milestone over baseline average."
+          },
+          {
+            "label": "Advance Scheme Check",
+            "caption": "Thirty percent value addition comfortably surpasses statutory rule."
+          },
+          {
+            "label": "Bank Certificate Match",
+            "caption": "Electronic realization certificates match shipping bill declarations."
+          },
+          {
+            "label": "Collateral Release",
+            "caption": "Discharge certificates trigger full cancellation of customs bonds."
+          }
+        ]
+      }
+    },
+    {
+      "partIndex": 4,
+      "spec": {
+        "title": "Enterprise Customs Command Tower",
+        "steps": [
+          {
+            "label": "Integrated Pipeline",
+            "caption": "Command tower integrates valuation and classification and incentives."
+          },
+          {
+            "label": "Bonded Optimization",
+            "caption": "System models working capital savings and perpetual duty deferral."
+          },
+          {
+            "label": "Treasury Dashboard",
+            "caption": "Dashboard provides executive visibility over customs duty exposure."
+          },
+          {
+            "label": "Master Certification",
+            "caption": "Simulation concludes with enterprise customs bonded master pass."
+          }
+        ]
+      }
+    }
+  ]
+}
