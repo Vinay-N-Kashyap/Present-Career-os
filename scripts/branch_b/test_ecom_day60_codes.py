@@ -1,170 +1,160 @@
 """
-Test and verify Python code blocks for Course 07 Day 60:
-Course 07 Grand Master Milestone 12 Capstone: The Sovereign Enterprise Omnichannel Commerce Platform
+Deterministic Python Code Blocks for Course 07 Day 60:
+Milestone 12 Grand Master Final Capstone: Sovereign Enterprise Omnichannel Commerce Platform & Global Boardroom Defense
 """
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
+import json
+import hashlib
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Tuple
 
-print("=== TIER 1: GLOBAL MARKETPLACE ESCROW & PAYMENT ORCHESTRATION ===")
+print("=== TIER 1: COMPOSABLE HEADLESS EDGE & FEDERATION SYNTHESIS ===")
 @dataclass
-class MarketplaceSplitPaymentContext:
-    order_id: str
-    gross_order_value_usd: float
-    take_rate_pct: float # e.g. 0.15 for 15% platform fee
-    escrow_hold_days: int
-    seller_payout_bank_verified: bool
+class FederatedGatewayMeshState:
+    gateway_id: str
+    active_subgraphs: List[str]
+    edge_cache_hit_rate_pct: float
+    p99_edge_latency_ms: float
 
-class SovereignEscrowPaymentOrchestrator:
-    def process_split_payment_settlement(self, ctx: MarketplaceSplitPaymentContext) -> Dict[str, float]:
-        platform_fee = round(ctx.gross_order_value_usd * ctx.take_rate_pct, 2)
-        seller_disbursement = round(ctx.gross_order_value_usd - platform_fee, 2)
-        escrow_status = "ESCROW_LOCKED_PENDING_DELIVERY" if ctx.seller_payout_bank_verified else "HOLD_SELLER_BANK_UNVERIFIED"
-        
+class ComposableMeshSynthesizer:
+    @staticmethod
+    def audit_tier1(mesh: FederatedGatewayMeshState) -> Dict[str, object]:
+        subgraph_count = len(mesh.active_subgraphs)
+        is_healthy = subgraph_count >= 4 and mesh.edge_cache_hit_rate_pct >= 90.0 and mesh.p99_edge_latency_ms <= 35.0
         return {
-            "gross_order": ctx.gross_order_value_usd,
-            "platform_take_rate_fee": platform_fee,
-            "seller_payable": seller_disbursement,
-            "hold_period_days": float(ctx.escrow_hold_days),
-            "is_authorized": 1.0 if ctx.seller_payout_bank_verified else 0.0
+            "tier": "TIER_1_COMPOSABLE_EDGE",
+            "gateway_id": mesh.gateway_id,
+            "subgraphs_connected": subgraph_count,
+            "edge_hit_rate": f"{mesh.edge_cache_hit_rate_pct:.1f}%",
+            "p99_latency": f"{mesh.p99_edge_latency_ms} ms",
+            "status": "TIER_1_CERTIFIED" if is_healthy else "DEFICIENT"
         }
 
-escrow_engine = SovereignEscrowPaymentOrchestrator()
-escrow_res = escrow_engine.process_split_payment_settlement(
-    MarketplaceSplitPaymentContext("ORD-MKTP-9011", 12500.0, 0.15, 14, True)
+mesh_input = FederatedGatewayMeshState("APEX-MESH-GLOBAL", ["Catalog", "Pricing", "Inventory", "Promotions"], 94.6, 26.4)
+t1_res = ComposableMeshSynthesizer.audit_tier1(mesh_input)
+print(f"Tier 1 Mesh: Gate=[{t1_res['gateway_id']}] | Subgraphs={t1_res['subgraphs_connected']} | EdgeHit={t1_res['edge_hit_rate']} | P99={t1_res['p99_latency']} -> [{t1_res['status']}]")
+
+
+print("\n=== TIER 2: PROGRAMMATIC SEO & EDGE SSR GOVERNANCE ===")
+@dataclass
+class EdgeRenderingSEOState:
+    domain: str
+    total_indexed_skus: int
+    cwv_passing_rate_pct: float
+    crawl_budget_efficiency_pct: float
+
+class EdgeSEOSynthesizer:
+    @staticmethod
+    def audit_tier2(seo: EdgeRenderingSEOState) -> Dict[str, object]:
+        is_healthy = seo.total_indexed_skus >= 1000000 and seo.cwv_passing_rate_pct >= 90.0 and seo.crawl_budget_efficiency_pct >= 95.0
+        return {
+            "tier": "TIER_2_SEO_EDGE_SSR",
+            "domain": seo.domain,
+            "indexed_skus": f"{seo.total_indexed_skus:,}",
+            "cwv_rate": f"{seo.cwv_passing_rate_pct:.1f}%",
+            "crawl_efficiency": f"{seo.crawl_budget_efficiency_pct:.1f}%",
+            "status": "TIER_2_CERTIFIED" if is_healthy else "DEFICIENT"
+        }
+
+seo_input = EdgeRenderingSEOState("store.apex-enterprise.com", 2450000, 95.8, 98.2)
+t2_res = EdgeSEOSynthesizer.audit_tier2(seo_input)
+print(f"Tier 2 SEO:  Domain=[{t2_res['domain']}] | SKUs={t2_res['indexed_skus']} | CWV={t2_res['cwv_rate']} | CrawlEff={t2_res['crawl_efficiency']} -> [{t2_res['status']}]")
+
+
+print("\n=== TIER 3: OMNICHANNEL DISTRIBUTED ATP & BOPIS ENGINE ===")
+@dataclass
+class OmnichannelFleetState:
+    retail_stores_active: int
+    daily_bopis_orders: int
+    pick_sla_compliance_pct: float
+    boris_recommerce_rate_pct: float
+
+class OmnichannelFleetSynthesizer:
+    @staticmethod
+    def audit_tier3(omni: OmnichannelFleetState) -> Dict[str, object]:
+        is_healthy = omni.retail_stores_active >= 400 and omni.pick_sla_compliance_pct >= 95.0 and omni.boris_recommerce_rate_pct >= 85.0
+        return {
+            "tier": "TIER_3_OMNICHANNEL_ATP_BOPIS",
+            "stores": omni.retail_stores_active,
+            "daily_bopis": f"{omni.daily_bopis_orders:,}",
+            "pick_sla": f"{omni.pick_sla_compliance_pct:.1f}%",
+            "recommerce_rate": f"{omni.boris_recommerce_rate_pct:.1f}%",
+            "status": "TIER_3_CERTIFIED" if is_healthy else "DEFICIENT"
+        }
+
+omni_input = OmnichannelFleetState(480, 42000, 97.8, 92.4)
+t3_res = OmnichannelFleetSynthesizer.audit_tier3(omni_input)
+print(f"Tier 3 Omni: Stores={t3_res['stores']} | BOPIS/Day={t3_res['daily_bopis']} | PickSLA={t3_res['pick_sla']} | ReCommerce={t3_res['recommerce_rate']} -> [{t3_res['status']}]")
+
+
+print("\n=== TIER 4: FLASH SALE ZERO-OVERSELL CONCURRENCY DEFENSE ===")
+@dataclass
+class FlashSaleDefenseState:
+    peak_rps_sustained: int
+    virtual_queue_drop_rate_pct: float
+    oversell_incidents: int
+    p99_checkout_latency_ms: float
+
+class FlashSaleDefenseSynthesizer:
+    @staticmethod
+    def audit_tier4(flash: FlashSaleDefenseState) -> Dict[str, object]:
+        is_healthy = flash.peak_rps_sustained >= 50000 and flash.oversell_incidents == 0 and flash.p99_checkout_latency_ms <= 75.0
+        return {
+            "tier": "TIER_4_FLASH_SALE_CONCURRENCY",
+            "peak_rps": f"{flash.peak_rps_sustained:,}",
+            "oversell_defects": flash.oversell_incidents,
+            "p99_latency": f"{flash.p99_checkout_latency_ms} ms",
+            "status": "TIER_4_CERTIFIED" if is_healthy else "DEFICIENT"
+        }
+
+flash_input = FlashSaleDefenseState(85000, 0.0, 0, 58.6)
+t4_res = FlashSaleDefenseSynthesizer.audit_tier4(flash_input)
+print(f"Tier 4 Flash: Peak={t4_res['peak_rps']} RPS | Oversells={t4_res['oversell_defects']} | P99={t4_res['p99_latency']} -> [{t4_res['status']}]")
+
+
+print("\n=== TIER 5: EXECUTIVE BOARDROOM DEFENSE & CCO-EA ACCREDITATION ===")
+@dataclass
+class ExecutiveGrandMasterScorecard:
+    candidate_id: str
+    credential_title: str
+    tier1_score: float
+    tier2_score: float
+    tier3_score: float
+    tier4_score: float
+    tier5_defense_score: float
+    annual_enterprise_roi_usd: float
+
+class BoardroomGrandMasterAuditor:
+    @staticmethod
+    def evaluate_boardroom_defense(card: ExecutiveGrandMasterScorecard) -> Dict[str, object]:
+        total_score = card.tier1_score + card.tier2_score + card.tier3_score + card.tier4_score + card.tier5_defense_score
+        is_apex = total_score == 100.0 and card.annual_enterprise_roi_usd >= 25000000.0
+        
+        status = "CHIEF_COMMERCE_OFFICER_ENTERPRISE_ARCHITECT_ACCREDITED" if is_apex else "PROVISIONAL"
+        return {
+            "candidate_id": card.candidate_id,
+            "credential": card.credential_title,
+            "composite_score": total_score,
+            "certified_annual_roi": f"${card.annual_enterprise_roi_usd:,.2f} USD",
+            "boardroom_verdict": status,
+            "curriculum_graduation": "COURSE_07_AND_BRANCH_B_100_PERCENT_GRADUATED"
+        }
+
+board_card = ExecutiveGrandMasterScorecard(
+    candidate_id="ARCH-GLOBAL-COMMERCE-001",
+    credential_title="Chief Commerce Officer & Enterprise Architect (CCO-EA)",
+    tier1_score=20.0,
+    tier2_score=20.0,
+    tier3_score=20.0,
+    tier4_score=20.0,
+    tier5_defense_score=20.0,
+    annual_enterprise_roi_usd=28500000.00
 )
 
-print(f"Marketplace Split Escrow Settlement:")
-print(f"  Gross Order Value:      ${escrow_res['gross_order']:,.2f} USD")
-print(f"  Platform Earned Fee:    ${escrow_res['platform_take_rate_fee']:,.2f} USD (15.0% Take Rate)")
-print(f"  Seller Net Disbursement: ${escrow_res['seller_payable']:,.2f} USD (Locked in Escrow 14d)")
-
-
-print("\n=== TIER 2: CROSS-BORDER TRADE, DDP LANDED COST & DRAWBACK ===")
-@dataclass
-class GlobalConsignmentDDPContext:
-    cif_value_usd: float
-    customs_duty_rate: float
-    destination_vat_rate: float
-    returned_units_drawback_eligible: bool
-
-def compute_global_consignment_fiscal_cycle(c: GlobalConsignmentDDPContext) -> Dict[str, float]:
-    duty_amount = round(c.cif_value_usd * c.customs_duty_rate, 2)
-    # Compounded destination consumption tax
-    vat_amount = round((c.cif_value_usd + duty_amount) * c.destination_vat_rate, 2)
-    total_ddp_landed = round(c.cif_value_usd + duty_amount + vat_amount, 2)
-    
-    # 99% Duty drawback on returned items
-    drawback_recovery = round(duty_amount * 0.99, 2) if c.returned_units_drawback_eligible else 0.0
-    
-    return {
-        "cif_value": c.cif_value_usd,
-        "customs_duty": duty_amount,
-        "destination_vat": vat_amount,
-        "total_ddp": total_ddp_landed,
-        "drawback_recovered": drawback_recovery
-    }
-
-trade_res = compute_global_consignment_fiscal_cycle(
-    GlobalConsignmentDDPContext(50000.0, 0.12, 0.20, True)
-)
-
-print(f"Sovereign Trade Landed Cost & Duty Drawback:")
-print(f"  Consignment CIF:        ${trade_res['cif_value']:,.2f} USD")
-print(f"  Customs Tariff (12%):   ${trade_res['customs_duty']:,.2f} USD")
-print(f"  Import VAT (20% Comp):  ${trade_res['destination_vat']:,.2f} USD")
-print(f"  Total DDP Landed Cost:  ${trade_res['total_ddp']:,.2f} USD")
-print(f"  CBP Form 7551 Drawback: ${trade_res['drawback_recovered']:,.2f} USD (99% Duty Reclaimed)")
-
-
-print("\n=== TIER 3: OMNICHANNEL DISTRIBUTED ORDER ROUTING (DOM) ===")
-@dataclass
-class OmnichannelRoutingContext:
-    total_order_lines: int
-    candidate_store_nodes_in_radius: int
-    single_source_node_available: bool
-    estimated_freight_savings_usd: float
-
-def execute_omnichannel_routing_decision(ctx: OmnichannelRoutingContext) -> Tuple[str, float, str]:
-    if ctx.single_source_node_available:
-        return "LOCAL_STORE_SHIP_FROM_STORE", ctx.estimated_freight_savings_usd, "ZERO_SPLIT_OPTIMAL_ROUTING"
-    else:
-        return "REGIONAL_DC_CONSOLIDATED", 0.0, "SPLIT_MITIGATED_CENTRAL_CONSOLIDATION"
-
-dom_res_node, dom_res_saved, dom_res_status = execute_omnichannel_routing_decision(
-    OmnichannelRoutingContext(4, 8, True, 14.50)
-)
-
-print(f"DOM Routing Decision: Node: [{dom_res_node}] | Savings: ${dom_res_saved:.2f} USD | Status: [{dom_res_status}]")
-
-
-print("\n=== TIER 4: REAL-TIME CUSTOMER 360 CDP & PREDICTIVE ML ===")
-@dataclass
-class MasterCDPProfileState:
-    master_customer_id: str
-    connected_identities_count: int
-    rfm_composite_tier: str
-    predicted_3year_ltv_usd: float
-    churn_risk_probability_pct: float
-
-def evaluate_cdp_profile_mastery(p: MasterCDPProfileState) -> Tuple[bool, str]:
-    is_unified = p.connected_identities_count >= 3
-    is_high_value = p.predicted_3year_ltv_usd >= 2000.0
-    status = "APEX_VIP_UNIFIED_CUSTOMER" if (is_unified and is_high_value) else "STANDARD_CUSTOMER_PROFILE"
-    return is_unified, status
-
-cdp_user = MasterCDPProfileState("CUST-360-APEX", 4, "CHAMPIONS_555", 3450.00, 8.5)
-ok_cdp, msg_cdp = evaluate_cdp_profile_mastery(cdp_user)
-
-print(f"Master CDP 360 Profile ({cdp_user.master_customer_id}):")
-print(f"  Connected Identities:   {cdp_user.connected_identities_count} (Cookies, Email, Phone, App Token)")
-print(f"  RFM Cohort:             [{cdp_user.rfm_composite_tier}]")
-print(f"  Predicted 3-Year LTV:   ${cdp_user.predicted_3year_ltv_usd:,.2f} USD (Churn Risk: {cdp_user.churn_risk_probability_pct}%)")
-print(f"  CDP Mastery Verdict:    [{msg_cdp}]")
-
-
-print("\n=== TIER 5: CHIEF COMMERCE TECHNOLOGY OFFICER (CCTO) GRAND MASTER DEFENSE ===")
-@dataclass
-class CCTOGrandMasterExecutiveAudit:
-    enterprise_annual_gmv_usd: float
-    payment_fraud_and_chargeback_savings_usd: float
-    trade_landed_cost_and_drawback_savings_usd: float
-    omnichannel_dom_freight_savings_usd: float
-    cdp_personalization_revenue_lift_usd: float
-    mach_5year_tco_infrastructure_savings_usd: float
-
-def execute_ccto_grand_master_boardroom_defense(a: CCTOGrandMasterExecutiveAudit) -> Dict[str, float]:
-    total_enterprise_roi = (
-        a.payment_fraud_and_chargeback_savings_usd +
-        a.trade_landed_cost_and_drawback_savings_usd +
-        a.omnichannel_dom_freight_savings_usd +
-        a.cdp_personalization_revenue_lift_usd +
-        a.mach_5year_tco_infrastructure_savings_usd
-    )
-    score = 0.0
-    score += 20.0 if a.payment_fraud_and_chargeback_savings_usd >= 3_000_000.0 else 10.0
-    score += 20.0 if a.trade_landed_cost_and_drawback_savings_usd >= 4_500_000.0 else 10.0
-    score += 20.0 if a.omnichannel_dom_freight_savings_usd >= 3_500_000.0 else 10.0
-    score += 20.0 if a.cdp_personalization_revenue_lift_usd >= 6_000_000.0 else 10.0
-    score += 20.0 if (a.mach_5year_tco_infrastructure_savings_usd >= 5_000_000.0 and total_enterprise_roi >= 25_000_000.0) else 10.0
-    
-    return {
-        "annual_gmv": a.enterprise_annual_gmv_usd,
-        "total_enterprise_roi": round(total_enterprise_roi, 2),
-        "composite_score": round(score, 1),
-        "status": "APEX_CHIEF_COMMERCE_TECHNOLOGY_OFFICER_GRAND_MASTER_ACCREDITED" if score == 100.0 else "PROVISIONAL"
-    }
-
-ccto_audit = execute_ccto_grand_master_boardroom_defense(CCTOGrandMasterExecutiveAudit(
-    enterprise_annual_gmv_usd=500_000_000.0,
-    payment_fraud_and_chargeback_savings_usd=3_650_000.0,
-    trade_landed_cost_and_drawback_savings_usd=5_200_000.0,
-    omnichannel_dom_freight_savings_usd=4_150_000.0,
-    cdp_personalization_revenue_lift_usd=6_800_000.0,
-    mach_5year_tco_infrastructure_savings_usd=5_200_000.0
-))
-
-print(f"Course 07 Grand Master Capstone Boardroom Defense:")
-print(f"  Enterprise Global GMV:         ${ccto_audit['annual_gmv']:,.2f} USD")
-print(f"  Total Enterprise Value / ROI:  ${ccto_audit['total_enterprise_roi']:,.2f} USD ($25.0M Benchmark)")
-print(f"  Composite Architectural Score: {ccto_audit['composite_score']}/100.0 pts")
-print(f"  Grand Master Accreditation:    [{ccto_audit['status']}]")
+board_verdict = BoardroomGrandMasterAuditor.evaluate_boardroom_defense(board_card)
+print("=== BOARDROOM DEFENSE GRAND MASTER ACCREDITATION ===")
+print(f"Candidate ID:     {board_verdict['candidate_id']}")
+print(f"Conferred Degree: {board_verdict['credential']}")
+print(f"Composite Score:  {board_verdict['composite_score']}/100.0 pts (Unanimous Apex)")
+print(f"Quantified ROI:   {board_verdict['certified_annual_roi']}")
+print(f"Boardroom Status: [{board_verdict['boardroom_verdict']}]")
+print(f"Curriculum State: [{board_verdict['curriculum_graduation']}]")
