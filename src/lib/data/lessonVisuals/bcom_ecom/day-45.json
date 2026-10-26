@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ecom",
+  "day": 45,
+  "entries": [
+    {
+      "partTitle": "Tier 1: Omnichannel Order Management & Distributed Order Routing (DOM) Defense",
+      "codeHash": "c074e0cbb46c1e9ba8605fa537e70bd63590d43300a9fbb6bdb9b65f1d2aa731",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 45 Part 1 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive committee convenes for Tier One order routing review.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Distributed order management optimizes multi node freight routing.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Single shipment consolidation protects operating profit margins.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audit order routing scorecard and inventory allocation accuracy.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 2: Cross-Docking, EDI ANSI X12 (850/856/810) & Automated ASN Dock Receiving Defense",
+      "codeHash": "770ec31f9a6eb27fed412c5deaa859ab6bf0b673ec48e9eb9f6908fd65f31bb9",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 45 Part 2 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive committee reviews Tier Two inbound logistics performance.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Cross docking flow through eliminates putaway warehousing labor.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated electronic manifests accelerate dock receiving throughput.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audit inbound logistics compliance and cross dock cost avoidance.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 3: Reverse Logistics, Disposition Triage & Circular Economy Liquidation Defense",
+      "codeHash": "6c78423ca61e9eece4d150429bf60080fa92822d95fd09f16d842e761c220d1c",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 45 Part 3 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive committee reviews Tier Three circular reverse logistics.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Automated disposition triage recaptures valuable working capital.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Zero landfill initiatives divert returned goods to secondary resale.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audit reverse logistics scorecard and secondary market recovery.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 4: Post-Purchase Telemetry, OpenTelemetry Tracing & Dynamic ETA Defense",
+      "codeHash": "fafaa283662abf831f39d91e6f4c28618661f2f3c6eed25554b8aa2d20f67e5c",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 45 Part 4 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Executive committee reviews Tier Four post purchase observability.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Distributed tracing and carrier normalization track parcel transit.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Proactive delivery notifications deflect customer support tickets.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Audit post purchase telemetry and customer satisfaction scorecards.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tier 5: The Sovereign Corporate Boardroom Defense & Executive Chief Supply Chain Architect Accreditation",
+      "codeHash": "1390734eeca9b49bc284e6f78491fa6cba16394d6870817a4c47795c48ea3d2a",
+      "spec": {
+        "template": "funnel",
+        "title": "Day 45 Part 5 Architecture Flow",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Board of Directors convenes for official capstone accreditation.",
+            "activeStageId": "s1",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Composite scorecard evaluates performance across all four tiers.",
+            "activeStageId": "s2",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Unanimous boardroom approval confers Chief Architect authority.",
+            "activeStageId": "s3",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Execute master capstone defense and verify credential conferral.",
+            "activeStageId": "s4",
+            "stages": [
+              {
+                "id": "s1",
+                "label": "Edge Intake Stage",
+                "value": "100.0%"
+              },
+              {
+                "id": "s2",
+                "label": "Security Validation",
+                "value": "98.5%"
+              },
+              {
+                "id": "s3",
+                "label": "Transaction Processing",
+                "value": "95.2%"
+              },
+              {
+                "id": "s4",
+                "label": "Fulfillment Dispatch",
+                "value": "94.8%"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

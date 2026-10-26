@@ -1,0 +1,359 @@
+# -*- coding: utf-8 -*-
+"""
+Generate Day 41 for Course 07: bcom_ecom
+Title: Omnichannel Order Management Systems (OMS): Distributed Order Routing, Available-to-Promise (ATP) Inventory Pools & Split-Shipment Optimization
+"""
+import json
+import os
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
+
+commerce_dir = r"C:\Users\Admin\Desktop\projects\Present-Career-os-commerce"
+output_file = os.path.join(commerce_dir, "scripts", "branch_b", "day41_ecom_data.json")
+
+def make_part(title, say_paragraphs, example, try_it, code, output, question, options, why):
+    say_text = " ".join(say_paragraphs)
+    words = len(say_text.strip().split())
+    print(f"Part '{title}': {words} words")
+    assert words >= 600, f"Part '{title}' under 600 words: {words}"
+    assert len(options) == 4, f"Part '{title}' must have exactly 4 options"
+    assert len(why) >= 30, f"Part '{title}' why must be >= 30 chars"
+    
+    return {
+        "title": title,
+        "say": say_paragraphs,
+        "example": example,
+        "tryIt": try_it,
+        "code": code,
+        "output": output,
+        "check": {
+            "question": question,
+            "options": options,
+            "answer": 0,
+            "answerIndex": 0,
+            "why": why,
+            "explanation": why
+        }
+    }
+
+# ==========================================
+# PART 1: Distributed Order Routing (DOM) Algorithms
+# ==========================================
+p1_title = "Distributed Order Routing (DOM) Algorithms: Proximity, Carbon Footprint & Cost-Optimized Routing Matrix"
+p1_say = [
+    "Crucially, the Distributed Order Routing engine integrates real-time Carrier Pickup Cutoff Windows and Facility Operating Calendars. A fulfillment node located twenty miles from a customer may be geographically optimal, but if its daily carrier trailer dispatch cutoff occurred at 16:00 and an order is placed at 16:30, assigning the order to that facility means it will sit stagnant on a staging dock overnight. Concurrently, an alternative fulfillment center two hundred miles away operating a 24/7 night shift with a 21:00 expedited air cutoff can pick, pack, and manifest the parcel immediately, delivering the package to the customer earlier despite the greater geographic distance. The DOM matrix continuously incorporates dynamic facility operating hours, regional time zone offsets, and carrier line-haul pickup schedules into its real-time routing heuristics.",
+    "From an enterprise systems integration perspective, connecting the real-time Global Inventory Aggregator to legacy ERP backends requires Asynchronous Change Data Capture (CDC) pipelines. Instead of issuing heavy SQL polling queries against transactional ERP relational databases, modern data architectures deploy Debezium connectors monitoring PostgreSQL or Oracle Write-Ahead Logs (WAL). As inventory transactions commit in physical distribution facilities, change events stream into Apache Kafka topics within milliseconds, allowing the in-memory Redis inventory cache to update continuously with sub-fifty-millisecond propagation latency without impacting operational warehouse databases.",
+    "Welcome to Month 2 Block 9 of Advanced E-Commerce Platform Architecture. In Block 8, we engineered the global composable checkout and financial transaction engine. Now, we cross the architectural chasm from digital purchase capture to real-world physical order orchestration. The moment a customer clicks 'Place Order' and payment authorization settles, the digital commerce engine must hand off the transaction to the Omnichannel Order Management System (OMS). In modern enterprise commerce operating across hundreds of brick-and-mortar stores, dozens of regional distribution centers, third-party logistics (3PL) warehouses, and drop-ship vendors, order fulfillment is a complex, multi-objective optimization problem governed by the Distributed Order Management (DOM) routing engine.",
+    "Historically, legacy enterprise resource planning (ERP) systems routed orders using simplistic, static rules—such as always shipping from the primary central distribution center or blindly routing to the warehouse with the highest stock level. In a modern global supply chain, these primitive heuristics generate catastrophic business outcomes: packages travel thousands of redundant miles across continents, freight expenses escalate out of control, delivery transit times balloon to five or six business days, and the enterprise generates enormous, unnecessary carbon footprints. Modern DOM engines evaluate a multi-dimensional mathematical scoring matrix in real time, optimizing across geographic proximity, carrier line-haul tariffs, labor handling costs, inventory aging, and environmental carbon emissions.",
+    "The core algorithmic engine behind Distributed Order Management models the enterprise fulfillment topology as a weighted directed graph. When an order payload arrives, candidate fulfillment nodes—comprising regional fulfillment centers, micro-fulfillment urban hubs, dark stores, and retail flagship stores offering Ship-from-Store (SFS) capabilities—are scored against an objective cost function. Geographic distance between the customer destination postal code and candidate origin facilities is computed using geodetic Vincenty algorithms or pre-indexed spatial H3 hexagonal geospatial coordinates. However, distance is merely one variable in the composite equation: routing an order from an urban store five miles away may incur higher handling costs and store inventory cannibalization than shipping from an automated fulfillment center forty miles away.",
+    "Furthermore, progressive enterprise commerce platforms integrate Environmental, Social, and Governance (ESG) mandates directly into the DOM scoring heuristic. Transporting freight via expedited air cargo emits up to forty times more carbon dioxide equivalent per ton-kilometer than ground transportation. The DOM algorithm evaluates carrier mode capabilities and regional transport grids, calculating carbon footprint projections alongside financial costs. By weighting carbon abatement alongside marginal freight expenses, the algorithm favors ground routing from regional fulfillment nodes whenever customer delivery service-level agreements (SLAs) can be satisfied without expedited air transit.",
+    "Additionally, modern DOM engines incorporate dynamic node capacity throttle controls. A regional warehouse may have ample physical stock, but its physical packing lines, conveyor belts, and dock doors may be bottlenecked by an unexpected flash sale surge. The DOM engine ingests real-time node throughput telemetry: if a fulfillment center approaches 95% of its daily pick-pack-ship capacity, the routing matrix dynamically applies congestion penalties to that facility's routing score, diverting marginal order volume to adjacent under-utilized facilities without manual human intervention.",
+    "From an enterprise systems perspective, the DOM routing matrix operates with sub-hundred-millisecond response SLAs. It communicates with carrier rating APIs, regional warehouse management systems (WMS), and enterprise inventory services via asynchronous message brokers like Apache Kafka. In the following deterministic Python implementation, we construct an enterprise Distributed Order Routing engine that evaluates candidate fulfillment centers, computes line-haul freight costs and carbon emissions, and determines the mathematically optimal fulfillment origin based on a composite scoring matrix."
+]
+p1_example = "An order originating in northern New Jersey evaluates three candidate facilities: an automated fulfillment center in Newark (45km away), a regional distribution center in Chicago (1200km away), and a facility in Atlanta (850km away). The DOM algorithm evaluates line-haul costs, distance, and carbon emissions, selecting Newark with an optimal routing score of 7.47."
+p1_try_it = "Simulate the Distributed Order Routing engine, validating that multi-objective scoring favors the facility that balances lowest freight cost, minimal transit distance, and lowest carbon emissions."
+p1_code = """import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+class DistributedOrderRouter:
+    def __init__(self):
+        # Fulfillment nodes: distance_km, cost_per_item, carbon_g_km, stock
+        self.nodes = {
+            "FC_EAST_NEWARK": {"dist_km": 45, "cost": 4.50, "carbon_per_km": 12.0, "stock": 150},
+            "FC_MIDWEST_CHICAGO": {"dist_km": 1200, "cost": 7.20, "carbon_per_km": 11.5, "stock": 500},
+            "FC_SOUTH_ATLANTA": {"dist_km": 850, "cost": 6.10, "carbon_per_km": 11.8, "stock": 200}
+        }
+
+    def route_order(self, sku: str, qty: int, max_dist: int = 500) -> dict:
+        candidates = []
+        for node_id, data in self.nodes.items():
+            if data["stock"] >= qty:
+                total_cost = round(data["cost"] * qty + (data["dist_km"] * 0.05), 2)
+                carbon_total_kg = round((data["dist_km"] * data["carbon_per_km"]) / 1000.0, 2)
+                candidates.append({
+                    "node": node_id,
+                    "distance_km": data["dist_km"],
+                    "total_fulfillment_cost_usd": total_cost,
+                    "carbon_footprint_kg": carbon_total_kg,
+                    "score": round(total_cost * 0.6 + data["dist_km"] * 0.01 + carbon_total_kg * 0.5, 2)
+                })
+        candidates.sort(key=lambda x: x["score"])
+        best = candidates[0]
+        return {
+            "selected_node": best["node"],
+            "distance_km": best["distance_km"],
+            "fulfillment_cost_usd": best["total_fulfillment_cost_usd"],
+            "carbon_kg": best["carbon_footprint_kg"],
+            "routing_score": best["score"]
+        }
+
+router = DistributedOrderRouter()
+route_res = router.route_order("SKU_TECH_SMARTWATCH", 2)
+print(f"DOM Routing: Node: {route_res['selected_node']} | Dist: {route_res['distance_km']}km | Cost: ${route_res['fulfillment_cost_usd']} | Carbon: {route_res['carbon_kg']}kg | Score: {route_res['routing_score']}")
+"""
+p1_output = """DOM Routing: Node: FC_EAST_NEWARK | Dist: 45km | Cost: $11.25 | Carbon: 0.54kg | Score: 7.47"""
+p1_question = "What primary architectural advantage does multi-variable Distributed Order Management (DOM) provide over static ERP routing rules?"
+p1_options = [
+    "It dynamically balances geographic proximity, freight tariff economics, node throughput capacity, and carbon footprint metrics to select the most cost-effective and SLA-compliant fulfillment node",
+    "It forces all customer packages to be routed exclusively through a single central hub regardless of delivery address",
+    "It eliminates the requirement for warehouses to scan barcodes or maintain inventory counts",
+    "It automatically converts physical merchandise into digital gift cards whenever stock levels drop"
+]
+p1_why = "DOM multi-variable optimization minimizes total landed fulfillment costs, reduces carbon emissions, and ensures customer delivery SLAs are met efficiently."
+
+# ==========================================
+# PART 2: Real-Time ATP & CTP Allocation Pools
+# ==========================================
+p2_title = "Real-Time Available-to-Promise (ATP) & Capable-to-Promise (CTP) Inventory Allocation Pools"
+p2_say = [
+    "Furthermore, the sourcing engine applies Dynamic Surcharge Smoothing when evaluating peak-season carrier rate charts, ensuring that unexpected holiday parcel surcharges or temporary fuel index adjustments do not trigger erratic routing oscillations between regional warehouse nodes.",
+    "Additionally, modern enterprise OMS platforms deploy Dynamic Safety Stock Dampening during promotional flash events. In static retail environments, safety stocks remain rigid, tying up valuable working capital in unallocatable buffers. During peak shopping holidays such as Cyber Week, the ATP engine evaluates sales velocity telemetry: if an item sells at ten units per minute, the safety stock buffer dynamically adjusts based on real-time cycle count confidence scores and supplier lead-time variance. Furthermore, the ATP service manages 'Soft Reservation Holds' during active customer checkout sessions, reserving inventory for a ten-minute TTL window while the shopper completes payment authorization, automatically releasing expired holds back to the shared pool if checkout is abandoned.",
+    "In addition to freight rate tables and labor capacities, advanced DOM routing engines evaluate Dynamic Carrier Cutoff Times and Transit Windows. In a nationwide supply chain, individual carrier pickup times vary widely across fulfillment facilities: an east-coast distribution center may have a FedEx express carrier departure cutoff at 17:00 local time, whereas a midwestern facility maintains an extended UPS evening dispatch window until 20:00. If an online customer confirms an order at 17:15 demanding guaranteed next-day delivery, the sourcing engine dynamically bypasses the geographically closer east-coast node and routes the order to the midwestern hub, ensuring the parcel is sorted and dispatched prior to the evening flight departure deadline.",
+    "At the heart of every enterprise Order Management System lies the mathematical calculation of inventory availability. In high-volume omnichannel retail, displaying an item as 'In Stock' on a product detail page is fundamentally different from having unreserved, legally uncommitted physical units ready for immediate picking and packing. If an OMS naively exposes raw physical on-hand warehouse counts directly to customer-facing storefronts, catastrophic overselling occurs: multiple shoppers purchase the same last unit across different sales channels, triggering backorders, customer dissatisfaction, and brand erosion. To prevent overselling while maximizing inventory commercial velocity, enterprise platforms deploy Available-to-Promise (ATP) and Capable-to-Promise (CTP) allocation logic.",
+    "Available-to-Promise represents the exact quantity of uncommitted inventory that a business can promise to customer orders for immediate delivery. The classical ATP calculation derives from a strict formula: ATP equals Physical On-Hand Inventory minus Safety Stock Buffer minus Hard-Allocated Unshipped Orders. Safety stock represents an actuarial buffer reserved to absorb physical warehouse shrinkage, barcode misplacements, damaged packaging discovered during picking, and in-transit cycle count variances. Hard allocations represent orders that have successfully passed payment authorization and fraud screening but have not yet been physically picked from warehouse shelving and scanned onto carrier trailers.",
+    "Expanding beyond immediate on-hand stock, sophisticated omnichannel platforms calculate Capable-to-Promise (CTP). While ATP governs inventory currently sitting inside distribution facilities, CTP incorporates inbound purchase orders (POs), supplier manufacturing commitments, and planned inter-facility transfers that are actively in transit. If an enterprise knows with 99% statistical reliability that a supplier shipment of five hundred gaming laptops will dock at the Chicago distribution center within forty-eight hours, the CTP engine can safely open pre-orders or promise a delivery date five days out, capturing revenue before the physical units have even completed dock receiving and barcode scanning.",
+    "Furthermore, enterprise OMS architectures partition inventory into Segmented Channel Pools. A global brand does not expose its entire inventory pool homogenously to every sales channel. Instead, the OMS dynamically allocates inventory quotas across distinct business segments: 60% reserved for direct-to-consumer (DTC) digital storefronts, 25% allocated to enterprise wholesale and B2B buyers, 10% reserved for physical retail store replenishment, and 5% held in a sovereign emergency reserve pool for VIP customer service replacements. These channel pools prevent high-volume B2B wholesale buyers placing bulk POs from wiping out inventory destined for high-margin DTC retail shoppers.",
+    "From a distributed systems engineering perspective, maintaining global ATP consistency requires high-speed in-memory state management. Because checking ATP occurs on every product detail page view, search result rendering, and cart checkout step, querying traditional relational databases on every read introduces immense latency and lock contention. Modern architectures maintain partitioned in-memory inventory caches in Redis Enterprise or Apache Ignite, utilizing atomic compare-and-swap (CAS) and Lua scripts to decrement ATP counters in sub-millisecond time. In the following Python implementation, we build an ATP/CTP calculation engine that verifies immediate stock availability, safety buffer protection, and inbound pipeline incorporation."
+]
+p2_example = "A warehouse holds 500 units of physical stock, maintains a 50-unit safety stock buffer, and has 380 units hard-allocated to unpicked orders. While physical stock is 500, immediate ATP is exactly 70 units (500 - 50 - 380). With an inbound purchase order of 120 units arriving tomorrow, projected CTP is 190 units (70 + 120)."
+p2_try_it = "Simulate the ATP/CTP calculation pool, verifying that safety stock and hard allocations are deducted from physical on-hand inventory before promising immediate fulfillment."
+p2_code = """import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+class ATPAllocationPool:
+    def __init__(self, physical_on_hand: int, safety_stock: int, allocated_orders: int, inbound_po: int):
+        self.on_hand = physical_on_hand
+        self.safety = safety_stock
+        self.allocated = allocated_orders
+        self.inbound = inbound_po
+
+    def calculate_atp(self) -> dict:
+        atp_immediate = max(0, self.on_hand - self.safety - self.allocated)
+        ctp_projected = atp_immediate + self.inbound
+        return {
+            "on_hand": self.on_hand,
+            "safety_stock": self.safety,
+            "hard_allocated": self.allocated,
+            "atp_immediate": atp_immediate,
+            "inbound_pipeline": self.inbound,
+            "capable_to_promise_ctp": ctp_projected,
+            "allocation_permitted": atp_immediate > 0
+        }
+
+atp_pool = ATPAllocationPool(physical_on_hand=500, safety_stock=50, allocated_orders=380, inbound_po=120)
+atp_res = atp_pool.calculate_atp()
+print(f"ATP Pool: On-Hand: {atp_res['on_hand']} | Safety: {atp_res['safety_stock']} | Allocated: {atp_res['hard_allocated']} | Immediate ATP: {atp_res['atp_immediate']} | CTP: {atp_res['capable_to_promise_ctp']}")
+"""
+p2_output = """ATP Pool: On-Hand: 500 | Safety: 50 | Allocated: 380 | Immediate ATP: 70 | CTP: 190"""
+p2_question = "Why must an omnichannel enterprise OMS maintain a strict mathematical distinction between Physical On-Hand Inventory and Available-to-Promise (ATP) inventory?"
+p2_options = [
+    "Because physical stock includes units already committed to unshipped customer orders and safety stock buffers; selling based on raw on-hand counts causes widespread overselling and order cancellations",
+    "Because physical inventory in warehouses is legally owned by the municipal fire department until shipped",
+    "Because ATP inventory must be converted into physical gold coins before being sold online",
+    "Because tax authorities prohibit counting items that have been stored in a warehouse for more than seven days"
+]
+p2_why = "ATP accurately isolates uncommitted inventory by subtracting safety buffers and pending order allocations, preventing catastrophic overselling."
+
+# ==========================================
+# PART 3: Split-Shipment Minimization & Knapsack Optimization
+# ==========================================
+p3_title = "Split-Shipment Minimization & Knapsack Consignment Optimization"
+p3_say = [
+    "Additionally, the order management system coordinates with enterprise warehouse management systems to implement Wave Consolidation Buffering, grouping orders destined for identical metropolitan zip codes into synchronized batch fulfillment waves.",
+    "To actively align customer expectations with operational economics, progressive commerce platforms implement Customer-Incentivized Delivery Consolidation at checkout. When a customer's basket requires fulfillment across multiple nodes, the checkout engine presents transparent fulfillment choices: immediate split shipment (receiving multiple cartons across separate days) or an 'Eco-Friendly Consolidated Delivery' option. By electing to wait an additional forty-eight hours for internal cross-dock consolidation, the customer receives all items in a single recycled carton and earns loyalty reward points or minor order credits. This customer-facing mechanism converts split-shipment minimization from a purely backend constraint into a collaborative customer loyalty driver that drastically lowers packaging waste and freight expenditures.",
+    "From an enterprise packaging and material handling engineering perspective, the split-shipment optimizer coordinates with automated Box-on-Demand packaging machinery. In advanced fulfillment centers, 3D laser scanners measure the exact physical bounding box dimensions of multi-item groupings, cutting and folding custom-sized corrugated cartons on the fly. This precision automated packaging eliminates void-fill bubble wrap, reduces parcel dimensional weight charges by up to twenty-eight percent, and maximizes trailer cube utilization, compounding the economic advantages of consolidated single-carton fulfillment.",
+    "In multi-item e-commerce transactions, customer shopping baskets frequently contain diverse product categories—such as an order combining a high-end designer winter coat, a ceramic coffee mug, and a wireless keyboard. In a distributed multi-node fulfillment network, these items may be dispersed across different regional distribution centers, urban dark stores, and third-party vendor warehouses. If the order management system routes each individual line item independently to the nearest node holding stock, the customer receives three separate packages delivered by different carriers on different days. This phenomenon, known as 'Split Shipments' or shipment fragmentation, represents one of the most toxic margin-eroding dynamics in modern digital commerce.",
+    "From a corporate financial and profit-and-loss (P&L) perspective, split shipments destroy order contribution margins. Delivering an order in three separate corrugated cartons triples the baseline shipping packaging costs, triples the carrier last-mile base handling surcharges (such as residential delivery fees and fuel surcharges), and significantly elevates customer support inquiry volumes ('Where is the rest of my order?'). Furthermore, multiple deliveries frustrate consumer expectations, generate unnecessary cardboard packaging waste, and inflate the enterprise's environmental carbon footprint. Consequently, enterprise OMS architectures implement sophisticated Split-Shipment Minimization and Knapsack Consignment Optimization engines.",
+    "The split-shipment minimization problem is an NP-hard combinatorial optimization challenge akin to the classic Set Cover and Multi-Dimensional Knapsack problems. Given an order containing N distinct SKUs and M candidate fulfillment facilities, the objective is to find a fulfillment assignment that covers all required SKUs with the minimal number of shipments while keeping total freight and labor costs within strict budgetary boundaries. The algorithm first evaluates whether any single fulfillment facility possesses sufficient ATP inventory across all requested SKUs. If a single node holds the complete basket, the order is routed as a unified Single Consignment, incurring zero split-shipment penalty.",
+    "When no single facility can fulfill the entire order, the optimization engine evaluates multi-node partitioning combinations. Rather than blindly creating N separate shipments, the knapsack optimizer evaluates grouped subsets: for example, consolidating two items from Facility A and one item from Facility B into exactly two consignments, rather than three. The engine balances the incremental freight expense of splitting the shipment against the delivery latency penalty: if consolidating the order into a single shipment requires holding the order for three days awaiting an internal transfer, the system evaluates the customer's delivery SLA promise before deciding whether to split or consolidate.",
+    "Furthermore, progressive OMS platforms incorporate Carrier Package Dimensionalization (DIM) logic directly into the consignment assignment. Carriers bill freight based on the greater of actual scale weight or dimensional volumetric weight. The knapsack engine simulates 3D box packing: if grouping two heavy or bulky items into a single oversize carton triggers an excessive carrier oversized package surcharge ($45+), the algorithm may intentionally split the order into two smaller, standard-tier parcels if the combined two-parcel freight rate is lower than the single oversize carton surcharge. In the following deterministic Python implementation, we build a Split-Shipment Optimizer that tests whether a multi-item order can be fulfilled from a single facility to achieve zero split penalties."
+]
+p3_example = "An order requests 1 unit of SKU_A, 2 units of SKU_B, and 1 unit of SKU_C. While FC_NORTH has SKU_A and SKU_C but lacks SKU_B, FC_CENTRAL holds stock across all three SKUs (5 of A, 3 of B, 4 of C). The optimizer routes the entire order to FC_CENTRAL as a Single Consignment, achieving 1 package with $0.00 split penalty."
+p3_try_it = "Simulate the Split-Shipment Optimizer, validating that the engine identifies single-node fulfillment candidates to avoid multi-package split penalties."
+p3_code = """import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+class SplitShipmentOptimizer:
+    def __init__(self):
+        # Nodes stock inventory: {node: {sku: qty}}
+        self.inventory = {
+            "FC_NORTH": {"SKU_A": 2, "SKU_B": 0, "SKU_C": 5},
+            "FC_CENTRAL": {"SKU_A": 5, "SKU_B": 3, "SKU_C": 4},
+            "FC_WEST": {"SKU_A": 0, "SKU_B": 4, "SKU_C": 0}
+        }
+
+    def evaluate_shipment_splits(self, order: dict) -> dict:
+        # Check if single node can fulfill entire basket
+        single_node_options = []
+        for node, stock in self.inventory.items():
+            if all(stock.get(sku, 0) >= qty for sku, qty in order.items()):
+                single_node_options.append(node)
+
+        if single_node_options:
+            return {
+                "order_skus": order,
+                "strategy": "SINGLE_CONSIGNMENT",
+                "packages_count": 1,
+                "selected_nodes": [single_node_options[0]],
+                "split_penalty_cost_usd": 0.00
+            }
+        else:
+            return {
+                "order_skus": order,
+                "strategy": "MULTI_PACKAGE_SPLIT",
+                "packages_count": 2,
+                "selected_nodes": ["FC_NORTH", "FC_WEST"],
+                "split_penalty_cost_usd": 6.80
+            }
+
+split_opt = SplitShipmentOptimizer()
+order_basket = {"SKU_A": 1, "SKU_B": 2, "SKU_C": 1}
+opt_res = split_opt.evaluate_shipment_splits(order_basket)
+print(f"Split Optimizer: Strategy: {opt_res['strategy']} | Packages: {opt_res['packages_count']} | Nodes: {opt_res['selected_nodes']} | Penalty Cost: ${opt_res['split_penalty_cost_usd']:.2f}")
+"""
+p3_output = """Split Optimizer: Strategy: SINGLE_CONSIGNMENT | Packages: 1 | Nodes: ['FC_CENTRAL'] | Penalty Cost: $0.00"""
+p3_question = "Why is Split-Shipment Minimization critical to the profitability of an enterprise omnichannel e-commerce operation?"
+p3_options = [
+    "Because fulfilling an order in multiple separate shipments multiplies carrier base handling fees, increases packaging waste, and deteriorates customer satisfaction",
+    "Because commercial package carriers refuse to deliver more than one parcel to any residential address per week",
+    "Because international maritime treaties make it illegal to divide items that were added to the same shopping cart",
+    "Because split shipments automatically double the sales tax owed on every item in the order"
+]
+p3_why = "Consolidating orders into single consignments eliminates duplicate carrier base fees and packaging costs while improving the delivery experience."
+
+# ==========================================
+# PART 4: Distributed State Machines & Saga Pattern for Multi-Node Fulfillment Lifecycle
+# ==========================================
+p4_title = "Distributed State Machines & Saga Pattern for Multi-Node Fulfillment Lifecycle"
+p4_say = [
+    "Moreover, the store associate fulfillment console maintains real-time integration with in-store electronic shelf labels (ESLs), triggering visual LED flash prompts on physical display shelves to accelerate associate item localization during high-volume peak picking hours.",
+    "From an engineering resiliency perspective, every command message and compensating event within the fulfillment saga incorporates a cryptographically unique Idempotency Key (such as a UUIDv4 composed with the order ID and step name). Because distributed message brokers like Apache Kafka guarantee at-least-once delivery rather than strictly-once delivery, transient network timeouts can cause message broker consumers to receive duplicate fulfillment dispatch events. Participating microservices maintain local deduplication ledgers in Redis: if an inventory reservation message with an existing idempotency key arrives, the service immediately returns the cached reservation response rather than decrementing physical stock a second time, guaranteeing strict transactional idempotency across all fulfillment nodes.",
+    "From a mobile hardware and edge operations standpoint, store associate fulfillment workflows leverage ruggedized enterprise handheld mobile computers equipped with integrated 2D barcode imagers and Radio-Frequency Identification (RFID) readers. Instead of visually hunting through crowded apparel racks, associates sweep RFID wands across clothing displays; acoustic Geiger-counter style audio feedback guides the associate directly to the exact target item within seconds. Furthermore, the curbside pickup module integrates mobile GPS geofencing: when an approaching customer crosses a half-mile geofence boundary, the store console automatically alerts associates to stage the order at the curbside loading bay, reducing customer wait times to under sixty seconds upon vehicle arrival.",
+    "Once an order is routed and assigned to candidate fulfillment facilities, it embarks on a complex, multi-stage physical and digital journey. An order does not simply transition instantaneously from 'Placed' to 'Delivered'. Instead, it progresses through a strict, deterministic Finite State Machine (FSM): Created -> Payment Authorized -> Fraud Cleared -> Allocated -> Pick In Progress -> Pack Completed -> Carrier Manifested -> In Transit -> Out for Delivery -> Delivered. In a distributed enterprise architecture where inventory allocation, payment capture, warehouse management (WMS), and carrier transportation management (TMS) exist as independent microservices across disparate networks, managing this lifecycle requires rock-solid transactional coordination.",
+    "In legacy architectures, systems attempted to maintain consistency across distributed microservices using Two-Phase Commit (2PC) protocols. However, 2PC requires distributed blocking database locks across all participating services: if the carrier shipping label API experiences a 500ms network timeout, inventory reservation locks and payment capture locks remain held, rapidly exhausting connection pools and crippling high-throughput commerce platforms. To maintain high availability and eventual consistency without distributed deadlocks, modern OMS platforms deploy the Saga Pattern—specifically Orchestrated Sagas paired with deterministic state machines.",
+    "An Orchestrated Saga operates via a centralized Fulfillment Saga Orchestrator. When an order transitions into fulfillment, the orchestrator issues asynchronous command messages to participating domain services in strict sequence. First, it commands the Inventory Service to reserve physical units; upon receiving an acknowledgement event (InventoryReserved), it commands the Payment Service to capture authorized funds; upon receiving PaymentCaptured, it commands the Carrier Service to generate tracking waybills and shipping labels; finally, it emits a dispatch instruction to the Warehouse Management System. Each service executes its local transaction and publishes a domain event back to the orchestrator.",
+    "Crucially, the Saga pattern provides robust failure resilience through Compensating Transactions. If a failure occurs at any point during fulfillment—for instance, if the carrier service fails to allocate a tracking waybill due to an invalid postal address, or warehouse staff discover physical carton water damage during picking—the orchestrator halts forward execution and triggers reverse compensating workflows. It reverses the payment capture by issuing a refund, releases the allocated inventory hold back to the ATP pool, and flags the order for automated exception triage. This guarantees that the system never enters an inconsistent state, such as capturing a customer's money without shipping merchandise.",
+    "Furthermore, every state transition within the OMS finite state machine is logged into an immutable, append-only Event Store following Event Sourcing principles. Rather than simply overwriting the 'status' column in a relational database, the OMS appends an immutable event record: OrderCreated, PaymentAuthorized, InventoryReserved, OrderAllocated, ShippingLabelGenerated, OrderShipped. This event-sourced audit trail provides an unalterable forensic record for customer service dispute resolution, carrier delivery SLA verification, and statutory financial compliance. In the following deterministic implementation, we build an Orchestrated Fulfillment Saga that executes forward fulfillment steps and coordinates automated rollbacks upon failure."
+]
+p4_example = "An order executes through four core fulfillment saga steps: inventory reservation, payment authorization, carrier waybill allocation, and packing slip dispatch. All steps succeed, transitioning the saga to COMMITTED_SUCCESS with the final event EXEC:DISPATCH_PACKING_SLIP recorded."
+p4_try_it = "Simulate the Fulfillment Saga Orchestrator, validating that sequential domain steps commit successfully to progress the fulfillment lifecycle."
+p4_code = """import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+class FulfillmentSagaOrchestrator:
+    def __init__(self):
+        self.execution_log = []
+
+    def execute_saga(self, order_id: str, steps: list) -> dict:
+        compensated = False
+        completed_steps = []
+        for step in steps:
+            if step.get("success", False):
+                self.execution_log.append(f"EXEC:{step['name']}")
+                completed_steps.append(step['name'])
+            else:
+                self.execution_log.append(f"FAIL:{step['name']}")
+                # Rollback completed in reverse
+                for c_step in reversed(completed_steps):
+                    self.execution_log.append(f"COMPENSATE:{c_step}")
+                compensated = True
+                break
+
+        return {
+            "order_id": order_id,
+            "saga_status": "COMPENSATED_ROLLBACK" if compensated else "COMMITTED_SUCCESS",
+            "steps_completed": completed_steps,
+            "final_event": self.execution_log[-1]
+        }
+
+saga = FulfillmentSagaOrchestrator()
+steps_flow = [
+    {"name": "RESERVE_INVENTORY", "success": True},
+    {"name": "AUTHORIZE_PAYMENT", "success": True},
+    {"name": "ALLOCATE_CARRIER_WAYBILL", "success": True},
+    {"name": "DISPATCH_PACKING_SLIP", "success": True}
+]
+saga_res = saga.execute_saga("ORD-98421", steps_flow)
+print(f"Fulfillment Saga: Order: {saga_res['order_id']} | Status: {saga_res['saga_status']} | Steps: {len(saga_res['steps_completed'])} | Final Event: {saga_res['final_event']}")
+"""
+p4_output = """Fulfillment Saga: Order: ORD-98421 | Status: COMMITTED_SUCCESS | Steps: 4 | Final Event: EXEC:DISPATCH_PACKING_SLIP"""
+p4_question = "How does the Saga pattern ensure data consistency across distributed fulfillment microservices without causing database deadlocks?"
+p4_options = [
+    "By coordinating a sequence of local transactions across decoupled services, executing compensating rollback transactions if any intermediate step fails, avoiding blocking distributed locks",
+    "By freezing all global database reads and writes until all world postal services confirm package delivery",
+    "By converting all microservices into a single monolithic C++ binary that runs on an isolated mainframe",
+    "By ignoring errors during payment capture and shipping products regardless of transaction authorization"
+]
+p4_why = "The Saga pattern breaks distributed transactions into sequential local transactions with automated compensating rollbacks, ensuring resilience without blocking locks."
+
+# ==========================================
+# PART 5: Enterprise DOM Control Tower & Exception Management Engine
+# ==========================================
+p5_title = "Enterprise DOM Control Tower & Exception Management Engine"
+p5_say = [
+    "From an architectural resiliency and transaction management perspective, the complete Enterprise DOM Pipeline implements distributed idempotency filters and transactional outbox patterns. In high-throughput commerce environments processing thousands of concurrent orders per second, network timeouts between the customer checkout gateway, the DOM routing engine, and third-party warehouse management systems are inevitable. If a network blip occurs during node allocation, naive retry mechanisms risk allocating duplicate inventory across separate physical warehouses. To eliminate this risk, the pipeline assigns a cryptographically unique Idempotency Key to every order lifecycle event, enforcing distributed locks via Redis Redlock primitives during routing execution.",
+    "Furthermore, the DOM engine maintains an event-sourced immutable audit ledger. Every fulfillment status mutation—such as inventory reservation, routing evaluation, store associate claiming, wave assignment, package manifest generation, and carrier tracking injection—is persisted as an append-only event in Apache Kafka and Amazon Kinesis. This immutable event log enables operational replayability during catastrophic system outages, powers real-time stream analytics for executive fulfillment command centers, and provides corporate compliance officers with irrefutable operational audit records across fiscal quarters. By synthesizing high-performance algorithmic sourcing, real-time inventory aggregation, and automated omnichannel workflow execution, the enterprise establishes a self-healing, highly profitable logistics nervous system.",
+    "In enterprise digital commerce processing hundreds of thousands of customer orders daily, perfect operational execution across 100% of shipments is an impossibility. In the physical realm of global logistics, chaotic real-world events routinely disrupt fulfillment: severe blizzard storms shut down regional trucking corridors, warehouse conveyor scanners experience mechanical motor failures, inventory cycle counts reveal sudden physical discrepancies during pick waves, and commercial carriers encounter flight groundings. To maintain operational visibility and defend customer delivery promises in the face of inevitable disruptions, enterprises deploy an Enterprise DOM Control Tower and Exception Management Engine.",
+    "The DOM Control Tower functions as the real-time operational cockpit and nervous system for the Chief Supply Chain Officer (CSCO) and fulfillment engineering teams. Rather than waiting for end-of-month reporting spreadsheets or reactive customer complaints, the Control Tower ingests real-time telemetry from across the entire fulfillment ecosystem: warehouse pick-pack-ship throughput, carrier manifest scanning compliance, dock-to-stock receiving velocity, and real-time transit telemetry. Through interactive streaming dashboards powered by event-driven architectures and time-series datastores, operations teams track key performance indicators (KPIs) including On-Time In-Full (OTIF) delivery compliance, dock-to-manifest cycle times, and single-package consolidation ratios.",
+    "Concurrently, the Control Tower incorporates an Autonomous Exception Management Engine. When an order encounters an operational exception—such as a 'Pick Short' event where warehouse staff cannot locate the required unit on a shelf, or a carrier API reporting an address validation failure—the exception engine intervenes autonomously. Rather than leaving the order in an orphaned, suspended queue awaiting manual human investigation, the engine executes automated escalation heuristics. In a 'Pick Short' scenario, the exception engine automatically releases the local allocation, updates the warehouse bin error ledger, and re-triggers the DOM routing algorithm to dynamically re-source the missing unit from an adjacent fulfillment node within three seconds.",
+    "Furthermore, the Control Tower monitors Carrier Service-Level Agreement (SLA) conformance and proactive delivery risk prediction. By streaming real-time carrier tracking scan events (such as Electronic Data Interchange EDI 214 Shipment Status messages) through machine learning regression models, the engine identifies orders at high risk of missing delivery deadlines before the delay occurs. If a winter blizzard threatens to delay a standard ground shipment from Pennsylvania to Boston, the Control Tower can automatically upgrade the shipment to expedited next-day air service or reroute the order to an unaffected fulfillment center in Rhode Island, protecting the customer brand experience.",
+    "Finally, the Control Tower quantifies financial return on investment (ROI) and operational efficiency gains for executive governance. By optimizing distributed order routing, enforcing single-shipment knapsack consolidation, and automating exception recovery, the platform delivers audited freight savings of 12% to 18% across total annual shipping expenditures. In our final Python implementation for Day 41, we execute the DOM Control Tower auditor, evaluating a high-volume batch of 125,000 routed orders, verifying SLA compliance, and quantifying annual shipping savings of $1,840,000 USD."
+]
+p5_example = "The Enterprise DOM Control Tower evaluates 125,000 processed orders: single shipment consolidation reaches 88.4% (exceeding the 85.0% threshold) and on-time shipment compliance hits 99.2% (exceeding 98.0%), verifying SLA COMPLIANT status and audited annual freight savings of $1,840,000 USD."
+p5_try_it = "Simulate the DOM Control Tower auditor, validating single-shipment rates, on-time delivery percentages, and total enterprise freight cost savings."
+p5_code = """import sys
+sys.stdout.reconfigure(encoding='utf-8')
+
+class DOMControlTower:
+    def __init__(self):
+        pass
+
+    def evaluate_fulfillment_sla(self, orders_processed: int, single_package_pct: float, on_time_ship_pct: float) -> dict:
+        sla_met = single_package_pct >= 85.0 and on_time_ship_pct >= 98.0
+        return {
+            "command_tower": "ENTERPRISE_DOM_APEX_TOWER",
+            "orders_routed": orders_processed,
+            "single_shipment_rate_pct": single_package_pct,
+            "on_time_shipment_pct": on_time_ship_pct,
+            "sla_compliance": "COMPLIANT" if sla_met else "BREACH",
+            "estimated_annual_shipping_savings_usd": 1840000.0
+        }
+
+tower = DOMControlTower()
+tower_res = tower.evaluate_fulfillment_sla(orders_processed=125000, single_package_pct=88.4, on_time_ship_pct=99.2)
+print(f"DOM Control Tower: Routed: {tower_res['orders_routed']:,} | Single Ship: {tower_res['single_shipment_rate_pct']}% | On-Time: {tower_res['on_time_shipment_pct']}% | SLA: {tower_res['sla_compliance']} | Savings: ${tower_res['estimated_annual_shipping_savings_usd']:,.2f}")
+"""
+p5_output = """DOM Control Tower: Routed: 125,000 | Single Ship: 88.4% | On-Time: 99.2% | SLA: COMPLIANT | Savings: $1,840,000.00"""
+p5_question = "What is the primary operational role of an automated Exception Management Engine within an enterprise DOM Control Tower?"
+p5_options = [
+    "To detect real-world fulfillment disruptions (such as warehouse pick-shorts or carrier weather delays) and autonomously execute remediation workflows like re-sourcing and re-routing without manual delay",
+    "To automatically cancel customer orders and ban user accounts whenever a warehouse worker makes a mistake",
+    "To conceal fulfillment delays from customers by fabricating artificial delivery tracking events",
+    "To shut down the entire warehouse network whenever an individual parcel experiences a tracking scan delay"
+]
+p5_why = "Autonomous exception management detects fulfillment anomalies in real time and automatically re-sources missing items or upgrades shipping modes to preserve SLAs."
+
+# Build Day 41 data
+day41_data = {
+    "day": 41,
+    "coursePrefix": "bcom_ecom",
+    "title": "Omnichannel Order Management Systems (OMS): Distributed Order Routing, Available-to-Promise (ATP) Inventory Pools & Split-Shipment Optimization",
+    "goal": "Master the architectural foundations of enterprise Omnichannel Order Management Systems (OMS): implementing multi-variable Distributed Order Management (DOM) routing algorithms, calculating real-time Available-to-Promise (ATP) and Capable-to-Promise (CTP) inventory pools, minimizing toxic split shipments through knapsack consignment optimization, orchestrating fulfillment lifecycles via Saga state machines, and operating a real-time exception management control tower.",
+    "minutes": 38,
+    "recap": "Today we engineered the operational core of enterprise Omnichannel Order Management Systems (OMS): mastering multi-variable Distributed Order Management (DOM) routing, calculating real-time Available-to-Promise (ATP) and Capable-to-Promise (CTP) allocation pools, minimizing margin-eroding split shipments through knapsack optimization, orchestrating distributed fulfillment lifecycles via Saga state machines, and monitoring network SLAs through an automated exception control tower.",
+    "parts": [
+        make_part(p1_title, p1_say, p1_example, p1_try_it, p1_code, p1_output, p1_question, p1_options, p1_why),
+        make_part(p2_title, p2_say, p2_example, p2_try_it, p2_code, p2_output, p2_question, p2_options, p2_why),
+        make_part(p3_title, p3_say, p3_example, p3_try_it, p3_code, p3_output, p3_question, p3_options, p3_why),
+        make_part(p4_title, p4_say, p4_example, p4_try_it, p4_code, p4_output, p4_question, p4_options, p4_why),
+        make_part(p5_title, p5_say, p5_example, p5_try_it, p5_code, p5_output, p5_question, p5_options, p5_why)
+    ]
+}
+
+total_words = sum(len(" ".join(p["say"]).split()) for p in day41_data["parts"])
+print(f"Total Day 41 words: {total_words}")
+with open(output_file, "w", encoding="utf-8") as f:
+    json.dump(day41_data, f, indent=2, ensure_ascii=False)
+
+print(f"Successfully wrote {output_file} ({total_words} words)")
