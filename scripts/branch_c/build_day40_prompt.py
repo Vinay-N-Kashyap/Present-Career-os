@@ -1,0 +1,408 @@
+import json
+import hashlib
+import re
+
+part1_say = [
+    "The modern enterprise artificial intelligence frontier demands more than fragmented, one-off prompting techniques; it requires a cohesive, production-grade architectural framework that unifies constrained structured generation, asynchronous multi-tool orchestration, context compression economics, and hierarchical semantic routing. In this Milestone Capstone, we synthesize the foundational and advanced methodologies explored throughout this module into a sovereign enterprise system: the ApexStructuredGrammar Suite.",
+    "The core architectural breakthrough of the ApexStructuredGrammar platform is unified cognitive pipelining. Rather than treating prompt compression, intent routing, grammar-constrained logit masking, and tool calling as isolated microservices stitched together with brittle glue code, the suite integrates these primitives into an atomic, low-latency execution pipeline. When an enterprise request arrives at the API gateway, it flows through a mathematically verified sequence of transformations that eliminates hallucinations, prevents syntax failures, and optimizes compute resources.",
+    "At the entry boundary of the ApexStructuredGrammar architecture sits the Semantic Intent Routing mesh. Incoming customer inquiries, financial transactions, or multi-modal documents are classified in single-digit milliseconds using dense vector embeddings and quantized classification models. The router determines whether the request can be resolved using cached responses, lightweight specialized models, or flagship frontier reasoning engines, dynamically assembling the optimal prompt context and withholding unnecessary tool schemas.",
+    "Simultaneously, the Perplexity-Aware Prompt Compressor executes selective context pruning on reference documentation and enterprise retrieved context. Utilizing token-level entropy budgets, the compression engine removes syntactic redundancy and low-information tokens, shrinking context preambles by more than three-fold. This radical reduction frees valuable attention bandwidth, accelerates prompt pre-fill processing, and slashes cloud inference expenditures.",
+    "At the generative core, the Context-Free Grammar and Deterministic Finite Automaton logit masking engine intercepts the transformer sampling loop. As the foundation model predicts next-token probability distributions, the grammar engine enforces rigid syntactic conformance to Pydantic and JSON schemas. Tokens that would introduce invalid syntax, illegal keys, or out-of-bounds enumerations are dynamically assigned negative infinity logits, ensuring that generated payloads achieve one hundred percent syntactic correctness.",
+    "For complex reasoning tasks requiring external data or database modifications, the Asynchronous Parallel Tool Orchestrator springs into action. Rather than waiting for serial function executions, the suite dispatches parallel tool calls across a distributed worker pool with dedicated circuit breakers, backoff retry handlers, and cryptographic audit logging, reuniting concurrent execution branches in minimum theoretical wall-clock time.",
+    "Sovereign enterprise architecture patterns govern the physical deployment topology of the suite. Organizations deploy ApexStructuredGrammar within isolated virtual private clouds or air-gapped on-premise GPU clusters, preventing sensitive corporate intellectual property, transactional ledgers, and proprietary trade secrets from leaking across public internet boundaries or multi-tenant commercial inference endpoints.",
+    "End-to-end integration contracts establish seamless data interchange across all pipeline components. Type-safe schemas defined at system inception flow unbroken through the intent classifier, prompt assembler, grammar enforcer, and tool orchestrator, guaranteeing that every intermediate representation adheres to mathematically verified structural invariants without lossy ad-hoc string parsing.",
+    "Multi-tenant isolation and strict cryptographic tenancy boundaries prevent context pollution across concurrent enterprise clients. The orchestration gateway assigns isolated memory arenas, session state stores, and tool access tokens to each enterprise department, guaranteeing that internal human resources records, executive financial models, and customer service inquiries remain strictly compartmentalized throughout the generative lifecycle.",
+    "Continuous automated regression testing and stress benchmarking safeguard platform resilience prior to deployment. Enterprise CI/CD pipelines simulate thousands of concurrent transactions under adverse synthetic network latency, confirming that the unified pipeline maintains strict sub-second response envelopes and zero-syntax-error execution under planetary production workloads.",
+    "Observability and cryptographic provenance underpin the entire architecture. Every stage of execution—from intent classification confidence and compression ratios to token masking latency and tool execution durations—is captured in OpenTelemetry distributed trace spans. Cryptographic hashes of prompts, schemas, and outputs are committed to immutable compliance ledgers, fulfilling the stringent governance demands of regulated global enterprises.",
+    "Building and deploying the ApexStructuredGrammar suite marks your graduation into an elite cohort of enterprise prompt engineers and AI systems architects. By mastering the synthesis of formal language theory, systems concurrency, token economics, and semantic routing, you possess the proven capability to engineer industrial-grade autonomous intelligence platforms that operate with uncompromising reliability."
+]
+
+part2_say = [
+    "At the operational heart of the ApexStructuredGrammar suite lies the high-performance Grammatical Parsing and Logit Masking Engine. In mission-critical enterprise workflows—such as financial settlements, automated code deployment, or algorithmic healthcare diagnostics—probabilistic JSON generation is fundamentally unacceptable. A single missing quotation mark, misplaced bracket, or unescaped newline can trigger downstream software crashes, financial reconciliation failures, or compliance violations.",
+    "Finite state automata and context free grammars govern the logit masking engine, converting static type schemas into dynamic runtime constraint boundaries. When an engineer specifies an enterprise data model using Pydantic or TypeScript interfaces, the compiler converts the schema into an optimized Context-Free Grammar expressed in Backus-Naur Form or compiles regular expression patterns into a Deterministic Finite Automaton state table.",
+    "During transformer inference, the grammar engine maintains active pointer references to current automaton states. Before the language model samples the next token, the engine queries the transition graph: given the partial JSON string already generated, which vocabulary tokens represent valid grammatical transitions? The engine constructs a sparse bitmask representing allowable tokens, instantly zeroing out invalid logits across vocabulary matrices containing upwards of one hundred thousand entries.",
+    "Line-rate logit masking demands extreme computational efficiency to avoid introducing latency bottlenecks. The ApexStructuredGrammar engine utilizes bit-parallel state sets and pre-computed token vocabulary intersections. By indexing the token vocabulary into specialized prefix trie structures and memory-mapped transition tables, the engine calculates valid token bitmasks in microseconds, ensuring that grammar enforcement adds zero detectable overhead to generative token generation.",
+    "Automated schema compilation pipelines transform complex OpenAPI specifications and database schemas into optimized automaton tables at server startup. By performing offline analysis of permissible JSON keys, type constraints, and string enumerations, the compiler pre-computes reachability matrices, eliminating dynamic parsing overhead during live production inference sessions.",
+    "Speculative grammatical decoding unlocks dramatic throughput acceleration across modern transformer inference engines. Because the grammar engine maintains absolute certainty regarding fixed structural tokens—such as JSON field names, colons, brackets, and quotation marks—the engine can speculatively inject these constant tokens without waiting for transformer forward passes, effectively doubling generation velocity on heavily formatted enterprise outputs.",
+    "Handling recursive structures and polymorphic schemas requires generalized Context-Free Grammar pushdown automata. Unlike flat regular expressions, nested enterprise JSON payloads containing arbitrary object hierarchies, nested arrays, and recursive definitions require a pushdown stack to track opening and closing delimiters. The suite implements an optimized pushdown parser that dynamically tracks nesting depth and schema transitions across deeply nested data structures.",
+    "Negative constraint enforcement guarantees that language models never generate prohibited strings, forbidden internal tokens, or deprecated schema attributes. If a regulatory mandate forbids the emission of personally identifiable information patterns or proprietary product codes, the grammar compiler embeds negative lookahead transitions directly into the state machine, physically preventing the model from sampling matching token sequences.",
+    "Syntactic and semantic recovery mechanisms safeguard against rare edge-case deadlocks. In scenarios where a restrictive grammar forces the model into a low-probability linguistic corner, the engine detects impending deadlocks through forward-looking beam search, dynamically backtracking or selecting alternate valid paths before sampling irreversible output tokens.",
+    "Hardware-accelerated bit-vector operations leverage modern CPU vector instructions including AVX-512 and ARM Neon to execute logit masking across tens of thousands of vocabulary entries simultaneously. By computing bitwise intersections directly in processor vector registers, the engine achieves microsecond mask generation latencies, completely decoupling grammatical complexity from model decoding velocity.",
+    "Unicode character normalization and escape sequence handling operate seamlessly within the pushdown automaton layer. Enterprise JSON payloads frequently contain non-ASCII characters, multi-byte emoji glyphs, and complex escaped string sequences. The grammar engine tracks byte-level transition boundaries across UTF-8 code point sequences, preventing multi-byte token splits from corrupting automaton state representations.",
+    "By mastering line-rate grammatical logit masking, enterprise systems achieve absolute structural determinism. The foundation model's creative reasoning capabilities are harmoniously married to the rigid predictability of formal computer science compilers, delivering flawless structured outputs at planetary enterprise scale."
+]
+
+part3_say = [
+    "While grammar-constrained generation ensures impeccable structural output, enterprise autonomous agents must interact dynamically with real-world enterprise infrastructure through tool calling and API invocation. The ApexStructuredGrammar suite incorporates an industrial-grade Asynchronous Parallel Tool Orchestration Engine designed to execute complex, multi-system operational workflows with maximum concurrency and resilience.",
+    "Parallel tool dispatch eliminates sequential processing bottlenecks in multi agent systems. Traditional agent implementations invoke tools serially: searching customer records, waiting for the HTTP response, then querying invoice databases, waiting again, and finally updating shipping tables. In an enterprise processing thousands of requests per second, serial network latency compounds into unacceptably sluggish user experiences and depleted server thread pools.",
+    "The ApexStructuredGrammar orchestrator inspects the model's parallel function call intentions and constructs an asynchronous Directed Acyclic Graph (DAG) execution plan. Independent operations—such as querying customer balances, validating KYC documentation, and retrieving currency exchange rates—are dispatched concurrently across an asynchronous worker pool utilizing non-blocking event loops, compressing overall execution duration to the slowest individual API call.",
+    "Distributed worker pool architectures ensure horizontal scalability across enterprise clusters. By distributing tool execution tasks across Redis message brokers and high-performance task queues, the suite prevents heavy computational workloads or sluggish third-party legacy APIs from bottlenecking the primary language model inference loops, sustaining linear throughput scaling as enterprise query volumes expand.",
+    "Idempotency management guarantees transaction safety across automated enterprise tool invocations. When an autonomous agent triggers financial ledger mutations, order placements, or database updates, the orchestrator generates deterministic idempotency tokens derived from session identifiers and parameter hashes, guaranteeing that transient network retries never trigger duplicate real-world transactions.",
+    "Robust error handling and schema validation boundaries insulate the foundation model from malformed tool outputs and external service failures. Every API response returned by external microservices is validated against strict Pydantic schemas before being injected back into the conversation context. If an external service returns a five-hundred error, an invalid payload, or timed out socket connection, the orchestrator intercepts the failure and synthesizes an informative, structured error object.",
+    "Dynamic retry policies with exponential backoff and randomized jitter protect downstream corporate microservices from thundering herd problems during transient outages. If a database query fails due to temporary connection limits, the worker automatically retries with calibrated backoff intervals, seamlessly recovering from network hiccups without failing the broader agent workflow.",
+    "Circuit breaker patterns actively monitor upstream and downstream API health across distributed nodes. If an external payment gateway exhibits error rates exceeding ten percent over a rolling two-minute window, the circuit breaker trips into an OPEN state, instantly halting traffic to the failing service and returning graceful fallback alternatives to the agent reasoning loop.",
+    "Multi-agent validation gates introduce critical verification checkpoints for high-risk tool operations. Before approving high-value wire transfers, database schema migrations, or infrastructure provisioning commands, the orchestrator routes the pending tool execution payload through a secondary auditor model that verifies authorization and business policy compliance.",
+    "Dead-letter queue isolation isolates irrecoverable tool execution anomalies for human review. When a tool fails repeatedly despite exponential backoff and alternate endpoint routing, the task is safely sequestered into an encrypted dead-letter queue with full context telemetry, allowing site reliability engineers to triage the issue without disrupting ongoing platform operations.",
+    "Distributed two-phase commit protocols coordinate multi-system transactional state changes across enterprise datastores. When an autonomous agent must simultaneously debit an ERP account ledger and issue a warehouse dispatch order, the tool orchestrator acts as transaction coordinator, executing prepare and commit phases across distributed microservices to guarantee that partial failure never leaves corporate records in an inconsistent state.",
+    "Tool execution rate limiting and concurrency throttling prevent autonomous agents from accidentally overwhelming internal production infrastructure. The suite enforces token-bucket and leaky-bucket rate limiters per tool and per user tenant, guaranteeing that high-concurrency multi-agent swarms operate within calibrated infrastructure capacity limits.",
+    "Asynchronous parallel tool orchestration transforms passive language models into resilient, high-throughput autonomous enterprise operators. By engineering robust concurrency, intelligent error recovery, and strict schema boundaries, the suite ensures that automated actions execute with industrial reliability."
+]
+
+part4_say = [
+    "Enterprise AI architectures must balance cognitive capability against the realities of cloud compute economics, KV-cache memory constraints, and end-to-end user latency. The fourth core pillar of the ApexStructuredGrammar suite integrates Perplexity-Aware Prompt Compression with Hierarchical Dynamic Dispatch to achieve unprecedented context efficiency and operational cost reduction.",
+    "Context budgeting and dynamic dispatch optimize enterprise compute utilization. In enterprise RAG workflows, retrieved reference documentation, system instructions, and historical conversation transcripts can quickly balloon into tens of thousands of tokens. Ingesting bloated contexts consumes massive GPU high-bandwidth memory for Key-Value caching, introduces long time-to-first-token delays, and risks distracting attention heads from critical operational directives.",
+    "The suite deploys the LLMLingua compression algorithm to evaluate the informational entropy of every retrieved token. Using a compact, fine-tuned compression model, the engine computes token-level perplexity scores across candidate text segments. Tokens exhibiting low perplexity—representing predictable grammatical fillers, boilerplate corporate headers, and redundant phrasing—are surgically pruned while preserving semantically dense keywords, numeric values, and structural logic.",
+    "Multi-stage iterative context pruning evaluates document cohesion and semantic preservation. After initial token-level entropy pruning, the compression engine passes the condensed text through a secondary evaluation stage that computes cosine similarity against the original document embedding, confirming that essential named entities, regulatory clauses, and numeric parameters remain intact before proceeding to model inference.",
+    "Dynamic token allocation algorithms calculate adaptive compression ratios based on current server load and query complexity. During peak traffic hours or for simple informational queries, the engine applies aggressive four-fold compression, conserving GPU memory and network bandwidth. Conversely, for high-stakes legal, medical, or architectural synthesis tasks, compression ratios are dynamically relaxed to ensure total retention of subtle contextual nuances.",
+    "Attention sink mechanisms and heavy hitter token eviction algorithms such as H2O bound KV-cache memory footprints during extended multi-turn agent sessions. By retaining initial prompt anchor tokens alongside dynamically scored high-attention tokens while evicting intermediate transient tokens, the system sustains infinite conversational loops with fixed memory ceilings and zero performance degradation.",
+    "KV-cache economics and attention density optimization govern prompt structure and serialization. By aligning static system instructions and frequently reused context segments at the absolute beginning of prompt payloads, the suite maximizes KV-cache hit rates across multi-tenant GPU clusters, slashing compute overhead and accelerating prompt pre-fill processing to near-instantaneous speeds.",
+    "Distributed prompt cache networks maintain pre-computed key-value representations across cluster nodes. Frequently referenced corporate policies, compliance guidelines, and code libraries are held hot in GPU memory-mapped caches, allowing thousands of concurrent user queries to attach to cached context prefixes in single-digit milliseconds without redundant re-computation.",
+    "Dynamic hierarchical dispatch routes compressed prompt payloads to the optimal foundation model tier. Simple customer FAQs and status lookups are dispatched to fast, cost-effective eight-billion-parameter models or resolved directly through semantic vector caches. Moderate transactional tasks are routed to specialized domain models, while complex multi-hop reasoning edge cases are escalated to flagship frontier models.",
+    "Cost-performance Pareto optimization continuously balances model operational expense against business critical requirements. The platform's dynamic cost controller aggregates token usage, model tier allocation, and latency metrics across all corporate departments, generating automated financial reports that demonstrate verified cost reductions of up to eighty-four percent compared to monolithic frontier model deployment.",
+    "Telemetry feedback loops continuously analyze the correlation between compression ratios, routing tiers, and downstream task completion rates. If aggressive compression in a specific business category leads to elevated retry rates, the system's automated optimization daemon adjusts compression thresholds upward, maintaining optimal Pareto efficiency between operational cost and cognitive accuracy.",
+    "Unifying perplexity-aware prompt compression with hierarchical dispatching delivers a massive structural advantage to enterprise AI deployments. Organizations achieve four-fold to eight-fold reductions in total inference expenditure while accelerating responsiveness across planetary customer volumes."
+]
+
+part5_say = [
+    "The culmination of our architectural journey is the full synthesis and deployment of the ApexStructuredGrammar Enterprise Suite in a hardened, production-ready Python service. In this final capstone phase, we validate the end-to-end integration of grammar logit masking, parallel tool dispatching, context compression, and hierarchical semantic routing against comprehensive enterprise benchmark suites.",
+    "Production telemetry and benchmark validation certify enterprise platform readiness. The test harness evaluates the integrated system across five critical operational dimensions: grammatical syntactic accuracy, parallel tool dispatch concurrency, context compression ratio, semantic intent classification precision, and ninety-ninth percentile tail latency reduction. Across hundreds of simulated enterprise transactions, the platform demonstrates uncompromised performance.",
+    "The Python implementation utilizes modern asynchronous design patterns, structured concurrency, and high-performance compilation frameworks. The Request Gateway handles incoming HTTP/2 and gRPC requests using asynchronous ASGI controllers, dispatching tasks to background worker pools without blocking the main event loop. Grammar state machines and token bitmasks execute with pre-compiled C-extensions and memory-mapped indexes for peak throughput.",
+    "Chaos engineering and fault injection suites rigorously challenge the platform's stability under simulated disaster scenarios. The test framework injects artificial network drops, API latency spikes, malformed JSON inputs, and simulated provider rate-limit rejections, confirming that circuit breakers trip predictably, worker retries recover cleanly, and fallback routing preserves user availability without crashing the host daemon.",
+    "Comprehensive OpenTelemetry instrumentation provides granular, real-time observability across all microservice boundaries. Distributed trace spans capture intent classification confidence scores, compression entropy distributions, individual tool execution timings, and transformer logit masking latencies, exporting metrics directly to enterprise monitoring platforms like Prometheus and Grafana.",
+    "Cryptographic provenance auditing seals every transaction with verifiable compliance signatures. The suite computes SHA-256 hashes of the user query, the applied grammar schema, the compressed prompt context, the tool execution traces, and the final validated response payload, storing the immutable cryptographic receipt in enterprise compliance vaults to satisfy regulatory mandates.",
+    "Automated post-incident forensic replay engines allow enterprise audit teams to reconstruct historical agent interactions with absolute fidelity. Using the cryptographically sealed session receipt, the simulator instantiates the exact grammar state machine, compressed context, and mock tool responses, confirming that the agent's autonomous decisions adhered strictly to established corporate governance policies.",
+    "SOC 2 and regulatory compliance frameworks are fully supported through zero-trust cryptographic audit trails. By linking user identity tokens, session state, prompt version hashes, and model response signatures in tamper-evident append-only ledgers, enterprise compliance teams can conduct exhaustive post-incident forensic audits without exposing unencrypted customer data.",
+    "Automated canary deployment harnesses and blue-green rollout pipelines enable continuous platform upgrades with zero user downtime. When engineers publish updated grammar definitions, new tool integrations, or revised routing taxonomies, the platform routes a canary slice of live traffic to the candidate version, verifying syntactic accuracy and latency envelopes before promoting the update across the production fleet.",
+    "Enterprise Kubernetes deployment topologies leverage horizontal pod autoscalers, GPU device plugins, and distributed ingress controllers. The Python service scales elastically in response to incoming transaction volumes, ensuring that CPU-bound grammar parsing and I/O-bound parallel tool dispatch operate with balanced resource consumption across multi-node clusters.",
+    "Continuous automated health probes and graceful degradation fallbacks protect platform reliability during severe infrastructure disruptions. If a primary cloud zone experiences network isolation, the orchestration cluster seamlessly shifts active sessions to secondary standby regions with zero state loss and zero dropped user transactions.",
+    "Resilience engineering patterns—including circuit breakers, connection pooling, graceful degradation sandboxes, and automated health probes—ensure continuous platform availability during upstream foundation model outages or regional cloud network partitions, safeguarding enterprise service level agreements under all conditions.",
+    "Congratulations on conquering Milestone Capstone Five and mastering the complete architecture of modern structured prompt engineering. By constructing the ApexStructuredGrammar suite, you have demonstrated the elite systems engineering capabilities required to build, secure, and scale autonomous artificial intelligence platforms across the modern global enterprise."
+]
+
+parts_data = [
+    {
+        "title": "ApexStructuredGrammar Architecture: Converging Grammars, Tool Pools, Compression & Routing",
+        "say": part1_say,
+        "example": "Enterprise platforms orchestrate grammars, tools, and compression seamlessly.",
+        "tryIt": "Synthesize grammar enforcement and parallel tool dispatch into a unified pipeline.",
+        "check": {
+            "question": "What is the primary breakthrough of the unified ApexStructuredGrammar architecture?",
+            "options": [
+                "Integrating grammars, tools, compression, and routing into an atomic low-latency pipeline",
+                "Rewriting the underlying computer operating system kernel in assembly language",
+                "Permanently disabling all network firewalls to allow unrestricted cloud access",
+                "Converting all enterprise documents into uncompressed raw bitmap image files"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "ApexStructuredGrammar unifies constrained grammars, parallel tools, prompt compression, and intent routing into an atomic low-latency pipeline, eliminating hallucinations and latency bloat."
+        }
+    },
+    {
+        "title": "Grammatical Parsing & Line-Rate Logit Masking: Zero-Syntax-Error Schema Enforcement",
+        "say": part2_say,
+        "example": "State machines dynamically mask invalid vocabulary tokens at runtime.",
+        "tryIt": "Implement a deterministic pushdown automaton for json validation during sampling.",
+        "check": {
+            "question": "How does line-rate logit masking guarantee zero syntax errors in generated JSON?",
+            "options": [
+                "By setting logits of tokens that violate active automaton transitions to negative infinity",
+                "By asking the user to manually correct invalid JSON syntax in a modal dialog box",
+                "By restarting the entire foundation model inference process from the beginning on error",
+                "By deleting all punctuation marks from the generated natural language response"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "Logit masking dynamically evaluates the automaton state set and assigns negative infinity to invalid transition tokens, physically preventing invalid syntax from being sampled."
+        }
+    },
+    {
+        "title": "Asynchronous Parallel Tool Orchestration: High-Concurrency Workers & Resilient Handlers",
+        "say": part3_say,
+        "example": "Worker pools dispatch concurrent queries across enterprise apis with error handlers.",
+        "tryIt": "Construct an asynchronous multi worker pool with circuit breakers and backoff retries.",
+        "check": {
+            "question": "Why does parallel tool dispatch dramatically outperform traditional serial execution?",
+            "options": [
+                "Independent API operations execute concurrently, reducing wall-clock latency to the slowest call",
+                "It bypasses corporate network security policies to achieve faster internet speeds",
+                "It forces all external web services to operate without authentication credentials",
+                "It stores all intermediate API responses on unencrypted local hard disk drives"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "Parallel tool dispatch executes independent API calls concurrently across an asynchronous worker pool, compressing latency to the duration of the slowest call."
+        }
+    },
+    {
+        "title": "Perplexity-Aware Compression & Dynamic Dispatch: KV-Cache Economics & Tiered Serving",
+        "say": part4_say,
+        "example": "Perplexity aware compression slashes context window token overhead by threefold.",
+        "tryIt": "Combine semantic intent routing with budget aware prompt compression algorithms.",
+        "check": {
+            "question": "How does LLMLingua compression optimize GPU memory and cloud inference budgets?",
+            "options": [
+                "By pruning low-perplexity redundant tokens while preserving high-information keywords",
+                "By deleting all vowels from the prompt text before submitting it to the model",
+                "By reducing the electrical voltage supplied to the server central processing unit",
+                "By encrypting all prompt strings with an irreversible one-way cryptographic hash"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "LLMLingua computes token-level perplexity, surgically removing low-information syntactic filler while preserving essential keywords, saving context and GPU cache memory."
+        }
+    },
+    {
+        "title": "Enterprise Capstone Integration: End-to-End Validation, Telemetry & Production Deployment",
+        "say": part5_say,
+        "example": "Enterprise suites demonstrate complete syntactic and semantic accuracy in benchmarks.",
+        "tryIt": "Deploy the unified ApexStructuredGrammar suite with monitoring and audit logging.",
+        "check": {
+            "question": "What role does cryptographic provenance auditing play in enterprise AI deployments?",
+            "options": [
+                "Creating immutable SHA-256 receipts of queries, schemas, and outputs for regulatory compliance",
+                "Preventing unauthorized users from viewing the computer screen during operation",
+                "Automatically formatting all source code files according to standard style guides",
+                "Compressing output audio files into high-fidelity stereo sound recordings"
+            ],
+            "answer": 0,
+            "answerIndex": 0,
+            "why": "Cryptographic provenance logs record cryptographic hashes of inputs, schemas, tool executions, and responses in compliance ledgers, satisfying regulatory standards."
+        }
+    }
+]
+
+code1 = '''def test_day40_apexstructuredgrammar_suite():
+    """
+    Day 40: Milestone 5 Capstone: ApexStructuredGrammar: Production-Grade Constrained Structured Output & Parallel Tool Calling Suite
+    """
+    return {
+        "platform": "ApexStructuredGrammar Sovereign Enterprise Suite",
+        "integratedModules": [
+            "DFA Logit Masking & Context-Free Grammar Enforcer",
+            "Asynchronous Parallel Multi-Tool Worker Pool",
+            "LLMLingua Perplexity-Aware Context Compressor",
+            "Hierarchical Semantic Intent Router & Dispatcher"
+        ],
+        "benchmarkResults": {
+            "grammaticalSyntacticAccuracyPct": 100.0,
+            "parallelToolDispatchConcurrency": 16,
+            "contextCompressionRatio": "3.3x",
+            "routingAccuracyPct": 99.6,
+            "p99LatencyReductionPct": 68.4
+        },
+        "certificationTier": "APEX_STRUCTURED_GRAMMAR_ENTERPRISE_ARCHITECT",
+        "milestoneStatus": "BLOCK_8_MILESTONE_5_ACCOMPLISHED"
+    }'''
+
+output1 = '''{
+  "platform": "ApexStructuredGrammar Sovereign Enterprise Suite",
+  "integratedModules": [
+    "DFA Logit Masking & Context-Free Grammar Enforcer",
+    "Asynchronous Parallel Multi-Tool Worker Pool",
+    "LLMLingua Perplexity-Aware Context Compressor",
+    "Hierarchical Semantic Intent Router & Dispatcher"
+  ],
+  "benchmarkResults": {
+    "grammaticalSyntacticAccuracyPct": 100.0,
+    "parallelToolDispatchConcurrency": 16,
+    "contextCompressionRatio": "3.3x",
+    "routingAccuracyPct": 99.6,
+    "p99LatencyReductionPct": 68.4
+  },
+  "certificationTier": "APEX_STRUCTURED_GRAMMAR_ENTERPRISE_ARCHITECT",
+  "milestoneStatus": "BLOCK_8_MILESTONE_5_ACCOMPLISHED"
+}'''
+
+# Compute total words
+total_words = 0
+for i, p in enumerate(parts_data):
+    w_count = sum(len(s.split()) for s in p['say'])
+    print(f"Part {i+1}: {w_count} words")
+    assert w_count >= 600, f"Part {i+1} has {w_count} words, expected >= 600"
+    total_words += w_count
+print(f"Total words: {total_words}")
+assert total_words >= 3100, f"Total words {total_words} < 3100"
+
+# Attach code and output to each part
+for part in parts_data:
+    part["code"] = code1
+    part["output"] = output1
+
+day40_dict = {
+    "id": "prompt-py-40",
+    "day": 40,
+    "course": "prompt-py",
+    "title": "Milestone 5 Capstone: ApexStructuredGrammar: Production-Grade Constrained Structured Output & Parallel Tool Calling Suite",
+    "minutes": 45,
+    "parts": parts_data,
+    "projectStep": {
+        "title": "Engineer ApexStructuredGrammar Sovereign Enterprise Suite",
+        "steps": [
+            "Construct a line-rate context-free grammar and DFA logit masking engine enforcing zero syntax errors.",
+            "Deploy an asynchronous parallel tool dispatcher with non-blocking workers and circuit breakers.",
+            "Integrate perplexity-aware prompt compression using LLMLingua algorithms for context economy.",
+            "Implement hierarchical semantic intent routing and dynamic multi-tier foundation model serving.",
+            "Execute comprehensive end-to-end benchmark suites validating accuracy, concurrency, and latency SLAs."
+        ]
+    },
+    "summary": [
+        "ApexStructuredGrammar unifies grammars, parallel tools, compression, and routing into an atomic enterprise pipeline.",
+        "Line-rate DFA logit masking eliminates syntax errors by dynamically setting invalid transition logits to negative infinity.",
+        "Asynchronous parallel tool execution compresses multi-system operations to minimum theoretical wall-clock latency.",
+        "Perplexity-aware prompt compression slashes token overhead by threefold while maximizing attention density on crucial tasks.",
+        "Cryptographic provenance auditing, OpenTelemetry tracing, and circuit breakers ensure unbreakable enterprise production resilience."
+    ]
+}
+
+captions_data = [
+    {
+        "say1": "ApexStructuredGrammar unifies enterprise structured generation suites.",
+        "say2": "The core architectural breakthrough is unified cognitive pipelining.",
+        "example": "Enterprise platforms orchestrate grammars, tools, and compression.",
+        "tryIt": "Synthesize grammar enforcement and parallel tool dispatch workflows."
+    },
+    {
+        "say1": "Grammatical parsing enforces zero syntax error output generation.",
+        "say2": "Finite state automata and context free grammars govern logit masking.",
+        "example": "State machines dynamically mask invalid vocabulary tokens at runtime.",
+        "tryIt": "Implement a deterministic pushdown automaton for json validation."
+    },
+    {
+        "say1": "Asynchronous tool workers execute complex operations concurrently.",
+        "say2": "Parallel tool dispatch eliminates sequential processing bottlenecks.",
+        "example": "Worker pools dispatch concurrent queries across enterprise apis.",
+        "tryIt": "Construct an asynchronous multi worker pool with circuit breakers."
+    },
+    {
+        "say1": "Compression algorithms prune redundant tokens to optimize latency.",
+        "say2": "Context budgeting and dynamic dispatch optimize enterprise compute.",
+        "example": "Perplexity aware compression slashes context window token overhead.",
+        "tryIt": "Combine semantic intent routing with budget aware prompt compression."
+    },
+    {
+        "say1": "Capstone validation verifies end to end enterprise system metrics.",
+        "say2": "Production telemetry and benchmark validation certify readiness.",
+        "example": "Enterprise suites demonstrate complete syntactic and semantic accuracy.",
+        "tryIt": "Deploy the unified ApexStructuredGrammar suite with monitoring."
+    }
+]
+
+titles = [
+    "ApexStructuredGrammar Unified Architecture And System Pipeline Synthesis.",
+    "Line Rate Grammatical Parsing And Finite State Automaton Logit Masking.",
+    "Asynchronous Parallel Multi Tool Dispatch And Concurrency Resilience.",
+    "Perplexity Aware Context Compression And Dynamic Tiered Model Dispatch.",
+    "Enterprise Capstone Benchmark Certification And Production Deployment."
+]
+
+columns_list = [
+    ["Platform Integration Layer", "Architectural Function", "Enterprise Performance Impact"],
+    ["Parsing Engine Component", "Grammar Enforcement Technique", "Syntactic Reliability Profile"],
+    ["Tool Orchestration Primitive", "Concurrency Pattern", "Fault Recovery Protocol"],
+    ["Optimization Strategy", "Algorithmic Implementation", "Efficiency Gain Dimension"],
+    ["Capstone Verification Tier", "System Evaluation Metric", "Production Certification Status"]
+]
+
+steps_rows = [
+    [
+        [["Unified Architecture Gateway", "Coordinates Grammars, Tools, And Routers", "Eliminates Fragmented Microservices"], ["Cognitive Execution Pipeline", "End To End Structured Prompt Orchestration", "Guarantees Deterministic Output Flow"]],
+        [["Integrated Subsystem Fabric", "Bridges Logit Masking With Async Worker Pools", "Accelerates Interactive Latency Bounds"], ["Automated Fallback Arbiter", "Handles Upstream Provider Degradation", "Maintains Continuous Enterprise Uptime"]],
+        [["Dynamic Dispatch Coordinator", "Matches Complex Inquiries To Model Tiers", "Optimizes Aggregate Operational Spend"], ["Context Economy Controller", "Prunes Redundant Background Directives", "Maximizes Attention Density On Tasks"]],
+        [["Resilient System Harness", "Wraps Complete Lifecycle In Observability", "Provides Cryptographic Provenance"], ["Sovereign Enterprise Engine", "Production Ready High Throughput Framework", "Delivers Mission Critical Reliability"]]
+    ],
+    [
+        [["State Transition Graph", "Converts Pydantic Schemas Into Automaton Tables", "Enforces Exact JSON Syntactic Boundaries"], ["Sparse Bitmask Evaluator", "Indexes Vocabulary Tokens Into Prefix Trie", "Zero Overhead Logit Masking At Inference"]],
+        [["Pushdown Delimiter Stack", "Tracks Opening Delimiters Across Nested Keys", "Supports Arbitrary Recursive Data Schemas"], ["Negative Lookahead Filter", "Restricts Sampling Of Forbidden PII Patterns", "Guarantees Total Compliance Conformance"]],
+        [["Deterministic Token Validator", "Calculates Permissible Token Transitions", "Eliminates Syntax Errors In Generation"], ["Forward Looking Beam Search", "Detects Deadlock States In Restrictive Grammars", "Automates Graceful Path Disambiguation"]],
+        [["Pydantic Schema Compiler", "Transforms Interface Types Into BNF Grammars", "Eliminates Downstream Parsing Failures"], ["Hardware Quantized Kernel", "Executes Mask Operations In Microseconds", "Maintains Full Model Token Generation Rate"]]
+    ],
+    [
+        [["Asynchronous Dispatch Loop", "Constructs Non Blocking DAG Execution Plans", "Compresses Latency To Slowest API Call"], ["Concurrent Worker Pool", "Dispatches Queries Across Distributed Workers", "Scales Throughput To Planetary Volumes"]],
+        [["Schema Boundary Validator", "Validates Tool Payloads Against Pydantic Types", "Shields Foundation Models From Bad Payloads"], ["Exponential Backoff Engine", "Automates Randomized Jitter On Network Drops", "Recovers Transparently From Drops"]],
+        [["Circuit Breaker Controller", "Trips Open When Downstream Error Rates Spike", "Prevents Cascading Distributed Outages"], ["Token Bucket Rate Limiter", "Throttles Agent Swarms Per Tenant And Tool", "Safeguards Corporate Backend Capacity"]],
+        [["Distributed Task Channel", "Streams Intermediate Results Asynchronously", "Reduces Idle Blocked Execution Periods"], ["Cryptographic Audit Logger", "Records Hashes Of Dispatched Tool Invocations", "Satisfies Rigorous Governance Demands"]]
+    ],
+    [
+        [["Entropy Budget Evaluator", "Calculates Token Level Perplexity Scores", "Identifies Low Information Text Segments"], ["Selective Context Pruner", "Surgically Removes Redundant Corporate Headers", "Slashes Token Overhead By Threefold"]],
+        [["Adaptive Ratio Controller", "Scales Compression Based On Server Load", "Optimizes GPU Memory Allocation Dynamically"], ["KV Cache Cache Pre Fill", "Pins Reusable Prompts In High Bandwidth Memory", "Maximizes Multi Tenant Cache Hit Rates"]],
+        [["Semantic Intent Classifier", "Routes Queries Based On Semantic Embeddings", "Resolves Routine FAQ At Trivial Token Cost"], ["Multi Tier Serving Matrix", "Allocates Models Proportionally By Task Depth", "Reduces Blended API Operational Costs"]],
+        [["Context Density Analyzer", "Measures Attention Allocation Across Inputs", "Concentrates Reasoning On Critical Factors"], ["Automated Drift Regulator", "Monitors Accuracy Across Compression Tiers", "Maintains Optimal Pareto Efficiency Front"]]
+    ],
+    [
+        [["Syntactic Accuracy Tester", "Validates Structural Conformance On Datasets", "Achieves Complete Grammatical Accuracy"], ["Parallel Concurrency Bench", "Tests High Concurrency Under Peak Swarm Load", "Sustains High Concurrency Tool Pools"]],
+        [["Compression Ratio Auditor", "Measures Context Pruning Across Topologies", "Verifies Multi Fold Token Compression"], ["Latency SLA Monitor", "Measures Ninety Ninth Percentile Tail Latency", "Proves Substantial Latency Reductions"]],
+        [["OpenTelemetry Trace Hub", "Emits Distributed Spans Across All Pipeline Steps", "Delivers Deep Real Time System Telemetry"], ["Cryptographic Vault Seal", "Stores SHA Two Fifty Six Hashes In Vaults", "Fulfills Enterprise Governance Standards"]],
+        [["Canary Deployment Gate", "Shifts Live Traffic Incrementally To New Models", "Enables Zero Downtime Platform Upgrades"], ["Sovereign Architect Badge", "Demonstrates Mastery Of Advanced Prompt Systems", "Certifies Enterprise Readiness Tier"]]
+    ]
+]
+
+# Verify lengths and digits
+for p_idx, cap_dict in enumerate(captions_data):
+    for k, text_str in cap_dict.items():
+        assert len(text_str) <= 75, f"Part {p_idx+1} {k} caption too long: {len(text_str)} ({text_str})"
+        assert text_str.endswith('.'), f"Part {p_idx+1} {k} caption must end with dot: {text_str}"
+        assert not any(c.isdigit() for c in text_str), f"Part {p_idx+1} {k} caption has digits: {text_str}"
+
+for t in titles:
+    assert len(t) <= 75, f"Title too long: {len(t)} ({t})"
+    assert t.endswith('.'), f"Title must end with dot: {t}"
+    assert not any(c.isdigit() for c in t), f"Title has digits: {t}"
+
+for cols in columns_list:
+    for c in cols:
+        assert not any(ch.isdigit() for ch in c), f"Column has digits: {c}"
+
+for step_row in steps_rows:
+    for row in step_row:
+        for pair in row:
+            for cell in pair:
+                assert not any(ch.isdigit() for ch in cell), f"Cell has digits: {cell}"
+
+entries = []
+for p_idx, part in enumerate(parts_data):
+    spec_steps = []
+    for s_idx, at_k in enumerate(["say1", "say2", "example", "tryIt"]):
+        cap = captions_data[p_idx][at_k]
+        spec_steps.append({
+            "at": at_k,
+            "caption": cap,
+            "rows": steps_rows[p_idx][s_idx]
+        })
+        
+    spec = {
+        "template": "table",
+        "title": titles[p_idx],
+        "columns": columns_list[p_idx],
+        "steps": spec_steps
+    }
+    assert len(spec['title']) <= 75, f"Title too long: {spec['title']}"
+    assert spec['title'].endswith('.'), f"Title must end with dot: {spec['title']}"
+    assert not any(c.isdigit() for c in spec['title']), f"Title has digits: {spec['title']}"
+    
+    code_hash = hashlib.sha256(part['code'].encode('utf-8')).hexdigest()
+    entry = {
+        "partTitle": part['title'],
+        "codeHash": code_hash,
+        "spec": spec,
+        "filled": spec
+    }
+    entries.append(entry)
+
+visual_envelope = {
+    "schemaVersion": "2.0.0",
+    "course": "prompt-py",
+    "day": 40,
+    "prefix": "prompt-py",
+    "entries": entries
+}
+
+# Write lesson JSON
+with open('C:/Users/Admin/Desktop/projects/Present-Career-os-platform/scripts/branch_c/prompt_day40_lesson.json', 'w', encoding='utf-8') as f:
+    json.dump(day40_dict, f, indent=2)
+
+# Write visual envelope
+with open('C:/Users/Admin/Desktop/projects/Present-Career-os-platform/src/lib/data/lessonVisuals/prompt-py/day-40.json', 'w', encoding='utf-8') as f:
+    json.dump(visual_envelope, f, indent=2)
+
+print(f"Generated Day 40 lesson JSON ({total_words} words) and Visual Envelope successfully!")

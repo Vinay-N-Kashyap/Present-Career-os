@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 55,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "ApexShield Architecture: The Multi-Tier Defense Mesh Blueprint",
+      "codeHash": "202de0cd2cb75dbdf1f0eb3ae2230770ad87c093d470fd413148dcc75a2f4c89",
+      "spec": {
+        "template": "table",
+        "title": "ApexShield Architecture The Multi Tier Defense Mesh Blueprint.",
+        "columns": [
+          "Defense Tier",
+          "Operational Mechanism",
+          "Protection SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ApexShield establishes an enterprise defense in depth security mesh.",
+            "rows": [
+              [
+                "Perimeter Ingress Gateway",
+                "Perplexity Anomaly Detection And Token Filtering",
+                "Sub Ten Milliseconds Screening"
+              ],
+              [
+                "Semantic Classifier Tier",
+                "Llama Guard Safety Taxonomy Categorization",
+                "Microsecond Policy Enforcement"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The multi tier defense mesh integrates input runtime and output layers.",
+            "rows": [
+              [
+                "Programmable Runtime Rail",
+                "NeMo Colang Dialogue Flow Steering",
+                "Deterministic Turn Execution"
+              ],
+              [
+                "Post Generation Scrubber",
+                "Presidio PII Entity Masking And Redaction",
+                "Flawless Privacy Preservation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Layered defensive firewalls intercept adversarial exploits systematically.",
+            "rows": [
+              [
+                "Canary Extraction Trap",
+                "Cryptographic Honeypot Token Verification",
+                "Zero System Prompt Leakage"
+              ],
+              [
+                "Immutable Audit Ledger",
+                "Cryptographic Hash Provenance Chains",
+                "Statutory Compliance Guarantee"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Architect a multi tier defense mesh protecting foundation model APIs.",
+            "rows": [
+              [
+                "Layered Defense Mesh",
+                "Synchronized Defense In Depth Protection",
+                "Ninety Nine Percent Resilience"
+              ],
+              [
+                "Apex Sovereign Gateway",
+                "Unified Multi Tier Enterprise AI Firewall",
+                "Enterprise Production Grade SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "ApexShield Architecture The Multi Tier Defense Mesh Blueprint.",
+        "columns": [
+          "Defense Tier",
+          "Operational Mechanism",
+          "Protection SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "ApexShield establishes an enterprise defense in depth security mesh.",
+            "rows": [
+              [
+                "Perimeter Ingress Gateway",
+                "Perplexity Anomaly Detection And Token Filtering",
+                "Sub Ten Milliseconds Screening"
+              ],
+              [
+                "Semantic Classifier Tier",
+                "Llama Guard Safety Taxonomy Categorization",
+                "Microsecond Policy Enforcement"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The multi tier defense mesh integrates input runtime and output layers.",
+            "rows": [
+              [
+                "Programmable Runtime Rail",
+                "NeMo Colang Dialogue Flow Steering",
+                "Deterministic Turn Execution"
+              ],
+              [
+                "Post Generation Scrubber",
+                "Presidio PII Entity Masking And Redaction",
+                "Flawless Privacy Preservation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Layered defensive firewalls intercept adversarial exploits systematically.",
+            "rows": [
+              [
+                "Canary Extraction Trap",
+                "Cryptographic Honeypot Token Verification",
+                "Zero System Prompt Leakage"
+              ],
+              [
+                "Immutable Audit Ledger",
+                "Cryptographic Hash Provenance Chains",
+                "Statutory Compliance Guarantee"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Architect a multi tier defense mesh protecting foundation model APIs.",
+            "rows": [
+              [
+                "Layered Defense Mesh",
+                "Synchronized Defense In Depth Protection",
+                "Ninety Nine Percent Resilience"
+              ],
+              [
+                "Apex Sovereign Gateway",
+                "Unified Multi Tier Enterprise AI Firewall",
+                "Enterprise Production Grade SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Input Interception Mesh: Perplexity, Llama Guard, And Classifiers",
+      "codeHash": "202de0cd2cb75dbdf1f0eb3ae2230770ad87c093d470fd413148dcc75a2f4c89",
+      "spec": {
+        "template": "table",
+        "title": "Input Interception Mesh Perplexity Llama Guard And Classifiers.",
+        "columns": [
+          "Inspection Stage",
+          "Detection Primitive",
+          "Filtering Latency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Perimeter input sanitizers screen adversarial prompt payloads in speed.",
+            "rows": [
+              [
+                "Perplexity Analysis",
+                "Ngram Surprisal And Cross Entropy Scoring",
+                "Single Millisecond Screening"
+              ],
+              [
+                "Embedding Distance Gate",
+                "Cosine Similarity Against Jailbreak Vectors",
+                "Low Latency Vector Lookup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Perplexity estimators and safety classifiers filter malicious tokens.",
+            "rows": [
+              [
+                "Llama Guard Inference",
+                "Fine Tuned Safety Taxonomy Categorization",
+                "Eighteen Milliseconds Evaluation"
+              ],
+              [
+                "Multi Modal Scanner",
+                "Cross Attention Perturbation Analysis",
+                "Comprehensive Image Text Defense"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi tier input filters achieve microsecond detection with zero leakage.",
+            "rows": [
+              [
+                "Token Smuggling Trap",
+                "Base Sixty Four And Unicode Normalization",
+                "Immediate Perimeter Rejection"
+              ],
+              [
+                "Adaptive Rate Limiter",
+                "Dynamic Probing Velocity Throttling",
+                "Denial Of Service Protection"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an input inspection proxy screening perplexity and hazard types.",
+            "rows": [
+              [
+                "Ingress Security Mesh",
+                "Unified Perimeter Pre Flight Sanitization",
+                "Zero Unchecked Prompt Leakage"
+              ],
+              [
+                "Perimeter Defense Shield",
+                "Deflects Adversarial Inputs Deterministically",
+                "Ultra Low False Positive SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Input Interception Mesh Perplexity Llama Guard And Classifiers.",
+        "columns": [
+          "Inspection Stage",
+          "Detection Primitive",
+          "Filtering Latency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Perimeter input sanitizers screen adversarial prompt payloads in speed.",
+            "rows": [
+              [
+                "Perplexity Analysis",
+                "Ngram Surprisal And Cross Entropy Scoring",
+                "Single Millisecond Screening"
+              ],
+              [
+                "Embedding Distance Gate",
+                "Cosine Similarity Against Jailbreak Vectors",
+                "Low Latency Vector Lookup"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Perplexity estimators and safety classifiers filter malicious tokens.",
+            "rows": [
+              [
+                "Llama Guard Inference",
+                "Fine Tuned Safety Taxonomy Categorization",
+                "Eighteen Milliseconds Evaluation"
+              ],
+              [
+                "Multi Modal Scanner",
+                "Cross Attention Perturbation Analysis",
+                "Comprehensive Image Text Defense"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi tier input filters achieve microsecond detection with zero leakage.",
+            "rows": [
+              [
+                "Token Smuggling Trap",
+                "Base Sixty Four And Unicode Normalization",
+                "Immediate Perimeter Rejection"
+              ],
+              [
+                "Adaptive Rate Limiter",
+                "Dynamic Probing Velocity Throttling",
+                "Denial Of Service Protection"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an input inspection proxy screening perplexity and hazard types.",
+            "rows": [
+              [
+                "Ingress Security Mesh",
+                "Unified Perimeter Pre Flight Sanitization",
+                "Zero Unchecked Prompt Leakage"
+              ],
+              [
+                "Perimeter Defense Shield",
+                "Deflects Adversarial Inputs Deterministically",
+                "Ultra Low False Positive SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Programmable Execution Guardrails: NeMo Colang Flows And Sandboxing",
+      "codeHash": "202de0cd2cb75dbdf1f0eb3ae2230770ad87c093d470fd413148dcc75a2f4c89",
+      "spec": {
+        "template": "table",
+        "title": "Programmable Execution Guardrails NeMo Colang Flows And Sandboxing.",
+        "columns": [
+          "Guardrail Component",
+          "Policy Specification",
+          "Enforcement Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmable dialogue flows constrain model execution within safe rails.",
+            "rows": [
+              [
+                "Colang Flow Controller",
+                "Declarative Dialogue State Transition Trees",
+                "Deterministic Conversation Steering"
+              ],
+              [
+                "Topical Self Check Rail",
+                "Secondary LLM Verification Of User Intent",
+                "Sub Second Intent Verification"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative Colang policies steer conversational trajectories safely.",
+            "rows": [
+              [
+                "Tool Authorization Gate",
+                "Schema Conformance And Parameter Sanitization",
+                "Zero Injection Tool Execution"
+              ],
+              [
+                "Ephemeral Sandbox Engine",
+                "Isolated Containerized Python Tool Runtime",
+                "Complete OS Kernel Protection"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Execution guardrails enforce policy flows and isolate untrusted tool calls.",
+            "rows": [
+              [
+                "Hallucination Interceptor",
+                "Self Consistency And Groundedness Verification",
+                "Factually Anchored Completions"
+              ],
+              [
+                "Memory Boundary Guard",
+                "Prevents Context Poisoning Across Turns",
+                "Strict Conversation Isolation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement programmable dialog rails constraining multi turn agent state.",
+            "rows": [
+              [
+                "Runtime Execution Mesh",
+                "End To End Programmable Safety Architecture",
+                "Flawless Behavioral Compliance"
+              ],
+              [
+                "Autonomous Agent Guard",
+                "Protects Tool Augmented Agent Workflows",
+                "Uncompromising Safety Standards"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Programmable Execution Guardrails NeMo Colang Flows And Sandboxing.",
+        "columns": [
+          "Guardrail Component",
+          "Policy Specification",
+          "Enforcement Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmable dialogue flows constrain model execution within safe rails.",
+            "rows": [
+              [
+                "Colang Flow Controller",
+                "Declarative Dialogue State Transition Trees",
+                "Deterministic Conversation Steering"
+              ],
+              [
+                "Topical Self Check Rail",
+                "Secondary LLM Verification Of User Intent",
+                "Sub Second Intent Verification"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Declarative Colang policies steer conversational trajectories safely.",
+            "rows": [
+              [
+                "Tool Authorization Gate",
+                "Schema Conformance And Parameter Sanitization",
+                "Zero Injection Tool Execution"
+              ],
+              [
+                "Ephemeral Sandbox Engine",
+                "Isolated Containerized Python Tool Runtime",
+                "Complete OS Kernel Protection"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Execution guardrails enforce policy flows and isolate untrusted tool calls.",
+            "rows": [
+              [
+                "Hallucination Interceptor",
+                "Self Consistency And Groundedness Verification",
+                "Factually Anchored Completions"
+              ],
+              [
+                "Memory Boundary Guard",
+                "Prevents Context Poisoning Across Turns",
+                "Strict Conversation Isolation"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement programmable dialog rails constraining multi turn agent state.",
+            "rows": [
+              [
+                "Runtime Execution Mesh",
+                "End To End Programmable Safety Architecture",
+                "Flawless Behavioral Compliance"
+              ],
+              [
+                "Autonomous Agent Guard",
+                "Protects Tool Augmented Agent Workflows",
+                "Uncompromising Safety Standards"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Output Scrubbing, Canary Leakage Traps, And Cryptographic Auditing",
+      "codeHash": "202de0cd2cb75dbdf1f0eb3ae2230770ad87c093d470fd413148dcc75a2f4c89",
+      "spec": {
+        "template": "table",
+        "title": "Output Scrubbing Canary Leakage Traps And Cryptographic Auditing.",
+        "columns": [
+          "Scrubbing Module",
+          "Forensic Technique",
+          "Compliance Standard SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post generation filters scrub sensitive data and detect canary tokens.",
+            "rows": [
+              [
+                "Presidio Entity Recognizer",
+                "Named Entity Recognition For PII Detection",
+                "GDPR And HIPAA Privacy Standard"
+              ],
+              [
+                "PCI DSS Credit Card Mask",
+                "Luhn Algorithm Check With Regex Substitution",
+                "Zero Payment Record Exposure"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Canary token traps intercept prompt extraction attempts deterministically.",
+            "rows": [
+              [
+                "Canary Honeypot Monitor",
+                "Exact Cryptographic Nonce Token Matching",
+                "Zero Prompt Extraction Leakage"
+              ],
+              [
+                "Entropy Secret Scanner",
+                "Shannon Information Entropy Peak Detection",
+                "Immediate Secret Key Scrubbing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cryptographic audit ledgers record verified model completions securely.",
+            "rows": [
+              [
+                "Synthetic Data Replacer",
+                "Substitutes Sensitive Fields With Fake Values",
+                "Preserves Downstream Utility"
+              ],
+              [
+                "Automated Redaction Log",
+                "Emits Redacted Completion Audit Transcripts",
+                "Complete Operational Transparency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an output scrubber masking sensitive records and canary tokens.",
+            "rows": [
+              [
+                "Cryptographic Ledger Core",
+                "Append Only SHA Two Fifty Six Provenance Chains",
+                "SOC Two Compliance Certification"
+              ],
+              [
+                "Egress Defense Gateway",
+                "Comprehensive Post Generation Sanitization",
+                "Flawless Output Governance SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Output Scrubbing Canary Leakage Traps And Cryptographic Auditing.",
+        "columns": [
+          "Scrubbing Module",
+          "Forensic Technique",
+          "Compliance Standard SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Post generation filters scrub sensitive data and detect canary tokens.",
+            "rows": [
+              [
+                "Presidio Entity Recognizer",
+                "Named Entity Recognition For PII Detection",
+                "GDPR And HIPAA Privacy Standard"
+              ],
+              [
+                "PCI DSS Credit Card Mask",
+                "Luhn Algorithm Check With Regex Substitution",
+                "Zero Payment Record Exposure"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Canary token traps intercept prompt extraction attempts deterministically.",
+            "rows": [
+              [
+                "Canary Honeypot Monitor",
+                "Exact Cryptographic Nonce Token Matching",
+                "Zero Prompt Extraction Leakage"
+              ],
+              [
+                "Entropy Secret Scanner",
+                "Shannon Information Entropy Peak Detection",
+                "Immediate Secret Key Scrubbing"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cryptographic audit ledgers record verified model completions securely.",
+            "rows": [
+              [
+                "Synthetic Data Replacer",
+                "Substitutes Sensitive Fields With Fake Values",
+                "Preserves Downstream Utility"
+              ],
+              [
+                "Automated Redaction Log",
+                "Emits Redacted Completion Audit Transcripts",
+                "Complete Operational Transparency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an output scrubber masking sensitive records and canary tokens.",
+            "rows": [
+              [
+                "Cryptographic Ledger Core",
+                "Append Only SHA Two Fifty Six Provenance Chains",
+                "SOC Two Compliance Certification"
+              ],
+              [
+                "Egress Defense Gateway",
+                "Comprehensive Post Generation Sanitization",
+                "Flawless Output Governance SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Continuous Immune System: Autonomous Fuzzing And Self-Hardening",
+      "codeHash": "202de0cd2cb75dbdf1f0eb3ae2230770ad87c093d470fd413148dcc75a2f4c89",
+      "spec": {
+        "template": "table",
+        "title": "The Continuous Immune System Autonomous Fuzzing And Self Hardening.",
+        "columns": [
+          "Subsystem Module",
+          "Architecture Role",
+          "Verification Metric SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Continuous automated red teaming hardens the enterprise immune system.",
+            "rows": [
+              [
+                "Multi Tier Input Proxy",
+                "Perplexity And Llama Guard Pre Flight Shield",
+                "Eighteen Millisecond Latency SLA"
+              ],
+              [
+                "NeMo Colang Engine",
+                "Programmable Dialog Steerage And Rail Routing",
+                "Deterministic State Transitions"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous red teaming meshes continuously probe and repair guardrails.",
+            "rows": [
+              [
+                "Presidio Canary Core",
+                "PII Redaction And Prompt Honeypot Trapping",
+                "Zero Sensitive Data Spillage"
+              ],
+              [
+                "Continuous Red Teamer",
+                "Autonomous Multi Algorithm Adversarial Fuzzing",
+                "Ten Thousand Attack Vectors Probed"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "ApexShield achieves ninety nine percent attack deflection in production.",
+            "rows": [
+              [
+                "Cryptographic Audit Vault",
+                "Immutable Hash Chaining And Audit Provenance",
+                "Statutory Compliance Assurance"
+              ],
+              [
+                "Immune Self Healing",
+                "Synthesizes Defensive Rules From Red Teaming",
+                "Rapid Automated Patch Deployment"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy the integrated ApexShield capstone defense mesh in production.",
+            "rows": [
+              [
+                "ApexShield Enterprise Mesh",
+                "Unified Defense Platform For Sovereign AI",
+                "Ninety Nine Point Eight Percent Deflection"
+              ],
+              [
+                "Milestone Eight Capstone",
+                "Full Block Eleven Enterprise Certification",
+                "Mastery Of AI Safety Systems"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The Continuous Immune System Autonomous Fuzzing And Self Hardening.",
+        "columns": [
+          "Subsystem Module",
+          "Architecture Role",
+          "Verification Metric SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Continuous automated red teaming hardens the enterprise immune system.",
+            "rows": [
+              [
+                "Multi Tier Input Proxy",
+                "Perplexity And Llama Guard Pre Flight Shield",
+                "Eighteen Millisecond Latency SLA"
+              ],
+              [
+                "NeMo Colang Engine",
+                "Programmable Dialog Steerage And Rail Routing",
+                "Deterministic State Transitions"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous red teaming meshes continuously probe and repair guardrails.",
+            "rows": [
+              [
+                "Presidio Canary Core",
+                "PII Redaction And Prompt Honeypot Trapping",
+                "Zero Sensitive Data Spillage"
+              ],
+              [
+                "Continuous Red Teamer",
+                "Autonomous Multi Algorithm Adversarial Fuzzing",
+                "Ten Thousand Attack Vectors Probed"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "ApexShield achieves ninety nine percent attack deflection in production.",
+            "rows": [
+              [
+                "Cryptographic Audit Vault",
+                "Immutable Hash Chaining And Audit Provenance",
+                "Statutory Compliance Assurance"
+              ],
+              [
+                "Immune Self Healing",
+                "Synthesizes Defensive Rules From Red Teaming",
+                "Rapid Automated Patch Deployment"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy the integrated ApexShield capstone defense mesh in production.",
+            "rows": [
+              [
+                "ApexShield Enterprise Mesh",
+                "Unified Defense Platform For Sovereign AI",
+                "Ninety Nine Point Eight Percent Deflection"
+              ],
+              [
+                "Milestone Eight Capstone",
+                "Full Block Eleven Enterprise Certification",
+                "Mastery Of AI Safety Systems"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

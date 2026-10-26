@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 46,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "The CodeAct Paradigm Transcending JSON Schemas With Python Actions",
+      "codeHash": "75c6131df93fe7738d137d844ba95423cdaafec7232a80b2beef6ec1834410a9",
+      "spec": {
+        "template": "table",
+        "title": "The CodeAct Paradigm Transcending JSON Schemas With Python Actions.",
+        "columns": [
+          "Action Space Model",
+          "Compositionality Degree",
+          "Context Efficiency Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CodeAct establishes executable Python as a universal agent action space.",
+            "rows": [
+              [
+                "JSON Declarative Call",
+                "Rigid Key Value Payload Per Turn",
+                "High Round Trip Token Overhead"
+              ],
+              [
+                "CodeAct Python Space",
+                "Arbitrary Executable Python Scripts",
+                "Maximum Token And Latency Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The CodeAct paradigm empowers autonomous agents to interact with.",
+            "rows": [
+              [
+                "Direct Variable Binding",
+                "Assigns Heavy Payloads To Local Memory",
+                "Zero Raw Data Passing Across Prompt"
+              ],
+              [
+                "Inline Error Recovery",
+                "Wraps Network Operations In Try Except",
+                "Autonomous Failure Remediation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents write executable Python scripts instead of rigid JSON tool payloads.",
+            "rows": [
+              [
+                "Algorithmic Loop Core",
+                "Iterates Concurrently Over Data Collections",
+                "Eliminates Repetitive Model Turns"
+              ],
+              [
+                "Standard Library Access",
+                "Imports NumPy Pandas And SciPy Natively",
+                "Expansive Scientific Computing Power"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare single turn Python loops against multi turn JSON tool calling.",
+            "rows": [
+              [
+                "Reasoning Code Blending",
+                "Embeds Explanations As Inline Comments",
+                "Unbroken Cognitive Trace Transparency"
+              ],
+              [
+                "Sovereign CodeAct Gateway",
+                "Translates Business Intents Into Python Code",
+                "Unlocks Universal Computational Autonomy"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The CodeAct Paradigm Transcending JSON Schemas With Python Actions.",
+        "columns": [
+          "Action Space Model",
+          "Compositionality Degree",
+          "Context Efficiency Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "CodeAct establishes executable Python as a universal agent action space.",
+            "rows": [
+              [
+                "JSON Declarative Call",
+                "Rigid Key Value Payload Per Turn",
+                "High Round Trip Token Overhead"
+              ],
+              [
+                "CodeAct Python Space",
+                "Arbitrary Executable Python Scripts",
+                "Maximum Token And Latency Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The CodeAct paradigm empowers autonomous agents to interact with.",
+            "rows": [
+              [
+                "Direct Variable Binding",
+                "Assigns Heavy Payloads To Local Memory",
+                "Zero Raw Data Passing Across Prompt"
+              ],
+              [
+                "Inline Error Recovery",
+                "Wraps Network Operations In Try Except",
+                "Autonomous Failure Remediation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents write executable Python scripts instead of rigid JSON tool payloads.",
+            "rows": [
+              [
+                "Algorithmic Loop Core",
+                "Iterates Concurrently Over Data Collections",
+                "Eliminates Repetitive Model Turns"
+              ],
+              [
+                "Standard Library Access",
+                "Imports NumPy Pandas And SciPy Natively",
+                "Expansive Scientific Computing Power"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Compare single turn Python loops against multi turn JSON tool calling.",
+            "rows": [
+              [
+                "Reasoning Code Blending",
+                "Embeds Explanations As Inline Comments",
+                "Unbroken Cognitive Trace Transparency"
+              ],
+              [
+                "Sovereign CodeAct Gateway",
+                "Translates Business Intents Into Python Code",
+                "Unlocks Universal Computational Autonomy"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive REPL Environments And Runtime State Persistence",
+      "codeHash": "75c6131df93fe7738d137d844ba95423cdaafec7232a80b2beef6ec1834410a9",
+      "spec": {
+        "template": "table",
+        "title": "Interactive REPL Environments And Runtime State Persistence.",
+        "columns": [
+          "Namespace Layer",
+          "Persistence Lifetime",
+          "State Recovery SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Persistent REPL environments maintain variables across turns.",
+            "rows": [
+              [
+                "Persistent Kernel Process",
+                "Maintains Active Python REPL Session",
+                "Zero Overhead Variable Continuity"
+              ],
+              [
+                "Global Namespace Dict",
+                "Preserves Symbols Across Dialogue Turns",
+                "Near Zero Latency Object Access"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Interactive Read Eval Print Loop environments preserve memory namespaces.",
+            "rows": [
+              [
+                "Workspace Reflection Core",
+                "Inspects Active Symbols And Schema Types",
+                "Dynamic Agentic Self Awareness"
+              ],
+              [
+                "Kernel Watchdog Daemon",
+                "Monitors Memory Ceilings And Infinite Loops",
+                "Graceful Execution Thread Recovery"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stateful Python kernels preserve variables across conversation turns.",
+            "rows": [
+              [
+                "Namespace Checkpointer",
+                "Serializes Memory Dictionaries To Storage",
+                "Instantaneous Session Rollback SLA"
+              ],
+              [
+                "Garbage Hygiene Sweep",
+                "Prunes Temporary Buffers With Weak References",
+                "Guarantees Lean Host Memory Profile"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a persistent REPL session maintaining DataFrame state.",
+            "rows": [
+              [
+                "Thread Safe Access Lock",
+                "Coordinates Multi Agent Kernel Operations",
+                "Prevents Destructive Race Conditions"
+              ],
+              [
+                "State Summary Serializer",
+                "Emits Compact Variable Metadata To Context",
+                "Optimal Context Attention Density"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Interactive REPL Environments And Runtime State Persistence.",
+        "columns": [
+          "Namespace Layer",
+          "Persistence Lifetime",
+          "State Recovery SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Persistent REPL environments maintain variables across turns.",
+            "rows": [
+              [
+                "Persistent Kernel Process",
+                "Maintains Active Python REPL Session",
+                "Zero Overhead Variable Continuity"
+              ],
+              [
+                "Global Namespace Dict",
+                "Preserves Symbols Across Dialogue Turns",
+                "Near Zero Latency Object Access"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Interactive Read Eval Print Loop environments preserve memory namespaces.",
+            "rows": [
+              [
+                "Workspace Reflection Core",
+                "Inspects Active Symbols And Schema Types",
+                "Dynamic Agentic Self Awareness"
+              ],
+              [
+                "Kernel Watchdog Daemon",
+                "Monitors Memory Ceilings And Infinite Loops",
+                "Graceful Execution Thread Recovery"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Stateful Python kernels preserve variables across conversation turns.",
+            "rows": [
+              [
+                "Namespace Checkpointer",
+                "Serializes Memory Dictionaries To Storage",
+                "Instantaneous Session Rollback SLA"
+              ],
+              [
+                "Garbage Hygiene Sweep",
+                "Prunes Temporary Buffers With Weak References",
+                "Guarantees Lean Host Memory Profile"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a persistent REPL session maintaining DataFrame state.",
+            "rows": [
+              [
+                "Thread Safe Access Lock",
+                "Coordinates Multi Agent Kernel Operations",
+                "Prevents Destructive Race Conditions"
+              ],
+              [
+                "State Summary Serializer",
+                "Emits Compact Variable Metadata To Context",
+                "Optimal Context Attention Density"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Algorithmic Compositionality Multi Tool Chaining In Unified Code",
+      "codeHash": "75c6131df93fe7738d137d844ba95423cdaafec7232a80b2beef6ec1834410a9",
+      "spec": {
+        "template": "table",
+        "title": "Algorithmic Compositionality Multi Tool Chaining In Unified Code.",
+        "columns": [
+          "Composition Paradigm",
+          "Data Transfer Mechanism",
+          "Latency Reduction Factor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic compositionality chains multiple tools in single scripts.",
+            "rows": [
+              [
+                "In Memory Data Piping",
+                "Passes Pointers Directly Between Function Calls",
+                "Zero Disk Serialization Latency"
+              ],
+              [
+                "AsyncIO Parallel Dispatch",
+                "Executes Non Blocking HTTP Requests In Parallel",
+                "Substantial Throughput Scaling SLA"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Algorithmic compositionality enables autonomous agents to chain.",
+            "rows": [
+              [
+                "Functional Pipeline Core",
+                "Leverages Map Filter Reduce And Generators",
+                "Concise Expressive Code Generation"
+              ],
+              [
+                "Dynamic Algorithmic Bridge",
+                "Synthesizes Ad Hoc Data Transformers On Demand",
+                "Seamless Disparate Tool Integration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents chain multiple APIs and pandas transforms in a single script.",
+            "rows": [
+              [
+                "Assertion Validation Gate",
+                "Validates Intermediate Mathematical Boundaries",
+                "Prevents Propagation Of Flawed Data"
+              ],
+              [
+                "Adaptive Request Batcher",
+                "Groups Payloads Into Maximum Throughput Windows",
+                "Minimizes External API Expenses"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an asynchronous dispatch loop querying multiple endpoints.",
+            "rows": [
+              [
+                "Unified Tool Script",
+                "Weaves Diverse Endpoints Into Cohesive Scripts",
+                "Superior Multi System Orchestration"
+              ],
+              [
+                "Sovereign Integrator Mesh",
+                "Replaces Fragile External Workflow State Machines",
+                "Unprecedented Computational Agility"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Algorithmic Compositionality Multi Tool Chaining In Unified Code.",
+        "columns": [
+          "Composition Paradigm",
+          "Data Transfer Mechanism",
+          "Latency Reduction Factor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algorithmic compositionality chains multiple tools in single scripts.",
+            "rows": [
+              [
+                "In Memory Data Piping",
+                "Passes Pointers Directly Between Function Calls",
+                "Zero Disk Serialization Latency"
+              ],
+              [
+                "AsyncIO Parallel Dispatch",
+                "Executes Non Blocking HTTP Requests In Parallel",
+                "Substantial Throughput Scaling SLA"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Algorithmic compositionality enables autonomous agents to chain.",
+            "rows": [
+              [
+                "Functional Pipeline Core",
+                "Leverages Map Filter Reduce And Generators",
+                "Concise Expressive Code Generation"
+              ],
+              [
+                "Dynamic Algorithmic Bridge",
+                "Synthesizes Ad Hoc Data Transformers On Demand",
+                "Seamless Disparate Tool Integration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Agents chain multiple APIs and pandas transforms in a single script.",
+            "rows": [
+              [
+                "Assertion Validation Gate",
+                "Validates Intermediate Mathematical Boundaries",
+                "Prevents Propagation Of Flawed Data"
+              ],
+              [
+                "Adaptive Request Batcher",
+                "Groups Payloads Into Maximum Throughput Windows",
+                "Minimizes External API Expenses"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct an asynchronous dispatch loop querying multiple endpoints.",
+            "rows": [
+              [
+                "Unified Tool Script",
+                "Weaves Diverse Endpoints Into Cohesive Scripts",
+                "Superior Multi System Orchestration"
+              ],
+              [
+                "Sovereign Integrator Mesh",
+                "Replaces Fragile External Workflow State Machines",
+                "Unprecedented Computational Agility"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Observation Processing And Structured Stream Filtering",
+      "codeHash": "75c6131df93fe7738d137d844ba95423cdaafec7232a80b2beef6ec1834410a9",
+      "spec": {
+        "template": "table",
+        "title": "Dynamic Observation Processing And Structured Stream Filtering.",
+        "columns": [
+          "Observation Filter Stage",
+          "Processing Algorithm",
+          "Token Compression Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observation filters condense high volume terminal streams for context.",
+            "rows": [
+              [
+                "Stream Separation Gate",
+                "Segregates Stdout Tables From Stderr Tracebacks",
+                "Prioritizes Diagnostic Remediation"
+              ],
+              [
+                "Tabular Preview Truncator",
+                "Calculates Global Metrics And Previews Rows",
+                "Prevents Catastrophic Context Blowout"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic observation processing filters and summarizes raw execution.",
+            "rows": [
+              [
+                "Log Deduplication Filter",
+                "Compresses Repetitive Progress Updates Cleanly",
+                "Eliminates Distracting Visual Clutter"
+              ],
+              [
+                "Artifact Storage Proxy",
+                "Offloads Visualizations And Binary Files To S Three",
+                "Decouples Media From Text Context"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Observation filters truncate massive dataframe outputs into clean previews.",
+            "rows": [
+              [
+                "Traceback Pruning Kernel",
+                "Strips Irrelevant Third Party Library Frames",
+                "Eighty Percent Error Token Reduction"
+              ],
+              [
+                "Extractive Summarizer",
+                "Condenses Verbose Texts Into Factual Briefs",
+                "Preserves Critical Numerical Facts"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a stream filter separating stdout tables from pruned tracebacks.",
+            "rows": [
+              [
+                "Cryptographic Audit Sealer",
+                "Hashes Code And Observations With SHA Two Fifty Six",
+                "Complete Post Mission Reproducibility"
+              ],
+              [
+                "High Density Token Gateway",
+                "Converts Noisy Terminal Output To Clean Insights",
+                "Maximizes Downstream Reasoning Precision"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Dynamic Observation Processing And Structured Stream Filtering.",
+        "columns": [
+          "Observation Filter Stage",
+          "Processing Algorithm",
+          "Token Compression Ratio"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Observation filters condense high volume terminal streams for context.",
+            "rows": [
+              [
+                "Stream Separation Gate",
+                "Segregates Stdout Tables From Stderr Tracebacks",
+                "Prioritizes Diagnostic Remediation"
+              ],
+              [
+                "Tabular Preview Truncator",
+                "Calculates Global Metrics And Previews Rows",
+                "Prevents Catastrophic Context Blowout"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Dynamic observation processing filters and summarizes raw execution.",
+            "rows": [
+              [
+                "Log Deduplication Filter",
+                "Compresses Repetitive Progress Updates Cleanly",
+                "Eliminates Distracting Visual Clutter"
+              ],
+              [
+                "Artifact Storage Proxy",
+                "Offloads Visualizations And Binary Files To S Three",
+                "Decouples Media From Text Context"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Observation filters truncate massive dataframe outputs into clean previews.",
+            "rows": [
+              [
+                "Traceback Pruning Kernel",
+                "Strips Irrelevant Third Party Library Frames",
+                "Eighty Percent Error Token Reduction"
+              ],
+              [
+                "Extractive Summarizer",
+                "Condenses Verbose Texts Into Factual Briefs",
+                "Preserves Critical Numerical Facts"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a stream filter separating stdout tables from pruned tracebacks.",
+            "rows": [
+              [
+                "Cryptographic Audit Sealer",
+                "Hashes Code And Observations With SHA Two Fifty Six",
+                "Complete Post Mission Reproducibility"
+              ],
+              [
+                "High Density Token Gateway",
+                "Converts Noisy Terminal Output To Clean Insights",
+                "Maximizes Downstream Reasoning Precision"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Production CodeAct Engine In Asynchronous Python",
+      "codeHash": "75c6131df93fe7738d137d844ba95423cdaafec7232a80b2beef6ec1834410a9",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Production CodeAct Engine In Asynchronous Python.",
+        "columns": [
+          "Engine Subsystem Layer",
+          "Asynchronous Implementation",
+          "Security Boundary Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production engines execute sandboxed Python with sub second latency.",
+            "rows": [
+              [
+                "Code Action Parser",
+                "Extracts Executable Blocks And Verifies Syntax",
+                "Guarantees Pre Execution Integrity"
+              ],
+              [
+                "REPL Kernel Manager",
+                "Orchestrates Asynchronous Python Kernel Sessions",
+                "Persistent Multi Turn Memory Runtime"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise production CodeAct engines coordinate code execution across.",
+            "rows": [
+              [
+                "Isolated Linux Sandbox",
+                "Enforces Cgroups Ceilings And Seccomp Filters",
+                "Prevents Unauthorized Host Compromise"
+              ],
+              [
+                "AsyncIO Event Dispatcher",
+                "Handles Concurrent Tasks And Timeout Monitors",
+                "High Concurrency Mission Scalability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Asynchronous python engines execute sandboxed code with sub second latency.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Real Time Latency And Memory Profiles",
+                "Complete Production SRE Visibility"
+              ],
+              [
+                "Cryptographic Provenance Log",
+                "Binds Actions To Prompts With Immutable Hashes",
+                "Statutory Compliance Auditability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a production CodeAct engine with namespace isolation.",
+            "rows": [
+              [
+                "High Throughput Worker Pool",
+                "Executes Hundreds Of Sessions Concurrently",
+                "Sub Second Execution Latency SLA"
+              ],
+              [
+                "Sovereign CodeAct Platform",
+                "Unifies Python REPL Sandboxes And Telemetry",
+                "Enterprise Grade Computational Sovereignty"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Production CodeAct Engine In Asynchronous Python.",
+        "columns": [
+          "Engine Subsystem Layer",
+          "Asynchronous Implementation",
+          "Security Boundary Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production engines execute sandboxed Python with sub second latency.",
+            "rows": [
+              [
+                "Code Action Parser",
+                "Extracts Executable Blocks And Verifies Syntax",
+                "Guarantees Pre Execution Integrity"
+              ],
+              [
+                "REPL Kernel Manager",
+                "Orchestrates Asynchronous Python Kernel Sessions",
+                "Persistent Multi Turn Memory Runtime"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise production CodeAct engines coordinate code execution across.",
+            "rows": [
+              [
+                "Isolated Linux Sandbox",
+                "Enforces Cgroups Ceilings And Seccomp Filters",
+                "Prevents Unauthorized Host Compromise"
+              ],
+              [
+                "AsyncIO Event Dispatcher",
+                "Handles Concurrent Tasks And Timeout Monitors",
+                "High Concurrency Mission Scalability"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Asynchronous python engines execute sandboxed code with sub second latency.",
+            "rows": [
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Real Time Latency And Memory Profiles",
+                "Complete Production SRE Visibility"
+              ],
+              [
+                "Cryptographic Provenance Log",
+                "Binds Actions To Prompts With Immutable Hashes",
+                "Statutory Compliance Auditability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy a production CodeAct engine with namespace isolation.",
+            "rows": [
+              [
+                "High Throughput Worker Pool",
+                "Executes Hundreds Of Sessions Concurrently",
+                "Sub Second Execution Latency SLA"
+              ],
+              [
+                "Sovereign CodeAct Platform",
+                "Unifies Python REPL Sandboxes And Telemetry",
+                "Enterprise Grade Computational Sovereignty"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

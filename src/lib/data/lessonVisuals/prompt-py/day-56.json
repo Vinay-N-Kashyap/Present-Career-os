@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 56,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "The Paradigm Shift: From Heuristic Eyeballing To Programmatic LLM Evaluation",
+      "codeHash": "1207143e5ce9f2a82609eee111a65037aa9b0b14c3c340c1b78449724d6c8c33",
+      "spec": {
+        "template": "table",
+        "title": "From Heuristic Eyeballing To Programmatic LLM Evaluation.",
+        "columns": [
+          "Evaluation Paradigm",
+          "Measurement Methodology",
+          "Verification Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmatic evaluation replaces manual inspection with objective metrics.",
+            "rows": [
+              [
+                "Heuristic Eyeballing",
+                "Subjective Human Manual Inspection",
+                "Unreliable Statistical Noise"
+              ],
+              [
+                "Programmatic Evaluation",
+                "Automated Deterministic Testing Harness",
+                "Statistically Valid Significance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The evolution from manual probing to automated evaluation establishes.",
+            "rows": [
+              [
+                "Reference Based Scoring",
+                "Semantic Embedding Distance Against Golden Data",
+                "High Diagnostic Ground Truth"
+              ],
+              [
+                "Reference Free Scoring",
+                "Entailment Verification Over Retrieved Passages",
+                "Scalable Zero Cost Verification"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated evaluation replaces manual inspection with objective metrics.",
+            "rows": [
+              [
+                "Stratified Test Suite",
+                "Broad Distribution Across Difficulty Tiers",
+                "Comprehensive Edge Coverage"
+              ],
+              [
+                "Automated Gating CI",
+                "Blocks Production Deployment On Regressions",
+                "Zero Production Spillage SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Design a programmatic evaluation battery benchmarking prompt variations.",
+            "rows": [
+              [
+                "Continuous Benchmark Mesh",
+                "Monitors Long Term Quality And Model Drift",
+                "High Observability Confidence"
+              ],
+              [
+                "Sovereign Evaluation Engine",
+                "Rigorous Multi Dimensional Quality Assurance",
+                "Enterprise Production Grade SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "From Heuristic Eyeballing To Programmatic LLM Evaluation.",
+        "columns": [
+          "Evaluation Paradigm",
+          "Measurement Methodology",
+          "Verification Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmatic evaluation replaces manual inspection with objective metrics.",
+            "rows": [
+              [
+                "Heuristic Eyeballing",
+                "Subjective Human Manual Inspection",
+                "Unreliable Statistical Noise"
+              ],
+              [
+                "Programmatic Evaluation",
+                "Automated Deterministic Testing Harness",
+                "Statistically Valid Significance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The evolution from manual probing to automated evaluation establishes.",
+            "rows": [
+              [
+                "Reference Based Scoring",
+                "Semantic Embedding Distance Against Golden Data",
+                "High Diagnostic Ground Truth"
+              ],
+              [
+                "Reference Free Scoring",
+                "Entailment Verification Over Retrieved Passages",
+                "Scalable Zero Cost Verification"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Automated evaluation replaces manual inspection with objective metrics.",
+            "rows": [
+              [
+                "Stratified Test Suite",
+                "Broad Distribution Across Difficulty Tiers",
+                "Comprehensive Edge Coverage"
+              ],
+              [
+                "Automated Gating CI",
+                "Blocks Production Deployment On Regressions",
+                "Zero Production Spillage SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Design a programmatic evaluation battery benchmarking prompt variations.",
+            "rows": [
+              [
+                "Continuous Benchmark Mesh",
+                "Monitors Long Term Quality And Model Drift",
+                "High Observability Confidence"
+              ],
+              [
+                "Sovereign Evaluation Engine",
+                "Rigorous Multi Dimensional Quality Assurance",
+                "Enterprise Production Grade SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "RAG Evaluation Mechanics: Faithfulness, Answer Relevance, And Context Metrics",
+      "codeHash": "1207143e5ce9f2a82609eee111a65037aa9b0b14c3c340c1b78449724d6c8c33",
+      "spec": {
+        "template": "table",
+        "title": "RAG Evaluation Mechanics Faithfulness And Context Metrics.",
+        "columns": [
+          "Ragas Metric",
+          "Mathematical Formulation",
+          "Target Benchmark SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ragas computes granular faithfulness and relevance across retrieved text.",
+            "rows": [
+              [
+                "Faithfulness Metric",
+                "Ratio Of Entailed Atomic Claims Over Context",
+                "Ninety Four Point Six Percent"
+              ],
+              [
+                "Answer Relevance",
+                "Cosine Similarity Over Reverse Generated Queries",
+                "Ninety Six Point Two Percent"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Faithfulness measures the factual groundedness of generated completions.",
+            "rows": [
+              [
+                "Context Precision",
+                "Mean Average Precision Over Ranked Retrieval",
+                "Ninety One Point Eight Percent"
+              ],
+              [
+                "Context Recall",
+                "Sentence Level Ground Truth Premise Coverage",
+                "Ninety Three Point Four Percent"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Faithfulness decomposes answers into atomic claims to detect errors.",
+            "rows": [
+              [
+                "Claim Decomposition",
+                "Linguistic Parsing Into Atomic Propositions",
+                "Microsecond Extraction Speed"
+              ],
+              [
+                "Entailment Verification",
+                "Natural Language Inference Probability Scoring",
+                "Deterministic Groundedness SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a Ragas evaluation pipeline calculating faithfulness metrics.",
+            "rows": [
+              [
+                "Ragas Feedback Core",
+                "Decomposes Retrieval Versus Generation Failures",
+                "High Diagnostic Precision"
+              ],
+              [
+                "Optimized Hyperparameters",
+                "Tunes Chunk Overlap And Embedding Similarity",
+                "Maximized System Accuracy SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "RAG Evaluation Mechanics Faithfulness And Context Metrics.",
+        "columns": [
+          "Ragas Metric",
+          "Mathematical Formulation",
+          "Target Benchmark SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Ragas computes granular faithfulness and relevance across retrieved text.",
+            "rows": [
+              [
+                "Faithfulness Metric",
+                "Ratio Of Entailed Atomic Claims Over Context",
+                "Ninety Four Point Six Percent"
+              ],
+              [
+                "Answer Relevance",
+                "Cosine Similarity Over Reverse Generated Queries",
+                "Ninety Six Point Two Percent"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Faithfulness measures the factual groundedness of generated completions.",
+            "rows": [
+              [
+                "Context Precision",
+                "Mean Average Precision Over Ranked Retrieval",
+                "Ninety One Point Eight Percent"
+              ],
+              [
+                "Context Recall",
+                "Sentence Level Ground Truth Premise Coverage",
+                "Ninety Three Point Four Percent"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Faithfulness decomposes answers into atomic claims to detect errors.",
+            "rows": [
+              [
+                "Claim Decomposition",
+                "Linguistic Parsing Into Atomic Propositions",
+                "Microsecond Extraction Speed"
+              ],
+              [
+                "Entailment Verification",
+                "Natural Language Inference Probability Scoring",
+                "Deterministic Groundedness SLA"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a Ragas evaluation pipeline calculating faithfulness metrics.",
+            "rows": [
+              [
+                "Ragas Feedback Core",
+                "Decomposes Retrieval Versus Generation Failures",
+                "High Diagnostic Precision"
+              ],
+              [
+                "Optimized Hyperparameters",
+                "Tunes Chunk Overlap And Embedding Similarity",
+                "Maximized System Accuracy SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Feedback Triad And DeepEval: Groundedness, Context Relevance, And Unit Testing",
+      "codeHash": "1207143e5ce9f2a82609eee111a65037aa9b0b14c3c340c1b78449724d6c8c33",
+      "spec": {
+        "template": "table",
+        "title": "The Feedback Triad And DeepEval Quality Assurance Batteries.",
+        "columns": [
+          "Framework Component",
+          "Inspection Mechanism",
+          "Continuous Testing SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Feedback Triad and unit assertions enforce rigorous quality gates.",
+            "rows": [
+              [
+                "Context Relevance",
+                "Measures Query To Retrieved Context Proximity",
+                "Sub Second Semantic Alignment"
+              ],
+              [
+                "Groundedness Checker",
+                "Verifies Response Is Derived From Passage Context",
+                "Zero Hallucination Tolerance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The TruLens Feedback Triad decomposes application quality into relational.",
+            "rows": [
+              [
+                "Answer Relevance Triad",
+                "Confirms Completion Satisfies User Query Intent",
+                "High User Satisfaction SLA"
+              ],
+              [
+                "DeepEval Pytest Harness",
+                "Embeds Metric Assertions In CI Unit Testing",
+                "Automated Pull Request Gates"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "DeepEval embeds LLM quality assertions directly into automated test suites.",
+            "rows": [
+              [
+                "Custom Metric Rubric",
+                "Enforces Corporate Disclaimers And Politeness",
+                "Tailored Domain Compliance"
+              ],
+              [
+                "Asynchronous Event Queue",
+                "Computes Metrics Offline Without Latency Penalties",
+                "Sub Millisecond User Impact"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Author a DeepEval test asserting faithfulness and relevance thresholds.",
+            "rows": [
+              [
+                "TruLens Quality Engine",
+                "Provides Transparent Relational Quality Auditing",
+                "Complete Observability SLA"
+              ],
+              [
+                "DeepEval Test Battery",
+                "Validates Production Gate Thresholds Reliably",
+                "Flawless Fleet Reliability SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The Feedback Triad And DeepEval Quality Assurance Batteries.",
+        "columns": [
+          "Framework Component",
+          "Inspection Mechanism",
+          "Continuous Testing SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "The Feedback Triad and unit assertions enforce rigorous quality gates.",
+            "rows": [
+              [
+                "Context Relevance",
+                "Measures Query To Retrieved Context Proximity",
+                "Sub Second Semantic Alignment"
+              ],
+              [
+                "Groundedness Checker",
+                "Verifies Response Is Derived From Passage Context",
+                "Zero Hallucination Tolerance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The TruLens Feedback Triad decomposes application quality into relational.",
+            "rows": [
+              [
+                "Answer Relevance Triad",
+                "Confirms Completion Satisfies User Query Intent",
+                "High User Satisfaction SLA"
+              ],
+              [
+                "DeepEval Pytest Harness",
+                "Embeds Metric Assertions In CI Unit Testing",
+                "Automated Pull Request Gates"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "DeepEval embeds LLM quality assertions directly into automated test suites.",
+            "rows": [
+              [
+                "Custom Metric Rubric",
+                "Enforces Corporate Disclaimers And Politeness",
+                "Tailored Domain Compliance"
+              ],
+              [
+                "Asynchronous Event Queue",
+                "Computes Metrics Offline Without Latency Penalties",
+                "Sub Millisecond User Impact"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Author a DeepEval test asserting faithfulness and relevance thresholds.",
+            "rows": [
+              [
+                "TruLens Quality Engine",
+                "Provides Transparent Relational Quality Auditing",
+                "Complete Observability SLA"
+              ],
+              [
+                "DeepEval Test Battery",
+                "Validates Production Gate Thresholds Reliably",
+                "Flawless Fleet Reliability SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "G-Eval And LLM-As-A-Judge: Chain-Of-Thought Scoring And Bias Mitigation",
+      "codeHash": "1207143e5ce9f2a82609eee111a65037aa9b0b14c3c340c1b78449724d6c8c33",
+      "spec": {
+        "template": "table",
+        "title": "G-Eval And LLM As A Judge Rubric Scoring And Bias Mitigation.",
+        "columns": [
+          "Judge Technique",
+          "Mitigation Strategy",
+          "Evaluation Consistency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "G-Eval formalizes rubric evaluation with probability weighted scoring.",
+            "rows": [
+              [
+                "Chain Of Thought Judge",
+                "Generates Diagnostic Critiques Before Scoring",
+                "Explainable Multi Step Logic"
+              ],
+              [
+                "Probability Weighted Form",
+                "Extracts Continuous Scores From Logit Distributions",
+                "Eliminates Integer Rounding Flaws"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The G-Eval framework formalizes evaluation using structured rubrics.",
+            "rows": [
+              [
+                "Pairwise Position Swap",
+                "Evaluates Candidate Order In Both Directions",
+                "Neutralizes Position Bias"
+              ],
+              [
+                "Verbosity Normalizer",
+                "Penalizes Gratuitous Token Padding In Answers",
+                "Promotes Concise High Value Text"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "G-Eval computes continuous probability weighted scores over rubrics.",
+            "rows": [
+              [
+                "Cross Family Panel",
+                "Combines Heterogeneous Evaluators Across Vendors",
+                "Neutralizes Vendor Self Preference"
+              ],
+              [
+                "Calibrated Normalization",
+                "Maps Judge Ratings Onto Standard Distributions",
+                "Harmonizes Varied Judge Strictness"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct a G-Eval judge prompt with pairwise position swap mitigation.",
+            "rows": [
+              [
+                "G-Eval Scoring Core",
+                "Correlates Closely With Human Expert Judgments",
+                "Superhuman Evaluation Speed"
+              ],
+              [
+                "Sovereign Judge Mesh",
+                "Automates Complex Qualitative System Reviews",
+                "Uncompromised Evaluation Rigor"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "G-Eval And LLM As A Judge Rubric Scoring And Bias Mitigation.",
+        "columns": [
+          "Judge Technique",
+          "Mitigation Strategy",
+          "Evaluation Consistency SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "G-Eval formalizes rubric evaluation with probability weighted scoring.",
+            "rows": [
+              [
+                "Chain Of Thought Judge",
+                "Generates Diagnostic Critiques Before Scoring",
+                "Explainable Multi Step Logic"
+              ],
+              [
+                "Probability Weighted Form",
+                "Extracts Continuous Scores From Logit Distributions",
+                "Eliminates Integer Rounding Flaws"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The G-Eval framework formalizes evaluation using structured rubrics.",
+            "rows": [
+              [
+                "Pairwise Position Swap",
+                "Evaluates Candidate Order In Both Directions",
+                "Neutralizes Position Bias"
+              ],
+              [
+                "Verbosity Normalizer",
+                "Penalizes Gratuitous Token Padding In Answers",
+                "Promotes Concise High Value Text"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "G-Eval computes continuous probability weighted scores over rubrics.",
+            "rows": [
+              [
+                "Cross Family Panel",
+                "Combines Heterogeneous Evaluators Across Vendors",
+                "Neutralizes Vendor Self Preference"
+              ],
+              [
+                "Calibrated Normalization",
+                "Maps Judge Ratings Onto Standard Distributions",
+                "Harmonizes Varied Judge Strictness"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct a G-Eval judge prompt with pairwise position swap mitigation.",
+            "rows": [
+              [
+                "G-Eval Scoring Core",
+                "Correlates Closely With Human Expert Judgments",
+                "Superhuman Evaluation Speed"
+              ],
+              [
+                "Sovereign Judge Mesh",
+                "Automates Complex Qualitative System Reviews",
+                "Uncompromised Evaluation Rigor"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Continuous Evaluation Mesh: Automated CI/CD Regression Pipelines",
+      "codeHash": "1207143e5ce9f2a82609eee111a65037aa9b0b14c3c340c1b78449724d6c8c33",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Continuous Evaluation Mesh And Regression Pipelines.",
+        "columns": [
+          "Pipeline Subsystem",
+          "Architectural Role",
+          "Production Verification SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise evaluation meshes benchmark thousands of test cases in speed.",
+            "rows": [
+              [
+                "Ragas Evaluation Engine",
+                "Computes Faithfulness And Retrieval Recall",
+                "Twelve Hundred Test Cases"
+              ],
+              [
+                "TruLens Triad Monitor",
+                "Tracks Real Time Production Quality Stream",
+                "Continuous Feedback Collection"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Translating programmatic LLM evaluation theory and metrics into practice.",
+            "rows": [
+              [
+                "DeepEval CI Assertion",
+                "Executes Automated Regression Unit Test Battery",
+                "Blocks Substandard Model Checkpoints"
+              ],
+              [
+                "Statutory Compliance Ledger",
+                "Archives Cryptographic Hashes Of Scorecards",
+                "Impenetrable Audit Trail"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise evaluation meshes benchmark thousands of test cases in speed.",
+            "rows": [
+              [
+                "G-Eval Multi Judge Mesh",
+                "Executes Calibrated Qualitative Rubric Scoring",
+                "Zero Bias Multi Turn Testing"
+              ],
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Quality Heatmaps And Metrics",
+                "Total Enterprise Transparency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an integrated evaluation mesh verifying production promotion gates.",
+            "rows": [
+              [
+                "Apex Evaluation Core",
+                "Harmonizes Four Programmatic Frameworks",
+                "Ninety Four Percent Faithfulness SLA"
+              ],
+              [
+                "Production Promotion Gate",
+                "Certifies Model Readiness For Fleet Deployment",
+                "Mastery Of Evaluation Systems"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Continuous Evaluation Mesh And Regression Pipelines.",
+        "columns": [
+          "Pipeline Subsystem",
+          "Architectural Role",
+          "Production Verification SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise evaluation meshes benchmark thousands of test cases in speed.",
+            "rows": [
+              [
+                "Ragas Evaluation Engine",
+                "Computes Faithfulness And Retrieval Recall",
+                "Twelve Hundred Test Cases"
+              ],
+              [
+                "TruLens Triad Monitor",
+                "Tracks Real Time Production Quality Stream",
+                "Continuous Feedback Collection"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Translating programmatic LLM evaluation theory and metrics into practice.",
+            "rows": [
+              [
+                "DeepEval CI Assertion",
+                "Executes Automated Regression Unit Test Battery",
+                "Blocks Substandard Model Checkpoints"
+              ],
+              [
+                "Statutory Compliance Ledger",
+                "Archives Cryptographic Hashes Of Scorecards",
+                "Impenetrable Audit Trail"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise evaluation meshes benchmark thousands of test cases in speed.",
+            "rows": [
+              [
+                "G-Eval Multi Judge Mesh",
+                "Executes Calibrated Qualitative Rubric Scoring",
+                "Zero Bias Multi Turn Testing"
+              ],
+              [
+                "OpenTelemetry Trace Bus",
+                "Exports Quality Heatmaps And Metrics",
+                "Total Enterprise Transparency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an integrated evaluation mesh verifying production promotion gates.",
+            "rows": [
+              [
+                "Apex Evaluation Core",
+                "Harmonizes Four Programmatic Frameworks",
+                "Ninety Four Percent Faithfulness SLA"
+              ],
+              [
+                "Production Promotion Gate",
+                "Certifies Model Readiness For Fleet Deployment",
+                "Mastery Of Evaluation Systems"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

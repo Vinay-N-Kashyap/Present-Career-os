@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 59,
+  "promptSha": "dsa-optim-day-59-randomized-and-probabilistic",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Foundations of Randomized Algorithms: Las Vegas, Monte Carlo & Universal Hashing",
+      "codeHash": "285dc1b0f13649de55b7ca18fe0d2d5c764b35fed2e0fe6c2a87ccc879b1a7e8",
+      "filled": {
+        "template": "table",
+        "title": "Randomized Algorithm Paradigms And Universal Hash Matrix.",
+        "columns": [
+          "Algorithm Classification",
+          "Execution Time Model",
+          "Correctness Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deliberate randomization delivers optimal performance in algorithms.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Las vegas and monte carlo paradigms classify randomized algorithms.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud firewall utilizes universal hash function against attackers.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code evaluating linear congruential formula.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Randomized Algorithm Paradigms And Universal Hash Matrix.",
+        "columns": [
+          "Algorithm Classification",
+          "Execution Time Model",
+          "Correctness Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Deliberate randomization delivers optimal performance in algorithms.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Las vegas and monte carlo paradigms classify randomized algorithms.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud firewall utilizes universal hash function against attackers.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code evaluating linear congruential formula.",
+            "rows": [
+              [
+                "Las Vegas Paradigm",
+                "Randomized Variable Runtime",
+                "Strict Deterministic Correctness"
+              ],
+              [
+                "Monte Carlo Paradigm",
+                "Deterministic Bounded Time",
+                "Provable Error Probability Bound"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Randomized Search Structures I: The Treap & Randomized Cartesian Priority Trees",
+      "codeHash": "d8c2e56b4df75f3d400cec0a5bd5f193a4feac6836a495bfd0c253c805eaa029",
+      "filled": {
+        "template": "table",
+        "title": "Treap Cartesian Key Order And Randomized Max Heap Balance.",
+        "columns": [
+          "Treap Node Key Value",
+          "Randomized Heap Priority",
+          "Tree Rotation Direction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Treap combines binary search tree with randomized priority heap.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Treap maintains binary search tree and max heap priority invariants.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Matching engine maintains limit orders in self balancing treap.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code rotating nodes to restore priority invariant.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Treap Cartesian Key Order And Randomized Max Heap Balance.",
+        "columns": [
+          "Treap Node Key Value",
+          "Randomized Heap Priority",
+          "Tree Rotation Direction"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Treap combines binary search tree with randomized priority heap.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Treap maintains binary search tree and max heap priority invariants.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Matching engine maintains limit orders in self balancing treap.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code rotating nodes to restore priority invariant.",
+            "rows": [
+              [
+                "Binary Search Key",
+                "Left Child Smaller Key",
+                "Right Child Greater Key"
+              ],
+              [
+                "Cartesian Heap Priority",
+                "Single Tree Rotation",
+                "Balanced Logarithmic Height"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Randomized Search Structures II: The Skip List & Probabilistic Tower Traversal",
+      "codeHash": "19ec9dff434f959435bf8199794aa27713a59bd66687a251603e8962473cc3e0",
+      "filled": {
+        "template": "table",
+        "title": "Skip List Multi Level Probabilistic Forward Pointer Towers.",
+        "columns": [
+          "Tower Level Index",
+          "Forward Pointer Step",
+          "Coin Flip Probability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Skip list achieves logarithmic search performance via forward lanes.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Ordered linked lists form express lanes determined by coin flips.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Redis sorted set uses skip list for concurrent score lookups.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code linking forward pointers across tower levels.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Skip List Multi Level Probabilistic Forward Pointer Towers.",
+        "columns": [
+          "Tower Level Index",
+          "Forward Pointer Step",
+          "Coin Flip Probability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Skip list achieves logarithmic search performance via forward lanes.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Ordered linked lists form express lanes determined by coin flips.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Redis sorted set uses skip list for concurrent score lookups.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code linking forward pointers across tower levels.",
+            "rows": [
+              [
+                "Express Lane Pointer",
+                "Skip Over Subordinate Nodes",
+                "Staircase Search Descent"
+              ],
+              [
+                "Geometric Coin Flip",
+                "Promoted Higher Level",
+                "Lock Free Pointer Swap"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Streaming Probabilistic Summaries: Count-Min Sketch & HyperLogLog Cardinality Estimation",
+      "codeHash": "613d000e96ef6d499a03aa55191cb183149cce074e3b0e75ac78e714de8d2dfc",
+      "filled": {
+        "template": "table",
+        "title": "Count Min Sketch Frequency And HyperLogLog Cardinality Array.",
+        "columns": [
+          "Universal Hash Row",
+          "Sketch Counter Column",
+          "Probabilistic Frequency Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming probabilistic structures summarize massive telemetry data.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Count min sketch estimates event frequency using universal hash rows.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Delivery network monitors requests detecting attacks and unique visitors.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code updating counters and estimating cardinality.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Count Min Sketch Frequency And HyperLogLog Cardinality Array.",
+        "columns": [
+          "Universal Hash Row",
+          "Sketch Counter Column",
+          "Probabilistic Frequency Bound"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Streaming probabilistic structures summarize massive telemetry data.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Count min sketch estimates event frequency using universal hash rows.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Delivery network monitors requests detecting attacks and unique visitors.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code updating counters and estimating cardinality.",
+            "rows": [
+              [
+                "Pairwise Universal Hash",
+                "Conservative Counter Update",
+                "Minimum Row Noise Filter"
+              ],
+              [
+                "Leading Zeros Register",
+                "Harmonic Mean Aggregator",
+                "Sub Kilobyte Memory Footprint"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Stream Telemetry Processor: Real-Time DDoS Detection & Heavy Hitters Analytics",
+      "codeHash": "f477e7d159f684df2c4ec3bf48a9e3c67ece031929db512cec5031cb0d5af4bb",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Stream Telemetry High Velocity Attack Mitigation.",
+        "columns": [
+          "Ingress Packet Stream",
+          "Count Min Frequency Score",
+          "Firewall Mitigation Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise stream telemetry platform analyzes cybersecurity events.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise gateways process network traffic identifying attack vectors.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Gateway detects volumetric flood triggering firewall mitigation.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete stream processor evaluating heavy hitter thresholds.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Stream Telemetry High Velocity Attack Mitigation.",
+        "columns": [
+          "Ingress Packet Stream",
+          "Count Min Frequency Score",
+          "Firewall Mitigation Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise stream telemetry platform analyzes cybersecurity events.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise gateways process network traffic identifying attack vectors.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Gateway detects volumetric flood triggering firewall mitigation.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete stream processor evaluating heavy hitter thresholds.",
+            "rows": [
+              [
+                "Volumetric Flood IP",
+                "Heavy Hitter Limit Exceeded",
+                "Instant Edge Firewall Drop"
+              ],
+              [
+                "Unique Visitor Session",
+                "HyperLogLog Stream Count",
+                "Continuous Topology Overview"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

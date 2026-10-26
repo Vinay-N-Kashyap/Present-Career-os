@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 33,
+  "entries": [
+    {
+      "partTitle": "The KV-Cache Memory Wall & Physical Fragmentation",
+      "codeHash": "389969d47594da38971cfe3a4dfd55e11c57f682de24b9d06fdeea2eb889f2d4",
+      "filled": {
+        "template": "table",
+        "title": "Contiguous Memory Allocation and Physical Cache Fragmentation.",
+        "columns": [
+          "Allocation Model",
+          "Memory Waste Ratio",
+          "Concurrency Limitation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Contiguous memory allocation creates severe internal cache fragmentation.",
+            "rows": [
+              [
+                "Contiguous Legacy Preallocation",
+                "Seventy Percent Waste",
+                "Severe Concurrency Limit"
+              ],
+              [
+                "Paged Dynamic Allocation",
+                "Under Four Percent Waste",
+                "Maximum Concurrency Scale"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Preallocating maximum context buffers leaves vast global memory unused.",
+            "rows": [
+              [
+                "Max Context Buffer Allocated",
+                "Empty Unused Space Preserved",
+                "Premature Out Of Memory"
+              ],
+              [
+                "On Demand Token Allocation",
+                "Zero Unused Space Reserved",
+                "One Hundred Percent DRAM Use"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rigid parking reservations waste space when compact vehicles enter.",
+            "rows": [
+              [
+                "Rigid Tour Bus Stall",
+                "Single Vehicle Parked",
+                "Massive Idle Asphalt"
+              ],
+              [
+                "Flexible Compact Parking",
+                "Vehicles Slotted Tightly",
+                "Zero Wasted Garage Space"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate fragmentation across varying context lengths and memory waste.",
+            "rows": [
+              [
+                "Short Sequence Request",
+                "Low Actual Memory Utilized",
+                "Eighty Percent Reclaimed"
+              ],
+              [
+                "Long Sequence Request",
+                "Progressive Memory Growth",
+                "Smooth Linear Scaling"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Contiguous Memory Allocation and Physical Cache Fragmentation.",
+        "columns": [
+          "Allocation Model",
+          "Memory Waste Ratio",
+          "Concurrency Limitation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Contiguous memory allocation creates severe internal cache fragmentation.",
+            "rows": [
+              [
+                "Contiguous Legacy Preallocation",
+                "Seventy Percent Waste",
+                "Severe Concurrency Limit"
+              ],
+              [
+                "Paged Dynamic Allocation",
+                "Under Four Percent Waste",
+                "Maximum Concurrency Scale"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Preallocating maximum context buffers leaves vast global memory unused.",
+            "rows": [
+              [
+                "Max Context Buffer Allocated",
+                "Empty Unused Space Preserved",
+                "Premature Out Of Memory"
+              ],
+              [
+                "On Demand Token Allocation",
+                "Zero Unused Space Reserved",
+                "One Hundred Percent DRAM Use"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Rigid parking reservations waste space when compact vehicles enter.",
+            "rows": [
+              [
+                "Rigid Tour Bus Stall",
+                "Single Vehicle Parked",
+                "Massive Idle Asphalt"
+              ],
+              [
+                "Flexible Compact Parking",
+                "Vehicles Slotted Tightly",
+                "Zero Wasted Garage Space"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate fragmentation across varying context lengths and memory waste.",
+            "rows": [
+              [
+                "Short Sequence Request",
+                "Low Actual Memory Utilized",
+                "Eighty Percent Reclaimed"
+              ],
+              [
+                "Long Sequence Request",
+                "Progressive Memory Growth",
+                "Smooth Linear Scaling"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "PagedAttention Architecture & Operating System Virtual Memory Paging Analogy",
+      "codeHash": "1c594a22713176ccc5009e403c46c23c773d6102df9ebd04befa65367eae1f6b",
+      "filled": {
+        "template": "table",
+        "title": "PagedAttention Block Tables and Virtual Address Translation.",
+        "columns": [
+          "Memory Architecture",
+          "Block Allocation Mode",
+          "Address Resolution"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PagedAttention partitions physical memory into fixed size token blocks.",
+            "rows": [
+              [
+                "Physical Frame Partitioning",
+                "Fixed Sixteen Token Blocks",
+                "Global Pool Management"
+              ],
+              [
+                "Virtual Address Translation",
+                "Logical Block Table Lookup",
+                "Direct Non Contiguous Gathering"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Logical block tables map token sequences to scattered physical blocks.",
+            "rows": [
+              [
+                "Logical Block Zero",
+                "Physical Block Ninety Nine",
+                "Zero Stride Contiguity Required"
+              ],
+              [
+                "Logical Block One",
+                "Physical Block Twelve",
+                "Scattered DRAM Allocation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Loose leaf indexing allocates sheets on demand without empty pages.",
+            "rows": [
+              [
+                "Prebound Blank Notebook",
+                "Fixed Unalterable Pages",
+                "High Paper Waste"
+              ],
+              [
+                "Loose Leaf Ring Binder",
+                "Sheets Inserted On Demand",
+                "Optimal Storage Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect translated token address offsets and verify physical block indices.",
+            "rows": [
+              [
+                "Logical Token Index Thirty Five",
+                "Physical Block Ninety Seven",
+                "Intra Block Offset Three"
+              ],
+              [
+                "Translation Latency",
+                "Sub Microsecond Bit Shift",
+                "Zero GPU Compute Penalty"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "PagedAttention Block Tables and Virtual Address Translation.",
+        "columns": [
+          "Memory Architecture",
+          "Block Allocation Mode",
+          "Address Resolution"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PagedAttention partitions physical memory into fixed size token blocks.",
+            "rows": [
+              [
+                "Physical Frame Partitioning",
+                "Fixed Sixteen Token Blocks",
+                "Global Pool Management"
+              ],
+              [
+                "Virtual Address Translation",
+                "Logical Block Table Lookup",
+                "Direct Non Contiguous Gathering"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Logical block tables map token sequences to scattered physical blocks.",
+            "rows": [
+              [
+                "Logical Block Zero",
+                "Physical Block Ninety Nine",
+                "Zero Stride Contiguity Required"
+              ],
+              [
+                "Logical Block One",
+                "Physical Block Twelve",
+                "Scattered DRAM Allocation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Loose leaf indexing allocates sheets on demand without empty pages.",
+            "rows": [
+              [
+                "Prebound Blank Notebook",
+                "Fixed Unalterable Pages",
+                "High Paper Waste"
+              ],
+              [
+                "Loose Leaf Ring Binder",
+                "Sheets Inserted On Demand",
+                "Optimal Storage Efficiency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect translated token address offsets and verify physical block indices.",
+            "rows": [
+              [
+                "Logical Token Index Thirty Five",
+                "Physical Block Ninety Seven",
+                "Intra Block Offset Three"
+              ],
+              [
+                "Translation Latency",
+                "Sub Microsecond Bit Shift",
+                "Zero GPU Compute Penalty"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Zero-Copy Prefix Caching & Radix Tree Management",
+      "codeHash": "b8e01a19cdf790a112fdf9abd6347e255593391c98ba6cd62f87b0e6726376ca",
+      "filled": {
+        "template": "table",
+        "title": "Zero Copy Prefix Caching and Radix Tree Reference Counting.",
+        "columns": [
+          "Caching Strategy",
+          "Duplicate KV Vectors",
+          "Time To First Token"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Zero copy prefix caching eliminates duplicate prompt tensor evaluations.",
+            "rows": [
+              [
+                "Redundant Prefix Processing",
+                "Full Recomputation Per Query",
+                "Severe Server Congestion"
+              ],
+              [
+                "Zero Copy Prefix Caching",
+                "Reused Existing Block Tables",
+                "Instant First Token Arrival"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Radix tree cache records shared prefix blocks across independent queries.",
+            "rows": [
+              [
+                "System Prompt Shared",
+                "Single Physical Storage",
+                "Dozens Of Pointer References"
+              ],
+              [
+                "Copy On Write Divergence",
+                "Private Block Cloned",
+                "Independent Generation Maintained"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Printing common text once saves massive typesetting time across readers.",
+            "rows": [
+              [
+                "Typesetting Front Page Repeatedly",
+                "Hours Of Wasted Press Time",
+                "Bottlenecked Distribution"
+              ],
+              [
+                "Printing Common Plate Once",
+                "Immediate High Speed Press",
+                "Instant Custom Dispatch"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate divergent prompt branching and observe prefix cache hit rate.",
+            "rows": [
+              [
+                "Cache Hit Ratio High",
+                "Seventy Percent Prefill Skipped",
+                "Three Times Throughput Gain"
+              ],
+              [
+                "Cache Miss Fallback",
+                "Evaluate New Prefix Chunk",
+                "Register In Radix Tree"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Zero Copy Prefix Caching and Radix Tree Reference Counting.",
+        "columns": [
+          "Caching Strategy",
+          "Duplicate KV Vectors",
+          "Time To First Token"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Zero copy prefix caching eliminates duplicate prompt tensor evaluations.",
+            "rows": [
+              [
+                "Redundant Prefix Processing",
+                "Full Recomputation Per Query",
+                "Severe Server Congestion"
+              ],
+              [
+                "Zero Copy Prefix Caching",
+                "Reused Existing Block Tables",
+                "Instant First Token Arrival"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Radix tree cache records shared prefix blocks across independent queries.",
+            "rows": [
+              [
+                "System Prompt Shared",
+                "Single Physical Storage",
+                "Dozens Of Pointer References"
+              ],
+              [
+                "Copy On Write Divergence",
+                "Private Block Cloned",
+                "Independent Generation Maintained"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Printing common text once saves massive typesetting time across readers.",
+            "rows": [
+              [
+                "Typesetting Front Page Repeatedly",
+                "Hours Of Wasted Press Time",
+                "Bottlenecked Distribution"
+              ],
+              [
+                "Printing Common Plate Once",
+                "Immediate High Speed Press",
+                "Instant Custom Dispatch"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate divergent prompt branching and observe prefix cache hit rate.",
+            "rows": [
+              [
+                "Cache Hit Ratio High",
+                "Seventy Percent Prefill Skipped",
+                "Three Times Throughput Gain"
+              ],
+              [
+                "Cache Miss Fallback",
+                "Evaluate New Prefix Chunk",
+                "Register In Radix Tree"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chunked Prefill & Mixed Batching Scheduling",
+      "codeHash": "2d7fe88a5b7af4c1dd4747bcc7d64f4bfcdd087181f7e0b0998bb0b6e98dbc48",
+      "filled": {
+        "template": "table",
+        "title": "Chunked Prefill Scheduling and Interleaved Decode Execution.",
+        "columns": [
+          "Batching Scheme",
+          "Execution Duration",
+          "Inter Token Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Monolithic prompt prefill bursts monopolize tensor cores and cause jitter.",
+            "rows": [
+              [
+                "Monolithic Prefill Burst",
+                "Hundreds Of Milliseconds Stall",
+                "Severe Jitter On Decodes"
+              ],
+              [
+                "Chunked Prefill Slicing",
+                "Uniform Five Hundred Twelve Tokens",
+                "Consistent Iteration Timing"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chunked prefill divides large prompts into uniform schedulable slices.",
+            "rows": [
+              [
+                "Mixed Batch Construction",
+                "Co Scheduled Prefill And Decode",
+                "Balanced Tensor Core Load"
+              ],
+              [
+                "Token Budget Allocation",
+                "Decode Streams Prioritized",
+                "Guaranteed Streaming Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Interleaving item scanning allows quick shoppers to pass without delay.",
+            "rows": [
+              [
+                "Shopper With Five Full Carts",
+                "Blocking Single Cash Register",
+                "Long Customer Wait Lines"
+              ],
+              [
+                "Quick Item Lane Interleaving",
+                "Smooth Steady Checkout",
+                "Minimal Queue Delay"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tune batch token budget and observe decode prefill token allocation.",
+            "rows": [
+              [
+                "Iteration Latency Capped",
+                "Sub Thirty Milliseconds",
+                "Strict SLA Compliance Maintained"
+              ],
+              [
+                "Hardware Saturation",
+                "High Arithmetic Intensity",
+                "Zero Pipeline Bubble Loss"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Chunked Prefill Scheduling and Interleaved Decode Execution.",
+        "columns": [
+          "Batching Scheme",
+          "Execution Duration",
+          "Inter Token Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Monolithic prompt prefill bursts monopolize tensor cores and cause jitter.",
+            "rows": [
+              [
+                "Monolithic Prefill Burst",
+                "Hundreds Of Milliseconds Stall",
+                "Severe Jitter On Decodes"
+              ],
+              [
+                "Chunked Prefill Slicing",
+                "Uniform Five Hundred Twelve Tokens",
+                "Consistent Iteration Timing"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Chunked prefill divides large prompts into uniform schedulable slices.",
+            "rows": [
+              [
+                "Mixed Batch Construction",
+                "Co Scheduled Prefill And Decode",
+                "Balanced Tensor Core Load"
+              ],
+              [
+                "Token Budget Allocation",
+                "Decode Streams Prioritized",
+                "Guaranteed Streaming Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Interleaving item scanning allows quick shoppers to pass without delay.",
+            "rows": [
+              [
+                "Shopper With Five Full Carts",
+                "Blocking Single Cash Register",
+                "Long Customer Wait Lines"
+              ],
+              [
+                "Quick Item Lane Interleaving",
+                "Smooth Steady Checkout",
+                "Minimal Queue Delay"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Tune batch token budget and observe decode prefill token allocation.",
+            "rows": [
+              [
+                "Iteration Latency Capped",
+                "Sub Thirty Milliseconds",
+                "Strict SLA Compliance Maintained"
+              ],
+              [
+                "Hardware Saturation",
+                "High Arithmetic Intensity",
+                "Zero Pipeline Bubble Loss"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production vLLM Deployment, Memory Telemetry & Enterprise Capacity Planning",
+      "codeHash": "db356a13ea40e3e884c5843e29d67aa308f5da729a2e38a03aaa5cc2ee568b1a",
+      "filled": {
+        "template": "table",
+        "title": "Production vLLM Deployment and Enterprise Capacity Planning.",
+        "columns": [
+          "Engine Setting",
+          "Physical Memory Pool",
+          "Active Stream Capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production serving configuration tunes memory utilization and block pools.",
+            "rows": [
+              [
+                "Eighty Gigabyte A One Hundred",
+                "Seventy Two Gigabytes Reserved",
+                "Fifty Four Gigabyte KV Pool"
+              ],
+              [
+                "Model Weights Footprint",
+                "Fourteen Gigabytes FP Sixteen",
+                "Static Memory Allocation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Allocating dedicated block pools supports thousands of concurrent streams.",
+            "rows": [
+              [
+                "Block Table Concurrency",
+                "Nearly Two Thousand Streams",
+                "Over Three Times Legacy Scale"
+              ],
+              [
+                "Tensor Parallel Eight Way",
+                "Synchronized Block Tables",
+                "Zero Inter Rank Divergence"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Managed terminal gates ensure arriving flights land without air delays.",
+            "rows": [
+              [
+                "Unmanaged Airport Runways",
+                "Planes Circling In Stacks",
+                "Severe Flight Delays"
+              ],
+              [
+                "Synchronized Gate Management",
+                "Smooth Runway Operations",
+                "Zero Holding Pattern Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate capacity across different accelerators and concurrency limits.",
+            "rows": [
+              [
+                "Memory Pressure Warning",
+                "Eighty Five Percent Threshold",
+                "Proactive Eviction Triggered"
+              ],
+              [
+                "Host Swapping Support",
+                "PCIe Block Migration",
+                "Zero Fatal Server Crashes"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Production vLLM Deployment and Enterprise Capacity Planning.",
+        "columns": [
+          "Engine Setting",
+          "Physical Memory Pool",
+          "Active Stream Capacity"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Production serving configuration tunes memory utilization and block pools.",
+            "rows": [
+              [
+                "Eighty Gigabyte A One Hundred",
+                "Seventy Two Gigabytes Reserved",
+                "Fifty Four Gigabyte KV Pool"
+              ],
+              [
+                "Model Weights Footprint",
+                "Fourteen Gigabytes FP Sixteen",
+                "Static Memory Allocation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Allocating dedicated block pools supports thousands of concurrent streams.",
+            "rows": [
+              [
+                "Block Table Concurrency",
+                "Nearly Two Thousand Streams",
+                "Over Three Times Legacy Scale"
+              ],
+              [
+                "Tensor Parallel Eight Way",
+                "Synchronized Block Tables",
+                "Zero Inter Rank Divergence"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Managed terminal gates ensure arriving flights land without air delays.",
+            "rows": [
+              [
+                "Unmanaged Airport Runways",
+                "Planes Circling In Stacks",
+                "Severe Flight Delays"
+              ],
+              [
+                "Synchronized Gate Management",
+                "Smooth Runway Operations",
+                "Zero Holding Pattern Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate capacity across different accelerators and concurrency limits.",
+            "rows": [
+              [
+                "Memory Pressure Warning",
+                "Eighty Five Percent Threshold",
+                "Proactive Eviction Triggered"
+              ],
+              [
+                "Host Swapping Support",
+                "PCIe Block Migration",
+                "Zero Fatal Server Crashes"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

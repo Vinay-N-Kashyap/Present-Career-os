@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 31,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "The Limits Of Linear Autoregressive Generation: Why Complex Combinatorial Problems Require Search Trees",
+      "codeHash": "87fc042b7ffe969b03f82817f3abf01fc4dfc4ae3ff9e8a9c0c0cbe364334980",
+      "spec": {
+        "template": "table",
+        "title": "Linear Generation Limitations And Decision Tree Traversal Dynamics.",
+        "columns": [
+          "Cognitive Search Dimension",
+          "Linear Chain Approach",
+          "Tree Of Thoughts Approach"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear autoregressive generation lacks backtracking for complex problems.",
+            "rows": [
+              [
+                "Reasoning Topology",
+                "Linear Autoregressive Forward Chain",
+                "Branching State Space Search Tree"
+              ],
+              [
+                "Backtracking Capability",
+                "Zero Retraction Of Previous Tokens",
+                "Deterministic Retraction And Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Early reasoning assumptions lock forward generation into justifying flaws.",
+            "rows": [
+              [
+                "Error Propagation Risk",
+                "Early Flaws Warping Subsequent Logic",
+                "Suboptimal Branches Cut Off Early"
+              ],
+              [
+                "Exploration Breadth",
+                "Single Sequential Hypotheses",
+                "Parallel Competing Reasoning Corridors"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A chess player visualizes multiple competing moves before acting.",
+            "rows": [
+              [
+                "Evaluation Mechanism",
+                "Implicit Self Attention Weighting",
+                "Explicit Heuristic Scoring Oracles"
+              ],
+              [
+                "Cognitive Success Rate",
+                "Low On Combinatorial Logic Suites",
+                "High Across Complex Strategic Puzzles"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace how linear prompt chains get trapped in flawed early commitments.",
+            "rows": [
+              [
+                "Resource Consumption",
+                "Fixed Token Consumption Trajectory",
+                "Adaptive Expansion Based On Difficulty"
+              ],
+              [
+                "Verification Provenance",
+                "Unstructured Freeform Text Stream",
+                "Auditable Graph Traversal Log Ledger"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Linear Generation Limitations And Decision Tree Traversal Dynamics.",
+        "columns": [
+          "Cognitive Search Dimension",
+          "Linear Chain Approach",
+          "Tree Of Thoughts Approach"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear autoregressive generation lacks backtracking for complex problems.",
+            "rows": [
+              [
+                "Reasoning Topology",
+                "Linear Autoregressive Forward Chain",
+                "Branching State Space Search Tree"
+              ],
+              [
+                "Backtracking Capability",
+                "Zero Retraction Of Previous Tokens",
+                "Deterministic Retraction And Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Early reasoning assumptions lock forward generation into justifying flaws.",
+            "rows": [
+              [
+                "Error Propagation Risk",
+                "Early Flaws Warping Subsequent Logic",
+                "Suboptimal Branches Cut Off Early"
+              ],
+              [
+                "Exploration Breadth",
+                "Single Sequential Hypotheses",
+                "Parallel Competing Reasoning Corridors"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "A chess player visualizes multiple competing moves before acting.",
+            "rows": [
+              [
+                "Evaluation Mechanism",
+                "Implicit Self Attention Weighting",
+                "Explicit Heuristic Scoring Oracles"
+              ],
+              [
+                "Cognitive Success Rate",
+                "Low On Combinatorial Logic Suites",
+                "High Across Complex Strategic Puzzles"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace how linear prompt chains get trapped in flawed early commitments.",
+            "rows": [
+              [
+                "Resource Consumption",
+                "Fixed Token Consumption Trajectory",
+                "Adaptive Expansion Based On Difficulty"
+              ],
+              [
+                "Verification Provenance",
+                "Unstructured Freeform Text Stream",
+                "Auditable Graph Traversal Log Ledger"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Tree-of-Thoughts Formulation: Thought Generation, State Evaluation & Heuristic Scoring",
+      "codeHash": "87fc042b7ffe969b03f82817f3abf01fc4dfc4ae3ff9e8a9c0c0cbe364334980",
+      "spec": {
+        "template": "table",
+        "title": "Tree Of Thoughts Formulation And Heuristic State Evaluation Rubrics.",
+        "columns": [
+          "Framework Component",
+          "Operational Role",
+          "Algorithmic Responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tree of thoughts decouples generation from evaluation across state trees.",
+            "rows": [
+              [
+                "Thought Decomposition",
+                "Break Complex Target Into Increments",
+                "Discrete Atomic Reasoning Milestones"
+              ],
+              [
+                "Thought Generator",
+                "Sample Multiple Distinct Alternatives",
+                "Branching Decision State Space"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Thought generators create branching candidate paths from current states.",
+            "rows": [
+              [
+                "State Evaluator",
+                "Heuristic Inspection Of Candidate States",
+                "Quantitative Viability Scoring Oracle"
+              ],
+              [
+                "Pruning Controller",
+                "Discard Branches Below Thresholds",
+                "Prevent Computational Token Explosion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Medical diagnostic teams formulate candidate hypotheses from evidence.",
+            "rows": [
+              [
+                "Backtracking Engine",
+                "Pop Impasse Nodes Off Execution Stack",
+                "Resume Exploration From Prior Nodes"
+              ],
+              [
+                "Independent Context Gate",
+                "Execute Scoring In Clean Environments",
+                "Eliminate Self Justification Bias"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct independent generation and evaluation prompts to score nodes.",
+            "rows": [
+              [
+                "Pydantic Data Contract",
+                "Validate Typed Node Representations",
+                "Prevent Structural Malformed Errors"
+              ],
+              [
+                "Terminal State Detector",
+                "Confirm Target Objective Achievement",
+                "Halt Search Upon Optimal Resolution"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Tree Of Thoughts Formulation And Heuristic State Evaluation Rubrics.",
+        "columns": [
+          "Framework Component",
+          "Operational Role",
+          "Algorithmic Responsibility"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Tree of thoughts decouples generation from evaluation across state trees.",
+            "rows": [
+              [
+                "Thought Decomposition",
+                "Break Complex Target Into Increments",
+                "Discrete Atomic Reasoning Milestones"
+              ],
+              [
+                "Thought Generator",
+                "Sample Multiple Distinct Alternatives",
+                "Branching Decision State Space"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Thought generators create branching candidate paths from current states.",
+            "rows": [
+              [
+                "State Evaluator",
+                "Heuristic Inspection Of Candidate States",
+                "Quantitative Viability Scoring Oracle"
+              ],
+              [
+                "Pruning Controller",
+                "Discard Branches Below Thresholds",
+                "Prevent Computational Token Explosion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Medical diagnostic teams formulate candidate hypotheses from evidence.",
+            "rows": [
+              [
+                "Backtracking Engine",
+                "Pop Impasse Nodes Off Execution Stack",
+                "Resume Exploration From Prior Nodes"
+              ],
+              [
+                "Independent Context Gate",
+                "Execute Scoring In Clean Environments",
+                "Eliminate Self Justification Bias"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Construct independent generation and evaluation prompts to score nodes.",
+            "rows": [
+              [
+                "Pydantic Data Contract",
+                "Validate Typed Node Representations",
+                "Prevent Structural Malformed Errors"
+              ],
+              [
+                "Terminal State Detector",
+                "Confirm Target Objective Achievement",
+                "Halt Search Upon Optimal Resolution"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Search Algorithms Over Prompt Trees: Breadth-First, Depth-First & Heuristic Beam Search",
+      "codeHash": "87fc042b7ffe969b03f82817f3abf01fc4dfc4ae3ff9e8a9c0c0cbe364334980",
+      "spec": {
+        "template": "table",
+        "title": "Search Algorithms Over Prompt Trees And Beam Pruning Architectures.",
+        "columns": [
+          "Tree Search Strategy",
+          "Traversal Priority",
+          "Resource Tradeoff Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search algorithms govern efficiency and traversal across reasoning trees.",
+            "rows": [
+              [
+                "Breadth First Search",
+                "Explore All Nodes At Current Level",
+                "Guarantees Shortest Path Solution"
+              ],
+              [
+                "Depth First Search",
+                "Traverse Single Branch To Impasse",
+                "Highly Efficient Working Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Breadth first beam search retains only the top scoring candidate nodes.",
+            "rows": [
+              [
+                "Beam Search Pruning",
+                "Retain Top Ranked Candidate Nodes",
+                "Strictly Bounds Exponential Branching"
+              ],
+              [
+                "A Star Heuristic Search",
+                "Combine Path Cost And Forward Promise",
+                "Prioritizes Cost Effective Solutions"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Route planning algorithms explore highway corridors using cost estimates.",
+            "rows": [
+              [
+                "Token Budget Governor",
+                "Dynamically Modulate Beam Width",
+                "Guarantees Predictable API Economics"
+              ],
+              [
+                "State Deduplication Cache",
+                "Store Evaluated Node Hash Signatures",
+                "Eliminates Redundant Re Reasoning Costs"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a beam search controller retaining top candidate paths.",
+            "rows": [
+              [
+                "Asynchronous Dispatcher",
+                "Sample Sibling Nodes In Parallel",
+                "Minimizes Wall Clock Search Latency"
+              ],
+              [
+                "Priority Queue Scheduler",
+                "Order Frontier By Confidence Value",
+                "Directs Compute To Promising Corridors"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Search Algorithms Over Prompt Trees And Beam Pruning Architectures.",
+        "columns": [
+          "Tree Search Strategy",
+          "Traversal Priority",
+          "Resource Tradeoff Profile"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Search algorithms govern efficiency and traversal across reasoning trees.",
+            "rows": [
+              [
+                "Breadth First Search",
+                "Explore All Nodes At Current Level",
+                "Guarantees Shortest Path Solution"
+              ],
+              [
+                "Depth First Search",
+                "Traverse Single Branch To Impasse",
+                "Highly Efficient Working Memory Footprint"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Breadth first beam search retains only the top scoring candidate nodes.",
+            "rows": [
+              [
+                "Beam Search Pruning",
+                "Retain Top Ranked Candidate Nodes",
+                "Strictly Bounds Exponential Branching"
+              ],
+              [
+                "A Star Heuristic Search",
+                "Combine Path Cost And Forward Promise",
+                "Prioritizes Cost Effective Solutions"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Route planning algorithms explore highway corridors using cost estimates.",
+            "rows": [
+              [
+                "Token Budget Governor",
+                "Dynamically Modulate Beam Width",
+                "Guarantees Predictable API Economics"
+              ],
+              [
+                "State Deduplication Cache",
+                "Store Evaluated Node Hash Signatures",
+                "Eliminates Redundant Re Reasoning Costs"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a beam search controller retaining top candidate paths.",
+            "rows": [
+              [
+                "Asynchronous Dispatcher",
+                "Sample Sibling Nodes In Parallel",
+                "Minimizes Wall Clock Search Latency"
+              ],
+              [
+                "Priority Queue Scheduler",
+                "Order Frontier By Confidence Value",
+                "Directs Compute To Promising Corridors"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Graph-of-Thoughts: Beyond Trees to Graph Aggregation, Branch Merging & Dynamic Transformations",
+      "codeHash": "87fc042b7ffe969b03f82817f3abf01fc4dfc4ae3ff9e8a9c0c0cbe364334980",
+      "spec": {
+        "template": "table",
+        "title": "Graph Of Thoughts Topology And Multi Branch Aggregation Frameworks.",
+        "columns": [
+          "Graph Transformation Mode",
+          "Network Topology Shift",
+          "Cognitive Reasoning Gain"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Graph of thoughts expands tree structures into directed cognitive graphs.",
+            "rows": [
+              [
+                "Thought Aggregation",
+                "Merge Multiple Independent Branches",
+                "Synthesizes Divergent Reasoning Streams"
+              ],
+              [
+                "Thought Refinement",
+                "Loop Feedback Onto Existing Nodes",
+                "Iteratively Improves Solution Quality"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Thought aggregation combines insights from multiple reasoning branches.",
+            "rows": [
+              [
+                "Thought Decomposition",
+                "Split Broad Node Into Sub Tasks",
+                "Enables Parallel Downstream Solvers"
+              ],
+              [
+                "Feedback Loop Injection",
+                "Critique Pass Back To Upstream Nodes",
+                "Self Corrects Intermediate Assumptions"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Corporate mergers consolidate financial audits into unified agreements.",
+            "rows": [
+              [
+                "Topological Dependency Engine",
+                "Track Prerequisite Vertex Completion",
+                "Ensures Strict Causal Ordering"
+              ],
+              [
+                "Dynamic Graph Rewriter",
+                "Mutate Edge Topology During Search",
+                "Adapts Strategy To Emerging Patterns"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Design a graph aggregation prompt merging multiple exploratory branches.",
+            "rows": [
+              [
+                "Concurrence Controller",
+                "Execute Unblocked Vertices Concurrently",
+                "Maximizes Multi Thread Throughput"
+              ],
+              [
+                "Network Centrality Auditing",
+                "Analyze Graph Topology Metrics",
+                "Identifies Critical Reasoning Paths"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Graph Of Thoughts Topology And Multi Branch Aggregation Frameworks.",
+        "columns": [
+          "Graph Transformation Mode",
+          "Network Topology Shift",
+          "Cognitive Reasoning Gain"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Graph of thoughts expands tree structures into directed cognitive graphs.",
+            "rows": [
+              [
+                "Thought Aggregation",
+                "Merge Multiple Independent Branches",
+                "Synthesizes Divergent Reasoning Streams"
+              ],
+              [
+                "Thought Refinement",
+                "Loop Feedback Onto Existing Nodes",
+                "Iteratively Improves Solution Quality"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Thought aggregation combines insights from multiple reasoning branches.",
+            "rows": [
+              [
+                "Thought Decomposition",
+                "Split Broad Node Into Sub Tasks",
+                "Enables Parallel Downstream Solvers"
+              ],
+              [
+                "Feedback Loop Injection",
+                "Critique Pass Back To Upstream Nodes",
+                "Self Corrects Intermediate Assumptions"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Corporate mergers consolidate financial audits into unified agreements.",
+            "rows": [
+              [
+                "Topological Dependency Engine",
+                "Track Prerequisite Vertex Completion",
+                "Ensures Strict Causal Ordering"
+              ],
+              [
+                "Dynamic Graph Rewriter",
+                "Mutate Edge Topology During Search",
+                "Adapts Strategy To Emerging Patterns"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Design a graph aggregation prompt merging multiple exploratory branches.",
+            "rows": [
+              [
+                "Concurrence Controller",
+                "Execute Unblocked Vertices Concurrently",
+                "Maximizes Multi Thread Throughput"
+              ],
+              [
+                "Network Centrality Auditing",
+                "Analyze Graph Topology Metrics",
+                "Identifies Critical Reasoning Paths"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Cognitive Architecture: Implementing a Production Tree-of-Thoughts Controller in Python",
+      "codeHash": "87fc042b7ffe969b03f82817f3abf01fc4dfc4ae3ff9e8a9c0c0cbe364334980",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Cognitive Architecture And Python Controller Implementation.",
+        "columns": [
+          "Controller Architectural Layer",
+          "Component Implementation",
+          "Production Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise cognitive architectures implement python controller harnesses.",
+            "rows": [
+              [
+                "Search Harness Layer",
+                "Manage Frontier Queue And Stack State",
+                "Deterministic Python Traversal Engine"
+              ],
+              [
+                "Thought Generator Gateway",
+                "Orchestrate Temperature And Sampling",
+                "Structured Pydantic Model Output"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Separation divides search harnesses from heuristic scoring oracles.",
+            "rows": [
+              [
+                "Scoring Oracle Layer",
+                "Independent Heuristic Evaluation Prompts",
+                "Calibrated Scalar Confidence Metric"
+              ],
+              [
+                "Backtracking Handler",
+                "Safe Node Retraction And Rollback",
+                "Prevents Infinite Circular Loops"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Air traffic management software routes aircraft through safe waypoints.",
+            "rows": [
+              [
+                "Telemetry Logger Core",
+                "Emit OpenTelemetry Node Span Records",
+                "Full Observability And Visual Traces"
+              ],
+              [
+                "Circuit Breaker Guard",
+                "Halt Traversal On Token Quota Limit",
+                "Guarantees Enterprise Budget Safety"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a modular Python class with frontier priority queue management.",
+            "rows": [
+              [
+                "Distributed Cache Store",
+                "Redis Cluster State Hash Ingestion",
+                "Sub Millisecond Node Retrieval Speed"
+              ],
+              [
+                "Human Audit Dashboard",
+                "Interactive Web Visual Graph Review",
+                "Verifiable High Stakes Decision Signoff"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Cognitive Architecture And Python Controller Implementation.",
+        "columns": [
+          "Controller Architectural Layer",
+          "Component Implementation",
+          "Production Reliability SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise cognitive architectures implement python controller harnesses.",
+            "rows": [
+              [
+                "Search Harness Layer",
+                "Manage Frontier Queue And Stack State",
+                "Deterministic Python Traversal Engine"
+              ],
+              [
+                "Thought Generator Gateway",
+                "Orchestrate Temperature And Sampling",
+                "Structured Pydantic Model Output"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Separation divides search harnesses from heuristic scoring oracles.",
+            "rows": [
+              [
+                "Scoring Oracle Layer",
+                "Independent Heuristic Evaluation Prompts",
+                "Calibrated Scalar Confidence Metric"
+              ],
+              [
+                "Backtracking Handler",
+                "Safe Node Retraction And Rollback",
+                "Prevents Infinite Circular Loops"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Air traffic management software routes aircraft through safe waypoints.",
+            "rows": [
+              [
+                "Telemetry Logger Core",
+                "Emit OpenTelemetry Node Span Records",
+                "Full Observability And Visual Traces"
+              ],
+              [
+                "Circuit Breaker Guard",
+                "Halt Traversal On Token Quota Limit",
+                "Guarantees Enterprise Budget Safety"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Build a modular Python class with frontier priority queue management.",
+            "rows": [
+              [
+                "Distributed Cache Store",
+                "Redis Cluster State Hash Ingestion",
+                "Sub Millisecond Node Retrieval Speed"
+              ],
+              [
+                "Human Audit Dashboard",
+                "Interactive Web Visual Graph Review",
+                "Verifiable High Stakes Decision Signoff"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

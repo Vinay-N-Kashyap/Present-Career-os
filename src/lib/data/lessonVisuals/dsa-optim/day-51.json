@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 51,
+  "promptSha": "dsa-optim-day-51-kmp-z-algo-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Failure Function Dynamics & Prefix Function (pi array) in O(N) Time",
+      "codeHash": "7efb2c9d921391b1d73d47d6cbff855107761a8e666d82191aac383a71d65159",
+      "filled": {
+        "template": "table",
+        "title": "Knuth Morris Pratt Prefix Function Table Construction.",
+        "columns": [
+          "Prefix Character Index",
+          "Longest Proper Border",
+          "Fallback Failure Link"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures mark algorithmic string matching foundations.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pathological naive string search exhibits backward rewinding behavior.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud parser searches log files without backtracking latency spikes.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing longest proper border prefix array.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Knuth Morris Pratt Prefix Function Table Construction.",
+        "columns": [
+          "Prefix Character Index",
+          "Longest Proper Border",
+          "Fallback Failure Link"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures mark algorithmic string matching foundations.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pathological naive string search exhibits backward rewinding behavior.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Cloud parser searches log files without backtracking latency spikes.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing longest proper border prefix array.",
+            "rows": [
+              [
+                "Initial Prefix Character",
+                "Zero Length Border",
+                "Direct Root Fallback"
+              ],
+              [
+                "Repeating Suffix Factor",
+                "Extended Border Length",
+                "Preserved State Index"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Knuth-Morris-Pratt Pattern Matching Engine with Amortized O(N + M) Proof",
+      "codeHash": "f70b44439b9cd22af72f29461dfd4adcb7f1f6c28046d5dcf30a4afbb501d796",
+      "filled": {
+        "template": "table",
+        "title": "Linear Time Knuth Morris Pratt Pattern Scanning Model.",
+        "columns": [
+          "Pattern Search State",
+          "Text Pointer Advancement",
+          "Linear Amortized Step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Knuth Morris Pratt pattern matching engine executes optimal linear scan.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix function shifts pattern forward without rewinding text pointer.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Intrusion detection monitor inspects streaming serial telemetry bytes.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code tracing pattern matches and text pointer advances.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Linear Time Knuth Morris Pratt Pattern Scanning Model.",
+        "columns": [
+          "Pattern Search State",
+          "Text Pointer Advancement",
+          "Linear Amortized Step"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Knuth Morris Pratt pattern matching engine executes optimal linear scan.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Prefix function shifts pattern forward without rewinding text pointer.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Intrusion detection monitor inspects streaming serial telemetry bytes.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code tracing pattern matches and text pointer advances.",
+            "rows": [
+              [
+                "Unidirectional Forward Pass",
+                "Strict Monotonic Advance",
+                "Constant Time Step"
+              ],
+              [
+                "Character Mismatch Event",
+                "Prefix Pointer Unwind",
+                "Zero Text Backtrack"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Z-Algorithm: Z-Box Window Invariants & Fundamental Substring Comparisons",
+      "codeHash": "d4b6207c0255d6c4a2d8389b764ccd84b2b65f63cfed3130d03acf141bfa6aee",
+      "filled": {
+        "template": "table",
+        "title": "Dan Gusfield Linear Z Box String Processing Formulation.",
+        "columns": [
+          "Active Box Frontier",
+          "Longest Prefix Match",
+          "Sentinel Separation Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear string processing framework computes longest prefix substrings.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active comparison window maintains prefix match inside boundary.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Bioinformatics analyzer identifies exact genomic motif occurrences.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing active values with sentinel delimiter.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Dan Gusfield Linear Z Box String Processing Formulation.",
+        "columns": [
+          "Active Box Frontier",
+          "Longest Prefix Match",
+          "Sentinel Separation Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Linear string processing framework computes longest prefix substrings.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Active comparison window maintains prefix match inside boundary.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Bioinformatics analyzer identifies exact genomic motif occurrences.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing active values with sentinel delimiter.",
+            "rows": [
+              [
+                "Current Box Left Bound",
+                "Cached Prefix Substring",
+                "Inner Window Match"
+              ],
+              [
+                "Current Box Right Bound",
+                "Boundary Extension Scan",
+                "Sentinel Reset Shift"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Prefix Function vs Z-Array Duality & Periodicity Detection",
+      "codeHash": "daf896659785d1230c3a28fb318990dc698084de073011275ec97607ce8995e9",
+      "filled": {
+        "template": "table",
+        "title": "String Periodicity Power and Dual Compression Matrix.",
+        "columns": [
+          "Repeating Period Unit",
+          "String Power Exponent",
+          "Extracted Minimal Root"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Theoretical duality between prefix function and string periodicity.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shortest period extracted directly from final value of prefix table.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Digital modem receiver detects periodic synchronization frame headers.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code extracting fundamental period and repeat unit.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "String Periodicity Power and Dual Compression Matrix.",
+        "columns": [
+          "Repeating Period Unit",
+          "String Power Exponent",
+          "Extracted Minimal Root"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Theoretical duality between prefix function and string periodicity.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Shortest period extracted directly from final value of prefix table.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Digital modem receiver detects periodic synchronization frame headers.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code extracting fundamental period and repeat unit.",
+            "rows": [
+              [
+                "Harmonic Period Block",
+                "Integer Power Division",
+                "Minimal Run Length"
+              ],
+              [
+                "Fractional Residual Tail",
+                "Prefix Border Suffix",
+                "Compressed Symbol Set"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: High-Throughput Packet Inspection & Log Telemetry Scanner (KmpPacketScanner)",
+      "codeHash": "419a1e85e3a17b2f5421e72c4da9e3fdf674e307e7b5286ad99b233babde77da",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Deep Packet Inspection Cybersecurity Engine.",
+        "columns": [
+          "Packet Inspection Rule",
+          "Compiled Automaton State",
+          "Cyber Defense Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Industrial cybersecurity engine inspects packet payloads for signatures.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Deep packet inspection engine evaluates multiple threat signatures.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise firewall precompiles signatures blocking malicious payloads.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore security signatures inspecting request payload and matched threats.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Deep Packet Inspection Cybersecurity Engine.",
+        "columns": [
+          "Packet Inspection Rule",
+          "Compiled Automaton State",
+          "Cyber Defense Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Industrial cybersecurity engine inspects packet payloads for signatures.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Deep packet inspection engine evaluates multiple threat signatures.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise firewall precompiles signatures blocking malicious payloads.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore security signatures inspecting request payload and matched threats.",
+            "rows": [
+              [
+                "Binary Protocol Signature",
+                "Precompiled State Array",
+                "Line Rate Inspection"
+              ],
+              [
+                "Hostile Injection Pattern",
+                "Linear Automaton Match",
+                "Immediate Packet Drop"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

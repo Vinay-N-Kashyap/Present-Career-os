@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 46,
+  "entries": [
+    {
+      "partTitle": "The Alignment Problem: Beyond Supervised Fine-Tuning",
+      "codeHash": "0a01beaf1c6a8a7184351da77621eb50bc4726359eaaba8c2f198e03adef670c",
+      "spec": {
+        "template": "table",
+        "title": "The Alignment Problem and Supervised Fine Tuning Limitations.",
+        "columns": [
+          "Alignment Framework Tier",
+          "Core Mathematical Driver",
+          "Operational Safety Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Next token prediction alone fails to ensure truthful model behavior.",
+            "rows": [
+              [
+                "Self Supervised Base Model",
+                "Internet Token Likelihood",
+                "High Hallucination Exposure"
+              ],
+              [
+                "Supervised Fine Tuning",
+                "Curated Human Demonstrations",
+                "Style Tone Format Imitation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Supervised fine tuning suffers from severe distribution shift issues.",
+            "rows": [
+              [
+                "Out Of Distribution Query",
+                "Distributional Covariate Shift",
+                "Superficial Behavioral Mimicry"
+              ],
+              [
+                "Reinforcement Learning",
+                "Empirical Preference Ranking",
+                "Deep Cognitive Goal Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Apprentices mimic master gestures without understanding principles.",
+            "rows": [
+              [
+                "Violin Workshop Apprentice",
+                "Chisel Motion Observation",
+                "Zero Acoustic Sound Feedback"
+              ],
+              [
+                "Master Craftsman Critique",
+                "Direct Auditory Resonance",
+                "Excellence Through Iteration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect supervised tuning boundaries and evaluate alignment objectives.",
+            "rows": [
+              [
+                "Uniform Cross Entropy",
+                "Equal Penalty For All Tokens",
+                "No Strategic Trade Off Vision"
+              ],
+              [
+                "Scalar Preference Gradient",
+                "Continuous Quality Ranking",
+                "Production Certified Safety"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The Alignment Problem and Supervised Fine Tuning Limitations.",
+        "columns": [
+          "Alignment Framework Tier",
+          "Core Mathematical Driver",
+          "Operational Safety Guarantee"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Next token prediction alone fails to ensure truthful model behavior.",
+            "rows": [
+              [
+                "Self Supervised Base Model",
+                "Internet Token Likelihood",
+                "High Hallucination Exposure"
+              ],
+              [
+                "Supervised Fine Tuning",
+                "Curated Human Demonstrations",
+                "Style Tone Format Imitation"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Supervised fine tuning suffers from severe distribution shift issues.",
+            "rows": [
+              [
+                "Out Of Distribution Query",
+                "Distributional Covariate Shift",
+                "Superficial Behavioral Mimicry"
+              ],
+              [
+                "Reinforcement Learning",
+                "Empirical Preference Ranking",
+                "Deep Cognitive Goal Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Apprentices mimic master gestures without understanding principles.",
+            "rows": [
+              [
+                "Violin Workshop Apprentice",
+                "Chisel Motion Observation",
+                "Zero Acoustic Sound Feedback"
+              ],
+              [
+                "Master Craftsman Critique",
+                "Direct Auditory Resonance",
+                "Excellence Through Iteration"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect supervised tuning boundaries and evaluate alignment objectives.",
+            "rows": [
+              [
+                "Uniform Cross Entropy",
+                "Equal Penalty For All Tokens",
+                "No Strategic Trade Off Vision"
+              ],
+              [
+                "Scalar Preference Gradient",
+                "Continuous Quality Ranking",
+                "Production Certified Safety"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Bradley-Terry Preference Modeling & Reward Model Training",
+      "codeHash": "0a01beaf1c6a8a7184351da77621eb50bc4726359eaaba8c2f198e03adef670c",
+      "spec": {
+        "template": "table",
+        "title": "Bradley Terry Preference Modeling and Reward Calibration.",
+        "columns": [
+          "Preference Formulation Layer",
+          "Loss Function Optimization",
+          "Scoring Calibration Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bradley Terry modeling converts pairwise comparisons into scalar rewards.",
+            "rows": [
+              [
+                "Pairwise Comparative Choice",
+                "Binary Winner Loser Pairs",
+                "High Inter Annotator Agreement"
+              ],
+              [
+                "Bradley Terry Psychometrics",
+                "Sigmoid Of Score Difference",
+                "Continuous Latent Scale Mapping"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reward model training minimizes binary cross entropy preference losses.",
+            "rows": [
+              [
+                "Scalar Reward Projection",
+                "Linear Single Value Head",
+                "Unbroken Differentiable Path"
+              ],
+              [
+                "Binary Preference Loss",
+                "Negative Log Sigmoid Objective",
+                "Large Winner Score Separation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Wine judges evaluate pairs of vintages to establish quantitative ratings.",
+            "rows": [
+              [
+                "Wine Tasting Exhibition",
+                "Head To Head Vintage Taste",
+                "Definitive Quality Ranking"
+              ],
+              [
+                "Elo Tournament Metric",
+                "Logistic Match Odds Model",
+                "Calibrated Master Scoreboard"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate Bradley Terry preference loss over pairs of candidate outputs.",
+            "rows": [
+              [
+                "Verbosity Bias Defense",
+                "Length Regularization Penalty",
+                "Elimination Of Superficial Fluff"
+              ],
+              [
+                "Multi Objective Partition",
+                "Helpfulness Safety Split",
+                "Independent Reward Modularization"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Bradley Terry Preference Modeling and Reward Calibration.",
+        "columns": [
+          "Preference Formulation Layer",
+          "Loss Function Optimization",
+          "Scoring Calibration Standard"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bradley Terry modeling converts pairwise comparisons into scalar rewards.",
+            "rows": [
+              [
+                "Pairwise Comparative Choice",
+                "Binary Winner Loser Pairs",
+                "High Inter Annotator Agreement"
+              ],
+              [
+                "Bradley Terry Psychometrics",
+                "Sigmoid Of Score Difference",
+                "Continuous Latent Scale Mapping"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reward model training minimizes binary cross entropy preference losses.",
+            "rows": [
+              [
+                "Scalar Reward Projection",
+                "Linear Single Value Head",
+                "Unbroken Differentiable Path"
+              ],
+              [
+                "Binary Preference Loss",
+                "Negative Log Sigmoid Objective",
+                "Large Winner Score Separation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Wine judges evaluate pairs of vintages to establish quantitative ratings.",
+            "rows": [
+              [
+                "Wine Tasting Exhibition",
+                "Head To Head Vintage Taste",
+                "Definitive Quality Ranking"
+              ],
+              [
+                "Elo Tournament Metric",
+                "Logistic Match Odds Model",
+                "Calibrated Master Scoreboard"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Simulate Bradley Terry preference loss over pairs of candidate outputs.",
+            "rows": [
+              [
+                "Verbosity Bias Defense",
+                "Length Regularization Penalty",
+                "Elimination Of Superficial Fluff"
+              ],
+              [
+                "Multi Objective Partition",
+                "Helpfulness Safety Split",
+                "Independent Reward Modularization"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Proximal Policy Optimization (PPO) Actor-Critic Mechanics",
+      "codeHash": "0a01beaf1c6a8a7184351da77621eb50bc4726359eaaba8c2f198e03adef670c",
+      "spec": {
+        "template": "table",
+        "title": "Proximal Policy Optimization Actor Critic Mechanics.",
+        "columns": [
+          "PPO Policy Component",
+          "Trust Region Mechanism",
+          "Policy Gradient Stability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PPO actor critic training orchestrates four concurrent language models.",
+            "rows": [
+              [
+                "Markov Decision Process",
+                "Autoregressive State Steps",
+                "Discrete Token Action Space"
+              ],
+              [
+                "On Policy Actor Critic",
+                "Simultaneous Policy And Value",
+                "Stable Expected Reward Ascent"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clipped surrogate objectives prevent destructive policy updates.",
+            "rows": [
+              [
+                "Probability Action Ratio",
+                "Current Over Old Policy Prob",
+                "Unbounded Update Collapse Risk"
+              ],
+              [
+                "Clipped Surrogate Objective",
+                "Epsilon Bound Trust Region",
+                "Mathematically Guaranteed Safety"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Acrobats practice complex aerial flips inside protective safety harnesses.",
+            "rows": [
+              [
+                "Trapeze Aerial Acrobatics",
+                "High Altitude Flip Routine",
+                "Catastrophic Fall Danger"
+              ],
+              [
+                "Protective Safety Harness",
+                "Arrested Over Rotation Bound",
+                "Zero Risk Skill Acquisition"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calculate clipped policy objective and inspect advantage estimates.",
+            "rows": [
+              [
+                "Generalized Advantage GAE",
+                "Temporal Difference Residuals",
+                "Credit Assigned To Key Steps"
+              ],
+              [
+                "Synchronized Rollout Cycle",
+                "Streaming Batch Evaluation",
+                "High Concurrency Execution"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Proximal Policy Optimization Actor Critic Mechanics.",
+        "columns": [
+          "PPO Policy Component",
+          "Trust Region Mechanism",
+          "Policy Gradient Stability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "PPO actor critic training orchestrates four concurrent language models.",
+            "rows": [
+              [
+                "Markov Decision Process",
+                "Autoregressive State Steps",
+                "Discrete Token Action Space"
+              ],
+              [
+                "On Policy Actor Critic",
+                "Simultaneous Policy And Value",
+                "Stable Expected Reward Ascent"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Clipped surrogate objectives prevent destructive policy updates.",
+            "rows": [
+              [
+                "Probability Action Ratio",
+                "Current Over Old Policy Prob",
+                "Unbounded Update Collapse Risk"
+              ],
+              [
+                "Clipped Surrogate Objective",
+                "Epsilon Bound Trust Region",
+                "Mathematically Guaranteed Safety"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Acrobats practice complex aerial flips inside protective safety harnesses.",
+            "rows": [
+              [
+                "Trapeze Aerial Acrobatics",
+                "High Altitude Flip Routine",
+                "Catastrophic Fall Danger"
+              ],
+              [
+                "Protective Safety Harness",
+                "Arrested Over Rotation Bound",
+                "Zero Risk Skill Acquisition"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Calculate clipped policy objective and inspect advantage estimates.",
+            "rows": [
+              [
+                "Generalized Advantage GAE",
+                "Temporal Difference Residuals",
+                "Credit Assigned To Key Steps"
+              ],
+              [
+                "Synchronized Rollout Cycle",
+                "Streaming Batch Evaluation",
+                "High Concurrency Execution"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The KL Divergence Penalty & Preventing Reward Hacking",
+      "codeHash": "0a01beaf1c6a8a7184351da77621eb50bc4726359eaaba8c2f198e03adef670c",
+      "spec": {
+        "template": "table",
+        "title": "Kullback Leibler Penalty and Reward Hacking Prevention.",
+        "columns": [
+          "Governance Penalty Mechanism",
+          "Mathematical Formulation",
+          "Linguistic Protection Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reward hacking occurs when policies exploit flaws in reward models.",
+            "rows": [
+              [
+                "Reward Hacking Pathology",
+                "Goodharts Law Vulnerability",
+                "Degenerative Nonsense Exploits"
+              ],
+              [
+                "Adversarial Reward Shortcut",
+                "Flawed Model Approximation",
+                "Superficial Perfect Scores"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Kullback Leibler penalties anchor active policies to reference baselines.",
+            "rows": [
+              [
+                "Kullback Leibler Divergence",
+                "Active Against Reference Prob",
+                "Log Policy Ratio Difference"
+              ],
+              [
+                "Restoring Spring Penalty",
+                "Negative Reward Subtraction",
+                "Strict Linguistic Anchor"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Financial regulators enforce reserve ratios to deter speculative bubbles.",
+            "rows": [
+              [
+                "Central Reserve Authority",
+                "Mandatory Capital Standards",
+                "Speculative Bubble Deterrent"
+              ],
+              [
+                "Monetary Anchor Bounds",
+                "Economic Production Basis",
+                "Guaranteed System Stability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Monitor divergence metrics and evaluate adaptive penalty controllers.",
+            "rows": [
+              [
+                "Adaptive Controller Beta",
+                "Real Time Drift Calibration",
+                "Automatic Restoring Scaling"
+              ],
+              [
+                "Dual Reference Protocol",
+                "Base Plus SFT Divergence",
+                "Zero Catastrophic Forgetting"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Kullback Leibler Penalty and Reward Hacking Prevention.",
+        "columns": [
+          "Governance Penalty Mechanism",
+          "Mathematical Formulation",
+          "Linguistic Protection Property"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Reward hacking occurs when policies exploit flaws in reward models.",
+            "rows": [
+              [
+                "Reward Hacking Pathology",
+                "Goodharts Law Vulnerability",
+                "Degenerative Nonsense Exploits"
+              ],
+              [
+                "Adversarial Reward Shortcut",
+                "Flawed Model Approximation",
+                "Superficial Perfect Scores"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Kullback Leibler penalties anchor active policies to reference baselines.",
+            "rows": [
+              [
+                "Kullback Leibler Divergence",
+                "Active Against Reference Prob",
+                "Log Policy Ratio Difference"
+              ],
+              [
+                "Restoring Spring Penalty",
+                "Negative Reward Subtraction",
+                "Strict Linguistic Anchor"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Financial regulators enforce reserve ratios to deter speculative bubbles.",
+            "rows": [
+              [
+                "Central Reserve Authority",
+                "Mandatory Capital Standards",
+                "Speculative Bubble Deterrent"
+              ],
+              [
+                "Monetary Anchor Bounds",
+                "Economic Production Basis",
+                "Guaranteed System Stability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Monitor divergence metrics and evaluate adaptive penalty controllers.",
+            "rows": [
+              [
+                "Adaptive Controller Beta",
+                "Real Time Drift Calibration",
+                "Automatic Restoring Scaling"
+              ],
+              [
+                "Dual Reference Protocol",
+                "Base Plus SFT Divergence",
+                "Zero Catastrophic Forgetting"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hardware Scaling, Multi-Model Co-Location & Distributed PPO Infrastructure",
+      "codeHash": "0a01beaf1c6a8a7184351da77621eb50bc4726359eaaba8c2f198e03adef670c",
+      "spec": {
+        "template": "table",
+        "title": "Distributed PPO Infrastructure and Multi Model Co Location.",
+        "columns": [
+          "Distributed Cluster Role",
+          "Memory Virtualization Tier",
+          "System Throughput Capability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed PPO coordinates actor critic and reward networks across GPUs.",
+            "rows": [
+              [
+                "Four Model PPO Fleet",
+                "Actor Reference Critic Reward",
+                "Massive VRAM Multi Model Need"
+              ],
+              [
+                "Seventy Billion Parameter",
+                "Over Five Hundred Gigabytes",
+                "Single GPU Memory Overflow"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Offloading reference models to host memory saves valuable device VRAM.",
+            "rows": [
+              [
+                "Actor Critic Shared Nodes",
+                "Active Tensor Parallelism",
+                "Maximum Compute Occupancy"
+              ],
+              [
+                "Reference Reward Offload",
+                "Quantized Eight Bit Inference",
+                "Seventy Percent Memory Drop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Choreographed pit crews service high speed race cars in milliseconds.",
+            "rows": [
+              [
+                "Formula One Pit Operation",
+                "Choreographed Crew Timing",
+                "Zero Second Transit Wasted"
+              ],
+              [
+                "Asynchronous Ray Mesh",
+                "Separated Rollout Pipeline",
+                "Zero Hardware Bubble Stalls"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine asynchronous cluster pipelines and analyze memory footprint.",
+            "rows": [
+              [
+                "PagedAttention Rollouts",
+                "Continuous Chunked Prefill",
+                "Five Fold Decoding Acceleration"
+              ],
+              [
+                "Enterprise ZeRO Partition",
+                "Distributed Parameter Shards",
+                "Planetary Scale Alignment"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Distributed PPO Infrastructure and Multi Model Co Location.",
+        "columns": [
+          "Distributed Cluster Role",
+          "Memory Virtualization Tier",
+          "System Throughput Capability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Distributed PPO coordinates actor critic and reward networks across GPUs.",
+            "rows": [
+              [
+                "Four Model PPO Fleet",
+                "Actor Reference Critic Reward",
+                "Massive VRAM Multi Model Need"
+              ],
+              [
+                "Seventy Billion Parameter",
+                "Over Five Hundred Gigabytes",
+                "Single GPU Memory Overflow"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Offloading reference models to host memory saves valuable device VRAM.",
+            "rows": [
+              [
+                "Actor Critic Shared Nodes",
+                "Active Tensor Parallelism",
+                "Maximum Compute Occupancy"
+              ],
+              [
+                "Reference Reward Offload",
+                "Quantized Eight Bit Inference",
+                "Seventy Percent Memory Drop"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Choreographed pit crews service high speed race cars in milliseconds.",
+            "rows": [
+              [
+                "Formula One Pit Operation",
+                "Choreographed Crew Timing",
+                "Zero Second Transit Wasted"
+              ],
+              [
+                "Asynchronous Ray Mesh",
+                "Separated Rollout Pipeline",
+                "Zero Hardware Bubble Stalls"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine asynchronous cluster pipelines and analyze memory footprint.",
+            "rows": [
+              [
+                "PagedAttention Rollouts",
+                "Continuous Chunked Prefill",
+                "Five Fold Decoding Acceleration"
+              ],
+              [
+                "Enterprise ZeRO Partition",
+                "Distributed Parameter Shards",
+                "Planetary Scale Alignment"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

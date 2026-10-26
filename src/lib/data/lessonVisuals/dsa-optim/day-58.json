@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 58,
+  "promptSha": "dsa-optim-day-58-voronoi-and-delaunay",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Spatial Proximity Duals: Voronoi Diagrams, Perpendicular Bisectors & Dual Triangulations",
+      "codeHash": "7bafbb1bf74e74eb5dd6c7669d9c52f0f2de9957f1aa89eb2a6ed2769b722a9d",
+      "filled": {
+        "template": "table",
+        "title": "Voronoi Diagram Perpendicular Bisector Spatial Partition.",
+        "columns": [
+          "Generating Site Seed",
+          "Voronoi Region Convex Cell",
+          "Circumcenter Vertex Locus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Spatial computing explores voronoi diagram and delaunay triangulation.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Voronoi diagram partitions plane into convex polygonal regions.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Emergency dispatcher maps ambulance stations in voronoi diagram.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code calculating circumcenter and triangle radius.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Voronoi Diagram Perpendicular Bisector Spatial Partition.",
+        "columns": [
+          "Generating Site Seed",
+          "Voronoi Region Convex Cell",
+          "Circumcenter Vertex Locus"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Spatial computing explores voronoi diagram and delaunay triangulation.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Voronoi diagram partitions plane into convex polygonal regions.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Emergency dispatcher maps ambulance stations in voronoi diagram.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code calculating circumcenter and triangle radius.",
+            "rows": [
+              [
+                "Primary Generator Seed",
+                "Perpendicular Half Plane",
+                "Equidistant Voronoi Vertex"
+              ],
+              [
+                "Convex Hull Boundary",
+                "Unbounded Spatial Ray",
+                "Asymptotic Linear Growth"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Delaunay Triangulation Invariants: Empty Circumcircles & The Bowyer-Watson Algorithm",
+      "codeHash": "95cbf6a1b1a04fdc538d01181f279d8e895efa47724d318e95366008e7e00755",
+      "filled": {
+        "template": "table",
+        "title": "Delaunay Triangulation Empty Circumcircle Invariant Model.",
+        "columns": [
+          "Candidate Point Query",
+          "In Circumcircle Determinant",
+          "Delaunay Mesh Inclusion"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Delaunay triangulation uniquely satisfies empty circumcircle property.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Angle maximization property maximizes minimum angle across triangles.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Engineering simulation generates delaunay triangulation of nodes.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code evaluating circumcircle determinant of triangle.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Delaunay Triangulation Empty Circumcircle Invariant Model.",
+        "columns": [
+          "Candidate Point Query",
+          "In Circumcircle Determinant",
+          "Delaunay Mesh Inclusion"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Delaunay triangulation uniquely satisfies empty circumcircle property.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Angle maximization property maximizes minimum angle across triangles.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Engineering simulation generates delaunay triangulation of nodes.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code evaluating circumcircle determinant of triangle.",
+            "rows": [
+              [
+                "Inscribed Triangle Face",
+                "Zero Interior Incursion",
+                "Equiangular Delaunay Mesh"
+              ],
+              [
+                "Bowyer Watson Cavity",
+                "Star Shaped Hole Border",
+                "Incremental Point Insertion"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fortune's Sweep-Line Algorithm: Beachline Parabolic Arcs & Circle Events",
+      "codeHash": "1dcd1e259e1b397084eec2c825933096ace78df0835493c1debc3c92ee12a28f",
+      "filled": {
+        "template": "table",
+        "title": "Fortune Sweep Line Parabolic Beachline Breakpoint Engine.",
+        "columns": [
+          "Sweep Line Directrix",
+          "Parabolic Arc Intersection",
+          "Breakline Trajectory Path"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fortune sweep line algorithm computes complete voronoi diagram.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Beachline parabolic arcs maintain dynamic spatial boundary curve.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Satellite imaging platform sweeps coordinates generating voronoi diagram.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code finding exact parabola intersection coordinate.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Fortune Sweep Line Parabolic Beachline Breakpoint Engine.",
+        "columns": [
+          "Sweep Line Directrix",
+          "Parabolic Arc Intersection",
+          "Breakline Trajectory Path"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fortune sweep line algorithm computes complete voronoi diagram.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Beachline parabolic arcs maintain dynamic spatial boundary curve.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Satellite imaging platform sweeps coordinates generating voronoi diagram.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code finding exact parabola intersection coordinate.",
+            "rows": [
+              [
+                "Downward Sweep Cursor",
+                "Parabolic Arc Breakpoint",
+                "Hyperbolic Boundary Trace"
+              ],
+              [
+                "Converging Arc Triplet",
+                "Circle Event Collapse",
+                "Discovered Voronoi Vertex"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Planar Graphs & Spanners: Euclidean Minimum Spanning Trees (EMST) via Delaunay Edges",
+      "codeHash": "cda3d2fbabadc00733265de31870f568912c582d6e1a3ab1495261ed8bcab6d6",
+      "filled": {
+        "template": "table",
+        "title": "Euclidean Minimum Spanning Tree Delaunay Planar Subgraph.",
+        "columns": [
+          "Planar Triangulation Edge",
+          "Euclidean Distance Metric",
+          "Spanning Tree Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Euclidean minimum spanning tree connects spatial graph vertices.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Euclidean minimum spanning tree is guaranteed subgraph of delaunay graph.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Telecommunications utility extracts spanning tree from delaunay mesh.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code extracting delaunay edges for spanning tree.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Euclidean Minimum Spanning Tree Delaunay Planar Subgraph.",
+        "columns": [
+          "Planar Triangulation Edge",
+          "Euclidean Distance Metric",
+          "Spanning Tree Invariant"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Euclidean minimum spanning tree connects spatial graph vertices.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Euclidean minimum spanning tree is guaranteed subgraph of delaunay graph.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Telecommunications utility extracts spanning tree from delaunay mesh.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code extracting delaunay edges for spanning tree.",
+            "rows": [
+              [
+                "Planar Delaunay Edge",
+                "Euler Formula Linear Bound",
+                "Minimum Weight Candidate"
+              ],
+              [
+                "Disjoint Set Union",
+                "Acyclic Graph Spanner",
+                "Optimal Backbone Topology"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Cellular Network Optimization Engine: Voronoi Tessellation & Blind Spot Detection",
+      "codeHash": "fd2899a40544ac1bdec2d66286a84ecc83ccdbe6488e08517686f174f3c6d67a",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Cellular Network Voronoi Topology Optimizer.",
+        "columns": [
+          "Base Station Antenna",
+          "Coverage Voronoi Polygon",
+          "Network Blind Spot State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise telecommunications platform manages cellular network towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Voronoi tessellation models service polygon for cellular cell towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network optimizer identifies coverage blind spot across cell towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise optimizer evaluating network topology.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Cellular Network Voronoi Topology Optimizer.",
+        "columns": [
+          "Base Station Antenna",
+          "Coverage Voronoi Polygon",
+          "Network Blind Spot State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise telecommunications platform manages cellular network towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Voronoi tessellation models service polygon for cellular cell towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Network optimizer identifies coverage blind spot across cell towers.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise optimizer evaluating network topology.",
+            "rows": [
+              [
+                "Radio Frequency Tower",
+                "Cellular Service Polygon",
+                "Handover Boundary Frontier"
+              ],
+              [
+                "Largest Empty Circle",
+                "Maximized Gap Radius",
+                "Optimal Small Cell Locus"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

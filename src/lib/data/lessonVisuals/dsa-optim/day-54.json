@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 54,
+  "promptSha": "dsa-optim-day-54-suffix-automaton-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Suffix Automaton Foundations: Right Contexts & Equivalence Classes",
+      "codeHash": "2a8d3040d1b23c3294bde345d8df82bbe6b1ab2c174d31a4b96b4a5e68ae2cd0",
+      "filled": {
+        "template": "table",
+        "title": "Suffix Automaton Right Context Equivalence Model.",
+        "columns": [
+          "Subtree Equivalence Class",
+          "Right Context Endpos Set",
+          "State Memory Representation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix automaton represents smallest deterministic finite automaton.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix automaton collapses distinct substrings into linear states.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Shared endpos positions merge substrings in suffix automaton state.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code initializing root state and suffix link.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Suffix Automaton Right Context Equivalence Model.",
+        "columns": [
+          "Subtree Equivalence Class",
+          "Right Context Endpos Set",
+          "State Memory Representation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix automaton represents smallest deterministic finite automaton.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix automaton collapses distinct substrings into linear states.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Shared endpos positions merge substrings in suffix automaton state.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code initializing root state and suffix link.",
+            "rows": [
+              [
+                "Canonical Suffix Class",
+                "Identical Ending Positions",
+                "Compressed State Vertex"
+              ],
+              [
+                "Disjoint Right Context",
+                "Hierarchical Partition",
+                "Minimal Deterministic Bound"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Incremental Linear-Time O(N) Construction Algorithm",
+      "codeHash": "a204fc910e9a795db7362f6e088686ffa71e9f9805023c2cae12dc71f096e86e",
+      "filled": {
+        "template": "table",
+        "title": "Incremental Linear Suffix Automaton State Extension.",
+        "columns": [
+          "Extension Stage Token",
+          "Transition Creation Phase",
+          "Automaton Clone Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Incremental online construction algorithm builds suffix automaton.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extending automaton traces suffix link chain establishing transition.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "State cloning splits transitions preserving deterministic invariant.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code handling state cloning and adding transitions.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Incremental Linear Suffix Automaton State Extension.",
+        "columns": [
+          "Extension Stage Token",
+          "Transition Creation Phase",
+          "Automaton Clone Boundary"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Incremental online construction algorithm builds suffix automaton.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extending automaton traces suffix link chain establishing transition.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "State cloning splits transitions preserving deterministic invariant.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code handling state cloning and adding transitions.",
+            "rows": [
+              [
+                "Online Character Extension",
+                "Unwound Backward Link Chain",
+                "Direct Transition Insertion"
+              ],
+              [
+                "State Splitting Fork",
+                "Duplicated Forward Pointers",
+                "Preserved Equivalence Class"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Link Tree Duality: Equivalence to Ukkonen's Suffix Tree",
+      "codeHash": "2c92b219cfbb4151a50eb980d11861a64355a5d946fc5e041b62feb1aefeb12a",
+      "filled": {
+        "template": "table",
+        "title": "Suffix Link Tree Ukkonen Suffix Tree Duality Model.",
+        "columns": [
+          "Link Tree Parent Node",
+          "Topological Depth Level",
+          "Subtree Occurrence Sum"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix link tree forms directed tree representing suffix tree duality.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix link tree is structurally isomorphic to reversed suffix tree.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Propagating occurrence counts along suffix links in topological pass.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code aggregating occurrence counts in link tree.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Suffix Link Tree Ukkonen Suffix Tree Duality Model.",
+        "columns": [
+          "Link Tree Parent Node",
+          "Topological Depth Level",
+          "Subtree Occurrence Sum"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix link tree forms directed tree representing suffix tree duality.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix link tree is structurally isomorphic to reversed suffix tree.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Propagating occurrence counts along suffix links in topological pass.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code aggregating occurrence counts in link tree.",
+            "rows": [
+              [
+                "Directed Suffix Parent",
+                "Longest Proper Suffix Target",
+                "Isomorphic Reversed Tree"
+              ],
+              [
+                "Topological Order Queue",
+                "Bottom Up Count Accumulation",
+                "Exact Endpos Cardinality"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distinct Substrings & Substring Occurrence Queries in O(|P|) Time",
+      "codeHash": "b770fed8cb8a209d716130494fd872c6b1f5b28221b000048dea49c360d8e306",
+      "filled": {
+        "template": "table",
+        "title": "Distinct Substrings And Constant Time Query Matrix.",
+        "columns": [
+          "Query Substring Pattern",
+          "State Machine Transition",
+          "Occurrence Locus Discovery"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix automaton executes pattern substring queries in optimal time.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pattern search follows character transitions extracting occurrence count.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Summing state length intervals counts distinct substrings in memory.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code counting distinct substrings and pattern queries.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Distinct Substrings And Constant Time Query Matrix.",
+        "columns": [
+          "Query Substring Pattern",
+          "State Machine Transition",
+          "Occurrence Locus Discovery"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Suffix automaton executes pattern substring queries in optimal time.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Pattern search follows character transitions extracting occurrence count.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Summing state length intervals counts distinct substrings in memory.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code counting distinct substrings and pattern queries.",
+            "rows": [
+              [
+                "Search Pattern Traversal",
+                "Deterministic Character Step",
+                "Instant Substring Discovery"
+              ],
+              [
+                "Non Terminal Exit Point",
+                "Immediate Rejection Notice",
+                "Zero Backtracking Overhead"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Planetary Genomic Sequence Indexing Fabric (SuffixAutomatonGeneIndexer)",
+      "codeHash": "6a1ad324fd905861f32735948b5cd4dc04b9fc8d091c2300a17532bda521342a",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Planetary Genomic Sequence Indexing Fabric.",
+        "columns": [
+          "Genomic Target Motif",
+          "Identified Locus Position",
+          "Biological Surveillance Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bioinformatics infrastructure indexes viral genomes for surveillance.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix automaton indexes genomic sequences for fast motif queries.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Genomic indexer locates viral mutation motifs and genomic locus.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore gene indexer evaluating viral genome motifs and locus coordinates.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Planetary Genomic Sequence Indexing Fabric.",
+        "columns": [
+          "Genomic Target Motif",
+          "Identified Locus Position",
+          "Biological Surveillance Output"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Bioinformatics infrastructure indexes viral genomes for surveillance.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Suffix automaton indexes genomic sequences for fast motif queries.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Genomic indexer locates viral mutation motifs and genomic locus.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore gene indexer evaluating viral genome motifs and locus coordinates.",
+            "rows": [
+              [
+                "Pathogen Mutation Signature",
+                "Exact Genomic Coordinates",
+                "Line Rate Variant Alert"
+              ],
+              [
+                "Regulatory Promoter Motif",
+                "Conserved Locus Frequency",
+                "Diagnostic Primer Target"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

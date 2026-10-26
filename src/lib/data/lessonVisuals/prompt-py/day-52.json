@@ -1,0 +1,778 @@
+{
+  "schemaVersion": "2.0.0",
+  "course": "prompt-py",
+  "day": 52,
+  "prefix": "prompt-py",
+  "entries": [
+    {
+      "partTitle": "The Architecture Of Multi Tier Pre Flight Input Guardrails",
+      "codeHash": "7bb4c24c974553144b9b9b7f83f05ccbcc713678fba9824dae95a3d92e811232",
+      "spec": {
+        "template": "table",
+        "title": "The Architecture Of Multi Tier Pre Flight Input Guardrails.",
+        "columns": [
+          "Guardrail Tier",
+          "Inspection Mechanism",
+          "Latency Defense SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi tier pre flight guardrails sanitize untrusted prompts reliably.",
+            "rows": [
+              [
+                "Lexical Sanitization",
+                "Regex And Unicode Character Normalization",
+                "Sub Millisecond Execution Latency"
+              ],
+              [
+                "Statistical Perplexity Gate",
+                "Sliding Window Token Probability Analysis",
+                "Five Millisecond Anomaly Check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The architecture of pre flight input guardrails establishes defense.",
+            "rows": [
+              [
+                "Neural Moderation Classifier",
+                "Llama Guard Safety Taxonomy Evaluation",
+                "Fifteen Millisecond Classification"
+              ],
+              [
+                "Programmable Flow Enforcer",
+                "NeMo Colang State Machine Flow Routing",
+                "Zero Unapproved Branching Toleration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dual model guardrails filter malicious prompts before LLM inference.",
+            "rows": [
+              [
+                "Fail Secure Fallback Gate",
+                "Closed Default Policy On Gateway Failures",
+                "Guarantees Zero Exploit Pass Through"
+              ],
+              [
+                "Telemetry Export Core",
+                "Streams Violation Metrics To SIEM Dashboards",
+                "Comprehensive Operational Visibility"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Architect a multi tier defensive input pipeline with low latency gates.",
+            "rows": [
+              [
+                "Sovereign Reverse Proxy",
+                "Intercepts Untrusted Prompts At Perimeter",
+                "Eighteen Millisecond Mean Latency"
+              ],
+              [
+                "Enterprise Defense Shield",
+                "Deflects Multi Tier Attacks Deterministically",
+                "Flawless Enterprise Compliance"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "The Architecture Of Multi Tier Pre Flight Input Guardrails.",
+        "columns": [
+          "Guardrail Tier",
+          "Inspection Mechanism",
+          "Latency Defense SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Multi tier pre flight guardrails sanitize untrusted prompts reliably.",
+            "rows": [
+              [
+                "Lexical Sanitization",
+                "Regex And Unicode Character Normalization",
+                "Sub Millisecond Execution Latency"
+              ],
+              [
+                "Statistical Perplexity Gate",
+                "Sliding Window Token Probability Analysis",
+                "Five Millisecond Anomaly Check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "The architecture of pre flight input guardrails establishes defense.",
+            "rows": [
+              [
+                "Neural Moderation Classifier",
+                "Llama Guard Safety Taxonomy Evaluation",
+                "Fifteen Millisecond Classification"
+              ],
+              [
+                "Programmable Flow Enforcer",
+                "NeMo Colang State Machine Flow Routing",
+                "Zero Unapproved Branching Toleration"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dual model guardrails filter malicious prompts before LLM inference.",
+            "rows": [
+              [
+                "Fail Secure Fallback Gate",
+                "Closed Default Policy On Gateway Failures",
+                "Guarantees Zero Exploit Pass Through"
+              ],
+              [
+                "Telemetry Export Core",
+                "Streams Violation Metrics To SIEM Dashboards",
+                "Comprehensive Operational Visibility"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Architect a multi tier defensive input pipeline with low latency gates.",
+            "rows": [
+              [
+                "Sovereign Reverse Proxy",
+                "Intercepts Untrusted Prompts At Perimeter",
+                "Eighteen Millisecond Mean Latency"
+              ],
+              [
+                "Enterprise Defense Shield",
+                "Deflects Multi Tier Attacks Deterministically",
+                "Flawless Enterprise Compliance"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Neural Moderation And Safety Taxonomy Classification With Llama Guard",
+      "codeHash": "7bb4c24c974553144b9b9b7f83f05ccbcc713678fba9824dae95a3d92e811232",
+      "spec": {
+        "template": "table",
+        "title": "Neural Moderation And Safety Taxonomy Classification With Llama Guard.",
+        "columns": [
+          "Taxonomy Category",
+          "Violation Criterion",
+          "Policy Enforcement Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural moderation classifiers categorize prompts against safety policies.",
+            "rows": [
+              [
+                "Violent Crime Taxonomy",
+                "Evaluates Physical Injury Incitement Signals",
+                "Absolute Input Rejection Standard"
+              ],
+              [
+                "Cyberattack Vulnerability",
+                "Scans For Malware And Exploit Code Synthesis",
+                "Enforces Software Security Policies"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Neural moderation and safety taxonomy classification categorize prompts.",
+            "rows": [
+              [
+                "Hate Speech Classification",
+                "Detects Slurs And Harassment Intent Patterns",
+                "Blocks Content Across Languages"
+              ],
+              [
+                "Chemical Hazard Policy",
+                "Identifies Hazardous Material Synthesis Inquiries",
+                "Mandatory Critical Escalation Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Llama Guard evaluates incoming prompts against standardized taxonomies.",
+            "rows": [
+              [
+                "Custom Corporate Policy",
+                "Defines Bespoke Governance And Brand Rules",
+                "Zero Shot Contextual Generalization"
+              ],
+              [
+                "Dual Pass Evaluation Gate",
+                "Inspects Both User Prompts And Model Outputs",
+                "Complete Lifecycle Safety Shield"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configure customized policy taxonomies within a neural moderation model.",
+            "rows": [
+              [
+                "Neural Arbiter Core",
+                "Outputs Deterministic Safe Or Unsafe Labels",
+                "Zero Point Four False Positive Rate"
+              ],
+              [
+                "Sovereign Taxonomy Hub",
+                "Standardizes Moderation Across AI Workloads",
+                "Flawless Multi Tenant Governance"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Neural Moderation And Safety Taxonomy Classification With Llama Guard.",
+        "columns": [
+          "Taxonomy Category",
+          "Violation Criterion",
+          "Policy Enforcement Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Neural moderation classifiers categorize prompts against safety policies.",
+            "rows": [
+              [
+                "Violent Crime Taxonomy",
+                "Evaluates Physical Injury Incitement Signals",
+                "Absolute Input Rejection Standard"
+              ],
+              [
+                "Cyberattack Vulnerability",
+                "Scans For Malware And Exploit Code Synthesis",
+                "Enforces Software Security Policies"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Neural moderation and safety taxonomy classification categorize prompts.",
+            "rows": [
+              [
+                "Hate Speech Classification",
+                "Detects Slurs And Harassment Intent Patterns",
+                "Blocks Content Across Languages"
+              ],
+              [
+                "Chemical Hazard Policy",
+                "Identifies Hazardous Material Synthesis Inquiries",
+                "Mandatory Critical Escalation Alert"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Llama Guard evaluates incoming prompts against standardized taxonomies.",
+            "rows": [
+              [
+                "Custom Corporate Policy",
+                "Defines Bespoke Governance And Brand Rules",
+                "Zero Shot Contextual Generalization"
+              ],
+              [
+                "Dual Pass Evaluation Gate",
+                "Inspects Both User Prompts And Model Outputs",
+                "Complete Lifecycle Safety Shield"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Configure customized policy taxonomies within a neural moderation model.",
+            "rows": [
+              [
+                "Neural Arbiter Core",
+                "Outputs Deterministic Safe Or Unsafe Labels",
+                "Zero Point Four False Positive Rate"
+              ],
+              [
+                "Sovereign Taxonomy Hub",
+                "Standardizes Moderation Across AI Workloads",
+                "Flawless Multi Tenant Governance"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Programmable Conversational Guardrails With NeMo Colang Flows",
+      "codeHash": "7bb4c24c974553144b9b9b7f83f05ccbcc713678fba9824dae95a3d92e811232",
+      "spec": {
+        "template": "table",
+        "title": "Programmable Conversational Guardrails With NeMo Colang Flows.",
+        "columns": [
+          "Colang Construct",
+          "Flow Orchestration",
+          "Deterministic Safety SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmable Colang flows guide dialogue trajectories and enforce bounds.",
+            "rows": [
+              [
+                "User Intent Definition",
+                "Maps Expressed User Requests In Natural Syntax",
+                "Precise Conversational Mapping"
+              ],
+              [
+                "Bot Response Template",
+                "Defines Standardized Pre Approved Answers",
+                "Consistent Brand Voice Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Programmable conversational guardrails with NeMo Colang flows direct path.",
+            "rows": [
+              [
+                "Topical Boundary Rail",
+                "Deflects Out Of Domain Controversial Queries",
+                "Zero Public Relations Risk Standard"
+              ],
+              [
+                "Tool Execution Guard",
+                "Validates Function Parameters Prior To Action",
+                "Blocks Unauthorized Database Edits"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Colang flows intercept adversarial steering and restrict topical scopes.",
+            "rows": [
+              [
+                "Fact Checking Rail",
+                "Compares Model Assertions Against Source Text",
+                "Prevents Unverified Hallucinations"
+              ],
+              [
+                "Deterministic State Engine",
+                "Executes State Transitions Without Randomness",
+                "One Hundred Percent Flow Compliance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Write Colang dialogue policies defining topical boundaries for an agent.",
+            "rows": [
+              [
+                "Colang Policy Kernel",
+                "Harmonizes Intent Action And Safety Rails",
+                "Zero Dialogue Derailment Toleration"
+              ],
+              [
+                "Sovereign Flow Mesh",
+                "Maintains Conversational Control Autonomously",
+                "Flawless Architectural Integrity"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Programmable Conversational Guardrails With NeMo Colang Flows.",
+        "columns": [
+          "Colang Construct",
+          "Flow Orchestration",
+          "Deterministic Safety SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Programmable Colang flows guide dialogue trajectories and enforce bounds.",
+            "rows": [
+              [
+                "User Intent Definition",
+                "Maps Expressed User Requests In Natural Syntax",
+                "Precise Conversational Mapping"
+              ],
+              [
+                "Bot Response Template",
+                "Defines Standardized Pre Approved Answers",
+                "Consistent Brand Voice Alignment"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Programmable conversational guardrails with NeMo Colang flows direct path.",
+            "rows": [
+              [
+                "Topical Boundary Rail",
+                "Deflects Out Of Domain Controversial Queries",
+                "Zero Public Relations Risk Standard"
+              ],
+              [
+                "Tool Execution Guard",
+                "Validates Function Parameters Prior To Action",
+                "Blocks Unauthorized Database Edits"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Colang flows intercept adversarial steering and restrict topical scopes.",
+            "rows": [
+              [
+                "Fact Checking Rail",
+                "Compares Model Assertions Against Source Text",
+                "Prevents Unverified Hallucinations"
+              ],
+              [
+                "Deterministic State Engine",
+                "Executes State Transitions Without Randomness",
+                "One Hundred Percent Flow Compliance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Write Colang dialogue policies defining topical boundaries for an agent.",
+            "rows": [
+              [
+                "Colang Policy Kernel",
+                "Harmonizes Intent Action And Safety Rails",
+                "Zero Dialogue Derailment Toleration"
+              ],
+              [
+                "Sovereign Flow Mesh",
+                "Maintains Conversational Control Autonomously",
+                "Flawless Architectural Integrity"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Perplexity Classifiers And Semantic Vector Boundary Scanners",
+      "codeHash": "7bb4c24c974553144b9b9b7f83f05ccbcc713678fba9824dae95a3d92e811232",
+      "spec": {
+        "template": "table",
+        "title": "Perplexity Classifiers And Semantic Vector Boundary Scanners.",
+        "columns": [
+          "Statistical Metric",
+          "Mathematical Formulation",
+          "Anomaly Detection SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Perplexity spikes identify unnatural gradient optimized token suffixes.",
+            "rows": [
+              [
+                "Token Negative Log Likelihood",
+                "Calculates Surprise Factor Over Token Sequence",
+                "Standard Baseline In Natural Prose"
+              ],
+              [
+                "Sliding Window Perplexity",
+                "Evaluates Localized Fifteen Token Windows",
+                "Detects Hidden Adversarial Suffixes"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Perplexity classifiers and semantic vector boundary scanners flag anomaly.",
+            "rows": [
+              [
+                "Dual Model Architecture",
+                "Cross Evaluates Prompts Across Model Families",
+                "Neutralizes Adaptive Evasion Tactic"
+              ],
+              [
+                "Cosine Centroid Distance",
+                "Measures Deviation From Allowed Task Vectors",
+                "Flags Out Of Domain Semantic Drifts"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "High perplexity triggers instant rejection of adversarial token strings.",
+            "rows": [
+              [
+                "Subword Entropy Scanner",
+                "Calculates Character Distribution Density",
+                "Identifies Obfuscated String Payloads"
+              ],
+              [
+                "Anomaly Dropping Gate",
+                "Rejects Prompts Exceeding Perplexity Bounds",
+                "Five Millisecond Execution Latency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a sliding window perplexity detector evaluating prompt tokens.",
+            "rows": [
+              [
+                "Statistical Defense Core",
+                "Neutralizes Gradient Optimized Universal Attacks",
+                "Ninety Nine Percent Attack Recall"
+              ],
+              [
+                "Sovereign Entropy Hub",
+                "Screens Mathematical Jailbreaks Mathematically",
+                "Zero False Alarm Disruption SLA"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Perplexity Classifiers And Semantic Vector Boundary Scanners.",
+        "columns": [
+          "Statistical Metric",
+          "Mathematical Formulation",
+          "Anomaly Detection SLA"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Perplexity spikes identify unnatural gradient optimized token suffixes.",
+            "rows": [
+              [
+                "Token Negative Log Likelihood",
+                "Calculates Surprise Factor Over Token Sequence",
+                "Standard Baseline In Natural Prose"
+              ],
+              [
+                "Sliding Window Perplexity",
+                "Evaluates Localized Fifteen Token Windows",
+                "Detects Hidden Adversarial Suffixes"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Perplexity classifiers and semantic vector boundary scanners flag anomaly.",
+            "rows": [
+              [
+                "Dual Model Architecture",
+                "Cross Evaluates Prompts Across Model Families",
+                "Neutralizes Adaptive Evasion Tactic"
+              ],
+              [
+                "Cosine Centroid Distance",
+                "Measures Deviation From Allowed Task Vectors",
+                "Flags Out Of Domain Semantic Drifts"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "High perplexity triggers instant rejection of adversarial token strings.",
+            "rows": [
+              [
+                "Subword Entropy Scanner",
+                "Calculates Character Distribution Density",
+                "Identifies Obfuscated String Payloads"
+              ],
+              [
+                "Anomaly Dropping Gate",
+                "Rejects Prompts Exceeding Perplexity Bounds",
+                "Five Millisecond Execution Latency"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Implement a sliding window perplexity detector evaluating prompt tokens.",
+            "rows": [
+              [
+                "Statistical Defense Core",
+                "Neutralizes Gradient Optimized Universal Attacks",
+                "Ninety Nine Percent Attack Recall"
+              ],
+              [
+                "Sovereign Entropy Hub",
+                "Screens Mathematical Jailbreaks Mathematically",
+                "Zero False Alarm Disruption SLA"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi Layer Defensive Input Filtering Engine In Python",
+      "codeHash": "7bb4c24c974553144b9b9b7f83f05ccbcc713678fba9824dae95a3d92e811232",
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Multi Layer Defensive Input Filtering Engine In Python.",
+        "columns": [
+          "Filtering Engine Tier",
+          "Implementation Strategy",
+          "Production SLA Target"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise input filtering pipelines deflect adversarial prompts cleanly.",
+            "rows": [
+              [
+                "Dual Model Perplexity Gate",
+                "Filters High Entropy Suffix Strings Rapidly",
+                "Sub Five Millisecond Anomaly Check"
+              ],
+              [
+                "Llama Guard Classifier",
+                "Categorizes Hazards Across Fourteen Policies",
+                "Fifteen Millisecond Latency SLA"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise multi layer defensive input filtering engines automate checks.",
+            "rows": [
+              [
+                "NeMo Colang Enforcer",
+                "Directs Conversational Flow Along Safe Paths",
+                "Deterministic Dialogue Governance"
+              ],
+              [
+                "Vector Boundary Scanner",
+                "Measures Cosine Distance To Allowed Clusters",
+                "Captures Semantic Outlier Requests"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi layer input pipelines achieve eighteen millisecond response times.",
+            "rows": [
+              [
+                "AsyncIO Parallel Worker",
+                "Coordinates Asynchronous Guardrail Workers",
+                "High Concurrency Fleet Scalability"
+              ],
+              [
+                "OpenTelemetry Telemetry Bus",
+                "Exports Real Time Deflection Latency Spans",
+                "Granular Production Observability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an enterprise input filtering engine with integrated classifiers.",
+            "rows": [
+              [
+                "Cryptographic Safety Ledger",
+                "Archives Hashes Of Prompts Classifications",
+                "Statutory Compliance Architecture"
+              ],
+              [
+                "Apex Defensive Engine",
+                "Harmonizes Statistical Neural And Flow Gates",
+                "Ninety Nine Percent Attack Deflection"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Multi Layer Defensive Input Filtering Engine In Python.",
+        "columns": [
+          "Filtering Engine Tier",
+          "Implementation Strategy",
+          "Production SLA Target"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise input filtering pipelines deflect adversarial prompts cleanly.",
+            "rows": [
+              [
+                "Dual Model Perplexity Gate",
+                "Filters High Entropy Suffix Strings Rapidly",
+                "Sub Five Millisecond Anomaly Check"
+              ],
+              [
+                "Llama Guard Classifier",
+                "Categorizes Hazards Across Fourteen Policies",
+                "Fifteen Millisecond Latency SLA"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Enterprise multi layer defensive input filtering engines automate checks.",
+            "rows": [
+              [
+                "NeMo Colang Enforcer",
+                "Directs Conversational Flow Along Safe Paths",
+                "Deterministic Dialogue Governance"
+              ],
+              [
+                "Vector Boundary Scanner",
+                "Measures Cosine Distance To Allowed Clusters",
+                "Captures Semantic Outlier Requests"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi layer input pipelines achieve eighteen millisecond response times.",
+            "rows": [
+              [
+                "AsyncIO Parallel Worker",
+                "Coordinates Asynchronous Guardrail Workers",
+                "High Concurrency Fleet Scalability"
+              ],
+              [
+                "OpenTelemetry Telemetry Bus",
+                "Exports Real Time Deflection Latency Spans",
+                "Granular Production Observability"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Deploy an enterprise input filtering engine with integrated classifiers.",
+            "rows": [
+              [
+                "Cryptographic Safety Ledger",
+                "Archives Hashes Of Prompts Classifications",
+                "Statutory Compliance Architecture"
+              ],
+              [
+                "Apex Defensive Engine",
+                "Harmonizes Statistical Neural And Flow Gates",
+                "Ninety Nine Percent Attack Deflection"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

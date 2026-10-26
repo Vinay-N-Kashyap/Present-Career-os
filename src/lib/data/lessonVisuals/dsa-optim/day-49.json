@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 49,
+  "promptSha": "dsa-optim-day-49-min-cut-duality-pipeline",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Minimum (s, t)-Cuts: S-T Reachability & Cut Capacity Equivalence",
+      "codeHash": "ceb4bee099e471a4a9f3a34c6c70d87c9660b9c9f7ea223ca53dfb8ea29db893",
+      "filled": {
+        "template": "table",
+        "title": "Residual Reachability Minimum Cut Boundary Model.",
+        "columns": [
+          "Cut Partition Set",
+          "Reachability Criterion",
+          "Cut Boundary Forward Edge"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures investigate discrete optimization duality theory.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Formal flow networks define partition of vertices into disjoint sets.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Regional highway transit systems analyze critical transportation paths.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing maximum flow and residual partition.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Residual Reachability Minimum Cut Boundary Model.",
+        "columns": [
+          "Cut Partition Set",
+          "Reachability Criterion",
+          "Cut Boundary Forward Edge"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Advanced data structures investigate discrete optimization duality theory.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Formal flow networks define partition of vertices into disjoint sets.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Regional highway transit systems analyze critical transportation paths.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing maximum flow and residual partition.",
+            "rows": [
+              [
+                "Source Reachable Set",
+                "Positive Residual Slack",
+                "Saturated Capacity BottleNeck"
+              ],
+              [
+                "Sink Disconnected Set",
+                "Zero Residual Inflow",
+                "Target Destination Terminal"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Maximum Bipartite Matching via Flow Reduction (Hopcroft-Karp / Dinic)",
+      "codeHash": "104782f261d2137124a9b72bcb5421bdcdd33be31fce84692b80a1f70d85132b",
+      "filled": {
+        "template": "table",
+        "title": "Bipartite Assignment Unit Flow Network Reduction.",
+        "columns": [
+          "Flow Network Tier",
+          "Edge Unit Capacity",
+          "Bipartite Assignment Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Flow networks solve widely applicable maximum bipartite matching tasks.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reducing bipartite matching to maximum flow models combinatorial edges.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Airline crew dispatch systems match incoming pilots to flights.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code introducing super source and super sink nodes.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Bipartite Assignment Unit Flow Network Reduction.",
+        "columns": [
+          "Flow Network Tier",
+          "Edge Unit Capacity",
+          "Bipartite Assignment Impact"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Flow networks solve widely applicable maximum bipartite matching tasks.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Reducing bipartite matching to maximum flow models combinatorial edges.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Airline crew dispatch systems match incoming pilots to flights.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code introducing super source and super sink nodes.",
+            "rows": [
+              [
+                "Virtual Super Source",
+                "Unit Inflow Invariant",
+                "Single Task Allocation Guard"
+              ],
+              [
+                "Worker Node Terminal",
+                "Unit Outflow Invariant",
+                "Zero Overlap Execution Match"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vertex Cover & Independent Set in Bipartite Graphs (Konig's Theorem)",
+      "codeHash": "672ec2856dd8ba3a572c72f85927e2ce0f1392a927ce9c1e25d3e68c0f53b648",
+      "filled": {
+        "template": "table",
+        "title": "Konig Duality Vertex Cover And Independent Set.",
+        "columns": [
+          "Combinatorial Metric",
+          "Algebraic Graph Theory",
+          "Polynomial Duality Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algebraic dualities formalize minimum vertex cover in bipartite graphs.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extracting minimum vertex covers leverages minimum cut partitions.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Municipal security monitoring grids place surveillance cameras.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing minimum vertex cover size directly.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Konig Duality Vertex Cover And Independent Set.",
+        "columns": [
+          "Combinatorial Metric",
+          "Algebraic Graph Theory",
+          "Polynomial Duality Rule"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Algebraic dualities formalize minimum vertex cover in bipartite graphs.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Extracting minimum vertex covers leverages minimum cut partitions.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Municipal security monitoring grids place surveillance cameras.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code computing minimum vertex cover size directly.",
+            "rows": [
+              [
+                "Maximum Matching Size",
+                "Cardinality Of Integral Flow",
+                "Equivalent Vertex Cover Bound"
+              ],
+              [
+                "Maximum Independent Set",
+                "Vertex Graph Complement",
+                "Complete Non Conflicting Subset"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Edge-Disjoint & Vertex-Disjoint Paths (Menger's Theorem)",
+      "codeHash": "dee46976e77037778a03b67c177558ebed2fcf326cba8057436d6d9d8e443e1d",
+      "filled": {
+        "template": "table",
+        "title": "Menger Vertex Splitting Disjoint Path Routing.",
+        "columns": [
+          "Disjoint Path Routing",
+          "Vertex Splitting Node",
+          "Network Path Redundancy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Menger theorem formalizes algorithmic extraction of disjoint paths.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Edge disjoint paths connect vertices without sharing physical edges.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Military communications satellite network transmits telemetry.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code transforming intermediate nodes with capacity.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Menger Vertex Splitting Disjoint Path Routing.",
+        "columns": [
+          "Disjoint Path Routing",
+          "Vertex Splitting Node",
+          "Network Path Redundancy"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Menger theorem formalizes algorithmic extraction of disjoint paths.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Edge disjoint paths connect vertices without sharing physical edges.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Military communications satellite network transmits telemetry.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code transforming intermediate nodes with capacity.",
+            "rows": [
+              [
+                "Edge Disjoint Route",
+                "Shared Intermediate Vertex",
+                "Single Edge Failure Protected"
+              ],
+              [
+                "Vertex Disjoint Route",
+                "Split Input Output Nodes",
+                "Total Node Failure Protected"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Application: Autonomous Cloud Task-to-GPU Scheduling Fabric (BipartiteGpuScheduler)",
+      "codeHash": "51d9db9c236b5253b6b814ee52288b99ad9d8cccfd6a6033ed7e2dac8c8e7cdf",
+      "filled": {
+        "template": "table",
+        "title": "Autonomous Cloud GPU Allocation Scheduling Matrix.",
+        "columns": [
+          "AI Compute Workload",
+          "GPU Accelerator Model",
+          "Hardware Allocation Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise cloud fabrics engineer autonomous gpu scheduler engines.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous orchestration control planes manage gpu cluster resources.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise cloud cluster hosts deep learning accelerators and workloads.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore gpu scheduler class registering accelerators and workloads.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Autonomous Cloud GPU Allocation Scheduling Matrix.",
+        "columns": [
+          "AI Compute Workload",
+          "GPU Accelerator Model",
+          "Hardware Allocation Status"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise cloud fabrics engineer autonomous gpu scheduler engines.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Autonomous orchestration control planes manage gpu cluster resources.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enterprise cloud cluster hosts deep learning accelerators and workloads.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore gpu scheduler class registering accelerators and workloads.",
+            "rows": [
+              [
+                "Large Foundation Model",
+                "High Memory Tensor Cores",
+                "Full NVLink Bandwidth Assigned"
+              ],
+              [
+                "Quantized Inference Job",
+                "Standard VRAM Compute Node",
+                "Cost Efficient Execution Match"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

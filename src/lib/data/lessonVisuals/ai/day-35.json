@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "ai",
+  "day": 35,
+  "entries": [
+    {
+      "partTitle": "End-to-End System Architecture of Modern LLM Serving Engines",
+      "codeHash": "1e13c8b5518e0b3759a316888c316f5e4c81a992fe6905da09d46d7583a90b3b",
+      "filled": {
+        "template": "table",
+        "title": "End to End Serving Architecture and Dynamic Iteration Scheduling.",
+        "columns": [
+          "Serving Component",
+          "Operational Latency",
+          "Throughput Scalability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asynchronous ingress gateways route incoming client requests to queues.",
+            "rows": [
+              [
+                "Ingress Gateway Queue",
+                "Sub Millisecond Dispatch",
+                "Ten Thousand Requests"
+              ],
+              [
+                "Prefill Decode Split",
+                "Disaggregated Hardware",
+                "Zero Latency Jitter"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Disaggregated architectures separate prefill nodes to prevent jitter.",
+            "rows": [
+              [
+                "Continuous Iteration Batching",
+                "Dynamic Step Reconstruction",
+                "Optimal GPU Utilization"
+              ],
+              [
+                "Evicted Finished Sequences",
+                "Immediate Slot Recycling",
+                "One Hundred Percent Concurrency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic iteration scheduling resembles high frequency train dispatching.",
+            "rows": [
+              [
+                "High Frequency Dispatch",
+                "Continuous Rail Transit",
+                "Zero Passenger Backlog"
+              ],
+              [
+                "Static Batching Bottleneck",
+                "Padded Sequence Delays",
+                "Massive Computational Waste"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace dynamic iteration batching across multiple client request streams.",
+            "rows": [
+              [
+                "Burst Traffic Ingestion",
+                "Token Bucket Rate Limiting",
+                "Guaranteed Quality Of Service"
+              ],
+              [
+                "CPU Host Buffering",
+                "Proactive OOM Prevention",
+                "Rock Solid Cluster Stability"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "End to End Serving Architecture and Dynamic Iteration Scheduling.",
+        "columns": [
+          "Serving Component",
+          "Operational Latency",
+          "Throughput Scalability"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Asynchronous ingress gateways route incoming client requests to queues.",
+            "rows": [
+              [
+                "Ingress Gateway Queue",
+                "Sub Millisecond Dispatch",
+                "Ten Thousand Requests"
+              ],
+              [
+                "Prefill Decode Split",
+                "Disaggregated Hardware",
+                "Zero Latency Jitter"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Disaggregated architectures separate prefill nodes to prevent jitter.",
+            "rows": [
+              [
+                "Continuous Iteration Batching",
+                "Dynamic Step Reconstruction",
+                "Optimal GPU Utilization"
+              ],
+              [
+                "Evicted Finished Sequences",
+                "Immediate Slot Recycling",
+                "One Hundred Percent Concurrency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Dynamic iteration scheduling resembles high frequency train dispatching.",
+            "rows": [
+              [
+                "High Frequency Dispatch",
+                "Continuous Rail Transit",
+                "Zero Passenger Backlog"
+              ],
+              [
+                "Static Batching Bottleneck",
+                "Padded Sequence Delays",
+                "Massive Computational Waste"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Trace dynamic iteration batching across multiple client request streams.",
+            "rows": [
+              [
+                "Burst Traffic Ingestion",
+                "Token Bucket Rate Limiting",
+                "Guaranteed Quality Of Service"
+              ],
+              [
+                "CPU Host Buffering",
+                "Proactive OOM Prevention",
+                "Rock Solid Cluster Stability"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Speculative Drafting Integration with Paged Virtual Memory",
+      "codeHash": "8e5be591a7cef535a08786dadaef46554e21b1cf5bd0d916d4f9ced738652e44",
+      "filled": {
+        "template": "table",
+        "title": "Speculative Drafting Integration and Virtual Block Reclaim.",
+        "columns": [
+          "Speculative Phase",
+          "Memory Management Mode",
+          "Reclamation Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Speculative decoding proposes multiple draft tokens in parallel trees.",
+            "rows": [
+              [
+                "Medusa Multi Head Proposer",
+                "Parallel Candidate Trees",
+                "High Lookahead Yield"
+              ],
+              [
+                "Target Verification Pass",
+                "Single Forward Matrix Multiplication",
+                "Deterministic Logit Checks"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Virtual block managers reclaim rejected candidate tokens in zero time.",
+            "rows": [
+              [
+                "Virtual Block Allocation",
+                "On Demand Table Population",
+                "Zero Copy Prefix Sharing"
+              ],
+              [
+                "Rejected Branch Reclaim",
+                "Instant Pointer Rollback",
+                "Sub Microsecond Deallocation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Speculative draft allocation resembles reserving flexible airline seats.",
+            "rows": [
+              [
+                "Flexible Passenger Standby",
+                "Dynamic Seat Reassignment",
+                "Zero Empty Cabin Space"
+              ],
+              [
+                "Rigid Contiguous Booking",
+                "High Booking Wastage",
+                "Severe Airport Delays"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect block table rollbacks when candidate draft tokens are rejected.",
+            "rows": [
+              [
+                "Radix Tree Integration",
+                "Shared Prefix Preservation",
+                "Four Times Speedup Achieved"
+              ],
+              [
+                "Tree Attention Masking",
+                "Causal Independence Enforced",
+                "Flawless Output Fidelity"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Speculative Drafting Integration and Virtual Block Reclaim.",
+        "columns": [
+          "Speculative Phase",
+          "Memory Management Mode",
+          "Reclamation Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Speculative decoding proposes multiple draft tokens in parallel trees.",
+            "rows": [
+              [
+                "Medusa Multi Head Proposer",
+                "Parallel Candidate Trees",
+                "High Lookahead Yield"
+              ],
+              [
+                "Target Verification Pass",
+                "Single Forward Matrix Multiplication",
+                "Deterministic Logit Checks"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Virtual block managers reclaim rejected candidate tokens in zero time.",
+            "rows": [
+              [
+                "Virtual Block Allocation",
+                "On Demand Table Population",
+                "Zero Copy Prefix Sharing"
+              ],
+              [
+                "Rejected Branch Reclaim",
+                "Instant Pointer Rollback",
+                "Sub Microsecond Deallocation"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Speculative draft allocation resembles reserving flexible airline seats.",
+            "rows": [
+              [
+                "Flexible Passenger Standby",
+                "Dynamic Seat Reassignment",
+                "Zero Empty Cabin Space"
+              ],
+              [
+                "Rigid Contiguous Booking",
+                "High Booking Wastage",
+                "Severe Airport Delays"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Inspect block table rollbacks when candidate draft tokens are rejected.",
+            "rows": [
+              [
+                "Radix Tree Integration",
+                "Shared Prefix Preservation",
+                "Four Times Speedup Achieved"
+              ],
+              [
+                "Tree Attention Masking",
+                "Causal Independence Enforced",
+                "Flawless Output Fidelity"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fused AWQ & FP8 Dequantization GEMM Execution Pipelines",
+      "codeHash": "6c567b7d0e948f6c3c360b9dc9d30ce120ff8ccadf803f90ff760aaa3be501ab",
+      "filled": {
+        "template": "table",
+        "title": "Fused Quantized Matrix Multiplication Execution Pipelines.",
+        "columns": [
+          "Execution Pipeline",
+          "Register Dequantization",
+          "Bus Bandwidth Demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fused quantization kernels stream packed weights directly into registers.",
+            "rows": [
+              [
+                "Four Bit Packed Integers",
+                "Direct SRAM Register Stream",
+                "Seventy Five Percent Savings"
+              ],
+              [
+                "Register Dequantization",
+                "Custom Bit Shifting Instructions",
+                "Instant Tensor Core Delivery"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Register dequantization eliminates extra high bandwidth memory passes.",
+            "rows": [
+              [
+                "Native Hopper FP Eight",
+                "Dual Mode Tensor Cores",
+                "Two Times Floating Point FLOPS"
+              ],
+              [
+                "Asynchronous Warp Copy",
+                "Tensor Memory Accelerator",
+                "Completely Hidden Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "On chip unpacking resembles reconstituting dense dehydrated rations.",
+            "rows": [
+              [
+                "Dense Field Rations",
+                "Reconstituted On Demand",
+                "Zero Transport Burden"
+              ],
+              [
+                "Uncompressed Bulky Storage",
+                "Massive Logistics Strain",
+                "Severe Supply Chain Delays"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Contrast effective bandwidth and latency between half and four bit modes.",
+            "rows": [
+              [
+                "Dynamic Kernel Dispatch",
+                "Adaptive GEMV Or GEMM",
+                "Maximum Hardware Efficiency"
+              ],
+              [
+                "Delayed Dynamic Scaling",
+                "History Based Range Tracking",
+                "Minimal Numerical Degradation"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Fused Quantized Matrix Multiplication Execution Pipelines.",
+        "columns": [
+          "Execution Pipeline",
+          "Register Dequantization",
+          "Bus Bandwidth Demand"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Fused quantization kernels stream packed weights directly into registers.",
+            "rows": [
+              [
+                "Four Bit Packed Integers",
+                "Direct SRAM Register Stream",
+                "Seventy Five Percent Savings"
+              ],
+              [
+                "Register Dequantization",
+                "Custom Bit Shifting Instructions",
+                "Instant Tensor Core Delivery"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Register dequantization eliminates extra high bandwidth memory passes.",
+            "rows": [
+              [
+                "Native Hopper FP Eight",
+                "Dual Mode Tensor Cores",
+                "Two Times Floating Point FLOPS"
+              ],
+              [
+                "Asynchronous Warp Copy",
+                "Tensor Memory Accelerator",
+                "Completely Hidden Latency"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "On chip unpacking resembles reconstituting dense dehydrated rations.",
+            "rows": [
+              [
+                "Dense Field Rations",
+                "Reconstituted On Demand",
+                "Zero Transport Burden"
+              ],
+              [
+                "Uncompressed Bulky Storage",
+                "Massive Logistics Strain",
+                "Severe Supply Chain Delays"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Contrast effective bandwidth and latency between half and four bit modes.",
+            "rows": [
+              [
+                "Dynamic Kernel Dispatch",
+                "Adaptive GEMV Or GEMM",
+                "Maximum Hardware Efficiency"
+              ],
+              [
+                "Delayed Dynamic Scaling",
+                "History Based Range Tracking",
+                "Minimal Numerical Degradation"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distributed Multi-GPU Tensor Parallelism & All-Reduce Synchronization",
+      "codeHash": "d463a8c215705ef503be02bf3f6dc8ecc1e86279e8bb57884b392188a4cbc37f",
+      "filled": {
+        "template": "table",
+        "title": "Distributed Multi GPU Tensor Parallelism and Synchronization.",
+        "columns": [
+          "Distributed Primitive",
+          "Collective Operation",
+          "Interconnect Bandwidth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Megatron tensor parallelism partitions weight matrices across GPU ranks.",
+            "rows": [
+              [
+                "Megatron Tensor Parallelism",
+                "Orthogonal Weight Slicing",
+                "Zero Redundant Memory"
+              ],
+              [
+                "Column Parallel Projections",
+                "Independent Head Execution",
+                "Zero Inter GPU Traffic"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Column and row projections partition transformer matrices across ranks.",
+            "rows": [
+              [
+                "Row Parallel Output",
+                "Ring All Reduce Collective",
+                "Microsecond Synchronization"
+              ],
+              [
+                "NVLink Crossbar Fabric",
+                "Nine Hundred Gigabytes Per Second",
+                "Linear Cluster Scaling"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi lane expressways synchronize heavy freight traffic without stalls.",
+            "rows": [
+              [
+                "Synchronized Multi Lane Roads",
+                "Parallel Vehicle Flow",
+                "Zero Intersection Congestion"
+              ],
+              [
+                "Single Lane Toll Booths",
+                "Severe Bottlenecks",
+                "Massive Freight Gridlock"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate collective communication latency across multi GPU configurations.",
+            "rows": [
+              [
+                "Coordinated Block Tables",
+                "Synchronized Paged Addressing",
+                "Zero Memory Divergence"
+              ],
+              [
+                "Asynchronous Overlap",
+                "Compute And Comm Pipelined",
+                "Zero Idle Core Bubbles"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Distributed Multi GPU Tensor Parallelism and Synchronization.",
+        "columns": [
+          "Distributed Primitive",
+          "Collective Operation",
+          "Interconnect Bandwidth"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Megatron tensor parallelism partitions weight matrices across GPU ranks.",
+            "rows": [
+              [
+                "Megatron Tensor Parallelism",
+                "Orthogonal Weight Slicing",
+                "Zero Redundant Memory"
+              ],
+              [
+                "Column Parallel Projections",
+                "Independent Head Execution",
+                "Zero Inter GPU Traffic"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Column and row projections partition transformer matrices across ranks.",
+            "rows": [
+              [
+                "Row Parallel Output",
+                "Ring All Reduce Collective",
+                "Microsecond Synchronization"
+              ],
+              [
+                "NVLink Crossbar Fabric",
+                "Nine Hundred Gigabytes Per Second",
+                "Linear Cluster Scaling"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Multi lane expressways synchronize heavy freight traffic without stalls.",
+            "rows": [
+              [
+                "Synchronized Multi Lane Roads",
+                "Parallel Vehicle Flow",
+                "Zero Intersection Congestion"
+              ],
+              [
+                "Single Lane Toll Booths",
+                "Severe Bottlenecks",
+                "Massive Freight Gridlock"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Evaluate collective communication latency across multi GPU configurations.",
+            "rows": [
+              [
+                "Coordinated Block Tables",
+                "Synchronized Paged Addressing",
+                "Zero Memory Divergence"
+              ],
+              [
+                "Asynchronous Overlap",
+                "Compute And Comm Pipelined",
+                "Zero Idle Core Bubbles"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Milestone 7 Capstone: The Ultra-High-Throughput Industrial Serving Engine",
+      "codeHash": "2d5101dad8b21d83448292b4f66a4d70899df7fb38bf9de87b185ad8aa782049",
+      "filled": {
+        "template": "table",
+        "title": "Milestone Seven Capstone Serving Engine Benchmark Synthesis.",
+        "columns": [
+          "Engine Configuration",
+          "Serving Concurrency",
+          "Inter Token Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unified inference engines synthesize speculative and virtual memory layers.",
+            "rows": [
+              [
+                "Legacy Contiguous FP Sixteen",
+                "Sixteen Active Streams",
+                "Thirty Five Milliseconds ITL"
+              ],
+              [
+                "Unified Industrial Engine",
+                "One Hundred Twenty Eight Streams",
+                "Seven Milliseconds ITL"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Empirical benchmarks demonstrate reduced latency and higher concurrency.",
+            "rows": [
+              [
+                "FlashAttention Memory Tiling",
+                "Online Softmax Reduction",
+                "Zero Global Memory Traffic"
+              ],
+              [
+                "Paged Virtual Management",
+                "Radix Tree Prefix Sharing",
+                "Four Times Memory Savings"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Integrated supersonic transports harmonize aerodynamics with jet thrust.",
+            "rows": [
+              [
+                "Supersonic Jet Transport",
+                "Harmonized Propulsion",
+                "Maximum Aviation Efficiency"
+              ],
+              [
+                "Legacy Propeller Craft",
+                "High Fuel Consumption",
+                "Low Travel Speed"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Benchmark throughput and latency across legacy and optimized serving modes.",
+            "rows": [
+              [
+                "Production Telemetry Gate",
+                "Strict P Ninety Nine Latency",
+                "Enterprise SLA Met"
+              ],
+              [
+                "Datacenter Cost Reduction",
+                "Seventy Percent TCO Savings",
+                "Commercial Viability Achieved"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Milestone Seven Capstone Serving Engine Benchmark Synthesis.",
+        "columns": [
+          "Engine Configuration",
+          "Serving Concurrency",
+          "Inter Token Latency"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Unified inference engines synthesize speculative and virtual memory layers.",
+            "rows": [
+              [
+                "Legacy Contiguous FP Sixteen",
+                "Sixteen Active Streams",
+                "Thirty Five Milliseconds ITL"
+              ],
+              [
+                "Unified Industrial Engine",
+                "One Hundred Twenty Eight Streams",
+                "Seven Milliseconds ITL"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Empirical benchmarks demonstrate reduced latency and higher concurrency.",
+            "rows": [
+              [
+                "FlashAttention Memory Tiling",
+                "Online Softmax Reduction",
+                "Zero Global Memory Traffic"
+              ],
+              [
+                "Paged Virtual Management",
+                "Radix Tree Prefix Sharing",
+                "Four Times Memory Savings"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Integrated supersonic transports harmonize aerodynamics with jet thrust.",
+            "rows": [
+              [
+                "Supersonic Jet Transport",
+                "Harmonized Propulsion",
+                "Maximum Aviation Efficiency"
+              ],
+              [
+                "Legacy Propeller Craft",
+                "High Fuel Consumption",
+                "Low Travel Speed"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Benchmark throughput and latency across legacy and optimized serving modes.",
+            "rows": [
+              [
+                "Production Telemetry Gate",
+                "Strict P Ninety Nine Latency",
+                "Enterprise SLA Met"
+              ],
+              [
+                "Datacenter Cost Reduction",
+                "Seventy Percent TCO Savings",
+                "Commercial Viability Achieved"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

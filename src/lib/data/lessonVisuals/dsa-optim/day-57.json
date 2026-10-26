@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "2.0.0",
+  "prefix": "dsa-optim",
+  "day": 57,
+  "promptSha": "dsa-optim-day-57-segment-intersection-and-closest-pair",
+  "model": "gemini-2.5-pro",
+  "entries": [
+    {
+      "partTitle": "Foundations of Line Segment Intersection: Cross-Product Straddle Tests & Bounding Box Filters",
+      "codeHash": "2b130ee4bd02f180ab2e6c99b219a5ea63f02194cb3a89eb6edce4bf1833b4bb",
+      "filled": {
+        "template": "table",
+        "title": "Line Segment Intersection Orientation Straddle Verification.",
+        "columns": [
+          "Segment Bounding Box",
+          "Straddle Orientation Sign",
+          "Geometric Intersection State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Planar computational geometry detects line segment intersections.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Geometric software executes segment intersection primitive operations.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Layout engine applies bounding box filtering and orientation tests.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code combining bounding box and straddle tests.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Line Segment Intersection Orientation Straddle Verification.",
+        "columns": [
+          "Segment Bounding Box",
+          "Straddle Orientation Sign",
+          "Geometric Intersection State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Planar computational geometry detects line segment intersections.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Geometric software executes segment intersection primitive operations.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Layout engine applies bounding box filtering and orientation tests.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code combining bounding box and straddle tests.",
+            "rows": [
+              [
+                "Candidate Segment Pair",
+                "Opposite Straddle Signs",
+                "Valid Interior Intersection"
+              ],
+              [
+                "Disjoint Coordinate Box",
+                "Filtered Broad Phase",
+                "Immediate Rejection Notice"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Bentley-Ottmann Sweep-Line Algorithm: Event Queues & Dynamic Status Trees",
+      "codeHash": "a2cf296beff08cecd3edc9379916fac759ea9ab2fa599f3a2c3677a4d4dbb28f",
+      "filled": {
+        "template": "table",
+        "title": "Bentley Ottmann Vertical Sweep Line Dynamic Status Tree.",
+        "columns": [
+          "Sweep Line Position",
+          "Event Queue Entry Type",
+          "Status Tree Vertical Neighbor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Collection testing finds all intersections among line segments.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bentley Ottmann sweep line algorithm achieves output sensitive time.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Transportation department analyzes transit line segments in network.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code solving linear system for exact coordinates.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Bentley Ottmann Vertical Sweep Line Dynamic Status Tree.",
+        "columns": [
+          "Sweep Line Position",
+          "Event Queue Entry Type",
+          "Status Tree Vertical Neighbor"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Collection testing finds all intersections among line segments.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Bentley Ottmann sweep line algorithm achieves output sensitive time.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Transportation department analyzes transit line segments in network.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code solving linear system for exact coordinates.",
+            "rows": [
+              [
+                "Vertical Sweep Cursor",
+                "Segment Left Endpoint",
+                "Status Tree Insertion Step"
+              ],
+              [
+                "Crossing Event Point",
+                "Interchange Tree Order",
+                "Next Neighbor Cross Check"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Closest Pair of Points via Divide-and-Conquer: Spatial Decomposition & The Strip Packing Lemma",
+      "codeHash": "7a47b5cfe58938c8f9ce9396ce53186e20a7f5071bd632c20d61ac99ef0a9453",
+      "filled": {
+        "template": "table",
+        "title": "Closest Pair Of Points Divide And Conquer Strip Filter.",
+        "columns": [
+          "Recursive Spatial Half",
+          "Median Strip Boundary",
+          "Minimum Euclidean Separation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Divide and conquer strategy solves closest pair of points in space.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decomposing plane recursively across vertical median coordinate.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Radar system tracks aircraft executing closest pair safety monitor.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code splitting points and scanning median strip.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Closest Pair Of Points Divide And Conquer Strip Filter.",
+        "columns": [
+          "Recursive Spatial Half",
+          "Median Strip Boundary",
+          "Minimum Euclidean Separation"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Divide and conquer strategy solves closest pair of points in space.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Decomposing plane recursively across vertical median coordinate.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Radar system tracks aircraft executing closest pair safety monitor.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code splitting points and scanning median strip.",
+            "rows": [
+              [
+                "Median Dividing Line",
+                "Delta Proximity Strip",
+                "Optimal Packing Comparison"
+              ],
+              [
+                "Recursive Subproblem",
+                "Halved Coordinate Subset",
+                "Asymptotic Logarithmic Recurrence"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Hierarchical Spatial Partitioning: QuadTrees & Bounding Volume Trees",
+      "codeHash": "902934fa00b5cc3bdbdefb6c03a28a7f5cc47059ff60f90abb01dbe945d64677",
+      "filled": {
+        "template": "table",
+        "title": "Hierarchical Spatial QuadTree Quadrant Decomposition Model.",
+        "columns": [
+          "Quadrant Compass Sector",
+          "Node Point Capacity",
+          "Spatial Range Pruning State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hierarchical spatial quadtree accelerates dynamic collision queries.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quadtree decomposes rectangular space into four equal quadrants.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "City ridesharing platform indexes vehicles in quadtree bounding box.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code subdividing boxes and pruning quadrants.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Hierarchical Spatial QuadTree Quadrant Decomposition Model.",
+        "columns": [
+          "Quadrant Compass Sector",
+          "Node Point Capacity",
+          "Spatial Range Pruning State"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Hierarchical spatial quadtree accelerates dynamic collision queries.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Quadtree decomposes rectangular space into four equal quadrants.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "City ridesharing platform indexes vehicles in quadtree bounding box.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Examine typescript code subdividing boxes and pruning quadrants.",
+            "rows": [
+              [
+                "Northwest Quadrant",
+                "Capacitated Bucket Fill",
+                "Recursive Subtree Split"
+              ],
+              [
+                "Disjoint Window Box",
+                "Bounding Box Rejection",
+                "Subtree Traversal Pruning"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Autonomous Collision Avoidance System: Dynamic CPA Trajectory Analysis & Airspace Deconfliction",
+      "codeHash": "dc1fed228cfb70dc3ea321e45720c1a11d873246e2c6060a07debf87347e8ef4",
+      "filled": {
+        "template": "table",
+        "title": "Enterprise Autonomous Aircraft Collision Avoidance Matrix.",
+        "columns": [
+          "Aircraft Flight Vector",
+          "Closest Approach Metric",
+          "Deconfliction Guidance Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise avionics platform synthesizes relative velocity vectors.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Air traffic management systems calculate closest point of approach.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Control sector monitors aircraft generating deconfliction waypoint.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise engine generating deconfliction waypoints.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          }
+        ]
+      },
+      "spec": {
+        "template": "table",
+        "title": "Enterprise Autonomous Aircraft Collision Avoidance Matrix.",
+        "columns": [
+          "Aircraft Flight Vector",
+          "Closest Approach Metric",
+          "Deconfliction Guidance Action"
+        ],
+        "steps": [
+          {
+            "at": "say1",
+            "caption": "Enterprise avionics platform synthesizes relative velocity vectors.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "say2",
+            "caption": "Air traffic management systems calculate closest point of approach.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Control sector monitors aircraft generating deconfliction waypoint.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Explore complete enterprise engine generating deconfliction waypoints.",
+            "rows": [
+              [
+                "Converging Vector Pair",
+                "Critical Approach Time",
+                "Immediate Warning Broadcast"
+              ],
+              [
+                "Orthogonal Steering Step",
+                "Restored Safe Buffer",
+                "Autonomous Flight Clearance"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
