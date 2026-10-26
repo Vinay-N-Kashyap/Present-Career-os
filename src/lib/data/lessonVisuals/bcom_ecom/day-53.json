@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Cross border logistics routers inspect declared retail package values.",
+            "caption": "De minimis valuation rules evaluate national customs exemption ceilings.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -39,7 +39,7 @@
           },
           {
             "at": "say1",
-            "caption": "Low value consignments qualify for statutory informal entry treatment.",
+            "caption": "Low value consignments enter destination countries free of customs tariffs.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -66,7 +66,7 @@
           },
           {
             "at": "example",
-            "caption": "Informal entry eliminates duty payments and speeds border clearance.",
+            "caption": "Centralized tax portals streamline low value tax remittance schedules.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -93,7 +93,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Expedited air cargo manifests deliver packages directly to regional hubs.",
+            "caption": "Configurable threshold matrices route international parcels compliantly.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -130,7 +130,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "European checkout engines collect destination value added taxes upfront.",
+            "caption": "Customs bonded warehouses defer import tariffs until domestic entry.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -157,7 +157,7 @@
           },
           {
             "at": "say1",
-            "caption": "Consolidated monthly electronic returns replace per parcel filings.",
+            "caption": "Foreign trade zones permit raw component assembly and kitting inside.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -184,7 +184,7 @@
           },
           {
             "at": "example",
-            "caption": "Valid identification numbers bypass destination courier handling fees.",
+            "caption": "Inverted tariff rules yield massive savings on finished goods entry.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -211,7 +211,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Pre cleared parcels transfer directly to local postal injection routes.",
+            "caption": "Consolidated weekly entry filings slash customs administrative overhead.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Logistics coordinators assemble parcels into consolidated air pallets.",
+            "caption": "International line haul logistics evaluate postal versus air injection.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -275,7 +275,7 @@
           },
           {
             "at": "say1",
-            "caption": "Commercial line haul flights bypass intermediate postal transit hubs.",
+            "caption": "Chartered air cargo flights pre clear customs manifests while airborne.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -302,7 +302,7 @@
           },
           {
             "at": "example",
-            "caption": "Domestic carrier injection hubs receive pre sorted international freight.",
+            "caption": "Airport gateway cross docks inject parcels directly into domestic hubs.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -329,7 +329,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Direct flight routing cuts intercontinental transit times significantly.",
+            "caption": "Commercial direct injection achieves express global delivery speeds.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -366,7 +366,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Bonded warehouse facilities store international merchandise duty deferred.",
+            "caption": "Dynamic global sourcing allocators analyze individual stock turnover rates.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -393,7 +393,7 @@
           },
           {
             "at": "say1",
-            "caption": "Customs duties apply only when products enter domestic consumption.",
+            "caption": "Fast moving merchandise forward deploys into regional fulfillment hubs.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -420,7 +420,7 @@
           },
           {
             "at": "example",
-            "caption": "Re exported inventory avoids national import duty expenses entirely.",
+            "caption": "Long tail specialty items fulfill via centralized direct air flights.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -447,7 +447,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Lot tracking ledgers maintain strict inventory chain of custody.",
+            "caption": "Hybrid inventory placement models balance speed against holding expense.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Logistics command towers track intercontinental freight line hauls.",
+            "caption": "Global logistics command towers monitor cross border fulfillment health.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -511,7 +511,7 @@
           },
           {
             "at": "say1",
-            "caption": "Airport dwell time analytics highlight customs inspection bottlenecks.",
+            "caption": "High de minimis utilization yields eliminate excessive customs duties.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -538,7 +538,7 @@
           },
           {
             "at": "example",
-            "caption": "Carrier performance scorecards evaluate delivery reliability and cost.",
+            "caption": "Pre cleared air cargo manifests maintain rapid customs clearance velocity.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -565,7 +565,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Executive supply chain views optimize global freight lane allocation.",
+            "caption": "Continuous logistics audits confer official global fulfillment status.",
             "activeStageId": "s4",
             "stages": [
               {

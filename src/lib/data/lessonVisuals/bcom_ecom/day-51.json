@@ -447,7 +447,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Quote validation prevents processing when lock window duration lapses.",
+            "caption": "Session validators refresh quotes smoothly after lock windows expire.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global checkout command towers monitor international payment conversion.",
+            "caption": "Global checkout command towers monitor international sales corridors.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -511,7 +511,7 @@
           },
           {
             "at": "say1",
-            "caption": "Real time telemetry flags routing anomalies and regional settlement gaps.",
+            "caption": "Localized payment rails drive superior cross border conversion yield.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -538,7 +538,7 @@
           },
           {
             "at": "example",
-            "caption": "Consolidated treasury views display currency balances across world banks.",
+            "caption": "Captured currency volatility buffers generate healthy operating margin.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -565,7 +565,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Executive reports quantify currency volatility savings and gross margins.",
+            "caption": "Treasury audits verify minimal settlement slippage across global rails.",
             "activeStageId": "s4",
             "stages": [
               {

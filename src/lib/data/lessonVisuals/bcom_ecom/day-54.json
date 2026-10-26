@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "European consumer protection directives establish cooling off windows.",
+            "caption": "Statutory withdrawal engines evaluate international return eligibility.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -39,7 +39,7 @@
           },
           {
             "at": "say1",
-            "caption": "Return authorization engines validate mandatory withdrawal timeframes.",
+            "caption": "Mandatory cooling off directives enforce unconditional return policies.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -66,7 +66,7 @@
           },
           {
             "at": "example",
-            "caption": "Statutory exemptions protect unsealed hygiene items and custom products.",
+            "caption": "Unsealed hygiene items trigger statutory return policy exemptions.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -93,7 +93,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Automated return portals generate official withdrawal confirmation forms.",
+            "caption": "Automated return portals issue compliant labels and statutory notices.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -130,7 +130,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reverse logistics networks route returns to regional inspection hubs.",
+            "caption": "Duty drawback calculators track original import entry declarations.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -157,7 +157,7 @@
           },
           {
             "at": "say1",
-            "caption": "Re exported international merchandise qualifies for customs drawback.",
+            "caption": "Verified re exportations unlock statutory customs tariff refunds.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -184,7 +184,7 @@
           },
           {
             "at": "example",
-            "caption": "Government filings reclaim up to ninety nine percent of paid duties.",
+            "caption": "Cross border returns re claim paid value added tax assessments.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -211,7 +211,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Reconciled export records recover valuable corporate working capital.",
+            "caption": "Electronic drawback dossiers eliminate margin leaks on returned units.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Privacy gateways evaluate consumer consent across world jurisdictions.",
+            "caption": "Regional privacy validators enforce jurisdictional consent mandates.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -275,7 +275,7 @@
           },
           {
             "at": "say1",
-            "caption": "Standard contractual clauses safeguard cross border personal data flows.",
+            "caption": "Transnational data pipelines require verified contractual protections.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -302,7 +302,7 @@
           },
           {
             "at": "example",
-            "caption": "Granular consent managers record customer tracking and marketing choices.",
+            "caption": "Non essential tracking scripts halt pending explicit consumer opt in.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -329,7 +329,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Cryptographic audit ledgers demonstrate full statutory compliance.",
+            "caption": "Decoupled privacy gates route customer profiles into sovereign zones.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -366,7 +366,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Storefront rendering engines adapt currency symbols and decimal formats.",
+            "caption": "Internationalization formatters configure localized typographic styles.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -393,7 +393,7 @@
           },
           {
             "at": "say1",
-            "caption": "Bidirectional isolation tags protect right to left typographical flow.",
+            "caption": "Bidirectional text wrappers protect complex scripts from layout shift.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -420,7 +420,7 @@
           },
           {
             "at": "example",
-            "caption": "Mirrored navigation menus deliver authentic local customer experiences.",
+            "caption": "Locale aware rules position currency symbols and numeric separators.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -447,7 +447,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Localized address components format forms for destination countries.",
+            "caption": "Culturally native presentation layers boost global checkout confidence.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Governance command towers monitor international regulatory compliance.",
+            "caption": "Governance command towers monitor cross border fulfillment metrics.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -511,7 +511,7 @@
           },
           {
             "at": "say1",
-            "caption": "Automated audits verify privacy consent and consumer right disclosures.",
+            "caption": "Consent compliance audits shield platforms from regulatory penalties.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -538,7 +538,7 @@
           },
           {
             "at": "example",
-            "caption": "Duty drawback ledgers track recovered customs tax capital over time.",
+            "caption": "Automated customs duty drawback maximizes net enterprise capital recovery.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -565,7 +565,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Customer satisfaction analytics evaluate localized checkout performance.",
+            "caption": "Synthetic multi market audits confirm seamless global operations.",
             "activeStageId": "s4",
             "stages": [
               {

@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Classification engines parse catalog product descriptions and attributes.",
+            "caption": "Landed cost calculation engines model international customs valuations.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -39,7 +39,7 @@
           },
           {
             "at": "say1",
-            "caption": "Taxonomy trees map commercial commodities to standard tariff codes.",
+            "caption": "Freight and insurance allocations establish the dutiable valuation base.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -66,7 +66,7 @@
           },
           {
             "at": "example",
-            "caption": "Regulatory updates synchronize international customs classification rules.",
+            "caption": "Compounding customs duties and import taxes are calculated precisely.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -93,7 +93,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Audited tariff code bindings guarantee accurate baseline duty schedules.",
+            "caption": "All inclusive landed cost figures eliminate post shipment fee variances.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -130,7 +130,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Landed cost engines evaluate total transport and import obligations.",
+            "caption": "Harmonized tariff schedules classify physical merchandise commodities.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -157,7 +157,7 @@
           },
           {
             "at": "say1",
-            "caption": "Delivered duty paid terms collect all taxes directly within checkout.",
+            "caption": "National tariff lines determine specific statutory import duty rates.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -184,7 +184,7 @@
           },
           {
             "at": "example",
-            "caption": "Pre paid duties eliminate surprise delivery fees at customer doorsteps.",
+            "caption": "Rules of origin under trade agreements unlock preferential duty rates.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -211,7 +211,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Clearance brokers receive advance tax guarantees for immediate release.",
+            "caption": "Automated classification registries verify tariff eligibility rules.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Landed cost algorithms aggregate merchandise cost freight and insurance.",
+            "caption": "Incoterms decision routers evaluate cross border fulfillment models.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -275,7 +275,7 @@
           },
           {
             "at": "say1",
-            "caption": "Ad valorem duty rates apply directly against total shipping valuations.",
+            "caption": "Delivered duty paid terms collect all duties and taxes at checkout.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -302,7 +302,7 @@
           },
           {
             "at": "example",
-            "caption": "Import value added taxes calculate on duty inclusive transaction totals.",
+            "caption": "Pre cleared customs shipments prevent unexpected doorstep collections.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -329,7 +329,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Itemized tax breakdowns provide transparent billing to global shoppers.",
+            "caption": "Eliminating surprise delivery surcharges collapses parcel refusal rates.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -366,7 +366,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Fulfillment gateways compile advance electronic customs declarations.",
+            "caption": "Customs documentation generators produce structured export manifests.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -393,7 +393,7 @@
           },
           {
             "at": "say1",
-            "caption": "Secure automated broker interfaces transmit pre arrival manifest files.",
+            "caption": "Paperless trade integrations transmit commercial invoices electronically.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -420,7 +420,7 @@
           },
           {
             "at": "example",
-            "caption": "Air cargo manifests clear customs while shipments are in transit.",
+            "caption": "High value export consignments trigger automated statutory filings.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -447,7 +447,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Automated clearance confirmations release packages for courier delivery.",
+            "caption": "Electronic export documentation accelerates international air clearance.",
             "activeStageId": "s4",
             "stages": [
               {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Trade compliance towers screen international recipients against watchlists.",
+            "caption": "Trade compliance command towers screen international consignments.",
             "activeStageId": "s1",
             "stages": [
               {
@@ -511,7 +511,7 @@
           },
           {
             "at": "say1",
-            "caption": "Denied party algorithms intercept orders bound for sanctioned entities.",
+            "caption": "Real time watchlists intercept prohibited parties before dispatch.",
             "activeStageId": "s2",
             "stages": [
               {
@@ -538,7 +538,7 @@
           },
           {
             "at": "example",
-            "caption": "Real time customs audits verify export documentation and tariff filings.",
+            "caption": "Continuous audits defend low landed cost quote billing variances.",
             "activeStageId": "s3",
             "stages": [
               {
@@ -565,7 +565,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Executive dashboards display customs clearance speeds and compliance rates.",
+            "caption": "Comprehensive trade reviews confer official trade compliance status.",
             "activeStageId": "s4",
             "stages": [
               {
