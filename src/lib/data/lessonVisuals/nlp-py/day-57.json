@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 57,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Adversarial Vulnerability Surface: Prompt Injection, Jailbreaks & Multilingual Exploits",
+      "codeHash": "d9a2610cef4ecadbfc6c9587f582d9f4c998f02541ea3f7940c63dff0a8ec550",
+      "spec": {
+        "template": "flow",
+        "title": "The Adversarial Vulnerability Surface: Prompt... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Adversarial Vul...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Adversarial Vulnerability Surface: P...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Adversarial Vul....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Adversarial Vulnerability Sur...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The Adversarial Vulnerability Surface: Prompt... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Adversarial Vul...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Adversarial Vulnerability Surface: P...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Adversarial Vul....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Adversarial Vulnerability Sur...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Red-Teaming & Fuzzing Engines: Mutation Operators & Gradient-Free Attacks",
+      "codeHash": "a99e8ae61a9559e7f62750ac1710a04f62932ca056050e684644e08b5812ee1d",
+      "spec": {
+        "template": "flow",
+        "title": "Automated Red-Teaming & Fuzzing Engines: Muta... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Automated Red-Teami...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Automated Red-Teaming & Fuzzing Engines:...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Automated Red-Teami....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Automated Red-Teaming & Fuzzing E...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Automated Red-Teaming & Fuzzing Engines: Muta... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Automated Red-Teami...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Automated Red-Teaming & Fuzzing Engines:...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Automated Red-Teami....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Automated Red-Teaming & Fuzzing E...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Safety Guardrails & Llama Guard Architectures: Toxic Classification & Policy Taxonomies",
+      "codeHash": "0af1f4271a13ee0188fd249aebcedd56b35136883370f17f9dab8e223b2c3bc1",
+      "spec": {
+        "template": "flow",
+        "title": "Safety Guardrails & Llama Guard Architectures... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Safety Guardrails &...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Safety Guardrails & Llama Guard Architec...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Safety Guardrails &....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Safety Guardrails & Llama Guard A...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Safety Guardrails & Llama Guard Architectures... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Safety Guardrails &...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Safety Guardrails & Llama Guard Architec...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Safety Guardrails &....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Safety Guardrails & Llama Guard A...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Representation Engineering & Refusal Steering: Activation Addition & Concept Vectors",
+      "codeHash": "595c5841b3be6db2a2b11b59dd2ecc114f5c37b6a7c63730f8f98ea0408c5c74",
+      "spec": {
+        "template": "flow",
+        "title": "Representation Engineering & Refusal Steering... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Representation Engi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Representation Engineering & Refusal Ste...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Representation Engi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Representation Engineering & Refu...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Representation Engineering & Refusal Steering... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Representation Engi...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Representation Engineering & Refusal Ste...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Representation Engi....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Representation Engineering & Refu...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Implementation: ApexGuard Enterprise Fuzzer & Guardrail Attestation Suite",
+      "codeHash": "511ab80506baf1289d76ad09e604429cbf57ced25a450d3d0485e19a41a790eb",
+      "spec": {
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexGuard Enterpr... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexGuard En...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexG...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexGuard Enterpr... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexGuard En...",
+            "values": {
+              "in": "Day 57 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexG...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

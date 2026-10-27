@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 56,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "Constitutional AI & Self-Correction: Principle-Driven Critiques & Automated Value Alignment",
+      "codeHash": "84f8291a7e5a458246789cca3ca771b912b4ca258b52ea6f10912c56b92b7d43",
+      "spec": {
+        "template": "flow",
+        "title": "Constitutional AI & Self-Correction: Principl... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Constitutional AI &...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Constitutional AI & Self-Correction: Pri...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Constitutional AI &....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Constitutional AI & Self-Correcti...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Constitutional AI & Self-Correction: Principl... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Constitutional AI &...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Constitutional AI & Self-Correction: Pri...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Constitutional AI &....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Constitutional AI & Self-Correcti...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Self-Instruct & Evol-Instruct Architectures: Complexity Deepening & Constraint Infusion",
+      "codeHash": "c46ef628de11c42991f4fef8626c15575f710d9f424b9f2b2ec6c3dde722c8b6",
+      "spec": {
+        "template": "flow",
+        "title": "Self-Instruct & Evol-Instruct Architectures: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Self-Instruct & Evo...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Self-Instruct & Evol-Instruct Architectu...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Self-Instruct & Evo....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Self-Instruct & Evol-Instruct Arc...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Self-Instruct & Evol-Instruct Architectures: ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Self-Instruct & Evo...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Self-Instruct & Evol-Instruct Architectu...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Self-Instruct & Evo....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Self-Instruct & Evol-Instruct Arc...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Data Quality Filtering & Decontamination: N-Gram Overlap, Perplexity & Reward Model Pruning",
+      "codeHash": "1d821ccd38fb9461d378db2396c04ff61a3c64ec64a23f861f35d0c5103e9f3a",
+      "spec": {
+        "template": "flow",
+        "title": "Data Quality Filtering & Decontamination: N-G... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Data Quality Filter...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Data Quality Filtering & Decontamination...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Data Quality Filter....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Data Quality Filtering & Decontam...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Data Quality Filtering & Decontamination: N-G... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Data Quality Filter...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Data Quality Filtering & Decontamination...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Data Quality Filter....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Data Quality Filtering & Decontam...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Task Diversity Synthesis & Difficulty Calibration: Taxonomy Trees & Difficulty Scoring",
+      "codeHash": "f40d085a08f8fbe04165694eb3207c786efeb0e81ef4780b4e5fe97a81454c35",
+      "spec": {
+        "template": "flow",
+        "title": "Task Diversity Synthesis & Difficulty Calibra... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Task Diversity Synt...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Task Diversity Synthesis & Difficulty Ca...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Task Diversity Synt....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Task Diversity Synthesis & Diffic...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Task Diversity Synthesis & Difficulty Calibra... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Task Diversity Synt...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Task Diversity Synthesis & Difficulty Ca...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Task Diversity Synt....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Task Diversity Synthesis & Diffic...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Implementation: ApexSynthetic Enterprise Generation & Constitutional Pipeline",
+      "codeHash": "276781816801992e3fe74e21883b3d4a1421d009892c5758fcc24375c7fa0fea",
+      "spec": {
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexSynthetic Ent... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexSyntheti...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexS...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexSynthetic Ent... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexSyntheti...",
+            "values": {
+              "in": "Day 56 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexS...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

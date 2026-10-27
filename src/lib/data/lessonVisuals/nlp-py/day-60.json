@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 60,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "ApexLinguist v2 Sovereign Architecture: From Raw BPE Tokenizer to 100B Parameter LLM",
+      "codeHash": "b3008d8e64ca191736a4c44bd823d9f2fd8c49ffecc6bea52a18b0116d1eb530",
+      "spec": {
+        "template": "flow",
+        "title": "ApexLinguist v2 Sovereign Architecture: From ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. ApexLinguist v2 Sov...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for ApexLinguist v2 Sovereign Architecture: ...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in ApexLinguist v2 Sov....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for ApexLinguist v2 Sovereign Archite...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "ApexLinguist v2 Sovereign Architecture: From ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. ApexLinguist v2 Sov...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for ApexLinguist v2 Sovereign Architecture: ...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in ApexLinguist v2 Sov....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for ApexLinguist v2 Sovereign Archite...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The End-to-End Training & Alignment Pipeline: Pre-Training to DPO/ORPO Synthesis",
+      "codeHash": "cd0042b2554a296380c28acf28d16d97d6709d326a953de9807b9c46b510ff89",
+      "spec": {
+        "template": "flow",
+        "title": "The End-to-End Training & Alignment Pipeline:... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The End-to-End Trai...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The End-to-End Training & Alignment Pipe...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The End-to-End Trai....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The End-to-End Training & Alignme...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The End-to-End Training & Alignment Pipeline:... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The End-to-End Trai...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The End-to-End Training & Alignment Pipe...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The End-to-End Trai....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The End-to-End Training & Alignme...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Industrial Serving, High-Throughput KV Paging & Real-Time Guardrail Gateways",
+      "codeHash": "ee25781c6f2e27012f81929c033a73914860424950bc05035d7fe9871499cd47",
+      "spec": {
+        "template": "flow",
+        "title": "Industrial Serving, High-Throughput KV Paging... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Industrial Serving,...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Industrial Serving, High-Throughput KV P...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Industrial Serving,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Industrial Serving, High-Throughp...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Industrial Serving, High-Throughput KV Paging... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Industrial Serving,...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Industrial Serving, High-Throughput KV P...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Industrial Serving,....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Industrial Serving, High-Throughp...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous Tool Calling, Multi-Step ReAct & Synthetic Self-Correction Loops",
+      "codeHash": "335bde19bd6a88a798e4dc5f57c3ca87d9eba6ba946b8a6ef188c84283177ee1",
+      "spec": {
+        "template": "flow",
+        "title": "Autonomous Tool Calling, Multi-Step ReAct & S... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Autonomous Tool Cal...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Autonomous Tool Calling, Multi-Step ReAc...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Autonomous Tool Cal....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Autonomous Tool Calling, Multi-St...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Autonomous Tool Calling, Multi-Step ReAct & S... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Autonomous Tool Cal...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Autonomous Tool Calling, Multi-Step ReAc...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Autonomous Tool Cal....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Autonomous Tool Calling, Multi-St...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Implementation & Boardroom Defense: ApexLinguist v2 Grand Master Platform",
+      "codeHash": "5470836aac575d10e1fc28eef54182cb42e62dd255c9ff6e5acf33bb9424c24f",
+      "spec": {
+        "template": "flow",
+        "title": "Masterclass Implementation & Boardroom Defens... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation & Boardroom D...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation & Boar...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Masterclass Implementation & Boardroom Defens... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Implementation & Boardroom D...",
+            "values": {
+              "in": "Day 60 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation & Boar...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

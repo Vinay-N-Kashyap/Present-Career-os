@@ -1,0 +1,1167 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 59,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Frontier Evaluation Crisis: Static Benchmarks, Saturation Dynamics & Contamination",
+      "codeHash": "622693a66866daed5c8dab7f8641a841c2ab823570a67c770259f344e6123c68",
+      "spec": {
+        "template": "flow",
+        "title": "The Frontier Evaluation Crisis: Static Benchm... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Frontier Evalua...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Frontier Evaluation Crisis: Static B...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Frontier Evalua....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Frontier Evaluation Crisis: S...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The Frontier Evaluation Crisis: Static Benchm... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Frontier Evalua...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Frontier Evaluation Crisis: Static B...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Frontier Evalua....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Frontier Evaluation Crisis: S...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Turn & Open-Ended Evaluation: MT-Bench Dynamics & AlpacaEval Win-Rate",
+      "codeHash": "5788573c59879cebf7ab45069931df032ac09e13b7425e987833e43a9f89df23",
+      "spec": {
+        "template": "flow",
+        "title": "Multi-Turn & Open-Ended Evaluation: MT-Bench ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Multi-Turn & Open-E...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Multi-Turn & Open-Ended Evaluation: MT-B...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Multi-Turn & Open-E....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Multi-Turn & Open-Ended Evaluatio...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Multi-Turn & Open-Ended Evaluation: MT-Bench ... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Multi-Turn & Open-E...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Multi-Turn & Open-Ended Evaluation: MT-B...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Multi-Turn & Open-E....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Multi-Turn & Open-Ended Evaluatio...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "LLM-as-a-Judge Architecture & Calibration: Position, Verbosity & Bradley-Terry Scaling",
+      "codeHash": "4c07bf82c87b6929d41058acad076ffb40447a5384e5275cb4fdc77f909a2296",
+      "spec": {
+        "template": "flow",
+        "title": "LLM-as-a-Judge Architecture & Calibration: Po... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. LLM-as-a-Judge Arch...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for LLM-as-a-Judge Architecture & Calibratio...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in LLM-as-a-Judge Arch....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for LLM-as-a-Judge Architecture & Cal...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "LLM-as-a-Judge Architecture & Calibration: Po... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. LLM-as-a-Judge Arch...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for LLM-as-a-Judge Architecture & Calibratio...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in LLM-as-a-Judge Arch....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for LLM-as-a-Judge Architecture & Cal...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fiduciary & Compliance Auditing: Hallucination Rates, Citation Fidelity & Risk Matrices",
+      "codeHash": "ff0f029ed54b1460198520aebc14e24b43ab28d0b304437051832e00c45240c6",
+      "spec": {
+        "template": "flow",
+        "title": "Fiduciary & Compliance Auditing: Hallucinatio... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Fiduciary & Complia...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Fiduciary & Compliance Auditing: Halluci...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Fiduciary & Complia....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Fiduciary & Compliance Auditing: ...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Fiduciary & Compliance Auditing: Hallucinatio... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Fiduciary & Complia...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Fiduciary & Compliance Auditing: Halluci...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Fiduciary & Complia....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Fiduciary & Compliance Auditing: ...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Implementation: ApexEval Enterprise Multi-Metric Audit Suite",
+      "codeHash": "686067736aa4f809ed2ea7bc7590108153ee45a8a15b581d33c325195e2cd4a8",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Masterclass Implementation: ApexEval Enterpri... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (12150) for Masterclass Implementation: Ap...",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12150,
+            "totalCredit": 12150,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 12150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (2430).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (14580).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 14580 = CR 14580).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Masterclass Implementation: ApexEval Enterpri... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Open primary debit entry (12150) for Masterclass Implementation: Ap...",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12150,
+            "totalCredit": 12150,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 12150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Record secondary accrual adjustment (2430).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Reconcile sub-ledger balances against control total (14580).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Double-entry invariant verified (Total DR 14580 = CR 14580).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
