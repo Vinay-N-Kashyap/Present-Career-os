@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 44,
+  "entries": [
+    {
+      "partTitle": "Enterprise Onboarding Topology: Milestones, SOW Deliverables & Time-to-First-Value (TTFV)",
+      "codeHash": "a3c23c4888e958df5cec4a61760ef16c9c4ea4f5aafca97c81be7853001df931",
+      "spec": {
+        "template": "funnel",
+        "title": "Enterprise Onboarding Topology: Mil... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating churn hazard curves and early warning renewal notice triggers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing journey state transitions and authenticated rescue playbooks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reconciling cohort retention waterfalls and qualified expansion ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Customer Journey State Machines: Onboarding, Adoption, Value Realization & Renewal",
+      "codeHash": "c09534a5db57227fe94190c215d28f61b081814a7c689d1aadcd3e2be2a4435c",
+      "spec": {
+        "template": "funnel",
+        "title": "Customer Journey State Machines: On... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating churn hazard curves and early warning renewal notice triggers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing journey state transitions and authenticated rescue playbooks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reconciling cohort retention waterfalls and qualified expansion ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive Business Reviews (EBR / QBR) & Value Realization ROI Ledgers",
+      "codeHash": "ab9680841a04a9ccc9e02208163af33a4b1200eb4e5a018adb7b885bdb987f7a",
+      "spec": {
+        "template": "funnel",
+        "title": "Executive Business Reviews (EBR / Q... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating churn hazard curves and early warning renewal notice triggers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing journey state transitions and authenticated rescue playbooks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reconciling cohort retention waterfalls and qualified expansion ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated CS Playbook Dispatching: Stalled Onboarding & At-Risk Executive Re-engagement",
+      "codeHash": "a11a57973977fddf9162d2d6f10890d804b7c3a83aff9ddb7eed3284d5afe4ef",
+      "spec": {
+        "template": "funnel",
+        "title": "Automated CS Playbook Dispatching: ... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating churn hazard curves and early warning renewal notice triggers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing journey state transitions and authenticated rescue playbooks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reconciling cohort retention waterfalls and qualified expansion ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Python Implementation: Sovereign Customer Journey State Machine & EBR ROI Ledger",
+      "codeHash": "4fd2ef1a816371f60a4e2ac6971385fd0ed751ed57ee24b050d86f777b484f92",
+      "spec": {
+        "template": "funnel",
+        "title": "Full Python Implementation: Soverei... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating churn hazard curves and early warning renewal notice triggers.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing journey state transitions and authenticated rescue playbooks.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Reconciling cohort retention waterfalls and qualified expansion ledgers.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Total Active Enterprise Accounts",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Healthy Adoption Cohort",
+                "value": 820,
+                "percentage": 82.0,
+                "dropoffRate": 18.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Retained Core Contract ARR",
+                "value": 760,
+                "percentage": 76.0,
+                "dropoffRate": 7.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Expanded Net Retention ARR",
+                "value": 115,
+                "percentage": 11.5,
+                "dropoffRate": 0.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
