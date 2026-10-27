@@ -1,10 +1,15 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { toast } from '@/lib/store/useAppStore';
 import { speakWithAvatar } from '@/lib/tts';
 import { CONCEPT_ANALOGIES_REGISTRY, findConceptAnalogy } from '@/lib/data/conceptAnalogies';
 import { LessonCodeEditor } from './LessonCodeEditor';
 import { LessonQuizBlock, getExplanationText } from './LessonQuizBlock';
+import { LessonPuzzleStage } from '@/components/quests/puzzle/LessonPuzzleStage';
+import { RapidFireBattleStage } from '@/components/quests/battle/RapidFireBattleStage';
+import { generateLessonPuzzle, generateRapidFireBattle } from '@/lib/puzzles/lessonPuzzleEngine';
+import { parseQuestId } from '@/lib/data/curriculumEnricher';
+import { getLongLesson } from '@/lib/data/longLessons';
 import { VisualStage } from './visuals';
 import type { LessonVisual } from '@/lib/types/lessonVisual';
 import {
@@ -202,6 +207,24 @@ export function LessonContentRenderer({
   const tappableLabels = getTappableLabelsForVisual(currentVisual);
 
   const [highlightedLabel, setHighlightedLabel] = useState<string | null>(null);
+
+  // Parse quest identity for 2.5D puzzle & rapid-fire battle synthesis
+  const parsedQuest = useMemo(() => parseQuestId(questId || ''), [questId]);
+  const longLesson = useMemo(() => {
+    return parsedQuest ? getLongLesson(parsedQuest.prefix, parsedQuest.dayNum) : null;
+  }, [parsedQuest]);
+
+  const puzzleSpec = useMemo(() => {
+    const prefix = parsedQuest?.prefix || '';
+    const dayNum = parsedQuest?.dayNum || 1;
+    return generateLessonPuzzle(questId, prefix, dayNum, longLesson || questData);
+  }, [questId, parsedQuest, longLesson, questData]);
+
+  const battleSpec = useMemo(() => {
+    const prefix = parsedQuest?.prefix || '';
+    const dayNum = parsedQuest?.dayNum || 1;
+    return generateRapidFireBattle(questId, prefix, dayNum, longLesson || questData);
+  }, [questId, parsedQuest, longLesson, questData]);
   const [selectedSlideAnswers, setSelectedSlideAnswers] = useState<Record<number, number>>({});
   const [slideAnswerFeedback, setSlideAnswerFeedback] = useState<Record<number, { isCorrect: boolean; feedback: string }>>({});
   const highlightTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -1016,7 +1039,35 @@ export function LessonContentRenderer({
               );
             })()}
 
-            {isLastSlide && (
+            {/* 🧩 1. The 2.5D Tactile Puzzle Stage (Slide N + 1) */}
+            {!slidesLoading && currentSlide === slides.length + 1 && (
+              <LessonPuzzleStage
+                puzzle={puzzleSpec}
+                teacherAccent={safeTeacher.accent || 'var(--accent)'}
+                onPuzzleSolved={() => {
+                  handleNextSlide();
+                }}
+                playChime={playChime}
+                launchConfetti={launchConfetti}
+              />
+            )}
+
+            {/* ⚔️ 2. The 60-Second Rapid-Fire MCQ Battle (Slide N + 2) */}
+            {!slidesLoading && currentSlide === slides.length + 2 && (
+              <RapidFireBattleStage
+                battle={battleSpec}
+                teacherAccent={safeTeacher.accent || 'var(--accent)'}
+                onBattleCleared={(score) => {
+                  setExamPassed(true);
+                  playChime();
+                  launchConfetti();
+                }}
+                playChime={playChime}
+                launchConfetti={launchConfetti}
+              />
+            )}
+
+            {isLastSlide && quizQuestions && (
               <LessonQuizBlock
                 teacherAccent={safeTeacher.accent || 'var(--accent)'}
                 examPassed={examPassed}

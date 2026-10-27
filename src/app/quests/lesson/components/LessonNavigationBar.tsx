@@ -51,6 +51,8 @@ export function LessonNavigationBar({
     role: 'Staff Systems Architect',
   };
   const isLearningSlide = currentSlide > 0 && currentSlide <= slidesLength;
+  const isPuzzleSlide = currentSlide === slidesLength + 1;
+  const isBattleSlide = currentSlide === slidesLength + 2;
   const isTestModeBypass = typeof window !== 'undefined' && window.location.search.includes('testMode=true');
   const isConfirmed = isLearningSlide ? Boolean(understandingConfirmed[currentSlide - 1]) : true;
   const isLocked = isLearningSlide && !isConfirmed && !isTestModeBypass;
@@ -203,10 +205,24 @@ export function LessonNavigationBar({
             }}
           >
             <span className="lesson-nav-label-desktop">
-              {isLocked ? 'Answer Check 🔒' : 'Next Slide ▶'}
+              {isLocked
+                ? 'Answer Check 🔒'
+                : isPuzzleSlide
+                ? '🧩 Puzzle Event'
+                : isBattleSlide
+                ? '⚔️ 60s Battle'
+                : currentSlide === slidesLength
+                ? 'Proceed to Puzzle 🧩'
+                : 'Next Slide ▶'}
             </span>
             <span className="lesson-nav-label-mobile">
-              {isLocked ? 'Locked 🔒' : 'Next ▶'}
+              {isLocked
+                ? 'Locked 🔒'
+                : isPuzzleSlide
+                ? '🧩 Puzzle'
+                : isBattleSlide
+                ? '⚔️ Battle'
+                : 'Next ▶'}
             </span>
           </button>
         )}
@@ -258,7 +274,11 @@ export function LessonNavigationBar({
               whiteSpace: 'nowrap',
             }}
           >
-            ✓ {Math.min(confirmedCount, slidesLength)}/{slidesLength} Checks
+            {isPuzzleSlide
+              ? '🧩 Synthesis Puzzle'
+              : isBattleSlide
+              ? '⚡ 60s MCQ Battle'
+              : `✓ ${Math.min(confirmedCount, slidesLength)}/${slidesLength} Concepts Confirmed`}
           </span>
         )}
       </div>

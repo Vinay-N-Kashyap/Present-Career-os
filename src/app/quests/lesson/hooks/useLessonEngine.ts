@@ -1247,10 +1247,12 @@ export function useLessonEngine({
 
     if (currentSlide === slidesLength + 1) {
       if (examPassed) {
-        return `Outstanding achievement, ${studentName}! You passed the syllabus evaluation exam with flying colors! Your conceptual grounding is verified. Click Finish Quest below to return to your roadmap and collect your rewards!`;
+        return `Outstanding achievement, ${studentName}! You passed the evaluation with flying colors! Your conceptual grounding is verified. Click Finish Quest below to return to your roadmap and collect your rewards!`;
       }
-      const qText = (quizQuestions ? quizQuestions[examQuestionIndex]?.question : slides[examQuestionIndex]?.mcq?.question) || "Ready for your evaluation question?";
-      return `Welcome to the Syllabus Evaluation Exam! Let us assess your understanding. ${qText}`;
+      return `Welcome to today's synthesis puzzle! Arrange the tactile component blocks in the correct operational sequence to clear the challenge and enter the 60-second Rapid-Fire Battle!`;
+    }
+    if (currentSlide === slidesLength + 2) {
+      return `Welcome to the 60-Second Rapid-Fire Battle Arena! You have 60 seconds to answer all 5 questions. Fast reflexes and accuracy count. Good luck!`;
     }
 
     const idx = currentSlide - 1;
@@ -1407,7 +1409,7 @@ export function useLessonEngine({
     currentPieceAtRef.current = 'intro';
     setCurrentPieceAt('intro');
     const slidesLength = slides.length || syllabus.length;
-    if (currentSlide < slidesLength + 1) {
+    if (currentSlide < slidesLength + 2) {
       const nextSlide = currentSlide + 1;
       setCurrentSlide(nextSlide);
       setMaxUnlockedSlide(prev => Math.max(prev, nextSlide));
@@ -1512,7 +1514,7 @@ export function useLessonEngine({
   // Auto-play speech on slide change
   useEffect(() => {
     const slidesLength = slidesLengthRef.current;
-    if (currentSlide === 0 || currentSlide > slidesLength + 1) {
+    if (currentSlide === 0 || currentSlide > slidesLength + 2) {
       stopSpeaking();
       setIsPlaying(false);
       return;

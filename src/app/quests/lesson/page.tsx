@@ -742,8 +742,10 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
   }, [isFullscreen, enterFullscreen, exitFullscreen]);
 
   const syllabus: string[] = Array.isArray(questData?.syllabus) ? questData.syllabus : [];
-  const totalSlides = (state.slides.length || syllabus.length) + 2;
-  const isLastSlide = state.currentSlide === (state.slides.length || syllabus.length) + 1;
+  const slidesLength = state.slides.length || syllabus.length;
+  // Slide 0: Intro | Slides 1..N: Concepts | Slide N+1: 2.5D Puzzle | Slide N+2: 60s Battle
+  const totalSlides = slidesLength + 2;
+  const isLastSlide = state.currentSlide >= slidesLength + 2;
 
   return (
     <div style={{
