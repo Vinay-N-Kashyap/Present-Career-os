@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": 1,
+  "prefix": "nlp-py",
+  "day": 47,
+  "promptSha": "73ae715848a9cbd76d8a225b670f270f490331cf997b6840582ea689408b916e",
+  "model": "gpt-4o",
+  "entries": [
+    {
+      "partTitle": "The Memory-Bound Decoding Wall: Why Memory Bandwidth Bottlenecks LLM Serving",
+      "codeHash": "37175ea3665a957860bcc4556383ceb071e3796a1dbdb875c834d4cf037bec30",
+      "spec": {
+        "template": "flow",
+        "title": "The Memory-Bound Decoding Wall: Why Memory Ba... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Memory-Bound De...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Memory-Bound Decoding Wall: Why Memo...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Memory-Bound De....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Memory-Bound Decoding Wall: W...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "The Memory-Bound Decoding Wall: Why Memory Ba... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. The Memory-Bound De...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for The Memory-Bound Decoding Wall: Why Memo...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in The Memory-Bound De....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for The Memory-Bound Decoding Wall: W...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Target-Draft Rejection Sampling: Mathematical Proof of Exact Output Equivalence",
+      "codeHash": "4d8d9ede63612a4f0647b620960a0913039a554305b8ba35c82560be7b161fb2",
+      "spec": {
+        "template": "flow",
+        "title": "Target-Draft Rejection Sampling: Mathematical... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Target-Draft Reject...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Target-Draft Rejection Sampling: Mathema...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Target-Draft Reject....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Target-Draft Rejection Sampling: ...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Target-Draft Rejection Sampling: Mathematical... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Target-Draft Reject...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Target-Draft Rejection Sampling: Mathema...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Target-Draft Reject....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Target-Draft Rejection Sampling: ...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Speculative Decoding Speedup Modeling: Acceptance Rate alpha & Cost Ratio gamma",
+      "codeHash": "e0aa7a3f4da137c73d4bd07afb94c5bf05e41455c7f7a851ec60d37bc1809bf5",
+      "spec": {
+        "template": "flow",
+        "title": "Speculative Decoding Speedup Modeling: Accept... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Speculative Decodin...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Speculative Decoding Speedup Modeling: A...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Speculative Decodin....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Speculative Decoding Speedup Mode...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Speculative Decoding Speedup Modeling: Accept... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Speculative Decodin...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Speculative Decoding Speedup Modeling: A...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Speculative Decodin....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Speculative Decoding Speedup Mode...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Self-Speculative Decoding, Medusa Heads & Multi-Token Speculation Trees",
+      "codeHash": "74402670f09abe5a4cecdf031e9961f7aaba7b3897e11e636b2e672747b5c8fd",
+      "spec": {
+        "template": "flow",
+        "title": "Self-Speculative Decoding, Medusa Heads & Mul... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Self-Speculative De...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Self-Speculative Decoding, Medusa Heads ...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Self-Speculative De....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Self-Speculative Decoding, Medusa...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Self-Speculative Decoding, Medusa Heads & Mul... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Self-Speculative De...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Self-Speculative Decoding, Medusa Heads ...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Self-Speculative De....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Self-Speculative Decoding, Medusa...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: Building the ApexSpeculative Engine",
+      "codeHash": "75d265c2407632de1c51617e69435695f3fc3af40741ce35d5351b1d3647389d",
+      "spec": {
+        "template": "flow",
+        "title": "Masterclass Synthesis: Building the ApexSpecu... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Synthes...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building the Apex...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Synthes....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Synthesis: Building t...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "flow",
+        "title": "Masterclass Synthesis: Building the ApexSpecu... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Synthes...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building the Apex...",
+            "values": {
+              "in": "Day 47 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execute core transformation in Masterclass Synthes....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: End-to-end execution verified for Masterclass Synthesis: Building t...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
