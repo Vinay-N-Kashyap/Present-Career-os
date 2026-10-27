@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 37,
+  "entries": [
+    {
+      "partTitle": "Pricing Models Architecture: Flat, Tiered, Slab & Usage-Based Consumption",
+      "codeHash": "957e2940ecbb30055b04ad62ca7a7060ef36865278f17508950fba5b6e83ce71",
+      "spec": {
+        "template": "funnel",
+        "title": "Pricing Models Architecture: Flat, ... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing commercial CPQ product catalog and option group structures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating dynamic pricing slabs and international currency rate bounds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tracking Deal Desk concession trade offsets and approval state machines.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimizing Quote-to-Cash billing flow and statutory revenue waterfalls.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Currency Normalization, FX Hedging & Purchasing Power Parity (PPP)",
+      "codeHash": "28a18b7b30187c8f025d4273c2bd82fda7cd144f1df58e9fcae5592aa2f89d43",
+      "spec": {
+        "template": "funnel",
+        "title": "Multi-Currency Normalization, FX He... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing commercial CPQ product catalog and option group structures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating dynamic pricing slabs and international currency rate bounds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tracking Deal Desk concession trade offsets and approval state machines.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimizing Quote-to-Cash billing flow and statutory revenue waterfalls.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The $1.2M Currency Arbitrage & Runaway Over-Discounting Incident",
+      "codeHash": "5344bec11813226f0aa7c46ed9fa55e7cbbaa2deaf3410fee60e18bd7228d98b",
+      "spec": {
+        "template": "funnel",
+        "title": "The $1.2M Currency Arbitrage & Runa... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing commercial CPQ product catalog and option group structures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating dynamic pricing slabs and international currency rate bounds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tracking Deal Desk concession trade offsets and approval state machines.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimizing Quote-to-Cash billing flow and statutory revenue waterfalls.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Discount Matrix Governance & Delegation of Authority (DoA) Thresholds",
+      "codeHash": "c670581cc9bf0137db8ed8eb2ac2071bce12470e3ebf89dbb07ecd8bd93d8c19",
+      "spec": {
+        "template": "funnel",
+        "title": "Discount Matrix Governance & Delega... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing commercial CPQ product catalog and option group structures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating dynamic pricing slabs and international currency rate bounds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tracking Deal Desk concession trade offsets and approval state machines.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimizing Quote-to-Cash billing flow and statutory revenue waterfalls.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Building the Production Enterprise Dynamic Pricing & Currency Engine",
+      "codeHash": "d2d3df2b23841f684dcfbf6400780f13608a6a3ed27f59c4edcdc5850e3448bb",
+      "spec": {
+        "template": "funnel",
+        "title": "Building the Production Enterprise ... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing commercial CPQ product catalog and option group structures.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating dynamic pricing slabs and international currency rate bounds.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Tracking Deal Desk concession trade offsets and approval state machines.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Optimizing Quote-to-Cash billing flow and statutory revenue waterfalls.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Market Leads",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Qualified RevOps Target",
+                "value": 450,
+                "percentage": 45.0,
+                "dropoffRate": 55.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Active Sales Engagement",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 60.0,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Closed Won Contract ARR",
+                "value": 72,
+                "percentage": 7.2,
+                "dropoffRate": 60.0,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
