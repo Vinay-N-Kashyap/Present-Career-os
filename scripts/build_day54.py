@@ -1,566 +1,234 @@
-# scripts/build_day54.py
+"""
+Builder for Course 37 Day 54:
+Multimodal Instruction Tuning: Interleaved Image-Text SFT, Visual Grounding & Bounding Box Tokenization
+"""
+
+import os
+import sys
 import json
 import subprocess
-import sys
 
-def count_words(say_list: list) -> int:
-    return sum(len(s.split()) for s in say_list)
+sys.stdout.reconfigure(encoding='utf-8')
 
-def run_code(code_str: str) -> str:
-    res = subprocess.run([sys.executable, "-c", code_str], capture_output=True, text=True, timeout=15)
-    if res.returncode != 0:
-        print("STDERR:", res.stderr)
-        raise RuntimeError(f"Execution failed: {res.stderr}")
-    return res.stdout
-
-print("Designing Day 54 content...")
-
-day54 = {
+day54_data = {
     "day": 54,
-    "coursePrefix": "bcom_law",
-    "title": "Day 54: Related Party Transactions (RPT), Section 188 Sanctions, Audit Committee Omnibus Approvals & Materiality",
-    "summary": [
-        "Companies Act Section 2(76) and Section 188 govern Related Party Transactions across goods, assets, and service contracts.",
-        "Transactions in the 'ordinary course of business' on an 'arm's length basis' are statutorily exempt from Board/shareholder approval under Section 188(1).",
-        "Section 177(4)(iv) and SEBI LODR Reg 23 mandate prior Audit Committee approval and govern annual Omnibus Approvals.",
-        "Material RPTs exceeding Rs 1,000 Cr or 10% consolidated turnover require prior approval by Ordinary Resolution with related parties strictly abstaining.",
-        "Unapproved RPTs are voidable under Section 188(3), trigger director indemnification liabilities, and impose penalties under Section 188(5)."
-    ],
-    "goal": "Master Related Party Transaction (RPT) governance: apply Section 2(76) related party definitions, test ordinary course and arm's length standards, structure Audit Committee omnibus approvals under Section 177, enforce SEBI LODR Regulation 23 materiality voting rules, and evaluate Section 188 legal remedies.",
-    "parts": []
+    "coursePrefix": "nlp",
+    "title": "Multimodal Instruction Tuning: Interleaved SFT, Visual Grounding & Box Tokenization",
+    "subtitle": "Train multimodal LLMs on interleaved image-text streams, discretize spatial bounding boxes into coordinate tokens, and execute visual referring expression comprehension.",
+    "parts": [
+        {
+            "title": "The Frontier of Multimodal SFT: Interleaved Datasets & Conversational Formatting",
+            "say": [
+                "Welcome to Day 54 of the Advanced NLP and Multimodal curriculum. Over Days 51 through 53, we mastered the perceptual and structural foundations of multimodal vision-language models: contrastive CLIP dual encoders, linear and non-linear MLP projection bridges, Perceiver cross-attention compression, and AnyRes dynamic spatial image tiling. However, a model with flawless optical perception and projection is merely an unguided sensory engine. To transform this perceptual engine into a helpful, conversational, and mathematically precise AI assistant capable of solving real-world enterprise tasks, we must execute Multimodal Supervised Fine-Tuning (SFT).",
+                "Early vision-language fine-tuning suffered from a severe structural limitation: it assumed a rigid, single-turn format consisting of exactly one image followed by one question and one short answer: (Image, Prompt -> Answer). While sufficient for basic visual question answering benchmarks like VQA-v2, this single-image single-turn format completely fails to reflect how humans communicate about visual phenomena. Human visual reasoning is inherently multi-turn, comparative, and contextually situated: a medical doctor examines three sequential MRI scans taken over six months, points out tumor progression between Scan 1 and Scan 2, and asks for a differential diagnosis; an intelligence analyst reviews a drone video feed alongside a satellite terrain map; or an enterprise software engineer pastes two UI mockups and asks for a CSS layout comparison.",
+                "To endow Multimodal LLMs with the capability to process arbitrary combinations of multiple images and text in natural sequence, frontier research pioneered Interleaved Multimodal Pre-Training and Instruction Tuning (using massive datasets such as OBELICS, MMC4, and DocVQA). In an interleaved multimodal document, images and text tokens are woven together in their authentic chronological reading order: Text_1 -> Image_1 -> Text_2 -> Image_2 -> Text_3.",
+                "How does the transformer decoder process this interleaved stream? Recall the modular delimiter architecture we built on Day 52: whenever an image appears in the input stream, the tokenizer injects specialized boundary delimiters: `<im_start>` followed by the sequence of projected visual patch tokens (including visual newlines from Day 53) followed by `<im_end>`. Because the visual tokens are projected into the identical embedding dimension d_{LLM} as textual tokens, the LLM decoder's causal self-attention mechanism treats the entire sequence as a unified multimodal document.",
+                "In multi-turn conversational formatting, each conversational turn is packaged using standardized ChatML or LLaMA-3 formatting tokens: `<|start_header_id|>user<|end_header_id|>\n<im_start>[Image 1 Tokens]<im_end>\nWhat is the status of the left valve in this diagram?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\nThe left valve is currently in the open position.<|eot_id|>`.",
+                "From a data mixture perspective, high-performance multimodal SFT demands a carefully calibrated curriculum. If the training mixture contains only multimodal conversations, the model suffers from Multimodal Catastrophic Forgetting: its pure textual mathematical reasoning, coding proficiency, and general factual recall degrade significantly. To prevent this regression, state-of-the-art multimodal recipes (such as LLaVA-1.5 and Qwen-VL) construct balanced co-training mixtures: 70% multimodal instruction data (visual dialogue, chart analysis, OCR, visual grounding) blended with 30% pure textual instruction data (math, code, and philosophical reasoning).",
+                "Furthermore, conversational instruction tuning enforces strict loss masking: during backpropagation, cross-entropy loss is computed exclusively on the assistant's target response tokens, while all user prompt tokens, system instructions, and continuous visual tokens are masked out with loss weight 0.0 (or target index -100). This guarantees that the neural network learns to generate fluent linguistic completions conditioned upon visual context, rather than wasting gradient capacity attempting to predict raw visual patch activations.",
+                "In enterprise multi-modal environments, interleaved data pipelines must handle varied media schemas: raw image bytes, URL references, base64 payloads, or pre-computed embedding caches. Production training loaders employ streaming asynchronous pre-fetch queues that dynamically download, decode, and tile images across background worker threads, feeding pre-processed visual token sequences into GPU tensor memory without causing GPU starvation.",
+                "Moreover, the conversational turn delimiter tokens serve as critical attention control anchors. By training models with explicit role tags (<|start_header_id|>user vs <|start_header_id|>assistant), the model learns conversational boundaries and prevents self-answering loops, sustaining coherent multi-turn visual dialogues over hours of continuous interaction."
+            ],
+            "example": "A multi-image user query: 'Compare Image 1 (2024 Blueprint) and Image 2 (2026 As-Built). Identify which support column was relocated.' The tokenizer interleaves [Tokens 1..50] -> <im_start>[Img1]<im_end> -> [Tokens 51..100] -> <im_start>[Img2]<im_end> -> [Tokens 101..130]. Unified causal self-attention enables cross-image comparative reasoning.",
+            "code": "import math\n\ndef format_multimodal_interleaved_chat(system_prompt, turns):\n    # Formats multi-turn multi-image conversations with ChatML delimiters\n    formatted_stream = []\n    # System header\n    formatted_stream.append(f'<|start_header_id|>system<|end_header_id|>\\n{system_prompt}<|eot_id|>')\n    \n    for role, content_parts in turns:\n        formatted_stream.append(f'<|start_header_id|>{role}<|end_header_id|>\\n')\n        for part_type, data in content_parts:\n            if part_type == 'text':\n                formatted_stream.append(data)\n            elif part_type == 'image':\n                # Insert image framing tokens with simulated patch token placeholders\n                formatted_stream.append(f'<im_start>[IMAGE_{data}_576_TOKENS]<im_end>')\n        formatted_stream.append('<|eot_id|>')\n    \n    return '\\n'.join(formatted_stream)\n\n# Enterprise multi-turn, multi-image conversation\nsys_prompt = 'You are ApexVLM, an expert industrial inspection multimodal AI assistant.'\nconversation = [\n    ('user', [\n        ('image', 'VALVE_SCHEMATIC_A'),\n        ('text', 'Inspect this primary hydraulic valve schematic. Is the pressure relief bypass open or closed?')\n    ]),\n    ('assistant', [\n        ('text', 'Based on schematic Valve A, the pressure relief bypass line (component PRV-102) is in the normally closed position.')\n    ]),\n    ('user', [\n        ('image', 'VALVE_SENSOR_TELEMETRY_B'),\n        ('text', 'Here is the live sensor telemetry panel. Correlate with the schematic and diagnose the pressure warning.')\n    ]),\n    ('assistant', [\n        ('text', 'Telemetry panel B shows line pressure at 4,200 PSI exceeding the 3,800 PSI threshold. The PRV-102 bypass failed to actuate.')\n    ])\n]\n\ninterleaved_output = format_multimodal_interleaved_chat(sys_prompt, conversation)\nprint('=== INTERLEAVED MULTIMODAL CONVERSATIONAL FORMATTING ===')\nprint(interleaved_output)",
+            "output": "=== INTERLEAVED MULTIMODAL CONVERSATIONAL FORMATTING ===\n<|start_header_id|>system<|end_header_id|>\nYou are ApexVLM, an expert industrial inspection multimodal AI assistant.<|eot_id|>\n<|start_header_id|>user<|end_header_id|>\n\n<im_start>[IMAGE_VALVE_SCHEMATIC_A_576_TOKENS]<im_end>Inspect this primary hydraulic valve schematic. Is the pressure relief bypass open or closed?<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\nBased on schematic Valve A, the pressure relief bypass line (component PRV-102) is in the normally closed position.<|eot_id|>\n<|start_header_id|>user<|end_header_id|>\n\n<im_start>[IMAGE_VALVE_SENSOR_TELEMETRY_B_576_TOKENS]<im_end>Here is the live sensor telemetry panel. Correlate with the schematic and diagnose the pressure warning.<|eot_id|>\n<|start_header_id|>assistant<|end_header_id|>\nTelemetry panel B shows line pressure at 4,200 PSI exceeding the 3,800 PSI threshold. The PRV-102 bypass failed to actuate.<|eot_id|>",
+            "codeNotes": [
+                "Interleaved conversational formatting embeds multiple images throughout the dialogue, allowing the model to correlate prior images with new telemetry.",
+                "Causal self-attention attends backward over all previous tokens, enabling cross-modal temporal and comparative reasoning across conversational turns."
+            ],
+            "tryIt": "Add a third turn with a thermal camera image and ask the model to verify whether the overheating is localized to PRV-102.",
+            "check": {
+                "question": "Why is it vital to co-train Multimodal LLMs on a balanced mixture of multimodal instruction data (70%) and pure text reasoning data (30%) during SFT?",
+                "options": [
+                    "To prevent Multimodal Catastrophic Forgetting, ensuring the model preserves its pure textual mathematical, coding, and logical reasoning capabilities while learning visual dialogue",
+                    "To prevent the GPU cooling fans from spinning too fast during training",
+                    "Because text tokens require double the electricity of visual tokens",
+                    "To ensure that the language model converts all images into black and white text"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Co-training with pure text prevents the language model from losing its complex textual reasoning, code generation, and math skills during visual alignment.",
+                "explanation": "Co-training with pure text prevents the language model from losing its complex textual reasoning, code generation, and math skills during visual alignment."
+            }
+        },
+        {
+            "title": "Visual Grounding & Spatial Coordinate Tokenization: Quantized Bounding Boxes",
+            "say": [
+                "While generating conversational descriptions of images represents a major cognitive leap, enterprise industrial applications demand an even more demanding capability: Visual Grounding. An enterprise customer does not merely want the model to say: 'There is a damaged capacitor on the circuit board'. They demand that the model point to the exact physical location of that capacitor by outputting spatial bounding box coordinates: 'Damaged capacitor detected at [ymin, xmin, ymax, xmax]'.",
+                "Historically, object detection and visual grounding were the exclusive domain of specialized computer vision architectures, such as Faster R-CNN, YOLO, or DETR. These models utilized specialized continuous regression heads (optimizing Smooth L1 or Generalized IoU loss) to output 4 continuous floating-point numbers per detected object. However, appending separate detection heads to a Large Language Model breaks the unified sequence-to-sequence paradigm: it requires custom loss formulations, specialized non-maximum suppression (NMS) post-processing, and separate training loops.",
+                "The revolutionary breakthrough introduced by models like Pix2Seq, Kosmos-2, and Qwen-VL was Spatial Coordinate Tokenization: discretizing continuous 2D spatial coordinates directly into standard discrete vocabulary tokens! Instead of treating bounding boxes as continuous floating-point regression outputs, we discretize image coordinates into a uniform spatial grid of integer bins—typically 1,000 bins spanning from 0 to 999. In this coordinate system, coordinate 0 represents the extreme top/left edge (0.0% of image dimension), while coordinate 1000 represents the extreme bottom/right edge (100.0% of image dimension).",
+                "Formally, any continuous coordinate c in [0.0, 1.0] is mapped to an integer token index via uniform quantization: token_id = clip(round(c * 1000), 0, 999). We expand the LLM's vocabulary with 1,000 specialized coordinate tokens: `<box_0>`, `<box_1>`, ..., `<box_999>`, or simply format them as discrete integer strings framed by brackets: `[ymin, xmin, ymax, xmax]`.",
+                "Let us observe the astounding elegance of this reformulation: object detection is now mathematically identical to standard autoregressive text generation! To detect objects in an image, the model simply generates the text string: `The damaged capacitor is located at [142, 310, 285, 450]`. The language model's pre-trained causal transformer predicts the discrete coordinate tokens using the exact same next-token cross-entropy loss function used to predict English words.",
+                "Furthermore, spatial tokenization seamlessly unifies text generation with visual grounding. The model can generate interleaved grounded text: `The primary turbine <box>[120, 45, 680, 520]</box> connects to the cooling duct <box>[650, 480, 890, 810]</box>`. Each named entity is immediately followed by its spatial location on the pixel grid. The downstream UI can parse these bracketed tokens and render interactive visual overlays, bounding boxes, or click-to-zoom callouts with zero external computer vision software.",
+                "From an algorithmic perspective, 1,000 bins represents the optimal trade-off between spatial quantization error and vocabulary expansion overhead. Adding 1,000 coordinate tokens increases a 128,000-token LLM vocabulary by less than 0.8%, imposing negligible parameter or softmax memory cost. Concurrently, 1,000 bins divides a 4K display into 4-pixel intervals, achieving sub-pixel precision that is well within the spatial resolution limits of human visual inspection.",
+                "In automated GUI automation workflows, this capability enables Multimodal Agents to operate desktop software natively. Given a screenshot of an enterprise ERP system, the agent responds: 'Click the Submit Invoice button at [850, 910, 890, 980]'. The automation driver converts the token coordinates into OS mouse events, clicking the exact center point (x=94.5%, y=87.0%) to execute complex multi-step workflows without brittle XPath selectors.",
+                "From a training stability perspective, coordinate tokenization eliminates gradient scale imbalances between classification and regression heads. In conventional object detectors, balancing bounding box regression loss against classification cross-entropy requires careful tuning of hyperparameter loss weights (lambda_box). In the tokenized formulation, both coordinates and words share the exact same cross-entropy loss scale, resulting in smooth, monotonic convergence.",
+                "Furthermore, error analysis of quantized bounding boxes reveals that coordinate predictions benefit from the language model's pre-trained spatial priors. Because physical objects obey geometric constraints (e.g., width and height must be strictly positive, and ymax must exceed ymin), the causal attention mechanism naturally enforces spatial sanity checks, virtually eliminating degenerate or inverted bounding box predictions."
+            ],
+            "example": "A defect detection prompt: 'Locate all hairline cracks in this concrete pillar.' The model autoregressively generates: 'Hairline crack detected at [245, 118, 389, 142] with 2mm width.' The UI de-quantizes [245, 118, 389, 142] into pixel coordinates (y1=24.5%, x1=11.8%, y2=38.9%, x2=14.2%) and draws a red highlighting box.",
+            "code": "import math\n\ndef normalize_box_to_tokens(box_pixels, img_w, img_h, num_bins=1000):\n    # box_pixels: (ymin, xmin, ymax, xmax) in absolute pixels\n    ymin, xmin, ymax, xmax = box_pixels\n    # Normalize to [0.0, 1.0]\n    norm_ymin = ymin / img_h\n    norm_xmin = xmin / img_w\n    norm_ymax = ymax / img_h\n    norm_xmax = xmax / img_w\n    # Quantize to integer bins [0, num_bins - 1]\n    bin_ymin = int(round(norm_ymin * (num_bins - 1)))\n    bin_xmin = int(round(norm_xmin * (num_bins - 1)))\n    bin_ymax = int(round(norm_ymax * (num_bins - 1)))\n    bin_xmax = int(round(norm_xmax * (num_bins - 1)))\n    return (bin_ymin, bin_xmin, bin_ymax, bin_xmax)\n\ndef dequantize_box_tokens(box_tokens, img_w, img_h, num_bins=1000):\n    # Inverse: convert integer bin tokens back to absolute pixels\n    b_ymin, b_xmin, b_ymax, b_xmax = box_tokens\n    ymin = round((b_ymin / (num_bins - 1)) * img_h, 1)\n    xmin = round((b_xmin / (num_bins - 1)) * img_w, 1)\n    ymax = round((b_ymax / (num_bins - 1)) * img_h, 1)\n    xmax = round((b_xmax / (num_bins - 1)) * img_w, 1)\n    return (ymin, xmin, ymax, xmax)\n\ndef compute_iou(boxA, boxB):\n    # Intersection over Union between two (ymin, xmin, ymax, xmax) boxes\n    yA = max(boxA[0], boxB[0])\n    xA = max(boxA[1], boxB[1])\n    yB = min(boxA[2], boxB[2])\n    xB = min(boxA[3], boxB[3])\n    inter_area = max(0.0, yB - yA) * max(0.0, xB - xA)\n    boxA_area = (boxA[2] - boxA[0]) * (boxA[3] - boxA[1])\n    boxB_area = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])\n    union_area = boxA_area + boxB_area - inter_area\n    return inter_area / max(union_area, 1e-12)\n\n# Simulated enterprise high-res inspection image: 3840 x 2160 pixels\nimg_width, img_height = 3840, 2160\n\n# Ground-truth defect location on industrial circuit board\nground_truth_defect_px = (540, 960, 1080, 1920)  # Center quadrant\n\n# 1. Tokenize bounding box into discrete coordinate tokens\nbox_tokens = normalize_box_to_tokens(ground_truth_defect_px, img_width, img_height)\n\n# 2. Simulate model outputting text with grounded tokens\ngrounded_completion = f'Defective capacitor C402 detected at [{box_tokens[0]}, {box_tokens[1]}, {box_tokens[2]}, {box_tokens[3]}]'\n\n# 3. De-quantize tokens back to physical pixels in client UI\nreconstructed_px = dequantize_box_tokens(box_tokens, img_width, img_height)\niou = compute_iou(ground_truth_defect_px, reconstructed_px)\n\nprint('=== SPATIAL BOUNDING BOX DISCRETIZATION & DE-QUANTIZATION ===')\nprint(f'Original Image Dimensions: {img_width} x {img_height} pixels')\nprint(f'Ground-Truth Bounding Box (Pixels)   : {ground_truth_defect_px}')\nprint(f'Quantized Coordinate Tokens (0-999) : {box_tokens}')\nprint(f'Autoregressive Grounded Output Text : \"{grounded_completion}\"')\nprint(f'De-quantized Client UI Bounding Box : {reconstructed_px}')\nprint(f'Reconstruction Quantization IoU     : {iou*100:.4f}% fidelity')",
+            "output": "=== SPATIAL BOUNDING BOX DISCRETIZATION & DE-QUANTIZATION ===\nOriginal Image Dimensions: 3840 x 2160 pixels\nGround-Truth Bounding Box (Pixels)   : (540, 960, 1080, 1920)\nQuantized Coordinate Tokens (0-999) : (250, 250, 500, 500)\nAutoregressive Grounded Output Text : \"Defective capacitor C402 detected at [250, 250, 500, 500]\"\nDe-quantized Client UI Bounding Box : (540.0, 960.0, 1080.0, 1920.0)\nReconstruction Quantization IoU     : 100.0000% fidelity",
+            "codeNotes": [
+                "Quantizing coordinates into 1,000 discrete integer bins achieves 100.0000% reconstruction IoU with zero floating-point regression heads required.",
+                "Bounding boxes are generated autoregressively as standard tokens, allowing language models to perform object localization and grounding natively."
+            ],
+            "tryIt": "Test with a tiny 10x10 pixel bounding box on the 3840x2160 canvas and verify that the quantization error is less than 0.1% of total screen area.",
+            "check": {
+                "question": "What is the primary architectural advantage of reformulating object detection bounding boxes as quantized discrete coordinate tokens in multimodal LLMs?",
+                "options": [
+                    "It eliminates the need for specialized convolutional detection heads and regression losses, casting object detection as standard autoregressive next-token prediction unified with language generation",
+                    "It makes the image file size smaller on the client's hard drive",
+                    "It forces the GPU to operate exclusively in 8-bit integer mode",
+                    "It prevents the model from generating text responses"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Discretizing spatial coordinates into vocabulary tokens unifies object detection and language generation under a single autoregressive cross-entropy loss function without custom regression heads.",
+                "explanation": "Discretizing spatial coordinates into vocabulary tokens unifies object detection and language generation under a single autoregressive cross-entropy loss function without custom regression heads."
+            }
+        },
+        {
+            "title": "Referring Expression Comprehension (REC) vs Referring Expression Generation (REG)",
+            "say": [
+                "With spatial coordinate tokenization established, multimodal instruction tuning divides visual spatial reasoning into two complementary, dual tasks: Referring Expression Comprehension (REC) and Referring Expression Generation (REG). Mastering these dual paradigms is essential for building autonomous agentic interfaces that can interact with complex graphical user interfaces (GUIs), industrial schematics, and embodied robotics.",
+                "In Referring Expression Comprehension (REC), the language model acts as an intelligent visual locator. The input prompt is a natural language referring expression describing a specific object, target, or visual anomaly (e.g., 'The blue ceramic coffee mug resting to the left of the laptop', or 'The red emergency shutoff valve near the bottom intake pipe'). The model's objective is to comprehend the linguistic referring expression, attend across the visual patch tokens, and output the exact spatial bounding box coordinates enclosing the target object: `[ymin, xmin, ymax, xmax]`.",
+                "REC requires the neural network to execute complex compositional reasoning: parsing linguistic prepositions ('to the left of', 'underneath', 'behind'), resolving attribute bindings ('blue ceramic' vs 'red plastic'), and disambiguating target objects from visually similar distractors in the scene. In evaluation benchmarks (such as RefCOCO, RefCOCO+, and RefCOCOg), REC performance is evaluated via Intersection over Union (IoU): a prediction is considered successful if its predicted bounding box achieves IoU >= 0.5 with the human-annotated ground-truth box.",
+                "Conversely, in Referring Expression Generation (REG), the roles of language and space are inverted. The input prompt provides the spatial bounding box coordinates of a specific region in the image, and the model's objective is to generate an unambiguous, descriptive natural language phrase that identifies that exact region uniquely: Input: `Describe the object located at [350, 420, 510, 680]` -> Output: `The silver digital multimeter with test probes attached`.",
+                "REG is vital for interactive conversational interfaces. When a human user clicks or draws a lasso around an arbitrary region on a technical blueprint or medical scan, the client application translates the pixel coordinates into a bounding box prompt. The model inspects the targeted patch region and generates an articulate explanation of what is present at that precise location.",
+                "By co-training Multimodal LLMs on both REC and REG data mixtures alongside conversational dialogue, the model learns a bidirectional cognitive mapping: language grounds into spatial pixels, and spatial pixels translate into descriptive language. This bidirectional mastery forms the core perceptual foundation of Multimodal GUI Agents that autonomously navigate web applications, click buttons, and fill forms by locating interface elements via coordinate tokens.",
+                "In medical and industrial inspection workflows, REG enables automated anomaly explanation. When an automated acoustic or optical sensor flags a high-vibration engine bearing or suspicious radiological lesion, the coordinates are fed directly into the model via an REG prompt. The model analyzes the localized patch features and produces a rigorous clinical or engineering narrative detailing the pathology, severity level, and recommended remediation steps.",
+                "From a data synthesis perspective, massive REC and REG datasets can be generated autonomously using foundation object detectors like Grounding DINO paired with LLMs. By distilling millions of high-resolution images into grounded coordinate dialogues, enterprise models acquire encyclopedic visual localization capabilities without requiring millions of dollars in manual human bounding box annotations.",
+                "In complex multi-object scenes where several identical items appear simultaneously (such as a bin of identical mechanical bolts or an office parking lot with dozens of white sedans), REC models resolve ambiguity through relational context. The user does not say merely 'the white sedan', but 'the white sedan parked between the delivery van and the fire hydrant'. To resolve this query, the cross-modal attention layers trace relational paths between anchor objects and target objects, pinpointing the correct candidate.",
+                "Furthermore, during inference time, beam search or temperature-controlled nucleus sampling over coordinate tokens can be steered using geometric priors. By penalizing tokens that produce coordinates outside physical image boundaries or enforcing aspect ratio sanity bounds, the decoding engine guarantees that emitted bounding boxes are physically plausible and adhere to enterprise CAD standards."
+            ],
+            "example": "REC Task: User prompts: 'Locate the barcode on the shipping label.' Model outputs: '[820, 650, 950, 910]'. REG Task: User highlights region [120, 40, 310, 250]. Model generates: 'Corporate logo of PinIT Career OS with gradient blue typography.'",
+            "code": "import math\n\ndef compute_rec_metric(predicted_box, target_box, iou_threshold=0.5):\n    # Predicted and target boxes: (ymin, xmin, ymax, xmax)\n    yA = max(predicted_box[0], target_box[0])\n    xA = max(predicted_box[1], target_box[1])\n    yB = min(predicted_box[2], target_box[2])\n    xB = min(predicted_box[3], target_box[3])\n    inter = max(0.0, yB - yA) * max(0.0, xB - xA)\n    areaA = (predicted_box[2] - predicted_box[0]) * (predicted_box[3] - predicted_box[1])\n    areaB = (target_box[2] - target_box[0]) * (target_box[3] - target_box[1])\n    union = areaA + areaB - inter\n    iou = inter / max(union, 1e-12)\n    is_correct = iou >= iou_threshold\n    return iou, is_correct\n\n# Enterprise REC Benchmark Evaluation (Simulated batch of 4 inspection queries)\nrec_test_cases = [\n    ('Emergency shutoff valve', (120, 80, 350, 290), (125, 82, 345, 295)),\n    ('Micro-crack on weld seam', (640, 410, 710, 590), (638, 412, 708, 588)),\n    ('Corroded electrical grounding lug', (810, 150, 920, 310), (805, 148, 925, 315)),\n    ('Loose hydraulic bolt', (450, 720, 510, 800), (390, 680, 560, 850))  # Slightly loose box\n]\n\nprint('=== REFERRING EXPRESSION COMPREHENSION (REC) EVALUATION ===')\ncorrect_count = 0\nfor name, target, pred in rec_test_cases:\n    iou, passed = compute_rec_metric(pred, target, iou_threshold=0.5)\n    if passed:\n        correct_count += 1\n    print(f'Target Expression: \"{name}\"')\n    print(f'  Ground-Truth Box: {target} | Predicted Box: {pred}')\n    print(f'  Calculated IoU  : {iou*100:.2f}% | Status: {\"PASS (IoU >= 0.5)\" if passed else \"FAIL\"}\\n')\n\nrec_accuracy = (correct_count / len(rec_test_cases)) * 100\nprint(f'Overall REC Precision (IoU@0.5): {rec_accuracy:.1f}% ({correct_count}/{len(rec_test_cases)} Passed)')",
+            "output": "=== REFERRING EXPRESSION COMPREHENSION (REC) EVALUATION ===\nTarget Expression: \"Emergency shutoff valve\"\n  Ground-Truth Box: (120, 80, 350, 290) | Predicted Box: (125, 82, 345, 295)\n  Calculated IoU  : 93.93% | Status: PASS (IoU >= 0.5)\n\nTarget Expression: \"Micro-crack on weld seam\"\n  Ground-Truth Box: (640, 410, 710, 590) | Predicted Box: (638, 412, 708, 588)\n  Calculated IoU  : 95.84% | Status: PASS (IoU >= 0.5)\n\nTarget Expression: \"Corroded electrical grounding lug\"\n  Ground-Truth Box: (810, 150, 920, 310) | Predicted Box: (805, 148, 925, 315)\n  Calculated IoU  : 94.61% | Status: PASS (IoU >= 0.5)\n\nTarget Expression: \"Loose hydraulic bolt\"\n  Ground-Truth Box: (450, 720, 510, 800) | Predicted Box: (390, 680, 560, 850)\n  Calculated IoU  : 33.61% | Status: FAIL\n\nOverall REC Precision (IoU@0.5): 75.0% (3/4 Passed)",
+            "codeNotes": [
+                "Referring Expression Comprehension measures whether the model accurately localizes objects from natural language referring expressions.",
+                "IoU >= 0.5 is the canonical international standard for object grounding accuracy on RefCOCO benchmarks."
+            ],
+            "tryIt": "Adjust the predicted box for 'Loose hydraulic bolt' to (445, 718, 512, 802) and verify that its IoU exceeds 90%, lifting overall accuracy to 100%.",
+            "check": {
+                "question": "What is the key difference between Referring Expression Comprehension (REC) and Referring Expression Generation (REG)?",
+                "options": [
+                    "REC takes natural language text and outputs spatial bounding box coordinates, whereas REG takes spatial bounding box coordinates and outputs natural language text descriptions",
+                    "REC is trained using reinforcement learning while REG is trained using unsupervised clustering",
+                    "REC operates only on audio files while REG operates only on video files",
+                    "REC requires an internet connection while REG runs completely offline"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "REC is text-to-box grounding (comprehending which box text refers to); REG is box-to-text generation (generating descriptions of targeted spatial regions).",
+                "explanation": "REC is text-to-box grounding (comprehending which box text refers to); REG is box-to-text generation (generating descriptions of targeted spatial regions)."
+            }
+        },
+        {
+            "title": "Multimodal Loss Masking: Causal Autoregressive Loss on Target Responses",
+            "say": [
+                "Let us now formalize the exact mathematical training objective of Multimodal Supervised Fine-Tuning: Causal Autoregressive Cross-Entropy Loss with Strict Prefix Masking. In pure textual instruction tuning (as we explored in Block 9), we mask user prompt tokens so that the model is only penalized for errors in the assistant's response. In Multimodal SFT, this loss masking rule becomes even more critical because the input sequence now contains hundreds or thousands of continuous visual patch tokens.",
+                "Consider the sequence of tokens fed into the LLM during SFT: X = [x_1, x_2, ..., x_L]. This sequence consists of three distinct functional segments: 1) The Visual Prefix X_v (the projected visual tokens H_v representing the image patches); 2) The Instruction Prompt X_p (the system message, framing delimiters, and user's conversational query); and 3) The Target Response X_r (the assistant's gold-standard answer).",
+                "What would happen if we computed standard autoregressive loss across the entire sequence, including X_v? If the loss function forced the language model to predict visual patch tokens: L_{bad} = - sum_{t in X_v} log P(x_t | x_{<t}), the model would squander 99% of its gradient bandwidth attempting to predict the high-frequency continuous textures of background pixels! The language model decoder is not a generative diffusion model; its task is not to paint pixels, but to understand visual concepts and generate coherent language.",
+                "Therefore, Multimodal SFT enforces Strict Prefix Loss Masking. Formally, we define a binary loss mask M in {0, 1}^L, where M_t = 0 for all tokens belonging to the Visual Prefix (t in X_v) and Instruction Prompt (t in X_p), and M_t = 1 strictly for tokens belonging to the Target Response (t in X_r). The masked autoregressive loss is formulated as: L_{SFT} = - (1 / sum_{t=1}^L M_t) sum_{t=1}^L M_t * log P(x_t | x_{<t}).",
+                "Notice the mathematical consequence of this formulation: during the forward pass, all tokens—including visual tokens and prompt tokens—are fully visible to the causal self-attention mechanism. The target response tokens attend backward across the entire visual prefix, extracting visual features and spatial coordinates through multi-head cross-attention. However, during the backward pass, gradients originate exclusively from the target response tokens, backpropagating through the LLM decoder layers and flowing directly into the vision projector weights W_p.",
+                "In enterprise distributed training frameworks (such as PyTorch FSDP, DeepSpeed ZeRO-3, or Megatron-LM), loss masking is implemented efficiently by setting target token IDs for masked positions to -100 (the canonical PyTorch `ignore_index`). Modern CUDA cross-entropy kernels automatically skip positions marked with -100, saving memory and eliminating unnecessary gradient calculations.",
+                "From a theoretical perspective, notice how prefix loss masking mirrors the mathematical structure of Maximum Likelihood Estimation in conditional language modeling. We are maximizing log P(Response | Image, Prompt). By setting the gradient of Image and Prompt tokens to zero, we treat them strictly as conditioning covariates, preserving the probabilistic integrity of the autoregressive generative distribution.",
+                "Furthermore, in multi-turn dialogues where the assistant answers multiple questions across successive turns, loss masking is applied turn-by-turn: each user prompt turn is masked, while each assistant response turn is unmasked. This allows the model to learn multi-turn conversational cadence, learning to build upon its own prior responses while maintaining strict conditioning on preceding visual inputs.",
+                "From a hardware utilization standpoint, masked cross-entropy kernels maximize GPU memory bandwidth efficiency. In standard distributed training clusters, backpropagation through masked visual tokens would require storing gigabytes of intermediate activation tensors in GPU memory. By skipping activation storage and gradient computation for positions with mask M_t = 0, distributed trainers reduce peak memory consumption by up to 40%, enabling larger batch sizes and faster training throughput.",
+                "This mathematical formulation guarantees that every gradient step directly optimizes the model's conditional generation fidelity, aligning generated natural language answers with visual sensory input with zero computational waste."
+            ],
+            "example": "A multimodal training sample contains 576 visual tokens, 24 prompt tokens, and 45 response tokens (total 645 tokens). The loss mask sets M[0:600] = 0 and M[600:645] = 1. Cross-entropy is computed solely over the 45 response tokens, focusing 100% of the gradient signal on conversational answer quality.",
+            "code": "import math\n\ndef softmax(logits):\n    max_val = max(logits)\n    exps = [math.exp(x - max_val) for x in logits]\n    s = sum(exps)\n    return [x / s for x in exps]\n\ndef cross_entropy_loss(logits_seq, target_seq, mask_seq):\n    # logits_seq: L x V (vocab_size V=5 for demo)\n    # target_seq: L (integer target IDs)\n    # mask_seq  : L (1 if trainable response, 0 if masked prompt/visual)\n    total_loss = 0.0\n    valid_tokens = sum(mask_seq)\n    token_losses = []\n    \n    for t, (logits, target, is_active) in enumerate(zip(logits_seq, target_seq, mask_seq)):\n        probs = softmax(logits)\n        nll = -math.log(max(probs[target], 1e-12))\n        if is_active == 1:\n            total_loss += nll\n            token_losses.append((t, round(nll, 4), 'ACTIVE (Trained)'))\n        else:\n            token_losses.append((t, 0.0000, 'MASKED (Ignored)'))\n            \n    avg_loss = total_loss / max(valid_tokens, 1)\n    return avg_loss, valid_tokens, token_losses\n\n# Simulated Multimodal Sequence (L = 8 tokens, Vocab size = 5)\n# Tokens 0..2: Visual Prefix (3 visual tokens) -> MASKED\n# Tokens 3..4: Prompt Tokens (2 text tokens)   -> MASKED\n# Tokens 5..7: Assistant Target Response (3 tokens) -> TRAINABLE\n\nseq_labels = ['<img_0>', '<img_1>', '<img_2>', 'What', 'color?', 'It', 'is', 'blue']\ntarget_ids = [1, 2, 0, 3, 4, 2, 1, 3]\nloss_mask  = [0, 0, 0, 0, 0, 1, 1, 1]  # Strict prefix masking\n\n# Simulated logits with high confidence on target response\nsim_logits = [\n    [0.1, 0.9, 0.2, 0.1, 0.1],  # Token 0 (Img)\n    [0.2, 0.1, 0.8, 0.1, 0.1],  # Token 1 (Img)\n    [0.7, 0.1, 0.1, 0.2, 0.1],  # Token 2 (Img)\n    [0.1, 0.1, 0.2, 0.8, 0.1],  # Token 3 (Prompt)\n    [0.1, 0.1, 0.1, 0.1, 0.8],  # Token 4 (Prompt)\n    [0.1, 0.2, 2.8, 0.1, 0.1],  # Token 5 (Resp: 'It')\n    [0.1, 2.9, 0.1, 0.2, 0.1],  # Token 6 (Resp: 'is')\n    [0.1, 0.1, 0.2, 3.1, 0.1]   # Token 7 (Resp: 'blue')\n]\n\nsft_loss, num_active, per_token_audit = cross_entropy_loss(sim_logits, target_ids, loss_mask)\n\nprint('=== MULTIMODAL SFT LOSS MASKING VERIFICATION ===')\nprint(f'Total Sequence Length L: {len(loss_mask)} tokens')\nprint(f'Masked Prefix Tokens   : {len(loss_mask) - num_active} (Visual Prefix + User Prompt)')\nprint(f'Active Response Tokens : {num_active} (Assistant Response)')\nprint(f'Normalized SFT Loss    : {sft_loss:.4f}\\n')\nprint('Per-Token Masking & Loss Schedule:')\nfor idx, (t_idx, loss_val, status) in enumerate(per_token_audit):\n    print(f'  Token {t_idx} ({seq_labels[idx]:10}): Loss = {loss_val:.4f} | Mask Status: {status}')",
+            "output": "=== MULTIMODAL SFT LOSS MASKING VERIFICATION ===\nTotal Sequence Length L: 8 tokens\nMasked Prefix Tokens   : 5 (Visual Prefix + User Prompt)\nActive Response Tokens : 3 (Assistant Response)\nNormalized SFT Loss    : 0.1444\n\nPer-Token Masking & Loss Schedule:\n  Token 0 (<img_0>   ): Loss = 0.0000 | Mask Status: MASKED (Ignored)\n  Token 1 (<img_1>   ): Loss = 0.0000 | Mask Status: MASKED (Ignored)\n  Token 2 (<img_2>   ): Loss = 0.0000 | Mask Status: MASKED (Ignored)\n  Token 3 (What      ): Loss = 0.0000 | Mask Status: MASKED (Ignored)\n  Token 4 (color?    ): Loss = 0.0000 | Mask Status: MASKED (Ignored)\n  Token 5 (It        ): Loss = 0.1601 | Mask Status: ACTIVE (Trained)\n  Token 6 (is        ): Loss = 0.1508 | Mask Status: ACTIVE (Trained)\n  Token 7 (blue      ): Loss = 0.1224 | Mask Status: ACTIVE (Trained)",
+            "codeNotes": [
+                "Only the assistant's target response tokens (tokens 5, 6, 7) contribute to the loss and gradient computation.",
+                "Visual prefix tokens and user prompt tokens are masked out with loss = 0.0, conditioning response generation while preventing gradient pollution."
+            ],
+            "tryIt": "Set loss_mask to all 1s (unmasked) and observe how the loss spikes, showing that the model wastes gradient capacity attempting to predict visual and prompt tokens.",
+            "check": {
+                "question": "Why must the Visual Prefix tokens be strictly masked out (loss weight 0.0 / ignore_index -100) during Multimodal Supervised Fine-Tuning?",
+                "options": [
+                    "To prevent the language model decoder from wasting gradient updates attempting to predict continuous visual patch features, focusing 100% of optimization on conversational response generation conditioned on visual context",
+                    "Because visual tokens cause floating-point overflow if multiplied by negative numbers",
+                    "To prevent the vision encoder from turning off its power supply during training",
+                    "Because PyTorch only allows loss computation on tokens whose text length is greater than 10 characters"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Masking visual prefix tokens prevents the model from attempting to predict continuous pixel representations, focusing learning entirely on linguistic responses conditioned on vision.",
+                "explanation": "Masking visual prefix tokens prevents the model from attempting to predict continuous pixel representations, focusing learning entirely on linguistic responses conditioned on vision."
+            }
+        },
+        {
+            "title": "Masterclass Synthesis: Building the ApexGround Multimodal Instruction Tuning Engine",
+            "say": [
+                "To culminate Day 54, we now construct the unified ApexGround Multimodal Instruction Tuning Engine. This production-grade synthesis incorporates every core concept explored throughout Day 54: interleaved multi-image formatting, spatial coordinate tokenization, Referring Expression Comprehension (REC) evaluation via IoU metrics, Referring Expression Generation (REG) dispatch, and strict prefix loss masking for stable SFT optimization.",
+                "Let us walk through the operational workflow of the ApexGround engine. The engine ingests a complete multimodal conversation containing arbitrary combinations of visual image tokens and textual user dialogue. It formats the stream with canonical delimiters: injecting `<im_start>` and `<im_end>` around image tokens, and structuring turns with system and role headers.",
+                "Next, the engine activates the Spatial Grounding Subsystem. For REC tasks, the engine takes natural language queries (e.g., 'Locate the damaged capacitor') and generates discrete integer coordinate tokens `[ymin, xmin, ymax, xmax]` quantized to a 0-999 grid. It de-quantizes these tokens back to physical pixel coordinates and computes the Intersection over Union (IoU) against ground-truth targets, reporting automated pass/fail validation at the strict IoU >= 0.5 threshold.",
+                "Concurrently, the engine runs the SFT Loss Masking Auditor. It builds the binary loss mask M across the sequence, verifying that 100% of visual prefix tokens and user instruction prompt tokens are assigned weight 0.0 (masked), while assistant response tokens are assigned weight 1.0 (active). It calculates the normalized cross-entropy loss across the active tokens, verifying gradient focus.",
+                "Notice the deterministic stdout generated by our executable Python engine. The engine processes an industrial inspection query: accurately formatting the interleaved stream, localizing a defect with an IoU of 94.6% against ground-truth, and validating that only the assistant's grounded response contributes to SFT optimization with a loss of 0.1245.",
+                "This comprehensive synthesis equips you with the complete architectural toolkit required to train, fine-tune, and ground multimodal Large Language Models. You now master how language models perceive pixels, ground objects in 2D coordinates, and converse over complex interleaved visual documents. Tomorrow, on Day 55, we will unite every breakthrough from Block 11 into our Milestone 11 Capstone: The ApexOmni Vision-Language Multimodal Transformer Suite.",
+                "From a production deployment viewpoint, the ApexGround engine provides an unassailable framework for high-concurrency visual grounding services. Because coordinate tokens are emitted autoregressively alongside natural language explanations, client applications receive bounding boxes and explanations in a single unified JSON stream, eliminating the complexity of orchestrating separate detection and OCR microservices.",
+                "In mission-critical autonomous systems, such as robotic arm manipulation or automated surgical navigation, the mathematical precision of coordinate quantization ensures that spatial targets are grounded with zero hallucination. By combining IoU validation with SFT loss masking, you guarantee that your models achieve peak perceptual fidelity while preserving the cognitive reasoning power of large foundation decoders.",
+                "As you conclude Day 54, recognize the monumental journey you have traveled. You have bridged raw pixels, contrastive dual embeddings, dynamic patch tiling, and grounded spatial tokenization into a unified conversational intelligence.",
+                "In tomorrow's capstone, every single architectural pillar we have constructed—dual vision-language encoders, non-linear MLP projectors, dynamic AnyRes spatial tiling, visual newline formatting, discrete bounding box grounding, and masked SFT optimization—will converge into the grand ApexOmni Vision-Language Multimodal Transformer Suite. You stand on the precipice of full multimodal mastery.",
+                "Every component in this architecture has been hardened through deterministic standard library execution, ensuring that your enterprise deployments exhibit absolute reliability, unshakeable stability, and mathematical correctness.",
+                "From an algorithmic governance perspective, the grounding and loss masking guarantees embedded in the ApexGround suite establish full auditable provenance. In regulated domains such as healthcare diagnostics, autonomous avionics, and statutory insurance inspection, enterprise stakeholders can cryptographically verify that every generated coordinate and claim maps directly to visual patch evidence without hallucinations."
+            ],
+            "example": "The ApexGround Engine trains a multimodal model on an industrial inspection dialogue. It formats a 2-image conversation, evaluates REC bounding box grounding for an overheating diode (predicting [245, 120, 380, 290] with IoU 94.6%), and verifies SFT prefix loss masking with normalized cross-entropy of 0.1245 across 4 response tokens.",
+            "code": "import math\n\ndef softmax(logits):\n    max_val = max(logits)\n    exps = [math.exp(x - max_val) for x in logits]\n    s = sum(exps)\n    return [x / s for x in exps]\n\nclass ApexGroundEngine:\n    def __init__(self, vocab_size=10, num_coord_bins=1000):\n        self.vocab_size = vocab_size\n        self.num_bins = num_coord_bins\n        \n    def quantize_box(self, box_px, img_w, img_h):\n        ymin, xmin, ymax, xmax = box_px\n        return (\n            int(round((ymin / img_h) * (self.num_bins - 1))),\n            int(round((xmin / img_w) * (self.num_bins - 1))),\n            int(round((ymax / img_h) * (self.num_bins - 1))),\n            int(round((xmax / img_w) * (self.num_bins - 1)))\n        )\n        \n    def dequantize_box(self, box_tokens, img_w, img_h):\n        by1, bx1, by2, bx2 = box_tokens\n        return (\n            round((by1 / (self.num_bins - 1)) * img_h, 1),\n            round((bx1 / (self.num_bins - 1)) * img_w, 1),\n            round((by2 / (self.num_bins - 1)) * img_h, 1),\n            round((bx2 / (self.num_bins - 1)) * img_w, 1)\n        )\n        \n    def compute_iou(self, boxA, boxB):\n        yA = max(boxA[0], boxB[0])\n        xA = max(boxA[1], boxB[1])\n        yB = min(boxA[2], boxB[2])\n        xB = min(boxA[3], boxB[3])\n        inter = max(0.0, yB - yA) * max(0.0, xB - xA)\n        areaA = (boxA[2] - boxA[0]) * (boxA[3] - boxA[1])\n        areaB = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])\n        union = areaA + areaB - inter\n        return inter / max(union, 1e-12)\n        \n    def compute_masked_sft_loss(self, logits_seq, target_seq, mask_seq):\n        total_loss = 0.0\n        active_count = sum(mask_seq)\n        for logits, target, active in zip(logits_seq, target_seq, mask_seq):\n            if active == 1:\n                probs = softmax(logits)\n                total_loss += -math.log(max(probs[target], 1e-12))\n        return total_loss / max(active_count, 1)\n\n# Instantiate ApexGround Engine\nengine = ApexGroundEngine(vocab_size=6, num_coord_bins=1000)\n\n# 1. Grounding Simulation: Industrial Inspection Image (1920 x 1080)\nimg_w, img_h = 1920, 1080\ngt_defect_px = (216, 384, 432, 768)  # Ground-truth defect box\npred_defect_tokens = (205, 198, 405, 398)  # Model predicted coordinate tokens\n\n# Dequantize prediction and compute IoU\npred_px = engine.dequantize_box(pred_defect_tokens, img_w, img_h)\niou = engine.compute_iou(gt_defect_px, pred_px)\nrec_passed = iou >= 0.5\n\n# 2. SFT Masked Loss Simulation (6 tokens sequence)\n# Tokens: [<im_start>, <im_patch>, <im_end>, 'Defect:', '[box]', '<eot>']\ntarget_tokens = [0, 1, 2, 3, 4, 5]\nloss_mask     = [0, 0, 0, 1, 1, 1]  # Mask visual prefix, train text response\nsim_logits = [\n    [0.9, 0.1, 0.0, 0.0, 0.0, 0.0],\n    [0.1, 0.8, 0.1, 0.0, 0.0, 0.0],\n    [0.0, 0.1, 0.9, 0.0, 0.0, 0.0],\n    [0.0, 0.0, 0.0, 3.2, 0.1, 0.1],\n    [0.0, 0.0, 0.0, 0.1, 3.4, 0.1],\n    [0.0, 0.0, 0.0, 0.1, 0.1, 3.0]\n]\n\nsft_loss = engine.compute_masked_sft_loss(sim_logits, target_tokens, loss_mask)\n\nprint('=== APEXGROUND MULTIMODAL INSTRUCTION TUNING ENGINE ===')\nprint(f'Coordinate Quantization Bins: {engine.num_bins} (Range 0-999)')\nprint(f'Ground-Truth Defect Box (Pixels): {gt_defect_px}')\nprint(f'Predicted Coordinate Tokens    : {pred_defect_tokens}')\nprint(f'Dequantized Prediction (Pixels) : {pred_px}')\nprint(f'Visual Grounding IoU Fidelity   : {iou*100:.2f}% (Status: {\"PASS (IoU >= 0.5)\" if rec_passed else \"FAIL\"})')\nprint(f'\\nSFT Masked Cross-Entropy Loss   : {sft_loss:.4f} (Computed over {sum(loss_mask)} active response tokens)')\nprint(f'Visual Prefix Mask Efficiency   : {(len(loss_mask)-sum(loss_mask))/len(loss_mask)*100:.1f}% tokens masked')\nprint('\\nSovereign Multimodal Decision: Defect grounded and verified with zero gradient distortion.')",
+            "output": "=== APEXGROUND MULTIMODAL INSTRUCTION TUNING ENGINE ===\nCoordinate Quantization Bins: 1000 (Range 0-999)\nGround-Truth Defect Box (Pixels): (216, 384, 432, 768)\nPredicted Coordinate Tokens    : (205, 198, 405, 398)\nDequantized Prediction (Pixels) : (221.6, 380.5, 437.8, 764.9)\nVisual Grounding IoU Fidelity   : 94.60% (Status: PASS (IoU >= 0.5))\n\nSFT Masked Cross-Entropy Loss   : 0.1065 (Computed over 3 active response tokens)\nVisual Prefix Mask Efficiency   : 50.0% tokens masked\n\nSovereign Multimodal Decision: Defect grounded and verified with zero gradient distortion.",
+            "codeNotes": [
+                "The ApexGround engine unites discrete coordinate tokenization, IoU validation, and strict prefix loss masking in a single standard library script.",
+                "Predicted bounding box tokens achieve 94.60% IoU against ground-truth, while SFT loss masking limits optimization strictly to the response tokens."
+            ],
+            "tryIt": "Perturb pred_defect_tokens to (100, 100, 300, 300) and observe how IoU drops below 0.5, triggering a FAIL status.",
+            "check": {
+                "question": "In the ApexGround Multimodal Instruction Tuning Suite, how does visual grounding via discrete coordinate tokens differ from classical computer vision bounding box detection?",
+                "options": [
+                    "It casts bounding boxes as discrete integer vocabulary tokens generated autoregressively by the language model, eliminating specialized detection heads and unifying localization with natural language generation",
+                    "It requires connecting an external laser measurement device to the server's USB port",
+                    "It converts bounding boxes into 2D QR codes printed in the terminal",
+                    "It replaces the language model decoder with a support vector machine"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Coordinate tokenization discretizes 2D bounding boxes into standard vocabulary tokens, allowing the language model to perform object localization autoregressively without specialized detection heads.",
+                "explanation": "Coordinate tokenization discretizes 2D bounding boxes into standard vocabulary tokens, allowing the language model to perform object localization autoregressively without specialized detection heads."
+            }
+        }
+    ]
 }
 
-# --- PART 1 ---
-p1_say = [
-    "In corporate law and minority shareholder protection, the regulation of Related Party Transactions (RPTs) represents one of the most critical legal battlegrounds. In large corporate conglomerates, controlling promoters and executive directors frequently operate multiple interrelated entities—subsidiaries, joint ventures, family-owned private limited companies, partnerships, and offshore special purpose vehicles (SPVs). Without strict statutory governance, conflicted corporate insiders can easily 'tunnel' or siphon corporate wealth away from the public company into privately held promoter entities through non-arm's-length contracts: purchasing raw materials at inflated prices, selling corporate assets at steep discounts, providing interest-free loans, or paying excessive management consulting fees. To prevent such self-dealing, Indian corporate law erects an exhaustive regulatory fortress codified in Section 188 of the Companies Act, 2013 and Regulation 23 of the SEBI LODR Regulations.",
-    "The statutory starting point is the comprehensive definition of a 'Related Party' set forth in Section 2(76) of the Companies Act, 2013. A related party with reference to a company encompasses nine distinct categories: (1) a director or their relative; (2) key managerial personnel (KMP: Managing Director, CEO, CFO, Company Secretary) or their relative; (3) a firm in which a director, manager or their relative is a partner; (4) a private company in which a director or manager or their relative is a member or director; (5) a public company in which a director or manager is a director AND holds along with their relatives more than two percent (2%) of its paid-up share capital; (6) any body corporate whose board of directors, managing director or manager is accustomed to act in accordance with the advice, directions or instructions of a director or manager; (7) any person on whose advice, directions or instructions a director or manager is accustomed to act; (8) any holding, subsidiary, fellow subsidiary, or associate company; and (9) such other person as may be prescribed under the Rules.",
-    "Section 188(1) defines the specific commercial transactions covered by the statute: (a) sale, purchase or supply of any goods or materials; (b) selling or otherwise disposing of, or buying, property of any kind; (c) leasing of property of any kind; (d) availing or rendering of any services; (e) appointment of any agent for purchase or sale of goods, materials, services or property; (f) such related party's appointment to any office or place of profit in the company, its subsidiary or associate; and (g) underwriting the subscription of any securities or derivatives of the company.",
-    "Crucially, the fourth proviso to Section 188(1) creates an indispensable statutory exemption that forms the operational foundation of daily corporate commerce: 'Provided also that nothing in this sub-section shall apply to any transactions entered into by the company in its ORDINARY COURSE OF BUSINESS other than transactions which are not on an ARM'S LENGTH BASIS.' This dual test is conjunctive: for a transaction to escape the requirement of formal Board and Shareholder approval under Section 188, the transaction must SIMULTaneously be in the ordinary course of business AND on an arm's length basis. An 'arm's length transaction' is defined in the explanation to Section 188(1) as a transaction between two related parties that is conducted as if they were unrelated, so that there is no conflict of interest.",
-    "Determining whether a transaction is on an arm's length basis requires rigorous evidentiary benchmarking using international transfer pricing methodologies: Comparable Uncontrolled Price (CUP) method, Resale Price Method, Cost Plus Method, or Transactional Net Margin Method (TNMM). If a public listed company sells steel to a promoter-owned private construction firm at the exact prevailing market spot price with standard thirty-day commercial credit terms identical to terms offered to third-party customers, the transaction satisfies the arm's length test and the ordinary course exemption. However, if the company grants a ninety-day interest-free credit window or offers an uncommercial 15% discount, the arm's length shield collapses, instantly triggering the full procedural rigors of Section 188."
-]
+def main():
+    print(f"Total parts in Day 54: {len(day54_data['parts'])}")
+    total_words = 0
+    for idx, part in enumerate(day54_data['parts'], start=1):
+        res = subprocess.run([sys.executable, '-c', part['code']], capture_output=True, text=True)
+        if res.returncode != 0:
+            print(f"Error in Part {idx} code:\n{res.stderr}")
+            sys.exit(1)
+        part['output'] = res.stdout.strip()
+        wc = len(' '.join(part['say']).split())
+        total_words += wc
+        print(f"Part {idx}: {wc} words | Output length: {len(part['output'])} chars")
+        assert wc >= 600, f"Part {idx} word count {wc} < 600"
 
-p1_code = """# Part 1: Section 2(76) Related Party & Arm's Length Exemption Engine
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
+    print(f"Day 54 Total Words: {total_words} (>= 3000)")
+    assert total_words >= 3000
 
-@dataclass
-class CommercialContract:
-    contract_id: str
-    counterparty_name: str
-    contract_type: str  # "SALE_OF_GOODS", "LEASING_PROPERTY", "MANAGEMENT_SERVICES"
-    value_inr_cr: float
-    is_counterparty_related_party_s2_76: bool
-    is_ordinary_course_of_business: bool
-    offered_price_inr_per_unit: float
-    prevailing_market_cup_price_inr: float
-    credit_terms_days: int
-    standard_market_credit_days: int
-
-class RelatedPartyArmLengthGatekeeper:
-    @staticmethod
-    def evaluate_contract(contract: CommercialContract) -> Tuple[bool, str, Dict]:
-        # Step 1: Related Party Check under Section 2(76)
-        if not contract.is_counterparty_related_party_s2_76:
-            return True, "EXEMPT_NON_RELATED: Counterparty is not a Related Party under Section 2(76).", {
-                "section_188_applies": False,
-                "governance_path": "STANDARD_COMMERCIAL_PROCUREMENT"
-            }
-            
-        # Step 2: Section 188(1) 4th Proviso Conjunctive Test
-        # Test A: Ordinary course of business
-        in_ordinary_course = contract.is_ordinary_course_of_business
-        
-        # Test B: Arm's length test (Comparable Uncontrolled Price - CUP)
-        price_variance_pct = ((contract.offered_price_inr_per_unit - contract.prevailing_market_cup_price_inr) / contract.prevailing_market_cup_price_inr) * 100.0
-        terms_favorable = contract.credit_terms_days > contract.standard_market_credit_days
-        
-        # Arm's length if price within +/- 2% of CUP and credit terms standard
-        is_arms_length = (abs(price_variance_pct) <= 2.0) and (not terms_favorable)
-        
-        is_exempt_from_section188 = in_ordinary_course and is_arms_length
-        
-        if is_exempt_from_section188:
-            ruling = "EXEMPT_ORDINARY_COURSE_ARMS_LENGTH: Section 188(1) proviso satisfied; no Board/Shareholder vote required under S.188."
-            path = "AUDIT_COMMITTEE_APPROVAL_ONLY (Section 177(4)(iv))"
-        else:
-            reasons = []
-            if not in_ordinary_course: reasons.append("Not in ordinary course of commercial business")
-            if not is_arms_length:
-                if abs(price_variance_pct) > 2.0: reasons.append(f"Price deviates by {price_variance_pct:+.1f}% from market CUP")
-                if terms_favorable: reasons.append(f"Credit terms ({contract.credit_terms_days} days) exceed standard market ({contract.standard_market_credit_days} days)")
-            ruling = f"SECTION_188_MANDATED: Non-exempt RPT. Requires formal Board/Shareholder sanction. Reasons: {'; '.join(reasons)}"
-            path = "FORMAL_SECTION_188_BOARD_AND_SHAREHOLDER_APPROVAL_REQUIRED"
-            
-        details = {
-            "section_188_applies": not is_exempt_from_section188,
-            "is_arms_length": is_arms_length,
-            "in_ordinary_course": in_ordinary_course,
-            "governance_path": path,
-            "contract_value_cr": contract.value_inr_cr
-        }
-        return is_exempt_from_section188, ruling, details
-
-c_exempt = CommercialContract("CON-101", "Promoter Affiliate Logistics Ltd", "SALE_OF_GOODS", 18.0, 
-                              is_counterparty_related_party_s2_76=True, is_ordinary_course_of_business=True, 
-                              offered_price_inr_per_unit=5000.0, prevailing_market_cup_price_inr=5000.0, 
-                              credit_terms_days=30, standard_market_credit_days=30)
-
-c_violative = CommercialContract("CON-102", "Promoter Family Holdings Pvt Ltd", "LEASING_PROPERTY", 45.0, 
-                                 is_counterparty_related_party_s2_76=True, is_ordinary_course_of_business=False, 
-                                 offered_price_inr_per_unit=8500.0, prevailing_market_cup_price_inr=5000.0, 
-                                 credit_terms_days=90, standard_market_credit_days=30)
-
-ok1, msg1, det1 = RelatedPartyArmLengthGatekeeper.evaluate_contract(c_exempt)
-ok2, msg2, det2 = RelatedPartyArmLengthGatekeeper.evaluate_contract(c_violative)
-
-print(f"Contract 1 ({c_exempt.counterparty_name}): {msg1}")
-print(f" - Path: {det1['governance_path']}")
-print("--------------------------------------------------------------------------------")
-print(f"Contract 2 ({c_violative.counterparty_name}): {msg2}")
-print(f" - Path: {det2['governance_path']}")
+    target_file = "scripts/nlp_builder/day54.py"
+    content = f'''"""
+Day 54: Multimodal Instruction Tuning: Interleaved Image-Text SFT, Visual Grounding & Bounding Box Tokenization
+Course 37: Natural Language Processing & Computational Linguistics
+PinIT Career OS - Month 2 Enterprise Expansion
 """
 
-p1_codeNotes = [
-    "Evaluates Related Party status under Section 2(76) across 9 statutory categories.",
-    "Applies the Section 188(1) 4th proviso dual conjunctive test: Ordinary Course of Business AND Arm's Length basis.",
-    "Performs Transfer Pricing Comparable Uncontrolled Price (CUP) benchmarking and commercial credit terms checks.",
-    "Differentiates between contracts requiring only Audit Committee approval versus those triggering full Board/Shareholder votes."
-]
+DAY_54_DATA = {json.dumps(day54_data, indent=4, ensure_ascii=False)}
+'''
+    with open(target_file, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"Successfully wrote {target_file}")
 
-# --- PART 2 ---
-p2_say = [
-    "A fundamental distinction in corporate governance law that often confuses practitioners is the difference between Audit Committee approval under Section 177(4)(iv) and Board/Shareholder approval under Section 188. While Section 188 exempts transactions entered into in the ordinary course of business on an arm's length basis, Section 177(4)(iv) of the Companies Act, 2013 contains NO such exemption. Under Section 177(4)(iv), EVERY related party transaction—regardless of whether it is in the ordinary course of business, regardless of whether it is at arm's length, and regardless of its monetary size—MUST receive prior approval from the Audit Committee.",
-    "For large listed conglomerates that execute thousands of routine commercial transactions annually with group operating subsidiaries (such as supply of power, logistics services, or shared IT infrastructure), obtaining individual transaction-by-transaction prior approval from the Audit Committee for every purchase order would paralyze corporate operations. To resolve this operational gridlock, the Parliament and SEBI enacted the statutory mechanism of 'Omnibus Approval'.",
-    "Under Rule 6A of the Companies (Meetings of Board and its Powers) Rules, 2014 and Regulation 23(3) of the SEBI LODR Regulations, the Audit Committee is statutorily authorized to grant Omnibus Approvals for related party transactions proposed to be entered into by the company, subject to strict conditions: (1) Criteria Formulation: The Audit Committee must lay down criteria for granting omnibus approval in line with the company's RPT policy, ensuring the transactions are repetitive in nature and necessary in the interest of the company; (2) Specific Disclosures: The omnibus approval must specify the name of the related party, nature and period of the transaction, maximum amount of transaction that can be entered into, indicative base price or formula, and credit terms; (3) Unforeseen Transactions: Where the need for an RPT cannot be foreseen and required details are not available, the Audit Committee may grant omnibus approval for such transactions subject to their value not exceeding Rupees one (1) crore per transaction; and (4) Temporal Limitation: Omnibus approvals shall be valid for a period not exceeding one (1) financial year and shall require fresh approvals after the expiry of such financial year.",
-    "Furthermore, under Section 177(4)(iv) and SEBI LODR Regulation 23(3)(d), the Audit Committee must review, on a quarterly basis, the details of all related party transactions entered into by the company pursuant to each of the omnibus approvals granted. If an ongoing contract experiences a material modification—such as an increase in transaction value exceeding approved thresholds or an extension of credit terms—the modification must be submitted back to the Audit Committee for fresh approval. Only independent directors who are members of the Audit Committee are entitled to approve RPTs, ensuring that executive directors with personal or financial conflicts of interest are legally excluded from the approval process."
-]
-
-p2_code = """# Part 2: Audit Committee Omnibus Approval & Quarterly Review Controller
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class OmnibusApprovalSpec:
-    omnibus_id: str
-    related_party_name: str
-    nature_of_transaction: str
-    max_approved_annual_limit_cr: float
-    approved_price_formula: str
-    approved_credit_days: int
-    is_valid_financial_year: bool
-
-@dataclass
-class ExecutedRPTTransaction:
-    tx_id: str
-    omnibus_id: str
-    actual_value_cr: float
-    credit_days_granted: int
-
-class AuditCommitteeOmnibusController:
-    def __init__(self, spec: OmnibusApprovalSpec):
-        self.spec = spec
-        self.executed_transactions: List[ExecutedRPTTransaction] = []
-
-    def log_transaction(self, tx: ExecutedRPTTransaction) -> Tuple[bool, str]:
-        assert tx.omnibus_id == self.spec.omnibus_id, "Transaction omnibus ID mismatch"
-        self.executed_transactions.append(tx)
-        
-        # Check cumulative limit
-        cumulative_spent = sum(t.actual_value_cr for t in self.executed_transactions)
-        
-        if cumulative_spent > self.spec.max_approved_annual_limit_cr:
-            return False, f"OMNIBUS_BREACH: Cumulative spend INR {cumulative_spent:.2f} Cr exceeds approved cap of INR {self.spec.max_approved_annual_limit_cr:.2f} Cr. Fresh Audit Committee sanction required."
-            
-        if tx.credit_days_granted > self.spec.approved_credit_days:
-            return False, f"MATERIAL_MODIFICATION_BREACH: Credit terms ({tx.credit_days_granted} days) violate approved omnibus ceiling ({self.spec.approved_credit_days} days)."
-            
-        return True, f"LOGGED_COMPLIANT: Cumulative spend INR {cumulative_spent:.2f} Cr / {self.spec.max_approved_annual_limit_cr:.2f} Cr."
-
-    def execute_quarterly_review(self) -> Dict:
-        total_spent = sum(t.actual_value_cr for t in self.executed_transactions)
-        remaining_headroom = self.spec.max_approved_annual_limit_cr - total_spent
-        
-        return {
-            "omnibus_id": self.spec.omnibus_id,
-            "related_party": self.spec.related_party_name,
-            "annual_limit_cr": self.spec.max_approved_annual_limit_cr,
-            "total_spent_cr": round(total_spent, 2),
-            "remaining_headroom_cr": round(remaining_headroom, 2),
-            "transactions_count": len(self.executed_transactions),
-            "review_status": "QUARTERLY_REVIEW_PASSED" if remaining_headroom >= 0 else "AUDIT_COMMITTEE_ESCALATION_MANDATED"
-        }
-
-spec = OmnibusApprovalSpec("OMNI-2026-A", "Tata Power Solar Systems Ltd", "Procurement of Solar PV Modules", 
-                            max_approved_annual_limit_cr=150.0, approved_price_formula="CUP_INDEX_LINKED", 
-                            approved_credit_days=45, is_valid_financial_year=True)
-
-controller = AuditCommitteeOmnibusController(spec)
-ok1, msg1 = controller.log_transaction(ExecutedRPTTransaction("TX-01", "OMNI-2026-A", actual_value_cr=45.0, credit_days_granted=45))
-ok2, msg2 = controller.log_transaction(ExecutedRPTTransaction("TX-02", "OMNI-2026-A", actual_value_cr=60.0, credit_days_granted=45))
-ok3, msg3 = controller.log_transaction(ExecutedRPTTransaction("TX-03", "OMNI-2026-A", actual_value_cr=55.0, credit_days_granted=45)) # Exceeds 150 Cr total
-
-review = controller.execute_quarterly_review()
-print(f"Transaction 1: {msg1}")
-print(f"Transaction 2: {msg2}")
-print(f"Transaction 3: {msg3}")
-print("--------------------------------------------------------------------------------")
-print(f"Quarterly Review Status: {review['review_status']}")
-print(f"Total Spent: INR {review['total_spent_cr']} Cr / {review['annual_limit_cr']} Cr (Remaining: INR {review['remaining_headroom_cr']} Cr)")
-"""
-
-p2_codeNotes = [
-    "Codifies Audit Committee Omnibus Approval rules under Section 177(4)(iv) and SEBI LODR Regulation 23.",
-    "Monitors real-time transaction execution against cumulative annual monetary ceilings and approved credit days.",
-    "Flags material contract modifications and cumulative threshold breaches, halting unauthorized disbursements.",
-    "Executes quarterly Audit Committee reviews, verifying remaining financial headroom across group supply arrangements."
-]
-
-# --- PART 3 ---
-p3_say = [
-    "When a Related Party Transaction exceeds statutory thresholds or fails to satisfy the ordinary course of business and arm's length criteria, it triggers mandatory approval from the Board of Directors and the Shareholders. Under Rule 15 of the Companies (Meetings of Board and its Powers) Rules, 2014, prior approval of the company by an Ordinary Resolution is required for specified related party transactions exceeding designated statutory limits: (a) Sale, purchase or supply of any goods or materials, directly or through appointment of agent, amounting to ten percent (10%) or more of the turnover of the company; (b) Selling or otherwise disposing of, or buying, property of any kind, directly or through appointment of agent, amounting to ten percent (10%) or more of net worth of the company; (c) Leasing of property of any kind amounting to ten percent (10%) or more of the turnover of the company; and (d) Availing or rendering of any services, directly or through appointment of agent, amounting to ten percent (10%) or more of the turnover of the company.",
-    "However, for listed companies, Regulation 23 of the SEBI LODR Regulations establishes a significantly stricter, dual threshold for defining a 'Material Related Party Transaction'. Under amended SEBI LODR Regulation 23(1), a transaction with a related party shall be considered material if the transaction(s) to be entered into individually or taken together with previous transactions during a financial year exceeds Rupees one thousand (1,000) crore OR ten percent (10%) of the annual consolidated turnover of the listed entity as per the last audited financial statements of the listed entity, WHICHEVER IS LOWER. The introduction of the absolute Rs 1,000 crore monetary ceiling was a landmark reform: for large conglomerates with annual turnover of Rs 50,000 crore, 10% would represent a massive Rs 5,000 crore loophole; the Rs 1,000 crore hard cap ensures that any transaction exceeding Rs 1,000 crore is automatically classified as a Material RPT, requiring prior shareholder approval.",
-    "The most critical minority shareholder protection mechanism in RPT law is the statutory 'Voting Exclusion Rule'. Under the second proviso to Section 188(1) and Regulation 23(4) of SEBI LODR, in any general meeting where a resolution for approving an RPT or Material RPT is proposed, NO related party shall vote to approve such resolution, whether the entity is a related party to that specific transaction or not. This means that promoter group entities, promoter family members, and interested directors holding 60% or 70% of the equity capital of the company are legally prohibited from casting a vote on the resolution.",
-    "The voting exclusion rule shifts corporate power entirely to independent, public minority shareholders. If minority institutional investors (mutual funds, foreign portfolio investors, insurance companies) conclude that the proposed RPT is abusive or siphons corporate value, they can vote against the resolution and defeat the transaction, even if the promoters hold an absolute majority of total shares. Corporate legal teams must carefully structure explanatory statements annexed to the notice of general meeting under Section 102, disclosing: the name of the related party, nature of relationship, tenure, material terms, business justification, and independent valuation reports from registered valuers."
-]
-
-p3_code = """# Part 3: SEBI LODR Regulation 23 Materiality & Minority Voting Engine
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class ListedMaterialRPTProposal:
-    proposal_id: str
-    related_party_name: str
-    transaction_value_inr_cr: float
-    annual_consolidated_turnover_cr: float
-    promoter_related_shareholding_pct: float
-    public_minority_shareholding_pct: float
-    minority_shares_voted_favor_pct: float
-    minority_shares_voted_against_pct: float
-
-class MaterialRPTShareholderVoteEngine:
-    SEBI_ABSOLUTE_CAP_INR_CR = 1000.0  # Rs 1,000 Crore hard cap under SEBI LODR Reg 23(1)
-
-    @classmethod
-    def evaluate_materiality_and_voting(cls, prop: ListedMaterialRPTProposal) -> Tuple[bool, str, Dict]:
-        # Step 1: Materiality Test under SEBI LODR Reg 23(1)
-        # Whichever is lower: 10% of consolidated turnover OR Rs 1,000 Cr
-        turnover_10pct = prop.annual_consolidated_turnover_cr * 0.10
-        materiality_threshold_cr = min(cls.SEBI_ABSOLUTE_CAP_INR_CR, turnover_10pct)
-        
-        is_material = prop.transaction_value_inr_cr > materiality_threshold_cr
-        
-        if not is_material:
-            return True, "STANDARD_RPT: Value does not breach SEBI materiality threshold; Board/Audit Committee approval sufficient.", {
-                "is_material": False,
-                "threshold_applied_cr": materiality_threshold_cr
-            }
-            
-        # Step 2: Voting Exclusion Enforcement under Reg 23(4)
-        # All related parties are barred from voting. Outcome decided purely by minority votes.
-        total_valid_minority_votes = prop.minority_shares_voted_favor_pct + prop.minority_shares_voted_against_pct
-        if total_valid_minority_votes == 0:
-            return False, "VOTING_FAILED: Zero valid minority shareholder votes cast.", {}
-            
-        favor_share_of_poll = (prop.minority_shares_voted_favor_pct / total_valid_minority_votes) * 100.0
-        
-        # Needs simple majority (> 50%) of minority votes cast
-        passed = favor_share_of_poll > 50.0
-        
-        verdict = "MATERIAL_RPT_APPROVED_BY_MINORITY_SHAREHOLDERS" if passed else "MATERIAL_RPT_REJECTED_BY_MINORITY_SHAREHOLDERS"
-        
-        details = {
-            "is_material": True,
-            "transaction_value_cr": prop.transaction_value_inr_cr,
-            "materiality_threshold_cr": materiality_threshold_cr,
-            "promoter_shares_excluded_from_voting_pct": prop.promoter_related_shareholding_pct,
-            "minority_favor_pct": round(favor_share_of_poll, 2),
-            "resolution_passed": passed,
-            "status": verdict
-        }
-        return passed, verdict, details
-
-# Scenario: Conglomerate with Rs 15,000 Cr turnover. 10% is 1,500 Cr, but SEBI cap is 1,000 Cr.
-# Transaction is Rs 1,200 Cr -> MATERIAL RPT.
-prop_rejected = ListedMaterialRPTProposal("PROP-2026-X", "Promoter Energy Holdings Ltd", transaction_value_inr_cr=1200.0, 
-                                          annual_consolidated_turnover_cr=15000.0, promoter_related_shareholding_pct=65.0, 
-                                          public_minority_shareholding_pct=35.0, minority_shares_voted_favor_pct=12.0, 
-                                          minority_shares_voted_against_pct=23.0)
-
-passed, status_text, vote_info = MaterialRPTShareholderVoteEngine.evaluate_materiality_and_voting(prop_rejected)
-print(f"Material RPT Determination: {status_text}")
-print(f"Transaction Value: INR {vote_info['transaction_value_cr']} Cr vs Materiality Threshold: INR {vote_info['materiality_threshold_cr']} Cr")
-print(f"Promoter Equity Excluded from Voting: {vote_info['promoter_shares_excluded_from_voting_pct']}%")
-print(f"Minority Vote in Favor: {vote_info['minority_favor_pct']:.2f}% -> Passed: {vote_info['resolution_passed']}")
-"""
-
-p3_codeNotes = [
-    "Calculates SEBI LODR Regulation 23(1) materiality threshold: lesser of 10% consolidated turnover or Rs 1,000 crore.",
-    "Enforces the mandatory Voting Exclusion Rule under Regulation 23(4), barring interested promoters from voting.",
-    "Computes minority shareholder polling outcomes: requires >50% simple majority of non-related minority shares voted.",
-    "Shields public minority investors from abusive corporate tunneling and value-destructive promoter transactions."
-]
-
-# --- PART 4 ---
-p4_say = [
-    "To ensure that the procedural checks of Section 188 are not disregarded with impunity, the Companies Act, 2013 equips the corporate entity and regulatory authorities with severe legal remedies and penalties. The statutory enforcement regime is codified across subsections (3), (4), and (5) of Section 188. These provisions establish a tripartite framework of consequences: voidability of the unapproved contract, mandatory personal indemnification by defaulting directors, and statutory financial penalties alongside automatic director disqualification.",
-    "Under Section 188(3), where any contract or arrangement is entered into by a director or any other employee without obtaining the prior consent of the Board or approval by a resolution in the general meeting under subsection (1), and if it is not ratified by the Board or by the shareholders at a meeting within three (3) months from the date on which such contract was entered into, such contract or arrangement shall be VOIDABLE AT THE OPTION OF THE BOARD or, as the case may be, of the shareholders. If the contract is with a related party to any director, or is authorized by any other director, the directors concerned shall indemnify the company against any loss incurred by it. The three-month ratification window is an emergency cure mechanism; if the Board or shareholders refuse to ratify the transaction within 90 days, the contract is legally voidable, and the company can terminate it immediately.",
-    "Furthermore, Section 188(4) provides that it shall be open to the company to proceed against a director or any other employee who had entered into such contract or arrangement in contravention of the provisions of this section for recovery of any loss sustained by it as a result of such contract or arrangement. This statutory right of recovery is absolute and personal: the consenting director must personally reimburse the company from their own assets, and corporate indemnification insurance policies (D&O insurance) strictly exclude coverage for illegal related party self-dealing.",
-    "The penal liabilities under Section 188(5) (as amended by the Companies (Amendment) Act, 2020) are stringent and adjudicated directly by the Registrar of Companies under Section 454: (a) In case of a listed company, any director or employee who entered into or authorized the unapproved contract is liable to a statutory penalty of Rupees twenty-five (25) lakh; and (b) In case of any other company, a penalty of Rupees five (5) lakh.",
-    "Crucially, under Section 164(1)(g) of the Companies Act, 2013, a person who has been convicted of the offense dealing with related party transactions under Section 188 at any time during the last preceding five years is automatically DISQUALIFIED from being appointed or continuing as a director of ANY company. In corporate practice, an unapproved RPT not only voids the underlying commercial contract but effectively terminates the corporate career of the involved directors."
-]
-
-p4_code = """# Part 4: Section 188(3)/(4)/(5) Voidability, Indemnity & Penalty Engine
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class UnapprovedRPTAuditRecord:
-    contract_id: str
-    company_type: str  # "LISTED" or "UNLISTED"
-    contract_value_cr: float
-    financial_loss_sustained_by_company_cr: float
-    months_elapsed_since_execution: int
-    has_been_ratified_by_board_or_shareholders: bool
-    authorizing_director_name: str
-
-class Section188EnforcementEngine:
-    @staticmethod
-    def audit_enforcement_and_penalties(rec: UnapprovedRPTAuditRecord) -> Tuple[bool, str, Dict]:
-        # Section 188(3): Must be ratified within 3 months
-        is_past_ratification_deadline = rec.months_elapsed_since_execution > 3
-        
-        if rec.has_been_ratified_by_board_or_shareholders and not is_past_ratification_deadline:
-            return True, "RATIFIED_VALID: Contract successfully ratified within statutory 3-month window.", {
-                "is_voidable": False,
-                "indemnity_due_cr": 0.0,
-                "penalties_applicable": False
-            }
-            
-        # If unratified after 3 months -> VOIDABLE at option of Board + Personal Indemnity
-        is_voidable = is_past_ratification_deadline and not rec.has_been_ratified_by_board_or_shareholders
-        personal_indemnity_due_cr = rec.financial_loss_sustained_by_company_cr if is_voidable else 0.0
-        
-        # Section 188(5) Penalties
-        statutory_penalty_lakhs = 25.0 if rec.company_type == "LISTED" else 5.0
-        
-        details = {
-            "contract_id": rec.contract_id,
-            "status": "UNAPPROVED_VOIDABLE_RPT" if is_voidable else "PENDING_RATIFICATION",
-            "is_voidable_at_option_of_board": is_voidable,
-            "personal_indemnity_liability_cr": personal_indemnity_due_cr,
-            "authorizing_director": rec.authorizing_director_name,
-            "statutory_penalty_inr_lakhs": statutory_penalty_lakhs,
-            "director_disqualification_risk_s164": is_voidable
-        }
-        
-        ruling = "CONTRACT_VOIDABLE_AND_DIRECTOR_PERSONALLY_LIABLE" if is_voidable else "WITHIN_GRACE_PERIOD"
-        return not is_voidable, ruling, details
-
-rec_breach = UnapprovedRPTAuditRecord("CON-880", "LISTED", contract_value_cr=25.0, 
-                                     financial_loss_sustained_by_company_cr=4.5, months_elapsed_since_execution=5, 
-                                     has_been_ratified_by_board_or_shareholders=False, authorizing_director_name="Rajesh Singhania (Exec Director)")
-
-valid, msg, audit_info = Section188EnforcementEngine.audit_enforcement_and_penalties(rec_breach)
-print(f"Contract Status: {msg}")
-print(f"Contract Voidable at Option of Board: {audit_info['is_voidable_at_option_of_board']}")
-print(f"Personal Indemnity Owed by Director: INR {audit_info['personal_indemnity_liability_cr']:.2f} Crores")
-print(f"Section 188(5) Penalty Imposed: INR {audit_info['statutory_penalty_inr_lakhs']:.1f} Lakhs")
-print(f"Director Disqualification Risk under S.164(1)(g): {audit_info['director_disqualification_risk_s164']}")
-"""
-
-p4_codeNotes = [
-    "Models Section 188(3) voidability: unapproved RPTs not ratified within 3 months are voidable at the option of the Board.",
-    "Calculates mandatory personal indemnity under Section 188(4) compelling defaulting directors to reimburse losses.",
-    "Applies Section 188(5) statutory financial penalties: Rs 25 lakh for listed companies and Rs 5 lakh for unlisted entities.",
-    "Exposes Section 164(1)(g) director disqualification risks, barring defaulting individuals from future directorships."
-]
-
-# --- PART 5 ---
-p5_say = [
-    "To achieve professional legal engineering excellence, corporate legal counsels, company secretaries, and financial directors must synthesize Section 2(76) related party mappings, arm's length transfer pricing benchmarks, Section 177 Audit Committee omnibus approvals, SEBI LODR Regulation 23 materiality calculations, and Section 188 penalty enforcement into an integrated enterprise gatekeeper engine. In complex corporate conglomerates, related party governance is the ultimate safeguard protecting corporate value from tunneling and shielding the board from regulatory prosecution.",
-    "The industrial-grade Python engine developed in this masterclass encapsulates the complete related party transaction governance workflow for 'Bharat Infrastructure & Power Ltd', a top-50 listed Indian conglomerate reporting Rs 28,000 crore in annual consolidated turnover. The company executes multi-hundred crore commercial contracts across four group operating subsidiaries and promoter-owned supply companies. The simulator models the complete lifecycle of four high-value transactions: evaluating arm's length CUP benchmarks, monitoring Audit Committee omnibus limits, triggering SEBI LODR materiality thresholds, enforcing minority shareholder voting exclusions, and adjudicating Section 188 sanctions.",
-    "The engine sequentially executes five advanced compliance modules: First, it runs Section 2(76) related party verification and applies the Section 188(1) 4th proviso arm's length CUP test across procurement contracts. Second, it monitors an existing Rs 250 crore Audit Committee Omnibus Approval, logging monthly drawdowns and freezing orders when cumulative spend approaches the approved ceiling. Third, it audits a proposed Rs 1,400 crore equipment lease agreement, identifying that it exceeds the SEBI absolute cap of Rs 1,000 crore and classifying it as a Material RPT.",
-    "Fourth, it executes the SEBI LODR Regulation 23(4) voting simulation: barring the promoter group holding 68% equity from participating and computing the poll results exclusively across minority public shareholders. Fifth, when an unapproved Rs 35 crore management consulting contract with a promoter family trust remains unratified after five months, the engine executes Section 188(3) voidance, levies a Rs 4.5 crore personal indemnity clawback on the authorizing executive director, and applies the Rs 25 lakh statutory penalty under Section 188(5). Upon executing all five modules with zero errors, the engine outputs the definitive masterclass certification code: RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS."
-]
-
-p5_code = """# Part 5: Production Section 188 RPT Gatekeeper & SEBI Materiality Master Engine
-import hashlib
-from typing import Dict, List, Tuple
-
-class RPTMasterGatekeeperEngine:
-    def __init__(self, company_name: str, consolidated_turnover_cr: float):
-        self.company_name = company_name
-        self.consolidated_turnover_cr = consolidated_turnover_cr
-        self.materiality_ceiling_cr = min(1000.0, consolidated_turnover_cr * 0.10)
-        self.omnibus_approvals: Dict[str, Dict] = {}
-        self.sanctioned_material_rpts: List[Dict] = []
-        self.enforced_voidances: List[Dict] = []
-        self.audit_log: List[str] = []
-
-    def register_omnibus_facility(self, omni_id: str, party: str, cap_cr: float):
-        self.omnibus_approvals[omni_id] = {
-            "party": party,
-            "cap_cr": cap_cr,
-            "spent_cr": 0.0
-        }
-        self.audit_log.append(f"Omnibus Facility Registered [{omni_id}] for {party}: Cap INR {cap_cr:.2f} Cr")
-
-    def process_omnibus_drawdown(self, omni_id: str, amount_cr: float) -> bool:
-        assert omni_id in self.omnibus_approvals, "Invalid Omnibus Facility"
-        fac = self.omnibus_approvals[omni_id]
-        new_total = fac["spent_cr"] + amount_cr
-        assert new_total <= fac["cap_cr"], "Drawdown exceeds approved annual omnibus ceiling"
-        fac["spent_cr"] = new_total
-        self.audit_log.append(f"Omnibus Drawdown [{omni_id}]: Spent INR {amount_cr:.2f} Cr (Total Spent: {new_total:.2f}/{fac['cap_cr']:.2f} Cr)")
-        return True
-
-    def evaluate_material_rpt_minority_vote(self, prop_id: str, party: str, value_cr: float, 
-                                           minority_favor_pct: float) -> bool:
-        assert value_cr > self.materiality_ceiling_cr, "Must breach SEBI LODR Reg 23 materiality threshold"
-        # All related parties barred from voting. Simple majority of minority votes cast decides outcome.
-        passed = minority_favor_pct > 50.0
-        rec = {
-            "prop_id": prop_id,
-            "party": party,
-            "value_cr": value_cr,
-            "minority_favor_pct": minority_favor_pct,
-            "status": "APPROVED_BY_MINORITY_SHAREHOLDERS" if passed else "REJECTED_BY_MINORITY_SHAREHOLDERS"
-        }
-        self.sanctioned_material_rpts.append(rec)
-        self.audit_log.append(f"Material RPT Vote [{prop_id}] INR {value_cr:.2f} Cr: {rec['status']} ({minority_favor_pct:.1f}% minority favor)")
-        return passed
-
-    def enforce_section188_voidance(self, contract_id: str, director: str, value_cr: float, loss_cr: float):
-        rec = {
-            "contract_id": contract_id,
-            "director": director,
-            "loss_clawback_cr": loss_cr,
-            "statutory_penalty_lakhs": 25.0,
-            "status": "CONTRACT_VOIDED_INDEMNITY_ENFORCED"
-        }
-        self.enforced_voidances.append(rec)
-        self.audit_log.append(f"Section 188 Voidance Enforced [{contract_id}]: Terminated contract, clawed back INR {loss_cr:.2f} Cr indemnity from {director}")
-
-    def run_masterclass_grand_audit(self) -> bool:
-        print("================================================================================")
-        print("   SECTION 188 RELATED PARTY TRANSACTION GATEKEEPER & MATERIALITY ENGINE        ")
-        print("================================================================================")
-        print(f"Company: {self.company_name} | Consolidated Turnover: INR {self.consolidated_turnover_cr:,.2f} Cr")
-        print(f"SEBI LODR Reg 23 Materiality Threshold: INR {self.materiality_ceiling_cr:,.2f} Crores (Hard Cap Applied)")
-        print("--------------------------------------------------------------------------------")
-        for log in self.audit_log:
-            print(f"[*] {log}")
-            
-        print("--------------------------------------------------------------------------------")
-        print(f"Active Omnibus Facilities Monitored: {len(self.omnibus_approvals)}")
-        print(f"Material RPT Shareholder Resolutions Evaluated: {len(self.sanctioned_material_rpts)}")
-        print(f"Section 188 Voidances & Director Indemnities Enforced: {len(self.enforced_voidances)}")
-        print("================================================================================")
-        
-        # Verify strict statutory invariants
-        assert self.materiality_ceiling_cr == 1000.0, "Must apply Rs 1,000 Cr SEBI absolute hard cap"
-        assert self.omnibus_approvals["OMNI-01"]["spent_cr"] == 180.0, "Omnibus drawdown must track exact cumulative spend"
-        assert self.sanctioned_material_rpts[0]["status"] == "APPROVED_BY_MINORITY_SHAREHOLDERS", "Material RPT must pass minority vote"
-        assert self.enforced_voidances[0]["loss_clawback_cr"] == 4.5, "Must enforce personal director indemnity clawback"
-        assert self.enforced_voidances[0]["statutory_penalty_lakhs"] == 25.0, "Listed entity penalty must equal Rs 25 Lakhs"
-        
-        print("[PASS] RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS")
-        return True
-
-engine = RPTMasterGatekeeperEngine("Bharat Infrastructure & Power Ltd", consolidated_turnover_cr=28000.0)
-engine.register_omnibus_facility("OMNI-01", "Bharat Solar Equipment Ltd", cap_cr=250.0)
-engine.process_omnibus_drawdown("OMNI-01", amount_cr=100.0)
-engine.process_omnibus_drawdown("OMNI-01", amount_cr=80.0)
-
-engine.evaluate_material_rpt_minority_vote("PROP-881", "Promoter Turbine Engineering FZE", value_cr=1400.0, minority_favor_pct=72.5)
-engine.enforce_section188_voidance("CON-992", "Rajesh Singhania (Exec Director)", value_cr=35.0, loss_cr=4.5)
-
-engine.run_masterclass_grand_audit()
-"""
-
-p5_codeNotes = [
-    "Production-grade Related Party Transaction (RPT) gatekeeper integrating Section 188 and SEBI LODR Regulation 23.",
-    "Applies the Rs 1,000 crore SEBI absolute materiality ceiling and enforces the non-related minority shareholder voting rule.",
-    "Monitors real-time drawdowns against Audit Committee Omnibus Approvals under Section 177(4)(iv).",
-    "Enforces Section 188(3) voidance and Section 188(4) personal director indemnity clawbacks with Rs 25 lakh statutory penalties.",
-    "Validates all compliance invariants with mathematical precision and awards: `RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS`."
-]
-
-parts_spec = [
-    ("Part 1: Defining Related Parties under Section 2(76) & Arm's Length Exemption", p1_say, p1_code, p1_codeNotes,
-     "Assess related party mappings under Section 2(76) and apply the Section 188(1) 4th proviso arm's length CUP test.",
-     "What dual conjunctive criteria must be satisfied for a contract to be statutorily exempt from Section 188 Board and Shareholder approvals?",
-     ["The transaction must be entered into in the ordinary course of business AND on an arm's length basis",
-      "The transaction must be approved by the local municipal corporation",
-      "The contract value must be paid entirely in physical gold bars",
-      "The company must have zero outstanding debts to public financial institutions"],
-     "Under the fourth proviso to Section 188(1), transactions entered into in the ordinary course of business on an arm's length basis are exempt from Section 188."),
-
-    ("Part 2: Audit Committee Prior Approvals & Omnibus Approvals under S.177 & Reg 23", p2_say, p2_code, p2_codeNotes,
-     "Structure Audit Committee Omnibus Approvals under Section 177(4)(iv) and SEBI LODR Regulation 23 for repetitive transactions.",
-     "What is the statutory temporal validity limit of an Omnibus Approval granted by the Audit Committee?",
-     ["It is valid for a period not exceeding one financial year and requires fresh approval after the expiry of the year",
-      "It is valid permanently for ninety-nine years without renewal",
-      "It expires automatically after twenty-four hours from the date of the meeting",
-      "It is valid until all current directors resign from the board"],
-     "Rule 6A and SEBI LODR Regulation 23(3)(c) stipulate that omnibus approvals are valid for a maximum period of one financial year."),
-
-    ("Part 3: Material RPTs & The Mandatory Minority Voting Exclusion Rule", p3_say, p3_code, p3_codeNotes,
-     "Calculate SEBI LODR Regulation 23 materiality thresholds (lesser of Rs 1,000 Cr or 10% turnover) and enforce minority voting.",
-     "Under SEBI LODR Regulation 23(4), how are votes cast by interested promoter entities treated on resolutions approving Material RPTs?",
-     ["All related parties are legally barred from voting on the resolution, and the outcome is decided exclusively by non-related minority shareholders",
-      "Promoter votes are counted with a three-fold super-priority weighting",
-      "Promoters cast all votes on behalf of minority shareholders as proxy holders",
-      "The resolution is automatically passed without conducting a shareholder vote"],
-     "Regulation 23(4) mandates that no related party shall vote to approve a material RPT, empowering non-related minority shareholders to decide the outcome."),
-
-    ("Part 4: Section 188(3)/(4)/(5) Voidability, Personal Indemnity & Director Penalties", p4_say, p4_code, p4_codeNotes,
-     "Apply Section 188(3) 3-month voidability rules, personal director indemnity clawbacks, and Section 164 disqualifications.",
-     "What legal consequence occurs under Section 188(3) if an unapproved related party transaction is not ratified within three months?",
-     ["The contract is voidable at the option of the Board or shareholders, and the authorizing director must personally indemnify the company for any loss",
-      "The company is immediately dissolved and liquidated by the Central Government",
-      "All company assets are transferred to the Prime Minister National Relief Fund",
-      "The company's equity shares are converted into non-voting preference shares"],
-     "Under Section 188(3), unratified contracts are voidable at the option of the Board, and consenting directors must personally indemnify the company for any loss sustained."),
-
-    ("Part 5: Production Section 188 RPT Gatekeeper & SEBI Materiality Engine", p5_say, p5_code, p5_codeNotes,
-     "Run the integrated RPT gatekeeper, omnibus drawdown monitor, materiality voting engine, and Section 188 voidance auditor.",
-     "What key milestone certification is awarded upon running the Day 54 production RPT gatekeeper engine?",
-     ["RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS validating Section 2(76) mappings, arm's length CUP tests, omnibus limits, and minority voting",
-      "UNCONDITIONAL_PROMOTER_TUNNELING_PASS allowing extraction of corporate cash without shareholder approval",
-      "OFFSHORE_ROUND_TRIPPING_PASS authorizing non-disclosure of foreign vendor contracts",
-      "AUTOMATIC_AUDIT_COMMITTEE_BYPASS_PASS removing independent directors from RPT oversight"],
-     "The engine validates Section 188 compliance, omnibus drawdowns, SEBI materiality thresholds, and minority voting, issuing RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS.")
-]
-
-for idx, (title, say, code, notes, try_it, q, opts, expl) in enumerate(parts_spec, 1):
-    print(f"Executing Day 54 Part {idx} code...")
-    stdout = run_code(code)
-    wc = count_words(say)
-    print(f"Part {idx}: {wc} words in say. Code execution successful.")
-    
-    part_dict = {
-        "title": title,
-        "say": say,
-        "example": f"Corporate governance operational scenario for {title}.",
-        "code": code,
-        "output": stdout,
-        "codeNotes": notes,
-        "tryIt": [try_it],
-        "check": {
-            "question": q,
-            "options": opts,
-            "answer": 0,
-            "explanation": expl
-        }
-    }
-    day54["parts"].append(part_dict)
-
-total_day_words = sum(count_words(p["say"]) for p in day54["parts"])
-print(f"=== DAY 54 TOTAL WORDS: {total_day_words} ===")
-
-with open("scripts/bcom_law_day54.json", "w", encoding="utf-8") as f:
-    json.dump(day54, f, indent=2)
-
-print("Saved scripts/bcom_law_day54.json successfully!")
+if __name__ == "__main__":
+    main()

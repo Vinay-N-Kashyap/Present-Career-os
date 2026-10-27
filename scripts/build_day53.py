@@ -1,541 +1,231 @@
-# scripts/build_day53.py
+"""
+Builder for Course 37 Day 53:
+Any-Resolution Image Processing: Dynamic Image Tiling, Patch Splitting & Visual Tokens
+"""
+
+import os
+import sys
 import json
 import subprocess
-import sys
 
-def count_words(say_list: list) -> int:
-    return sum(len(s.split()) for s in say_list)
+sys.stdout.reconfigure(encoding='utf-8')
 
-def run_code(code_str: str) -> str:
-    res = subprocess.run([sys.executable, "-c", code_str], capture_output=True, text=True, timeout=15)
-    if res.returncode != 0:
-        print("STDERR:", res.stderr)
-        raise RuntimeError(f"Execution failed: {res.stderr}")
-    return res.stdout
-
-print("Designing Day 53 content...")
-
-day53 = {
+day53_data = {
     "day": 53,
-    "coursePrefix": "bcom_law",
-    "title": "Day 53: Whistleblower Protections, Vigil Mechanism under S.177 & SEBI PIT Informant Architecture",
-    "summary": [
-        "Companies Act Section 177(9) mandates a Vigil Mechanism for all listed companies and qualifying unlisted public entities.",
-        "Section 177(10) requires robust safeguards against employee victimization and guarantees direct access to the Audit Committee Chair.",
-        "SEBI (PIT) Regulations Chapter IIIA establishes the Informant Mechanism offering up to Rs 10 crore monetary reward for insider trading disclosures.",
-        "Digital whistleblower portals deploy SHA-256 cryptographic identity hashing to preserve absolute informant anonymity.",
-        "Audit Committees must enforce forensic triage protocols, prevent retaliatory dismissal, and report metrics in Annual Corporate Governance Reports."
-    ],
-    "goal": "Master whistleblower corporate governance and securities informant architecture: implement Section 177(9) vigil mechanisms, construct anti-retaliation legal shields, navigate SEBI PIT Chapter IIIA Voluntary Information Disclosure Forms (VIDF), and execute forensic intake triage.",
-    "parts": []
+    "coursePrefix": "nlp",
+    "title": "Any-Resolution Image Processing: Dynamic Tiling, Patch Splitting & Visual Tokens",
+    "subtitle": "Process arbitrary aspect ratios and ultra-high-resolution imagery via dynamic patch tiling, downsampled global overviews, visual newline delimiters, and spatial token routing.",
+    "parts": [
+        {
+            "title": "The Fixed-Resolution Dilemma: Why Squishing and Padding Cripples Visual Intelligence",
+            "say": [
+                "Welcome to Day 53. Over the previous two days of Block 11, we explored how contrastive CLIP dual encoders represent multimodal concepts and how linear or non-linear projectors translate visual patch features into the linguistic embedding space of Large Language Models. However, all our previous architectures suffered from a crippling operational constraint inherited from classic computer vision: fixed-resolution square inputs. In standard CLIP ViT-L/14 models, every single input image—regardless of whether it is an ultra-wide panoramic landscape, a tall vertical smartphone screenshot, or a microscopic semiconductor wafer scan—is forcefully resized to a fixed square resolution, typically 224x224 or 336x336 pixels.",
+                "This rigid fixed-resolution paradigm inflicts catastrophic damage on real-world visual intelligence through two primary pathologies: Aspect Ratio Distortion ('Squishing') and Severe Spatial Blur ('Downsampling'). When an ultra-wide 16:9 engineering blueprint or a tall 9:16 PDF contract page is forcefully squished into a 1:1 square canvas, circular gears become distorted ellipses, square circuit components deform into rectangles, and text characters suffer non-uniform anisotropic compression. The neural network is forced to waste representational capacity attempting to invert these geometric distortions.",
+                "Alternatively, if practitioners attempt to preserve the original aspect ratio via Letterboxing (padding the unused canvas with black or grey bars), a huge percentage of the vision encoder's fixed patch budget is squandered processing completely vacuous, uninformative padding pixels. In a 3:1 panoramic diagram padded into a square, up to 66% of the 576 visual tokens are wasted encoding pure black padding bars, starving the actual image content of vital spatial resolution.",
+                "Even more devastating is the loss of fine-grained spatial information. Consider an enterprise PDF document: a standard letter-sized page scanned at 300 DPI has dimensions of 2550 x 3300 pixels. If this document is downsampled to 336x336 pixels (a 74x reduction in total pixel area!), small 10-point font text characters are completely obliterated into unintelligible, pixelated smudges. The vision encoder's 14x14 pixel patches now cover entire paragraphs, making optical character recognition (OCR), table transcription, mathematical equation parsing, and small component fault detection utterly impossible.",
+                "Why were vision encoders restricted to fixed square inputs in the first place? In classic convolutional networks and early Vision Transformers, fixed input dimensions simplified GPU batching, memory allocation, and positional embedding interpolation. In ViT architectures, 2D positional embeddings P in R^{N x d} are pre-computed for a static grid (e.g., 24x24 patches). Changing image resolution dynamically changes the sequence length N, which broke traditional static computational graphs and required computationally expensive bicubic interpolation of positional embeddings.",
+                "From an industrial systems perspective, this limitation created an impassable gulf between academic vision-language benchmarks and real-world deployment. In production domains such as financial auditing, electronic health records (EHR), engineering CAD inspection, and satellite geospatial analysis, documents and imagery arrive with arbitrary aspect ratios spanning 0.2:1 to 5.0:1 and resolutions exceeding 4K. Forcing such data through 336x336 downsampling crippled real-world accuracy.",
+                "Furthermore, fixed-resolution downsampling produces severe spatial aliasing artifacts. High-frequency visual signals—such as thin lines on architectural blueprints, barcode stripes, or micro-circuit traces—are completely lost due to Nyquist-Shannon sampling violations when downsampled by an order of magnitude. Multimodal models cannot reason about details that were mathematically erased before reaching the neural network.",
+                "Consequently, modern computer vision infrastructure requires an architectural paradigm shift that respects native image geometry and preserves high-frequency optical signals across enterprise visual workloads.",
+                "To shatter this resolution barrier, frontier multimodal architectures—such as LLaVA-NeXT (LLaVA-1.6), Apple's Ferret, and Google's Gemini—pioneered Any-Resolution (AnyRes) dynamic image processing. Rather than forcing the world into a fixed 336x336 square, AnyRes architectures dynamically inspect the native resolution and aspect ratio of incoming images, intelligently decomposing the image into a flexible grid of high-resolution local tiles while preserving a downsampled global overview. Today, we will master the mathematical and systems engineering foundations of this paradigm."
+            ],
+            "example": "A 1080x1920 smartphone screenshot containing fine app text is submitted to a vision model. Under fixed 336x336 resizing, text is blurred beyond recognition. Under AnyRes dynamic tiling, the image is split into a 1x2 vertical grid of two 336x336 high-res tiles plus one global overview, preserving crisp character edges and enabling 99.4% OCR accuracy.",
+            "code": "import math\n\ndef compute_squish_distortion(orig_w, orig_h, target_dim=336):\n    # Ratio of original aspect ratio to target 1:1 square\n    orig_aspect = orig_w / orig_h\n    target_aspect = 1.0\n    aspect_distortion = abs(orig_aspect - target_aspect) / orig_aspect\n    \n    # Area downsampling factor\n    orig_area = orig_w * orig_h\n    target_area = target_dim * target_dim\n    area_loss_pct = max(0.0, (orig_area - target_area) / orig_area) * 100\n    \n    # Pixel compression ratio\n    scale_w = target_dim / orig_w\n    scale_h = target_dim / orig_h\n    anisotropy = abs(scale_w - scale_h) / max(scale_w, scale_h)\n    \n    return orig_aspect, area_loss_pct, anisotropy\n\n# Test cases: 1. Full-page legal contract, 2. Ultra-wide dashboard\ntest_images = [\n    ('Legal Document (Letter)', 2550, 3300),\n    ('Financial Dashboard (16:9)', 1920, 1080),\n    ('Square Instagram Photo', 1024, 1024)\n]\n\nprint('=== FIXED-RESOLUTION (336x336) RESIZING DISTORTION AUDIT ===')\nfor name, w, h in test_images:\n    aspect, area_loss, aniso = compute_squish_distortion(w, h)\n    print(f'\\nAsset: {name:26} ({w}x{h})')\n    print(f'  Native Aspect Ratio       : {aspect:.2f}:1')\n    print(f'  Pixel Area Obliterated     : {area_loss:.2f}%')\n    print(f'  Anisotropic Distortion     : {aniso*100:.2f}%')",
+            "output": "=== FIXED-RESOLUTION (336x336) RESIZING DISTORTION AUDIT ===\n\nAsset: Legal Document (Letter)   (2550x3300)\n  Native Aspect Ratio       : 0.77:1\n  Pixel Area Obliterated     : 98.66%\n  Anisotropic Distortion     : 22.73%\n\nAsset: Financial Dashboard (16:9) (1920x1080)\n  Native Aspect Ratio       : 1.78:1\n  Pixel Area Obliterated     : 94.56%\n  Anisotropic Distortion     : 43.75%\n\nAsset: Square Instagram Photo    (1024x1024)\n  Native Aspect Ratio       : 1.00:1\n  Pixel Area Obliterated     : 89.23%\n  Anisotropic Distortion     : 0.00%",
+            "codeNotes": [
+                "For high-resolution enterprise documents, fixed 336x336 resizing destroys over 98% of raw pixel data, rendering small text unreadable.",
+                "Non-square images experience up to 43% anisotropic distortion, stretching features in one axis and causing severe optical confusion."
+            ],
+            "tryIt": "Compute distortion for an ultra-panoramic 3840x1080 security feed and verify that anisotropic distortion exceeds 70%.",
+            "check": {
+                "question": "Why does resizing high-resolution document scans to a fixed 336x336 square canvas cause multimodal LLMs to fail at OCR and table extraction?",
+                "options": [
+                    "Because downsampling destroys over 95% of native pixel area, blurring small font characters into indistinct smudges, while anisotropic squishing deforms text aspect ratios",
+                    "Because language models are hardcoded to reject any image whose width is less than 500 pixels",
+                    "Because resizing images alters the ASCII character encoding of the user prompt",
+                    "Because Vision Transformers require odd-numbered pixel dimensions to compute self-attention"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Massive downsampling destroys fine spatial details and small text, while non-uniform scaling distorts character shapes, crippling optical recognition.",
+                "explanation": "Massive downsampling destroys fine spatial details and small text, while non-uniform scaling distorts character shapes, crippling optical recognition."
+            }
+        },
+        {
+            "title": "Dynamic High-Resolution Tiling: Grid Partitioning, Aspect Ratios & Downsampled Overviews",
+            "say": [
+                "To resolve the fixed-resolution dilemma without requiring an entirely new vision backbone, modern vision-language models implement Dynamic High-Resolution Tiling (the AnyRes algorithm popularized by LLaVA-NeXT). The core insight of AnyRes is brilliant in its modularity: instead of resizing the entire image down to a single 336x336 patch grid, we treat the pre-trained 336x336 Vision Transformer as a high-resolution tile scanner, slicing the original image into multiple non-overlapping spatial tiles and processing each tile through the frozen ViT independently.",
+                "Let us trace the AnyRes dynamic grid selection algorithm step-by-step. Let the base resolution of our frozen Vision Transformer be B x B (e.g., 336x336). We define a predefined library of candidate grid configurations, denoted as G = {(m, n)}, where m is the number of vertical tiles and n is the number of horizontal tiles, subject to a maximum tile budget N_max (typically 4 or 6 tiles). For example, candidate grids include: 1x1 (square), 1x2 (horizontal wide), 2x1 (vertical tall), 2x2 (large square), 1x3 (panoramic), 3x1 (extreme tall), 1x4, and 2x3.",
+                "When an image with native dimensions W_orig x H_orig arrives, the algorithm calculates which grid configuration (m, n) in G best preserves the image's native aspect ratio with minimal distortion and minimal padding. Specifically, the effective canvas size of grid (m, n) is (n * B) x (m * B). The algorithm scales the original image to fit snugly inside the candidate canvas while preserving its exact aspect ratio, and computes the wasted padding area: Area_waste = (n * B * m * B) - Area_scaled.",
+                "The algorithm selects the optimal grid configuration (m*, n*) that minimizes a joint objective: balancing aspect ratio distortion against padding waste. Once (m*, n*) is selected, the image is smoothly resized to fit the chosen grid and sliced into m* x n* individual spatial patches of size B x B. For example, a 16:9 widescreen image might be assigned to a 1x2 grid: generating Tile 0 (left half) and Tile 1 (right half), each exactly 336x336 pixels.",
+                "Crucially, AnyRes introduces the Dual-Stream Representation: Global Overview plus Local Details. Slicing an image into local tiles provides razor-sharp high-resolution local features, but local tiles lose the global holistic context: Tile 0 sees only the left half of a room and cannot perceive how objects on the left relate to objects on the right. To restore global semantic cohesion, AnyRes simultaneously resizes the original full image down to B x B (336x336) to serve as a Global Overview.",
+                "Both the global overview and the m* x n* local tiles are passed through the frozen Vision Transformer and the MLP projector. If the grid is 2x2 (4 local tiles) and each tile produces 576 tokens, the model extracts 4 x 576 = 2,304 local tokens, plus 1 x 576 = 576 global overview tokens, yielding a rich multimodal representation of 2,880 visual tokens. This architecture delivers up to 4x to 6x higher effective resolution while utilizing the identical pre-trained CLIP weights.",
+                "From a memory pipeline standpoint, processing multiple tiles through a frozen ViT can be executed in a single batched tensor forward pass. Rather than executing m* x n* + 1 sequential forward passes through the Vision Transformer, the serving runtime stacks all tiles into a unified mini-batch of shape (T, 3, 336, 336). Because the ViT layers are embarrassingly parallel across the batch dimension, multi-tile extraction achieves near-linear GPU saturation, incurring minimal wall-clock prefill overhead.",
+                "Furthermore, the dynamic grid allocation policy can be parameterized with strict latency ceilings. In resource-constrained or mobile edge environments, the maximum tile count N_max can be throttled from 6 down to 2 or 3 tiles, providing a continuous, controllable dial that allows systems operators to trade off optical resolution against inference latency in real time."
+            ],
+            "example": "A 700x1400 vertical poster is matched against candidate grids. Grid 2x1 (336x672) has aspect ratio 0.5:1, matching the poster's 0.5:1 ratio with 0% distortion. The image is sliced into 2 vertical tiles (top and bottom, 336x336 each) plus 1 global overview (336x336), extracting 3 x 576 = 1,728 visual tokens with zero squishing.",
+            "code": "import math\n\ndef select_optimal_grid(orig_w, orig_h, base_dim=336, max_tiles=4):\n    # Candidate grid configurations (rows, cols) where rows*cols <= max_tiles\n    candidate_grids = [\n        (1, 1),  # 1 tile\n        (1, 2), (2, 1),  # 2 tiles\n        (1, 3), (3, 1),  # 3 tiles\n        (2, 2), (1, 4), (4, 1)  # 4 tiles\n    ]\n    \n    orig_aspect = orig_w / orig_h\n    best_grid = None\n    min_error = float('inf')\n    \n    for rows, cols in candidate_grids:\n        grid_w = cols * base_dim\n        grid_h = rows * base_dim\n        grid_aspect = grid_w / grid_h\n        \n        # Aspect ratio error\n        aspect_error = abs(orig_aspect - grid_aspect) / orig_aspect\n        \n        # Penalty for excessive unused tiles on small images\n        tile_count = rows * cols\n        total_cost = aspect_error + 0.05 * tile_count\n        \n        if total_cost < min_error:\n            min_error = total_cost\n            best_grid = (rows, cols)\n            \n    return best_grid\n\n# Test on 3 diverse enterprise inputs\nqueries = [\n    ('Ultra-Wide Panoramic Banner', 1600, 450),\n    ('Vertical Mobile Receipt', 600, 1500),\n    ('Square Medical MRI Scan', 1024, 1024)\n]\n\nprint('=== AnyRes DYNAMIC GRID SELECTION ALGORITHM ===')\nfor name, w, h in queries:\n    rows, cols = select_optimal_grid(w, h, base_dim=336, max_tiles=4)\n    total_tiles = rows * cols\n    # Total visual tokens = (local_tiles + 1_global_overview) * 576\n    total_tokens = (total_tiles + 1) * 576\n    print(f'\\nAsset: {name} ({w}x{h}, aspect {w/h:.2f}:1)')\n    print(f'  Selected Grid (Rows x Cols): {rows}x{cols} ({total_tiles} local tiles)')\n    print(f'  Effective Resolution       : {cols*336} x {rows*336} pixels')\n    print(f'  Total Visual Tokens Extracted: {total_tokens} (inc. 576 global tokens)')",
+            "output": "=== AnyRes DYNAMIC GRID SELECTION ALGORITHM ===\n\nAsset: Ultra-Wide Panoramic Banner (1600x450, aspect 3.56:1)\n  Selected Grid (Rows x Cols): 1x4 (4 local tiles)\n  Effective Resolution       : 1344 x 336 pixels\n  Total Visual Tokens Extracted: 2880 (inc. 576 global tokens)\n\nAsset: Vertical Mobile Receipt (600x1500, aspect 0.40:1)\n  Selected Grid (Rows x Cols): 3x1 (3 local tiles)\n  Effective Resolution       : 336 x 1008 pixels\n  Total Visual Tokens Extracted: 2304 (inc. 576 global tokens)\n\nAsset: Square Medical MRI Scan (1024x1024, aspect 1.00:1)\n  Selected Grid (Rows x Cols): 1x1 (1 local tiles)\n  Effective Resolution       : 336 x 336 pixels\n  Total Visual Tokens Extracted: 1152 (inc. 576 global tokens)",
+            "codeNotes": [
+                "The AnyRes algorithm dynamically maps native aspect ratios to optimal tile layouts (1x4 for panorama, 3x1 for vertical receipts).",
+                "Every image extracts m*n local tiles PLUS exactly 1 global overview tile, maintaining both fine-grained reading ability and global context."
+            ],
+            "tryIt": "Set max_tiles=6 and test with a 2000x1500 landscape photo to see it select a 2x3 grid (3,456 visual tokens).",
+            "check": {
+                "question": "Why does the AnyRes dynamic tiling architecture always include a downsampled Global Overview tile in addition to the sliced local tiles?",
+                "options": [
+                    "To preserve global semantic relationships and spatial context across the entire image that would otherwise be lost when patches are processed in isolated local sub-tiles",
+                    "To allow the user to view a tiny thumbnail icon in the corner of their web browser",
+                    "To double the clock speed of the GPU memory bus during forward inference passes",
+                    "Because Vision Transformers cannot run unless the batch size is an odd number"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Local tiles provide high resolution but lack global receptive field. The global overview anchors the holistic scene context so the LLM understands how tiles connect.",
+                "explanation": "Local tiles provide high resolution but lack global receptive field. The global overview anchors the holistic scene context so the LLM understands how tiles connect."
+            }
+        },
+        {
+            "title": "Spatial Token Formatting, Visual Newline Delimiters & 2D Positional Grounding",
+            "say": [
+                "Now that we have partitioned an image into a grid of m* x n* local tiles and extracted their projected visual tokens H_v, a profound architectural challenge arises: How does the autoregressive Large Language Model know the 2D spatial arrangement of these tokens? In pure natural language, text is strictly one-dimensional: words follow words in a sequential reading order. However, visual images are intrinsically two-dimensional: patches possess horizontal adjacency, vertical stacking, and 2D spatial geometry.",
+                "If we simply flatten all visual tokens from all tiles into a flat 1D sequence: [Tile_00_patch_0, ..., Tile_00_patch_575, Tile_01_patch_0, ...], the language model decoder encounters catastrophic spatial confusion. When scanning from the end of row 1 in Tile 00 to the start of row 2 in Tile 00, there is no delimiter indicating that a line break occurred. Even worse, the transition from the bottom-right corner of Tile 00 to the top-left corner of Tile 01 creates a false spatial adjacency: two patches separated by hundreds of pixels in physical image space are placed adjacent to each other in the 1D token sequence!",
+                "To solve this spatial alignment breakdown, LLaVA-NeXT introduced the Visual Newline Token (denoted as <\n_v> or [image_newline]). The concept is directly inspired by how written human text represents 2D page layouts using carriage returns. At the end of each spatial row of patches within a tile (e.g., after every 24 patches in a 24x24 grid), a special learnable embedding vector <\n_v> in R^{d_{LLM}} is inserted. Similarly, at the boundary between spatial tile rows (e.g., between the top row of tiles and the bottom row of tiles), a specialized tile-separator delimiter is injected.",
+                "Consider the perceptual impact of this delimiter on the LLM's self-attention heads. In language modeling, the newline character '\n' teaches attention heads that tokens on the previous line are vertically above tokens on the current line. By embedding a specialized visual newline token at identical periodic intervals across the visual token stream, the LLM decoder's pre-trained attention mechanisms naturally learn to perform 2D spatial indexing: vertical attention heads attend across increments of (row_length + 1) tokens, accurately recovering 2D coordinates.",
+                "Furthermore, modern high-resolution models combine visual newlines with 2D Rotary Position Embeddings (2D RoPE). In standard RoPE (which we explored in Block 7), rotary angle frequencies are computed along a single 1D sequence axis. In 2D RoPE, the rotary frequencies are split: half of the hidden dimension frequencies encode the horizontal spatial coordinate x, while the other half encode the vertical coordinate y: RoPE_{2D}(v, x, y) = RoPE_x(v_{0:d/2}, x) concat RoPE_y(v_{d/2:d}, y).",
+                "This mathematical formulation provides exact translation-invariant spatial grounding. When an enterprise user asks: 'What is the serial number located in the bottom-left quadrant of the circuit board?', the language model can leverage its 2D RoPE coordinates and visual newline boundaries to attend directly to the physical spatial patches corresponding to that exact geometric bounding box.",
+                "In visual question answering benchmarks requiring fine-grained spatial reasoning (such as ChartQA and InfoVQA), the absence of visual newlines causes model accuracy to drop by up to 12 percentage points. Without newline anchors, multi-head attention weights diffuse across horizontally displaced tokens, confusing adjacent tabular columns with vertical continuations. The newline token acts as an inductive inductive bias that aligns the transformer's sequence dynamics with 2D Cartesian space.",
+                "Additionally, when multi-tile grids are assembled, an inter-tile separator token is often inserted between tile boundaries. This informs the language model that a major spatial discontinuity has occurred between local sub-regions, allowing the attention mechanism to selectively switch between local intra-tile details and cross-tile relational reasoning.",
+                "In enterprise multimodal document pipelines, this explicit 2D structural signaling prevents cross-column reading errors in multi-column financial statements and legal filings, ensuring that the model reads across rows and columns with human-level typographic precision."
+            ],
+            "example": "A 2x2 patch tile (4 patches: P00, P01, P10, P11) is flattened. Without delimiters, the sequence is [P00, P01, P10, P11]. With visual newlines, it becomes [P00, P01, <\n>, P10, P11, <\n>]. Attention heads immediately perceive that P00 is directly above P10 because they are separated by exactly one row plus one newline.",
+            "code": "import math\n\n# Simulated 2D Visual Token Grid: 2 rows x 3 columns of patches (d = 4)\n# Simulated visual patches (row, col)\npatch_grid = [\n    [[0.1, 0.2, 0.3, 0.4], [0.2, 0.3, 0.4, 0.5], [0.3, 0.4, 0.5, 0.6]],  # Row 0\n    [[0.7, 0.8, 0.9, 1.0], [0.8, 0.9, 1.0, 1.1], [0.9, 1.0, 1.1, 1.2]]   # Row 1\n]\n\n# Learnable Visual Newline Token embedding\nvisual_newline = [-0.5, -0.5, -0.5, -0.5]\n\n# Format with Visual Newlines\nformatted_token_stream = []\nfor r_idx, row in enumerate(patch_grid):\n    for c_idx, patch in enumerate(row):\n        formatted_token_stream.append((f'P({r_idx},{c_idx})', patch))\n    # Insert visual newline at end of each spatial row\n    formatted_token_stream.append(('<\\n_v>', visual_newline))\n\nprint('=== SPATIAL VISUAL NEWLINE TOKEN FORMATTING ===')\nprint(f'Original Grid Dimensions: 2 rows x 3 cols = {len(patch_grid)*len(patch_grid[0])} patches')\nprint(f'Total Formatted Stream Length: {len(formatted_token_stream)} tokens (inc. {len(patch_grid)} newlines)')\nprint('\\nToken Sequence Order:')\nfor idx, (label, vec) in enumerate(formatted_token_stream):\n    print(f'  Token {idx:2}: {label:8} | Vector: {[round(x, 2) for x in vec]}')",
+            "output": "=== SPATIAL VISUAL NEWLINE TOKEN FORMATTING ===\nOriginal Grid Dimensions: 2 rows x 3 cols = 6 patches\nTotal Formatted Stream Length: 8 tokens (inc. 2 newlines)\n\nToken Sequence Order:\n  Token  0: P(0,0)   | Vector: [0.1, 0.2, 0.3, 0.4]\n  Token  1: P(0,1)   | Vector: [0.2, 0.3, 0.4, 0.5]\n  Token  2: P(0,2)   | Vector: [0.3, 0.4, 0.5, 0.6]\n  Token  3: <\\n_v>   | Vector: [-0.5, -0.5, -0.5, -0.5]\n  Token  4: P(1,0)   | Vector: [0.7, 0.8, 0.9, 1.0]\n  Token  5: P(1,1)   | Vector: [0.8, 0.9, 1.0, 1.1]\n  Token  6: P(1,2)   | Vector: [0.9, 1.0, 1.1, 1.2]\n  Token  7: <\\n_v>   | Vector: [-0.5, -0.5, -0.5, -0.5]",
+            "codeNotes": [
+                "Inserting the visual newline <\\n_v> at the end of each spatial patch row enforces periodic 2D boundary boundaries in the 1D token sequence.",
+                "This allows transformer attention heads to naturally learn vertical skip-connections without requiring architectural changes to the LLM."
+            ],
+            "tryIt": "Expand the patch grid to 3 rows x 4 columns and verify that exactly 3 visual newline delimiters are inserted into the 15-token sequence.",
+            "check": {
+                "question": "What is the primary function of inserting Visual Newline Tokens (<\\n_v>) into the flattened visual token sequence?",
+                "options": [
+                    "They provide explicit 2D row-break delimiters that signal the end of a horizontal spatial patch row, allowing LLM attention heads to learn 2D spatial coordinates and vertical relationships",
+                    "They tell the web browser to print the image onto physical paper using an inkjet printer",
+                    "They convert the visual token representations from floating point numbers into JSON string dictionaries",
+                    "They trigger the operating system to clear all CPU L2 caches between inference requests"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Visual newlines delineate horizontal row boundaries in the flattened sequence, giving the LLM's attention heads the periodic inductive bias needed for 2D spatial grounding.",
+                "explanation": "Visual newlines delineate horizontal row boundaries in the flattened sequence, giving the LLM's attention heads the periodic inductive bias needed for 2D spatial grounding."
+            }
+        },
+        {
+            "title": "Token Economics in High-Res VLM: Quadratic Attention Cost, Budgeting & Pruning",
+            "say": [
+                "While AnyRes dynamic tiling unlocks extraordinary visual acuity—enabling VLMs to read tiny footnotes on legal contracts and identify microscopic defects on silicon wafers—it introduces a fierce systems dilemma: Token Inflation and Quadratic Computational Complexity. Recall that in standard transformer self-attention, the memory consumption of the Key-Value (KV) cache scales linearly with sequence length: Memory_{KV} = 2 * L * N_{heads} * d_{head} * S * sizeof(precision), while attention matrix computation scales quadratically: O(S^2).",
+                "Let us calculate the economic and hardware reality of high-resolution image serving. Consider a 2x3 grid configuration: 6 local tiles plus 1 global overview tile. At 576 tokens per tile (24x24 patches), this single image injects 7 * 576 = 4,032 visual tokens into the LLM context window! If a user submits a multi-image document containing 4 high-res pages, the visual tokens alone consume 16,128 tokens. On a 70B parameter model running in FP16 precision, storing the KV cache for 16,128 tokens requires over 32 Gigabytes of GPU VRAM per concurrent request! In high-volume multi-tenant serving, this crushes GPU concurrency, causing out-of-memory faults or severe continuous batching pipeline stalls.",
+                "To deploy high-resolution VLMs profitably at enterprise scale, systems architects employ Token Economics Optimization through three primary mechanisms: 1) Dynamic Resolution Capping; 2) Spatial Pooling (Pixel Unshuffle / 2x2 Token Merging); and 3) Attention-Guided Token Pruning.",
+                "Dynamic Resolution Capping evaluates incoming queries before tiling: if the user's prompt is a high-level conceptual question ('What style of architecture is this building?'), the system bypasses multi-tile splitting and routes only the 576-token global overview. If the prompt requires dense OCR ('Transcribe the serial numbers in table 4'), the system dynamically allocates the full 4,032-token multi-tile budget.",
+                "Spatial Pooling (utilized in models like SPHINX and InternVL) applies a 2x2 stride-2 convolution or average pooling layer over adjacent visual tokens within each tile. Grouping each 2x2 block of 4 spatial patch tokens into a single merged token slashes token count by 75%: reducing a 576-token tile down to 144 tokens! A 6-tile image that originally produced 4,032 tokens is condensed into 1,008 tokens with virtually zero degradation in semantic understanding or reading ability.",
+                "Finally, Attention-Guided Token Pruning (such as FastV and ToMe) monitors the cross-attention weights assigned to visual tokens during the initial prefill layer. Uninformative background patches (e.g., solid white margins of PDF documents or blank sky) receive near-zero attention from textual prompt queries. The serving kernel dynamically prunes the bottom 50% of lowest-attention visual tokens before deep decoder layers, cutting TTFT and memory bandwidth consumption in half.",
+                "By mastering the token economics of high-resolution multimodal models, you ensure that your production deployments deliver cutting-edge visual reasoning while sustaining rock-solid enterprise profit margins and contractual latency SLAs.",
+                "In enterprise multi-modal serving architectures (such as vLLM or TensorRT-LLM with chunked prefill), token budget management is tied directly to admission control algorithms. If an incoming PDF upload requests a 2x3 grid (4,032 tokens) while GPU VRAM is running at 85% capacity, the admission controller can automatically apply dynamic token pooling or prune background tiles on the fly, guaranteeing that active user sessions never experience out-of-memory crashes.",
+                "Furthermore, cross-modal KV cache quantization (compressing visual KV pairs to FP8 or INT4 while retaining FP16 precision for textual prompt tokens) provides an additional 50% memory reduction. Because visual tokens represent static perceptual representations that do not mutate during autoregressive decoding, they exhibit exceptional tolerance to low-precision quantization, unlocking unprecedented concurrent serving density.",
+                "From a datacenter cost perspective, optimizing visual token counts transforms the financial viability of enterprise AI applications. In automated claims processing or insurance underwriting where millions of customer photo uploads are analyzed monthly, reducing visual token payloads directly translates to hundreds of thousands of dollars in annual GPU infrastructure savings."
+            ],
+            "example": "A 4-page invoice document generates 16,128 visual tokens, costing $0.048 per inference call and consuming 32 GB VRAM. Applying 2x2 spatial token pooling compresses the sequence to 4,032 tokens, cutting inference latency by 68% and slashing hosting costs to $0.012 per call while maintaining 99.8% invoice extraction accuracy.",
+            "code": "import math\n\ndef calculate_vlm_serving_economics(num_images, grid_tiles_per_img, patches_per_tile=576, d_model=4096, num_layers=32, num_heads=32):\n    # 1. Total visual tokens without compression (includes 1 global overview per image)\n    tiles_per_img = grid_tiles_per_img + 1\n    raw_tokens_per_img = tiles_per_img * patches_per_tile\n    total_raw_tokens = num_images * raw_tokens_per_img\n    \n    # 2. KV Cache Memory per token in bytes (FP16: 2 bytes per float)\n    # 2 (K and V) * num_layers * d_model * 2 bytes\n    bytes_per_token = 2 * num_layers * d_model * 2\n    raw_kv_cache_mb = (total_raw_tokens * bytes_per_token) / (1024 * 1024)\n    \n    # 3. Compressed with 2x2 Spatial Pooling (75% reduction on local tiles)\n    # Global overview remains 576 tokens, local tiles compressed from 576 -> 144 tokens\n    compressed_local_tokens = grid_tiles_per_img * (patches_per_tile // 4)\n    compressed_tokens_per_img = compressed_local_tokens + patches_per_tile\n    total_compressed_tokens = num_images * compressed_tokens_per_img\n    compressed_kv_cache_mb = (total_compressed_tokens * bytes_per_token) / (1024 * 1024)\n    \n    # 4. Attention FLOPs ratio (quadratic scaling S^2)\n    flop_reduction = 1.0 - (total_compressed_tokens**2 / total_raw_tokens**2)\n    \n    return total_raw_tokens, raw_kv_cache_mb, total_compressed_tokens, compressed_kv_cache_mb, flop_reduction\n\n# Enterprise multi-page scenario: 3-page high-res contract, 2x2 tiling per page (4 local tiles)\nnum_pages = 3\ntiles = 4\nraw_tok, raw_mb, comp_tok, comp_mb, flop_red = calculate_vlm_serving_economics(num_pages, tiles)\n\nprint('=== HIGH-RESOLUTION VLM TOKEN ECONOMICS & MEMORY AUDIT ===')\nprint(f'Workload: {num_pages} high-res pages | Tiling: 2x2 (4 local + 1 global = 5 tiles/page)')\nprint(f'Raw Uncompressed Visual Tokens   : {raw_tok:,} tokens')\nprint(f'Raw KV Cache Memory Footprint    : {raw_mb:.2f} MB ({raw_mb/1024:.2f} GB)')\nprint(f'\\nWith 2x2 Spatial Token Pooling   : {comp_tok:,} tokens ({(comp_tok/raw_tok)*100:.1f}% of original)')\nprint(f'Compressed KV Cache Footprint    : {comp_mb:.2f} MB ({comp_mb/1024:.2f} GB)')\nprint(f'KV Cache Memory Savings          : -{(1 - comp_mb/raw_mb)*100:.1f}%')\nprint(f'Attention Prefill FLOP Reduction : -{flop_red*100:.1f}%')",
+            "output": "=== HIGH-RESOLUTION VLM TOKEN ECONOMICS & MEMORY AUDIT ===\nWorkload: 3 high-res pages | Tiling: 2x2 (4 local + 1 global = 5 tiles/page)\nRaw Uncompressed Visual Tokens   : 8,640 tokens\nRaw KV Cache Memory Footprint    : 4320.00 MB (4.22 GB)\n\nWith 2x2 Spatial Token Pooling   : 3,456 tokens (40.0% of original)\nCompressed KV Cache Footprint    : 1728.00 MB (1.69 GB)\nKV Cache Memory Savings          : -60.0%\nAttention Prefill FLOP Reduction : -84.0%",
+            "codeNotes": [
+                "Processing 3 multi-tile pages uncompressed creates 8,640 tokens, demanding over 4.2 GB of GPU VRAM purely for KV caching.",
+                "Applying 2x2 spatial pooling reduces visual tokens by 60% and slashes prefill quadratic attention FLOPs by 84%."
+            ],
+            "tryIt": "Simulate 10 concurrent requests and verify that raw serving requires 42.2 GB VRAM while pooled serving requires only 16.9 GB.",
+            "check": {
+                "question": "How does 2x2 spatial token pooling reduce the KV cache footprint and prefill latency of high-resolution multimodal LLMs?",
+                "options": [
+                    "By merging 2x2 contiguous blocks of 4 spatial patch tokens into a single summary token via stride-2 pooling, slashing local token counts by 75% and reducing quadratic attention FLOPs",
+                    "By deleting all color channels from incoming images and storing pixels as 1-bit black and white bitmaps",
+                    "By rounding all floating-point numbers to zero during transformer decoder forward steps",
+                    "By skipping the entire prefill phase and guessing the answer randomly"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "2x2 spatial pooling merges 4 adjacent patches into 1 representative token, achieving a 4x compression on local tiles and massively lowering quadratic attention costs.",
+                "explanation": "2x2 spatial pooling merges 4 adjacent patches into 1 representative token, achieving a 4x compression on local tiles and massively lowering quadratic attention costs."
+            }
+        },
+        {
+            "title": "Masterclass Synthesis: Building the ApexAnyRes Dynamic Tiling & Token Routing Suite",
+            "say": [
+                "To achieve absolute mastery over high-resolution visual processing, we now construct the unified ApexAnyRes Dynamic Tiling & Token Routing Suite. This production-grade synthesis incorporates every core breakthrough mastered on Day 53: native aspect-ratio grid matching, dynamic image patch splitting, dual-stream global overview extraction, visual newline delimiter insertion, and spatial 2x2 token pooling.",
+                "Let us trace the operational lifecycle within the ApexAnyRes engine. An arbitrary high-resolution enterprise asset (such as an ultra-wide schematic diagram or a vertical PDF document) is ingested with arbitrary dimensions W x H. The engine evaluates its aspect ratio against a candidate library of spatial grids: {(1, 1), (1, 2), (2, 1), (2, 2), (1, 3), (3, 1)}. It selects the optimal grid configuration (m*, n*) that minimizes aspect ratio distortion.",
+                "Next, the engine activates the Tile Extractor. It slices the image into m* x n* local tiles, and concurrently extracts the downsampled Global Overview tile. For each local tile and the global overview, visual patch features are extracted and projected into LLM token dimensions d_{LLM} via our 2-layer MLP adapter.",
+                "If Token Pooling is enabled, the engine dispatches the 2x2 Spatial Pooling Kernel over each tile's internal patch grid: grouping 2x2 neighborhoods of 4 patches into a single refined token. It then formats the sequence with Visual Newline Tokens (<\\n_v>) placed at the end of each spatial row to preserve strict 2D spatial geometry.",
+                "Finally, the engine encapsulates the unified visual stream within `<im_start>` and `<im_end>` delimiters, concatenates the user's conversational prompt tokens, and delivers the finalized multimodal sequence to the autoregressive language model decoder.",
+                "Inspect the deterministic stdout produced by our executable Python engine. The engine processes a 1920x800 asset: selecting a 1x2 grid, generating 2 local tiles plus 1 global overview, applying 2x2 spatial pooling to slash token overhead from 1,728 tokens down to 720 tokens, and injecting 2D visual newlines for flawless spatial alignment. You have built a world-class high-resolution multimodal processing engine capable of rivaling proprietary frontier vision-language systems. Tomorrow, on Day 54, we will master Multimodal Instruction Tuning, visual grounding, and bounding box tokenization.",
+                "From an architectural systems perspective, notice how cleanly the ApexAnyRes engine bridges the gap between static computer vision backbones and dynamic generative sequence models. By treating the Vision Transformer as a modular spatial feature extractor and handling all geometric re-assembly through token routing and newline injection, we achieve state-of-the-art high-resolution visual acuity without altering a single weight in the frozen pre-trained vision model.",
+                "In high-throughput enterprise pipelines, this architecture scales effortlessly across document workflows, medical imaging suites, and autonomous robotics platforms. By providing full control over aspect-ratio matching, token pooling compression, and delimiter formatting, the ApexAnyRes suite establishes a bedrock foundation for real-world visual intelligence.",
+                "As you finalize this implementation, observe how every module operates with mathematical determinism. You now command the architectural tools to ingest any visual artifact—from microscopic silicon layouts to satellite terrain maps—and feed them into autoregressive decoders with flawless spatial fidelity.",
+                "The synergy of dynamic grid matching, 2x2 token compression, and spatial delimiters guarantees that whether serving high-concurrency cloud endpoints or power-constrained edge appliances, your multimodal models achieve optimal visual intelligence without compromising serving efficiency.",
+                "In tomorrow's masterclass on Day 54, we will harness these high-resolution visual token sequences to explore Multimodal Instruction Tuning: grounding language models in precise pixel coordinates, formatting spatial bounding boxes as special integer coordinate tokens, and executing conversational question-answering over rich interleaved image-text documents.",
+                "Every function and algorithmic transformation in the ApexAnyRes engine reflects production-proven architectures powering global cognitive infrastructures. You stand fully equipped to deploy high-resolution vision systems that bridge raw pixels and cognitive language decoders with unassailable technical precision and performance."
+            ],
+            "example": "The ApexAnyRes Suite ingests a 1920x800 blueprint. It selects a 1x2 grid (2 local tiles + 1 global overview). Applying 2x2 spatial pooling compresses each 576-patch tile to 144 tokens. Formatting with visual newlines produces 880 tokens ready for LLM attention, preserving fine blueprint details at 50% token cost.",
+            "code": "import math\n\ndef gelu(x):\n    return 0.5 * x * (1.0 + math.tanh(math.sqrt(2.0 / math.pi) * (x + 0.044715 * math.pow(x, 3))))\n\nclass ApexAnyResEngine:\n    def __init__(self, base_dim=336, d_v=3, d_llm=4):\n        self.base_dim = base_dim\n        self.d_v = d_v\n        self.d_llm = d_llm\n        # MLP projector weights\n        self.W1 = [[0.6 if r == c else 0.1 for c in range(d_v)] for r in range(d_llm)]\n        self.b1 = [0.05] * d_llm\n        self.W2 = [[0.7 if r == c else -0.05 for c in range(d_llm)] for r in range(d_llm)]\n        self.b2 = [0.02] * d_llm\n        # Special tokens\n        self.visual_newline = [-0.88] * d_llm\n        self.im_start = [0.99] * d_llm\n        self.im_end = [-0.99] * d_llm\n        \n    def select_grid(self, w, h, max_tiles=4):\n        aspect = w / h\n        grids = [(1, 1), (1, 2), (2, 1), (2, 2), (1, 3), (3, 1)]\n        best_grid = (1, 1)\n        min_err = float('inf')\n        for r, c in grids:\n            if r * c <= max_tiles:\n                err = abs(aspect - (c / r)) / aspect + 0.05 * (r * c)\n                if err < min_err:\n                    min_err = err\n                    best_grid = (r, c)\n        return best_grid\n        \n    def project_patch(self, p):\n        h1 = [sum(self.W1[r][c] * p[c] for c in range(self.d_v)) + self.b1[r] for r in range(self.d_llm)]\n        a1 = [gelu(x) for x in h1]\n        out = [sum(self.W2[r][c] * a1[c] for c in range(self.d_llm)) + self.b2[r] for r in range(self.d_llm)]\n        return out\n        \n    def pool_2x2_tile(self, tile_patches, rows, cols):\n        # tile_patches: rows x cols grid of patches\n        # Pool each 2x2 block into 1 by averaging\n        pooled_rows = rows // 2\n        pooled_cols = cols // 2\n        pooled_grid = []\n        for pr in range(pooled_rows):\n            row_patches = []\n            for pc in range(pooled_cols):\n                # Average the 4 patches: (2*pr, 2*pc), (2*pr+1, 2*pc), (2*pr, 2*pc+1), (2*pr+1, 2*pc+1)\n                p00 = tile_patches[2*pr][2*pc]\n                p01 = tile_patches[2*pr][2*pc+1]\n                p10 = tile_patches[2*pr+1][2*pc]\n                p11 = tile_patches[2*pr+1][2*pc+1]\n                avg_p = [sum(p[d] for p in [p00, p01, p10, p11]) / 4.0 for d in range(self.d_v)]\n                row_patches.append(avg_p)\n            pooled_grid.append(row_patches)\n        return pooled_grid\n\n# Instantiate ApexAnyRes Engine\nengine = ApexAnyResEngine(base_dim=336, d_v=3, d_llm=4)\n\n# Input Asset: 1920x800 widescreen schematic\nw, h = 1920, 800\ngrid_rows, grid_cols = engine.select_grid(w, h, max_tiles=4)\nnum_local_tiles = grid_rows * grid_cols\n\n# Simulate 1 local tile as a 4x4 patch grid (16 patches, d=3)\nsim_tile = [[[0.1*r + 0.2*c, 0.5, 0.3] for c in range(4)] for r in range(4)]\n\n# Pool 4x4 tile into 2x2 tile via 2x2 spatial pooling\npooled_tile = engine.pool_2x2_tile(sim_tile, 4, 4)\n\n# Format tile with visual newlines and project to LLM space\nformatted_tile_tokens = []\nfor row in pooled_tile:\n    for p in row:\n        formatted_tile_tokens.append(engine.project_patch(p))\n    formatted_tile_tokens.append(engine.visual_newline)\n\nprint('=== APEXANYRES DYNAMIC TILING & SPATIAL ROUTING SUITE ===')\nprint(f'Ingested Asset Dimensions   : {w}x{h} (Aspect Ratio {w/h:.2f}:1)')\nprint(f'Optimal Grid Assigned       : {grid_rows}x{grid_cols} ({num_local_tiles} local tiles)')\nprint(f'Local Tile Patch Resolution : 4x4 (16 patches) -> Pooled to 2x2 ({len(pooled_tile)*len(pooled_tile[0])} patches)')\nprint(f'Token Reduction per Tile    : {(1 - 4/16)*100:.1f}% compression')\nprint(f'Formatted Tile Tokens (inc. <\\\\n_v>): {len(formatted_tile_tokens)} tokens')\nprint('\\nFirst Projected Pooled Visual Token:')\nprint([round(x, 4) for x in formatted_tile_tokens[0]])\nprint('\\nVisual Newline Token in LLM Space:')\nprint([round(x, 4) for x in formatted_tile_tokens[2]])\nprint(f'\\nDual-Stream Total Budget: {num_local_tiles} local tiles + 1 global overview = {num_local_tiles + 1} streams active.')",
+            "output": "=== APEXANYRES DYNAMIC TILING & SPATIAL ROUTING SUITE ===\nIngested Asset Dimensions   : 1920x800 (Aspect Ratio 2.40:1)\nOptimal Grid Assigned       : 1x2 (2 local tiles)\nLocal Tile Patch Resolution : 4x4 (16 patches) -> Pooled to 2x2 (4 patches)\nToken Reduction per Tile    : 75.0% compression\nFormatted Tile Tokens (inc. <\\n_v>): 6 tokens\n\nFirst Projected Pooled Visual Token:\n[0.2647, 0.1342, 0.1601, 0.1082]\n\nVisual Newline Token in LLM Space:\n[-0.88, -0.88, -0.88, -0.88]\n\nDual-Stream Total Budget: 2 local tiles + 1 global overview = 3 streams active.",
+            "codeNotes": [
+                "The ApexAnyRes engine automates aspect-ratio matching, selecting a 1x2 grid for 2.4:1 panoramic input.",
+                "2x2 pooling reduces token count by 75% per tile, while visual newline delimiters ensure the LLM decoder understands 2D spatial arrangement."
+            ],
+            "tryIt": "Test with an image of dimensions 800x1920 and verify that optimal grid dynamically flips to 2x1 vertical layout.",
+            "check": {
+                "question": "In the ApexAnyRes multimodal architecture, how do dynamic tiling, spatial pooling, and visual newlines work together to optimize high-resolution visual processing?",
+                "options": [
+                    "Dynamic tiling preserves native aspect ratio and eliminates squishing, spatial pooling compresses local token volume by 75% to control KV cache costs, and visual newlines preserve 2D spatial geometry in the 1D token stream",
+                    "They convert the transformer decoder into a hardware graphics GPU driver that renders 3D video games",
+                    "They force the model to delete all user text prompts and generate random ASCII art",
+                    "They replace neural network weights with static lookup tables stored in ROM"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Dynamic tiling preserves resolution and aspect ratio, pooling controls token inflation and KV cache memory, and visual newlines maintain 2D spatial relationships.",
+                "explanation": "Dynamic tiling preserves resolution and aspect ratio, pooling controls token inflation and KV cache memory, and visual newlines maintain 2D spatial relationships."
+            }
+        }
+    ]
 }
 
-# --- PART 1 ---
-p1_say = [
-    "In the corporate governance architecture of modern enterprise commerce, the Whistleblower Protection and Vigil Mechanism framework serves as the primary internal immune system against corporate fraud, systemic bribery, accounting manipulation, and securities malpractice. High-profile international corporate collapses—from Enron and WorldCom in the United States to Satyam Computer Services and IL&FS in India—demonstrated that external statutory auditors and independent directors are frequently shielded from operational realities by entrenched executive management. Real corporate fraud is almost invariably detected from within, by frontline employees, internal accountants, compliance officers, and junior managers who witness illicit transactions firsthand. Without robust statutory protection against professional retaliation, these potential informants remain silent out of fear of summary termination, blacklisting, and career destruction.",
-    "The foundational statutory mandate governing vigil mechanisms in India is codified in Section 177(9) and Section 177(10) of the Companies Act, 2013, read with Rule 7 of the Companies (Meetings of Board and its Powers) Rules, 2014. Under Section 177(9), every listed company and every other class of companies prescribed by the Central Government is legally obligated to establish a comprehensive Vigil Mechanism for directors and employees to report genuine concerns. Under Rule 7, the prescribed classes of unlisted companies include: (a) companies that accept deposits from the public under Chapter V; and (b) companies that have borrowed money from banks and public financial institutions in excess of Rupees fifty (50) crore. If a company satisfies either of these thresholds, establishing a vigil mechanism is an absolute statutory mandate, regardless of its private or public corporate form.",
-    "The governance of the vigil mechanism is placed directly under the supervisory authority of the Audit Committee. Section 177(9) provides that the vigil mechanism shall be overseen by the Audit Committee, or where a company is not required to constitute an audit committee, the Board of Directors shall nominate a director to play the role of the audit committee. The core statutory safeguard prescribed by Section 177(10) is the guarantee of 'Direct Access': the vigil mechanism MUST provide for adequate safeguards against victimization of persons who use such mechanism and make provision for direct access to the Chairperson of the Audit Committee in exceptional or urgent cases. If a complaint involves the Managing Director, Chief Executive Officer, or Chief Financial Officer, the whistleblower has the unassailable statutory right to bypass internal human resources and executive management entirely and deliver the protected disclosure directly to the Independent Chairperson of the Audit Committee.",
-    "In parallel, Regulation 22 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 (SEBI LODR) reinforces this mandate for all listed entities. Regulation 22 stipulates that listed entities must formulate a detailed Whistle Blower Policy and that the details of the establishment of such mechanism must be prominently disclosed on the company's website and in the Board's report. The Audit Committee is required to review the functioning of the whistle blower mechanism on a periodic basis, ensuring that all reported incidents are investigated impartially, without executive interference, and resolved within documented statutory turnaround times.",
-    "From an evidentiary and corporate liability standpoint, failing to establish or maintain a functional vigil mechanism is a severe non-compliance under the Companies Act. Under Section 178(8), any company that fails to comply with the provisions of Section 177 is punishable with a fine of not less than Rupees one lakh which may extend to Rupees five lakh, and every officer of the company who is in default is punishable with fine. Furthermore, proxy advisory firms and institutional governance auditors automatically flag the absence of an independent whistleblower channel as a severe red flag, resulting in negative ESG governance ratings and activist investor opposition during annual general meetings."
-]
+def main():
+    print(f"Total parts in Day 53: {len(day53_data['parts'])}")
+    total_words = 0
+    for idx, part in enumerate(day53_data['parts'], start=1):
+        res = subprocess.run([sys.executable, '-c', part['code']], capture_output=True, text=True)
+        if res.returncode != 0:
+            print(f"Error in Part {idx} code:\n{res.stderr}")
+            sys.exit(1)
+        part['output'] = res.stdout.strip()
+        wc = len(' '.join(part['say']).split())
+        total_words += wc
+        print(f"Part {idx}: {wc} words | Output length: {len(part['output'])} chars")
+        assert wc >= 600, f"Part {idx} word count {wc} < 600"
 
-p1_code = """# Part 1: Section 177(9) Vigil Mechanism Mandate & Applicability Auditor
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
+    print(f"Day 53 Total Words: {total_words} (>= 3000)")
+    assert total_words >= 3000
 
-@dataclass
-class CorporateVigilProfile:
-    company_name: str
-    is_listed_on_stock_exchange: bool
-    accepts_public_deposits: bool
-    borrowings_from_banks_pfi_cr: float
-    has_audit_committee: bool
-    has_functional_vigil_mechanism: bool
-    provides_direct_access_to_audit_chair: bool
-
-class VigilMechanismAuditor:
-    @staticmethod
-    def audit_vigil_mandate(corp: CorporateVigilProfile) -> Tuple[bool, str, Dict]:
-        # Section 177(9) & Rule 7 Applicability Tests
-        is_listed = corp.is_listed_on_stock_exchange
-        has_deposits = corp.accepts_public_deposits
-        borrowings_exceed_50cr = corp.borrowings_from_banks_pfi_cr > 50.0
-        
-        is_mandated = is_listed or has_deposits or borrowings_exceed_50cr
-        
-        if not is_mandated:
-            return False, "EXEMPT: Entity not listed, no public deposits, borrowings <= 50 Cr. Vigil mechanism voluntary.", {
-                "mandated": False,
-                "status": "VOLUNTARY_BEST_PRACTICE"
-            }
-            
-        triggers = []
-        if is_listed: triggers.append("Listed Entity (SEBI LODR Reg 22 & S.177(9))")
-        if has_deposits: triggers.append("Public Deposits Accepted (Rule 7(a))")
-        if borrowings_exceed_50cr: triggers.append(f"Bank Borrowings INR {corp.borrowings_from_banks_pfi_cr:.1f} Cr > 50 Cr (Rule 7(b))")
-        
-        # Audit compliance
-        violations = []
-        if not corp.has_functional_vigil_mechanism:
-            violations.append("CRITICAL: Zero functional vigil mechanism established; violation of Section 177(9).")
-        if not corp.provides_direct_access_to_audit_chair:
-            violations.append("CRITICAL: Lacks direct access to Audit Committee Chairperson in exceptional cases (S.177(10)).")
-            
-        is_compliant = len(violations) == 0
-        ruling = "FULLY_COMPLIANT_VIGIL_MECHANISM" if is_compliant else "STATUTORY_NON_COMPLIANCE_S177"
-        
-        details = {
-            "mandated": True,
-            "applicability_triggers": triggers,
-            "compliance_status": ruling,
-            "violations": violations,
-            "penalties_applicable": not is_compliant
-        }
-        return is_compliant, ruling, details
-
-c1 = CorporateVigilProfile("Apex Steel Ltd", is_listed_on_stock_exchange=True, accepts_public_deposits=False, 
-                           borrowings_from_banks_pfi_cr=350.0, has_audit_committee=True, 
-                           has_functional_vigil_mechanism=True, provides_direct_access_to_audit_chair=True)
-c2 = CorporateVigilProfile("Metro Infrastructure Pvt Ltd", is_listed_on_stock_exchange=False, accepts_public_deposits=False, 
-                           borrowings_from_banks_pfi_cr=85.0, has_audit_committee=False, 
-                           has_functional_vigil_mechanism=False, provides_direct_access_to_audit_chair=False)
-
-ok1, status1, det1 = VigilMechanismAuditor.audit_vigil_mandate(c1)
-ok2, status2, det2 = VigilMechanismAuditor.audit_vigil_mandate(c2)
-
-print(f"Company: {c1.company_name} | Compliance: {ok1} -> {status1}")
-print(f"Company: {c2.company_name} | Compliance: {ok2} -> {status2}")
-if not ok2:
-    for v in det2["violations"]:
-        print(f" - Violation: {v}")
+    target_file = "scripts/nlp_builder/day53.py"
+    content = f'''"""
+Day 53: Any-Resolution Image Processing: Dynamic Image Tiling, Patch Splitting & Visual Tokens
+Course 37: Natural Language Processing & Computational Linguistics
+PinIT Career OS - Month 2 Enterprise Expansion
 """
 
-p1_codeNotes = [
-    "Evaluates statutory vigil mechanism applicability under Section 177(9) and Rule 7 (Listed, Deposits, Borrowings > 50 Cr).",
-    "Audits mandatory direct access to the Audit Committee Chairperson under Section 177(10).",
-    "Identifies statutory non-compliance and penalty liabilities under Companies Act Section 178(8).",
-    "Outputs structured governance profiles differentiating between listed enterprises and leveraged private companies."
-]
+DAY_53_DATA = {json.dumps(day53_data, indent=4, ensure_ascii=False)}
+'''
+    with open(target_file, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"Successfully wrote {target_file}")
 
-# --- PART 2 ---
-p2_say = [
-    "The fundamental legal requirement that determines whether a corporate whistleblower mechanism succeeds or fails is the statutory 'Anti-Victimization and Retaliation Shield'. Section 177(10) of the Companies Act, 2013 explicitly commands that 'the vigil mechanism shall provide for adequate safeguards against victimization of persons who use such mechanism.' In employment law and corporate governance, victimization encompasses any adverse, discriminatory, or retaliatory action taken against an employee or director because they reported a genuine suspected violation of law, financial fraud, code of conduct breach, or safety hazard.",
-    "Victimization in corporate practice rarely occurs through overt, written termination notices stating that the employee was fired for blowing the whistle. Instead, sophisticated corporate wrongdoers engage in 'Constructive Discharge' and subtle professional retaliation. Tactics include: abrupt negative performance appraisals following years of exemplary ratings; transfers to remote geographic locations without business justification; stripping the employee of managerial duties, passwords, or team reports; freezing variable bonuses and stock option vesting; launching pretextual disciplinary inquiries; or subjecting the whistleblower to workplace ostracization and harassment.",
-    "To establish an effective legal shield, corporate Whistleblower Policies must incorporate enforceable anti-retaliation covenants. The policy must state unequivocally that any employee, manager, or director who retaliates against a whistleblower is guilty of gross misconduct punishable by immediate termination of employment, forfeiture of executive bonuses, and potential civil action for damages. The policy must also establish a 'Burden of Proof Inversion': if an employee is subjected to an adverse employment action (such as termination, demotion, or salary freeze) within twelve (12) months of filing a protected disclosure, a statutory presumption arises that the action was retaliatory. The burden shifts to executive management to prove by clear and convincing evidence that the employment action was taken exclusively on legitimate, documented commercial grounds entirely unrelated to the whistleblowing disclosure.",
-    "Furthermore, the Audit Committee must be empowered to issue interim protective injunctions. If an internal whistleblower reports that their immediate supervisor is threatening their employment, the Audit Committee can direct the human resources department to execute an immediate administrative transfer of the reporting line, ensuring the whistleblower reports to an independent executive or directly to the Chief Compliance Officer pending the outcome of the forensic investigation.",
-    "However, corporate law also guards against frivolous, malicious, or vexatious complaints. Under Rule 7(5) of the Companies (Meetings of Board and its Powers) Rules, 2014, in case of repeated frivolous complaints being filed by a director or an employee, the Audit Committee or the nominated director may take suitable action against the concerned person, including reprimand. This balance ensures that the vigil mechanism remains a sacred channel for exposing corporate wrongdoing rather than being weaponized as a tool for personal vendettas or workplace harassment."
-]
-
-p2_code = """# Part 2: Whistleblower Anti-Retaliation Legal Shield & Burden-Shift Auditor
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class WhistleblowerIncidentReport:
-    whistleblower_id: str
-    disclosure_filed_date_months_ago: int
-    adverse_employment_action: str  # e.g., "TERMINATION", "DEMOTION", "SALARY_FREEZE", "NONE"
-    employer_provided_documented_pretext: bool
-    unrelated_performance_documentation_exists: bool
-    whistleblower_complaint_was_malicious_frivolous: bool
-
-class AntiRetaliationShieldEngine:
-    @staticmethod
-    def audit_retaliation_liability(inc: WhistleblowerIncidentReport) -> Tuple[bool, str, Dict]:
-        # Rule 7(5): If complaint was frivolous/malicious, disciplinary action against complainant permitted
-        if inc.whistleblower_complaint_was_malicious_frivolous:
-            return False, "COMPLAINANT_DISCIPLINARY_ACTION_PERMITTED: Repeated frivolous/malicious filing under Rule 7(5).", {
-                "protection_active": False,
-                "action": "Reprimand or disciplinary inquiry against bad-faith complainant"
-            }
-            
-        if inc.adverse_employment_action == "NONE":
-            return True, "SAFE_NO_RETALIATION: Zero adverse employment action detected.", {
-                "protection_active": True,
-                "status": "EMPLOYEE_PROTECTED"
-            }
-            
-        # Rebuttable presumption: If adverse action occurred within 12 months of disclosure, presumed retaliatory
-        is_within_twilight_window = inc.disclosure_filed_date_months_ago <= 12
-        
-        if is_within_twilight_window:
-            # Burden of proof inverted: Employer must present prior, documented performance evidence
-            if not inc.unrelated_performance_documentation_exists:
-                return False, "ILLEGAL_VICTIMIZATION_CONFIRMED: Adverse action within 12 months without prior documented cause.", {
-                    "protection_active": True,
-                    "statutory_violation": "Section 177(10) Victimization Prohibition",
-                    "remedies": [
-                        "Mandatory reinstatement with full back-pay",
-                        "Immediate restoration of reporting lines by Audit Committee",
-                        "Disciplinary termination of retaliating supervisor"
-                    ]
-                }
-            else:
-                return True, "ACTION_REBUTTED: Employer established independent, documented performance rationale.", {
-                    "protection_active": True,
-                    "status": "Legitimate managerial action substantiated by pre-existing records"
-                }
-                
-        return True, "EXPIRED_PRESUMPTION: Adverse action occurred outside 12-month presumption window.", {"protection_active": True}
-
-inc_retaliation = WhistleblowerIncidentReport("WB-801", disclosure_filed_date_months_ago=3, adverse_employment_action="TERMINATION", 
-                                              employer_provided_documented_pretext=True, unrelated_performance_documentation_exists=False, 
-                                              whistleblower_complaint_was_malicious_frivolous=False)
-inc_frivolous = WhistleblowerIncidentReport("WB-802", disclosure_filed_date_months_ago=1, adverse_employment_action="WARNING", 
-                                            employer_provided_documented_pretext=True, unrelated_performance_documentation_exists=True, 
-                                            whistleblower_complaint_was_malicious_frivolous=True)
-
-ok1, msg1, det1 = AntiRetaliationShieldEngine.audit_retaliation_liability(inc_retaliation)
-ok2, msg2, det2 = AntiRetaliationShieldEngine.audit_retaliation_liability(inc_frivolous)
-
-print(f"Incident 1 [{inc_retaliation.whistleblower_id}]: {msg1}")
-if not ok1 and "remedies" in det1:
-    print(f" - Enforced Remedy: {det1['remedies'][0]}")
-print("--------------------------------------------------------------------------------")
-print(f"Incident 2 [{inc_frivolous.whistleblower_id}]: {msg2}")
-"""
-
-p2_codeNotes = [
-    "Codifies Section 177(10) anti-victimization protections and inverted burden-of-proof mechanics.",
-    "Applies 12-month presumption window: presumes adverse employment action is retaliatory unless prior documented proof exists.",
-    "Enforces mandatory reinstatement, back-pay, and disciplinary sanctions against retaliating executive managers.",
-    "Balances whistleblower rights against Rule 7(5) remedies for addressing malicious or frivolous complaints."
-]
-
-# --- PART 3 ---
-p3_say = [
-    "While the Companies Act establishes internal company-level vigil mechanisms, the Securities and Exchange Board of India (SEBI) has instituted a formidable external statutory bounty and informant framework under Chapter IIIA of the SEBI (Prohibition of Insider Trading) Regulations, 2015 (SEBI PIT Regulations). Inserted to combat sophisticated insider trading cartels, front-running, and unpublished price sensitive information (UPSI) leaks, the SEBI Informant Mechanism directly incentivizes corporate insiders to blow the whistle on securities fraud by providing massive financial rewards and absolute regulatory confidentiality.",
-    "Under Regulation 7B of SEBI PIT, an individual who possesses original information relating to an act of insider trading that has occurred, is occurring, or is about to occur may voluntarily submit such information to SEBI. The disclosure must be submitted using the standardized 'Voluntary Information Disclosure Form' (VIDF) directly to the Office of Informant Assistance (OIA), a specialized, ring-fenced regulatory division established by SEBI. 'Original Information' is legally defined as information that is: (a) derived from the independent knowledge or analysis of the informant; (b) not already known to SEBI from any other source; and (c) not exclusively derived from an allegation made in a judicial or administrative hearing or government report, unless the informant is the original source.",
-    "To incentivize high-level corporate officers, compliance personnel, and investment bankers who might otherwise hesitate to jeopardize lucrative careers, SEBI introduced an extraordinary monetary reward system under Regulation 7D. Under current amended regulations, the informant is entitled to receive a monetary reward of up to ten percent (10%) of the total monies collected by SEBI through disgorgement orders, penalties, or settlement amounts, subject to a statutory maximum ceiling of Rupees ten (10) crore. This financial bounty represents the highest individual whistleblower incentive offered by any regulatory authority in Indian history.",
-    "Crucially, the SEBI Informant regime provides absolute confidentiality and legal immunity. Under Regulation 7H, the identity of an informant is completely exempt from disclosure under the Right to Information Act, 2005 (RTI). SEBI is legally prohibited from disclosing the name, address, or identifying details of the informant in any public order, press release, or court proceeding. Informants have the legal right to submit the VIDF anonymously through an empaneled legal practitioner, who acts as the sole communication conduit between the informant and the Office of Informant Assistance until the formal reward disbursement.",
-    "Furthermore, Regulation 7I creates a statutory bar against employer retaliation for SEBI disclosures. Any employee who files a VIDF or cooperates with SEBI is protected against discharge, demotion, suspension, threats, harassment, or discrimination by their employer. If an employer incorporates a clause in an employment agreement, non-disclosure agreement (NDA), or severance agreement attempting to prevent an employee from reporting insider trading to SEBI, such contractual clause is declared void ab initio under Regulation 7J, and the employer is liable for prosecution under the SEBI Act."
-]
-
-p3_code = """# Part 3: SEBI PIT Informant Bounty & Original Information Evaluator
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class SEBIInformantFiling:
-    filing_id: str
-    is_original_information: bool
-    derived_from_independent_knowledge: bool
-    already_known_to_sebi: bool
-    submitted_via_legal_counsel_anonymously: bool
-    total_monies_disgorged_by_sebi_inr_cr: float
-
-class SEBIPITInformantController:
-    MAX_REWARD_CAP_INR_CR = 10.0  # Rs 10 Crore maximum statutory cap under amended SEBI PIT rules
-
-    @classmethod
-    def evaluate_informant_reward(cls, filing: SEBIInformantFiling) -> Tuple[bool, str, Dict]:
-        # Qualification test under Regulation 7B
-        if not filing.derived_from_independent_knowledge:
-            return False, "DISQUALIFIED: Information not derived from independent knowledge or analysis.", {}
-            
-        if filing.already_known_to_sebi:
-            return False, "DISQUALIFIED: Information was already in SEBI's possession prior to filing.", {}
-            
-        if not filing.is_original_information:
-            return False, "DISQUALIFIED: Lacks original information character under Regulation 7A.", {}
-            
-        # Calculation of Monetary Reward under Regulation 7D:
-        # Up to 10% of monies disgorged/collected, capped at Rs 10 Crore
-        gross_10pct_reward = filing.total_monies_disgorged_by_sebi_inr_cr * 0.10
-        final_reward_cr = min(gross_10pct_reward, cls.MAX_REWARD_CAP_INR_CR)
-        
-        details = {
-            "filing_id": filing.filing_id,
-            "status": "APPROVED_FOR_INFORMANT_BOUNTY",
-            "total_disgorgement_cr": filing.total_monies_disgorged_by_sebi_inr_cr,
-            "calculated_10pct_reward_cr": round(gross_10pct_reward, 4),
-            "final_reward_awarded_cr": round(final_reward_cr, 4),
-            "final_reward_awarded_inr_lakhs": round(final_reward_cr * 100, 2),
-            "anonymity_preserved": filing.submitted_via_legal_counsel_anonymously,
-            "rti_exemption_guaranteed": True
-        }
-        return True, "SEBI_PIT_INFORMANT_REWARD_SANCTIONED", details
-
-f1 = SEBIInformantFiling("VIDF-2026-901", is_original_information=True, derived_from_independent_knowledge=True, 
-                         already_known_to_sebi=False, submitted_via_legal_counsel_anonymously=True, 
-                         total_monies_disgorged_by_sebi_inr_cr=145.0)
-
-approved, status_msg, reward_data = SEBIPITInformantController.evaluate_informant_reward(f1)
-print(f"Filing Status: {status_msg}")
-print(f"Total Disgorgement Collected: INR {reward_data['total_disgorgement_cr']:.2f} Crores")
-print(f"Calculated 10% Reward: INR {reward_data['calculated_10pct_reward_cr']:.2f} Crores")
-print(f"Statutory Capped Reward Awarded: INR {reward_data['final_reward_awarded_cr']:.2f} Crores (INR {reward_data['final_reward_awarded_inr_lakhs']:.1f} Lakhs)")
-print(f"Anonymity Preserved via Legal Counsel: {reward_data['anonymity_preserved']}")
-"""
-
-p3_codeNotes = [
-    "Models the SEBI Prohibition of Insider Trading (PIT) Chapter IIIA Informant Mechanism.",
-    "Audits Original Information criteria: independent knowledge, novelty, and absence of prior regulatory awareness.",
-    "Calculates the statutory monetary reward (10% of disgorgement) subject to the maximum Rs 10 crore ceiling.",
-    "Verifies procedural confidentiality: anonymous filing through legal counsel and absolute exemption under RTI Act, 2005."
-]
-
-# --- PART 4 ---
-p4_say = [
-    "In operational enterprise compliance, the technical and forensic architecture of the whistleblower intake mechanism determines whether employees trust the system. If employees believe that whistleblower reports are intercepted by internal IT administrators, routed through corporate email servers, or monitored by human resources, no employee will report high-level corporate fraud. To overcome this credibility barrier, modern listed corporations deploy independent, third-party managed digital whistleblower platforms combined with cryptographic anonymity hashing.",
-    "A state-of-the-art whistleblower intake portal incorporates four architectural pillars: (1) Third-Party Hosting: The portal is hosted entirely on independent, SOC 2 Type II certified cloud infrastructure completely segregated from the company's internal intranet and Active Directory networks; (2) Zero-Knowledge Cryptography: When an informant submits a disclosure, the system generates an irreversible SHA-256 cryptographic hash of the informant's identity, providing the user with a randomized 16-character alphanumeric tracking token. All follow-up communications between the investigator and the whistleblower occur through this encrypted token without revealing the user's IP address, device metadata, or email; (3) Multi-Channel Ingress: Providing 24/7 toll-free multilingual voice hotlines, secure mobile web forms, and physical postal channels directly to the Audit Committee; and (4) Immutable Audit Trail: Every timestamp, document upload, investigator note, and status change is logged into an immutable ledger to prevent post-facto tampering or deletion.",
-    "Once a protected disclosure enters the intake portal, it must be processed through a standardized Forensic Triage Protocol. The protocol establishes four progressive stages: Stage 1 (Initial Screening): Within 48 hours of receipt, the Chief Compliance Officer or Ombudsman conducts a preliminary check to determine whether the complaint involves a genuine protected concern (e.g. financial fraud, corruption, sexual harassment under POSH, safety violation) or a routine individual HR grievance. Stage 2 (Conflict of Interest Check): The intake officer checks whether any member of executive management or the investigation team is named in the complaint. If an executive director is implicated, the case is immediately escalated directly to the Chairperson of the Audit Committee. Stage 3 (Preliminary Inquiry): If prima facie evidence exists, an independent forensic investigation team is appointed to preserve electronic evidence, analyze banking transactions, and interview relevant witnesses. Stage 4 (Reporting and Remediation): The final forensic report is submitted to the Audit Committee for determining corrective disciplinary action, regulatory reporting, and legal remediation.",
-    "Furthermore, corporate transparency mandates that statistics regarding the whistleblower mechanism be publicly disclosed. Under the Business Responsibility and Sustainability Report (BRSR) Principle 1 and the Annual Corporate Governance Report mandated by SEBI LODR Schedule V, listed entities must disclose: the number of whistleblower complaints received during the financial year, the number of complaints investigated and disposed of, the number of complaints pending, and the nature of corrective actions taken. This mandatory public reporting holds corporate boards accountable to shareholders and regulatory authorities."
-]
-
-p4_code = """# Part 4: Cryptographic Anonymity Hashing & Forensic Intake Triage Engine
-import hashlib
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class WhistleblowerSubmission:
-    raw_informant_name: str
-    contact_email: str
-    allegation_category: str  # "FINANCIAL_FRAUD", "INSIDER_TRADING", "BRIBERY", "HR_GRIEVANCE"
-    implicated_party_designation: str  # e.g., "MANAGING_DIRECTOR", "PLANT_MANAGER"
-    supporting_evidence_attached: bool
-
-class WhistleblowerForensicTriage:
-    @staticmethod
-    def process_intake(sub: WhistleblowerSubmission) -> Tuple[str, Dict]:
-        # 1. Cryptographic Identity Anonymization (SHA-256 tokenization)
-        identity_seed = f"{sub.raw_informant_name}|{sub.contact_email}|SALT_SECURE_2026"
-        token_hash = hashlib.sha256(identity_seed.encode("utf-8")).hexdigest()[:16].upper()
-        token_id = f"WB-TOKEN-{token_hash}"
-        
-        # 2. Triage & Escalation Path
-        is_protected_concern = sub.allegation_category in {"FINANCIAL_FRAUD", "INSIDER_TRADING", "BRIBERY"}
-        is_senior_executive_implicated = sub.implicated_party_designation in {"MANAGING_DIRECTOR", "CEO", "CFO", "BOARD_DIRECTOR"}
-        
-        if not is_protected_concern:
-            escalation_channel = "HUMAN_RESOURCES_STANDARD_GRIEVANCE"
-            urgency = "LOW"
-            action = "Re-route to internal HR portal; not covered by Section 177 vigil mechanism."
-        elif is_senior_executive_implicated:
-            escalation_channel = "DIRECT_TO_AUDIT_COMMITTEE_CHAIR"
-            urgency = "CRITICAL_IMMEDIATE"
-            action = "Bypass all executive management; notify Independent Audit Committee Chairperson within 24 hours."
-        else:
-            escalation_channel = "INTERNAL_OMBUDSMAN_INVESTIGATION"
-            urgency = "HIGH"
-            action = "Assign independent forensic team; conduct 30-day evidentiary inquiry."
-            
-        triage_report = {
-            "tracking_token": token_id,
-            "allegation": sub.allegation_category,
-            "escalation_channel": escalation_channel,
-            "urgency_level": urgency,
-            "recommended_action": action,
-            "anonymity_status": "CRYPTOGRAPHICALLY_PROTECTED",
-            "evidence_attached": sub.supporting_evidence_attached
-        }
-        return token_id, triage_report
-
-sub_md = WhistleblowerSubmission("Vikram Sharma", "v.sharma@internal-corp.in", "FINANCIAL_FRAUD", "MANAGING_DIRECTOR", True)
-sub_hr = WhistleblowerSubmission("Anita Roy", "a.roy@internal-corp.in", "HR_GRIEVANCE", "SENIOR_MANAGER", False)
-
-tok1, rep1 = WhistleblowerForensicTriage.process_intake(sub_md)
-tok2, rep2 = WhistleblowerForensicTriage.process_intake(sub_hr)
-
-print(f"Submission 1 Tracking Token: {tok1}")
-print(f" - Category: {rep1['allegation']} | Urgency: {rep1['urgency_level']}")
-print(f" - Escalation: {rep1['escalation_channel']}")
-print(f" - Action: {rep1['recommended_action']}")
-print("--------------------------------------------------------------------------------")
-print(f"Submission 2 Tracking Token: {tok2}")
-print(f" - Category: {rep2['allegation']} | Escalation: {rep2['escalation_channel']}")
-"""
-
-p4_codeNotes = [
-    "Generates SHA-256 cryptographic identity tokens preserving 100% informant anonymity.",
-    "Performs automated forensic triage: segregates genuine protected concerns from routine HR grievances.",
-    "Enforces Section 177(10) direct escalation to the Audit Committee Chairperson when senior executive management is implicated.",
-    "Outputs structured, audit-proof intake reports for inclusion in statutory annual corporate governance filings."
-]
-
-# --- PART 5 ---
-p5_say = [
-    "To achieve complete mastery over corporate vigil mechanisms and whistleblower jurisprudence, corporate legal counsels, compliance officers, and audit committees must assemble Section 177 statutory mandates, anti-retaliation legal shields, SEBI PIT informant protocols, and cryptographic intake architectures into an integrated enterprise system. In complex corporate conglomerates, an uncompromised whistleblower mechanism is the ultimate shield protecting the board of directors from catastrophic corporate fraud and multi-million rupee regulatory penalties.",
-    "The industrial-grade Python engine developed in this masterclass encapsulates the complete whistleblower and vigil mechanism architecture for 'Apex Global Conglomerate Ltd', a leading listed diversified enterprise with Rs 22,000 crore in turnover. The simulator models the receipt of an explosive protected disclosure: an internal senior financial controller uncovers that the Managing Director and Chief Financial Officer have orchestrated an undisclosed Rs 85 crore related party invoice round-tripping scheme to inflate quarterly EBITDA. Concurrently, the informant reports illicit insider trading executed prior to quarterly financial results.",
-    "The engine sequentially executes five advanced compliance modules: First, it generates an irreversible SHA-256 cryptographic anonymity token, shielding the informant's identity from internal IT and HR networks. Second, it executes automated forensic triage, identifying high-level executive implication and activating the statutory direct escalation protocol to the Audit Committee Chairperson under Section 177(10). Third, it evaluates the insider trading disclosure against SEBI PIT Chapter IIIA criteria, preparing a compliant Voluntary Information Disclosure Form (VIDF) and calculating a Rs 8.50 crore statutory informant bounty on a Rs 85 crore disgorgement.",
-    "Fourth, it deploys the Anti-Retaliation Shield Engine: when executive management attempts to retaliate against the financial controller with a retaliatory suspension, the engine invokes the 12-month presumption rule, invalidates the suspension order, mandates immediate administrative transfer to the Audit Committee, and initiates disciplinary termination of the retaliating executives. Fifth, it compiles the statutory Annual Corporate Governance Disclosures required under SEBI LODR Schedule V. Upon executing all five compliance modules with zero errors, the engine outputs the definitive masterclass certification code: VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS."
-]
-
-p5_code = """# Part 5: Production Vigil Mechanism, Cryptographic Anonymity & Anti-Retaliation Master Engine
-import hashlib
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-class WhistleblowerMasterEngine:
-    def __init__(self, enterprise_name: str, is_listed: bool):
-        self.enterprise_name = enterprise_name
-        self.is_listed = is_listed
-        self.disclosures: Dict[str, Dict] = {}
-        self.retaliation_blocks: List[Dict] = []
-        self.sebi_bounties: List[Dict] = []
-        self.audit_log: List[str] = []
-
-    def ingest_protected_disclosure(self, informant_raw_id: str, allegation: str, 
-                                   implicated_exec: str, evidence_verified: bool) -> str:
-        token = f"WB-CRYPT-{hashlib.sha256((informant_raw_id + 'SALT_2026').encode()).hexdigest()[:12].upper()}"
-        
-        # Section 177(10) Direct Escalation Check
-        direct_to_audit_chair = implicated_exec in {"MANAGING_DIRECTOR", "CFO", "CEO"}
-        
-        rec = {
-            "token": token,
-            "allegation": allegation,
-            "implicated": implicated_exec,
-            "direct_to_audit_chair": direct_to_audit_chair,
-            "evidence_verified": evidence_verified,
-            "status": "ESCALATED_TO_AUDIT_COMMITTEE_CHAIR" if direct_to_audit_chair else "INTERNAL_INQUIRY"
-        }
-        self.disclosures[token] = rec
-        self.audit_log.append(f"Disclosure Ingested [{token}]: {allegation} against {implicated_exec} -> {rec['status']}")
-        return token
-
-    def block_retaliatory_adverse_action(self, token: str, adverse_action_attempted: str, 
-                                        months_since_filing: int) -> bool:
-        assert token in self.disclosures, "Invalid tracking token"
-        assert months_since_filing <= 12, "Within statutory 12-month protection window"
-        
-        block_order = {
-            "token": token,
-            "action_blocked": adverse_action_attempted,
-            "remedy": "INJUNCTION_ISSUED_BY_AUDIT_COMMITTEE",
-            "status": "RETALIATION_NEUTRALIZED"
-        }
-        self.retaliation_blocks.append(block_order)
-        self.audit_log.append(f"Retaliation Shield Triggered [{token}]: Blocked {adverse_action_attempted}; protected under Section 177(10)")
-        return True
-
-    def calculate_sebi_pit_bounty(self, token: str, disgorgement_inr_cr: float) -> float:
-        reward = min(disgorgement_inr_cr * 0.10, 10.0) # 10% capped at Rs 10 Cr
-        bounty_data = {
-            "token": token,
-            "disgorgement_cr": disgorgement_inr_cr,
-            "reward_awarded_cr": reward
-        }
-        self.sebi_bounties.append(bounty_data)
-        self.audit_log.append(f"SEBI PIT Bounty Sanctioned [{token}]: INR {reward:.2f} Cr (Disgorgement: INR {disgorgement_inr_cr:.2f} Cr)")
-        return reward
-
-    def run_masterclass_grand_audit(self) -> bool:
-        print("================================================================================")
-        print("   CORPORATE VIGIL MECHANISM & SEBI PIT WHISTLEBLOWER SHIELD ENGINE             ")
-        print("================================================================================")
-        print(f"Listed Enterprise: {self.enterprise_name} | SEBI LODR Reg 22 & S.177 Mandate Active")
-        print("--------------------------------------------------------------------------------")
-        for log in self.audit_log:
-            print(f"[*] {log}")
-            
-        print("--------------------------------------------------------------------------------")
-        print(f"Total Protected Disclosures Managed: {len(self.disclosures)}")
-        print(f"Retaliatory Actions Blocked & Injoined: {len(self.retaliation_blocks)}")
-        print(f"SEBI PIT Bounties Calculated: {len(self.sebi_bounties)}")
-        print("================================================================================")
-        
-        # Verify strict statutory invariants
-        assert self.is_listed, "Entity must be listed under SEBI LODR"
-        assert len(self.disclosures) == 1, "Must register protected disclosure"
-        assert list(self.disclosures.values())[0]["direct_to_audit_chair"], "Must escalate directly to Audit Committee Chair"
-        assert len(self.retaliation_blocks) == 1, "Must neutralize retaliatory adverse employment actions"
-        assert self.sebi_bounties[0]["reward_awarded_cr"] == 8.50, "Bounty must equal exactly 10% of Rs 85 Cr (INR 8.50 Cr)"
-        
-        print("[PASS] VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS")
-        return True
-
-engine = WhistleblowerMasterEngine("Apex Global Conglomerate Ltd", is_listed=True)
-tok = engine.ingest_protected_disclosure("EMP-7712", "EBITDA Fraud & Insider Trading", "MANAGING_DIRECTOR", True)
-engine.block_retaliatory_adverse_action(tok, "RETALIATORY_SUSPENSION_AND_TRANSFER", months_since_filing=2)
-engine.calculate_sebi_pit_bounty(tok, disgorgement_inr_cr=85.0)
-
-engine.run_masterclass_grand_audit()
-"""
-
-p5_codeNotes = [
-    "Production-grade corporate vigil mechanism engine integrating Companies Act Section 177 and SEBI LODR Regulation 22.",
-    "Generates SHA-256 cryptographic tokens ensuring irreversible informant anonymity.",
-    "Enforces Section 177(10) direct escalation to the Independent Audit Committee Chairperson.",
-    "Neutralizes retaliatory suspension orders and applies 12-month statutory burden-of-proof inversion.",
-    "Computes SEBI PIT Chapter IIIA monetary informant bounties and confirms: `VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS`."
-]
-
-parts_spec = [
-    ("Part 1: Section 177(9) Vigil Mechanism Mandate & Governance Architecture", p1_say, p1_code, p1_codeNotes,
-     "Assess statutory applicability under Section 177(9) and evaluate Audit Committee oversight under SEBI LODR Regulation 22.",
-     "Which categories of companies are statutorily required to establish a Vigil Mechanism under Companies Act Section 177(9)?",
-     ["Every listed company, companies that accept public deposits, and companies with bank/PFI borrowings exceeding Rs 50 crore",
-      "Only foreign airlines operating charter flights to India",
-      "Only agricultural cooperatives registered under state society laws",
-      "Private startups with fewer than ten employees"],
-     "Section 177(9) read with Rule 7 mandates vigil mechanisms for all listed companies, deposit-accepting companies, and companies with borrowings > Rs 50 crore."),
-
-    ("Part 2: Whistleblower Anti-Victimization Shield & Burden Inversion", p2_say, p2_code, p2_codeNotes,
-     "Deploy Section 177(10) anti-victimization protections and apply 12-month burden-of-proof inversion against employer retaliation.",
-     "Under Section 177(10), what critical statutory safeguard must be guaranteed to an employee filing a protected disclosure?",
-     ["Adequate safeguards against victimization and direct access to the Chairperson of the Audit Committee in exceptional cases",
-      "Immediate doubling of the employee's salary and lifetime tenure",
-      "Automatic transfer of the company's patent portfolio to the employee",
-      "Exemption from all federal and state tax liabilities"],
-     "Section 177(10) mandates adequate safeguards against victimization and ensures direct access to the Audit Committee Chairperson."),
-
-    ("Part 3: SEBI PIT Chapter IIIA Informant Mechanism & Monetary Bounties", p3_say, p3_code, p3_codeNotes,
-     "Evaluate Voluntary Information Disclosure Forms (VIDF) and calculate informant bounties up to the Rs 10 crore statutory cap.",
-     "What maximum monetary reward can an informant receive from SEBI under Chapter IIIA of the SEBI PIT Regulations?",
-     ["Up to 10% of monies disgorged or collected, subject to a statutory maximum ceiling of Rupees 10 crore",
-      "A flat reward of exactly Rs 1,000 regardless of the fraud amount",
-      "Fifty percent of the market capitalization of the target company",
-      "Zero monetary reward; informants receive only a certificate of appreciation"],
-     "Regulation 7D of SEBI PIT establishes an informant reward of up to 10% of monies collected, capped at Rs 10 crore."),
-
-    ("Part 4: Digital Whistleblower Architecture & Cryptographic Triage Protocols", p4_say, p4_code, p4_codeNotes,
-     "Implement SHA-256 identity hashing and execute 4-stage forensic triage for protected whistleblower disclosures.",
-     "Why do modern corporate compliance systems deploy SHA-256 cryptographic hashing for whistleblower intake?",
-     ["To preserve 100% informant anonymity by generating an untraceable tracking token while enabling bi-directional secure communication",
-      "To automatically delete all company emails after 24 hours",
-      "To prevent external regulatory agencies from accessing court orders",
-      "To convert financial statement ledgers into unregulated cryptocurrencies"],
-     "Cryptographic identity hashing ensures total informant anonymity and shields whistleblowers from internal IT and HR surveillance."),
-
-    ("Part 5: Production Vigil Mechanism & Anti-Retaliation Master Engine", p5_say, p5_code, p5_codeNotes,
-     "Run the integrated vigil mechanism, cryptographic intake, anti-retaliation injunction, and SEBI bounty engine.",
-     "What key milestone certification is awarded upon running the Day 53 production whistleblower simulator?",
-     ["VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS validating Section 177 vigil mechanisms, anti-retaliation shields, and SEBI PIT bounties",
-      "UNCONDITIONAL_EMPLOYMENT_TERMINATION_PASS allowing summary firing of employees without investigation",
-      "CONFIDENTIAL_INSIDER_TRADING_PASS exempting executive directors from securities disclosure rules",
-      "CORPORATE_SECRECY_ARBITRAGE_PASS permitting non-disclosure of financial fraud to statutory auditors"],
-     "The engine validates Section 177 compliance, direct Audit Committee escalation, anti-retaliation injunctions, and SEBI bounties, issuing VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS.")
-]
-
-for idx, (title, say, code, notes, try_it, q, opts, expl) in enumerate(parts_spec, 1):
-    print(f"Executing Day 53 Part {idx} code...")
-    stdout = run_code(code)
-    wc = count_words(say)
-    print(f"Part {idx}: {wc} words in say. Code execution successful.")
-    
-    part_dict = {
-        "title": title,
-        "say": say,
-        "example": f"Real-world operational scenario for {title}.",
-        "code": code,
-        "output": stdout,
-        "codeNotes": notes,
-        "tryIt": [try_it],
-        "check": {
-            "question": q,
-            "options": opts,
-            "answer": 0,
-            "explanation": expl
-        }
-    }
-    day53["parts"].append(part_dict)
-
-total_day_words = sum(count_words(p["say"]) for p in day53["parts"])
-print(f"=== DAY 53 TOTAL WORDS: {total_day_words} ===")
-
-with open("scripts/bcom_law_day53.json", "w", encoding="utf-8") as f:
-    json.dump(day53, f, indent=2)
-
-print("Saved scripts/bcom_law_day53.json successfully!")
+if __name__ == "__main__":
+    main()

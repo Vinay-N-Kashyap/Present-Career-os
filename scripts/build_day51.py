@@ -1,552 +1,223 @@
-# scripts/build_day51.py
+"""
+Builder for Course 37 Day 51:
+Vision-Language Foundations: Contrastive Language-Image Pre-Training (CLIP), Dual Encoders & Cross-Modal Embedding Space
+"""
+
+import os
+import sys
 import json
 import subprocess
-import sys
-import hashlib
 
-def count_words(say_list: list) -> int:
-    return sum(len(s.split()) for s in say_list)
+sys.stdout.reconfigure(encoding='utf-8')
 
-def run_code(code_str: str) -> str:
-    res = subprocess.run([sys.executable, "-c", code_str], capture_output=True, text=True, timeout=15)
-    if res.returncode != 0:
-        print("STDERR:", res.stderr)
-        raise RuntimeError(f"Execution failed: {res.stderr}")
-    return res.stdout
-
-print("Designing Day 51 content...")
-
-day51 = {
+day51_data = {
     "day": 51,
-    "coursePrefix": "bcom_law",
-    "title": "Day 51: ESG Regulatory Architecture & SEBI Business Responsibility and Sustainability Reporting (BRSR Core)",
-    "summary": [
-        "SEBI LODR Regulation 34(2)(f) mandates Business Responsibility and Sustainability Reporting (BRSR) for top 1,000 listed entities.",
-        "BRSR Core establishes an audited baseline of 9 Key Performance Indicators (KPIs) requiring mandatory reasonable assurance.",
-        "National Guidelines on Responsible Business Conduct (NGRBC) prescribe 9 core principles governing ethical, environmental, and social operations.",
-        "Greenwashing and fraudulent ESG disclosures trigger severe statutory penalties under SEBI PFUTP and Companies Act Sections 447/448.",
-        "Board of Directors and Audit Committees bear affirmative fiduciary duties under Section 166(2) to govern ESG risk management."
-    ],
-    "goal": "Master ESG regulatory compliance: navigate SEBI LODR Regulation 34(2)(f), audit BRSR Core metrics under the 9 NGRBC principles, evaluate Scope 1/2/3 GHG emissions and water intensity, mitigate greenwashing liability, and implement Board-level ESG governance controls.",
-    "parts": []
+    "coursePrefix": "nlp",
+    "title": "Vision-Language Foundations: CLIP, Dual Encoders & Cross-Modal Embeddings",
+    "subtitle": "Unify visual tokens and linguistic semantics via dual encoders, symmetric InfoNCE contrastive loss, temperature scaling, and zero-shot cross-modal alignment.",
+    "parts": [
+        {
+            "title": "The Multimodal Paradigm: Unifying Vision & Language in Shared Latent Space",
+            "say": [
+                "Welcome to Block 11 of the Advanced Natural Language Processing and Computational Linguistics curriculum. Over the first ten blocks of this course, we explored the inner workings of textual language representations: from tokenization and recurrent language models, through Transformer decoders and attention optimizations, to large-scale post-training alignment, continuous batching, and low-precision integer quantization. However, human cognitive intelligence does not operate within a purely textual vacuum; rather, human language evolved to ground concepts within rich sensory perception of the physical and visual world. Today, we initiate our journey into Multimodal Artificial Intelligence, beginning with the foundational architecture that bridged the chasm between computer vision and natural language processing: Contrastive Language-Image Pre-Training, commonly known as CLIP.",
+                "Prior to the breakthrough of contrastive multimodal learning, computer vision models and natural language processing models lived in completely disjoint architectural silos. Vision models, primarily convolutional neural networks or early Vision Transformers (ViTs), were trained via supervised classification over fixed, closed vocabularies of discrete category labels, such as the 1,000 canonical classes of ImageNet. This paradigm imposed catastrophic constraints: a model trained to recognize 'dogs' and 'cats' had zero semantic understanding of fine-grained linguistic descriptors such as 'a golden retriever splashing vigorously through a muddy autumn creek'. The model outputted a flat 1,000-dimensional probability vector that stripped away all relational, descriptive, and compositional nuance.",
+                "Conversely, natural language models were trained on vast corpora of unstructured web text using autoregressive next-token prediction or masked language modeling. While these models learned intricate syntactic structures and factual relationships, their conceptual representations suffered from what cognitive scientists term the Symbol Grounding Problem: words were merely abstract symbols defined purely in relation to other abstract symbols, lacking any perceptual correspondence to physical shapes, colors, textures, spatial orientations, or embodied physical interactions.",
+                "The core insight of the CLIP multimodal paradigm is to treat natural language supervision not as a brittle discrete classification label, but as an open-ended, continuous semantic embedding space. By pairing millions of uncurated web images with their naturally occurring text descriptions (captions, alt-text, title metadata), we can train two distinct neural networks simultaneously: a Vision Encoder (which maps raw pixel grids or patch sequences into a dense visual embedding vector) and a Text Encoder (which maps sequences of linguistic tokens into a dense textual embedding vector).",
+                "To unify these two fundamentally distinct sensory modalities into a single coherent latent space, both encoder outputs are projected into a shared multimodal embedding dimension, denoted as d_e (typically 512, 768, or 1024 dimensions). In this shared geometric space, the fundamental objective is simple yet extraordinarily potent: maximize the cosine similarity between the visual representation of an image and the textual representation of its corresponding caption, while simultaneously minimizing the cosine similarity between that image and all other non-matching captions in the training batch.",
+                "This contrastive alignment completely dissolves the rigid boundaries of closed-vocabulary classification. Because the visual representations are mapped directly into the linguistic geometry of the text encoder, the resulting model can perform Zero-Shot Classification on entirely novel visual concepts, artistic styles, historical landmarks, or diagnostic imagery without ever undergoing task-specific supervised fine-tuning. One simply constructs natural language prompts corresponding to target candidate classes, passes them through the text encoder, and predicts the class whose text embedding achieves highest cosine similarity with the query image embedding.",
+                "In enterprise multimodal architectures, the CLIP dual-encoder foundation serves as the universal cognitive backbone. It provides the visual semantic grounding for modern generative diffusion models (such as Stable Diffusion, where CLIP text embeddings condition denoising UNets), powers large-scale cross-modal semantic search engines across petabytes of enterprise digital asset management systems, and establishes the foundational perceptual features ingested by the vision-to-language projection adapters that we will build over the subsequent days of this block.",
+                "As we analyze the mathematical formulation of cross-modal dual encoders, remember that contrastive alignment represents an entirely different learning objective than generative autoregression. While autoregressive decoders predict the next discrete token in a sequence, dual encoders optimize the global geometric topology of high-dimensional vectors on a unit hypersphere, teaching neural networks that an image of an eagle soaring over mountain peaks and the sentence 'A majestic raptor glides above snow-capped ridges' are two expressions of the identical underlying semantic reality."
+            ],
+            "example": "In an enterprise e-commerce catalog of 10,000,000 product images, a user searches for 'retro high-top basketball sneakers in vibrant turquoise canvas'. A conventional keyword index fails if the metadata only says 'athletic shoe'. A CLIP dual-encoder encodes the query text into a 512-dimensional vector, computes dot products against pre-indexed visual feature vectors, and retrieves the top-10 exact matches in sub-5ms latency with zero metadata tagging.",
+            "code": "import math\n\ndef dot_product(v1, v2):\n    return sum(x * y for x, y in zip(v1, v2))\n\ndef l2_norm(v):\n    return math.sqrt(sum(x * x for x in v))\n\ndef normalize(v):\n    norm = l2_norm(v)\n    return [x / (norm + 1e-12) for x in v]\n\ndef cosine_similarity(v1, v2):\n    n1, n2 = normalize(v1), normalize(v2)\n    return dot_product(n1, n2)\n\n# Simulated shared multimodal embedding space (d_e = 4)\n# Image embeddings for: 0: Golden Retriever, 1: Vintage Sports Car, 2: Espresso Cup\nimage_embeddings = [\n    [0.82, 0.45, 0.12, 0.31],\n    [0.05, 0.11, 0.94, 0.32],\n    [0.21, 0.78, 0.15, 0.57]\n]\n\n# Candidate textual query: 'A happy dog playing outdoors'\ntext_query = [0.80, 0.50, 0.10, 0.28]\n\nsimilarities = [cosine_similarity(img, text_query) for img in image_embeddings]\nclasses = ['Golden Retriever', 'Vintage Sports Car', 'Espresso Cup']\n\nprint('=== CROSS-MODAL COSINE SIMILARITY RETRIEVAL ===')\nfor cls_name, sim in zip(classes, similarities):\n    print(f'Query vs Image ({cls_name:18}): Cosine Sim = {sim:.4f}')\nbest_idx = max(range(len(similarities)), key=lambda i: similarities[i])\nprint(f'Zero-Shot Predicted Match: {classes[best_idx]} (Score: {similarities[best_idx]:.4f})')",
+            "output": "=== CROSS-MODAL COSINE SIMILARITY RETRIEVAL ===\nQuery vs Image (Golden Retriever  ): Cosine Sim = 0.9983\nQuery vs Image (Vintage Sports Car): Cosine Sim = 0.3846\nQuery vs Image (Espresso Cup      ): Cosine Sim = 0.7936\nZero-Shot Predicted Match: Golden Retriever (Score: 0.9983)",
+            "codeNotes": [
+                "Both visual and textual embeddings must be L2-normalized onto the unit hypersphere before computing similarity metrics.",
+                "In normalized space, cosine similarity is equivalent to standard Euclidean dot product, enabling sub-millisecond approximate nearest neighbor (ANN) vector indexing."
+            ],
+            "tryIt": "Modify text_query to represent 'A hot ceramic mug of freshly brewed coffee' and verify that Espresso Cup achieves the top similarity score.",
+            "check": {
+                "question": "Why does the CLIP dual-encoder architecture solve the classic Symbol Grounding Problem in natural language processing?",
+                "options": [
+                    "By mapping continuous visual patch features and discrete text token representations into a shared geometric latent space where text vectors are topologically aligned with perceptual sensory data",
+                    "By replacing textual tokenizers with convolutional neural network layers that parse character strings as 2D bitmap images",
+                    "By converting all training images into ASCII text art and processing them through standard autoregressive causal language models",
+                    "By freezing the text encoder and training only the final linear classification layer on ImageNet discrete class labels"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "CLIP solves symbol grounding by co-projecting visual and textual encoders into a unified metric space, anchoring linguistic concepts directly to physical visual representations via contrastive cosine alignment.",
+                "explanation": "CLIP solves symbol grounding by co-projecting visual and textual encoders into a unified metric space, anchoring linguistic concepts directly to physical visual representations via contrastive cosine alignment."
+            }
+        },
+        {
+            "title": "Dual Encoders & Symmetric InfoNCE Contrastive Loss: Temperature tau and Batch Mining",
+            "say": [
+                "Having conceptualized the multimodal paradigm, let us now formalize the mathematical engine that drives contrastive representation learning: the Dual Encoder architecture optimized via the Symmetric InfoNCE (Information Noise-Contrastive Estimation) loss function. Contrastive learning relies upon pairs of positive and negative examples. In the context of vision-language modeling, a training batch of size N consists of N image-text pairs: (I_1, T_1), (I_2, T_2), ..., (I_N, T_N), where each pair (I_i, T_i) represents an authentic, ground-truth match extracted from web data.",
+                "Each image I_i is processed by a Vision Encoder f_V (such as a Vision Transformer ViT-L/14 or a ResNet-50) to produce a visual feature vector v_i in R^{d_v}. Concurrently, each text sequence T_i is tokenized, wrapped in [SOS] and [EOS] framing tokens, and passed through a Text Transformer f_T to produce a textual feature vector t_i in R^{d_t} (typically extracted from the activation corresponding to the final [EOS] token). Because the vision and text encoders generally have differing hidden dimensions, linear projection matrices W_V in R^{d_v x d_e} and W_T in R^{d_t x d_e} project the raw features into the shared embedding dimension d_e.",
+                "Once projected, both sets of vectors are strictly L2-normalized: v̂_i = (W_V v_i) / ||W_V v_i||_2, and t̂_i = (W_T t_i) / ||W_T t_i||_2. The matrix of all pairwise cosine similarities across the entire mini-batch of size N is constructed as a square similarity matrix S in R^{N x N}, where the entry at row i and column j is given by the dot product: S_{i, j} = v̂_i . t̂_j. In this N x N matrix, the N diagonal elements S_{i, i} represent the positive matching pairs, while the N(N - 1) off-diagonal elements S_{i, j} (where i != j) represent negative distractors.",
+                "To optimize this similarity matrix, we employ a learnable temperature parameter tau (or its log-parameterization log_tau). The raw cosine similarities are scaled by dividing by tau: logits_{i, j} = S_{i, j} / tau. The temperature parameter acts as a critical sharpness controller over the softmax distribution: when tau is small (e.g., 0.07), the softmax function concentrates probability mass aggressively on the most similar pairs, penalizing hard negative distractors with exponential severity. If tau were too large, the softmax distribution would become overly diffuse, providing insufficient gradient signal to separate semantically distinct visual concepts.",
+                "Crucially, the CLIP objective is bidirectional and symmetric. There are two distinct cross-entropy losses computed across the similarity matrix. First, the Image-to-Text Loss (L_{I->T}) treats each row of the matrix as a classification task: for image i, the model must correctly identify its matching text description i from among all N candidate captions in the batch. Second, the Text-to-Image Loss (L_{T->I}) treats each column as a classification task: for text j, the model must identify its matching image j from among all N candidate images in the batch.",
+                "Formally, for a batch of size N, the Image-to-Text loss for the i-th image is: L_{I->T}(i) = - log [ exp(v̂_i . t̂_i / tau) / sum_{j=1}^N exp(v̂_i . t̂_j / tau) ]. Symmetrically, the Text-to-Image loss for the j-th text is: L_{T->I}(j) = - log [ exp(v̂_j . t̂_j / tau) / sum_{i=1}^N exp(v̂_i . t̂_j / tau) ]. The total Symmetric InfoNCE loss over the batch is the arithmetic mean of these two directional cross-entropies: L_{CLIP} = (1 / 2N) sum_{k=1}^N [ L_{I->T}(k) + L_{T->I}(k) ].",
+                "Because InfoNCE uses in-batch negatives (every other item in the mini-batch serves as a negative distractor), the batch size N plays a monumental role in representation quality. In the original OpenAI CLIP implementation, training was conducted with an enormous batch size of N = 32,768 distributed across hundreds of GPUs. A batch size of 32,768 creates over 1 billion negative pairs per training step, ensuring that the encoders encounter exceptionally fine-grained, hard negatives that force the learned embedding geometry to disentangle subtle semantic distinctions.",
+                "From a hardware systems perspective, gathering normalized embeddings across large GPU clusters requires efficient AllGather communication primitives. Rather than broadcasting full activations, distributed CLIP implementations gather only the compact d_e-dimensional embedding vectors before computing the local N x N similarity sub-matrices, minimizing inter-node NVLink and InfiniBand bandwidth consumption."
+            ],
+            "example": "Consider a mini-batch of N = 3 pairs: (Dog, 'A puppy in grass'), (Airplane, 'A jet in the clouds'), (Cake, 'A chocolate birthday cake'). The 3x3 similarity matrix S is scaled by tau = 0.07. If the diagonal logits are [12.5, 11.8, 13.2] and off-diagonals are around [3.1, 4.0, 2.8], the softmax cross-entropy drives diagonal probabilities toward 1.0 while suppressing cross-modal confusion.",
+            "code": "import math\n\ndef softmax(logits):\n    max_val = max(logits)\n    exp_vals = [math.exp(x - max_val) for x in logits]\n    sum_exp = sum(exp_vals)\n    return [x / sum_exp for x in exp_vals]\n\ndef cross_entropy_loss(probs, target_idx):\n    return -math.log(max(probs[target_idx], 1e-12))\n\n# Simulated batch of N = 4 pairs (normalized visual & textual vectors, d = 3)\n# High alignment on diagonals, low alignment on off-diagonals\nvision_vectors = [\n    [0.9, 0.4, 0.1],  # 0: Cat\n    [0.1, 0.9, 0.4],  # 1: Yacht\n    [0.3, 0.2, 0.9],  # 2: Laptop\n    [0.7, 0.1, 0.7]   # 3: Mountain\n]\ntext_vectors = [\n    [0.88, 0.42, 0.08],  # 0: 'A fluffy kitten'\n    [0.12, 0.88, 0.45],  # 1: 'A luxury sailboat'\n    [0.35, 0.18, 0.92],  # 2: 'A modern notebook computer'\n    [0.68, 0.15, 0.71]   # 3: 'A snowy alpine peak'\n]\n\n# L2 normalization\ndef norm_vec(v):\n    length = math.sqrt(sum(x*x for x in v))\n    return [x / length for x in v]\n\nV = [norm_vec(v) for v in vision_vectors]\nT = [norm_vec(t) for t in text_vectors]\n\n# Temperature tau = 0.1\ntau = 0.1\nN = len(V)\n\n# Construct N x N similarity matrix\nsim_matrix = [[sum(v[k] * t[k] for k in range(3)) / tau for t in T] for v in V]\n\n# Image-to-Text loss\nloss_i2t = 0.0\nfor i in range(N):\n    row_logits = sim_matrix[i]\n    row_probs = softmax(row_logits)\n    loss_i2t += cross_entropy_loss(row_probs, i)\nloss_i2t /= N\n\n# Text-to-Image loss\nloss_t2i = 0.0\nfor j in range(N):\n    col_logits = [sim_matrix[i][j] for i in range(N)]\n    col_probs = softmax(col_logits)\n    loss_t2i += cross_entropy_loss(col_probs, j)\nloss_t2i /= N\n\ntotal_clip_loss = 0.5 * (loss_i2t + loss_t2i)\n\nprint('=== SYMMETRIC INFONCE CONTRASTIVE LOSS EVALUATION ===')\nprint(f'Batch Size N: {N} pairs | Temperature tau: {tau}')\nprint(f'Image-to-Text Loss (L_i2t): {loss_i2t:.4f}')\nprint(f'Text-to-Image Loss (L_t2i): {loss_t2i:.4f}')\nprint(f'Total Symmetric CLIP Loss : {total_clip_loss:.4f}')\nprint('\\nDiagonal (Positive) Logits:')\nfor k in range(N):\n    print(f'  Pair {k} ({k}->{k}): Logit = {sim_matrix[k][k]:.2f} (Prob = {softmax(sim_matrix[k])[k]:.4f})')",
+            "output": "=== SYMMETRIC INFONCE CONTRASTIVE LOSS EVALUATION ===\nBatch Size N: 4 pairs | Temperature tau: 0.1\nImage-to-Text Loss (L_i2t): 0.0051\nText-to-Image Loss (L_t2i): 0.0051\nTotal Symmetric CLIP Loss : 0.0051\n\nDiagonal (Positive) Logits:\n  Pair 0 (0->0): Logit = 9.99 (Prob = 0.9947)\n  Pair 1 (1->1): Logit = 9.99 (Prob = 0.9950)\n  Pair 2 (2->2): Logit = 9.99 (Prob = 0.9951)\n  Pair 3 (3->3): Logit = 9.99 (Prob = 0.9948)",
+            "codeNotes": [
+                "The loss is strictly symmetric: it enforces that an image's closest text is its true caption, AND that a text's closest image is its true picture.",
+                "Dividing by temperature tau sharpens the distribution, transforming moderate cosine differences into strong exponential gradients."
+            ],
+            "tryIt": "Increase tau to 1.0 (removing the sharp scaling) and observe how the probabilities drop and total loss increases due to diffused logits.",
+            "check": {
+                "question": "What is the mathematical role of the temperature parameter tau in the Symmetric InfoNCE contrastive loss?",
+                "options": [
+                    "It scales the cosine similarity logits prior to the softmax operator, controlling the entropy of the probability distribution and determining the gradient penalty assigned to hard negative distractors",
+                    "It acts as a physical thermal regulator that limits GPU clock frequency during heavy matrix multiplication",
+                    "It defines the learning rate decay schedule applied to the AdamW optimizer during multi-node training",
+                    "It controls the dropout probability applied to the feed-forward projection layers of the vision encoder"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Temperature tau scales logits before softmax. Lower tau sharpens probabilities and forces large penalties on near-miss negatives; higher tau flattens probabilities.",
+                "explanation": "Temperature tau scales logits before softmax. Lower tau sharpens probabilities and forces large penalties on near-miss negatives; higher tau flattens probabilities."
+            }
+        },
+        {
+            "title": "Zero-Shot Classification: Prompt Ensembling, Cosine Similarity & Softmax Logits",
+            "say": [
+                "The defining operational superpower of contrastively aligned vision-language models is Zero-Shot Classification. In classical computer vision pipelines, adapting a deep convolutional network or Vision Transformer to a new diagnostic or industrial classification task required appending a fresh linear classification head (W_c in R^{K x d}) and fine-tuning on thousands of manually annotated images corresponding to the K target classes. If a new class emerged tomorrow, the classification head had to be modified, and the network had to be re-trained or fine-tuned, risking catastrophic forgetting of prior features.",
+                "In sharp contrast, CLIP performs classification dynamically at inference time without modifying a single model weight. To classify an input image across K arbitrary target classes (such as ['cat', 'dog', 'sports car', 'passenger jet']), we do not use numeric integer IDs. Instead, we synthesize natural language text prompts describing each candidate class. For example, rather than feeding the raw isolated word 'cat', we embed the class label into a descriptive context sentence, known as a prompt template: 'A photo of a cat'.",
+                "Why is prompt templating necessary? Consider the pre-training data distribution: CLIP was trained on text found across the internet, where raw isolated category names rarely appear without grammatical context. On web pages, text almost always consists of complete descriptive phrases, such as 'A crisp photo of a majestic cat lounging on a velvet sofa'. If we pass the bare token 'cat' to the text encoder, the resulting embedding may occupy a different linguistic subspace than full captions. By placing the class label into natural sentence templates—such as 'A photo of a {label}', 'A centered portrait of the {label}', or 'A high-resolution photograph of a {label}'—we align the test prompt with the pre-training linguistic distribution.",
+                "To further maximize zero-shot robustness, enterprise implementations utilize Prompt Ensembling. Rather than relying on a single prompt template, we construct a diverse ensemble of M distinct prompt templates (e.g., 50 to 80 templates encompassing varied viewpoints, lighting conditions, and camera contexts: 'A close-up photograph of a {label}', 'A rendering of a {label}', 'A cropped photo of the {label}'). For each candidate class k in {1, ..., K}, we generate all M templated sentences, encode each sentence through the Text Transformer, normalize each resulting embedding, and compute the arithmetic average across the M embeddings. We then re-normalize this averaged vector to obtain a single canonical, robust text prototype t̂_k for each class.",
+                "During inference, when a query image I arrives, it is passed through the Vision Encoder to generate a single normalized visual embedding v̂ in R^{d_e}. We then compute the dot product between the image vector v̂ and all K pre-computed class text prototypes [t̂_1, t̂_2, ..., t̂_K]. This matrix-vector multiplication yields a K-dimensional vector of raw cosine similarities. Finally, we scale these similarities by the learned temperature (100.0, corresponding to tau = 0.01) and apply the softmax function to obtain a calibrated probability distribution over the K candidate classes.",
+                "The efficiency of this approach is staggering. Because all K class text prototypes can be pre-computed and cached as a static K x d_e matrix in GPU memory, classifying incoming images involves only a single vision forward pass followed by a blistering fast matrix-vector product. In high-throughput industrial inspection or edge security pipelines, this enables classifying thousands of images per second across thousands of arbitrary, dynamically configurable zero-shot classes.",
+                "Furthermore, prompt engineering allows practitioners to inject task-specific inductive biases into zero-shot classification without fine-tuning. For satellite imagery, templates such as 'A satellite photo of {label}' dramatically outperform generic templates. For medical histology, 'A histopathological scan of {label}' focuses the text encoder on cellular pathologies. This establishes prompt engineering as a first-class perceptual steering mechanism in multimodal systems architecture."
+            ],
+            "example": "To classify an image between 'Golden Retriever', 'Bulldog', and 'Tabby Cat', we ensemble 3 templates: ['A photo of a {label}', 'A clear picture of a {label}', 'A centered photo of a {label}']. We average the normalized text embeddings per class to create 3 prototype vectors. The query image has cosine similarity 0.88 with Golden Retriever, 0.62 with Bulldog, 0.25 with Tabby Cat. Softmax with scale 100 yields 99.9% probability for Golden Retriever.",
+            "code": "import math\n\ndef normalize(v):\n    norm = math.sqrt(sum(x * x for x in v))\n    return [x / (norm + 1e-12) for x in v]\n\ndef dot_product(v1, v2):\n    return sum(x * y for x, y in zip(v1, v2))\n\ndef softmax(logits):\n    max_val = max(logits)\n    exps = [math.exp(x - max_val) for x in logits]\n    sum_exps = sum(exps)\n    return [x / sum_exps for x in exps]\n\n# Simulated Text Encoder feature generation for templates\ntemplates = [\n    'A photo of a {c}',\n    'A centered portrait of a {c}',\n    'A high-quality picture of a {c}'\n]\nclasses = ['African Elephant', 'Monarch Butterfly', 'Formula 1 Racing Car']\n\n# Simulated raw text encoder vectors (d = 4) for (class, template)\nsimulated_text_encoder_db = {\n    ('African Elephant', 0): [0.72, 0.60, 0.15, 0.10],\n    ('African Elephant', 1): [0.70, 0.62, 0.18, 0.12],\n    ('African Elephant', 2): [0.75, 0.58, 0.14, 0.09],\n    ('Monarch Butterfly', 0): [0.10, 0.25, 0.85, 0.40],\n    ('Monarch Butterfly', 1): [0.08, 0.28, 0.82, 0.42],\n    ('Monarch Butterfly', 2): [0.12, 0.22, 0.88, 0.38],\n    ('Formula 1 Racing Car', 0): [0.20, 0.82, 0.10, 0.50],\n    ('Formula 1 Racing Car', 1): [0.22, 0.80, 0.12, 0.52],\n    ('Formula 1 Racing Car', 2): [0.18, 0.85, 0.09, 0.48]\n}\n\n# 1. Compute Ensembled Class Text Prototypes\nclass_prototypes = []\nfor c in classes:\n    # Gather normalized vectors across templates\n    vectors = [normalize(simulated_text_encoder_db[(c, t_idx)]) for t_idx in range(len(templates))]\n    # Arithmetic mean across templates\n    avg_vec = [sum(vectors[t][dim] for t in range(len(templates))) / len(templates) for dim in range(4)]\n    # Re-normalize\n    class_prototypes.append(normalize(avg_vec))\n\n# 2. Query Image Vector (Simulated image of an elephant)\nquery_image = normalize([0.71, 0.61, 0.16, 0.11])\n\n# 3. Compute Cosine Similarities & Scale with learned temperature (scale = 100)\nscale = 100.0\nsimilarities = [dot_product(query_image, proto) for proto in class_prototypes]\nscaled_logits = [sim * scale for sim in similarities]\nprobabilities = [round(p, 4) for p in softmax(scaled_logits)]\n\nprint('=== ZERO-SHOT MULTIMODAL CLASSIFICATION ===')\nprint(f'Templates Ensembled: {len(templates)}')\nfor cls_name, sim, prob in zip(classes, similarities, probabilities):\n    print(f'Class: {cls_name:22} | Cosine Sim: {sim:.4f} | Zero-Shot Prob: {prob*100:6.2f}%')\n\npred_idx = max(range(len(probabilities)), key=lambda i: probabilities[i])\nprint(f'\\nTop-1 Prediction: {classes[pred_idx]} ({probabilities[pred_idx]*100:.2f}%)')",
+            "output": "=== ZERO-SHOT MULTIMODAL CLASSIFICATION ===\nTemplates Ensembled: 3\nClass: African Elephant        | Cosine Sim: 0.9999 | Zero-Shot Prob: 100.00%\nClass: Monarch Butterfly      | Cosine Sim: 0.4437 | Zero-Shot Prob:   0.00%\nClass: Formula 1 Racing Car   | Cosine Sim: 0.7713 | Zero-Shot Prob:   0.00%\n\nTop-1 Prediction: African Elephant (100.00%)",
+            "codeNotes": [
+                "Prompt ensembling averages multiple template embeddings per class, reducing template variance and boosting zero-shot accuracy by 3-5% on ImageNet.",
+                "The scale factor of 100.0 (tau = 0.01) sharpens the high-similarity winner, producing decisive posterior class probabilities."
+            ],
+            "tryIt": "Change query_image to [0.11, 0.26, 0.84, 0.41] (a butterfly) and verify that Monarch Butterfly becomes the 100.00% top-1 prediction.",
+            "check": {
+                "question": "Why does Prompt Ensembling (averaging embeddings across templates like 'A photo of {c}' and 'A close-up of {c}') outperform single raw-word prompts?",
+                "options": [
+                    "It bridges the distribution mismatch between isolated class labels and web pre-training captions while averaging out template-specific syntactic noise",
+                    "It doubles the dimension of the embedding vector d_e, allowing the vision encoder to store higher resolution RGB pixel channels",
+                    "It forces the GPU memory controller to execute double-precision 64-bit floating point matrix multiplications",
+                    "It activates autoregressive causal decoding within the Vision Transformer patch projection heads"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Prompt ensembling bridges the lexical and distributional gap between bare labels and rich descriptive pre-training text, stabilizing the text prototype vector against syntactic biases.",
+                "explanation": "Prompt ensembling bridges the lexical and distributional gap between bare labels and rich descriptive pre-training text, stabilizing the text prototype vector against syntactic biases."
+            }
+        },
+        {
+            "title": "Modality Gap Phenomenon & Geometric Alignment in Multimodal Latents",
+            "say": [
+                "While contrastive language-image pre-training produces breathtaking zero-shot retrieval and classification capabilities, rigorous geometric inspection of the learned shared embedding space reveals a fascinating empirical pathology: the Modality Gap Phenomenon. When researchers first visualized CLIP embedding vectors in R^{d_e} using dimensionality reduction techniques such as t-SNE or Principal Component Analysis (PCA), they expected image embeddings and their corresponding text captions to intermingle uniformly across the unit hypersphere. Instead, they discovered that image embeddings and text embeddings completely segregate into two disjoint, non-overlapping geometric clusters.",
+                "Specifically, if you compute the centroid of all image embeddings in the dataset: c_I = (1 / N) sum_{i=1}^N v̂_i, and the centroid of all text embeddings: c_T = (1 / N) sum_{i=1}^N t̂_i, the difference vector Delta = c_I - c_T (known as the Modality Gap Vector) has a large, strictly positive L2 norm (typically ||Delta||_2 in [0.7, 1.2]). Even for a perfectly matched image-caption pair (I_k, T_k), their cosine similarity rarely exceeds 0.35 to 0.45 in raw unscaled space, and their Euclidean distance ||v̂_k - t̂_k||_2 is significantly greater than zero. What causes this stubborn geometric segregation?",
+                "Extensive empirical and mathematical investigations (notably Liang et al., 2022) revealed that the modality gap is driven by two primary architectural and statistical forces: Cone Effect and Asymmetric Network Topologies. First, deep neural networks with non-linear activations (GELU, ReLU) and LayerNorm layers inherently suffer from representation collapse into narrow high-dimensional cones. In isotropic Gaussian spaces, random vectors are nearly orthogonal; however, in trained neural encoders, feature vectors tend to be confined to a narrow positive orthant or acute cone. Because the vision encoder (a ViT or CNN operating on 2D spatial pixel patches) and the text encoder (a causal or bidirectional Transformer operating on 1D discrete token vocabularies) have radically different initializations and architectural structures, their output vectors collapse into two distinct cones pointing in different directions.",
+                "Second, the InfoNCE loss itself does not penalize this constant separation! Notice that the contrastive loss operates entirely on relative cosine similarities within a mini-batch: L_CLIP optimizes whether v̂_i . t̂_i is greater than v̂_i . t̂_j (for j != i). If every single visual vector v̂ has a constant offset Delta added relative to all text vectors, the relative ordering of dot products across different items in the batch remains invariant. Consequently, the gradient of the contrastive loss provides zero incentive for the optimizers to shift the visual cone directly on top of the text cone.",
+                "Does the modality gap harm downstream performance? In pure cross-modal retrieval (Image-to-Text or Text-to-Image) and zero-shot classification, the modality gap has negligible negative impact because queries are always from one modality and candidates are from the other. However, in multimodal generative models, cross-modal interpolation, and dense visual-language token fusion (such as LLaVA or multimodal LLM decoders), the modality gap creates severe calibration distortions. If a vision token embedding is fed directly into an LLM's text token sequence without calibration, the LLM decoder interprets the vision token as an out-of-distribution anomaly, causing linguistic hallucination or prompt degradation.",
+                "To remediate the modality gap, modern multimodal engineering employs several geometric calibration techniques: 1) Centroid Shifting (subtracting the precomputed empirical modality gap vector Delta from visual embeddings to center both modalities at the origin); 2) Temperature-Regularized Alignment during fine-tuning; and 3) Non-linear Projector Heads (such as 2-layer MLP adapters with GELU activations) that explicitly learn to warp and map the visual feature cone into the exact linguistic manifold of the target language model.",
+                "Understanding the geometry of multimodal latent spaces equips enterprise architects with the diagnostic mastery needed to debug cross-modal alignment failures. When cross-modal retrieval models suffer sudden precision degradation on domain-shifted imagery, analyzing the magnitude and angle of the modality gap vector provides an immediate diagnostic signal of geometric misalignment."
+            ],
+            "example": "In an uncalibrated CLIP space, image embeddings cluster around centroid c_I = [0.45, 0.55, 0.10, 0.20] and text captions cluster around c_T = [-0.10, 0.20, 0.60, 0.50]. The gap vector has norm 0.86. Subtracting 0.5 * Delta from image vectors and adding 0.5 * Delta to text vectors aligns their centroids to the origin, increasing zero-shot retrieval robustness under heavy domain noise.",
+            "code": "import math\n\ndef norm(v):\n    return math.sqrt(sum(x * x for x in v))\n\ndef normalize(v):\n    n = norm(v)\n    return [x / (n + 1e-12) for x in v]\n\ndef dot(v1, v2):\n    return sum(x * y for x, y in zip(v1, v2))\n\ndef vec_sub(v1, v2):\n    return [x - y for x, y in zip(v1, v2)]\n\ndef vec_add(v1, v2):\n    return [x + y for x, y in zip(v1, v2)]\n\ndef scale_vec(v, s):\n    return [x * s for x in v]\n\n# Simulated empirical batch of 5 matched (image, text) pairs in d = 4\nraw_images = [\n    [0.72, 0.65, 0.10, 0.12],\n    [0.68, 0.70, 0.15, 0.08],\n    [0.75, 0.60, 0.08, 0.14],\n    [0.62, 0.74, 0.12, 0.11],\n    [0.71, 0.67, 0.09, 0.13]\n]\nraw_texts = [\n    [0.10, 0.25, 0.72, 0.62],\n    [0.12, 0.20, 0.68, 0.69],\n    [0.08, 0.28, 0.75, 0.58],\n    [0.15, 0.22, 0.65, 0.71],\n    [0.11, 0.24, 0.70, 0.65]\n]\n\n# Normalize all vectors\nV = [normalize(v) for v in raw_images]\nT = [normalize(t) for t in raw_texts]\nN = len(V)\n\n# 1. Compute Modality Centroids\nc_I = [sum(V[i][dim] for i in range(N)) / N for dim in range(4)]\nc_T = [sum(T[i][dim] for i in range(N)) / N for dim in range(4)]\n\n# 2. Modality Gap Vector Delta = c_I - c_T\ndelta = vec_sub(c_I, c_T)\ngap_magnitude = norm(delta)\n\n# 3. Compute baseline matched cosine similarities\nbase_sims = [dot(V[i], T[i]) for i in range(N)]\navg_base_sim = sum(base_sims) / N\n\n# 4. Apply Centroid Calibration: shift images towards origin by delta/2, texts by -delta/2\nV_calibrated = [normalize(vec_sub(V[i], scale_vec(delta, 0.5))) for i in range(N)]\nT_calibrated = [normalize(vec_add(T[i], scale_vec(delta, 0.5))) for i in range(N)]\n\ncalib_sims = [dot(V_calibrated[i], T_calibrated[i]) for i in range(N)]\navg_calib_sim = sum(calib_sims) / N\n\nprint('=== MODALITY GAP PHENOMENON & CENTROID CALIBRATION ===')\nprint(f'Visual Centroid c_I : {[round(x, 3) for x in c_I]}')\nprint(f'Textual Centroid c_T: {[round(x, 3) for x in c_T]}')\nprint(f'Modality Gap Vector Delta Magnitude (||Delta||): {gap_magnitude:.4f}')\nprint(f'Average Raw Matched Cosine Sim      : {avg_base_sim:.4f}')\nprint(f'Average Calibrated Matched Cosine Sim: {avg_calib_sim:.4f}')\nprint(f'Cross-Modal Alignment Gain          : +{(avg_calib_sim - avg_base_sim):.4f}')",
+            "output": "=== MODALITY GAP PHENOMENON & CENTROID CALIBRATION ===\nVisual Centroid c_I : [0.72, 0.686, 0.11, 0.118]\nTextual Centroid c_T: [0.114, 0.239, 0.706, 0.655]\nModality Gap Vector Delta Magnitude (||Delta||): 1.0927\nAverage Raw Matched Cosine Sim      : 0.4005\nAverage Calibrated Matched Cosine Sim: 0.9984\nCross-Modal Alignment Gain          : +0.5979",
+            "codeNotes": [
+                "The modality gap vector Delta separates the image cone and text cone, resulting in low raw cosine similarities (0.40) despite high semantic matching.",
+                "Calibrating vectors by shifting along the gap vector centers both modalities, boosting true cross-modal alignment without losing contrastive discrimination."
+            ],
+            "tryIt": "Verify that relative discrimination is preserved after calibration: compute dot product between V_calibrated[0] and T_calibrated[1] and ensure it remains lower than V_calibrated[0] and T_calibrated[0].",
+            "check": {
+                "question": "What is the primary cause of the Modality Gap Phenomenon in contrastive vision-language models like CLIP?",
+                "options": [
+                    "Different architectural inductive biases and non-linear layer activations cause feature vectors to collapse into two separate narrow geometric cones pointing in different directions, which InfoNCE does not eliminate because relative ranking is invariant to constant vector shifts",
+                    "A hardware bug in floating-point matrix multiplication units on NVIDIA Ampere and Hopper architectures",
+                    "The text encoder tokenizer uses BPE while the vision encoder uses WordPiece, causing token IDs to clash",
+                    "Image pixels are stored in 8-bit integers while text characters are stored in UTF-8 Unicode bytes"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Different architectural structures and non-linearities drive features into distinct narrow cones; because contrastive ranking depends on relative differences, InfoNCE loss does not penalize this constant separation vector.",
+                "explanation": "Different architectural structures and non-linearities drive features into distinct narrow cones; because contrastive ranking depends on relative differences, InfoNCE loss does not penalize this constant separation vector."
+            }
+        },
+        {
+            "title": "Masterclass Synthesis: Building the ApexCLIP Dual-Encoder Embedding Engine",
+            "say": [
+                "To achieve absolute systems mastery over multimodal vision-language representations, we now construct the unified ApexCLIP Dual-Encoder Embedding Engine. This production-grade synthesis incorporates every core concept explored throughout Day 51: dual projection of vision and text features, L2 hypersphere normalization, bidirectional Symmetric InfoNCE loss computation with learnable temperature scaling, prompt-ensembled zero-shot classification, and empirical modality gap diagnostic telemetry.",
+                "In our implementation, the ApexCLIP engine models a multi-tenant enterprise multimodal retrieval and zero-shot categorization system. The engine ingests a batch of visual feature representations (emulating the output of a Vision Transformer patch aggregator) and a batch of natural language text descriptions (emulating the pooled output of a Text Transformer). The engine projects both modalities into a shared d_e = 8 embedding dimension via orthogonal linear projection weights W_V and W_T.",
+                "Following projection and L2 normalization, the engine computes the full N x N cross-modal similarity matrix scaled by temperature tau = 0.05. It executes the dual-direction cross-entropy evaluation: computing Image-to-Text loss (measuring the precision with which images locate their captions) and Text-to-Image loss (measuring how accurately text prompts retrieve their corresponding imagery). The bidirectional loss is synthesized into a single scalar objective that drives backpropagation across distributed GPU clusters.",
+                "Next, the engine activates its Zero-Shot Classification Subsystem. Given an arbitrary uncaptioned image and a list of target enterprise categories (such as 'Automotive Engine Part', 'Microprocessor Board', and 'Medical Stethoscope'), the engine generates multi-template prompt ensembles ('A diagnostic photo of a {c}', 'A close-up view of the {c}', 'An industrial inspection image of a {c}'). It encodes, averages, and normalizes the class prototype vectors, computing temperature-scaled softmax probabilities to deliver high-confidence, zero-shot categorizations.",
+                "Finally, the engine runs the Modality Gap Auditor: calculating the empirical visual centroid c_I and textual centroid c_T across the enterprise dataset, measuring the L2 norm of the modality gap vector Delta, and assessing whether cross-modal calibration is necessary prior to feeding visual tokens into downstream multimodal LLM projection layers.",
+                "Study the deterministic execution output of the ApexCLIP engine carefully. Notice how the positive diagonal logits dominate the contrastive matrix, resulting in a low InfoNCE loss of 0.0001, while the zero-shot classifier achieves 100.00% confidence on the target class. This architecture forms the absolute perceptual bedrock upon which we will build LLaVA linear projectors, MLP adapters, and dynamic visual patch tokenizers over the coming days. You are no longer merely a builder of language models; you are an architect of multimodal intelligence.",
+                "From an infrastructure scaling perspective, production deployment of the ApexCLIP dual-encoder engine demands rigorous memory and compute optimizations. Because the vision and text encoders can run completely asynchronously until the final embedding dot product, inference requests can be distributed across heterogeneous hardware topologies: vision passes can run on high-throughput GPU clusters with FP16 tensor cores, while text prompts can be pre-compiled and served from ultra-low-latency CPU caches.",
+                "Furthermore, the modality gap diagnostic integrated into the ApexCLIP engine provides mission-critical telemetry for enterprise observability. By continuously monitoring the drift of the modality gap vector Delta across streaming production data, engineers can detect subtle distribution shifts—such as optical sensor degradation, camera lens focal distortion, or changing linguistic terminology—long before classification accuracy degrades below contractual SLA thresholds.",
+                "In tomorrow's masterclass, we will leverage these foundational visual representations to construct Vision-to-Language Projectors: connecting pre-trained Vision Transformers directly into autoregressive Large Language Model decoders via LLaVA linear projections, MLP adapters, and Perceiver Resamplers to enable conversational visual reasoning.",
+                "Every line of standard library code in this synthesis has been engineered to illuminate the core invariant of contrastive learning: geometric distance encodes semantic meaning. By mastering the dual-encoder topology, you possess the capability to build cross-modal search, zero-shot visual tagging, and perceptual foundation layers that operate with absolute mathematical determinism."
+            ],
+            "example": "The ApexCLIP Engine processes a batch of industrial inspection images. It optimizes symmetric InfoNCE loss (L_CLIP = 0.0121), verifies zero-shot classification of a microchip image with 99.8% confidence using a 3-template ensemble, and measures a modality gap vector of norm 1.04, successfully auditing the multi-modal geometry for downstream LLM projection.",
+            "code": "import math\n\ndef norm(v):\n    return math.sqrt(sum(x * x for x in v))\n\ndef normalize(v):\n    n = norm(v)\n    return [x / (n + 1e-12) for x in v]\n\ndef dot(v1, v2):\n    return sum(x * y for x, y in zip(v1, v2))\n\ndef mat_vec_mul(W, x):\n    return [sum(W[r][c] * x[c] for c in range(len(x))) for r in range(len(W))]\n\ndef softmax(logits):\n    max_val = max(logits)\n    exps = [math.exp(x - max_val) for x in logits]\n    s = sum(exps)\n    return [x / s for x in exps]\n\ndef cross_entropy(probs, target_idx):\n    return -math.log(max(probs[target_idx], 1e-12))\n\nclass ApexCLIPEngine:\n    def __init__(self, d_v, d_t, d_e, tau=0.05):\n        self.d_e = d_e\n        self.tau = tau\n        # Deterministic projection weights W_V (d_e x d_v) and W_T (d_e x d_t)\n        # For deterministic demonstration, identity-like scaling\n        self.W_V = [[0.8 if r == c else 0.1 for c in range(d_v)] for r in range(d_e)]\n        self.W_T = [[0.85 if r == c else 0.08 for c in range(d_t)] for r in range(d_e)]\n        \n    def encode_image(self, raw_v):\n        proj = mat_vec_mul(self.W_V, raw_v)\n        return normalize(proj)\n        \n    def encode_text(self, raw_t):\n        proj = mat_vec_mul(self.W_T, raw_t)\n        return normalize(proj)\n        \n    def compute_symmetric_infonce(self, vision_batch, text_batch):\n        N = len(vision_batch)\n        V = [self.encode_image(v) for v in vision_batch]\n        T = [self.encode_text(t) for t in text_batch]\n        \n        # Compute N x N similarity matrix scaled by tau\n        sim = [[dot(V[i], T[j]) / self.tau for j in range(N)] for i in range(N)]\n        \n        loss_i2t = sum(cross_entropy(softmax(sim[i]), i) for i in range(N)) / N\n        loss_t2i = sum(cross_entropy(softmax([sim[i][j] for i in range(N)]), j) for j in range(N)) / N\n        total_loss = 0.5 * (loss_i2t + loss_t2i)\n        return total_loss, sim\n        \n    def audit_modality_gap(self, vision_batch, text_batch):\n        V = [self.encode_image(v) for v in vision_batch]\n        T = [self.encode_text(t) for t in text_batch]\n        N = len(V)\n        c_I = [sum(V[i][dim] for i in range(N)) / N for dim in range(self.d_e)]\n        c_T = [sum(T[i][dim] for i in range(N)) / N for dim in range(self.d_e)]\n        delta = [c_I[d] - c_T[d] for d in range(self.d_e)]\n        return norm(delta), c_I, c_T\n\n# Instantiate ApexCLIP with d_v = 4, d_t = 4, d_e = 4\nengine = ApexCLIPEngine(d_v=4, d_t=4, d_e=4, tau=0.05)\n\n# Training Batch: 3 matched pairs (Industrial Components)\n# 0: Microprocessor, 1: Hydraulic Valve, 2: Solar Panel\nvision_features = [\n    [0.85, 0.20, 0.10, 0.45],\n    [0.15, 0.90, 0.35, 0.10],\n    [0.10, 0.25, 0.88, 0.35]\n]\ntext_features = [\n    [0.82, 0.22, 0.12, 0.48],\n    [0.18, 0.88, 0.32, 0.12],\n    [0.08, 0.22, 0.92, 0.31]\n]\n\nloss, sim_mat = engine.compute_symmetric_infonce(vision_features, text_features)\ngap_norm, c_I, c_T = engine.audit_modality_gap(vision_features, text_features)\n\n# Zero-Shot Query: Test query of Microprocessor Board\nquery_img = vision_features[0]\nquery_v = engine.encode_image(query_img)\nclass_names = ['Microprocessor Board', 'Hydraulic Valve System', 'Solar Panel Array']\nprototypes = [engine.encode_text(t) for t in text_features]\nzero_shot_sims = [dot(query_v, p) for p in prototypes]\nzero_shot_probs = softmax([s * 50.0 for s in zero_shot_sims])\n\nprint('=== APEXCLIP MULTIMODAL DUAL-ENCODER SYNTHESIS ===')\nprint(f'Embedding Dimension d_e: {engine.d_e} | Temperature tau: {engine.tau}')\nprint(f'Symmetric InfoNCE Loss : {loss:.4f}')\nprint(f'Modality Gap Vector ||Delta||: {gap_norm:.4f}')\nprint('\\nZero-Shot Classification of Query Image:')\nfor name, s, p in zip(class_names, zero_shot_sims, zero_shot_probs):\n    print(f'  {name:24}: Cosine Sim = {s:.4f} | Prob = {p*100:5.2f}%')\nwinner = class_names[max(range(3), key=lambda i: zero_shot_probs[i])]\nprint(f'\\nSovereign Zero-Shot Decision: {winner} ({max(zero_shot_probs)*100:.2f}%)')",
+            "output": "=== APEXCLIP MULTIMODAL DUAL-ENCODER SYNTHESIS ===\nEmbedding Dimension d_e: 4 | Temperature tau: 0.05\nSymmetric InfoNCE Loss : 0.0001\nModality Gap Vector ||Delta||: 0.0416\n\nZero-Shot Classification of Query Image:\n  Microprocessor Board    : Cosine Sim = 0.9991 | Prob = 100.00%\n  Hydraulic Valve System  : Cosine Sim = 0.3855 | Prob =  0.00%\n  Solar Panel Array       : Cosine Sim = 0.4496 | Prob =  0.00%\n\nSovereign Zero-Shot Decision: Microprocessor Board (100.00%)",
+            "codeNotes": [
+                "The ApexCLIP engine encapsulates dual-projection, symmetric InfoNCE cross-entropy loss, and modality gap telemetry in a unified standard library architecture.",
+                "Zero-shot decision delivers 100.00% probability to the true class with zero manual classification labels required during training."
+            ],
+            "tryIt": "Input query_img as vision_features[1] (Hydraulic Valve) and verify that the Sovereign Zero-Shot Decision dynamically switches to Hydraulic Valve System with 100.00% confidence.",
+            "check": {
+                "question": "In an enterprise multi-modal architecture, what is the key advantage of deploying the ApexCLIP engine for zero-shot categorization over traditional supervised classifiers?",
+                "options": [
+                    "New categories can be added or updated dynamically at runtime without retraining or fine-tuning, simply by synthesizing natural language class descriptions and caching their text embeddings",
+                    "It converts high-resolution images into compressed JPEG files that take less disk storage on web servers",
+                    "It replaces the need for floating-point calculations with pure integer boolean logic gates",
+                    "It eliminates the need for GPUs entirely by routing all image inference through CPU L1 caches"
+                ],
+                "answer": 0,
+                "answerIndex": 0,
+                "why": "Zero-shot classification allows adding arbitrary new categories at runtime with zero training; you merely encode the text description of the new class and calculate cosine similarity against image vectors.",
+                "explanation": "Zero-shot classification allows adding arbitrary new categories at runtime with zero training; you merely encode the text description of the new class and calculate cosine similarity against image vectors."
+            }
+        }
+    ]
 }
 
-# --- PART 1 ---
-p1_say = [
-    "In contemporary corporate law and securities regulation, the transition from voluntary corporate philanthropy to legally enforceable Environmental, Social, and Governance (ESG) compliance represents a historic paradigm shift. Historically, corporate performance was evaluated almost exclusively through backward-looking financial statements—audited balance sheets, profit and loss statements, and cash flow reports prepared under the Companies Act and Indian Accounting Standards (Ind AS). However, systemic climate risks, global supply chain disruptions, resource depletion, and human capital challenges have demonstrated to institutional investors and sovereign regulators that non-financial ESG factors exert a direct, material impact on a corporation's long-term enterprise value and systemic financial stability.",
-    "The statutory cornerstone of ESG regulation in India is codified in Regulation 34(2)(f) of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 (SEBI LODR). Under this regulation, the top 1,000 listed entities by market capitalization on Indian stock exchanges (BSE and NSE) are legally mandated to submit a comprehensive Business Responsibility and Sustainability Report (BRSR) as an integral component of their annual report. This reporting regime is rooted in the National Guidelines on Responsible Business Conduct (NGRBC) formulated by the Ministry of Corporate Affairs (MCA). The NGRBC articulates nine foundational principles: Principle 1 (Ethical Governance, Transparency & Accountability); Principle 2 (Sustainable, Safe Goods & Lifecycle Responsibility); Principle 3 (Employee Well-being & Labor Rights); Principle 4 (Stakeholder Responsiveness); Principle 5 (Human Rights Protection); Principle 6 (Environmental Stewardship & Climate Action); Principle 7 (Responsible Public & Regulatory Policy Advocacy); Principle 8 (Inclusive Growth & Community Development); and Principle 9 (Customer Value & Consumer Protection).",
-    "Under the BRSR framework, listed corporations must transition away from subjective qualitative narratives and provide rigorous, quantitative disclosures across both Essential Indicators (mandatory compliance metrics) and Leadership Indicators (aspirational best practices). For instance, under Principle 6 (Environment), companies must disclose exact energy consumption in gigajoules, water withdrawal by source (groundwater, municipal supply, surface water), percentage of water recycled, Scope 1 direct greenhouse gas emissions, Scope 2 indirect emissions from purchased electricity, and hazardous versus non-hazardous waste generation. These disclosures must be presented alongside historical comparisons with the immediately preceding financial year, enabling regulators, credit rating agencies, and global asset managers to track the enterprise's environmental trajectory.",
-    "From an evidentiary and corporate governance perspective, compliance with Regulation 34(2)(f) is not a mere public relations exercise; it is an enforceable securities law obligation. Failure to submit an accurate, compliant BRSR report or filing misleading disclosures exposes the listed entity, its Managing Director, Chief Executive Officer, and Compliance Officer to formal regulatory enforcement actions by SEBI under Section 11 and Section 11B of the SEBI Act, 1992. Furthermore, proxy advisory firms and institutional investors (such as sovereign wealth funds and domestic mutual funds) actively vote against the reappointment of independent directors and remuneration proposals of executive boards that fail to meet statutory ESG disclosure thresholds.",
-    "Comparative international jurisprudence underscores this regulatory convergence. In the European Union, the Corporate Sustainability Reporting Directive (CSRD) and Sustainable Finance Disclosure Regulation (SFDR) impose rigorous double-materiality standards, requiring companies to disclose both how sustainability risks impact financial performance and how corporate operations impact people and the environment. Similarly, the United States Securities and Exchange Commission (SEC) has finalized climate-related disclosure rules requiring mandatory Scope 1 and Scope 2 reporting. India's BRSR framework places Indian capital markets at the forefront of this global regulatory harmonisation, ensuring that Indian corporate champions attract premium global capital while maintaining sustainable, responsible operations."
-]
+def main():
+    print(f"Total parts in Day 51: {len(day51_data['parts'])}")
+    total_words = 0
+    for idx, part in enumerate(day51_data['parts'], start=1):
+        res = subprocess.run([sys.executable, '-c', part['code']], capture_output=True, text=True)
+        if res.returncode != 0:
+            print(f"Error in Part {idx} code:\n{res.stderr}")
+            sys.exit(1)
+        part['output'] = res.stdout.strip()
+        wc = len(' '.join(part['say']).split())
+        total_words += wc
+        print(f"Part {idx}: {wc} words | Output length: {len(part['output'])} chars")
+        assert wc >= 600, f"Part {idx} word count {wc} < 600"
 
-p1_code = """# Part 1: SEBI BRSR Regulatory Scope & NGRBC Principle Auditor
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
+    print(f"Day 51 Total Words: {total_words} (>= 3000)")
+    assert total_words >= 3000
 
-@dataclass
-class ListedCorporateProfile:
-    company_name: str
-    bse_nse_market_cap_rank: int
-    turnover_cr: float
-    has_submitted_brsr: bool
-    essential_indicators_disclosed_pct: float
-    leadership_indicators_disclosed_pct: float
-
-class BRSRMandateAuditor:
-    @staticmethod
-    def audit_brsr_applicability(corp: ListedCorporateProfile) -> Tuple[bool, str, Dict]:
-        # Under SEBI LODR Reg 34(2)(f), mandatory for Top 1,000 listed entities
-        is_mandated = corp.bse_nse_market_cap_rank <= 1000
-        
-        if not is_mandated:
-            return False, "VOLUNTARY: Entity ranks outside Top 1,000 listed entities; BRSR recommended as best practice.", {
-                "mandated": False,
-                "compliance_status": "EXEMPT_FROM_MANDATORY_REG_34"
-            }
-            
-        # If mandated, evaluate disclosure completeness
-        if not corp.has_submitted_brsr:
-            return True, "NON_COMPLIANT: Entity ranked in Top 1,000 failed to submit mandatory BRSR report.", {
-                "mandated": True,
-                "compliance_status": "STATUTORY_VIOLATION_SEBI_LODR_REG_34",
-                "sebi_action": "Liable for penalty under SEBI Act Section 15HB"
-            }
-            
-        if corp.essential_indicators_disclosed_pct < 100.0:
-            return True, f"DEFECTIVE_FILING: Only {corp.essential_indicators_disclosed_pct:.1f}% Essential Indicators disclosed; 100% required.", {
-                "mandated": True,
-                "compliance_status": "INCOMPLETE_STATUTORY_DISCLOSURE",
-                "remedy": "File revised BRSR addendum within 30 days"
-            }
-            
-        return True, "FULLY_COMPLIANT: Mandated BRSR submitted with 100% Essential Indicators disclosed.", {
-            "mandated": True,
-            "compliance_status": "STATUTORY_REQUIREMENTS_SATISFIED",
-            "leadership_grade": "EXCELLENT" if corp.leadership_indicators_disclosed_pct >= 75.0 else "STANDARD"
-        }
-
-corp_top50 = ListedCorporateProfile("Tata Steel Ltd", bse_nse_market_cap_rank=42, turnover_cr=140_000.0, 
-                                   has_submitted_brsr=True, essential_indicators_disclosed_pct=100.0, leadership_indicators_disclosed_pct=82.5)
-corp_mid = ListedCorporateProfile("Apex Logistics Ltd", bse_nse_market_cap_rank=650, turnover_cr=3_200.0, 
-                                 has_submitted_brsr=True, essential_indicators_disclosed_pct=88.0, leadership_indicators_disclosed_pct=40.0)
-
-res1, status1, details1 = BRSRMandateAuditor.audit_brsr_applicability(corp_top50)
-res2, status2, details2 = BRSRMandateAuditor.audit_brsr_applicability(corp_mid)
-
-print(f"Company: {corp_top50.company_name} | Rank: #{corp_top50.bse_nse_market_cap_rank}")
-print(f"Status: {status1} -> {details1['compliance_status']}")
-print("--------------------------------------------------------------------------------")
-print(f"Company: {corp_mid.company_name} | Rank: #{corp_mid.bse_nse_market_cap_rank}")
-print(f"Status: {status2} -> {details2['compliance_status']}")
+    target_file = "scripts/nlp_builder/day51.py"
+    content = f'''"""
+Day 51: Vision-Language Foundations: Contrastive Language-Image Pre-Training (CLIP), Dual Encoders & Cross-Modal Embedding Space
+Course 37: Natural Language Processing & Computational Linguistics
+PinIT Career OS - Month 2 Enterprise Expansion
 """
 
-p1_codeNotes = [
-    "Evaluates statutory BRSR reporting mandate under SEBI LODR Regulation 34(2)(f) based on market capitalization rank.",
-    "Distinguishes between mandatory Essential Indicators (100% required) and aspirational Leadership Indicators.",
-    "Identifies regulatory infractions under SEBI Act Section 15HB for missing or defective sustainability filings.",
-    "Outputs compliance statuses and actionable rectification pathways for corporate governance teams."
-]
+DAY_51_DATA = {json.dumps(day51_data, indent=4, ensure_ascii=False)}
+'''
+    with open(target_file, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"Successfully wrote {target_file}")
 
-# --- PART 2 ---
-p2_say = [
-    "To introduce rigorous reliability and prevent superficial corporate disclosures, SEBI issued a landmark Master Circular in July 2023 establishing the 'BRSR Core' framework. Prior to this intervention, corporate sustainability reporting suffered from a fundamental credibility deficit: while financial statements were rigorously audited by independent chartered accountants under statutory auditing standards, ESG reports were largely self-certified qualitative brochures without independent third-party verification. SEBI recognized that global institutional investors allocate capital based on sustainability metrics; therefore, ESG disclosures must be subjected to the same exacting standards of evidentiary assurance as statutory financial statements.",
-    "The 'BRSR Core' is a specialized, objective subset of the wider BRSR framework, comprising nine quantifiable Key Performance Indicators (KPIs) that represent the critical pulse of an enterprise's ESG performance. These nine core parameters cover: (1) Green-House Gas (GHG) Footprint: Scope 1 direct emissions and Scope 2 indirect emissions calculated in metric tonnes of CO2 equivalent, alongside GHG intensity normalized per rupee of turnover; (2) Water Footprint: total water consumption, water withdrawal intensity per rupee of turnover, and percentage of water recycled; (3) Energy Footprint: total energy consumed, proportion of renewable energy in the energy mix, and energy intensity; (4) Waste Management: total hazardous and non-hazardous waste generated, recovery and recycling rates, and zero waste to landfill certification; (5) Employee Health and Safety: Lost Time Injury Frequency Rate (LTIFR) per million hours worked and fatalities; (6) Gender Diversity: percentage of women employees, female board representation, and the median wage ratio between male and female personnel; (7) Wage Fairness: gross wages paid to female employees as a percentage of total wages, and compliance with statutory minimum wages; (8) Well-being & Training: percentage of employees covered by health insurance and skill enhancement programs; and (9) Openness of Business: percentage of input materials sourced from local or MSME suppliers, and job creation in small towns.",
-    "Under SEBI's phased roadmap, the top 150 listed entities by market capitalization were required to obtain mandatory 'Reasonable Assurance' over their BRSR Core KPIs starting in Financial Year 2023–24, expanding to the top 250 in FY 2024–25, the top 500 in FY 2025–26, and the top 1,000 in FY 2026–27. Crucially, the assurance provider cannot be an internal auditor; it must be an independent assurance entity possessing demonstrable competence in environmental accounting and sustainability standards. The assurance provider must certify that they have examined evidentiary records, metering devices, utility invoices, and payroll ledgers to verify the reported figures under international assurance standards (such as ISAE 3000 / AA1000AS).",
-    "Perhaps the most revolutionary aspect of the BRSR Core regime is its extraterritorial expansion into the corporate Value Chain (Scope 3 emissions and supply chain ESG). Beginning in FY 2024–25 for the top 250 listed entities on a 'comply-or-explain' basis, corporations must extend BRSR Core disclosures to their top supply chain partners—accounting for at least 75% of their total purchases or sales by value. This value-chain mandate forces large conglomerates (such as automobile manufacturers and FMCG giants) to audit tier-1 vendors, micro-enterprises, and logistics suppliers for carbon intensity, child labor, and wage compliance. Small and medium enterprises (MSMEs) seeking to do business with India's largest corporations must therefore adopt carbon accounting and ESG hygiene to maintain their supplier contracts.",
-    "Corporate legal counsels and compliance officers must structure contractual 'ESG Supplier Covenants' across all procurement master service agreements (MSAs). These clauses mandate that vendors maintain verifiable energy and water metering, submit to annual third-party sustainability audits, and grant audit inspection rights to the principal company. If a supplier falsifies its carbon intensity or violates workplace safety standards, the principal listed entity faces immediate contagion risk, potentially disqualifying its own BRSR Core assurance report and triggering investor divestment."
-]
-
-p2_code = """# Part 2: BRSR Core 9-KPI Assurance & Intensity Calculator
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class BRSRCoreInputMetrics:
-    turnover_inr_crores: float
-    scope_1_ghg_mt_co2e: float
-    scope_2_ghg_mt_co2e: float
-    water_consumed_kilolitres: float
-    water_recycled_kilolitres: float
-    total_energy_consumed_gj: float
-    renewable_energy_gj: float
-    lost_time_injuries_count: int
-    total_manhours_worked_millions: float
-    female_workforce_pct: float
-    male_median_salary_lakhs: float
-    female_median_salary_lakhs: float
-    independent_assurance_obtained: bool
-
-class BRSRCoreAuditor:
-    @staticmethod
-    def compute_and_audit_kpis(metrics: BRSRCoreInputMetrics) -> Tuple[bool, Dict, List[str]]:
-        audit_flags = []
-        
-        # 1. GHG Intensity (MT CO2e per Crore of Turnover)
-        total_ghg = metrics.scope_1_ghg_mt_co2e + metrics.scope_2_ghg_mt_co2e
-        ghg_intensity = total_ghg / metrics.turnover_inr_crores
-        
-        # 2. Water Recycling Ratio
-        water_recycle_pct = (metrics.water_recycled_kilolitres / metrics.water_consumed_kilolitres) * 100.0 if metrics.water_consumed_kilolitres > 0 else 0.0
-        if water_recycle_pct < 20.0:
-            audit_flags.append(f"FLAG: Water recycling rate ({water_recycle_pct:.1f}%) is below 20% sustainable benchmark.")
-            
-        # 3. Renewable Energy Share
-        renewable_pct = (metrics.renewable_energy_gj / metrics.total_energy_consumed_gj) * 100.0 if metrics.total_energy_consumed_gj > 0 else 0.0
-        
-        # 4. Workplace Safety: LTIFR (Lost Time Injury Frequency Rate per million hours)
-        ltifr = metrics.lost_time_injuries_count / metrics.total_manhours_worked_millions if metrics.total_manhours_worked_millions > 0 else 0.0
-        if ltifr > 1.0:
-            audit_flags.append(f"FLAG: LTIFR ({ltifr:.2f}) exceeds safe industrial threshold of 1.0 per million hours.")
-            
-        # 5. Gender Pay Equity Ratio (Female / Male Median Salary)
-        gender_pay_equity_ratio = (metrics.female_median_salary_lakhs / metrics.male_median_salary_lakhs) if metrics.male_median_salary_lakhs > 0 else 1.0
-        if gender_pay_equity_ratio < 0.80:
-            audit_flags.append(f"FLAG: Gender pay equity ({gender_pay_equity_ratio:.2f}) indicates > 20% compensation disparity.")
-            
-        # 6. Assurance Verification
-        if not metrics.independent_assurance_obtained:
-            audit_flags.append("CRITICAL: Mandatory third-party reasonable assurance missing under SEBI Master Circular.")
-            is_valid = False
-        else:
-            is_valid = len([f for f in audit_flags if "CRITICAL" in f]) == 0
-            
-        kpis = {
-            "total_ghg_mt_co2e": total_ghg,
-            "ghg_intensity_per_cr": round(ghg_intensity, 2),
-            "water_recycle_pct": round(water_recycle_pct, 1),
-            "renewable_energy_pct": round(renewable_pct, 1),
-            "ltifr_rate": round(ltifr, 2),
-            "gender_pay_equity": round(gender_pay_equity_ratio, 2),
-            "assurance_certified": metrics.independent_assurance_obtained
-        }
-        
-        return is_valid, kpis, audit_flags
-
-data = BRSRCoreInputMetrics(
-    turnover_inr_crores=5000.0,
-    scope_1_ghg_mt_co2e=125000.0,
-    scope_2_ghg_mt_co2e=45000.0,
-    water_consumed_kilolitres=850000.0,
-    water_recycled_kilolitres=320000.0,
-    total_energy_consumed_gj=450000.0,
-    renewable_energy_gj=180000.0,
-    lost_time_injuries_count=2,
-    total_manhours_worked_millions=4.5,
-    female_workforce_pct=28.5,
-    male_median_salary_lakhs=14.5,
-    female_median_salary_lakhs=13.2,
-    independent_assurance_obtained=True
-)
-
-valid, kpi_res, flags = BRSRCoreAuditor.compute_and_audit_kpis(data)
-print(f"BRSR Core Audit Valid: {valid}")
-print(f"GHG Intensity: {kpi_res['ghg_intensity_per_cr']} MT/Cr | Water Recycled: {kpi_res['water_recycle_pct']}%")
-print(f"Renewable Share: {kpi_res['renewable_energy_pct']}% | LTIFR: {kpi_res['ltifr_rate']} | Pay Equity: {kpi_res['gender_pay_equity']}")
-for fl in flags:
-    print(f" [*] {fl}")
-"""
-
-p2_codeNotes = [
-    "Computes SEBI BRSR Core Key Performance Indicators: GHG intensity, water recycling, renewable share, LTIFR, and pay equity.",
-    "Normalizes emissions and resource consumption against gross turnover in Indian Rupees (Crores).",
-    "Audits operational parameters against industrial safety and ESG benchmarks (LTIFR $\le 1.0$, water recycling $\ge 20\%$).",
-    "Enforces mandatory third-party reasonable assurance certification under the SEBI July 2023 Master Circular."
-]
-
-# --- PART 3 ---
-p3_say = [
-    "As capital markets increasingly reward sustainable corporations with higher valuation multiples and lower borrowing costs, the corporate temptation to fabricate or exaggerate environmental credentials has created a severe securities law violation known as 'Greenwashing'. Greenwashing is defined as the practice of making false, misleading, unsubstantiated, or exaggerated claims regarding the environmental benefits, climate neutrality, sustainability practices, or ethical standards of a company's products, services, or overall business operations. In India's regulatory framework, greenwashing has transitioned from an ethical criticism into a high-risk statutory offense prosecuted vigorously by both the Securities and Exchange Board of India (SEBI) and the Ministry of Corporate Affairs (MCA).",
-    "Under the SEBI (Prohibition of Fraudulent and Unfair Trade Practices relating to Securities Market) Regulations, 2003 (PFUTP Regulations), disseminating misleading information that induces investors to purchase, hold, or sell securities is classified as a fraudulent market practice. Regulation 4(2)(k) of PFUTP explicitly prohibits publishing any statement, promise, or forecast that is untrue or misleading. If a listed enterprise advertises in its annual report or investor presentations that it has achieved 'Net Zero Emissions' or '100% Water Positive Operations' when its underlying operations rely on undisclosed fossil-fuel generation or unverified carbon offsets, SEBI has the statutory power to initiate formal adjudication proceedings. Penalties under Section 15HA of the SEBI Act, 1992 can extend up to Rs 25 crore or three times the amount of profits made out of such fraudulent practices, accompanied by debarment of executive directors from accessing the securities market.",
-    "Furthermore, Section 448 of the Companies Act, 2013 establishes severe criminal liability for misstatements in statutory reports. Section 448 provides: 'If in any return, report, certificate, financial statement, prospectus, statement or other document required by, or for, the purposes of any of the provisions of this Act or the rules made thereunder, any person makes a statement which is false in any material particulars, knowing it to be false, or which omits any material fact, knowing it to be material, he shall be liable under section 447.' Under Section 447, any person found guilty of corporate fraud faces mandatory non-bailable imprisonment for a term between six months and ten years, alongside a fine up to three times the amount involved in the fraud.",
-    "To govern the independent evaluation of sustainability claims, SEBI introduced a comprehensive regulatory framework for ESG Rating Providers (ERPs) in 2023 by amending the SEBI (Credit Rating Agencies) Regulations, 1999. Under Chapter IV-A, no entity can act as an ESG rating provider in Indian securities markets without obtaining formal registration from SEBI. The regulations establish two tiers: Category I ERPs (full-scale rating providers requiring minimum net worth of Rs 10 crore) and Category II ERPs (specialized providers requiring Rs 5 crore). ERPs must formulate transparent rating methodologies, maintain strict conflict-of-interest walls between ESG ratings and ESG consulting services, and provide an explicit 'Core ESG Rating' based exclusively on verified BRSR Core data.",
-    "From a risk mitigation standpoint, corporate legal teams must implement an internal 'ESG Substantiation and Verification Protocol'. Before any sustainability metric, carbon neutrality target, or green bond allocation is disclosed in regulatory filings or marketing brochures, the corporate legal department must review the primary documentary evidence. Every environmental claim must be backed by ISO 14064 greenhouse gas audits, Central Pollution Control Board (CPCB) consent orders, or verified third-party laboratory test reports. By establishing strict internal evidentiary gates, companies insulate themselves against devastating SEBI enforcement orders and catastrophic reputational damage."
-]
-
-p3_code = """# Part 3: Anti-Greenwashing & Regulatory Fraud Penalty Auditor
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class ESGClaimVerification:
-    claim_id: str
-    claim_text: str
-    is_publicly_advertised: bool
-    has_substantiated_evidence: bool
-    uses_unverified_unregistered_offsets: bool
-    estimated_greenwashing_premium_inr_cr: float
-
-class GreenwashingProsecutionAuditor:
-    @staticmethod
-    def audit_claim_integrity(claims: List[ESGClaimVerification]) -> Tuple[bool, str, List[Dict]]:
-        violations = []
-        is_clean = True
-        
-        for c in claims:
-            # Test 1: Unsubstantiated claims violate PFUTP Reg 4(2)(k)
-            if not c.has_substantiated_evidence:
-                violations.append({
-                    "claim_id": c.claim_id,
-                    "text": c.claim_text,
-                    "statute": "SEBI PFUTP Regulation 4(2)(k) & Companies Act Section 448",
-                    "severity": "CRIMINAL_FRAUD",
-                    "penalty_exposure_inr_cr": max(25.0, c.estimated_greenwashing_premium_inr_cr * 3.0),
-                    "reason": "Unsubstantiated environmental claim in statutory filing; false representation to investors."
-                })
-                is_clean = False
-                
-            # Test 2: Unverified offsets
-            elif c.uses_unverified_unregistered_offsets:
-                violations.append({
-                    "claim_id": c.claim_id,
-                    "text": c.claim_text,
-                    "statute": "SEBI Master Circular on BRSR Core & ESG Rating Rules",
-                    "severity": "REGULATORY_NON_COMPLIANCE",
-                    "penalty_exposure_inr_cr": 5.0,
-                    "reason": "Net-Zero claim relies on unverified offshore carbon credits lacking Article 6 Paris Agreement validation."
-                })
-                is_clean = False
-                
-        status = "COMPLIANT_ZERO_GREENWASHING" if is_clean else "GREENWASHING_FRAUD_DETECTED"
-        return is_clean, status, violations
-
-c1 = ESGClaimVerification("CLM-01", "100% Water Positive Operations in Rajasthan Facility", True, True, False, 0.0)
-c2 = ESGClaimVerification("CLM-02", "Certified Carbon Neutral Product Line Across All Retail Stores", True, False, True, 12.0)
-
-clean, verdict, audit_findings = GreenwashingProsecutionAuditor.audit_claim_integrity([c1, c2])
-print(f"Overall Corporate ESG Integrity: {verdict}")
-for f in audit_findings:
-    print(f"Violation [{f['claim_id']}]: {f['statute']}")
-    print(f" - Severity: {f['severity']} | Maximum Penalty: INR {f['penalty_exposure_inr_cr']:.1f} Crores")
-    print(f" - Detail: {f['reason']}")
-"""
-
-p3_codeNotes = [
-    "Evaluates corporate sustainability claims against SEBI PFUTP Regulations and Companies Act Section 447/448 fraud standards.",
-    "Exposes greenwashing tactics: unverified net-zero assertions and unregistered offshore carbon offsets.",
-    "Calculates statutory penalty exposure under SEBI Act Section 15HA (up to Rs 25 crore or 3x fraudulent gains).",
-    "Generates itemized prosecution alerts, protecting listed issuers from criminal liability and securities debarment."
-]
-
-# --- PART 4 ---
-p4_say = [
-    "The implementation of ESG regulatory compliance fundamentally reshapes the fiduciary duties and corporate governance architecture of the Board of Directors. Under Section 166 of the Companies Act, 2013, Indian corporate law established a modern, enlightened shareholder value model that codified directors' duties toward broader society. Specifically, Section 166(2) provides: 'A director of a company shall act in good faith in order to promote the objects of the company for the benefit of its members as a whole, and in the best interests of the company, its employees, the shareholders, the community and for the protection of environment.' This statutory provision is historic: environmental protection is not a mere discretionary guideline; it is a personal, statutory duty imposed directly on every individual director.",
-    "Directors who treat environmental regulations with indifference or who fail to exercise reasonable care and due diligence face personal liability under Section 166(7), which prescribes fines up to Rs 5 lakh alongside potential civil damages in tort for environmental destruction. Furthermore, under Regulation 17(9) of the SEBI LODR Regulations, the Board of Directors is legally responsible for framing, implementing, and monitoring the company's risk management plan. In contemporary enterprise governance, climate transition risks, carbon border taxes (such as the EU Carbon Border Adjustment Mechanism - CBAM), and water scarcity are recognized as existential strategic risks. A board that fails to evaluate the impact of CBAM on its export revenues breaches its oversight duties under Regulation 17(9).",
-    "To institutionalize this oversight, elite listed enterprises establish specialized Board-level committees: the 'ESG and Sustainability Committee'. Typically chaired by an Independent Director and comprising the Managing Director and Chief Financial Officer, this committee is tasked with: (1) reviewing quarterly BRSR Core progress reports; (2) approving capital expenditure for renewable energy and effluent treatment plants; (3) vetting the independence and credentials of external assurance providers; and (4) aligning executive compensation with sustainability milestones. Under modern executive compensation structures, up to 20% to 30% of Executive Directors' annual variable pay and Long-Term Incentive Plans (LTIPs) are tethered directly to achieving verified ESG targets, such as reductions in Scope 1 GHG emissions and improvements in the LTIFR workplace safety index.",
-    "In parallel, the Audit Committee exercises an indispensable statutory check under Section 177 of the Companies Act and Regulation 18 of SEBI LODR. The Audit Committee must review the internal financial and non-financial controls governing sustainability data collection. Because BRSR Core metrics must be assured by third-party auditors, the Audit Committee is responsible for recommending the appointment, remuneration, and terms of engagement of the ESG assurance provider, ensuring there are no conflicts of interest with the company's statutory financial auditors.",
-    "The emerging frontier of corporate litigation involves shareholder climate activism and derivative lawsuits. Institutional investors holding minority stakes in listed carbon-heavy companies are increasingly utilizing general meetings to table shareholder resolutions demanding science-based climate targets (SBTi). If directors fail to act in accordance with Section 166(2), institutional shareholders have the legal standing to petition the National Company Law Tribunal (NCLT) under Section 241 of the Companies Act for 'oppression and mismanagement', arguing that environmental negligence is prejudicial to the public interest and the long-term solvency of the company."
-]
-
-p4_code = """# Part 4: Board ESG Governance & Director Section 166(2) Compliance Engine
-from dataclasses import dataclass
-from typing import Dict, List, Tuple
-
-@dataclass
-class BoardESGStructure:
-    has_dedicated_esg_committee: bool
-    esg_committee_chaired_by_independent_dir: bool
-    quarterly_brsr_review_conducted: bool
-    executive_comp_linked_to_esg_targets_pct: float
-    cbam_climate_risk_assessed: bool
-    internal_controls_audited_by_audit_comm: bool
-
-class BoardGovernanceAuditor:
-    @staticmethod
-    def audit_board_fiduciary_esg_controls(gov: BoardESGStructure) -> Tuple[bool, float, List[str]]:
-        findings = []
-        score = 0.0
-        
-        # Test 1: Committee Governance
-        if gov.has_dedicated_esg_committee and gov.esg_committee_chaired_by_independent_dir:
-            score += 25.0
-            findings.append("PASSED: Dedicated Board ESG Committee established with Independent Director leadership.")
-        else:
-            findings.append("DEFICIENT: Missing Board ESG Committee or lacks Independent Director chair.")
-            
-        # Test 2: Regular Oversight & Section 166(2) Compliance
-        if gov.quarterly_brsr_review_conducted:
-            score += 20.0
-            findings.append("PASSED: Quarterly BRSR Core data review conducted at Board level.")
-        else:
-            findings.append("DEFICIENT: No quarterly Board-level oversight; risk of personal liability under S.166(2).")
-            
-        # Test 3: Executive Remuneration Alignment
-        if gov.executive_comp_linked_to_esg_targets_pct >= 15.0:
-            score += 20.0
-            findings.append(f"PASSED: Executive compensation tied to ESG ({gov.executive_comp_linked_to_esg_targets_pct}% variable weight).")
-        else:
-            findings.append("DEFICIENT: Inadequate executive incentive alignment (<15% ESG linkage).")
-            
-        # Test 4: Strategic Climate Risk Management (CBAM)
-        if gov.cbam_climate_risk_assessed:
-            score += 15.0
-            findings.append("PASSED: Climate transition and EU CBAM export risks assessed under SEBI LODR Reg 17(9).")
-        else:
-            findings.append("DEFICIENT: Failure to model CBAM financial impact on international revenues.")
-            
-        # Test 5: Audit Committee Assurance Control
-        if gov.internal_controls_audited_by_audit_comm:
-            score += 20.0
-            findings.append("PASSED: Audit Committee reviewed internal controls for non-financial ESG data collection.")
-        else:
-            findings.append("DEFICIENT: Audit Committee omitted review of ESG internal data controls.")
-            
-        is_compliant = score >= 80.0
-        return is_compliant, score, findings
-
-gov_strong = BoardESGStructure(
-    has_dedicated_esg_committee=True,
-    esg_committee_chaired_by_independent_dir=True,
-    quarterly_brsr_review_conducted=True,
-    executive_comp_linked_to_esg_targets_pct=25.0,
-    cbam_climate_risk_assessed=True,
-    internal_controls_audited_by_audit_comm=True
-)
-
-is_comp, gov_score, notes = BoardGovernanceAuditor.audit_board_fiduciary_esg_controls(gov_strong)
-print(f"Board Governance Compliance: {is_comp} | Overall Score: {gov_score:.1f} / 100.0")
-for n in notes:
-    print(f" [*] {n}")
-"""
-
-p4_codeNotes = [
-    "Evaluates Board of Directors oversight against Companies Act Section 166(2) statutory environmental duties.",
-    "Audits the constitution and independence of specialized Board ESG and Sustainability Committees.",
-    "Assesses executive compensation linkage: verifies whether 20-25% of variable pay is tethered to verified ESG goals.",
-    "Examines climate risk modeling under SEBI LODR Regulation 17(9) for cross-border carbon border adjustment mechanisms."
-]
-
-# --- PART 5 ---
-p5_say = [
-    "To achieve mastery over corporate environmental and regulatory compliance, legal counsels, company secretaries, and financial directors must assemble NGRBC principles, BRSR Core quantitative calculations, anti-greenwashing verification, and Board governance controls into a unified production architecture. In large listed enterprise groups, sustainability compliance is no longer a peripheral public relations task; it is a high-stakes corporate legal function that directly dictates market access, capital cost, and regulatory standing.",
-    "The industrial-grade Python engine developed in this masterclass models the complete ESG regulatory architecture for 'Bharat Industrial Infrastructure Ltd', a top-100 listed Indian conglomerate with operations across manufacturing, thermal energy, logistics, and supply chain hubs. The company reports annual gross turnover of Rs 18,500 crore and employs over 14,000 personnel. The simulator executes an exhaustive forensic audit across all nine NGRBC principles, tracking Scope 1 and Scope 2 carbon emissions, water recycling intensities, LTIFR workplace incident rates, gender wage equity ratios, and supplier value-chain compliance.",
-    "The engine sequentially executes five advanced compliance modules: First, it computes gross and normalized GHG intensity, evaluating Scope 1 and Scope 2 emissions against statutory industrial benchmarks. Second, it calculates the water recycling ratio and workplace safety LTIFR index, confirming compliance with zero-fatality standards. Third, it audits corporate sustainability advertising claims under SEBI PFUTP Regulation 4(2)(k) and Companies Act Section 448, screening for unverified carbon offsets and eliminating greenwashing penalty exposure.",
-    "Fourth, it evaluates the Board of Directors' governance structure, auditing the ESG Committee's independent leadership, executive compensation alignment, and Audit Committee assurance controls under Section 166(2) and Section 177. Fifth, it verifies the independent third-party reasonable assurance report mandated under the SEBI Master Circular. Upon running all five validation suites and verifying zero statutory discrepancies, the engine outputs the definitive masterclass certification code: SEBI_BRSR_CORE_COMPLIANCE_PASS."
-]
-
-p5_code = """# Part 5: Production SEBI BRSR Core Compliance & ESG Assurance Master Engine
-import hashlib
-from typing import Dict, List, Tuple
-
-class SEBIBRSRMasterEngine:
-    def __init__(self, company_name: str, market_cap_rank: int, turnover_inr_cr: float):
-        self.company_name = company_name
-        self.market_cap_rank = market_cap_rank
-        self.turnover_inr_cr = turnover_inr_cr
-        self.kpi_data: Dict[str, float] = {}
-        self.verified_claims: List[str] = []
-        self.audit_log: List[str] = []
-
-    def set_environmental_kpis(self, scope_1_mt: float, scope_2_mt: float, 
-                              water_consumed_kl: float, water_recycled_kl: float, 
-                              renewable_energy_share_pct: float):
-        total_ghg = scope_1_mt + scope_2_mt
-        ghg_intensity = total_ghg / self.turnover_inr_cr
-        water_recycle_rate = (water_recycled_kl / water_consumed_kl) * 100.0 if water_consumed_kl > 0 else 0.0
-        
-        self.kpi_data["total_ghg_mt"] = total_ghg
-        self.kpi_data["ghg_intensity_per_cr"] = ghg_intensity
-        self.kpi_data["water_recycle_rate_pct"] = water_recycle_rate
-        self.kpi_data["renewable_energy_pct"] = renewable_energy_share_pct
-        self.audit_log.append(f"Environmental KPIs: GHG Intensity={ghg_intensity:.2f} MT/Cr | Water Recycled={water_recycle_rate:.1f}% | Renewable={renewable_energy_share_pct:.1f}%")
-
-    def set_social_and_governance_kpis(self, ltifr: float, gender_pay_equity: float, 
-                                       independent_esg_committee: bool, 
-                                       audit_comm_assurance_signed: bool):
-        self.kpi_data["ltifr"] = ltifr
-        self.kpi_data["gender_pay_equity"] = gender_pay_equity
-        self.kpi_data["independent_esg_comm"] = 1.0 if independent_esg_committee else 0.0
-        self.kpi_data["audit_comm_signed"] = 1.0 if audit_comm_assurance_signed else 0.0
-        self.audit_log.append(f"Social/Gov KPIs: LTIFR={ltifr:.2f} | Gender Pay Equity={gender_pay_equity:.2f} | Assurance Signed={audit_comm_assurance_signed}")
-
-    def verify_greenwashing_hygiene(self, claims: List[Tuple[str, bool]]):
-        for text, has_proof in claims:
-            assert has_proof, f"Greenwashing violation detected on claim: {text}"
-            self.verified_claims.append(text)
-        self.audit_log.append(f"Anti-Greenwashing Audit Passed: {len(self.verified_claims)} claims verified against ISO/CPCB evidence.")
-
-    def run_statutory_masterclass_audit(self) -> bool:
-        print("================================================================================")
-        print("     SEBI BRSR CORE & CORPORATE ESG REGULATORY ASSURANCE ENGINE                 ")
-        print("================================================================================")
-        print(f"Listed Enterprise: {self.company_name} | BSE/NSE Market Cap Rank: #{self.market_cap_rank}")
-        print(f"Gross Turnover: INR {self.turnover_inr_cr:,.2f} Crores | Mandatory Scope: SEBI LODR Reg 34(2)(f)")
-        print("--------------------------------------------------------------------------------")
-        for log in self.audit_log:
-            print(f"[*] {log}")
-            
-        print("--------------------------------------------------------------------------------")
-        print("BRSR CORE KEY PERFORMANCE INDICATOR (KPI) SUMMARY:")
-        print(f" - Gross GHG Footprint (Scope 1 + 2): {self.kpi_data['total_ghg_mt']:,.2f} MT CO2e")
-        print(f" - Normalized GHG Intensity: {self.kpi_data['ghg_intensity_per_cr']:.2f} MT / INR Crore")
-        print(f" - Water Circularity Recycle Ratio: {self.kpi_data['water_recycle_rate_pct']:.1f}%")
-        print(f" - Industrial Safety LTIFR: {self.kpi_data['ltifr']:.2f} per million man-hours")
-        print(f" - Gender Compensation Equity: {self.kpi_data['gender_pay_equity']:.2f}")
-        print("================================================================================")
-        
-        # Invariant validations
-        assert self.market_cap_rank <= 1000, "Must fall within mandatory Top 1,000 threshold"
-        assert self.kpi_data["water_recycle_rate_pct"] >= 25.0, "Must satisfy water circularity threshold"
-        assert self.kpi_data["ltifr"] <= 1.0, "LTIFR must conform to industrial safety standards"
-        assert self.kpi_data["audit_comm_signed"] == 1.0, "Audit Committee must sign off on independent assurance"
-        assert len(self.verified_claims) >= 2, "Must verify all published environmental claims"
-        
-        print("[PASS] SEBI_BRSR_CORE_COMPLIANCE_PASS")
-        return True
-
-engine = SEBIBRSRMasterEngine("Bharat Industrial Infrastructure Ltd", market_cap_rank=74, turnover_inr_cr=18500.0)
-engine.set_environmental_kpis(scope_1_mt=280000.0, scope_2_mt=95000.0, water_consumed_kl=1200000.0, water_recycled_kl=420000.0, renewable_energy_share_pct=34.5)
-engine.set_social_and_governance_kpis(ltifr=0.42, gender_pay_equity=0.92, independent_esg_committee=True, audit_comm_assurance_signed=True)
-engine.verify_greenwashing_hygiene([
-    ("Zero Untreated Effluent Discharge across all 12 Plants", True),
-    ("34.5% Renewable Energy Mix verified by State Electricity Boards", True)
-])
-
-engine.run_statutory_masterclass_audit()
-"""
-
-p5_codeNotes = [
-    "Industrial-grade SEBI BRSR Core masterclass simulator modeling enterprise ESG governance.",
-    "Calculates Scope 1/2 GHG intensity, water circularity ratios, and LTIFR safety indicators.",
-    "Enforces strict anti-greenwashing controls under SEBI PFUTP and Companies Act Section 448.",
-    "Audits Board ESG committee independence and Audit Committee reasonable assurance sign-offs.",
-    "Validates all statutory compliance invariants and confirms: `SEBI_BRSR_CORE_COMPLIANCE_PASS`."
-]
-
-parts_spec = [
-    ("Part 1: ESG Jurisprudence & SEBI LODR Regulation 34(2)(f) Mandate", p1_say, p1_code, p1_codeNotes,
-     "Assess listed company market capitalization thresholds and evaluate mandatory BRSR applicability under SEBI LODR Regulation 34(2)(f).",
-     "Under Regulation 34(2)(f) of the SEBI LODR Regulations, which entities are legally mandated to submit a Business Responsibility and Sustainability Report (BRSR)?",
-     ["The top 1,000 listed entities on Indian stock exchanges by market capitalization",
-      "Only public sector banking institutions holding sovereign government guarantees",
-      "All private limited companies incorporated within the last twelve months",
-      "Foreign non-governmental organizations operating charitable trusts in India"],
-     "Regulation 34(2)(f) makes BRSR mandatory for the top 1,000 listed entities by market capitalization."),
-
-    ("Part 2: The BRSR Core 9-KPI Reasonable Assurance Framework", p2_say, p2_code, p2_codeNotes,
-     "Compute BRSR Core Key Performance Indicators across GHG emissions, water circularity, LTIFR, and gender pay equity.",
-     "What distinguishes 'BRSR Core' from the broader BRSR disclosure framework under the SEBI Master Circular of July 2023?",
-     ["BRSR Core comprises a critical subset of 9 quantifiable KPIs that require mandatory reasonable assurance from an independent third-party assurance provider",
-      "BRSR Core applies exclusively to software startups without physical office locations",
-      "BRSR Core eliminates all environmental reporting requirements in favor of executive tax returns",
-      "BRSR Core allows corporations to self-certify sustainability without presenting documentary evidence"],
-     "BRSR Core specifies 9 key ESG performance indicators that require mandatory third-party reasonable assurance."),
-
-    ("Part 3: Greenwashing Liability & Anti-Fraud Securities Regulations", p3_say, p3_code, p3_codeNotes,
-     "Audit corporate sustainability claims under SEBI PFUTP Regulations and Companies Act Section 448 fraud standards.",
-     "What statutory liability arises if a listed enterprise publishes false or misleading 'Net Zero' claims in its annual report?",
-     ["Prosecution under SEBI PFUTP Regulation 4(2)(k) and criminal fraud liability under Companies Act Sections 447 and 448 with potential imprisonment up to 10 years",
-      "A modest administrative warning with zero financial penalties or public disclosure",
-      "Immediate exemption from corporate income tax for the subsequent financial year",
-      "Automatic transfer of corporate equity shares to the United Nations Development Programme"],
-     "Disseminating false sustainability statements is classified as securities fraud under PFUTP and corporate fraud under Companies Act Sections 447/448."),
-
-    ("Part 4: Board Fiduciary Duties & Director Environmental Responsibility under Section 166(2)", p4_say, p4_code, p4_codeNotes,
-     "Examine personal director liabilities under Section 166(2) and structure Board-level ESG committees and executive compensation linkage.",
-     "How does Section 166(2) of the Companies Act, 2013 formally define a director's statutory environmental responsibility?",
-     ["A director is legally mandated to act in good faith to promote company objects, protect employees and community, and act 'for the protection of environment'",
-      "A director is legally forbidden from considering environmental issues during boardroom meetings",
-      "A director must allocate 100% of annual company revenues to international carbon credit brokers",
-      "A director is personally exempt from all environmental liabilities if corporate shares are held in demat form"],
-     "Section 166(2) codifies the explicit statutory duty of directors to act for the protection of the environment."),
-
-    ("Part 5: Production SEBI BRSR Core Compliance & ESG Assurance Engine", p5_say, p5_code, p5_codeNotes,
-     "Run the integrated BRSR Core KPI calculator, anti-greenwashing auditor, and Board governance verification engine.",
-     "What key milestone certification is awarded upon executing the Day 51 production ESG engine?",
-     ["SEBI_BRSR_CORE_COMPLIANCE_PASS verifying GHG intensity, water circularity, anti-greenwashing hygiene, and Board ESG governance",
-      "VOLUNTARY_CARBON_ARBITRAGE_PASS allowing trading of uncertified carbon offsets without regulatory oversight",
-      "AUTOMATIC_POLLUTION_EXEMPTION_PASS shielding industrial factories from state pollution board inspections",
-      "UNCONDITIONAL_MARKET_CAPITALIZATION_PASS exempting listed issuers from SEBI LODR disclosures"],
-     "The engine validates BRSR Core KPIs, anti-greenwashing hygiene, and Board governance, issuing SEBI_BRSR_CORE_COMPLIANCE_PASS.")
-]
-
-for idx, (title, say, code, notes, try_it, q, opts, expl) in enumerate(parts_spec, 1):
-    print(f"Executing Day 51 Part {idx} code...")
-    stdout = run_code(code)
-    wc = count_words(say)
-    print(f"Part {idx}: {wc} words in say. Code execution successful.")
-    
-    part_dict = {
-        "title": title,
-        "say": say,
-        "example": f"Real-world ESG compliance scenario for {title}.",
-        "code": code,
-        "output": stdout,
-        "codeNotes": notes,
-        "tryIt": [try_it],
-        "check": {
-            "question": q,
-            "options": opts,
-            "answer": 0,
-            "explanation": expl
-        }
-    }
-    day51["parts"].append(part_dict)
-
-total_day_words = sum(count_words(p["say"]) for p in day51["parts"])
-print(f"=== DAY 51 TOTAL WORDS: {total_day_words} ===")
-
-with open("scripts/bcom_law_day51.json", "w", encoding="utf-8") as f:
-    json.dump(day51, f, indent=2)
-
-print("Saved scripts/bcom_law_day51.json successfully!")
+if __name__ == "__main__":
+    main()
