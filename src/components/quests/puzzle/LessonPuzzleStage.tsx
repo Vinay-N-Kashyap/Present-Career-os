@@ -91,10 +91,21 @@ export function LessonPuzzleStage({
   // Verify solution against target sequence
   const handleTestSolution = () => {
     setIsEvaluated(true);
+
+    // Check for decoys first
+    if (puzzle.decoyBlockIds && puzzle.decoyBlockIds.length > 0) {
+      const placedDecoyId = placedOrder.find(id => puzzle.decoyBlockIds?.includes(id));
+      if (placedDecoyId) {
+        const decoyBlock = puzzle.blocks.find(b => b.id === placedDecoyId);
+        setErrorMessage(`Decoy Detected: "${decoyBlock?.label || 'This block'}" is an intentional trap / anti-pattern! Remove it from the pipeline.`);
+        setIsSuccess(false);
+        return;
+      }
+    }
     
     // Check length
     if (placedOrder.length !== puzzle.correctOrder.length) {
-      setErrorMessage(`Incomplete pipeline: You placed ${placedOrder.length} blocks, but this solution requires ${puzzle.correctOrder.length} blocks.`);
+      setErrorMessage(`Incomplete pipeline: You placed ${placedOrder.length} blocks, but this solution requires exactly ${puzzle.correctOrder.length} blocks.`);
       setIsSuccess(false);
       return;
     }
@@ -111,7 +122,7 @@ export function LessonPuzzleStage({
       setIsSuccess(false);
       // Find first mismatch
       const mismatchIdx = placedOrder.findIndex((id, idx) => id !== puzzle.correctOrder[idx]);
-      setErrorMessage(`Misaligned Step ${mismatchIdx + 1}: The block at position ${mismatchIdx + 1} does not belong here in the logical flow.`);
+      setErrorMessage(`Misaligned Step ${mismatchIdx + 1}: The block at position ${mismatchIdx + 1} does not belong here in the logical sequence.`);
     }
   };
 
@@ -282,8 +293,15 @@ export function LessonPuzzleStage({
                         {idx + 1}
                       </span>
                       <div style={{ minWidth: 0 }}>
-                        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                          {block.label}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                          <span style={{ fontSize: 12.5, fontWeight: 800, color: '#ffffff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {block.label}
+                          </span>
+                          {block.badge && (
+                            <span style={{ fontSize: 9.5, fontWeight: 900, padding: '1px 5px', borderRadius: 4, background: cStyle.border, color: '#0f172a', letterSpacing: '0.5px' }}>
+                              {block.badge}
+                            </span>
+                          )}
                         </div>
                         {block.subtext && (
                           <div style={{ fontSize: 11.5, fontFamily: 'monospace', color: cStyle.text, marginTop: 2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -371,8 +389,15 @@ export function LessonPuzzleStage({
                     }}
                   >
                     <div style={{ minWidth: 0, flex: 1 }}>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#f1f5f9' }}>
-                        {block.label}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#f1f5f9' }}>
+                          {block.label}
+                        </span>
+                        {block.badge && (
+                          <span style={{ fontSize: 9, fontWeight: 900, padding: '1px 5px', borderRadius: 4, background: cStyle.border, color: '#0f172a', letterSpacing: '0.5px' }}>
+                            {block.badge}
+                          </span>
+                        )}
                       </div>
                       {block.subtext && (
                         <div style={{ fontSize: 11, fontFamily: 'monospace', color: cStyle.text, marginTop: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
