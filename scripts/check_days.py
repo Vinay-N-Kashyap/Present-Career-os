@@ -1,7 +1,10 @@
 import re
+from pathlib import Path
 
-files = ['excelVizLongLessons.ts', 'compFundLongLessons.ts', 'gitVcsLongLessons.ts', 'softSkillsLongLessons.ts']
-for f in files:
-    content = open('src/lib/data/' + f, encoding='utf-8').read()
-    days = re.findall(r'["\']?day["\']?:\s*(\d+)', content)
-    print(f"{f}: {len(days)} days ({days})")
+text = Path("src/lib/data/bcomScrmLongLessons.ts").read_text(encoding="utf-8")
+matches = list(re.finditer(r'"day":\s*(\d+)', text))
+print("Total day matches:", len(matches))
+for m in matches:
+    d = int(m.group(1))
+    if d >= 48:
+        print(f"Pos {m.start()}: Day {d}")
