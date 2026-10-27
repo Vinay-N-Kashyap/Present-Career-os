@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 51,
+  "entries": [
+    {
+      "partTitle": "Anatomy of Vapourware: Over-Promised Architectural Capabilities, SLAs & The Legal Trap",
+      "codeHash": "52343d9ad6302a366d36114d88f8d9592c3f546a0dfcbe8828bc02ef714d1e39",
+      "spec": {
+        "template": "funnel",
+        "title": "Anatomy of Vapourware: Over-Promise... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing contract clauses and gross margin incentive boundary conditions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing dynamic account tiering and intent telemetry routing matrices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating hierarchical product bundles and multi-term proration math.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Engineering Governance & Dual Co-Signature Workflows: Enforcing Technical Feasibility Gates",
+      "codeHash": "fcfef1dfea6dbb351ae8a603f7ea13c3b0bbdc29ff1229fd95ef696d85903138",
+      "spec": {
+        "template": "funnel",
+        "title": "Engineering Governance & Dual Co-Si... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing contract clauses and gross margin incentive boundary conditions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing dynamic account tiering and intent telemetry routing matrices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating hierarchical product bundles and multi-term proration math.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Contractual Liability, Liquidated Damages & Uncapped Indemnification Traps",
+      "codeHash": "5a90d59c453dccfa0bd952e470f1a42bbfa7c850ff8c1d9057fa0e3568cf0d1d",
+      "spec": {
+        "template": "funnel",
+        "title": "Contractual Liability, Liquidated D... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing contract clauses and gross margin incentive boundary conditions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing dynamic account tiering and intent telemetry routing matrices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating hierarchical product bundles and multi-term proration math.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Contract Clause Scanning & Ambiguity Detection via Pattern Matching",
+      "codeHash": "072d90577e85142d7b3a8b73981e41d9d39cb4a3448363960fd0d74fd31d5cfc",
+      "spec": {
+        "template": "funnel",
+        "title": "Automated Contract Clause Scanning ... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing contract clauses and gross margin incentive boundary conditions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing dynamic account tiering and intent telemetry routing matrices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating hierarchical product bundles and multi-term proration math.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Python Implementation: Complete Vapourware Defense & Roadmap Compliance Verification Engine",
+      "codeHash": "f4828a5a4578c1fc69dca37fd70fc19ef8c0902e20a49234b75dc21adf71909e",
+      "spec": {
+        "template": "funnel",
+        "title": "Full Python Implementation: Complet... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing contract clauses and gross margin incentive boundary conditions.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing dynamic account tiering and intent telemetry routing matrices.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating hierarchical product bundles and multi-term proration math.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Historical Sales Risk Governance",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Margin Gated Commission Bounds",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Dynamic ABM Account Swarm",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Certified Hierarchical CPQ",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
