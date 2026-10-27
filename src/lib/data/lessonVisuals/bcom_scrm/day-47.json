@@ -1,0 +1,817 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 47,
+  "entries": [
+    {
+      "partTitle": "Modern Data Stack Architecture: Forward ETL/ELT vs Reverse ETL in RevOps",
+      "codeHash": "eb087c9fe866049b44302762c8fb4beb19c27796d030a8e318258d6682dce726",
+      "spec": {
+        "template": "funnel",
+        "title": "Modern Data Stack Architecture: For... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broker state.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating reverse extract and cryptographic delta checksum algorithms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing role governance and kernel field security attribute filters.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying immutable audit ledgers and automated threat detection alerts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Analytical Feature Engineering: Aggregated Usage Metrics, Product Qualified Accounts (PQA) & Tier Scores",
+      "codeHash": "7d38293e66ab62900fb4c1e083f567b3587fe92d3c13f25ace1ac9f7521fd6f3",
+      "spec": {
+        "template": "funnel",
+        "title": "Analytical Feature Engineering: Agg... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broker state.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating reverse extract and cryptographic delta checksum algorithms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing role governance and kernel field security attribute filters.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying immutable audit ledgers and automated threat detection alerts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Incremental Sync Algorithms: Primary Key Hashing, Checksums & Merkle Tree Delta Detection",
+      "codeHash": "86e49d8be3c7e7458101a4e9f43603e512909d061e752906483e08aa48e21bc4",
+      "spec": {
+        "template": "funnel",
+        "title": "Incremental Sync Algorithms: Primar... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broker state.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating reverse extract and cryptographic delta checksum algorithms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing role governance and kernel field security attribute filters.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying immutable audit ledgers and automated threat detection alerts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Rate Limiting & High-Throughput Bulk API Sync (Salesforce Bulk API 2.0 / HubSpot Batch API)",
+      "codeHash": "fa62736e11b340dd40efbb9fa55a177889a1b46d1e717ea30580f29743f5c58b",
+      "spec": {
+        "template": "funnel",
+        "title": "Rate Limiting & High-Throughput Bul... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broker state.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating reverse extract and cryptographic delta checksum algorithms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing role governance and kernel field security attribute filters.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying immutable audit ledgers and automated threat detection alerts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Python Implementation: Enterprise Reverse ETL Pipeline & Hash-Based Delta Sync Engine",
+      "codeHash": "251774df7be1ef710c79671fdf6d16a1d52919281f3f394452e4312df8c8f7ce",
+      "spec": {
+        "template": "funnel",
+        "title": "Full Python Implementation: Enterpr... - RevOps Funnel",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broker state.",
+            "activeStageId": "top",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "data"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "idle"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Evaluating reverse extract and cryptographic delta checksum algorithms.",
+            "activeStageId": "qual",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "data"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "idle"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Enforcing role governance and kernel field security attribute filters.",
+            "activeStageId": "target",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "data"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verifying immutable audit ledgers and automated threat detection alerts.",
+            "activeStageId": "final",
+            "stages": [
+              {
+                "id": "top",
+                "label": "Enterprise Integration Brokers",
+                "value": 1000,
+                "percentage": 100,
+                "tone": "ok"
+              },
+              {
+                "id": "qual",
+                "label": "Reverse ETL Delta Filters",
+                "value": 780,
+                "percentage": 78.0,
+                "dropoffRate": 22.0,
+                "tone": "ok"
+              },
+              {
+                "id": "target",
+                "label": "Governed Territory Routing",
+                "value": 520,
+                "percentage": 52.0,
+                "dropoffRate": 33.3,
+                "tone": "ok"
+              },
+              {
+                "id": "final",
+                "label": "Audited Immutable Ledger",
+                "value": 180,
+                "percentage": 18.0,
+                "dropoffRate": 65.4,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
