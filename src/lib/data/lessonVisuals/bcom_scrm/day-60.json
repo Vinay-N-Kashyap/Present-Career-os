@@ -1,0 +1,682 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_scrm",
+  "day": 60,
+  "entries": [
+    {
+      "partTitle": "Capstone Architecture: The Unified ApexRevenueOS Planetary Architecture & Executive Boardroom Presentation",
+      "codeHash": "587f429dfa8ebc67a485efe6ada1c982d371561287bbac4d1bfddc2c42dd6f39",
+      "spec": {
+        "template": "funnel",
+        "stages": [
+          {
+            "name": "Governance Discovery",
+            "value": 100,
+            "color": "#3B82F6"
+          },
+          {
+            "name": "Architectural Design",
+            "value": 75,
+            "color": "#10B981"
+          },
+          {
+            "name": "Telemetry Verification",
+            "value": 50,
+            "color": "#F59E0B"
+          },
+          {
+            "name": "Board Certification",
+            "value": 25,
+            "color": "#8B5CF6"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing sovereign revenue operations and executive leadership models.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing enterprise technical compliance and architectural governance.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing simulated transaction pipelines and telemetry verification.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating final cryptographic certificates and boardroom consensus.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End RevOps Pipeline: Inbound Intent, Lead-to-Account DAG, CPQ Waterfall & ASC 606 Billing Sync",
+      "codeHash": "c451fbc7e8db18f4bc65e2f9f20c3f9f477882ac5378dcfc98e0ff37791fdf10",
+      "spec": {
+        "template": "funnel",
+        "stages": [
+          {
+            "name": "Governance Discovery",
+            "value": 100,
+            "color": "#3B82F6"
+          },
+          {
+            "name": "Architectural Design",
+            "value": 75,
+            "color": "#10B981"
+          },
+          {
+            "name": "Telemetry Verification",
+            "value": 50,
+            "color": "#F59E0B"
+          },
+          {
+            "name": "Board Certification",
+            "value": 25,
+            "color": "#8B5CF6"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing sovereign revenue operations and executive leadership models.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing enterprise technical compliance and architectural governance.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing simulated transaction pipelines and telemetry verification.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating final cryptographic certificates and boardroom consensus.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Customer Retention, Churn Hazard Telemetry & Expansion Whitespace Execution Under Stress Testing",
+      "codeHash": "4ce85c90f46957986b4f77b8f6e7ad369ede788bc912cf2530b075bdd345ece4",
+      "spec": {
+        "template": "funnel",
+        "stages": [
+          {
+            "name": "Governance Discovery",
+            "value": 100,
+            "color": "#3B82F6"
+          },
+          {
+            "name": "Architectural Design",
+            "value": 75,
+            "color": "#10B981"
+          },
+          {
+            "name": "Telemetry Verification",
+            "value": 50,
+            "color": "#F59E0B"
+          },
+          {
+            "name": "Board Certification",
+            "value": 25,
+            "color": "#8B5CF6"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing sovereign revenue operations and executive leadership models.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing enterprise technical compliance and architectural governance.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing simulated transaction pipelines and telemetry verification.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating final cryptographic certificates and boardroom consensus.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Chief Revenue Officer & Enterprise Systems Architect Grand Viva Gate: 10 Critical Failure Scenarios",
+      "codeHash": "d1ab02a4fae95963f335cd139c49bf46b1c6a70eda9f2eb06198bc4d37dd4b5a",
+      "spec": {
+        "template": "funnel",
+        "stages": [
+          {
+            "name": "Governance Discovery",
+            "value": 100,
+            "color": "#3B82F6"
+          },
+          {
+            "name": "Architectural Design",
+            "value": 75,
+            "color": "#10B981"
+          },
+          {
+            "name": "Telemetry Verification",
+            "value": 50,
+            "color": "#F59E0B"
+          },
+          {
+            "name": "Board Certification",
+            "value": 25,
+            "color": "#8B5CF6"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing sovereign revenue operations and executive leadership models.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing enterprise technical compliance and architectural governance.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing simulated transaction pipelines and telemetry verification.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating final cryptographic certificates and boardroom consensus.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Full Python Implementation: The Complete Sovereign ApexRevenueOS Enterprise Master Simulation Engine & Boardroom Defense Suite",
+      "codeHash": "6d50f5a4a5ab88285d696006d4653ce671b170b4c22d385b758b15c9665cfcc2",
+      "spec": {
+        "template": "funnel",
+        "stages": [
+          {
+            "name": "Governance Discovery",
+            "value": 100,
+            "color": "#3B82F6"
+          },
+          {
+            "name": "Architectural Design",
+            "value": 75,
+            "color": "#10B981"
+          },
+          {
+            "name": "Telemetry Verification",
+            "value": 50,
+            "color": "#F59E0B"
+          },
+          {
+            "name": "Board Certification",
+            "value": 25,
+            "color": "#8B5CF6"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Reviewing sovereign revenue operations and executive leadership models.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Auditing enterprise technical compliance and architectural governance.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Executing simulated transaction pipelines and telemetry verification.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Validating final cryptographic certificates and boardroom consensus.",
+            "stages": [
+              {
+                "name": "Governance Discovery",
+                "value": 100,
+                "color": "#3B82F6"
+              },
+              {
+                "name": "Architectural Design",
+                "value": 75,
+                "color": "#10B981"
+              },
+              {
+                "name": "Telemetry Verification",
+                "value": 50,
+                "color": "#F59E0B"
+              },
+              {
+                "name": "Board Certification",
+                "value": 25,
+                "color": "#8B5CF6"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
