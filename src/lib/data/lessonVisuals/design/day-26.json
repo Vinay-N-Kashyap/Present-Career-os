@@ -1,0 +1,1713 @@
+{
+  "schemaVersion": 1,
+  "prefix": "design",
+  "day": 26,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Vector Coordinate Foundations: viewBox, Aspect Ratios & Normalization",
+      "codeHash": "a523cbf15dbd88fd40efd765d4521b56cb01da2c8230a962f26ed9a7013e9e13",
+      "spec": {
+        "template": "wireframe",
+        "title": "Vector Coordinate Foundations: viewBox, Aspec... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Vector Coordinate Found...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Vector Coordinate Foundations: viewBox, Aspec... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Vector Coordinate Found...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Color Inheritance with currentColor: Eliminating Hardcoded Hex Codes",
+      "codeHash": "c08c4f5158bcadaac8e10cc0b9cccfdf2adc427ee646ad3522b4e5cabf5f6ef4",
+      "spec": {
+        "template": "wireframe",
+        "title": "Dynamic Color Inheritance with currentColor: ... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Dynamic Color Inheritan...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Dynamic Color Inheritance with currentColor: ... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Dynamic Color Inheritan...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Standardized Icon Size Scales & Baseline Optical Alignment",
+      "codeHash": "42522a1b51a4f46c654d9fb131951c3cc12f826da9d0d9f28727bc3bef445373",
+      "spec": {
+        "template": "wireframe",
+        "title": "Standardized Icon Size Scales & Baseline Opti... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Standardized Icon Size ...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Standardized Icon Size Scales & Baseline Opti... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Standardized Icon Size ...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SVG Sprite Architecture: Bundling with symbol and use href",
+      "codeHash": "85a5bd723739724c6d35bcc75d774cae1468d070976f903869d5cc5c9e7f6dbb",
+      "spec": {
+        "template": "wireframe",
+        "title": "SVG Sprite Architecture: Bundling with symbol... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for SVG Sprite Architecture...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "SVG Sprite Architecture: Bundling with symbol... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for SVG Sprite Architecture...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Accessible Icon Component: ARIA Contracts & Decorative vs Meaningful Icons",
+      "codeHash": "2a9e73254c89732bb7e2454c1cf81dadf51a129bd94d620949514b9811433a38",
+      "spec": {
+        "template": "wireframe",
+        "title": "Accessible Icon Component: ARIA Contracts & D... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Accessible Icon Compone...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "Accessible Icon Component: ARIA Contracts & D... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for Accessible Icon Compone...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SVG Optimization & Security Sanitization: Stripping Dangerous Vectors",
+      "codeHash": "84ce6b5958ffa63fb5613266d789f538457d1913789ddd21e629ff9e36e2e128",
+      "spec": {
+        "template": "wireframe",
+        "title": "SVG Optimization & Security Sanitization: Str... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for SVG Optimization & Secu...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "wireframe",
+        "title": "SVG Optimization & Security Sanitization: Str... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Establish horizontal flex-row container for SVG Optimization & Secu...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
+              {
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
