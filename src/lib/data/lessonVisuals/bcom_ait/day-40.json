@@ -1,0 +1,1229 @@
+{
+  "schemaVersion": 1,
+  "prefix": "bcom_ait",
+  "day": 40,
+  "promptSha": "40f8f16b2525e42c7f0b483d22d713d09de2863485546f1f4616ab814dbe7a68",
+  "model": "anthropic/claude-3.5-sonnet",
+  "entries": [
+    {
+      "partTitle": "Architecture of the Enterprise Fiduciary Knowledge Mesh",
+      "codeHash": "4daaa1bc95ec9a1252a85b73fb3eb20d19d1df00e3bff7c81584314581523ddd",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Architecture of the Enterprise Fiduciary Know... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Architecture of the Enterprise ...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Architecture of the Enterprise Fiduciary Know... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Architecture of the Enterprise ...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 1: Automated Cross-Border Statutory Regulatory Ingestion & Triplet Extraction",
+      "codeHash": "1f6f273be11442da3cdd7631df05f478d488e722ca3f3cecf72cf030aa17bc93",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Module 1: Automated Cross-Border Statutory Re... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 1: Automated Cross-Borde...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Module 1: Automated Cross-Border Statutory Re... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 1: Automated Cross-Borde...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 2: Multi-Hop Supply Chain Due Diligence & ESG Audit Traversal",
+      "codeHash": "6b7160d86eb18c7c2e8f42bb465549eaaed7631e7684cd3b1106506dadb4e106",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Module 2: Multi-Hop Supply Chain Due Diligenc... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Multi-Hop Supply Chai...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Module 2: Multi-Hop Supply Chain Due Diligenc... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Multi-Hop Supply Chai...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Module 3: Fiduciary RAG Triad Firewall & Autonomous Sanctions Interception",
+      "codeHash": "873ef556c305ab1e332fcf4c1b10edaca4b0211d39d39fcb4339ac1762957be0",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Module 3: Fiduciary RAG Triad Firewall & Auto... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Fiduciary RAG Triad F...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Module 3: Fiduciary RAG Triad Firewall & Auto... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Fiduciary RAG Triad F...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Masterclass Synthesis: The Boardroom Fiduciary Knowledge Cockpit & Block 8 Accreditation",
+      "codeHash": "30e65e1057f864969315575888d2f23558f25a8fe65a1758c8d50c8f6ea1f187",
+      "spec": {
+        "template": "tree-graph",
+        "title": "Masterclass Synthesis: The Boardroom Fiduciar... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Boar...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "tree-graph",
+        "title": "Masterclass Synthesis: The Boardroom Fiduciar... — Enterprise AI Decision Graph",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Context Query",
+            "tone": "data"
+          },
+          {
+            "id": "n2",
+            "label": "Vector Retriever",
+            "tone": "data"
+          },
+          {
+            "id": "n3",
+            "label": "Policy Guardrail",
+            "tone": "ok"
+          },
+          {
+            "id": "n4",
+            "label": "Synthesized Action",
+            "tone": "ok"
+          }
+        ],
+        "edges": [
+          [
+            "n1",
+            "n2"
+          ],
+          [
+            "n1",
+            "n3"
+          ],
+          [
+            "n2",
+            "n4"
+          ],
+          [
+            "n3",
+            "n4"
+          ]
+        ],
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Boar...",
+            "activeNodeId": "n1",
+            "visitedNodeIds": [
+              "n1"
+            ],
+            "tones": {
+              "n1": "data",
+              "n2": "idle",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Traverse Vector Retriever for grounded domain knowledge.",
+            "activeNodeId": "n2",
+            "visitedNodeIds": [
+              "n1",
+              "n2"
+            ],
+            "activeEdge": [
+              "n1",
+              "n2"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "data",
+              "n3": "idle",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Validate compliance & hallucination bounds in Policy Guardrail.",
+            "activeNodeId": "n3",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3"
+            ],
+            "activeEdge": [
+              "n1",
+              "n3"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "data",
+              "n4": "idle"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Emit verified Synthesized Action with audit provenance.",
+            "activeNodeId": "n4",
+            "visitedNodeIds": [
+              "n1",
+              "n2",
+              "n3",
+              "n4"
+            ],
+            "activeEdge": [
+              "n3",
+              "n4"
+            ],
+            "tones": {
+              "n1": "ok",
+              "n2": "ok",
+              "n3": "ok",
+              "n4": "ok"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
