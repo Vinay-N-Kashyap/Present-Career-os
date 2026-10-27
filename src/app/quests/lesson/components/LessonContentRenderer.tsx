@@ -986,7 +986,8 @@ export function LessonContentRenderer({
                             data-testid="btn-confirm-understanding"
                             onClick={() => {
                               setUnderstandingConfirmed(prev => ({ ...prev, [currentSlide - 1]: true }));
-                              toast.success("Great!", "Understanding confirmed. Click 'Next Slide' to continue.");
+                              toast.success("Awesome!", "Concept confirmed.");
+                              handleNextSlide();
                             }}
                             style={{
                               background: 'var(--success)',

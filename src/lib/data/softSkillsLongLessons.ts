@@ -8883,11 +8883,11 @@ console.log('Career Invariant: Staff+ engineering is calibrated on organizationa
     }
   ],
   "summary": [
-    "Mastered The System Design Opening Calculus: Powers-of-Two & Capacity Sizing and verified its core production invariant (Architecture without mathematical scale constraints is mere drawing: back-of-the-envelope ...).",
-    "Mastered The Ambiguity Boundary Probe: Scoping Open-Ended Requirements and verified its core production invariant (System design prompts are intentionally underspecified: an architect must proactively boun...).",
-    "Mastered Back-of-the-Envelope Capacity Estimation Engine Implementation and verified its core production invariant (The 80/20 Pareto rule dictates cache sizing: an in-memory cache must hold 20% of daily act...).",
-    "Mastered Live Scoping & Math Under Fire Lab: Handling Dynamic Scale Curveballs and verified its core production invariant (When an interviewer drastically alters scale parameters mid-interview, an architect must c...).",
-    "Mastered Day 31 Mastery Certification: Scope Clarification & Capacity Mathematics and verified its core production invariant (Mastery of system design opening moves establishes the foundation for high-conviction arch...)."
+    "Mastered The System Design Opening Calculus: Powers-of-Two & Capacity Sizing. Key takeaway: back-of-the-envelope ....",
+    "Mastered The Ambiguity Boundary Probe: Scoping Open-Ended Requirements. Key takeaway: an architect must proactively boun....",
+    "Mastered Back-of-the-Envelope Capacity Estimation Engine Implementation. Key takeaway: an in-memory cache must hold 20% of daily act....",
+    "Mastered Live Scoping & Math Under Fire Lab: Handling Dynamic Scale Curveballs. Key takeaway: When an interviewer drastically alters scale parameters mid-interview, an architect must c....",
+    "Mastered Day 31 Mastery Certification: Scope Clarification & Capacity Mathematics. Key takeaway: Mastery of system design opening moves establishes the foundation for high-conviction arch...."
   ],
   "projectStep": {
     "title": "Day 31 Milestone – System Design Interview Protocol: Scope Clarification & Back-of-the-Envelope Estimation",
@@ -9295,11 +9295,11 @@ console.log('Career Invariant: Staff+ engineering is calibrated on organizationa
     }
   ],
   "summary": [
-    "Mastered Visual Systems Topology & Cognitive Ergonomics: Component Layering and verified its core production invariant (A system architecture diagram must communicate flow directionality and protocol semantics:...).",
-    "Mastered The High-Density Architecture Whiteboard: Distributed Ride-Sharing Dispatch and verified its core production invariant (High-throughput real-time systems must decouple location ingestion from match dispatching ...).",
-    "Mastered Architecture Canvas Markdown & Mermaid Exporter Implementation and verified its core production invariant (Architectural diagrams should be representable as version-controlled declarative code (Mer...).",
-    "Mastered Live Iterative Whiteboard Driving Lab: Bottleneck Proaction and verified its core production invariant (A candidate must actively drive the final 15 minutes of an interview by proactively identi...).",
-    "Mastered Day 32 Mastery Certification: Whiteboard Storytelling & Visual Architecture and verified its core production invariant (Visual architecture storytelling transforms technical specifications into an intuitive, sh...)."
+    "Mastered Visual Systems Topology & Cognitive Ergonomics: Component Layering. Key takeaway: ....",
+    "Mastered The High-Density Architecture Whiteboard: Distributed Ride-Sharing Dispatch. Key takeaway: High-throughput real-time systems must decouple location ingestion from match dispatching ....",
+    "Mastered Architecture Canvas Markdown & Mermaid Exporter Implementation. Key takeaway: Architectural diagrams should be representable as version-controlled declarative code (Mer....",
+    "Mastered Live Iterative Whiteboard Driving Lab: Bottleneck Proaction. Key takeaway: A candidate must actively drive the final 15 minutes of an interview by proactively identi....",
+    "Mastered Day 32 Mastery Certification: Whiteboard Storytelling & Visual Architecture. Key takeaway: Visual architecture storytelling transforms technical specifications into an intuitive, sh...."
   ],
   "projectStep": {
     "title": "Day 32 Milestone – Driving the Whiteboard: Top-Down Architecture & Iterative Deep Dives",
@@ -9708,11 +9708,11 @@ console.log('Career Invariant: Staff+ engineering is calibrated on organizationa
     }
   ],
   "summary": [
-    "Mastered The Multi-Dimensional Trade-Off Matrix: PACELC & Distributed Vectors and verified its core production invariant (An architectural recommendation is invalid without explicitly enumerating its trade-offs: ...).",
-    "Mastered The Architectural Decision Dissector: 4 Classic Binary Dilemmas and verified its core production invariant (Dogmatic technology advocacy is an immediate disqualifier: a Staff architect must articula...).",
-    "Mastered Automated Trade-Off Radar CLI Implementation and verified its core production invariant (Architectural fitness must be evaluated across multi-dimensional radar vectors (Complexity...).",
-    "Mastered Live Architectural Trade-Off Cross-Examination Lab and verified its core production invariant (When an interviewer challenges a technology choice, a Staff engineer defends the rationale...).",
-    "Mastered Day 33 Mastery Certification: PACELC & Architectural Trade-Off Defense and verified its core production invariant (Mastery of multi-dimensional trade-offs elevates an engineer from a feature implementer in...)."
+    "Mastered The Multi-Dimensional Trade-Off Matrix: PACELC & Distributed Vectors. Key takeaway: ....",
+    "Mastered The Architectural Decision Dissector: 4 Classic Binary Dilemmas. Key takeaway: a Staff architect must articula....",
+    "Mastered Automated Trade-Off Radar CLI Implementation. Key takeaway: Architectural fitness must be evaluated across multi-dimensional radar vectors (Complexity....",
+    "Mastered Live Architectural Trade-Off Cross-Examination Lab. Key takeaway: When an interviewer challenges a technology choice, a Staff engineer defends the rationale....",
+    "Mastered Day 33 Mastery Certification: PACELC & Architectural Trade-Off Defense. Key takeaway: Mastery of multi-dimensional trade-offs elevates an engineer from a feature implementer in...."
   ],
   "projectStep": {
     "title": "Day 33 Milestone – Communicating Trade-Offs Under Pressure: CAP, PACELC & Cost vs Throughput",
@@ -10112,11 +10112,11 @@ console.log('Career Invariant: Staff+ engineering is calibrated on organizationa
     }
   ],
   "summary": [
-    "Mastered The Psychology of Evaluator Stress-Testing: Probes & Composure and verified its core production invariant (Interviewer pushback is a collaborative diagnostic probe, not an attack: responding with c...).",
-    "Mastered The Curveball Taxonomy & Playbook: 10 Architectural Pivots and verified its core production invariant (Every distributed systems failure mode has a codified architectural countermeasure: an arc...).",
-    "Mastered System Design Curveball Generator CLI Simulator Implementation and verified its core production invariant (Architectural adaptability is measured by the speed and precision of pivoting: an architec...).",
-    "Mastered High-Stress Curveball Gauntlet Lab: Compound Anomaly Survival and verified its core production invariant (A production architecture is truly resilient if and only if it survives compound, simultan...).",
-    "Mastered Day 34 Mastery Certification: Interview Pushback & Adaptive Pivoting and verified its core production invariant (The hallmark of Staff+ leadership is turning unexpected adversity and aggressive pushback ...)."
+    "Mastered The Psychology of Evaluator Stress-Testing: Probes & Composure. Key takeaway: responding with c....",
+    "Mastered The Curveball Taxonomy & Playbook: 10 Architectural Pivots. Key takeaway: an arc....",
+    "Mastered System Design Curveball Generator CLI Simulator Implementation. Key takeaway: an architec....",
+    "Mastered High-Stress Curveball Gauntlet Lab: Compound Anomaly Survival. Key takeaway: A production architecture is truly resilient if and only if it survives compound, simultan....",
+    "Mastered Day 34 Mastery Certification: Interview Pushback & Adaptive Pivoting. Key takeaway: The hallmark of Staff+ leadership is turning unexpected adversity and aggressive pushback ...."
   ],
   "projectStep": {
     "title": "Day 34 Milestone – Handling Interviewer Pushback & Curveballs: Graceful Pivots & Intellectual Flexibility",
@@ -10535,11 +10535,11 @@ console.log('Career Invariant: Staff+ engineering is calibrated on organizationa
     }
   ],
   "summary": [
-    "Mastered Planetary Scale System Design Rubrics: Meta & Google Standards and verified its core production invariant (A system design architecture achieves Staff+ leveling if and only if it satisfies all 4 ru...).",
-    "Mastered ApexDesign Master Architecture Dossier Audit and verified its core production invariant (A comprehensive system architecture dossier must integrate all 5 foundational specificatio...).",
-    "Mastered ApexDesign Interactive Whiteboard Engine Implementation and verified its core production invariant (Progressive layer revelation in visual storytelling prevents cognitive overload by sequenc...).",
-    "Mastered Live ApexDesign Bar Raiser System Defense Lab and verified its core production invariant (A Staff+ candidate must successfully defend a planetary-scale architecture before an adver...).",
-    "Mastered Milestone 4 Capstone Certification: ApexDesign System Design Suite and verified its core production invariant (Achieving Milestone 4 certification formally ratifies the candidate as a Sovereign System ...)."
+    "Mastered Planetary Scale System Design Rubrics: Meta & Google Standards. Key takeaway: A system design architecture achieves Staff+ leveling if and only if it satisfies all 4 ru....",
+    "Mastered ApexDesign Master Architecture Dossier Audit. Key takeaway: A comprehensive system architecture dossier must integrate all 5 foundational specificatio....",
+    "Mastered ApexDesign Interactive Whiteboard Engine Implementation. Key takeaway: Progressive layer revelation in visual storytelling prevents cognitive overload by sequenc....",
+    "Mastered Live ApexDesign Bar Raiser System Defense Lab. Key takeaway: A Staff+ candidate must successfully defend a planetary-scale architecture before an adver....",
+    "Mastered Milestone 4 Capstone Certification: ApexDesign System Design Suite. Key takeaway: Achieving Milestone 4 certification formally ratifies the candidate as a Sovereign System ...."
   ],
   "projectStep": {
     "title": "Day 35 Milestone – Milestone 4 (M2): ApexDesign System Design Whiteboard Communication & Live Trade-Off Suite",

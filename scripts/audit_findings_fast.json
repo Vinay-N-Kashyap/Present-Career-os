@@ -1,0 +1,451 @@
+{
+  "total_days": 518,
+  "total_issues": 21,
+  "course_stats": {
+    "aiDeployWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "aiPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "aiWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "bcomAccounting": {
+      "days": 30,
+      "issues_count": 0
+    },
+    "bcomAit": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomAna": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomAud": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomBan": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomDmkt": {
+      "days": 15,
+      "issues_count": 1
+    },
+    "bcomEcom": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomEnt": {
+      "days": 30,
+      "issues_count": 0
+    },
+    "bcomFinance": {
+      "days": 30,
+      "issues_count": 0
+    },
+    "bcomLaw": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomMkt": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "bcomOps": {
+      "days": 35,
+      "issues_count": 1
+    },
+    "bcomScrm": {
+      "days": 30,
+      "issues_count": 0
+    },
+    "bcomTax": {
+      "days": 15,
+      "issues_count": 0
+    },
+    "blockchain": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "cloudPython": {
+      "days": 1,
+      "issues_count": 0
+    },
+    "cloudWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "compFund": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "cyberPython": {
+      "days": 1,
+      "issues_count": 0
+    },
+    "cyberWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "designWeb": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "devopsWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "distPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "distributedWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "dsaPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "dsaWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "excelViz": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "fullstackJs": {
+      "days": 9,
+      "issues_count": 2
+    },
+    "g3d": {
+      "days": 5,
+      "issues_count": 1
+    },
+    "gitVcs": {
+      "days": 5,
+      "issues_count": 4
+    },
+    "iotEdge": {
+      "days": 5,
+      "issues_count": 2
+    },
+    "iotEmb": {
+      "days": 60,
+      "issues_count": 0
+    },
+    "iotNet": {
+      "days": 5,
+      "issues_count": 1
+    },
+    "iotSec": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "javaBasics": {
+      "days": 17,
+      "issues_count": 1
+    },
+    "mobile": {
+      "days": 17,
+      "issues_count": 2
+    },
+    "nlpPython": {
+      "days": 1,
+      "issues_count": 2
+    },
+    "nodeWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "promptPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "python": {
+      "days": 61,
+      "issues_count": 1
+    },
+    "quantPython": {
+      "days": 1,
+      "issues_count": 1
+    },
+    "quantSystems": {
+      "days": 5,
+      "issues_count": 0
+    },
+    "react": {
+      "days": 45,
+      "issues_count": 0
+    },
+    "safetyPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "softSkills": {
+      "days": 5,
+      "issues_count": 2
+    },
+    "sql": {
+      "days": 30,
+      "issues_count": 0
+    },
+    "sreWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "streamWeb": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "trainPython": {
+      "days": 0,
+      "issues_count": 0
+    },
+    "vectorPython": {
+      "days": 0,
+      "issues_count": 0
+    }
+  },
+  "findings": [
+    {
+      "course": "bcomDmkt",
+      "day": 15,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'telemetry invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'telemetry invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/bcomDmktLongLessons.ts, Day 15",
+      "evidence": "eck: {           question: 'What primary creative telemetry invariants qualify a video ad asset for aggressive budget s",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "bcomOps",
+      "day": 30,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/bcomOpsLongLessons.ts, Day 30",
+      "evidence": "bcom_ops\",   \"title\": \"Cold Chain Logistics & IoT Telemetry Invariants\",   \"minutes\": 38,   \"parts\": [     {       \"par",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "fullstackJs",
+      "day": 9,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/fullstackJsLongLessons.ts, Day 9",
+      "evidence": "lqRecords()[0].error);\\nconsole.log('Resilience & Telemetry Invariant: VERIFIED');\",       \"output\": \"Enterprise Resili",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "fullstackJs",
+      "day": 9,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/fullstackJsLongLessons.ts, Day 9",
+      "evidence": "ort-44 | Error=FATAL_CORRUPT_BUFFER\\nResilience & Telemetry Invariant: VERIFIED\",       \"tryIt\": \"Simulate injecting 10",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "g3d",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/g3dLongLessons.ts, Day 5",
+      "evidence": "engine architecture enforces four non-negotiable production invariants: First, zero CPU vertex deformation: all vertex",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "gitVcs",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'distributed invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'distributed invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/gitVcsLongLessons.ts, Day 5",
+      "evidence": "aster remote synchronization suite and verify all distributed invariants.\"       ],       \"example\": \"A master remote syn",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "gitVcs",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Production Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Production Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/gitVcsLongLessons.ts, Day 5",
+      "evidence": "xEnterpriseGitOps` governed by the Grand Capstone Production Invariant: (1) **Pillar 1: High-Performance Content-Address",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "gitVcs",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/gitVcsLongLessons.ts, Day 5",
+      "evidence": "{         \"question\": \"Which five non-negotiable production invariants must `ApexEnterpriseGitOps` satisfy simultaneous",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "gitVcs",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Production Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Production Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/gitVcsLongLessons.ts, Day 5",
+      "evidence": "\"answer\": 0,         \"why\": \"The Grand Capstone Production Invariant unites cryptographic authenticity, LFS pointer hy",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "iotEdge",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/iotEdgeLongLessons.ts, Day 5",
+      "evidence": "e_idx)\\n                \\n        # Assert strict production invariants\\n        assert self.heap_allocations == 0, \\\"FA",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "iotEdge",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/iotEdgeLongLessons.ts, Day 5",
+      "evidence": "s += 1\\n                \\n        # Assert strict production invariants\\n        assert self.heap_allocations == 0, \\\"FA",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "iotNet",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/iotNetLongLessons.ts, Day 5",
+      "evidence": "precision. Upon satisfying all of these rigorous production invariants, the engine latches and emits the verified certi",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "javaBasics",
+      "day": 1,
+      "category": "PREREQUISITE_TRAP",
+      "title": "Virtual Threads Concurrency on Day 1",
+      "what": "Introduces Java 21 Virtual Threads & Loom concurrency on Day 1.",
+      "why": "Author wanted to highlight modern Java 21 features upfront without respecting beginner scaffolding.",
+      "where": "src/lib/data/javaBasicsLongLessons.ts, Day 1",
+      "evidence": "Virtual Threads in JVM Architecture Day 1",
+      "how": "Move Virtual Threads to Concurrency module (Day 25+); teach simple main() and variables on Day 1."
+    },
+    {
+      "course": "mobile",
+      "day": 19,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/mobileLongLessons.ts, Day 19",
+      "evidence": "ycardia detected on mobile edge)');\\nconsole.log('Telemetry Invariant: IEEE 11073 packets enforce CRC-16 integrity and",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "mobile",
+      "day": 19,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/mobileLongLessons.ts, Day 19",
+      "evidence": "DIAC_ALERT (Tachycardia detected on mobile edge)\\nTelemetry Invariant: IEEE 11073 packets enforce CRC-16 integrity and",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "nlpPython",
+      "day": 2,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/nlpPythonLongLessons.ts, Day 2",
+      "evidence": "ross enterprise pipelines.\",           \"The first production invariant is Lossless Reversibility: decode(encode(x)) == x",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "nlpPython",
+      "day": 2,
+      "category": "PREREQUISITE_TRAP",
+      "title": "Function Definition in Absolute Beginner Lesson",
+      "what": "Uses 'def' statement on Day 2 before functions are introduced on Day 16.",
+      "why": "Author used full production function templates instead of top-to-bottom script execution.",
+      "where": "src/lib/data/nlpPythonLongLessons.ts, Day 2",
+      "evidence": "def statement found in code snippet",
+      "how": "Convert snippet to linear script statements (e.g. variable assignments, simple calculations, print)."
+    },
+    {
+      "course": "python",
+      "day": 35,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'production invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'production invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/pythonLongLessons.ts, Day 35",
+      "evidence": "tion gate rigorously enforces five non-negotiable production invariants: first, zero security bypasses across all penetr",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "quantPython",
+      "day": 2,
+      "category": "PREREQUISITE_TRAP",
+      "title": "Function Definition in Absolute Beginner Lesson",
+      "what": "Uses 'def' statement on Day 2 before functions are introduced on Day 16.",
+      "why": "Author used full production function templates instead of top-to-bottom script execution.",
+      "where": "src/lib/data/quantPythonLongLessons.ts, Day 2",
+      "evidence": "def statement found in code snippet",
+      "how": "Convert snippet to linear script statements (e.g. variable assignments, simple calculations, print)."
+    },
+    {
+      "course": "softSkills",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/softSkillsLongLessons.ts, Day 5",
+      "evidence": "ct:     \\\" + healthStats.verdict);\\nconsole.log(\\\"Telemetry Invariant:   OBJECTIVE_METRICS_DISARM_SUBJECTIVE_ORGANIZATI",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    },
+    {
+      "course": "softSkills",
+      "day": 5,
+      "category": "SYNTHETIC_BOOSTER",
+      "title": "Artificial Corporate Filler 'Telemetry Invariant'",
+      "what": "Artificial enterprise jargon inserted into curriculum: 'Telemetry Invariant'.",
+      "why": "Injected by automated word-count booster scripts to hit the >=600 words/part gate during urgency.",
+      "where": "src/lib/data/softSkillsLongLessons.ts, Day 5",
+      "evidence": ":     APEXINFLUENCE_TELEMETRY_DASHBOARD_VERIFIED\\nTelemetry Invariant:   OBJECTIVE_METRICS_DISARM_SUBJECTIVE_ORGANIZATI",
+      "how": "Remove the corporate buzzword and replace with plain, pedagogical language."
+    }
+  ]
+}
