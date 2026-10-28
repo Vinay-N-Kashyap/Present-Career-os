@@ -8,7 +8,7 @@
       "codeHash": "76ae9139ef10425b7ba9a2ddeda19c9d1f98d1ec2f377e4420ccbe9bab471680",
       "spec": {
         "template": "bars",
-        "title": "The Architecture of Prescriptive Optim... \u2014 Decision Evaluation",
+        "title": "The Architecture of Prescriptive Optim... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "ea05edaa42b835b76989086a1fa70d81fd0ece1f2275f4b884c72ccd58e7064d",
       "spec": {
         "template": "bars",
-        "title": "Convex Polyhedral Geometry & The Funda... \u2014 Decision Evaluation",
+        "title": "Convex Polyhedral Geometry & The Funda... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "53f0faeff4d757d43096dc2c9e53a217287f0dd8867675233a69d215b344c08b",
       "spec": {
         "template": "bars",
-        "title": "The Simplex Algorithm & Tableau Pivot ... \u2014 Decision Evaluation",
+        "title": "The Simplex Algorithm & Tableau Pivot ... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "899fb975d342a41bba7f646de09d20f8e38e1ad7fe928c1b9f5cb937507ee2b3",
       "spec": {
         "template": "bars",
-        "title": "Duality Theory, Shadow Prices & Post-O... \u2014 Decision Evaluation",
+        "title": "Duality Theory, Shadow Prices & Post-O... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "fe488ab2cdffef6628a3d19da361ba4fc9505f4799e92801d5ca0b666d7ce44b",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Linear Programm... \u2014 Decision Evaluation",
+        "title": "Building an Enterprise Linear Programm... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D28P5].",
             "max": 100,
             "bars": [
               {

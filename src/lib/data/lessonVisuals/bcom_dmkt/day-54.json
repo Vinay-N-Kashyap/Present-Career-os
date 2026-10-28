@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Deterministic Loyalty Card & Offline POS Receipt Linkage: In-Store Basket Matching & First-Party Shopper Graphs",
-      "codeHash": "8315a5294335a855ecd7a6f265196ce37455b05caefc63b09cfb8f2956fe03a1",
+      "codeHash": "947174771f69e47b14df29d9d70bf0e65ff434bd56f8479dd3ad492b14e07fce",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Retail Data Clean Rooms (Amazon Marketing Cloud, Snowflake, InfoSum): Differential Privacy & K-Anonymity SQL",
-      "codeHash": "85fbeba9f70dbea3a4b0e2f5f8e963c8e97c7d202cc9cc6539c7b84cd7981129",
+      "codeHash": "7c160511b3e030f99426fac3b3b584bb3da543ec5cbc08f3aa02d8e1eb1c4afd",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Incremental Return on Ad Spend (iROAS) & Matched-Market Geo-Lift Experimentation for Omnichannel Retail",
-      "codeHash": "a377242a48a2075a09edb7a6ee11f561ef5e9a2e20a7d92863b81f588b32d482",
+      "codeHash": "019c64d103efde0d98b1c1e585ca42372f6d8c4e3a33ee8c8ce4ddce07cc49a5",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "New-to-Brand (NTB) Analytics, Lapsed Customer Win-Back & Customer Lifetime Value (LTV) Lift",
-      "codeHash": "35c3251f37fd0ded8c4777bd8ddddc7c1cc5b6f4121f9ce09bcec5ab9dc93f53",
+      "codeHash": "caa6d5e7e358417a25a74abfd86f5d11685be6398ca3e32cce995bc2a371514c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Retail Clean Room SQL Compiler & Closed-Loop iROAS Calculator in Python",
-      "codeHash": "40b635eed5f5cea3c1d126122a3612d38f6f1217f22848205b336a3282575eb9",
+      "codeHash": "377593c32f0ff52e327e706bf13249aa0456669f9ba0212c172c9a7dfc4dfe14",
       "spec": {
         "template": "funnel",
         "steps": [

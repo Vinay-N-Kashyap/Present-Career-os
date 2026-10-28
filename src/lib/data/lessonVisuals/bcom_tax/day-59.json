@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Expat Secondment Defense",
+        "template": "ledger-sheet",
+        "title": "Cross-Border Expat Secondment, Corporate Guar... — General Ledger Verification",
         "steps": [
           {
-            "label": "Overseas Deployment",
-            "caption": "Foreign parent deploys technical specialists to local production."
+            "at": "intro",
+            "caption": "Open primary debit entry for Cross Border Expat Sec (Tau Alpha).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11350,
+            "totalCredit": 11350,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Lien Examination",
-            "caption": "Authorities inspect whether overseas employment lien remains active."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Cross Border Expat Sec (Alpha).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Reverse Charge Notice",
-            "caption": "Revenue demands indirect tax on salary reimbursements under mandate."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Cross Border Expat Sec (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Revenue Neutrality",
-            "caption": "Full input tax credit eligibility negates corporate tax liability."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Cross Border Expat Sec (Alpha).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8fe46a51a727979a46b467ff13ce005a0324ba06cba81f923f5e15e4caf0eaeb",
+      "partTitle": "Cross-Border Expat Secondment, Corporate Guarantees & The Northern Operating Systems Doctrine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Cross-Border Expat Secondment, Corporate Guar... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Cross Border Expat Sec (Tau Alpha).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11350,
+            "totalCredit": 11350,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Cross Border Expat Sec (Alpha).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Cross Border Expat Sec (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Cross Border Expat Sec (Alpha).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Inverted Duty Refund Math",
+        "template": "ledger-sheet",
+        "title": "Inverted Duty Structure (IDS) Refunds & Rule ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Rate Inversion",
-            "caption": "Higher tax rate on raw materials generates unabsorbed input credit."
+            "at": "intro",
+            "caption": "Open primary debit entry for Inverted Duty Structur (Tau Beta).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11550,
+            "totalCredit": 11550,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Formula Application",
-            "caption": "Refund is computed by apportioning output tax against input goods."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Inverted Duty Structur (Beta).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Service Exclusion",
-            "caption": "Input tax credit on services is statutorily excluded from refund."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Inverted Duty Structur (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Treasury Disbursement",
-            "caption": "Verified refund amount is credited directly to enterprise account."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Inverted Duty Structur (Beta).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8ffb93d84b396ab0564338028637a5c9b20af2ce30ad1239b8f132c510aed8c5",
+      "partTitle": "Inverted Duty Structure (IDS) Refunds & Rule 89(5) Mathematical Mechanics",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Inverted Duty Structure (IDS) Refunds & Rule ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Inverted Duty Structur (Tau Beta).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11550,
+            "totalCredit": 11550,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Inverted Duty Structur (Beta).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Inverted Duty Structur (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Inverted Duty Structur (Beta).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Works Contract Tax Mechanics",
+        "template": "ledger-sheet",
+        "title": "Real Estate, Works Contracts & Section 17(5) ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Composite Supply",
-            "caption": "Civil construction is classified as a composite supply of service."
+            "at": "intro",
+            "caption": "Open primary debit entry for Real Estate Works Cont (Tau Gamma).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11750,
+            "totalCredit": 11750,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Credit Block Review",
-            "caption": "Statute blocks input tax credit on construction of civil structures."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Real Estate Works Cont (Gamma).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Functionality Doctrine",
-            "caption": "Court applies functionality test to identify industrial plant items."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Real Estate Works Cont (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Deferred Time of Supply",
-            "caption": "Tax liability on development agreements matures upon completion."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Real Estate Works Cont (Gamma).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "76c8ba273bb4b65970d0fc9da88dd0bf12aa8de0f78143a9fa5fa6c3bf888979",
+      "partTitle": "Real Estate, Works Contracts & Section 17(5) ITC Restrictions post-Safari Retreats",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Real Estate, Works Contracts & Section 17(5) ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Real Estate Works Cont (Tau Gamma).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11750,
+            "totalCredit": 11750,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Real Estate Works Cont (Gamma).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Real Estate Works Cont (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Real Estate Works Cont (Gamma).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14100,
+            "totalCredit": 14100,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11750,
+                "balance": 11750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2350,
+                "balance": 14100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Anti Profiteering Compliance",
+        "template": "ledger-sheet",
+        "title": "Anti-Profiteering Architecture under Section ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Statutory Rate Cut",
-            "caption": "Tax council notifies official reduction in indirect tax rates."
+            "at": "intro",
+            "caption": "Open primary debit entry for Anti Profiteering Arch (Tau Delta).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11950,
+            "totalCredit": 11950,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Mandatory Price Cut",
-            "caption": "Enterprise must pass on exact tax saving via reduced retail prices."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Anti Profiteering Arch (Delta).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Regulatory Audit",
-            "caption": "Competition commission investigates pricing records per product line."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Anti Profiteering Arch (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Consumer Refund Order",
-            "caption": "Authority orders refund of retained gains into consumer welfare fund."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Anti Profiteering Arch (Delta).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "904da56684fa82e324a13ded525b901b7815a11bd82c5e68977dbad5cf6679ba",
+      "partTitle": "Anti-Profiteering Architecture under Section 171 & Competition Commission Enforcement",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Anti-Profiteering Architecture under Section ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Anti Profiteering Arch (Tau Delta).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11950,
+            "totalCredit": 11950,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 11950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Anti Profiteering Arch (Delta).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Anti Profiteering Arch (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Anti Profiteering Arch (Delta).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14340,
+            "totalCredit": 14340,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 11950,
+                "balance": 11950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2390,
+                "balance": 14340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Advanced Indirect Tax Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Advanced Ente... — General Ledger Verification",
         "steps": [
           {
-            "label": "Expat RCM Calculator",
-            "caption": "Engine calculates reverse charge exposure on foreign reimbursements."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Tau Epsilon).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12150,
+            "totalCredit": 12150,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 12150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Inverted Duty Estimator",
-            "caption": "Module models maximum cash refund under amended statutory formula."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Guarantee Valuation",
-            "caption": "System computes deemed service values for corporate bank guarantees."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Dynamic Price Monitor",
-            "caption": "Platform recalibrates retail prices to guarantee statutory compliance."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "e9984131f10cf22bf182e31b1b63380ee10000f1915a7c11fc29c179743baf3f",
+      "partTitle": "Production Python Architecture: Advanced Enterprise GST Controversy & Compliance Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Advanced Ente... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Tau Epsilon).",
+            "title": "Day 59 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12150,
+            "totalCredit": 12150,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Clearing & Settlement Control",
+                "credit": 12150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 59 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Primary Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Clearing & Settlement Control",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Tau).",
+            "title": "Day 59 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "General Ledger Control Account",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 59 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14580,
+            "totalCredit": 14580,
+            "entries": [
+              {
+                "id": "JNL-5901",
+                "account": "Audited Operating Asset",
+                "debit": 12150,
+                "balance": 12150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2430,
+                "balance": 14580,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5903",
+                "account": "Audited Treasury Settlement",
+                "credit": 14580,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

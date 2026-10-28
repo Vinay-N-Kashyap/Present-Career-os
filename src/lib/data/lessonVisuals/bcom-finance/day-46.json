@@ -10,23 +10,23 @@
         "caption": "Private equity capital structure ledger balancing loan tranches.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -72,23 +72,23 @@
         "caption": "Private equity capital structure ledger balancing loan tranches.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -134,23 +134,23 @@
         "caption": "Private equity capital structure ledger balancing loan tranches.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -196,23 +196,23 @@
         "caption": "Private equity capital structure ledger balancing loan tranches.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -258,23 +258,23 @@
         "caption": "Private equity capital structure ledger balancing loan tranches.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -311,6 +311,539 @@
           ]
         }
       ]
+    }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Private Equity Architecture: The Anatomy of a Mega-Cap Leveraged Buyout",
+      "codeHash": "16d67561647fa9838715d72fcfd7197980dadfda6ecd280aeb720fe02cb7cc02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Private Equity Architecture: T",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha)."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta)."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma)."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Private Equity Architecture: T",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Debt Seniority Stack: First Lien, Term Loans & Institutional Bullet Mechanics",
+      "codeHash": "16d67561647fa9838715d72fcfd7197980dadfda6ecd280aeb720fe02cb7cc02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: The Debt Seniority Stack: Firs",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha)."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta)."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma)."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: The Debt Seniority Stack: Firs",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Junior Capital & Mezzanine Debt: PIK Interest, Warrants & Intercreditor Dynamics",
+      "codeHash": "16d67561647fa9838715d72fcfd7197980dadfda6ecd280aeb720fe02cb7cc02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Junior Capital & Mezzanine Deb",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha)."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta)."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma)."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Junior Capital & Mezzanine Deb",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost of Capital Optimization: Blended Interest Rates, OID & Financing Fee Amortization",
+      "codeHash": "16d67561647fa9838715d72fcfd7197980dadfda6ecd280aeb720fe02cb7cc02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Cost of Capital Optimization: ",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha)."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta)."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma)."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Cost of Capital Optimization: ",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Debt Tranching Engine: Sandbox Execution & Socratic Synthesis",
+      "codeHash": "16d67561647fa9838715d72fcfd7197980dadfda6ecd280aeb720fe02cb7cc02",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Production Debt Tranching Engi",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha)."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta)."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma)."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Production Debt Tranching Engi",
+        "caption": "Private equity capital structure ledger balancing loan tranches.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token."
+          }
+        ]
+      }
     }
   ]
 }

@@ -387,5 +387,748 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Evolution of Public Listing Pathways: Traditional Firm-Commitment IPOs, Direct Listings & SPACs",
+      "codeHash": "dc3f21b01dc0161e0c280f95a2576ad13ec788df6fb3d96983b791757bcb2494",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — QuartusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — QuartusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — QuartusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — QuartusBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — QuartusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — QuartusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — QuartusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — QuartusBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "SPAC Lifecycle Architecture: IPO Unit Structuring, Trust Accounts & Shareholder Redemption Rights",
+      "codeHash": "e343a7d77d28bdd3671772ad3fd986d932c4788a76e863eed4e183fb1dd34bff",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — QuartusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — QuartusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — QuartusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — QuartusBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — QuartusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — QuartusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — QuartusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — QuartusBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The De-SPAC Business Combination: PIPE Financing, Sponsor Promote Dilution & Warrant Overhang",
+      "codeHash": "8b7f273606f8f0eb1086b7417d91b1e904ccccffd35dc440778e17790978a26a",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — QuartusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — QuartusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — QuartusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — QuartusBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — QuartusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — QuartusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — QuartusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — QuartusBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regulatory Scrutiny, SEC Safe Harbor Protections & Post-De-SPAC Performance Dynamics",
+      "codeHash": "7dc42bf018a6be17d7e4a6cddaa630ebd78b7af15596e51615b7230d331be7c1",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — QuartusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — QuartusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — QuartusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — QuartusBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — QuartusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — QuartusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — QuartusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — QuartusBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: SPAC Dilution Waterfall, PIPE Sizing & Post-Merger Shareholder Returns Engine",
+      "codeHash": "7e89ade427d167c062504f7025e1fa41ea09c80c413d0906e2d8ea5d9212698c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — QuartusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — QuartusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — QuartusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — QuartusBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 58 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Operating Company Acquired Enterprise Net Assets",
+            "$1,500,000,000.00",
+            ""
+          ],
+          [
+            "Delivered Cash Inflow from Trust and Pipe",
+            "$225,000,000.00",
+            ""
+          ],
+          [
+            "Target Operating Company Rollover Share Capital",
+            "",
+            "$1,275,000,000.00"
+          ],
+          [
+            "Institutional Private Placement Common Equity",
+            "",
+            "$200,000,000.00"
+          ],
+          [
+            "Sponsor Promote and Retained Public Common Equity",
+            "",
+            "$250,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,725,000,000.00",
+          "$1,725,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 58 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — QuartusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — QuartusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — QuartusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — QuartusBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

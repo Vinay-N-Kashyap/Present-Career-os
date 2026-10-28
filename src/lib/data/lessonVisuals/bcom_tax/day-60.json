@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Global Command Overview",
+        "template": "ledger-sheet",
+        "title": "Enterprise Anatomy, Global Supply Chain & The... — General Ledger Verification",
         "steps": [
           {
-            "label": "Multinational Enterprise",
-            "caption": "Conglomerate coordinates cross border hubs across four territories."
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Anatomy Glo (Upsilon Alpha).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11500,
+            "totalCredit": 11500,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Regulatory Convergence",
-            "caption": "Enterprise confronts simultaneous direct and indirect tax audits."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Anatomy Glo (Alpha).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Statutory Evidence",
-            "caption": "Executive command mobilizes contemporaneous transfer pricing files."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy Glo (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Integrated Strategy",
-            "caption": "Chief tax officer orchestrates comprehensive multilateral defense."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Anatomy Glo (Alpha).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "70afc339ed16801e035b030f64da2c85e517164d848739f94a49419d4dfa5269",
+      "partTitle": "Enterprise Anatomy, Global Supply Chain & The Chief Tax Officer Command Mandate",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Anatomy, Global Supply Chain & The... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Anatomy Glo (Upsilon Alpha).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11500,
+            "totalCredit": 11500,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Anatomy Glo (Alpha).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Anatomy Glo (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Anatomy Glo (Alpha).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Anti Avoidance Panel Victory",
+        "template": "ledger-sheet",
+        "title": "Cross-Border GAAR Defense, Commercial Substan... — General Ledger Verification",
         "steps": [
           {
-            "label": "Arrangement Challenge",
-            "caption": "Revenue questions commercial substance of overseas financing hub."
+            "at": "intro",
+            "caption": "Open primary debit entry for Cross Border GAAR Defe (Upsilon Beta).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Substance Validation",
-            "caption": "Defense establishes local office operations and third party credit."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Cross Border GAAR Defe (Beta).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Panel Hearing",
-            "caption": "Counsel presents economic paper book before three member panel."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Cross Border GAAR Defe (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Total Vindication",
-            "caption": "Approving panel rejects tax challenge and confirms validity of hub."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Cross Border GAAR Defe (Beta).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "ef9e12b3245c30aeb8e8f22e4488de3c53114903dcb5950cdc8efa1daa79e871",
+      "partTitle": "Cross-Border GAAR Defense, Commercial Substance & Section 144BA Approving Panel Proceedings",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Cross-Border GAAR Defense, Commercial Substan... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Cross Border GAAR Defe (Upsilon Beta).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Cross Border GAAR Defe (Beta).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Cross Border GAAR Defe (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Cross Border GAAR Defe (Beta).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Global Minimum Tax Shield",
+        "template": "ledger-sheet",
+        "title": "OECD Pillar Two GloBE 15% ETR Architecture & ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Jurisdictional Audit",
-            "caption": "System computes effective tax rates across global corporate network."
+            "at": "intro",
+            "caption": "Open primary debit entry for OECD Pillar Two GloBE (Upsilon Gamma).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11900,
+            "totalCredit": 11900,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Substance Carve Out",
-            "caption": "Payroll and manufacturing assets shield core industrial profits."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for OECD Pillar Two GloBE (Gamma).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Domestic Tax Priority",
-            "caption": "Home exchequer collects top up tax under domestic minimum rules."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Multilateral Immunity",
-            "caption": "Safe harbour status shields enterprise from foreign tax clawback."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for OECD Pillar Two GloBE (Gamma).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "72ff76bbaa8ddddc17162463a122fe221e334e7aec5e252bd4bb716c9e98f438",
+      "partTitle": "OECD Pillar Two GloBE 15% ETR Architecture & Indian QDMTT Optimization Strategy",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "OECD Pillar Two GloBE 15% ETR Architecture & ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for OECD Pillar Two GloBE (Upsilon Gamma).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11900,
+            "totalCredit": 11900,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 11900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for OECD Pillar Two GloBE (Gamma).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for OECD Pillar Two GloBE (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for OECD Pillar Two GloBE (Gamma).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14280,
+            "totalCredit": 14280,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 11900,
+                "balance": 11900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2380,
+                "balance": 14280,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14280,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Restructuring and Indirect Victory",
+        "template": "ledger-sheet",
+        "title": "M&A Amalgamation Tax Optimization & Expat Sec... — General Ledger Verification",
         "steps": [
           {
-            "label": "Merger Loss Absorption",
-            "caption": "Scheme of arrangement absorbs target business losses tax free."
+            "at": "intro",
+            "caption": "Open primary debit entry for M A Amalgamation Tax O (Upsilon Delta).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12100,
+            "totalCredit": 12100,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 12100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Secondment Defense",
-            "caption": "Dual contracts and full input credit defeat tax penalty demands."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for M A Amalgamation Tax O (Delta).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Statutory Cash Shield",
-            "caption": "Approved loss set offs deliver multi crore corporate tax savings."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for M A Amalgamation Tax O (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Case Closure",
-            "caption": "Tax authorities drop disputed additions and close audit files."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for M A Amalgamation Tax O (Delta).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "50d70250639f82e433c7c104900223625c24f95444c54ebb1d5a01b901f3b154",
+      "partTitle": "M&A Amalgamation Tax Optimization & Expat Secondment GST Defense",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "M&A Amalgamation Tax Optimization & Expat Sec... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for M A Amalgamation Tax O (Upsilon Delta).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12100,
+            "totalCredit": 12100,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 12100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for M A Amalgamation Tax O (Delta).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for M A Amalgamation Tax O (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for M A Amalgamation Tax O (Delta).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14520,
+            "totalCredit": 14520,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 12100,
+                "balance": 12100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2420,
+                "balance": 14520,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14520,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Grand Master Simulator",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Global Tax Di... — General Ledger Verification",
         "steps": [
           {
-            "label": "Command Simulation",
-            "caption": "Simulator executes complete lifecycle of global tax optimization."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Upsilon Epsilon).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Exposure Mitigation",
-            "caption": "Platform quantifies total corporate tax shields and penalties saved."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Enterprise Protection",
-            "caption": "Multi tier algorithms shield corporate balance sheet capital."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Grand Accreditation",
-            "caption": "System awards supreme master credential on triumphant conclusion."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8c5288aab58f952a961342204b7cf0334ef50480dde0285cbd683c9b15b3e497",
+      "partTitle": "Production Python Architecture: Global Tax Director & CTO Enterprise Command Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Global Tax Di... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Upsilon Epsilon).",
+            "title": "Day 60 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Clearing & Settlement Control",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 60 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Primary Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Clearing & Settlement Control",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Upsilon).",
+            "title": "Day 60 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "General Ledger Control Account",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 60 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14760,
+            "totalCredit": 14760,
+            "entries": [
+              {
+                "id": "JNL-6001",
+                "account": "Audited Operating Asset",
+                "debit": 12300,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2460,
+                "balance": 14760,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-6003",
+                "account": "Audited Treasury Settlement",
+                "credit": 14760,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

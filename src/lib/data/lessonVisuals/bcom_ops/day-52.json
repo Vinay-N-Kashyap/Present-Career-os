@@ -46,7 +46,9 @@
             "caption": "Advanced manifest filings screen international cargo for security hazards."
           }
         ]
-      }
+      },
+      "codeHash": "f29c4eb595d58eea7538225879d29a17ac05cf4a078b923b2fac9f003b1fe88c",
+      "partTitle": "Regulatory Architecture of Global Customs: World Customs Organization (WCO) and Cross-Border Clearance"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Essential character rules determine classifications for composite goods."
           }
         ]
-      }
+      },
+      "codeHash": "654fe2cadb20144f27e4472aa71b88efd5c8e6cab4c573bc5d807c0025240be0",
+      "partTitle": "Harmonized System (HS) Tariff Classification: General Rules of Interpretation (GRI 1-6) and Section Notes"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Condition of sale royalties must be added to dutiable customs valuation."
           }
         ]
-      }
+      },
+      "codeHash": "288e12d10209560e093a5d66b78b3fcaef185d51175ee3eb8e72068068970f87",
+      "partTitle": "Customs Valuation Mechanics: Transaction Value Method, Royalties, Assists, and Deductive Value"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Certificates of origin prove where merchandise was legally transformed."
           }
         ]
-      }
+      },
+      "codeHash": "9ea345185b89820e2189cbc9c86a06aa4d50af1a7ba7ca1b4f554de1d0ad6802",
+      "partTitle": "Core International Trade Documentation: Commercial Invoice, Packing List, Bill of Lading, and Certificate of Origin"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Rules of origin algorithms verify regional value content requirements."
           }
         ]
-      }
+      },
+      "codeHash": "05efca6941c9d7baa852d248624a9fd4015a870d18021fd0b5961d3d1053f881",
+      "partTitle": "Customs Tariff & Duty Computation Engine: Anti-Dumping Duties, Countervailing Duties & FTA Origin Verification"
     }
   ]
 }

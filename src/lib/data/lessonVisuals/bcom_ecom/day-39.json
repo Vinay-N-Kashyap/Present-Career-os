@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "United States Sales Tax & Economic Nexus Architecture: Post-Wayfair Threshold Monitoring, Destination Sourcing & Boundary Overlaps",
-      "codeHash": "d06cd3a15d588731dc6e18b360d57da19a3d39cbb312800c0c937ba69c1eca46",
+      "codeHash": "91e4c02f1be80ed7bf3d9fde8d4a8fc8e491d9566c7b3802bcdabc94dee31469",
       "spec": {
         "template": "funnel",
         "title": "Day 39 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "European Union VAT One-Stop Shop (OSS), IOSS & Cross-Border Reverse Charge Mechanisms",
-      "codeHash": "b89766b8ce0c6f00ed17727a9e4eeac7d813839dca481345ed4de0717862c7ce",
+      "codeHash": "8257c06b4e68ed02822c8ff1b97f59deb975b551593312438868f07a123f314c",
       "spec": {
         "template": "funnel",
         "title": "Day 39 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Harmonized Tariff Schedule (HTS), Landed Cost Calculations & Incoterms (DDP vs DAP)",
-      "codeHash": "9716da20c193b0c1843d89a9287c4dc3223d610fd44e85e1dc45420562318e64",
+      "codeHash": "2ea19ec6f34b30d171773975236197bca6504644cd04b5a316752e806ab068a3",
       "spec": {
         "template": "funnel",
         "title": "Day 39 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Real-Time Tax Engine Integrations, Circuit Breakers & Spatial Address Validation Caching",
-      "codeHash": "226317a6ec9c5ddc9c959e022d8484f76152851cbbabda4c65154463c691bae5",
+      "codeHash": "7b839fec68d06332fca3162b074895d8f6abe84bc12924a9cf8a82100c59f49d",
       "spec": {
         "template": "funnel",
         "title": "Day 39 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "The Complete Enterprise Global Taxation, Customs & Landed Cost Calculation Engine in Python",
-      "codeHash": "4cc2085e242bc15e415263b5124361aa8854b85770b179a2a0edac765bf5dc8a",
+      "codeHash": "72234ed366e9bab5fd6c8c1f7b5e3ce0f622b9ab7c701c5f0cf2a6ef971d65fa",
       "spec": {
         "template": "funnel",
         "title": "Day 39 Part 5 Architecture Flow",

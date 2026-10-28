@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Amalgamation Architecture",
+        "template": "ledger-sheet",
+        "title": "Corporate Amalgamations under Section 2(1B) &... — General Ledger Verification",
         "steps": [
           {
-            "label": "Asset Transfer",
-            "caption": "All properties and liabilities transfer to the amalgamated company."
+            "at": "intro",
+            "caption": "Open primary debit entry for Corporate Amalgamation (Sigma Alpha).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11200,
+            "totalCredit": 11200,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Shareholder Continuity",
-            "caption": "Three fourths of shareholders in value become continuing owners."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Corporate Amalgamation (Alpha).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Capital Gains Exemption",
-            "caption": "Asset transfers and share exchanges enjoy full statutory exemption."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Corporate Amalgamation (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Loss Carry Forward",
-            "caption": "Amalgamated entity inherits accumulated business losses and allowances."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Corporate Amalgamation (Alpha).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "968fd6d5d845d1074e45fbe7bdec46c05dcb0b348402ba8a15e6ff1cfc825c81",
+      "partTitle": "Corporate Amalgamations under Section 2(1B) & The Section 72A Loss Carry Forward Architecture",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Corporate Amalgamations under Section 2(1B) &... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Corporate Amalgamation (Sigma Alpha).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11200,
+            "totalCredit": 11200,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Corporate Amalgamation (Alpha).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Corporate Amalgamation (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Corporate Amalgamation (Alpha).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13440,
+            "totalCredit": 13440,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11200,
+                "balance": 11200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2240,
+                "balance": 13440,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13440,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Demerger Undertaking Spin Off",
+        "template": "ledger-sheet",
+        "title": "Corporate Demergers under Section 2(19AA) & T... — General Ledger Verification",
         "steps": [
           {
-            "label": "Undertaking Definition",
-            "caption": "Corporate unit transfers as an autonomous viable going concern."
+            "at": "intro",
+            "caption": "Open primary debit entry for Corporate Demergers un (Sigma Beta).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Book Value Transfer",
-            "caption": "Assets and liabilities transfer at historic book values without markup."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Corporate Demergers un (Beta).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Proportionate Allotment",
-            "caption": "Resulting entity issues shares directly to parent shareholders."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Corporate Demergers un (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Apportioned Tax Shield",
-            "caption": "Accumulated losses are divided proportionately between companies."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Corporate Demergers un (Beta).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "3d16aadda203ce5412e34a5c0db4ebf7ca2cdcfdea166aac69f04ca177fd5292",
+      "partTitle": "Corporate Demergers under Section 2(19AA) & The Undertaking Allocation Doctrine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Corporate Demergers under Section 2(19AA) & T... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Corporate Demergers un (Sigma Beta).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Corporate Demergers un (Beta).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Corporate Demergers un (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Corporate Demergers un (Beta).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13680,
+            "totalCredit": 13680,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11400,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2280,
+                "balance": 13680,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13680,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Slump Sale Mechanics",
+        "template": "ledger-sheet",
+        "title": "Slump Sale Architecture under Section 50B & R... — General Ledger Verification",
         "steps": [
           {
-            "label": "Lump Sum Transfer",
-            "caption": "Business undertaking transfers for single unassigned consideration."
+            "at": "intro",
+            "caption": "Open primary debit entry for Slump Sale Architectur (Sigma Gamma).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11600,
+            "totalCredit": 11600,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Net Worth Calculation",
-            "caption": "Depreciable assets at written down value form cost of acquisition."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Slump Sale Architectur (Gamma).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Fair Value Comparison",
-            "caption": "Consideration is benchmarked against market value of assets sold."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Slump Sale Architectur (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Capital Gain Assessment",
-            "caption": "Gain is computed without indexation benefit under special code."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Slump Sale Architectur (Gamma).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "6ea5fc1a4257e295c2175058e9bee9f8c230d51228d40a39f6ec95f9fd476021",
+      "partTitle": "Slump Sale Architecture under Section 50B & Rule 11UAE Net Worth Determination",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Slump Sale Architecture under Section 50B & R... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Slump Sale Architectur (Sigma Gamma).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11600,
+            "totalCredit": 11600,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Slump Sale Architectur (Gamma).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Slump Sale Architectur (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Slump Sale Architectur (Gamma).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13920,
+            "totalCredit": 13920,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11600,
+                "balance": 11600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2320,
+                "balance": 13920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 13920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Reorganization Clawback Rules",
+        "template": "ledger-sheet",
+        "title": "Capital Gains Exemptions under Section 47 & A... — General Ledger Verification",
         "steps": [
           {
-            "label": "Wholly Owned Exemption",
-            "caption": "Asset transfer between parent and subsidiary is exempt from tax."
+            "at": "intro",
+            "caption": "Open primary debit entry for Capital Gains Exemptio (Sigma Delta).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11800,
+            "totalCredit": 11800,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Eight Year Limitation",
-            "caption": "Holding company must maintain full ownership for eight full years."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Capital Gains Exemptio (Delta).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Share Dilution Event",
-            "caption": "Reduction of equity holding triggers statutory clawback of relief."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptio (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Retroactive Charge",
-            "caption": "Originally exempt gain becomes taxable income in year of dilution."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Capital Gains Exemptio (Delta).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "ad32a912e79139159200cbff498629a4e345db8d4bc56def4e15b6c5257abe33",
+      "partTitle": "Capital Gains Exemptions under Section 47 & Anti-Abuse Traps: Section 47A and 56(2)(x)",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Capital Gains Exemptions under Section 47 & A... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Capital Gains Exemptio (Sigma Delta).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11800,
+            "totalCredit": 11800,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 11800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Capital Gains Exemptio (Delta).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Capital Gains Exemptio (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Capital Gains Exemptio (Delta).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14160,
+            "totalCredit": 14160,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 11800,
+                "balance": 11800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2360,
+                "balance": 14160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 14160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Corporate Restructuring Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Corporate M&A... — General Ledger Verification",
         "steps": [
           {
-            "label": "Merger Qualification",
-            "caption": "System verifies statutory asset and shareholder continuity tests."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Sigma Epsilon).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Loss Schedule Audit",
-            "caption": "Engine projects cash tax savings from absorbed industrial losses."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Slump Sale Valuation",
-            "caption": "Module calculates net worth and fair market value capital gains."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Clawback Watchdog",
-            "caption": "Platform monitors equity retention to prevent statutory tax clawback."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "c1af8f22fc9846f9184952f51251eca7956953b4df2ff8be5dc1922b665e9b72",
+      "partTitle": "Production Python Architecture: Corporate M&A Restructuring & Section 72A/50B Tax Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Corporate M&A... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Sigma Epsilon).",
+            "title": "Day 58 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Clearing & Settlement Control",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 58 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Primary Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Clearing & Settlement Control",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Sigma).",
+            "title": "Day 58 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "General Ledger Control Account",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 58 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14400,
+            "totalCredit": 14400,
+            "entries": [
+              {
+                "id": "JNL-5801",
+                "account": "Audited Operating Asset",
+                "debit": 12000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2400,
+                "balance": 14400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5803",
+                "account": "Audited Treasury Settlement",
+                "credit": 14400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

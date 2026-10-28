@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Omnichannel Order Management & Distributed Order Routing (DOM) Defense",
-      "codeHash": "c074e0cbb46c1e9ba8605fa537e70bd63590d43300a9fbb6bdb9b65f1d2aa731",
+      "codeHash": "135b2b5d48ca79be36398698bea5380e8e501ae3b82dcd92aaf02b6826fc0174",
       "spec": {
         "template": "funnel",
         "title": "Day 45 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tier 2: Cross-Docking, EDI ANSI X12 (850/856/810) & Automated ASN Dock Receiving Defense",
-      "codeHash": "770ec31f9a6eb27fed412c5deaa859ab6bf0b673ec48e9eb9f6908fd65f31bb9",
+      "codeHash": "d9a25c47be38abc926a7706de489eec3e3235445e615c02680bb0c4e54914e14",
       "spec": {
         "template": "funnel",
         "title": "Day 45 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Tier 3: Reverse Logistics, Disposition Triage & Circular Economy Liquidation Defense",
-      "codeHash": "6c78423ca61e9eece4d150429bf60080fa92822d95fd09f16d842e761c220d1c",
+      "codeHash": "aa9b692e0932a304479e45fc6fff104ee772149bb8bcacc62e22e130723a2407",
       "spec": {
         "template": "funnel",
         "title": "Day 45 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Tier 4: Post-Purchase Telemetry, OpenTelemetry Tracing & Dynamic ETA Defense",
-      "codeHash": "fafaa283662abf831f39d91e6f4c28618661f2f3c6eed25554b8aa2d20f67e5c",
+      "codeHash": "72086cd43b9e9adeaadcad1341de319faa977889a7bb6b8c22ec15999d11f171",
       "spec": {
         "template": "funnel",
         "title": "Day 45 Part 4 Architecture Flow",
@@ -477,14 +477,14 @@
     },
     {
       "partTitle": "Tier 5: The Sovereign Corporate Boardroom Defense & Executive Chief Supply Chain Architect Accreditation",
-      "codeHash": "1390734eeca9b49bc284e6f78491fa6cba16394d6870817a4c47795c48ea3d2a",
+      "codeHash": "7f2346a5b435bd611d66e2353b4eb3fcf0b3bb73fa05b680c563cd480d271ca3",
       "spec": {
         "template": "funnel",
         "title": "Day 45 Part 5 Architecture Flow",
         "steps": [
           {
             "at": "intro",
-            "caption": "Board of Directors convenes for official capstone accreditation.",
+            "caption": "Board of Directors convenes for official capstone accreditation [D45P5].",
             "activeStageId": "s1",
             "stages": [
               {

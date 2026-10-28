@@ -46,7 +46,9 @@
             "caption": "Shippers bear strict legal responsibility for declaring hazardous goods."
           }
         ]
-      }
+      },
+      "codeHash": "398c9241391016055525e983d8a6e91170d5571a82d243aecddded00ea38219e",
+      "partTitle": "Dangerous Goods Regulatory Frameworks: UN Model Regulations, IMDG Code, IATA DGR, and ADR Transport Conventions"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Diamond hazmat placards communicate chemical risks to first responders."
           }
         ]
-      }
+      },
+      "codeHash": "b1e038c65aea504c2da9053d906cf56c33609697d84bdd170485abf18807f9a4",
+      "partTitle": "The Nine UN Hazmat Hazard Classes: Chemical Incompatibilities, Segregation Tables, and Placarding Invariants"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Dangerous goods declarations document proper shipping names and classes."
           }
         ]
-      }
+      },
+      "codeHash": "ea55d04f9fade0876a9a28a32ef75b4a67bb85ec33f0fae3accf1d9d662b7454",
+      "partTitle": "Packaging Groups and Dangerous Goods Declarations: Performance-Oriented Packaging (POP) and UN Markings"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Mean kinetic temperature calculates non linear cumulative heat exposure."
           }
         ]
-      }
+      },
+      "codeHash": "20fd249a4eb6e23086c204e3330780f748ae74a9435063d0ca4c4bbf66e87585",
+      "partTitle": "Pharmaceutical and Perishable Cold Chain Standards: Good Distribution Practices (GDP) and Passive vs. Active Control"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Predictive thermal models alert command centers before phase changes melt."
           }
         ]
-      }
+      },
+      "codeHash": "a6ef62a8ba5a59a7ab46d5ca08600f0ab90be4e40debae8905f26139c1c20ada",
+      "partTitle": "Hazmat Segregation Matrix & Cold Chain Telemetry Engine: Automated Hazard Verification and Thermal Excursion Auditing"
     }
   ]
 }

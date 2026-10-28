@@ -183,7 +183,7 @@ export function VisualStage({
       case 'boxes':
         return (
           <BoxesTemplate
-            boxes={visual.boxes}
+            boxes={visual.boxes || (visual as any).items || (visual as any).nodes || []}
             step={visual.steps[safeStepIndex]}
             highlightedLabel={highlightedLabel}
             onShapeTap={onShapeTap}

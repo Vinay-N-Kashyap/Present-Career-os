@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "public_dmz",
-            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats.",
+            "caption": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats. (Multi-Account PCI-DSS Foundation: L)"
           },
           {
             "at": "say2",
             "focus": "inspection_hub",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall. (Multi-Account PCI-DSS Foundation: L)"
           },
           {
             "at": "example",
             "focus": "hsm_vault",
-            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens.",
+            "caption": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens. (Multi-Account PCI-DSS Foundation: L)"
           },
           {
             "at": "tryIt",
             "focus": "cde_core",
-            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys.",
+            "caption": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys. (Multi-Account PCI-DSS Foundation: L)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "public_dmz",
-            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats.",
+            "caption": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats. (CDE Network Segmentation: Transit G)"
           },
           {
             "at": "say2",
             "focus": "inspection_hub",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall. (CDE Network Segmentation: Transit G)"
           },
           {
             "at": "example",
             "focus": "hsm_vault",
-            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens.",
+            "caption": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens. (CDE Network Segmentation: Transit G)"
           },
           {
             "at": "tryIt",
             "focus": "cde_core",
-            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys.",
+            "caption": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys. (CDE Network Segmentation: Transit G)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "public_dmz",
-            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats.",
+            "caption": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats. (Edge Tokenization & In-Transit Prot)"
           },
           {
             "at": "say2",
             "focus": "inspection_hub",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall. (Edge Tokenization & In-Transit Prot)"
           },
           {
             "at": "example",
             "focus": "hsm_vault",
-            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens.",
+            "caption": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens. (Edge Tokenization & In-Transit Prot)"
           },
           {
             "at": "tryIt",
             "focus": "cde_core",
-            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys.",
+            "caption": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys. (Edge Tokenization & In-Transit Prot)"
           }
         ]
       }
@@ -267,33 +279,37 @@
           {
             "at": "say1",
             "focus": "public_dmz",
-            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats.",
+            "caption": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats. (Zero Static Credentials in CDE: OID)"
           },
           {
             "at": "say2",
             "focus": "inspection_hub",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall. (Zero Static Credentials in CDE: OID)"
           },
           {
             "at": "example",
             "focus": "hsm_vault",
-            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens.",
+            "caption": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens. (Zero Static Credentials in CDE: OID)"
           },
           {
             "at": "tryIt",
             "focus": "cde_core",
-            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys.",
+            "caption": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys. (Zero Static Credentials in CDE: OID)"
           }
         ]
       }
     },
     {
-      "partTitle": "\u2b50 Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
+      "partTitle": "⭐ Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
       "codeHash": "83e4cfb3ba2d61ead349006f43390b1b0170faae5e8a3744711a5fb21fb5bcc6",
       "spec": {
         "template": "workflow",
         "workflow": {
-          "title": "\u2b50 Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
+          "title": "⭐ Milestone 8 Synthesis: Full-Mesh PCI-DSS Compliance Validator & SRE Runbook",
           "nodes": [
             {
               "id": "public_dmz",
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "public_dmz",
-            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats."
+            "annotation": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats.",
+            "caption": "Inbound payment transactions enter public DMZ and are inspected by AWS WAF for OWASP threats. (⭐ Milestone 8 Synthesis: Full-Mesh )"
           },
           {
             "at": "say2",
             "focus": "inspection_hub",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to Suricata DPI firewall. (⭐ Milestone 8 Synthesis: Full-Mesh )"
           },
           {
             "at": "example",
             "focus": "hsm_vault",
-            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens."
+            "annotation": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens.",
+            "caption": "Dedicated CloudHSM appliances tokenize raw card numbers, replacing PANs with surrogate tokens. (⭐ Milestone 8 Synthesis: Full-Mesh )"
           },
           {
             "at": "tryIt",
             "focus": "cde_core",
-            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys."
+            "annotation": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys.",
+            "caption": "Payment core processes non-sensitive tokens using short-lived OIDC STS credentials with zero static keys. (⭐ Milestone 8 Synthesis: Full-Mesh )"
           }
         ]
       }

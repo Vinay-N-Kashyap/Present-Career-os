@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Global Foreign Exchange Market Architecture, Settlement Dates & FEDAI Framework",
-      "codeHash": "15c150e37ced202efc828d4d8bc12512c6c07aab197b63f686da377609768c70",
+      "codeHash": "74f330389677af502f02235a4deedeb2d26d628d7ded410b1811c3fe61ec5435",
       "spec": {
         "template": "funnel",
-        "title": "Global Foreign Exchange Market Archite... \u2014 Treasury Risk Operations",
+        "title": "Global Foreign Exchange Market Archite... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Two-Way Dealer Price Quotations, Bid-Ask Spreads & FEDAI Merchant Margin Loading",
-      "codeHash": "e582a0ddb3189441eb88733d9c1114bb8c6ffedc2f8d4266f9806b0ad4be4937",
+      "codeHash": "e8ce6f7164da10c14cd4374d16ee444cfda9e0ed3cc9d02854b5333773dccdfb",
       "spec": {
         "template": "funnel",
-        "title": "Two-Way Dealer Price Quotations, Bid-A... \u2014 Treasury Risk Operations",
+        "title": "Two-Way Dealer Price Quotations, Bid-A... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Cross-Currency Rates & Triangular Arbitrage Mechanics",
-      "codeHash": "798c702ffc1a2fa67617c7a38b83ed09b09008fbca10bb5cd17877d0672fc54a",
+      "codeHash": "62805584ad952d498a43b819a575dbf7058928228190671b49a6c4e51c633c83",
       "spec": {
         "template": "funnel",
-        "title": "Cross-Currency Rates & Triangular Arbi... \u2014 Treasury Risk Operations",
+        "title": "Cross-Currency Rates & Triangular Arbi... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Forward Exchange Rates, Swap Points & Covered Interest Parity (CIP) Physics",
-      "codeHash": "aa1b99ac155b039bdc298d568bb54d3f0ab5994b750a93e9e44fbb7d72fb36a0",
+      "codeHash": "531b61e5d18ec43756f97ea62b2a5b4004c24379a8fdb3c769a5ad624aec38a2",
       "spec": {
         "template": "funnel",
-        "title": "Forward Exchange Rates, Swap Points & ... \u2014 Treasury Risk Operations",
+        "title": "Forward Exchange Rates, Swap Points & ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Forex Dealing Room Command & Exposure Risk Simulator",
-      "codeHash": "ab3b97d51dd3e2b85c978765066dad4f9c2f5960c872f5d0a667fd3f1ca9437d",
+      "codeHash": "c4f58fae5aa3217658a5b0e41244807ccc930a168c6aed21be3090c9796f00aa",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Forex Dealing... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Forex Dealing... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

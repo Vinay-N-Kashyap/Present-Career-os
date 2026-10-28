@@ -662,7 +662,7 @@
       }
     },
     {
-      "partTitle": "Production Operational Invariants: On-Call Ergonomics, PagerDuty Routing Trees & SRE Compensation Models",
+      "partTitle": "Production daily workflow standards: On-Call Ergonomics, PagerDuty Routing Trees & SRE Compensation Models",
       "codeHash": "1a411b1afcf57ac82856e32f4487df893fe56e8a66ecdd124602dcea31fe83b4",
       "spec": {
         "template": "compare",

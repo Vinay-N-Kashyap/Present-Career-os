@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Market Risk Architecture & Value-at-Risk Foundations: Parametric Variance-Covariance VaR",
-      "codeHash": "afa629d5f2fecbc3c4b7717005096f87f5c514d2a2be8fc8892720595a2cd88b",
+      "codeHash": "b8d8d821b33145cc27e59a8257a7f638265d10968e8b028033b59b6982ae4d9c",
       "spec": {
         "template": "funnel",
-        "title": "Market Risk Architecture & Value-at-Ri... \u2014 Treasury Risk Operations",
+        "title": "Market Risk Architecture & Value-at-Ri... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Non-Parametric Market Risk Analytics: Historical Simulation & Full Revaluation Monte Carlo VaR",
-      "codeHash": "fb16a39133791878bb6a64e82fd23ff10c7c68a7729137e544137647176bf495",
+      "codeHash": "43c8be0633cf2d6d0f1dd3b79bc319a30ca08bd2a5daccf8b457e1127d14914a",
       "spec": {
         "template": "funnel",
-        "title": "Non-Parametric Market Risk Analytics: ... \u2014 Treasury Risk Operations",
+        "title": "Non-Parametric Market Risk Analytics: ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Tail Risk & Subadditivity: Stressed VaR (SVaR) & Expected Shortfall (ES / CVaR) under FRTB",
-      "codeHash": "c784a11ebab5807aa70ac33340de48a73d6624b468681544fbdacca3f01d906c",
+      "codeHash": "289dceda878282dba8e4b417b1c447f8fada81774e0b408056eb0e7eeb03c984",
       "spec": {
         "template": "funnel",
-        "title": "Tail Risk & Subadditivity: Stressed Va... \u2014 Treasury Risk Operations",
+        "title": "Tail Risk & Subadditivity: Stressed Va... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Operational Risk Modernization: Basel III Standardized Measurement Approach (SMA)",
-      "codeHash": "8c38a640cc47cab2639bea7050bb1309a66bd7fc0acefe7bd2f44eafc4af5e8b",
+      "codeHash": "836353538dffcb332b6916a2d039a5099791ff1d1dcd9d4d507a984916eaf28c",
       "spec": {
         "template": "funnel",
-        "title": "Operational Risk Modernization: Basel ... \u2014 Treasury Risk Operations",
+        "title": "Operational Risk Modernization: Basel ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Enterprise Market & Operational Risk Defense Engine: Backtesting & Supervisory Capital Suite",
-      "codeHash": "6034d46443671eed7dfdff02c20960d13566e9096c460764899b8fa53bc98e42",
+      "codeHash": "cb606b2a59b0d406bfecb84852fdb6ae9f17275f259dd73b8e0c852e3e91a57c",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Market & Operational Risk D... \u2014 Treasury Risk Operations",
+        "title": "Enterprise Market & Operational Risk D... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

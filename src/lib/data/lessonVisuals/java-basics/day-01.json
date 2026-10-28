@@ -468,11 +468,11 @@
       }
     },
     {
-      "partTitle": "Resource Management & The AutoCloseable Interface",
-      "codeHash": "6a00acfed0ca4784b119db69d00b58b89f888f43611697038713ee8745b59352",
+      "partTitle": "Resource Management & The SafeCloseable Interface",
+      "codeHash": "d4fe2520e32f95523faf0d28420414c2df78501544f66db620f3c1c6c20a2974",
       "spec": {
         "template": "stack-queue",
-        "title": "Resource Management & The AutoCloseable Inter... — JVM Call Stack & Frame Lifecycle",
+        "title": "Resource Management & The SafeCloseable Inter... — JVM Call Stack & Frame Lifecycle",
         "mode": "stack",
         "steps": [
           {
@@ -547,7 +547,7 @@
       },
       "filled": {
         "template": "stack-queue",
-        "title": "Resource Management & The AutoCloseable Inter... — JVM Call Stack & Frame Lifecycle",
+        "title": "Resource Management & The SafeCloseable Inter... — JVM Call Stack & Frame Lifecycle",
         "mode": "stack",
         "steps": [
           {
@@ -622,11 +622,11 @@
       }
     },
     {
-      "partTitle": "Modern Concurrency: Virtual Threads & High-Throughput I/O",
-      "codeHash": "f288fa8a9182ce4e581806cf6fefdfe1ae824f78d7fd33c532b79e737ed328c2",
+      "partTitle": "Modern Concurrency: Lightweight Tasks & High-Throughput I/O",
+      "codeHash": "cda92e1e732129331275da9433bb7f178627bc26263ced19e17190604424bf78",
       "spec": {
         "template": "stack-queue",
-        "title": "Modern Concurrency: Virtual Threads & High-Th... — JVM Call Stack & Frame Lifecycle",
+        "title": "Modern Concurrency: Lightweight Tasks & High-Th... — JVM Call Stack & Frame Lifecycle",
         "mode": "stack",
         "steps": [
           {
@@ -701,7 +701,7 @@
       },
       "filled": {
         "template": "stack-queue",
-        "title": "Modern Concurrency: Virtual Threads & High-Th... — JVM Call Stack & Frame Lifecycle",
+        "title": "Modern Concurrency: Lightweight Tasks & High-Th... — JVM Call Stack & Frame Lifecycle",
         "mode": "stack",
         "steps": [
           {

@@ -387,5 +387,748 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Architecture of Sovereign Debt: Internal vs External Debt, Original Sin & Central Bank Reserve Management",
+      "codeHash": "5d17274e601a6be012de1226751fedf7a935c1742fee2fa1ad1c96618b2a7e14",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — QuintusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — QuintusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — QuintusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — QuintusBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — QuintusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — QuintusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — QuintusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — QuintusBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sovereign Debt Sustainability Analysis (DSA): IMF/World Bank Frameworks & Debt-to-GDP Dynamics",
+      "codeHash": "7657024cc708f9ff3cf1ea9fcd22b10a387cc82ada75da6e9fd89c495e4fb132",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — QuintusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — QuintusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — QuintusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — QuintusBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — QuintusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — QuintusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — QuintusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — QuintusBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sovereign Restructurings & Debt Workouts: The Paris Club, London Club, CACs & Brady Bond Precedents",
+      "codeHash": "74a15b5f42509fcf9ab6773831f1d6ad15e947779c2e57614fbaceca47edaec3",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — QuintusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — QuintusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — QuintusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — QuintusBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — QuintusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — QuintusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — QuintusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — QuintusBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Geopolitical Reserve Hegemony, Sanctions, De-Dollarization & Sovereign Wealth Shields",
+      "codeHash": "c5774bedeb5db2b4fe6919e594c9b4d6a9b929cc080e6e1f996c249db7d0a846",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — QuintusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — QuintusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — QuintusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — QuintusBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — QuintusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — QuintusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — QuintusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — QuintusBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Sovereign Debt Sustainability (DSA) Engine & Debt Restructuring Waterfall",
+      "codeHash": "dd8801c521bc5c5c9b1ce0c68bc830007d909f66fe422f2b8ce4492684d48250",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — QuintusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — QuintusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — QuintusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — QuintusBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 59 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "National Sovereign Economic Infrastructure Assets",
+            "$100,000,000,000.00",
+            ""
+          ],
+          [
+            "Central Bank Foreign Exchange Physical Gold Reserve",
+            "$15,000,000,000.00",
+            ""
+          ],
+          [
+            "Restructured External Sovereign Eurobond Facility",
+            "",
+            "$55,250,000,000.00"
+          ],
+          [
+            "Bilateral Official Paris Club Debt Obligations",
+            "",
+            "$25,000,000,000.00"
+          ],
+          [
+            "Consolidated National Sovereign Equity Net Worth",
+            "",
+            "$34,750,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000,000.00",
+          "$115,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 59 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — QuintusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — QuintusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — QuintusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — QuintusBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

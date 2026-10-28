@@ -623,7 +623,7 @@
     },
     {
       "partTitle": "ClassLoader Hierarchy & Dynamic Isolation (Parent Delegation Model)",
-      "codeHash": "3102df42770999a3a6774204b1ff688a9437009f73d4d3cfedf0506863810093",
+      "codeHash": "279233577f9e31a7f409c2eafc8f41065429061edd613d1c867598a4c533b8e6",
       "spec": {
         "template": "stack-queue",
         "title": "ClassLoader Hierarchy & Dynamic Isolation (Pa... — JVM Call Stack & Frame Lifecycle",

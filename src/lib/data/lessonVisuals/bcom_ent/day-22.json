@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "Blanchard Situational Leadership II (SLII): Competence, Commitment & Style Matching",
-      "codeHash": "bac25341601191a463428785fe5a82075803780a7dab3b344aa9ddffcf610ea3",
+      "codeHash": "091cdac23af13556a81d69d985ec117ad8335f6503020f6d8beaf04e37ca54a2",
       "spec": {
         "template": "funnel",
         "title": "Blanchard Situational Leadership II (SLI - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (10,000 prospects).",
+            "caption": "Enterprise talent reach (10,000 prospects) [D22P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -172,7 +172,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (10,000 prospects).",
+            "caption": "Enterprise talent reach (10,000 prospects) [D22P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Retained Core",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,14 +327,14 @@
     },
     {
       "partTitle": "Amy Edmondson Psychological Safety Audit & High-Performance Learning Zones",
-      "codeHash": "2bd8a0c69f024a1aceff5384b375741ecaf20a2275825b63da6ba469dfc150f8",
+      "codeHash": "7eb48c99b76ecce9a4e0b71e57d12523ee66b2a642c361a3ed53bdca10595be4",
       "spec": {
         "template": "funnel",
         "title": "Amy Edmondson Psychological Safety Audit - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (12,500 prospects).",
+            "caption": "Enterprise talent reach (12,500 prospects) [D22P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -492,7 +492,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (12,500 prospects).",
+            "caption": "Enterprise talent reach (12,500 prospects) [D22P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Retained Core",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,14 +647,14 @@
     },
     {
       "partTitle": "Kim Scott Radical Candor Feedback Matrix: Care Personally vs. Challenge Directly",
-      "codeHash": "98a3cd6a533541feff0339cb2ec52c5d0742f32bb418e075e1a785fc793966a4",
+      "codeHash": "0c1caec97d0218a747152ee3ec693756421317bb556e40da83078b89592ab55f",
       "spec": {
         "template": "funnel",
         "title": "Kim Scott Radical Candor Feedback Matrix - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (8,000 prospects).",
+            "caption": "Enterprise talent reach (8,000 prospects) [D22P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -812,7 +812,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (8,000 prospects).",
+            "caption": "Enterprise talent reach (8,000 prospects) [D22P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Retained Core",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,14 +967,14 @@
     },
     {
       "partTitle": "J. Richard Hackman's 5 Conditions for Team Collaboration & Effectiveness",
-      "codeHash": "fe6378a86faea2c07cb71babc803ca07a8f26104d25990c6cb4b3e2c1512bff3",
+      "codeHash": "c320a5a525d24ceb8a7d5e84701e6a4abe68620e07eaadc12f50e2bdd8527839",
       "spec": {
         "template": "funnel",
         "title": "J. Richard Hackman's 5 Conditions for Te - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (9,500 prospects).",
+            "caption": "Enterprise talent reach (9,500 prospects) [D22P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1132,7 +1132,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (9,500 prospects).",
+            "caption": "Enterprise talent reach (9,500 prospects) [D22P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Retained Core",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,14 +1287,14 @@
     },
     {
       "partTitle": "Master Leadership & Team Governance Control Tower: 4-Gate Leadership Accreditation",
-      "codeHash": "802917246651a87c0a76efa64b2f6ec9c2ef8a6c8512c59c31e8450036047b44",
+      "codeHash": "43e1d783676cc398da759ac35158930af3639ec141964b66e9fd9a6d54ee7cd3",
       "spec": {
         "template": "funnel",
         "title": "Master Leadership & Team Governance Cont - Governance Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (15,000 prospects).",
+            "caption": "Enterprise talent reach (15,000 prospects) [D22P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1308,16 +1308,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1325,7 +1325,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,16 +1346,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1363,7 +1363,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,16 +1384,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1401,7 +1401,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,16 +1422,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1439,7 +1439,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1452,7 +1452,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Enterprise talent reach (15,000 prospects).",
+            "caption": "Enterprise talent reach (15,000 prospects) [D22P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1466,16 +1466,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1483,7 +1483,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,16 +1504,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1521,7 +1521,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,16 +1542,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1559,7 +1559,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,16 +1580,16 @@
                 "id": "qual",
                 "label": "Qualified Cohort",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Calibrated Tier",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1597,7 +1597,7 @@
                 "label": "Retained Core",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Programmatic Supply Chain Topology: Ad Servers, SSPs, Exchanges & DSPs",
-      "codeHash": "f5b9dcee0ad19978363dcb67d465de6a78e52512a24d0b68fbc73b1271e00373",
+      "codeHash": "31946b04cdc8eaf3e1d80159014399a072aae13c24febccfb577d33bc82a13e6",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Dissecting the OpenRTB 2.5 vs 3.0 Protocol: JSON Payload Anatomy & AdCOM",
-      "codeHash": "8c1c4a4dbc4767d1b8a129800b56649094bb86c862cb79436108c7ec7d35ec00",
+      "codeHash": "efa0afa5a97e3f948130c8804cd88703d72d7b59730ed0241eae12e3adc5deaa",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Auction Mechanics: The Shift from Second-Price (Vickrey) to Generalized First-Price Auctions",
-      "codeHash": "a4e9a321a7ccbe9c18e2a56398e7a4d5c473ea3ba20f39b9e6f87ebfb17bfc3c",
+      "codeHash": "6999c8f7ba9806235cd428eda83fe32b24d5c862eba4abf7310e9df788fc61e2",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Real-Time Latency Budgets: Sub-100ms Timeout Cascades & Network Micro-Architectures",
-      "codeHash": "b6e8999762d13b272b909cfe5e365088394d4776696b7c924871a29004442de9",
+      "codeHash": "4115c4b24e891cbbbe18b4152b249e255308f9d3b16d3bde99152f793f7253bb",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Industrial OpenRTB Engine: DSP Bid Evaluation & Dynamic Shading Simulator",
-      "codeHash": "ceaa9127c9acb0d1f768227e24b3d03a7df28ea29623e21f263ddb9728358f2e",
+      "codeHash": "6f13dea1b353d169c74b60a4c470f712472088bccca43d3b8b035331e74065f3",
       "spec": {
         "template": "funnel",
         "steps": [

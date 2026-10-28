@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Multi-Gateway Smart Routing & Cascade Fallback: Maximizing Authorization Rates & Reducing Interchange Fees",
-      "codeHash": "4d6cd17950e2c8195ab6bb3e236c34a19c2821b2bb63a5020a4862c08fafb557",
+      "codeHash": "cd31971270c45953c3e430a829995148c26cdafd8afddaf4711452a193abbf99",
       "spec": {
         "template": "funnel",
         "title": "Day 36 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "EMV 3D-Secure 2.0 (3DS2) & SCA Dynamic Exemption Engines: Frictionless Authentication Flow",
-      "codeHash": "b70aef1f6a7fcc13f3f2069e511ba2b91e1b85984285f90769a2bcdd9baa4cac",
+      "codeHash": "104b936e8780580c95e37b7373779ce7530561fade6b33cdf6d671addf24272f",
       "spec": {
         "template": "funnel",
         "title": "Day 36 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Network Tokenization, Cryptographic Cryptograms & PCI-DSS Level 1 Scope Reduction",
-      "codeHash": "f575f23ee8546ba3196bf00271c5a684c0d0fcf1b6f2e4e12337115961577d04",
+      "codeHash": "3723385b1e8d052df4e247b30b430cd79ff48b77d23a240bb866495696ca119e",
       "spec": {
         "template": "funnel",
         "title": "Day 36 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Multi-Currency Dynamic Currency Conversion (DCC), FX Hedging & Cross-Border Settlement",
-      "codeHash": "e47632c6db9ba7b7a1a6a12252c05ef60145db8d4f36f369e1ca498091a94081",
+      "codeHash": "a7e0293a7543dff0e6907b9f9f5ec398d0516b02e958f4b555fa78b6b577b403",
       "spec": {
         "template": "funnel",
         "title": "Day 36 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "The Complete Enterprise Global Payment Gateway Orchestrator: End-to-End Production Pipeline",
-      "codeHash": "03aad8d93df3d528798d5388fbf3a0e575c492bcde5fb8e5e039b57ce75765b6",
+      "codeHash": "923ffe026ed0bbc45547f27898c50ae4d68a558fdf9d5a374d428f79955283ba",
       "spec": {
         "template": "funnel",
         "title": "Day 36 Part 5 Architecture Flow",

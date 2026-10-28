@@ -10,23 +10,23 @@
         "caption": "Distressed restructuring ledger balancing priority claims.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -72,23 +72,23 @@
         "caption": "Distressed restructuring ledger balancing priority claims.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -134,23 +134,23 @@
         "caption": "Distressed restructuring ledger balancing priority claims.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -196,23 +196,23 @@
         "caption": "Distressed restructuring ledger balancing priority claims.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -258,23 +258,23 @@
         "caption": "Distressed restructuring ledger balancing priority claims.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 2500000000.0,
-          "totalCredit": 2500000000.0,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
           "rows": [
             {
               "account": "Acquired Enterprise Value",
-              "debit": 2500000000.0,
-              "credit": 0.0
+              "debit": 2500000000,
+              "credit": 0
             },
             {
               "account": "Total Debt Financed",
-              "debit": 0.0,
-              "credit": 1500000000.0
+              "debit": 0,
+              "credit": 1500000000
             },
             {
               "account": "Sponsor Equity Invested",
-              "debit": 0.0,
-              "credit": 1000000000.0
+              "debit": 0,
+              "credit": 1000000000
             }
           ]
         },
@@ -311,6 +311,559 @@
           ]
         }
       ]
+    }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Corporate Distress Architecture: The Zone of Insolvency & Fiduciary Duty Shifts",
+      "codeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Corporate Distress Architectur",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — TauBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — TauBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — TauBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — TauBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Corporate Distress Architectur",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — TauBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — TauBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — TauBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — TauBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Restructuring Hierarchy: The Absolute Priority Rule & The Fulcrum Security",
+      "codeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: The Restructuring Hierarchy: T",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — TauBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — TauBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — TauBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — TauBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: The Restructuring Hierarchy: T",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — TauBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — TauBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — TauBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — TauBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Chapter 11 Reorganization Mechanics: DIP Financing, Automatic Stay & Section 363 Sales",
+      "codeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Chapter 11 Reorganization Mech",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — TauBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — TauBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — TauBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — TauBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Chapter 11 Reorganization Mech",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — TauBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — TauBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — TauBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — TauBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Debt-for-Equity Swaps & Cramdown Valuation: Pre-Packs & Section 1129(b) Standards",
+      "codeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Debt-for-Equity Swaps & Cramdo",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — TauBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — TauBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — TauBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — TauBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Debt-for-Equity Swaps & Cramdo",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — TauBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — TauBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — TauBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — TauBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Distressed Restructuring Engine: Sandbox Execution & Socratic Synthesis",
+      "codeHash": "36015ae919927c3ab1d68f6e17302e79bc8d35a929e79fc859e4a8d40dba080f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Production Distressed Restruct",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — TauBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — TauBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — TauBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — TauBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "LBO Ledger: Production Distressed Restruct",
+        "caption": "Distressed restructuring ledger balancing priority claims.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 2500000000,
+          "totalCredit": 2500000000,
+          "rows": [
+            {
+              "account": "Acquired Enterprise Value",
+              "debit": 2500000000,
+              "credit": 0
+            },
+            {
+              "account": "Total Debt Financed",
+              "debit": 0,
+              "credit": 1500000000
+            },
+            {
+              "account": "Sponsor Equity Invested",
+              "debit": 0,
+              "credit": 1000000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Transaction Structuring",
+            "description": "Establish purchase price multiples and capital tranches.",
+            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — TauBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Waterfall Execution",
+            "description": "Model cash flow generation and debt paydown trajectories.",
+            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — TauBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Returns Decomposition",
+            "description": "Decompose equity gains across operational and financial drivers.",
+            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — TauBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Committee Verification",
+            "description": "Verify debt covenant compliance and emit cryptographic pass token.",
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — TauBeta Epsilon Delta."
+          }
+        ]
+      }
     }
   ]
 }

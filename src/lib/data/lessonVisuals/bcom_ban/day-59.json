@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Climate Risk Regulatory Imperative: BCBS Core Principles, NGFS Scenarios & Green Swans",
-      "codeHash": "d755831b7f5e847375746aa4f325d4a14ce07ec8b2e6490f621fecfdc913aaef",
+      "codeHash": "16b221a88332a15aa7da889a00e29d21e50ef603d120bee3890764496b9826e1",
       "spec": {
         "template": "funnel",
-        "title": "The Climate Risk Regulatory Imperative... \u2014 Central Banking & Solvency",
+        "title": "The Climate Risk Regulatory Imperative... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Physical vs Transition Climate Risk Modeling: Damage Functions & Stranded Asset Vulnerability",
-      "codeHash": "1e484a5e9783624692ee4c25fb63df91699dc24f23406029e7d9b32f43b2967e",
+      "codeHash": "1c40ccba8cfd3abdeb5a7ac40b04cb3f135ebaee3110e3781b1a1ee9503900e8",
       "spec": {
         "template": "funnel",
-        "title": "Physical vs Transition Climate Risk Mo... \u2014 Central Banking & Solvency",
+        "title": "Physical vs Transition Climate Risk Mo... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Scope 3 Financed Emissions & The PCAF Standard: Attribution Factors & Carbon Intensity",
-      "codeHash": "fd93992f90bc8974eb0689342ec0a8b64aa5b03a7ee5bab7031c28fbae3d9776",
+      "codeHash": "c8c2f859f2b9b0bbf8735766a7b394170ad39834a4ad306bca3c8b9d3daec317",
       "spec": {
         "template": "funnel",
-        "title": "Scope 3 Financed Emissions & The PCAF ... \u2014 Central Banking & Solvency",
+        "title": "Scope 3 Financed Emissions & The PCAF ... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Sustainable Finance Taxonomy & Green Bond Principles: ICMA Framework & Climate Bond Certification",
-      "codeHash": "4869a0dca065b0630d59d7569bd8ae292427df0e0ff9a0cd28dc3fadf7e24729",
+      "codeHash": "ec0c25fb4291737421dca48e352fb4087e55ff62275f579735c4ca25f1107002",
       "spec": {
         "template": "funnel",
-        "title": "Sustainable Finance Taxonomy & Green B... \u2014 Central Banking & Solvency",
+        "title": "Sustainable Finance Taxonomy & Green B... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Industrial ESG Risk Lab: Bank Financed Emissions Engine & Climate Stress Testing Simulator",
-      "codeHash": "5633cc0f86ef915acb9ec74322df8396ec7ede147eca4c53e76c4d4a1462317d",
+      "codeHash": "e1d878b3da5867efc0d90868635281a7bd7026f6432d429650653e319e119a8c",
       "spec": {
         "template": "funnel",
-        "title": "Industrial ESG Risk Lab: Bank Financed... \u2014 Central Banking & Solvency",
+        "title": "Industrial ESG Risk Lab: Bank Financed... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

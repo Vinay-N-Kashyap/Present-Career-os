@@ -913,251 +913,223 @@
       "partTitle": "Masterclass Implementation: ApexEval Enterprise Multi-Metric Audit Suite",
       "codeHash": "686067736aa4f809ed2ea7bc7590108153ee45a8a15b581d33c325195e2cd4a8",
       "spec": {
-        "template": "ledger-sheet",
-        "title": "Masterclass Implementation: ApexEval Enterpri... — General Ledger Verification",
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexEval Enterpri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (12150) for Masterclass Implementation: Ap...",
-            "title": "Day 59 Journal — Initial Posting",
-            "isBalanced": true,
-            "totalDebit": 12150,
-            "totalCredit": 12150,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Primary Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "data",
-                "memo": "Initial recognition"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Clearing & Settlement Control",
-                "credit": 12150,
-                "balance": 0,
-                "tone": "ok",
-                "memo": "Offset control"
-              }
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexEval Ent...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
             ]
           },
           {
             "at": "say1",
-            "caption": "Step 2: Record secondary accrual adjustment (2430).",
-            "title": "Day 59 Journal — Accrual Adjustment",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Primary Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Accrued Provision / Tax Control",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "data"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "Clearing & Settlement Control",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "ok"
-              }
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
             ]
           },
           {
             "at": "example",
-            "caption": "Step 3: Reconcile sub-ledger balances against control total (14580).",
-            "title": "Day 59 Journal — Reconciliation Check",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Verified Asset Sub-Ledger",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Verified Compliance Reserve",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "General Ledger Control Account",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "data"
-              }
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
             ]
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Double-entry invariant verified (Total DR 14580 = CR 14580).",
-            "title": "Day 59 Journal — Audited Trial Balance",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Audited Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Audited Compliance Reserve",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "Audited Treasury Settlement",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "ok"
-              }
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexE...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
             ]
           }
         ]
       },
       "filled": {
-        "template": "ledger-sheet",
-        "title": "Masterclass Implementation: ApexEval Enterpri... — General Ledger Verification",
+        "template": "flow",
+        "title": "Masterclass Implementation: ApexEval Enterpri... — Execution Pipeline",
+        "nodes": [
+          {
+            "id": "in",
+            "label": "1. Input & State",
+            "tappable": true
+          },
+          {
+            "id": "proc",
+            "label": "2. Masterclass Impleme...",
+            "tappable": true
+          },
+          {
+            "id": "out",
+            "label": "3. Verified Output",
+            "tappable": true
+          }
+        ],
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (12150) for Masterclass Implementation: Ap...",
-            "title": "Day 59 Journal — Initial Posting",
-            "isBalanced": true,
-            "totalDebit": 12150,
-            "totalCredit": 12150,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Primary Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "data",
-                "memo": "Initial recognition"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Clearing & Settlement Control",
-                "credit": 12150,
-                "balance": 0,
-                "tone": "ok",
-                "memo": "Offset control"
-              }
+            "caption": "Step 1: Initialize input state for Masterclass Implementation: ApexEval Ent...",
+            "values": {
+              "in": "Day 59 Input",
+              "proc": "Standby",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "data",
+              "proc": "idle",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ]
             ]
           },
           {
             "at": "say1",
-            "caption": "Step 2: Record secondary accrual adjustment (2430).",
-            "title": "Day 59 Journal — Accrual Adjustment",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Primary Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Accrued Provision / Tax Control",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "data"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "Clearing & Settlement Control",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "ok"
-              }
+            "caption": "Step 2: Execute core transformation in Masterclass Impleme....",
+            "values": {
+              "in": "Validated",
+              "proc": "Processing...",
+              "out": "Pending"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "data",
+              "out": "idle"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
             ]
           },
           {
             "at": "example",
-            "caption": "Step 3: Reconcile sub-ledger balances against control total (14580).",
-            "title": "Day 59 Journal — Reconciliation Check",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Verified Asset Sub-Ledger",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Verified Compliance Reserve",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "General Ledger Control Account",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "data"
-              }
+            "caption": "Step 3: Inspect concrete example output and invariants.",
+            "values": {
+              "in": "Validated",
+              "proc": "Invariant OK",
+              "out": "Emitting"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "data"
+            },
+            "arrows": [
+              [
+                "proc",
+                "out"
+              ]
             ]
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Double-entry invariant verified (Total DR 14580 = CR 14580).",
-            "title": "Day 59 Journal — Audited Trial Balance",
-            "isBalanced": true,
-            "totalDebit": 14580,
-            "totalCredit": 14580,
-            "entries": [
-              {
-                "id": "JNL-5901",
-                "account": "Audited Operating Asset",
-                "debit": 12150,
-                "balance": 12150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5902",
-                "account": "Audited Compliance Reserve",
-                "debit": 2430,
-                "balance": 14580,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-5903",
-                "account": "Audited Treasury Settlement",
-                "credit": 14580,
-                "balance": 0,
-                "tone": "ok"
-              }
+            "caption": "Step 4: End-to-end execution verified for Masterclass Implementation: ApexE...",
+            "values": {
+              "in": "Committed",
+              "proc": "Verified",
+              "out": "Complete ✓"
+            },
+            "tones": {
+              "in": "ok",
+              "proc": "ok",
+              "out": "ok"
+            },
+            "arrows": [
+              [
+                "in",
+                "proc"
+              ],
+              [
+                "proc",
+                "out"
+              ]
             ]
           }
         ]

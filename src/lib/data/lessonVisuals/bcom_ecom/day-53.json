@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "De Minimis Value Thresholds: US Section 321, EU IOSS & Global Exemption Mapping",
-      "codeHash": "7f5da52b5bebda0657cf81277fbc9a31f6c515a780d2fb7427771bc882ea5ce2",
+      "codeHash": "d60caf690c288e0294156efb170e343d35fd65a43dc3fcaf882a35be14501931",
       "spec": {
         "template": "funnel",
         "title": "Day 53 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Bonded Warehouses & Foreign Trade Zones (FTZ): Duty Deferral & Inverted Tariffs",
-      "codeHash": "fb74f9a7de99897563e490e2f8453880591d11e7d523e6ba3d92259acac5a250",
+      "codeHash": "78a0ea69009b85049931458ce912a907a8de9ea245c8aea3fcf505ed5b4bdcf8",
       "spec": {
         "template": "funnel",
         "title": "Day 53 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "International Line-Haul Modes: Universal Postal (UPU) vs Commercial Direct Injection",
-      "codeHash": "95a7c0bf695ecc1850354ce3e0d33d445ccb022fedd9ef5b778fed6c36bebf51",
+      "codeHash": "6735ec98bc6ead2f21dea7f002bb8a60e0336c9c58fc894a2a07168ea6cf2b14",
       "spec": {
         "template": "funnel",
         "title": "Day 53 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Dynamic Global Sourcing: Centralized Direct Air vs Regional Forward-Deployed Hubs",
-      "codeHash": "675cbb29bb266ec29097321f3c97d767baf27561919687b11a8a93df49e99872",
+      "codeHash": "d7e8b9caa1891e3a48b0ab2c9353e068af8bac1bad07e2eff739f03446c33910",
       "spec": {
         "template": "funnel",
         "title": "Day 53 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Global Logistics Command Tower: De Minimis Audits & Clearance Velocity",
-      "codeHash": "be66b84330c9234448ac58901754f903bcb049879cf411b2180e8eda353e546b",
+      "codeHash": "fa723847dcbda707b0c7da1550e33103b5578a4d8ea56d5f66ee4458418b6f26",
       "spec": {
         "template": "funnel",
         "title": "Day 53 Part 5 Architecture Flow",

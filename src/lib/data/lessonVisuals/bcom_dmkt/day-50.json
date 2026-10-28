@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Capstone Architecture & Executive Briefing: The Autonomous Search & Information Retrieval Infrastructure",
-      "codeHash": "4fdbf3577b95d007d02bf790d57a82daf52ef5c0cb4b30344aebeff3222dd510",
+      "codeHash": "1952bf296cda9d39996c37f0383eaa389955a3c707b062c32745ea66d8bf2e2b",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Hybrid Indexing & Retrieval Engine: Combining Okapi BM25 with Dense Vector Embeddings",
-      "codeHash": "bfef9f2e5041c3a27c4223addec57943c11e6c3df3de6f5c68e7736d23894804",
+      "codeHash": "de2a51e486c0f2e2d161f3c90ca18593dbea8e05c88533fdfcfc92c195ae0be8",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Query Intelligence & Reciprocal Rank Fusion (RRF) Re-Ranking Pipeline",
-      "codeHash": "e0daa52507d6c8464937ca9c578d8024e7b04173946069d92cbb66fd41bd6dd7",
+      "codeHash": "7e4fe4e06141852ff1fd0c720e7bfb755245c70a4a516161a82caa30444035ad",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Search Console BigQuery Analytics, Position Decay & Cannibalization Detector",
-      "codeHash": "349f49a99c08b441c9269e8b6e819669066ca61407e31732edd918bd8a26409a",
+      "codeHash": "0cb1224a71167060a65206085e6aff1665327710ebd23c4141752aeb073d131a",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Executive Search Performance Dashboard & Strategic Organic ROI Telemetry",
-      "codeHash": "cc75ea2763af9bb55a9e83c18869eac1e3c216a28092aedb630eacafbd54ea24",
+      "codeHash": "accf5391db094c3fe38ccfc3dbda372556d177ca36264b02cae9117ff324070f",
       "spec": {
         "template": "funnel",
         "steps": [

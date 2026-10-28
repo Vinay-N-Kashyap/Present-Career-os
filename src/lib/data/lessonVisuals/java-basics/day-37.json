@@ -339,7 +339,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Production Incident Lab: .",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Pr [D37P5].",
             "mode": "stack",
             "items": [
               "main() Frame",

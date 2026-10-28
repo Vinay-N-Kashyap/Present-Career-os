@@ -362,5 +362,698 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Architecture of Sustainable Finance: Green, Social, Sustainability (GSS) & Sustainability-Linked Bonds (SLBs)",
+      "codeHash": "e1bdead8db478c897ea133279454390b0174ba0f5b51c0e9363816e3a7af8902",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — OmegaBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — OmegaBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — OmegaBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — OmegaBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — OmegaBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — OmegaBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — OmegaBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — OmegaBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ICMA Green Bond Principles, EU Taxonomy & Greenium (Green Premium) Pricing Dynamics",
+      "codeHash": "61df28f21a5f5a6cd6fdb297c53a849494f6b4540500e46063b76b26be149046",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — OmegaBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — OmegaBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — OmegaBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — OmegaBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — OmegaBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — OmegaBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — OmegaBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — OmegaBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Sustainability-Linked Loans (SLLs) & Structural Coupon Step-Up Margin Ratchets",
+      "codeHash": "be333faf7717e6d6f77194eddca34c496be30cf2d4fce4bf22b83f9bb27e58aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — OmegaBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — OmegaBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — OmegaBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — OmegaBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — OmegaBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — OmegaBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — OmegaBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — OmegaBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Carbon Credit Markets: Compliance Markets (EU ETS) vs Voluntary Carbon Markets (VCM) & Article 6 Paris Agreement",
+      "codeHash": "f957f1baffb6adfc319ad56786744c5e9f5c5e45a58808cbf6eeb6e61fb216b9",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — OmegaBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — OmegaBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — OmegaBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — OmegaBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — OmegaBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — OmegaBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — OmegaBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — OmegaBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Green Bond Greenium Valuation, SLL Coupon Step-Up Ratchet & EU ETS Carbon Offset Optimizer",
+      "codeHash": "1637e0c87baa791ccbd4727ee37f27664f382bbc87ea83fff827fc9e7e1abb9e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — OmegaBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — OmegaBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — OmegaBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — OmegaBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 54 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Verified Green Capital Expenditure Projects",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "European Union Carbon Allowance Reserve",
+            "$24,600,000.00",
+            ""
+          ],
+          [
+            "Senior Unsecured Green Bond Payable",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Carbon Compliance Forward Treasury Liability",
+            "",
+            "$24,600,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$1,024,600,000.00",
+          "$1,024,600,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 54 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — OmegaBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — OmegaBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — OmegaBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — OmegaBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Multi-Lender Credit Framework: Sole Banking vs Multiple Banking Arrangements (MBA) vs Consortium Lending",
-      "codeHash": "f7b3adfcb8d6ab3218c68d18bb8401d2203a0d2f52e3777c002cdea7b661298f",
+      "codeHash": "1849da0fb5ce588a992ae6dfffb9c8f07c27ca1fc67ea51b82719a8bb6205ebc",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Lender Credit Framework: Sole Ba... \u2014 Credit Underwriting Review",
+        "title": "Multi-Lender Credit Framework: Sole Ba... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "The Legal Architecture of Security Sharing: Pari-Passu Charges, Security Trustees & Inter-Creditor Agreements (ICA)",
-      "codeHash": "45bdcd37455115595224e6f67e27ae345fdf826ed36be214a7ff1afb9fe6864b",
+      "codeHash": "9d55be4f139e220645d41cc59464bdd07e6ff799b7e23abcec6ab3f6e237c5c7",
       "spec": {
         "template": "funnel",
-        "title": "The Legal Architecture of Security Sha... \u2014 Credit Underwriting Review",
+        "title": "The Legal Architecture of Security Sha... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Escrow Accounts & Trust & Retention Accounts (TRA): Cash Flow Waterfalls & Anti-Diversion Architecture",
-      "codeHash": "25585f765a72d07c6c039dbfbdb3165da841060f4dd26ab540309514d92a7b2d",
+      "codeHash": "93d5d6881e0ad0268d2c3bc4dc35a0b14591eef6c402a2b60319a8877e20739a",
       "spec": {
         "template": "funnel",
-        "title": "Escrow Accounts & Trust & Retention Ac... \u2014 Credit Underwriting Review",
+        "title": "Escrow Accounts & Trust & Retention Ac... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Credit Monitoring & Early Distress Governance: Joint Lenders Forum (JLF) & Corrective Action Plans (CAP)",
-      "codeHash": "ce25f387c4d99066bb4b04287151074118a529004e5c9cff8d446a900300c472",
+      "codeHash": "6094d02a95a08f6eecf53d1bdc6edf5653aba542bf139146462623fb49b206ab",
       "spec": {
         "template": "funnel",
-        "title": "Credit Monitoring & Early Distress Gov... \u2014 Credit Underwriting Review",
+        "title": "Credit Monitoring & Early Distress Gov... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Consortium Credit & TRA Cash Waterfall Simulator",
-      "codeHash": "86fa3e88646e81503d33bedd14209509d68e7fe11184e9fe258d772e1d852122",
+      "codeHash": "afd063dec1c01cf27f28e4d57d64df3c801e764d634a4263246863ea8475753e",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Consortium Cr... \u2014 Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Consortium Cr... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

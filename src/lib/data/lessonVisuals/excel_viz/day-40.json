@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Enterprise Multi-Table Star Schema Architecture Audit",
-    "codeHash": "00a160532ba5432b7efa309d36d03f024e9fef807cc2c617e4380534ad3253fe",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Multi-Table Star Schema Architecture Audit — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Multi-Table Star Schema Architecture Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Multi-Table Star Schema Architecture Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Multi-Table Star Schema Architecture Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Multi-Table Star Schema Architecture Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 40,
+  "entries": [
+    {
+      "partTitle": "Enterprise Multi-Table Star Schema Architecture Audit",
+      "codeHash": "00a160532ba5432b7efa309d36d03f024e9fef807cc2c617e4380534ad3253fe",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Multi-Table Star Schema Architecture Audit — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Multi-Table Star Schema Architecture Audit — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Multi-Table Star Schema Architecture Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+      "codeHash": "b05300876f27413703b0eb373f684b278d97484230e28398b9e3bbfe9ba0db08",
+      "spec": {
+        "template": "bars",
+        "title": "End-to-End Power Query M Ingestion & 100% Query Folding Pipeline — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "End-to-End Power Query M Ingestion & 100% Query Folding Pipeline — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+      "codeHash": "de5592f559764e6f41e4b016717241e8d4290d95f6baccd72f81a515cced55ab",
+      "spec": {
+        "template": "bars",
+        "title": "VertiPaq Columnar Engine Memory Profiling & Compression Benchmark — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "VertiPaq Columnar Engine Memory Profiling & Compression Benchmark — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "High-Performance DAX Executive Scorecard Engine",
+      "codeHash": "065bc8ad1767756315e0b2038e7a32ad83e8282e774d3ab8eb0d4f4b4d671fc1",
+      "spec": {
+        "template": "bars",
+        "title": "High-Performance DAX Executive Scorecard Engine — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "High-Performance DAX Executive Scorecard Engine — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for High-Performance DAX Executive Scorecard Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+      "codeHash": "42ac2c8cfa0cff4268cc68b9c126f97bec51f00d8fe47540f7e469c538b1c12c",
+      "spec": {
+        "template": "bars",
+        "title": "ApexModel Production Certification & Sovereign SHA-256 Audit Seal — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "ApexModel Production Certification & Sovereign SHA-256 Audit Seal — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Multi-Fact Star Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "100% Query Folding",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "11x VertiPaq Ratio",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Executive Scorecard",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
-    "codeHash": "b05300876f27413703b0eb373f684b278d97484230e28398b9e3bbfe9ba0db08",
-    "spec": {
-      "template": "bars",
-      "title": "End-to-End Power Query M Ingestion & 100% Query Folding Pipeline — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for End-to-End Power Query M Ingestion & 100% Query Folding Pipeline",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
-    "codeHash": "de5592f559764e6f41e4b016717241e8d4290d95f6baccd72f81a515cced55ab",
-    "spec": {
-      "template": "bars",
-      "title": "VertiPaq Columnar Engine Memory Profiling & Compression Benchmark — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for VertiPaq Columnar Engine Memory Profiling & Compression Benchmark",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "High-Performance DAX Executive Scorecard Engine",
-    "codeHash": "065bc8ad1767756315e0b2038e7a32ad83e8282e774d3ab8eb0d4f4b4d671fc1",
-    "spec": {
-      "template": "bars",
-      "title": "High-Performance DAX Executive Scorecard Engine — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for High-Performance DAX Executive Scorecard Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for High-Performance DAX Executive Scorecard Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for High-Performance DAX Executive Scorecard Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for High-Performance DAX Executive Scorecard Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
-    "codeHash": "42ac2c8cfa0cff4268cc68b9c126f97bec51f00d8fe47540f7e469c538b1c12c",
-    "spec": {
-      "template": "bars",
-      "title": "ApexModel Production Certification & Sovereign SHA-256 Audit Seal — ⭐ Milestone 5: ApexModel Star Schema Data Modeling & High-Performance DAX Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for ApexModel Production Certification & Sovereign SHA-256 Audit Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Multi-Fact Star Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "100% Query Folding",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "11x VertiPaq Ratio",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Executive Scorecard",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

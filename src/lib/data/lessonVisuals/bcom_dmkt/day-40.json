@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Architecture Review: Unified First-Party Tagging, Privacy Sandbox & Clean Room Topologies",
-      "codeHash": "32d90c07bd1194a1f7e80f3e3c75068eba9b10335a77594e0212f65b8418980a",
+      "codeHash": "661823e726c4d8a3671a0a33e469ebdeb2141aa108b3cc5a07f7e1a448e31e53",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "End-to-End Incident Simulation: Client Signal Degradation & Automated CAPI Recovery",
-      "codeHash": "81ebd1f4a7aed037e076655af5f10155acc0257cfc0807f80536890e9847952c",
+      "codeHash": "8e98a2bbdf0a2b3b825d5807fa55f7b2da35ac862bf6c79062c8e66a16ead2d2",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Multi-Party Clean Room War Room: Retail Media Network Joint Audience Discovery & Overlap Attribution",
-      "codeHash": "468c1a3f917e8364732022f6b3f464e5812ebf26371e50e6283968cab6b5d87d",
+      "codeHash": "d9720a8f83c8404ef3a79e25f436f6b5438042a0b9a97bb1e988d89cfcee1974",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Algorithmic Value-Based Bidding Deployment: Live BG/NBD + Gamma-Gamma pCLV Vector Dispatch",
-      "codeHash": "523898e93bd6403901e3098e70e84adf22f2e76b8b0e7dbccb8a8c4c48400b47",
+      "codeHash": "1314a5ab71ec3a6ff1c9077ead32fb6caf5a5e01dea5c725a95f4e085a750372",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Executive Defense & Enterprise Marketing Analytics War Room Certification (CMO-PEA v2)",
-      "codeHash": "df9483a0adeb4a678e56c9bf68284bfcdebd58e392f59af6b09377dd46eb0fe1",
+      "codeHash": "0cd8c9e12cc15a3b24326ff5cc667d51229834f08e3b6c3ae80765a69fad71cc",
       "spec": {
         "template": "funnel",
         "steps": [

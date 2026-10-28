@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
-    "codeHash": "3b49b746187eb05031a4f431dfca24d9ca8201aa0068001fffe1e0c49381cca2",
-    "spec": {
-      "template": "bars",
-      "title": "TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 48,
+  "entries": [
+    {
+      "partTitle": "TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+      "codeHash": "3b49b746187eb05031a4f431dfca24d9ca8201aa0068001fffe1e0c49381cca2",
+      "spec": {
+        "template": "bars",
+        "title": "TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for TypeScript Office Scripts vs. VBA COM: Architecture, Sandboxing & Zero-Trust Security",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+      "codeHash": "10d57cf45c29fdfd95dc8e323cbc99d61a9d541598ce35bbcb01457bd4e9a4df",
+      "spec": {
+        "template": "bars",
+        "title": "Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+      "codeHash": "5b60f029c14fbfeb54947d2c55621d5362be413fc865f36efaff99510cc54c34",
+      "spec": {
+        "template": "bars",
+        "title": "Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+      "codeHash": "c65e2b2c2f5efdf8f8e952b08728c9db49f381668515744753a1375486712928",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+      "codeHash": "6527b7b2da1375c5976da892b51ea8880088ebcf443ff323b0fde804b21ba031",
+      "spec": {
+        "template": "bars",
+        "title": "Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "V8 Sandbox",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Matrix",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "JSON Webhook",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Cloud Flow",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
-    "codeHash": "10d57cf45c29fdfd95dc8e323cbc99d61a9d541598ce35bbcb01457bd4e9a4df",
-    "spec": {
-      "template": "bars",
-      "title": "Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Network Physics of Excel JavaScript API & Batch Matrix Operations (range.getValues / range.setValues)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
-    "codeHash": "5b60f029c14fbfeb54947d2c55621d5362be413fc865f36efaff99510cc54c34",
-    "spec": {
-      "template": "bars",
-      "title": "Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts) – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Asynchronous Cloud Execution & Power Automate Webhook Bridges (JSON Schema & Timeouts)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
-    "codeHash": "c65e2b2c2f5efdf8f8e952b08728c9db49f381668515744753a1375486712928",
-    "spec": {
-      "template": "bars",
-      "title": "Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Multi-Stage Async Cloud Pipeline: Ingestion, Transformation, SOX Telemetry & Clean Exit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
-    "codeHash": "6527b7b2da1375c5976da892b51ea8880088ebcf443ff323b0fde804b21ba031",
-    "spec": {
-      "template": "bars",
-      "title": "Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance – Modern Automation with TypeScript Office Scripts: Excel JavaScript API, Power Automate & Async Cloud Flows",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Master TypeScript Office Scripts Gateway: Synthesis & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "V8 Sandbox",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Matrix",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "JSON Webhook",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Cloud Flow",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

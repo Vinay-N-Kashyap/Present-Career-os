@@ -6,7 +6,7 @@
     {
       "partIndex": 0,
       "partTitle": "Extreme Traffic Surges, Concurrency Bottlenecks & Database Connection Exhaustion",
-      "codeHash": "3780aa329c44a252f395acc407613458f51c8058e32232777d98334b835c9a51",
+      "codeHash": "97426c58594e7fd5b07df2bd5d5fce9c688caa778f556ae1e8f390a3bc0579ea",
       "spec": {
         "template": "funnel",
         "title": "Extreme Traffic Surges, Concurrency Bottlenecks & Database Connection Exhaustion",
@@ -65,7 +65,7 @@
     {
       "partIndex": 1,
       "partTitle": "Virtual Waiting Rooms, Token-Bucket Throttling & Cryptographically Signed Admission",
-      "codeHash": "6971a548c37466437e68464463d8f8f48aa4f81897205d6fe18f5b35365e96f6",
+      "codeHash": "9ca17a7549a2056a36700405f7c4273482c48d9cd1a0162516e3994ce30a02c0",
       "spec": {
         "template": "funnel",
         "title": "Virtual Waiting Rooms, Token-Bucket Throttling & Cryptographically Signed Admission",
@@ -124,7 +124,7 @@
     {
       "partIndex": 2,
       "partTitle": "Distributed Locking, Optimistic Concurrency & Atomic Inventory Reservation",
-      "codeHash": "82cdb4a43bc5ca824b8ca91a11f247baae3704cfbb148b0155bf660381b89a11",
+      "codeHash": "e65c28b7b3c10af45a81bdfa4ed32009b4a6676e6a61c8050a8f38c5ea69a31d",
       "spec": {
         "template": "funnel",
         "title": "Distributed Locking, Optimistic Concurrency & Atomic Inventory Reservation",
@@ -183,7 +183,7 @@
     {
       "partIndex": 3,
       "partTitle": "Asynchronous Order Ingestion, Distributed Event Streaming & Idempotent Consumer Workers",
-      "codeHash": "b04e83d26427910ed44c9b7390c1afa69b6338884fbf2b336e20764c32e158a7",
+      "codeHash": "b53070294bd1ea6765dd1fb0aaa084434ca865d95b84dc4d6029e06de1e05c3b",
       "spec": {
         "template": "funnel",
         "title": "Asynchronous Order Ingestion, Distributed Event Streaming & Idempotent Consumer Workers",
@@ -242,7 +242,7 @@
     {
       "partIndex": 4,
       "partTitle": "Enterprise Flash Sale & Concurrency Defense Command Tower",
-      "codeHash": "f313fe3306c8d25e6cac2f38d7b0e49ddd37e5e3bb3c3076bf0790b181407b45",
+      "codeHash": "e2d741a2de497338fb924d876a86cbe67ebdf804730ac7b6a31412c38b6e980c",
       "spec": {
         "template": "funnel",
         "title": "Enterprise Flash Sale & Concurrency Defense Command Tower",

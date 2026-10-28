@@ -662,7 +662,7 @@
       }
     },
     {
-      "partTitle": "Production Security Invariants: Short-Lived TTLs, Cryptographic Rotation & Least-Privilege IAM Auditing",
+      "partTitle": "Production strict security safeguards: Short-Lived TTLs, Cryptographic Rotation & Least-Privilege IAM Auditing",
       "codeHash": "a6521896d10eb4e171127e41b526c19792cce471747eac3b9aaf40f307437621",
       "spec": {
         "template": "compare",

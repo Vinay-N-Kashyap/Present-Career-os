@@ -260,7 +260,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P2].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -364,7 +364,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P2].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -472,7 +472,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P3].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -576,7 +576,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P3].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -684,7 +684,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P4].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -788,7 +788,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P4].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -896,7 +896,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P5].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -1000,7 +1000,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P5].",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [

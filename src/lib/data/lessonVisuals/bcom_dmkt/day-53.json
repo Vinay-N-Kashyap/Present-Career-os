@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Programmatic Digital Out-of-Home (pDOOH) in Retail Storefronts: VAST/VPAID Video Loop Architectures",
-      "codeHash": "27143b50d263875c91d7d2a22e26062c5b932010e45a8454dcc8ed558142cf5e",
+      "codeHash": "3d796ff6a0b81ab271fb7025a08f73e04ce0d8e3077cfd04a8dcf006e5386e35",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Smart Carts, Interactive Endcaps & In-Aisle Screen Telemetry: Real-Time Dwell Time & Optical Sensor Tracking",
-      "codeHash": "cfecd1ff6c1032cfed60b6e5cc94701ef798534214803dd28020a2c08dda0448",
+      "codeHash": "bcde0359b7d380aef54ffce0f37331c88de10fed922e22996125b26a79189dbd",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Weather, Inventory & Local Foot-Traffic Dynamic Creative Optimization (DCO) Trigger Engines",
-      "codeHash": "497597cb160ec0fe4f15c182aec3ab210bec180ecc5e28b61b4ff8a3ec7ef654",
+      "codeHash": "75fc2dabf5a0f64741c8d6290e2294b8659c0d9774c473b2cec8e65e615d55d3",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Privacy-Preserving In-Store Audience Measurement: BLE Beacons, Wi-Fi Probes & Synthetic Footfall Aggregation",
-      "codeHash": "f8cc3dc8bdad38c0685b02bd668acd805d911062d1bb9e40fdffb57cf60de595",
+      "codeHash": "a858cb4addfe476b7d9401507ba5f513f057a1ebcdf2027412e2e31367e70b96",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise In-Store DOOH Playlist Orchestrator & Footfall Lift Simulation in Python",
-      "codeHash": "5c4dff351a600e9be2a2abc6f290f3fd8ae42a2cf54c2cbb873efb5e206ebbe2",
+      "codeHash": "3fdc3ff0b10ded175f577440570131a11fbdf0f832bcd9ccc41db8c8de8dc445",
       "spec": {
         "template": "funnel",
         "steps": [

@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Search Warrant Execution",
+        "template": "ledger-sheet",
+        "title": "Section 132 Search & Seizure Jurisprudence: A... — General Ledger Verification",
         "steps": [
           {
-            "label": "Authorization Warrant",
-            "caption": "Director General issues search warrant upon recorded reasons."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section Search Seizure (Theta Alpha).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9700,
+            "totalCredit": 9700,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 9700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Premises Entry",
-            "caption": "Search team enters residential and commercial properties."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section Search Seizure (Alpha).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Inventory Taking",
-            "caption": "Officers catalog commercial stock without physical seizure."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section Search Seizure (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Asset Restraint",
-            "caption": "Restraint orders preserve bulky assets for limited period."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section Search Seizure (Alpha).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "135bf060eaeef3bf3485763b64d4673c687078ef83b19a92b951cd0adb5d04f1",
+      "partTitle": "Section 132 Search & Seizure Jurisprudence: Authorization Warrants & Stock-in-Trade Immunity",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 132 Search & Seizure Jurisprudence: A... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section Search Seizure (Theta Alpha).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9700,
+            "totalCredit": 9700,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 9700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section Search Seizure (Alpha).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section Search Seizure (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section Search Seizure (Alpha).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Survey Distinction & Doctrine",
+        "template": "ledger-sheet",
+        "title": "Section 133A Surveys vs Section 132 Searches ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Business Hours",
-            "caption": "Survey entry is restricted exclusively to business operating hours."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A Surveys vs S (Theta Beta).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9900,
+            "totalCredit": 9900,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 9900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Book Impounding",
-            "caption": "Books may be impounded for fifteen days without higher approval."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A Surveys vs S (Beta).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Statement Recording",
-            "caption": "Officers record statements without administering formal oath."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A Surveys vs S (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Retraction Rights",
-            "caption": "Uncorroborated confessions are deleted per Supreme Court ruling."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A Surveys vs S (Beta).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "fdaef1a53f8598d8386adeeb4f2f6d7efba6ad8774a990e022855bfd928f5839",
+      "partTitle": "Section 133A Surveys vs Section 132 Searches & The Khader Khan Evidentiary Doctrine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 133A Surveys vs Section 132 Searches ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A Surveys vs S (Theta Beta).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9900,
+            "totalCredit": 9900,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 9900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A Surveys vs S (Beta).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A Surveys vs S (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A Surveys vs S (Beta).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Evidentiary Presumptions Flow",
+        "template": "ledger-sheet",
+        "title": "Evidentiary Presumptions under Section 132(4A... — General Ledger Verification",
         "steps": [
           {
-            "label": "Possession Presumption",
-            "caption": "Books and valuable assets found are presumed to belong to owner."
+            "at": "intro",
+            "caption": "Open primary debit entry for Evidentiary Presumptio (Theta Gamma).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10100,
+            "totalCredit": 10100,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Truth of Contents",
-            "caption": "Documentary contents and handwriting are presumed genuine."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Evidentiary Presumptio (Gamma).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Cash Credit Test",
-            "caption": "Assessee substantiates identity, creditworthiness, and genuineness."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Evidentiary Presumptio (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Source of Source",
-            "caption": "Closely held entities prove ultimate source of investor capital."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Evidentiary Presumptio (Gamma).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "2296390e275812dc026c94de85adc81f402b76f45bf7e7cbbf3ba858bad9529d",
+      "partTitle": "Evidentiary Presumptions under Section 132(4A) & Section 292C & Unexplained Cash Credits",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Evidentiary Presumptions under Section 132(4A... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Evidentiary Presumptio (Theta Gamma).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10100,
+            "totalCredit": 10100,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Evidentiary Presumptio (Gamma).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Evidentiary Presumptio (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Evidentiary Presumptio (Gamma).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12120,
+            "totalCredit": 12120,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10100,
+                "balance": 10100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2020,
+                "balance": 12120,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12120,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Punitive Taxation Mechanics",
+        "template": "ledger-sheet",
+        "title": "Punitive Taxation under Section 115BBE & Blac... — General Ledger Verification",
         "steps": [
           {
-            "label": "Base Tax Levy",
-            "caption": "Unexplained income attracts sixty percent statutory base tax."
+            "at": "intro",
+            "caption": "Open primary debit entry for Punitive Taxation unde (Theta Delta).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10300,
+            "totalCredit": 10300,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Surcharge Addition",
-            "caption": "Mandatory twenty five percent surcharge elevates tax burden."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Punitive Taxation unde (Delta).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Loss Bar Rule",
-            "caption": "Statute strictly bars set off of business or capital losses."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Punitive Taxation unde (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Foreign Treble Penalty",
-            "caption": "Undisclosed foreign assets face ninety percent treble penalty."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Punitive Taxation unde (Delta).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "80007e84dec3e8b2ef4358bfc3ac372a981e683cb21da49294f3b09122236906",
+      "partTitle": "Punitive Taxation under Section 115BBE & Black Money Act, 2015 Architecture",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Punitive Taxation under Section 115BBE & Blac... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Punitive Taxation unde (Theta Delta).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10300,
+            "totalCredit": 10300,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Punitive Taxation unde (Delta).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Punitive Taxation unde (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Punitive Taxation unde (Delta).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Enforcement Simulator Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Search & Surv... — General Ledger Verification",
         "steps": [
           {
-            "label": "Item Cataloging",
-            "caption": "Engine classifies discovered assets into inventory and cash."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Theta Epsilon).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10500,
+            "totalCredit": 10500,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Seizure Legality",
-            "caption": "System flags illegal seizures of commercial stock in trade."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Evidentiary Audit",
-            "caption": "Algorithm filters out uncorroborated survey admissions."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Confiscation Summary",
-            "caption": "Engine calculates effective seventy eight percent tax liability."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1b44b9df9f19475b26052e7f50a46fb949d817a86ee1ca393b6f665b950d178a",
+      "partTitle": "Production Python Architecture: Search & Survey Forensic Enforcement Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Search & Surv... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Theta Epsilon).",
+            "title": "Day 48 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10500,
+            "totalCredit": 10500,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Clearing & Settlement Control",
+                "credit": 10500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 48 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Clearing & Settlement Control",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Theta).",
+            "title": "Day 48 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Verified Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "General Ledger Control Account",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 48 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-4801",
+                "account": "Audited Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4802",
+                "account": "Audited Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4803",
+                "account": "Audited Treasury Settlement",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

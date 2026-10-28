@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Executive KPI Architecture & DuPont Decomposition Telemetry",
-    "codeHash": "e3830f7e35425f4b28d5a95c21a12e88e99e3b6cac9d95f423b774654ef2d268",
-    "spec": {
-      "template": "bars",
-      "title": "Executive KPI Architecture & DuPont Decomposition Telemetry — Boardroom Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Executive KPI Architecture & DuP...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Executive KPI Architecture & DuP...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Executive KPI Architecture & DuP...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Executive KPI Architecture & DuP...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 29,
+  "entries": [
+    {
+      "partTitle": "Executive KPI Architecture & DuPont Decomposition Telemetry",
+      "codeHash": "e3830f7e35425f4b28d5a95c21a12e88e99e3b6cac9d95f423b774654ef2d268",
+      "spec": {
+        "template": "bars",
+        "title": "Executive KPI Architecture & DuPont Decomposition Telemetry — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Executive KPI Architecture & DuPont Decomposition Telemetry — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Executive KPI Architecture & DuP...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Multi-Table Slicers & Scenario Harvesting Engines",
+      "codeHash": "7285a45378569a39bdac00febdf2fa9d60a8154f9ab0563d9725183ae1e40087",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Multi-Table Slicers & Scenario Harvesting Engines — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Dynamic Multi-Table Slicers & Scenario Harvesting Engines — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Dynamic Multi-Table Slicers & Sc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Variance Waterfall & Price-Volume-Mix (PVM) Decomposition",
+      "codeHash": "2ce72135635834666fd8ce3a02f6287df42b0863188edf5d065efa16e84e7790",
+      "spec": {
+        "template": "bars",
+        "title": "Financial Variance Waterfall & Price-Volume-Mix (PVM) Decomposition — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Financial Variance Waterfall & Price-Volume-Mix (PVM) Decomposition — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Financial Variance Waterfall & P...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Boardroom Cognitive Chart Architecture & Bullet Graph Telemetry",
+      "codeHash": "e603ec4080fc12b71983bfb2c55eb0ca1c4b36ca4c6d2d042055f315901d2701",
+      "spec": {
+        "template": "bars",
+        "title": "Boardroom Cognitive Chart Architecture & Bullet Graph Telemetry — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Boardroom Cognitive Chart Architecture & Bullet Graph Telemetry — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Boardroom Cognitive Chart Archit...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master C-Suite Financial Telemetry Command Cockpit Gateway",
+      "codeHash": "862e92e2cff94a5cfc8f4ef915876b3f50ee28f2b50f9394cf9c67e40b45d122",
+      "spec": {
+        "template": "bars",
+        "title": "Master C-Suite Financial Telemetry Command Cockpit Gateway — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master C-Suite Financial Telemetry Command Cockpit Gateway — Boardroom Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Master C-Suite Financial Telemet...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "ROE Lever",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Profit Margin",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Asset Turnover",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Equity Multiplier",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Dynamic Multi-Table Slicers & Scenario Harvesting Engines",
-    "codeHash": "7285a45378569a39bdac00febdf2fa9d60a8154f9ab0563d9725183ae1e40087",
-    "spec": {
-      "template": "bars",
-      "title": "Dynamic Multi-Table Slicers & Scenario Harvesting Engines — Boardroom Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Dynamic Multi-Table Slicers & Sc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Dynamic Multi-Table Slicers & Sc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Dynamic Multi-Table Slicers & Sc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Dynamic Multi-Table Slicers & Sc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Financial Variance Waterfall & Price-Volume-Mix (PVM) Decomposition",
-    "codeHash": "2ce72135635834666fd8ce3a02f6287df42b0863188edf5d065efa16e84e7790",
-    "spec": {
-      "template": "bars",
-      "title": "Financial Variance Waterfall & Price-Volume-Mix (PVM) Decomposition — Boardroom Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Financial Variance Waterfall & P...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Financial Variance Waterfall & P...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Financial Variance Waterfall & P...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Financial Variance Waterfall & P...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Boardroom Cognitive Chart Architecture & Bullet Graph Telemetry",
-    "codeHash": "e603ec4080fc12b71983bfb2c55eb0ca1c4b36ca4c6d2d042055f315901d2701",
-    "spec": {
-      "template": "bars",
-      "title": "Boardroom Cognitive Chart Architecture & Bullet Graph Telemetry — Boardroom Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Boardroom Cognitive Chart Archit...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Boardroom Cognitive Chart Archit...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Boardroom Cognitive Chart Archit...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Boardroom Cognitive Chart Archit...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master C-Suite Financial Telemetry Command Cockpit Gateway",
-    "codeHash": "862e92e2cff94a5cfc8f4ef915876b3f50ee28f2b50f9394cf9c67e40b45d122",
-    "spec": {
-      "template": "bars",
-      "title": "Master C-Suite Financial Telemetry Command Cockpit Gateway — Boardroom Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: DuPont ratio breakdown and KPI architecture for Master C-Suite Financial Telemet...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing dynamic slicers and scenario sensitivities for Master C-Suite Financial Telemet...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Variance waterfall attribution and cognitive storytelling for Master C-Suite Financial Telemet...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Executive cockpit certification and SHA-256 seal for Master C-Suite Financial Telemet...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "ROE Lever",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Profit Margin",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Asset Turnover",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Equity Multiplier",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

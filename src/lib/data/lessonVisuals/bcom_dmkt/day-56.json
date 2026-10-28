@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Generative AI in Enterprise Performance Marketing: LLM Prompt Chains, Multi-Modal Synthesis & Content Scale",
-      "codeHash": "eb5722b7cce08b77141aa06c86b29cb4faa4d28a0fd7ca83aae7503875b7afa0",
+      "codeHash": "6aa8d9eb305478f815574046db382edb24ab25925b2e862fd949f997461d3dbb",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Style Consistency, LoRA Fine-Tuning & Brand Token Guardrails: Latent Space Conditioning in Enterprise Diffusion",
-      "codeHash": "e8e8b631255e682bf4f2f8f9bd46d77b7836228155d154b801c23d65f0e1d0c8",
+      "codeHash": "2e2cdc097c7edbd3991940d28ae404a96b1c520e50c0e1065428c079b4605c4e",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Real-Time Generative Video & Synthetic Voice: Video Foundation Models, Lip-Sync AI & C2PA Provenance",
-      "codeHash": "d83d69a57560f6a67e76b6e548a385a351e308ae055b47530e9d3ecb19204c08",
+      "codeHash": "0d16498b82ef47698a24362e2d5ed4f6d814b4f2524cef2bfc4150983e855e5f",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Agentic Media Buying & Autonomous Campaign Optimization: Multi-Agent LLM Orchestrators & Contextual Bandits",
-      "codeHash": "27f7d46e374c1568aa46f8f22b0f26ae16b4d2fab74636d09fc9f08b7710dc6b",
+      "codeHash": "7e8efa62819921a13feb9f042c4d019bfbc3180f539362191b0380ae8be0ff65",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Autonomous Marketing Control Tower in Python: Closed-Loop Generative & Agentic Architecture",
-      "codeHash": "d014f1b23a475e2feb04d546ef698d498405b800e0de312328f14dcdbc754283",
+      "codeHash": "60490a0a2f8d3f42fa4f544d6582b4b615956bccbc11f0cc00463768e4e15456",
       "spec": {
         "template": "funnel",
         "steps": [

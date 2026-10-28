@@ -25,19 +25,19 @@ export const JAVA_30_DAYS_CONFIGS: DayConfig[] = [
   // ── Day 2: Reading User Input with Scanner ────────────────────────────────
   {
     title: "Reading User Input — The Scanner Class & Buffer Traps",
-    desc: "Use the Scanner class to read keyboard input from the user. Step 1: import java.util.Scanner;. Step 2: Scanner sc = new Scanner(System.in);. Step 3: sc.nextInt() for integers, sc.nextLine() for text sentences. Always clear the buffer with sc.nextLine() after reading numbers! (Real world: ATM pinpads and web forms pause and wait for keyboard input.)",
+    desc: "Use the Scanner class to read keyboard input from the user and store it in labeled boxes (int for whole numbers, String for text). Step 1: import java.util.Scanner;. Step 2: Scanner sc = new Scanner(System.in);. Step 3: int age = sc.nextInt(); for integers, String name = sc.nextLine(); for text sentences. Always clear the buffer with sc.nextLine() after reading numbers! (Real world: ATM pinpads and web forms pause and wait for keyboard input.)",
     syllabus: [
-      "Scanner 3-Step Lifecycle: Import, create reader, and read input.",
-      "Type-Specific Readers: sc.nextInt() for numbers, sc.nextLine() for text.",
+      "Scanner 3-Step Lifecycle: Import, create reader, and read input into int or String storage boxes.",
+      "Type-Specific Readers: sc.nextInt() for whole numbers (int), sc.nextLine() for text (String).",
       "The Enter-Key Buffer Trap: Flushing leftover newline characters."
     ],
     eTitle: "Day 2 Challenge: Fix the Broken Input Reader",
-    eDesc: "Fix the bug in the program below so it reads the user age and then reads their full name without skipping.",
-    eStarter: "import java.util.Scanner;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int age = sc.nextInt();\n        // BUG: Add 1 line here to clear the leftover Enter key buffer:\n        \n        String name = sc.nextLine();\n        System.out.println(\"Name: \" + name + \" | Age: \" + age);\n    }\n}",
+    eDesc: "Fix the bug in the program below so it reads the user age (stored in int age) and then reads their full name (stored in String name) without skipping.",
+    eStarter: "import java.util.Scanner;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int age = sc.nextInt();\n        // BUG: Add 1 line here (sc.nextLine();) to clear the leftover Enter key buffer:\n        \n        String name = sc.nextLine();\n        System.out.println(\"Name: \" + name + \" | Age: \" + age);\n    }\n}",
     eHint: "Add sc.nextLine(); right after nextInt() to clear the buffer.",
     eTest: "import java.io.*;\npublic class Test {\n    public static void main(String[] args) {\n        String input1 = \"22\\nVinay Kumar\\n\";\n        System.setIn(new ByteArrayInputStream(input1.getBytes()));\n        ByteArrayOutputStream out1 = new ByteArrayOutputStream();\n        System.setOut(new PrintStream(out1));\n        Solution.main(new String[]{});\n        if (!out1.toString().contains(\"Name: Vinay Kumar | Age: 22\")) throw new AssertionError(\"Test 1 failed: Expected 'Name: Vinay Kumar | Age: 22'\");\n        \n        String input2 = \"18\\nSarah Connor\\n\";\n        System.setIn(new ByteArrayInputStream(input2.getBytes()));\n        ByteArrayOutputStream out2 = new ByteArrayOutputStream();\n        System.setOut(new PrintStream(out2));\n        Solution.main(new String[]{});\n        if (!out2.toString().contains(\"Name: Sarah Connor | Age: 18\")) throw new AssertionError(\"Test 2 failed: Expected 'Name: Sarah Connor | Age: 18'\");\n    }\n}",
     aTitle: "Day 2 Assignment: Reading Number Input",
-    aDesc: "Write a Java program that reads an integer score using sc.nextInt() and prints 'Score: ' followed by the score.",
+    aDesc: "Write a Java program that reads an integer score into a whole-number box (int score = sc.nextInt();) and prints 'Score: ' followed by the score.",
     aStarter: "import java.util.Scanner;\n\npublic class Solution {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        // Read score and print it:\n        \n    }\n}",
     aHint: "Use int score = sc.nextInt();",
     aTest: "import java.io.*;\npublic class Test {\n    public static void main(String[] args) {\n        String input = \"88\\n\";\n        System.setIn(new ByteArrayInputStream(input.getBytes()));\n        ByteArrayOutputStream out = new ByteArrayOutputStream();\n        System.setOut(new PrintStream(out));\n        Solution.main(new String[]{});\n        String res = out.toString().trim();\n        if (!res.contains(\"Score: 88\")) throw new AssertionError(\"Expected 'Score: 88', got: \" + res);\n    }\n}"

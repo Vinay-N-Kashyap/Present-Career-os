@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Clean Room Paradigm: Multi-Party Collaboration Without Data Movement",
-      "codeHash": "f4d2fd9bc3dc75cd109be460262f9026a8954ba5314501ea0f8b820f33a3e4f9",
+      "codeHash": "cd325a235b067daefcf3cd657a8d0343cb1af3468c8d2879bf450c991fc1bccb",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Snowflake & BigQuery Secure Data Sharing: Access Policies & Aggregation Governance",
-      "codeHash": "c20e9e632001132b3d541ad4d702132d210c801a4618869a91737ff503970600",
+      "codeHash": "aa589445aa2434cec3a30768f69024bc2c8cd12d7a58b1bd3228b67e24d59a1b",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Cryptographic Foundations: Private Set Intersection & Secure Multiparty Computation",
-      "codeHash": "3278aee3d8f2b457d417d6ce6638779d5d05812ea064096f8becde2d6f0cc50e",
+      "codeHash": "b5d683c584bf33b1266fb9c220833b314a7e44b2c51430adb9f880be5113b60d",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Differential Privacy in Clean Rooms: Epsilon-Delta Noise & Privacy Auditing",
-      "codeHash": "d05cf7e20ccf505f288e260e95e2e811b629a02143770b1fa55cf63fde4beb8f",
+      "codeHash": "bf24528c090e41037ed8472c06cf8b0184c28f35e69ed8fa133f75e734ce79de",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Industrial Clean Room Lab: Retail Media & Streaming Television Closed-Loop Engine",
-      "codeHash": "525a09abba05dd9f6ea06c7f735a96daef5d97490da35f0111ffe01945f250ab",
+      "codeHash": "d7e5308bbce25cdae2d990521c9bba69847ed02d790a8ee1de4ba08b9e0ceab1",
       "spec": {
         "template": "funnel",
         "steps": [

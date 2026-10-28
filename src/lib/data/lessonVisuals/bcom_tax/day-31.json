@@ -46,7 +46,9 @@
             "caption": "Accumulated business loss clocks reset upon qualifying amalgamation."
           }
         ]
-      }
+      },
+      "codeHash": "94b4459b46117e0d00e51027b51b16f6a3a2d77eff720e51927306d867d825be",
+      "partTitle": "Statutory Framework of Corporate Amalgamations under Section 2(1B) and Section 72A"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Allocated business losses transfer to the resulting operating company."
           }
         ]
-      }
+      },
+      "codeHash": "e01d6df6583d428e7fb91e52b4dd7bd77407f24ff36cfad894627dac8cb1a0c7",
+      "partTitle": "Demergers and Spinoffs: Section 2(19AA) Conditions & Tax Neutrality"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Independent accountant reports certify statutory net worth computations."
           }
         ]
-      }
+      },
+      "codeHash": "db657e70fb47c796e74f1655cd47142adb225416ae11e7271dd166427b54e931",
+      "partTitle": "Slump Sale Taxation under Section 50B: Net Worth Computation & Capital Gains"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Asset depreciation splits based on operating days utilized."
           }
         ]
-      }
+      },
+      "codeHash": "28619e4db7af463f7bc682f67cae88a97dc00c6cdf23c2281c27ce88503e8ddd",
+      "partTitle": "Transfer of Tax Concessions, SEZ Units (Section 10AA) & Unabsorbed Depreciation"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Unabsorbed depreciation survives corporate shareholding shifts."
           }
         ]
-      }
+      },
+      "codeHash": "59e332837e4f16bd98b1e8e689e9005fbd31f00156e4a0d5067f258497986a21",
+      "partTitle": "Anti-Abuse Provisions: Section 79 Change in Shareholding & Loss Forfeiture Exceptions"
     }
   ]
 }

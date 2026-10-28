@@ -362,5 +362,678 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Architecture of Sovereign Capital: Commodity vs Non-Commodity Funds, Santiago Principles & Governance",
+      "codeHash": "436bf3d2f843983c69a785958873a4738ecfa09f91471368fc701d7137e77bec",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha)."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta)."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma)."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Macroeconomic Stabilization vs Intergenerational Wealth Accumulation (Norway GPFG vs UAE ADIA)",
+      "codeHash": "1199ee3700c1cfd953464a68e1bb866c69914bbc55a318926c59cf7206fadd5d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha)."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta)."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma)."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Strategic Direct Co-Investments, Megarounds & Sovereign Equity Underwriting (Temasek & GIC)",
+      "codeHash": "181e4c3fca7116ca84e978539ffc8d83df378dc2d4424fd74548c7c0837e97ea",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha)."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta)."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma)."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Geopolitical Risk, CFIUS/FIRRMA National Security Reviews & Bilateral Investment Treaties (BITs)",
+      "codeHash": "5ec3379f6f341f80f8ab5df2bf6fbcd93587a185e27769433aa017d72671ce86",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha)."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta)."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma)."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Sovereign Portfolio Allocation, Santiago Governance Scoring & Currency Risk Immunization Engine",
+      "codeHash": "09157ae3a566eeffb3a0c872a51b660b4dc0f77263d4fdc233a1ef6eacee2588",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha)."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta)."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma)."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta)."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 51 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Equities & Infrastructure Assets",
+            "$75,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign Fixed Income Portfolio",
+            "$25,000,000,000.00",
+            ""
+          ],
+          [
+            "Sovereign State Endowment Capital",
+            "",
+            "$90,000,000,000.00"
+          ],
+          [
+            "Foreign Exchange Stabilization Reserve",
+            "",
+            "$10,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$100,000,000,000.00",
+          "$100,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 51 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3
+          }
+        ]
+      }
+    }
   ]
 }

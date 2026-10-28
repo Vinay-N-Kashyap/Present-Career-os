@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "War Room Briefing: The Multicurrency Cross-Border Forex & Trade Liquidity Emergency",
-      "codeHash": "f71d59c8ab4254a4ea5bf4d4de38c5de59fd8b37a0099248810aece2903b06a1",
+      "codeHash": "ecaab6775507616f610028029b48088562c3eb7598df810c289d1d43f39280b8",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The Multicurrency C... \u2014 Treasury Risk Operations",
+        "title": "War Room Briefing: The Multicurrency C... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Algorithmic Forex Dealing & Dynamic Arbitrage Engine: FEDAI Spreads & Microstructure Defense",
-      "codeHash": "5fd8e0eb3e622bb20084fa77bf14adda36ce45cb0987ae3872d1ae30adc5b301",
+      "codeHash": "6c952fe4c84c617f84b7f3e715e6e15adbf3937ac3c300436b00898d07f03d2a",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Forex Dealing & Dynamic Ar... \u2014 Treasury Risk Operations",
+        "title": "Algorithmic Forex Dealing & Dynamic Ar... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Trade Finance Execution & UCP 600 Discrepancy Adjudication: LCs, Guarantees & ECGC Recovery",
-      "codeHash": "a83c31109aea8b6e9ac37c3f3ab1c8337d1bf6773f6496e3c939f0f2fd4aa46c",
+      "codeHash": "ee84bd74543682c90b6e8a3c7ed74a630baf82a20997dde8a0c2d2e8a5133f3b",
       "spec": {
         "template": "funnel",
-        "title": "Trade Finance Execution & UCP 600 Disc... \u2014 Treasury Risk Operations",
+        "title": "Trade Finance Execution & UCP 600 Disc... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "International Settlement Rails, Nostro-Vostro Mirror Book & ISO 20022 Audit",
-      "codeHash": "1fae047feadc1c9ed572ccbd87db9b9649f35b63ede3f4c91f1e82253c190406",
+      "codeHash": "c2da187e2892d87dedf1427a811ad7f56b8ccaa44cf858cf9b71a2f587b60427",
       "spec": {
         "template": "funnel",
-        "title": "International Settlement Rails, Nostro... \u2014 Treasury Risk Operations",
+        "title": "International Settlement Rails, Nostro... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Master War Room Solvency Scorecard: End-to-End Orchestration & FEMA Section 15 Compounding Suite",
-      "codeHash": "2afa6fa9fda94058bc483f30fba81f5a06bf7538583914f97ae299c2407b128c",
+      "codeHash": "85fca815d9b1e7f4954adb88a47453bcc13c356164c908fbf7ab3b76df748085",
       "spec": {
         "template": "funnel",
-        "title": "Master War Room Solvency Scorecard: En... \u2014 Treasury Risk Operations",
+        "title": "Master War Room Solvency Scorecard: En... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

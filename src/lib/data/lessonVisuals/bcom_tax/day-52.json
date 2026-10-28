@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Draft Order Gateway",
+        "template": "ledger-sheet",
+        "title": "The Section 144C Statutory Gateway: Eligible ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Eligible Entity Check",
-            "caption": "System validates foreign corporation status or transfer pricing scope."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Section C Statutor (Mu Alpha).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10300,
+            "totalCredit": 10300,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Draft Formulation",
-            "caption": "Assessing officer prepares proposed variations with tax schedules."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Section C Statutor (Alpha).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Mandatory Forwarding",
-            "caption": "Officer transmits statutory draft order without demand notice."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Section C Statutor (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Statutory Protection",
-            "caption": "Omission of draft order renders entire assessment void ab initio."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Section C Statutor (Alpha).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "2a525a9f04fd2c0a60754bc09eebb04d5419f2f74dd3a551ff892079171eac97",
+      "partTitle": "The Section 144C Statutory Gateway: Eligible Assessees & The Mandatory Draft Assessment Order",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Section 144C Statutory Gateway: Eligible ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Section C Statutor (Mu Alpha).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10300,
+            "totalCredit": 10300,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Section C Statutor (Alpha).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Section C Statutor (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Section C Statutor (Alpha).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12360,
+            "totalCredit": 12360,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10300,
+                "balance": 10300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2060,
+                "balance": 12360,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12360,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Strategic Path Selection",
+        "template": "ledger-sheet",
+        "title": "The Bifurcated Statutory Choice under Section... — General Ledger Verification",
         "steps": [
           {
-            "label": "Draft Order Receipt",
-            "caption": "Corporate assessee receives draft assessment order via tax portal."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Bifurcated Statuto (Mu Beta).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10500,
+            "totalCredit": 10500,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Thirty Day Window",
-            "caption": "Assessee reviews proposed adjustments within thirty calendar days."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Bifurcated Statuto (Beta).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Form Thirty Five A",
-            "caption": "Appellant prepares electronic objections with economic paper book."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Bifurcated Statuto (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Parallel Lodgment",
-            "caption": "Objections are lodged simultaneously with panel secretariat and officer."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Bifurcated Statuto (Beta).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "818e4b0b10fe1197fc93c927dccd914e5e3f79306b63e1c75610824d9b373f37",
+      "partTitle": "The Bifurcated Statutory Choice under Section 144C(2) & Form 35A Objections Architecture",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Bifurcated Statutory Choice under Section... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Bifurcated Statuto (Mu Beta).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10500,
+            "totalCredit": 10500,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Bifurcated Statuto (Beta).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Bifurcated Statuto (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Bifurcated Statuto (Beta).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12600,
+            "totalCredit": 12600,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10500,
+                "balance": 10500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2100,
+                "balance": 12600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12600,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Collegiate Panel Review",
+        "template": "ledger-sheet",
+        "title": "Collegiate Powers, Proceedings & The Nine-Mon... — General Ledger Verification",
         "steps": [
           {
-            "label": "Collegiate Intake",
-            "caption": "Three senior commissioners assemble to evaluate corporate objections."
+            "at": "intro",
+            "caption": "Open primary debit entry for Collegiate Powers Proc (Mu Gamma).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10700,
+            "totalCredit": 10700,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Oral Hearing",
-            "caption": "Taxpayer counsel argues economic comparability before collegiate bench."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Collegiate Powers Proc (Gamma).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Enhancement Safeguard",
-            "caption": "Panel gives reasonable opportunity before enhancing any variation."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Collegiate Powers Proc (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Statutory Limitation",
-            "caption": "Panel must issue binding directions within nine months of draft month."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Collegiate Powers Proc (Gamma).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "bbff6a1d1f96d40897f098bba717e7dc8533ace8fb07da72d1bee2c6d8cc37e1",
+      "partTitle": "Collegiate Powers, Proceedings & The Nine-Month Limitation Period under Section 144C",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Collegiate Powers, Proceedings & The Nine-Mon... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Collegiate Powers Proc (Mu Gamma).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10700,
+            "totalCredit": 10700,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Collegiate Powers Proc (Gamma).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Collegiate Powers Proc (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Collegiate Powers Proc (Gamma).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12840,
+            "totalCredit": 12840,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10700,
+                "balance": 10700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2140,
+                "balance": 12840,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 12840,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Directions Implementation",
+        "template": "ledger-sheet",
+        "title": "Implementation of DRP Directions under Sectio... — General Ledger Verification",
         "steps": [
           {
-            "label": "Directions Receipt",
-            "caption": "Assessing officer receives binding directions from panel secretariat."
+            "at": "intro",
+            "caption": "Open primary debit entry for Implementation of DRP (Mu Delta).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10900,
+            "totalCredit": 10900,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "One Month Deadline",
-            "caption": "Officer must complete assessment within one month from receipt month."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Implementation of DRP (Delta).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Final Assessment",
-            "caption": "Officer passes final order in strict conformity with directions."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Implementation of DRP (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Tribunal Gateway",
-            "caption": "Taxpayer appeals directly to appellate tribunal without first appeal."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Implementation of DRP (Delta).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "89a4e237b47794dd59311d23fe1e5310829d5f9da2c382792914d83fb32910d3",
+      "partTitle": "Implementation of DRP Directions under Section 144C(13) & Direct Gateway to ITAT",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Implementation of DRP Directions under Sectio... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Implementation of DRP (Mu Delta).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10900,
+            "totalCredit": 10900,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 10900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Implementation of DRP (Delta).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Implementation of DRP (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Implementation of DRP (Delta).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Dispute Resolution Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 144C ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Limitation Watchdog",
-            "caption": "Engine calculates precise deadline for collegiate panel directions."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Mu Epsilon).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Draft Order Audit",
-            "caption": "System flags illegal premature assessment orders with demand notices."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Economic Verification",
-            "caption": "Engine compares transfer pricing adjustments against arm length margins."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Tribunal Notice Alert",
-            "caption": "Platform schedules direct tribunal appeal upon final order delivery."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8e2954d0ed3126977167ab2704688e8e253cbd8f61cc504bdca2792b1258dfb0",
+      "partTitle": "Production Python Architecture: Section 144C DRP Objection & Timeline Orchestrator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 144C ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Mu Epsilon).",
+            "title": "Day 52 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 52 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Clearing & Settlement Control",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Mu).",
+            "title": "Day 52 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Verified Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "General Ledger Control Account",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 52 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5201",
+                "account": "Audited Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5202",
+                "account": "Audited Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5203",
+                "account": "Audited Treasury Settlement",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

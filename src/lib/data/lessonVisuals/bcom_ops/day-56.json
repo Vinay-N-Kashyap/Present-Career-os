@@ -46,7 +46,9 @@
             "caption": "Plants within a plant isolate diverse manufacturing tasks effectively."
           }
         ]
-      }
+      },
+      "codeHash": "fa36223fd44db19a9af0ff29bf65b678284616b26992b2a8f221dbada9622c3c",
+      "partTitle": "Strategic Operations Framework: Skinner's Focused Factory & Hayes-Wheelwright Matrix"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Dependability and speed enable lasting enterprise cost efficiency."
           }
         ]
-      }
+      },
+      "codeHash": "9d8c709812cd592310bad36e5717fefd2e0cbfd33834d48b7753fd57c2c291c4",
+      "partTitle": "Trade-Off Theory vs. Cumulative Capabilities: Ferdows & De Meyer's Sand Cone Model"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Modular designs allow rapid late stage configuration for local markets."
           }
         ]
-      }
+      },
+      "codeHash": "f64eeca5f6428e0fe56b4e9aa49660711ef51d2881d60622d3d10d413a890ae4",
+      "partTitle": "Manufacturing Agility, Mass Customization & Postponement Architectures"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Manufacturing infrastructure must match customer order winning factors."
           }
         ]
-      }
+      },
+      "codeHash": "f20b2025fe86ef4df2f743386bcc4fe0d3d38d98ccf109fef0202be04d04cefa",
+      "partTitle": "Competitive Priorities Formulation: Order Qualifiers, Order Winners & Trade-Off Resolution"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Policy deployment aligns shop floor actions with corporate objectives."
           }
         ]
-      }
+      },
+      "codeHash": "d5411deca597b028667a579dc91e75f77a370d88662269d284ae87714e44be4b",
+      "partTitle": "Enterprise Operations Execution: Strategy Maps, Balanced Scorecards & Value Disciplines"
     }
   ]
 }

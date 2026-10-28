@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "The FAST Financial Modeling Standard: Flexible, Appropriate, Structured, Transparent",
-    "codeHash": "a35b7514e61e6c9c2d542599de8254b570c507f1f3dc1ee2afb2af0e59ed9641",
-    "spec": {
-      "template": "bars",
-      "title": "The FAST Financial Modeling Standard: Fl... \u2014 Financial Model Audit Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline governance parameters for The FAST Financial Modeling Standar...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 50,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Circuit breaker validation and error precondition scans in The FAST Financial Modeling Standar...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 86,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 75,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Three-statement reconciliation and targeted error trapping in The FAST Financial Modeling Standar...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 90,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for The FAST Financial Modeling Standar...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 19,
+  "entries": [
+    {
+      "partTitle": "The FAST Financial Modeling Standard: Flexible, Appropriate, Structured, Transparent",
+      "codeHash": "a35b7514e61e6c9c2d542599de8254b570c507f1f3dc1ee2afb2af0e59ed9641",
+      "spec": {
+        "template": "bars",
+        "title": "The FAST Financial Modeling Standard: Fl... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The FAST Financial Modeling Standard: Fl... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for The FAST Financial Modeling Standar...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Circular References & Iterative Calculation: The Debt-Interest-Tax Shield Loop",
+      "codeHash": "352ac92490e2d63955ee1dae1ce3e75a3e5810a79a630975642b1c453ba12ed6",
+      "spec": {
+        "template": "bars",
+        "title": "Circular References & Iterative Calculat... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Circular References & Iterative Calculat... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Circular References & Iterative Cal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Designing Dynamic Circularity Breaker Switches (VBA-Free Boolean Flagging)",
+      "codeHash": "4c41703fbda396c9cf7e989d5c51cd413e21d4e3dba2407f1186fceb665d0b38",
+      "spec": {
+        "template": "bars",
+        "title": "Designing Dynamic Circularity Breaker Sw... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Designing Dynamic Circularity Breaker Sw... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Designing Dynamic Circularity Break...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Financial Model Error Trapping: ISERROR, IFERROR, NA() & Formula Auditing Tools",
+      "codeHash": "2444fe4300b9f4a83fc2f0b9fb420efefb45fc25864af23d7132e404060cd3ac",
+      "spec": {
+        "template": "bars",
+        "title": "Financial Model Error Trapping: ISERROR,... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Financial Model Error Trapping: ISERROR,... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Financial Model Error Trapping: ISE...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Financial Model Pre-Flight Audit & Stress Testing Integrity Gateway",
+      "codeHash": "3efd0f7733bfd9209dbd95ea14285f6fc53a1a2437480796c30faab54f4ae308",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Financial Model Pre-Flight Au... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Financial Model Pre-Flight Au... — Financial Model Audit Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline governance parameters for Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 50,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Circuit breaker validation and error precondition scans in Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 86,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 75,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 90,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Enterprise Financial Model Pre-Flig...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Audit Health Score",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FAST Compliance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Circularity Safety",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Balance Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Circular References & Iterative Calculation: The Debt-Interest-Tax Shield Loop",
-    "codeHash": "352ac92490e2d63955ee1dae1ce3e75a3e5810a79a630975642b1c453ba12ed6",
-    "spec": {
-      "template": "bars",
-      "title": "Circular References & Iterative Calculat... \u2014 Financial Model Audit Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline governance parameters for Circular References & Iterative Cal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 50,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Circuit breaker validation and error precondition scans in Circular References & Iterative Cal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 86,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 75,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Circular References & Iterative Cal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 90,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Circular References & Iterative Cal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Designing Dynamic Circularity Breaker Switches (VBA-Free Boolean Flagging)",
-    "codeHash": "4c41703fbda396c9cf7e989d5c51cd413e21d4e3dba2407f1186fceb665d0b38",
-    "spec": {
-      "template": "bars",
-      "title": "Designing Dynamic Circularity Breaker Sw... \u2014 Financial Model Audit Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline governance parameters for Designing Dynamic Circularity Break...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 50,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Circuit breaker validation and error precondition scans in Designing Dynamic Circularity Break...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 86,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 75,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Designing Dynamic Circularity Break...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 90,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Designing Dynamic Circularity Break...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Financial Model Error Trapping: ISERROR, IFERROR, NA() & Formula Auditing Tools",
-    "codeHash": "2444fe4300b9f4a83fc2f0b9fb420efefb45fc25864af23d7132e404060cd3ac",
-    "spec": {
-      "template": "bars",
-      "title": "Financial Model Error Trapping: ISERROR,... \u2014 Financial Model Audit Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline governance parameters for Financial Model Error Trapping: ISE...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 50,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Circuit breaker validation and error precondition scans in Financial Model Error Trapping: ISE...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 86,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 75,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Financial Model Error Trapping: ISE...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 90,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Financial Model Error Trapping: ISE...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Financial Model Pre-Flight Audit & Stress Testing Integrity Gateway",
-    "codeHash": "3efd0f7733bfd9209dbd95ea14285f6fc53a1a2437480796c30faab54f4ae308",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Financial Model Pre-Flight Au... \u2014 Financial Model Audit Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline governance parameters for Enterprise Financial Model Pre-Flig...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 50,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Circuit breaker validation and error precondition scans in Enterprise Financial Model Pre-Flig...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 86,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 75,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Three-statement reconciliation and targeted error trapping in Enterprise Financial Model Pre-Flig...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 90,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full pre-flight certification and cryptographic audit seal applied for Enterprise Financial Model Pre-Flig...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Audit Health Score",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FAST Compliance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Circularity Safety",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Balance Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

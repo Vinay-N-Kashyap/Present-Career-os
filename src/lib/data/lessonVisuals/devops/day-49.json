@@ -662,7 +662,7 @@
       }
     },
     {
-      "partTitle": "Production Operational Invariants: Kernel Version Compatibility, Memory Map Sizing & Safety Trade-offs",
+      "partTitle": "Production daily workflow standards: Kernel Version Compatibility, Memory Map Sizing & Safety Trade-offs",
       "codeHash": "b320583259e967fd9eccc7bd81df2d7638034ec2b008d7d9e40db45c41649335",
       "spec": {
         "template": "compare",

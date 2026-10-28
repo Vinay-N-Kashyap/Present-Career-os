@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Anti Avoidance Threshold",
+        "template": "ledger-sheet",
+        "title": "The Statutory Architecture of GAAR: Chapter X... — General Ledger Verification",
         "steps": [
           {
-            "label": "Arrangement Review",
-            "caption": "Assessing authority identifies complex corporate restructuring steps."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Statutory Architec (Pi Alpha).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10900,
+            "totalCredit": 10900,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 10900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Tax Benefit Check",
-            "caption": "System verifies reduction or deferral of statutory tax liabilities."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Statutory Architec (Alpha).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Safe Harbour Audit",
-            "caption": "Authority checks aggregate tax benefit against statutory threshold."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Statutory Architec (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Notice Formulation",
-            "caption": "Officer drafts statutory notice to invoke general anti avoidance rules."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Statutory Architec (Alpha).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8ffc6cc295c77625e62d4c9d9ef37eb576fccdf3adc4deaa7de7d441d5760dd1",
+      "partTitle": "The Statutory Architecture of GAAR: Chapter X-A, Section 95 & The Main Purpose Threshold",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Statutory Architecture of GAAR: Chapter X... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Statutory Architec (Pi Alpha).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10900,
+            "totalCredit": 10900,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 10900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Statutory Architec (Alpha).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Statutory Architec (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Statutory Architec (Alpha).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13080,
+            "totalCredit": 13080,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 10900,
+                "balance": 10900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2180,
+                "balance": 13080,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13080,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Tainted Element Matrix",
+        "template": "ledger-sheet",
+        "title": "The Four Tainted Element Tests & Lack of Comm... — General Ledger Verification",
         "steps": [
           {
-            "label": "Substance Test",
-            "caption": "Panel evaluates whether form differs from true economic reality."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Four Tainted Eleme (Pi Beta).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Round Trip Analysis",
-            "caption": "System traces circular transfer of funds across offshore accounts."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Four Tainted Eleme (Beta).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Conduit Detection",
-            "caption": "Authority identifies accommodating entities lacking business substance."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Four Tainted Eleme (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Tainted Element Finding",
-            "caption": "Panel confirms presence of statutorily tainted transaction element."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Four Tainted Eleme (Beta).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "753640dbd6a278b7129d7ac10c1e60e5e8686dfbf183f33ff81d430a05ba510f",
+      "partTitle": "The Four Tainted Element Tests & Lack of Commercial Substance under Section 96 and 97",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Four Tainted Element Tests & Lack of Comm... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Four Tainted Eleme (Pi Beta).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Four Tainted Eleme (Beta).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Four Tainted Eleme (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Four Tainted Eleme (Beta).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13320,
+            "totalCredit": 13320,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11100,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2220,
+                "balance": 13320,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13320,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Recharacterization Powers",
+        "template": "ledger-sheet",
+        "title": "Consequences of GAAR under Section 98 & The I... — General Ledger Verification",
         "steps": [
           {
-            "label": "Look Through Order",
-            "caption": "Officer disregards intermediary corporate step in transaction chain."
+            "at": "intro",
+            "caption": "Open primary debit entry for Consequences of GAAR u (Pi Gamma).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11300,
+            "totalCredit": 11300,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Party Consolidation",
-            "caption": "Authority treats accommodating conduit and parent as identical entity."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Consequences of GAAR u (Gamma).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Hybrid Reclassification",
-            "caption": "Officer recharacterizes hybrid debt instrument into taxable equity."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Consequences of GAAR u (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Treaty Denial",
-            "caption": "Domestic anti avoidance rules override bilateral treaty exemptions."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Consequences of GAAR u (Gamma).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "ef090f8f6a26d65dd2111a08ac95bdb68eb1034d2636f24ece159a2d7cf5f68b",
+      "partTitle": "Consequences of GAAR under Section 98 & The Interplay between GAAR, SAAR and DTAAs",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Consequences of GAAR under Section 98 & The I... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Consequences of GAAR u (Pi Gamma).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11300,
+            "totalCredit": 11300,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Consequences of GAAR u (Gamma).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Consequences of GAAR u (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Consequences of GAAR u (Gamma).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13560,
+            "totalCredit": 13560,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11300,
+                "balance": 11300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2260,
+                "balance": 13560,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13560,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Approving Panel Procedure",
+        "template": "ledger-sheet",
+        "title": "Procedural Safeguards & The Statutory Approvi... — General Ledger Verification",
         "steps": [
           {
-            "label": "Officer Reference",
-            "caption": "Assessing officer submits formal reference to principal commissioner."
+            "at": "intro",
+            "caption": "Open primary debit entry for Procedural Safeguards (Pi Delta).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11500,
+            "totalCredit": 11500,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Statutory Notice",
-            "caption": "Commissioner issues show cause notice granting sixty days for response."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Procedural Safeguards (Delta).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Collegiate Hearing",
-            "caption": "Three member panel chaired by high court judge hears oral arguments."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Procedural Safeguards (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Binding Directions",
-            "caption": "Approving panel issues binding directions within six months of receipt."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Procedural Safeguards (Delta).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "9435142c0f6d8944a43c234a8d14cf48e727bd5722f0a79c2aed7d967e43a231",
+      "partTitle": "Procedural Safeguards & The Statutory Approving Panel Architecture under Section 144BA",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Procedural Safeguards & The Statutory Approvi... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Procedural Safeguards (Pi Delta).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11500,
+            "totalCredit": 11500,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Procedural Safeguards (Delta).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Procedural Safeguards (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Procedural Safeguards (Delta).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13800,
+            "totalCredit": 13800,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11500,
+                "balance": 11500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2300,
+                "balance": 13800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 13800,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Anti Avoidance Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise GA... — General Ledger Verification",
         "steps": [
           {
-            "label": "Safe Harbour Clock",
-            "caption": "Engine verifies whether tax exposure falls below statutory threshold."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Pi Epsilon).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Substance Indexing",
-            "caption": "Platform scores corporate office leases and local employment records."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Recharacterization Model",
-            "caption": "Simulator computes tax adjustments from proposed step disregards."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Statutory Docket",
-            "caption": "Module compiles contemporaneous business defense for approving panel."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "9939802f879eede1cc6e5496af2ed008261b634c1d909bf7f9539c53a263df24",
+      "partTitle": "Production Python Architecture: Enterprise GAAR Risk Assessment & Approving Panel Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise GA... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Pi Epsilon).",
+            "title": "Day 56 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 56 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Primary Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Clearing & Settlement Control",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Pi).",
+            "title": "Day 56 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Verified Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "General Ledger Control Account",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 56 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14040,
+            "totalCredit": 14040,
+            "entries": [
+              {
+                "id": "JNL-5601",
+                "account": "Audited Operating Asset",
+                "debit": 11700,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5602",
+                "account": "Audited Compliance Reserve",
+                "debit": 2340,
+                "balance": 14040,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5603",
+                "account": "Audited Treasury Settlement",
+                "credit": 14040,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

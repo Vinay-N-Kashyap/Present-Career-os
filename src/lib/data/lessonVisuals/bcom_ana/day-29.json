@@ -8,7 +8,7 @@
       "codeHash": "8eb1f3685dde2bdd671246e73f121d716feb0373dcb3692133fc06a4cd5cf6dd",
       "spec": {
         "template": "bars",
-        "title": "Decision Analysis Under Uncertainty: P... \u2014 Decision Evaluation",
+        "title": "Decision Analysis Under Uncertainty: P... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "a294717973b9dcf0fcb49764c18df028f28125b796535644f2863888afd28fc9",
       "spec": {
         "template": "bars",
-        "title": "Decision Trees & Backward Induction (T... \u2014 Decision Evaluation",
+        "title": "Decision Trees & Backward Induction (T... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "6dbc697356641ab6eae0f91f4bf46c2d862a8ac13197690cee6323bcf0f1646e",
       "spec": {
         "template": "bars",
-        "title": "Expected Value of Perfect Information ... \u2014 Decision Evaluation",
+        "title": "Expected Value of Perfect Information ... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "ce29790933029ecab69132fbc8a5769817ad2c395019656f72672dd378080f01",
       "spec": {
         "template": "bars",
-        "title": "Risk Tolerance, Utility Theory & Certa... \u2014 Decision Evaluation",
+        "title": "Risk Tolerance, Utility Theory & Certa... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "f903a55dd0d4eb043a09ca4c4ba74589e2c301541f438e32d6dea7e1cdde75f5",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Decision Tree &... \u2014 Decision Evaluation",
+        "title": "Building an Enterprise Decision Tree &... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D29P5].",
             "max": 100,
             "bars": [
               {

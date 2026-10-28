@@ -46,7 +46,9 @@
             "caption": "Closed loop telemetry feeds border exception alerts to executive teams."
           }
         ]
-      }
+      },
+      "codeHash": "410a030368ccbb8d227f1784d5f2846b30bbb8c40b2e10bae66e96cd8e310eea",
+      "partTitle": "Capstone Architecture: End-to-End International Logistics Pipeline from Factory Floor to Foreign Port of Entry"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Incoterms mapping partitions freight expenses between trading partners."
           }
         ]
-      }
+      },
+      "codeHash": "7fc86284373bb5b24df15060f1a977efb4441761fcb5bc4d6d4e00d859facab4",
+      "partTitle": "Multi-Leg Intermodal Routing Engine: Dynamic Cost-Lead-Time Trade-Off Optimization across Corridors"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Electronic trade suites generate sworn invoices and certificates of origin."
           }
         ]
-      }
+      },
+      "codeHash": "860de0b4f9f58f33801c839dcf8efb6c2a8a267fb1329a1ad9537b1e24c3f396",
+      "partTitle": "Automated Customs Documentation & Duty Assessment: HS Classification, Origin Verification & Valuation Proofs"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "IoT telemetry alarms trigger emergency work orders during thermal spikes."
           }
         ]
-      }
+      },
+      "codeHash": "6d8b62927e6b960c6637a5e82529a0ee9cd13e40076c91a1e05e58a29e7e81af",
+      "partTitle": "Real-Time Border Exception Handling: Port Congestion Re-Routing, Customs Inspections, and Demurrage Mitigation"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Executive scorecards certify complete compliance across global treaties."
           }
         ]
-      }
+      },
+      "codeHash": "68db36327bbbbd96b7fe6a5d2b611944085d400211b7af633b1fa93b28ea9059",
+      "partTitle": "Production Capstone Validation: End-to-End Execution of the Global Multimodal Logistics & Customs Engine"
     }
   ]
 }

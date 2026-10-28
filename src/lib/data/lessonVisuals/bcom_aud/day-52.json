@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Statutory Accounting for Loss Contingencies under ASC 450 & IAS 37",
-      "codeHash": "5c513aa8b7fd5dbec3c60cc550d4159b10153721101da7390a769b119625aeda",
+      "codeHash": "d1dbb7e0930285740bad80f8340698041dffd3918285897a2bbbfd827a117786",
       "spec": {
         "template": "funnel",
-        "title": "Statutory Accounting for Loss Continge... \u2014 Assurance Review",
+        "title": "Statutory Accounting for Loss Continge... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "The Legal Inquiry Letter under PCAOB AS 2505 & ABA Statement of Policy",
-      "codeHash": "f7f9ac581fcdca22031068d0043551dd7a83a55240944892d60685ae86b3aee9",
+      "codeHash": "8f8104c8db78872f65af94d96628039334826e929e18f39980f6a9b8249d2cd0",
       "spec": {
         "template": "funnel",
-        "title": "The Legal Inquiry Letter under PCAOB A... \u2014 Assurance Review",
+        "title": "The Legal Inquiry Letter under PCAOB A... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Evaluating Settlement Conferences, Mediation Trends & Loss Ranges",
-      "codeHash": "86cde43523d65b52d9b2412168f2fbb19a6bc0fa708d896aeb2c9b477fd6bb17",
+      "codeHash": "e6c1cdb9dfcf98e89841769e1331ca776bb5224f6db45e21c0d0eb68695836e6",
       "spec": {
         "template": "funnel",
-        "title": "Evaluating Settlement Conferences, Med... \u2014 Assurance Review",
+        "title": "Evaluating Settlement Conferences, Med... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Utilizing Valuation Specialists & Actuaries in Complex Legal Contingencies",
-      "codeHash": "caeceb253b683646f82df9550e16f8d871aeece9aeddbcb5dd84efe971520d2b",
+      "codeHash": "3185e32a55a699df75df5e4c5752b44381bc5bda0ee4f4a04d4c84b3859c3d69",
       "spec": {
         "template": "funnel",
-        "title": "Utilizing Valuation Specialists & Actu... \u2014 Assurance Review",
+        "title": "Utilizing Valuation Specialists & Actu... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Legal Contingencies & Litigation Assurance Simulator",
-      "codeHash": "aea1b7ff78c5df878967f72d3497bf099e1f52e878fa56ff2c529403ffbaf5b2",
+      "codeHash": "87abc5b0f5e96ec500082cc36fb63bee8c3509cafd9da83766508f17f5a0299e",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Legal Contingencies & Li... \u2014 Assurance Review",
+        "title": "Comprehensive Legal Contingencies & Li... — Assurance Review",
         "steps": [
           {
             "at": "intro",

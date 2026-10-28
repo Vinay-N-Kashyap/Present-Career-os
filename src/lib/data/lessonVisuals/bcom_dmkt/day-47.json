@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Lexical Search Limitations & The Semantic Gap: Vocabulary Mismatch & Polysemy",
-      "codeHash": "8bd4ebf2b7d00c9e0b0414e733efc857ca2fe21e347564e6a4d131e092d64042",
+      "codeHash": "f091da873395e8b00bb479d4c7d2a2bdf4dc3f5dc63b5d0cb8149d6a427d9dba",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Dense Retrieval & Representation Learning: Bi-Encoders, Cross-Encoders & Sentence Transformers",
-      "codeHash": "1fe8d21b6a66e02f56cc4ed41017da983e0005d841bbe91ea54bb4e4af30efb1",
+      "codeHash": "3e56eb5ec28b66a8ad9bab7348916a8e0ca5c0704f3c9da705f4f3895c030813",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "High-Dimensional Vector Search: Cosine Similarity, Dot Product & Dimensionality Reductions",
-      "codeHash": "b69bd2e725ec6d9d62f5189cb330fdf8880f7701800ed3426be8d0c001f73a82",
+      "codeHash": "851675356a2ce0fb0847a3c4adc44090d74f1bafee1e7409858155cf897cba42",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Approximate Nearest Neighbor (ANN) Indexing: Inverted File (IVF), Hierarchical Navigable Small World (HNSW) & Quantization",
-      "codeHash": "a420e1e6769fb1b70d8b13d35c0e292f74c49feb2acec3e7b9522ed29b490226",
+      "codeHash": "19b769ae8adb28ca63e53ab475ff0e5e700d4c8aab5a967c1d6da36a2d4cad01",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Dense Retrieval & Hybrid Search Engine in Python",
-      "codeHash": "2b14c8649a8e2dcb1ae9e928d86747c418db5991a580401a128a35f257d33feb",
+      "codeHash": "d30578f9e5725c2997ad18c64e49c3c3759d3251b780418d9e93b61977538952",
       "spec": {
         "template": "funnel",
         "steps": [

@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Statutory Management Representation Letter under PCAOB AS 2805 & ISA 580",
-      "codeHash": "941bd334e63fa11f513da77d9d97fe6e2250f9c88cbe58c4e4ad522c564e9831",
+      "codeHash": "3263e25a53a7e3929ef8d9bfbd53ad80c901ce6db4157ee2524289a4bd3fdde6",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Management Representatio... \u2014 Assurance Review",
+        "title": "The Statutory Management Representatio... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Mandatory Tailored Representations & Summary of Unadjusted Differences (SUD)",
-      "codeHash": "3712234e50c4cbfa82562c436783540c2bfdfaf3622ceff100509f25cc08279c",
+      "codeHash": "b62c8f183acd1d1ad328383ee82f884af21dcf1e3fa63d066511da56d82fefae",
       "spec": {
         "template": "funnel",
-        "title": "Mandatory Tailored Representations & S... \u2014 Assurance Review",
+        "title": "Mandatory Tailored Representations & S... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Management Refusal to Furnish Written Representations: Scope Limitations",
-      "codeHash": "336f3bb211a51478d992b256ac0c040f45f519d16fef4e16d2d86913e60d15d5",
+      "codeHash": "9a8cf5e7fba3efcd6fb6e7ad36ff21a31d4ecd23385853ff9712166e828db68a",
       "spec": {
         "template": "funnel",
-        "title": "Management Refusal to Furnish Written ... \u2014 Assurance Review",
+        "title": "Management Refusal to Furnish Written ... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Mandatory Audit Committee Communications under PCAOB AS 1301 & ISA 260",
-      "codeHash": "849302c3437b76c1c597c30ecea5307561e2c288fefa92e446aab4469c0042ff",
+      "codeHash": "6842d32a7483c18ad8205a2585ba01f688a84e7f95382ca8516d7e84b6e3f366",
       "spec": {
         "template": "funnel",
-        "title": "Mandatory Audit Committee Communicatio... \u2014 Assurance Review",
+        "title": "Mandatory Audit Committee Communicatio... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Governance Communications & Representation Defense Simulator",
-      "codeHash": "9815e1c7c04b04f1744b26eab444a9acba840140b028f91c33655833a2d30352",
+      "codeHash": "5f4ac6fb185d002d872bef25bb73cebe1fca176f17440693c38da0c023508319",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Governance Communication... \u2014 Assurance Review",
+        "title": "Comprehensive Governance Communication... — Assurance Review",
         "steps": [
           {
             "at": "intro",

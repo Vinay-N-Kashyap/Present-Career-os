@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Enterprise Case Strategy",
+        "template": "ledger-sheet",
+        "title": "Enterprise Dispute Anatomy & The Section 144C... — General Ledger Verification",
         "steps": [
           {
-            "label": "Draft Order Audit",
-            "caption": "Enterprise counsel analyzes proposed transfer pricing additions."
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Dispute Ana (Omicron Alpha).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10750,
+            "totalCredit": 10750,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 10750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Strategic Election",
-            "caption": "Counsel selects collegiate panel route over traditional first appeal."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Dispute Ana (Alpha).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Limitation Control",
-            "caption": "System enforces thirty day objection deadline from draft order receipt."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Ana (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Paper Book Assembly",
-            "caption": "Team gathers technical logs and economic comparability studies."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Dispute Ana (Alpha).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "3b41ab5975b246a38e69c5c1b2e4724fe8211cd58cb513a7b62c9d966c70ab2e",
+      "partTitle": "Enterprise Dispute Anatomy & The Section 144C Bifurcated Strategic Crossroads",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Dispute Anatomy & The Section 144C... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Dispute Ana (Omicron Alpha).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10750,
+            "totalCredit": 10750,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 10750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Dispute Ana (Alpha).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Dispute Ana (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Dispute Ana (Alpha).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12900,
+            "totalCredit": 12900,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 10750,
+                "balance": 10750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2150,
+                "balance": 12900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 12900,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Collegiate Panel Defense",
+        "template": "ledger-sheet",
+        "title": "Form 35A Collegiate Advocacy, The 9-Month Lim... — General Ledger Verification",
         "steps": [
           {
-            "label": "Collegiate Hearing",
-            "caption": "Counsel argues economic methodology before three commissioners."
+            "at": "intro",
+            "caption": "Open primary debit entry for Form A Collegiate Advo (Omicron Beta).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10950,
+            "totalCredit": 10950,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 10950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Substantial Relief",
-            "caption": "Panel deletes majority of transfer pricing addition under precedent."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Form A Collegiate Advo (Beta).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Binding Directions",
-            "caption": "Panel issues directions within nine months of draft forwarding month."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Form A Collegiate Advo (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Final Assessment Order",
-            "caption": "Officer passes final order in one month without altering directions."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Form A Collegiate Advo (Beta).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "cd3fb0308dd441cbf4c3f38efeb151e80325aeebdf245f5e5e94dfb0a14b1818",
+      "partTitle": "Form 35A Collegiate Advocacy, The 9-Month Limitation Clock & Section 144C(13) Enforcement",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Form 35A Collegiate Advocacy, The 9-Month Lim... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Form A Collegiate Advo (Omicron Beta).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10950,
+            "totalCredit": 10950,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 10950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Form A Collegiate Advo (Beta).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Form A Collegiate Advo (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Form A Collegiate Advo (Beta).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13140,
+            "totalCredit": 13140,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 10950,
+                "balance": 10950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2190,
+                "balance": 13140,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13140,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Tribunal Appeal and Stay",
+        "template": "ledger-sheet",
+        "title": "Direct ITAT Gateway under Section 253(1)(d), ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Direct Tribunal Filing",
-            "caption": "Enterprise appeals sustained adjustments directly to tribunal bench."
+            "at": "intro",
+            "caption": "Open primary debit entry for Direct ITAT Gateway un (Omicron Gamma).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11150,
+            "totalCredit": 11150,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Mandatory Deposit",
-            "caption": "Treasury deposits statutory twenty percent into central tax treasury."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Direct ITAT Gateway un (Gamma).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Stay Injunction",
-            "caption": "Tribunal grants unconditional stay on remaining eighty percent balance."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway un (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Constitutional Shield",
-            "caption": "Stay remains effective beyond three hundred sixty five days."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Direct ITAT Gateway un (Gamma).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "c8ca1b385954727d32ea45ef9346a6116c1ae6c2a2f5d3c501d979147aeef967",
+      "partTitle": "Direct ITAT Gateway under Section 253(1)(d), Form 36 Pleadings & The Section 254(2A) Stay Defense",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Direct ITAT Gateway under Section 253(1)(d), ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Direct ITAT Gateway un (Omicron Gamma).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11150,
+            "totalCredit": 11150,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Direct ITAT Gateway un (Gamma).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Direct ITAT Gateway un (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Direct ITAT Gateway un (Gamma).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13380,
+            "totalCredit": 13380,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11150,
+                "balance": 11150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2230,
+                "balance": 13380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Judicial Victory and Refund",
+        "template": "ledger-sheet",
+        "title": "Section 260A High Court Formulation & CBDT Po... — General Ledger Verification",
         "steps": [
           {
-            "label": "Full Tribunal Relief",
-            "caption": "Tribunal deletes all remaining adjustments applying apex precedents."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A High Court F (Omicron Delta).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11350,
+            "totalCredit": 11350,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "High Court Challenge",
-            "caption": "Revenue files appeal challenging factual transfer pricing findings."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A High Court F (Delta).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Summary Dismissal",
-            "caption": "High court dismisses appeal in limine for lack of substantial law."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A High Court F (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Treasury Refund",
-            "caption": "Officer refunds stay deposit with statutory interest into bank account."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A High Court F (Delta).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "775c0ddc9edae4b4e2f3eb03e79c00ff6d1900d06d1624cb4e64af5334decbc5",
+      "partTitle": "Section 260A High Court Formulation & CBDT Policy Threshold In limine Dismissal Execution",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 260A High Court Formulation & CBDT Po... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A High Court F (Omicron Delta).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11350,
+            "totalCredit": 11350,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A High Court F (Delta).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A High Court F (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A High Court F (Delta).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13620,
+            "totalCredit": 13620,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11350,
+                "balance": 11350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2270,
+                "balance": 13620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Master Defense Simulator",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise Mu... — General Ledger Verification",
         "steps": [
           {
-            "label": "Multi Tier Simulation",
-            "caption": "Simulator executes complete lifecycle of corporate appellate defense."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Omicron Epsilon).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11550,
+            "totalCredit": 11550,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Limitation Clock Audit",
-            "caption": "Engine validates compliance with all statutory procedural windows."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Financial Exposure Model",
-            "caption": "Platform calculates tax shield and interest recovery for enterprise."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Master Accreditation",
-            "caption": "System grants master certification upon triumphant corporate defense."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1a404ab55c64170609337f5bcbf9e5b6b3112f7de3cdce15daca60b2de1aff80",
+      "partTitle": "Production Python Architecture: Enterprise Multi-Tier Appellate Defense Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise Mu... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Omicron Epsilon).",
+            "title": "Day 55 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11550,
+            "totalCredit": 11550,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Clearing & Settlement Control",
+                "credit": 11550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 55 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Primary Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Clearing & Settlement Control",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Omicron).",
+            "title": "Day 55 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Verified Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "General Ledger Control Account",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 55 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13860,
+            "totalCredit": 13860,
+            "entries": [
+              {
+                "id": "JNL-5501",
+                "account": "Audited Operating Asset",
+                "debit": 11550,
+                "balance": 11550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5502",
+                "account": "Audited Compliance Reserve",
+                "debit": 2310,
+                "balance": 13860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5503",
+                "account": "Audited Treasury Settlement",
+                "credit": 13860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

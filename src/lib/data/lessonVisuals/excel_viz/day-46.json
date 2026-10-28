@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
-    "codeHash": "afe9c45a6c252a694f0ac26061e2abc6195a097c42ea46467f0d9e20c999b2e7",
-    "spec": {
-      "template": "bars",
-      "title": "The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 46,
+  "entries": [
+    {
+      "partTitle": "The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+      "codeHash": "afe9c45a6c252a694f0ac26061e2abc6195a097c42ea46467f0d9e20c999b2e7",
+      "spec": {
+        "template": "bars",
+        "title": "The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for The Component Object Model (COM) & Excel DOM Hierarchy: Application, Workbooks, Worksheets & Range",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+      "codeHash": "a99f34cdf3552c05dafd829c0c3cb8622e8798325bc6cae30bef2bc7d2ae26d8",
+      "spec": {
+        "template": "bars",
+        "title": "Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+      "codeHash": "85317e6e5d516cdb9a966bbdd30751292e4f8ec978f5e868501c7f644ed154c1",
+      "spec": {
+        "template": "bars",
+        "title": "Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+      "codeHash": "251cfecf20a0d331421fcccb1d6351f3ad18984e416d68dbb73ca2265d9d7797",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+      "codeHash": "eeadaf75c6ac9f49fb664e85116455ba653b9b7b12e319bb76a146ec2e48551e",
+      "spec": {
+        "template": "bars",
+        "title": "Master VBA COM Automation Gateway: Production Verification & Architecture Certification – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master VBA COM Automation Gateway: Production Verification & Architecture Certification – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "COM Hierarchy",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Value2 Array",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "State Controller",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Ledger Consolidation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
-    "codeHash": "a99f34cdf3552c05dafd829c0c3cb8622e8798325bc6cae30bef2bc7d2ae26d8",
-    "spec": {
-      "template": "bars",
-      "title": "Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Memory Array Buffering vs Cell-by-Cell Loops: Range.Value2 & The COM Interop Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
-    "codeHash": "85317e6e5d516cdb9a966bbdd30751292e4f8ec978f5e868501c7f644ed154c1",
-    "spec": {
-      "template": "bars",
-      "title": "Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Execution State Control: ScreenUpdating, Calculation Modes & UI Friction Suppression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
-    "codeHash": "251cfecf20a0d331421fcccb1d6351f3ad18984e416d68dbb73ca2265d9d7797",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Enterprise Multi-Sheet Consolidation Architecture & Subsidiary Ledger Harvesting",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
-    "codeHash": "eeadaf75c6ac9f49fb664e85116455ba653b9b7b12e319bb76a146ec2e48551e",
-    "spec": {
-      "template": "bars",
-      "title": "Master VBA COM Automation Gateway: Production Verification & Architecture Certification – VBA Architecture & COM Object Model: Application, Workbook, Worksheet & Range DOM Hierarchy",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Master VBA COM Automation Gateway: Production Verification & Architecture Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "COM Hierarchy",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Value2 Array",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "State Controller",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Ledger Consolidation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

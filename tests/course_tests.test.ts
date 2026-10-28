@@ -13,7 +13,7 @@ const react = () => COURSES_REGISTRY.find((c) => c.id === 'course-react-web')!;
 test('React course: a test after every 5 days, placed after that day\'s practice', () => {
   const ids = react().quests.map((q) => q.id);
   const tests = ids.filter((id) => parseTestQuestId(id));
-  assert.deepEqual(tests, [5, 10, 15, 20, 25, 30].map((d) => `react-basics-test-days-${d - 4}-${d}`));
+  assert.deepEqual(tests, [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].map((d) => `react-basics-test-days-${d - 4}-${d}`));
   for (const id of tests) {
     const { end } = parseTestQuestId(id)!;
     assert.equal(ids[ids.indexOf(id) - 1], `react-basics-assign-day-${end}`, `${id} must follow day ${end}'s last practice`);

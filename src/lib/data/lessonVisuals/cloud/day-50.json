@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Shared staging environments suffer from continuous delivery friction."
+            "annotation": "Shared staging environments suffer from continuous delivery friction.",
+            "caption": "Shared staging environments suffer from continuous delivery friction. (Ephemeral Pull Request Paradigm & T)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Ephemeral namespaces provide completely isolated feature review sandboxes."
+            "annotation": "Ephemeral namespaces provide completely isolated feature review sandboxes.",
+            "caption": "Ephemeral namespaces provide completely isolated feature review sandboxes. (Ephemeral Pull Request Paradigm & T)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Dynamic ingress routes traffic seamlessly to active preview environments."
+            "annotation": "Dynamic ingress routes traffic seamlessly to active preview environments.",
+            "caption": "Dynamic ingress routes traffic seamlessly to active preview environments. (Ephemeral Pull Request Paradigm & T)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Independent preview environments accelerate releases across squads."
+            "annotation": "Independent preview environments accelerate releases across squads.",
+            "caption": "Independent preview environments accelerate releases across squads. (Ephemeral Pull Request Paradigm & T)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Manual manifest authoring slows down deployment cycles and creates errors."
+            "annotation": "Manual manifest authoring slows down deployment cycles and creates errors.",
+            "caption": "Manual manifest authoring slows down deployment cycles and creates errors. (Dynamic Helm & ArgoCD ApplicationSe)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "The ApplicationSet generator templates applications dynamically."
+            "annotation": "The ApplicationSet generator templates applications dynamically.",
+            "caption": "The ApplicationSet generator templates applications dynamically. (Dynamic Helm & ArgoCD ApplicationSe)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Enforced resource limits ensure high density without cluster exhaustion."
+            "annotation": "Enforced resource limits ensure high density without cluster exhaustion.",
+            "caption": "Enforced resource limits ensure high density without cluster exhaustion. (Dynamic Helm & ArgoCD ApplicationSe)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Automated manifest generation delivers self-service cloud environments."
+            "annotation": "Automated manifest generation delivers self-service cloud environments.",
+            "caption": "Automated manifest generation delivers self-service cloud environments. (Dynamic Helm & ArgoCD ApplicationSe)"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Dedicated databases cause severe startup delays and excessive costs."
+            "annotation": "Dedicated databases cause severe startup delays and excessive costs.",
+            "caption": "Dedicated databases cause severe startup delays and excessive costs. (Ephemeral Data Isolation: Branch-Sp)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Schema isolation partitions tenant data cleanly on shared clusters."
+            "annotation": "Schema isolation partitions tenant data cleanly on shared clusters.",
+            "caption": "Schema isolation partitions tenant data cleanly on shared clusters. (Ephemeral Data Isolation: Branch-Sp)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Pre-sync hooks execute database migrations and seed realistic fixtures."
+            "annotation": "Pre-sync hooks execute database migrations and seed realistic fixtures.",
+            "caption": "Pre-sync hooks execute database migrations and seed realistic fixtures. (Ephemeral Data Isolation: Branch-Sp)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Fast database sandboxes validate schema alterations before merge."
+            "annotation": "Fast database sandboxes validate schema alterations before merge.",
+            "caption": "Fast database sandboxes validate schema alterations before merge. (Ephemeral Data Isolation: Branch-Sp)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Abandoned preview environments silently drain organizational cloud budgets."
+            "annotation": "Abandoned preview environments silently drain organizational cloud budgets.",
+            "caption": "Abandoned preview environments silently drain organizational cloud budgets. (Automated Garbage Collection: The R)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "The Reaper Lambda scans resource tags and queries repository status."
+            "annotation": "The Reaper Lambda scans resource tags and queries repository status.",
+            "caption": "The Reaper Lambda scans resource tags and queries repository status. (Automated Garbage Collection: The R)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Automated teardown reclaims unneeded compute and load balancer resources."
+            "annotation": "Automated teardown reclaims unneeded compute and load balancer resources.",
+            "caption": "Automated teardown reclaims unneeded compute and load balancer resources. (Automated Garbage Collection: The R)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Proactive garbage collection guarantees sustainable cloud operations."
+            "annotation": "Proactive garbage collection guarantees sustainable cloud operations.",
+            "caption": "Proactive garbage collection guarantees sustainable cloud operations. (Automated Garbage Collection: The R)"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Autonomous GitOps pipelines replace fragile manual release handoffs."
+            "annotation": "Autonomous GitOps pipelines replace fragile manual release handoffs.",
+            "caption": "Autonomous GitOps pipelines replace fragile manual release handoffs. (Milestone 9 Capstone Synthesis: End)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "The synthesis engine unites Terraform, ArgoCD, and CDK Aspects."
+            "annotation": "The synthesis engine unites Terraform, ArgoCD, and CDK Aspects.",
+            "caption": "The synthesis engine unites Terraform, ArgoCD, and CDK Aspects. (Milestone 9 Capstone Synthesis: End)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Automated chaos verification proves resiliency during preview drills."
+            "annotation": "Automated chaos verification proves resiliency during preview drills.",
+            "caption": "Automated chaos verification proves resiliency during preview drills. (Milestone 9 Capstone Synthesis: End)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Autonomous GitOps platforms empower teams to deliver resilient software."
+            "annotation": "Autonomous GitOps platforms empower teams to deliver resilient software.",
+            "caption": "Autonomous GitOps platforms empower teams to deliver resilient software. (Milestone 9 Capstone Synthesis: End)"
           }
         ]
       }

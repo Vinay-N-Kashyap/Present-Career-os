@@ -46,7 +46,9 @@
             "caption": "Standard monthly cadences dismantle functional operational silos."
           }
         ]
-      }
+      },
+      "codeHash": "75338cd28ebb2a4b8707919fa3e32f2293a59277ec6f563b74f78062ef680326",
+      "partTitle": "Foundations of Enterprise S&OP: The Five-Step Monthly Rhythm and Functional Silo Dissolution"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Tracking signals monitor directional forecast bias across quarters."
           }
         ]
-      }
+      },
+      "codeHash": "a2a1f28a100f33f654602c575bd2b47069a88851e6f3a62cb6911bcd498dc98e",
+      "partTitle": "Unconstrained Demand Consensus: Statistical Baselines, Commercial Uplifts, and Cannibalization Modeling"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Hybrid strategies balance level output against seasonal overtime."
           }
         ]
-      }
+      },
+      "codeHash": "dd58043fb193a0746a288b02cde809f0abfbb5e86302bb7b32b93e992e425c86",
+      "partTitle": "Supply Capability Assessment: Rough-Cut Capacity Planning (RCCP) and Inventory Pre-Build Strategies"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Pre S and OP teams formulate actionable scenarios for executive evaluation."
           }
         ]
-      }
+      },
+      "codeHash": "f92fc18a86ec31c53e4b0583a0ac7f869ede279c4a9460724c1d3675b68f924b",
+      "partTitle": "Financial Reconciliation and Gap Analysis: Reconciling Volumetric Plans with Budgetary EBITDA Targets"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Firm time fences freeze near term schedules to protect factory stability."
           }
         ]
-      }
+      },
+      "codeHash": "a2711e53e8678fb860d0034a47e79a5e4b7543fb86f6cda625aaa208b591abf6",
+      "partTitle": "Executive S&OP Escalation: Trade-Off Arbitrage, Scenario Modeling, and Consensus Sign-Off"
     }
   ]
 }

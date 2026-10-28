@@ -46,7 +46,9 @@
             "caption": "Practitioners walk the physical Gemba backward to observe reality clearly."
           }
         ]
-      }
+      },
+      "codeHash": "7f9e1eb5c65db6de2cec278532130e566c4eb6373281c51941e937aecc728d25",
+      "partTitle": "Value Stream Architecture: Defining Product Families and Scoping the End-to-End Value Stream"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Timelines compare total production lead time against value added seconds."
           }
         ]
-      }
+      },
+      "codeHash": "dd6120879627b41968adc78ca6129e548c113080cb8793dbbd135e0d8eb8c52a",
+      "partTitle": "Current State Mapping: Takt Time, Cycle Time, Changeover Duration, and Work-in-Process Stagnation"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Process cycle efficiency measures the percentage of lead time adding value."
           }
         ]
-      }
+      },
+      "codeHash": "87106f884aadb580f829992bec1b29727b6521a4ec86073fc0280ac3eb0dc585",
+      "partTitle": "Value-Added vs. Non-Value-Added Analysis: Calculating Process Velocity and Process Cycle Efficiency (PCE)"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Pitch intervals establish a visual heartbeat for plant material handlers."
           }
         ]
-      }
+      },
+      "codeHash": "466cf3b4ade8b9de217390c4bd6106d98b1c9772cfe3df2c185a333ff94c7e2d",
+      "partTitle": "Future State Design: Continuous Flow, Supermarkets, Pacemaker Processes, and Pitch Calibration"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Leader standard work embeds visual audits to sustain operational progress."
           }
         ]
-      }
+      },
+      "codeHash": "a96813e4209846ef924c992d36ada841193a59bd1d888db48fa5630a98c0a84a",
+      "partTitle": "Kaizen Execution Framework: Implementation Plan, A3 Problem Solving, and Gemba Walk Standard Work"
     }
   ]
 }

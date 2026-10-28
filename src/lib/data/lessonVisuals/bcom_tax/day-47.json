@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Reassessment Inception Flow",
+        "template": "ledger-sheet",
+        "title": "The Reconstructed Section 147 Regime: Shift f... — General Ledger Verification",
         "steps": [
           {
-            "label": "Information Flag",
-            "caption": "Insight portal flags high risk transaction across risk strategy."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Reconstructed Sect (Eta Alpha).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9550,
+            "totalCredit": 9550,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Escapement Review",
-            "caption": "Officer reviews flagged data suggesting taxable income escaped."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Reconstructed Sect (Alpha).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Prior Approval",
-            "caption": "Specified authority grants preliminary sanction for inquiry."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Reconstructed Sect (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Jurisdiction Gate",
-            "caption": "Proceedings advance to statutory preliminary inquiry stage."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Reconstructed Sect (Alpha).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "dd97ded7cb1f67666c60830252b73dd33e35b0507a13a045d1a5cf4d20d158c8",
+      "partTitle": "The Reconstructed Section 147 Regime: Shift from 'Reason to Believe' to 'Information Suggesting Escapement'",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Reconstructed Section 147 Regime: Shift f... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Reconstructed Sect (Eta Alpha).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9550,
+            "totalCredit": 9550,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9550,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Reconstructed Sect (Alpha).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Reconstructed Sect (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Reconstructed Sect (Alpha).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11460,
+            "totalCredit": 11460,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9550,
+                "balance": 9550,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1910,
+                "balance": 11460,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11460,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Section 148A Inquiry Stages",
+        "template": "ledger-sheet",
+        "title": "Mandatory Section 148A Preliminary Inquiry Ar... — General Ledger Verification",
         "steps": [
           {
-            "label": "Preliminary Inquiry",
-            "caption": "Officer gathers external data with prior statutory sanction."
+            "at": "intro",
+            "caption": "Open primary debit entry for Mandatory Section A Pr (Eta Beta).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9750,
+            "totalCredit": 9750,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Show Cause Notice",
-            "caption": "Assessee receives show cause notice with supporting evidence."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Mandatory Section A Pr (Beta).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Assessee Response",
-            "caption": "Assessee files detailed rebuttal supported by commercial records."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Mandatory Section A Pr (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Speaking Order",
-            "caption": "Officer passes reasoned order on fitness of reassessment."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Mandatory Section A Pr (Beta).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "bb2efca4da37159d8620abb4b1badac33a36f1ca791bc5c0850d2dd6834692fb",
+      "partTitle": "Mandatory Section 148A Preliminary Inquiry Architecture & The Landmark Ashish Agarwal Ruling",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Mandatory Section 148A Preliminary Inquiry Ar... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Mandatory Section A Pr (Eta Beta).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9750,
+            "totalCredit": 9750,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9750,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Mandatory Section A Pr (Beta).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Mandatory Section A Pr (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Mandatory Section A Pr (Beta).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11700,
+            "totalCredit": 11700,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9750,
+                "balance": 9750,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1950,
+                "balance": 11700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11700,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Limitation Window Analysis",
+        "template": "ledger-sheet",
+        "title": "Limitation Periods under Section 149 & The Fi... — General Ledger Verification",
         "steps": [
           {
-            "label": "Standard Window",
-            "caption": "Three year window permits reassessment for any escaped sum."
+            "at": "intro",
+            "caption": "Open primary debit entry for Limitation Periods und (Eta Gamma).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9950,
+            "totalCredit": 9950,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Extended Window",
-            "caption": "Ten year window requires fifty lakh rupee asset threshold."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Limitation Periods und (Gamma).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Asset Representation",
-            "caption": "Escaped income must be represented by asset or book entry."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Limitation Periods und (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Statutory Sunset",
-            "caption": "Time barred past years cannot be revived under amended rules."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Limitation Periods und (Gamma).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1d336189d162410aa8e8185c703aef3c063f58147f430ac1ff924ea307f6b211",
+      "partTitle": "Limitation Periods under Section 149 & The Fifty-Lakh-Rupee Asset Threshold",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Limitation Periods under Section 149 & The Fi... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Limitation Periods und (Eta Gamma).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9950,
+            "totalCredit": 9950,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 9950,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Limitation Periods und (Gamma).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Limitation Periods und (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Limitation Periods und (Gamma).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11940,
+            "totalCredit": 11940,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 9950,
+                "balance": 9950,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 1990,
+                "balance": 11940,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 11940,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Sanction & Limitation Protocol",
+        "template": "ledger-sheet",
+        "title": "Section 151 Specified Authority Protocols, Ju... — General Ledger Verification",
         "steps": [
           {
-            "label": "Authority Rank",
-            "caption": "Higher rank approval is mandatory for notices beyond three years."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section Specified Auth (Eta Delta).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10150,
+            "totalCredit": 10150,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 10150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Independent Mind",
-            "caption": "Sanctioning authority records independent appraisal of evidence."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section Specified Auth (Delta).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Writ Remedy",
-            "caption": "Defective sanction is challenged before constitutional court."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section Specified Auth (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Order Deadline",
-            "caption": "Reassessment order must be completed within twelve months."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section Specified Auth (Delta).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "66e2a30de1c30141c3ad3926afa759de104ba7da6023ec199073e80d9e18f647",
+      "partTitle": "Section 151 Specified Authority Protocols, Jurisdictional Writs & Section 153(2) Limitation",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 151 Specified Authority Protocols, Ju... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section Specified Auth (Eta Delta).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10150,
+            "totalCredit": 10150,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 10150,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section Specified Auth (Delta).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section Specified Auth (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section Specified Auth (Delta).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12180,
+            "totalCredit": 12180,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 10150,
+                "balance": 10150,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2030,
+                "balance": 12180,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 12180,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Reassessment Defense Simulator",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 148A ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Notice Parsing",
-            "caption": "Engine ingests electronic notice and validates digital signature."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Eta Epsilon).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10350,
+            "totalCredit": 10350,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 10350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Limitation Audit",
-            "caption": "Algorithm computes elapsed duration from assessment year end."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Threshold Test",
-            "caption": "System checks whether alleged escapement meets statutory limit."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Remedy Strategy",
-            "caption": "Platform recommends writ petition or substantive defense response."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "af06f00aaeb7dfa4bfa1a6df4c44e0d1470303411827e01e96b325f4a61d1ac9",
+      "partTitle": "Production Python Architecture: Section 148A Inquiry & Limitation Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 148A ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Eta Epsilon).",
+            "title": "Day 47 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10350,
+            "totalCredit": 10350,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Clearing & Settlement Control",
+                "credit": 10350,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 47 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Primary Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Clearing & Settlement Control",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Eta).",
+            "title": "Day 47 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "General Ledger Control Account",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 47 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12420,
+            "totalCredit": 12420,
+            "entries": [
+              {
+                "id": "JNL-4701",
+                "account": "Audited Operating Asset",
+                "debit": 10350,
+                "balance": 10350,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2070,
+                "balance": 12420,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4703",
+                "account": "Audited Treasury Settlement",
+                "credit": 12420,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

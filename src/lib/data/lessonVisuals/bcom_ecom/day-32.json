@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Monolithic GraphQL Bottleneck & Apollo Federation v2 Declarative Architecture",
-      "codeHash": "d7ecd40f377431b256916181c50ef02d0bfa75fb480b0491a1362aba92f92452",
+      "codeHash": "200ec7b5f7f4217c8b70d5620df5b1f2f54e8fe0c841ae1f2fb38b50c16bad03",
       "spec": {
         "template": "funnel",
         "title": "Day 32 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Federated Entity Directives: @key, @shareable, @external & Product Graph Unification",
-      "codeHash": "f878e4b5311f4ec4ba048739557e573b06b72901da1b4c5592536d1580b59ef9",
+      "codeHash": "fe81c72b12530e672bd980b93fb0ad2377c7394891bb08db7dfe0cdbccad6988",
       "spec": {
         "template": "funnel",
         "title": "Day 32 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Query Plan Analysis, Router Execution Graphs & Cross-Subgraph Network Latency Mitigation",
-      "codeHash": "9c406f077bdc7c84479850d0e0cc3e0953aaf9fc2d54bdf7ccbb383ca0e76ec7",
+      "codeHash": "d85370542323a1254f542fdd4e3c3201895342f6fda95ba267692b3a61061060",
       "spec": {
         "template": "funnel",
         "title": "Day 32 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "High-Concurrency Batching with DataLoader & Database Round-Trip Optimization",
-      "codeHash": "2a137eadd9776c516841680946b629daea53f164ddcf46c0950996c039d276e1",
+      "codeHash": "270e4f588b2c675d833cd561483b64c59237d78010cbc42f9baf7da0877a06cb",
       "spec": {
         "template": "funnel",
         "title": "Day 32 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Federated Commerce Subgraph Router & Query Planner in Python",
-      "codeHash": "e74f68d89763c42556d2ee4c7c274032e5d1a4b6b69c99bf4a34a1a776a970fb",
+      "codeHash": "3c6fd4d99f4e6bf0910a120fa505531a5e9261844bccbfbccdf6f00c97b500b9",
       "spec": {
         "template": "funnel",
         "title": "Day 32 Part 5 Architecture Flow",

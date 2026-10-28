@@ -10,18 +10,18 @@
         "caption": "Exotic derivatives ledger balancing barrier notes.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -67,18 +67,18 @@
         "caption": "Exotic derivatives ledger balancing barrier notes.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -124,18 +124,18 @@
         "caption": "Exotic derivatives ledger balancing barrier notes.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -181,18 +181,18 @@
         "caption": "Exotic derivatives ledger balancing barrier notes.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -238,18 +238,18 @@
         "caption": "Exotic derivatives ledger balancing barrier notes.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -286,6 +286,509 @@
           ]
         }
       ]
+    }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Path-Dependent Exotics: Barrier Option Mechanics & Boundary Conditions",
+      "codeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Path-Dependent Exotics: Barrie",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — XiBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — XiBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — XiBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — XiBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Path-Dependent Exotics: Barrie",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — XiBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — XiBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — XiBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — XiBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asian Options & Averaging Mechanics: Arithmetic vs Geometric Closed-Form Valuation",
+      "codeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Asian Options & Averaging Mech",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — XiBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — XiBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — XiBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — XiBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Asian Options & Averaging Mech",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — XiBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — XiBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — XiBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — XiBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Structured Equity-Linked Notes (ELNs): Reverse Convertibles & Autocallable Mechanics",
+      "codeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Structured Equity-Linked Notes",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — XiBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — XiBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — XiBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — XiBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Structured Equity-Linked Notes",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — XiBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — XiBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — XiBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — XiBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Volatility as an Asset Class: CBOE VIX Mechanics, Term Structure & Variance Swaps",
+      "codeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Volatility as an Asset Class: ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — XiBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — XiBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — XiBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — XiBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Volatility as an Asset Class: ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — XiBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — XiBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — XiBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — XiBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Exotic Structuring Engine: Sandbox Execution & Socratic Synthesis",
+      "codeHash": "5257c778108fa5ecbbd46eed1fbba81fc42a1371827b2e349463e789e1ce4c38",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Exotic Structuring ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — XiBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — XiBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — XiBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — XiBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Exotic Structuring ",
+        "caption": "Exotic derivatives ledger balancing barrier notes.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — XiBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — XiBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — XiBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — XiBeta Epsilon Delta."
+          }
+        ]
+      }
     }
   ]
 }

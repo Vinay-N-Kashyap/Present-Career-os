@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "client",
-            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge.",
+            "caption": "Frontend clients establish persistent WebSockets with AppSync edge. (AWS AppSync GraphQL Architecture: M)"
           },
           {
             "at": "say2",
             "focus": "appsync",
-            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments.",
+            "caption": "AppSync routes mutations and filters subscriptions by matching arguments. (AWS AppSync GraphQL Architecture: M)"
           },
           {
             "at": "example",
             "focus": "resolver",
-            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda.",
+            "caption": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda. (AWS AppSync GraphQL Architecture: M)"
           },
           {
             "at": "tryIt",
             "focus": "dynamo",
-            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking.",
+            "caption": "Direct DynamoDB calls commit state changes with optimistic concurrency locking. (AWS AppSync GraphQL Architecture: M)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "client",
-            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge.",
+            "caption": "Frontend clients establish persistent WebSockets with AppSync edge. (Direct Data Sources: Native APPSYNC)"
           },
           {
             "at": "say2",
             "focus": "appsync",
-            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments.",
+            "caption": "AppSync routes mutations and filters subscriptions by matching arguments. (Direct Data Sources: Native APPSYNC)"
           },
           {
             "at": "example",
             "focus": "resolver",
-            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda.",
+            "caption": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda. (Direct Data Sources: Native APPSYNC)"
           },
           {
             "at": "tryIt",
             "focus": "dynamo",
-            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking.",
+            "caption": "Direct DynamoDB calls commit state changes with optimistic concurrency locking. (Direct Data Sources: Native APPSYNC)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "client",
-            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge.",
+            "caption": "Frontend clients establish persistent WebSockets with AppSync edge. (Advanced Pipeline Resolvers: Multi-)"
           },
           {
             "at": "say2",
             "focus": "appsync",
-            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments.",
+            "caption": "AppSync routes mutations and filters subscriptions by matching arguments. (Advanced Pipeline Resolvers: Multi-)"
           },
           {
             "at": "example",
             "focus": "resolver",
-            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda.",
+            "caption": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda. (Advanced Pipeline Resolvers: Multi-)"
           },
           {
             "at": "tryIt",
             "focus": "dynamo",
-            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking.",
+            "caption": "Direct DynamoDB calls commit state changes with optimistic concurrency locking. (Advanced Pipeline Resolvers: Multi-)"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "client",
-            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge.",
+            "caption": "Frontend clients establish persistent WebSockets with AppSync edge. (Enterprise Security: Multi-Auth Mod)"
           },
           {
             "at": "say2",
             "focus": "appsync",
-            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments.",
+            "caption": "AppSync routes mutations and filters subscriptions by matching arguments. (Enterprise Security: Multi-Auth Mod)"
           },
           {
             "at": "example",
             "focus": "resolver",
-            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda.",
+            "caption": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda. (Enterprise Security: Multi-Auth Mod)"
           },
           {
             "at": "tryIt",
             "focus": "dynamo",
-            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking.",
+            "caption": "Direct DynamoDB calls commit state changes with optimistic concurrency locking. (Enterprise Security: Multi-Auth Mod)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "client",
-            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge."
+            "annotation": "Frontend clients establish persistent WebSockets with AppSync edge.",
+            "caption": "Frontend clients establish persistent WebSockets with AppSync edge. (Masterclass Synthesis: Production C)"
           },
           {
             "at": "say2",
             "focus": "appsync",
-            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments."
+            "annotation": "AppSync routes mutations and filters subscriptions by matching arguments.",
+            "caption": "AppSync routes mutations and filters subscriptions by matching arguments. (Masterclass Synthesis: Production C)"
           },
           {
             "at": "example",
             "focus": "resolver",
-            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda."
+            "annotation": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda.",
+            "caption": "Native APPSYNC_JS resolvers execute in microsecond V8 isolates without Lambda. (Masterclass Synthesis: Production C)"
           },
           {
             "at": "tryIt",
             "focus": "dynamo",
-            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking."
+            "annotation": "Direct DynamoDB calls commit state changes with optimistic concurrency locking.",
+            "caption": "Direct DynamoDB calls commit state changes with optimistic concurrency locking. (Masterclass Synthesis: Production C)"
           }
         ]
       }

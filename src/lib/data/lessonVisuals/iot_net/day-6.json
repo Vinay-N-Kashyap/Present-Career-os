@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register PHY_CHANNEL_REG for IEEE 802.15.4 PHY Architecture &.",
+            "caption": "Step 1: Arm hardware register PHY_CHANNEL_REG for IEEE 802.15.4 PHY [D6P1].",
             "registerName": "PHY_CHANNEL_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -266,7 +266,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register OQPSK_MOD_REG for Offset Quadrature Phase Shift Ke.",
+            "caption": "Step 1: Arm hardware register OQPSK_MOD_REG for Offset Quadrature P [D6P2].",
             "registerName": "OQPSK_MOD_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -518,7 +518,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register DSSS_CHIP_REG for Direct Sequence Spread Spectrum .",
+            "caption": "Step 1: Arm hardware register DSSS_CHIP_REG for Direct Sequence Spr [D6P3].",
             "registerName": "DSSS_CHIP_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -770,7 +770,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register COEXIST_FILTER_REG for Wi-Fi (802.11) vs 802.15.4 Spect.",
+            "caption": "Step 1: Arm hardware register COEXIST_FILTER_REG for Wi-Fi (802.11) [D6P4].",
             "registerName": "COEXIST_FILTER_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1022,7 +1022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register CORRELATOR_REG for Complete 802.15.4 DSSS Symbol Sp.",
+            "caption": "Step 1: Arm hardware register CORRELATOR_REG for Complete 802.15.4 [D6P5].",
             "registerName": "CORRELATOR_REG",
             "bitWidth": 8,
             "hexValue": "0x80",

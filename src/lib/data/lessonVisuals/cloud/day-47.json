@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners.",
+            "caption": "Legacy push pipelines expose administrative credentials to external runners. (The GitOps Paradigm: Declarative In)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation.",
+            "caption": "GitOps pull operators enforce private endpoints and versioned reconciliation. (The GitOps Paradigm: Declarative In)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "In-cluster GitOps operators pull state securely without external access."
+            "annotation": "In-cluster GitOps operators pull state securely without external access.",
+            "caption": "In-cluster GitOps operators pull state securely without external access. (The GitOps Paradigm: Declarative In)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically.",
+            "caption": "Verify that GitOps controllers maintain cluster state parity automatically. (The GitOps Paradigm: Declarative In)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners.",
+            "caption": "Legacy push pipelines expose administrative credentials to external runners. (ArgoCD Application Architecture: Co)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation.",
+            "caption": "GitOps pull operators enforce private endpoints and versioned reconciliation. (ArgoCD Application Architecture: Co)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Self-healing controllers detect uncommitted mutations and revert them."
+            "annotation": "Self-healing controllers detect uncommitted mutations and revert them.",
+            "caption": "Self-healing controllers detect uncommitted mutations and revert them. (ArgoCD Application Architecture: Co)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically.",
+            "caption": "Verify that GitOps controllers maintain cluster state parity automatically. (ArgoCD Application Architecture: Co)"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners.",
+            "caption": "Legacy push pipelines expose administrative credentials to external runners. (Multi-Cluster GitOps Orchestration:)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation.",
+            "caption": "GitOps pull operators enforce private endpoints and versioned reconciliation. (Multi-Cluster GitOps Orchestration:)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Matrix generators provision microservices across clusters without duplication."
+            "annotation": "Matrix generators provision microservices across clusters without duplication.",
+            "caption": "Matrix generators provision microservices across clusters without duplication. (Multi-Cluster GitOps Orchestration:)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically.",
+            "caption": "Verify that GitOps controllers maintain cluster state parity automatically. (Multi-Cluster GitOps Orchestration:)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners.",
+            "caption": "Legacy push pipelines expose administrative credentials to external runners. (Progressive Delivery with Argo Roll)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation.",
+            "caption": "GitOps pull operators enforce private endpoints and versioned reconciliation. (Progressive Delivery with Argo Roll)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Metric analysis templates abort canary releases if error thresholds breach."
+            "annotation": "Metric analysis templates abort canary releases if error thresholds breach.",
+            "caption": "Metric analysis templates abort canary releases if error thresholds breach. (Progressive Delivery with Argo Roll)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically.",
+            "caption": "Verify that GitOps controllers maintain cluster state parity automatically. (Progressive Delivery with Argo Roll)"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy push pipelines expose administrative credentials to external runners."
+            "annotation": "Legacy push pipelines expose administrative credentials to external runners.",
+            "caption": "Legacy push pipelines expose administrative credentials to external runners. (Masterclass Synthesis: Enterprise G)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation."
+            "annotation": "GitOps pull operators enforce private endpoints and versioned reconciliation.",
+            "caption": "GitOps pull operators enforce private endpoints and versioned reconciliation. (Masterclass Synthesis: Enterprise G)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Enterprise GitOps enforces signed commits and auditable deployments."
+            "annotation": "Enterprise GitOps enforces signed commits and auditable deployments.",
+            "caption": "Enterprise GitOps enforces signed commits and auditable deployments. (Masterclass Synthesis: Enterprise G)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically."
+            "annotation": "Verify that GitOps controllers maintain cluster state parity automatically.",
+            "caption": "Verify that GitOps controllers maintain cluster state parity automatically. (Masterclass Synthesis: Enterprise G)"
           }
         ]
       }

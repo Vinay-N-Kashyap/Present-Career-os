@@ -7,7 +7,7 @@
   "entries": [
     {
       "partTitle": "Medical Sensor Telemetry Protocol: Continuous Glucose & ECG Stream Packaging",
-      "codeHash": "4f40cf14b6919fbb2fe8aca67c8899111c40742c7d903268dc3a5c6c33a80a4b",
+      "codeHash": "0e22df3823016fa04b946ac69ab3484edc54eb82b266a3810ce417488492865d",
       "spec": {
         "template": "component-tree",
         "rootId": "root",
@@ -215,7 +215,7 @@
     },
     {
       "partTitle": "Hardware-Anchored Patient Data Encryption: Secure Enclave AES-256-GCM & HIPAA Storage",
-      "codeHash": "e69a6c7b6a126157f3580d5bc98617ea6c3a45c3f5db6a6636171f93c4fda8f1",
+      "codeHash": "19e234c94ce6c9209ccf0f77ed0f7ea3e73dbd9d110262315cccac2cdebe2817",
       "spec": {
         "template": "component-tree",
         "rootId": "root",
@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P2].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P2].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P3].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P3].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P4].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P4].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P5].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 checksum via <EcgTelemetryPacketParser />",
+            "caption": "Step 1: Parse IEEE 11073 medical telemetry and verify CRC-16 check [D25P5].",
             "activeId": "MedicalParser",
             "tone": "primary",
             "nodes": [

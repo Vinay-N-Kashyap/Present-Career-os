@@ -10,7 +10,7 @@
       "codeHash": "64317645ada6b157c3493b22ccd31d1c42a4c4fdd6b718b533fdc248af2c6e96",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 34 Part 1 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 34 Part 1 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -91,7 +91,7 @@
       "codeHash": "1a7bc1fb3c8a165ad837e47d238c4f879f3e7d912fe6653f9d670a5aeaa0a768",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 34 Part 2 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 34 Part 2 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -172,7 +172,7 @@
       "codeHash": "406497f0681a9a8816a7e717812032402a5679d5e8dde0c9c1eda1149d26e882",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 34 Part 3 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 34 Part 3 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -250,10 +250,10 @@
     },
     {
       "partTitle": "Multi-Tenant Disaster: Inappropriate Static State Leaks & Cross-Tenant Data Corruption",
-      "codeHash": "b8a53b24083e74ab33590d5578ff190370cdc40dc1a93ac686743122b73af5b7",
+      "codeHash": "409d47caff174f7044bb15fe78051a7adb1401fcfc731463227264a4ba493d3c",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 34 Part 4 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 34 Part 4 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -334,7 +334,7 @@
       "codeHash": "3b0e2f1c35ee4cc2f8c95ff8922c7f8af643eebf440102f0aaf0501e7eda6634",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 34 Part 5 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 34 Part 5 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {

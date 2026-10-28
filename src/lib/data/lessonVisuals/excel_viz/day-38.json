@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "DAX Architecture & Evaluation Context Fundamentals",
-    "codeHash": "afb5279962a953e17eafb5648546e1dde93a591c29988395c9d746999e207794",
-    "spec": {
-      "template": "bars",
-      "title": "DAX Architecture & Evaluation Context Fundamentals — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for DAX Architecture & Evaluation Context Fundamentals",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for DAX Architecture & Evaluation Context Fundamentals",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for DAX Architecture & Evaluation Context Fundamentals",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for DAX Architecture & Evaluation Context Fundamentals",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 38,
+  "entries": [
+    {
+      "partTitle": "DAX Architecture & Evaluation Context Fundamentals",
+      "codeHash": "afb5279962a953e17eafb5648546e1dde93a591c29988395c9d746999e207794",
+      "spec": {
+        "template": "bars",
+        "title": "DAX Architecture & Evaluation Context Fundamentals — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "DAX Architecture & Evaluation Context Fundamentals — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for DAX Architecture & Evaluation Context Fundamentals",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+      "codeHash": "987795a7d5bafd5ecccb28d48e80d5077348f6bb2b38d6059ee52f1d251e412f",
+      "spec": {
+        "template": "bars",
+        "title": "Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The CALCULATE Engine & Context Transition",
+      "codeHash": "d264a9352b286e1e53ff2e8f492150a60c4e0bc2af4a7ee661af5cdd4f2d9ade",
+      "spec": {
+        "template": "bars",
+        "title": "The CALCULATE Engine & Context Transition — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The CALCULATE Engine & Context Transition — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for The CALCULATE Engine & Context Transition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+      "codeHash": "b07423ea83b1b849f08b174095580dec1cd410ef9e03712d2885e7dec47d4e16",
+      "spec": {
+        "template": "bars",
+        "title": "Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise DAX Metric Framework & Governance Gateway",
+      "codeHash": "a668b67abbbab174362df013a7162901f701af26fd7dcf89233fe7623e3e2f5f",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise DAX Metric Framework & Governance Gateway — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise DAX Metric Framework & Governance Gateway — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise DAX Metric Framework & Governance Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Filter Context",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Zero-RAM Measures",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CALCULATE Engine",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Iterative SUMX Scan",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
-    "codeHash": "987795a7d5bafd5ecccb28d48e80d5077348f6bb2b38d6059ee52f1d251e412f",
-    "spec": {
-      "template": "bars",
-      "title": "Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Calculated Columns vs Explicit Measures & VertiPaq RAM Footprint",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "The CALCULATE Engine & Context Transition",
-    "codeHash": "d264a9352b286e1e53ff2e8f492150a60c4e0bc2af4a7ee661af5cdd4f2d9ade",
-    "spec": {
-      "template": "bars",
-      "title": "The CALCULATE Engine & Context Transition — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for The CALCULATE Engine & Context Transition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for The CALCULATE Engine & Context Transition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for The CALCULATE Engine & Context Transition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for The CALCULATE Engine & Context Transition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
-    "codeHash": "b07423ea83b1b849f08b174095580dec1cd410ef9e03712d2885e7dec47d4e16",
-    "spec": {
-      "template": "bars",
-      "title": "Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Iterative X-Functions (SUMX, AVERAGEX) & Row Context Scans",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise DAX Metric Framework & Governance Gateway",
-    "codeHash": "a668b67abbbab174362df013a7162901f701af26fd7dcf89233fe7623e3e2f5f",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise DAX Metric Framework & Governance Gateway — Introduction to DAX (Data Analysis Expressions): Calculated Columns vs Measures, Filter Context & Row Context",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise DAX Metric Framework & Governance Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Enterprise DAX Metric Framework & Governance Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Enterprise DAX Metric Framework & Governance Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Enterprise DAX Metric Framework & Governance Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Filter Context",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Zero-RAM Measures",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CALCULATE Engine",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Iterative SUMX Scan",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Distributed Checkout Concurrency Crisis: Dual-Writes, Race Conditions & Inventory Overselling",
-      "codeHash": "e9d2e3d72e207d0a845280cd216a5ff0693a9de852f532ac097aacde3db0ed03",
+      "codeHash": "7624049fa789c0a926c6a15c9e1ac69956aad037aaaf11288bb241d0acfaad31",
       "spec": {
         "template": "funnel",
         "title": "Day 33 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Saga Pattern Orchestration: Forward Execution Steps vs. Backward Compensating Transactions",
-      "codeHash": "778896f0c6c0d9bd34af78e9645b68b5cbab920a33e9761cd20ee2d5375563d1",
+      "codeHash": "68379a0bb205efe4344d19f213513921c04df94b85f276255c6da805eddeb9ec",
       "spec": {
         "template": "funnel",
         "title": "Day 33 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Distributed Mutual Exclusion: Redis Redlock Algorithm, Quorum Acquisition & Fencing Tokens",
-      "codeHash": "69188eeeb7bca6109f6d19e41544837640757c8991d8f898b86d07d1c1f741ed",
+      "codeHash": "43b429ed6f56bc83897c56e50af2ed7fb675a0b603f1af1341558826ae0ab0da",
       "spec": {
         "template": "funnel",
         "title": "Day 33 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Idempotent API Design, Request Deduplication Stores & RFC 7395 Idempotency Keys",
-      "codeHash": "491b8407233e293cf47d7385c628bc4d3e09da8b672419b2e0760eb25aaa1a93",
+      "codeHash": "b63e41be4820d16d621ac35dc693611ae8e3bf0d7156f8122ae6bb4bc94331fc",
       "spec": {
         "template": "funnel",
         "title": "Day 33 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Distributed Checkout Saga Orchestrator & Inventory Reservation Engine in Python",
-      "codeHash": "5078546eecec7f68c7c010198a54ec30af95bad3deaa460074884b74c53e1b53",
+      "codeHash": "b31364a00dd9eb9c42c6de20a37e6a0799899b106273bf011da9c36c9e5a86d5",
       "spec": {
         "template": "funnel",
         "title": "Day 33 Part 5 Architecture Flow",

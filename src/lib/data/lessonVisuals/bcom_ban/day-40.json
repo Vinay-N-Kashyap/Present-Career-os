@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Institutional Treasury Dealing Room Architecture & Interbank Liquidity Shock",
-      "codeHash": "127121452e9dae72e772e2879b5efa1cc4fc82bdd136e0dd4019ffd175ff14e0",
+      "codeHash": "f65c48e9b7dbd4ba51c9abb9e6339f83765f77ae5a0925281691f4428d75db9a",
       "spec": {
         "template": "funnel",
-        "title": "Institutional Treasury Dealing Room Ar... \u2014 Treasury Risk Operations",
+        "title": "Institutional Treasury Dealing Room Ar... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Primary Sovereign Auction Underwriting, Bidding Strategy & Devolution Management",
-      "codeHash": "7eafa322f936fb3d8de53026745181a412dc2d1425b63fcbe5c2ab4b142f4f4f",
+      "codeHash": "6a544b8828e63b27ce6841f4c4576b1fdd3958bdb0165ebb0e767b31929ba37c",
       "spec": {
         "template": "funnel",
-        "title": "Primary Sovereign Auction Underwriting... \u2014 Treasury Risk Operations",
+        "title": "Primary Sovereign Auction Underwriting... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Secondary NDS-OM Electronic Trading & Bond Portfolio Marked-to-Market Stress",
-      "codeHash": "bcf993873e4bda6cf9c8082735f7bf77bf4059167cc7f8eefd8425652a4212eb",
+      "codeHash": "211f5444f596ebe098688e3de3bfe73ed09a8b2095860824be90900935f44d5b",
       "spec": {
         "template": "funnel",
-        "title": "Secondary NDS-OM Electronic Trading & ... \u2014 Treasury Risk Operations",
+        "title": "Secondary NDS-OM Electronic Trading & ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Enterprise ALCO War Room: Dynamic Duration Gap Immunization & Basel III EVE Solvency",
-      "codeHash": "23f4fdc4539f4c92d18f8717ff8d529f87e3999488202f21bc066f9b9688742e",
+      "codeHash": "35621ca424bd4678ccc4b2b7082a3ae632d9a2a053b6f130b9cf7c532ed614a7",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise ALCO War Room: Dynamic Dura... \u2014 Treasury Risk Operations",
+        "title": "Enterprise ALCO War Room: Dynamic Dura... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Treasury Command & Systemic Solvency War Room Audit",
-      "codeHash": "3dcca02127790fd389a013325898630085f30a2fe71f71a671159583a9d474ec",
+      "codeHash": "5b9a71256cb86f7888b5ca51966979db8cca752f4b380fb59bb4d8e12ef6e936",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Treasury Command & Syste... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Treasury Command & Syste... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "e0221ac4b33c87fece8f9869cb43432299522b8222f4f12ecefe5d599581e937",
       "spec": {
         "template": "funnel",
-        "title": "The Enterprise MarTech Fragmentation Crisi... \u2014 Conversion Funnel",
+        "title": "The Enterprise MarTech Fragmentation Crisi... — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,7 +172,7 @@
       "codeHash": "4ebe857bd9bd19a7e8bf2e71f2cae8308bffb8bf0cc81e054ecb1fa786922abd",
       "spec": {
         "template": "funnel",
-        "title": "The Grand Central Dispatch Terminal: Conce... \u2014 Conversion Funnel",
+        "title": "The Grand Central Dispatch Terminal: Conce... — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -334,7 +334,7 @@
       "codeHash": "6a441610acf5b6561c0be8c05ad18615cfdfa54fe4da5f6058c5b712a0b66476",
       "spec": {
         "template": "funnel",
-        "title": "MarTech Stack Topology, Deterministic Iden... \u2014 Conversion Funnel",
+        "title": "MarTech Stack Topology, Deterministic Iden... — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,7 +496,7 @@
       "codeHash": "b7966f80308e9956de3ef420fb806a7311be7c41c5385cda97482877d8a64a53",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Simulator: Enterprise Customer... \u2014 Conversion Funnel",
+        "title": "Interactive Simulator: Enterprise Customer... — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -654,11 +654,11 @@
       }
     },
     {
-      "partTitle": "Architectural Invariants, Production Post-Mortems & Diagnostic Review",
+      "partTitle": "core design principles, Production Post-Mortems & Diagnostic Review",
       "codeHash": "65f1bd30d5d9d3558075d4f46d6cef9dc2b68daf2c674bd87a018315af51c17c",
       "spec": {
         "template": "funnel",
-        "title": "Architectural Invariants, Production Post-... \u2014 Conversion Funnel",
+        "title": "Architectural Invariants, Production Post-... — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

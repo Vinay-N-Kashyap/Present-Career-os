@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "spoke_vpc",
-            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering.",
+            "caption": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering. (AWS Transit Gateway (TGW) Architect)"
           },
           {
             "at": "say2",
             "focus": "transit_gateway",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs. (AWS Transit Gateway (TGW) Architect)"
           },
           {
             "at": "example",
             "focus": "inspection_firewall",
-            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic.",
+            "caption": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic. (AWS Transit Gateway (TGW) Architect)"
           },
           {
             "at": "tryIt",
             "focus": "privatelink_target",
-            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption.",
+            "caption": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption. (AWS Transit Gateway (TGW) Architect)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "spoke_vpc",
-            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering.",
+            "caption": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering. (Centralized Ingress & Egress Inspec)"
           },
           {
             "at": "say2",
             "focus": "transit_gateway",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs. (Centralized Ingress & Egress Inspec)"
           },
           {
             "at": "example",
             "focus": "inspection_firewall",
-            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic.",
+            "caption": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic. (Centralized Ingress & Egress Inspec)"
           },
           {
             "at": "tryIt",
             "focus": "privatelink_target",
-            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption.",
+            "caption": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption. (Centralized Ingress & Egress Inspec)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "spoke_vpc",
-            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering.",
+            "caption": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering. (AWS PrivateLink & VPC Endpoint Serv)"
           },
           {
             "at": "say2",
             "focus": "transit_gateway",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs. (AWS PrivateLink & VPC Endpoint Serv)"
           },
           {
             "at": "example",
             "focus": "inspection_firewall",
-            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic.",
+            "caption": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic. (AWS PrivateLink & VPC Endpoint Serv)"
           },
           {
             "at": "tryIt",
             "focus": "privatelink_target",
-            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption.",
+            "caption": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption. (AWS PrivateLink & VPC Endpoint Serv)"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "spoke_vpc",
-            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering.",
+            "caption": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering. (Cross-Region Transit Gateway Peerin)"
           },
           {
             "at": "say2",
             "focus": "transit_gateway",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs. (Cross-Region Transit Gateway Peerin)"
           },
           {
             "at": "example",
             "focus": "inspection_firewall",
-            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic.",
+            "caption": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic. (Cross-Region Transit Gateway Peerin)"
           },
           {
             "at": "tryIt",
             "focus": "privatelink_target",
-            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption.",
+            "caption": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption. (Cross-Region Transit Gateway Peerin)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "spoke_vpc",
-            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering."
+            "annotation": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering.",
+            "caption": "Spoke VPCs attach to Transit Gateway without requiring full-mesh point-to-point peering. (Masterclass Synthesis: Zero-Trust E)"
           },
           {
             "at": "say2",
             "focus": "transit_gateway",
-            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs."
+            "annotation": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs.",
+            "caption": "Transit Gateway route tables enforce Layer 3 isolation and route traffic to inspection hubs. (Masterclass Synthesis: Zero-Trust E)"
           },
           {
             "at": "example",
             "focus": "inspection_firewall",
-            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic."
+            "annotation": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic.",
+            "caption": "AWS Network Firewall executes stateful Suricata inspection, dropping unauthorized C2 traffic. (Masterclass Synthesis: Zero-Trust E)"
           },
           {
             "at": "tryIt",
             "focus": "privatelink_target",
-            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption."
+            "annotation": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption.",
+            "caption": "PrivateLink and TGW Peering route traffic privately over AWS backbone with MACsec encryption. (Masterclass Synthesis: Zero-Trust E)"
           }
         ]
       }

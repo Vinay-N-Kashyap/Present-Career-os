@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Institutional ALCO Framework & Regulatory Structural Liquidity Statement",
-      "codeHash": "58b425c1432e512bda031748b241892460a46b28b08821b0047f9bae0d399a44",
+      "codeHash": "b1f957343ffd354fe01b826cb017f95a4be76c9dd3a6bef7e4297143356d20e2",
       "spec": {
         "template": "funnel",
-        "title": "The Institutional ALCO Framework & Reg... \u2014 Treasury Risk Operations",
+        "title": "The Institutional ALCO Framework & Reg... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Interest Rate Sensitivity Analysis: Rate Sensitive Assets (RSA), RSL & Repricing Gap",
-      "codeHash": "690405ebc2c6490b0147f2faef14ced9547b3c33d343b56d6632b966d7aaf94a",
+      "codeHash": "2e1da40197e7d85abcf78037ca4613c511350536db45a53a8695c66cd46754d8",
       "spec": {
         "template": "funnel",
-        "title": "Interest Rate Sensitivity Analysis: Ra... \u2014 Treasury Risk Operations",
+        "title": "Interest Rate Sensitivity Analysis: Ra... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Dynamic Duration Gap Modeling & Economic Value of Equity (EVE) Physics",
-      "codeHash": "f72005082f87b5a38d0e3ec24c148df17d6c0d7a19d545425ccfbc8985bbe275",
+      "codeHash": "b29290e857cf3c7249bfc86fa78fc7ee5005efe0f0dfee8fb3a3726fb97eb8ed",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Duration Gap Modeling & Econom... \u2014 Treasury Risk Operations",
+        "title": "Dynamic Duration Gap Modeling & Econom... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Earnings at Risk (EaR) & Net Interest Margin (NIM) Stress Simulation",
-      "codeHash": "2433298f6dd3e5590491c4af8055b63d9047f739fceaf9ebb95275005e99b342",
+      "codeHash": "af80adbc8f44dcdd264b416722490f4c1562b84d220c2f40288afa2d7f54809e",
       "spec": {
         "template": "funnel",
-        "title": "Earnings at Risk (EaR) & Net Interest ... \u2014 Treasury Risk Operations",
+        "title": "Earnings at Risk (EaR) & Net Interest ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise ALM Command & Balance Sheet Crisis Simulator",
-      "codeHash": "4b713302e720fc5d1d2b0cf3012eaecee982d00c76d0bc9be395255ed6ac511e",
+      "codeHash": "4269a21dd5e4e783f8ac71166479b01b9079e0cdd0f4a618e97dbecc1dcb74b2",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise ALM Command &... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Enterprise ALM Command &... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

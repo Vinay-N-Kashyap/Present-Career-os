@@ -8,7 +8,7 @@
       "codeHash": "0462532f6e321ff32b89205350c8b6cf3e5b5d2a00e3e2ed501f7e4ca9c60a6d",
       "spec": {
         "template": "bars",
-        "title": "The Generalization Paradigm: From Econ... \u2014 Learning Evaluation",
+        "title": "The Generalization Paradigm: From Econ... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "ee2d05d803c915b508586c2c7ef3ad8ee557d064bd9f6e6e1d70d6d8cb59df34",
       "spec": {
         "template": "bars",
-        "title": "The Bias-Variance Decomposition: Mathe... \u2014 Learning Evaluation",
+        "title": "The Bias-Variance Decomposition: Mathe... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "ae48d27f124f1f53f1b07564b6cf0e77260de7ea6ea0fc6cbf7a15399ff7048f",
       "spec": {
         "template": "bars",
-        "title": "The Deadly Sins of Enterprise Data Sci... \u2014 Learning Evaluation",
+        "title": "The Deadly Sins of Enterprise Data Sci... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "39fa400be0245adad2c331d565b3688429bcbbe0a28cef1afdad9d3c81800b45",
       "spec": {
         "template": "bars",
-        "title": "Industrial Cross-Validation: K-Fold, S... \u2014 Learning Evaluation",
+        "title": "Industrial Cross-Validation: K-Fold, S... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "f68a6b9c0d19eee22bd33988c77933d83660e196f58618ffb4977d29add33e57",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Machine Learnin... \u2014 Learning Evaluation",
+        "title": "Building an Enterprise Machine Learnin... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D31P5].",
             "max": 100,
             "bars": [
               {

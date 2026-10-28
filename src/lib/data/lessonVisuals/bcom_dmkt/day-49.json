@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Google Search Console (GSC) API: Quotas, Dimension Filtering & Bulk Extraction Protocols",
-      "codeHash": "f1afedaea2a6dcaa3338bdb0e2dbf9c15dd3675e3f26d0c44a20ad123e18d502",
+      "codeHash": "40d0cd087f68b3628e2003f8c69c6aefdc32d1394c1d4d5ed674f09814f399b1",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Modern Search Data Warehousing in BigQuery: Partitioned Tables, Clustering & Incremental ETL",
-      "codeHash": "fb38aed29a4e28f70dfbd99cf574174b4e06cfc300c59524d7687380128ce732",
+      "codeHash": "13229d1962a9a8993019a2aba572c5bcda473ae2c10a0b85209e1fd460a3a74c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Algorithmic Organic CTR Modeling: Log-Logistic Decay Curves, SERP Feature Discounting & Position Baselines",
-      "codeHash": "75f9bed514d2fe0baf439492b2641282fb1e292cc7b289dcaf1a25258d95d2aa",
+      "codeHash": "35d2f9e4772c5159adc9206c36e6a82c5844202e1c7461d7d249761c9a67f008",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Keyword Cannibalization & Query Drift Detection: Variance Analysis & Page-Query Affinity Matrices",
-      "codeHash": "3b53ebb7939d7cb3d507125f26450dbc0bf5802709919c20f75741cab706cc5c",
+      "codeHash": "6e075e6f940a44e3b9fec13ce2f478c15666cc9454bad7e72a33688c53a193d1",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Production BigQuery Search Console ETL & Predictive CTR Modeling Engine in Python",
-      "codeHash": "2b6be835dbb0efd888ab783d9b6be0813f10b946a13551834a9a7bd1ebb5e5a7",
+      "codeHash": "fc3d44d202f49386e32aafb4bf4c8890e86c3f9b0b5a8294f94731ca2650b4d0",
       "spec": {
         "template": "funnel",
         "steps": [

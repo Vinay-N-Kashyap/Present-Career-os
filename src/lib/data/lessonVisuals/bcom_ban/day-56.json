@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Central Bank Operating Framework: The Policy Rate Corridor & Transmission Channels",
-      "codeHash": "f45bed2387fe49ce97da33fb4163837e06276d3773004917612546c8e0be4ebe",
+      "codeHash": "0f285ff23fe453c9a11a102300936e2f46a1a47f07301994b2fd8b519fece6ff",
       "spec": {
         "template": "funnel",
-        "title": "Central Bank Operating Framework: The ... \u2014 Central Banking & Solvency",
+        "title": "Central Bank Operating Framework: The ... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Liquidity Adjustment Facility (LAF) Operations: Repo, Reverse Repo & Standing Deposit Facility",
-      "codeHash": "694c6538c6e0a6c418f8678de045c672ef342789775000fd7187772d70f84d2f",
+      "codeHash": "230e10ab106a2d7417f8fb5a0ca5e770387cd1f81946b64522cf013befbf5774",
       "spec": {
         "template": "funnel",
-        "title": "Liquidity Adjustment Facility (LAF) Op... \u2014 Central Banking & Solvency",
+        "title": "Liquidity Adjustment Facility (LAF) Op... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Open Market Operations (OMO) & Long-Term Repo Operations: Balance Sheet Steering",
-      "codeHash": "b5504311017e807d3fda01fd0127dc98fb03cc9a766c899dd63ace74a6ca09a6",
+      "codeHash": "cc717ff551537d36915e225499e56c23c07bf6bee3327d4377c4b9c61c27d39c",
       "spec": {
         "template": "funnel",
-        "title": "Open Market Operations (OMO) & Long-Te... \u2014 Central Banking & Solvency",
+        "title": "Open Market Operations (OMO) & Long-Te... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Marginal Standing Facility (MSF) & Lender of Last Resort Protocols: Emergency Liquidity",
-      "codeHash": "17559797eee354e97c761afe615edaec178f7b9539f2dbf7132d3d602e58e77f",
+      "codeHash": "85d7d3edad139af0a55aa7ff92ea0bf6a05b0f0e69574f3cc1d4199370affdb7",
       "spec": {
         "template": "funnel",
-        "title": "Marginal Standing Facility (MSF) & Len... \u2014 Central Banking & Solvency",
+        "title": "Marginal Standing Facility (MSF) & Len... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Industrial Central Banking Lab: Dynamic Treasury Liquidity Desk Simulator",
-      "codeHash": "52a1295152c845bfc2b5c8571704c9d685c2a029fd00dd134b0712880929d977",
+      "codeHash": "7a459ae1a4117fa881f105093792eb9761e161801854947e6cb68407d835fe5d",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Central Banking Lab: Dynami... \u2014 Central Banking & Solvency",
+        "title": "Industrial Central Banking Lab: Dynami... — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

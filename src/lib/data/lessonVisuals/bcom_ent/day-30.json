@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "Sovereign Holding Company (HoldCo) Architecture & SOTP Valuation",
-      "codeHash": "c29401fb1656d6853bba637a0934c6f68984c05dcd8f1a56460fc3f1c00ff40c",
+      "codeHash": "6b822b80ef6e6f21a45408f92745ed7e6c074c95295050c6550fb73d8156fcb9",
       "spec": {
         "template": "funnel",
         "title": "Sovereign Holding Company (HoldCo) Archi - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (20,000 prospects).",
+            "caption": "Global pipeline evaluation (20,000 prospects) [D30P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -172,7 +172,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (20,000 prospects).",
+            "caption": "Global pipeline evaluation (20,000 prospects) [D30P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,14 +327,14 @@
     },
     {
       "partTitle": "Founder Secondary Liquidity, Dual-Class Control & Monetization",
-      "codeHash": "41000b34a9c1b02355343df4184d8226c3c49c742fd4c23face1a437964cdbad",
+      "codeHash": "5183b74517f51a4fcda415ace1bb0c7922e07286cbb3964e55cf3dc3a55c8d9d",
       "spec": {
         "template": "funnel",
         "title": "Founder Secondary Liquidity, Dual-Class  - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (25,000 prospects).",
+            "caption": "Global pipeline evaluation (25,000 prospects) [D30P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -492,7 +492,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (25,000 prospects).",
+            "caption": "Global pipeline evaluation (25,000 prospects) [D30P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,14 +647,14 @@
     },
     {
       "partTitle": "Family Office Endowment Portfolio & Generational Preservation",
-      "codeHash": "fc288039f81bf257080ac70a7e10bf6d9b441fa65c8c36a38337582c5a75cdb3",
+      "codeHash": "343a74116ff7e47aec2aa5b408ac3b4c802c0bcaa8ae8747891c87b1ba7716b9",
       "spec": {
         "template": "funnel",
         "title": "Family Office Endowment Portfolio & Gene - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (18,000 prospects).",
+            "caption": "Global pipeline evaluation (18,000 prospects) [D30P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -812,7 +812,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (18,000 prospects).",
+            "caption": "Global pipeline evaluation (18,000 prospects) [D30P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,14 +967,14 @@
     },
     {
       "partTitle": "Decadal Executive Succession, Board Handover & Dynasty Trusts",
-      "codeHash": "dd7a0a7a030dbe96f2dd6e02667557db55355b4b961c6595f44fdf12462075bc",
+      "codeHash": "1ce828866286f5819c62667f3f550ffff4e05004c5b4a8bb630b95dc73ee85ea",
       "spec": {
         "template": "funnel",
         "title": "Decadal Executive Succession, Board Hand - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (30,000 prospects).",
+            "caption": "Global pipeline evaluation (30,000 prospects) [D30P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1132,7 +1132,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (30,000 prospects).",
+            "caption": "Global pipeline evaluation (30,000 prospects) [D30P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,14 +1287,14 @@
     },
     {
       "partTitle": "Grand Capstone 5 Master Viva & Sovereign Empire Control Tower",
-      "codeHash": "fc1ef534a9d7f9694ba353135426cdab2ca64c07ba258f9b30900af435e9b2f1",
+      "codeHash": "5d2367e7b1eb55850bfc2b4539396c51688b79faf6110b1fe7f1504d9ee9fac2",
       "spec": {
         "template": "funnel",
         "title": "Grand Capstone 5 Master Viva & Sovereign - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (50,000 prospects).",
+            "caption": "Global pipeline evaluation (50,000 prospects) [D30P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1308,24 +1308,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,24 +1346,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,24 +1384,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,24 +1422,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1452,7 +1452,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (50,000 prospects).",
+            "caption": "Global pipeline evaluation (50,000 prospects) [D30P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1466,24 +1466,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,24 +1504,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,24 +1542,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,24 +1580,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

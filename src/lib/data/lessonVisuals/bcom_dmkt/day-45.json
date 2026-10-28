@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Hybrid Header Bidding & Prebid Server Wrapper Orchestration",
-      "codeHash": "88a2d3bd219442abab0cb42773b722991ec18e3f84929520b3130cd3652297f4",
+      "codeHash": "dac8ef39e23fb88688708c4fe7f5e2f07a2b2a40f2f2c8aea989f9153238446e",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Tier 2: OpenRTB 3.0 Real-Time Auction & Sub-80ms Latency Engine",
-      "codeHash": "696cfc89e5ac8f89ea567b1cb86ea8a0911435bdc08ceca6dd06b23435ba2a86",
+      "codeHash": "23b34337ff9a49dcbf325ec0e1cc9723de6afbc3b52d8c8fe9d148af9a75d095",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Tier 3: Cryptographic Supply Path Verification & Anti-Fraud Schain Graph",
-      "codeHash": "234f60a2f4cef11355bb3b7ac6c3dd12eecbdf5e9614fa4ba91f07720c0cbdc2",
+      "codeHash": "fea5fe6ede7ca62fe115517c2f819c27502021df901e2dbd1450cad369106f01",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Tier 4: Dynamic Machine Learning Floor Pricing & Yield Maximization",
-      "codeHash": "f0e1f1ad07962912255497c16c160c25fa82e116010b54990cb95f22282376ab",
+      "codeHash": "16aa0113f0833ecfa18359632274fd065d1cd39db8ca68f06b6f2df3cdc947d7",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Tier 5: Executive Programmatic Solvency Defense & Boardroom Audit Ledger",
-      "codeHash": "2d42783a38fb2cf7657acb500128b68ae6cf45052e7cd21f52a0d99a5ddf64de",
+      "codeHash": "02da8b4d60e88c669a1be1636476e95cbdad10b3b80502903bcbe2439db9497f",
       "spec": {
         "template": "funnel",
         "steps": [

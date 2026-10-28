@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Securitization Architecture: Originators, Bankruptcy-Remote SPVs & Servicing Protocols",
-      "codeHash": "ca3e4972dabeb7b9b6cee7ec0da665b6596303f42f25c2953be041f0393b1c76",
+      "codeHash": "95abb1d75b2885eabafcf9f24eb14484e1b82ac049e2e90d59de80e0ec16175a",
       "spec": {
         "template": "funnel",
-        "title": "The Securitization Architecture: Origi... \u2014 Structured Credit Operations",
+        "title": "The Securitization Architecture: Origi... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "True Sale Legal Criteria & Bankruptcy Remoteness: Asset Isolation & Non-Consolidation",
-      "codeHash": "ce2dba9a204650387b3c92858e7c4c474f7266c1262c0cf9ebaf9e2cff4cfa09",
+      "codeHash": "d76c492a73e9a530b0bdec4ebcdf60cc8d51b1869ca8d93d8aec71ada60e19fc",
       "spec": {
         "template": "funnel",
-        "title": "True Sale Legal Criteria & Bankruptcy ... \u2014 Structured Credit Operations",
+        "title": "True Sale Legal Criteria & Bankruptcy ... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Credit Enhancement Mechanisms: Internal Subordination, Overcollateralization & Excess Spread",
-      "codeHash": "e0147c056e7e37d04a99439f1621b9fdd72e22fd409bd5eec69928e4ec02044b",
+      "codeHash": "98fa65e296ff166ddff2396b30d3c351673cbc5706e0328914372d44ab6f3d9c",
       "spec": {
         "template": "funnel",
-        "title": "Credit Enhancement Mechanisms: Interna... \u2014 Structured Credit Operations",
+        "title": "Credit Enhancement Mechanisms: Interna... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Cash Flow Waterfall Engineering: Sequential Pay vs Pro-Rata & Structural Performance Triggers",
-      "codeHash": "f64538c5c4a2dcd93bf2014c31d21f99af737508ddacafc94815e1f6e4998504",
+      "codeHash": "719f210d498636ee217397de82e77047fa2d846948f0b53c0428946d08d705b3",
       "spec": {
         "template": "funnel",
-        "title": "Cash Flow Waterfall Engineering: Seque... \u2014 Structured Credit Operations",
+        "title": "Cash Flow Waterfall Engineering: Seque... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Industrial Securitization Lab: Multi-Period Loan Pool Waterfall Simulator & Tranche Return Engine",
-      "codeHash": "35a3cd6f60f3ac703f7fee5f0c98b67f398ae6af52a49b87f401b26244c0ebf5",
+      "codeHash": "fbf86ebcfa79f739f6faa9127a7b963991eaf0cd6fd381f5eb98520a5d530d42",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Securitization Lab: Multi-P... \u2014 Structured Credit Operations",
+        "title": "Industrial Securitization Lab: Multi-P... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

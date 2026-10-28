@@ -46,7 +46,9 @@
             "caption": "Unilateral credits protect domestic firms in non treaty zones."
           }
         ]
-      }
+      },
+      "codeHash": "f2150aa81d8bce4664778f04fff5be796b1cfcfc6c9b2307d0ab6d4bd02c30de",
+      "partTitle": "Residence Rules, Source vs. Residence Taxation & Section 90 vs. Section 91 Relief"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Dependent agents habitually concluding sales create taxable presence."
           }
         ]
-      }
+      },
+      "codeHash": "7f395619a23fbb31fe1aedd84576404d9c50e6ba93a270bb2ebd8f0020c6ddcb",
+      "partTitle": "Permanent Establishment (PE) Dynamics: Fixed Place, Agency & Service PE Risks (Article 5)"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Certified withholding certificates support cross border remittances."
           }
         ]
-      }
+      },
+      "codeHash": "613f845622dab1ea606bef94b543b727260950d3b9a8cd82dfea073339b9add9",
+      "partTitle": "Taxation of Royalties & Fees for Technical Services (FTS) under Article 12 vs. Section 115A"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Limitation on benefits rules restrict treaty claims."
           }
         ]
-      }
+      },
+      "codeHash": "cea25c60c6fbc3e578dbaf07d9a509d8ef4b6475aecc86e7d95fbd346ebc55a6",
+      "partTitle": "BEPS Action Plans & Multilateral Instrument (MLI): Principal Purpose Test (PPT) & LOB"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Global tax agreements aim to replace unilateral digital taxes over time."
           }
         ]
-      }
+      },
+      "codeHash": "4af83ccf68c353d8289fb7293a237241553e31e29433d4f1e8ac37df61fb2a10",
+      "partTitle": "Equalisation Levy & Significant Economic Presence (SEP) for Digital Business Models"
     }
   ]
 }

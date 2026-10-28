@@ -49,7 +49,101 @@
           "attachedTo": "tryIt",
           "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
         }
-      ]
+      ],
+      "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a",
+      "partTitle": "Multicollinearity Physics & Variance Inflation Factors (VIF)",
+      "spec": {
+        "template": "compare",
+        "title": "Multicollinearity Physics & Variance Inflation Factors (VIF)",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core multicolli mechanisms and physics concepts.",
+            "attachedTo": "say1",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal multicolli bounds across physics systems.",
+            "attachedTo": "say2",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical multicolli rules and physics cases.",
+            "attachedTo": "example",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying multicolli calculations and physics outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Multicollinearity Physics & Variance Inflation Factors (VIF)",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core multicolli mechanisms and physics concepts.",
+            "attachedTo": "say1",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal multicolli bounds across physics systems.",
+            "attachedTo": "say2",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical multicolli rules and physics cases.",
+            "attachedTo": "example",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying multicolli calculations and physics outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "128f2ece4156837a365b62f1f93edba1893b96ce0f018b266568f8d34c45398a"
+          }
+        ]
+      }
     },
     {
       "partIndex": 1,
@@ -98,7 +192,101 @@
           "attachedTo": "tryIt",
           "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
         }
-      ]
+      ],
+      "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612",
+      "partTitle": "Heteroskedasticity Mechanics & Breusch-Pagan Lagrange Multipliers",
+      "spec": {
+        "template": "compare",
+        "title": "Heteroskedasticity Mechanics & Breusch-Pagan Lagrange Multipliers",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core heterosked mechanisms and mechanics concepts.",
+            "attachedTo": "say1",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal heterosked bounds across mechanics systems.",
+            "attachedTo": "say2",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical heterosked rules and mechanics cases.",
+            "attachedTo": "example",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying heterosked calculations and mechanics outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Heteroskedasticity Mechanics & Breusch-Pagan Lagrange Multipliers",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core heterosked mechanisms and mechanics concepts.",
+            "attachedTo": "say1",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal heterosked bounds across mechanics systems.",
+            "attachedTo": "say2",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical heterosked rules and mechanics cases.",
+            "attachedTo": "example",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying heterosked calculations and mechanics outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "a74aaad759dc6dbbe84714e7b5109925255cb4fd1b813059672119a1ff642612"
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -147,7 +335,101 @@
           "attachedTo": "tryIt",
           "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
         }
-      ]
+      ],
+      "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2",
+      "partTitle": "White's Heteroskedasticity-Consistent (HC) Robust Standard Errors",
+      "spec": {
+        "template": "compare",
+        "title": "White's Heteroskedasticity-Consistent (HC) Robust Standard Errors",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core whites mechanisms and heterosked concepts.",
+            "attachedTo": "say1",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal whites bounds across heterosked systems.",
+            "attachedTo": "say2",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical whites rules and heterosked cases.",
+            "attachedTo": "example",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying whites calculations and heterosked outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "White's Heteroskedasticity-Consistent (HC) Robust Standard Errors",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core whites mechanisms and heterosked concepts.",
+            "attachedTo": "say1",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal whites bounds across heterosked systems.",
+            "attachedTo": "say2",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical whites rules and heterosked cases.",
+            "attachedTo": "example",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying whites calculations and heterosked outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "4a173b0bd80e69a6cc50ed121f12bfad5954ce91a63bb3894430823c0a27eda2"
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -196,7 +478,101 @@
           "attachedTo": "tryIt",
           "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
         }
-      ]
+      ],
+      "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41",
+      "partTitle": "Clustered Standard Errors & Intra-Cluster Correlation Dynamics",
+      "spec": {
+        "template": "compare",
+        "title": "Clustered Standard Errors & Intra-Cluster Correlation Dynamics",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core clustered mechanisms and standard concepts.",
+            "attachedTo": "say1",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal clustered bounds across standard systems.",
+            "attachedTo": "say2",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical clustered rules and standard cases.",
+            "attachedTo": "example",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying clustered calculations and standard outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Clustered Standard Errors & Intra-Cluster Correlation Dynamics",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core clustered mechanisms and standard concepts.",
+            "attachedTo": "say1",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal clustered bounds across standard systems.",
+            "attachedTo": "say2",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical clustered rules and standard cases.",
+            "attachedTo": "example",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying clustered calculations and standard outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "3fb765802b6fc52d41aa477b4140d83436630ec12a8426495af44cbfb4f23f41"
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -245,7 +621,101 @@
           "attachedTo": "tryIt",
           "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
         }
-      ]
+      ],
+      "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0",
+      "partTitle": "Milestone 5 Capstone: Enterprise Econometric Diagnostic Control Tower",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 5 Capstone: Enterprise Econometric Diagnostic Control Tower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D9P5].",
+            "attachedTo": "say1",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 5 Capstone: Enterprise Econometric Diagnostic Control Tower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D9P5].",
+            "attachedTo": "say1",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
+          }
+        ]
+      }
     }
   ]
 }

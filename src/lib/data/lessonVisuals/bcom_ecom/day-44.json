@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Post-Purchase Event-Driven Architecture: Event Sourcing & Append-Only Log Topologies",
-      "codeHash": "50162583f59c40331b7e897cd69e3412e7ccbcc9c2244388e6eed9ee970d472f",
+      "codeHash": "11f0ac04d447176032498d3bbc39d2ed5b6b92d75cc2083cb4f2c8372caf7ac1",
       "spec": {
         "template": "funnel",
         "title": "Day 44 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Distributed Tracing with OpenTelemetry: Trace Context Propagation Across Supply Chain Microservices",
-      "codeHash": "f98096b5a8b860a57f229e167e7a11ea475ba23a3dcc2b8d8a5cf1edb8ad25bf",
+      "codeHash": "64b1354c2235dc008a2ccb22596ddc3a5cd4b82169543885aa6a57346050be55",
       "spec": {
         "template": "funnel",
         "title": "Day 44 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Real-Time Carrier Webhook Ingestion & Normalization Engine (EDI 214 & Carrier Status APIs)",
-      "codeHash": "bd06c408cacef3fefb7f34f57cb141bf99e8bb6218510324c0f50485f0dc6c84",
+      "codeHash": "d8dac72159628c4a01e1a57bfc62e7975ff0429624c123a62ed13fb801ddc19f",
       "spec": {
         "template": "funnel",
         "title": "Day 44 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Intelligent Customer Notification Pipelines: Dynamic Delivery ETA Prediction & Exception Alerting",
-      "codeHash": "b0f8fdc852565ed86b8eeca884a22a870168388df67d51cf89aa141cad63536f",
+      "codeHash": "8f3b9190c5b6ff8be4af8b54734d77c1a1a4bf8589ea56cb5682dab4be3e2dc7",
       "spec": {
         "template": "funnel",
         "title": "Day 44 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Post-Purchase Operations Command Tower & CSAT Performance Governance",
-      "codeHash": "4bbaa3d1784e0f89769c5ad3c6892afa11a2702c5be78cb502924b9649adb51e",
+      "codeHash": "07b9c0aa7530088b89d9e5732a8f21c4ca7442b40d44a12176b6377a31d4d0f3",
       "spec": {
         "template": "funnel",
         "title": "Day 44 Part 5 Architecture Flow",

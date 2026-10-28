@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Distributed Order Routing (DOM) Algorithms: Proximity, Carbon Footprint & Cost-Optimized Routing Matrix",
-      "codeHash": "d69ba2af90536d6e504f170c3d11b6783e317d096c512846d1b7ebdaf59d567a",
+      "codeHash": "710da3fd06c0e9a6112c9527edf3d206505e8f4218954da74c9514f82b87af9b",
       "spec": {
         "template": "funnel",
         "title": "Day 41 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Real-Time Available-to-Promise (ATP) & Capable-to-Promise (CTP) Inventory Allocation Pools",
-      "codeHash": "4f33a773fd3eff7816b4b825a12fe2c64d68dd11cfd259522cd4a21893e0f6a4",
+      "codeHash": "872402d4f030cabb55590666ea79725ba761a3b6b6d2d5deb296b9ad1bd44137",
       "spec": {
         "template": "funnel",
         "title": "Day 41 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Split-Shipment Minimization & Knapsack Consignment Optimization",
-      "codeHash": "231f971a3a3b9710e0c2b4ccf9105fce10ee0c08b73f2a5cad22264f29798c9b",
+      "codeHash": "1650f40bd117ea1345545473f4165771cf491f9ca0a4b48f4931ff831dc89a22",
       "spec": {
         "template": "funnel",
         "title": "Day 41 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Distributed State Machines & Saga Pattern for Multi-Node Fulfillment Lifecycle",
-      "codeHash": "3820e23851d7e4ff0fc0e2dd163026bf4ecef083bf7e7a6359ef4dbff6c45a5a",
+      "codeHash": "994d7201a6298d9c18f6c03cb6d085c618ebf88e787ae13c111644b7a0ff65e0",
       "spec": {
         "template": "funnel",
         "title": "Day 41 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise DOM Control Tower & Exception Management Engine",
-      "codeHash": "2a0ed27bda7380e48fdc4363f149ce1521e88fed028302f24293bf7e7898154f",
+      "codeHash": "4f2aacfaf7573a1062b3f95fa86638756b2d32565c8249bad30fa24eeed9b796",
       "spec": {
         "template": "funnel",
         "title": "Day 41 Part 5 Architecture Flow",

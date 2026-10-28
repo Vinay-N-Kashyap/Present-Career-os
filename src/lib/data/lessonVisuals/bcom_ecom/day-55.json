@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1 Capstone Synthesis: Multi-Currency Pricing Engines & Treasury Forward Hedging",
-      "codeHash": "950152dc1e15bd052d904b1fbb5c901efb2076167ffcb7b27fc4331241efe0e7",
+      "codeHash": "c5ecd3faf3877a3f20b1c298bfeb423265eab59ba267c9fc09d23cb67f603765",
       "spec": {
         "template": "funnel",
         "title": "Day 55 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tier 2 Capstone Synthesis: HS Customs Classification & Delivered Duty Paid (DDP) Architecture",
-      "codeHash": "e2ec4957d976b3cd33f0778a3be48229d5b14e0e3547ad08292be1b4473e527b",
+      "codeHash": "0ca357c2edd8951fc2dbc1a3644947b46ee321451daeeee8ad4ca8a89e05be9d",
       "spec": {
         "template": "funnel",
         "title": "Day 55 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Tier 3 Capstone Synthesis: Section 321 / IOSS De Minimis Routing & Bonded Warehousing",
-      "codeHash": "8578e8c84e468f54a3a987a5a8d924bb500084299ce081adb74fa89f4981af2e",
+      "codeHash": "eb162ccd2036a9025f8fbf69a003b8d673c468993e4e6334cff501dc6da6b32f",
       "spec": {
         "template": "funnel",
         "title": "Day 55 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Tier 4 Capstone Synthesis: Statutory Consumer Rights & Customs Duty Drawback Reclaim",
-      "codeHash": "4a7dd334b0cf9db2e6dfa40bf165ad7fb5716f5737b11bc6a274cd710ca3a764",
+      "codeHash": "c183dba050e5a7c2273625fb154b528f8effb241c4d57ae4d9c4c6b78a6f55a3",
       "spec": {
         "template": "funnel",
         "title": "Day 55 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Tier 5 Capstone Integration: Global Commerce Command Tower & CGCA-ITA Boardroom Accreditation",
-      "codeHash": "fc9f9869b5fefab86468c255f4098c2b2eacd93756e1c6a5d85a8e0189eee91e",
+      "codeHash": "411c4aea6f4d6371ade886f5b1fc8a7f3abcad890f16f0e5e704a50f70ace1dd",
       "spec": {
         "template": "funnel",
         "title": "Day 55 Part 5 Architecture Flow",

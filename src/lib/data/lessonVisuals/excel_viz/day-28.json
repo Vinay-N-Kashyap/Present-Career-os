@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "GAAP & IFRS Dual Reporting & Balance Sheet Consolidation",
-    "codeHash": "a47c2219268cc485e8be074f4a1a21fe7fad6fdc19606658aadc90bab9bdc8cb",
-    "spec": {
-      "template": "bars",
-      "title": "GAAP & IFRS Dual Reporting & Balance Sheet Consolidation \u2014 Consolidation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting multi-entity trial balances and scope for GAAP & IFRS Dual Reporting & Bal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing translation adjustments and elimination entries for GAAP & IFRS Dual Reporting & Bal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating multinational group institutional reporting for GAAP & IFRS Dual Reporting & Bal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for GAAP & IFRS Dual Reporting & Bal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FX Translation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Intercompany",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 28,
+  "entries": [
+    {
+      "partTitle": "GAAP & IFRS Dual Reporting & Balance Sheet Consolidation",
+      "codeHash": "a47c2219268cc485e8be074f4a1a21fe7fad6fdc19606658aadc90bab9bdc8cb",
+      "spec": {
+        "template": "bars",
+        "title": "GAAP & IFRS Dual Reporting & Balance Sheet Consolidation — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "GAAP & IFRS Dual Reporting & Balance Sheet Consolidation — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for GAAP & IFRS Dual Reporting & Bal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "ASC 830 / IAS 21 Multi-Currency Translation & CTA Reserves",
+      "codeHash": "8553718d95691dfd9350d6e2ba2a2e67ac308c126bbaa4f28ef4cf796f95ac1c",
+      "spec": {
+        "template": "bars",
+        "title": "ASC 830 / IAS 21 Multi-Currency Translation & CTA Reserves — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "ASC 830 / IAS 21 Multi-Currency Translation & CTA Reserves — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for ASC 830 / IAS 21 Multi-Currency ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Intercompany Eliminations & Unrealized Profit Deferral",
+      "codeHash": "04d6d6e0af68fd77d9140fdc69c5343f604b252e70f62486bb1305f38ce66f73",
+      "spec": {
+        "template": "bars",
+        "title": "Intercompany Eliminations & Unrealized Profit Deferral — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Intercompany Eliminations & Unrealized Profit Deferral — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Intercompany Eliminations & Unre...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Segment Reporting Disclosures & Non-Controlling Interest (NCI)",
+      "codeHash": "6af6ecba520fba288417ea0e55467897c64355dd4643a76f8c99084165980efe",
+      "spec": {
+        "template": "bars",
+        "title": "Segment Reporting Disclosures & Non-Controlling Interest (NCI) — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Segment Reporting Disclosures & Non-Controlling Interest (NCI) — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Segment Reporting Disclosures & ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Global Financial Consolidation Command Gateway",
+      "codeHash": "8b556dc8f46803f385b8453c9ca24f6c90b896660d0c8fd0a1b8eb1fd6a38c00",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Global Financial Consolidation Command Gateway — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Global Financial Consolidation Command Gateway — Consolidation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting multi-entity trial balances and scope for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing translation adjustments and elimination entries for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating multinational group institutional reporting for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "FX Translation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Intercompany",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Enterprise Global Financial Cons...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "FX Translation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Intercompany",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "NCI & Segments",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "ASC 830 / IAS 21 Multi-Currency Translation & CTA Reserves",
-    "codeHash": "8553718d95691dfd9350d6e2ba2a2e67ac308c126bbaa4f28ef4cf796f95ac1c",
-    "spec": {
-      "template": "bars",
-      "title": "ASC 830 / IAS 21 Multi-Currency Translation & CTA Reserves \u2014 Consolidation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting multi-entity trial balances and scope for ASC 830 / IAS 21 Multi-Currency ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing translation adjustments and elimination entries for ASC 830 / IAS 21 Multi-Currency ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating multinational group institutional reporting for ASC 830 / IAS 21 Multi-Currency ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for ASC 830 / IAS 21 Multi-Currency ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FX Translation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Intercompany",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Intercompany Eliminations & Unrealized Profit Deferral",
-    "codeHash": "04d6d6e0af68fd77d9140fdc69c5343f604b252e70f62486bb1305f38ce66f73",
-    "spec": {
-      "template": "bars",
-      "title": "Intercompany Eliminations & Unrealized Profit Deferral \u2014 Consolidation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting multi-entity trial balances and scope for Intercompany Eliminations & Unre...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing translation adjustments and elimination entries for Intercompany Eliminations & Unre...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating multinational group institutional reporting for Intercompany Eliminations & Unre...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Intercompany Eliminations & Unre...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FX Translation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Intercompany",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Segment Reporting Disclosures & Non-Controlling Interest (NCI)",
-    "codeHash": "6af6ecba520fba288417ea0e55467897c64355dd4643a76f8c99084165980efe",
-    "spec": {
-      "template": "bars",
-      "title": "Segment Reporting Disclosures & Non-Controlling Interest (NCI) \u2014 Consolidation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting multi-entity trial balances and scope for Segment Reporting Disclosures & ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing translation adjustments and elimination entries for Segment Reporting Disclosures & ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating multinational group institutional reporting for Segment Reporting Disclosures & ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Segment Reporting Disclosures & ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FX Translation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Intercompany",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Global Financial Consolidation Command Gateway",
-    "codeHash": "8b556dc8f46803f385b8453c9ca24f6c90b896660d0c8fd0a1b8eb1fd6a38c00",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Global Financial Consolidation Command Gateway \u2014 Consolidation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting multi-entity trial balances and scope for Enterprise Global Financial Cons...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing translation adjustments and elimination entries for Enterprise Global Financial Cons...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating multinational group institutional reporting for Enterprise Global Financial Cons...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "FX Translation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Intercompany",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Statutory balance sheet certification and SHA-256 seal for Enterprise Global Financial Cons...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "FX Translation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Intercompany",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "NCI & Segments",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

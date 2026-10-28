@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Credit Risk Architecture & Expected Loss Decomposition: PD, LGD, EAD & Regulatory Granularity",
-      "codeHash": "f946e7636b26c8e316d4766921bdc64b2eaa25d3bb415c2b0885645dea2c8e65",
+      "codeHash": "07da535d57d8808a80707b8323d33e2a7614330ec67466b93b2059f0f9f0f9fd",
       "spec": {
         "template": "funnel",
-        "title": "Credit Risk Architecture & Expected Lo... \u2014 Treasury Risk Operations",
+        "title": "Credit Risk Architecture & Expected Lo... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Accounting for Credit Impairment: Ind AS 109 / IFRS 9 Expected Credit Loss (ECL) Staging & Macro Overlays",
-      "codeHash": "548c852822e9a7c61e1437d060c396a47a3557f76aae3d090eefe95802838abf",
+      "codeHash": "380c10eaea61dedb7707645283eb34df87762411ee2aa0bda9942782653311a0",
       "spec": {
         "template": "funnel",
-        "title": "Accounting for Credit Impairment: Ind ... \u2014 Treasury Risk Operations",
+        "title": "Accounting for Credit Impairment: Ind ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Classical Quantitative Credit Scoring: Altman Z-Score & Financial Ratio Discriminant Signals",
-      "codeHash": "89f457a61dc8d3e0802f0b854c20af289f3822b5dde602d79fb9d4c0f3f5acd4",
+      "codeHash": "e735cbce3f99e841251e197143ebb920e9e3549e641877afcb7a2bebda2866ad",
       "spec": {
         "template": "funnel",
-        "title": "Classical Quantitative Credit Scoring:... \u2014 Treasury Risk Operations",
+        "title": "Classical Quantitative Credit Scoring:... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Structural Credit Risk & Distance-to-Default: The Merton Model & Option Pricing Analogy",
-      "codeHash": "8a6dca539c9f96228446b3600566cfbd31f106de6e6dde885d99af34b9d55be0",
+      "codeHash": "c10d317d1f138d6eeedbe9a8b2b92372ee0b3a8c3c270fc10ffefc82ff1b5400",
       "spec": {
         "template": "funnel",
-        "title": "Structural Credit Risk & Distance-to-D... \u2014 Treasury Risk Operations",
+        "title": "Structural Credit Risk & Distance-to-D... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Enterprise Portfolio Credit Risk Engine: Vasicek Single-Index Model & Capital Sizing",
-      "codeHash": "cd976e9912b428639d14b2a9f6ad0967aa425f8b0d2d9f4db5fbb1ff5877b114",
+      "codeHash": "c8f8b92900b23931645e6d8bb31f4e5632839634e3bf584d7f918103ccf266a8",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Portfolio Credit Risk Engin... \u2014 Treasury Risk Operations",
+        "title": "Enterprise Portfolio Credit Risk Engin... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

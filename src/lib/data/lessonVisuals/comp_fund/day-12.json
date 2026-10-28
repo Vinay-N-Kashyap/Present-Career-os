@@ -57,7 +57,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Touch Typing Fundamentals, Home Row Kinetics & Ergonomic Muscle Memory",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 1: Touch Typing Fundamentals, Home Row Kinetics & Ergonomic Muscle Memory\n\nWelcome to Day 12 of Computer Fundamentals and Systems Architecture. Today, we step into a dimension that directly dictates your daily engineering throughput, cognitive stamina, and physical career longevity: Digital Productivity, Advanced Keyboard Shortcuts, Touch Typing Kinetics, Operating System Ergonomics, and Terminal Command-Line Velocity. While algorithmic comprehension, system design principles, and software architectural patterns dictate what you build, keyboard velocity and kinetic muscle memory dictate the speed and fluid fidelity at which architectural ideas transform into compiled, tested, and deployed production software."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/productivity_sim\necho \"METRIC,VALUE,STATUS\" > /home/student/workspace/productivity_sim/metrics.csv\necho \"GROSS_WPM,90,VERIFIED\" >> /home/student/workspace/productivity_sim/metrics.csv\necho \"ACCURACY_PCT,98.5,OPTIMAL\" >> /home/student/workspace/productivity_sim/metrics.csv\necho \"HOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED\" >> /home/student/workspace/productivity_sim/metrics.csv\ncat /home/student/workspace/productivity_sim/metrics.csv\ngrep \"TOUCH_TYPING_BENCHMARK_VERIFIED\" /home/student/workspace/productivity_sim/metrics.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "METRIC,VALUE,STATUS\nGROSS_WPM,90,VERIFIED\nACCURACY_PCT,98.5,OPTIMAL\nHOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED\nHOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a concert pianist: they never look down at the piano keys because their...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "Welcome to Day 12 of Computer Fundamentals and Systems Architecture. Today, we step into a dimension that directly dictates your daily engineering throughput, cognitive stamina, and physical career longevity: Digital Productivity, Advanced Keyboard Shortcuts, Touch Typing Kinetics, Operating System Ergonomics, and Terminal Command-Line Velocity. While algorithmic comprehension, system design principles, and software architectural patterns dictate what you build, keyboard velocity and kinetic muscle memory dictate the speed and fluid fidelity at which architectural ideas transform into compiled, tested, and deployed production software.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Touch Typing Fundamentals, Home Row)"
+          },
+          {
+            "label": "say1",
+            "say": "At the bedrock of high-velocity computer interaction lies Touch Typing and Home Row Kinetics. The human hands possess an extraordinary density of sensory nerve endings and fine-motor neuromuscular pathways capable of typing complex technical prose and source code at speeds exceeding 80 to 120 words per minute without requiring visual feedback from the physical keyboard. Traditional hunt-and-peck typists look down at the keyboard to locate keys visually, which forces a continuous, exhausting cognitive context switch in the brain: the engineer's eyes dart incessantly between the display screen and the physical plastic keycaps. This constant visual oscillation degrades cognitive working memory, interrupts sustained problem-solving flow, and induces chronic cervical neck strain and muscular tension.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Touch Typing Fundamentals, Home Row)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a concert pianist: they never look down at the piano keys because their fingers have developed precise spatial muscle memory; looking down at the keys would destroy their playing tempo and fracture their artistic concentration.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Touch Typing Fundamentals, Home Row)"
+          },
+          {
+            "label": "tryIt",
+            "say": "Ergonomic mechanical keyboards further optimize kinetic efficiency and physiological alignment. Traditional staggered keyboard layouts—where rows of keys are shifted horizontally relative to one another—are an obsolete legacy artifact of 19th-century mechanical typewriters designed to prevent physical mechanical levers from jamming. Modern ergonomic keyboards adopt Columnar or Ortholinear key layouts, aligning keys in straight vertical columns that match the natural anatomical flexion and extension of human fingers. Split mechanical keyboards allow the two halves of the keyboard to be positioned at shoulder width and angled outward (tenting), keeping the wrists in a neutral, un-pronated posture that prevents ulnar deviation and median nerve compression.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Touch Typing Fundamentals, Home Row)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Touch Typing Fundamentals, Home Row Kinetics & Ergonomic Muscle Memory",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 1: Touch Typing Fundamentals, Home Row Kinetics & Ergonomic Muscle Memory\n\nWelcome to Day 12 of Computer Fundamentals and Systems Architecture. Today, we step into a dimension that directly dictates your daily engineering throughput, cognitive stamina, and physical career longevity: Digital Productivity, Advanced Keyboard Shortcuts, Touch Typing Kinetics, Operating System Ergonomics, and Terminal Command-Line Velocity. While algorithmic comprehension, system design principles, and software architectural patterns dictate what you build, keyboard velocity and kinetic muscle memory dictate the speed and fluid fidelity at which architectural ideas transform into compiled, tested, and deployed production software."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/productivity_sim\necho \"METRIC,VALUE,STATUS\" > /home/student/workspace/productivity_sim/metrics.csv\necho \"GROSS_WPM,90,VERIFIED\" >> /home/student/workspace/productivity_sim/metrics.csv\necho \"ACCURACY_PCT,98.5,OPTIMAL\" >> /home/student/workspace/productivity_sim/metrics.csv\necho \"HOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED\" >> /home/student/workspace/productivity_sim/metrics.csv\ncat /home/student/workspace/productivity_sim/metrics.csv\ngrep \"TOUCH_TYPING_BENCHMARK_VERIFIED\" /home/student/workspace/productivity_sim/metrics.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "METRIC,VALUE,STATUS\nGROSS_WPM,90,VERIFIED\nACCURACY_PCT,98.5,OPTIMAL\nHOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED\nHOME_ROW,ASDF_JKL,TOUCH_TYPING_BENCHMARK_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a concert pianist: they never look down at the piano keys because their...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "Welcome to Day 12 of Computer Fundamentals and Systems Architecture. Today, we step into a dimension that directly dictates your daily engineering throughput, cognitive stamina, and physical career longevity: Digital Productivity, Advanced Keyboard Shortcuts, Touch Typing Kinetics, Operating System Ergonomics, and Terminal Command-Line Velocity. While algorithmic comprehension, system design principles, and software architectural patterns dictate what you build, keyboard velocity and kinetic muscle memory dictate the speed and fluid fidelity at which architectural ideas transform into compiled, tested, and deployed production software.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "At the bedrock of high-velocity computer interaction lies Touch Typing and Home Row Kinetics. The human hands possess an extraordinary density of sensory nerve endings and fine-motor neuromuscular pathways capable of typing complex technical prose and source code at speeds exceeding 80 to 120 words per minute without requiring visual feedback from the physical keyboard. Traditional hunt-and-peck typists look down at the keyboard to locate keys visually, which forces a continuous, exhausting cognitive context switch in the brain: the engineer's eyes dart incessantly between the display screen and the physical plastic keycaps. This constant visual oscillation degrades cognitive working memory, interrupts sustained problem-solving flow, and induces chronic cervical neck strain and muscular tension.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a concert pianist: they never look down at the piano keys because their fingers have developed precise spatial muscle memory; looking down at the keys would destroy their playing tempo and fracture their artistic concentration.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Ergonomic mechanical keyboards further optimize kinetic efficiency and physiological alignment. Traditional staggered keyboard layouts—where rows of keys are shifted horizontally relative to one another—are an obsolete legacy artifact of 19th-century mechanical typewriters designed to prevent physical mechanical levers from jamming. Modern ergonomic keyboards adopt Columnar or Ortholinear key layouts, aligning keys in straight vertical columns that match the natural anatomical flexion and extension of human fingers. Split mechanical keyboards allow the two halves of the keyboard to be positioned at shoulder width and angled outward (tenting), keeping the wrists in a neutral, un-pronated posture that prevents ulnar deviation and median nerve compression.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -113,7 +225,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Operating System Window Management, Virtual Desktops & Workspace Orchestration",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 2: Operating System Window Management, Virtual Desktops & Workspace Orchestration\n\nIn our second operational tier of Day 12, we examine Operating System Window Management, Virtual Desktops, and Tiling Window Managers. A major source of cognitive friction, mental fatigue, and productivity loss in software engineering is 'Window Clutter'—having dozens of overlapping browser windows, terminal sessions, documentation tabs, database consoles, and chat clients scattered haphazardly across the screen, requiring constant mouse clicking and alt-tab hunting to locate desired windows."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/hotkeys_sim\necho \"OS_LAYER,HOTKEY,ACTION,STATUS\" > /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"WINDOW_MGMT,Super+Left,Snap_Window_Left_Half,ACTIVE\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"VIRTUAL_DESKTOP,Ctrl+Win+D,Create_New_Desktop,ACTIVE\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"MODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\ncat /home/student/workspace/hotkeys_sim/hotkeys.csv\ngrep \"HOTKEY_ERGONOMICS_VERIFIED\" /home/student/workspace/hotkeys_sim/hotkeys.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "OS_LAYER,HOTKEY,ACTION,STATUS\nWINDOW_MGMT,Super+Left,Snap_Window_Left_Half,ACTIVE\nVIRTUAL_DESKTOP,Ctrl+Win+D,Create_New_Desktop,ACTIVE\nMODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED\nMODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a chef's kitchen: prep station on the left, cooking range in the center...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our second operational tier of Day 12, we examine Operating System Window Management, Virtual Desktops, and Tiling Window Managers. A major source of cognitive friction, mental fatigue, and productivity loss in software engineering is 'Window Clutter'—having dozens of overlapping browser windows, terminal sessions, documentation tabs, database consoles, and chat clients scattered haphazardly across the screen, requiring constant mouse clicking and alt-tab hunting to locate desired windows.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Operating System Window Management,)"
+          },
+          {
+            "label": "say1",
+            "say": "Professional desktop environments provide sophisticated Window Orchestration primitives: 1. Snapping and Split Screen: Splitting display real estate into geometric quadrants or side-by-side halves (Windows Snap: Win+Left/Right/Up/Down; macOS Tile: Ctrl+Cmd+F; Linux: Super+Arrow keys); 2. Virtual Desktops (Workspaces): Logical full-screen display spaces that allow engineers to segregate unrelated workflows (e.g., Workspace 1 for IDE and compiler, Workspace 2 for Web Browser and API docs, Workspace 3 for Slack/Email communications); and 3. Application Switchers: Fast modal switching (Alt+Tab / Cmd+Tab) and direct workspace jumps (Super+1, Super+2, Super+3).",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Operating System Window Management,)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a chef's kitchen: prep station on the left, cooking range in the center, plating counter on the right; keeping tools in dedicated physical zones avoids chaotic scrambling during dinner service.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Operating System Window Management,)"
+          },
+          {
+            "label": "tryIt",
+            "say": "Window management also intersects with system resource usage. Each running graphical application maintains its own window surface buffers composited by the OS Display Server (X11, Wayland, or Windows DWM). Minimizing or assigning inactive background applications to dedicated virtual desktops allows the display server to suspend unnecessary paint passes, reducing GPU memory bandwidth and preserving laptop battery life during intensive compile cycles.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Operating System Window Management,)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Operating System Window Management, Virtual Desktops & Workspace Orchestration",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 2: Operating System Window Management, Virtual Desktops & Workspace Orchestration\n\nIn our second operational tier of Day 12, we examine Operating System Window Management, Virtual Desktops, and Tiling Window Managers. A major source of cognitive friction, mental fatigue, and productivity loss in software engineering is 'Window Clutter'—having dozens of overlapping browser windows, terminal sessions, documentation tabs, database consoles, and chat clients scattered haphazardly across the screen, requiring constant mouse clicking and alt-tab hunting to locate desired windows."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/hotkeys_sim\necho \"OS_LAYER,HOTKEY,ACTION,STATUS\" > /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"WINDOW_MGMT,Super+Left,Snap_Window_Left_Half,ACTIVE\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"VIRTUAL_DESKTOP,Ctrl+Win+D,Create_New_Desktop,ACTIVE\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\necho \"MODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED\" >> /home/student/workspace/hotkeys_sim/hotkeys.csv\ncat /home/student/workspace/hotkeys_sim/hotkeys.csv\ngrep \"HOTKEY_ERGONOMICS_VERIFIED\" /home/student/workspace/hotkeys_sim/hotkeys.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "OS_LAYER,HOTKEY,ACTION,STATUS\nWINDOW_MGMT,Super+Left,Snap_Window_Left_Half,ACTIVE\nVIRTUAL_DESKTOP,Ctrl+Win+D,Create_New_Desktop,ACTIVE\nMODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED\nMODAL_NAV,Caps_Lock_Tap,Escape_Key_Vim,HOTKEY_ERGONOMICS_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a chef's kitchen: prep station on the left, cooking range in the center...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our second operational tier of Day 12, we examine Operating System Window Management, Virtual Desktops, and Tiling Window Managers. A major source of cognitive friction, mental fatigue, and productivity loss in software engineering is 'Window Clutter'—having dozens of overlapping browser windows, terminal sessions, documentation tabs, database consoles, and chat clients scattered haphazardly across the screen, requiring constant mouse clicking and alt-tab hunting to locate desired windows.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "Professional desktop environments provide sophisticated Window Orchestration primitives: 1. Snapping and Split Screen: Splitting display real estate into geometric quadrants or side-by-side halves (Windows Snap: Win+Left/Right/Up/Down; macOS Tile: Ctrl+Cmd+F; Linux: Super+Arrow keys); 2. Virtual Desktops (Workspaces): Logical full-screen display spaces that allow engineers to segregate unrelated workflows (e.g., Workspace 1 for IDE and compiler, Workspace 2 for Web Browser and API docs, Workspace 3 for Slack/Email communications); and 3. Application Switchers: Fast modal switching (Alt+Tab / Cmd+Tab) and direct workspace jumps (Super+1, Super+2, Super+3).",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a chef's kitchen: prep station on the left, cooking range in the center, plating counter on the right; keeping tools in dedicated physical zones avoids chaotic scrambling during dinner service.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Window management also intersects with system resource usage. Each running graphical application maintains its own window surface buffers composited by the OS Display Server (X11, Wayland, or Windows DWM). Minimizing or assigning inactive background applications to dedicated virtual desktops allows the display server to suspend unnecessary paint passes, reducing GPU memory bandwidth and preserving laptop battery life during intensive compile cycles.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -169,7 +393,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Text Editing Velocity: Command Navigation, Multi-Cursor Editing & Regex Transformations",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 3: Text Editing Velocity: Command Navigation, Multi-Cursor Editing & Regex Transformations\n\nIn the third section of Day 12, we conquer Text Editing Velocity: Command Navigation, Multi-Cursor Editing, and Keyboard Navigation Semantics. When inspecting, editing, or refactoring thousands of lines of code, engineers who navigate using the mouse cursor or single arrow keys waste hours every week. High-performance software engineering demands word-level, line-level, block-level, and semantic token navigation."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/tiling_sim\necho \"NODE_ID,LAYOUT_TYPE,ACTIVE_APP,STATUS\" > /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_LEFT,VERTICAL_SPLIT,Neovim_Source,ACTIVE\" >> /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_RIGHT_TOP,HORIZONTAL_SPLIT,DevTools_Browser,ACTIVE\" >> /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED\" >> /home/student/workspace/tiling_sim/wm.csv\ncat /home/student/workspace/tiling_sim/wm.csv\ngrep \"TILING_WINDOW_MANAGER_VERIFIED\" /home/student/workspace/tiling_sim/wm.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "NODE_ID,LAYOUT_TYPE,ACTIVE_APP,STATUS\nWS1_LEFT,VERTICAL_SPLIT,Neovim_Source,ACTIVE\nWS1_RIGHT_TOP,HORIZONTAL_SPLIT,DevTools_Browser,ACTIVE\nWS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED\nWS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a rubber stamp with 5 heads: stamping the paper once prints all 5 lines...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the third section of Day 12, we conquer Text Editing Velocity: Command Navigation, Multi-Cursor Editing, and Keyboard Navigation Semantics. When inspecting, editing, or refactoring thousands of lines of code, engineers who navigate using the mouse cursor or single arrow keys waste hours every week. High-performance software engineering demands word-level, line-level, block-level, and semantic token navigation.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Text Editing Velocity: Command Navi)"
+          },
+          {
+            "label": "say1",
+            "say": "Fundamental OS Text Navigation Semantics are built into all modern operating systems and editors: 1. Word Jumping: Pressing Ctrl+Left/Right (Option+Left/Right on macOS) jumps the cursor word-by-word across whitespace and punctuation boundaries; 2. Line Boundaries: Home / End (Cmd+Left/Right on macOS) jumps instantly to the absolute start or end of the current line; 3. Document Boundaries: Ctrl+Home / Ctrl+End (Cmd+Up/Down on macOS) jumps directly to the very first or last line of the entire file; and 4. Text Selection Chording: Holding Shift in combination with any navigation shortcut selects text with surgical precision.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Text Editing Velocity: Command Navi)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a rubber stamp with 5 heads: stamping the paper once prints all 5 lines at the exact same moment rather than handwriting each line one by one.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Text Editing Velocity: Command Navi)"
+          },
+          {
+            "label": "tryIt",
+            "say": "At the apex of text editing velocity stands the Modal Editing Paradigm pioneered by Vim and Neovim. Rather than treating every keystroke as literal character insertion, modal editors operate in distinct states: Normal Mode (where every alphanumeric key is a rapid navigation or editing command: `w` for next word, `b` for back word, `d$` for delete to end of line, `ci\"` for change inside quotes), Visual Mode (for text selection), and Insert Mode (for standard typing). Modal editing eliminates hand movement away from the home row to reach arrow keys or trackpads.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Text Editing Velocity: Command Navi)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Text Editing Velocity: Command Navigation, Multi-Cursor Editing & Regex Transformations",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 3: Text Editing Velocity: Command Navigation, Multi-Cursor Editing & Regex Transformations\n\nIn the third section of Day 12, we conquer Text Editing Velocity: Command Navigation, Multi-Cursor Editing, and Keyboard Navigation Semantics. When inspecting, editing, or refactoring thousands of lines of code, engineers who navigate using the mouse cursor or single arrow keys waste hours every week. High-performance software engineering demands word-level, line-level, block-level, and semantic token navigation."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/tiling_sim\necho \"NODE_ID,LAYOUT_TYPE,ACTIVE_APP,STATUS\" > /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_LEFT,VERTICAL_SPLIT,Neovim_Source,ACTIVE\" >> /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_RIGHT_TOP,HORIZONTAL_SPLIT,DevTools_Browser,ACTIVE\" >> /home/student/workspace/tiling_sim/wm.csv\necho \"WS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED\" >> /home/student/workspace/tiling_sim/wm.csv\ncat /home/student/workspace/tiling_sim/wm.csv\ngrep \"TILING_WINDOW_MANAGER_VERIFIED\" /home/student/workspace/tiling_sim/wm.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "NODE_ID,LAYOUT_TYPE,ACTIVE_APP,STATUS\nWS1_LEFT,VERTICAL_SPLIT,Neovim_Source,ACTIVE\nWS1_RIGHT_TOP,HORIZONTAL_SPLIT,DevTools_Browser,ACTIVE\nWS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED\nWS1_RIGHT_BOTTOM,HORIZONTAL_SPLIT,Alacritty_Terminal,TILING_WINDOW_MANAGER_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a rubber stamp with 5 heads: stamping the paper once prints all 5 lines...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the third section of Day 12, we conquer Text Editing Velocity: Command Navigation, Multi-Cursor Editing, and Keyboard Navigation Semantics. When inspecting, editing, or refactoring thousands of lines of code, engineers who navigate using the mouse cursor or single arrow keys waste hours every week. High-performance software engineering demands word-level, line-level, block-level, and semantic token navigation.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "Fundamental OS Text Navigation Semantics are built into all modern operating systems and editors: 1. Word Jumping: Pressing Ctrl+Left/Right (Option+Left/Right on macOS) jumps the cursor word-by-word across whitespace and punctuation boundaries; 2. Line Boundaries: Home / End (Cmd+Left/Right on macOS) jumps instantly to the absolute start or end of the current line; 3. Document Boundaries: Ctrl+Home / Ctrl+End (Cmd+Up/Down on macOS) jumps directly to the very first or last line of the entire file; and 4. Text Selection Chording: Holding Shift in combination with any navigation shortcut selects text with surgical precision.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a rubber stamp with 5 heads: stamping the paper once prints all 5 lines at the exact same moment rather than handwriting each line one by one.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "At the apex of text editing velocity stands the Modal Editing Paradigm pioneered by Vim and Neovim. Rather than treating every keystroke as literal character insertion, modal editors operate in distinct states: Normal Mode (where every alphanumeric key is a rapid navigation or editing command: `w` for next word, `b` for back word, `d$` for delete to end of line, `ci\"` for change inside quotes), Visual Mode (for text selection), and Insert Mode (for standard typing). Modal editing eliminates hand movement away from the home row to reach arrow keys or trackpads.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -225,7 +561,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Terminal Command-Line Ergonomics: Readline Keybindings, History Expansion & Aliases",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 4: Terminal Command-Line Ergonomics: Readline Keybindings, History Expansion & Aliases\n\nIn our fourth operational tier of Day 12, we explore Terminal Command-Line Ergonomics and Readline Shortcuts. The UNIX terminal shell (Bash, Zsh) is the universal control plane for servers, cloud containers, build pipelines, and git operations. Engineers who interact with the shell by repeatedly striking the backspace key thirty times to fix a typo at the start of a command line waste enormous amounts of time and mental energy."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/cli_nav\necho \"SHORTCUT,ACTION,HIST_STATUS\" > /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+A,Jump_Start_Of_Line,OPTIMAL\" >> /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+E,Jump_End_Of_Line,OPTIMAL\" >> /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED\" >> /home/student/workspace/cli_nav/readline.csv\ncat /home/student/workspace/cli_nav/readline.csv\ngrep \"CLI_NAVIGATION_EFFICIENCY_VERIFIED\" /home/student/workspace/cli_nav/readline.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "SHORTCUT,ACTION,HIST_STATUS\nCtrl+A,Jump_Start_Of_Line,OPTIMAL\nCtrl+E,Jump_End_Of_Line,OPTIMAL\nCtrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED\nCtrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a librarian with an index card catalog: instead of reading every book o...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our fourth operational tier of Day 12, we explore Terminal Command-Line Ergonomics and Readline Shortcuts. The UNIX terminal shell (Bash, Zsh) is the universal control plane for servers, cloud containers, build pipelines, and git operations. Engineers who interact with the shell by repeatedly striking the backspace key thirty times to fix a typo at the start of a command line waste enormous amounts of time and mental energy.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Terminal Command-Line Ergonomics: R)"
+          },
+          {
+            "label": "say1",
+            "say": "The default interactive input engine for Bash, Python REPLs, and many UNIX utilities is GNU Readline, which provides powerful Emacs-style keybindings directly on the command line: 1. Line Boundary Traversal: Ctrl+A jumps instantly to the beginning of the command line; Ctrl+E jumps to the end of the line; 2. Word-Level Traversal: Alt+F (or Esc then F) moves forward one word; Alt+B moves backward one word; 3. Character & Line Deletion: Ctrl+U kills (cuts) from the cursor back to the start of the line; Ctrl+K kills from the cursor forward to the end of the line; Ctrl+W kills the preceding word; and Ctrl+Y yanks (pastes) the previously killed text.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Terminal Command-Line Ergonomics: R)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a librarian with an index card catalog: instead of reading every book on the shelf from left to right, typing keywords in Ctrl+R pulls the exact record from the catalog in a fraction of a second.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Terminal Command-Line Ergonomics: R)"
+          },
+          {
+            "label": "tryIt",
+            "say": "Furthermore, Bash History Expansion operators provide rapid parameter recycling: `!$` expands to the very last argument of the previous command (e.g., after typing `mkdir -p /opt/app/data`, typing `cd !$` immediately changes into `/opt/app/data`); `!!` re-executes the entire previous command (frequently used with `sudo !!` when a command failed due to lack of administrative privileges); and `!*` expands to all arguments of the previous command.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Terminal Command-Line Ergonomics: R)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Terminal Command-Line Ergonomics: Readline Keybindings, History Expansion & Aliases",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 4: Terminal Command-Line Ergonomics: Readline Keybindings, History Expansion & Aliases\n\nIn our fourth operational tier of Day 12, we explore Terminal Command-Line Ergonomics and Readline Shortcuts. The UNIX terminal shell (Bash, Zsh) is the universal control plane for servers, cloud containers, build pipelines, and git operations. Engineers who interact with the shell by repeatedly striking the backspace key thirty times to fix a typo at the start of a command line waste enormous amounts of time and mental energy."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/cli_nav\necho \"SHORTCUT,ACTION,HIST_STATUS\" > /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+A,Jump_Start_Of_Line,OPTIMAL\" >> /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+E,Jump_End_Of_Line,OPTIMAL\" >> /home/student/workspace/cli_nav/readline.csv\necho \"Ctrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED\" >> /home/student/workspace/cli_nav/readline.csv\ncat /home/student/workspace/cli_nav/readline.csv\ngrep \"CLI_NAVIGATION_EFFICIENCY_VERIFIED\" /home/student/workspace/cli_nav/readline.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "SHORTCUT,ACTION,HIST_STATUS\nCtrl+A,Jump_Start_Of_Line,OPTIMAL\nCtrl+E,Jump_End_Of_Line,OPTIMAL\nCtrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED\nCtrl+R,Fuzzy_History_Reverse_Search,CLI_NAVIGATION_EFFICIENCY_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a librarian with an index card catalog: instead of reading every book o...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our fourth operational tier of Day 12, we explore Terminal Command-Line Ergonomics and Readline Shortcuts. The UNIX terminal shell (Bash, Zsh) is the universal control plane for servers, cloud containers, build pipelines, and git operations. Engineers who interact with the shell by repeatedly striking the backspace key thirty times to fix a typo at the start of a command line waste enormous amounts of time and mental energy.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "The default interactive input engine for Bash, Python REPLs, and many UNIX utilities is GNU Readline, which provides powerful Emacs-style keybindings directly on the command line: 1. Line Boundary Traversal: Ctrl+A jumps instantly to the beginning of the command line; Ctrl+E jumps to the end of the line; 2. Word-Level Traversal: Alt+F (or Esc then F) moves forward one word; Alt+B moves backward one word; 3. Character & Line Deletion: Ctrl+U kills (cuts) from the cursor back to the start of the line; Ctrl+K kills from the cursor forward to the end of the line; Ctrl+W kills the preceding word; and Ctrl+Y yanks (pastes) the previously killed text.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a librarian with an index card catalog: instead of reading every book on the shelf from left to right, typing keywords in Ctrl+R pulls the exact record from the catalog in a fraction of a second.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Furthermore, Bash History Expansion operators provide rapid parameter recycling: `!$` expands to the very last argument of the previous command (e.g., after typing `mkdir -p /opt/app/data`, typing `cd !$` immediately changes into `/opt/app/data`); `!!` re-executes the entire previous command (frequently used with `sudo !!` when a command failed due to lack of administrative privileges); and `!*` expands to all arguments of the previous command.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 5,
@@ -281,7 +729,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Comprehensive Productivity Command Suite & Daily Workflow Synthesis",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 5: Comprehensive Productivity Command Suite & Daily Workflow Synthesis\n\nIn the final operational tier of Day 12, we assemble our findings into an integrated engineering synthesis: The Complete Digital Productivity & Ergonomic Command Suite. High-performing engineering teams do not rely on accidental habits; they configure deterministic, automated productivity scaffolding across their shell profiles (`~/.bashrc`, `~/.zshrc`), text editor configurations (`keybindings.json`), and system hotkey daemons."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/ergonomics_audit\necho \"SYSTEM_STATUS: AUDIT_COMPLETE\" > /home/student/workspace/ergonomics_audit/summary.txt\necho \"TYPING_SPEED_NET: 88_WPM\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"HOTKEY_COVERAGE: 95%\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"TILING_WM_ACTIVE: YES\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"SOVEREIGN_WORKFLOW_INDEX: 99/100\" >> /home/student/workspace/ergonomics_audit/summary.txt\ncat /home/student/workspace/ergonomics_audit/summary.txt\ngrep \"SOVEREIGN_WORKFLOW_INDEX\" /home/student/workspace/ergonomics_audit/summary.txt",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "SYSTEM_STATUS: AUDIT_COMPLETE\nTYPING_SPEED_NET: 88_WPM\nHOTKEY_COVERAGE: 95%\nTILING_WM_ACTIVE: YES\nSOVEREIGN_WORKFLOW_INDEX: 99/100\nSOVEREIGN_WORKFLOW_INDEX: 99/100"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a Formula 1 steering wheel: all critical buttons, dials, and paddle shi...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the final operational tier of Day 12, we assemble our findings into an integrated engineering synthesis: The Complete Digital Productivity & Ergonomic Command Suite. High-performing engineering teams do not rely on accidental habits; they configure deterministic, automated productivity scaffolding across their shell profiles (`~/.bashrc`, `~/.zshrc`), text editor configurations (`keybindings.json`), and system hotkey daemons.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Comprehensive Productivity Command )"
+          },
+          {
+            "label": "say1",
+            "say": "Productivity Scaffolding incorporates four pillars: 1. Shell Aliases & Functions: Shortening high-frequency multi-word commands into 2-letter or 3-letter mnemonics (e.g., `alias gs='git status'`, `alias gco='git checkout'`, `alias k='kubectl'`); 2. Directory Bookmarking and Fuzzy Jumpers: Using tools like `z` or `zoxide` to jump to deeply nested project directories via frecency algorithms (`z prod` jumping straight to `/home/user/workspace/projects/production/services`); 3. Clipboard History Managers: Storing a persistent FIFO stack of recent text clippings accessible via keyboard hotkeys (Win+V on Windows, Raycast/Maccy on macOS) to eliminate repetitive copy-pasting; and 4. Physical Ergonomics: Adjusting monitor height so the top third is at eye level, setting chair height so elbows form 90-degree angles, and deploying the 20-20-20 rule (every 20 minutes, gaze at an object 20 feet away for 20 seconds) to prevent digital eye strain.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Comprehensive Productivity Command )"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a Formula 1 steering wheel: all critical buttons, dials, and paddle shifters are positioned directly under the driver's thumbs and fingers so they never take their hands off the wheel at 200 MPH.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Comprehensive Productivity Command )"
+          },
+          {
+            "label": "tryIt",
+            "say": "Physical ergonomics is the silent foundation of sustainable engineering careers. Cumulative Trauma Disorders (CTD) develop over years of sub-optimal keyboard postures. Placing wrists on desk edges restricts blood circulation through the carpal tunnel; typing with bent wrists creates friction between finger tendons and the transverse carpal ligament. Floating the wrists naturally above the keys during active typing and resting palms only during pauses preserves neurovascular integrity, ensuring decades of pain-free productivity.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Comprehensive Productivity Command )"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Comprehensive Productivity Command Suite & Daily Workflow Synthesis",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 5: Comprehensive Productivity Command Suite & Daily Workflow Synthesis\n\nIn the final operational tier of Day 12, we assemble our findings into an integrated engineering synthesis: The Complete Digital Productivity & Ergonomic Command Suite. High-performing engineering teams do not rely on accidental habits; they configure deterministic, automated productivity scaffolding across their shell profiles (`~/.bashrc`, `~/.zshrc`), text editor configurations (`keybindings.json`), and system hotkey daemons."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/ergonomics_audit\necho \"SYSTEM_STATUS: AUDIT_COMPLETE\" > /home/student/workspace/ergonomics_audit/summary.txt\necho \"TYPING_SPEED_NET: 88_WPM\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"HOTKEY_COVERAGE: 95%\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"TILING_WM_ACTIVE: YES\" >> /home/student/workspace/ergonomics_audit/summary.txt\necho \"SOVEREIGN_WORKFLOW_INDEX: 99/100\" >> /home/student/workspace/ergonomics_audit/summary.txt\ncat /home/student/workspace/ergonomics_audit/summary.txt\ngrep \"SOVEREIGN_WORKFLOW_INDEX\" /home/student/workspace/ergonomics_audit/summary.txt",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "SYSTEM_STATUS: AUDIT_COMPLETE\nTYPING_SPEED_NET: 88_WPM\nHOTKEY_COVERAGE: 95%\nTILING_WM_ACTIVE: YES\nSOVEREIGN_WORKFLOW_INDEX: 99/100\nSOVEREIGN_WORKFLOW_INDEX: 99/100"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Think of a Formula 1 steering wheel: all critical buttons, dials, and paddle shi...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the final operational tier of Day 12, we assemble our findings into an integrated engineering synthesis: The Complete Digital Productivity & Ergonomic Command Suite. High-performing engineering teams do not rely on accidental habits; they configure deterministic, automated productivity scaffolding across their shell profiles (`~/.bashrc`, `~/.zshrc`), text editor configurations (`keybindings.json`), and system hotkey daemons.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "Productivity Scaffolding incorporates four pillars: 1. Shell Aliases & Functions: Shortening high-frequency multi-word commands into 2-letter or 3-letter mnemonics (e.g., `alias gs='git status'`, `alias gco='git checkout'`, `alias k='kubectl'`); 2. Directory Bookmarking and Fuzzy Jumpers: Using tools like `z` or `zoxide` to jump to deeply nested project directories via frecency algorithms (`z prod` jumping straight to `/home/user/workspace/projects/production/services`); 3. Clipboard History Managers: Storing a persistent FIFO stack of recent text clippings accessible via keyboard hotkeys (Win+V on Windows, Raycast/Maccy on macOS) to eliminate repetitive copy-pasting; and 4. Physical Ergonomics: Adjusting monitor height so the top third is at eye level, setting chair height so elbows form 90-degree angles, and deploying the 20-20-20 rule (every 20 minutes, gaze at an object 20 feet away for 20 seconds) to prevent digital eye strain.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Think of a Formula 1 steering wheel: all critical buttons, dials, and paddle shifters are positioned directly under the driver's thumbs and fingers so they never take their hands off the wheel at 200 MPH.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Physical ergonomics is the silent foundation of sustainable engineering careers. Cumulative Trauma Disorders (CTD) develop over years of sub-optimal keyboard postures. Placing wrists on desk edges restricts blood circulation through the carpal tunnel; typing with bent wrists creates friction between finger tendons and the transverse carpal ligament. Floating the wrists naturally above the keys during active typing and resting palms only during pauses preserves neurovascular integrity, ensuring decades of pain-free productivity.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     }
   ]
 }

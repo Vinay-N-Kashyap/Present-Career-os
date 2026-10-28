@@ -49,7 +49,101 @@
           "attachedTo": "tryIt",
           "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
         }
-      ]
+      ],
+      "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd",
+      "partTitle": "Ordinary Least Squares (OLS) Matrix Mathematics & Normal Equations",
+      "spec": {
+        "template": "compare",
+        "title": "Ordinary Least Squares (OLS) Matrix Mathematics & Normal Equations",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core ordinary mechanisms and least concepts.",
+            "attachedTo": "say1",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal ordinary bounds across least systems.",
+            "attachedTo": "say2",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical ordinary rules and least cases.",
+            "attachedTo": "example",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying ordinary calculations and least outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ordinary Least Squares (OLS) Matrix Mathematics & Normal Equations",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core ordinary mechanisms and least concepts.",
+            "attachedTo": "say1",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal ordinary bounds across least systems.",
+            "attachedTo": "say2",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical ordinary rules and least cases.",
+            "attachedTo": "example",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying ordinary calculations and least outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "fcf3255b11d7baf6dc658f0d2871e5fb42333120450bc935d6f20dd6d443edfd"
+          }
+        ]
+      }
     },
     {
       "partIndex": 1,
@@ -98,7 +192,101 @@
           "attachedTo": "tryIt",
           "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
         }
-      ]
+      ],
+      "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11",
+      "partTitle": "The Gauss-Markov Theorem & Proof of BLUE Optimality",
+      "spec": {
+        "template": "compare",
+        "title": "The Gauss-Markov Theorem & Proof of BLUE Optimality",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core gaussmarko mechanisms and theorem concepts.",
+            "attachedTo": "say1",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal gaussmarko bounds across theorem systems.",
+            "attachedTo": "say2",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical gaussmarko rules and theorem cases.",
+            "attachedTo": "example",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying gaussmarko calculations and theorem outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "The Gauss-Markov Theorem & Proof of BLUE Optimality",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core gaussmarko mechanisms and theorem concepts.",
+            "attachedTo": "say1",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal gaussmarko bounds across theorem systems.",
+            "attachedTo": "say2",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical gaussmarko rules and theorem cases.",
+            "attachedTo": "example",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying gaussmarko calculations and theorem outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "06bcc1ee1df85708a73ea239cbf6eb4212e08c73434bb6464ed76dd47e1b5c11"
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -147,7 +335,101 @@
           "attachedTo": "tryIt",
           "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
         }
-      ]
+      ],
+      "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885",
+      "partTitle": "Omitted Variable Bias (OVB) Mechanics & The Directional Bias Formula",
+      "spec": {
+        "template": "compare",
+        "title": "Omitted Variable Bias (OVB) Mechanics & The Directional Bias Formula",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core omitted mechanisms and variable concepts.",
+            "attachedTo": "say1",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal omitted bounds across variable systems.",
+            "attachedTo": "say2",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical omitted rules and variable cases.",
+            "attachedTo": "example",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying omitted calculations and variable outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Omitted Variable Bias (OVB) Mechanics & The Directional Bias Formula",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core omitted mechanisms and variable concepts.",
+            "attachedTo": "say1",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal omitted bounds across variable systems.",
+            "attachedTo": "say2",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical omitted rules and variable cases.",
+            "attachedTo": "example",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying omitted calculations and variable outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "723fd160e9593f857e2db1dff63eb2b3448fa23aac5ca45d86997d86e8bb0885"
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -196,7 +478,101 @@
           "attachedTo": "tryIt",
           "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
         }
-      ]
+      ],
+      "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d",
+      "partTitle": "Goodness-of-Fit, R-Squared Realities & Adjusted R-Squared Invariants",
+      "spec": {
+        "template": "compare",
+        "title": "Goodness-of-Fit, R-Squared Realities & Adjusted R-Squared Invariants",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core goodnessof mechanisms and rsquared concepts.",
+            "attachedTo": "say1",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal goodnessof bounds across rsquared systems.",
+            "attachedTo": "say2",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical goodnessof rules and rsquared cases.",
+            "attachedTo": "example",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying goodnessof calculations and rsquared outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Goodness-of-Fit, R-Squared Realities & Adjusted R-Squared Invariants",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core goodnessof mechanisms and rsquared concepts.",
+            "attachedTo": "say1",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal goodnessof bounds across rsquared systems.",
+            "attachedTo": "say2",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical goodnessof rules and rsquared cases.",
+            "attachedTo": "example",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying goodnessof calculations and rsquared outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "8be1860d4aa235ce86e2fe6555f83bf2482e7c68175d8b0c34bdd133ce4d960d"
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -245,7 +621,101 @@
           "attachedTo": "tryIt",
           "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
         }
-      ]
+      ],
+      "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23",
+      "partTitle": "Milestone 4 Capstone: Enterprise Econometric Forecasting Engine",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 4 Capstone: Enterprise Econometric Forecasting Engine",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D8P5].",
+            "attachedTo": "say1",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 4 Capstone: Enterprise Econometric Forecasting Engine",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D8P5].",
+            "attachedTo": "say1",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "9112b2ff97e3d20054ce7b9e41c3fc66794faddee805c2c0b5686eb7ada20a23"
+          }
+        ]
+      }
     }
   ]
 }

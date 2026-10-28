@@ -1453,7 +1453,7 @@
     },
     {
       "partTitle": "Mobile Security Hardening: SSL Pinning, Root Detection & Enclave Attestation",
-      "codeHash": "875b38225cdd9f26e44ae8d3aab6dacd51649ff2faec17047d06203af667bf8f",
+      "codeHash": "678e71a6a47bb003077d78f34275f40fb2c4cf5f2959146bf5e270c1ba564663",
       "spec": {
         "template": "component-tree",
         "title": "Mobile Security Hardening: SSL Pinning, Root ... — Mobile Component Hierarchy",

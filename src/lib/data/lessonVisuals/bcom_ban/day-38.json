@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Sovereign Debt Architecture: G-Secs, T-Bills & State Development Loans (SDLs)",
-      "codeHash": "bfb5a1a95f1580c053ddbb46a4c2d0baac8da5f04f9d18d3ed8992786232d15e",
+      "codeHash": "2e518319b95689a98fd91f0f1b44a725e1d96797f1f4ef9742e86866d07ae370",
       "spec": {
         "template": "funnel",
-        "title": "The Sovereign Debt Architecture: G-Sec... \u2014 Treasury Risk Operations",
+        "title": "The Sovereign Debt Architecture: G-Sec... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Primary Auction Mechanics: Uniform Price vs Multiple Price Formats & The When-Issued Market",
-      "codeHash": "c66329d8453c3f3195bf1c37c3313c64eb05c1ef47a78c71d5443d7edd1d5958",
+      "codeHash": "867b5d180e6a8f982653b6ef1207352a7afa7e413df4bc31645efe24f0225f55",
       "spec": {
         "template": "funnel",
-        "title": "Primary Auction Mechanics: Uniform Pri... \u2014 Treasury Risk Operations",
+        "title": "Primary Auction Mechanics: Uniform Pri... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Secondary Market Electronic Trading: The NDS-OM Platform & DvP-III Settlement",
-      "codeHash": "f6356bcaec7ad0d3e40c79edb16b28f9cf22dcd486349a9d1ab6a404a0e6ce9c",
+      "codeHash": "8887473fda9e5c308164da2ef1b9bce6530710365662a288d744a0ab34df880d",
       "spec": {
         "template": "funnel",
-        "title": "Secondary Market Electronic Trading: T... \u2014 Treasury Risk Operations",
+        "title": "Secondary Market Electronic Trading: T... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Quantitative Fixed-Income Analytics: YTM, Duration, Modified Duration & Convexity",
-      "codeHash": "56077b53c7943937f919185fe329d0890c8efc5fcfab16cd1d6d877efe00102f",
+      "codeHash": "6aa440191f957ea48f4f54d2e5a61c65c8c772a863204acb3e002070384476dd",
       "spec": {
         "template": "funnel",
-        "title": "Quantitative Fixed-Income Analytics: Y... \u2014 Treasury Risk Operations",
+        "title": "Quantitative Fixed-Income Analytics: Y... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Sovereign Debt Trading & Yield Curve Shock Simulator",
-      "codeHash": "f7a3bbcf60e912953d0504353e31cedccb686f851a9e54a663a522dd9d81560f",
+      "codeHash": "e5aefe4583969241c098d85bd523c398521dd0ad66e2d70d102c5f24cb8f9788",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Sovereign Deb... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Sovereign Deb... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

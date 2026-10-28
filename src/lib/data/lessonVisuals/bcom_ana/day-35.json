@@ -8,7 +8,7 @@
       "codeHash": "f6cc586132063bd9bfbc588fdff022149fb9d119ab4f89f01e5d9aa92ba12ad9",
       "spec": {
         "template": "bars",
-        "title": "The Commercial Malpractice of Default ... \u2014 Learning Evaluation",
+        "title": "The Commercial Malpractice of Default ... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "8e05525375dfc014e2975a467c007dbb05e365be1833c99a80f372a9653637ef",
       "spec": {
         "template": "bars",
-        "title": "The Mathematical Derivation of the Pro... \u2014 Learning Evaluation",
+        "title": "The Mathematical Derivation of the Pro... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,11 +244,11 @@
       "codeHash": "41a41cf94d168fe8a9d160915db7f285437d3837441cb1a46ff0f99801f315c3",
       "spec": {
         "template": "bars",
-        "title": "Expected Value Framework & Cost-Utilit... \u2014 Learning Evaluation",
+        "title": "Expected Value Framework & Cost-Utilit... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core expected mechanisms and value concepts.",
+            "caption": "Reviewing core expected mechanisms and value concepts [D35P3].",
             "max": 100,
             "bars": [
               {
@@ -362,7 +362,7 @@
       "codeHash": "134549fa80a29b3ee34286749c1990877e8491c273ecc85fe27f5ddf32b4fe14",
       "spec": {
         "template": "bars",
-        "title": "Uplift Modeling & Causal Machine Learn... \u2014 Learning Evaluation",
+        "title": "Uplift Modeling & Causal Machine Learn... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "6dd3a6d47b2380763516597437246e1aaa1feac6fe42d51d605299b7e8f7b667",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Profit-Maximizi... \u2014 Learning Evaluation",
+        "title": "Building an Enterprise Profit-Maximizi... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D35P5].",
             "max": 100,
             "bars": [
               {

@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "Tier 1: Macro Marketing Econometrics & Bayesian MMM Engine",
-      "codeHash": "e90faf12e39c3d099d85f07e10f3ca9c25baee8cb21c4c3f192841e77051ac51",
+      "codeHash": "518fcc194ef626eb6335265ac2a180ed64d079a05f9f0fed571d4c661a93cdb3",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Macro Marketing Econometrics & Bayesian MMM Engine \u2014 Conversion Funnel",
+        "title": "Tier 1: Macro Marketing Econometrics & Bayesian MMM Engine — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D35P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -169,14 +169,14 @@
     },
     {
       "partTitle": "Tier 2: Causal Inference & Synthetic Control Incrementality Hub",
-      "codeHash": "4a4a68338c93cb462bda0167049fac6a436a8841636526966931e893f85c5803",
+      "codeHash": "e6ef12c100ff18bd7c0aa6e4abc833576c24514778c19767b1a69ffa06ff0d9c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Causal Inference & Synthetic Control Incrementality Hub \u2014 Conversion Funnel",
+        "title": "Tier 2: Causal Inference & Synthetic Control Incrementality Hub — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D35P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -331,14 +331,14 @@
     },
     {
       "partTitle": "Tier 3: Algorithmic Multi-Touch Attribution & Graph Engine",
-      "codeHash": "360a0a46beb2f129fe36b6937252d85fc1f75f246ef7187335d4649f6d3094ec",
+      "codeHash": "896428e40e0885fb3cb350a6fb8797f0e507bd41348062ad133d5f7e99f80db2",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Algorithmic Multi-Touch Attribution & Graph Engine \u2014 Conversion Funnel",
+        "title": "Tier 3: Algorithmic Multi-Touch Attribution & Graph Engine — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D35P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -493,14 +493,14 @@
     },
     {
       "partTitle": "Tier 4: Composable CDP Identity Resolution & Reverse ETL Tower",
-      "codeHash": "293a3468fbabbe6cdf1fb7fea3ae46b28038a0af04175b565d228f514e612ec4",
+      "codeHash": "5d21ce170708642819c89bcd061e045711a6270f223ca05fc75e728de9e6eede",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Composable CDP Identity Resolution & Reverse ETL Tower \u2014 Conversion Funnel",
+        "title": "Tier 4: Composable CDP Identity Resolution & Reverse ETL Tower — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D35P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -655,14 +655,14 @@
     },
     {
       "partTitle": "Tier 5: Executive Boardroom Solvency, KKT Marginal Optimization & Capstone Accreditation",
-      "codeHash": "b7161ab9becbb0bd2eba24f46f7cc8288182650093d2f461935bac23a7c94100",
+      "codeHash": "26c7bcdc07533f901973526d5259247354707d9abf52ec892010816d38470aac",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Executive Boardroom Solvency, KKT Marginal Optimization & Capstone Accreditation \u2014 Conversion Funnel",
+        "title": "Tier 5: Executive Boardroom Solvency, KKT Marginal Optimization & Capstone Accreditation — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D35P5].",
             "activeStageId": "top",
             "stages": [
               {

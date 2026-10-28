@@ -577,250 +577,280 @@
       "partTitle": "Button & Form Accessibility Audit: WCAG Contrast & Focus Rings",
       "codeHash": "309ae395cd3d345fbaf46dcfb06cbb32cab8e36786add35932d9a89384c951f8",
       "spec": {
-        "template": "ledger-sheet",
-        "title": "Button & Form Accessibility Audit: WCAG Contr... — General Ledger Verification",
+        "template": "wireframe",
+        "title": "Button & Form Accessibility Audit: WCAG Contr... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (5150) for Button & Form Accessibility Aud...",
-            "title": "Day 15 Journal — Initial Posting",
-            "isBalanced": true,
-            "totalDebit": 5150,
-            "totalCredit": 5150,
-            "entries": [
+            "caption": "Step 1: Establish horizontal flex-row container for Button & Form Accessibi...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Primary Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
-                "tone": "data",
-                "memo": "Initial recognition"
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
               },
               {
-                "id": "JNL-1502",
-                "account": "Clearing & Settlement Control",
-                "credit": 5150,
-                "balance": 0,
-                "tone": "ok",
-                "memo": "Offset control"
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           },
           {
             "at": "say1",
-            "caption": "Step 2: Record secondary accrual adjustment (1030).",
-            "title": "Day 15 Journal — Accrual Adjustment",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Primary Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1502",
-                "account": "Accrued Provision / Tax Control",
-                "debit": 1030,
-                "balance": 6180,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
                 "tone": "data"
               },
               {
-                "id": "JNL-1503",
-                "account": "Clearing & Settlement Control",
-                "credit": 6180,
-                "balance": 0,
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           },
           {
             "at": "example",
-            "caption": "Step 3: Reconcile sub-ledger balances against control total (6180).",
-            "title": "Day 15 Journal — Reconciliation Check",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Verified Asset Sub-Ledger",
-                "debit": 5150,
-                "balance": 5150,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
               },
               {
-                "id": "JNL-1502",
-                "account": "Verified Compliance Reserve",
-                "debit": 1030,
-                "balance": 6180,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1503",
-                "account": "General Ledger Control Account",
-                "credit": 6180,
-                "balance": 0,
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
                 "tone": "data"
               }
             ]
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Double-entry invariant verified (Total DR 6180 = CR 6180).",
-            "title": "Day 15 Journal — Audited Trial Balance",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Audited Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
               },
               {
-                "id": "JNL-1502",
-                "account": "Audited Compliance Reserve",
-                "debit": 1030,
-                "balance": 6180,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1503",
-                "account": "Audited Treasury Settlement",
-                "credit": 6180,
-                "balance": 0,
-                "tone": "ok"
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           }
         ]
       },
       "filled": {
-        "template": "ledger-sheet",
-        "title": "Button & Form Accessibility Audit: WCAG Contr... — General Ledger Verification",
+        "template": "wireframe",
+        "title": "Button & Form Accessibility Audit: WCAG Contr... — Layout & Hierarchy Wireframe",
+        "boxes": [
+          {
+            "id": "nav",
+            "label": "Navigation Bar",
+            "flex": "1",
+            "tone": "data"
+          },
+          {
+            "id": "hero",
+            "label": "Primary Hero Viewport",
+            "flex": "2",
+            "tone": "ok"
+          },
+          {
+            "id": "cta",
+            "label": "Interactive CTA Card",
+            "flex": "1",
+            "tone": "data"
+          }
+        ],
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (5150) for Button & Form Accessibility Aud...",
-            "title": "Day 15 Journal — Initial Posting",
-            "isBalanced": true,
-            "totalDebit": 5150,
-            "totalCredit": 5150,
-            "entries": [
+            "caption": "Step 1: Establish horizontal flex-row container for Button & Form Accessibi...",
+            "layoutMode": "flex-row",
+            "justifyContent": "space-between",
+            "alignItems": "center",
+            "activeBoxId": "nav",
+            "tone": "data",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Primary Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
-                "tone": "data",
-                "memo": "Initial recognition"
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
               },
               {
-                "id": "JNL-1502",
-                "account": "Clearing & Settlement Control",
-                "credit": 5150,
-                "balance": 0,
-                "tone": "ok",
-                "memo": "Offset control"
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
+                "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           },
           {
             "at": "say1",
-            "caption": "Step 2: Record secondary accrual adjustment (1030).",
-            "title": "Day 15 Journal — Accrual Adjustment",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 2: Structure responsive grid hierarchy around Primary Hero Viewport.",
+            "layoutMode": "grid",
+            "justifyContent": "center",
+            "alignItems": "stretch",
+            "activeBoxId": "hero",
+            "tone": "ok",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Primary Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1502",
-                "account": "Accrued Provision / Tax Control",
-                "debit": 1030,
-                "balance": 6180,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
                 "tone": "data"
               },
               {
-                "id": "JNL-1503",
-                "account": "Clearing & Settlement Control",
-                "credit": 6180,
-                "balance": 0,
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
+              },
+              {
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           },
           {
             "at": "example",
-            "caption": "Step 3: Reconcile sub-ledger balances against control total (6180).",
-            "title": "Day 15 Journal — Reconciliation Check",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 3: Inspect CSS box-model padding, border, and margin tokens.",
+            "layoutMode": "box-model",
+            "activeBoxId": "cta",
+            "tone": "data",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Verified Asset Sub-Ledger",
-                "debit": 5150,
-                "balance": 5150,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
               },
               {
-                "id": "JNL-1502",
-                "account": "Verified Compliance Reserve",
-                "debit": 1030,
-                "balance": 6180,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1503",
-                "account": "General Ledger Control Account",
-                "credit": 6180,
-                "balance": 0,
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
                 "tone": "data"
               }
             ]
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Double-entry invariant verified (Total DR 6180 = CR 6180).",
-            "title": "Day 15 Journal — Audited Trial Balance",
-            "isBalanced": true,
-            "totalDebit": 6180,
-            "totalCredit": 6180,
-            "entries": [
+            "caption": "Step 4: Verify mobile-first flex-col stacking & WCAG contrast.",
+            "layoutMode": "flex-col",
+            "justifyContent": "flex-start",
+            "alignItems": "stretch",
+            "activeBoxId": "cta",
+            "tone": "ok",
+            "boxes": [
               {
-                "id": "JNL-1501",
-                "account": "Audited Operating Asset",
-                "debit": 5150,
-                "balance": 5150,
+                "id": "nav",
+                "label": "Navigation Bar",
+                "flex": "1",
+                "tone": "data"
+              },
+              {
+                "id": "hero",
+                "label": "Primary Hero Viewport",
+                "flex": "2",
                 "tone": "ok"
               },
               {
-                "id": "JNL-1502",
-                "account": "Audited Compliance Reserve",
-                "debit": 1030,
-                "balance": 6180,
-                "tone": "ok"
-              },
-              {
-                "id": "JNL-1503",
-                "account": "Audited Treasury Settlement",
-                "credit": 6180,
-                "balance": 0,
-                "tone": "ok"
+                "id": "cta",
+                "label": "Interactive CTA Card",
+                "flex": "1",
+                "tone": "data"
               }
             ]
           }

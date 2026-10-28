@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "TIMWOODS 8 Wastes Operational Audit & Financial Burden",
-      "codeHash": "17a1b7423b0e78a8d8372d5b8a7c0e7a17957e869a92ca898f3a04ea2754878d",
+      "codeHash": "61dd8240eba7780cdf724e3a6b7b09cc5170f9e9cec31a85231be8e485887759",
       "spec": {
         "template": "funnel",
         "title": "TIMWOODS 8 Wastes Operational Audit & Fi - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (10,000 prospects).",
+            "caption": "Venture commercial reach (10,000 prospects) [D16P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -172,7 +172,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (10,000 prospects).",
+            "caption": "Venture commercial reach (10,000 prospects) [D16P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Retained Accounts",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,14 +327,14 @@
     },
     {
       "partTitle": "DMAIC Structured Continuous Improvement & Phase Gate Governance",
-      "codeHash": "921bf55a511c98aaf0230d04a7ad36d1dc5313cb594337f3e008edd7dbf1f5e1",
+      "codeHash": "120aed56a45effdfc5a55379eff9286e302840b5dcf82810e9dc16cf065e31ae",
       "spec": {
         "template": "funnel",
         "title": "DMAIC Structured Continuous Improvement  - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (12,500 prospects).",
+            "caption": "Venture commercial reach (12,500 prospects) [D16P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -492,7 +492,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (12,500 prospects).",
+            "caption": "Venture commercial reach (12,500 prospects) [D16P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Retained Accounts",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,14 +647,14 @@
     },
     {
       "partTitle": "Statistical Process Capability: Cp, Cpk & The 4-Sigma Benchmark (Cpk >= 1.33)",
-      "codeHash": "c0a26c79378c05859d032dc11b812461851f380e3494cbff099d6f96aca3f832",
+      "codeHash": "c5901296500240eba6190cb2ec532368978b70a3392ae762daf7131e34734685",
       "spec": {
         "template": "funnel",
         "title": "Statistical Process Capability: Cp, Cpk  - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (8,000 prospects).",
+            "caption": "Venture commercial reach (8,000 prospects) [D16P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -812,7 +812,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (8,000 prospects).",
+            "caption": "Venture commercial reach (8,000 prospects) [D16P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Retained Accounts",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,14 +967,14 @@
     },
     {
       "partTitle": "Statistical Process Control (SPC): X-bar & R Charts & Stability Detection",
-      "codeHash": "13de69ba54dbe97aa886ba99fa54ac59316e54a77867e1cc2e11150966332836",
+      "codeHash": "f9743d9884becf5f72548d029500108dac2b3a15eac8df24fdc8ae2164d8b54b",
       "spec": {
         "template": "funnel",
         "title": "Statistical Process Control (SPC): X-bar - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (9,500 prospects).",
+            "caption": "Venture commercial reach (9,500 prospects) [D16P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1132,7 +1132,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (9,500 prospects).",
+            "caption": "Venture commercial reach (9,500 prospects) [D16P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Retained Accounts",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,14 +1287,14 @@
     },
     {
       "partTitle": "Master Six Sigma Quality Control Tower & Enterprise Accreditation",
-      "codeHash": "6bcc64cd3b5585fd54b18b4773dea2fe893cd65bcdf4710b724a52f98878c998",
+      "codeHash": "b3fed2cf5d9999b84cd11d54c0d6e80f01ea5f5d42a187144bd6f17387ed8d5c",
       "spec": {
         "template": "funnel",
         "title": "Master Six Sigma Quality Control Tower & - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (15,000 prospects).",
+            "caption": "Venture commercial reach (15,000 prospects) [D16P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1308,16 +1308,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1325,7 +1325,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,16 +1346,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1363,7 +1363,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,16 +1384,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1401,7 +1401,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,16 +1422,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1439,7 +1439,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1452,7 +1452,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (15,000 prospects).",
+            "caption": "Venture commercial reach (15,000 prospects) [D16P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1466,16 +1466,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1483,7 +1483,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,16 +1504,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1521,7 +1521,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,16 +1542,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1559,7 +1559,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,16 +1580,16 @@
                 "id": "qual",
                 "label": "Qualified Intent",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Evaluation",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1597,7 +1597,7 @@
                 "label": "Retained Accounts",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

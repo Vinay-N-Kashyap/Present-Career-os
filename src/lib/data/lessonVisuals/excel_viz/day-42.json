@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
-    "codeHash": "002dbae3d97e1567a1f915583dd6738be79437ef6d41d244184e35b7b881cbdb",
-    "spec": {
-      "template": "bars",
-      "title": "Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 42,
+  "entries": [
+    {
+      "partTitle": "Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+      "codeHash": "002dbae3d97e1567a1f915583dd6738be79437ef6d41d244184e35b7b881cbdb",
+      "spec": {
+        "template": "bars",
+        "title": "Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Inferential Hypothesis Formulation & Student's Two-Sample Independent T-Test",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+      "codeHash": "e10bb0a25a82a1a56d1a9619b11090a3766235899106ab4565798fa4cc062cd4",
+      "spec": {
+        "template": "bars",
+        "title": "Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+      "codeHash": "faabaa8a9817ad93e367635a2e73e45fae9059c451fd2fe818d40861a7537f65",
+      "spec": {
+        "template": "bars",
+        "title": "Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+      "codeHash": "cb1e3e61d376bfc996b6382579aaa4f5ac662b426922d12fc855879d4ad5b535",
+      "spec": {
+        "template": "bars",
+        "title": "Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+      "codeHash": "72114dca996f4ce3126581811f8262ef67d8d495cd16fe57a69d3b82e7589394",
+      "spec": {
+        "template": "bars",
+        "title": "Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Null Hypothesis",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Welch's T-Test",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "ANOVA Variance",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Bonferroni FWER",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
-    "codeHash": "e10bb0a25a82a1a56d1a9619b11090a3766235899106ab4565798fa4cc062cd4",
-    "spec": {
-      "template": "bars",
-      "title": "Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Paired-Sample T-Tests: Controlling Subject-Level Variance in Pre/Post Interventions",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
-    "codeHash": "faabaa8a9817ad93e367635a2e73e45fae9059c451fd2fe818d40861a7537f65",
-    "spec": {
-      "template": "bars",
-      "title": "Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Single-Factor ANOVA (Analysis of Variance): Between-Group vs Within-Group F-Ratios",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
-    "codeHash": "cb1e3e61d376bfc996b6382579aaa4f5ac662b426922d12fc855879d4ad5b535",
-    "spec": {
-      "template": "bars",
-      "title": "Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Family-Wise Error Rate (FWER) & Bonferroni Corrections in Multi-Arm Testing",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
-    "codeHash": "72114dca996f4ce3126581811f8262ef67d8d495cd16fe57a69d3b82e7589394",
-    "spec": {
-      "template": "bars",
-      "title": "Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification — Inferential Statistics & Hypothesis Testing in Excel: Z-Tests, T-Tests, Paired Samples & ANOVA F-Tests",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Master Hypothesis Testing Decision Gateway: Executive A/B Testing Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Null Hypothesis",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Welch's T-Test",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "ANOVA Variance",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Bonferroni FWER",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

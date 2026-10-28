@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Sovereign Architecture & Master COA Harmonization Engine",
-    "codeHash": "288f3da4aaba0007a9e217a18196b02394bfae6624e8477fb622e986b620b7c7",
-    "spec": {
-      "template": "bars",
-      "title": "Sovereign Architecture & Master COA Harmonization Engine — Sovereign Enterprise Financial OS",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Sovereign Architecture & Master ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing multi-currency translation and eliminations for Sovereign Architecture & Master ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Treasury runway optimization and capital structure for Sovereign Architecture & Master ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Sovereign Architecture & Master ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 30,
+  "entries": [
+    {
+      "partTitle": "Sovereign Architecture & Master COA Harmonization Engine",
+      "codeHash": "288f3da4aaba0007a9e217a18196b02394bfae6624e8477fb622e986b620b7c7",
+      "spec": {
+        "template": "bars",
+        "title": "Sovereign Architecture & Master COA Harmonization Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Sovereign Architecture & Master COA Harmonization Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Sovereign Architecture & Master ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous Multi-Currency Statutory Consolidation Engine",
+      "codeHash": "c9dd1cf0f7727db69c0c59737b9a6717c05e0bbfccf335a68fba57dd38dd7625",
+      "spec": {
+        "template": "bars",
+        "title": "Autonomous Multi-Currency Statutory Consolidation Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Autonomous Multi-Currency Statutory Consolidation Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Multi-Currency Statut...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Autonomous Treasury Operations & Cash Runway Optimization",
+      "codeHash": "cefb1085a36aaa58b2ae8aaa2c1ee026fd60b8ff83632886209e87440b8ad1f6",
+      "spec": {
+        "template": "bars",
+        "title": "Autonomous Treasury Operations & Cash Runway Optimization — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Autonomous Treasury Operations & Cash Runway Optimization — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Treasury Operations &...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Capital Structure & DCF Enterprise Valuation Engine",
+      "codeHash": "59c25785a3b479c8f8bc81128bd3378fe12d6c2b9b3ed680a05e2d80dcd3843a",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Capital Structure & DCF Enterprise Valuation Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Dynamic Capital Structure & DCF Enterprise Valuation Engine — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Dynamic Capital Structure & DCF ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Grand Final Milestone 6 Capstone Master Gateway: Sovereign Financial OS",
+      "codeHash": "d950262fd2a2a3a5c5495f3041923f54ed6e49e8d8c08f945de27654c5f08c9b",
+      "spec": {
+        "template": "bars",
+        "title": "Grand Final Milestone 6 Capstone Master Gateway: Sovereign Financial OS — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Grand Final Milestone 6 Capstone Master Gateway: Sovereign Financial OS — Sovereign Enterprise Financial OS",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing multi-currency translation and eliminations for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Treasury runway optimization and capital structure for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 80,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Grand Final Milestone 6 Capstone...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Consolidation",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Treasury Sweeps",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "DCF Valuation",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "SOX Integrity",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Autonomous Multi-Currency Statutory Consolidation Engine",
-    "codeHash": "c9dd1cf0f7727db69c0c59737b9a6717c05e0bbfccf335a68fba57dd38dd7625",
-    "spec": {
-      "template": "bars",
-      "title": "Autonomous Multi-Currency Statutory Consolidation Engine — Sovereign Enterprise Financial OS",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Multi-Currency Statut...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Multi-Currency Statut...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Multi-Currency Statut...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Multi-Currency Statut...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Autonomous Treasury Operations & Cash Runway Optimization",
-    "codeHash": "cefb1085a36aaa58b2ae8aaa2c1ee026fd60b8ff83632886209e87440b8ad1f6",
-    "spec": {
-      "template": "bars",
-      "title": "Autonomous Treasury Operations & Cash Runway Optimization — Sovereign Enterprise Financial OS",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Autonomous Treasury Operations &...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing multi-currency translation and eliminations for Autonomous Treasury Operations &...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Treasury runway optimization and capital structure for Autonomous Treasury Operations &...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Autonomous Treasury Operations &...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Dynamic Capital Structure & DCF Enterprise Valuation Engine",
-    "codeHash": "59c25785a3b479c8f8bc81128bd3378fe12d6c2b9b3ed680a05e2d80dcd3843a",
-    "spec": {
-      "template": "bars",
-      "title": "Dynamic Capital Structure & DCF Enterprise Valuation Engine — Sovereign Enterprise Financial OS",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Dynamic Capital Structure & DCF ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing multi-currency translation and eliminations for Dynamic Capital Structure & DCF ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Treasury runway optimization and capital structure for Dynamic Capital Structure & DCF ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Dynamic Capital Structure & DCF ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Grand Final Milestone 6 Capstone Master Gateway: Sovereign Financial OS",
-    "codeHash": "d950262fd2a2a3a5c5495f3041923f54ed6e49e8d8c08f945de27654c5f08c9b",
-    "spec": {
-      "template": "bars",
-      "title": "Grand Final Milestone 6 Capstone Master Gateway: Sovereign Financial OS — Sovereign Enterprise Financial OS",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Grand Final Milestone 6 Capstone...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing multi-currency translation and eliminations for Grand Final Milestone 6 Capstone...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Treasury runway optimization and capital structure for Grand Final Milestone 6 Capstone...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 80,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign platform certification and SHA-256 seal for Grand Final Milestone 6 Capstone...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Consolidation",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Treasury Sweeps",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "DCF Valuation",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "SOX Integrity",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

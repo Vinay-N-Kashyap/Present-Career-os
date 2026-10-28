@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Real-Time Multi-RMN Bidding & Bid Shading Engine (Amazon SP & Walmart Connect)",
-      "codeHash": "826eb9becd50fd29c98e8f0850c052d483e87b15aeecf307d029115ffe055dc5",
+      "codeHash": "999a80e287dea41a570ac5bf532cdfd6df73ac26ba8fe6b4b7ae5f70dd3205bf",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Tier 2: Algorithmic Inventory & Buy Box Telemetry Killswitch Gateway",
-      "codeHash": "48ddc85c95dac9de23fca7dda780e1ead19940438d60b41519e83f47e3784439",
+      "codeHash": "8ebadfa536bfe70b5044563837f4fed4249b3b62a4169d5a70c3c9db318ba52c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Tier 3: Programmatic In-Store DOOH & Dynamic Shelf Video Loop Flight Controller",
-      "codeHash": "1bd28b54009f52ddd4efbfdd3cb2d47b5238f15d909e986e838c4d89b97c0554",
+      "codeHash": "f725b1c826880bc1062bc3c1b80f32f4d731debc492f46fb9f4679d4b9874929",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Tier 4: Enterprise Privacy-Safe Retail Clean Room & Closed-Loop Omnichannel Attribution Hub",
-      "codeHash": "ce074571553221b1ecccfeaad9f290f7415b55dea895e68db92e1cbfd490213a",
+      "codeHash": "12f49028d31c8e8f180e4c3e6b66415040f8725408c1087f81304801bf3f97b3",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Tier 5: Chief Commercial Officer (CCO) Executive Boardroom Defense & Enterprise Retail Media Accreditation",
-      "codeHash": "ef87eca561ec08e32016cfe0323030bc376144790f63373cbf7b7c3362631c4f",
+      "codeHash": "9f96e31c5cc6b069f1a96034960cc9d9990f58dfea55152c9a12fbfe0e38da51",
       "spec": {
         "template": "funnel",
         "steps": [

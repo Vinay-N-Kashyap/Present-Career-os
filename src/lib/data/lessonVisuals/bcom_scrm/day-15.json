@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "360-Degree Architectural Synthesis of Milestone 3 CS Frameworks",
-      "codeHash": "da15b80d25c5d12e684bed4b77f29f75688886514880d23a0b1ee5bc5c079f27",
+      "codeHash": "b8927b07d51c6711baae732d5f3575062a01412de657989b3f918930f78b89dc",
       "spec": {
         "template": "funnel",
-        "title": "360-Degree Architectural Synthesis of Mile \u2014 Retention Pipeline",
+        "title": "360-Degree Architectural Synthesis of Mile — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (10,000 accounts).",
+            "caption": "Portfolio account base (10,000 accounts) [D15P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "360-Degree Architectural Synthesis of Mile \u2014 Retention Pipeline",
+        "title": "360-Degree Architectural Synthesis of Mile — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (10,000 accounts).",
+            "caption": "Portfolio account base (10,000 accounts) [D15P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,14 +327,14 @@
     },
     {
       "partTitle": "Unified Enterprise Customer Health, Retention & Whitespace Simulation",
-      "codeHash": "595af59617fed2788ded3fefa0be4225e80502eff5d056b998492a929de777e3",
+      "codeHash": "5a407d00043d5b32a70c77d84d3f76b3941f88fb1793d6d1f9bf952dc213ee94",
       "spec": {
         "template": "funnel",
-        "title": "Unified Enterprise Customer Health, Retent \u2014 Retention Pipeline",
+        "title": "Unified Enterprise Customer Health, Retent — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (12,500 accounts).",
+            "caption": "Portfolio account base (12,500 accounts) [D15P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Unified Enterprise Customer Health, Retent \u2014 Retention Pipeline",
+        "title": "Unified Enterprise Customer Health, Retent — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (12,500 accounts).",
+            "caption": "Portfolio account base (12,500 accounts) [D15P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,14 +647,14 @@
     },
     {
       "partTitle": "Severe Account Crisis, Champion Turnover & Multi-Threat Churn Rescue Gateway",
-      "codeHash": "99c6d3b08e6df607a5bf46b2dec261739ba0dad31fe8d88be7676cba7ad479d7",
+      "codeHash": "7ae9c67a3af9e1139b3fdd934310b59745c7959c1d55754b4889fc479dba45c6",
       "spec": {
         "template": "funnel",
-        "title": "Severe Account Crisis, Champion Turnover & \u2014 Retention Pipeline",
+        "title": "Severe Account Crisis, Champion Turnover & — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (8,000 accounts).",
+            "caption": "Portfolio account base (8,000 accounts) [D15P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Severe Account Crisis, Champion Turnover & \u2014 Retention Pipeline",
+        "title": "Severe Account Crisis, Champion Turnover & — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (8,000 accounts).",
+            "caption": "Portfolio account base (8,000 accounts) [D15P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,14 +967,14 @@
     },
     {
       "partTitle": "Strategic Boardroom Customer Retention & NRR Multiplier Defense",
-      "codeHash": "81c9b35773c03dd2216a692b3e39b8becefbc84c8dae92eca55d9e1a8eaa7276",
+      "codeHash": "f98503264b65261852adfe1c0dab22d7f0eb1e71d7d11a957632e9c08ae76221",
       "spec": {
         "template": "funnel",
-        "title": "Strategic Boardroom Customer Retention & N \u2014 Retention Pipeline",
+        "title": "Strategic Boardroom Customer Retention & N — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (9,500 accounts).",
+            "caption": "Portfolio account base (9,500 accounts) [D15P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Strategic Boardroom Customer Retention & N \u2014 Retention Pipeline",
+        "title": "Strategic Boardroom Customer Retention & N — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (9,500 accounts).",
+            "caption": "Portfolio account base (9,500 accounts) [D15P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,14 +1287,14 @@
     },
     {
       "partTitle": "Master Enterprise Customer Success & Retention Operating Platform",
-      "codeHash": "dec5f0f8f7eb498105ca94c0e4a30679e2be4bf1b1edebc46bf3ec8f978fc11f",
+      "codeHash": "06a3c3984cae215fcb5f7ac186f9192a7b479cd40d27b5483d3980bf2c117d0e",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Customer Success & Reten \u2014 Retention Pipeline",
+        "title": "Master Enterprise Customer Success & Reten — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (15,000 accounts).",
+            "caption": "Portfolio account base (15,000 accounts) [D15P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1308,16 +1308,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1325,7 +1325,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,16 +1346,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1363,7 +1363,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,16 +1384,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1401,7 +1401,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,16 +1422,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1439,7 +1439,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Enterprise Customer Success & Reten \u2014 Retention Pipeline",
+        "title": "Master Enterprise Customer Success & Reten — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (15,000 accounts).",
+            "caption": "Portfolio account base (15,000 accounts) [D15P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1466,16 +1466,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1483,7 +1483,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,16 +1504,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1521,7 +1521,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,16 +1542,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1559,7 +1559,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,16 +1580,16 @@
                 "id": "qual",
                 "label": "Healthy Green Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Whitespace Expansion Pipeline",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1597,7 +1597,7 @@
                 "label": "Net Retained & Expanded ARR",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

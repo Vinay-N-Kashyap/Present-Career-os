@@ -8,7 +8,7 @@
       "codeHash": "f7fb33b6448e68d9db4968dc01661fb65d7f0285540d8a9cb896a27e66282d82",
       "spec": {
         "template": "bars",
-        "title": "Sequential Residual Boosting & Gradien... \u2014 Learning Evaluation",
+        "title": "Sequential Residual Boosting & Gradien... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "8124c5a49e569d4bd13837f82d9ce1f9dca8caee320e3cc9793c50a0288f4ca7",
       "spec": {
         "template": "bars",
-        "title": "The Mathematics of XGBoost: Second-Ord... \u2014 Learning Evaluation",
+        "title": "The Mathematics of XGBoost: Second-Ord... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "37a60532bc53cd8d9ce0318b01bda8f537284cc3a8c4c181a75155b74445c085",
       "spec": {
         "template": "bars",
-        "title": "LightGBM Architectural Innovations: Hi... \u2014 Learning Evaluation",
+        "title": "LightGBM Architectural Innovations: Hi... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "ab1e3a131d24242d0e1df663602d6bdfbff53f6aef253f6c075e715e8db245f9",
       "spec": {
         "template": "bars",
-        "title": "CatBoost & High-Cardinality Categorica... \u2014 Learning Evaluation",
+        "title": "CatBoost & High-Cardinality Categorica... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "83dcd9449fb1846694c77f8c481dea6232ffc61e05b2657f26f25e2e88aec49e",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Gradient Booste... \u2014 Learning Evaluation",
+        "title": "Building an Enterprise Gradient Booste... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D34P5].",
             "max": 100,
             "bars": [
               {

@@ -158,11 +158,16 @@ function outputPool(prefix: string, start: number, end: number): string[] {
 function questionsForDay(prefix: string, day: number, pool: string[] = []): TestQuestion[] {
   const long = getLongLesson(prefix, day);
   if (long) {
-    return spread(long.parts.map((p, i) => ({ p, i })), QUESTIONS_PER_DAY).map(({ p, i }) => ({
-      question: p.check?.question || `Concept check for Day ${day} Part ${i + 1}`,
-      ...withAnswerAt(p.check?.options || ['Optimal approach', 'Suboptimal approach'], p.check?.answer ?? 0, day * 7 + i),
-      explanation: p.check?.why || (p.check as any)?.explanation || 'Optimal architectural invariant verified.',
-    }));
+    return spread(long.parts.map((p, i) => ({ p, i })), QUESTIONS_PER_DAY).map(({ p, i }) => {
+      const rawCheck: any = p.check || {};
+      const rawAnswer = rawCheck.answer ?? rawCheck.answerIndex ?? rawCheck.correctIndex ?? 0;
+      const rawWhy = rawCheck.why || rawCheck.explanation || `This option matches the core concept explained in "${p.title || `Day ${day} Part ${i + 1}`}".`;
+      return {
+        question: rawCheck.question || `Which statement best summarizes "${p.title || `Day ${day} Part ${i + 1}`}"?`,
+        ...withAnswerAt(rawCheck.options || ['Follow the lesson step-by-step method', 'Skip verification steps'], rawAnswer, day * 7 + i),
+        explanation: rawWhy,
+      };
+    });
   }
 
   const plan = resolvePilotDay(prefix, day);
@@ -191,15 +196,15 @@ export function getTestQuestions(prefix: string, start: number, end: number): Te
   return out.map((q, idx) => {
     const safeOptions = Array.isArray(q.options) && q.options.length >= 2
       ? q.options
-      : ['Optimal production invariant', 'Suboptimal unvalidated implementation'];
+      : ['Apply the verified lesson procedure', 'Skip the verification check'];
     const safeAnswerIdx = (typeof q.answerIndex === 'number' && q.answerIndex >= 0 && q.answerIndex < safeOptions.length)
       ? q.answerIndex
       : 0;
     return {
-      question: q.question || `Production Invariant Check ${idx + 1}`,
+      question: q.question || `Concept Check ${idx + 1}`,
       options: safeOptions,
       answerIndex: safeAnswerIdx,
-      explanation: q.explanation || 'Optimal architectural invariant verified.',
+      explanation: q.explanation || 'Review the lesson explanation above to see why this choice is accurate.',
     };
   });
 }

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Publisher Yield Management Economics & Price Elasticity",
-      "codeHash": "2dfb2f424b44d2c42fe0736b4a93eede97e1cba5cd3738dcde7269593d40094b",
+      "codeHash": "acf18dc77f8db99eb691731593e2cb77bd348b22220659e196e2dd07828049c7",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Dynamic Floor Pricing Algorithms: Machine Learning at the Edge",
-      "codeHash": "ddeefdbffe888fea231e0d0bd40fb48a4630ba513a606b3182430a9778bdb8c0",
+      "codeHash": "bc7d14204aca348b2e00bd3760363e4b7fb0f6efd80f1c60a1d9d2193047d12b",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "DSP Counter-Measures: Machine Learning Bid Shading Algorithms",
-      "codeHash": "7ecd8d52d57d6ec4304474754f46fbe71f394e7e22b546809cef2daea8de3786",
+      "codeHash": "d2d313ce41b91dfb19326bfc18f506ac72705e43981cc588842cd3bd986bb280",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "The Ad Tech Tax Cascade & Take Rate Auditing",
-      "codeHash": "90173a3de2b7eea96bfa0e31ad0868bbf280198af0bb7ae0db90af6b8646dbd8",
+      "codeHash": "bc9b194c8464d51e9bb0e324df9ed43105f192ba962328ae870c081eb4deb1f2",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Unified Yield & Dynamic Floor Optimization Engine",
-      "codeHash": "ec16a9c07d424b974f2d15c0141694add0e4e20decd7ee669801621f5b31ec64",
+      "codeHash": "81483e995c4e98d0fb41bfc23ad69ba61561ab82273682625f1ad5f5b7c47899",
       "spec": {
         "template": "funnel",
         "steps": [

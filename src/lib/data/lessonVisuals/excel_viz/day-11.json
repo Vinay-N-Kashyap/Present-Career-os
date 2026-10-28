@@ -7,10 +7,10 @@
   "entries": [
     {
       "partTitle": "The Three-Statement Integration Invariant: Balancing P&L, Balance Sheet & Cash Flow Statement",
-      "codeHash": "e189b8ff8abc5f4b42ebc69d8fa6f80a1b9e699a71e88c0daf1f675b2c04e20b",
+      "codeHash": "105c61cc4d1a34a474fd7b81773abd38f6f55824c7293138df17d14ff969747f",
       "spec": {
         "template": "bars",
-        "title": "The Three-Statement Integration Invarian... \u2014 Treasury & Working Capital Distribution",
+        "title": "The Three-Statement Integration Invarian... — Treasury & Working Capital Distribution",
         "steps": [
           {
             "at": "intro",
@@ -125,10 +125,10 @@
     },
     {
       "partTitle": "Working Capital Mechanics: Days Sales Outstanding (DSO), Days Inventory Outstanding (DIO) & Days Payable Outstanding (DPO)",
-      "codeHash": "2982f214d204aa9dc39cf90e2f0531e2a45ef326842d6b3f3a9d391473d49bba",
+      "codeHash": "c3912bd01029c502b219975d7d23c1f37de8c75eb94a2359bc29cac1dc717c61",
       "spec": {
         "template": "bars",
-        "title": "Working Capital Mechanics: Days Sales Ou... \u2014 Treasury & Working Capital Distribution",
+        "title": "Working Capital Mechanics: Days Sales Ou... — Treasury & Working Capital Distribution",
         "steps": [
           {
             "at": "intro",
@@ -243,10 +243,10 @@
     },
     {
       "partTitle": "The Cash Conversion Cycle (CCC) & Operating Cash Drag Optimization",
-      "codeHash": "28d0acece9b3a4deedf2f2cd21d8674da605890334e8bbfdc92fff58a555f06e",
+      "codeHash": "f18ddb11c25095fb83b06ba746d5ad1daa1481117fb50c9b39533f3c797f46d8",
       "spec": {
         "template": "bars",
-        "title": "The Cash Conversion Cycle (CCC) & Operat... \u2014 Treasury & Working Capital Distribution",
+        "title": "The Cash Conversion Cycle (CCC) & Operat... — Treasury & Working Capital Distribution",
         "steps": [
           {
             "at": "intro",
@@ -361,10 +361,10 @@
     },
     {
       "partTitle": "Dynamic Cash Flow Forecasting: Revolver Triggers, Minimum Cash Sweeps & Interest Circularity Breakers",
-      "codeHash": "085571b8f6ffd4b745a0de12a8507558d486a4354c6e16c700797256ed55606f",
+      "codeHash": "81373f80843ae5b64cd644c8e167ebeca064b6a4dcb59151067c32f0ab9ae0d2",
       "spec": {
         "template": "bars",
-        "title": "Dynamic Cash Flow Forecasting: Revolver ... \u2014 Treasury & Working Capital Distribution",
+        "title": "Dynamic Cash Flow Forecasting: Revolver ... — Treasury & Working Capital Distribution",
         "steps": [
           {
             "at": "intro",
@@ -479,10 +479,10 @@
     },
     {
       "partTitle": "Institutional Treasury Liquidity Dashboard & Working Capital Optimization Engine",
-      "codeHash": "3516140cd1a62731d1c83c70231a2a5aaec6ddfcc1601018b8cb035f9fb3232e",
+      "codeHash": "83783ae04b6c2bab8196aba56a3f9022f1a8ad1ef285d7c05fe6c6583698dccc",
       "spec": {
         "template": "bars",
-        "title": "Institutional Treasury Liquidity Dashboa... \u2014 Treasury & Working Capital Distribution",
+        "title": "Institutional Treasury Liquidity Dashboa... — Treasury & Working Capital Distribution",
         "steps": [
           {
             "at": "intro",

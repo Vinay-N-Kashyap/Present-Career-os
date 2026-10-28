@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Anatomy of Search Queries: Intent Taxonomy (Informational, Navigational, Commercial, Transactional)",
-      "codeHash": "042de9a07117bb15fdff05b36b6e556c2d2a135d33549177785fabfdd29a14f0",
+      "codeHash": "544b1758709a428ddaf2fd7851bebe387d5b506dd56e412bf4c7f049034a100a",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Query Preprocessing & Expansion: Spell Correction, Query Rewriting & Sub-Query Decomposition",
-      "codeHash": "e3897ce8d369480d956c4179f32006b7bde9268eb1480a5bf93624897f644046",
+      "codeHash": "cf03bc4180fb7056e3769ee1c38fc0316fc99b81609787eaeb2840a7fd0bd46a",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Entity Extraction & Knowledge Graphs: Named Entity Recognition (NER), Semantic Triples & Schema.org",
-      "codeHash": "a5f66f05f50064cbf65315733202265d73aa71b808a2b94edf7c3eb21068dad5",
+      "codeHash": "268eae7260a913d00498581174407f20e6591de7886f8d5edd4ee32378caa9dd",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Passage Ranking & Document Segmentation: BM25/Dense Hybrid Fusion & Reciprocal Rank Fusion (RRF)",
-      "codeHash": "1e330f25a6b932b9c5a3ddd2d2b25ca9edcbc6fa12218e09166cf0f7cc09e56b",
+      "codeHash": "a4191f62934cd0194b08b1b017c2959b72a89c7f38294c6a107be3e84d8ffed7",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Query Understanding & Intent Classification Engine in Python",
-      "codeHash": "6a6d0af915c021de95d8c70746ba38bafed6df0887478c4c9da4785367ddcc67",
+      "codeHash": "07b2e812c3b37427a4e19aa3ec0b1a828b4a857616517cc5f88b42e8919112bf",
       "spec": {
         "template": "funnel",
         "steps": [

@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "The Economics of Enterprise Sales Compensation: 50/50 OTE Split & Quota Sizing Models",
-      "codeHash": "0671241fa1e3edfae6af65cfab2531008813e4da1b63763e372083458bc1f557",
+      "codeHash": "2f5b88481594542fdd588b47f1aa773215651a2a9012b4d1aa59a340592df872",
       "spec": {
         "template": "funnel",
-        "title": "The Economics of Enterprise Sales Compensa \u2014 RevOps Funnel",
+        "title": "The Economics of Enterprise Sales Compensa — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (10,000 leads).",
+            "caption": "Inbound revenue funnel (10,000 leads) [D19P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The Economics of Enterprise Sales Compensa \u2014 RevOps Funnel",
+        "title": "The Economics of Enterprise Sales Compensa — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (10,000 leads).",
+            "caption": "Inbound revenue funnel (10,000 leads) [D19P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1800,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Closed Won Revenue",
                 "value": 720,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,14 +327,14 @@
     },
     {
       "partTitle": "Commission Tier Architecture & Non-Linear Marginal Accelerators",
-      "codeHash": "9175270e44722ac1c8f9e6e8bc7cdaa988b5778c3bdd8ca53eac6d991ff4ae5d",
+      "codeHash": "9c219910978526b160baaf62655921ce6fda97863990a2473cb49363ebaa667e",
       "spec": {
         "template": "funnel",
-        "title": "Commission Tier Architecture & Non-Linear  \u2014 RevOps Funnel",
+        "title": "Commission Tier Architecture & Non-Linear  — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (12,500 leads).",
+            "caption": "Inbound revenue funnel (12,500 leads) [D19P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Commission Tier Architecture & Non-Linear  \u2014 RevOps Funnel",
+        "title": "Commission Tier Architecture & Non-Linear  — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (12,500 leads).",
+            "caption": "Inbound revenue funnel (12,500 leads) [D19P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 5625,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2250,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Closed Won Revenue",
                 "value": 900,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,14 +647,14 @@
     },
     {
       "partTitle": "Draw Schedules, Recoverable vs Non-Recoverable Draws & Rep Ramp Modeling",
-      "codeHash": "319cbf94dc4e6dc23a8af4dda91e5c6029ee61607fe0e80b1ba1ca27ec770cc6",
+      "codeHash": "7554b9b5dec780a85581c231803da32963418b71665759d95daaf82b8e765d61",
       "spec": {
         "template": "funnel",
-        "title": "Draw Schedules, Recoverable vs Non-Recover \u2014 RevOps Funnel",
+        "title": "Draw Schedules, Recoverable vs Non-Recover — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (8,000 leads).",
+            "caption": "Inbound revenue funnel (8,000 leads) [D19P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Draw Schedules, Recoverable vs Non-Recover \u2014 RevOps Funnel",
+        "title": "Draw Schedules, Recoverable vs Non-Recover — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (8,000 leads).",
+            "caption": "Inbound revenue funnel (8,000 leads) [D19P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 3600,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1440,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Closed Won Revenue",
                 "value": 576,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,14 +967,14 @@
     },
     {
       "partTitle": "Clawback Governance, Payment Timing & Tactical SPIFF Engineering",
-      "codeHash": "fe858ea75f1659f6bfb8b2686062e133c1e9677f823fe128c062b3004f793d73",
+      "codeHash": "ee83b529ba4680961aa43e6b85bfcacad912b5e7f9768f3701453d4e723e2acb",
       "spec": {
         "template": "funnel",
-        "title": "Clawback Governance, Payment Timing & Tact \u2014 RevOps Funnel",
+        "title": "Clawback Governance, Payment Timing & Tact — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (9,500 leads).",
+            "caption": "Inbound revenue funnel (9,500 leads) [D19P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Clawback Governance, Payment Timing & Tact \u2014 RevOps Funnel",
+        "title": "Clawback Governance, Payment Timing & Tact — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (9,500 leads).",
+            "caption": "Inbound revenue funnel (9,500 leads) [D19P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 4275,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 1710,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Closed Won Revenue",
                 "value": 684,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,14 +1287,14 @@
     },
     {
       "partTitle": "Master Enterprise Sales Compensation & Commission Engine",
-      "codeHash": "894b79e9bdce677fa0e9649b0753d975f1a8c237e14097c2534fae5dc7110690",
+      "codeHash": "cc57039f9366b494fd02118de49b25fc78fc16ccd035bf6af95b54f11146e249",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Sales Compensation & Com \u2014 RevOps Funnel",
+        "title": "Master Enterprise Sales Compensation & Com — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (15,000 leads).",
+            "caption": "Inbound revenue funnel (15,000 leads) [D19P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1308,16 +1308,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1325,7 +1325,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,16 +1346,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1363,7 +1363,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,16 +1384,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1401,7 +1401,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,16 +1422,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1439,7 +1439,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Enterprise Sales Compensation & Com \u2014 RevOps Funnel",
+        "title": "Master Enterprise Sales Compensation & Com — RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound revenue funnel (15,000 leads).",
+            "caption": "Inbound revenue funnel (15,000 leads) [D19P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -1466,16 +1466,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1483,7 +1483,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,16 +1504,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1521,7 +1521,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,16 +1542,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1559,7 +1559,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,16 +1580,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Tier",
                 "value": 6750,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Cycle",
                 "value": 2700,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1597,7 +1597,7 @@
                 "label": "Closed Won Revenue",
                 "value": 1080,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

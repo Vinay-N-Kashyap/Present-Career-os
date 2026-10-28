@@ -387,5 +387,748 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Architecture of the Global Multi-Asset Infrastructure & Sovereign Syndication Platform",
+      "codeHash": "afa165d72756432595f45a30ae9bde6d27f81bef282b078d055f345f8b3ba854",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — PrimeBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — PrimeBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — PrimeBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — PrimeBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — PrimeBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — PrimeBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — PrimeBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — PrimeBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Border Concession SPV Structuring & Multi-Tranche Debt Sculpting Execution",
+      "codeHash": "1526c8cc5a49d715cde5101399556e5a9ac6aefef69240eeaf76ddea86eba064",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — PrimeBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — PrimeBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — PrimeBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — PrimeBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — PrimeBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — PrimeBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — PrimeBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — PrimeBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regulatory Asset Base (RAB) Integration, YieldCo Drop-Downs & CAFD Waterfalls",
+      "codeHash": "30bd822bb17d7da5e3f74b166195537bc97021429a8baa2c5f2e1ed68dfa3551",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — PrimeBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — PrimeBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — PrimeBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — PrimeBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — PrimeBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — PrimeBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — PrimeBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — PrimeBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Green Bond Issuance, SLL Margin Optimization & Compliance Carbon Hedging",
+      "codeHash": "a7dfd9a5e8d79457d751069c70791fd6d40ba9e37eebc88eabbac8dca9df22c6",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — PrimeBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — PrimeBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — PrimeBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — PrimeBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — PrimeBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — PrimeBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — PrimeBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — PrimeBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Global Sovereign Capital, Infrastructure Syndicate & ESG Asset Management Engine",
+      "codeHash": "2d1117a439850ef1cb65a82e3909301f87840ec69bd3d80eb587da6f7c488335",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — PrimeBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — PrimeBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — PrimeBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — PrimeBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 55 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Global Renewable Transmission Infrastructure",
+            "$5,000,000,000.00",
+            ""
+          ],
+          [
+            "Dedicated Six Month Debt Service Reserve",
+            "$101,923,076.92",
+            ""
+          ],
+          [
+            "Senior Sculpted Project Term Debt Facility",
+            "",
+            "$2,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Green Infrastructure Bonds",
+            "",
+            "$1,000,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Equity",
+            "",
+            "$1,601,923,076.92"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$5,101,923,076.92",
+          "$5,101,923,076.92"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 55 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — PrimeBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — PrimeBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — PrimeBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — PrimeBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

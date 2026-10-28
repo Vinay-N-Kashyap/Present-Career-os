@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Enterprise Contract Pricing Engines & Multi-Dimensional Price List Resolution",
-      "codeHash": "fe2918edd5b9507b0c8722ab13278627499ea46da846f84c468eaf52bc590af0",
+      "codeHash": "abf98ebb4ab2768e89295ee7a032f90f0f613ebf46c8fb0735cca2511666c251",
       "spec": {
         "template": "funnel",
         "title": "Day 49 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tiered Volume Breaks, Stepped Pricing vs Marginal Bracket Calculators",
-      "codeHash": "877e2e5b9e18ba8d58614a8b866245f16df0388bb90c004534aee7f80dfe277a",
+      "codeHash": "523a2128e984263e485f6ea525365240107088a88b2aa739c87944358cd7bad1",
       "spec": {
         "template": "funnel",
         "title": "Day 49 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Retrospective Annual Volume Rebate Engines & ASC 606 Variable Consideration Accruals",
-      "codeHash": "38d0c2480b194d4b6e227febca756301aba73537192ccc660d9e7c5d976d0ec3",
+      "codeHash": "0409c6ae94854778bf8fd6db5824300ca2e85425509aed2488889fabd559ac5c",
       "spec": {
         "template": "funnel",
         "title": "Day 49 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Configure, Price, Quote (CPQ) Workflows, RFQ Lifecycles & Margin Hurdle Governance",
-      "codeHash": "24687f89144e20b359e3fcb7c8278e593d02e074171e523f77281f623ae6fc3f",
+      "codeHash": "d586175f8e98401906f608f8adaea3d1707b2f48f76bdb4539575cb57bf52a77",
       "spec": {
         "template": "funnel",
         "title": "Day 49 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Executive B2B Pricing Waterfall, Pocket Margin Yield & Margin Leakage Defense Tower",
-      "codeHash": "6c286f3292047e43bfb7392b10fba973e61478e8e946f2d06554560ac45b78c5",
+      "codeHash": "af71dfbefd2c0ef157b8c8f58afd3e3cb462978b95f3b8bc34fab9ca7eecb718",
       "spec": {
         "template": "funnel",
         "title": "Day 49 Part 5 Architecture Flow",

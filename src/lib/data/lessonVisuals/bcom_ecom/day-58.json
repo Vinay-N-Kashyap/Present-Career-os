@@ -6,7 +6,7 @@
     {
       "partIndex": 0,
       "partTitle": "Unified Omnichannel Architecture: POS Hardware, Digital Storefronts & Synchronized Identity",
-      "codeHash": "b94ba2f1a5a4eaf2854dbe3b80b868b0c317c4c40262e893522962c616fbb1b6",
+      "codeHash": "42a2e045f02f2eedee772713faa2902abde38772ac198e13e193b4ec7f298791",
       "spec": {
         "template": "funnel",
         "title": "Unified Omnichannel Architecture: POS Hardware, Digital Storefronts & Synchronized Identity",
@@ -65,7 +65,7 @@
     {
       "partIndex": 1,
       "partTitle": "Distributed Inventory Allocation, Real-Time Available-to-Promise (ATP) & Multi-Node Routing",
-      "codeHash": "2c21d0f5c64d3eaa45cf930052f25c4092a87c32f9828539d790e383c1351e8c",
+      "codeHash": "07d0e6e0dd799d2c943249a0656507ffc864a7d78e5b35daf27a1e2d0e06fedd",
       "spec": {
         "template": "funnel",
         "title": "Distributed Inventory Allocation, Real-Time Available-to-Promise (ATP) & Multi-Node Routing",
@@ -124,7 +124,7 @@
     {
       "partIndex": 2,
       "partTitle": "BOPIS (Buy Online, Pick Up In Store) Fulfillment State Machine & Store Associate SFS Workflows",
-      "codeHash": "234c3b5cd7c21f9c031331fea19931ae446e0f5982053e4e02fa2b33da55b230",
+      "codeHash": "37609744e0810579d78b672b1b8ee577f1e356aed920041851322e44b2641da2",
       "spec": {
         "template": "funnel",
         "title": "BOPIS (Buy Online, Pick Up In Store) Fulfillment State Machine & Store Associate SFS Workflows",
@@ -183,7 +183,7 @@
     {
       "partIndex": 3,
       "partTitle": "BORIS (Buy Online, Return In Store) & Reverse Logistics Re-Commerce Reconciliation",
-      "codeHash": "6210a2df0c985465edea2fb429a4496553590e716a2493aeb6c93f5fae288c3e",
+      "codeHash": "8935ef13ad42e696d69f6d7693a9078ec20e592e848aa5786c1cad5ca495e3f4",
       "spec": {
         "template": "funnel",
         "title": "BORIS (Buy Online, Return In Store) & Reverse Logistics Re-Commerce Reconciliation",
@@ -242,7 +242,7 @@
     {
       "partIndex": 4,
       "partTitle": "Enterprise Omnichannel Retail & Store Fulfillment Command Tower",
-      "codeHash": "fc985e3e491347879b706f136ed27df47f3959b8659fe70cf3bd672d53c509a3",
+      "codeHash": "ada81b84fcdd0468a88026f983e46c700d68b12bc0ce302a82d49273ec1714ee",
       "spec": {
         "template": "funnel",
         "title": "Enterprise Omnichannel Retail & Store Fulfillment Command Tower",

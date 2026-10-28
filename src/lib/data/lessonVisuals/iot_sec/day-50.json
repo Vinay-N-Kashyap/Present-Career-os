@@ -7,7 +7,7 @@
   "entries": [
     {
       "partTitle": "Milestone 10 Architecture & Root-of-Trust Invariants: Zero-NVM Storage & Silicon Biometrics",
-      "codeHash": "3647faa5980ac9a2bd856c1c02db5670545d0e34ca6afac254f2797e461a1a55",
+      "codeHash": "ac70d68e498ddf99198ee3da9d159c204b049c10efd7185e68b64f65efdc0ff6",
       "spec": {
         "template": "register-bits",
         "title": "Day 50 Part 1 — Milestone 10 Architecture & Root-of-Tr — Register Architecture",

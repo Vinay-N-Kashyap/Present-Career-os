@@ -46,7 +46,9 @@
             "caption": "Total landed cost calculations balance freight rates with carrying costs."
           }
         ]
-      }
+      },
+      "codeHash": "0f0305c948a23514a1db3b1360f62ccbaea03b5b4d56ad928e9a3a6b855138bb",
+      "partTitle": "Architecture of Global Trade: Ocean, Air, Rail, and Road Freight Dynamics and Modal Selection Economics"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Delivered duty paid mandates that sellers absorb import clearance duties."
           }
         ]
-      }
+      },
+      "codeHash": "6e3bc08d0f2fbb859f99b91bd301ce3640ec715cb60b5ae11026eeb3b127eb7b",
+      "partTitle": "Incoterms 2020 Invariants: Risk Transfer, Cost Allocation, and Title Transfer (EXW, FOB, CIF, DDP)"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Inland container depots provide customs bonded processing away from coasts."
           }
         ]
-      }
+      },
+      "codeHash": "49abd7bc410bc5315227b1b54d9497a1571a13f67bdda8627c39663863099577",
+      "partTitle": "Containerization & Intermodal Logistics: TEU Economics, Drayage Networks, and Transshipment Hubs"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Volumetric weight rules ensure carriers bill for space when goods cube out."
           }
         ]
-      }
+      },
+      "codeHash": "2f28d7bfc59f2719aecd81c4f99a2fed4add28fb1fffab4e4859d7c5a46610d7",
+      "partTitle": "3D Container Loading Problem (CLP): Volumetric Weight, Axle Weight Distribution, and Stowage Heuristics"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Predictive risk engines flag last free days to avoid detention penalties."
           }
         ]
-      }
+      },
+      "codeHash": "dcb381baca92eeb665224fac86c6fc135270fe8c8c49920c938a1f8d6c384428",
+      "partTitle": "Global Freight Costing Engine: Multi-Leg Freight Optimization and Demurrage Detention Risk Modeling"
     }
   ]
 }

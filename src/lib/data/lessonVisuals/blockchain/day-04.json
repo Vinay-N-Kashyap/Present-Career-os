@@ -7,7 +7,7 @@
   "entries": [
     {
       "partTitle": "Read-Only Reentrancy & Cross-Contract State Inconsistency",
-      "codeHash": "f69dace1c326862991ca26dc5e688c1b5b372666762225d26ae302ac805f13dd",
+      "codeHash": "fce7fb70f030aee5cc09edc8289776c182c55b9fb5b1edf675a231f573590dae",
       "spec": {
         "template": "sequence",
         "title": "Read-Only Reentrancy & Cross-Contract State I... — On-Chain Transaction Sequence",
@@ -619,7 +619,7 @@
     },
     {
       "partTitle": "Multi-Signature Safe Architecture & Threshold Signatures",
-      "codeHash": "11c7ed57168b409af9fd8d6c71d45fd8cc08372b87df1f2a45acce08fed1f55d",
+      "codeHash": "f7807a16eaa7403a44932d428182a45d18a873814a5f9d1c321e7d806070ca97",
       "spec": {
         "template": "sequence",
         "title": "Multi-Signature Safe Architecture & Threshold... — On-Chain Transaction Sequence",

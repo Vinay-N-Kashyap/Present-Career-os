@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "The Counterfactual Framework & Rubin Causal Model: Eliminating Selection Bias",
-      "codeHash": "6c9079f25a7433283844db018b49a93ec63a162935c4256a123edeb7c29e3911",
+      "codeHash": "ef145b9b7f7a832dcafb1fbe097c5b54cd6fc73337a9221bc8f62ba3965fc6cb",
       "spec": {
         "template": "funnel",
-        "title": "The Counterfactual Framework & Rubin Causal Model: Eliminating Selection Bias \u2014 Conversion Funnel",
+        "title": "The Counterfactual Framework & Rubin Causal Model: Eliminating Selection Bias — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D32P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -169,14 +169,14 @@
     },
     {
       "partTitle": "Matched Market Quasi-Experiments: Stratification & Pre-Period Alignment",
-      "codeHash": "fe81012063fc6a8f5c4c2ea76fc70cddbdf13d8320e2b69549ff8cd4b8da09bd",
+      "codeHash": "ea06b942ce1dac33393e8a60557c343ec7c0d7ce278814e894ef48472b4a0359",
       "spec": {
         "template": "funnel",
-        "title": "Matched Market Quasi-Experiments: Stratification & Pre-Period Alignment \u2014 Conversion Funnel",
+        "title": "Matched Market Quasi-Experiments: Stratification & Pre-Period Alignment — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D32P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -331,14 +331,14 @@
     },
     {
       "partTitle": "The Difference-in-Differences (DiD) Estimator: Validating Parallel Trends",
-      "codeHash": "346e237064bcfe14ad7a5b022a3355298d286bc82b597384f4429b275bbf8137",
+      "codeHash": "d1ba16ce424e8ca571d64c4f453d7f06672735cf40e520cabd85a393f4e0a36f",
       "spec": {
         "template": "funnel",
-        "title": "The Difference-in-Differences (DiD) Estimator: Validating Parallel Trends \u2014 Conversion Funnel",
+        "title": "The Difference-in-Differences (DiD) Estimator: Validating Parallel Trends — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D32P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -493,14 +493,14 @@
     },
     {
       "partTitle": "Synthetic Control Methods (SCM): Constructing Virtual Counterfactuals",
-      "codeHash": "7509b45e0277d87fd1ba55773521fd253717c57e1d1a6d56dd5fa5828204c1ea",
+      "codeHash": "7874f44479abce6b9feebfc6e6cd1f968a0ada2458bd6d988b30731ff6fe5926",
       "spec": {
         "template": "funnel",
-        "title": "Synthetic Control Methods (SCM): Constructing Virtual Counterfactuals \u2014 Conversion Funnel",
+        "title": "Synthetic Control Methods (SCM): Constructing Virtual Counterfactuals — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D32P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -655,14 +655,14 @@
     },
     {
       "partTitle": "Causal Incrementality Auditing & Budget Governance: Translating iROAS into Board Decisions",
-      "codeHash": "22eff7d4bc88706d3ebb392773478ab55e855c6981de3fe94b7788131bda601a",
+      "codeHash": "d69a0c68cd055980781ecb4ea48af5f4819a8b62e6abfe1d4db070d4364bfef5",
       "spec": {
         "template": "funnel",
-        "title": "Causal Incrementality Auditing & Budget Governance: Translating iROAS into Board Decisions \u2014 Conversion Funnel",
+        "title": "Causal Incrementality Auditing & Budget Governance: Translating iROAS into Board Decisions — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D32P5].",
             "activeStageId": "top",
             "stages": [
               {

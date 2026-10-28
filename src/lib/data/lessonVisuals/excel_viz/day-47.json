@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
-    "codeHash": "f19dc92ce1ede9664e9cd1b76cf65167499a1e29b4b10a366e9ea10f46110330",
-    "spec": {
-      "template": "bars",
-      "title": "Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 47,
+  "entries": [
+    {
+      "partTitle": "Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+      "codeHash": "f19dc92ce1ede9664e9cd1b76cf65167499a1e29b4b10a366e9ea10f46110330",
+      "spec": {
+        "template": "bars",
+        "title": "Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Structured Error Handling in VBA: On Error GoTo vs The Fatal 'On Error Resume Next' Trap",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The CleanExit Pattern & Atomic State Restoration Guarantees",
+      "codeHash": "69bd7fb3982373285e8136dd1cc6a35bd203afd402250be86b87eb17be2c175e",
+      "spec": {
+        "template": "bars",
+        "title": "The CleanExit Pattern & Atomic State Restoration Guarantees – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The CleanExit Pattern & Atomic State Restoration Guarantees – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for The CleanExit Pattern & Atomic State Restoration Guarantees",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+      "codeHash": "e2287ccaae82fdd141a64f9e42d55a93246e14dec972b1f7efc4288cb23cee85",
+      "spec": {
+        "template": "bars",
+        "title": "Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic SOX 404 Audit Logging & User Modification Journaling",
+      "codeHash": "f201a4e9eddb363ae73a2744e3ed36bfd375388190b16819c4b66d2419186382",
+      "spec": {
+        "template": "bars",
+        "title": "Forensic SOX 404 Audit Logging & User Modification Journaling – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Forensic SOX 404 Audit Logging & User Modification Journaling – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging & User Modification Journaling",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+      "codeHash": "0c685f14602f913772414ec79ac6238d9de54b44061cfa5e3689d40db5fe8d0a",
+      "spec": {
+        "template": "bars",
+        "title": "Master Event-Driven Automation Gateway: Enterprise Error & Event Certification – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Event-Driven Automation Gateway: Enterprise Error & Event Certification – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Structured Error",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "CleanExit Pattern",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Event Interceptor",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Ledger",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "The CleanExit Pattern & Atomic State Restoration Guarantees",
-    "codeHash": "69bd7fb3982373285e8136dd1cc6a35bd203afd402250be86b87eb17be2c175e",
-    "spec": {
-      "template": "bars",
-      "title": "The CleanExit Pattern & Atomic State Restoration Guarantees – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for The CleanExit Pattern & Atomic State Restoration Guarantees",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for The CleanExit Pattern & Atomic State Restoration Guarantees",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for The CleanExit Pattern & Atomic State Restoration Guarantees",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for The CleanExit Pattern & Atomic State Restoration Guarantees",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
-    "codeHash": "e2287ccaae82fdd141a64f9e42d55a93246e14dec972b1f7efc4288cb23cee85",
-    "spec": {
-      "template": "bars",
-      "title": "Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Event-Driven Automation: Worksheet_Change & Preventing Cascading Recursion Loops",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Forensic SOX 404 Audit Logging & User Modification Journaling",
-    "codeHash": "f201a4e9eddb363ae73a2744e3ed36bfd375388190b16819c4b66d2419186382",
-    "spec": {
-      "template": "bars",
-      "title": "Forensic SOX 404 Audit Logging & User Modification Journaling – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging & User Modification Journaling",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging & User Modification Journaling",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging & User Modification Journaling",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging & User Modification Journaling",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
-    "codeHash": "0c685f14602f913772414ec79ac6238d9de54b44061cfa5e3689d40db5fe8d0a",
-    "spec": {
-      "template": "bars",
-      "title": "Master Event-Driven Automation Gateway: Enterprise Error & Event Certification – Robust VBA Error Handling & Event-Driven Automation: On Error GoTo, ScreenUpdating & Sheet Events",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Master Event-Driven Automation Gateway: Enterprise Error & Event Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Structured Error",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "CleanExit Pattern",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Event Interceptor",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Ledger",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

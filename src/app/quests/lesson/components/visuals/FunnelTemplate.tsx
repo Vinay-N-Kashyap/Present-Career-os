@@ -20,7 +20,13 @@ export function FunnelTemplate({
   onShapeTap,
   showSpaces,
 }: FunnelTemplateProps): React.ReactElement {
-  const stages: FunnelStage[] = step.stages || [];
+  const defaultValues = [1000, 720, 480, 260, 140];
+  const stages: FunnelStage[] = (step.stages || []).map((st: any, i: number) => ({
+    ...st,
+    id: st?.id || `stage-${i + 1}`,
+    label: st?.label || st?.name || st?.title || `Stage ${i + 1}`,
+    value: typeof st?.value === 'number' ? st.value : (typeof st?.count === 'number' ? st.count : (defaultValues[i] ?? Math.max(100, 1000 - i * 180))),
+  }));
   const activeStageId = step.activeStageId;
 
   // Determine baseline value from the top stage or maximum

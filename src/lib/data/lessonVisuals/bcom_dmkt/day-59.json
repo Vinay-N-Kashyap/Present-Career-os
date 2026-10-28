@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Post-Cookie Paradigm & Signal Loss: Apple ATT, Third-Party Cookie Deprecation & Privacy Sandbox",
-      "codeHash": "59debfd4869be451cb0524dcc6416e6a83fbdec3686748b5e65241f3cb1834d0",
+      "codeHash": "d32b0bcff009ba0db4679c7c7b96574b39ccd53a00f14655f91f73b513230869",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Differential Privacy in Adtech: Epsilon Budgets, Laplace Noise Injection & Secure Aggregation",
-      "codeHash": "a4357ac62915a5e4d99ba131f5a8d4300f2303a92123a7d29314b68804f69658",
+      "codeHash": "8fd316a507dd2bfa755663867084956708968c84cf63b14be4794b3b025ce1cd",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Federated Learning & On-Device Edge Machine Learning for Audience Modeling",
-      "codeHash": "b99f3c171a4b0596c3f6620f0b71e34352ded498eb472d5712680c6ff5319dce",
+      "codeHash": "77233e69f420096147a674a494c65084241ca9aaeccd1d5e1d76fad5a061a0ef",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Generative Synthetic Data & Counterfactual Attribution Modeling in Clean Rooms",
-      "codeHash": "32948a245c9f402fe8814c43a9d125011f6418718f53397a1b9eaa381de968e7",
+      "codeHash": "4fa8af2104fd3beb666a5daf0645c1268c7351ac1e72f5c96663cd809bf548f2",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Privacy-First Ad Engine: Integrated Privacy Sandbox, Clean Rooms & Signal Restoration",
-      "codeHash": "8b110af2ca959d142971ec9038cb15b9ac05342a7e8bf4083cb3d82a960f5138",
+      "codeHash": "49c244a86707a9afee14c3875119ee97d1bd097db77a6e3fbd3e0058cb41ad06",
       "spec": {
         "template": "funnel",
         "steps": [

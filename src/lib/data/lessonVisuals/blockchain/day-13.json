@@ -10,7 +10,7 @@
       "codeHash": "da6d2c8542cfec399268666593f22c002bb09000bd6cae99e2145c53d6d66d06",
       "spec": {
         "template": "sequence",
-        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle \u2014 Flash Loan Sequence",
+        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -65,7 +65,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -77,7 +77,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -86,7 +86,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle \u2014 Flash Loan Sequence",
+        "title": "Flash Loan Fundamentals & Atomic Transaction Lifecycle — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -141,7 +141,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -153,7 +153,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -166,7 +166,7 @@
       "codeHash": "e0e590d43aca9a4bfd8ca48759f6f62035fe38067b8f981d66b279fc53c92146",
       "spec": {
         "template": "sequence",
-        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns \u2014 Flash Loan Sequence",
+        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -221,7 +221,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -233,7 +233,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -242,7 +242,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns \u2014 Flash Loan Sequence",
+        "title": "The ERC-3156 Flash Lending Standard: Interfaces & Magic Returns — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -297,7 +297,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -309,7 +309,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -322,7 +322,7 @@
       "codeHash": "de46c07aad4aeb7937d3555473f98042019372aba0bc2977a60a1a090e9509c8",
       "spec": {
         "template": "sequence",
-        "title": "Decentralized Arbitrage & Liquidation Engine Architecture \u2014 Flash Loan Sequence",
+        "title": "Decentralized Arbitrage & Liquidation Engine Architecture — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -377,7 +377,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -389,7 +389,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -398,7 +398,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Decentralized Arbitrage & Liquidation Engine Architecture \u2014 Flash Loan Sequence",
+        "title": "Decentralized Arbitrage & Liquidation Engine Architecture — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -453,7 +453,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -465,7 +465,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -474,11 +474,11 @@
       }
     },
     {
-      "partTitle": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance",
+      "partTitle": "Flash Loan strict security safeguards & Attack Surfaces: Oracles, Reentrancy & Governance",
       "codeHash": "41df4e0c1b4570ecfda480c862080ee30f29d50801b3034d5dfcc84f6817a6e4",
       "spec": {
         "template": "sequence",
-        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance \u2014 Flash Loan Sequence",
+        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -533,7 +533,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -545,7 +545,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -554,7 +554,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance \u2014 Flash Loan Sequence",
+        "title": "Flash Loan Security Invariants & Attack Surfaces: Oracles, Reentrancy & Governance — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -609,7 +609,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -621,7 +621,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -634,7 +634,7 @@
       "codeHash": "d3148ebfe400cbb0b0a4d953ee461291b9c801f0f3318b20556b8cfc5f460adf",
       "spec": {
         "template": "sequence",
-        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture \u2014 Flash Loan Sequence",
+        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -689,7 +689,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -701,7 +701,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]
@@ -710,7 +710,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture \u2014 Flash Loan Sequence",
+        "title": "Master Flash Loan & Arbitrage Execution Engine Architecture — Flash Loan Sequence",
         "actors": [
           "Flash Borrower",
           "ERC3156 Lender Pool",
@@ -765,7 +765,7 @@
               {
                 "from": "Flash Borrower",
                 "to": "ERC3156 Lender Pool",
-                "label": "repay(amount + fee) [Magic Return \u2713]",
+                "label": "repay(amount + fee) [Magic Return ✓]",
                 "tone": "ok"
               },
               {
@@ -777,7 +777,7 @@
               {
                 "from": "Profit Vault",
                 "to": "Flash Borrower",
-                "label": "FlashLoanCertified(Solvent \u2713)",
+                "label": "FlashLoanCertified(Solvent ✓)",
                 "tone": "ok"
               }
             ]

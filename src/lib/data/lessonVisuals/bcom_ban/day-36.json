@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Integrated Treasury Architecture: Desks, Liquidity Mandates & Front-Mid-Back Office Segregation",
-      "codeHash": "5d30502fef7cb077f111626cdda42dd87b384a7885c35209c5f874321326f630",
+      "codeHash": "f1d4f1b9bcdb0a7c41e608c64b4595e995a73ea01fc5c092029050a24a2ad672",
       "spec": {
         "template": "funnel",
-        "title": "The Integrated Treasury Architecture: ... \u2014 Treasury Risk Operations",
+        "title": "The Integrated Treasury Architecture: ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Statutory Reserve Physics: CRR Formulation, Maintenance Floors & Penal Structures",
-      "codeHash": "fb99c237ffebfbd606fb8c2ec3b0ccdf7dbf60b6e521971697ec3f10e154302a",
+      "codeHash": "337eff60723c146d231a53ccc07bd2758a830e76bde201d94c4329d8592e3dc6",
       "spec": {
         "template": "funnel",
-        "title": "Statutory Reserve Physics: CRR Formula... \u2014 Treasury Risk Operations",
+        "title": "Statutory Reserve Physics: CRR Formula... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Statutory Liquidity Ratio (SLR) & Portfolio Accounting: HTM, AFS & HFT Categories",
-      "codeHash": "4d2a385cb328958d590cf10cd2cb00a0ed04d4cf1e73a0337a17c7254e69578c",
+      "codeHash": "0a4d0cabdcd448c9341a2febbb48aead615fbfa3ab934f9e92be00a82a27a44a",
       "spec": {
         "template": "funnel",
-        "title": "Statutory Liquidity Ratio (SLR) & Port... \u2014 Treasury Risk Operations",
+        "title": "Statutory Liquidity Ratio (SLR) & Port... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Dealing Room Risk Limits: Daylight, Overnight, Stop-Loss & PV01 Governance",
-      "codeHash": "fe927ccef49cfec12c34edd37a882efbd71e952ff95a3c7b3cb561102e36d235",
+      "codeHash": "10d21d6636bb70da925566d0eca1205408b1dbd946b7899ada3ec100facf88d7",
       "spec": {
         "template": "funnel",
-        "title": "Dealing Room Risk Limits: Daylight, Ov... \u2014 Treasury Risk Operations",
+        "title": "Dealing Room Risk Limits: Daylight, Ov... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Bank Treasury & CRR/SLR Compliance Simulator",
-      "codeHash": "d527a693ede5c400690151305253f640eacab98bc8b46f63a0efe10080e63b30",
+      "codeHash": "45a50146e68496d487414e1f4d74eaf1d2daeed2830e817df3f20e649068c8f5",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Bank Treasury... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Bank Treasury... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

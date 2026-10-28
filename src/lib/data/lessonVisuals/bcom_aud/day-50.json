@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "War Room Briefing: The Multi-Cycle Substantive Audit Mandate",
-      "codeHash": "7bd9ed8f8253803acee159a6562352f9397a54c2db100bafead6fc813d77e97f",
+      "codeHash": "c02401ec5fa69a0e5c08f7af2bfe2ce84334935acd341ed9a17b157f4e366825",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The Multi-Cycle Sub... \u2014 Assurance Review",
+        "title": "War Room Briefing: The Multi-Cycle Sub... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Cycle 1 Execution: Revenue, Contract Assets & Receivables Substantive Audit",
-      "codeHash": "fd459c0b0411cdf5cae5f93019f5641c27dcdcf1ea95329e66cfcd04cb1dee9e",
+      "codeHash": "f8f798fe3365bb2feaa44048be7206567322d7b01298e0cb9ee511a5da37db22",
       "spec": {
         "template": "funnel",
-        "title": "Cycle 1 Execution: Revenue, Contract A... \u2014 Assurance Review",
+        "title": "Cycle 1 Execution: Revenue, Contract A... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Cycle 2 Execution: Procurement, Accounts Payable & SOUL Substantive Audit",
-      "codeHash": "759c56fd88dc4ee9c609d26a3111088e30ea1ccf2003a4a47a9a700b6c6f5bbc",
+      "codeHash": "1b51a360e3f5778205c83ae855c7fa35f8b0f19215fd302630ffe6fc5ccbc562",
       "spec": {
         "template": "funnel",
-        "title": "Cycle 2 Execution: Procurement, Accoun... \u2014 Assurance Review",
+        "title": "Cycle 2 Execution: Procurement, Accoun... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Cycles 3 & 4 Execution: Inventory, Fixed Assets, Leases & Impairment",
-      "codeHash": "02980c0f23e7a5fdba2dc69f7c9fbe38168efa3c5ed4f96d905c9873ebb52578",
+      "codeHash": "0a4b807fe3d82247e77e0a847a392356fa6abad81d598c963a984a932b63c9b1",
       "spec": {
         "template": "funnel",
-        "title": "Cycles 3 & 4 Execution: Inventory, Fix... \u2014 Assurance Review",
+        "title": "Cycles 3 & 4 Execution: Inventory, Fix... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "War Room Master Simulator: The Multi-Cycle Assurance Engine & SUD Evaluation",
-      "codeHash": "ba311b13b8d25a867a9877e8d8115504f4d34129c0a3f18bd57c357e7c3dee44",
+      "codeHash": "27bb909daaaf323bb3ee9f04c1cb8fd70775e01c969685b99ac8fac6c213b1b0",
       "spec": {
         "template": "funnel",
-        "title": "War Room Master Simulator: The Multi-C... \u2014 Assurance Review",
+        "title": "War Room Master Simulator: The Multi-C... — Assurance Review",
         "steps": [
           {
             "at": "intro",

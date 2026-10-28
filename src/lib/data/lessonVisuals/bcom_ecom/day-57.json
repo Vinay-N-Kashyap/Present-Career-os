@@ -6,7 +6,7 @@
     {
       "partIndex": 0,
       "partTitle": "Programmatic Catalog Architecture, Dynamic Faceted URLs & Canonical Indexation Controls",
-      "codeHash": "a50a05821c2203286822075390d2ce482de1d3ff8d98d0b93e76d0bbfe5d5b9b",
+      "codeHash": "2cd656de9acdb96ff69439f2dca900e13ac5e66d2757b15ec371d48408c5d425",
       "spec": {
         "template": "funnel",
         "title": "Programmatic Catalog Architecture, Dynamic Faceted URLs & Canonical Indexation Controls",
@@ -65,7 +65,7 @@
     {
       "partIndex": 1,
       "partTitle": "Schema.org Structured Data, JSON-LD Rich Snippet Generation & Product Offer Compliance",
-      "codeHash": "76dce3497e2d694469aa4d2df8cb8d42a79794c437edf4b1c93571387b11e9b3",
+      "codeHash": "46fe1dc6ac16d7a09850f298562c9c400e1471f9fdbed9bc028bbd7ce9cab3d4",
       "spec": {
         "template": "funnel",
         "title": "Schema.org Structured Data, JSON-LD Rich Snippet Generation & Product Offer Compliance",
@@ -124,7 +124,7 @@
     {
       "partIndex": 2,
       "partTitle": "Server-Side Rendering (SSR), Incremental Static Regeneration (ISR) & Edge Hydration",
-      "codeHash": "50ab90f3a53bd3fad71ac2cc03864e7b3c17c60f0800d8bb0cf861110387c47d",
+      "codeHash": "1dded6320938545e50bb09b238441160839a24c14690c79644aeec7a54bf8ce0",
       "spec": {
         "template": "funnel",
         "title": "Server-Side Rendering (SSR), Incremental Static Regeneration (ISR) & Edge Hydration",
@@ -183,7 +183,7 @@
     {
       "partIndex": 3,
       "partTitle": "Core Web Vitals Telemetry: LCP, INP, CLS & Real-User Performance Monitoring (RUM)",
-      "codeHash": "0ddbf929b0899d06f0cfa03508783c1a747ffd83ae556cb86fd1807900d8f0b8",
+      "codeHash": "543c9a8b925ae8d682495281d1322930738f574425f2d420d04380834092d427",
       "spec": {
         "template": "funnel",
         "title": "Core Web Vitals Telemetry: LCP, INP, CLS & Real-User Performance Monitoring (RUM)",
@@ -242,7 +242,7 @@
     {
       "partIndex": 4,
       "partTitle": "Enterprise SEO & Edge Rendering Command Tower",
-      "codeHash": "2f3d97526d1ce14b85749e1b1ff869543e9a722bfc8aeb654a4aaa537421f810",
+      "codeHash": "49653d9b46a87e181e59861d309c57b8c19b185b9c57dfff13f3ddbf918c1b46",
       "spec": {
         "template": "funnel",
         "title": "Enterprise SEO & Edge Rendering Command Tower",

@@ -263,7 +263,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P2].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -368,7 +368,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P2].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -477,7 +477,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P3].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -582,7 +582,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P3].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -691,7 +691,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P4].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -796,7 +796,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P4].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -905,7 +905,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P5].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [
@@ -1010,7 +1010,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs via <ApplePrivacyManifest />",
+            "caption": "Step 1: Validate Apple Privacy Manifests and Required Reason APIs [D29P5].",
             "activeId": "PrivacyValidator",
             "tone": "primary",
             "nodes": [

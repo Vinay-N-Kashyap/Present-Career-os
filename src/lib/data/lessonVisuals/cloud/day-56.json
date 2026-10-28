@@ -6,7 +6,7 @@
     {
       "partIndex": 1,
       "partTitle": "Serverless Event Topology: Amazon EventBridge Bus, Filtering & Rule Routing",
-      "codeHash": "790c12a12a58dd326e636ce1cae00550b11d2d32ee3cbefed4d03c1192136065",
+      "codeHash": "3b17e4217e38101f0a506ba7eda654095f7bb930e9e8f9e29f6e1da56b7ec8d2",
       "spec": {
         "template": "compare",
         "left": {
@@ -30,19 +30,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Direct synchronous HTTP calls risk cascading service timeouts."
+            "annotation": "Direct synchronous HTTP calls risk cascading service timeouts.",
+            "caption": "Direct synchronous HTTP calls risk cascading service timeouts. (Serverless Event Topology: Amazon E)"
           },
           {
             "at": "say2",
-            "annotation": "EventBridge decouples publishers from consumers via event buses."
+            "annotation": "EventBridge decouples publishers from consumers via event buses.",
+            "caption": "EventBridge decouples publishers from consumers via event buses. (Serverless Event Topology: Amazon E)"
           },
           {
             "at": "example",
-            "annotation": "Router directs standard and vip orders to appropriate queues."
+            "annotation": "Router directs standard and vip orders to appropriate queues.",
+            "caption": "Router directs standard and vip orders to appropriate queues. (Serverless Event Topology: Amazon E)"
           },
           {
             "at": "tryIt",
-            "annotation": "Declarative filter rules eliminate unnecessary compute invocations."
+            "annotation": "Declarative filter rules eliminate unnecessary compute invocations.",
+            "caption": "Declarative filter rules eliminate unnecessary compute invocations. (Serverless Event Topology: Amazon E)"
           }
         ]
       }
@@ -50,7 +54,7 @@
     {
       "partIndex": 2,
       "partTitle": "High-Fanout Broadcasts: Amazon SNS Topic Subscriptions & Filter Policies",
-      "codeHash": "eb78c6e7b2d700444f4ce0e8e6bd91fd94b86144382d8b31531826ddcc33b461",
+      "codeHash": "d037493e534486db37871cc75b0c0cb1b3d741038fbfac474eb3a6050fd6cf0e",
       "spec": {
         "template": "compare",
         "left": {
@@ -74,19 +78,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Sequential consumer notifications introduce high transaction latency."
+            "annotation": "Sequential consumer notifications introduce high transaction latency.",
+            "caption": "Sequential consumer notifications introduce high transaction latency. (High-Fanout Broadcasts: Amazon SNS )"
           },
           {
             "at": "say2",
-            "annotation": "SNS topic fans out broadcast messages to multiple endpoints."
+            "annotation": "SNS topic fans out broadcast messages to multiple endpoints.",
+            "caption": "SNS topic fans out broadcast messages to multiple endpoints. (High-Fanout Broadcasts: Amazon SNS )"
           },
           {
             "at": "example",
-            "annotation": "Topic applies attribute filter policies to route dispatch events."
+            "annotation": "Topic applies attribute filter policies to route dispatch events.",
+            "caption": "Topic applies attribute filter policies to route dispatch events. (High-Fanout Broadcasts: Amazon SNS )"
           },
           {
             "at": "tryIt",
-            "annotation": "Subscription filters ensure subscribers receive only relevant data."
+            "annotation": "Subscription filters ensure subscribers receive only relevant data.",
+            "caption": "Subscription filters ensure subscribers receive only relevant data. (High-Fanout Broadcasts: Amazon SNS )"
           }
         ]
       }
@@ -94,7 +102,7 @@
     {
       "partIndex": 3,
       "partTitle": "Ordered Processing: Amazon SQS FIFO Queues, Message Groups & Deduplication",
-      "codeHash": "e1e5fe40f189274af9385092f719371d5f0f57b81871fe1e8fefafb4bf5e05e5",
+      "codeHash": "e5bdcffe2b541613381aa0d89531ed28419b342530a25df6d1e7d4f8e9adbb6e",
       "spec": {
         "template": "compare",
         "left": {
@@ -118,19 +126,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Standard queues risk out of order delivery and duplicate messages."
+            "annotation": "Standard queues risk out of order delivery and duplicate messages.",
+            "caption": "Standard queues risk out of order delivery and duplicate messages. (Ordered Processing: Amazon SQS FIFO)"
           },
           {
             "at": "say2",
-            "annotation": "FIFO queues guarantee strict chronological message delivery order."
+            "annotation": "FIFO queues guarantee strict chronological message delivery order.",
+            "caption": "FIFO queues guarantee strict chronological message delivery order. (Ordered Processing: Amazon SQS FIFO)"
           },
           {
             "at": "example",
-            "annotation": "Queue executes sequential transactions with message deduplication."
+            "annotation": "Queue executes sequential transactions with message deduplication.",
+            "caption": "Queue executes sequential transactions with message deduplication. (Ordered Processing: Amazon SQS FIFO)"
           },
           {
             "at": "tryIt",
-            "annotation": "Message groups enable parallel processing across independent accounts."
+            "annotation": "Message groups enable parallel processing across independent accounts.",
+            "caption": "Message groups enable parallel processing across independent accounts. (Ordered Processing: Amazon SQS FIFO)"
           }
         ]
       }
@@ -138,7 +150,7 @@
     {
       "partIndex": 4,
       "partTitle": "Fault Isolation: SQS Dead Letter Queues, Redrive Mechanics & Poison-Pill Defense",
-      "codeHash": "a608c2517f0e7a49cafec37bcdc3b835f4659cb31d0f8c765e3a62f046c8150f",
+      "codeHash": "7bfd496d5eda14c66d252b8c12baa843d323373ae0673a72c18c1b79e601ad90",
       "spec": {
         "template": "compare",
         "left": {
@@ -162,19 +174,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Malformed poison pill payloads cause repeated consumer worker crashes."
+            "annotation": "Malformed poison pill payloads cause repeated consumer worker crashes.",
+            "caption": "Malformed poison pill payloads cause repeated consumer worker crashes. (Fault Isolation: SQS Dead Letter Qu)"
           },
           {
             "at": "say2",
-            "annotation": "Dead letter queues isolate unprocessable messages after retry limits."
+            "annotation": "Dead letter queues isolate unprocessable messages after retry limits.",
+            "caption": "Dead letter queues isolate unprocessable messages after retry limits. (Fault Isolation: SQS Dead Letter Qu)"
           },
           {
             "at": "example",
-            "annotation": "Queue isolates poison payload while allowing healthy items to proceed."
+            "annotation": "Queue isolates poison payload while allowing healthy items to proceed.",
+            "caption": "Queue isolates poison payload while allowing healthy items to proceed. (Fault Isolation: SQS Dead Letter Qu)"
           },
           {
             "at": "tryIt",
-            "annotation": "Automated redrive tasks return quarantined messages once resolved."
+            "annotation": "Automated redrive tasks return quarantined messages once resolved.",
+            "caption": "Automated redrive tasks return quarantined messages once resolved. (Fault Isolation: SQS Dead Letter Qu)"
           }
         ]
       }
@@ -182,7 +198,7 @@
     {
       "partIndex": 5,
       "partTitle": "Enterprise Synthesis: End-to-End Serverless Event Pipeline & Verification",
-      "codeHash": "e84ac07fc1cd523b1cc6e660cbccf388c7316d6d3e51f346d0d3f9481d34fbeb",
+      "codeHash": "90bb532f64d90803c4a61e753a7c88a88a466ee5d10c50f8bdec7ed938d6f1f4",
       "spec": {
         "template": "compare",
         "left": {
@@ -206,19 +222,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Direct component coupling causes cascading failures under heavy load."
+            "annotation": "Direct component coupling causes cascading failures under heavy load.",
+            "caption": "Direct component coupling causes cascading failures under heavy load. (Enterprise Synthesis: End-to-End Se)"
           },
           {
             "at": "say2",
-            "annotation": "Choreographed event architecture decouples producers from consumers."
+            "annotation": "Choreographed event architecture decouples producers from consumers.",
+            "caption": "Choreographed event architecture decouples producers from consumers. (Enterprise Synthesis: End-to-End Se)"
           },
           {
             "at": "example",
-            "annotation": "Pipeline synthesizes routing fanout buffering and fault isolation."
+            "annotation": "Pipeline synthesizes routing fanout buffering and fault isolation.",
+            "caption": "Pipeline synthesizes routing fanout buffering and fault isolation. (Enterprise Synthesis: End-to-End Se)"
           },
           {
             "at": "tryIt",
-            "annotation": "Synthesis confirms end to end pipeline operational and emits token."
+            "annotation": "Synthesis confirms end to end pipeline operational and emits token.",
+            "caption": "Synthesis confirms end to end pipeline operational and emits token. (Enterprise Synthesis: End-to-End Se)"
           }
         ]
       }

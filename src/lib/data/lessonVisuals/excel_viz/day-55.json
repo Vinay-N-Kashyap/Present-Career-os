@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
-    "codeHash": "72c22eef2c95dc81a937076a3768502098c6685543819481423dcc9aa3f0533f",
-    "spec": {
-      "template": "bars",
-      "title": "Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 55,
+  "entries": [
+    {
+      "partTitle": "Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+      "codeHash": "72c22eef2c95dc81a937076a3768502098c6685543819481423dcc9aa3f0533f",
+      "spec": {
+        "template": "bars",
+        "title": "Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Defense-in-Depth Spreadsheet Security: OpenXML ZIP Vulnerabilities vs AES-256 Encryption",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+      "codeHash": "e418c7558e442c0a2467c2fea2d734982c1c3c11d4291a40605d03ceb9b0dd5a",
+      "spec": {
+        "template": "bars",
+        "title": "Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+      "codeHash": "9058e9cef8f60ec85faa617336e0e4e15eb12da457729f9ae57a498f172f8e47",
+      "spec": {
+        "template": "bars",
+        "title": "Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+      "codeHash": "d44d12f9b8a15c49c8a05d4cde788ddc64ad04f5bd02f2bc7e7d18a826f6f041",
+      "spec": {
+        "template": "bars",
+        "title": "Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+      "codeHash": "685c227468fc229574c0176d7ad05b0a6cb3be7e6ed2d414a8b5e3b954da1808",
+      "spec": {
+        "template": "bars",
+        "title": "Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "AES-256 Encryption",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Active Directory RBAC",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Purview IRM Rights",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SOX 404 Hash Chain",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
-    "codeHash": "e418c7558e442c0a2467c2fea2d734982c1c3c11d4291a40605d03ceb9b0dd5a",
-    "spec": {
-      "template": "bars",
-      "title": "Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Role-Based Access Control (RBAC): Active Directory Range Permissions & Formula Locking",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
-    "codeHash": "9058e9cef8f60ec85faa617336e0e4e15eb12da457729f9ae57a498f172f8e47",
-    "spec": {
-      "template": "bars",
-      "title": "Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Information Rights Management (IRM): Microsoft Purview Sensitivity Labels & Dynamic Revocation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
-    "codeHash": "d44d12f9b8a15c49c8a05d4cde788ddc64ad04f5bd02f2bc7e7d18a826f6f041",
-    "spec": {
-      "template": "bars",
-      "title": "Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Forensic SOX 404 Audit Logging: Cryptographic Modification Ledgers & Tamper-Evident Chains",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
-    "codeHash": "685c227468fc229574c0176d7ad05b0a6cb3be7e6ed2d414a8b5e3b954da1808",
-    "spec": {
-      "template": "bars",
-      "title": "Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal – Enterprise Spreadsheet Governance, Role-Based Access Control, IRM & Compliance Validation",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Master Enterprise Governance Gateway: Defense-in-Depth Certification & SOX Compliance Seal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "AES-256 Encryption",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Active Directory RBAC",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Purview IRM Rights",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SOX 404 Hash Chain",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

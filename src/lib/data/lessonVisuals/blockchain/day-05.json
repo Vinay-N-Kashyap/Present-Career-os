@@ -619,7 +619,7 @@
     },
     {
       "partTitle": "Cross-Chain Interoperability & Generalized Message Passing (GMP)",
-      "codeHash": "829a1eb69e49e77ca61fd9c559ebf7f030890b238bf9cf5862b7e077516c816d",
+      "codeHash": "ed98a93dc5c8323a8b05847e8ef946eeb3069975e45cbc9f31d27bac46796008",
       "spec": {
         "template": "sequence",
         "title": "Cross-Chain Interoperability & Generalized Me... — On-Chain Transaction Sequence",

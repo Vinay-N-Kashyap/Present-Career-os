@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
-    "codeHash": "c6e50137311fd741509450a0343669d2bffdbedbfa77ddf9c76dd4d7569b24ce",
-    "spec": {
-      "template": "bars",
-      "title": "Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 56,
+  "entries": [
+    {
+      "partTitle": "Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+      "codeHash": "c6e50137311fd741509450a0343669d2bffdbedbfa77ddf9c76dd4d7569b24ce",
+      "spec": {
+        "template": "bars",
+        "title": "Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Engineering of the JPMorgan London Whale Spreadsheet: The Synthetic Credit Portfolio & Flawed Equations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+      "codeHash": "5bc7aa9da9613b582d40f62de22e4328ec2ba0b114dfb64fa34936ffcb157aaf",
+      "spec": {
+        "template": "bars",
+        "title": "The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+      "codeHash": "33c1a92a16bac637aa32e79923857dd43aeb12c4ebc93ee82b357b2261a526ea",
+      "spec": {
+        "template": "bars",
+        "title": "Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+      "codeHash": "ec7e25e631db6bf6f4d9f5b9f51802830ddb6252afd2d89d6c99d94ad450f215",
+      "spec": {
+        "template": "bars",
+        "title": "Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+      "codeHash": "6174fcef0dc5f1e9d3a1976e53f621d61b72bccafb3dde8a3743ab30faa57322",
+      "spec": {
+        "template": "bars",
+        "title": "Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Synthetic Portfolio",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VaR Division Flaw",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Manual Clipboard",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SR 11-7 Audit Seal",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
-    "codeHash": "5bc7aa9da9613b582d40f62de22e4328ec2ba0b114dfb64fa34936ffcb157aaf",
-    "spec": {
-      "template": "bars",
-      "title": "The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for The $6.2B Division Formula Error Detective Challenge: Tracing the Rogue Division Formula & Understated Risk Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
-    "codeHash": "33c1a92a16bac637aa32e79923857dd43aeb12c4ebc93ee82b357b2261a526ea",
-    "spec": {
-      "template": "bars",
-      "title": "Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Manual Copy-Paste Fragility & Spreadsheet Governance Breakdown: Eradicating Uncontrolled Clipboard Handoffs",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
-    "codeHash": "ec7e25e631db6bf6f4d9f5b9f51802830ddb6252afd2d89d6c99d94ad450f215",
-    "spec": {
-      "template": "bars",
-      "title": "Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Institutional-Grade VaR Risk Engine with Automated Dual-Engine Cross-Verification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
-    "codeHash": "6174fcef0dc5f1e9d3a1976e53f621d61b72bccafb3dde8a3743ab30faa57322",
-    "spec": {
-      "template": "bars",
-      "title": "Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification – Historic Catastrophe Post-Mortem 1: The $6.2 Billion JPMorgan 'London Whale' VaR Formula Disaster",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Master London Whale Forensic Gateway: Model Audit, Regulatory Stress Verification Defense & Capital Adequacy Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Synthetic Portfolio",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VaR Division Flaw",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Manual Clipboard",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SR 11-7 Audit Seal",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

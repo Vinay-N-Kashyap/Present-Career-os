@@ -910,8 +910,8 @@
       }
     },
     {
-      "partTitle": "Production Edge Middleware & Isolate Security Invariants",
-      "codeHash": "eb56a8b40ad3af052df6d5520f0728c597729e2907b02b77cc9b5a88304c82a2",
+      "partTitle": "Production Edge Middleware & Isolate strict security safeguards",
+      "codeHash": "a4f2a6ee056fbadbdf99c46505da7c14713750c9eed4937cee56000c4dbb5f40",
       "spec": {
         "template": "flow",
         "title": "Production Edge Middleware & Isolate Security... — Execution Pipeline",

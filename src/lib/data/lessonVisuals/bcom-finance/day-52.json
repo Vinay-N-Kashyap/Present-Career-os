@@ -362,5 +362,698 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Anatomy of Non-Recourse Project Finance: Special Purpose Vehicles (SPVs) & Ring-Fenced Balance Sheets",
+      "codeHash": "eb14174ba1d6ce9876be4b0cf22012811379ade6a12936784daacd4e44be352d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — ChiBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — ChiBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — ChiBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — ChiBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — ChiBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — ChiBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — ChiBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — ChiBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concession Agreements, Offtake Contracts (PPAs) & Risk Allocation Matrices",
+      "codeHash": "cb6a6e6ac05818932b51471e27f1de01037491304bc73fb434564e8ae74c7a9c",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — ChiBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — ChiBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — ChiBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — ChiBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — ChiBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — ChiBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — ChiBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — ChiBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Debt Sizing & Financial Covenants: DSCR, LLCR, PLCR & Cash Sweep Mechanics",
+      "codeHash": "9bcc942d002bbf075b2b2f1ff63c3c7ac0ded98dfd75e427df9594006435161e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — ChiBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — ChiBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — ChiBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — ChiBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — ChiBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — ChiBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — ChiBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — ChiBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cross-Border Political Risk Mitigation: Multilateral Development Banks (MDBs), IFC & MIGA Guarantees",
+      "codeHash": "1040438fe3b38f97213ce71836b8731a23e0c385b65d789296bb5f9fd7e95380",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — ChiBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — ChiBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — ChiBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — ChiBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — ChiBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — ChiBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — ChiBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — ChiBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Project Finance SPV Financial Model, DSCR Waterfall & MIGA Political Risk Sensitivity Engine",
+      "codeHash": "8cdc27b507cde987376de43d2417e453231c99e258f7ebe1d558c31fc5cd08a8",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — ChiBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — ChiBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — ChiBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — ChiBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 52 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Infrastructure Concession Physical Asset",
+            "$800,000,000.00",
+            ""
+          ],
+          [
+            "Debt Service Reserve Account Trust",
+            "$24,000,000.00",
+            ""
+          ],
+          [
+            "Non Recourse Senior Sculpted Term Loan",
+            "",
+            "$600,000,000.00"
+          ],
+          [
+            "Sponsor Equity & Subordinated Capital",
+            "",
+            "$224,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$824,000,000.00",
+          "$824,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 52 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — ChiBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — ChiBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — ChiBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — ChiBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

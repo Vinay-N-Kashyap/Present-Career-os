@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "The Modern Customer Data Platform (CDP) Stack: Packaged vs Composable Architectures",
-      "codeHash": "677b9d99a87fef9ff272974f22eda02c91ed8e4a1f550758fc741dc71d38e2ca",
+      "codeHash": "022bd4c4dd9890b48445788848e5eecb7f3263cb363a2b347b67e8ee7628d8cf",
       "spec": {
         "template": "funnel",
-        "title": "The Modern Customer Data Platform (CDP) Stack: Packaged vs Composable Architectures \u2014 Conversion Funnel",
+        "title": "The Modern Customer Data Platform (CDP) Stack: Packaged vs Composable Architectures — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D34P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -169,14 +169,14 @@
     },
     {
       "partTitle": "The Unified Identity Graph: Nodes, Edges & Identifier Hierarchies",
-      "codeHash": "881be00cfc2f1a25dadefd5ebbbab983aa2ec1773e5a10d07ff1f2a7fcbe0a78",
+      "codeHash": "d5cd40f09bbfb01c074b769dcd84888e6e6588e2aded579ee863f259eb6599ff",
       "spec": {
         "template": "funnel",
-        "title": "The Unified Identity Graph: Nodes, Edges & Identifier Hierarchies \u2014 Conversion Funnel",
+        "title": "The Unified Identity Graph: Nodes, Edges & Identifier Hierarchies — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D34P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -331,14 +331,14 @@
     },
     {
       "partTitle": "Deterministic Identity Resolution with Disjoint-Set Union (Union-Find)",
-      "codeHash": "ddd94ba178b095bd9d9ebaf818c7dc42a14e7822d7967f19c6c3df29af1079bd",
+      "codeHash": "3dca4746599cbb44ac71912f937094d196362195d7cbf5aa3cfc48da2f0b7eb5",
       "spec": {
         "template": "funnel",
-        "title": "Deterministic Identity Resolution with Disjoint-Set Union (Union-Find) \u2014 Conversion Funnel",
+        "title": "Deterministic Identity Resolution with Disjoint-Set Union (Union-Find) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D34P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -493,14 +493,14 @@
     },
     {
       "partTitle": "Probabilistic Record Linkage: The Fellegi-Sunter Mathematical Framework",
-      "codeHash": "90f1c77734399ca23f8208d0f9f85fba40c86bae44632a21bfdcddb25688e97f",
+      "codeHash": "17f63f12d4df0c5df0d31a839fb4e14986f3306dcc12a1ff5fb1f82714285b1c",
       "spec": {
         "template": "funnel",
-        "title": "Probabilistic Record Linkage: The Fellegi-Sunter Mathematical Framework \u2014 Conversion Funnel",
+        "title": "Probabilistic Record Linkage: The Fellegi-Sunter Mathematical Framework — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D34P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -655,14 +655,14 @@
     },
     {
       "partTitle": "Real-Time Event Streaming & Reverse ETL: Activating the Golden Customer Record",
-      "codeHash": "d70d39b6d251508da4e7ddc7db9425d747799029eb4e39f2c54d5096b36dc26c",
+      "codeHash": "aee231a1fb5da08dfb863809dbce2b2850e1de656730ec76d182b1a34acfbf81",
       "spec": {
         "template": "funnel",
-        "title": "Real-Time Event Streaming & Reverse ETL: Activating the Golden Customer Record \u2014 Conversion Funnel",
+        "title": "Real-Time Event Streaming & Reverse ETL: Activating the Golden Customer Record — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D34P5].",
             "activeStageId": "top",
             "stages": [
               {

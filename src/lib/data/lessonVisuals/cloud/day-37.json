@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "ingest",
-            "annotation": "High-throughput telemetry emitted by producer fleets."
+            "annotation": "High-throughput telemetry emitted by producer fleets.",
+            "caption": "High-throughput telemetry emitted by producer fleets. (Kinesis Shard Architecture: Log-Str)"
           },
           {
             "at": "say2",
             "focus": "router",
-            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges.",
+            "caption": "128-bit MD5 hashing assigns partition keys to shard ranges. (Kinesis Shard Architecture: Log-Str)"
           },
           {
             "at": "example",
             "focus": "shards",
-            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard.",
+            "caption": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard. (Kinesis Shard Architecture: Log-Str)"
           },
           {
             "at": "tryIt",
             "focus": "consumers",
-            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes.",
+            "caption": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes. (Kinesis Shard Architecture: Log-Str)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "ingest",
-            "annotation": "High-throughput telemetry emitted by producer fleets."
+            "annotation": "High-throughput telemetry emitted by producer fleets.",
+            "caption": "High-throughput telemetry emitted by producer fleets. (Partition Key Design: Hash Key Spac)"
           },
           {
             "at": "say2",
             "focus": "router",
-            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges.",
+            "caption": "128-bit MD5 hashing assigns partition keys to shard ranges. (Partition Key Design: Hash Key Spac)"
           },
           {
             "at": "example",
             "focus": "shards",
-            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard.",
+            "caption": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard. (Partition Key Design: Hash Key Spac)"
           },
           {
             "at": "tryIt",
             "focus": "consumers",
-            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes.",
+            "caption": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes. (Partition Key Design: Hash Key Spac)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "ingest",
-            "annotation": "High-throughput telemetry emitted by producer fleets."
+            "annotation": "High-throughput telemetry emitted by producer fleets.",
+            "caption": "High-throughput telemetry emitted by producer fleets. (Shard Lifecycle Engineering: Shard )"
           },
           {
             "at": "say2",
             "focus": "router",
-            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges.",
+            "caption": "128-bit MD5 hashing assigns partition keys to shard ranges. (Shard Lifecycle Engineering: Shard )"
           },
           {
             "at": "example",
             "focus": "shards",
-            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard.",
+            "caption": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard. (Shard Lifecycle Engineering: Shard )"
           },
           {
             "at": "tryIt",
             "focus": "consumers",
-            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes.",
+            "caption": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes. (Shard Lifecycle Engineering: Shard )"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "ingest",
-            "annotation": "High-throughput telemetry emitted by producer fleets."
+            "annotation": "High-throughput telemetry emitted by producer fleets.",
+            "caption": "High-throughput telemetry emitted by producer fleets. (Consumer Topologies: Classic Shared)"
           },
           {
             "at": "say2",
             "focus": "router",
-            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges.",
+            "caption": "128-bit MD5 hashing assigns partition keys to shard ranges. (Consumer Topologies: Classic Shared)"
           },
           {
             "at": "example",
             "focus": "shards",
-            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard.",
+            "caption": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard. (Consumer Topologies: Classic Shared)"
           },
           {
             "at": "tryIt",
             "focus": "consumers",
-            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes.",
+            "caption": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes. (Consumer Topologies: Classic Shared)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "ingest",
-            "annotation": "High-throughput telemetry emitted by producer fleets."
+            "annotation": "High-throughput telemetry emitted by producer fleets.",
+            "caption": "High-throughput telemetry emitted by producer fleets. (Masterclass Synthesis: High-Through)"
           },
           {
             "at": "say2",
             "focus": "router",
-            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges."
+            "annotation": "128-bit MD5 hashing assigns partition keys to shard ranges.",
+            "caption": "128-bit MD5 hashing assigns partition keys to shard ranges. (Masterclass Synthesis: High-Through)"
           },
           {
             "at": "example",
             "focus": "shards",
-            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard."
+            "annotation": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard.",
+            "caption": "Shard capacity limits enforced: 1MB/s write and 2MB/s read per shard. (Masterclass Synthesis: High-Through)"
           },
           {
             "at": "tryIt",
             "focus": "consumers",
-            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes."
+            "annotation": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes.",
+            "caption": "Enhanced Fan-Out streams records via dedicated HTTP/2 pipes. (Masterclass Synthesis: High-Through)"
           }
         ]
       }

@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
-    "codeHash": "e50d54a5f653ff4800d2bb6ba7ed1351dfbc5582dc79c41a7834fbbcbfcf0b3a",
-    "spec": {
-      "template": "bars",
-      "title": "Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 41,
+  "entries": [
+    {
+      "partTitle": "Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+      "codeHash": "e50d54a5f653ff4800d2bb6ba7ed1351dfbc5582dc79c41a7834fbbcbfcf0b3a",
+      "spec": {
+        "template": "bars",
+        "title": "Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Mathematical Moments of Continuous Distributions: Mean, Variance, Skewness & Excess Kurtosis",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+      "codeHash": "9be7cad00fe11846ae329dbb1eb5c76784398945f63ab115c60382bb6e0c4973",
+      "spec": {
+        "template": "bars",
+        "title": "Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+      "codeHash": "0f12a5c337335e6d14468e83106a2f7fc64baa0145002145ff012f57a7facf32",
+      "spec": {
+        "template": "bars",
+        "title": "Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+      "codeHash": "28ab62c228880eb31b93870899cadce1ef5d675a4b37a17301a34ca625f7588b",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+      "codeHash": "6be8d8b92b467f6f8586c8dc8ce355c737a22de0b4f6c748ee99fd467f8d2028",
+      "spec": {
+        "template": "bars",
+        "title": "Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Moment Profiler",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "IQR Tukey Filter",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Shape Diagnostics",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Multi-Cohort Audit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
-    "codeHash": "9be7cad00fe11846ae329dbb1eb5c76784398945f63ab115c60382bb6e0c4973",
-    "spec": {
-      "template": "bars",
-      "title": "Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Tukey's Interquartile Range (IQR) & Non-Parametric Outlier Fences",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
-    "codeHash": "0f12a5c337335e6d14468e83106a2f7fc64baa0145002145ff012f57a7facf32",
-    "spec": {
-      "template": "bars",
-      "title": "Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Distribution Shape Diagnostics: Skewness Direction & Kurtosis Tail Risk",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
-    "codeHash": "28ab62c228880eb31b93870899cadce1ef5d675a4b37a17301a34ca625f7588b",
-    "spec": {
-      "template": "bars",
-      "title": "Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Multi-Cohort Exploratory Data Profiling & Executive Discrepancy Audits",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
-    "codeHash": "6be8d8b92b467f6f8586c8dc8ce355c737a22de0b4f6c748ee99fd467f8d2028",
-    "spec": {
-      "template": "bars",
-      "title": "Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest — Exploratory Data Analysis & Descriptive Statistics: Skewness, Kurtosis, Interquartile Range & Outlier Detection",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Master Exploratory Data Analysis Gateway: SOX 404 Cryptographic Audit Digest",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Moment Profiler",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "IQR Tukey Filter",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Shape Diagnostics",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Multi-Cohort Audit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

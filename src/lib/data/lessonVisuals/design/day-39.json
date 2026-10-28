@@ -18,25 +18,29 @@
             "stepNumber": 1,
             "label": "Sliding Axis Geometry",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined sliding axis geometry validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous sliding axis geometry standards."
+            "rightCaption": "Sovereign design systems enforce rigorous sliding axis geometry standards.",
+            "caption": "Sliding Axis Geometry (Anatomy of Drawers & Bottom Sheets:)"
           },
           {
             "stepNumber": 2,
             "label": "Modal Overlay Contrast",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined modal overlay contrast validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous modal overlay contrast standards."
+            "rightCaption": "Sovereign design systems enforce rigorous modal overlay contrast standards.",
+            "caption": "Modal Overlay Contrast (Anatomy of Drawers & Bottom Sheets:)"
           },
           {
             "stepNumber": 3,
             "label": "In Flow Push Margin",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined in flow push margin validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous in flow push margin standards."
+            "rightCaption": "Sovereign design systems enforce rigorous in flow push margin standards.",
+            "caption": "In Flow Push Margin (Anatomy of Drawers & Bottom Sheets:)"
           },
           {
             "stepNumber": 4,
             "label": "Responsive Polymorphism",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined responsive polymorphism validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous responsive polymorphism standards."
+            "rightCaption": "Sovereign design systems enforce rigorous responsive polymorphism standards.",
+            "caption": "Responsive Polymorphism (Anatomy of Drawers & Bottom Sheets:)"
           }
         ]
       }
@@ -54,25 +58,29 @@
             "stepNumber": 1,
             "label": "Displacement Tracking",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined displacement tracking validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous displacement tracking standards."
+            "rightCaption": "Sovereign design systems enforce rigorous displacement tracking standards.",
+            "caption": "Displacement Tracking (Touch Gestures & Velocity Tracking:)"
           },
           {
             "stepNumber": 2,
             "label": "Linear Downward Tracking",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined linear downward tracking validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous linear downward tracking standards."
+            "rightCaption": "Sovereign design systems enforce rigorous linear downward tracking standards.",
+            "caption": "Linear Downward Tracking (Touch Gestures & Velocity Tracking:)"
           },
           {
             "stepNumber": 3,
             "label": "Logarithmic Rubber Banding",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined logarithmic rubber banding validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous logarithmic rubber banding standards."
+            "rightCaption": "Sovereign design systems enforce rigorous logarithmic rubber banding standards.",
+            "caption": "Logarithmic Rubber Banding (Touch Gestures & Velocity Tracking:)"
           },
           {
             "stepNumber": 4,
             "label": "Velocity Flick Decision",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined velocity flick decision validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous velocity flick decision standards."
+            "rightCaption": "Sovereign design systems enforce rigorous velocity flick decision standards.",
+            "caption": "Velocity Flick Decision (Touch Gestures & Velocity Tracking:)"
           }
         ]
       }
@@ -90,25 +98,29 @@
             "stepNumber": 1,
             "label": "Dynamic Viewport Units",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined dynamic viewport units validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous dynamic viewport units standards."
+            "rightCaption": "Sovereign design systems enforce rigorous dynamic viewport units standards.",
+            "caption": "Dynamic Viewport Units (Mobile Viewport Hazards: Virtual Ke)"
           },
           {
             "stepNumber": 2,
             "label": "Notch Safe Area Insets",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined notch safe area insets validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous notch safe area insets standards."
+            "rightCaption": "Sovereign design systems enforce rigorous notch safe area insets standards.",
+            "caption": "Notch Safe Area Insets (Mobile Viewport Hazards: Virtual Ke)"
           },
           {
             "stepNumber": 3,
             "label": "Virtual Keyboard Shift",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined virtual keyboard shift validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous virtual keyboard shift standards."
+            "rightCaption": "Sovereign design systems enforce rigorous virtual keyboard shift standards.",
+            "caption": "Virtual Keyboard Shift (Mobile Viewport Hazards: Virtual Ke)"
           },
           {
             "stepNumber": 4,
             "label": "Overscroll Containment",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined overscroll containment validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous overscroll containment standards."
+            "rightCaption": "Sovereign design systems enforce rigorous overscroll containment standards.",
+            "caption": "Overscroll Containment (Mobile Viewport Hazards: Virtual Ke)"
           }
         ]
       }
@@ -126,25 +138,29 @@
             "stepNumber": 1,
             "label": "Aria Dialog Contract",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined aria dialog contract validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous aria dialog contract standards."
+            "rightCaption": "Sovereign design systems enforce rigorous aria dialog contract standards.",
+            "caption": "Aria Dialog Contract (Accessible Off-Canvas Modality: Foc)"
           },
           {
             "stepNumber": 2,
             "label": "Background Inert Isolation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined background inert isolation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous background inert isolation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous background inert isolation standards.",
+            "caption": "Background Inert Isolation (Accessible Off-Canvas Modality: Foc)"
           },
           {
             "stepNumber": 3,
             "label": "Focus Shift & Restoration",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined focus shift & restoration validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous focus shift & restoration standards."
+            "rightCaption": "Sovereign design systems enforce rigorous focus shift & restoration standards.",
+            "caption": "Focus Shift & Restoration (Accessible Off-Canvas Modality: Foc)"
           },
           {
             "stepNumber": 4,
             "label": "Accessible Close Targets",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined accessible close targets validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous accessible close targets standards."
+            "rightCaption": "Sovereign design systems enforce rigorous accessible close targets standards.",
+            "caption": "Accessible Close Targets (Accessible Off-Canvas Modality: Foc)"
           }
         ]
       }
@@ -162,25 +178,29 @@
             "stepNumber": 1,
             "label": "Safe Area Boundary Mount",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined safe area boundary mount validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous safe area boundary mount standards."
+            "rightCaption": "Sovereign design systems enforce rigorous safe area boundary mount standards.",
+            "caption": "Safe Area Boundary Mount (Enterprise Application: Sovereign M)"
           },
           {
             "stepNumber": 2,
             "label": "Touch Drag Kinematics",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined touch drag kinematics validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous touch drag kinematics standards."
+            "rightCaption": "Sovereign design systems enforce rigorous touch drag kinematics standards.",
+            "caption": "Touch Drag Kinematics (Enterprise Application: Sovereign M)"
           },
           {
             "stepNumber": 3,
             "label": "Instantaneous Velocity Check",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined instantaneous velocity check validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous instantaneous velocity check standards."
+            "rightCaption": "Sovereign design systems enforce rigorous instantaneous velocity check standards.",
+            "caption": "Instantaneous Velocity Check (Enterprise Application: Sovereign M)"
           },
           {
             "stepNumber": 4,
             "label": "Complete Focus Return",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined complete focus return validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous complete focus return standards."
+            "rightCaption": "Sovereign design systems enforce rigorous complete focus return standards.",
+            "caption": "Complete Focus Return (Enterprise Application: Sovereign M)"
           }
         ]
       }

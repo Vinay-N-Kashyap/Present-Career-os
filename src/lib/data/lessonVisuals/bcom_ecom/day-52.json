@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Anatomy of Total Landed Cost: CIF Valuation, Compounding Tariffs & Import Taxes",
-      "codeHash": "338e0e189494f334dbf95a92cc54a312559900ad3ae95c38e7c408bae2639aaa",
+      "codeHash": "e6ed4cc54321f6b832f419c5148e6b6dedf4ebc8d23692238c3b82edd68e0456",
       "spec": {
         "template": "funnel",
         "title": "Day 52 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Harmonized Tariff Schedule (HTS / HS Codes) & Preferential Trade Agreements",
-      "codeHash": "c4488330ace45069bc28d8bb9e2c32b782db2cfcd431042ecc9a0e7aee841724",
+      "codeHash": "e3a36d7ed3b2059d11223aa17d73712f82db5c93b9d4dc372e80c0e0c78c09f0",
       "spec": {
         "template": "funnel",
         "title": "Day 52 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Incoterms 2020: Delivered Duty Paid (DDP) vs Delivered at Place (DAP / DDU)",
-      "codeHash": "268bdcf773f5696e76cced7eb8fd1f8bd13d40d44ef51f350dc24d2d1e18f1a1",
+      "codeHash": "edae5375897a7f2dd815d387d3e4532722b2129f7d9421c2bf39a7c4e631454c",
       "spec": {
         "template": "funnel",
         "title": "Day 52 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Automated Customs Documentation: Commercial Invoices, EEI & AES Direct Filing",
-      "codeHash": "04047691d7f15a362678a567204a18effb47cd648d958b43b99fbc7d216512a6",
+      "codeHash": "0eaa827e514626068796467b94ef08a429afc9bc3d6beb949c29a0e77aae02dd",
       "spec": {
         "template": "funnel",
         "title": "Day 52 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Trade Compliance Command Tower: Denied Party Screening & Precision Audits",
-      "codeHash": "6cbe96e9c3e71bb9bc1f551f3fe9499d2f3b6be04cd6fb5f68116d78cec48bf7",
+      "codeHash": "aabb8845a7257e83d3ee1a134fee5b69eb9f63628646841adf6e2da1d693a011",
       "spec": {
         "template": "funnel",
         "title": "Day 52 Part 5 Architecture Flow",

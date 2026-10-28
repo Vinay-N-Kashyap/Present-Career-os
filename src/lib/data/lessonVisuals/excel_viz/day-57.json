@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
-    "codeHash": "2dd1dbf2679a9a466a8cc2cd80d9254efecc7fe070ca3f3f974395ee77e63a07",
-    "spec": {
-      "template": "bars",
-      "title": "Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 57,
+  "entries": [
+    {
+      "partTitle": "Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+      "codeHash": "2dd1dbf2679a9a466a8cc2cd80d9254efecc7fe070ca3f3f974395ee77e63a07",
+      "spec": {
+        "template": "bars",
+        "title": "Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Forensic Analysis of the Reinhart-Rogoff Omission Error: Historical Context, Policy Impact & Range Truncation Mechanics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+      "codeHash": "a554ae2ee466ceff35343ece8066f3fa85ab9767220c29c93364a2fbd59e26bb",
+      "spec": {
+        "template": "bars",
+        "title": "The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+      "codeHash": "dd71073714b8dafd445f7a9493481e2babf3823e7d2c6cb03cb08abb7a3675d7",
+      "spec": {
+        "template": "bars",
+        "title": "Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+      "codeHash": "b8ea45abb04ccab84d05d03eb39c8d70ad0a862ac06911480443be7544c6def8",
+      "spec": {
+        "template": "bars",
+        "title": "Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+      "codeHash": "4abfdddd268259bb508f37d614329e49c89bd74d7f4b3d5c6a58fbff10412fc2",
+      "spec": {
+        "template": "bars",
+        "title": "Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Sovereign institutional governance and production certification for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Macroeconomic Base",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Range Truncation",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Country Weighting",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Structured Table",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
-    "codeHash": "a554ae2ee466ceff35343ece8066f3fa85ab9767220c29c93364a2fbd59e26bb",
-    "spec": {
-      "template": "bars",
-      "title": "The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for The Truncated Macroeconomic Dataset Detective Challenge: Isolating Omitted Observations & Calculating the Growth Delta",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
-    "codeHash": "dd71073714b8dafd445f7a9493481e2babf3823e7d2c6cb03cb08abb7a3675d7",
-    "spec": {
-      "template": "bars",
-      "title": "Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Country Weighting Distortions & Selective Exclusion: Uncovering Methodological Pitfalls in Macroeconomic Research",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
-    "codeHash": "b8ea45abb04ccab84d05d03eb39c8d70ad0a862ac06911480443be7544c6def8",
-    "spec": {
-      "template": "bars",
-      "title": "Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Auto-Expanding Empirical Analytics Engine with Excel Structured Tables (ListObject) & Power Query",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
-    "codeHash": "4abfdddd268259bb508f37d614329e49c89bd74d7f4b3d5c6a58fbff10412fc2",
-    "spec": {
-      "template": "bars",
-      "title": "Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit – Historic Catastrophe Post-Mortem 2: The Reinhart-Rogoff $200B Austerity Omission (=AVERAGE(A1:A15) Range Error)",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural baseline configuration and parameter ingestion for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing pipeline execution and intermediate simulation for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing, boundary verification, and anomaly detection for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Sovereign institutional governance and production certification for Master Reinhart-Rogoff Forensic Gateway: Data Integrity, Self-Expanding Aggregations & Sovereign Policy Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Macroeconomic Base",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Range Truncation",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Country Weighting",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Structured Table",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

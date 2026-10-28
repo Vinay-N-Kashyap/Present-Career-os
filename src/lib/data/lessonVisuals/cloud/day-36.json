@@ -25,7 +25,8 @@
                 "virtio_minimal"
               ],
               "status": "DEVICE_MODEL_OPTIMIZED"
-            }
+            },
+            "caption": "Traditional QEMU emulates legacy hardware (PCI/ACPI); Firecracker provides minimal 4-device model in Rust. (Firecracker MicroVM Architecture: L)"
           },
           {
             "at": "say2",
@@ -40,7 +41,8 @@
                 "virtio_block"
               ],
               "status": "KVM_INITIALIZED"
-            }
+            },
+            "caption": "Minimalist vmlinux kernel loaded directly via /dev/kvm, bypassing firmware initialization. (Firecracker MicroVM Architecture: L)"
           },
           {
             "at": "example",
@@ -55,7 +57,8 @@
                 "sub_5ms_verified"
               ],
               "status": "BOOT_5MS_ACHIEVED"
-            }
+            },
+            "caption": "MicroVM boots, configures virtio interfaces, and starts execution in 5.3 milliseconds. (Firecracker MicroVM Architecture: L)"
           },
           {
             "at": "tryIt",
@@ -70,7 +73,8 @@
                 "thousands_microvms"
               ],
               "status": "HIGH_DENSITY_VERIFIED"
-            }
+            },
+            "caption": "Lazy memory allocation and Extended Page Tables pack thousands of microVMs per bare-metal host. (Firecracker MicroVM Architecture: L)"
           }
         ]
       }
@@ -97,7 +101,8 @@
                 "isolation_guarantee"
               ],
               "status": "THREAT_SURFACE_ISOLATED"
-            }
+            },
+            "caption": "Untrusted third-party code runs on shared bare-metal; Jailer builds multi-tier defense. (The Firecracker Jailer: Multi-Tenan)"
           },
           {
             "at": "say2",
@@ -112,7 +117,8 @@
                 "host_fs_hidden"
               ],
               "status": "PRIVILEGES_REVOKED"
-            }
+            },
+            "caption": "Jailer revokes root privileges to unprivileged UID/GID and locks process into isolated chroot jailroot. (The Firecracker Jailer: Multi-Tenan)"
           },
           {
             "at": "example",
@@ -127,7 +133,8 @@
                 "sandbox_secured"
               ],
               "status": "SECCOMP_BPF_ENFORCED"
-            }
+            },
+            "caption": "Linux kernel BPF filter intercepts syscalls, killing any process attempting unauthorized calls like ptrace. (The Firecracker Jailer: Multi-Tenan)"
           },
           {
             "at": "tryIt",
@@ -142,7 +149,8 @@
                 "fair_share_guaranteed"
               ],
               "status": "RESOURCE_QUOTA_ACTIVE"
-            }
+            },
+            "caption": "Hard CPU and memory bandwidth limits prevent noisy-neighbor workloads from impacting adjacent microVMs. (The Firecracker Jailer: Multi-Tenan)"
           }
         ]
       }
@@ -169,7 +177,8 @@
                 "6s_latency_penalty"
               ],
               "status": "COLD_START_IDENTIFIED"
-            }
+            },
+            "caption": "JVM class loading, dependency injection, and JIT compilation incur 6+ second initialization cold starts. (Lambda SnapStart & Micro-Snapshotti)"
           },
           {
             "at": "say2",
@@ -184,7 +193,8 @@
                 "pause_execution"
               ],
               "status": "PRE_INIT_COMPLETED"
-            }
+            },
+            "caption": "AWS pre-initializes function on deployment, executing static blocks and framework setup offline. (Lambda SnapStart & Micro-Snapshotti)"
           },
           {
             "at": "example",
@@ -199,7 +209,8 @@
                 "tiered_cache"
               ],
               "status": "SNAPSHOT_CAPTURED"
-            }
+            },
+            "caption": "Firecracker captures vCPU registers and memory pages into encrypted, distributed tiered cache. (Lambda SnapStart & Micro-Snapshotti)"
           },
           {
             "at": "tryIt",
@@ -214,7 +225,8 @@
                 "sub_150ms_response"
               ],
               "status": "SNAPSTART_200MS_ACHIEVED"
-            }
+            },
+            "caption": "Upon user invocation, memory is restored directly into guest RAM, resuming execution in under 150ms. (Lambda SnapStart & Micro-Snapshotti)"
           }
         ]
       }
@@ -241,7 +253,8 @@
                 "auth_broken"
               ],
               "status": "PRNG_COLLISION_RISK"
-            }
+            },
+            "caption": "Memory snapshot captures internal PRNG seeds; 1000 restored instances share the exact same random state. (The SnapStart Security Trap: PRNG E)"
           },
           {
             "at": "say2",
@@ -256,7 +269,8 @@
                 "entropy_refreshed"
               ],
               "status": "KERNEL_ENTROPY_RESET"
-            }
+            },
+            "caption": "Linux guest kernel automatically refreshes /dev/urandom pools upon microVM restoration. (The SnapStart Security Trap: PRNG E)"
           },
           {
             "at": "example",
@@ -271,7 +285,8 @@
                 "unique_session_tokens"
               ],
               "status": "PRNG_UNIQUENESS_VERIFIED"
-            }
+            },
+            "caption": "AfterRestore() callback explicitly re-seeds custom SecureRandom instances and UUID generators. (The SnapStart Security Trap: PRNG E)"
           },
           {
             "at": "tryIt",
@@ -286,7 +301,8 @@
                 "production_hardened"
               ],
               "status": "CONNECTIONS_RESTORED"
-            }
+            },
+            "caption": "Database connection pools reconnect cleanly in afterRestore(); ephemeral /tmp storage cleaned up. (The SnapStart Security Trap: PRNG E)"
           }
         ]
       }
@@ -313,7 +329,8 @@
                 "provisioned_pool"
               ],
               "status": "RUNTIME_SYNTHESIS_ACTIVE"
-            }
+            },
+            "caption": "Complete unification of Firecracker KVM, Jailer sandboxing, SnapStart, and Provisioned Concurrency. (Masterclass Synthesis: Production F)"
           },
           {
             "at": "say2",
@@ -328,7 +345,8 @@
                 "cold_start_spike"
               ],
               "status": "SPILLOVER_IDENTIFIED"
-            }
+            },
+            "caption": "Requests exceeding provisioned capacity spill into on-demand execution, triggering cold start spikes. (Masterclass Synthesis: Production F)"
           },
           {
             "at": "example",
@@ -343,7 +361,8 @@
                 "uniform_5ms_latency"
               ],
               "status": "PROVISIONED_AUTOSCALED"
-            }
+            },
+            "caption": "Application Auto Scaling targets 70% provisioned utilization, scaling capacity proactively. (Masterclass Synthesis: Production F)"
           },
           {
             "at": "tryIt",
@@ -358,7 +377,8 @@
                 "grade_a_certified"
               ],
               "status": "GRADE_A_PLUS_PRODUCTION_CERTIFIED"
-            }
+            },
+            "caption": "Serverless virtualization engine verified with 100% test coverage and sub-200ms restoration. (Masterclass Synthesis: Production F)"
           }
         ]
       }

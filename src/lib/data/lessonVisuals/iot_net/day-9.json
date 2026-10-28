@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register PAN_SCAN_REG for PAN Formation & Channel Scanning.",
+            "caption": "Step 1: Arm hardware register PAN_SCAN_REG for PAN Formation & Chan [D9P1].",
             "registerName": "PAN_SCAN_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -266,7 +266,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register ADDR_TRANS_REG for Address Space & Translation: 64-.",
+            "caption": "Step 1: Arm hardware register ADDR_TRANS_REG for Address Space & Tr [D9P2].",
             "registerName": "ADDR_TRANS_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -518,7 +518,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register ASSOC_STATE_REG for The 4-Way Association Handshake .",
+            "caption": "Step 1: Arm hardware register ASSOC_STATE_REG for The 4-Way Associa [D9P3].",
             "registerName": "ASSOC_STATE_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -770,7 +770,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register ORPHAN_SYNC_REG for Network Maintenance: Disassociat.",
+            "caption": "Step 1: Arm hardware register ORPHAN_SYNC_REG for Network Maintenan [D9P4].",
             "registerName": "ORPHAN_SYNC_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1022,7 +1022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register INDIRECT_Q_REG for Full PAN Coordinator Association.",
+            "caption": "Step 1: Arm hardware register INDIRECT_Q_REG for Full PAN Coordinat [D9P5].",
             "registerName": "INDIRECT_Q_REG",
             "bitWidth": 8,
             "hexValue": "0x80",

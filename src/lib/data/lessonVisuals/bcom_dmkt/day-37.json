@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Third-Party Cookie Deprecation Mechanics & Google Chrome Privacy Sandbox Architecture",
-      "codeHash": "9d59258e55818b706f07940698317de6048ee6932cb9451fd6538e8f69d63a72",
+      "codeHash": "715716c865359687f04b30385d09b774a0d883f91d8e284ea5e92c134669f896",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Interest-Based Advertising without Cross-Site Tracking: The Topics API Taxonomy & Differential Privacy Noise",
-      "codeHash": "1e0e39c6136058b22a38ca8be7d2620c29ba54732bd6a29f81655d4a96604de7",
+      "codeHash": "7d16cba591a2c89ac56b2f1634513f42c7f210a8e0e8bfe872c048fefa633c6e",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "On-Device Remarketing & Real-Time Auctions: Protected Audience API (PAAPI / FLEDGE) & Key/Value Trusted Execution Environments (TEE)",
-      "codeHash": "b72f444dc32bb749560e962a031770cd49ac61e1d83740d00fc11bb5f8a4b0a6",
+      "codeHash": "05d74cf41c8a4352550dc3b03116f36ca1f85755cffe9b34332348bcaceeecaa",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Privacy-Safe Conversion Measurement: Attribution Reporting API (ARA), Event-Level Reports & Aggregatable Summary Reports",
-      "codeHash": "3a292e36bd5d2cc533224806aee5bb508c6eec1564d8487a87ddb5fe9152f690",
+      "codeHash": "8e8583c9bf237aec8ffa178f6546903e4274d46f532a039f010b66cf32464334",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "European Regulatory Compliance: Google Consent Mode v2 (Advanced vs Basic), TCF v2.2 & Server-Side Consent Gating",
-      "codeHash": "f1fac97d6a873d757114d94011c98c75d5b30d24cc9a1faa246160285416e3a1",
+      "codeHash": "c4bd81bfe20c4ae91a9c7d04b66b26e84a413ac13b667ed09b779c3443aef22e",
       "spec": {
         "template": "funnel",
         "steps": [

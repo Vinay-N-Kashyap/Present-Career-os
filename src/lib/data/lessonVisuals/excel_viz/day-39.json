@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
-    "codeHash": "4685aa37838b908737f0807731f6a1547969d392e22df2aee22ef10e4659add1",
-    "spec": {
-      "template": "bars",
-      "title": "Contiguous Calendar Table Prerequisite & Date Dimension Invariants — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 39,
+  "entries": [
+    {
+      "partTitle": "Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+      "codeHash": "4685aa37838b908737f0807731f6a1547969d392e22df2aee22ef10e4659add1",
+      "spec": {
+        "template": "bars",
+        "title": "Contiguous Calendar Table Prerequisite & Date Dimension Invariants — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Contiguous Calendar Table Prerequisite & Date Dimension Invariants — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Contiguous Calendar Table Prerequisite & Date Dimension Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+      "codeHash": "496d354b2440666d179aa7986fea55d62dadf5018301954557ac31f9844e0c19",
+      "spec": {
+        "template": "bars",
+        "title": "Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+      "codeHash": "69445ea45e0fbcdff84b283403f5e1e4099e4f6eeb4be260549fd20621cd34db",
+      "spec": {
+        "template": "bars",
+        "title": "Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+      "codeHash": "6f560b5203eebfcb17f91f9043fbff76f8770eda352e57a424226692ace89239",
+      "spec": {
+        "template": "bars",
+        "title": "Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+      "codeHash": "f3b2ed7e9d4cea0540b4e924c5ee4c5c69bc3baa08bb16f9232f0ed0953a4ff8",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Time Intelligence Governance & Multi-Period Metric Gateway — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Time Intelligence Governance & Multi-Period Metric Gateway — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Contiguous Calendar",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "TOTALYTD Expansion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "YoY Period Growth",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Trailing Moving Avg",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
-    "codeHash": "496d354b2440666d179aa7986fea55d62dadf5018301954557ac31f9844e0c19",
-    "spec": {
-      "template": "bars",
-      "title": "Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Year-to-Date (YTD) & Quarter-to-Date (QTD) Cumulative Aggregations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
-    "codeHash": "69445ea45e0fbcdff84b283403f5e1e4099e4f6eeb4be260549fd20621cd34db",
-    "spec": {
-      "template": "bars",
-      "title": "Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Period-Over-Period Variance & SAMEPERIODLASTYEAR / DATEADD",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
-    "codeHash": "6f560b5203eebfcb17f91f9043fbff76f8770eda352e57a424226692ace89239",
-    "spec": {
-      "template": "bars",
-      "title": "Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Moving & Rolling Averages with DATESINPERIOD / DATESBETWEEN",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
-    "codeHash": "f3b2ed7e9d4cea0540b4e924c5ee4c5c69bc3baa08bb16f9232f0ed0953a4ff8",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Time Intelligence Governance & Multi-Period Metric Gateway — Time Intelligence in DAX: TOTALYTD, SAMEPERIODLASTYEAR, Rolling Averages & Calendar Tables",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Time Intelligence Governance & Multi-Period Metric Gateway",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Contiguous Calendar",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "TOTALYTD Expansion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "YoY Period Growth",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Trailing Moving Avg",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

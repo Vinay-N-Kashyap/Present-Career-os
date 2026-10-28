@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Real-Time Generative Video Foundations: Video Diffusion Transformers (DiT), Sora & Runway Gen-3",
-      "codeHash": "acb586cdfd460186094f2843bf8730e36938ccea8296c3740c83fd49ebb1f61c",
+      "codeHash": "4159b2e56b994a21ac315193453f8d8adedb890d0cdbf6e245f98d96db2ba661",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Neural Radiance Fields (NeRFs), 3D Gaussian Splatting & Photorealistic Virtual Product Showrooms",
-      "codeHash": "f07c81e24d8606e46cd459497e606317bf3f4e917e74efd8cc5d8f575bc6b9c2",
+      "codeHash": "5ecf68f3777163e70fdad59cdcc5a24d3d94355a499f84f89b4d27347fbcb52a",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Synthetic Voice Actors, Automated Lip-Syncing & Multi-Lingual Dubbing at Global Scale",
-      "codeHash": "21f4c9d628044ac37e6dc7b9a569042b5c0e44941913d58cab5ba34a3d1a2008",
+      "codeHash": "51a996bc668e0c339f8cee7eab1a250b28ca8d7fdbff42f0933cbc2df6cae871",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Synthetic Media Governance, C2PA Provenance & Legal Compliance: The EU AI Act & FTC Deepfake Regulations",
-      "codeHash": "990dba905d5e6760c6d6e0220f981e934484d747d294ecca46753e0909f562f8",
+      "codeHash": "adaea1b4975fc225eab1305910e28a32988bc3639492af8a4d7a04e7a2000fc3",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Synthetic Video Generator & C2PA Compliance Validator in Python",
-      "codeHash": "f6f10dff6a3d4e3433ca99d74cd40b086a586d66d927d7e8db18b2c7f31a4b00",
+      "codeHash": "9505ec88e904cff0d12833a157a8fcaf674ca0b5f1dd86f80942ca7318f5280b",
       "spec": {
         "template": "funnel",
         "steps": [

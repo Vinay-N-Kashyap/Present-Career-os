@@ -823,7 +823,7 @@
     },
     {
       "partTitle": "Chainlink Decentralized Oracles & Stale Price Protection",
-      "codeHash": "c2258846a3f262c937e86fab3497d2db299ec762ebdf0584771be2b3d87a645f",
+      "codeHash": "a0ec387c93a4aef41f5b396e6a9628df03c63f81f2fbf238455376f869278fda",
       "spec": {
         "template": "sequence",
         "title": "Chainlink Decentralized Oracles & Stale Price... — On-Chain Transaction Sequence",

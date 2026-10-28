@@ -46,7 +46,9 @@
             "caption": "Virtual commissioning validates automation controls prior to deployment."
           }
         ]
-      }
+      },
+      "codeHash": "961e2cf2607bae6602d21fa200ab44978a2142faeaf461328bd5e538c7dbb875",
+      "partTitle": "Digital Twin Foundations: Physics-Based Modeling vs. Discrete Event Simulation (DES)"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Weibull curves capture realistic component fatigue and failure dynamics."
           }
         ]
-      }
+      },
+      "codeHash": "d3c3e2d8ea2eac9106b57c3d80a47719da8d598ee916a63af39eec8962a6c632",
+      "partTitle": "State-Space Modeling, Queueing Networks & SimEvents / AnyLogic Architectures"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Edge nodes filter high frequency sensor noise before cloud delivery."
           }
         ]
-      }
+      },
+      "codeHash": "6d9dfdbb2e9b77d1af3b9d8117530c243b20aaca46399f8587ef1fd75341bc5e",
+      "partTitle": "Real-Time Synchronization: Sensor Streams, Shadow Virtual Twins & Telemetry Ingestion"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Stochastic stress testing quantifies throughput variance."
           }
         ]
-      }
+      },
+      "codeHash": "3c0b9488bde0970ce4a2aa9c644602ad91b0d3c3b496cff1402274e33cb65e88",
+      "partTitle": "Dynamic Bottleneck Auditing & Monte Carlo Stress-Testing under Stochastic Demand"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Autonomous control systems minimize line idle time and buffer overflows."
           }
         ]
-      }
+      },
+      "codeHash": "3948f195a9866bef5c9ffa41215db832c54efc479797018ec03a46571ad1535f",
+      "partTitle": "Closed-Loop Predictive Optimization: Dynamic Dispatching Rules & Virtual Commissioning"
     }
   ]
 }

@@ -6,7 +6,7 @@
     {
       "partIndex": 1,
       "partTitle": "Global E-Commerce Data Tier: Decoupled Multi-Model Storage & Request Routing",
-      "codeHash": "8350eb82e1c8e6959722366bac85b55fe34d6eda43d7edeea5e5b1815652b50e",
+      "codeHash": "bddf7dc7d04c8f49f7a5bcad5ce30c557daec70fb7505b96ad41e8764b6755ab",
       "spec": {
         "template": "compare",
         "left": {
@@ -30,19 +30,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Monolithic database tiers suffer massive contention during traffic surges."
+            "annotation": "Monolithic database tiers suffer massive contention during traffic surges.",
+            "caption": "Monolithic database tiers suffer massive contention during traffic surges. (Global E-Commerce Data Tier: Decoup)"
           },
           {
             "at": "say2",
-            "annotation": "Polyglot architecture routes requests to specialized database engines."
+            "annotation": "Polyglot architecture routes requests to specialized database engines.",
+            "caption": "Polyglot architecture routes requests to specialized database engines. (Global E-Commerce Data Tier: Decoup)"
           },
           {
             "at": "example",
-            "annotation": "Router directs incoming traffic across caching and relational tiers."
+            "annotation": "Router directs incoming traffic across caching and relational tiers.",
+            "caption": "Router directs incoming traffic across caching and relational tiers. (Global E-Commerce Data Tier: Decoup)"
           },
           {
             "at": "tryIt",
-            "annotation": "Decoupled multi-tier persistence guarantees sub ten millisecond latency."
+            "annotation": "Decoupled multi-tier persistence guarantees sub ten millisecond latency.",
+            "caption": "Decoupled multi-tier persistence guarantees sub ten millisecond latency. (Global E-Commerce Data Tier: Decoup)"
           }
         ]
       }
@@ -50,7 +54,7 @@
     {
       "partIndex": 2,
       "partTitle": "Hot Read Acceleration: Distributed Valkey Caching & Mutex Stampede Protection",
-      "codeHash": "b0ae7cd8fa5b21a14aa1ba1fac4e4aed1ddb4a77bd0c1c7eb95a38d35f06a209",
+      "codeHash": "933fc2a97ff67d337e9d8c71361812df50ff1f5fb51902ac8b3f108aa99c2451",
       "spec": {
         "template": "compare",
         "left": {
@@ -74,19 +78,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Flash sale traffic spikes overwhelm unprotected database caching layers."
+            "annotation": "Flash sale traffic spikes overwhelm unprotected database caching layers.",
+            "caption": "Flash sale traffic spikes overwhelm unprotected database caching layers. (Hot Read Acceleration: Distributed )"
           },
           {
             "at": "say2",
-            "annotation": "Valkey cluster absorbs ninety-five percent of catalog read requests."
+            "annotation": "Valkey cluster absorbs ninety-five percent of catalog read requests.",
+            "caption": "Valkey cluster absorbs ninety-five percent of catalog read requests. (Hot Read Acceleration: Distributed )"
           },
           {
             "at": "example",
-            "annotation": "Catalog simulator serves five hundred concurrent reads in one millisecond."
+            "annotation": "Catalog simulator serves five hundred concurrent reads in one millisecond.",
+            "caption": "Catalog simulator serves five hundred concurrent reads in one millisecond. (Hot Read Acceleration: Distributed )"
           },
           {
             "at": "tryIt",
-            "annotation": "Distributed mutex locks prevent database collapse during key expiration."
+            "annotation": "Distributed mutex locks prevent database collapse during key expiration.",
+            "caption": "Distributed mutex locks prevent database collapse during key expiration. (Hot Read Acceleration: Distributed )"
           }
         ]
       }
@@ -94,7 +102,7 @@
     {
       "partIndex": 3,
       "partTitle": "Core Ordering: DynamoDB Single-Table Transactions & Item Collections",
-      "codeHash": "803584c519e17e2124b7eb48bce50e8aed3c16cd790ec7b5867b5966afb263fb",
+      "codeHash": "cfd4e67ddef3918112551a1a2d76bc29add76682cb66703504b729dfa3e4b56f",
       "spec": {
         "template": "compare",
         "left": {
@@ -118,19 +126,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Relational checkout transactions risk table deadlocks and slow queries."
+            "annotation": "Relational checkout transactions risk table deadlocks and slow queries.",
+            "caption": "Relational checkout transactions risk table deadlocks and slow queries. (Core Ordering: DynamoDB Single-Tabl)"
           },
           {
             "at": "say2",
-            "annotation": "DynamoDB single table design co-locates orders within item collections."
+            "annotation": "DynamoDB single table design co-locates orders within item collections.",
+            "caption": "DynamoDB single table design co-locates orders within item collections. (Core Ordering: DynamoDB Single-Tabl)"
           },
           {
             "at": "example",
-            "annotation": "Checkout engine commits atomic transaction and decrements stock quickly."
+            "annotation": "Checkout engine commits atomic transaction and decrements stock quickly.",
+            "caption": "Checkout engine commits atomic transaction and decrements stock quickly. (Core Ordering: DynamoDB Single-Tabl)"
           },
           {
             "at": "tryIt",
-            "annotation": "Condition checks prevent inventory overselling without distributed locks."
+            "annotation": "Condition checks prevent inventory overselling without distributed locks.",
+            "caption": "Condition checks prevent inventory overselling without distributed locks. (Core Ordering: DynamoDB Single-Tabl)"
           }
         ]
       }
@@ -138,7 +150,7 @@
     {
       "partIndex": 4,
       "partTitle": "Financial Settlement: Aurora Global Database & Amazon RDS Proxy Pooling",
-      "codeHash": "3ce5f10b1cf51f5f6194178cc71555bc8fbaab9a4302aea2e5c08b1d09f410b8",
+      "codeHash": "cffbd8e1dd1347efd52cf0356b66ab40ccbcdf99a038f4951e7c8b160920b45d",
       "spec": {
         "template": "compare",
         "left": {
@@ -162,19 +174,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Direct serverless database connections risk connection pool starvation."
+            "annotation": "Direct serverless database connections risk connection pool starvation.",
+            "caption": "Direct serverless database connections risk connection pool starvation. (Financial Settlement: Aurora Global)"
           },
           {
             "at": "say2",
-            "annotation": "Aurora Serverless engine scales compute without dropping connections."
+            "annotation": "Aurora Serverless engine scales compute without dropping connections.",
+            "caption": "Aurora Serverless engine scales compute without dropping connections. (Financial Settlement: Aurora Global)"
           },
           {
             "at": "example",
-            "annotation": "Settlement engine updates double entry balances with cross region safety."
+            "annotation": "Settlement engine updates double entry balances with cross region safety.",
+            "caption": "Settlement engine updates double entry balances with cross region safety. (Financial Settlement: Aurora Global)"
           },
           {
             "at": "tryIt",
-            "annotation": "Storage layer replication guarantees sub second recovery point objectives."
+            "annotation": "Storage layer replication guarantees sub second recovery point objectives.",
+            "caption": "Storage layer replication guarantees sub second recovery point objectives. (Financial Settlement: Aurora Global)"
           }
         ]
       }
@@ -182,7 +198,7 @@
     {
       "partIndex": 5,
       "partTitle": "Capstone Verification: End-to-End Sub-10ms Pipeline & Confirmation Token",
-      "codeHash": "c8b438396984f9a4130bc544500f443b847d2742bf0cfd3d3651d836121246bc",
+      "codeHash": "e29cfe9121787435dad4ec88a0641dd7780376993a8cc1f815dd3d4698712338",
       "spec": {
         "template": "compare",
         "left": {
@@ -206,19 +222,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Sequential database operations violate sub ten millisecond service SLAs."
+            "annotation": "Sequential database operations violate sub ten millisecond service SLAs.",
+            "caption": "Sequential database operations violate sub ten millisecond service SLAs. (Capstone Verification: End-to-End S)"
           },
           {
             "at": "say2",
-            "annotation": "Parallel pipeline orchestration executes reads and writes concurrently."
+            "annotation": "Parallel pipeline orchestration executes reads and writes concurrently.",
+            "caption": "Parallel pipeline orchestration executes reads and writes concurrently. (Capstone Verification: End-to-End S)"
           },
           {
             "at": "example",
-            "annotation": "Orchestrator synthesizes all four data tiers to achieve optimal latency."
+            "annotation": "Orchestrator synthesizes all four data tiers to achieve optimal latency.",
+            "caption": "Orchestrator synthesizes all four data tiers to achieve optimal latency. (Capstone Verification: End-to-End S)"
           },
           {
             "at": "tryIt",
-            "annotation": "Synthesis confirms all tiers operational and emits verified capstone token."
+            "annotation": "Synthesis confirms all tiers operational and emits verified capstone token.",
+            "caption": "Synthesis confirms all tiers operational and emits verified capstone token. (Capstone Verification: End-to-End S)"
           }
         ]
       }

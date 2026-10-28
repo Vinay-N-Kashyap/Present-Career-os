@@ -18,25 +18,29 @@
             "stepNumber": 1,
             "label": "Stacking Context Trap",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined stacking context trap validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous stacking context trap standards."
+            "rightCaption": "Sovereign design systems enforce rigorous stacking context trap standards.",
+            "caption": "Stacking Context Trap (The Stacking Context Trap: Why Z-In)"
           },
           {
             "stepNumber": 2,
             "label": "Encapsulated Context Hierarchy",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined encapsulated context hierarchy validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous encapsulated context hierarchy standards."
+            "rightCaption": "Sovereign design systems enforce rigorous encapsulated context hierarchy standards.",
+            "caption": "Encapsulated Context Hierarchy (The Stacking Context Trap: Why Z-In)"
           },
           {
             "stepNumber": 3,
             "label": "Composite Scoring",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined composite scoring validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous composite scoring standards."
+            "rightCaption": "Sovereign design systems enforce rigorous composite scoring standards.",
+            "caption": "Composite Scoring (The Stacking Context Trap: Why Z-In)"
           },
           {
             "stepNumber": 4,
             "label": "Root Portal Escape",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined root portal escape validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous root portal escape standards."
+            "rightCaption": "Sovereign design systems enforce rigorous root portal escape standards.",
+            "caption": "Root Portal Escape (The Stacking Context Trap: Why Z-In)"
           }
         ]
       }
@@ -54,25 +58,29 @@
             "stepNumber": 1,
             "label": "Component Logic Ownership",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined component logic ownership validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous component logic ownership standards."
+            "rightCaption": "Sovereign design systems enforce rigorous component logic ownership standards.",
+            "caption": "Component Logic Ownership (Portal Architecture: Teleporting No)"
           },
           {
             "stepNumber": 2,
             "label": "Root Teleportation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined root teleportation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous root teleportation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous root teleportation standards.",
+            "caption": "Root Teleportation (Portal Architecture: Teleporting No)"
           },
           {
             "stepNumber": 3,
             "label": "Pointer Events Routing",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined pointer events routing validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous pointer events routing standards."
+            "rightCaption": "Sovereign design systems enforce rigorous pointer events routing standards.",
+            "caption": "Pointer Events Routing (Portal Architecture: Teleporting No)"
           },
           {
             "stepNumber": 4,
             "label": "Lifecycle Unmounting",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined lifecycle unmounting validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous lifecycle unmounting standards."
+            "rightCaption": "Sovereign design systems enforce rigorous lifecycle unmounting standards.",
+            "caption": "Lifecycle Unmounting (Portal Architecture: Teleporting No)"
           }
         ]
       }
@@ -90,25 +98,29 @@
             "stepNumber": 1,
             "label": "Bounding Rect Telemetry",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined bounding rect telemetry validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous bounding rect telemetry standards."
+            "rightCaption": "Sovereign design systems enforce rigorous bounding rect telemetry standards.",
+            "caption": "Bounding Rect Telemetry (Anchor Positioning Mechanics: Compu)"
           },
           {
             "stepNumber": 2,
             "label": "Coordinate Geometry",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate geometry validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous coordinate geometry standards."
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate geometry standards.",
+            "caption": "Coordinate Geometry (Anchor Positioning Mechanics: Compu)"
           },
           {
             "stepNumber": 3,
             "label": "Directional Placement",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined directional placement validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous directional placement standards."
+            "rightCaption": "Sovereign design systems enforce rigorous directional placement standards.",
+            "caption": "Directional Placement (Anchor Positioning Mechanics: Compu)"
           },
           {
             "stepNumber": 4,
             "label": "Scroll Offsets Math",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined scroll offsets math validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous scroll offsets math standards."
+            "rightCaption": "Sovereign design systems enforce rigorous scroll offsets math standards.",
+            "caption": "Scroll Offsets Math (Anchor Positioning Mechanics: Compu)"
           }
         ]
       }
@@ -126,25 +138,29 @@
             "stepNumber": 1,
             "label": "Boundary Clearance Check",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined boundary clearance check validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous boundary clearance check standards."
+            "rightCaption": "Sovereign design systems enforce rigorous boundary clearance check standards.",
+            "caption": "Boundary Clearance Check (Coordinate Geometry & Clipping Bypa)"
           },
           {
             "stepNumber": 2,
             "label": "Main Axis Auto Flip",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined main axis auto flip validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous main axis auto flip standards."
+            "rightCaption": "Sovereign design systems enforce rigorous main axis auto flip standards.",
+            "caption": "Main Axis Auto Flip (Coordinate Geometry & Clipping Bypa)"
           },
           {
             "stepNumber": 3,
             "label": "Cross Axis Shift Clamping",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined cross axis shift clamping validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous cross axis shift clamping standards."
+            "rightCaption": "Sovereign design systems enforce rigorous cross axis shift clamping standards.",
+            "caption": "Cross Axis Shift Clamping (Coordinate Geometry & Clipping Bypa)"
           },
           {
             "stepNumber": 4,
             "label": "Size Limiting Fallback",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined size limiting fallback validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous size limiting fallback standards."
+            "rightCaption": "Sovereign design systems enforce rigorous size limiting fallback standards.",
+            "caption": "Size Limiting Fallback (Coordinate Geometry & Clipping Bypa)"
           }
         ]
       }
@@ -162,25 +178,29 @@
             "stepNumber": 1,
             "label": "Semantic Tier Hierarchy",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined semantic tier hierarchy validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous semantic tier hierarchy standards."
+            "rightCaption": "Sovereign design systems enforce rigorous semantic tier hierarchy standards.",
+            "caption": "Semantic Tier Hierarchy (Enterprise Application: Institution)"
           },
           {
             "stepNumber": 2,
             "label": "Multi Tier Stacking Order",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined multi tier stacking order validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous multi tier stacking order standards."
+            "rightCaption": "Sovereign design systems enforce rigorous multi tier stacking order standards.",
+            "caption": "Multi Tier Stacking Order (Enterprise Application: Institution)"
           },
           {
             "stepNumber": 3,
             "label": "Coordinate Auto Alignment",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate auto alignment validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous coordinate auto alignment standards."
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate auto alignment standards.",
+            "caption": "Coordinate Auto Alignment (Enterprise Application: Institution)"
           },
           {
             "stepNumber": 4,
             "label": "Deterministic Cleanup",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined deterministic cleanup validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous deterministic cleanup standards."
+            "rightCaption": "Sovereign design systems enforce rigorous deterministic cleanup standards.",
+            "caption": "Deterministic Cleanup (Enterprise Application: Institution)"
           }
         ]
       }

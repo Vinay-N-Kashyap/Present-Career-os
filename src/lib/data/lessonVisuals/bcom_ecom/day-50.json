@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1 Capstone Synthesis: cXML PunchOut Catalog Gateways & Contract Pricing Precedence",
-      "codeHash": "70db2fbc80df3699092dbb7594018770e1a6cfde8af8b29389c1df526a4bd292",
+      "codeHash": "7b710e55f4a953f4df589b012a0ea1c3af1b1f6e4b5d5a442cc5afe9df86178f",
       "spec": {
         "template": "funnel",
         "title": "Day 50 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tier 2 Capstone Synthesis: Corporate Hierarchy Tree Traversal & Separation of Duties (SoD)",
-      "codeHash": "7ec69c29998ac2abc9f700721bfcef4c1a169b0003ce3f1b8085fd896f5a28eb",
+      "codeHash": "1a80a6649f8a6f42c894141a7eb1ea4eb0d11045f3c659ddb1ab3e398736cd38",
       "spec": {
         "template": "funnel",
         "title": "Day 50 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Tier 3 Capstone Synthesis: Enterprise Revolving Trade Credit & 2/10 Net 30 Cash Discount Optimization",
-      "codeHash": "83efde3c49c2bee7097e02ffec00cb2848cb3d6b9719a3d4a7dc179c81f67654",
+      "codeHash": "025c165f6f3bdcdf4423dc5e4467f0f9c88585dd988c5760b2eb245b5794745a",
       "spec": {
         "template": "funnel",
         "title": "Day 50 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Tier 4 Capstone Synthesis: CPQ Quoting Engines, Margin Hurdle Gates & ASC 606 Rebate Accruals",
-      "codeHash": "577fcdaa12cc637e6df0144f84a8ff926eef53dafd38eaa670a09d1960e8208f",
+      "codeHash": "5892e6335500e16a1a90008825bf8ff5ee4d6f4ba829d960ff703fdad79ccce0",
       "spec": {
         "template": "funnel",
         "title": "Day 50 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Tier 5 Capstone Integration: Global Enterprise B2B Command Tower & CBCA-EPA Boardroom Accreditation",
-      "codeHash": "ac5a6adf30206caf3d166007eb6d3d0de92ec7f2e15fec3094dc76be1c4b2969",
+      "codeHash": "8c283f4a296e769a3eb32c5dadcf7d2772942fca5b652701a536e66e1dcb9a4b",
       "spec": {
         "template": "funnel",
         "title": "Day 50 Part 5 Architecture Flow",

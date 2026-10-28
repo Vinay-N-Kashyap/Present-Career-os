@@ -41,6 +41,244 @@
             "Verified"
           ]
         ]
+      },
+      "spec": {
+        "template": "cells",
+        "title": "Remote Access Protocols: Secure Shell (SSH Po... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Remote Access Protocols:...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Remote Access Protocols: Secure Shell (SSH Po... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Remote Access Protocols:...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
       }
     },
     {
@@ -81,6 +319,244 @@
             "Ready",
             "Verified"
           ]
+        ]
+      },
+      "spec": {
+        "template": "cells",
+        "title": "SSH Port Forwarding & Cryptographic Tunneling... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for SSH Port Forwarding & Cr...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "SSH Port Forwarding & Cryptographic Tunneling... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for SSH Port Forwarding & Cr...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
         ]
       }
     },
@@ -123,13 +599,251 @@
             "Verified"
           ]
         ]
+      },
+      "spec": {
+        "template": "cells",
+        "title": "Cloud Virtual Desktop Infrastructure (VDI): A... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Cloud Virtual Desktop In...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Cloud Virtual Desktop Infrastructure (VDI): A... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Cloud Virtual Desktop In...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
       }
     },
     {
       "stepId": "cf-d27-p4",
       "partTitle": "Network QoS, Latency Budgets & Collaboration Security: Bandwidth, Jitter & Zero Trust Access (ZTNA)",
       "template": "cells",
-      "codeHash": "fa927e1cae24e31837e4b71963676b177e72bfb5e6fec022a2b03d3523b5f42c",
+      "codeHash": "e9f25f808bce06bbed70098c3f0a0a65e2c76ee448fc895f16707bcc2dc5947c",
       "data": {
         "title": "Remote Infrastructure: Network QoS, Latency Budgets & Collaboration Security: Bandwidth, Jitter & Zero Trust Access (ZTNA)",
         "headers": [
@@ -164,13 +878,251 @@
             "Verified"
           ]
         ]
+      },
+      "spec": {
+        "template": "cells",
+        "title": "Network QoS, Latency Budgets & Collaboration ... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Network QoS, Latency Bud...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Network QoS, Latency Budgets & Collaboration ... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Network QoS, Latency Bud...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
       }
     },
     {
       "stepId": "cf-d27-p5",
       "partTitle": "Master Remote Work Infrastructure, SSH Tunnels & VDI Collaboration Telemetry Suite",
       "template": "cells",
-      "codeHash": "e15aada85bce82e2435ffa50bf2e15d256ec170b657e302cd55551355d1f2ee1",
+      "codeHash": "38a4116e4cd7ea5ccb6ae80237ee7d3509e44751cfe04fb16a4e86247e5aea07",
       "data": {
         "title": "Remote Infrastructure: Master Remote Work Infrastructure, SSH Tunnels & VDI Collaboration Telemetry Suite",
         "headers": [
@@ -204,6 +1156,244 @@
             "Ready",
             "Verified"
           ]
+        ]
+      },
+      "spec": {
+        "template": "cells",
+        "title": "Master Remote Work Infrastructure, SSH Tunnel... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Master Remote Work Infra...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Master Remote Work Infrastructure, SSH Tunnel... — Memory Address & Pointer Cells",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Master Remote Work Infra...",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 0,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              0,
+              1
+            ],
+            "tones": {
+              "0": "data",
+              "1": "idle",
+              "2": "idle",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Decode operands in 0x04: REG_A and 0x08: REG_B.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "PC",
+                "index": 1,
+                "tone": "ok"
+              },
+              {
+                "name": "ALU",
+                "index": 2,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              1,
+              3
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "data",
+              "2": "data",
+              "3": "idle"
+            }
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Execute ALU operation and stage output toward 0x0C: ACCUM.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "ALU",
+                "index": 3,
+                "tone": "data"
+              }
+            ],
+            "highlightRange": [
+              2,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "data"
+            }
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Commit verified word into 0x0C: ACCUM memory cell.",
+            "items": [
+              "0x00: OPCODE",
+              "0x04: REG_A",
+              "0x08: REG_B",
+              "0x0C: ACCUM"
+            ],
+            "pointers": [
+              {
+                "name": "COMMIT",
+                "index": 3,
+                "tone": "ok"
+              }
+            ],
+            "highlightRange": [
+              0,
+              4
+            ],
+            "tones": {
+              "0": "ok",
+              "1": "ok",
+              "2": "ok",
+              "3": "ok"
+            }
+          }
         ]
       }
     }

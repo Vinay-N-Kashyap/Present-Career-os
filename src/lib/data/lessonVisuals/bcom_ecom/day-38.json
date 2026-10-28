@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Mathematics of Promotion Rule Evaluation: Order of Operations & Discount Waterfall",
-      "codeHash": "708ee8156c0f825cd42523c7e9a285d6c609d03e8b1e0cda23f7ebbb2d329154",
+      "codeHash": "ad6e8fbe0d44c5e59c0f1df30f8b17ed284ddcac939a04a49803f01d879d5a16",
       "spec": {
         "template": "funnel",
         "title": "Day 38 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "The RETE Pattern-Matching Algorithm for Real-Time High-Volume Cart Rules",
-      "codeHash": "3b5d9b8b3cfa26dcba3aec17638b6631f745c0bb4da0d7658891e92feef062ee",
+      "codeHash": "f003d1facbb1a214ffe9bdc9abf51076e79685c1ed05f61cd4cb042ab18e0948",
       "spec": {
         "template": "funnel",
         "title": "Day 38 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Complex Coupon Stacking Architectures & Exclusion Invariants",
-      "codeHash": "634d5bd96a9b70b400b13ef438ab35bf41aea589293db2eb78fa0e4882cd37fc",
+      "codeHash": "b508cdfa06bc44cd722c67986869992657138527b971fdfff186559992143e3c",
       "spec": {
         "template": "funnel",
         "title": "Day 38 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Promotional Abuse Defense & Velocity Fraud Detection: Neutralizing Synthetic Loops",
-      "codeHash": "4d9d100ae0a57bdde58e93f33fa6e06224bc3afeec49378a82d26c001e5ba8ca",
+      "codeHash": "a58be07d0d082d2f489b208dcb0921759b8f2395d6b2e18cbae83b5b5070a142",
       "spec": {
         "template": "funnel",
         "title": "Day 38 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "The Complete Enterprise Composable Promotion Engine & Cart Mutation Pipeline in Python",
-      "codeHash": "9468920293839989a5ed517f69250b004defa7677c3f2e1f0519ff755b28d817",
+      "codeHash": "366e2b516e5a33526499a55b6d362d1c7817206262b10817c144214e755e5b01",
       "spec": {
         "template": "funnel",
         "title": "Day 38 Part 5 Architecture Flow",

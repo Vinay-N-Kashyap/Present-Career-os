@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Two-Way Sensitivity Matrices & What-If Data Table Engines",
-    "codeHash": "72c3185851b2687dc8e7a37c0859365abb8f2d1d7be235ad4f561a4134184f95",
-    "spec": {
-      "template": "bars",
-      "title": "Two-Way Sensitivity Matrices & What-If Data Table Engines — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Two-Way Sensitivity Matrices & What-If Data Table Engines",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Two-Way Sensitivity Matrices & What-If Data Table Engines",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Two-Way Sensitivity Matrices & What-If Data Table Engines",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Two-Way Sensitivity Matrices & What-If Data Table Engines",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 34,
+  "entries": [
+    {
+      "partTitle": "Two-Way Sensitivity Matrices & What-If Data Table Engines",
+      "codeHash": "72c3185851b2687dc8e7a37c0859365abb8f2d1d7be235ad4f561a4134184f95",
+      "spec": {
+        "template": "bars",
+        "title": "Two-Way Sensitivity Matrices & What-If Data Table Engines — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Two-Way Sensitivity Matrices & What-If Data Table Engines — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Two-Way Sensitivity Matrices & What-If Data Table Engines",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Tornado Chart Sensitivity Ranking & Elasticity Engine",
+      "codeHash": "8c5353ef353d23c893363d77c46bbc9d90e9ad4c97019489543b2fe32a2875c7",
+      "spec": {
+        "template": "bars",
+        "title": "Tornado Chart Sensitivity Ranking & Elasticity Engine — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Tornado Chart Sensitivity Ranking & Elasticity Engine — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Tornado Chart Sensitivity Ranking & Elasticity Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+      "codeHash": "00335ca7269cf5e9a043657394bd057b042e8bedd6ff0f2b6eebc936f894f680",
+      "spec": {
+        "template": "bars",
+        "title": "Scenario Manager Switchboard (Base, Bull, Bear, Stagflation) — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Scenario Manager Switchboard (Base, Bull, Bear, Stagflation) — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Correlated Monte Carlo Stochastic Risk Simulation",
+      "codeHash": "b3e3e5f42857f28438d2523563e6449f76754b57fae9a19bf8a83834eca546d3",
+      "spec": {
+        "template": "bars",
+        "title": "Correlated Monte Carlo Stochastic Risk Simulation — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Correlated Monte Carlo Stochastic Risk Simulation — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Correlated Monte Carlo Stochastic Risk Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+      "codeHash": "a4655b5253de38d3ee52a9ffb855d482de203a698b56f5462d6d70e11f437b93",
+      "spec": {
+        "template": "bars",
+        "title": "Master Enterprise Financial Risk & Stochastic Sensitivity Suite — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Enterprise Financial Risk & Stochastic Sensitivity Suite — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Two-Way Data Table",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tornado Sensitivity",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Scenario Switch",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Monte Carlo VaR",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Tornado Chart Sensitivity Ranking & Elasticity Engine",
-    "codeHash": "8c5353ef353d23c893363d77c46bbc9d90e9ad4c97019489543b2fe32a2875c7",
-    "spec": {
-      "template": "bars",
-      "title": "Tornado Chart Sensitivity Ranking & Elasticity Engine — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Tornado Chart Sensitivity Ranking & Elasticity Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Tornado Chart Sensitivity Ranking & Elasticity Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Tornado Chart Sensitivity Ranking & Elasticity Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Tornado Chart Sensitivity Ranking & Elasticity Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
-    "codeHash": "00335ca7269cf5e9a043657394bd057b042e8bedd6ff0f2b6eebc936f894f680",
-    "spec": {
-      "template": "bars",
-      "title": "Scenario Manager Switchboard (Base, Bull, Bear, Stagflation) — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Scenario Manager Switchboard (Base, Bull, Bear, Stagflation)",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Correlated Monte Carlo Stochastic Risk Simulation",
-    "codeHash": "b3e3e5f42857f28438d2523563e6449f76754b57fae9a19bf8a83834eca546d3",
-    "spec": {
-      "template": "bars",
-      "title": "Correlated Monte Carlo Stochastic Risk Simulation — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Correlated Monte Carlo Stochastic Risk Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Correlated Monte Carlo Stochastic Risk Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Correlated Monte Carlo Stochastic Risk Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Correlated Monte Carlo Stochastic Risk Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
-    "codeHash": "a4655b5253de38d3ee52a9ffb855d482de203a698b56f5462d6d70e11f437b93",
-    "spec": {
-      "template": "bars",
-      "title": "Master Enterprise Financial Risk & Stochastic Sensitivity Suite — Advanced Sensitivity & Scenario Managers: Two-Way Data Tables, Tornado Charts & Monte Carlo Simulations",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Master Enterprise Financial Risk & Stochastic Sensitivity Suite",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Two-Way Data Table",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tornado Sensitivity",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Scenario Switch",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Monte Carlo VaR",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

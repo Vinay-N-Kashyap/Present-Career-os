@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Deterministic vs Stochastic Financial Modeling: Probability Distributions (Normal, Lognormal, Triangular)",
-    "codeHash": "06401a17c6473586b5f34c4f71da98b5f59ef75f4e9d50815f50acb389d040e2",
-    "spec": {
-      "template": "bars",
-      "title": "Deterministic vs Stochastic Financial Mo... \u2014 Monte Carlo Simulation Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline stochastic sampling parameters for Deterministic vs Stochastic Financi...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 70,
-              "tone": "idle"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 65,
-              "tone": "idle"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 45,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Deterministic vs Stochastic Financi...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 88,
-              "tone": "data"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 40,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Deterministic vs Stochastic Financi...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 30,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Deterministic vs Stochastic Financi...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 25,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 18,
+  "entries": [
+    {
+      "partTitle": "Deterministic vs Stochastic Financial Modeling: Probability Distributions (Normal, Lognormal, Triangular)",
+      "codeHash": "06401a17c6473586b5f34c4f71da98b5f59ef75f4e9d50815f50acb389d040e2",
+      "spec": {
+        "template": "bars",
+        "title": "Deterministic vs Stochastic Financial Mo... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Deterministic vs Stochastic Financial Mo... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Deterministic vs Stochastic Financi...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Monte Carlo Iteration Mechanics in Excel: Dynamic Arrays, RAND(), NORM.INV() & Data Tables 1D",
+      "codeHash": "003f61aef8ee0e6a9c58a75775bd4550e2ae886131c654673597b91cef38f869",
+      "spec": {
+        "template": "bars",
+        "title": "Monte Carlo Iteration Mechanics in Excel... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Monte Carlo Iteration Mechanics in Excel... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Monte Carlo Iteration Mechanics in ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Value at Risk (VaR) & Expected Shortfall (CVaR) Distribution Tails",
+      "codeHash": "a75cfc4525297677911c9676c73f9e9941a27b5d2ee4a0c08d73a4f377f2ea06",
+      "spec": {
+        "template": "bars",
+        "title": "Value at Risk (VaR) & Expected Shortfall... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Value at Risk (VaR) & Expected Shortfall... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Value at Risk (VaR) & Expected Shor...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Correlated Stochastic Variables & Cholesky Decomposition Matrix Foundations",
+      "codeHash": "cbce5105dad5362d0e8b76e18b06bae15a523fd8e2589fc761010268f5d5880c",
+      "spec": {
+        "template": "bars",
+        "title": "Correlated Stochastic Variables & Choles... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Correlated Stochastic Variables & Choles... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Correlated Stochastic Variables & C...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Multi-Variable Monte Carlo Capital Budgeting & Cash Runway Simulation Platform",
+      "codeHash": "21cd8e2d1415a2868b3f3ca38dff1a8b9d8f66e365e6ce1ae299e3c98f495db0",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Multi-Variable Monte Carlo Ca... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Multi-Variable Monte Carlo Ca... — Monte Carlo Simulation Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline stochastic sampling parameters for Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 70,
+                "tone": "idle"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 65,
+                "tone": "idle"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 45,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 92,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 88,
+                "tone": "data"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 40,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 96,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 94,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 30,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Enterprise Multi-Variable Monte Car...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Simulation Stability",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Tail Risk Precision",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Correlation Fidelity",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Insolvency Headroom",
+                "value": 25,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Monte Carlo Iteration Mechanics in Excel: Dynamic Arrays, RAND(), NORM.INV() & Data Tables 1D",
-    "codeHash": "003f61aef8ee0e6a9c58a75775bd4550e2ae886131c654673597b91cef38f869",
-    "spec": {
-      "template": "bars",
-      "title": "Monte Carlo Iteration Mechanics in Excel... \u2014 Monte Carlo Simulation Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline stochastic sampling parameters for Monte Carlo Iteration Mechanics in ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 70,
-              "tone": "idle"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 65,
-              "tone": "idle"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 45,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Monte Carlo Iteration Mechanics in ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 88,
-              "tone": "data"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 40,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Monte Carlo Iteration Mechanics in ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 30,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Monte Carlo Iteration Mechanics in ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 25,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Value at Risk (VaR) & Expected Shortfall (CVaR) Distribution Tails",
-    "codeHash": "a75cfc4525297677911c9676c73f9e9941a27b5d2ee4a0c08d73a4f377f2ea06",
-    "spec": {
-      "template": "bars",
-      "title": "Value at Risk (VaR) & Expected Shortfall... \u2014 Monte Carlo Simulation Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline stochastic sampling parameters for Value at Risk (VaR) & Expected Shor...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 70,
-              "tone": "idle"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 65,
-              "tone": "idle"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 45,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Value at Risk (VaR) & Expected Shor...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 88,
-              "tone": "data"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 40,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Value at Risk (VaR) & Expected Shor...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 30,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Value at Risk (VaR) & Expected Shor...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 25,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Correlated Stochastic Variables & Cholesky Decomposition Matrix Foundations",
-    "codeHash": "cbce5105dad5362d0e8b76e18b06bae15a523fd8e2589fc761010268f5d5880c",
-    "spec": {
-      "template": "bars",
-      "title": "Correlated Stochastic Variables & Choles... \u2014 Monte Carlo Simulation Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline stochastic sampling parameters for Correlated Stochastic Variables & C...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 70,
-              "tone": "idle"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 65,
-              "tone": "idle"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 45,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Correlated Stochastic Variables & C...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 88,
-              "tone": "data"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 40,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Correlated Stochastic Variables & C...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 30,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Correlated Stochastic Variables & C...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 25,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Multi-Variable Monte Carlo Capital Budgeting & Cash Runway Simulation Platform",
-    "codeHash": "21cd8e2d1415a2868b3f3ca38dff1a8b9d8f66e365e6ce1ae299e3c98f495db0",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Multi-Variable Monte Carlo Ca... \u2014 Monte Carlo Simulation Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline stochastic sampling parameters for Enterprise Multi-Variable Monte Car...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 70,
-              "tone": "idle"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 65,
-              "tone": "idle"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 45,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Cholesky decomposition and 10,000-trial simulation draws in Enterprise Multi-Variable Monte Car...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 92,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 88,
-              "tone": "data"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 40,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Value at Risk (VaR) and Expected Shortfall tail convergence in Enterprise Multi-Variable Monte Car...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 96,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 94,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 30,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full empirical distribution and capital contingency buffer mapped in Enterprise Multi-Variable Monte Car...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Simulation Stability",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Tail Risk Precision",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Correlation Fidelity",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Insolvency Headroom",
-              "value": 25,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

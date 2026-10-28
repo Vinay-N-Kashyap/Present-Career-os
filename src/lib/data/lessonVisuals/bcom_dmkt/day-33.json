@@ -7,14 +7,14 @@
   "entries": [
     {
       "partTitle": "The Failure of Rule-Based Attribution Heuristics: Eliminating Subjective Biases",
-      "codeHash": "be91872c7e7b3cb18620c7274a0e275e7040799e6810c645f1c0cc3a2d17ae32",
+      "codeHash": "15cf5a80bd0c8f6b1528df0819f076dec0c2ec6eaf18512446e7f901c441b9a8",
       "spec": {
         "template": "funnel",
-        "title": "The Failure of Rule-Based Attribution Heuristics: Eliminating Subjective Biases \u2014 Conversion Funnel",
+        "title": "The Failure of Rule-Based Attribution Heuristics: Eliminating Subjective Biases — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D33P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -169,14 +169,14 @@
     },
     {
       "partTitle": "Cooperative Game Theory & Shapley Value Attribution: Coalition Fairness Axioms",
-      "codeHash": "46f76afb8b6fdf2e4151702c4ce4c6908cdffb9a7977da3dba6fc55acb1facab",
+      "codeHash": "f939d1a492097dcb387ad18d794a758e4f74784d20dc05c1d9f168aced97521b",
       "spec": {
         "template": "funnel",
-        "title": "Cooperative Game Theory & Shapley Value Attribution: Coalition Fairness Axioms \u2014 Conversion Funnel",
+        "title": "Cooperative Game Theory & Shapley Value Attribution: Coalition Fairness Axioms — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D33P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -331,14 +331,14 @@
     },
     {
       "partTitle": "Markov Transition Chains & Structural Removal Effects: Graph-Based Attribution",
-      "codeHash": "49d534de583af2c4a959cbcd336fe1adb9626c6b66464d96475bb74716f383ab",
+      "codeHash": "eef61bf2496c710cf7755ea88f42e1f6ebae92c96bf8a674743fc09046c47dca",
       "spec": {
         "template": "funnel",
-        "title": "Markov Transition Chains & Structural Removal Effects: Graph-Based Attribution \u2014 Conversion Funnel",
+        "title": "Markov Transition Chains & Structural Removal Effects: Graph-Based Attribution — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D33P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -493,14 +493,14 @@
     },
     {
       "partTitle": "Higher-Order Markov Chains & Memory-Dependent Pathing: Capturing Temporal Context",
-      "codeHash": "db2c0b314bad39a2580944d2db4b7f88421e0b30439c803802092697819c19c5",
+      "codeHash": "88821eeb9404901eea76ce661d32dec21f3c6d84f56e59d9c36cc22a33dc0a92",
       "spec": {
         "template": "funnel",
-        "title": "Higher-Order Markov Chains & Memory-Dependent Pathing: Capturing Temporal Context \u2014 Conversion Funnel",
+        "title": "Higher-Order Markov Chains & Memory-Dependent Pathing: Capturing Temporal Context — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D33P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -655,14 +655,14 @@
     },
     {
       "partTitle": "Triangulation: Reconciling MTA with Top-Down MMM and Causal Lift",
-      "codeHash": "95c3f27b0870d2346f97b1d8b2864314ade24e161f626ea705c182e7b3b24641",
+      "codeHash": "610153575bdbdf96d16367a8664ecf31393da188ffa644513468bcdc05d472b4",
       "spec": {
         "template": "funnel",
-        "title": "Triangulation: Reconciling MTA with Top-Down MMM and Causal Lift \u2014 Conversion Funnel",
+        "title": "Triangulation: Reconciling MTA with Top-Down MMM and Causal Lift — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D33P5].",
             "activeStageId": "top",
             "stages": [
               {

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Reverse Logistics Economics: Return Merchandise Authorization (RMA) & Self-Service Customer Portals",
-      "codeHash": "7dbacaa5c7a3f687c2a1a3ba6bf0cbf283edbc0a334ad4559f5d8281f2679588",
+      "codeHash": "e57f62963e9a60f9185adada3855b6854380c14a21ae56c55b15e79479dae56b",
       "spec": {
         "template": "funnel",
         "title": "Day 43 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Automated Disposition Triage Algorithms: Grade A/B/C/D Refurbishment & Restocking Matrix",
-      "codeHash": "34cd20eef43d4c5828fd932003c8b703b06731a50d4f57ac82bc22e4b3f51238",
+      "codeHash": "0586d660f94fe731fd3c2e8f317fbdfbda5fcb62bd408ceb962db3938c5629b5",
       "spec": {
         "template": "funnel",
         "title": "Day 43 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Secondary Market Liquidation & B2B Wholesale Clearance Auction Architecture",
-      "codeHash": "60773065a53563816c0ff8f233a64a0be62f426dd84b7c33f4dd0f76418289c8",
+      "codeHash": "ac8c191a6f70af241b2c58b6299cb92b836a9b25ac999bab965de301278b0c56",
       "spec": {
         "template": "funnel",
         "title": "Day 43 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Return Fraud & Wardrobing Prevention: Behavioral Anomaly Detection & Velocity Limits",
-      "codeHash": "0ba9428fb725b5dae3c82a403ad917dd07417195be143f50e00be74165ffb93e",
+      "codeHash": "07af75bb89ad15fe51062e989eaf982a863ecf83f385bb3a47db6e6fb004e2de",
       "spec": {
         "template": "funnel",
         "title": "Day 43 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Circular Economy Accounting & Reverse Logistics Command Tower",
-      "codeHash": "69bb01f1c478dcf84600151836d4f2d51028c93a78284fd3b332a187795763b7",
+      "codeHash": "08592d5281922798d548aa18667ad7bb195208e79bbc06c48e1e35171884f4c1",
       "spec": {
         "template": "funnel",
         "title": "Day 43 Part 5 Architecture Flow",

@@ -4,12 +4,12 @@
   "day": 40,
   "entries": [
     {
-      "partTitle": "\u2b50 Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
+      "partTitle": "⭐ Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
       "codeHash": "248af052a72fc3cd96df44fa999918d41ee5fdc92d530716886e6264b4c7dc5f",
       "spec": {
         "template": "workflow",
         "workflow": {
-          "title": "\u2b50 Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
+          "title": "⭐ Milestone 7 Architecture: 1,000,000 Event/Sec Ingestion Backbone & Kinesis EFO Sizing",
           "nodes": [
             {
               "id": "producers",
@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "producers",
-            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second.",
+            "caption": "Distributed IoT device fleets emit 1,000,000 telemetry events per second. (⭐ Milestone 7 Architecture: 1,000,0)"
           },
           {
             "at": "say2",
             "focus": "kinesis",
-            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery.",
+            "caption": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery. (⭐ Milestone 7 Architecture: 1,000,0)"
           },
           {
             "at": "example",
             "focus": "flink",
-            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB.",
+            "caption": "Apache Flink executes stateful windowing and anomaly detection with RocksDB. (⭐ Milestone 7 Architecture: 1,000,0)"
           },
           {
             "at": "tryIt",
             "focus": "dual_egress",
-            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet.",
+            "caption": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet. (⭐ Milestone 7 Architecture: 1,000,0)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "producers",
-            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second.",
+            "caption": "Distributed IoT device fleets emit 1,000,000 telemetry events per second. (Amazon Managed Service for Apache F)"
           },
           {
             "at": "say2",
             "focus": "kinesis",
-            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery.",
+            "caption": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery. (Amazon Managed Service for Apache F)"
           },
           {
             "at": "example",
             "focus": "flink",
-            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB.",
+            "caption": "Apache Flink executes stateful windowing and anomaly detection with RocksDB. (Amazon Managed Service for Apache F)"
           },
           {
             "at": "tryIt",
             "focus": "dual_egress",
-            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet.",
+            "caption": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet. (Amazon Managed Service for Apache F)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "producers",
-            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second.",
+            "caption": "Distributed IoT device fleets emit 1,000,000 telemetry events per second. (Sliding & Tumbling Windows: RocksDB)"
           },
           {
             "at": "say2",
             "focus": "kinesis",
-            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery.",
+            "caption": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery. (Sliding & Tumbling Windows: RocksDB)"
           },
           {
             "at": "example",
             "focus": "flink",
-            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB.",
+            "caption": "Apache Flink executes stateful windowing and anomaly detection with RocksDB. (Sliding & Tumbling Windows: RocksDB)"
           },
           {
             "at": "tryIt",
             "focus": "dual_egress",
-            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet.",
+            "caption": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet. (Sliding & Tumbling Windows: RocksDB)"
           }
         ]
       }
@@ -267,33 +279,37 @@
           {
             "at": "say1",
             "focus": "producers",
-            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second.",
+            "caption": "Distributed IoT device fleets emit 1,000,000 telemetry events per second. (High-Throughput Dual Egress: Real-T)"
           },
           {
             "at": "say2",
             "focus": "kinesis",
-            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery.",
+            "caption": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery. (High-Throughput Dual Egress: Real-T)"
           },
           {
             "at": "example",
             "focus": "flink",
-            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB.",
+            "caption": "Apache Flink executes stateful windowing and anomaly detection with RocksDB. (High-Throughput Dual Egress: Real-T)"
           },
           {
             "at": "tryIt",
             "focus": "dual_egress",
-            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet.",
+            "caption": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet. (High-Throughput Dual Egress: Real-T)"
           }
         ]
       }
     },
     {
-      "partTitle": "\u2b50 Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
+      "partTitle": "⭐ Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
       "codeHash": "19ae1c3b227a68ed3282a67bddf190b1dda92c4015528376a4b74572f18fd061",
       "spec": {
         "template": "workflow",
         "workflow": {
-          "title": "\u2b50 Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
+          "title": "⭐ Milestone 7 Synthesis: Production 1,000,000 Event/Sec Telemetry Engine & SRE Runbook",
           "nodes": [
             {
               "id": "producers",
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "producers",
-            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second."
+            "annotation": "Distributed IoT device fleets emit 1,000,000 telemetry events per second.",
+            "caption": "Distributed IoT device fleets emit 1,000,000 telemetry events per second. (⭐ Milestone 7 Synthesis: Production)"
           },
           {
             "at": "say2",
             "focus": "kinesis",
-            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery."
+            "annotation": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery.",
+            "caption": "1,000 Kinesis shards buffer 500 MB/s ingress with Enhanced Fan-Out delivery. (⭐ Milestone 7 Synthesis: Production)"
           },
           {
             "at": "example",
             "focus": "flink",
-            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB."
+            "annotation": "Apache Flink executes stateful windowing and anomaly detection with RocksDB.",
+            "caption": "Apache Flink executes stateful windowing and anomaly detection with RocksDB. (⭐ Milestone 7 Synthesis: Production)"
           },
           {
             "at": "tryIt",
             "focus": "dual_egress",
-            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet."
+            "annotation": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet.",
+            "caption": "Dual egress routes real-time alerts to Amazon MSK and historical data to S3 Parquet. (⭐ Milestone 7 Synthesis: Production)"
           }
         ]
       }

@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P2].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P2].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P3].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P3].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P4].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P4].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P5].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <BytecodeObfuscationVerifier />",
+            "caption": "Step 1: Verify R8 bytecode obfuscation and stripped symbols via <B [D24P5].",
             "activeId": "StaticObfuscation",
             "tone": "primary",
             "nodes": [

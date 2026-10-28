@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Client-Side Tagging Vulnerabilities & First-Party Server GTM Architecture",
-      "codeHash": "98dac11d0b127572bae4732681e99e3ef44ae0a3acee17cfc83f34d971578f36",
+      "codeHash": "7cb51c5f86bec8fa84683bb894cc15edb1d7a0039fccbc24d2906812737f0dc5",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Meta Conversions API (CAPI) Architecture & Direct Server-to-Server Payloads",
-      "codeHash": "f9233bf561aa317b329b20d74e9f5534ca4361a1a9fcebcf0ca34f609f837dec",
+      "codeHash": "b5c19f79a6542e8ceb9f0cc24a6382b5e362aebedfe0d9176bfe922121211f76",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Algorithmic Event Deduplication: The event_id Synchronization Protocol",
-      "codeHash": "4056e79612af4e1439cfc21ecae9af7f153256256a06ab1fa0356a5bc5984e23",
+      "codeHash": "f74808c9d34b1a0c089cb3d016d6e178390183b36bb07dd3b838ca079c39ab89",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Event Quality Score (EQS) Optimization & Advanced Matching Normalization",
-      "codeHash": "d0c211c1c32b29a5bf584575177a73315da0c9cb07db625923788a75ff5a0406",
+      "codeHash": "b46b3e65ba3e391168832cf561ae7f168ee9d1f72d817d3c7874699dba5e4c9c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Industrial CAPI Lab: Enterprise Server-Side Tagging & Conversions API Gateway",
-      "codeHash": "a3ff9c8090d85f55258ff7fd59a7bf8da4f68a20246cc12a7d57821839643037",
+      "codeHash": "4b52f3abf1d55b68a0772e31068e8e9ca18bc2b06117a09c526e28fc6b58fa77",
       "spec": {
         "template": "funnel",
         "steps": [

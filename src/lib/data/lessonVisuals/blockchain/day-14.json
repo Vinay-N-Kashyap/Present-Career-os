@@ -10,7 +10,7 @@
       "codeHash": "7c6f2fb087f02b2fbb163b5ec0ac6bb485c13d0d919365987d30b4bb6cb3d8aa",
       "spec": {
         "template": "sequence",
-        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation \u2014 Oracle Security Sequence",
+        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -39,7 +39,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -71,7 +71,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -80,7 +80,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation \u2014 Oracle Security Sequence",
+        "title": "Spot Price Oracles & Single-Block Liquidity Manipulation — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -109,7 +109,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -141,7 +141,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -154,7 +154,7 @@
       "codeHash": "be187070da5bb573c32e13912ac83112b8f1b44a66ebe451fac891bef7f3bd73",
       "spec": {
         "template": "sequence",
-        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators \u2014 Oracle Security Sequence",
+        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -183,7 +183,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -215,7 +215,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -224,7 +224,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators \u2014 Oracle Security Sequence",
+        "title": "Uniswap v2 & v3 Time-Weighted Average Price (TWAP) Accumulators — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -253,7 +253,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -285,7 +285,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -298,7 +298,7 @@
       "codeHash": "89da44c71c5846062930c042fd8ddb47d0ebb1564e3e7f7c53467b2ba0773aa4",
       "spec": {
         "template": "sequence",
-        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface \u2014 Oracle Security Sequence",
+        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -327,7 +327,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -359,7 +359,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -368,7 +368,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface \u2014 Oracle Security Sequence",
+        "title": "Chainlink Decentralized Oracle Networks (DONs) & AggregatorV3Interface — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -397,7 +397,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -429,7 +429,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -438,11 +438,11 @@
       }
     },
     {
-      "partTitle": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers",
-      "codeHash": "5967fef7d14a69959d3266bbee3ede9a83996c27615ce4237afeb8541607a4d5",
+      "partTitle": "Oracle strict security safeguards: Staleness, Heartbeats & Circuit Breakers",
+      "codeHash": "4c3112eeb212f75c522abd9e87b409b73ecbb6e28929e4f76d33494f493724c0",
       "spec": {
         "template": "sequence",
-        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers \u2014 Oracle Security Sequence",
+        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -471,7 +471,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -503,7 +503,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -512,7 +512,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers \u2014 Oracle Security Sequence",
+        "title": "Oracle Security Invariants: Staleness, Heartbeats & Circuit Breakers — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -541,7 +541,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -573,7 +573,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -586,7 +586,7 @@
       "codeHash": "63a601b1fd4e975c2a615370174cd18c05b23af75806ac26f61356d8cd0f8e33",
       "spec": {
         "template": "sequence",
-        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture \u2014 Oracle Security Sequence",
+        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -615,7 +615,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -647,7 +647,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]
@@ -656,7 +656,7 @@
       },
       "filled": {
         "template": "sequence",
-        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture \u2014 Oracle Security Sequence",
+        "title": "Master Dual-Oracle Defense & Fallback Engine Architecture — Oracle Security Sequence",
         "actors": [
           "Lending Protocol",
           "Chainlink DON Oracle",
@@ -685,7 +685,7 @@
               {
                 "from": "Chainlink DON Oracle",
                 "to": "Lending Protocol",
-                "label": "return(roundId, answer, updatedAt) [Fresh \u2713]",
+                "label": "return(roundId, answer, updatedAt) [Fresh ✓]",
                 "tone": "ok"
               }
             ]
@@ -717,7 +717,7 @@
               {
                 "from": "Liquidation Vault",
                 "to": "Lending Protocol",
-                "label": "OracleConsensusApproved(Safe \u2713)",
+                "label": "OracleConsensusApproved(Safe ✓)",
                 "tone": "ok"
               }
             ]

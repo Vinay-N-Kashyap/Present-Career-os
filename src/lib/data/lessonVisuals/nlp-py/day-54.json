@@ -935,7 +935,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building the Apex...",
+            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building [D54P5].",
             "values": {
               "in": "Day 54 Input",
               "proc": "Standby",
@@ -1046,7 +1046,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building the Apex...",
+            "caption": "Step 1: Initialize input state for Masterclass Synthesis: Building [D54P5].",
             "values": {
               "in": "Day 54 Input",
               "proc": "Standby",

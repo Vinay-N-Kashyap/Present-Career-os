@@ -46,7 +46,9 @@
             "caption": "TPM hunts down the six big equipment losses that degrade plant output."
           }
         ]
-      }
+      },
+      "codeHash": "d2067181b4570841f419005cedbcbdaeb0e29d8cbadee4824e66f91f17ce8dd1",
+      "partTitle": "TPM Foundations and the Eight Pillars: Eliminating the Six Big Losses in Capital Equipment"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "World class equipment metrics require exceeding eighty five percent."
           }
         ]
-      }
+      },
+      "codeHash": "292cf89539e1a8b9be11d4e613639d1acad5a252e5b3ca3c504088f8b56badbb",
+      "partTitle": "Overall Equipment Effectiveness (OEE) Decomposition: Availability, Performance, and Quality Loss Vectors"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Operators execute daily visual maintenance routines with pride and rigor."
           }
         ]
-      }
+      },
+      "codeHash": "4d58ad1dba70e3e9932b9737fe763ccd839c3fe623c70b5a582ee6677be197cb",
+      "partTitle": "Autonomous Maintenance (Jishuken): Step-by-Step Operator Empowerment and Initial Cleaning Inspection"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Functional clamps and preset stops eliminate manual thread adjustments."
           }
         ]
-      }
+      },
+      "codeHash": "63ecdb0a1cdc22cd07e89797729342beb8e4db0716147cfcd5b9db5b31ac635e",
+      "partTitle": "Single-Minute Exchange of Die (SMED): Shigeo Shingo's Internal vs. External Setup Conversion"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Vibration telemetry predicts mechanical bearing wear weeks in advance."
           }
         ]
-      }
+      },
+      "codeHash": "d8326445bd8ab55ef3a5a05e0d05013271029e753472321115c328dd99ea1f08",
+      "partTitle": "SMED & OEE Telemetry Engine: Setup Optimization and Micro-Stoppage Pareto Analysis"
     }
   ]
 }

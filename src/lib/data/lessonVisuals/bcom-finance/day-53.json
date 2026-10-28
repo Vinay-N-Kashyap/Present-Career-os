@@ -362,5 +362,698 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Economic Characteristics of Infrastructure Assets: Natural Monopolies, Inelastic Demand & Inflation Indexation",
+      "codeHash": "9be98e26776b406af6c9662fe4793acef46e283eb8145eeea5ca3046477e02f0",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — PsiBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — PsiBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — PsiBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — PsiBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — PsiBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — PsiBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — PsiBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — PsiBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regulated Asset Base (RAB) Models & Building Block Tariff Methodologies",
+      "codeHash": "0ac2ace38951bd6b6a9eed2971dbd6d017af35400f36e523892c9c2d0277149f",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — PsiBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — PsiBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — PsiBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — PsiBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — PsiBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — PsiBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — PsiBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — PsiBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "YieldCo Financial Engineering: Dividend Growth, Cost of Capital & Cash Available for Distribution (CAFD)",
+      "codeHash": "b9a91acc2ab83abb1e7e71b2efc7aa4650b7155d7b6e208bddf3895942b6e2a9",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — PsiBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — PsiBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — PsiBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — PsiBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — PsiBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — PsiBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — PsiBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — PsiBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Concession Life Decay, Decommissioning Liabilities & Terminal Value Modeling",
+      "codeHash": "27ab996d10dd83b101b09d3c5b5845eef15a2173263b84b15bd39616a761dbf7",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — PsiBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — PsiBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — PsiBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — PsiBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — PsiBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — PsiBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — PsiBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — PsiBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Regulated Asset Base (RAB) Tariff Builder & YieldCo CAFD Valuation Engine",
+      "codeHash": "01f7fc54af5d918ef27467474d000faa432ffbe51343e189846977d2cbfd52d5",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — PsiBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — PsiBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — PsiBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — PsiBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 53 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Regulated Transmission Asset Base",
+            "$2,000,000,000.00",
+            ""
+          ],
+          [
+            "YieldCo Cash Available for Distribution",
+            "$82,000,000.00",
+            ""
+          ],
+          [
+            "Institutional Regulated Utility Bonds",
+            "",
+            "$1,200,000,000.00"
+          ],
+          [
+            "Public Common YieldCo Equity & Sponsor IDR",
+            "",
+            "$882,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$2,082,000,000.00",
+          "$2,082,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 53 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — PsiBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — PsiBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — PsiBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — PsiBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

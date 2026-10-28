@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Conflict-Free Replicated Data Types (CRDTs) in Distributed Shopping Carts: State-Based Eventual Consistency",
-      "codeHash": "df70b5a922761d0e375b62e3576bc17d30770b3002cfdb2478c4aedc1e6a6588",
+      "codeHash": "1d9a43ba3fcf6c1d9381d1897a7f7656a6514dd2d61eda2357419beb03a6f8b9",
       "spec": {
         "template": "funnel",
         "title": "Day 37 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Cross-Device Anonymous-to-Authenticated Session Merging: Identity Graphs & Price Revalidation",
-      "codeHash": "87dbff87302bb49cc7aa4195c35bd52cf4c6839dcfac1cbefb388dc7480e4ccb",
+      "codeHash": "15931a2a0296065e40271b1fbcdfb66de4c9045ebee8c4abf690f72828cca342",
       "spec": {
         "template": "funnel",
         "title": "Day 37 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Real-Time Bidirectional Cart State Synchronization via WebSockets & Redis Pub/Sub",
-      "codeHash": "4902c3c328970e72212c5ee1f7ec561fd7ae43c9eef9b327430078261e57ae70",
+      "codeHash": "0509fe316276c55e2fdb3b0c15422e11734803c1c478ddf5e6ee9734eeb1eb14",
       "spec": {
         "template": "funnel",
         "title": "Day 37 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "High-Throughput Cart Abandonment Telemetry & Redis Streams Event Pipeline",
-      "codeHash": "57909e352b5fc3ebe919b452ff497c8bf04dcbe58decd3483f4c6b0e1bfbdb4e",
+      "codeHash": "5de25b8764788d13e24e23ba35454b827c22fb5e9af8ecd8e07e9d658e83facb",
       "spec": {
         "template": "funnel",
         "title": "Day 37 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "The Complete Enterprise Distributed Shopping Cart & Abandonment Recovery Engine in Python",
-      "codeHash": "2a0d5de1fe27276caa413dfb98663704d9284e81bf72a1c782f0235848c8b6bc",
+      "codeHash": "8da924e29799d164d4d2d462f97023bdc0fc5a648f638c3ff49bd5d8077d906f",
       "spec": {
         "template": "funnel",
         "title": "Day 37 Part 5 Architecture Flow",

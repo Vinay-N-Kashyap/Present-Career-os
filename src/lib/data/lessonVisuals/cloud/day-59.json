@@ -6,7 +6,7 @@
     {
       "partIndex": 1,
       "partTitle": "Reliability Pillar: High Availability Engineering, MTTR Reduction & Fault Domains",
-      "codeHash": "da91569f97e46d45afec025edb2529988c5b37c71836cabc3829e9bc53414bf0",
+      "codeHash": "5a569675f6af37c01e81393076ce2ff224f21c9d64bab79b013d3a07fb10a39c",
       "spec": {
         "template": "compare",
         "left": {
@@ -30,19 +30,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Single datacenter deployments suffer catastrophic downtime during outages."
+            "annotation": "Single datacenter deployments suffer catastrophic downtime during outages.",
+            "caption": "Single datacenter deployments suffer catastrophic downtime during outages. (Reliability Pillar: High Availabili)"
           },
           {
             "at": "say2",
-            "annotation": "Multi-AZ architectures eliminate single failure points across layers."
+            "annotation": "Multi-AZ architectures eliminate single failure points across layers.",
+            "caption": "Multi-AZ architectures eliminate single failure points across layers. (Reliability Pillar: High Availabili)"
           },
           {
             "at": "example",
-            "annotation": "Engine calculates uptime availability percentage and confirms four nines."
+            "annotation": "Engine calculates uptime availability percentage and confirms four nines.",
+            "caption": "Engine calculates uptime availability percentage and confirms four nines. (Reliability Pillar: High Availabili)"
           },
           {
             "at": "tryIt",
-            "annotation": "Automated self-healing and cell architecture ensure continuous reliability."
+            "annotation": "Automated self-healing and cell architecture ensure continuous reliability.",
+            "caption": "Automated self-healing and cell architecture ensure continuous reliability. (Reliability Pillar: High Availabili)"
           }
         ]
       }
@@ -50,7 +54,7 @@
     {
       "partIndex": 2,
       "partTitle": "Security Pillar: Zero-Trust Identity, KMS Envelope Encryption & Network Isolation",
-      "codeHash": "ea12a0fd1839976c784867290f5954e313c29a2755ff020438f52bfa0cb4ef35",
+      "codeHash": "fdccaf87edd87d6065692ee1e8db0ef731fbe6440356ce0ac9db9a25f7d78a39",
       "spec": {
         "template": "compare",
         "left": {
@@ -74,19 +78,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Perimeter only security fails when internal network credentials leak."
+            "annotation": "Perimeter only security fails when internal network credentials leak.",
+            "caption": "Perimeter only security fails when internal network credentials leak. (Security Pillar: Zero-Trust Identit)"
           },
           {
             "at": "say2",
-            "annotation": "Zero-trust architecture enforces least privilege identity across all APIs."
+            "annotation": "Zero-trust architecture enforces least privilege identity across all APIs.",
+            "caption": "Zero-trust architecture enforces least privilege identity across all APIs. (Security Pillar: Zero-Trust Identit)"
           },
           {
             "at": "example",
-            "annotation": "Security engine generates master envelope keys with secure data lengths."
+            "annotation": "Security engine generates master envelope keys with secure data lengths.",
+            "caption": "Security engine generates master envelope keys with secure data lengths. (Security Pillar: Zero-Trust Identit)"
           },
           {
             "at": "tryIt",
-            "annotation": "Envelope encryption secures petabyte scale data without rate throttling."
+            "annotation": "Envelope encryption secures petabyte scale data without rate throttling.",
+            "caption": "Envelope encryption secures petabyte scale data without rate throttling. (Security Pillar: Zero-Trust Identit)"
           }
         ]
       }
@@ -94,7 +102,7 @@
     {
       "partIndex": 3,
       "partTitle": "Cost Optimization: AWS Graviton Migration, S3 Intelligent-Tiering & FinOps Allocation",
-      "codeHash": "8a70a534ce4ff4e53f4ad95ef4d0661d4d2032f355cf343e24e37e3ea3cba3ea",
+      "codeHash": "c4dee9342859e34fea538fa26d770c6168ed4a9afa3c1543e6d41585b1554393",
       "spec": {
         "template": "compare",
         "left": {
@@ -118,19 +126,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Unmonitored cloud spending rapidly erodes corporate profit margins."
+            "annotation": "Unmonitored cloud spending rapidly erodes corporate profit margins.",
+            "caption": "Unmonitored cloud spending rapidly erodes corporate profit margins. (Cost Optimization: AWS Graviton Mig)"
           },
           {
             "at": "say2",
-            "annotation": "Graviton processors deliver superior compute performance at lower costs."
+            "annotation": "Graviton processors deliver superior compute performance at lower costs.",
+            "caption": "Graviton processors deliver superior compute performance at lower costs. (Cost Optimization: AWS Graviton Mig)"
           },
           {
             "at": "example",
-            "annotation": "Engine calculates monthly savings achieved through Graviton migration."
+            "annotation": "Engine calculates monthly savings achieved through Graviton migration.",
+            "caption": "Engine calculates monthly savings achieved through Graviton migration. (Cost Optimization: AWS Graviton Mig)"
           },
           {
             "at": "tryIt",
-            "annotation": "FinOps cost allocation tags provide financial transparency across domains."
+            "annotation": "FinOps cost allocation tags provide financial transparency across domains.",
+            "caption": "FinOps cost allocation tags provide financial transparency across domains. (Cost Optimization: AWS Graviton Mig)"
           }
         ]
       }
@@ -138,7 +150,7 @@
     {
       "partIndex": 4,
       "partTitle": "Multi-Region Resilience: Active-Active Routing, Route 53 Health Checks & RTO/RPO",
-      "codeHash": "677b8e339d9e7f2779d3565698da7b6b7b2c2723728c90aa4fea16085fde70f1",
+      "codeHash": "1bcbfc819d1a201d833162291bdd1a3a6339e2a644e4c92161f7a3dc76252ac6",
       "spec": {
         "template": "compare",
         "left": {
@@ -162,19 +174,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Single region architectures cannot survive catastrophic regional outages."
+            "annotation": "Single region architectures cannot survive catastrophic regional outages.",
+            "caption": "Single region architectures cannot survive catastrophic regional outages. (Multi-Region Resilience: Active-Act)"
           },
           {
             "at": "say2",
-            "annotation": "Active-active multi-region deployments serve live global user traffic."
+            "annotation": "Active-active multi-region deployments serve live global user traffic.",
+            "caption": "Active-active multi-region deployments serve live global user traffic. (Multi-Region Resilience: Active-Act)"
           },
           {
             "at": "example",
-            "annotation": "Router directs traffic to primary region and auto fails over if degraded."
+            "annotation": "Router directs traffic to primary region and auto fails over if degraded.",
+            "caption": "Router directs traffic to primary region and auto fails over if degraded. (Multi-Region Resilience: Active-Act)"
           },
           {
             "at": "tryIt",
-            "annotation": "Asynchronous replication achieves sub second recovery points globally."
+            "annotation": "Asynchronous replication achieves sub second recovery points globally.",
+            "caption": "Asynchronous replication achieves sub second recovery points globally. (Multi-Region Resilience: Active-Act)"
           }
         ]
       }
@@ -182,7 +198,7 @@
     {
       "partIndex": 5,
       "partTitle": "Well-Architected Synthesis: Enterprise Review, Audit Scoring & Verification Token",
-      "codeHash": "0b40fe005a5059f41f6f21fcc9e58086df13d0da79b43bf8ec301947f7cf3f97",
+      "codeHash": "9a67818467bd723a221c8bfb0ac54aecf2cfd7860395bfa5a8339ab3f9a3b5d4",
       "spec": {
         "template": "compare",
         "left": {
@@ -206,19 +222,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Unreviewed cloud systems carry hidden architectural and security risks."
+            "annotation": "Unreviewed cloud systems carry hidden architectural and security risks.",
+            "caption": "Unreviewed cloud systems carry hidden architectural and security risks. (Well-Architected Synthesis: Enterpr)"
           },
           {
             "at": "say2",
-            "annotation": "Well-Architected reviews systematically evaluate workloads against pillars."
+            "annotation": "Well-Architected reviews systematically evaluate workloads against pillars.",
+            "caption": "Well-Architected reviews systematically evaluate workloads against pillars. (Well-Architected Synthesis: Enterpr)"
           },
           {
             "at": "example",
-            "annotation": "Auditor evaluates platform metrics across reliability security and cost."
+            "annotation": "Auditor evaluates platform metrics across reliability security and cost.",
+            "caption": "Auditor evaluates platform metrics across reliability security and cost. (Well-Architected Synthesis: Enterpr)"
           },
           {
             "at": "tryIt",
-            "annotation": "Synthesis confirms enterprise readiness and emits verified capstone token."
+            "annotation": "Synthesis confirms enterprise readiness and emits verified capstone token.",
+            "caption": "Synthesis confirms enterprise readiness and emits verified capstone token. (Well-Architected Synthesis: Enterpr)"
           }
         ]
       }

@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Global Enterprise Audit Mandate & Multi-Jurisdiction Group Audit Architecture (ISA 600 / AS 1205)",
-      "codeHash": "d666c80695d79bb7a20238c95458eaa869d91aa9e197695fea73e1c475b1e8a6",
+      "codeHash": "4756ee6cfd920995be6c883f4bd40d1590a5c14f333c0308380579b6569f36b6",
       "spec": {
         "template": "funnel",
-        "title": "The Global Enterprise Audit Mandate & ... \u2014 Assurance Review",
+        "title": "The Global Enterprise Audit Mandate & ... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Group Consolidation, Intercompany Eliminations & Multi-Cycle Substantive Findings",
-      "codeHash": "118628ab72b4e7c0ce021f8d3ef14a0d1a5e8e282f123c311aff7dc3d5828d8d",
+      "codeHash": "b60ecf180760745198b566b096f7f184361551ef35cadf51803851d7137bdb4e",
       "spec": {
         "template": "funnel",
-        "title": "Group Consolidation, Intercompany Elim... \u2014 Assurance Review",
+        "title": "Group Consolidation, Intercompany Elim... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "The Going Concern Stress Defense, Debt Covenants & Mitigation Qualification",
-      "codeHash": "043ae1b4ea423f0250d9aef5cf2a513898dcb738fe1535b1f2c9fe88ca37f52b",
+      "codeHash": "42e9789696b1827165087493aa1c6e586e5bd2cc6813fa4bcf7e41c4a73ccca2",
       "spec": {
         "template": "funnel",
-        "title": "The Going Concern Stress Defense, Debt... \u2014 Assurance Review",
+        "title": "The Going Concern Stress Defense, Debt... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Architecting Global CAMs / KAMs & Evaluating Opinion Modifications",
-      "codeHash": "a3226837d8d1df4f5d4b91dfac4c2a7549b74a49462381eb685fd764bd9ce541",
+      "codeHash": "87f7a2f208e81e7ecde0e6b505f34eea6cb57d0310715428780ce227b3518a10",
       "spec": {
         "template": "funnel",
-        "title": "Architecting Global CAMs / KAMs & Eval... \u2014 Assurance Review",
+        "title": "Architecting Global CAMs / KAMs & Eval... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Grand Master War Room Simulator: Executive Governance Defense, EQR Concurrence & Report Release",
-      "codeHash": "b2774777021215eacfc2993f10e45fd73da487bd277d62df7ff339375a0e53e4",
+      "codeHash": "e18c5620d3bd53bc484cedc638ac891f4edd2e4b61f23dba68d05465d805179a",
       "spec": {
         "template": "funnel",
-        "title": "Grand Master War Room Simulator: Execu... \u2014 Assurance Review",
+        "title": "Grand Master War Room Simulator: Execu... — Assurance Review",
         "steps": [
           {
             "at": "intro",

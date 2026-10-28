@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Scenario Manager Architecture: Base, Bull, Bear & Custom Parameter Toggles",
-    "codeHash": "85beaa8ebdf6bb7c12d61dced765eb96ba174557a135c9c7774ff1f67171cc0e",
-    "spec": {
-      "template": "bars",
-      "title": "Scenario Manager Architecture: Base, Bul... \u2014 Optimization Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline optimization parameters for Scenario Manager Architecture: Base...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 40,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Constraint evaluation and iterative gradient steps for Scenario Manager Architecture: Base...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 94,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 78,
-              "tone": "data"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 35,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Scenario Manager Architecture: Base...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 98,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 88,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 92,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 20,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Scenario Manager Architecture: Base...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 15,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 17,
+  "entries": [
+    {
+      "partTitle": "Scenario Manager Architecture: Base, Bull, Bear & Custom Parameter Toggles",
+      "codeHash": "85beaa8ebdf6bb7c12d61dced765eb96ba174557a135c9c7774ff1f67171cc0e",
+      "spec": {
+        "template": "bars",
+        "title": "Scenario Manager Architecture: Base, Bul... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Scenario Manager Architecture: Base, Bul... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Scenario Manager Architecture: Base...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Goal Seek Numerical Root-Finding: Single-Variable Breakeven & Target-Seeking Invariants",
+      "codeHash": "0cedbd0422d084373a2e32c02f49568d85bc4a7d227d5593670b484c031ee211",
+      "spec": {
+        "template": "bars",
+        "title": "Goal Seek Numerical Root-Finding: Single... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Goal Seek Numerical Root-Finding: Single... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Goal Seek Numerical Root-Finding: S...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Introduction to Linear Programming & Excel Solver: Objective Function, Decision Variables & Constraints",
+      "codeHash": "e904d8bfccddc3690776fe3fdc0c4bd95eb15e76ae048784a53a85dda529da29",
+      "spec": {
+        "template": "bars",
+        "title": "Introduction to Linear Programming & Exc... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Introduction to Linear Programming & Exc... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Introduction to Linear Programming ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Non-Linear Optimization & Solving Algorithms: Simplex LP vs GRG Non-Linear vs Evolutionary Algorithms",
+      "codeHash": "8a75e751f7a1ed3e7b01600e84cad064be2cad932b8c21468a6a8046555b303b",
+      "spec": {
+        "template": "bars",
+        "title": "Non-Linear Optimization & Solving Algori... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Non-Linear Optimization & Solving Algori... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Non-Linear Optimization & Solving A...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Capital Structure & Working Capital Constrained Optimization Platform",
+      "codeHash": "0da0494b1dc7581a3c093131ebd3bafaf46580492fd963917fddca0f5e9eaf22",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Capital Structure & Working C... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Capital Structure & Working C... — Optimization Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline optimization parameters for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 75,
+                "tone": "idle"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 60,
+                "tone": "idle"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 40,
+                "tone": "idle"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Constraint evaluation and iterative gradient steps for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 94,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 82,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 78,
+                "tone": "data"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 35,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 98,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 88,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 92,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 20,
+                "tone": "warn"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Enterprise Capital Structure & Work...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Optimization Feasibility",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Constraint Margin",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Convergence Rate",
+                "value": 98,
+                "tone": "accent"
+              },
+              {
+                "label": "Slack Capacity",
+                "value": 15,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Goal Seek Numerical Root-Finding: Single-Variable Breakeven & Target-Seeking Invariants",
-    "codeHash": "0cedbd0422d084373a2e32c02f49568d85bc4a7d227d5593670b484c031ee211",
-    "spec": {
-      "template": "bars",
-      "title": "Goal Seek Numerical Root-Finding: Single... \u2014 Optimization Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline optimization parameters for Goal Seek Numerical Root-Finding: S...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 40,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Constraint evaluation and iterative gradient steps for Goal Seek Numerical Root-Finding: S...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 94,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 78,
-              "tone": "data"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 35,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Goal Seek Numerical Root-Finding: S...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 98,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 88,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 92,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 20,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Goal Seek Numerical Root-Finding: S...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 15,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Introduction to Linear Programming & Excel Solver: Objective Function, Decision Variables & Constraints",
-    "codeHash": "e904d8bfccddc3690776fe3fdc0c4bd95eb15e76ae048784a53a85dda529da29",
-    "spec": {
-      "template": "bars",
-      "title": "Introduction to Linear Programming & Exc... \u2014 Optimization Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline optimization parameters for Introduction to Linear Programming ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 40,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Constraint evaluation and iterative gradient steps for Introduction to Linear Programming ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 94,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 78,
-              "tone": "data"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 35,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Introduction to Linear Programming ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 98,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 88,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 92,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 20,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Introduction to Linear Programming ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 15,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Non-Linear Optimization & Solving Algorithms: Simplex LP vs GRG Non-Linear vs Evolutionary Algorithms",
-    "codeHash": "8a75e751f7a1ed3e7b01600e84cad064be2cad932b8c21468a6a8046555b303b",
-    "spec": {
-      "template": "bars",
-      "title": "Non-Linear Optimization & Solving Algori... \u2014 Optimization Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline optimization parameters for Non-Linear Optimization & Solving A...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 40,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Constraint evaluation and iterative gradient steps for Non-Linear Optimization & Solving A...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 94,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 78,
-              "tone": "data"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 35,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Non-Linear Optimization & Solving A...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 98,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 88,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 92,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 20,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Non-Linear Optimization & Solving A...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 15,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Capital Structure & Working Capital Constrained Optimization Platform",
-    "codeHash": "0da0494b1dc7581a3c093131ebd3bafaf46580492fd963917fddca0f5e9eaf22",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Capital Structure & Working C... \u2014 Optimization Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline optimization parameters for Enterprise Capital Structure & Work...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 75,
-              "tone": "idle"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 60,
-              "tone": "idle"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 40,
-              "tone": "idle"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Constraint evaluation and iterative gradient steps for Enterprise Capital Structure & Work...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 94,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 82,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 78,
-              "tone": "data"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 35,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Simplex vertex pivot or GRG gradient convergence in Enterprise Capital Structure & Work...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 98,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 88,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 92,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 20,
-              "tone": "warn"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Optimal global solution reached satisfying all covenant boundaries for Enterprise Capital Structure & Work...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Optimization Feasibility",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Constraint Margin",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Convergence Rate",
-              "value": 98,
-              "tone": "accent"
-            },
-            {
-              "label": "Slack Capacity",
-              "value": 15,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

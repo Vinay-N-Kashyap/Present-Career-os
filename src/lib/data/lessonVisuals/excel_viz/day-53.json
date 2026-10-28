@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
-    "codeHash": "893658dd787f7ef4c16417ac5d9843831dc29d530dd8e5200defe827780abeba",
-    "spec": {
-      "template": "bars",
-      "title": "Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 53,
+  "entries": [
+    {
+      "partTitle": "Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+      "codeHash": "893658dd787f7ef4c16417ac5d9843831dc29d530dd8e5200defe827780abeba",
+      "spec": {
+        "template": "bars",
+        "title": "Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Tufte Data-Ink Ratio & Visual Hierarchy: Eradicating Chartjunk & 3D Optical Distortion",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+      "codeHash": "a729c6a8d54567fb660553b4e843fdaafa85c24e5466fe6e5b1c3f37b1d36f1b",
+      "spec": {
+        "template": "bars",
+        "title": "Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+      "codeHash": "c6364557b0c737671791131fc54bbe02696b0d1e4c8ea0ee2ce5542a86fb2fac",
+      "spec": {
+        "template": "bars",
+        "title": "Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+      "codeHash": "0022234fef9ffa510e37fe0090114b37f5d109be0d15069b98244fb61bee28d8",
+      "spec": {
+        "template": "bars",
+        "title": "Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+      "codeHash": "ba12994dc6f8bb49db119f64d66236377f4304ec5bd5a126c2b71c852d227fa8",
+      "spec": {
+        "template": "bars",
+        "title": "Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Tufte Data-Ink",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Few Bullet Graph",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "In-Cell Sparkline",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Form Control Cockpit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
-    "codeHash": "a729c6a8d54567fb660553b4e843fdaafa85c24e5466fe6e5b1c3f37b1d36f1b",
-    "spec": {
-      "template": "bars",
-      "title": "Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Stephen Few Bullet Graphs: Replacing Cluttered Gauges with High-Density Comparative Bars",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
-    "codeHash": "c6364557b0c737671791131fc54bbe02696b0d1e4c8ea0ee2ce5542a86fb2fac",
-    "spec": {
-      "template": "bars",
-      "title": "Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Micro-Sparkline Trend Trajectories: In-Cell Temporal Profiling & High/Low Annotations",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
-    "codeHash": "0022234fef9ffa510e37fe0090114b37f5d109be0d15069b98244fb61bee28d8",
-    "spec": {
-      "template": "bars",
-      "title": "Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Interactive Form Controls & Scenario Drivers: Single-Screen 1080p Executive Cockpit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
-    "codeHash": "ba12994dc6f8bb49db119f64d66236377f4304ec5bd5a126c2b71c852d227fa8",
-    "spec": {
-      "template": "bars",
-      "title": "Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification – High-Density Executive Financial Dashboards: Sparklines, Bullet Graphs, Form Controls & Information Radiators",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Master Executive Dashboard Gateway: Synthesis, Information Radiators & Tufte Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Tufte Data-Ink",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Few Bullet Graph",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "In-Cell Sparkline",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Form Control Cockpit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

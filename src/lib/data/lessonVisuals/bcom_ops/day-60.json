@@ -46,7 +46,9 @@
             "caption": "Real time telemetry links physical throughput with financial impact."
           }
         ]
-      }
+      },
+      "codeHash": "9a5262b5abf53774b08d6434423c81bd9f0827cfba37dda55690be37381a897c",
+      "partTitle": "Grand Master Command Tower Architecture: End-to-End Visibility, Control & Autonomous Orchestration"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Finite capacity scheduling sequences high mix production without delays."
           }
         ]
-      }
+      },
+      "codeHash": "cd64bbe437bbeaa729491c4006d5ecc0d478994569cac020880b6b3b1cd982a9",
+      "partTitle": "Unified Multi-Echelon Enterprise S&OP, Dynamic Heuristics & Network Optimization"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Leveled production resequencing prevents factory shutdowns."
           }
         ]
-      }
+      },
+      "codeHash": "899781618a944576baf42c43407c715b4bc40ed14780753d13a8715309e96afe",
+      "partTitle": "Real-Time Disruptions Simulation: Port Blackouts, Supplier Insolvencies & Path Rerouting"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Standard cost variance accounting pinpoints scrap drivers."
           }
         ]
-      }
+      },
+      "codeHash": "fe5b024a8d5890b3cd088a399d87b99755b202bfeec87860b6156187e957917e",
+      "partTitle": "High-Stakes Operations Forensic: Zero-Defect Quality, Cost-to-Serve & Variance Auditing"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Grand master accreditation certifies global operations mastery."
           }
         ]
-      }
+      },
+      "codeHash": "1763b1beb4d35a36da9f91d51296005964ac71922ff2e47e495b132df67ea520",
+      "partTitle": "Grand Master Industrial Defense: Executive Operations Leadership & Boardroom Dossier"
     }
   ]
 }

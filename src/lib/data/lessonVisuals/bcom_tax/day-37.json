@@ -46,7 +46,9 @@
             "caption": "Qualifying exports unlock full unutilized input credit cash refunds."
           }
         ]
-      }
+      },
+      "codeHash": "b6678cb1c6161ff7acacca8d6799972c78b68e186287550276ed858a59ff2045",
+      "partTitle": "Constitutional and Statutory Basis of Export Refunds: Zero-Rated Supplies under Section 16 of the IGST Act"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Electronic bank realization certificates substantiate export claims."
           }
         ]
-      }
+      },
+      "codeHash": "d6bff27fdb8c409d89ed756e584175f296f5559cd388b74dd8fd081e86a15316",
+      "partTitle": "Letter of Undertaking (LUT) Architecture: Bond vs LUT, Export Invoices & Bank Realization Certificates (eBRC)"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Turnover proportions govern maximum statutory refund calculations."
           }
         ]
-      }
+      },
+      "codeHash": "4e77a941a5d87db5ac08591a35940c80baafddad8c0fac91ac5ef00241d2c99d",
+      "partTitle": "Rule 89(4) Refund of Unutilized ITC on Zero-Rated Supplies: Turnover Ratios & Maximum Refund Formulas"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Proportional outward tax deductions protect refundable credit pools."
           }
         ]
-      }
+      },
+      "codeHash": "83bae0177efad28bbff8f1e60823b7e82cd149b191c4f2ace3c668972e4cac0a",
+      "partTitle": "Inverted Duty Structure (IDS) under Section 54(3)(ii) & Rule 89(5): Supreme Court Jurisprudence & Revised Formulas"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Audit manifests compile shipping bills and statutory certificates."
           }
         ]
-      }
+      },
+      "codeHash": "d1f9cd11abada20208313ad4fce20a76dacbbd1df663ac769adf539cce3bdf18",
+      "partTitle": "Enterprise Implementation: Algorithmic Inverted Duty Structure & Export Refund Calculation Cockpit"
     }
   ]
 }

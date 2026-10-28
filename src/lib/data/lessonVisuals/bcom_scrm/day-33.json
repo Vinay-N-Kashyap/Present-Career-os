@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts [D33P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -26,16 +26,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -43,7 +43,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -64,16 +64,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -81,7 +81,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -102,16 +102,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -119,7 +119,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -140,16 +140,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -157,7 +157,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts [D33P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -188,16 +188,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -205,7 +205,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -226,16 +226,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -243,7 +243,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -264,16 +264,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -281,7 +281,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -302,16 +302,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -319,7 +319,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts [D33P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -350,16 +350,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -367,7 +367,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -388,16 +388,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -405,7 +405,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -426,16 +426,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -443,7 +443,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -464,16 +464,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -481,7 +481,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts [D33P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -512,16 +512,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -529,7 +529,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -550,16 +550,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -567,7 +567,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -588,16 +588,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -605,7 +605,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -626,16 +626,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -643,7 +643,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts [D33P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -674,16 +674,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -691,7 +691,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -712,16 +712,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "idle"
               },
               {
@@ -729,7 +729,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -750,16 +750,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -767,7 +767,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -788,16 +788,16 @@
                 "id": "qual",
                 "label": "Qualified RevOps Target",
                 "value": 450,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Active Sales Engagement",
                 "value": 180,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -805,7 +805,7 @@
                 "label": "Closed Won Contract ARR",
                 "value": 72,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

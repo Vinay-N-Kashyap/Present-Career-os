@@ -10,12 +10,12 @@
       "codeHash": "9096fc6e60e0768686ef5a59b7976c8d2ea3bfda368c082b7085f77eb4032e86",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Standard Essential Patents (SEPs), FRAND C... \u2014 General Ledger Verification",
+        "title": "Standard Essential Patents (SEPs), FRAND C... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($60,000) for Standard Essential Patents (SEPs), ...",
-            "title": "Day 10 Journal \u2014 Initial Posting",
+            "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60000,
             "totalCredit": 60000,
@@ -41,7 +41,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($12,000).",
-            "title": "Day 10 Journal \u2014 Accrual Adjustment",
+            "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72000,
             "totalCredit": 72000,
@@ -72,7 +72,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 10 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 10 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 72000,
             "totalCredit": 72000,
@@ -103,7 +103,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 10 Journal \u2014 Balanced Closure",
+            "title": "Day 10 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 72000,
             "totalCredit": 72000,
@@ -136,15 +136,15 @@
     },
     {
       "partTitle": "Non-Practicing Entities (NPEs / Patent Trolls), Inter Partes Review (IPR) & PTAB Defense",
-      "codeHash": "24e81fac3b670b46e120c86fcdadce96c2404ba304fda5ee51310214bef1c8b3",
+      "codeHash": "85bc3687c998dbe28899936207d3355bf43a26ff5c548745eddbf75d3d1f1719",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Practicing Entities (NPEs / Patent Tro... \u2014 General Ledger Verification",
+        "title": "Non-Practicing Entities (NPEs / Patent Tro... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($61,250) for Non-Practicing Entities (NPEs / Pat...",
-            "title": "Day 10 Journal \u2014 Initial Posting",
+            "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61250,
             "totalCredit": 61250,
@@ -170,7 +170,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($12,250).",
-            "title": "Day 10 Journal \u2014 Accrual Adjustment",
+            "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73500,
             "totalCredit": 73500,
@@ -201,7 +201,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 10 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 10 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 73500,
             "totalCredit": 73500,
@@ -232,7 +232,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 10 Journal \u2014 Balanced Closure",
+            "title": "Day 10 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 73500,
             "totalCredit": 73500,
@@ -268,12 +268,12 @@
       "codeHash": "52012cf4947ddb65239f0063f6159b5843eebe43d130a0655c7da31d360ffd39",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Technology Transfer, IP Valuation & Relief... \u2014 General Ledger Verification",
+        "title": "Technology Transfer, IP Valuation & Relief... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($62,500) for Technology Transfer, IP Valuation &...",
-            "title": "Day 10 Journal \u2014 Initial Posting",
+            "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 62500,
             "totalCredit": 62500,
@@ -299,7 +299,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($12,500).",
-            "title": "Day 10 Journal \u2014 Accrual Adjustment",
+            "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 75000,
             "totalCredit": 75000,
@@ -330,7 +330,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 10 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 10 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 75000,
             "totalCredit": 75000,
@@ -361,7 +361,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 10 Journal \u2014 Balanced Closure",
+            "title": "Day 10 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 75000,
             "totalCredit": 75000,
@@ -397,12 +397,12 @@
       "codeHash": "ee46d493c06adde0015c1a9a317d6b79b0c4c3608c8ee2f156e62e326bffda65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Antitrust & IP Intersection: Reverse Payme... \u2014 General Ledger Verification",
+        "title": "Antitrust & IP Intersection: Reverse Payme... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($63,750) for Antitrust & IP Intersection: Revers...",
-            "title": "Day 10 Journal \u2014 Initial Posting",
+            "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63750,
             "totalCredit": 63750,
@@ -428,7 +428,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($12,750).",
-            "title": "Day 10 Journal \u2014 Accrual Adjustment",
+            "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76500,
             "totalCredit": 76500,
@@ -459,7 +459,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 10 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 10 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 76500,
             "totalCredit": 76500,
@@ -490,7 +490,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 10 Journal \u2014 Balanced Closure",
+            "title": "Day 10 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 76500,
             "totalCredit": 76500,
@@ -526,12 +526,12 @@
       "codeHash": "3b45e27b244448839afe4f726372242becc99c9d3c58810fda1af99e69e56582",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 2 Grand Capstone Boardroom Defen... \u2014 General Ledger Verification",
+        "title": "Milestone 2 Grand Capstone Boardroom Defen... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($65,000) for Milestone 2 Grand Capstone Boardroo...",
-            "title": "Day 10 Journal \u2014 Initial Posting",
+            "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 65000,
             "totalCredit": 65000,
@@ -557,7 +557,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($13,000).",
-            "title": "Day 10 Journal \u2014 Accrual Adjustment",
+            "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 78000,
             "totalCredit": 78000,
@@ -588,7 +588,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 10 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 10 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 78000,
             "totalCredit": 78000,
@@ -619,7 +619,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 10 Journal \u2014 Balanced Closure",
+            "title": "Day 10 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 78000,
             "totalCredit": 78000,

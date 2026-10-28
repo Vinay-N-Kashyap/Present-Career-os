@@ -18,25 +18,29 @@
             "stepNumber": 1,
             "label": "Portal Mount Foundation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined portal mount foundation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous portal mount foundation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous portal mount foundation standards.",
+            "caption": "Portal Mount Foundation (The Anatomy of a Modal Dialog & Why)"
           },
           {
             "stepNumber": 2,
             "label": "Inert Backdrop Isolation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined inert backdrop isolation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous inert backdrop isolation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous inert backdrop isolation standards.",
+            "caption": "Inert Backdrop Isolation (The Anatomy of a Modal Dialog & Why)"
           },
           {
             "stepNumber": 3,
             "label": "Focus Trapping Loop",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined focus trapping loop validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous focus trapping loop standards."
+            "rightCaption": "Sovereign design systems enforce rigorous focus trapping loop standards.",
+            "caption": "Focus Trapping Loop (The Anatomy of a Modal Dialog & Why)"
           },
           {
             "stepNumber": 4,
             "label": "Keyboard Dismissal & Restore",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined keyboard dismissal & restore validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous keyboard dismissal & restore standards."
+            "rightCaption": "Sovereign design systems enforce rigorous keyboard dismissal & restore standards.",
+            "caption": "Keyboard Dismissal & Restore (The Anatomy of a Modal Dialog & Why)"
           }
         ]
       }
@@ -54,25 +58,29 @@
             "stepNumber": 1,
             "label": "Trigger Capture",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined trigger capture validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous trigger capture standards."
+            "rightCaption": "Sovereign design systems enforce rigorous trigger capture standards.",
+            "caption": "Trigger Capture (Focus Trapping Algorithms: Roving F)"
           },
           {
             "stepNumber": 2,
             "label": "Active Trapping Cycle",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined active trapping cycle validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous active trapping cycle standards."
+            "rightCaption": "Sovereign design systems enforce rigorous active trapping cycle standards.",
+            "caption": "Active Trapping Cycle (Focus Trapping Algorithms: Roving F)"
           },
           {
             "stepNumber": 3,
             "label": "Sentinel Guard Nodes",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined sentinel guard nodes validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous sentinel guard nodes standards."
+            "rightCaption": "Sovereign design systems enforce rigorous sentinel guard nodes standards.",
+            "caption": "Sentinel Guard Nodes (Focus Trapping Algorithms: Roving F)"
           },
           {
             "stepNumber": 4,
             "label": "Focus Return Contract",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined focus return contract validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous focus return contract standards."
+            "rightCaption": "Sovereign design systems enforce rigorous focus return contract standards.",
+            "caption": "Focus Return Contract (Focus Trapping Algorithms: Roving F)"
           }
         ]
       }
@@ -90,25 +98,29 @@
             "stepNumber": 1,
             "label": "Scrollbar Measurement",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined scrollbar measurement validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous scrollbar measurement standards."
+            "rightCaption": "Sovereign design systems enforce rigorous scrollbar measurement standards.",
+            "caption": "Scrollbar Measurement (Body Scroll Locking & Layout Shift )"
           },
           {
             "stepNumber": 2,
             "label": "Padding Right Compensation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined padding right compensation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous padding right compensation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous padding right compensation standards.",
+            "caption": "Padding Right Compensation (Body Scroll Locking & Layout Shift )"
           },
           {
             "stepNumber": 3,
             "label": "Touchmove Prevention",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined touchmove prevention validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous touchmove prevention standards."
+            "rightCaption": "Sovereign design systems enforce rigorous touchmove prevention standards.",
+            "caption": "Touchmove Prevention (Body Scroll Locking & Layout Shift )"
           },
           {
             "stepNumber": 4,
             "label": "Viewport Restoration",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined viewport restoration validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous viewport restoration standards."
+            "rightCaption": "Sovereign design systems enforce rigorous viewport restoration standards.",
+            "caption": "Viewport Restoration (Body Scroll Locking & Layout Shift )"
           }
         ]
       }
@@ -126,25 +138,29 @@
             "stepNumber": 1,
             "label": "Semantic Role Contract",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined semantic role contract validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous semantic role contract standards."
+            "rightCaption": "Sovereign design systems enforce rigorous semantic role contract standards.",
+            "caption": "Semantic Role Contract (WAI-ARIA 1.2 Modal Dialog Contracts)"
           },
           {
             "stepNumber": 2,
             "label": "Aria Modal Declaration",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined aria modal declaration validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous aria modal declaration standards."
+            "rightCaption": "Sovereign design systems enforce rigorous aria modal declaration standards.",
+            "caption": "Aria Modal Declaration (WAI-ARIA 1.2 Modal Dialog Contracts)"
           },
           {
             "stepNumber": 3,
             "label": "Bidirectional Labeling",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined bidirectional labeling validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous bidirectional labeling standards."
+            "rightCaption": "Sovereign design systems enforce rigorous bidirectional labeling standards.",
+            "caption": "Bidirectional Labeling (WAI-ARIA 1.2 Modal Dialog Contracts)"
           },
           {
             "stepNumber": 4,
             "label": "Escape Listener Binding",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined escape listener binding validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous escape listener binding standards."
+            "rightCaption": "Sovereign design systems enforce rigorous escape listener binding standards.",
+            "caption": "Escape Listener Binding (WAI-ARIA 1.2 Modal Dialog Contracts)"
           }
         ]
       }
@@ -162,25 +178,29 @@
             "stepNumber": 1,
             "label": "Portal Mounting",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined portal mounting validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous portal mounting standards."
+            "rightCaption": "Sovereign design systems enforce rigorous portal mounting standards.",
+            "caption": "Portal Mounting (Enterprise Application: High-Stakes)"
           },
           {
             "stepNumber": 2,
             "label": "Safety Countdown Latch",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined safety countdown latch validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous safety countdown latch standards."
+            "rightCaption": "Sovereign design systems enforce rigorous safety countdown latch standards.",
+            "caption": "Safety Countdown Latch (Enterprise Application: High-Stakes)"
           },
           {
             "stepNumber": 3,
             "label": "Defensive Initial Focus",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined defensive initial focus validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous defensive initial focus standards."
+            "rightCaption": "Sovereign design systems enforce rigorous defensive initial focus standards.",
+            "caption": "Defensive Initial Focus (Enterprise Application: High-Stakes)"
           },
           {
             "stepNumber": 4,
             "label": "Transaction Dispatch",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined transaction dispatch validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous transaction dispatch standards."
+            "rightCaption": "Sovereign design systems enforce rigorous transaction dispatch standards.",
+            "caption": "Transaction Dispatch (Enterprise Application: High-Stakes)"
           }
         ]
       }

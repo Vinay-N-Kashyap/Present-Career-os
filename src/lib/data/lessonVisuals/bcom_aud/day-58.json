@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Statutory Taxonomy of Modified Opinions (PCAOB AS 3105 & ISA 705)",
-      "codeHash": "da93c8bb852617c0da905deb512b686e0d423ab438b37fbd94ad15ea92e38d8c",
+      "codeHash": "0dc4738c50fe0e053996179688f8b54ca1f8c4b57e5761a1267b7cab4ebd5b60",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Taxonomy of Modified Opi... \u2014 Assurance Review",
+        "title": "The Statutory Taxonomy of Modified Opi... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Qualified Opinions: GAAP Departures vs. Scope Limitations",
-      "codeHash": "39c6c8e2b365bc78a511744a6558942e6067eaf9949189912bb6205c949173e6",
+      "codeHash": "03b65af4a5972416e52dc7f09b21c73c63a0c82a07f34308fc92187c44861ca3",
       "spec": {
         "template": "funnel",
-        "title": "Qualified Opinions: GAAP Departures vs... \u2014 Assurance Review",
+        "title": "Qualified Opinions: GAAP Departures vs... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Adverse Opinions: Pervasive GAAP Departures & Fraudulent Reporting",
-      "codeHash": "c96e7b88577bb1b4edb0528fff22e3e7eaeae310752ff66192581d7bde865a24",
+      "codeHash": "ea44f22d75814391213a1d24f8078a6d16e876aaf1ca28e1f7a57900a998d623",
       "spec": {
         "template": "funnel",
-        "title": "Adverse Opinions: Pervasive GAAP Depar... \u2014 Assurance Review",
+        "title": "Adverse Opinions: Pervasive GAAP Depar... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Disclaimers of Opinion: Severe Scope Limitations & Unauditable Entities",
-      "codeHash": "5d1164e660ccab18770be8fbe93204a53d5d9314383624e32f96968e5248fdd3",
+      "codeHash": "245a1a63bbfb7851a617e60c65101ab67aa0e56cc1b0e9e5f121548dc41d8cac",
       "spec": {
         "template": "funnel",
-        "title": "Disclaimers of Opinion: Severe Scope L... \u2014 Assurance Review",
+        "title": "Disclaimers of Opinion: Severe Scope L... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Opinion Decision Engine & Modification Simulator",
-      "codeHash": "fab1deb67b0b1f885041f77f94a0b40c4648154eeae596773a34eac19857e9a7",
+      "codeHash": "0ae13b36cc8e2584c68acd6d030613025a1d2c4e47cf0d15570acda124341cf2",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Opinion Decis... \u2014 Assurance Review",
+        "title": "Comprehensive Enterprise Opinion Decis... — Assurance Review",
         "steps": [
           {
             "at": "intro",

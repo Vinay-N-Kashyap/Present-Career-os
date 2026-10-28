@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Substantive Audit of PPE Additions, Disposals & Depreciation Recalculation",
-      "codeHash": "e3ff2d55848f44a7fb448eb8b18233f19772c557f55bda4a5baa9a00fda44f42",
+      "codeHash": "51a2c8c1b6d0ca6e3bacb8af2d08942181b14aa0adfa625b82f38b53fb3ed333",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Audit of PPE Additions, Di... \u2014 Assurance Review",
+        "title": "Substantive Audit of PPE Additions, Di... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Capitalization vs. Repairs & Maintenance Expense Analysis (CapEx vs. OpEx)",
-      "codeHash": "6c1800f41e79a7c77bdf82d2f3e7cfe9ccd7a9350b989ad49cfc4ec313a14a12",
+      "codeHash": "d42bc1a6c45c6d1eefc73a726ba4bb57118ae3def009cbe69abb626936017c5a",
       "spec": {
         "template": "funnel",
-        "title": "Capitalization vs. Repairs & Maintenan... \u2014 Assurance Review",
+        "title": "Capitalization vs. Repairs & Maintenan... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Substantive Audit of Leases under IFRS 16 & ASC 842: ROU Assets & Liabilities",
-      "codeHash": "009ad90659c9b896cbcf0b7fd3d54fa4e04707d47e14f0c8836468dd3ea645a8",
+      "codeHash": "5dbec1a0309df07f5c74b760afe19bbf57ac13026f4af54c1f20e077a51c13a4",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Audit of Leases under IFRS... \u2014 Assurance Review",
+        "title": "Substantive Audit of Leases under IFRS... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Impairment Testing of Long-Lived Assets & Goodwill under IAS 36 & ASC 360",
-      "codeHash": "bba185e5b78f02d519e160258072977b34b1169b1f4fe8f4d229f61f7070f4b6",
+      "codeHash": "d987dcbfd18f91a61b6304f0e70b9fc4cae02a5d0396aacad700938ca61ab884",
       "spec": {
         "template": "funnel",
-        "title": "Impairment Testing of Long-Lived Asset... \u2014 Assurance Review",
+        "title": "Impairment Testing of Long-Lived Asset... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Substantive Fixed Assets, Leases & Impairment Simulator",
-      "codeHash": "f25a3fbdb41692d01a78d7cac2c6fc409de4459ff4fb47b8dd9bd36243527c0e",
+      "codeHash": "3b2d9d77fce65ad5cd8cd2257d9cee37428a44aa87abb2f9b8dc299a1ed376e9",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Fixed Assets... \u2014 Assurance Review",
+        "title": "Comprehensive Substantive Fixed Assets... — Assurance Review",
         "steps": [
           {
             "at": "intro",

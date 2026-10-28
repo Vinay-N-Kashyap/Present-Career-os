@@ -7,10 +7,10 @@
   "entries": [
     {
       "partTitle": "Capital Budgeting Foundations: Net Present Value (NPV), Internal Rate of Return (IRR) & Hurdle Rate Invariants",
-      "codeHash": "7f21758185577164846abec5dd780011ae1f55e48bc945f02d9da8991a0f0f09",
+      "codeHash": "6ea5756c108f4e8a04b87b2f49539917f773ae92d927864fb2ad99bf66762601",
       "spec": {
         "template": "bars",
-        "title": "Capital Budgeting Foundations: Net Prese... \u2014 Capital Allocation & Sensitivity Metrics",
+        "title": "Capital Budgeting Foundations: Net Prese... — Capital Allocation & Sensitivity Metrics",
         "steps": [
           {
             "at": "intro",
@@ -125,10 +125,10 @@
     },
     {
       "partTitle": "Dual-Variable Sensitivity Tables (Excel Data Tables 2D) & Vectorized Scenario Grids",
-      "codeHash": "f40c6d0cc1b27f9cc8426968c8d7b19ba642395048f908ca50e63236610eb3ff",
+      "codeHash": "0b617f57c087f285a0f4b44ea8dbc06a8794337089e16c750f7da06eaa550546",
       "spec": {
         "template": "bars",
-        "title": "Dual-Variable Sensitivity Tables (Excel ... \u2014 Capital Allocation & Sensitivity Metrics",
+        "title": "Dual-Variable Sensitivity Tables (Excel ... — Capital Allocation & Sensitivity Metrics",
         "steps": [
           {
             "at": "intro",
@@ -243,10 +243,10 @@
     },
     {
       "partTitle": "Tornado Diagram Architecture: Ranking Value Drivers by Elasticity of Valuation",
-      "codeHash": "878eb10abcd6aa4dd0c72d491d8b899a414183e63ecb835b0a70a26d3fb12329",
+      "codeHash": "763628551110f8f8664a8e875427bdae9db95168a4d222c295b262a329193d97",
       "spec": {
         "template": "bars",
-        "title": "Tornado Diagram Architecture: Ranking Va... \u2014 Capital Allocation & Sensitivity Metrics",
+        "title": "Tornado Diagram Architecture: Ranking Va... — Capital Allocation & Sensitivity Metrics",
         "steps": [
           {
             "at": "intro",
@@ -361,10 +361,10 @@
     },
     {
       "partTitle": "Break-Even Analysis, Operating Leverage & Margin of Safety Modeling",
-      "codeHash": "6a60a884f7ffa687652fcba2d1a8e9369bc904266ed32ec09ce5e0af00fdfe06",
+      "codeHash": "c97deaca78fb48205aa384c527d415cc2e5cc52e926a2a7e628f1a0ff9df8a24",
       "spec": {
         "template": "bars",
-        "title": "Break-Even Analysis, Operating Leverage ... \u2014 Capital Allocation & Sensitivity Metrics",
+        "title": "Break-Even Analysis, Operating Leverage ... — Capital Allocation & Sensitivity Metrics",
         "steps": [
           {
             "at": "intro",
@@ -479,10 +479,10 @@
     },
     {
       "partTitle": "Institutional Capital Allocation & Dynamic Investment Committee Scoring Engine",
-      "codeHash": "136eac6f9400e4fa40a6ac08f21655d7410827a204d9c8673dbea65562ae3544",
+      "codeHash": "e11a430ddb69a9a68141e080396f6896ac50a0fea64c8ab511b555d173c45fc6",
       "spec": {
         "template": "bars",
-        "title": "Institutional Capital Allocation & Dynam... \u2014 Capital Allocation & Sensitivity Metrics",
+        "title": "Institutional Capital Allocation & Dynam... — Capital Allocation & Sensitivity Metrics",
         "steps": [
           {
             "at": "intro",

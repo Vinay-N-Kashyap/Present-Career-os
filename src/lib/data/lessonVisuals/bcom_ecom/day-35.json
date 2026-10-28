@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Composable Frontend & Edge CDN Performance Audit: Sub-50ms TTFB & Cache-Tag Invalidation",
-      "codeHash": "fa6f209ef71181551367cb5e8745289359693ee893099ed83a9b4bd318d18298",
+      "codeHash": "4a2521b44fd6e13533da3828397eec67cd13251ef3be0b6dc1cdb05b64938cc6",
       "spec": {
         "template": "funnel",
         "title": "Day 35 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tier 2: Apollo Federation v2 Supergraph Audit: Entity Resolution, Query Planning & N+1 Fanout Elimination",
-      "codeHash": "889c802a04b70a5c6eb4235927395e0fde8257b01a1ba1b7b6320214b2cc4dc2",
+      "codeHash": "c001032f5f207077d212b9f9dadbf0b1c8c58b9f5bb62dc8187bcf10cf89aeaf",
       "spec": {
         "template": "funnel",
         "title": "Day 35 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Tier 3: Distributed Order Saga & Idempotent Checkout Orchestration Audit: Redlock, Outbox & Compensation",
-      "codeHash": "68ad21bbd4a416090acb65365684c6e61b736ade327968b4cdee9636f8162d3d",
+      "codeHash": "03b8d1d67267eecdf8715b2f41357589f9e3e11f355f243adbef28301deb9d96",
       "spec": {
         "template": "funnel",
         "title": "Day 35 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Tier 4: Global Multi-Tenant Inventory Partitioning & ATP Engine Audit: Zero-Oversell & RFID Cycle Counting",
-      "codeHash": "0ac4e1b33fed15af13cb14d6a2f51838ad2f0389f54a8100c1618b2127bdbf65",
+      "codeHash": "6a39fa17787c0a5256b916d5a3fb8cc2e52dd4a1d0fd57ce81f63b7f8cd41c14",
       "spec": {
         "template": "funnel",
         "title": "Day 35 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Tier 5: Sovereign Corporate Boardroom Defense: Chief E-Commerce Architect Accreditation & Executive Sign-off",
-      "codeHash": "fc082f4578f56115def4c09ac627c5bf6bfd31197791d58bbb818684d88d8635",
+      "codeHash": "4658761782c8a85e918d424a2bba86a9224e18df24b3405f7110b8d61add0043",
       "spec": {
         "template": "funnel",
         "title": "Day 35 Part 5 Architecture Flow",

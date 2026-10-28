@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Cross-Docking Architecture: Opportunistic Flow-Through & Elimination of Putaway Warehousing Costs",
-      "codeHash": "0462580dc55ee2bd802f69ccd0665d1dd99678c1d7198162519030c3472e7a9c",
+      "codeHash": "a38ebfece34e23e9401d96dca625b0206a48f317fce09952fbf0cda38977d976",
       "spec": {
         "template": "funnel",
         "title": "Day 42 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Electronic Data Interchange (EDI) Standards & ANSI X12 Protocol Translation (EDI 850, 856, 810)",
-      "codeHash": "4119da682c42d0f172eea7ed43bb29b2ad3316ebcbb77e6d0132ee3261b6262b",
+      "codeHash": "679b2d5ea72a980a652ff5f83a633096821498aaa42c5b2c5e77cf631c2129ba",
       "spec": {
         "template": "funnel",
         "title": "Day 42 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Advanced Shipping Notices (ASNs) & Automated Dock Receiving Reconciliation",
-      "codeHash": "1a604145fc6a1d112ff18ab921e81b78e0c95590c7c9cfb3f9eb54abd307d137",
+      "codeHash": "589bbe76a5bfb70d7de4d7d46357c5f5466a0808e35fb21ce17b05243902101e",
       "spec": {
         "template": "funnel",
         "title": "Day 42 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Dynamic 3PL Logistics Integration: REST/GraphQL Webhooks vs. Legacy Value-Added Networks (VANs)",
-      "codeHash": "460e628b89b31effc27d795ca2b6f2159dca2ce0ee605b1974177a0a5a451367",
+      "codeHash": "207359131855e8249773cd18d819e2309094ea4bc66285112d2d22a789438a5d",
       "spec": {
         "template": "funnel",
         "title": "Day 42 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Global Multi-Node Sourcing & Inbound Carrier Transportation Management (TMS) Optimization",
-      "codeHash": "df52e4444a9bb05b9352e6507c59e30427d8df2d7bc36bbde9190f308b43fd21",
+      "codeHash": "63e1ffbd248775c40420b2b348cf2b8950ea8a828937a1df38c60a2da0be2c87",
       "spec": {
         "template": "funnel",
         "title": "Day 42 Part 5 Architecture Flow",

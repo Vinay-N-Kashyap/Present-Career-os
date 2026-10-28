@@ -6,16 +6,16 @@
   "model": "anthropic/claude-3.5-sonnet",
   "entries": [
     {
-      "partTitle": "Patentable Subject Matter & The Alice/Mayo Two-Step Framework (35 U.S.C. \u00a7 101)",
+      "partTitle": "Patentable Subject Matter & The Alice/Mayo Two-Step Framework (35 USC § 101)",
       "codeHash": "6ee1a5f2ae59d825e32cca2d6c4dfe5082c845ddee82ad53107bbce3e2e81970",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patentable Subject Matter & The Alice/Mayo... \u2014 General Ledger Verification",
+        "title": "Patentable Subject Matter & The Alice/Mayo... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($46,000) for Patentable Subject Matter & The Ali...",
-            "title": "Day 6 Journal \u2014 Initial Posting",
+            "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 46000,
             "totalCredit": 46000,
@@ -41,7 +41,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($9,200).",
-            "title": "Day 6 Journal \u2014 Accrual Adjustment",
+            "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 55200,
             "totalCredit": 55200,
@@ -72,7 +72,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 6 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 6 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 55200,
             "totalCredit": 55200,
@@ -103,7 +103,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 6 Journal \u2014 Balanced Closure",
+            "title": "Day 6 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 55200,
             "totalCredit": 55200,
@@ -135,16 +135,16 @@
       }
     },
     {
-      "partTitle": "Novelty & Prior Art Anticipation Invariants (35 U.S.C. \u00a7 102)",
+      "partTitle": "Novelty & Prior Art Anticipation Invariants (35 USC § 102)",
       "codeHash": "d19e34b89e93c448f465d70818dc80c21585043018231b5e2367751ff52a43fb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Novelty & Prior Art Anticipation Invariant... \u2014 General Ledger Verification",
+        "title": "Novelty & Prior Art Anticipation Invariant... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($47,250) for Novelty & Prior Art Anticipation In...",
-            "title": "Day 6 Journal \u2014 Initial Posting",
+            "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 47250,
             "totalCredit": 47250,
@@ -170,7 +170,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($9,450).",
-            "title": "Day 6 Journal \u2014 Accrual Adjustment",
+            "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 56700,
             "totalCredit": 56700,
@@ -201,7 +201,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 6 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 6 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 56700,
             "totalCredit": 56700,
@@ -232,7 +232,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 6 Journal \u2014 Balanced Closure",
+            "title": "Day 6 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 56700,
             "totalCredit": 56700,
@@ -264,16 +264,16 @@
       }
     },
     {
-      "partTitle": "Non-Obviousness & The Graham v. John Deere Framework (35 U.S.C. \u00a7 103)",
+      "partTitle": "Non-Obviousness & The Graham v. John Deere Framework (35 USC § 103)",
       "codeHash": "1be72dcb6cf06a88c2b6b9b995720559dc86305bedd6ee4f9c2785943a09da54",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Obviousness & The Graham v. John Deere... \u2014 General Ledger Verification",
+        "title": "Non-Obviousness & The Graham v. John Deere... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($48,500) for Non-Obviousness & The Graham v. Joh...",
-            "title": "Day 6 Journal \u2014 Initial Posting",
+            "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 48500,
             "totalCredit": 48500,
@@ -299,7 +299,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($9,700).",
-            "title": "Day 6 Journal \u2014 Accrual Adjustment",
+            "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 58200,
             "totalCredit": 58200,
@@ -330,7 +330,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 6 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 6 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 58200,
             "totalCredit": 58200,
@@ -361,7 +361,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 6 Journal \u2014 Balanced Closure",
+            "title": "Day 6 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 58200,
             "totalCredit": 58200,
@@ -397,12 +397,12 @@
       "codeHash": "5c135c7f1f53b66f4a81e454df33f55077bb9cf5c976ca6ef0e4e7a66092b5d2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patent Prosecution, Claim Drafting & Freed... \u2014 General Ledger Verification",
+        "title": "Patent Prosecution, Claim Drafting & Freed... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($49,750) for Patent Prosecution, Claim Drafting ...",
-            "title": "Day 6 Journal \u2014 Initial Posting",
+            "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49750,
             "totalCredit": 49750,
@@ -428,7 +428,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($9,950).",
-            "title": "Day 6 Journal \u2014 Accrual Adjustment",
+            "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59700,
             "totalCredit": 59700,
@@ -459,7 +459,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 6 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 6 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 59700,
             "totalCredit": 59700,
@@ -490,7 +490,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 6 Journal \u2014 Balanced Closure",
+            "title": "Day 6 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 59700,
             "totalCredit": 59700,
@@ -523,15 +523,15 @@
     },
     {
       "partTitle": "Patent Litigation, Willful Infringement & Treble Damages Architecture",
-      "codeHash": "d47f87e51964f13438737504c484e4e94b39a569411fbf11e3cbf517248bb27f",
+      "codeHash": "bbafae9508c59842723b92d0656829d051b871447eac953464613fd6ed052770",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patent Litigation, Willful Infringement & ... \u2014 General Ledger Verification",
+        "title": "Patent Litigation, Willful Infringement & ... — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Step 1: Open primary facility debit entry ($51,000) for Patent Litigation, Willful Infringe...",
-            "title": "Day 6 Journal \u2014 Initial Posting",
+            "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 51000,
             "totalCredit": 51000,
@@ -557,7 +557,7 @@
           {
             "at": "say1",
             "caption": "Step 2: Record secondary interest & fee accrual adjustment ($10,200).",
-            "title": "Day 6 Journal \u2014 Accrual Adjustment",
+            "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 61200,
             "totalCredit": 61200,
@@ -588,7 +588,7 @@
           {
             "at": "example",
             "caption": "Step 3: Verification of institutional reserve provisioning & counterparty collateral.",
-            "title": "Day 6 Journal \u2014 Collateral & Reserve Alignment",
+            "title": "Day 6 Journal — Collateral & Reserve Alignment",
             "isBalanced": true,
             "totalDebit": 61200,
             "totalCredit": 61200,
@@ -619,7 +619,7 @@
           {
             "at": "tryIt",
             "caption": "Step 4: Real-time balance sheet reconciliation and regulatory capital confirmation.",
-            "title": "Day 6 Journal \u2014 Balanced Closure",
+            "title": "Day 6 Journal — Balanced Closure",
             "isBalanced": true,
             "totalDebit": 61200,
             "totalCredit": 61200,

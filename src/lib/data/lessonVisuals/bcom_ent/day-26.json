@@ -7,7 +7,7 @@
   "entries": [
     {
       "partTitle": "Foreign Market Selection & Entry Mode Architecture",
-      "codeHash": "0527f466cdf2f7d2d67c347eef99614b49ceb9316b4e9f9ba58babeeeb4f694a",
+      "codeHash": "5518e56ff42b082fd1232a12b8eaa80fb0a31913cf3f6e2fa80f3895dcd8647a",
       "spec": {
         "template": "funnel",
         "title": "Foreign Market Selection & Entry Mode Ar - Sovereign Funnel",
@@ -28,16 +28,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -45,7 +45,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -66,16 +66,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -83,7 +83,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -104,16 +104,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -121,7 +121,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -142,16 +142,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -159,7 +159,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -186,16 +186,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -203,7 +203,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -224,16 +224,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -241,7 +241,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -262,16 +262,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -279,7 +279,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -300,16 +300,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 9000,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3600,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -317,7 +317,7 @@
                 "label": "Sovereign Execution",
                 "value": 1440,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -327,7 +327,7 @@
     },
     {
       "partTitle": "CAGE Distance Framework & Cross-Border Friction Index",
-      "codeHash": "a90733450c62aca66e64f642b6768350d25c4f73834a657df4939012d87d2378",
+      "codeHash": "a150df2ceead7e368bb7b5fab1d94b93f736f89bea1d000bf413aec9cc182eed",
       "spec": {
         "template": "funnel",
         "title": "CAGE Distance Framework & Cross-Border F - Sovereign Funnel",
@@ -348,16 +348,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -365,7 +365,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -386,16 +386,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -403,7 +403,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -424,16 +424,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -441,7 +441,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -462,16 +462,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -479,7 +479,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -506,16 +506,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -523,7 +523,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -544,16 +544,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -561,7 +561,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -582,16 +582,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -599,7 +599,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -620,16 +620,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 11250,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 4500,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -637,7 +637,7 @@
                 "label": "Sovereign Execution",
                 "value": 1800,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -647,7 +647,7 @@
     },
     {
       "partTitle": "OECD Transfer Pricing & Arm's Length Principle (ALP)",
-      "codeHash": "e60e682c0bc6791a851ad38c93e2b31c6301cf4ce97961f8558a6f0a8e55f849",
+      "codeHash": "5a48e0c3c8909d88d8afb7f1329010fe260943136834841abbcec6b699a5fa76",
       "spec": {
         "template": "funnel",
         "title": "OECD Transfer Pricing & Arm's Length Pri - Sovereign Funnel",
@@ -668,16 +668,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -685,7 +685,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -706,16 +706,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -723,7 +723,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -744,16 +744,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -761,7 +761,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -782,16 +782,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -799,7 +799,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -826,16 +826,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -843,7 +843,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -864,16 +864,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -881,7 +881,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -902,16 +902,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -919,7 +919,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -940,16 +940,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 8100,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 3240,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -957,7 +957,7 @@
                 "label": "Sovereign Execution",
                 "value": 1296,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -967,7 +967,7 @@
     },
     {
       "partTitle": "Currency Hedging Architecture: FX Forwards & Option Collars",
-      "codeHash": "4ff7842d93efddf6be1c8aa14892ead023b4313ffe7326e02c900badae7c3595",
+      "codeHash": "43e1e6febab3edd0b01ee3da2a5d2d3fbb31626f75a983f4c6cb6573a4e853ab",
       "spec": {
         "template": "funnel",
         "title": "Currency Hedging Architecture: FX Forwar - Sovereign Funnel",
@@ -988,16 +988,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1005,7 +1005,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1026,16 +1026,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1043,7 +1043,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1064,16 +1064,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1081,7 +1081,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1102,16 +1102,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1119,7 +1119,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1146,16 +1146,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1163,7 +1163,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1184,16 +1184,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1201,7 +1201,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1222,16 +1222,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
@@ -1239,7 +1239,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1260,16 +1260,16 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 13500,
-                "percentage": 45.0,
-                "dropoffRate": 55.0,
+                "percentage": 45,
+                "dropoffRate": 55,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 5400,
-                "percentage": 18.0,
-                "dropoffRate": 60.0,
+                "percentage": 18,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
@@ -1277,7 +1277,7 @@
                 "label": "Sovereign Execution",
                 "value": 2160,
                 "percentage": 7.2,
-                "dropoffRate": 60.0,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1287,7 +1287,7 @@
     },
     {
       "partTitle": "Global Tax Optimization, Pillar Two & Sovereign Compliance",
-      "codeHash": "46ca169ec99da0262e74f61f7bea8bce7676030a48af27af900378c59a1bf066",
+      "codeHash": "cf4dde8e81d5422ce34be123428185b74fb7ce5fdf8e3aff49a2f053d0b258f6",
       "spec": {
         "template": "funnel",
         "title": "Global Tax Optimization, Pillar Two & So - Sovereign Funnel",
@@ -1308,24 +1308,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1346,24 +1346,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1384,24 +1384,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1422,24 +1422,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]
@@ -1466,24 +1466,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1504,24 +1504,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1542,24 +1542,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "data"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "idle"
               }
             ]
@@ -1580,24 +1580,24 @@
                 "id": "qual",
                 "label": "Qualified Opportunities",
                 "value": 25000,
-                "percentage": 50.0,
-                "dropoffRate": 50.0,
+                "percentage": 50,
+                "dropoffRate": 50,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Due Diligence Filter",
                 "value": 10000,
-                "percentage": 20.0,
-                "dropoffRate": 60.0,
+                "percentage": 20,
+                "dropoffRate": 60,
                 "tone": "ok"
               },
               {
                 "id": "final",
                 "label": "Sovereign Execution",
                 "value": 4000,
-                "percentage": 8.0,
-                "dropoffRate": 60.0,
+                "percentage": 8,
+                "dropoffRate": 60,
                 "tone": "data"
               }
             ]

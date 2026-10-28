@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Multi-Agent Marketing Swarms: Autonomous Role Specialization & Cognitive Orchestration",
-      "codeHash": "7e7abd2f39a825137efac7883cf417376501ab7cb84b8d7b7eba6b978cc59580",
+      "codeHash": "f6b2fe33fde727c56c3d2cb14d8c61a96e095bac54dcbdc800ac3e7c6e746436",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Stateful Multi-Agent Workflows with LangGraph: Cyclic Graphs, State Persistence & Checkpointing",
-      "codeHash": "a14e12594d0d8ad6f9f08c9b382248ded1f482b75c1ddd8e0690bef11051f9ab",
+      "codeHash": "ff9f923eb5be9ff19dad60a0b5f2471f60db9a4e93137c22284b8e6387b8ffff",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Real-Time Inter-Agent Negotiation & Budget Arbitration: Cooperative Game Theory in Campaign Portfolios",
-      "codeHash": "37342c184114c6f6c2010933d0b63fe510d84a0eddac625f35289e23d3f31134",
+      "codeHash": "9c3c03b47725a7fefc76b5addeea84c68e809f5189b377cd16627ebd204a31b6",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Human-in-the-Loop (HITL) Supervisory Control & Threshold-Based Escalation Protocols",
-      "codeHash": "831a48ac4dc30248b27dc0c232d353d6a090c22e109b0e31968ffc92b30c7b1d",
+      "codeHash": "e63a5f7f4e972d4a71dfab45e7a40417e6bf06d62a0c3939616ba3c4f93c6e2c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Multi-Agent Campaign Swarm: End-to-End Autonomous Orchestration Architecture",
-      "codeHash": "0774a238f06f6231a280a2899602725797a3afb666a0b4ef339d6551a6c29e9e",
+      "codeHash": "fbd24396951ab9c3441e059a05906f6031cf2b02e45e96fb4338ec300ab1b2c5",
       "spec": {
         "template": "funnel",
         "steps": [

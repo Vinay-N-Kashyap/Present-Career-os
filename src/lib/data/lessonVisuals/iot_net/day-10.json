@@ -7,7 +7,7 @@
   "entries": [
     {
       "partTitle": "Architectural Specification of the End-to-End IEEE 802.15.4 MAC Subsystem",
-      "codeHash": "cb27de0647ffbaca518218f5515de8ea2d9d1ac61af03e77f89eca0f2a46ce5f",
+      "codeHash": "2ab225b78d0cd4cb81c23b150ec6d6a32d9fd186c7011e296cc19f219ce2d429",
       "spec": {
         "template": "register-bits",
         "title": "Day 10 Part 1 — Architectural Specification of — Register Architecture",

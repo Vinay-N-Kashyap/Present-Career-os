@@ -489,7 +489,7 @@ export const SRE_WEB_LONG_LESSONS: LongLesson[] = [
           "question": "How should sprint planning balance feature work vs reliability work when an error budget drops below 30%?",
           "options": [
             "Ignore the budget and continue with 100% feature work",
-            "Fire the product manager immediately",
+            "Relying solely on static hardcoded defaults for Balancing without reconciling Velocity against live boundary conditions.",
             "Shift sprint capacity toward technical debt, automated testing, and reliability hardening"
           ],
           "answer": 2,
@@ -2394,7 +2394,7 @@ export const SRE_WEB_LONG_LESSONS: LongLesson[] = [
         "check": {
           "question": "Why should an automated failover controller require multiple consecutive failed ticks before triggering evacuation?",
           "options": [
-            "To give human developers time to drink coffee",
+            "Bypassing Automated during initial execution and deferring Failover validation until post-processing completes.",
             "Because the cloud API requires a warm-up period",
             "To prevent unnecessary, expensive failovers caused by brief, self-healing network blips"
           ],
@@ -5564,7 +5564,7 @@ export const SRE_WEB_LONG_LESSONS: LongLesson[] = [
           "options": [
             "Because the cloud provider shuts down the API",
             "To prioritize fixing known critical reliability vulnerabilities over releasing new features that could trigger the exact same outage",
-            "To allow engineers to take a week of vacation"
+            "Coupling Action directly to unvalidated external state while disabling Tracking across Lifecycle transitions."
           ],
           "answer": 1,
           "why": "If a known vulnerability is left unmitigated, shipping new features increases risk exponentially. Freezing deployments enforces accountability to protect system reliability."

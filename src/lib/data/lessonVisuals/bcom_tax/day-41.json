@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Customs Boundary & Taxable Event",
+        "template": "ledger-sheet",
+        "title": "Statutory Foundations & Taxable Event under S... — General Ledger Verification",
         "steps": [
           {
-            "label": "Territorial Waters",
-            "caption": "Vessel crosses the maritime boundary into national territorial waters."
+            "at": "intro",
+            "caption": "Open primary debit entry for Statutory Foundations (Alpha Alpha).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 8650,
+            "totalCredit": 8650,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 8650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Customs Boundary",
-            "caption": "Customs jurisdiction attaches under the statutory charging provision."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Continuous Process",
-            "caption": "Importation continues until goods cross the physical customs barrier."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Tariff Date Lock",
-            "caption": "Tariff rates lock on the presentation date of bill of entry."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1bd9eecd30d2bb455b6b1fc177e37f743d18cfbcf114f9ededca72f065ffbbdd",
+      "partTitle": "Statutory Foundations & Taxable Event under Section 12: Territorial Waters & Maritime Zones Architecture",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Statutory Foundations & Taxable Event under S... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Statutory Foundations (Alpha Alpha).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 8650,
+            "totalCredit": 8650,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 8650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Statutory Foundations (Alpha).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10380,
+            "totalCredit": 10380,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 8650,
+                "balance": 8650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1730,
+                "balance": 10380,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10380,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Import Clearance Lifecycle",
+        "template": "ledger-sheet",
+        "title": "Importation Lifecycle: Entry Inwards, Bill of... — General Ledger Verification",
         "steps": [
           {
-            "label": "Arrival Manifest",
-            "caption": "Master delivers the electronic cargo manifest prior to vessel arrival."
+            "at": "intro",
+            "caption": "Open primary debit entry for Importation Lifecycle (Alpha Beta).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 8850,
+            "totalCredit": 8850,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 8850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Entry Inwards",
-            "caption": "Proper customs officer reviews records and grants entry inwards order."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Importation Lifecycle (Beta).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Bill of Entry",
-            "caption": "Importer files white bill of entry for immediate home consumption."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Importation Lifecycle (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Out of Charge",
-            "caption": "Inspector completes examination and issues the out of charge release."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Importation Lifecycle (Beta).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "028907af605645a8652a119fbc5bf34db2d407d6b050ba52fb74f62f469396a0",
+      "partTitle": "Importation Lifecycle: Entry Inwards, Bill of Entry Classifications & ICEGATE Electronic Clearance",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Importation Lifecycle: Entry Inwards, Bill of... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Importation Lifecycle (Alpha Beta).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 8850,
+            "totalCredit": 8850,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 8850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Importation Lifecycle (Beta).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Importation Lifecycle (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Importation Lifecycle (Beta).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10620,
+            "totalCredit": 10620,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 8850,
+                "balance": 8850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1770,
+                "balance": 10620,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10620,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "High Seas Sales Contract Mechanics",
+        "template": "ledger-sheet",
+        "title": "High Seas Sales (HSS): Contractual Mechanics,... — General Ledger Verification",
         "steps": [
           {
-            "label": "Title Endorsement",
-            "caption": "Consignee endorses negotiable bill of lading while goods are on high seas."
+            "at": "intro",
+            "caption": "Open primary debit entry for High Seas Sales HSS Co (Alpha Gamma).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9050,
+            "totalCredit": 9050,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Contract Transfer",
-            "caption": "Contract transfers title to buyer prior to customs port clearance."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for High Seas Sales HSS Co (Gamma).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Schedule Three Scope",
-            "caption": "Transaction qualifies as statutory non-supply exempt from sales tax."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for High Seas Sales HSS Co (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Customs Assessment",
-            "caption": "Customs assessment calculates duties on the final contract price."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for High Seas Sales HSS Co (Gamma).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "2006535ad8f0d55b1614c0aba2d5e31e53b15f3424e15a0a44118b13478b8120",
+      "partTitle": "High Seas Sales (HSS): Contractual Mechanics, GST Schedule III Exemption & Customs Valuation",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "High Seas Sales (HSS): Contractual Mechanics,... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for High Seas Sales HSS Co (Alpha Gamma).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9050,
+            "totalCredit": 9050,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for High Seas Sales HSS Co (Gamma).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for High Seas Sales HSS Co (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for High Seas Sales HSS Co (Gamma).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10860,
+            "totalCredit": 10860,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9050,
+                "balance": 9050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1810,
+                "balance": 10860,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 10860,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Export Clearance & Let Export Order",
+        "template": "ledger-sheet",
+        "title": "Exportation Statutory Framework: Entry Outwar... — General Ledger Verification",
         "steps": [
           {
-            "label": "Trade Code Setup",
-            "caption": "Exporter registers verified trade identification code on customs portal."
+            "at": "intro",
+            "caption": "Open primary debit entry for Exportation Statutory (Alpha Delta).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9250,
+            "totalCredit": 9250,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Entry Outwards",
-            "caption": "Master secures entry outwards authorization before embarking cargo."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Exportation Statutory (Delta).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Inspection Review",
-            "caption": "Officer inspects goods and verifies mandatory non-prohibition checks."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Exportation Statutory (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Let Export Order",
-            "caption": "Proper officer issues let export order allowing loading onto vessel."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Exportation Statutory (Delta).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "138e1d4451bd713f4bf62dea624c1a421e5c689452a055b92031d1bfb85a296c",
+      "partTitle": "Exportation Statutory Framework: Entry Outwards, Shipping Bill under Section 50 & LEO Verification",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Exportation Statutory Framework: Entry Outwar... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Exportation Statutory (Alpha Delta).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9250,
+            "totalCredit": 9250,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Exportation Statutory (Delta).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Exportation Statutory (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Exportation Statutory (Delta).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11100,
+            "totalCredit": 11100,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9250,
+                "balance": 9250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1850,
+                "balance": 11100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 11100,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Deterministic Customs Assessment Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
         "steps": [
           {
-            "label": "Currency Conversion",
-            "caption": "Simulator converts foreign invoice currency at notified exchange rates."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Alpha Epsilon).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9450,
+            "totalCredit": 9450,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Basic Customs Duty",
-            "caption": "Engine computes basic customs duty on the statutory assessable base."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Social Welfare Fee",
-            "caption": "Surcharge attaches at ten percent on the primary basic customs duty."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Integrated Tax Base",
-            "caption": "Integrated tax applies on cumulative sum of assessable base and duties."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "2bdd9b3fa960845f78ad1bab7828430eb82e9faceec10df09236348a3330c8e1",
+      "partTitle": "Production Python Architecture: Deterministic Customs Import & High Seas Sales Assessment Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Alpha Epsilon).",
+            "title": "Day 41 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9450,
+            "totalCredit": 9450,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Clearing & Settlement Control",
+                "credit": 9450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 41 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Primary Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Clearing & Settlement Control",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Alpha).",
+            "title": "Day 41 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Verified Compliance Reserve",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "General Ledger Control Account",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 41 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11340,
+            "totalCredit": 11340,
+            "entries": [
+              {
+                "id": "JNL-4101",
+                "account": "Audited Operating Asset",
+                "debit": 9450,
+                "balance": 9450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4102",
+                "account": "Audited Compliance Reserve",
+                "debit": 1890,
+                "balance": 11340,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4103",
+                "account": "Audited Treasury Settlement",
+                "credit": 11340,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

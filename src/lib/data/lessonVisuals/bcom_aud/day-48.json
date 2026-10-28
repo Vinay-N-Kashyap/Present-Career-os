@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Physical Inventory Count Observation Protocol under ISA 501 & PCAOB AS 2510",
-      "codeHash": "e6b17018f18cc7bd1714f07195135d7e9389b0db8890ce031745db05f4f09329",
+      "codeHash": "11f6234f0d259623d7ed065a518ca2ca01197079c1b89fa7aa4650331e31471d",
       "spec": {
         "template": "funnel",
-        "title": "Physical Inventory Count Observation P... \u2014 Assurance Review",
+        "title": "Physical Inventory Count Observation P... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Inventory Roll-Forward and Roll-Back Procedures for Interim Physical Counts",
-      "codeHash": "061ebdcbef6834826e23e233e3173c3216bb8a1351a733838dd63b2757feea4e",
+      "codeHash": "67c35801114c5aaabbbd00f9a7219780c186bd8306c03b3f16561f2da9048b96",
       "spec": {
         "template": "funnel",
-        "title": "Inventory Roll-Forward and Roll-Back P... \u2014 Assurance Review",
+        "title": "Inventory Roll-Forward and Roll-Back P... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Substantive Inventory Costing & Standard Cost Variance Allocations (IAS 2 / ASC 330)",
-      "codeHash": "ed724fd928e78789d119ba45e90b0e5203828a883925fd062819563159c3d9a6",
+      "codeHash": "5336d6785a820cdc6070e5ce759288da912f2944fb907792969a832ed33cfbef",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Inventory Costing & Standa... \u2014 Assurance Review",
+        "title": "Substantive Inventory Costing & Standa... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Lower of Cost and Net Realizable Value (NRV) & Obsolescence Reserves Testing",
-      "codeHash": "1639052d1102ce306845ddffdf3e1dd927a96f0cc0e04c0e5ecd766915965393",
+      "codeHash": "e37f92596b911f6f5c7cbe97362cc188e648ad6c53a556a3b708955c481eb83f",
       "spec": {
         "template": "funnel",
-        "title": "Lower of Cost and Net Realizable Value... \u2014 Assurance Review",
+        "title": "Lower of Cost and Net Realizable Value... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Substantive Inventory Valuation & Physical Count Simulator",
-      "codeHash": "0b564088c20a88f841ee36bea613ff506a47f1e1a636bd4f836f55c9a647c6a2",
+      "codeHash": "698d73df3184bc6b62301176a85b90a71b446793f535d6feecaeb19175ff6d34",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Inventory Va... \u2014 Assurance Review",
+        "title": "Comprehensive Substantive Inventory Va... — Assurance Review",
         "steps": [
           {
             "at": "intro",

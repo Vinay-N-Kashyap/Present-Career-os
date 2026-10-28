@@ -46,7 +46,9 @@
             "caption": "Zero rated export supplies preserve full credit without reduction."
           }
         ]
-      }
+      },
+      "codeHash": "ca51096af8cb07b1e57fd2711585bcb137f836f5280d028e9c8578f14d398f30",
+      "partTitle": "Statutory Architecture of Input Tax Credit & Dual-Use Apportionment under Section 17"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Monthly reversals add directly to outward commercial tax obligations."
           }
         ]
-      }
+      },
+      "codeHash": "ed9052d90b544578ff1bc11a6b25429c6a86a1d3fa2ae522bad89464473831a2",
+      "partTitle": "Rule 42 Mathematical Mechanics: Inputs & Input Services Apportionment Formulas"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Asset category transitions adjust historical credits systematically."
           }
         ]
-      }
+      },
+      "codeHash": "36151f29dea5b2b7072e5e0f2c5296ce4505f1587d5351ad7bf83cb844002ca0",
+      "partTitle": "Rule 43 Capital Goods Lifecycle Apportionment & Sixty-Month Amortization Engine"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Statutory elections bind corporate banking filings for the full year."
           }
         ]
-      }
+      },
+      "codeHash": "f7595e48b99dc2edf421fd71c73ffebe988492487e2101ed9fb11a9ce826e8b6",
+      "partTitle": "Banking & Financial Institutions Special Regime: Section 17(4) 50% Flat Forfeiture vs Actual Allocation"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Standard monthly returns upload verified net credits without errors."
           }
         ]
-      }
+      },
+      "codeHash": "85686703e75aa0ea8ea68b0d4453c5d572784eb8ac9fed9dd288c8b03c5df05f",
+      "partTitle": "Enterprise Implementation: Automated Multi-Plant ITC Apportionment & Monthly Reversal Engine"
     }
   ]
 }

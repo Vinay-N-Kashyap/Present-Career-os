@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Evolution from Waterfall Monetization to Header Bidding",
-      "codeHash": "f8196bb1163f65ea01e52cf45a4091f6d9b3f33f60e618b34a84ae3872b467fd",
+      "codeHash": "fbaf1592ac56769aff1969599972daa61b2586e458d09866abd72a670cd54597",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Client-Side Prebid.js Architecture & Wrapper Lifecycle",
-      "codeHash": "6c1dcaa6884065e18efc0d75231cb141855fc48b2c292e29e4dc069849aae1a5",
+      "codeHash": "5dc67abbd9cb54f17d13d6e0d984e0e58c06871dce6f97fe2b46bf5c01049860",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Server-to-Server Header Bidding: Prebid Server (PBS) & OpenRTB Relays",
-      "codeHash": "c2c39ca883458f5349cb707470756a38006faa3c297a68054ba38f9d51b6d628",
+      "codeHash": "52167e743044f6cb59ee38712d02dcaaab7c98821957e8edd7a0eb5eb330a863",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Google Ad Manager (GAM) Integration: Key-Value Targeting & Line Item Matrix",
-      "codeHash": "8fb0cdaa54b3290c0f18c7e74b980368fdd7fb511c81fe62ca51936fd7a18e08",
+      "codeHash": "9c5bd06da06ad360c10af472227e0bcba92b4dee589c6470c3c96801cbccda53",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Prebid Wrapper Engine & Yield Optimization Lab",
-      "codeHash": "2385804ebbdddd5a7e0d54a13b46be995b69b1880f1cf983c3c2c0ae4856f126",
+      "codeHash": "c3a1937d7b1a74edcd3f4c751789428694d6b4d526187ea355540edfd6b7ee7d",
       "spec": {
         "template": "funnel",
         "steps": [

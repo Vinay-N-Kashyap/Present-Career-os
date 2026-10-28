@@ -25,7 +25,8 @@
                 "plaintext_sniffed"
               ],
               "status": "PLAINTEXT_VULNERABILITY"
-            }
+            },
+            "caption": "Legacy perimeter security assumes internal VPC is safe; compromised pod sniffs plaintext traffic. (Service Mesh Architecture: Control )"
           },
           {
             "at": "say2",
@@ -40,7 +41,8 @@
                 "dynamic_listeners"
               ],
               "status": "XDS_CONFIG_STREAMED"
-            }
+            },
+            "caption": "Istiod control plane streams dynamic xDS configs over gRPC to Envoy C++ sidecars. (Service Mesh Architecture: Control )"
           },
           {
             "at": "example",
@@ -55,7 +57,8 @@
                 "envoy_15001"
               ],
               "status": "PACKETS_INTERCEPTED"
-            }
+            },
+            "caption": "Istio-init configures PREROUTING and OUTPUT chains redirecting TCP to ports 15006 and 15001. (Service Mesh Architecture: Control )"
           },
           {
             "at": "tryIt",
@@ -70,7 +73,8 @@
                 "transparent_flow"
               ],
               "status": "MESH_INGESTION_ACTIVE"
-            }
+            },
+            "caption": "Microservices communicate normally while Envoy sidecars handle encryption and telemetry transparently. (Service Mesh Architecture: Control )"
           }
         ]
       }
@@ -97,7 +101,8 @@
                 "ec_diffie_hellman"
               ],
               "status": "MTLS_ESTABLISHED"
-            }
+            },
+            "caption": "Client and server Envoys present X.509 certs, verifying identities before data exchange. (Mutual TLS (mTLS) Deep Dive: Crypto)"
           },
           {
             "at": "say2",
@@ -112,7 +117,8 @@
                 "sds_unix_socket"
               ],
               "status": "SPIFFE_CERT_ISSUED"
-            }
+            },
+            "caption": "Citadel CA issues short-lived certs with SPIFFE SANs (spiffe://cluster.local/ns/sa). (Mutual TLS (mTLS) Deep Dive: Crypto)"
           },
           {
             "at": "example",
@@ -127,7 +133,8 @@
                 "traffic_blocked"
               ],
               "status": "PLAINTEXT_DROPPED"
-            }
+            },
+            "caption": "STRICT PeerAuthentication terminates unencrypted plaintext with an immediate connection reset. (Mutual TLS (mTLS) Deep Dive: Crypto)"
           },
           {
             "at": "tryIt",
@@ -142,7 +149,8 @@
                 "soc2_compliant"
               ],
               "status": "STRICT_MTLS_CERTIFIED"
-            }
+            },
+            "caption": "Automated 12-hour rotation guarantees in-memory cryptographic freshness without downtime. (Mutual TLS (mTLS) Deep Dive: Crypto)"
           }
         ]
       }
@@ -169,7 +177,8 @@
                 "subset_v2_10"
               ],
               "status": "WEIGHT_SPLIT_APPLIED"
-            }
+            },
+            "caption": "DestinationRule defines v1/v2 subsets while VirtualService splits traffic by weight percentage. (Traffic Shifting, Canary Deployment)"
           },
           {
             "at": "say2",
@@ -184,7 +193,8 @@
                 "zero_prod_impact"
               ],
               "status": "HEADER_MATCH_ROUTED"
-            }
+            },
+            "caption": "Beta tester headers or cookies route directly to v2 while standard users remain on v1. (Traffic Shifting, Canary Deployment)"
           },
           {
             "at": "example",
@@ -199,7 +209,8 @@
                 "fail_fast_503"
               ],
               "status": "CIRCUIT_TRIPPED"
-            }
+            },
+            "caption": "Envoy detects 3 consecutive 5xx errors and immediately ejects the failing pod instance. (Traffic Shifting, Canary Deployment)"
           },
           {
             "at": "tryIt",
@@ -214,7 +225,8 @@
                 "resilient_system"
               ],
               "status": "HIGH_AVAILABILITY_SECURED"
-            }
+            },
+            "caption": "Automatic retries and timeouts insulate upstream services from cascading outages. (Traffic Shifting, Canary Deployment)"
           }
         ]
       }
@@ -241,7 +253,8 @@
                 "rbac_eval"
               ],
               "status": "RBAC_EVALUATED"
-            }
+            },
+            "caption": "AuthorizationPolicy matches SPIFFE source principal and HTTP paths directly in Envoy. (Layer 7 Authorization Policies & Ob)"
           },
           {
             "at": "say2",
@@ -256,7 +269,8 @@
                 "auth_allowed"
               ],
               "status": "JWT_CLAIMS_VERIFIED"
-            }
+            },
+            "caption": "Envoy validates external JWT signature and role claims before allowing state mutations. (Layer 7 Authorization Policies & Ob)"
           },
           {
             "at": "example",
@@ -271,7 +285,8 @@
                 "container_protected"
               ],
               "status": "UNAUTHORIZED_BLOCKED"
-            }
+            },
+            "caption": "Unauthorized calls receive an immediate 403 Forbidden without reaching the container. (Layer 7 Authorization Policies & Ob)"
           },
           {
             "at": "tryIt",
@@ -286,7 +301,8 @@
                 "kiali_topology"
               ],
               "status": "OBSERVABILITY_LIVE"
-            }
+            },
+            "caption": "Envoy injects W3C traceparent headers, streaming real-time topologies and metrics. (Layer 7 Authorization Policies & Ob)"
           }
         ]
       }
@@ -313,7 +329,8 @@
                 "mesh_pipeline"
               ],
               "status": "PACKET_TRAPPED"
-            }
+            },
+            "caption": "Linux iptables traps outbound TCP calls, handing raw byte streams to local Envoy. (Masterclass Synthesis: Production I)"
           },
           {
             "at": "say2",
@@ -328,7 +345,8 @@
                 "plaintext_rejected"
               ],
               "status": "MTLS_VERIFIED_STRICT"
-            }
+            },
+            "caption": "Cryptographic SPIFFE X.509 handshake authenticates client/server with zero plaintext. (Masterclass Synthesis: Production I)"
           },
           {
             "at": "example",
@@ -343,7 +361,8 @@
                 "latency_1_25ms"
               ],
               "status": "TRAFFIC_SPLIT_10_90"
-            }
+            },
+            "caption": "VirtualService routes 90% to stable v1 and 10% to canary v2 with 1.25ms transit. (Masterclass Synthesis: Production I)"
           },
           {
             "at": "tryIt",
@@ -358,7 +377,8 @@
                 "grade_a_certified"
               ],
               "status": "GRADE_A_PLUS_CERTIFIED"
-            }
+            },
+            "caption": "Zero-trust service mesh engine certified with 100% test coverage and resilience. (Masterclass Synthesis: Production I)"
           }
         ]
       }

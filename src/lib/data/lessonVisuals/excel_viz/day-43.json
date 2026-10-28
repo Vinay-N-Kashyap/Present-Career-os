@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Pearson Correlation Coefficient & Covariance Matrix Algebra",
-    "codeHash": "6b8c0a8714b6c0acdf17a6869f38108e8aeed35cdfbcca7ffde1bda717677189",
-    "spec": {
-      "template": "bars",
-      "title": "Pearson Correlation Coefficient & Covariance Matrix Algebra — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Pearson Correlation Coefficient & Covariance Matrix Algebra",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Pearson Correlation Coefficient & Covariance Matrix Algebra",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Pearson Correlation Coefficient & Covariance Matrix Algebra",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Pearson Correlation Coefficient & Covariance Matrix Algebra",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 43,
+  "entries": [
+    {
+      "partTitle": "Pearson Correlation Coefficient & Covariance Matrix Algebra",
+      "codeHash": "6b8c0a8714b6c0acdf17a6869f38108e8aeed35cdfbcca7ffde1bda717677189",
+      "spec": {
+        "template": "bars",
+        "title": "Pearson Correlation Coefficient & Covariance Matrix Algebra — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Pearson Correlation Coefficient & Covariance Matrix Algebra — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Pearson Correlation Coefficient & Covariance Matrix Algebra",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+      "codeHash": "c70c4303bc688b476f12569033940f293caba054a8a8a107aad41e5211575442",
+      "spec": {
+        "template": "bars",
+        "title": "Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "The LINE Assumptions & Residual Diagnostic Scatter Plots",
+      "codeHash": "bd967a2dfe8e04e7fcedee1a639e64c12cb8c934d52a3f73c70fbdebe9b00ad7",
+      "spec": {
+        "template": "bars",
+        "title": "The LINE Assumptions & Residual Diagnostic Scatter Plots — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "The LINE Assumptions & Residual Diagnostic Scatter Plots — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for The LINE Assumptions & Residual Diagnostic Scatter Plots",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+      "codeHash": "95b3574e3b692f87ac88c4d12bf2e9b4cf5a67ff484caa4340528a97c652aac7",
+      "spec": {
+        "template": "bars",
+        "title": "Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master OLS Econometric Gateway: Cryptographic Regression Certification",
+      "codeHash": "c9462d99e7cc2bcffa2ae6a2f0038eaf496ef950d7fbde16d0a4ed1413cb215f",
+      "spec": {
+        "template": "bars",
+        "title": "Master OLS Econometric Gateway: Cryptographic Regression Certification — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master OLS Econometric Gateway: Cryptographic Regression Certification — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingestion and distributional baseline setup for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Algorithmic calculation and statistical analysis for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and statistical validation for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Econometric gating and production verification for Master OLS Econometric Gateway: Cryptographic Regression Certification",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pearson Covariance",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "OLS Closed-Form",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "LINE Residuals",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "R² Goodness-of-Fit",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
-    "codeHash": "c70c4303bc688b476f12569033940f293caba054a8a8a107aad41e5211575442",
-    "spec": {
-      "template": "bars",
-      "title": "Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Ordinary Least Squares (OLS) Formulation & R² Variance Decomposition",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "The LINE Assumptions & Residual Diagnostic Scatter Plots",
-    "codeHash": "bd967a2dfe8e04e7fcedee1a639e64c12cb8c934d52a3f73c70fbdebe9b00ad7",
-    "spec": {
-      "template": "bars",
-      "title": "The LINE Assumptions & Residual Diagnostic Scatter Plots — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for The LINE Assumptions & Residual Diagnostic Scatter Plots",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for The LINE Assumptions & Residual Diagnostic Scatter Plots",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for The LINE Assumptions & Residual Diagnostic Scatter Plots",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for The LINE Assumptions & Residual Diagnostic Scatter Plots",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
-    "codeHash": "95b3574e3b692f87ac88c4d12bf2e9b4cf5a67ff484caa4340528a97c652aac7",
-    "spec": {
-      "template": "bars",
-      "title": "Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Regression Inferential Statistics: Standard Errors, T-Stats, P-Values & ANOVA Table",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master OLS Econometric Gateway: Cryptographic Regression Certification",
-    "codeHash": "c9462d99e7cc2bcffa2ae6a2f0038eaf496ef950d7fbde16d0a4ed1413cb215f",
-    "spec": {
-      "template": "bars",
-      "title": "Master OLS Econometric Gateway: Cryptographic Regression Certification — Bivariate Correlation & Ordinary Least Squares (OLS) Linear Regression: R², Residual Plots & P-Values",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingestion and distributional baseline setup for Master OLS Econometric Gateway: Cryptographic Regression Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Algorithmic calculation and statistical analysis for Master OLS Econometric Gateway: Cryptographic Regression Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and statistical validation for Master OLS Econometric Gateway: Cryptographic Regression Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Econometric gating and production verification for Master OLS Econometric Gateway: Cryptographic Regression Certification",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pearson Covariance",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "OLS Closed-Form",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "LINE Residuals",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "R² Goodness-of-Fit",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Enterprise Trade Credit Engines, Real-Time Exposure Scoring & Dynamic Credit Limits",
-      "codeHash": "687e97ac097751fc8d70764bdf35de36e738c96e654a2f70aa21fef5ad0b8cdf",
+      "codeHash": "499d0c55b0b11fb1375677141cb68096491a2ac140f6d25a793ccc5dd38e6831",
       "spec": {
         "template": "funnel",
         "title": "Day 48 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Commercial Invoicing, Payment Terms (Net 30/60/90, 2/10 Net 30) & Cash Discount Engines",
-      "codeHash": "c06ad6b314330715eaf7b98dd83181209f5a177da931580d8f4c1623840544be",
+      "codeHash": "4e5757609b2d0bfc9e43e1368ab67f15f8f4d44805b730286cd68b1285307423",
       "spec": {
         "template": "funnel",
         "title": "Day 48 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Accounts Receivable (AR) Aging Schedules, Delinquency Buckets & CECL Loss Reserves",
-      "codeHash": "d255780e0460727a4c46534c73916dbe1b98e413163b447ca3007da9ffc3bad7",
+      "codeHash": "2dce5fe97f8c3ee396c53c8fd846005f6f92558d11df6ae61ce6524aba4c5ea4",
       "spec": {
         "template": "funnel",
         "title": "Day 48 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Multi-Stage Automated Dunning State Machines, Penalty Interest & Credit Freeze Triggers",
-      "codeHash": "b845a3c4bd7cb61599925e7712c4dc8da5fcfeb8195e8853866b137653f5df18",
+      "codeHash": "a714d11ea9be91cff68eab8b47da88f9676bdce9ebd56b9c35cb7d4843eb74ea",
       "spec": {
         "template": "funnel",
         "title": "Day 48 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Accounts Receivable (AR) Treasury Command Tower & DSO Telemetry",
-      "codeHash": "1efde41c6a1a36775b0adfe733446a5da56928c99462bbb07fe2400a3086f265",
+      "codeHash": "7fff6d47cfd0f29a71ede73277e220b138479fde0f4088e758dcefa217d74bb1",
       "spec": {
         "template": "funnel",
         "title": "Day 48 Part 5 Architecture Flow",

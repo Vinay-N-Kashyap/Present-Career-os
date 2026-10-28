@@ -8,7 +8,7 @@
       "codeHash": "55ec1f37273c2ddc60aa31c83d7b2b80890f2d1449bae7e0e8c2ee62a94fc1b1",
       "spec": {
         "template": "bars",
-        "title": "The Working Capital Triad: DSO, DIO & ... \u2014 Decision Evaluation",
+        "title": "The Working Capital Triad: DSO, DIO & ... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "d58528864892189bd792d90fb646b1904239a06f8a5be8ff5dd661225706e8d8",
       "spec": {
         "template": "bars",
-        "title": "The Cash Conversion Cycle (CCC): Mathe... \u2014 Decision Evaluation",
+        "title": "The Cash Conversion Cycle (CCC): Mathe... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "6f95f27335aafb271de6b5aeef226fc22130973fb548a5577a2bbebd629e6f55",
       "spec": {
         "template": "bars",
-        "title": "The Phenomenon of Negative Cash Conver... \u2014 Decision Evaluation",
+        "title": "The Phenomenon of Negative Cash Conver... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "6c59f68a716233f3fbcf1405227154a4007907c3706b5b3a0e3927d06c8e8b9c",
       "spec": {
         "template": "bars",
-        "title": "Quantifying Operational Cash Drag & Co... \u2014 Decision Evaluation",
+        "title": "Quantifying Operational Cash Drag & Co... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "ffd9b8cfd04239714f6e3df28684a16249b01b15022e567f16308dd09c2c2849",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Working Capital... \u2014 Decision Evaluation",
+        "title": "Building an Enterprise Working Capital... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D27P5].",
             "max": 100,
             "bars": [
               {

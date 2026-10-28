@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Cross-Border E-Commerce Economics & Local Payment Method (LPM) Penetration",
-      "codeHash": "595d2cc45d5d7261c16e8ec753e5aeb4b56b933c3a7ae5035b1a2f9187e3c417",
+      "codeHash": "4e1f7b6fbd6fea80ab3f785ac2793c9801b0325af514ff9b95aa43d9b3dd35a4",
       "spec": {
         "template": "funnel",
         "title": "Day 51 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Multi-Currency Pricing Architectures: Base Currency, FX Buffers & Psychological Rounding",
-      "codeHash": "468a247f68c327f26c3d604e1428df39b7405cbcaf815f56ec831b3e9e9c2d71",
+      "codeHash": "11f726ba677c5f37a5d92a0b596c58dc6dad1cbad3f164fbb48d3b88805c5561",
       "spec": {
         "template": "funnel",
         "title": "Day 51 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Foreign Exchange (FX) Risk Management: Treasury Hedging & Forward Contracts",
-      "codeHash": "3d1f45cef188ca7c8f3c409cd9efe5022a87436f7b4a8159c8e67a472c0a242c",
+      "codeHash": "b8277bbf8773b06b666ff291d4b958d26c7f5609e6603639c49bba5e7aad2d39",
       "spec": {
         "template": "funnel",
         "title": "Day 51 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Localized Checkout UX & Guaranteed Rate Quote Locks: Eliminating Cart Abandonment",
-      "codeHash": "50e836a1d141bfe38d49089e8fbe15c3bc38963e78fa41b8fed7fdb34b398de1",
+      "codeHash": "710be36fd5c38207b10b7cfe8acff6e07c48bc5a7cbaa8699a59c41014fa7f4a",
       "spec": {
         "template": "funnel",
         "title": "Day 51 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Global Checkout Command Tower: FX Yield & Margin Optimization",
-      "codeHash": "b6961683fa90f3aef32456f63a26694894b7a42947fbe64d86f55a51cb5b1ddf",
+      "codeHash": "9309421ea4aaf6b5f2ed435ece97f34ccbea92761706944ab18ccef477f57ef8",
       "spec": {
         "template": "funnel",
         "title": "Day 51 Part 5 Architecture Flow",

@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Regulatory Capital Stack: CET1, AT1, Tier 2 Capital & Loss Absorption Hierarchy",
-      "codeHash": "1448843b3d27dbab02dd77788ba8fae14265c33bbdcb49a9f41d4150fcb6253f",
+      "codeHash": "1db58c7e4084d57e16a431b2d1a2bf84adc6a317f7bbdadc7022d4690f037945",
       "spec": {
         "template": "funnel",
-        "title": "The Regulatory Capital Stack: CET1, AT... \u2014 Treasury Risk Operations",
+        "title": "The Regulatory Capital Stack: CET1, AT... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Macroprudential Capital Buffers: CCB, Countercyclical Buffer (CCyB) & D-SIB Surcharges",
-      "codeHash": "e8b777d38ebad27e88a7d45ea3759bdcd2ae99d487028ce3607697db01b62277",
+      "codeHash": "f883a66a70787ac295acf372c5f21b857e1d9209850a05187f8777a6d7a1085c",
       "spec": {
         "template": "funnel",
-        "title": "Macroprudential Capital Buffers: CCB, ... \u2014 Treasury Risk Operations",
+        "title": "Macroprudential Capital Buffers: CCB, ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "The Non-Risk-Based Backstop: The Basel III Leverage Ratio & Exposure Metric",
-      "codeHash": "d4d049d1c7e58d08c8a79084a5e8c9919563cb7ae9a3e10f2bd5ef96a7464df2",
+      "codeHash": "42c3f9702b7286104aaed03aa296eef6b0e2e4904407b9c709aa6c23f6260cde",
       "spec": {
         "template": "funnel",
-        "title": "The Non-Risk-Based Backstop: The Basel... \u2014 Treasury Risk Operations",
+        "title": "The Non-Risk-Based Backstop: The Basel... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Basel IV (Finalized Basel III) Output Floors & Standardized Approach Overhaul",
-      "codeHash": "9175687d1f394c3840e2e698909a1656ef6c8c5cc7fbe4eff13cba1dfaf33d5e",
+      "codeHash": "3ea2d4d30bf9439c7ce786b054b3db0f63e83895e9077b7b427e00cda20f0230",
       "spec": {
         "template": "funnel",
-        "title": "Basel IV (Finalized Basel III) Output ... \u2014 Treasury Risk Operations",
+        "title": "Basel IV (Finalized Basel III) Output ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Master Enterprise Capital Sizing & Allocation Engine: Comprehensive Solvency Scorecard",
-      "codeHash": "20b4a8fb8bbd1668835539d8b80c4dad4c04bf800e4443aba55bbd4189b7b5ab",
+      "codeHash": "c503a484a6f2fb3c472463f892325e4abad709b5ce904d75293babe1faba7af2",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Capital Sizing & All... \u2014 Treasury Risk Operations",
+        "title": "Master Enterprise Capital Sizing & All... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

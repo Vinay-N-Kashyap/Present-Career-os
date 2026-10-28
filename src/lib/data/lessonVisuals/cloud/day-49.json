@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Uncontrolled scripts risk widespread catastrophic production outages."
+            "annotation": "Uncontrolled scripts risk widespread catastrophic production outages.",
+            "caption": "Uncontrolled scripts risk widespread catastrophic production outages. (Principles of Chaos Engineering & A)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Managed chaos templates define structured fault injection targets."
+            "annotation": "Managed chaos templates define structured fault injection targets.",
+            "caption": "Managed chaos templates define structured fault injection targets. (Principles of Chaos Engineering & A)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Action execution limits enforce strict blast radius boundaries."
+            "annotation": "Action execution limits enforce strict blast radius boundaries.",
+            "caption": "Action execution limits enforce strict blast radius boundaries. (Principles of Chaos Engineering & A)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Hypothesis testing builds empirical confidence in cloud architectures."
+            "annotation": "Hypothesis testing builds empirical confidence in cloud architectures.",
+            "caption": "Hypothesis testing builds empirical confidence in cloud architectures. (Principles of Chaos Engineering & A)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Blind experiments easily escalate into severe customer service impacts."
+            "annotation": "Blind experiments easily escalate into severe customer service impacts.",
+            "caption": "Blind experiments easily escalate into severe customer service impacts. (Automated Stop Conditions & Safety )"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Automated stop conditions monitor critical business service alarms."
+            "annotation": "Automated stop conditions monitor critical business service alarms.",
+            "caption": "Automated stop conditions monitor critical business service alarms. (Automated Stop Conditions & Safety )"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Circuit breakers halt fault actions immediately upon error spikes."
+            "annotation": "Circuit breakers halt fault actions immediately upon error spikes.",
+            "caption": "Circuit breakers halt fault actions immediately upon error spikes. (Automated Stop Conditions & Safety )"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Automated rollback guarantees system stability during chaos drills."
+            "annotation": "Automated rollback guarantees system stability during chaos drills.",
+            "caption": "Automated rollback guarantees system stability during chaos drills. (Automated Stop Conditions & Safety )"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Under-provisioned zones collapse during complete zonal failover events."
+            "annotation": "Under-provisioned zones collapse during complete zonal failover events.",
+            "caption": "Under-provisioned zones collapse during complete zonal failover events. (Availability Zone (AZ) Evacuation &)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Zonal shift redirects traffic away from impaired availability zones."
+            "annotation": "Zonal shift redirects traffic away from impaired availability zones.",
+            "caption": "Zonal shift redirects traffic away from impaired availability zones. (Availability Zone (AZ) Evacuation &)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Deliberate headroom prevents cascading overload on surviving nodes."
+            "annotation": "Deliberate headroom prevents cascading overload on surviving nodes.",
+            "caption": "Deliberate headroom prevents cascading overload on surviving nodes. (Availability Zone (AZ) Evacuation &)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Validated evacuation ensures seamless continuity during data center loss."
+            "annotation": "Validated evacuation ensures seamless continuity during data center loss.",
+            "caption": "Validated evacuation ensures seamless continuity during data center loss. (Availability Zone (AZ) Evacuation &)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Gray failures tie up critical connection pools and exhaust threads."
+            "annotation": "Gray failures tie up critical connection pools and exhaust threads.",
+            "caption": "Gray failures tie up critical connection pools and exhaust threads. (Network Chaos Injection: Synthetic )"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Synthetic network chaos injects realistic packet drops and latency."
+            "annotation": "Synthetic network chaos injects realistic packet drops and latency.",
+            "caption": "Synthetic network chaos injects realistic packet drops and latency. (Network Chaos Injection: Synthetic )"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Circuit breakers trip open to serve instant cached fallback data."
+            "annotation": "Circuit breakers trip open to serve instant cached fallback data.",
+            "caption": "Circuit breakers trip open to serve instant cached fallback data. (Network Chaos Injection: Synthetic )"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Graceful degradation preserves core customer checkout and browsing flows."
+            "annotation": "Graceful degradation preserves core customer checkout and browsing flows.",
+            "caption": "Graceful degradation preserves core customer checkout and browsing flows. (Network Chaos Injection: Synthetic )"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Blame cultures punish engineers rather than fixing systemic flaws."
+            "annotation": "Blame cultures punish engineers rather than fixing systemic flaws.",
+            "caption": "Blame cultures punish engineers rather than fixing systemic flaws. (Resiliency GameDays & Production In)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Collaborative GameDays build essential team operational muscle memory."
+            "annotation": "Collaborative GameDays build essential team operational muscle memory.",
+            "caption": "Collaborative GameDays build essential team operational muscle memory. (Resiliency GameDays & Production In)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Automated metrics measure precise detection and recovery duration."
+            "annotation": "Automated metrics measure precise detection and recovery duration.",
+            "caption": "Automated metrics measure precise detection and recovery duration. (Resiliency GameDays & Production In)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Continuous chaos automation guarantees ongoing production resiliency."
+            "annotation": "Continuous chaos automation guarantees ongoing production resiliency.",
+            "caption": "Continuous chaos automation guarantees ongoing production resiliency. (Resiliency GameDays & Production In)"
           }
         ]
       }

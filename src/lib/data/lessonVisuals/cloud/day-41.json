@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "management",
-            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts.",
+            "caption": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts. (Enterprise Multi-Account Architectu)"
           },
           {
             "at": "say2",
             "focus": "ou_core",
-            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads.",
+            "caption": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads. (Enterprise Multi-Account Architectu)"
           },
           {
             "at": "example",
             "focus": "scp_guardrail",
-            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins.",
+            "caption": "Service Control Policies apply immutable explicit Deny rules above local IAM admins. (Enterprise Multi-Account Architectu)"
           },
           {
             "at": "tryIt",
             "focus": "member_acc",
-            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves.",
+            "caption": "Member accounts operate autonomously within strictly bounded, compliant enclaves. (Enterprise Multi-Account Architectu)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "management",
-            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts.",
+            "caption": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts. (Service Control Policies (SCPs): Ev)"
           },
           {
             "at": "say2",
             "focus": "ou_core",
-            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads.",
+            "caption": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads. (Service Control Policies (SCPs): Ev)"
           },
           {
             "at": "example",
             "focus": "scp_guardrail",
-            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins.",
+            "caption": "Service Control Policies apply immutable explicit Deny rules above local IAM admins. (Service Control Policies (SCPs): Ev)"
           },
           {
             "at": "tryIt",
             "focus": "member_acc",
-            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves.",
+            "caption": "Member accounts operate autonomously within strictly bounded, compliant enclaves. (Service Control Policies (SCPs): Ev)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "management",
-            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts.",
+            "caption": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts. (AWS Control Tower & Account Factory)"
           },
           {
             "at": "say2",
             "focus": "ou_core",
-            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads.",
+            "caption": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads. (AWS Control Tower & Account Factory)"
           },
           {
             "at": "example",
             "focus": "scp_guardrail",
-            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins.",
+            "caption": "Service Control Policies apply immutable explicit Deny rules above local IAM admins. (AWS Control Tower & Account Factory)"
           },
           {
             "at": "tryIt",
             "focus": "member_acc",
-            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves.",
+            "caption": "Member accounts operate autonomously within strictly bounded, compliant enclaves. (AWS Control Tower & Account Factory)"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "management",
-            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts.",
+            "caption": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts. (Production SCP Engineering: Regiona)"
           },
           {
             "at": "say2",
             "focus": "ou_core",
-            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads.",
+            "caption": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads. (Production SCP Engineering: Regiona)"
           },
           {
             "at": "example",
             "focus": "scp_guardrail",
-            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins.",
+            "caption": "Service Control Policies apply immutable explicit Deny rules above local IAM admins. (Production SCP Engineering: Regiona)"
           },
           {
             "at": "tryIt",
             "focus": "member_acc",
-            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves.",
+            "caption": "Member accounts operate autonomously within strictly bounded, compliant enclaves. (Production SCP Engineering: Regiona)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "management",
-            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts."
+            "annotation": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts.",
+            "caption": "AWS Organizations manages root hierarchy, consolidated billing, and core accounts. (Masterclass Synthesis: Multi-Accoun)"
           },
           {
             "at": "say2",
             "focus": "ou_core",
-            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads."
+            "annotation": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads.",
+            "caption": "Organizational Units structure accounts into Core (Log Archive, Security) and Workloads. (Masterclass Synthesis: Multi-Accoun)"
           },
           {
             "at": "example",
             "focus": "scp_guardrail",
-            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins."
+            "annotation": "Service Control Policies apply immutable explicit Deny rules above local IAM admins.",
+            "caption": "Service Control Policies apply immutable explicit Deny rules above local IAM admins. (Masterclass Synthesis: Multi-Accoun)"
           },
           {
             "at": "tryIt",
             "focus": "member_acc",
-            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves."
+            "annotation": "Member accounts operate autonomously within strictly bounded, compliant enclaves.",
+            "caption": "Member accounts operate autonomously within strictly bounded, compliant enclaves. (Masterclass Synthesis: Multi-Accoun)"
           }
         ]
       }

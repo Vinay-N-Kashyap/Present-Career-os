@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Auditing the Five-Step Revenue Model under ASC 606 / IFRS 15 & Multi-Element Contracts",
-      "codeHash": "e83794b1355935c4b7581db14f05e090bce359c9e323a4a66dbbdba661f278b3",
+      "codeHash": "00ed2e95fbb2f8a95098373c7cc8e4ab8b84da0aa36ffa84c835978fb987f7b5",
       "spec": {
         "template": "funnel",
-        "title": "Auditing the Five-Step Revenue Model u... \u2014 Assurance Review",
+        "title": "Auditing the Five-Step Revenue Model u... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Sales Cut-Off Testing, Shipping Terms (FOB) & Channel Stuffing / Bill-and-Hold Irregularities",
-      "codeHash": "1ef502e82b08a553921544618b727379d86ae45d5491a2c40a704d8ca0cb809f",
+      "codeHash": "b7db6cc33b006f5a4cd0ee461393be00986acc2e49f3c18418dda3335035dc25",
       "spec": {
         "template": "funnel",
-        "title": "Sales Cut-Off Testing, Shipping Terms ... \u2014 Assurance Review",
+        "title": "Sales Cut-Off Testing, Shipping Terms ... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Gross vs. Net Revenue Auditing: Principal vs. Agent Indicators in Digital & Platform Models",
-      "codeHash": "d4433b9ef38f8a1e24231ee095a1814f897bf3ab65779d455617c516af08365d",
+      "codeHash": "8fd426991ca0f3e7a81143e4e675be116490621dbcda83a8af11c2228daa59e4",
       "spec": {
         "template": "funnel",
-        "title": "Gross vs. Net Revenue Auditing: Princi... \u2014 Assurance Review",
+        "title": "Gross vs. Net Revenue Auditing: Princi... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Substantive Testing of Accounts Receivable, Unbilled Contract Assets & CECL / IFRS 9 Allowances",
-      "codeHash": "37e8c47274fdf98729f09d2eda8ef9d73bf45cbceb3351bc613155b30ac23cdf",
+      "codeHash": "06b7123bb31d1402e85ab7043a8088d7a22d5639393570082b8d969f41d4dc8d",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Testing of Accounts Receiv... \u2014 Assurance Review",
+        "title": "Substantive Testing of Accounts Receiv... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Substantive Revenue & Receivables Audit Simulator",
-      "codeHash": "c1c4fa630e566f3e23daa4e03dd5dac55cb052da3064193e1e617cf3bf32260e",
+      "codeHash": "5ae9ea0ba73d607ce2b394a78e20e56bc8e76bb21c4386cf0ceb975ad09ed0c0",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Substantive Revenue & Re... \u2014 Assurance Review",
+        "title": "Comprehensive Substantive Revenue & Re... — Assurance Review",
         "steps": [
           {
             "at": "intro",

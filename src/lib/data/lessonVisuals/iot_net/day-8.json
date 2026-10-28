@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register CSMA_BACKOFF_REG for Medium Access Control Dynamics: .",
+            "caption": "Step 1: Arm hardware register CSMA_BACKOFF_REG for Medium Access Co [D8P1].",
             "registerName": "CSMA_BACKOFF_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -266,7 +266,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register EXP_WINDOW_REG for Backoff Exponents & Contention W.",
+            "caption": "Step 1: Arm hardware register EXP_WINDOW_REG for Backoff Exponents [D8P2].",
             "registerName": "EXP_WINDOW_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -518,7 +518,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register CCA_ENERGY_REG for Clear Channel Assessment Physics.",
+            "caption": "Step 1: Arm hardware register CCA_ENERGY_REG for Clear Channel Asse [D8P3].",
             "registerName": "CCA_ENERGY_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -770,7 +770,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register DUAL_CCA_REG for Slotted CSMA/CA for Beacon-Enabl.",
+            "caption": "Step 1: Arm hardware register DUAL_CCA_REG for Slotted CSMA/CA for [D8P4].",
             "registerName": "DUAL_CCA_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1022,7 +1022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register CONTENTION_REG for Full Discrete-Event CSMA/CA Simu.",
+            "caption": "Step 1: Arm hardware register CONTENTION_REG for Full Discrete-Even [D8P5].",
             "registerName": "CONTENTION_REG",
             "bitWidth": 8,
             "hexValue": "0x80",

@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
-    "codeHash": "b245d3e362ea3b7d730948bf2d63e1fb898e39df7e4c37f6531136bdc054abf5",
-    "spec": {
-      "template": "bars",
-      "title": "Three-Statement Ledger Invariants & Accounting Equilibrium Checksum — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 31,
+  "entries": [
+    {
+      "partTitle": "Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+      "codeHash": "b245d3e362ea3b7d730948bf2d63e1fb898e39df7e4c37f6531136bdc054abf5",
+      "spec": {
+        "template": "bars",
+        "title": "Three-Statement Ledger Invariants & Accounting Equilibrium Checksum — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Three-Statement Ledger Invariants & Accounting Equilibrium Checksum — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Three-Statement Ledger Invariants & Accounting Equilibrium Checksum",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Operating Working Capital Schedules & Cash Flow Bridge",
+      "codeHash": "6be78c8c636c0193e46cdc4e1075c4ef2532e8ea7ee4b0b2934aac260dea0e0c",
+      "spec": {
+        "template": "bars",
+        "title": "Operating Working Capital Schedules & Cash Flow Bridge — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Operating Working Capital Schedules & Cash Flow Bridge — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Operating Working Capital Schedules & Cash Flow Bridge",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+      "codeHash": "41581f073c45c864f41226e468a590c675abd6b39ca5f23c3933b7276436326f",
+      "spec": {
+        "template": "bars",
+        "title": "Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+      "codeHash": "4d0c98ba0f433cde5422b45ae7e6ad993150ef462cf1ea6ef690cb6a078a5b37",
+      "spec": {
+        "template": "bars",
+        "title": "Retained Earnings Linkers, Dividends & Share Buyback Equity Updates — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Retained Earnings Linkers, Dividends & Share Buyback Equity Updates — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master Integrated Five-Year Three-Statement Forecast Simulator",
+      "codeHash": "6532461fb0c595de731da0dacbf60ce67ff9b9f9248399d3894e7c9aae26f274",
+      "spec": {
+        "template": "bars",
+        "title": "Master Integrated Five-Year Three-Statement Forecast Simulator — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master Integrated Five-Year Three-Statement Forecast Simulator — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master Integrated Five-Year Three-Statement Forecast Simulator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "P&L Net Income",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Operating Cash Flow",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "CapEx & PP&E",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Balance Sheet Balance",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Operating Working Capital Schedules & Cash Flow Bridge",
-    "codeHash": "6be78c8c636c0193e46cdc4e1075c4ef2532e8ea7ee4b0b2934aac260dea0e0c",
-    "spec": {
-      "template": "bars",
-      "title": "Operating Working Capital Schedules & Cash Flow Bridge — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Operating Working Capital Schedules & Cash Flow Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Operating Working Capital Schedules & Cash Flow Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Operating Working Capital Schedules & Cash Flow Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Operating Working Capital Schedules & Cash Flow Bridge",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
-    "codeHash": "41581f073c45c864f41226e468a590c675abd6b39ca5f23c3933b7276436326f",
-    "spec": {
-      "template": "bars",
-      "title": "Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Fixed Asset PP&E Schedules, CapEx Outflows & Depreciation Addbacks",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
-    "codeHash": "4d0c98ba0f433cde5422b45ae7e6ad993150ef462cf1ea6ef690cb6a078a5b37",
-    "spec": {
-      "template": "bars",
-      "title": "Retained Earnings Linkers, Dividends & Share Buyback Equity Updates — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Retained Earnings Linkers, Dividends & Share Buyback Equity Updates",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master Integrated Five-Year Three-Statement Forecast Simulator",
-    "codeHash": "6532461fb0c595de731da0dacbf60ce67ff9b9f9248399d3894e7c9aae26f274",
-    "spec": {
-      "template": "bars",
-      "title": "Master Integrated Five-Year Three-Statement Forecast Simulator — Dynamic Three-Statement Financial Modeling: Integrated P&L, Balance Sheet & Cash Flow Loops",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Master Integrated Five-Year Three-Statement Forecast Simulator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Master Integrated Five-Year Three-Statement Forecast Simulator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Master Integrated Five-Year Three-Statement Forecast Simulator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Master Integrated Five-Year Three-Statement Forecast Simulator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "P&L Net Income",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Operating Cash Flow",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "CapEx & PP&E",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Balance Sheet Balance",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

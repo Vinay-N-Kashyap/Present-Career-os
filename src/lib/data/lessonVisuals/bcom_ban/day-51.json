@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Credit Default Swap Foundations: The Premium & Contingent Default Legs",
-      "codeHash": "de72a384ab61d747c36bd48336e72c19198f5f0202908741c777291b02499b42",
+      "codeHash": "249b13eeeb2e36605efadb2cdee4318d7383d0863ce9605d979889a8ccefcffa",
       "spec": {
         "template": "funnel",
-        "title": "Credit Default Swap Foundations: The P... \u2014 Structured Credit Operations",
+        "title": "Credit Default Swap Foundations: The P... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Reduced-Form Credit Modeling: Hazard Rates & Poisson Intensity",
-      "codeHash": "09f8088228267c5da1054aeae074dc7fd60706d9e82386b4c72fe6b403457b3a",
+      "codeHash": "2a1650462df87d62903f2fd40a6f9e7d85f82994d49c1ebd6fb0e640d3ccfe84",
       "spec": {
         "template": "funnel",
-        "title": "Reduced-Form Credit Modeling: Hazard R... \u2014 Structured Credit Operations",
+        "title": "Reduced-Form Credit Modeling: Hazard R... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "The CDS-Bond Basis: Negative Basis Arbitrage & Repo Funding",
-      "codeHash": "2d98f1580c7cfee8cf36538f1c9d5f3202a24e4e459b6592c473e613750581fc",
+      "codeHash": "34de468527d034d9a15bfc1d04af9a31f1ad583d043757b68fb3a6ac6e26f890",
       "spec": {
         "template": "funnel",
-        "title": "The CDS-Bond Basis: Negative Basis Arb... \u2014 Structured Credit Operations",
+        "title": "The CDS-Bond Basis: Negative Basis Arb... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "ISDA Master Agreement, Credit Events & Auction Settlement",
-      "codeHash": "8d8d3b7adb93d39481ee57d807b70ac0a49aeaaaa6f245e643873bc03bbece1c",
+      "codeHash": "71f61af86de2f91ebee158864973e2cabfef4c5fc6ead2f3796140f6f3982cd3",
       "spec": {
         "template": "funnel",
-        "title": "ISDA Master Agreement, Credit Events &... \u2014 Structured Credit Operations",
+        "title": "ISDA Master Agreement, Credit Events &... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Master Single-Name CDS Pricing, Hazard Rate & Basis Arbitrage Simulator",
-      "codeHash": "e0cec2ed514710b59a61c42186f0bb8a047c3a99a61b0bfafb5fc7928375e87f",
+      "codeHash": "10e8dbf658f7211c0ea174d3c4da11bd57ff9dc648b328db2c93397387d5d95b",
       "spec": {
         "template": "funnel",
-        "title": "Master Single-Name CDS Pricing, Hazard... \u2014 Structured Credit Operations",
+        "title": "Master Single-Name CDS Pricing, Hazard... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

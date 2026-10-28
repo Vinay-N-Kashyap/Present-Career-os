@@ -18,25 +18,29 @@
             "stepNumber": 1,
             "label": "Architecture Foundation",
             "leftCaption": "Tightly coupled components bundle styles and business state together.",
-            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation.",
+            "caption": "Architecture Foundation (Architecture Review: Headless Primi)"
           },
           {
             "stepNumber": 2,
             "label": "Accessibility Standards",
             "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
-            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance.",
+            "caption": "Accessibility Standards (Architecture Review: Headless Primi)"
           },
           {
             "stepNumber": 3,
             "label": "Real World Systems",
             "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
-            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes.",
+            "caption": "Real World Systems (Architecture Review: Headless Primi)"
           },
           {
             "stepNumber": 4,
             "label": "Interactive Verification",
             "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
-            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands.",
+            "caption": "Interactive Verification (Architecture Review: Headless Primi)"
           }
         ]
       }
@@ -54,25 +58,29 @@
             "stepNumber": 1,
             "label": "Architecture Foundation",
             "leftCaption": "Tightly coupled components bundle styles and business state together.",
-            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation.",
+            "caption": "Architecture Foundation (Compound Component Orchestration: A)"
           },
           {
             "stepNumber": 2,
             "label": "Accessibility Standards",
             "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
-            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance.",
+            "caption": "Accessibility Standards (Compound Component Orchestration: A)"
           },
           {
             "stepNumber": 3,
             "label": "Real World Systems",
             "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
-            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes.",
+            "caption": "Real World Systems (Compound Component Orchestration: A)"
           },
           {
             "stepNumber": 4,
             "label": "Interactive Verification",
             "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
-            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands.",
+            "caption": "Interactive Verification (Compound Component Orchestration: A)"
           }
         ]
       }
@@ -90,25 +98,29 @@
             "stepNumber": 1,
             "label": "Architecture Foundation",
             "leftCaption": "Tightly coupled components bundle styles and business state together.",
-            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation.",
+            "caption": "Architecture Foundation (Polymorphic Rendering Pipeline: Typ)"
           },
           {
             "stepNumber": 2,
             "label": "Accessibility Standards",
             "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
-            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance.",
+            "caption": "Accessibility Standards (Polymorphic Rendering Pipeline: Typ)"
           },
           {
             "stepNumber": 3,
             "label": "Real World Systems",
             "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
-            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes.",
+            "caption": "Real World Systems (Polymorphic Rendering Pipeline: Typ)"
           },
           {
             "stepNumber": 4,
             "label": "Interactive Verification",
             "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
-            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands.",
+            "caption": "Interactive Verification (Polymorphic Rendering Pipeline: Typ)"
           }
         ]
       }
@@ -126,25 +138,29 @@
             "stepNumber": 1,
             "label": "Architecture Foundation",
             "leftCaption": "Tightly coupled components bundle styles and business state together.",
-            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation.",
+            "caption": "Architecture Foundation (Controlled/Uncontrolled Adapter Int)"
           },
           {
             "stepNumber": 2,
             "label": "Accessibility Standards",
             "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
-            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance.",
+            "caption": "Accessibility Standards (Controlled/Uncontrolled Adapter Int)"
           },
           {
             "stepNumber": 3,
             "label": "Real World Systems",
             "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
-            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes.",
+            "caption": "Real World Systems (Controlled/Uncontrolled Adapter Int)"
           },
           {
             "stepNumber": 4,
             "label": "Interactive Verification",
             "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
-            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands.",
+            "caption": "Interactive Verification (Controlled/Uncontrolled Adapter Int)"
           }
         ]
       }
@@ -162,25 +178,29 @@
             "stepNumber": 1,
             "label": "Architecture Foundation",
             "leftCaption": "Tightly coupled components bundle styles and business state together.",
-            "rightCaption": "Decoupled headless primitives isolate state from visual presentation."
+            "rightCaption": "Decoupled headless primitives isolate state from visual presentation.",
+            "caption": "Architecture Foundation (Grand Certification: Multi-Brand He)"
           },
           {
             "stepNumber": 2,
             "label": "Accessibility Standards",
             "leftCaption": "Manual markup often breaks assistive screen reader navigation contracts.",
-            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance."
+            "rightCaption": "Automated helper attributes guarantee complete accessibility compliance.",
+            "caption": "Accessibility Standards (Grand Certification: Multi-Brand He)"
           },
           {
             "stepNumber": 3,
             "label": "Real World Systems",
             "leftCaption": "Single chassis vehicles cannot adapt to diverse transport requirements.",
-            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes."
+            "rightCaption": "Universal vehicle chassis power diverse customized transport airframes.",
+            "caption": "Real World Systems (Grand Certification: Multi-Brand He)"
           },
           {
             "stepNumber": 4,
             "label": "Interactive Verification",
             "leftCaption": "Hardcoded styles require tedious regression testing across codebases.",
-            "rightCaption": "Unified headless engines deliver consistent behavior across all brands."
+            "rightCaption": "Unified headless engines deliver consistent behavior across all brands.",
+            "caption": "Interactive Verification (Grand Certification: Multi-Brand He)"
           }
         ]
       }

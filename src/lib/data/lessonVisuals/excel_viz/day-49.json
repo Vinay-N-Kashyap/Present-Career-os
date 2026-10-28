@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
-    "codeHash": "b02135412b0bfa2fbc2cc8f056991bbdead5b4f8e2299606607a5622bf2f5080",
-    "spec": {
-      "template": "bars",
-      "title": "Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 49,
+  "entries": [
+    {
+      "partTitle": "Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+      "codeHash": "b02135412b0bfa2fbc2cc8f056991bbdead5b4f8e2299606607a5622bf2f5080",
+      "spec": {
+        "template": "bars",
+        "title": "Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Mathematical Foundations of LAMBDA: Church-Turing Thesis, Functional Calculus & Grid Immutability",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+      "codeHash": "f0682b737ec691c5a796a262c2bf86fc985f094f57ea04cd2b388623e4fcd79c",
+      "spec": {
+        "template": "bars",
+        "title": "Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+      "codeHash": "7af5b0e87b2c20f58fe3bc159727153c539c4c105de216124c6bdd4abf8f842c",
+      "spec": {
+        "template": "bars",
+        "title": "Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+      "codeHash": "41b7dff8b00faea8a331fafd2a9667913c9a54cbb560dc97579b4259d9fdbcc5",
+      "spec": {
+        "template": "bars",
+        "title": "Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+      "codeHash": "acb4b49e73dff5369403b792db8aa40f9f665b092c15328b19ddc1d931329357",
+      "spec": {
+        "template": "bars",
+        "title": "Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Architectural ingestion and baseline configuration for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Execution pipeline and memory array processing for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Stress testing and failure boundary validation for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Institutional governance and production certification for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Pure Lambda",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Tail Recursion",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Vector MAP / BYROW",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "SCAN / REDUCE",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
-    "codeHash": "f0682b737ec691c5a796a262c2bf86fc985f094f57ea04cd2b388623e4fcd79c",
-    "spec": {
-      "template": "bars",
-      "title": "Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Recursive LAMBDA & The 1,024 Stack Limit: Tail-Call Simulation & Safe Base Case Termination",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
-    "codeHash": "7af5b0e87b2c20f58fe3bc159727153c539c4c105de216124c6bdd4abf8f842c",
-    "spec": {
-      "template": "bars",
-      "title": "Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Vectorized Higher-Order Array Functions: MAP & BYROW Matrix Transformations without Helper Columns",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
-    "codeHash": "41b7dff8b00faea8a331fafd2a9667913c9a54cbb560dc97579b4259d9fdbcc5",
-    "spec": {
-      "template": "bars",
-      "title": "Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Stateful Accumulation with SCAN & REDUCE: Dynamic Drawdown Tracking & Running Statistics",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
-    "codeHash": "acb4b49e73dff5369403b792db8aa40f9f665b092c15328b19ddc1d931329357",
-    "spec": {
-      "template": "bars",
-      "title": "Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance – Custom User-Defined Functions (UDFs) & Modern Lambda Helper Functions: LAMBDA Recursion, MAP, SCAN, REDUCE & BYROW",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Architectural ingestion and baseline configuration for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Execution pipeline and memory array processing for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Stress testing and failure boundary validation for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Institutional governance and production certification for Production Deployment: Registering Lambda Libraries in the Name Manager & Institutional Governance",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Pure Lambda",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Tail Recursion",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Vector MAP / BYROW",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "SCAN / REDUCE",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

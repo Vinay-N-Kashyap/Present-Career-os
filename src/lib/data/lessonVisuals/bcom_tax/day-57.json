@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Minimum Tax Scope",
+        "template": "ledger-sheet",
+        "title": "The Global Tax Revolution: OECD Pillar Two & ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Consolidated Revenue",
-            "caption": "System verifies group revenue against global reporting threshold."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Global Tax Revolut (Rho Alpha).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11050,
+            "totalCredit": 11050,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Excluded Entity Filter",
-            "caption": "Platform excludes sovereign funds and non profit entities from scope."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Global Tax Revolut (Alpha).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Constituent Mapping",
-            "caption": "Engine maps all cross border subsidiaries and joint ventures."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Global Tax Revolut (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Multilateral Scope",
-            "caption": "Group enters mandatory compliance under global anti base erosion rules."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Global Tax Revolut (Alpha).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "163e6ab275c9f2204f2485314faa3d916d16a8cf1854ec45c89bcfaedf889833",
+      "partTitle": "The Global Tax Revolution: OECD Pillar Two & The EUR 750M GloBE Scope",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Global Tax Revolution: OECD Pillar Two & ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Global Tax Revolut (Rho Alpha).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11050,
+            "totalCredit": 11050,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Global Tax Revolut (Alpha).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Global Tax Revolut (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Global Tax Revolut (Alpha).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Interlocking Charging Rules",
+        "template": "ledger-sheet",
+        "title": "The Two Core Interlocking Charging Mechanisms... — General Ledger Verification",
         "steps": [
           {
-            "label": "Income Inclusion Rule",
-            "caption": "Ultimate parent entity pays top up tax on low taxed foreign income."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Two Core Interlock (Rho Beta).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11250,
+            "totalCredit": 11250,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Top Down Application",
-            "caption": "Taxing right cascades to intermediate entity if parent does not act."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Two Core Interlock (Beta).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Undertaxed Profits Rule",
-            "caption": "Operating entities deny local deductions to collect residual tax."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Two Core Interlock (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Substance Allocation",
-            "caption": "Residual tax is allocated by relative employee headcount and assets."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Two Core Interlock (Beta).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "6f30f29873f2e9eb55b797e063d6fd27dd2ce1aff10f4feb762f7f63ce50d2d2",
+      "partTitle": "The Two Core Interlocking Charging Mechanisms: Income Inclusion Rule (IIR) & UTPR",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Two Core Interlocking Charging Mechanisms... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Two Core Interlock (Rho Beta).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11250,
+            "totalCredit": 11250,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Two Core Interlock (Beta).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Two Core Interlock (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Two Core Interlock (Beta).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Domestic Minimum Tax",
+        "template": "ledger-sheet",
+        "title": "Qualified Domestic Minimum Top-Up Tax (QDMTT)... — General Ledger Verification",
         "steps": [
           {
-            "label": "Low Tax Calculation",
-            "caption": "Source jurisdiction detects effective tax rate below fifteen percent."
+            "at": "intro",
+            "caption": "Open primary debit entry for Qualified Domestic Min (Rho Gamma).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11450,
+            "totalCredit": 11450,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Domestic Levy",
-            "caption": "Host nation levies qualified domestic minimum top up tax locally."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Qualified Domestic Min (Gamma).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Priority Absorption",
-            "caption": "Domestic payment reduces parent top up liability down to zero."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Qualified Domestic Min (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Safe Harbour Status",
-            "caption": "Certified domestic tax eliminates complex foreign filing obligations."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Qualified Domestic Min (Gamma).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "de4075339e839e417af1f3c80131b7a6d77512637aff7cd515fa3f2ddbc0f960",
+      "partTitle": "Qualified Domestic Minimum Top-Up Tax (QDMTT) & Sovereign Jurisdictional Priority",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Qualified Domestic Minimum Top-Up Tax (QDMTT)... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Qualified Domestic Min (Rho Gamma).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11450,
+            "totalCredit": 11450,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Qualified Domestic Min (Gamma).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Qualified Domestic Min (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Qualified Domestic Min (Gamma).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13740,
+            "totalCredit": 13740,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11450,
+                "balance": 11450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2290,
+                "balance": 13740,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13740,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Effective Tax Rate Math",
+        "template": "ledger-sheet",
+        "title": "GloBE Income, Covered Taxes, The Jurisdiction... — General Ledger Verification",
         "steps": [
           {
-            "label": "Net Income Adjustment",
-            "caption": "Accounting profit is adjusted for excluded dividends and net taxes."
+            "at": "intro",
+            "caption": "Open primary debit entry for GloBE Income Covered T (Rho Delta).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11650,
+            "totalCredit": 11650,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Covered Tax Audit",
-            "caption": "System calculates adjusted corporate taxes and recapped deferrals."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for GloBE Income Covered T (Delta).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Rate Determination",
-            "caption": "Covered taxes are divided by net income to yield jurisdictional rate."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for GloBE Income Covered T (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Substance Carve Out",
-            "caption": "Payroll and tangible asset carve outs protect routine profit base."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for GloBE Income Covered T (Delta).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "6898e54022ba64d899200eb2cfe16beefb4d9b6ffd66914ea2b2818299407675",
+      "partTitle": "GloBE Income, Covered Taxes, The Jurisdictional 15% ETR & Substance Carve-Outs",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "GloBE Income, Covered Taxes, The Jurisdiction... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for GloBE Income Covered T (Rho Delta).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11650,
+            "totalCredit": 11650,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for GloBE Income Covered T (Delta).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for GloBE Income Covered T (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for GloBE Income Covered T (Delta).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13980,
+            "totalCredit": 13980,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11650,
+                "balance": 11650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2330,
+                "balance": 13980,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 13980,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Global Minimum Tax Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: OECD Pillar T... — General Ledger Verification",
         "steps": [
           {
-            "label": "Threshold Monitoring",
-            "caption": "Engine audits consolidated revenues across preceding fiscal years."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Rho Epsilon).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11850,
+            "totalCredit": 11850,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Effective Rate Calculator",
-            "caption": "Platform computes jurisdictional rates for each operating nation."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Substance Modeling",
-            "caption": "System applies payroll and plant carve outs to isolate excess profit."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Priority Allocator",
-            "caption": "Module directs top up payments to domestic treasury under safe harbour."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "20db176c31ecaa79a12a6809f75e0c92071b8846e75134cd42d061cc726cedd1",
+      "partTitle": "Production Python Architecture: OECD Pillar Two GloBE Top-Up Tax & QDMTT Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: OECD Pillar T... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Rho Epsilon).",
+            "title": "Day 57 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11850,
+            "totalCredit": 11850,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Clearing & Settlement Control",
+                "credit": 11850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 57 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Primary Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Clearing & Settlement Control",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Rho).",
+            "title": "Day 57 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Verified Compliance Reserve",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "General Ledger Control Account",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 57 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 14220,
+            "totalCredit": 14220,
+            "entries": [
+              {
+                "id": "JNL-5701",
+                "account": "Audited Operating Asset",
+                "debit": 11850,
+                "balance": 11850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5702",
+                "account": "Audited Compliance Reserve",
+                "debit": 2370,
+                "balance": 14220,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5703",
+                "account": "Audited Treasury Settlement",
+                "credit": 14220,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

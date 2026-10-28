@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "CloudFormation templates struggle without construct tree validation."
+            "annotation": "CloudFormation templates struggle without construct tree validation.",
+            "caption": "CloudFormation templates struggle without construct tree validation. (CDK Construct Hierarchy & Synthesis)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern CDK applications organize infrastructure into typed construct trees."
+            "annotation": "Modern CDK applications organize infrastructure into typed construct trees.",
+            "caption": "Modern CDK applications organize infrastructure into typed construct trees. (CDK Construct Hierarchy & Synthesis)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Construct hierarchies enable automated token resolution and synthesis."
+            "annotation": "Construct hierarchies enable automated token resolution and synthesis.",
+            "caption": "Construct hierarchies enable automated token resolution and synthesis. (CDK Construct Hierarchy & Synthesis)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Typed construct trees eliminate configuration drift across teams."
+            "annotation": "Typed construct trees eliminate configuration drift across teams.",
+            "caption": "Typed construct trees eliminate configuration drift across teams. (CDK Construct Hierarchy & Synthesis)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Primitive CloudFormation resources require manual parameter configuration."
+            "annotation": "Primitive CloudFormation resources require manual parameter configuration.",
+            "caption": "Primitive CloudFormation resources require manual parameter configuration. (Construct Layers & Abstractions: L1)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Curated constructs embed security best practices and encryption defaults."
+            "annotation": "Curated constructs embed security best practices and encryption defaults.",
+            "caption": "Curated constructs embed security best practices and encryption defaults. (Construct Layers & Abstractions: L1)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Higher level constructs compose complete architectural service patterns."
+            "annotation": "Higher level constructs compose complete architectural service patterns.",
+            "caption": "Higher level constructs compose complete architectural service patterns. (Construct Layers & Abstractions: L1)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Enterprise teams achieve rapid developer velocity using curated patterns."
+            "annotation": "Enterprise teams achieve rapid developer velocity using curated patterns.",
+            "caption": "Enterprise teams achieve rapid developer velocity using curated patterns. (Construct Layers & Abstractions: L1)"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Manual review processes miss critical security flaws during deployments."
+            "annotation": "Manual review processes miss critical security flaws during deployments.",
+            "caption": "Manual review processes miss critical security flaws during deployments. (CDK Aspects & Policy-as-Code: Visit)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "The visitor pattern inspects every resource node during preparation."
+            "annotation": "The visitor pattern inspects every resource node during preparation.",
+            "caption": "The visitor pattern inspects every resource node during preparation. (CDK Aspects & Policy-as-Code: Visit)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Aspects enforce mandatory tags and encryption before template synthesis."
+            "annotation": "Aspects enforce mandatory tags and encryption before template synthesis.",
+            "caption": "Aspects enforce mandatory tags and encryption before template synthesis. (CDK Aspects & Policy-as-Code: Visit)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Policy as code guarantees organizational compliance across deployments."
+            "annotation": "Policy as code guarantees organizational compliance across deployments.",
+            "caption": "Policy as code guarantees organizational compliance across deployments. (CDK Aspects & Policy-as-Code: Visit)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Full template snapshots often suffer from false positive alert fatigue."
+            "annotation": "Full template snapshots often suffer from false positive alert fatigue.",
+            "caption": "Full template snapshots often suffer from false positive alert fatigue. (Unit Testing & Compliance Assertion)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Fine-grained assertions verify critical security properties directly."
+            "annotation": "Fine-grained assertions verify critical security properties directly.",
+            "caption": "Fine-grained assertions verify critical security properties directly. (Unit Testing & Compliance Assertion)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Matchers assert resource counts and cryptographic key configurations."
+            "annotation": "Matchers assert resource counts and cryptographic key configurations.",
+            "caption": "Matchers assert resource counts and cryptographic key configurations. (Unit Testing & Compliance Assertion)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Automated assertions provide mathematical certainty for cloud releases."
+            "annotation": "Automated assertions provide mathematical certainty for cloud releases.",
+            "caption": "Automated assertions provide mathematical certainty for cloud releases. (Unit Testing & Compliance Assertion)"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Traditional pipelines require manual updates on infrastructure shifts."
+            "annotation": "Traditional pipelines require manual updates on infrastructure shifts.",
+            "caption": "Traditional pipelines require manual updates on infrastructure shifts. (CDK Pipelines & Enterprise Self-Mut)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Self-mutating pipelines update their own stages automatically from code."
+            "annotation": "Self-mutating pipelines update their own stages automatically from code.",
+            "caption": "Self-mutating pipelines update their own stages automatically from code. (CDK Pipelines & Enterprise Self-Mut)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Deployment waves coordinate multi-account and multi-region releases safely."
+            "annotation": "Deployment waves coordinate multi-account and multi-region releases safely.",
+            "caption": "Deployment waves coordinate multi-account and multi-region releases safely. (CDK Pipelines & Enterprise Self-Mut)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Automated pipeline stages deliver infrastructure reliably across systems."
+            "annotation": "Automated pipeline stages deliver infrastructure reliably across systems.",
+            "caption": "Automated pipeline stages deliver infrastructure reliably across systems. (CDK Pipelines & Enterprise Self-Mut)"
           }
         ]
       }

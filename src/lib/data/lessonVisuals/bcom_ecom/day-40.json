@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Global Multi-Gateway Smart Routing & Dynamic Settlement Architecture",
-      "codeHash": "7095f080fa855ce93de02ddd1ca7b0bd4bd381d1a27daccb8ed347f5a7463d08",
+      "codeHash": "dbc0d9efb8b1b8c882b0541b34740e3f7d9c184ec39d10b41a7ee4ae20c46300",
       "spec": {
         "template": "funnel",
         "title": "Day 40 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Tier 2: Distributed CRDT Shopping Cart State & Real-Time Abandonment Event Streaming",
-      "codeHash": "e9a3265cc154054a8a7cc0581cae9d7e1b6614f6006536ecede69c2a104df8a0",
+      "codeHash": "54ba55da03bbbb36b1f5154212ef1556d540f7046544c39e09a6b7dcac3aa116",
       "spec": {
         "template": "funnel",
         "title": "Day 40 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Tier 3: High-Throughput RETE Promotion Evaluation, Discount Waterfall & Coupon Stacking",
-      "codeHash": "0fea77785057e3a53e9ce27ba4411ca41d0d3eeab1ef5df8a14b26afb613a37f",
+      "codeHash": "f5f2d0768f5fba3e9ead1601095e10dd7d93031a4016413766cd3395eb95afc1",
       "spec": {
         "template": "funnel",
         "title": "Day 40 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Tier 4: Enterprise Global Tax Compliance, Cross-Border Customs & Landed Cost Infrastructure",
-      "codeHash": "710434ece2a66efb3a72d55cdeeaf12ab5593314bf0305de4c7f3b71418e3571",
+      "codeHash": "592806b444376d5c99beb8fe9ecfb8531b5c659558bc2002ec7502ff1eefc908",
       "spec": {
         "template": "funnel",
         "title": "Day 40 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Tier 5: The Sovereign Global Infrastructure Command Tower Defense & Boardroom Accreditation",
-      "codeHash": "a21d4ff0ef350d73aaf3c14594d3aa45dad1fe0dd63c59f657e8ca54ee0ba0bb",
+      "codeHash": "bdae6488f3cb85a48892f9ac51d3be8c162d0e4a3a25bba88ecbdb5225bdb94e",
       "spec": {
         "template": "funnel",
         "title": "Day 40 Part 5 Architecture Flow",

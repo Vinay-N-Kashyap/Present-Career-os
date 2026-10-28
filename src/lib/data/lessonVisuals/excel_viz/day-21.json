@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Static vs Flexible Budgets & Variance Decomposition Hierarchy",
-    "codeHash": "690ce7ea2517ed40dcffba7226dcdc7c99fa3e6753bc3ab46e60f91abdcd6b44",
-    "spec": {
-      "template": "bars",
-      "title": "Static vs Flexible Budgets & Variance De... \u2014 FP&A Variance Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline budget parameters for Static vs Flexible Budgets & Varian...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 45,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 40,
-              "tone": "idle"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Static vs Flexible Budgets & Varian...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 55,
-              "tone": "warn"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 92,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Static vs Flexible Budgets & Varian...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 98,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Static vs Flexible Budgets & Varian...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 21,
+  "entries": [
+    {
+      "partTitle": "Static vs Flexible Budgets & Variance Decomposition Hierarchy",
+      "codeHash": "690ce7ea2517ed40dcffba7226dcdc7c99fa3e6753bc3ab46e60f91abdcd6b44",
+      "spec": {
+        "template": "bars",
+        "title": "Static vs Flexible Budgets & Variance De... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Static vs Flexible Budgets & Variance De... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Static vs Flexible Budgets & Varian...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Price-Volume-Mix (PVM) Multi-Product Revenue Decomposition",
+      "codeHash": "fcd586076a157964340592bcb8345c5e31e8ed6050d2b871ea9abd70ca11029f",
+      "spec": {
+        "template": "bars",
+        "title": "Price-Volume-Mix (PVM) Multi-Product Rev... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Price-Volume-Mix (PVM) Multi-Product Rev... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Price-Volume-Mix (PVM) Multi-Produc...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cost Variances: Direct Materials, Direct Labor & Overhead 2-Way/3-Way Analysis",
+      "codeHash": "162f588a77de5868a659e859cf35fbcbb857d432b7524767c6a1309fa0b748da",
+      "spec": {
+        "template": "bars",
+        "title": "Cost Variances: Direct Materials, Direct... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cost Variances: Direct Materials, Direct... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Cost Variances: Direct Materials, D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Variance Bridges & Waterfall Modeling in Excel",
+      "codeHash": "94f2cd9fcd021ec65b69791d862d0b1f2d75262a6ab8a9843afbd21b0ba3e63d",
+      "spec": {
+        "template": "bars",
+        "title": "Dynamic Variance Bridges & Waterfall Mod... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Dynamic Variance Bridges & Waterfall Mod... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Dynamic Variance Bridges & Waterfal...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Corporate FP&A Monthly Operating Review (MOR) Variance Gateway",
+      "codeHash": "78cc03a7493a9fdddc630369b95ed36e4a514f3229f9ffa97101c07c59d2974e",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Corporate FP&A Monthly Operat... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Corporate FP&A Monthly Operat... — FP&A Variance Metrics",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline budget parameters for Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 45,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 40,
+                "tone": "idle"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 55,
+                "tone": "warn"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 92,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 98,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Enterprise Corporate FP&A Monthly O...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Volume Impact",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Price Realization",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Mix Efficiency",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Reconciliation",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Price-Volume-Mix (PVM) Multi-Product Revenue Decomposition",
-    "codeHash": "fcd586076a157964340592bcb8345c5e31e8ed6050d2b871ea9abd70ca11029f",
-    "spec": {
-      "template": "bars",
-      "title": "Price-Volume-Mix (PVM) Multi-Product Rev... \u2014 FP&A Variance Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline budget parameters for Price-Volume-Mix (PVM) Multi-Produc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 45,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 40,
-              "tone": "idle"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Price-Volume-Mix (PVM) Multi-Produc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 55,
-              "tone": "warn"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 92,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Price-Volume-Mix (PVM) Multi-Produc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 98,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Price-Volume-Mix (PVM) Multi-Produc...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Cost Variances: Direct Materials, Direct Labor & Overhead 2-Way/3-Way Analysis",
-    "codeHash": "162f588a77de5868a659e859cf35fbcbb857d432b7524767c6a1309fa0b748da",
-    "spec": {
-      "template": "bars",
-      "title": "Cost Variances: Direct Materials, Direct... \u2014 FP&A Variance Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline budget parameters for Cost Variances: Direct Materials, D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 45,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 40,
-              "tone": "idle"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Cost Variances: Direct Materials, D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 55,
-              "tone": "warn"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 92,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Cost Variances: Direct Materials, D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 98,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Cost Variances: Direct Materials, D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Dynamic Variance Bridges & Waterfall Modeling in Excel",
-    "codeHash": "94f2cd9fcd021ec65b69791d862d0b1f2d75262a6ab8a9843afbd21b0ba3e63d",
-    "spec": {
-      "template": "bars",
-      "title": "Dynamic Variance Bridges & Waterfall Mod... \u2014 FP&A Variance Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline budget parameters for Dynamic Variance Bridges & Waterfal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 45,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 40,
-              "tone": "idle"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Dynamic Variance Bridges & Waterfal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 55,
-              "tone": "warn"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 92,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Dynamic Variance Bridges & Waterfal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 98,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Dynamic Variance Bridges & Waterfal...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Corporate FP&A Monthly Operating Review (MOR) Variance Gateway",
-    "codeHash": "78cc03a7493a9fdddc630369b95ed36e4a514f3229f9ffa97101c07c59d2974e",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Corporate FP&A Monthly Operat... \u2014 FP&A Variance Metrics",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline budget parameters for Enterprise Corporate FP&A Monthly O...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 45,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 40,
-              "tone": "idle"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Flexible budget re-indexing and cost variance scans in Enterprise Corporate FP&A Monthly O...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 55,
-              "tone": "warn"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 92,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: PVM decomposition and EBITDA waterfall bridge in Enterprise Corporate FP&A Monthly O...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 98,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Full MOR certification and cryptographic sign-off seal applied for Enterprise Corporate FP&A Monthly O...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Volume Impact",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Price Realization",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Mix Efficiency",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Reconciliation",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

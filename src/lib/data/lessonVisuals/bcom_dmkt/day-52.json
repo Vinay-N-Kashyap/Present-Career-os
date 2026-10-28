@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Walmart Connect & First-Price Auction Dynamics: Bid Shading, Overbidding Hedging & Margin Preservation",
-      "codeHash": "940f5d1d41fe9ffe9bdf44e23e97e22bbae8d3969d316020133ecaaebd8cf960",
+      "codeHash": "da238698afe3e791edfed56de50b06cd469cfa3e718b6657d9d4c2715ca71212",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Walmart Luminate Data Platform & Supplier Channel Intelligence: Category Share of Voice, Basket Affinities & Shelf Analytics",
-      "codeHash": "94eb61019e07460a16390cf7aa1d6a9d9e8f9b03c97a8854451ad31f171bb409",
+      "codeHash": "e4f583e35dd7855fb9d58bcf268fd74a83a1414c60de9dc90ace429840162170",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Buy Box Suppression, Inventory Threshold Routing & Out-of-Stock (OOS) Ad Killswitches",
-      "codeHash": "90797b85afa71102027ed9047403562693ecdcb0586a782267b6b153e663132d",
+      "codeHash": "2fa94492e5fe74f84e649efd3d40af209cbd15da3775bd12fa98ee254607ee5a",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Off-Site Retail Audience Extension: The Trade Desk, UID2, RampID & Connected TV (CTV) Syndication",
-      "codeHash": "8d5921a5776e02e351bb490ac92beded566d7f457412468bc6c9e8281a4d8643",
+      "codeHash": "ed19cf2f7c0d53093c2dba05756956f8d5840d581eeefec896801448a50c5675",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Walmart Connect Bid Shading & Inventory Killswitch Engine in Python",
-      "codeHash": "fdb3dbdc4742a47f60b47c180be81b083e6f1ee7de52342e6ac73a93b77895db",
+      "codeHash": "d93d5ca0b4a051398ba75b67fa57959c7e534618ee37142d4fb4df13296312b0",
       "spec": {
         "template": "funnel",
         "steps": [

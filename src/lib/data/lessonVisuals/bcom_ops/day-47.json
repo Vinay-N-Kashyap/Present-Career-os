@@ -46,7 +46,9 @@
             "caption": "Finite capacity scheduling enforces hard operational throughput limits."
           }
         ]
-      }
+      },
+      "codeHash": "7f3d94198f70315b6c071f05b213eb5df7624056a6f09ce7a05964f7077ccf8a",
+      "partTitle": "Capacity Planning Hierarchy: Resource Requirements Planning, RCCP, and Capacity Requirements Planning (CRP)"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Engineers measure run times and amortize setup duration cleanly."
           }
         ]
-      }
+      },
+      "codeHash": "9665a566b58276dca02a7f57ef1a26842e51dcb17f99f32d0d6df555335811fb",
+      "partTitle": "Bills of Resources (BOR) and Product Load Profiles: Translating Master Production Schedules into Work-Center Hours"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "The Rope synchronizes raw material release to bottleneck consumption rates."
           }
         ]
-      }
+      },
+      "codeHash": "22630dca1e245dde66ebb995271b268ace8ef56d10474f6d8361f394033d4bb0",
+      "partTitle": "Finite vs. Infinite Loading Mechanics: Theory of Constraints and Drum-Buffer-Rope Synchronization"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Critical ratio ranking balances processing time against due dates."
           }
         ]
-      }
+      },
+      "codeHash": "5368106543631f49373798267067ee9a9b5fc0daed5d9f0c5d45d9279076620e",
+      "partTitle": "Shifting Bottleneck Heuristics and Dynamic Job-Shop Dispatching Priority Rules (SPT, EDD, CR)"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Automated systems execute local schedule repair when machines fail."
           }
         ]
-      }
+      },
+      "codeHash": "d12d6dfabdad4ebb959ccf98aa574732370a85afcd6b2d6f8c4818d2271f12a4",
+      "partTitle": "Production Scheduling Engine: Multi-Machine Sequence Optimization and Setup Matrix Minimization"
     }
   ]
 }

@@ -662,7 +662,7 @@
       }
     },
     {
-      "partTitle": "Production Invariants: Envoy Resource Footprint, Concurrency Limits, Drain Timers & Mesh Troubleshooting",
+      "partTitle": "reliable production standards: Envoy Resource Footprint, Concurrency Limits, Drain Timers & Mesh Troubleshooting",
       "codeHash": "0bda09eaaa4d2b7ac8e421d0207d81214a87e509d90b8929abf8dc4d409daf70",
       "spec": {
         "template": "compare",

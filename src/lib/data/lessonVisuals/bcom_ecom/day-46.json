@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "PunchOut Catalog Architecture: cXML SetupRequest & OCI Roundtrip Protocol Handshakes",
-      "codeHash": "c051ab4f8811f159e83977b19b6a3eeceb76a1803547917d40048a50e7b1686c",
+      "codeHash": "dac4ea7879e8b41b1123184c3ed69372ad98f726d06c3c96d00df6036cda1b41",
       "spec": {
         "template": "funnel",
         "title": "Day 46 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Dynamic B2B Custom Contract Price Lists & Account-Specific Catalog Entitlements",
-      "codeHash": "93c8566412719794094ee14206e93c83c9bcb494181b12a50e58803590ae689c",
+      "codeHash": "83507dc75f25e45995c9333e4ab3002d1c9b75535248085299480f9f10402a06",
       "spec": {
         "template": "funnel",
         "title": "Day 46 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "PunchOut Order Message (cXML PunchOutOrderMessage) Return & Procurement Cart Injection",
-      "codeHash": "3cbd7d2db4a8ed822c166f5b3ce353f45b63c99babfaec290cb0a7a469f17452",
+      "codeHash": "dd79ec960f1dfff706146deeb8f50f53ecc30a2efdce7d7fe3bdbd932add1c8e",
       "spec": {
         "template": "funnel",
         "title": "Day 46 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Open Catalog Interface (SAP OCI) HTTP Form-Post Roundtrip Integration",
-      "codeHash": "aa124d16931c79af2fc5d0da34ae447cc4974d99dcd0c952fde1275102a39d54",
+      "codeHash": "6b9d9ca312a221d6b6c3e30345d6d73f324d03fd9ad501f92483aacc6a1ecbcd",
       "spec": {
         "template": "funnel",
         "title": "Day 46 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise PunchOut Gateway Control Tower & Integration SLA Governance",
-      "codeHash": "aaaf1b6f82e5f9fc627848a058233339bcc3256f5a157d52cf7dc4e740faa49d",
+      "codeHash": "7cf1cfcf738309b2750a0fda15e3e68c82dba3398eb81c17dd77f35d06f7809d",
       "spec": {
         "template": "funnel",
         "title": "Day 46 Part 5 Architecture Flow",

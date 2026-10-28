@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Tier 1: Autonomous Bidding, Reinforcement Learning & Multi-Armed Bandit Capital Allocation",
-      "codeHash": "207f248321ea536ea31519231148dd06bbdfc7e81638893d072f8afd7efd6eb9",
+      "codeHash": "08bc37729988a59df8eb28783af3b98263d3a12d288e24df4092b86537f03f5c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Tier 2: Generative Creative Engineering, Diffusion LoRA & Multimodal Brand Safety Guardrails",
-      "codeHash": "5e8106e5dc41615bf930366361a7b0628186de6596f6397124c5008107dfc1ec",
+      "codeHash": "051ef8316999690d5bd661fdb11dfe615c3fb7f39ba15ec9476f76dadb973885",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Tier 3: Autonomous Multi-Agent Marketing Swarm & Stateful LangGraph Orchestration",
-      "codeHash": "7dd60751dea17608d95783009e191ee14260c999f07bb018d3a43b40bf98cc6c",
+      "codeHash": "27f3cdb6076d648af8b15fff079c41e53b1c56fd5413d576a93717033417b603",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Tier 4: Privacy-First Clean Room Attribution, Differential Privacy & Federated Edge Personalization",
-      "codeHash": "2a6f49d3cd5ba36fdef5ae798235a01c848bda7ab9bcab8c2a5b19fe8d26e446",
+      "codeHash": "a2d9b68d800ea34fd8af94cc0d1e8953995aef54047cab1f2633f907674246bc",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Tier 5: Executive Boardroom Defense, CMTO War Room & Sovereign Accreditation",
-      "codeHash": "9d74d5d64e7ce1388c5cf7c7ff2baf69c6c0f0a296f4b50609d20f71050fa1af",
+      "codeHash": "1f921bdd9a8ac26636bb9296b1ec982b907b0ead1c33e15b14b8ab3684d417c5",
       "spec": {
         "template": "funnel",
         "steps": [

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Opaque Programmatic Supply Chain & Arbitrage Vulnerabilities",
-      "codeHash": "573b70dfcf222f1fd00f160e521dc858f40cc8725f9d420e64e8ce9fc371bb5b",
+      "codeHash": "01f5bb2c49d7e24cf19162b15207fad4c45c3776246c489d73aff8b105e22f2f",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Declarative Seller Verification: ads.txt, app-ads.txt & buyers.json",
-      "codeHash": "66a994d1258e89dca3d82886cfff1615bcb8e526711c2261e8baf4a8c30e91f5",
+      "codeHash": "2b2d45d47bc4a3d79b2a5c4a193eb8d35bfcef10267d6b47d07ef3174adc7f2c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Sellers.json & The OpenRTB SupplyChain Object (Schain)",
-      "codeHash": "d144ac1acd1b0f3052b8a7fc400fee9226807ae3b2bfd66ff1b51c3e0cc50847",
+      "codeHash": "6a571e21988bc0135b5a1d52a9be410beb6edf97719f49f27dea4cfc15fd9232",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Programmatic Supply Path Optimization (SPO) Algorithms",
-      "codeHash": "38de3fcc3849ef49600a5ff0596057b8d3f7b5efe4964ce25d63bbf8202a937b",
+      "codeHash": "e38250aec1be9bbf4ee7bb747ee3e21182e51a716e519f7e4db254f1954a2cb5",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Industrial SPO & SupplyChain Graph Audit Engine",
-      "codeHash": "31329163cba8251551cdfdd62a5c95e1be28e900bf003279da0552715c5c460a",
+      "codeHash": "667e7e8c03e7bf81863c5887f3a1451e19ee78bc136687da7349cc9c411a3eb0",
       "spec": {
         "template": "funnel",
         "steps": [

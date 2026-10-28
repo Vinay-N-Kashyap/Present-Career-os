@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking.",
+            "caption": "Legacy architectures suffer from configuration drift and fragile state tracking. (Modular HCL Composition & The Terra)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking.",
+            "caption": "Modern declarative patterns enforce modularity and distributed locking. (Modular HCL Composition & The Terra)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Modular architecture enables topological graph evaluation without coupling."
+            "annotation": "Modular architecture enables topological graph evaluation without coupling.",
+            "caption": "Modular architecture enables topological graph evaluation without coupling. (Modular HCL Composition & The Terra)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+            "annotation": "Verify that declarative rules maintain state parity without service disruption.",
+            "caption": "Verify that declarative rules maintain state parity without service disruption. (Modular HCL Composition & The Terra)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking.",
+            "caption": "Legacy architectures suffer from configuration drift and fragile state tracking. (DRY Multi-Environment Orchestration)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking.",
+            "caption": "Modern declarative patterns enforce modularity and distributed locking. (DRY Multi-Environment Orchestration)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Terragrunt eliminates code duplication across multiple deployment stages."
+            "annotation": "Terragrunt eliminates code duplication across multiple deployment stages.",
+            "caption": "Terragrunt eliminates code duplication across multiple deployment stages. (DRY Multi-Environment Orchestration)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+            "annotation": "Verify that declarative rules maintain state parity without service disruption.",
+            "caption": "Verify that declarative rules maintain state parity without service disruption. (DRY Multi-Environment Orchestration)"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking.",
+            "caption": "Legacy architectures suffer from configuration drift and fragile state tracking. (Zero-Downtime State Refactoring: An)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking.",
+            "caption": "Modern declarative patterns enforce modularity and distributed locking. (Zero-Downtime State Refactoring: An)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Declarative moved blocks prevent catastrophic resource destruction."
+            "annotation": "Declarative moved blocks prevent catastrophic resource destruction.",
+            "caption": "Declarative moved blocks prevent catastrophic resource destruction. (Zero-Downtime State Refactoring: An)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+            "annotation": "Verify that declarative rules maintain state parity without service disruption.",
+            "caption": "Verify that declarative rules maintain state parity without service disruption. (Zero-Downtime State Refactoring: An)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking.",
+            "caption": "Legacy architectures suffer from configuration drift and fragile state tracking. (Remote State Architecture: S3 Backe)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking.",
+            "caption": "Modern declarative patterns enforce modularity and distributed locking. (Remote State Architecture: S3 Backe)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Remote state backends protect against concurrent execution race conditions."
+            "annotation": "Remote state backends protect against concurrent execution race conditions.",
+            "caption": "Remote state backends protect against concurrent execution race conditions. (Remote State Architecture: S3 Backe)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+            "annotation": "Verify that declarative rules maintain state parity without service disruption.",
+            "caption": "Verify that declarative rules maintain state parity without service disruption. (Remote State Architecture: S3 Backe)"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking."
+            "annotation": "Legacy architectures suffer from configuration drift and fragile state tracking.",
+            "caption": "Legacy architectures suffer from configuration drift and fragile state tracking. (Masterclass Synthesis: Enterprise I)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Modern declarative patterns enforce modularity and distributed locking."
+            "annotation": "Modern declarative patterns enforce modularity and distributed locking.",
+            "caption": "Modern declarative patterns enforce modularity and distributed locking. (Masterclass Synthesis: Enterprise I)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Enterprise GitOps enforces automated compliance guardrails before deployment."
+            "annotation": "Enterprise GitOps enforces automated compliance guardrails before deployment.",
+            "caption": "Enterprise GitOps enforces automated compliance guardrails before deployment. (Masterclass Synthesis: Enterprise I)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Verify that declarative rules maintain state parity without service disruption."
+            "annotation": "Verify that declarative rules maintain state parity without service disruption.",
+            "caption": "Verify that declarative rules maintain state parity without service disruption. (Masterclass Synthesis: Enterprise I)"
           }
         ]
       }

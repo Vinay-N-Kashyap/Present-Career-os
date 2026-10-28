@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Kimball Dimensional Modeling & The Star Schema Topology",
-    "codeHash": "42ffd0d225b1eeee07fcfe9750a2dbc308c7d68494bcfc95e7b5e4911f5c8c16",
-    "spec": {
-      "template": "bars",
-      "title": "Kimball Dimensional Modeling & The Star Schema Topology — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Kimball Dimensional Modeling & The Star Schema Topology",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Kimball Dimensional Modeling & The Star Schema Topology",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Kimball Dimensional Modeling & The Star Schema Topology",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Kimball Dimensional Modeling & The Star Schema Topology",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 37,
+  "entries": [
+    {
+      "partTitle": "Kimball Dimensional Modeling & The Star Schema Topology",
+      "codeHash": "42ffd0d225b1eeee07fcfe9750a2dbc308c7d68494bcfc95e7b5e4911f5c8c16",
+      "spec": {
+        "template": "bars",
+        "title": "Kimball Dimensional Modeling & The Star Schema Topology — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Kimball Dimensional Modeling & The Star Schema Topology — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Kimball Dimensional Modeling & The Star Schema Topology",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+      "codeHash": "30ba4e041eb6bd6b4c7abbac08a4b8b4f0b67abaf19986de8d7930f7ae67ec3f",
+      "spec": {
+        "template": "bars",
+        "title": "Fact vs Dimension Decomposition & VertiPaq Columnar Compression — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Fact vs Dimension Decomposition & VertiPaq Columnar Compression — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Surrogate Key Generation & Relational Integrity Invariants",
+      "codeHash": "1136a1cdc7ee183eae3f1e6b1e8caa9b007ebd2e0a7e48e043744b5970fc9485",
+      "spec": {
+        "template": "bars",
+        "title": "Surrogate Key Generation & Relational Integrity Invariants — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Surrogate Key Generation & Relational Integrity Invariants — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Surrogate Key Generation & Relational Integrity Invariants",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+      "codeHash": "afe0689d17d015401a17a50f0337ef0ada2ea1422b13ddc810f63c45885b242b",
+      "spec": {
+        "template": "bars",
+        "title": "Active vs Inactive Relationships & Role-Playing Dimension Traversal — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Active vs Inactive Relationships & Role-Playing Dimension Traversal — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Star Schema Gateway & Relational Closure Auditor",
+      "codeHash": "f6b8e8bf51679846142dfbca94ff246d1ea4a022821543f46c9e216f98031083",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Star Schema Gateway & Relational Closure Auditor — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Star Schema Gateway & Relational Closure Auditor — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Star Schema Gateway & Relational Closure Auditor",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Kimball Star Schema",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "VertiPaq Bit-Packing",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Surrogate Key Purity",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Active vs Inactive Path",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
-    "codeHash": "30ba4e041eb6bd6b4c7abbac08a4b8b4f0b67abaf19986de8d7930f7ae67ec3f",
-    "spec": {
-      "template": "bars",
-      "title": "Fact vs Dimension Decomposition & VertiPaq Columnar Compression — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Fact vs Dimension Decomposition & VertiPaq Columnar Compression",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Surrogate Key Generation & Relational Integrity Invariants",
-    "codeHash": "1136a1cdc7ee183eae3f1e6b1e8caa9b007ebd2e0a7e48e043744b5970fc9485",
-    "spec": {
-      "template": "bars",
-      "title": "Surrogate Key Generation & Relational Integrity Invariants — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Surrogate Key Generation & Relational Integrity Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Surrogate Key Generation & Relational Integrity Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Surrogate Key Generation & Relational Integrity Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Surrogate Key Generation & Relational Integrity Invariants",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Active vs Inactive Relationships & Role-Playing Dimension Traversal",
-    "codeHash": "afe0689d17d015401a17a50f0337ef0ada2ea1422b13ddc810f63c45885b242b",
-    "spec": {
-      "template": "bars",
-      "title": "Active vs Inactive Relationships & Role-Playing Dimension Traversal — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Active vs Inactive Relationships & Role-Playing Dimension Traversal",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Star Schema Gateway & Relational Closure Auditor",
-    "codeHash": "f6b8e8bf51679846142dfbca94ff246d1ea4a022821543f46c9e216f98031083",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Star Schema Gateway & Relational Closure Auditor — Dimensional Modeling in Excel: Star Schemas, Fact vs Dimension Tables & Active vs Inactive Relationships",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Enterprise Star Schema Gateway & Relational Closure Auditor",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Enterprise Star Schema Gateway & Relational Closure Auditor",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Enterprise Star Schema Gateway & Relational Closure Auditor",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Enterprise Star Schema Gateway & Relational Closure Auditor",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Kimball Star Schema",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "VertiPaq Bit-Packing",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Surrogate Key Purity",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Active vs Inactive Path",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

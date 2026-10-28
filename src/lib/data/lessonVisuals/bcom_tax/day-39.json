@@ -46,7 +46,9 @@
             "caption": "Deposited taxes transfer into seller electronic cash ledgers monthly."
           }
         ]
-      }
+      },
+      "codeHash": "79fab7848a243663a1950633c257234105ebae48a058e2dda1b5ae90cacc4161",
+      "partTitle": "Electronic Commerce Operator (ECO) Architecture: Section 52 Tax Collection at Source (TCS) Mechanics"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Platform convenience fees remain eligible for credit set off relief."
           }
         ]
-      }
+      },
+      "codeHash": "b6a2778cf1f714514eae7995db8198a154ac805533eac9eb5ecfdc9942190f12",
+      "partTitle": "Section 9(5) Deemed Supplier Liabilities: Passenger Transport, Accommodation & Restaurant Services"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Overseas vendors obtain simplified registrations to remit taxes."
           }
         ]
-      }
+      },
+      "codeHash": "2052d77401d0ee8e4d3ecf6ae496ba3104f4e613ba1571c5aa53973c3475d11a",
+      "partTitle": "Online Information & Database Access or Retrieval (OIDAR) Services: Cross-Border Digital Nexus & NTOR Rules"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Unreconciled sales discrepancies trigger statutory outward additions."
           }
         ]
-      }
+      },
+      "codeHash": "4788bd8f35a376957950803b182ef2e2a11076c193fb619dc86b63bab63f62e2",
+      "partTitle": "Marketplace Vendor Compliance, Return Architectures (GSTR-8) & Dual-State Invoicing Conflicts"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Immutable transaction logs safeguard platforms during scrutiny."
           }
         ]
-      }
+      },
+      "codeHash": "b5515b66b99c385ebc579aca04c9528fc7cd4397ef6cbcaf9205010e218e3a2b",
+      "partTitle": "Enterprise Implementation: High-Throughput E-Commerce Platform Indirect Tax Settlement & OIDAR Engine"
     }
   ]
 }

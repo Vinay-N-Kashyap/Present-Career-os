@@ -30,21 +30,35 @@ export function BoxesTemplate({
         padding: '16px 8px',
       }}
     >
-      {boxes.map((box) => {
+      {(boxes || []).map((box: any, idx: number) => {
+        const boxId = String(box?.id ?? `box-${idx}`);
+        const boxLabel = String(box?.label ?? box?.title ?? box?.name ?? boxId);
         const isHighlighted =
           highlightedLabel !== null &&
-          highlightedLabel.trim().toLowerCase() === box.label.trim().toLowerCase();
+          highlightedLabel.trim().toLowerCase() === boxLabel.trim().toLowerCase();
 
-        const rawTone: VisualTone = step.tones[box.id] || 'idle';
-        const effectiveTone: VisualTone = isHighlighted ? 'data' : rawTone;
-        const isTappable = box.tappable !== false;
-        const value = step.values[box.id] ?? '';
-        const typeTag = step.types?.[box.id];
+        const rawTone: VisualTone = step.tones?.[boxId] || box?.status || 'idle';
+        const effectiveTone: VisualTone = isHighlighted ? 'data' : (['data', 'ok', 'error', 'idle'].includes(rawTone) ? rawTone : 'idle');
+        const isTappable = box?.tappable !== false;
+        const rawVal: any = step.values?.[boxId] ?? box?.desc ?? '';
+        const value =
+          typeof rawVal === 'string'
+            ? rawVal
+            : rawVal && typeof rawVal === 'object'
+            ? String(rawVal.text ?? rawVal.status ?? rawVal.var ?? (rawVal.out !== undefined ? `line ${rawVal.out}` : ''))
+            : String(rawVal ?? '');
+        const rawTypeTag: any = step.types?.[boxId];
+        const typeTag =
+          typeof rawTypeTag === 'string'
+            ? rawTypeTag
+            : rawTypeTag && typeof rawTypeTag === 'object'
+            ? String(rawTypeTag.as || rawTypeTag.var || '')
+            : undefined;
 
         return (
           <div
-            key={box.id}
-            onClick={isTappable ? () => onShapeTap?.(box.label) : undefined}
+            key={`${boxId}-${idx}`}
+            onClick={isTappable ? () => onShapeTap?.(boxLabel) : undefined}
             role={isTappable ? 'button' : undefined}
             tabIndex={isTappable ? 0 : undefined}
             onKeyDown={
@@ -52,12 +66,12 @@ export function BoxesTemplate({
                 ? (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      onShapeTap?.(box.label);
+                      onShapeTap?.(boxLabel);
                     }
                   }
                 : undefined
             }
-            aria-label={`Variable ${box.label}: ${value || 'empty'}${typeTag ? ` (${typeTag})` : ''}`}
+            aria-label={`Variable ${boxLabel}: ${value || 'empty'}${typeTag ? ` (${typeTag})` : ''}`}
             style={{
               border: `2px solid ${getToneColor(effectiveTone)}`,
               background: getToneBg(effectiveTone),
@@ -92,7 +106,7 @@ export function BoxesTemplate({
                   color: effectiveTone === 'idle' ? 'var(--t1)' : getToneTextColor(effectiveTone),
                 }}
               >
-                {box.label}
+                {boxLabel}
               </span>
 
               {typeTag && (

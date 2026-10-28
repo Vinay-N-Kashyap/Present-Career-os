@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Basel Pillar 2 Architecture: ICAAP vs SREP & The Board Risk Appetite Framework",
-      "codeHash": "681050ebcd52f5e2fce597f76a566ca69221f431a125d5c92393611dfe33e489",
+      "codeHash": "87e8a8ad3c7b8522c7db93e1cc476333050c413f23afb99b14a6b929e39903ea",
       "spec": {
         "template": "funnel",
-        "title": "Basel Pillar 2 Architecture: ICAAP vs ... \u2014 Treasury Risk Operations",
+        "title": "Basel Pillar 2 Architecture: ICAAP vs ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Macroeconomic Scenario Stress Testing: Baseline, Adverse & Severely Adverse Projections",
-      "codeHash": "ce3f93ee4bbb26656a75cc0f3212f21dde9fbf981b2e8e1133f3a99116f25f1d",
+      "codeHash": "d5b2a7a6edf1507eab48d6ae14263cea8a9d7833a9b92b69b9de0a5e6d4d90e4",
       "spec": {
         "template": "funnel",
-        "title": "Macroeconomic Scenario Stress Testing:... \u2014 Treasury Risk Operations",
+        "title": "Macroeconomic Scenario Stress Testing:... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Advanced Stress Testing Methodologies: Sensitivity Analysis & Reverse Stress Testing",
-      "codeHash": "febfd30f2864ade889fe434e277988c78dddd56ab560be2e67783b641de646ab",
+      "codeHash": "46a46c64b07d39a490575b84ea1519f2647d09348b1a809cd2223ca9415bcc18",
       "spec": {
         "template": "funnel",
-        "title": "Advanced Stress Testing Methodologies:... \u2014 Treasury Risk Operations",
+        "title": "Advanced Stress Testing Methodologies:... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Supervisory Review and Evaluation Process (SREP): Pillar 2A & Pillar 2B Surcharges",
-      "codeHash": "172abf7ba3b8a5f8c9fdafa2bf2ee876490b086822220d0b129a453cbc742763",
+      "codeHash": "507983583686225f65d2d0fb72599821243d7cfaa2252b6fae019147269abb4f",
       "spec": {
         "template": "funnel",
-        "title": "Supervisory Review and Evaluation Proc... \u2014 Treasury Risk Operations",
+        "title": "Supervisory Review and Evaluation Proc... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Master Enterprise ICAAP Stress Testing & Capital Planning Simulator",
-      "codeHash": "616439a4f30098af8f3df0be2d12ac6ff3f86bf3635dbfdc55febf856f7c8b45",
+      "codeHash": "6e21f37ddb041f97de6b65f7227b0db44b8c2829dcce72d563b911276e4e3f06",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise ICAAP Stress Testing... \u2014 Treasury Risk Operations",
+        "title": "Master Enterprise ICAAP Stress Testing... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "War Room Briefing: The Enterprise Audit Completion Mandate",
-      "codeHash": "5493b27c98303384814b08a42a2146349ff1f9e3722c6cabd620e410c18705fd",
+      "codeHash": "9910551f92cd802921973ec6430c61a6f8de036224a7a96a6d06801c696cb5f5",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The Enterprise Audi... \u2014 Assurance Review",
+        "title": "War Room Briefing: The Enterprise Audi... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Concluding Analytics, Ratios & Subsequent Events Execution",
-      "codeHash": "5183ee02acc6836aca71eae5268954e7b4c4e72431b627d568619ea32f4038b0",
+      "codeHash": "a9b53f70d8b177a3db2b20d0c371b2ceeff1b53eb85518d2d8ef39b1d0f38428",
       "spec": {
         "template": "funnel",
-        "title": "Concluding Analytics, Ratios & Subsequ... \u2014 Assurance Review",
+        "title": "Concluding Analytics, Ratios & Subsequ... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Litigation, Claims & Legal Inquiries Execution under AS 2505",
-      "codeHash": "9ab977f31c2c4656be33cabced0a61af2c3d4d919795bb9d7750275480ac0f36",
+      "codeHash": "283af76131cb5a0484bf08e70e8d0b976f17065eef11ac9aff684ba9604e53e1",
       "spec": {
         "template": "funnel",
-        "title": "Litigation, Claims & Legal Inquiries E... \u2014 Assurance Review",
+        "title": "Litigation, Claims & Legal Inquiries E... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Going Concern Stress Testing, Mitigating Plans & Report Phrasing",
-      "codeHash": "6789ee9cba77917bc7ef84276d695b9f072d86c4436673aa331d7fa55a0ea70e",
+      "codeHash": "09c26d2e4854a2bb099469bd14bbd9d9b721752106090b3afa26c86f1f98e9f9",
       "spec": {
         "template": "funnel",
-        "title": "Going Concern Stress Testing, Mitigati... \u2014 Assurance Review",
+        "title": "Going Concern Stress Testing, Mitigati... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "War Room Master Simulator: Representations, Governance Defense & EQR Clearance",
-      "codeHash": "c8600d4f9c14af2a3438f4039e8bf3bbaeb34d99a73818573a40d788033f41d8",
+      "codeHash": "ed19d28eaaf2f7e2e3eea9f82a44ccd2501d05ba5132efba5769dc27332502de",
       "spec": {
         "template": "funnel",
-        "title": "War Room Master Simulator: Representat... \u2014 Assurance Review",
+        "title": "War Room Master Simulator: Representat... — Assurance Review",
         "steps": [
           {
             "at": "intro",

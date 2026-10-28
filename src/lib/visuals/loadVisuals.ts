@@ -137,34 +137,57 @@ export function getVisual(
   }
 
   // 2. Load from day file
-  const dayFile = loadDayFile(prefix, day);
-  if (!dayFile || !Array.isArray(dayFile.entries)) {
+  const dayFile: any = loadDayFile(prefix, day);
+  if (!dayFile) {
     return null;
   }
 
-  const entry = dayFile.entries[partIndex];
-  if (!entry || !entry.spec) {
+  const entriesList: any[] = Array.isArray(dayFile.entries)
+    ? dayFile.entries
+    : Array.isArray(dayFile.visuals)
+    ? dayFile.visuals
+    : Array.isArray(dayFile)
+    ? dayFile
+    : [];
+
+  const entry: any = entriesList[partIndex];
+  if (!entry) {
     return null;
   }
 
-  if (entry.spec.template === 'none') {
+  const specObj: any = entry.spec && typeof entry.spec === 'object' ? entry.spec : entry;
+  if (specObj.template === 'none') {
     return null;
   }
 
   let visual: LessonVisual | null = null;
   if (entry.filled && typeof entry.filled === 'object') {
-    if ('template' in entry.filled && typeof entry.filled.template === 'string') {
+    if ('template' in entry.filled && typeof entry.filled.template === 'string' && entry.filled.template !== 'none' && Array.isArray((entry.filled as any).steps)) {
       visual = entry.filled as unknown as LessonVisual;
-    } else if ('visual' in entry.filled && entry.filled.visual) {
+    } else if ('visual' in entry.filled && entry.filled.visual && typeof (entry.filled.visual as any).template === 'string') {
       visual = entry.filled.visual as LessonVisual;
-    } else {
-      visual = entry.filled as unknown as LessonVisual;
     }
-  } else if (entry.spec && typeof entry.spec === 'object' && 'template' in entry.spec && entry.spec.template !== 'none') {
-    visual = entry.spec as unknown as LessonVisual;
+  }
+  if (!visual && specObj && typeof specObj === 'object') {
+    if (typeof specObj.template === 'string' && specObj.template !== 'none' && Array.isArray(specObj.steps)) {
+      visual = specObj as unknown as LessonVisual;
+    } else if (typeof specObj.template === 'string' && specObj.data && Array.isArray(specObj.data.steps)) {
+      visual = {
+        template: specObj.template,
+        title: specObj.title || specObj.data.title || `${prefix} Day ${day} Part ${partIndex + 1}`,
+        ...specObj.data,
+        steps: specObj.data.steps,
+      } as unknown as LessonVisual;
+    } else if (specObj.ledger && Array.isArray(specObj.steps)) {
+      visual = {
+        template: 'ledger-sheet',
+        title: specObj.title || `${prefix} Day ${day} Part ${partIndex + 1}`,
+        ...specObj,
+      } as unknown as LessonVisual;
+    }
   }
 
-  if (!visual) {
+  if (!visual || !visual.template || !Array.isArray(visual.steps) || visual.steps.length === 0) {
     return null;
   }
 
@@ -555,8 +578,7 @@ export function synthesizeLongLessonVisual(
   // 4C. Accounting, Finance, Tax, Audit, Banking & Corporate Law -> 4-step LedgerSheetVisual
   if (
     normPrefix.startsWith('bcom_') ||
-    normPrefix.startsWith('bcom-') ||
-    (normPrefix !== 'java_basics' && /\b(ledger|journal|debit|credit|balance\s+sheet|audit|tax|gst|ifrs|npv|irr|amortization)\b/.test(titleLow))
+    normPrefix.startsWith('bcom-')
   ) {
     const baseAmt = 2500 + (day * 150) + (partIndex * 200);
     const adjAmt = Math.round(baseAmt * 0.2);

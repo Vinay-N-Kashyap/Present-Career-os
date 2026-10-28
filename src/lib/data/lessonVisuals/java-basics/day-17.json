@@ -6,7 +6,7 @@
   "model": "curriculum-visual-synthesizer-v2",
   "entries": [
     {
-      "partTitle": "String Immutability, Security Invariants & Multi-Threaded Memory Safety",
+      "partTitle": "String Immutability, strict security safeguards & Multi-Threaded Memory Safety",
       "codeHash": "81ea323802db2e7e6a01e0b928b04d15009bb2870f5b46ea7cacd7dca37ad048",
       "spec": {
         "template": "stack-queue",

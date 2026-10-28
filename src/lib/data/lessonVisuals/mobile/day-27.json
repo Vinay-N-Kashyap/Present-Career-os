@@ -263,7 +263,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P2].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -368,7 +368,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P2].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -477,7 +477,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P3].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -582,7 +582,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P3].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -691,7 +691,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P4].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -796,7 +796,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P4].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -905,7 +905,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P5].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [
@@ -1010,7 +1010,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure reducer state invariants via <JestUnitTestHarness />",
+            "caption": "Step 1: Execute fast in-memory Jest unit tests verifying pure redu [D27P5].",
             "activeId": "UnitTestEngine",
             "tone": "primary",
             "nodes": [

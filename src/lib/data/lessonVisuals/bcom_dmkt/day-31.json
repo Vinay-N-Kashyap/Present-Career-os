@@ -7,10 +7,10 @@
   "entries": [
     {
       "partTitle": "The Foundations of Modern MMM: Overcoming Last-Touch Bias with Macro-Econometric Regression",
-      "codeHash": "29efee39d51020b3b351c23c285384068541b19fc3af63d676e5bea0f7eb8c03",
+      "codeHash": "e38da19cd6d4dbd61eeb0c5e553c1eafaaf93d0fcc88b13b3858e46dfd35779f",
       "spec": {
         "template": "funnel",
-        "title": "The Foundations of Modern MMM: Overcoming Last-Touch Bias with Macro-Econometric Regression \u2014 Conversion Funnel",
+        "title": "The Foundations of Modern MMM: Overcoming Last-Touch Bias with Macro-Econometric Regression — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -169,14 +169,14 @@
     },
     {
       "partTitle": "Adstock Decay Dynamics: Geometric Decay vs Weibull Survival Mechanics",
-      "codeHash": "a57cf083726780c35aa9f974af172cdbfec09673edd3b46939bde1b9cd5014ce",
+      "codeHash": "d3f2e540c6acf43c9658bfb788abe0c6b2f8899af231287ba69a23c029debef1",
       "spec": {
         "template": "funnel",
-        "title": "Adstock Decay Dynamics: Geometric Decay vs Weibull Survival Mechanics \u2014 Conversion Funnel",
+        "title": "Adstock Decay Dynamics: Geometric Decay vs Weibull Survival Mechanics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D31P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -331,14 +331,14 @@
     },
     {
       "partTitle": "Non-Linear Saturation Dynamics: The Hill Equation & Diminishing Marginal Returns",
-      "codeHash": "fb746d491d11b133520eedcf06b35a688aaa624866df63678d08329fc83f3948",
+      "codeHash": "6b6402dfb8fa97899749163c640e4eecfb24b560756209de086bed61e935b17e",
       "spec": {
         "template": "funnel",
-        "title": "Non-Linear Saturation Dynamics: The Hill Equation & Diminishing Marginal Returns \u2014 Conversion Funnel",
+        "title": "Non-Linear Saturation Dynamics: The Hill Equation & Diminishing Marginal Returns — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D31P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -493,14 +493,14 @@
     },
     {
       "partTitle": "Hierarchical Bayesian Inference & Prior Elicitation: Calibrating Robyn and LightweightMMM",
-      "codeHash": "0db3340da29a3eb39c2800a8ac3dad91a27b3b28436975d971c6dc57db417484",
+      "codeHash": "302ddab24424cb3949ad5c46e83c2d758a15938f640c5e71a78d6f0b1b623440",
       "spec": {
         "template": "funnel",
-        "title": "Hierarchical Bayesian Inference & Prior Elicitation: Calibrating Robyn and LightweightMMM \u2014 Conversion Funnel",
+        "title": "Hierarchical Bayesian Inference & Prior Elicitation: Calibrating Robyn and LightweightMMM — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D31P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -655,14 +655,14 @@
     },
     {
       "partTitle": "Optimal Budget Allocation: Karush-Kuhn-Tucker (KKT) Conditions & Marginal ROAS Equalization",
-      "codeHash": "e1ae49b28ffcb1777053039c718909b204bcef67a1bbbf18ee5a5edb08bfb571",
+      "codeHash": "d5c8104c151e7fa991ad4ba8fdeb8f4c8126a7632eccd3a2df75ba542bf1c32c",
       "spec": {
         "template": "funnel",
-        "title": "Optimal Budget Allocation: Karush-Kuhn-Tucker (KKT) Conditions & Marginal ROAS Equalization \u2014 Conversion Funnel",
+        "title": "Optimal Budget Allocation: Karush-Kuhn-Tucker (KKT) Conditions & Marginal ROAS Equalization — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase.",
+            "caption": "Initial audience discovery and traffic acquisition phase [D31P5].",
             "activeStageId": "top",
             "stages": [
               {

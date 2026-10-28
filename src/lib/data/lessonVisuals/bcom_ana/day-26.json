@@ -8,7 +8,7 @@
       "codeHash": "115c61e7e599946989b94cd4242acc3e7afc72113a11a84211b831aefd811ffb",
       "spec": {
         "template": "bars",
-        "title": "Value Stream Mapping & Little's Law: F... \u2014 Decision Evaluation",
+        "title": "Value Stream Mapping & Little's Law: F... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "3453116256aa96a27c330cdf41a57a82f4aa231319be7d48951234e8280ee87c",
       "spec": {
         "template": "bars",
-        "title": "Bottleneck Identification & The Theory... \u2014 Decision Evaluation",
+        "title": "Bottleneck Identification & The Theory... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "7ea59adc7dc5e9ef513da82fcb2e898f42125eccc80b284e27efc8f148254f16",
       "spec": {
         "template": "bars",
-        "title": "The Bullwhip Effect: Information Disto... \u2014 Decision Evaluation",
+        "title": "The Bullwhip Effect: Information Disto... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "5ec4bdc66b58f7cd40e8fac7dab9158613cc2ddabf49b627964d7cc043aab041",
       "spec": {
         "template": "bars",
-        "title": "CPFR & Information Transparency: Share... \u2014 Decision Evaluation",
+        "title": "CPFR & Information Transparency: Share... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "6594ebf327eb836047a78d9892600f2c295e33890b61a5f0210d7e6dab67b13f",
       "spec": {
         "template": "bars",
-        "title": "Building a Comprehensive Supply Chain ... \u2014 Decision Evaluation",
+        "title": "Building a Comprehensive Supply Chain ... — Decision Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and comprehens concepts.",
+            "caption": "Reviewing core building mechanisms and comprehens concepts [D26P5].",
             "max": 100,
             "bars": [
               {

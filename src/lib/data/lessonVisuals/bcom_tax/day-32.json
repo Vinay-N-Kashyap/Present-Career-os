@@ -46,7 +46,9 @@
             "caption": "Foreign portfolio investors without permanent presence avoid book tax."
           }
         ]
-      }
+      },
+      "codeHash": "8d33e00d1f101eb9b82c3ca38003be100cdd07546e38431d8b9738ae788fecb3",
+      "partTitle": "Legislative Intent and Scope of Section 115JB: Domestic vs. Foreign Companies"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Insolvent corporate debtors deduct aggregate losses and depreciation."
           }
         ]
-      }
+      },
+      "codeHash": "d1d51fdb1dfa5366000d4024042d47cf1817ef0aef27c31e1fab4edcef1a212e",
+      "partTitle": "Book Profit Adjustments: Mandatory Additions and Permissible Reductions"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Unrealized equity swings remain deferred until investments are sold."
           }
         ]
-      }
+      },
+      "codeHash": "1905e4fe211d5c56c9488dbc72ac5758a05d6dec1e38af4448296eb1f020eda1",
+      "partTitle": "Treatment of Ind AS Adjustments, OCI Items & Transition Reserves under Section 115JB(2A)"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Audited projections verify deferred tax asset recoverability tests."
           }
         ]
-      }
+      },
+      "codeHash": "9df6d8b6723db60632fee2ab0abf8806441d7c9ec197c4f7a7012c5cb4f4feaa",
+      "partTitle": "MAT Credit Entitlement (Section 115JAA), 15-Year Carryforward & Utilization Waterfalls"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Corporate reorganizations isolate credit balances in separate entities."
           }
         ]
-      }
+      },
+      "codeHash": "2fb36bbc4b800e07caa9a63ed283ac4cb8bb26460caff6371d72764415ad0ac6",
+      "partTitle": "Interplay between Section 115JB and Concessional Regimes (Section 115BAA/115BAB)"
     }
   ]
 }

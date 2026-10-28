@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D45P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -26,15 +26,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -43,7 +43,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -64,15 +64,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -81,7 +81,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -102,15 +102,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "data"
               },
@@ -119,7 +119,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -140,15 +140,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "ok"
               },
@@ -157,7 +157,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "data"
               }
             ]
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D45P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -188,15 +188,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -205,7 +205,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -226,15 +226,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -243,7 +243,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -264,15 +264,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "data"
               },
@@ -281,7 +281,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -302,15 +302,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "ok"
               },
@@ -319,7 +319,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "data"
               }
             ]
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D45P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -350,15 +350,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -367,7 +367,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -388,15 +388,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -405,7 +405,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -426,15 +426,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "data"
               },
@@ -443,7 +443,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -464,15 +464,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "ok"
               },
@@ -481,7 +481,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "data"
               }
             ]
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D45P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -512,15 +512,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -529,7 +529,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -550,15 +550,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -567,7 +567,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -588,15 +588,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "data"
               },
@@ -605,7 +605,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -626,15 +626,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "ok"
               },
@@ -643,7 +643,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "data"
               }
             ]
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay dampening.",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D45P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -674,15 +674,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -691,7 +691,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -712,15 +712,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "idle"
               },
@@ -729,7 +729,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -750,15 +750,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "data"
               },
@@ -767,7 +767,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "idle"
               }
             ]
@@ -788,15 +788,15 @@
                 "id": "qual",
                 "label": "Healthy Adoption Cohort",
                 "value": 820,
-                "percentage": 82.0,
-                "dropoffRate": 18.0,
+                "percentage": 82,
+                "dropoffRate": 18,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Retained Core Contract ARR",
                 "value": 760,
-                "percentage": 76.0,
+                "percentage": 76,
                 "dropoffRate": 7.3,
                 "tone": "ok"
               },
@@ -805,7 +805,7 @@
                 "label": "Expanded Net Retention ARR",
                 "value": 115,
                 "percentage": 11.5,
-                "dropoffRate": 0.0,
+                "dropoffRate": 0,
                 "tone": "data"
               }
             ]

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Web Crawling Architecture: Frontier Queues, Politeness, robots.txt & Sitemap Indexing",
-      "codeHash": "1e4ea9d90185aee0cfd7d0e64a02925de5ac24e6f1334356c00534921d484d20",
+      "codeHash": "df8c35a2468e7572419163be035cbd287a3abcdf65ce41ca18d482ac34a3ed35",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Document Preprocessing & Inverted Index Construction: Tokenization, Stemming & Positional Postings",
-      "codeHash": "5d390be50103c4b46f33008c52f663b29376a6a1bb1c06a4d4a438d80dee3644",
+      "codeHash": "84571a12388d8ee05461a12cb0b6276d1e8243d98e81a41b11b21a62f9d7c86c",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Lexical Relevance & Ranking Functions: TF-IDF, Term Saturation & Okapi BM25 Mechanics",
-      "codeHash": "497f12a47c5e25c45f4640ec8203df0ec7cc3b00b195b288438372fbf7b02e94",
+      "codeHash": "867d180687c096301f0d33ad7ae84de4fc6d44d3079d9fe02098807d84acbb34",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Link Analysis & PageRank Mathematics: Markov Chains, Transition Probability Matrices & The Random Surfer Model",
-      "codeHash": "d4688b99f47dfd929707eba8f25a73a4186a49449902aa08905a5b8aa7f351eb",
+      "codeHash": "cb175208e64f79f64d89ad1f1e141093bca05932b5806a2859b7b2b98123cc25",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Industrial Search Index & BM25/PageRank Scoring Engine in Python",
-      "codeHash": "69e299ff5dfd79004ef21b7887c6eb1891e3fbd27a6712c4e932299e851cb01f",
+      "codeHash": "21a8889f7748700fa3521e569efda2695b8cf7a0ffc77b6fa779583ab6a24495",
       "spec": {
         "template": "funnel",
         "steps": [

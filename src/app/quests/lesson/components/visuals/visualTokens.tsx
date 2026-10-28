@@ -43,13 +43,20 @@ export function getToneTextColor(tone: VisualTone): string {
   }
 }
 
-export function RenderWithFaintSpaces({ text, showSpaces }: { text: string; showSpaces?: boolean }): React.ReactElement {
-  if (!text) return <React.Fragment />;
+export function RenderWithFaintSpaces({ text, showSpaces }: { text: any; showSpaces?: boolean }): React.ReactElement {
+  if (text === null || text === undefined || text === '') return <React.Fragment />;
+  const str =
+    typeof text === 'string'
+      ? text
+      : typeof text === 'object'
+      ? String(text.text ?? text.var ?? (text.out !== undefined ? `line ${text.out}` : JSON.stringify(text)))
+      : String(text);
+  if (!str) return <React.Fragment />;
   if (!showSpaces) {
-    const cleanText = text.replace(/\u00b7/g, ' ');
+    const cleanText = str.replace(/\u00b7/g, ' ');
     return <span>{cleanText}</span>;
   }
-  const parts = text.split(/([\s\u00b7])/);
+  const parts = str.split(/([\s\u00b7])/);
   return (
     <React.Fragment>
       {parts.map((part, i) => {

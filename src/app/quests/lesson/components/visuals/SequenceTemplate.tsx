@@ -18,9 +18,22 @@ export function SequenceTemplate({
   step,
   showSpaces,
 }: SequenceTemplateProps): React.ReactElement {
-  const actorList = actors && actors.length > 0 ? actors : ['Client', 'Server'];
+  const rawActors: any[] = actors && actors.length > 0 ? actors : ['Client', 'Server'];
+  const actorList: string[] = rawActors.map((a: any, i: number) =>
+    typeof a === 'string' ? a : String(a?.label || a?.name || a?.id || `Actor ${i + 1}`)
+  );
+  const actorAliasMap = new Map<string, string>();
+  rawActors.forEach((a: any, i: number) => {
+    const label = actorList[i];
+    actorAliasMap.set(label, label);
+    if (a && typeof a === 'object') {
+      if (a.id) actorAliasMap.set(String(a.id), label);
+      if (a.label) actorAliasMap.set(String(a.label), label);
+      if (a.name) actorAliasMap.set(String(a.name), label);
+    }
+  });
   const messages = step.messages || [];
-  const activeActor = step.activeActor;
+  const activeActor = step.activeActor ? (actorAliasMap.get(String(step.activeActor)) || String(step.activeActor)) : undefined;
 
   const width = 340;
   const msgRowHeight = 44;
@@ -31,8 +44,13 @@ export function SequenceTemplate({
   const actorXMap = new Map<string, number>();
   const actorSpacing = width / (actorList.length + 1);
   actorList.forEach((actor, idx) => {
-    actorXMap.set(actor, (idx + 1) * actorSpacing);
+    const xPos = (idx + 1) * actorSpacing;
+    actorXMap.set(actor, xPos);
   });
+  for (const [alias, canonical] of actorAliasMap.entries()) {
+    const xPos = actorXMap.get(canonical);
+    if (xPos !== undefined) actorXMap.set(alias, xPos);
+  }
 
   return (
     <div

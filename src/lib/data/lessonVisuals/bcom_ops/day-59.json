@@ -46,7 +46,9 @@
             "caption": "Legacy machinery receives internet of things sensor retrofits."
           }
         ]
-      }
+      },
+      "codeHash": "06a783348e2a54af333db98fe6e92c9895c7019f6ea30330139f4c35285b8080",
+      "partTitle": "Cyber-Physical Production Systems (CPPS): Reference Architectural Model Industrie 4.0 (RAMI 4.0)"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Time aware shapers guarantee collision free packet windows."
           }
         ]
-      }
+      },
+      "codeHash": "ad8cfc2520f8786e8bb8c6878a1d80457fd2e128343aae6b6a2e530cbe21ee9d",
+      "partTitle": "Industrial IoT Protocols: OPC-UA, MQTT, and Time-Sensitive Networking (TSN)"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Cloud clusters train machine learning models and deploy updates to edge."
           }
         ]
-      }
+      },
+      "codeHash": "f91037dc363cab4ada4d8216ad3a42b2b38326b05fcd4cb8bc94731acdfe5d14",
+      "partTitle": "Edge Computing vs. Cloud Analytics: High-Frequency Sensor Ingestion & Vibration Telemetry"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Remaining useful life metrics trigger automated work orders."
           }
         ]
-      }
+      },
+      "codeHash": "0c2666b5026dca070c81ecbca0a51772df7fd81e1e4519b249b7223e64e69c68",
+      "partTitle": "Predictive Maintenance (PdM) Algorithms: Weibull RUL, FFT Spectral Analysis & Vibration"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Execution systems orchestrate autonomous shop floor fleets."
           }
         ]
-      }
+      },
+      "codeHash": "621778c2bd9b8d498cf52db8ec7053db668c903f5aacdd8e2908c82124d31566",
+      "partTitle": "Autonomous Guided Vehicles (AGVs), Collaborative Robots (Cobots) & Smart Shop Floor"
     }
   ]
 }

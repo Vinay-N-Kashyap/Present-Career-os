@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P2].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P2].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P3].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P3].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P4].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P4].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P5].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize hardware-accelerated video decoder via <HardwareVideoDecoder />",
+            "caption": "Step 1: Initialize hardware-accelerated video decoder via <Hardwar [D21P5].",
             "activeId": "HardwareCodec",
             "tone": "primary",
             "nodes": [

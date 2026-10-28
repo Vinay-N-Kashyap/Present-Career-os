@@ -45,22 +45,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Relational multi-table patterns cause severe sequential network delays."
+            "annotation": "Relational multi-table patterns cause severe sequential network delays.",
+            "caption": "Relational multi-table patterns cause severe sequential network delays. (Foundations of Single-Table Design:)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Single table architectures group related items under identical keys."
+            "annotation": "Single table architectures group related items under identical keys.",
+            "caption": "Single table architectures group related items under identical keys. (Foundations of Single-Table Design:)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Co-located item collections fetch heterogeneous records in one query."
+            "annotation": "Co-located item collections fetch heterogeneous records in one query.",
+            "caption": "Co-located item collections fetch heterogeneous records in one query. (Foundations of Single-Table Design:)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Generic key overloading delivers predictable single-digit latency."
+            "annotation": "Generic key overloading delivers predictable single-digit latency.",
+            "caption": "Generic key overloading delivers predictable single-digit latency. (Foundations of Single-Table Design:)"
           }
         ]
       }
@@ -107,22 +111,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Full table scans waste immense read capacity and inflate cloud costs."
+            "annotation": "Full table scans waste immense read capacity and inflate cloud costs.",
+            "caption": "Full table scans waste immense read capacity and inflate cloud costs. (Composite Sort Keys & Hierarchical )"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Composite sort keys concatenate hierarchical attributes with delimiters."
+            "annotation": "Composite sort keys concatenate hierarchical attributes with delimiters.",
+            "caption": "Composite sort keys concatenate hierarchical attributes with delimiters. (Composite Sort Keys & Hierarchical )"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Prefix filtering queries multiple organizational levels efficiently."
+            "annotation": "Prefix filtering queries multiple organizational levels efficiently.",
+            "caption": "Prefix filtering queries multiple organizational levels efficiently. (Composite Sort Keys & Hierarchical )"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Hierarchical range expressions eliminate expensive unindexed scans."
+            "annotation": "Hierarchical range expressions eliminate expensive unindexed scans.",
+            "caption": "Hierarchical range expressions eliminate expensive unindexed scans. (Composite Sort Keys & Hierarchical )"
           }
         ]
       }
@@ -169,22 +177,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Excessive dedicated secondary indexes rapidly breach service limits."
+            "annotation": "Excessive dedicated secondary indexes rapidly breach service limits.",
+            "caption": "Excessive dedicated secondary indexes rapidly breach service limits. (Global Secondary Index (GSI) Overlo)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Overloaded indexes satisfy diverse access patterns using generic keys."
+            "annotation": "Overloaded indexes satisfy diverse access patterns using generic keys.",
+            "caption": "Overloaded indexes satisfy diverse access patterns using generic keys. (Global Secondary Index (GSI) Overlo)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Sparse indexing includes only items with defined secondary attributes."
+            "annotation": "Sparse indexing includes only items with defined secondary attributes.",
+            "caption": "Sparse indexing includes only items with defined secondary attributes. (Global Secondary Index (GSI) Overlo)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Inverted indexes allow bidirectional lookups across entity relationships."
+            "annotation": "Inverted indexes allow bidirectional lookups across entity relationships.",
+            "caption": "Inverted indexes allow bidirectional lookups across entity relationships. (Global Secondary Index (GSI) Overlo)"
           }
         ]
       }
@@ -231,22 +243,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Relational junction tables collapse without server-side SQL joins."
+            "annotation": "Relational junction tables collapse without server-side SQL joins.",
+            "caption": "Relational junction tables collapse without server-side SQL joins. (Many-to-Many Relationships & Adjace)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "Adjacency lists represent graph edges as individual table items."
+            "annotation": "Adjacency lists represent graph edges as individual table items.",
+            "caption": "Adjacency lists represent graph edges as individual table items. (Many-to-Many Relationships & Adjace)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Inverted secondary keys enable instant bidirectional relationship lookups."
+            "annotation": "Inverted secondary keys enable instant bidirectional relationship lookups.",
+            "caption": "Inverted secondary keys enable instant bidirectional relationship lookups. (Many-to-Many Relationships & Adjace)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Graph modeling in single-table schemas scales to millions of connections."
+            "annotation": "Graph modeling in single-table schemas scales to millions of connections.",
+            "caption": "Graph modeling in single-table schemas scales to millions of connections. (Many-to-Many Relationships & Adjace)"
           }
         ]
       }
@@ -293,22 +309,26 @@
           {
             "at": "say1",
             "focus": "left",
-            "annotation": "Pessimistic row locks create severe contention in distributed databases."
+            "annotation": "Pessimistic row locks create severe contention in distributed databases.",
+            "caption": "Pessimistic row locks create severe contention in distributed databases. (Atomic Transactions & Optimistic Co)"
           },
           {
             "at": "say2",
             "focus": "right",
-            "annotation": "TransactWriteItems executes atomic mutations across distributed items."
+            "annotation": "TransactWriteItems executes atomic mutations across distributed items.",
+            "caption": "TransactWriteItems executes atomic mutations across distributed items. (Atomic Transactions & Optimistic Co)"
           },
           {
             "at": "example",
             "focus": "both",
-            "annotation": "Condition expressions enforce optimistic version checks without locking."
+            "annotation": "Condition expressions enforce optimistic version checks without locking.",
+            "caption": "Condition expressions enforce optimistic version checks without locking. (Atomic Transactions & Optimistic Co)"
           },
           {
             "at": "tryIt",
             "focus": "right",
-            "annotation": "Atomic transactions maintain financial consistency across cloud services."
+            "annotation": "Atomic transactions maintain financial consistency across cloud services.",
+            "caption": "Atomic transactions maintain financial consistency across cloud services. (Atomic Transactions & Optimistic Co)"
           }
         ]
       }

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Statutory Consumer Rights & EU 14-Day Right of Withdrawal Engines",
-      "codeHash": "4f989ed0d0aa631ccf7bd5c562f495018426414a00ff6dedc51729f0e2f08dac",
+      "codeHash": "b9977f4c9c5076044ac6be935be742978c2080bf9a1a75905478f369d7b1253f",
       "spec": {
         "template": "funnel",
         "title": "Day 54 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Cross-Border Reverse Logistics & Customs Duty Drawback Recovery",
-      "codeHash": "5acac77255a63fad14fc090fa63880d139e5a8d5066574a2101e2454a99caeba",
+      "codeHash": "5a64de9b5f66950f8d9291910d57fd292cb22a5cab77389c2f5e30352b2689d6",
       "spec": {
         "template": "funnel",
         "title": "Day 54 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Global Data Privacy Governance: GDPR, CCPA & Cross-Border Transfer Gates",
-      "codeHash": "9d7f1926304b6f78db522ff4b93e00f8c6c9567f21286be3d6cb4a664b98ad6f",
+      "codeHash": "3796095a6e17da46e934595123a4b98a910bab28d19ea373e56b8ffc89f64c8f",
       "spec": {
         "template": "funnel",
         "title": "Day 54 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Storefront Localization Engineering: Currency Formatting & Right-to-Left (RTL) Layouts",
-      "codeHash": "027ec6c40a3ff5d472e269be466cdf6a7dc33820ed1d402b69284a3f93fdd4ce",
+      "codeHash": "573104813731ebac8539f4f2eb614920760dc16156eba3545aedfa4c8568e81d",
       "spec": {
         "template": "funnel",
         "title": "Day 54 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Global E-Commerce Governance Command Tower: Auditing & International Scalability",
-      "codeHash": "6911bf319c4f52a3e1463d75f5575bc35c5ba95e8456f8101f0c97b32def9217",
+      "codeHash": "871cd2cf6b66c765d3332965ae280353ae6a4cc6dedcbbc8a8baa73e3b420500",
       "spec": {
         "template": "funnel",
         "title": "Day 54 Part 5 Architecture Flow",

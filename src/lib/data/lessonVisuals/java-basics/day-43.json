@@ -10,7 +10,7 @@
       "codeHash": "07f99d9ed3ef8505cdd8251303beb60cfe6b62ac98489b0b138149d5e5806a39",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 43 Part 1 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 43 Part 1 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -93,7 +93,7 @@
       "codeHash": "3eac5de0839cc6eb2d01c2636874118f66bd74315ec9de1d48190a9463b1029b",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 43 Part 2 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 43 Part 2 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -176,7 +176,7 @@
       "codeHash": "ff0d4714bd9378b6c62085b9f20da94d57b6480915c4aa506bee58e34c4280b2",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 43 Part 3 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 43 Part 3 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -259,12 +259,12 @@
       "codeHash": "538bda8251de3a269924389e4997b575b107bce98520b7c566e50c150cf4805c",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 43 Part 4 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 43 Part 4 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Production Incident Lab: .",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Pr [D43P4].",
             "mode": "stack",
             "items": [
               "main() Frame",
@@ -342,7 +342,7 @@
       "codeHash": "a75508daa5596e6836df33d23caff82000b9dc54dad33c7646aec2265cd23fdb",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 43 Part 5 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 43 Part 5 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {

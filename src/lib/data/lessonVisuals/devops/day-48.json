@@ -662,7 +662,7 @@
       }
     },
     {
-      "partTitle": "Production Operational Invariants: Sampling Strategies (Tail-Based vs Head-Based), Cardinality Explosion Controls",
+      "partTitle": "Production daily workflow standards: Sampling Strategies (Tail-Based vs Head-Based), Cardinality Explosion Controls",
       "codeHash": "11f9b5b95dd1c606c788c0d60df54a335b3e0457f0d82ada00b60fbbdd52c187",
       "spec": {
         "template": "compare",

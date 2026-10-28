@@ -6,7 +6,7 @@
     {
       "partIndex": 1,
       "partTitle": "Capstone Ingress: Global Anycast Routing, Edge WAF Defense & Unified Gateways",
-      "codeHash": "4d54f6a89dfb5b8c5fffc78f5173dc225a94d281087033788730323175299952",
+      "codeHash": "787e84c7dfc379dafcac373ffe8d96d56e512b342fa0840677b89b890c404fde",
       "spec": {
         "template": "compare",
         "left": {
@@ -30,19 +30,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Direct public ingress exposes backend microservices to DDoS attacks."
+            "annotation": "Direct public ingress exposes backend microservices to DDoS attacks.",
+            "caption": "Direct public ingress exposes backend microservices to DDoS attacks. (Capstone Ingress: Global Anycast Ro)"
           },
           {
             "at": "say2",
-            "annotation": "CloudFront and WAF inspect global packets at edge locations worldwide."
+            "annotation": "CloudFront and WAF inspect global packets at edge locations worldwide.",
+            "caption": "CloudFront and WAF inspect global packets at edge locations worldwide. (Capstone Ingress: Global Anycast Ro)"
           },
           {
             "at": "example",
-            "annotation": "Edge tier permits authorized requests and blocks malicious attacks."
+            "annotation": "Edge tier permits authorized requests and blocks malicious attacks.",
+            "caption": "Edge tier permits authorized requests and blocks malicious attacks. (Capstone Ingress: Global Anycast Ro)"
           },
           {
             "at": "tryIt",
-            "annotation": "Private link and anycast routing deliver secure low latency ingress."
+            "annotation": "Private link and anycast routing deliver secure low latency ingress.",
+            "caption": "Private link and anycast routing deliver secure low latency ingress. (Capstone Ingress: Global Anycast Ro)"
           }
         ]
       }
@@ -50,7 +54,7 @@
     {
       "partIndex": 2,
       "partTitle": "Capstone Storage: Sub-10ms Polyglot Tier - Valkey, DynamoDB & Aurora Global",
-      "codeHash": "d886ef99c121bde6d3d83a89f0cbf47c1a59b594ed8d6cb623ffc39b46eeb8cf",
+      "codeHash": "508994e3ffe2860df3ffd802a09be07353a7bcf9e1ca026a9ea3aa6153864014",
       "spec": {
         "template": "compare",
         "left": {
@@ -74,19 +78,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Monolithic relational databases suffer severe lock contention at scale."
+            "annotation": "Monolithic relational databases suffer severe lock contention at scale.",
+            "caption": "Monolithic relational databases suffer severe lock contention at scale. (Capstone Storage: Sub-10ms Polyglot)"
           },
           {
             "at": "say2",
-            "annotation": "Polyglot persistence allocates workloads to specialized data engines."
+            "annotation": "Polyglot persistence allocates workloads to specialized data engines.",
+            "caption": "Polyglot persistence allocates workloads to specialized data engines. (Capstone Storage: Sub-10ms Polyglot)"
           },
           {
             "at": "example",
-            "annotation": "Orchestrator commits orders in DynamoDB Aurora and caches in Valkey."
+            "annotation": "Orchestrator commits orders in DynamoDB Aurora and caches in Valkey.",
+            "caption": "Orchestrator commits orders in DynamoDB Aurora and caches in Valkey. (Capstone Storage: Sub-10ms Polyglot)"
           },
           {
             "at": "tryIt",
-            "annotation": "Multi-tier storage achieves sub ten millisecond composite user latency."
+            "annotation": "Multi-tier storage achieves sub ten millisecond composite user latency.",
+            "caption": "Multi-tier storage achieves sub ten millisecond composite user latency. (Capstone Storage: Sub-10ms Polyglot)"
           }
         ]
       }
@@ -94,7 +102,7 @@
     {
       "partIndex": 3,
       "partTitle": "Capstone Orchestration: Asynchronous Choreography & Distributed Saga Workflows",
-      "codeHash": "6785c2d199abbddba5b249b7130df1b14271884a36d6d1443bd9648e10fd2092",
+      "codeHash": "e87e836bd84d422e1b6e7b2f960d2b5469f97639ef30451c3cfa8e6b6d05b4f9",
       "spec": {
         "template": "compare",
         "left": {
@@ -118,19 +126,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Synchronous service coupling causes cascading failures under heavy load."
+            "annotation": "Synchronous service coupling causes cascading failures under heavy load.",
+            "caption": "Synchronous service coupling causes cascading failures under heavy load. (Capstone Orchestration: Asynchronou)"
           },
           {
             "at": "say2",
-            "annotation": "Asynchronous event choreography decouples publishers from consumers."
+            "annotation": "Asynchronous event choreography decouples publishers from consumers.",
+            "caption": "Asynchronous event choreography decouples publishers from consumers. (Capstone Orchestration: Asynchronou)"
           },
           {
             "at": "example",
-            "annotation": "Engine coordinates multi-step checkout saga with full verification."
+            "annotation": "Engine coordinates multi-step checkout saga with full verification.",
+            "caption": "Engine coordinates multi-step checkout saga with full verification. (Capstone Orchestration: Asynchronou)"
           },
           {
             "at": "tryIt",
-            "annotation": "Step Functions sagas execute compensating rollbacks upon step failure."
+            "annotation": "Step Functions sagas execute compensating rollbacks upon step failure.",
+            "caption": "Step Functions sagas execute compensating rollbacks upon step failure. (Capstone Orchestration: Asynchronou)"
           }
         ]
       }
@@ -138,7 +150,7 @@
     {
       "partIndex": 4,
       "partTitle": "Capstone Lakehouse: S3 Apache Iceberg, Streaming Athena Analytics & FinOps Governance",
-      "codeHash": "a7d531f3807b339a9139494aa9f30ab83031285b10be867383e0dc44f064d823",
+      "codeHash": "2c12a6f219c01ad8a0f640f50ccc0209f5f3798deb14210c4dd0821ff77d14a7",
       "spec": {
         "template": "compare",
         "left": {
@@ -162,19 +174,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Legacy row based warehouses incur exorbitant analytical scan costs."
+            "annotation": "Legacy row based warehouses incur exorbitant analytical scan costs.",
+            "caption": "Legacy row based warehouses incur exorbitant analytical scan costs. (Capstone Lakehouse: S3 Apache Icebe)"
           },
           {
             "at": "say2",
-            "annotation": "Apache Iceberg brings ACID transactions and partitioning to object storage."
+            "annotation": "Apache Iceberg brings ACID transactions and partitioning to object storage.",
+            "caption": "Apache Iceberg brings ACID transactions and partitioning to object storage. (Capstone Lakehouse: S3 Apache Icebe)"
           },
           {
             "at": "example",
-            "annotation": "Projector streams order events to Parquet partitions with scan pruning."
+            "annotation": "Projector streams order events to Parquet partitions with scan pruning.",
+            "caption": "Projector streams order events to Parquet partitions with scan pruning. (Capstone Lakehouse: S3 Apache Icebe)"
           },
           {
             "at": "tryIt",
-            "annotation": "Serverless Athena SQL delivers real time business intelligence at scale."
+            "annotation": "Serverless Athena SQL delivers real time business intelligence at scale.",
+            "caption": "Serverless Athena SQL delivers real time business intelligence at scale. (Capstone Lakehouse: S3 Apache Icebe)"
           }
         ]
       }
@@ -182,7 +198,7 @@
     {
       "partIndex": 5,
       "partTitle": "Grand Master Accreditation: 60-Day Curriculum Graduation & Architect Simulator",
-      "codeHash": "dc1b17147089136caed517de2af465b42807dbb8d0e11754bf6cb169bc070864",
+      "codeHash": "dfff31d05728caff0f058c034f01929f4fef0c25d7cba1e9881d98051c4aa25e",
       "spec": {
         "template": "compare",
         "left": {
@@ -206,19 +222,23 @@
         "steps": [
           {
             "at": "say1",
-            "annotation": "Fragmented cloud knowledge leads to fragile and costly architectures."
+            "annotation": "Fragmented cloud knowledge leads to fragile and costly architectures.",
+            "caption": "Fragmented cloud knowledge leads to fragile and costly architectures. (Grand Master Accreditation: 60-Day )"
           },
           {
             "at": "say2",
-            "annotation": "Master cloud architects design resilient and cost optimized platforms."
+            "annotation": "Master cloud architects design resilient and cost optimized platforms.",
+            "caption": "Master cloud architects design resilient and cost optimized platforms. (Grand Master Accreditation: 60-Day )"
           },
           {
             "at": "example",
-            "annotation": "Simulator confirms sub ten millisecond latency and high availability."
+            "annotation": "Simulator confirms sub ten millisecond latency and high availability.",
+            "caption": "Simulator confirms sub ten millisecond latency and high availability. (Grand Master Accreditation: 60-Day )"
           },
           {
             "at": "tryIt",
-            "annotation": "Curriculum graduation awards master cloud architect accreditation."
+            "annotation": "Curriculum graduation awards master cloud architect accreditation.",
+            "caption": "Curriculum graduation awards master cloud architect accreditation. (Grand Master Accreditation: 60-Day )"
           }
         ]
       }

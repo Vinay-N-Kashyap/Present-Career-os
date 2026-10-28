@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "caption": "Reviewing historical enterprise sales risk and governance architec [D53P1].",
             "activeStageId": "top",
             "stages": [
               {
@@ -26,15 +26,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -42,7 +42,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -64,15 +64,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -80,7 +80,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -102,15 +102,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "data"
               },
@@ -118,7 +118,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -140,15 +140,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "ok"
               },
@@ -156,7 +156,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "data"
               }
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "caption": "Reviewing historical enterprise sales risk and governance architec [D53P2].",
             "activeStageId": "top",
             "stages": [
               {
@@ -188,15 +188,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -204,7 +204,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -226,15 +226,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -242,7 +242,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -264,15 +264,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "data"
               },
@@ -280,7 +280,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -302,15 +302,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "ok"
               },
@@ -318,7 +318,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "data"
               }
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "caption": "Reviewing historical enterprise sales risk and governance architec [D53P3].",
             "activeStageId": "top",
             "stages": [
               {
@@ -350,15 +350,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -366,7 +366,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -388,15 +388,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -404,7 +404,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -426,15 +426,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "data"
               },
@@ -442,7 +442,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -464,15 +464,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "ok"
               },
@@ -480,7 +480,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "data"
               }
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "caption": "Reviewing historical enterprise sales risk and governance architec [D53P4].",
             "activeStageId": "top",
             "stages": [
               {
@@ -512,15 +512,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -528,7 +528,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -550,15 +550,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -566,7 +566,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -588,15 +588,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "data"
               },
@@ -604,7 +604,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -626,15 +626,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "ok"
               },
@@ -642,7 +642,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "data"
               }
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing historical enterprise sales risk and governance architecture.",
+            "caption": "Reviewing historical enterprise sales risk and governance architec [D53P5].",
             "activeStageId": "top",
             "stages": [
               {
@@ -674,15 +674,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "idle"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -690,7 +690,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -712,15 +712,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "data"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "idle"
               },
@@ -728,7 +728,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -750,15 +750,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "data"
               },
@@ -766,7 +766,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "idle"
               }
@@ -788,15 +788,15 @@
                 "id": "qual",
                 "label": "Margin Gated Commission Bounds",
                 "value": 780,
-                "percentage": 78.0,
-                "dropoffRate": 22.0,
+                "percentage": 78,
+                "dropoffRate": 22,
                 "tone": "ok"
               },
               {
                 "id": "target",
                 "label": "Dynamic ABM Account Swarm",
                 "value": 520,
-                "percentage": 52.0,
+                "percentage": 52,
                 "dropoffRate": 33.3,
                 "tone": "ok"
               },
@@ -804,7 +804,7 @@
                 "id": "final",
                 "label": "Certified Hierarchical CPQ",
                 "value": 180,
-                "percentage": 18.0,
+                "percentage": 18,
                 "dropoffRate": 65.4,
                 "tone": "data"
               }

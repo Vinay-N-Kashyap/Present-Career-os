@@ -687,7 +687,7 @@
     },
     {
       "partTitle": "Root Cause Attribution without Blame: Systemic Invariants vs Human Error",
-      "codeHash": "bbff155f2cf97e68a5c6db84095c97fdb20487fe9b381a94f8f1fedf8ec19d13",
+      "codeHash": "40f77b3289cb52a956d3e23b824ca8e792f68cfb85f51cad86d51d9ba0e8f985",
       "spec": {
         "template": "workflow",
         "title": "Root Cause Attribution without Blame: Systemi... — Operational Workflow",

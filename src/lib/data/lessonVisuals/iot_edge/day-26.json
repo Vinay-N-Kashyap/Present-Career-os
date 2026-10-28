@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80) [D26P1].",
             "registerName": "IOT_EDGE_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -263,7 +263,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80) [D26P1].",
             "registerName": "IOT_EDGE_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -516,7 +516,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80) [D26P2].",
             "registerName": "IOT_EDGE_CR2",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -765,7 +765,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR2 with EN bit asserted (0x80) [D26P2].",
             "registerName": "IOT_EDGE_CR2",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1018,7 +1018,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80) [D26P3].",
             "registerName": "IOT_EDGE_CR3",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1267,7 +1267,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR3 with EN bit asserted (0x80) [D26P3].",
             "registerName": "IOT_EDGE_CR3",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1520,7 +1520,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80) [D26P4].",
             "registerName": "IOT_EDGE_CR4",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1769,7 +1769,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR4 with EN bit asserted (0x80) [D26P4].",
             "registerName": "IOT_EDGE_CR4",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -2015,14 +2015,14 @@
     },
     {
       "partTitle": "Production Autoencoder Anomaly Engine Simulation & Certification Gate",
-      "codeHash": "2cfbabaa6f66cd0a89d0016d5d99cab8de39d4add054c6f4e584a9543a366a9f",
+      "codeHash": "3f62679610e9fe066731c9e65c63901f85ee775cb325cb52cad86a580fdfc853",
       "spec": {
         "template": "register-bits",
         "title": "Production Autoencoder Anomaly Engine Simulat... — Register Bit Architecture",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80) [D26P5].",
             "registerName": "IOT_EDGE_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -2271,7 +2271,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80).",
+            "caption": "Step 1: Initialize IOT_EDGE_CR1 with EN bit asserted (0x80) [D26P5].",
             "registerName": "IOT_EDGE_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",

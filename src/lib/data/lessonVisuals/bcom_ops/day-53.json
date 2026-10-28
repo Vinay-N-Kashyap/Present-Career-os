@@ -46,7 +46,9 @@
             "caption": "Automated terminal operating systems orchestrate physical port workflows."
           }
         ]
-      }
+      },
+      "codeHash": "dfcd21648bc00d2ec5793830d9744d66848562ec122b6d4786e7c0ba10b298eb",
+      "partTitle": "Deepwater Container Port Ecosystems: Quayside, Staging Yard, Gate Complex, and Rail Intermodal Interfaces"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Safety clearance buffers prevent mechanical collisions between cranes."
           }
         ]
-      }
+      },
+      "codeHash": "28b2535c406e96d1116a87b2b2085d344ba503ec65432e4754f2345fa77e26c3",
+      "partTitle": "Berth Allocation Problem (BAP) and Quay Crane Scheduling Problem (QCSP): Combinatorial Formulations"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Export pre marshaling consolidates outbound containers before berthing."
           }
         ]
-      }
+      },
+      "codeHash": "98c794b14c6e28699c634720898907a6385fa71648ac6388e5cd997ea35c207a",
+      "partTitle": "Yard Crane Dispatching and Container Stacking Strategies: Marshaling, Housekeeping Moves, and Dwell-Time Optimization"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Optical character recognition portals record container damage at gates."
           }
         ]
-      }
+      },
+      "codeHash": "ab04ae3731771ced91a9fca8214da35e551bc344312016e25f6b9bf86558731c",
+      "partTitle": "Automated Terminal Technologies: Automated Guided Vehicles (AGVs), OCR Gate Portals, and Digital Terminal Operating Systems (TOS)"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Local search algorithms swap berthing orders to minimize vessel delay."
           }
         ]
-      }
+      },
+      "codeHash": "0289af835f5e9d66573e8b0bb7ebd8624cbc5586f331c9b55a6da83e5d339cd1",
+      "partTitle": "Port Berth & Crane Scheduling Simulator: Turnaround Time Minimization and Congestion Queue Modeling"
     }
   ]
 }

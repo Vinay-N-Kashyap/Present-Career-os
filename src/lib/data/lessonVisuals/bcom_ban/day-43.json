@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Correspondent Banking Network & Nostro, Vostro and Loro Taxonomy",
-      "codeHash": "73541a69ca531308e3bde2090b05297bebe9115b83cfde87de3de2353bb999fa",
+      "codeHash": "c4244045ca93ec1510a814ae678dd56ec7156819f883397749fe964f0ff20c65",
       "spec": {
         "template": "funnel",
-        "title": "The Correspondent Banking Network & No... \u2014 Treasury Risk Operations",
+        "title": "The Correspondent Banking Network & No... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "The Global SWIFT Migration: Legacy MT FIN vs ISO 20022 MX Standards",
-      "codeHash": "0ccba6e106be0614f8277b48515624853a60c1c9f69e3aaefea8b63e366b7eca",
+      "codeHash": "49aff26a703932f1d6dcda4a3ac03c6875cab91d387c279d57b8e23934348279",
       "spec": {
         "template": "funnel",
-        "title": "The Global SWIFT Migration: Legacy MT ... \u2014 Treasury Risk Operations",
+        "title": "The Global SWIFT Migration: Legacy MT ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Multi-Currency Mirror Accounting & Shadow Ledger Operations",
-      "codeHash": "824c88cf86ea714ae95e7118177fc33157ba09689d9c4d9d721f31aceeb413a6",
+      "codeHash": "36c8b98d836da9a61bc79dd6c87c34e03541f84111df056413cbca58ab9fcb9b",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Currency Mirror Accounting & Sha... \u2014 Treasury Risk Operations",
+        "title": "Multi-Currency Mirror Accounting & Sha... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Nostro Reconciliation Mechanics, Outstanding Items & Transit Float Risk",
-      "codeHash": "238f7c9f922d7833481a9e5f3873c91b1df51f8abb1f6996435870beadae06ab",
+      "codeHash": "651b3ba24831439e671a69e6fcabfd848325cf7ad3a64f93821a44e7a9a74377",
       "spec": {
         "template": "funnel",
-        "title": "Nostro Reconciliation Mechanics, Outst... \u2014 Treasury Risk Operations",
+        "title": "Nostro Reconciliation Mechanics, Outst... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Cross-Border Settlement & Nostro Simulator",
-      "codeHash": "1dbdb035dc7f89628c73aae2733789916047a7ac49c1cc62017b5732a9212b18",
+      "codeHash": "75332e77cd59652126dd14578152f5cab48f0d29523dd05840a9c30bf93e343c",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Cross-Border ... \u2014 Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Cross-Border ... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

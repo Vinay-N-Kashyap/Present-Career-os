@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "Non-Fund-Based Credit Architecture: Contingent Liabilities, Off-Balance-Sheet Exposure & Credit Conversion Factors (CCF)",
-      "codeHash": "ab1d038b88807313f05cdc6dfc843385dec7e4a2fa33393e1f1b116ab3a144b3",
+      "codeHash": "9a72d6a6100736ac9899e1d946e5ba3fbffbdc45358ba295a408a685eb46e186",
       "spec": {
         "template": "funnel",
-        "title": "Non-Fund-Based Credit Architecture: Co... \u2014 Credit Underwriting Review",
+        "title": "Non-Fund-Based Credit Architecture: Co... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Bank Guarantees (BGs): Financial Guarantees vs Performance Guarantees & URDG 758 Legal Doctrine",
-      "codeHash": "93ea1b628b8bab143768ec07bee67f122d7732b73387db8a1c61745365b6b5da",
+      "codeHash": "45441d69b9daa38718a9251d34b1322f99b645daae70674afe59682c60559763",
       "spec": {
         "template": "funnel",
-        "title": "Bank Guarantees (BGs): Financial Guara... \u2014 Credit Underwriting Review",
+        "title": "Bank Guarantees (BGs): Financial Guara... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Letters of Credit (LCs): Commercial Architecture, Parties & The Doctrine of Strict Compliance (UCP 600 / ISBP 745)",
-      "codeHash": "471bf827aa7d34e1af6c859a0cb491325d05b4a60fc52132b06ae182037e936e",
+      "codeHash": "181f2d4d951e09d46fc82d987984ec1db00881ca45424e0b1dd00df7999a7da0",
       "spec": {
         "template": "funnel",
-        "title": "Letters of Credit (LCs): Commercial Ar... \u2014 Credit Underwriting Review",
+        "title": "Letters of Credit (LCs): Commercial Ar... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Underwriting & Structuring NFB Credit Facilities: Margins, Security & Devolvement Defense",
-      "codeHash": "cf6e38d12d80f713f181036ad2cf30d649209cefd7464894f302e98f0cfe99f0",
+      "codeHash": "151c90f0dce37f9358b5cd1e7f843ac913abd7528df30e6075574371cee806a0",
       "spec": {
         "template": "funnel",
-        "title": "Underwriting & Structuring NFB Credit ... \u2014 Credit Underwriting Review",
+        "title": "Underwriting & Structuring NFB Credit ... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Bank Guarantee & Letter of Credit Underwriting Simulator",
-      "codeHash": "c91e5d8393904a21639ef596f814b06b48b413a40b40df5748340e48d35b129a",
+      "codeHash": "a88253438fa11934708752c9d89f730ce8f6302711be5c12fb8ea76e31a6ffcb",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Bank Guarante... \u2014 Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Bank Guarante... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

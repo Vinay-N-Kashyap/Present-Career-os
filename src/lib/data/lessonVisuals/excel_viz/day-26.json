@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Modern Excel Automation: Office Scripts & TypeScript Architecture",
-    "codeHash": "f2ad062e6ec0292b6573803f7c88ba56912207fcba4eb32a0829ec2d0a0824d0",
-    "spec": {
-      "template": "bars",
-      "title": "Modern Excel Automation: Office Scripts ... \u2014 Office Scripts Automation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline TypeScript script initialization for Modern Excel Automation: Office ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 50,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 65,
-              "tone": "warn"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: REST pagination and in-memory data cleansing for Modern Excel Automation: Office ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Event-driven webhook dispatch and range updates for Modern Excel Automation: Office ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 95,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Modern Excel Automation: Office ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 26,
+  "entries": [
+    {
+      "partTitle": "Modern Excel Automation: Office Scripts & TypeScript Architecture",
+      "codeHash": "f2ad062e6ec0292b6573803f7c88ba56912207fcba4eb32a0829ec2d0a0824d0",
+      "spec": {
+        "template": "bars",
+        "title": "Modern Excel Automation: Office Scripts ... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Modern Excel Automation: Office Scripts ... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Modern Excel Automation: Office ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Cloud Data Ingestion: REST APIs, Bearer Auth & Paging Pipelines",
+      "codeHash": "563a623d3e3d71bf8718a259e64fc827d6110e528f041b30500a0d1e6ea87a91",
+      "spec": {
+        "template": "bars",
+        "title": "Cloud Data Ingestion: REST APIs, Bearer ... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Cloud Data Ingestion: REST APIs, Bearer ... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Cloud Data Ingestion: REST APIs,...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Asynchronous Batch Pipelines & Data Cleansing Invariants",
+      "codeHash": "a28e7629b15deebad363507c00831a368bc5ef336dbdd466383b7d01739468c9",
+      "spec": {
+        "template": "bars",
+        "title": "Asynchronous Batch Pipelines & Data Clea... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Asynchronous Batch Pipelines & Data Clea... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Asynchronous Batch Pipelines & D...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Event-Driven Automation: Webhooks & Power Automate Orchestration",
+      "codeHash": "88713c8cbe17e30ea33eb10963b5d5b7a1b45aa3529a68f091a75a1defc52d8d",
+      "spec": {
+        "template": "bars",
+        "title": "Event-Driven Automation: Webhooks & Powe... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Event-Driven Automation: Webhooks & Powe... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Event-Driven Automation: Webhook...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Office Script Automation Gateway & Boardroom Telemetry",
+      "codeHash": "ad224d162e983116d59d8d22b2286f45dc6478c8b5be01bb3b913203223be8dd",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Office Script Automation Gate... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Office Script Automation Gate... — Office Scripts Automation Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Baseline TypeScript script initialization for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 50,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 65,
+                "tone": "warn"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: REST pagination and in-memory data cleansing for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 80,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Event-driven webhook dispatch and range updates for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 95,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 95,
+                "tone": "accent"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Enterprise Office Script Automat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Script Exec",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "API Ingestion",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Batch Cleanse",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Webhook Routing",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Cloud Data Ingestion: REST APIs, Bearer Auth & Paging Pipelines",
-    "codeHash": "563a623d3e3d71bf8718a259e64fc827d6110e528f041b30500a0d1e6ea87a91",
-    "spec": {
-      "template": "bars",
-      "title": "Cloud Data Ingestion: REST APIs, Bearer ... \u2014 Office Scripts Automation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline TypeScript script initialization for Cloud Data Ingestion: REST APIs,...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 50,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 65,
-              "tone": "warn"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: REST pagination and in-memory data cleansing for Cloud Data Ingestion: REST APIs,...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Event-driven webhook dispatch and range updates for Cloud Data Ingestion: REST APIs,...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 95,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Cloud Data Ingestion: REST APIs,...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Asynchronous Batch Pipelines & Data Cleansing Invariants",
-    "codeHash": "a28e7629b15deebad363507c00831a368bc5ef336dbdd466383b7d01739468c9",
-    "spec": {
-      "template": "bars",
-      "title": "Asynchronous Batch Pipelines & Data Clea... \u2014 Office Scripts Automation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline TypeScript script initialization for Asynchronous Batch Pipelines & D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 50,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 65,
-              "tone": "warn"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: REST pagination and in-memory data cleansing for Asynchronous Batch Pipelines & D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Event-driven webhook dispatch and range updates for Asynchronous Batch Pipelines & D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 95,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Asynchronous Batch Pipelines & D...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Event-Driven Automation: Webhooks & Power Automate Orchestration",
-    "codeHash": "88713c8cbe17e30ea33eb10963b5d5b7a1b45aa3529a68f091a75a1defc52d8d",
-    "spec": {
-      "template": "bars",
-      "title": "Event-Driven Automation: Webhooks & Powe... \u2014 Office Scripts Automation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline TypeScript script initialization for Event-Driven Automation: Webhook...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 50,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 65,
-              "tone": "warn"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: REST pagination and in-memory data cleansing for Event-Driven Automation: Webhook...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Event-driven webhook dispatch and range updates for Event-Driven Automation: Webhook...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 95,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Event-Driven Automation: Webhook...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Office Script Automation Gateway & Boardroom Telemetry",
-    "codeHash": "ad224d162e983116d59d8d22b2286f45dc6478c8b5be01bb3b913203223be8dd",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Office Script Automation Gate... \u2014 Office Scripts Automation Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Baseline TypeScript script initialization for Enterprise Office Script Automat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 50,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 65,
-              "tone": "warn"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: REST pagination and in-memory data cleansing for Enterprise Office Script Automat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 80,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Event-driven webhook dispatch and range updates for Enterprise Office Script Automat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 95,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 95,
-              "tone": "accent"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise gateway certification and SHA-256 seal for Enterprise Office Script Automat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Script Exec",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "API Ingestion",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Batch Cleanse",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Webhook Routing",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

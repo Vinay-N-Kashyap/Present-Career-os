@@ -10,18 +10,18 @@
         "caption": "Options Greeks hedging ledger immunizing delta risks.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -67,18 +67,18 @@
         "caption": "Options Greeks hedging ledger immunizing delta risks.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -124,18 +124,18 @@
         "caption": "Options Greeks hedging ledger immunizing delta risks.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -181,18 +181,18 @@
         "caption": "Options Greeks hedging ledger immunizing delta risks.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -238,18 +238,18 @@
         "caption": "Options Greeks hedging ledger immunizing delta risks.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -286,6 +286,509 @@
           ]
         }
       ]
+    }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Black-Scholes-Merton Mechanics: Stochastic Calculus & Risk-Neutral Valuation",
+      "codeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Black-Scholes-Merton Mechanics",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — MuBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — MuBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — MuBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — MuBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Black-Scholes-Merton Mechanics",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — MuBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — MuBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — MuBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — MuBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "First-Order Greeks: Delta (Delta), Theta (Theta) & Rho (Rho) Directional Dynamics",
+      "codeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: First-Order Greeks: Delta (Del",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — MuBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — MuBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — MuBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — MuBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: First-Order Greeks: Delta (Del",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — MuBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — MuBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — MuBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — MuBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Second-Order & Cross Greeks: Gamma (Gamma), Vega (Vega), Vanna & Volga Mechanics",
+      "codeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Second-Order & Cross Greeks: G",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — MuBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — MuBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — MuBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — MuBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Second-Order & Cross Greeks: G",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — MuBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — MuBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — MuBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — MuBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Dynamic Delta-Gamma-Vega Neutral Immunization & Volatility Surface Architecture",
+      "codeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Dynamic Delta-Gamma-Vega Neutr",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — MuBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — MuBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — MuBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — MuBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Dynamic Delta-Gamma-Vega Neutr",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — MuBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — MuBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — MuBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — MuBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Greeks Hedging Engine: Sandbox Execution & Socratic Synthesis",
+      "codeHash": "e962c1d498541b9bd10a1e71e29a717249a749481c9175ca8b72449602b0735d",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Greeks Hedging Engi",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — MuBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — MuBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — MuBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — MuBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Greeks Hedging Engi",
+        "caption": "Options Greeks hedging ledger immunizing delta risks.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — MuBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — MuBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — MuBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — MuBeta Epsilon Delta."
+          }
+        ]
+      }
     }
   ]
 }

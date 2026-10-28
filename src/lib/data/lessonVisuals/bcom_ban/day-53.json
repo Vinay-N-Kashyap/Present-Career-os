@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "CLO Structural Mechanics: The Collateral Manager, Warehouse Facilities & Reinvestment Lifecycle",
-      "codeHash": "2846f489792954d347d22aca0c4123558f7120c7258d8f497e6acb3ea1b61dc5",
+      "codeHash": "2211dd0e4526b270bf29feda36a4bff311ec4ec308aeaae6fac9559e974b004e",
       "spec": {
         "template": "funnel",
-        "title": "CLO Structural Mechanics: The Collater... \u2014 Structured Credit Operations",
+        "title": "CLO Structural Mechanics: The Collater... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Collateral Portfolio Quality Metrics: WARF, WAS, WAC & Moody's Diversity Score",
-      "codeHash": "f8e8d06d92213952ebf08664ffe0ce7ad1dfc465e7b8acd6d9423db06a35994c",
+      "codeHash": "79b880efacfa54bc6380ce1aba72befac2782e6df17e38c20f13bea856b20916",
       "spec": {
         "template": "funnel",
-        "title": "Collateral Portfolio Quality Metrics: ... \u2014 Structured Credit Operations",
+        "title": "Collateral Portfolio Quality Metrics: ... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Capital Tranche Anatomy: From Senior AAA to Subordinated Equity Arbitrage",
-      "codeHash": "2d396e7f80fc6e97b93cd1f83ff9b7136475e2221eb0b18ff6f7c706ae7c259f",
+      "codeHash": "1bdb0b2aeac5e9636d9730c972daedf9595199e4c1ee3098eed30430e81c5fc8",
       "spec": {
         "template": "funnel",
-        "title": "Capital Tranche Anatomy: From Senior A... \u2014 Structured Credit Operations",
+        "title": "Capital Tranche Anatomy: From Senior A... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Par Value Coverage Tests: Overcollateralization (OC) & Interest Coverage (IC) Test Mechanics",
-      "codeHash": "7f0f14b2eecdc67a03896b4a73bd9877ac96ea0cb95353cd22b7da2f5ddc60fe",
+      "codeHash": "da99049935f1bf18b785c8e0fd78ed7f6936080928d3f2309b2176e3c6af5798",
       "spec": {
         "template": "funnel",
-        "title": "Par Value Coverage Tests: Overcollater... \u2014 Structured Credit Operations",
+        "title": "Par Value Coverage Tests: Overcollater... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Industrial CLO Lab: Collateral Cash Flow Engine, Dynamic OC Curing & Equity IRR Simulator",
-      "codeHash": "4de2a2a0cbdbf57af4102e4db7d95ee9150a0549a9ff2be471b042a29df8d4fc",
+      "codeHash": "164bb814b8195771c2a101265ab0b85e6d0906c398c877b34c9ad5487626806c",
       "spec": {
         "template": "funnel",
-        "title": "Industrial CLO Lab: Collateral Cash Fl... \u2014 Structured Credit Operations",
+        "title": "Industrial CLO Lab: Collateral Cash Fl... — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

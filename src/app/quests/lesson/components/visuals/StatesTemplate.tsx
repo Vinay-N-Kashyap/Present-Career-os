@@ -70,13 +70,14 @@ export function StatesTemplate({
           width: '100%',
         }}
       >
-        {stateList.map((st) => {
-          const isCurrent = st.id === currentStateId;
+        {stateList.map((st: any, idx: number) => {
+          const stId = st?.id || st?.name || st?.label || `state-${idx}`;
+          const isCurrent = stId === currentStateId || (step as any)?.values?.activeState === stId;
           const tone = isCurrent ? currentTone : 'idle';
 
           return (
             <div
-              key={st.id}
+              key={`${stId}-${idx}`}
               className="visual-state-node"
               style={{
                 display: 'flex',

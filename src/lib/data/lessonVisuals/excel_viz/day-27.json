@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Advanced Power Query M Language & Functional Paradigm",
-    "codeHash": "0bd61829a60a50b20a8af4718be38a87be2d3ea3f5c7d762aa2d74b56aa856cb",
-    "spec": {
-      "template": "bars",
-      "title": "Advanced Power Query M Language & Functional Paradigm \u2014 Big Data Pipeline Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting data structures and architectural scope for Advanced Power Query M Language ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 10,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 5,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing transformation algorithms and data pipelines for Advanced Power Query M Language ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 45,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 30,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Advanced Power Query M Language ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Advanced Power Query M Language ...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 27,
+  "entries": [
+    {
+      "partTitle": "Advanced Power Query M Language & Functional Paradigm",
+      "codeHash": "0bd61829a60a50b20a8af4718be38a87be2d3ea3f5c7d762aa2d74b56aa856cb",
+      "spec": {
+        "template": "bars",
+        "title": "Advanced Power Query M Language & Functional Paradigm — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Advanced Power Query M Language & Functional Paradigm — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Advanced Power Query M Language ...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Web Scraping & Regulatory Filing HTML Extraction",
+      "codeHash": "c8bfa3ffd47889d4f985cd30e70950af70a86dbe35da2d0b1bfb8aa0e2b4808b",
+      "spec": {
+        "template": "bars",
+        "title": "Automated Web Scraping & Regulatory Filing HTML Extraction — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Automated Web Scraping & Regulatory Filing HTML Extraction — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Web Scraping & Regulat...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Fuzzy Matching, Jaccard Similarity & Multi-Source Data Blending",
+      "codeHash": "9507d28d3bafb1585860bd232f7e53cc831497749a498358534ea3517f11d6d1",
+      "spec": {
+        "template": "bars",
+        "title": "Fuzzy Matching, Jaccard Similarity & Multi-Source Data Blending — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Fuzzy Matching, Jaccard Similarity & Multi-Source Data Blending — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Fuzzy Matching, Jaccard Similari...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Automated Multi-Source Reconciliation & Exception Triangulation",
+      "codeHash": "bd4e6b3ad5ac5345049452b5f88957ef4f85eb4d69adbb3375bfb71ba7eb6074",
+      "spec": {
+        "template": "bars",
+        "title": "Automated Multi-Source Reconciliation & Exception Triangulation — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Automated Multi-Source Reconciliation & Exception Triangulation — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Multi-Source Reconcili...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Big Data Excel Pipeline Gateway & Boardroom Telemetry",
+      "codeHash": "b351e74a9ac7493a4ef5ec999b9bff824ef12defd73812bbffc90b67b38f9b49",
+      "spec": {
+        "template": "bars",
+        "title": "Enterprise Big Data Excel Pipeline Gateway & Boardroom Telemetry — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Enterprise Big Data Excel Pipeline Gateway & Boardroom Telemetry — Big Data Pipeline Telemetry",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ingesting data structures and architectural scope for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 10,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 5,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing transformation algorithms and data pipelines for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 50,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 45,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 30,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 90,
+                "tone": "accent"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 85,
+                "tone": "data"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 75,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Enterprise Big Data Excel Pipeli...",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Query Folding",
+                "value": 100,
+                "tone": "data"
+              },
+              {
+                "label": "Web Scraping",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "Fuzzy Matching",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "3-Way Recon",
+                "value": 100,
+                "tone": "accent"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Automated Web Scraping & Regulatory Filing HTML Extraction",
-    "codeHash": "c8bfa3ffd47889d4f985cd30e70950af70a86dbe35da2d0b1bfb8aa0e2b4808b",
-    "spec": {
-      "template": "bars",
-      "title": "Automated Web Scraping & Regulatory Filing HTML Extraction \u2014 Big Data Pipeline Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting data structures and architectural scope for Automated Web Scraping & Regulat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 10,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 5,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Web Scraping & Regulat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 45,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 30,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Web Scraping & Regulat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Web Scraping & Regulat...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Fuzzy Matching, Jaccard Similarity & Multi-Source Data Blending",
-    "codeHash": "9507d28d3bafb1585860bd232f7e53cc831497749a498358534ea3517f11d6d1",
-    "spec": {
-      "template": "bars",
-      "title": "Fuzzy Matching, Jaccard Similarity & Multi-Source Data Blending \u2014 Big Data Pipeline Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting data structures and architectural scope for Fuzzy Matching, Jaccard Similari...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 10,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 5,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing transformation algorithms and data pipelines for Fuzzy Matching, Jaccard Similari...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 45,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 30,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Fuzzy Matching, Jaccard Similari...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Fuzzy Matching, Jaccard Similari...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Automated Multi-Source Reconciliation & Exception Triangulation",
-    "codeHash": "bd4e6b3ad5ac5345049452b5f88957ef4f85eb4d69adbb3375bfb71ba7eb6074",
-    "spec": {
-      "template": "bars",
-      "title": "Automated Multi-Source Reconciliation & Exception Triangulation \u2014 Big Data Pipeline Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting data structures and architectural scope for Automated Multi-Source Reconcili...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 10,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 5,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing transformation algorithms and data pipelines for Automated Multi-Source Reconcili...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 45,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 30,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Automated Multi-Source Reconcili...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Automated Multi-Source Reconcili...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Enterprise Big Data Excel Pipeline Gateway & Boardroom Telemetry",
-    "codeHash": "b351e74a9ac7493a4ef5ec999b9bff824ef12defd73812bbffc90b67b38f9b49",
-    "spec": {
-      "template": "bars",
-      "title": "Enterprise Big Data Excel Pipeline Gateway & Boardroom Telemetry \u2014 Big Data Pipeline Telemetry",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ingesting data structures and architectural scope for Enterprise Big Data Excel Pipeli...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 10,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 5,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing transformation algorithms and data pipelines for Enterprise Big Data Excel Pipeli...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 50,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 45,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 30,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Evaluating real-world institutional enterprise scenario for Enterprise Big Data Excel Pipeli...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 90,
-              "tone": "accent"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 85,
-              "tone": "data"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 75,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Enterprise Big Data gateway certification and SHA-256 seal for Enterprise Big Data Excel Pipeli...",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Query Folding",
-              "value": 100,
-              "tone": "data"
-            },
-            {
-              "label": "Web Scraping",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "Fuzzy Matching",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "3-Way Recon",
-              "value": 100,
-              "tone": "accent"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

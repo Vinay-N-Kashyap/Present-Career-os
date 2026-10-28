@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Modern Statutory Audit Report Architecture (PCAOB AS 3101 & ISA 700)",
-      "codeHash": "6bdc0066dab318dfab331b4cad628d41ae6f2836bb01c8381b24e119349e35b2",
+      "codeHash": "8eb235b5bb1e55c5d96378a0ddc4560c25104bb93357443d69d3261c3021c705",
       "spec": {
         "template": "funnel",
-        "title": "The Modern Statutory Audit Report Arch... \u2014 Assurance Review",
+        "title": "The Modern Statutory Audit Report Arch... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "The Basis for Opinion & Independence Declarations",
-      "codeHash": "c20194390dff673b2018cd9d5ad9ddeb8a631a548542cf9e171c51d0535eebcd",
+      "codeHash": "8aabb00afcbc2b80159e1704c58233f3e676304d5626990ac7d01ccc3387118d",
       "spec": {
         "template": "funnel",
-        "title": "The Basis for Opinion & Independence D... \u2014 Assurance Review",
+        "title": "The Basis for Opinion & Independence D... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Explanatory Paragraphs & Emphasis of Matter (AS 3101 vs. ISA 706)",
-      "codeHash": "b5a0a9b7e9ecb9d3344ff5eeb19f2e66c9729f725191bb4f01be266ec18ac7a0",
+      "codeHash": "7951e9a4121639ec184e01ebf754015f7d431521d23adbce08cb8dccf6b8ccf5",
       "spec": {
         "template": "funnel",
-        "title": "Explanatory Paragraphs & Emphasis of M... \u2014 Assurance Review",
+        "title": "Explanatory Paragraphs & Emphasis of M... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Report Dating, Dual-Dating Mechanics & Signature Protocols (AS 3110)",
-      "codeHash": "a2accc68c6cc551211ecf279239d70504c2808a657ffbd21b8a48c9c14d05766",
+      "codeHash": "3df7e3f0c876c90edb7575986842414ebf445deb86127ef1b1ce0b1f54a7a929",
       "spec": {
         "template": "funnel",
-        "title": "Report Dating, Dual-Dating Mechanics &... \u2014 Assurance Review",
+        "title": "Report Dating, Dual-Dating Mechanics &... — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Audit Report Generator & Compliance Engine",
-      "codeHash": "5d33a49f869e13d9b840a851c6c249046065cef4f7cb3f6a72aae56f5bed1544",
+      "codeHash": "d78a3bc9b63fd61915295a73c69a0f8252696788ea2f7e59609b8aec84b5a9a6",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Audit Report ... \u2014 Assurance Review",
+        "title": "Comprehensive Enterprise Audit Report ... — Assurance Review",
         "steps": [
           {
             "at": "intro",

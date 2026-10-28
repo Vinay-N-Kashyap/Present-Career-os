@@ -387,5 +387,748 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "REIT Institutional Architecture: Equity REITs vs Mortgage REITs (mREITs) & Statutory Tax Invariants",
+      "codeHash": "d7f3efe314f28ea76b5f8df536ab654182f67df6f88d961dd0922bcf1a3ab125",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — TertiusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — TertiusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — TertiusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — TertiusBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — TertiusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — TertiusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — TertiusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — TertiusBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commercial Real Estate Financial Metrics: Net Operating Income (NOI), FFO, AFFO & NAV Modeling",
+      "codeHash": "a6096ad79c84f772baaa7e5360d8f0203c0fc01200065a852c81abe213193467",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — TertiusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — TertiusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — TertiusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — TertiusBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — TertiusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — TertiusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — TertiusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — TertiusBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commercial Mortgage-Backed Securities (CMBS): Tranching, Subordination & Loss Waterfalls",
+      "codeHash": "5692c7d4e56bb7960bf7e844766d71cf3047c3f0420fe49af31c1b5bfc724e4a",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — TertiusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — TertiusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — TertiusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — TertiusBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — TertiusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — TertiusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — TertiusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — TertiusBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "CRE Refinancing Risk, Maturity Walls, Cap Rates & Debt Yield Optimization",
+      "codeHash": "14bcd32a7576223dda9260bf201f7ade1c075e161e571ae15dc7e29bbadf2ec8",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — TertiusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — TertiusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — TertiusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — TertiusBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — TertiusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — TertiusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — TertiusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — TertiusBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: REIT FFO/AFFO Valuation, NAV Model & CMBS Tranche Loss Engine",
+      "codeHash": "468eb33f4da3669ffcda0f8bb6fab3ecd8ce6a2f7e642ffac86629c3f8e8c5b1",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — TertiusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — TertiusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — TertiusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — TertiusBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 57 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Commercial Real Estate Physical Property Asset",
+            "$500,000,000.00",
+            ""
+          ],
+          [
+            "Commercial Mortgage Debt Service Escrow Reserve",
+            "$25,000,000.00",
+            ""
+          ],
+          [
+            "Senior Triple A Commercial Mortgage Securities",
+            "",
+            "$350,000,000.00"
+          ],
+          [
+            "Mezzanine Subordinated Mortgage Debt Tranche",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "First Loss Commercial Equity Partner Capital",
+            "",
+            "$75,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$525,000,000.00",
+          "$525,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 57 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — TertiusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — TertiusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — TertiusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 4,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — TertiusBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Penalty Taxonomy Structure",
+        "template": "ledger-sheet",
+        "title": "Section 270A Penalty Taxonomy: Under-Reportin... — General Ledger Verification",
         "steps": [
           {
-            "label": "Assessed Variance",
-            "caption": "Assessment order determines total additions to returned income."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A Penalty Taxo (Iota Alpha).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9850,
+            "totalCredit": 9850,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 9850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Under Reporting",
-            "caption": "Honest errors attract fifty percent penalty on computed tax."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A Penalty Taxo (Alpha).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Misreporting Escalation",
-            "caption": "Fraudulent suppression attracts two hundred percent penalty."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A Penalty Taxo (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Notice Specification",
-            "caption": "Show cause notice must state exact statutory limb invoked."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A Penalty Taxo (Alpha).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1668da9e69cbe3327a1487c048f13c0934853cf76f6105d098e5784d89c7d9ef",
+      "partTitle": "Section 270A Penalty Taxonomy: Under-Reporting of Income vs Misreporting of Income",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 270A Penalty Taxonomy: Under-Reportin... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section A Penalty Taxo (Iota Alpha).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9850,
+            "totalCredit": 9850,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 9850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section A Penalty Taxo (Alpha).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section A Penalty Taxo (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section A Penalty Taxo (Alpha).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11820,
+            "totalCredit": 11820,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 9850,
+                "balance": 9850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 1970,
+                "balance": 11820,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 11820,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Misreporting Gateways & Carve-outs",
+        "template": "ledger-sheet",
+        "title": "The Six Statutory Misreporting Gateways & Saf... — General Ledger Verification",
         "steps": [
           {
-            "label": "Six Gateways",
-            "caption": "Misreporting is strictly confined to six statutory categories."
+            "at": "intro",
+            "caption": "Open primary debit entry for The Six Statutory Misr (Iota Beta).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10050,
+            "totalCredit": 10050,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Bona Fide Explanation",
-            "caption": "Substantiated explanations are fully carved out from penalty."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Six Statutory Misr (Beta).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Estimate Protection",
-            "caption": "Income additions based on accounting estimates are exempt."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Six Statutory Misr (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Transfer Pricing Shield",
-            "caption": "Contemporaneous economic benchmarking shields cross border terms."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Six Statutory Misr (Beta).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "11f3ec21db77a95f8dd4a1cf3b9b4cd9a4341fba0cc3498ff43f4f8a376496f2",
+      "partTitle": "The Six Statutory Misreporting Gateways & Safe Harbour Carve-outs",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "The Six Statutory Misreporting Gateways & Saf... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for The Six Statutory Misr (Iota Beta).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10050,
+            "totalCredit": 10050,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for The Six Statutory Misr (Beta).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for The Six Statutory Misr (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for The Six Statutory Misr (Beta).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12060,
+            "totalCredit": 12060,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10050,
+                "balance": 10050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2010,
+                "balance": 12060,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12060,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Section 270AA Statutory Immunity",
+        "template": "ledger-sheet",
+        "title": "Mandatory Statutory Immunity under Section 27... — General Ledger Verification",
         "steps": [
           {
-            "label": "Demand Payment",
-            "caption": "Assessee pays full tax and interest demand within thirty days."
+            "at": "intro",
+            "caption": "Open primary debit entry for Mandatory Statutory Im (Iota Gamma).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10250,
+            "totalCredit": 10250,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Appeal Waiver",
-            "caption": "Assessee executes formal board waiver of appellate challenge."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Mandatory Statutory Im (Gamma).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Form Filing",
-            "caption": "Assessee submits electronic application in Form Sixty Eight."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Mandatory Statutory Im (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Mandatory Grant",
-            "caption": "Officer grants absolute immunity from penalty and prosecution."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Mandatory Statutory Im (Gamma).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "5689058c2b2643c03ecd702209507ee7def5a375637b2c766d88a1632d29bb58",
+      "partTitle": "Mandatory Statutory Immunity under Section 270AA & Penalty Waiver under Section 273A",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Mandatory Statutory Immunity under Section 27... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Mandatory Statutory Im (Iota Gamma).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10250,
+            "totalCredit": 10250,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Mandatory Statutory Im (Gamma).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Mandatory Statutory Im (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Mandatory Statutory Im (Gamma).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12300,
+            "totalCredit": 12300,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10250,
+                "balance": 10250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2050,
+                "balance": 12300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12300,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "False Entry & Prosecution Flow",
+        "template": "ledger-sheet",
+        "title": "Section 271AAD False Entry Penalties & Crimin... — General Ledger Verification",
         "steps": [
           {
-            "label": "Fake Invoices",
-            "caption": "Accommodation entries attract hundred percent penalty on amount."
+            "at": "intro",
+            "caption": "Open primary debit entry for Section AAD False Entr (Iota Delta).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10450,
+            "totalCredit": 10450,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Intermediary Liability",
-            "caption": "Entry providers and abettors face equal financial penalties."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section AAD False Entr (Delta).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Criminal Charge",
-            "caption": "Willful tax evasion triggers rigorous imprisonment proceedings."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section AAD False Entr (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Compounding Relief",
-            "caption": "Competent authority compounds offenses upon statutory fees."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section AAD False Entr (Delta).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "cfd4b4e2d8f154a810cfda16a2a16e491591d4030a377a8c1546f8ea19972acc",
+      "partTitle": "Section 271AAD False Entry Penalties & Criminal Prosecutions under Chapter XXII",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Section 271AAD False Entry Penalties & Crimin... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Section AAD False Entr (Iota Delta).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10450,
+            "totalCredit": 10450,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Section AAD False Entr (Delta).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Section AAD False Entr (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Section AAD False Entr (Delta).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Penalty Optimization Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 270A ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Addition Ingestion",
-            "caption": "Engine catalogs assessment variations and factual disclosures."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Iota Epsilon).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10650,
+            "totalCredit": 10650,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Safe Harbour Audit",
-            "caption": "Algorithm identifies additions protected by statutory carve outs."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Immunity Evaluation",
-            "caption": "System verifies Form Sixty Eight eligibility requirements."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Settlement Strategy",
-            "caption": "Platform quantifies savings achieved through statutory immunity."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "d1ea6177fe4cd9457f0895c65ec08efadbb3c022d75bddd2502292f4d6850063",
+      "partTitle": "Production Python Architecture: Section 270A Penalty & Section 270AA Immunity Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Section 270A ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Iota Epsilon).",
+            "title": "Day 49 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10650,
+            "totalCredit": 10650,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Clearing & Settlement Control",
+                "credit": 10650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 49 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Clearing & Settlement Control",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Iota).",
+            "title": "Day 49 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Verified Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "General Ledger Control Account",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 49 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-4901",
+                "account": "Audited Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4902",
+                "account": "Audited Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4903",
+                "account": "Audited Treasury Settlement",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

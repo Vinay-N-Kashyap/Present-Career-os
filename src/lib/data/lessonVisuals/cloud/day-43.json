@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "client_app",
-            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances.",
+            "caption": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances. (AWS KMS Architecture & Multi-Region)"
           },
           {
             "at": "say2",
             "focus": "kms_hsm_gateway",
-            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication.",
+            "caption": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication. (AWS KMS Architecture & Multi-Region)"
           },
           {
             "at": "example",
             "focus": "cryptographic_envelope",
-            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context.",
+            "caption": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context. (AWS KMS Architecture & Multi-Region)"
           },
           {
             "at": "tryIt",
             "focus": "ciphertext_store",
-            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction.",
+            "caption": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction. (AWS KMS Architecture & Multi-Region)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "client_app",
-            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances.",
+            "caption": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances. (Dedicated Hardware Security: AWS Cl)"
           },
           {
             "at": "say2",
             "focus": "kms_hsm_gateway",
-            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication.",
+            "caption": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication. (Dedicated Hardware Security: AWS Cl)"
           },
           {
             "at": "example",
             "focus": "cryptographic_envelope",
-            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context.",
+            "caption": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context. (Dedicated Hardware Security: AWS Cl)"
           },
           {
             "at": "tryIt",
             "focus": "ciphertext_store",
-            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction.",
+            "caption": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction. (Dedicated Hardware Security: AWS Cl)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "client_app",
-            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances.",
+            "caption": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances. (Envelope Encryption & High-Throughp)"
           },
           {
             "at": "say2",
             "focus": "kms_hsm_gateway",
-            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication.",
+            "caption": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication. (Envelope Encryption & High-Throughp)"
           },
           {
             "at": "example",
             "focus": "cryptographic_envelope",
-            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context.",
+            "caption": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context. (Envelope Encryption & High-Throughp)"
           },
           {
             "at": "tryIt",
             "focus": "ciphertext_store",
-            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction.",
+            "caption": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction. (Envelope Encryption & High-Throughp)"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "client_app",
-            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances.",
+            "caption": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances. (Cryptographic Erasure (Crypto-Shred)"
           },
           {
             "at": "say2",
             "focus": "kms_hsm_gateway",
-            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication.",
+            "caption": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication. (Cryptographic Erasure (Crypto-Shred)"
           },
           {
             "at": "example",
             "focus": "cryptographic_envelope",
-            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context.",
+            "caption": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context. (Cryptographic Erasure (Crypto-Shred)"
           },
           {
             "at": "tryIt",
             "focus": "ciphertext_store",
-            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction.",
+            "caption": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction. (Cryptographic Erasure (Crypto-Shred)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "client_app",
-            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances."
+            "annotation": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances.",
+            "caption": "Applications request cryptographic operations using Multi-Region Keys or dedicated CloudHSM appliances. (Masterclass Synthesis: Enterprise K)"
           },
           {
             "at": "say2",
             "focus": "kms_hsm_gateway",
-            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication."
+            "annotation": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication.",
+            "caption": "KMS and CloudHSM enforce FIPS 140-2 Level 3 hardware boundaries and M-of-N quorum dual-party authentication. (Masterclass Synthesis: Enterprise K)"
           },
           {
             "at": "example",
             "focus": "cryptographic_envelope",
-            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context."
+            "annotation": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context.",
+            "caption": "Envelope encryption reuses cached data keys to prevent throttling while binding cryptographic context. (Masterclass Synthesis: Enterprise K)"
           },
           {
             "at": "tryIt",
             "focus": "ciphertext_store",
-            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction."
+            "annotation": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction.",
+            "caption": "Ciphertext remains mathematically secure on immutable storage, enabling instant crypto-shredding on key destruction. (Masterclass Synthesis: Enterprise K)"
           }
         ]
       }

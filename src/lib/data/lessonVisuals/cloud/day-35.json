@@ -25,7 +25,8 @@
                 "istio_mesh"
               ],
               "status": "BLUEPRINT_ESTABLISHED"
-            }
+            },
+            "caption": "Architectural synthesis uniting VPC CNI, Karpenter, ALB Ingress, and Istio mTLS. (Enterprise EKS Platform Blueprint: )"
           },
           {
             "at": "say2",
@@ -40,7 +41,8 @@
                 "encrypted_etcd"
               ],
               "status": "ETCD_ENCRYPTED_AT_REST"
-            }
+            },
+            "caption": "Kubernetes API server encrypts DEK with AWS KMS CMK before persisting secrets to etcd. (Enterprise EKS Platform Blueprint: )"
           },
           {
             "at": "example",
@@ -55,7 +57,8 @@
                 "credential_theft_blocked"
               ],
               "status": "IMDS_ISOLATION_ENFORCED"
-            }
+            },
+            "caption": "Setting IMDSv2 hop limit to 1 prevents containerized pods from stealing host node IAM credentials. (Enterprise EKS Platform Blueprint: )"
           },
           {
             "at": "tryIt",
@@ -70,7 +73,8 @@
                 "least_privilege_aws"
               ],
               "status": "POD_IDENTITIES_BOUND"
-            }
+            },
+            "caption": "Pods assume dedicated least-privilege IAM roles via projected OIDC ServiceAccount tokens. (Enterprise EKS Platform Blueprint: )"
           }
         ]
       }
@@ -97,7 +101,8 @@
                 "spot_graviton_node"
               ],
               "status": "SPOT_PROVISIONED_42S"
-            }
+            },
+            "caption": "Karpenter watches scheduler queue, bin-packs pending pods, and launches Spot instances in under 45s. (Dynamic Compute Tier: Karpenter Jus)"
           },
           {
             "at": "say2",
@@ -112,7 +117,8 @@
                 "70_pct_cost_cut"
               ],
               "status": "COMPUTE_DIVERSIFIED"
-            }
+            },
+            "caption": "NodePool mixes Graviton ARM64 and x86_64 across 20+ instance types for 70% cost savings. (Dynamic Compute Tier: Karpenter Jus)"
           },
           {
             "at": "example",
@@ -127,7 +133,8 @@
                 "eviction_rejected"
               ],
               "status": "PDB_VIOLATION_BLOCKED"
-            }
+            },
+            "caption": "PodDisruptionBudget (minAvailable: 1) blocks node consolidation from evicting all replicas simultaneously. (Dynamic Compute Tier: Karpenter Jus)"
           },
           {
             "at": "tryIt",
@@ -142,7 +149,8 @@
                 "zero_downtime_drain"
               ],
               "status": "SPOT_DRAINED_GRACEFULLY"
-            }
+            },
+            "caption": "EventBridge SQS receives 2-minute Spot warning, cordoning node and migrating pods seamlessly. (Dynamic Compute Tier: Karpenter Jus)"
           }
         ]
       }
@@ -169,7 +177,8 @@
                 "pod_target_port"
               ],
               "status": "SINGLE_HOP_INGRESS"
-            }
+            },
+            "caption": "ALB routes directly to pod VPC secondary ENI IPs, bypassing NodePort and kube-proxy NAT. (Edge-to-Pod Ingress: AWS Load Balan)"
           },
           {
             "at": "say2",
@@ -184,7 +193,8 @@
                 "consolidated_cost"
               ],
               "status": "ALB_CONSOLIDATED"
-            }
+            },
+            "caption": "Multiple namespace Ingress manifests share a consolidated ALB with automated ACM wildcard TLS. (Edge-to-Pod Ingress: AWS Load Balan)"
           },
           {
             "at": "example",
@@ -199,7 +209,8 @@
                 "old_pod_preserved"
               ],
               "status": "ZERO_502_ERRORS"
-            }
+            },
+            "caption": "Target-health.elbv2.k8s.aws holds pod in unready state until AWS Target Group confirms healthy status. (Edge-to-Pod Ingress: AWS Load Balan)"
           },
           {
             "at": "tryIt",
@@ -214,7 +225,8 @@
                 "clean_shutdown"
               ],
               "status": "ROLLING_UPDATE_ZERO_DOWNTIME"
-            }
+            },
+            "caption": "Deregistration delay allows in-flight HTTP requests to complete before terminating retiring pods. (Edge-to-Pod Ingress: AWS Load Balan)"
           }
         ]
       }
@@ -241,7 +253,8 @@
                 "zero_code_changes"
               ],
               "status": "TRANSPARENT_INTERCEPTION"
-            }
+            },
+            "caption": "Linux iptables traps TCP packets, redirecting traffic to local Envoy proxy on port 15001/15006. (Zero-Trust Microservice Mesh: Istio)"
           },
           {
             "at": "say2",
@@ -256,7 +269,8 @@
                 "plaintext_rejected"
               ],
               "status": "STRICT_MTLS_ACTIVE"
-            }
+            },
+            "caption": "PeerAuthentication in STRICT mode drops all unencrypted plaintext with connection resets. (Zero-Trust Microservice Mesh: Istio)"
           },
           {
             "at": "example",
@@ -271,7 +285,8 @@
                 "http_403_forbidden"
               ],
               "status": "RBAC_ENFORCED"
-            }
+            },
+            "caption": "Envoy evaluates client SPIFFE principal, path, and method, dropping unauthorized calls with 403 Forbidden. (Zero-Trust Microservice Mesh: Istio)"
           },
           {
             "at": "tryIt",
@@ -286,14 +301,15 @@
                 "cascading_failure_prevented"
               ],
               "status": "SELF_HEALING_MESH"
-            }
+            },
+            "caption": "VirtualService splits traffic 90/10; circuit breaker ejects pods after 3 consecutive 5xx errors. (Zero-Trust Microservice Mesh: Istio)"
           }
         ]
       }
     },
     {
       "partIndex": 5,
-      "partTitle": "\u2b50 MILESTONE 6 SYNTHESIS: Enterprise EKS Platform Verification & Production Capstone Engine",
+      "partTitle": "⭐ MILESTONE 6 SYNTHESIS: Enterprise EKS Platform Verification & Production Capstone Engine",
       "codeHash": "01d04aab267fe351dab4c96b2499315c4f35ebc1f427e3834b7108e083558db6",
       "spec": {
         "template": "workflow",
@@ -313,7 +329,8 @@
                 "zero_trust_mesh"
               ],
               "status": "ENTERPRISE_PLATFORM_INTEGRATED"
-            }
+            },
+            "caption": "Complete platform unification: hardened control plane, Karpenter, ALB, and Istio Zero Trust. (⭐ MILESTONE 6 SYNTHESIS: Enterprise)"
           },
           {
             "at": "say2",
@@ -328,7 +345,8 @@
                 "sla_beaten"
               ],
               "status": "SCALE_OUT_42S_VERIFIED"
-            }
+            },
+            "caption": "Deployment scales from 2 to 100 pods in 42 seconds with Karpenter bin-packing Spot compute. (⭐ MILESTONE 6 SYNTHESIS: Enterprise)"
           },
           {
             "at": "example",
@@ -343,7 +361,8 @@
                 "sub_millisecond_hops"
               ],
               "status": "RELIABILITY_VERIFIED"
-            }
+            },
+            "caption": "PodDisruptionBudgets protect consolidation; Pod Readiness Gates ensure zero dropped requests. (⭐ MILESTONE 6 SYNTHESIS: Enterprise)"
           },
           {
             "at": "tryIt",
@@ -358,7 +377,8 @@
                 "grade_a_certified"
               ],
               "status": "GRADE_A_PLUS_PRODUCTION_CERTIFIED"
-            }
+            },
+            "caption": "Platform proof validated across all security, compute, networking, and mesh invariants. (⭐ MILESTONE 6 SYNTHESIS: Enterprise)"
           }
         ]
       }

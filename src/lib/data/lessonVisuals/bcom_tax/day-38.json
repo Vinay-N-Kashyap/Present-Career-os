@@ -46,7 +46,9 @@
             "caption": "Documented trade discounts reduce invoice values legitimately."
           }
         ]
-      }
+      },
+      "codeHash": "30e6edaaf4de569fe45e283b03913737f9fed03cb99604853e3babe8edd59676",
+      "partTitle": "Statutory Valuation Framework: Section 15(1) Transaction Value Invariants & Mandatory Inclusions"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Manufacturing costs receive a statutory ten percent markup fallback."
           }
         ]
-      }
+      },
+      "codeHash": "e1ff33ce5f7e98b8ff523819730879efcb84baa3f7b0b3b260a3ac0e0131df37",
+      "partTitle": "Related Party & Distinct Persons Valuation: Rule 28 Open Market Value, Like Kind & 90% Price Proviso"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Exempt recipient units disqualify suppliers from nominal valuations."
           }
         ]
-      }
+      },
+      "codeHash": "720f85069f9b4f5be44cb53a16c94c10add21c49d75d4e86fc64d3d4287586cb",
+      "partTitle": "Second Proviso to Rule 28: Full ITC Recipient, Zero-Valuation Liberty & Strategic Cross-Charging"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Separate monthly returns transmit verified credits to branch ledgers."
           }
         ]
-      }
+      },
+      "codeHash": "84b8d1bfd3d976f36c4d96218a14d5227847b525d961adf4ca1a41ba5168dc7f",
+      "partTitle": "Input Service Distributor (ISD) vs Cross-Charge: Mandatory ISD Registration (Finance Act 2024)"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Reconciliation schedules align general ledgers with statutory returns."
           }
         ]
-      }
+      },
+      "codeHash": "7052ffcca40eb2a914a182a04b68b9075740fcaa3213996ac4db9a332fdf7512",
+      "partTitle": "Enterprise Implementation: Corporate Cross-Charge Valuation, ISD Apportionment & Cost Allocation Engine"
     }
   ]
 }

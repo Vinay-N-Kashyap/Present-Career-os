@@ -6,7 +6,7 @@
     {
       "partIndex": 0,
       "partTitle": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
-      "codeHash": "1ecbaf53b346dbfb49a0c9433ed36cb19c75dee771f85516c485da2ec6cf830c",
+      "codeHash": "1176ea46b1d6425cbf8bcc39ac80a5133238623c6556e644d813cd1973fa3818",
       "spec": {
         "template": "funnel",
         "title": "The Decoupled Paradigm: Monolithic Commerce vs. MACH Architecture (Microservices, API-First, Cloud-Native, Headless)",
@@ -65,7 +65,7 @@
     {
       "partIndex": 1,
       "partTitle": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
-      "codeHash": "9afb974ada6f347674285da450e211b8d987e7cb03ca0ae35e2d9cba22c9ba9d",
+      "codeHash": "663235661924b6f7e768749841c3daab13fd1bad943fa552ba219c352c122a13",
       "spec": {
         "template": "funnel",
         "title": "The Backend-for-Frontend (BFF) Pattern & Device-Specific Edge Adaptation",
@@ -124,7 +124,7 @@
     {
       "partIndex": 2,
       "partTitle": "GraphQL Federation & Distributed Subgraph Entity Resolution",
-      "codeHash": "e722ea2d44761984b573962ed21010a66dc76437f2f5feaebf38a3cfe4f03c8f",
+      "codeHash": "b14c67d05c827f67809614d58659df54c1e1ffbce53844b343755fe74693d4e8",
       "spec": {
         "template": "funnel",
         "title": "GraphQL Federation & Distributed Subgraph Entity Resolution",
@@ -183,7 +183,7 @@
     {
       "partIndex": 3,
       "partTitle": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
-      "codeHash": "d771abd607ec24089d6e5579d5b2ea7f420e0ecbac35e2cc231a4134ea7fa371",
+      "codeHash": "7d4c3e0abfe0df35d26b47d3477b203a14bf6970e95b71781a570a28a97fd1f6",
       "spec": {
         "template": "funnel",
         "title": "Edge Caching Strategies, Stale-While-Revalidate & CDN Surrogate-Key Purging",
@@ -242,7 +242,7 @@
     {
       "partIndex": 4,
       "partTitle": "Enterprise Composable Headless Gateway & Federation Command Tower",
-      "codeHash": "5d7d3000ac454c4c83434fbd74537815b64046eec30bd7aac2a3a24e571b6851",
+      "codeHash": "1eb1803446ae6d2bf5d1cb1a1632b5cda3d5332441b150ed11a2abb3762cf117",
       "spec": {
         "template": "funnel",
         "title": "Enterprise Composable Headless Gateway & Federation Command Tower",

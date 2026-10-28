@@ -10,18 +10,18 @@
         "caption": "Master quantitative trading desk balancing risk assets.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -67,18 +67,18 @@
         "caption": "Master quantitative trading desk balancing risk assets.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -124,18 +124,18 @@
         "caption": "Master quantitative trading desk balancing risk assets.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -181,18 +181,18 @@
         "caption": "Master quantitative trading desk balancing risk assets.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -238,18 +238,18 @@
         "caption": "Master quantitative trading desk balancing risk assets.",
         "sheet": {
           "isBalanced": true,
-          "totalDebit": 1000000.0,
-          "totalCredit": 1000000.0,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
           "rows": [
             {
               "account": "Risk Capital Reserve",
-              "debit": 1000000.0,
-              "credit": 0.0
+              "debit": 1000000,
+              "credit": 0
             },
             {
               "account": "Trading Equity Allocation",
-              "debit": 0.0,
-              "credit": 1000000.0
+              "debit": 0,
+              "credit": 1000000
             }
           ]
         },
@@ -286,6 +286,509 @@
           ]
         }
       ]
+    }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Trading Desk Architecture: Unified Risk Management & Financial Engineering",
+      "codeHash": "e8b969b76707a71a0c04045300598d3fb3ef7bcfa86edc275f07be1bd8f3a4aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Trading Desk Architecture: Uni",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — OmicronBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — OmicronBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — OmicronBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — OmicronBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Trading Desk Architecture: Uni",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Alpha Alpha) — OmicronBeta Alpha Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Alpha Beta) — OmicronBeta Alpha Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Alpha Gamma) — OmicronBeta Alpha Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Alpha Delta) — OmicronBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillars 1 & 2 Synthesis: Market Risk VaR/CVaR & Dynamic Greeks Neutralization",
+      "codeHash": "e8b969b76707a71a0c04045300598d3fb3ef7bcfa86edc275f07be1bd8f3a4aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Pillars 1 & 2 Synthesis: Marke",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — OmicronBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — OmicronBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — OmicronBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — OmicronBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Pillars 1 & 2 Synthesis: Marke",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Beta Alpha) — OmicronBeta Beta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Beta Beta) — OmicronBeta Beta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Beta Gamma) — OmicronBeta Beta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Beta Delta) — OmicronBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Pillars 3 & 4 Synthesis: Structural Credit Inversion & Structured Exotic Engineering",
+      "codeHash": "e8b969b76707a71a0c04045300598d3fb3ef7bcfa86edc275f07be1bd8f3a4aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Pillars 3 & 4 Synthesis: Struc",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — OmicronBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — OmicronBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — OmicronBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — OmicronBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Pillars 3 & 4 Synthesis: Struc",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Gamma Alpha) — OmicronBeta Gamma Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Gamma Beta) — OmicronBeta Gamma Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Gamma Gamma) — OmicronBeta Gamma Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Gamma Delta) — OmicronBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Enterprise Capital Governance: Basel III / FRTB Capital Charges & Board Audit Standards",
+      "codeHash": "e8b969b76707a71a0c04045300598d3fb3ef7bcfa86edc275f07be1bd8f3a4aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Enterprise Capital Governance:",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — OmicronBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — OmicronBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — OmicronBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — OmicronBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Enterprise Capital Governance:",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Delta Alpha) — OmicronBeta Delta Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Delta Beta) — OmicronBeta Delta Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Delta Gamma) — OmicronBeta Delta Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Delta Delta) — OmicronBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Production Capstone Simulator: Sandbox Execution & Accreditation Synthesis",
+      "codeHash": "e8b969b76707a71a0c04045300598d3fb3ef7bcfa86edc275f07be1bd8f3a4aa",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Capstone Simulator:",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — OmicronBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — OmicronBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — OmicronBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — OmicronBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Risk Ledger: Production Capstone Simulator:",
+        "caption": "Master quantitative trading desk balancing risk assets.",
+        "sheet": {
+          "isBalanced": true,
+          "totalDebit": 1000000,
+          "totalCredit": 1000000,
+          "rows": [
+            {
+              "account": "Risk Capital Reserve",
+              "debit": 1000000,
+              "credit": 0
+            },
+            {
+              "account": "Trading Equity Allocation",
+              "debit": 0,
+              "credit": 1000000
+            }
+          ]
+        },
+        "steps": [
+          {
+            "id": "intro",
+            "label": "Model Specification",
+            "description": "Establish structural parameters and regulatory thresholds.",
+            "caption": "Establish structural parameters and regulatory thresholds (Epsilon Alpha) — OmicronBeta Epsilon Alpha."
+          },
+          {
+            "id": "say1",
+            "label": "Analytical Computation",
+            "description": "Compute statistical distributions and non-linear risk metrics.",
+            "caption": "Compute statistical distributions and non-linear risk metrics (Epsilon Beta) — OmicronBeta Epsilon Beta."
+          },
+          {
+            "id": "example",
+            "label": "Institutional Reconciliation",
+            "description": "Reconcile balance sheet sensitivities against regulatory mandates.",
+            "caption": "Reconcile balance sheet sensitivities against regulatory mandates (Epsilon Gamma) — OmicronBeta Epsilon Gamma."
+          },
+          {
+            "id": "tryIt",
+            "label": "Desk Verification",
+            "description": "Verify model convergence and emit cryptographic pass token.",
+            "caption": "Verify model convergence and emit cryptographic pass token (Epsilon Delta) — OmicronBeta Epsilon Delta."
+          }
+        ]
+      }
     }
   ]
 }

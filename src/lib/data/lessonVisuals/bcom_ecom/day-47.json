@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Recursive Corporate Account Hierarchies & Multi-Unit Organization Modeling",
-      "codeHash": "c632df0b3bbaeca638028eb11be95349364ddbf00d436680fe9a45c4c3e27915",
+      "codeHash": "2a1cee7194e99af7566975a34211cb1da669a9f34356844d3d7fad5787e60ed2",
       "spec": {
         "template": "funnel",
         "title": "Day 47 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "Role-Based Access Control (RBAC), Granular Purchasing Permissions & Separation of Duties",
-      "codeHash": "f11fa8175cc2e6b0d787c3b7b2d87cdd58aa276dfa405e0e2dc15fa95008add2",
+      "codeHash": "d3289160ad56c9784770cdfaf6440216fa46c4d79696fe95c173e5cdcb2ba767",
       "spec": {
         "template": "funnel",
         "title": "Day 47 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Multi-Tier Dynamic Approval Routing Engines & Cost Center Budget Guards",
-      "codeHash": "05419b72c4ade29f56d7e34d3e8c7332503612a0de58c3d920901344f40c70aa",
+      "codeHash": "30dc45508086a9b7b2b694e79b24d2bd0c28146956ef6cd2b1f238453f7ba342",
       "spec": {
         "template": "funnel",
         "title": "Day 47 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "Delegation of Authority (DoA), SLA Escalation State Machines & Immutable Audit Trails",
-      "codeHash": "11eaf71a553d0a338ce5a895d81ccff5ed493d9f6eabea77147bd03836b98bb4",
+      "codeHash": "423112d49c74a6a2a9581a4f7a1095535f924be29ece8cfa80d45865c9243005",
       "spec": {
         "template": "funnel",
         "title": "Day 47 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise B2B Account Administration Console & Governance Dashboard",
-      "codeHash": "c8d2679d602aae2defd270f208221875f05569d3640ad497e6314477a8aad46d",
+      "codeHash": "91a9aebe34b2c0007f4f564aa535a838b84975974adbe3332f6e52fba4e6dc04",
       "spec": {
         "template": "funnel",
         "title": "Day 47 Part 5 Architecture Flow",

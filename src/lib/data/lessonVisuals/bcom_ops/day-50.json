@@ -46,7 +46,9 @@
             "caption": "Closed loop telemetry feeds shop floor asset status back to leadership."
           }
         ]
-      }
+      },
+      "codeHash": "c8776d5edc8bf8e5d32351cc05534caed457cbc7fed6f81ee3d8a1cc07f08bd2",
+      "partTitle": "Capstone Architecture: Integrating Monthly Demand Forecasting, Finite Resource Constraints, and Cellular Flow"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Working capital constraints prevent inventory from breaching debt limits."
           }
         ]
-      }
+      },
+      "codeHash": "8fce0b461e3bf3e5aa5b7880dbb9d9471b4cbe2856c2430f88f360c4719abdab",
+      "partTitle": "Dynamic S&OP Consensus Optimization: Resolving Demand-Supply Volumetric Imbalances under Margin Maximization"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Circular walking paths ensure continuous single piece flow without waste."
           }
         ]
-      }
+      },
+      "codeHash": "9b5bddad6a9773dc8cbd467d37a9ca51991c62a81a8048b3dc4079baaa560c9f",
+      "partTitle": "U-Shaped Lean Workcell Engineering: Yamazumi Balance Charts, Takt Time Synchronization, and Operator Routing"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Dynamic re sequencing algorithms divert urgent jobs to secondary paths."
           }
         ]
-      }
+      },
+      "codeHash": "b36b36d75b0847bfa15d83385b25a354f7d220ad62f3b9b732394b4174ca11f5",
+      "partTitle": "Closed-Loop Telemetry & Exception Handling: Real-Time Machine Down Events, Re-Sequencing, and Buffer Protection"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Executive dashboards certify complete compliance across all invariants."
           }
         ]
-      }
+      },
+      "codeHash": "19292bbe87f62eb62763dc96f104ed6535ec2bdc0a86ec74f856b174aefe4cd8",
+      "partTitle": "Production Capstone Validation: End-to-End Execution of the S&OP & Cellular Manufacturing Engine"
     }
   ]
 }

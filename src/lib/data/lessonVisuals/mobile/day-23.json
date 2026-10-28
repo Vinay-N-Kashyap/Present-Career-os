@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P2].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P2].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P3].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P3].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P4].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P4].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P5].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Scale location provider and radio power based on motion via <DynamicPowerPacingEngine />",
+            "caption": "Step 1: Scale location provider and radio power based on motion vi [D23P5].",
             "activeId": "PowerPacer",
             "tone": "primary",
             "nodes": [

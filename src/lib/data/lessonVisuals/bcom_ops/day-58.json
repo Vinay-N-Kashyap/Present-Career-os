@@ -46,7 +46,9 @@
             "caption": "Ecodesign principles eliminate waste during product development."
           }
         ]
-      }
+      },
+      "codeHash": "108717809455ee54cd24382834444ca2e08490e4a2f2e22606b15c269baa533e",
+      "partTitle": "Sustainable Operations Strategy: Triple Bottom Line & ISO 14040/14044 LCA Methodology"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Value chain emissions drive majority of industrial footprints."
           }
         ]
-      }
+      },
+      "codeHash": "534009fc957432775b2014b104d2e9ba6c0a8bf618b53526fdc4d49649432658",
+      "partTitle": "Greenhouse Gas (GHG) Protocol: Scope 1, Scope 2, and Scope 3 Emissions Accounting"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Reverse logistics networks coordinate core collection cycles."
           }
         ]
-      }
+      },
+      "codeHash": "0786e7317bb55e8f47b7e47d96ec767aa21ab1a508d832e5ac79512451255a5e",
+      "partTitle": "Circular Economy Closed Loops: Remanufacturing, Industrial Symbiosis & Cradle-to-Cradle"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Waste heat recovery captures thermal energy from hot exhausts."
           }
         ]
-      }
+      },
+      "codeHash": "ca73a62ca8fd36284e8633bbfc753fcb99e99ff97aa206cbf4293b27b56ac3cf",
+      "partTitle": "Renewable Energy Integration & Factory Energy Management Systems (ISO 50001)"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Modal shift transfers long haul freight from air cargo to rail networks."
           }
         ]
-      }
+      },
+      "codeHash": "09f6760d44f4a0834a57ff0aadf3d46cca8b4a5f5c8cc462dc43e8a66864a548",
+      "partTitle": "ESG Governance, Scope 3 Supply Chain Transparency & Green Logistics Compliance"
     }
   ]
 }

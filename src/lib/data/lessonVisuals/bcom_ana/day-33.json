@@ -8,7 +8,7 @@
       "codeHash": "cab8ad458ab5f4fcc3b67cc92102d9244e0d3952610b2bac402a281b4d9a1a37",
       "spec": {
         "template": "bars",
-        "title": "Recursive Binary Splitting, Gini Impur... \u2014 Learning Evaluation",
+        "title": "Recursive Binary Splitting, Gini Impur... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "146156ff8d9d3cde6c0157f878078353148378b3c3fd3c032663bd588303ae8e",
       "spec": {
         "template": "bars",
-        "title": "The Instability of Single Trees: High ... \u2014 Learning Evaluation",
+        "title": "The Instability of Single Trees: High ... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "d89a2586eb7b6cfbfeef499f90a031d15f715dad2b6a4ef8e0e8654ca5f2729a",
       "spec": {
         "template": "bars",
-        "title": "Bootstrap Aggregation (Bagging): Mathe... \u2014 Learning Evaluation",
+        "title": "Bootstrap Aggregation (Bagging): Mathe... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "3915de1ababd583596cc0e0c0a13cfb6e9ef35c233359c0aaefc12b779a5b140",
       "spec": {
         "template": "bars",
-        "title": "Random Forests & Feature Randomization... \u2014 Learning Evaluation",
+        "title": "Random Forests & Feature Randomization... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,11 +480,11 @@
       "codeHash": "a7214242666f49c6f0e1ea29152f363e5bf3559d5605bcbc11ee349dd69a61bc",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Random Forest C... \u2014 Learning Evaluation",
+        "title": "Building an Enterprise Random Forest C... — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts.",
+            "caption": "Reviewing core building mechanisms and enterprise concepts [D33P5].",
             "max": 100,
             "bars": [
               {

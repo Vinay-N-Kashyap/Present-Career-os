@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "FEMA 1999 Statutory Architecture: Current Account (Section 5) vs Capital Account (Section 6) Transactions",
-      "codeHash": "2d638dcea727b104a771b31f5d61324700f4659ad319c7ac92c87c677adfd47d",
+      "codeHash": "221bf30b494af8a997fb17daf04da9ab85c456ab11482fbad4ab14d1f0d148e8",
       "spec": {
         "template": "funnel",
-        "title": "FEMA 1999 Statutory Architecture: Curr... \u2014 Treasury Risk Operations",
+        "title": "FEMA 1999 Statutory Architecture: Curr... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Liberalised Remittance Scheme (LRS): USD 250,000 Ceiling, Purpose Codes & Tax Collected at Source (TCS)",
-      "codeHash": "982b502fecf31817ad2389184b45d6103f4578f8cfcadc039ae6df16fdea3541",
+      "codeHash": "79aa278bfae1f82076e8d9fd21d8931a0953cb2f303d7139f42acf32974fce4b",
       "spec": {
         "template": "funnel",
-        "title": "Liberalised Remittance Scheme (LRS): U... \u2014 Treasury Risk Operations",
+        "title": "Liberalised Remittance Scheme (LRS): U... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Overseas Direct Investment (ODI) & Overseas Portfolio Investment (OPI): Net Worth Ceilings & Rules 2022",
-      "codeHash": "2b78717a755f4b622c5fd850e217fc9f806954f54639cec35a1467496f763450",
+      "codeHash": "cc36472423d812664ecf442ac0bb2f1149f3a578f9d1d04d80c1887ff3da435e",
       "spec": {
         "template": "funnel",
-        "title": "Overseas Direct Investment (ODI) & Ove... \u2014 Treasury Risk Operations",
+        "title": "Overseas Direct Investment (ODI) & Ove... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "External Commercial Borrowings (ECB) & Trade Credits: Automatic vs Approval Routes & MAM Guidelines",
-      "codeHash": "a4e5e6adb999326e7617a8ac614c2f6cfce720ea7e38457f2b9a26f60c9a4bc1",
+      "codeHash": "b79b7248f698d7334451ebd6035cb6b946bded804ff7f572629ee2736d3c45ad",
       "spec": {
         "template": "funnel",
-        "title": "External Commercial Borrowings (ECB) &... \u2014 Treasury Risk Operations",
+        "title": "External Commercial Borrowings (ECB) &... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Master Enterprise FEMA Regulatory Compliance, FIRMS Portal & Section 15 Compounding Suite",
-      "codeHash": "6717f579ec25aebbfd48ff74d226192c48dd2196c0bfd5ea0cfe3a9e8413e709",
+      "codeHash": "0b03830598d8b37a1be1e3bfff2024474f941506b59119c6e53bb673a8c901b7",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise FEMA Regulatory Comp... \u2014 Treasury Risk Operations",
+        "title": "Master Enterprise FEMA Regulatory Comp... — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

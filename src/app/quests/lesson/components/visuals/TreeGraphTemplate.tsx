@@ -25,8 +25,15 @@ export function TreeGraphTemplate({
   step,
   showSpaces,
 }: TreeGraphTemplateProps): React.ReactElement {
-  const safeNodes = nodes || [];
-  const safeEdges = edges || [];
+  const safeNodes = (nodes || (step as any)?.nodes || []).map((n: any, i: number) => ({
+    ...n,
+    id: String(n?.id ?? `n${i}`),
+    label: String(n?.label ?? n?.name ?? n?.id ?? `N${i}`),
+  }));
+  const rawEdges: any[] = edges && edges.length > 0 ? edges : (step as any)?.edges || [];
+  const safeEdges: [string, string][] = rawEdges.map((e: any) =>
+    Array.isArray(e) ? [String(e[0]), String(e[1])] : [String(e?.from ?? e?.source ?? ''), String(e?.to ?? e?.target ?? '')]
+  );
   const activeNodeId = step?.activeNodeId;
   const visitedNodeIds = new Set(step?.visitedNodeIds || []);
   const activeEdge = step?.activeEdge;
@@ -78,7 +85,7 @@ export function TreeGraphTemplate({
   }
 
   // For any unvisited nodes, assign to last level
-  for (const n of nodes) {
+  for (const n of safeNodes) {
     if (!levels.has(n.id)) {
       levels.set(n.id, 1);
     }
@@ -153,7 +160,7 @@ export function TreeGraphTemplate({
         aria-label="tree graph visualization"
       >
         {/* Draw Edges */}
-        {edges.map(([fromId, toId], idx) => {
+        {safeEdges.map(([fromId, toId], idx) => {
           const fromPos = nodePositions.get(fromId);
           const toPos = nodePositions.get(toId);
           if (!fromPos || !toPos) return null;
@@ -178,7 +185,7 @@ export function TreeGraphTemplate({
         })}
 
         {/* Draw Nodes */}
-        {nodes.map((node) => {
+        {safeNodes.map((node) => {
           const pos = nodePositions.get(node.id);
           if (!pos) return null;
 

@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "Monolithic vs. Headless Commerce Architecture: Decoupling Presentation Layers from Core Transactional Backends",
-      "codeHash": "f040d89aec1fbddaacb752cc0e3ca6a12caae083b3d721351bbd90a94a444ccf",
+      "codeHash": "3324d278a05105c2b07f49906b634cd448e9699a27b67f71dfd30aeb53f7809c",
       "spec": {
         "template": "funnel",
         "title": "Day 31 Part 1 Architecture Flow",
@@ -123,7 +123,7 @@
     },
     {
       "partTitle": "The MACH Paradigm: Microservices, API-First, Cloud-Native SaaS & Headless Orchestration",
-      "codeHash": "b6f5f0c569a77ee144dce872c1472698efa643c865dae23eef1cbcfc552a0777",
+      "codeHash": "f6874951d8c19d5cda82b90a4f5014d97372ce34cbfe9c0027f5463102c6d803",
       "spec": {
         "template": "funnel",
         "title": "Day 31 Part 2 Architecture Flow",
@@ -241,7 +241,7 @@
     },
     {
       "partTitle": "Jamstack, Incremental Static Regeneration (ISR) & Edge Caching for Sub-Second Product Pages (PDPs)",
-      "codeHash": "8c80d10dd117df6bb6d9e56874182f917d227d6276387056f091b4def016f840",
+      "codeHash": "0aeb197e45ef0fd4c72e13dd5e3961564acd5a2f991d780896e8f69d40371aa7",
       "spec": {
         "template": "funnel",
         "title": "Day 31 Part 3 Architecture Flow",
@@ -359,7 +359,7 @@
     },
     {
       "partTitle": "API Gateway Architecture, Token Bucket Rate-Limiting & High-Throughput Edge Routing",
-      "codeHash": "99acbc8f3153a683aad98990afafaabad4195d66c5049ce044b88b9ab467a5ca",
+      "codeHash": "73803bfa93d5250a9d6fe9361eaf8c242c3e3ed66064512c835272fffd0cf787",
       "spec": {
         "template": "funnel",
         "title": "Day 31 Part 4 Architecture Flow",
@@ -477,7 +477,7 @@
     },
     {
       "partTitle": "Enterprise Headless Commerce Architecture Simulator & Edge Cache Gateway in Python",
-      "codeHash": "d67b645823410be481091393aa66e2db5c0955bb62c138494694dd30304b21d0",
+      "codeHash": "c1dcb47448ac8e50065ba85dd5a800d1021bfb17ff89c2e4fbfb2d3e8a220c05",
       "spec": {
         "template": "funnel",
         "title": "Day 31 Part 5 Architecture Flow",

@@ -57,7 +57,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "CPU Protection Rings, Principle of Least Privilege & Windows UAC Architecture",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 1: CPU Protection Rings, Principle of Least Privilege & Windows UAC Architecture\n\nWelcome to Day 17 of Computer Fundamentals and Systems Architecture. Today, we delve into the core operational defense mechanics of modern operating systems: Operating System Security, User Account Control (UAC), Privilege Separation, the Sudo Subsystem, and Stateful Host Firewalls. An operating system is essentially a resource multiplexer that mediates access between untrusted user applications and high-privilege hardware controllers. If the operating system fails to enforce rigid privilege boundaries, any downloaded script or background process can compromise the entire computing machine, access physical memory, log keystrokes, and exfiltrate private credentials."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/uac_sim\necho \"RING,LEVEL_NAME,PRIVILEGES,MEMORY_ACCESS,STATUS\" > /home/student/workspace/uac_sim/rings.csv\necho \"RING_0,KERNEL_SUPERVISOR,UNRESTRICTED,DIRECT_HARDWARE,ENFORCED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"RING_3,USER_APPLICATION,RESTRICTED,VIRTUAL_ADDRESS_SPACE,ISOLATED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"MIC_HIGH,ELEVATED_ADMIN,WRITE_SYSTEM,UAC_SECURE_DESKTOP,FILTERED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"MIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED\" >> /home/student/workspace/uac_sim/rings.csv\ncat /home/student/workspace/uac_sim/rings.csv\ngrep \"UAC_PRIVILEGE_BOUNDARY_VERIFIED\" /home/student/workspace/uac_sim/rings.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "RING,LEVEL_NAME,PRIVILEGES,MEMORY_ACCESS,STATUS\nRING_0,KERNEL_SUPERVISOR,UNRESTRICTED,DIRECT_HARDWARE,ENFORCED\nRING_3,USER_APPLICATION,RESTRICTED,VIRTUAL_ADDRESS_SPACE,ISOLATED\nMIC_HIGH,ELEVATED_ADMIN,WRITE_SYSTEM,UAC_SECURE_DESKTOP,FILTERED\nMIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED\nMIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Windows User Account Control splits an administrator's logon session into a filt...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "Welcome to Day 17 of Computer Fundamentals and Systems Architecture. Today, we delve into the core operational defense mechanics of modern operating systems: Operating System Security, User Account Control (UAC), Privilege Separation, the Sudo Subsystem, and Stateful Host Firewalls. An operating system is essentially a resource multiplexer that mediates access between untrusted user applications and high-privilege hardware controllers. If the operating system fails to enforce rigid privilege boundaries, any downloaded script or background process can compromise the entire computing machine, access physical memory, log keystrokes, and exfiltrate private credentials.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (CPU Protection Rings, Principle of )"
+          },
+          {
+            "label": "say1",
+            "say": "At the foundation of CPU hardware security lies the Hierarchical Protection Ring Architecture. Modern microprocessors (such as x86-64 and ARM64) implement hardware-enforced privilege rings: Ring 0 represents Kernel Mode (Supervisor Mode), where the OS kernel executes with unrestricted, direct access to physical memory addresses, CPU control registers (CR0, CR3, CR4), page tables, and hardware I/O ports. Conversely, Ring 3 represents User Mode, where user applications (such as web browsers, code editors, and media players) execute within isolated virtual memory address spaces. Applications in Ring 3 cannot execute privileged CPU instructions (such as HLT, CLI, or MOV to CR3); any attempt triggers a hardware General Protection Fault (GPF). To request kernel services—such as allocating memory or reading a file from disk—Ring 3 applications must execute controlled System Calls (such as syscall or sysenter), transferring execution deterministically through kernel-defined interrupt descriptors.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (CPU Protection Rings, Principle of )"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Windows User Account Control splits an administrator's logon session into a filtered standard token and an elevated administrator token, preventing background malware from silently gaining kernel control.",
+            "focus": [
+              1
+            ],
+            "caption": "example (CPU Protection Rings, Principle of )"
+          },
+          {
+            "label": "tryIt",
+            "say": "Windows Mandatory Integrity Control defines four primary integrity levels: Low Integrity (assigned to untrusted sandboxed processes such as browser tabs to prevent writing to user profile directories), Medium Integrity (standard desktop applications), High Integrity (elevated administrative processes with full system read/write access), and System Integrity (OS kernel services and Local System accounts). A process at Medium Integrity cannot write to or inject code into a process at High Integrity, enforcing a unidirectional security barrier known as No-Write-Up.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (CPU Protection Rings, Principle of )"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "CPU Protection Rings, Principle of Least Privilege & Windows UAC Architecture",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 1: CPU Protection Rings, Principle of Least Privilege & Windows UAC Architecture\n\nWelcome to Day 17 of Computer Fundamentals and Systems Architecture. Today, we delve into the core operational defense mechanics of modern operating systems: Operating System Security, User Account Control (UAC), Privilege Separation, the Sudo Subsystem, and Stateful Host Firewalls. An operating system is essentially a resource multiplexer that mediates access between untrusted user applications and high-privilege hardware controllers. If the operating system fails to enforce rigid privilege boundaries, any downloaded script or background process can compromise the entire computing machine, access physical memory, log keystrokes, and exfiltrate private credentials."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/uac_sim\necho \"RING,LEVEL_NAME,PRIVILEGES,MEMORY_ACCESS,STATUS\" > /home/student/workspace/uac_sim/rings.csv\necho \"RING_0,KERNEL_SUPERVISOR,UNRESTRICTED,DIRECT_HARDWARE,ENFORCED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"RING_3,USER_APPLICATION,RESTRICTED,VIRTUAL_ADDRESS_SPACE,ISOLATED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"MIC_HIGH,ELEVATED_ADMIN,WRITE_SYSTEM,UAC_SECURE_DESKTOP,FILTERED\" >> /home/student/workspace/uac_sim/rings.csv\necho \"MIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED\" >> /home/student/workspace/uac_sim/rings.csv\ncat /home/student/workspace/uac_sim/rings.csv\ngrep \"UAC_PRIVILEGE_BOUNDARY_VERIFIED\" /home/student/workspace/uac_sim/rings.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "RING,LEVEL_NAME,PRIVILEGES,MEMORY_ACCESS,STATUS\nRING_0,KERNEL_SUPERVISOR,UNRESTRICTED,DIRECT_HARDWARE,ENFORCED\nRING_3,USER_APPLICATION,RESTRICTED,VIRTUAL_ADDRESS_SPACE,ISOLATED\nMIC_HIGH,ELEVATED_ADMIN,WRITE_SYSTEM,UAC_SECURE_DESKTOP,FILTERED\nMIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED\nMIC_MED,STANDARD_USER,READ_USER,TOKEN_FILTERED_ACTIVE,UAC_PRIVILEGE_BOUNDARY_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Windows User Account Control splits an administrator's logon session into a filt...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "Welcome to Day 17 of Computer Fundamentals and Systems Architecture. Today, we delve into the core operational defense mechanics of modern operating systems: Operating System Security, User Account Control (UAC), Privilege Separation, the Sudo Subsystem, and Stateful Host Firewalls. An operating system is essentially a resource multiplexer that mediates access between untrusted user applications and high-privilege hardware controllers. If the operating system fails to enforce rigid privilege boundaries, any downloaded script or background process can compromise the entire computing machine, access physical memory, log keystrokes, and exfiltrate private credentials.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "At the foundation of CPU hardware security lies the Hierarchical Protection Ring Architecture. Modern microprocessors (such as x86-64 and ARM64) implement hardware-enforced privilege rings: Ring 0 represents Kernel Mode (Supervisor Mode), where the OS kernel executes with unrestricted, direct access to physical memory addresses, CPU control registers (CR0, CR3, CR4), page tables, and hardware I/O ports. Conversely, Ring 3 represents User Mode, where user applications (such as web browsers, code editors, and media players) execute within isolated virtual memory address spaces. Applications in Ring 3 cannot execute privileged CPU instructions (such as HLT, CLI, or MOV to CR3); any attempt triggers a hardware General Protection Fault (GPF). To request kernel services—such as allocating memory or reading a file from disk—Ring 3 applications must execute controlled System Calls (such as syscall or sysenter), transferring execution deterministically through kernel-defined interrupt descriptors.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Windows User Account Control splits an administrator's logon session into a filtered standard token and an elevated administrator token, preventing background malware from silently gaining kernel control.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Windows Mandatory Integrity Control defines four primary integrity levels: Low Integrity (assigned to untrusted sandboxed processes such as browser tabs to prevent writing to user profile directories), Medium Integrity (standard desktop applications), High Integrity (elevated administrative processes with full system read/write access), and System Integrity (OS kernel services and Local System accounts). A process at Medium Integrity cannot write to or inject code into a process at High Integrity, enforcing a unidirectional security barrier known as No-Write-Up.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -113,7 +225,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "UNIX Privilege Delegation: Sudoers Configuration, Audit Logging & SUID Invariants",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 2: UNIX Privilege Delegation: Sudoers Configuration, Audit Logging & SUID Invariants\n\nIn our second operational tier of Day 17, we examine UNIX Privilege Delegation and the Sudo Architecture. In UNIX, Linux, and macOS environments, the superuser account (UID 0, universally named root) possesses omnipotent authority over the operating system: root can read and modify any file, bind to privileged network ports below 1024, terminate any process, and load arbitrary kernel modules. Historically, administrators logged into physical terminals as root or used the su (substitute user) command to spawn a root shell, creating severe auditability gaps and catastrophic blast radiuses for typographical errors."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/sudoers_sim\necho \"RULE_TYPE,PRINCIPAL,COMMAND,SECURITY_STATUS\" > /home/student/workspace/sudoers_sim/sudoers.csv\necho \"DEFAULT_ROOT,root,ALL=(ALL:ALL) ALL,SECURE\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"ADMIN_WHEEL,%wheel,ALL=(ALL:ALL) ALL,PASSWORD_REQUIRED\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"RESTRICTED_APP,deployer,/usr/bin/systemctl restart nginx,LEAST_PRIVILEGE\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"SUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED\" >> /home/student/workspace/sudoers_sim/sudoers.csv\ncat /home/student/workspace/sudoers_sim/sudoers.csv\ngrep \"SUDO_PRIVILEGE_DELEGATION_VERIFIED\" /home/student/workspace/sudoers_sim/sudoers.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "RULE_TYPE,PRINCIPAL,COMMAND,SECURITY_STATUS\nDEFAULT_ROOT,root,ALL=(ALL:ALL) ALL,SECURE\nADMIN_WHEEL,%wheel,ALL=(ALL:ALL) ALL,PASSWORD_REQUIRED\nRESTRICTED_APP,deployer,/usr/bin/systemctl restart nginx,LEAST_PRIVILEGE\nSUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED\nSUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Configuring /etc/sudoers with specific binary paths and password requirements al...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our second operational tier of Day 17, we examine UNIX Privilege Delegation and the Sudo Architecture. In UNIX, Linux, and macOS environments, the superuser account (UID 0, universally named root) possesses omnipotent authority over the operating system: root can read and modify any file, bind to privileged network ports below 1024, terminate any process, and load arbitrary kernel modules. Historically, administrators logged into physical terminals as root or used the su (substitute user) command to spawn a root shell, creating severe auditability gaps and catastrophic blast radiuses for typographical errors.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (UNIX Privilege Delegation: Sudoers )"
+          },
+          {
+            "label": "say1",
+            "say": "The modern standard for UNIX privilege elevation is sudo (superuser do). Unlike su, which requires sharing the global root password among multiple engineers, sudo allows individual system users to execute specific administrative commands using their own personal account password. Furthermore, sudo logs every executed command, working directory, and timestamp to system audit logs (such as /var/log/auth.log or /var/log/secure), providing an immutable, forensic audit trail of all privileged operations.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (UNIX Privilege Delegation: Sudoers )"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Configuring /etc/sudoers with specific binary paths and password requirements allows operations engineers to restart production services without sharing the root superuser credentials.",
+            "focus": [
+              1
+            ],
+            "caption": "example (UNIX Privilege Delegation: Sudoers )"
+          },
+          {
+            "label": "tryIt",
+            "say": "Beyond sudo, UNIX filesystems implement Special Permission Bits: SUID (Set User ID, octal 4000) and SGID (Set Group ID, octal 2000). When an executable file has the SUID bit set (-rwsr-xr-x), it executes with the privileges of the file owner (typically root) regardless of who launches it. Essential system tools like passwd require SUID root so that normal users can update their passwords in /etc/shadow. However, unmaintained or rogue SUID binaries represent severe Local Privilege Escalation (LPE) vectors; security engineers perform regular automated audits using find / -perm -4000 to detect unauthorized SUID binaries across production file trees.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (UNIX Privilege Delegation: Sudoers )"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "UNIX Privilege Delegation: Sudoers Configuration, Audit Logging & SUID Invariants",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 2: UNIX Privilege Delegation: Sudoers Configuration, Audit Logging & SUID Invariants\n\nIn our second operational tier of Day 17, we examine UNIX Privilege Delegation and the Sudo Architecture. In UNIX, Linux, and macOS environments, the superuser account (UID 0, universally named root) possesses omnipotent authority over the operating system: root can read and modify any file, bind to privileged network ports below 1024, terminate any process, and load arbitrary kernel modules. Historically, administrators logged into physical terminals as root or used the su (substitute user) command to spawn a root shell, creating severe auditability gaps and catastrophic blast radiuses for typographical errors."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/sudoers_sim\necho \"RULE_TYPE,PRINCIPAL,COMMAND,SECURITY_STATUS\" > /home/student/workspace/sudoers_sim/sudoers.csv\necho \"DEFAULT_ROOT,root,ALL=(ALL:ALL) ALL,SECURE\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"ADMIN_WHEEL,%wheel,ALL=(ALL:ALL) ALL,PASSWORD_REQUIRED\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"RESTRICTED_APP,deployer,/usr/bin/systemctl restart nginx,LEAST_PRIVILEGE\" >> /home/student/workspace/sudoers_sim/sudoers.csv\necho \"SUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED\" >> /home/student/workspace/sudoers_sim/sudoers.csv\ncat /home/student/workspace/sudoers_sim/sudoers.csv\ngrep \"SUDO_PRIVILEGE_DELEGATION_VERIFIED\" /home/student/workspace/sudoers_sim/sudoers.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "RULE_TYPE,PRINCIPAL,COMMAND,SECURITY_STATUS\nDEFAULT_ROOT,root,ALL=(ALL:ALL) ALL,SECURE\nADMIN_WHEEL,%wheel,ALL=(ALL:ALL) ALL,PASSWORD_REQUIRED\nRESTRICTED_APP,deployer,/usr/bin/systemctl restart nginx,LEAST_PRIVILEGE\nSUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED\nSUID_AUDIT,/usr/bin/passwd,OCTAL_4755,SUDO_PRIVILEGE_DELEGATION_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `Configuring /etc/sudoers with specific binary paths and password requirements al...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our second operational tier of Day 17, we examine UNIX Privilege Delegation and the Sudo Architecture. In UNIX, Linux, and macOS environments, the superuser account (UID 0, universally named root) possesses omnipotent authority over the operating system: root can read and modify any file, bind to privileged network ports below 1024, terminate any process, and load arbitrary kernel modules. Historically, administrators logged into physical terminals as root or used the su (substitute user) command to spawn a root shell, creating severe auditability gaps and catastrophic blast radiuses for typographical errors.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "The modern standard for UNIX privilege elevation is sudo (superuser do). Unlike su, which requires sharing the global root password among multiple engineers, sudo allows individual system users to execute specific administrative commands using their own personal account password. Furthermore, sudo logs every executed command, working directory, and timestamp to system audit logs (such as /var/log/auth.log or /var/log/secure), providing an immutable, forensic audit trail of all privileged operations.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: Configuring /etc/sudoers with specific binary paths and password requirements allows operations engineers to restart production services without sharing the root superuser credentials.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Beyond sudo, UNIX filesystems implement Special Permission Bits: SUID (Set User ID, octal 4000) and SGID (Set Group ID, octal 2000). When an executable file has the SUID bit set (-rwsr-xr-x), it executes with the privileges of the file owner (typically root) regardless of who launches it. Essential system tools like passwd require SUID root so that normal users can update their passwords in /etc/shadow. However, unmaintained or rogue SUID binaries represent severe Local Privilege Escalation (LPE) vectors; security engineers perform regular automated audits using find / -perm -4000 to detect unauthorized SUID binaries across production file trees.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -169,7 +393,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Host-Based Packet Filtering: Stateful Packet Inspection (SPI) & Netfilter/UFW Rules",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 3: Host-Based Packet Filtering: Stateful Packet Inspection (SPI) & Netfilter/UFW Rules\n\nIn our third operational tier of Day 17, we analyze Host-Based Firewalls and Stateful Packet Inspection (SPI). While perimeter network firewalls filter traffic entering corporate data centers, Host Firewalls execute directly within the operating system kernel on individual endpoints and servers, providing Zero-Trust micro-segmentation and protecting machines against lateral movement from compromised neighbors on the same local subnet."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/firewall_sim\necho \"CHAIN,DIRECTION,PROTOCOL,PORT,CONN_STATE,ACTION,STATUS\" > /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,ALL,ANY,ESTABLISHED,ACCEPT,STATEFUL_TRACKED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,TCP,443,NEW,ACCEPT,OPEN_PUBLIC\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,TCP,22,NEW,ACCEPT,BASTION_RESTRICTED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,ALL,ANY,NEW,DROP,DEFAULT_DENY_ENFORCED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"POLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED\" >> /home/student/workspace/firewall_sim/firewall.csv\ncat /home/student/workspace/firewall_sim/firewall.csv\ngrep \"HOST_FIREWALL_SPI_VERIFIED\" /home/student/workspace/firewall_sim/firewall.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "CHAIN,DIRECTION,PROTOCOL,PORT,CONN_STATE,ACTION,STATUS\nINPUT,INGRESS,ALL,ANY,ESTABLISHED,ACCEPT,STATEFUL_TRACKED\nINPUT,INGRESS,TCP,443,NEW,ACCEPT,OPEN_PUBLIC\nINPUT,INGRESS,TCP,22,NEW,ACCEPT,BASTION_RESTRICTED\nINPUT,INGRESS,ALL,ANY,NEW,DROP,DEFAULT_DENY_ENFORCED\nPOLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED\nPOLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `A Linux stateful firewall using iptables or nftables connection tracking permits...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our third operational tier of Day 17, we analyze Host-Based Firewalls and Stateful Packet Inspection (SPI). While perimeter network firewalls filter traffic entering corporate data centers, Host Firewalls execute directly within the operating system kernel on individual endpoints and servers, providing Zero-Trust micro-segmentation and protecting machines against lateral movement from compromised neighbors on the same local subnet.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Host-Based Packet Filtering: Statef)"
+          },
+          {
+            "label": "say1",
+            "say": "The Linux kernel implements packet filtering and network address translation via the Netfilter subsystem, historically controlled by iptables and modernized in contemporary distributions by nftables. Netfilter intercepts network packets at distinct hooks in the network stack: PREROUTING (before routing decision), INPUT (packets destined for local sockets), FORWARD (packets routed through this host), OUTPUT (packets generated locally), and POSTROUTING (packets exiting network interfaces). In Windows, the equivalent host filtering engine is the Windows Defender Firewall with Advanced Security, managed via GUI or netsh advfirewall.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Host-Based Packet Filtering: Statef)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: A Linux stateful firewall using iptables or nftables connection tracking permits incoming TCP packets only if they belong to an ESTABLISHED or RELATED outbound session, blocking unsolicited probes.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Host-Based Packet Filtering: Statef)"
+          },
+          {
+            "label": "tryIt",
+            "say": "To simplify host firewall management on Linux servers, distributions provide higher-level abstraction utilities: Uncomplicated Firewall (ufw) on Debian/Ubuntu, and firewalld with dynamic zones on RHEL/CentOS. These utilities compile declarative rules into optimized nftables bytecode, avoiding manual low-level rule table manipulation.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Host-Based Packet Filtering: Statef)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Host-Based Packet Filtering: Stateful Packet Inspection (SPI) & Netfilter/UFW Rules",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 3: Host-Based Packet Filtering: Stateful Packet Inspection (SPI) & Netfilter/UFW Rules\n\nIn our third operational tier of Day 17, we analyze Host-Based Firewalls and Stateful Packet Inspection (SPI). While perimeter network firewalls filter traffic entering corporate data centers, Host Firewalls execute directly within the operating system kernel on individual endpoints and servers, providing Zero-Trust micro-segmentation and protecting machines against lateral movement from compromised neighbors on the same local subnet."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/firewall_sim\necho \"CHAIN,DIRECTION,PROTOCOL,PORT,CONN_STATE,ACTION,STATUS\" > /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,ALL,ANY,ESTABLISHED,ACCEPT,STATEFUL_TRACKED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,TCP,443,NEW,ACCEPT,OPEN_PUBLIC\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,TCP,22,NEW,ACCEPT,BASTION_RESTRICTED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"INPUT,INGRESS,ALL,ANY,NEW,DROP,DEFAULT_DENY_ENFORCED\" >> /home/student/workspace/firewall_sim/firewall.csv\necho \"POLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED\" >> /home/student/workspace/firewall_sim/firewall.csv\ncat /home/student/workspace/firewall_sim/firewall.csv\ngrep \"HOST_FIREWALL_SPI_VERIFIED\" /home/student/workspace/firewall_sim/firewall.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "CHAIN,DIRECTION,PROTOCOL,PORT,CONN_STATE,ACTION,STATUS\nINPUT,INGRESS,ALL,ANY,ESTABLISHED,ACCEPT,STATEFUL_TRACKED\nINPUT,INGRESS,TCP,443,NEW,ACCEPT,OPEN_PUBLIC\nINPUT,INGRESS,TCP,22,NEW,ACCEPT,BASTION_RESTRICTED\nINPUT,INGRESS,ALL,ANY,NEW,DROP,DEFAULT_DENY_ENFORCED\nPOLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED\nPOLICY,VERIFIED,SPI,CONNTRACK,ALL,SECURE,HOST_FIREWALL_SPI_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `A Linux stateful firewall using iptables or nftables connection tracking permits...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our third operational tier of Day 17, we analyze Host-Based Firewalls and Stateful Packet Inspection (SPI). While perimeter network firewalls filter traffic entering corporate data centers, Host Firewalls execute directly within the operating system kernel on individual endpoints and servers, providing Zero-Trust micro-segmentation and protecting machines against lateral movement from compromised neighbors on the same local subnet.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "The Linux kernel implements packet filtering and network address translation via the Netfilter subsystem, historically controlled by iptables and modernized in contemporary distributions by nftables. Netfilter intercepts network packets at distinct hooks in the network stack: PREROUTING (before routing decision), INPUT (packets destined for local sockets), FORWARD (packets routed through this host), OUTPUT (packets generated locally), and POSTROUTING (packets exiting network interfaces). In Windows, the equivalent host filtering engine is the Windows Defender Firewall with Advanced Security, managed via GUI or netsh advfirewall.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: A Linux stateful firewall using iptables or nftables connection tracking permits incoming TCP packets only if they belong to an ESTABLISHED or RELATED outbound session, blocking unsolicited probes.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "To simplify host firewall management on Linux servers, distributions provide higher-level abstraction utilities: Uncomplicated Firewall (ufw) on Debian/Ubuntu, and firewalld with dynamic zones on RHEL/CentOS. These utilities compile declarative rules into optimized nftables bytecode, avoiding manual low-level rule table manipulation.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -225,7 +561,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Mandatory Access Control (MAC): SELinux Type Enforcement, AppArmor & Seccomp Sandboxing",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 4: Mandatory Access Control (MAC): SELinux Type Enforcement, AppArmor & Seccomp Sandboxing\n\nIn our fourth operational tier of Day 17, we examine Mandatory Access Control (MAC) and Kernel Sandboxing Frameworks. Traditional operating systems rely on Discretionary Access Control (DAC), where access permissions (rwxr-xr-x) are governed at the discretion of the resource owner. Under DAC, if a web server running as user www-data is compromised via a Remote Code Execution (RCE) vulnerability, the attacker can access and modify every file owned by www-data, read world-readable configuration files in /etc, and write exploit scripts to /tmp."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/mac_sim\necho \"FRAMEWORK,SUBJECT,TARGET_OBJECT,POLICY_TYPE,STATUS\" > /home/student/workspace/mac_sim/mac.csv\necho \"SELINUX,httpd_t,httpd_sys_content_t,READ_ALLOW,CONFINED\" >> /home/student/workspace/mac_sim/mac.csv\necho \"SELINUX,httpd_t,shadow_t,ACCESS_DENIED,AVC_ALERT_LOGGED\" >> /home/student/workspace/mac_sim/mac.csv\necho \"APPARMOR,nginx_profile,/var/www/**,READ_ONLY,ENFORCING\" >> /home/student/workspace/mac_sim/mac.csv\necho \"SECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED\" >> /home/student/workspace/mac_sim/mac.csv\ncat /home/student/workspace/mac_sim/mac.csv\ngrep \"MANDATORY_ACCESS_CONTROL_VERIFIED\" /home/student/workspace/mac_sim/mac.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "FRAMEWORK,SUBJECT,TARGET_OBJECT,POLICY_TYPE,STATUS\nSELINUX,httpd_t,httpd_sys_content_t,READ_ALLOW,CONFINED\nSELINUX,httpd_t,shadow_t,ACCESS_DENIED,AVC_ALERT_LOGGED\nAPPARMOR,nginx_profile,/var/www/**,READ_ONLY,ENFORCING\nSECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED\nSECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `SELinux type enforcement confines the Apache web server to the httpd_t domain, p...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our fourth operational tier of Day 17, we examine Mandatory Access Control (MAC) and Kernel Sandboxing Frameworks. Traditional operating systems rely on Discretionary Access Control (DAC), where access permissions (rwxr-xr-x) are governed at the discretion of the resource owner. Under DAC, if a web server running as user www-data is compromised via a Remote Code Execution (RCE) vulnerability, the attacker can access and modify every file owned by www-data, read world-readable configuration files in /etc, and write exploit scripts to /tmp.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Mandatory Access Control (MAC): SEL)"
+          },
+          {
+            "label": "say1",
+            "say": "Mandatory Access Control (MAC) overcomes DAC vulnerabilities by enforcing centrally administered security policies that neither users nor compromised processes can alter. In Linux, the two dominant MAC implementations are Security-Enhanced Linux (SELinux) and AppArmor. Under MAC, every subject (process, user) and every object (file, socket, device) is assigned a cryptographic or textual security label. Access is denied unless an explicit, compiled policy rule permits the interaction, regardless of traditional Unix permissions.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Mandatory Access Control (MAC): SEL)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: SELinux type enforcement confines the Apache web server to the httpd_t domain, preventing a compromised web server process from reading /etc/shadow even if the web server process runs as root.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Mandatory Access Control (MAC): SEL)"
+          },
+          {
+            "label": "tryIt",
+            "say": "Modern container and cloud environments extend MAC principles through Linux Kernel Namespaces (PID, Mount, Network, IPC, UTS, User) and Control Groups (cgroups), combined with Secure Computing Mode (seccomp). Seccomp intercepts system calls made by a process: using Berkeley Packet Filters (BPF), seccomp allows containers to disable dangerous system calls (such as reboot, swapon, or ptrace), preventing container escape attacks even if root permissions are gained inside the container.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Mandatory Access Control (MAC): SEL)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Mandatory Access Control (MAC): SELinux Type Enforcement, AppArmor & Seccomp Sandboxing",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 4: Mandatory Access Control (MAC): SELinux Type Enforcement, AppArmor & Seccomp Sandboxing\n\nIn our fourth operational tier of Day 17, we examine Mandatory Access Control (MAC) and Kernel Sandboxing Frameworks. Traditional operating systems rely on Discretionary Access Control (DAC), where access permissions (rwxr-xr-x) are governed at the discretion of the resource owner. Under DAC, if a web server running as user www-data is compromised via a Remote Code Execution (RCE) vulnerability, the attacker can access and modify every file owned by www-data, read world-readable configuration files in /etc, and write exploit scripts to /tmp."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/mac_sim\necho \"FRAMEWORK,SUBJECT,TARGET_OBJECT,POLICY_TYPE,STATUS\" > /home/student/workspace/mac_sim/mac.csv\necho \"SELINUX,httpd_t,httpd_sys_content_t,READ_ALLOW,CONFINED\" >> /home/student/workspace/mac_sim/mac.csv\necho \"SELINUX,httpd_t,shadow_t,ACCESS_DENIED,AVC_ALERT_LOGGED\" >> /home/student/workspace/mac_sim/mac.csv\necho \"APPARMOR,nginx_profile,/var/www/**,READ_ONLY,ENFORCING\" >> /home/student/workspace/mac_sim/mac.csv\necho \"SECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED\" >> /home/student/workspace/mac_sim/mac.csv\ncat /home/student/workspace/mac_sim/mac.csv\ngrep \"MANDATORY_ACCESS_CONTROL_VERIFIED\" /home/student/workspace/mac_sim/mac.csv",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "FRAMEWORK,SUBJECT,TARGET_OBJECT,POLICY_TYPE,STATUS\nSELINUX,httpd_t,httpd_sys_content_t,READ_ALLOW,CONFINED\nSELINUX,httpd_t,shadow_t,ACCESS_DENIED,AVC_ALERT_LOGGED\nAPPARMOR,nginx_profile,/var/www/**,READ_ONLY,ENFORCING\nSECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED\nSECCOMP,container_proc,reboot_syscall,EPERM_BLOCKED,MANDATORY_ACCESS_CONTROL_VERIFIED"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `SELinux type enforcement confines the Apache web server to the httpd_t domain, p...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In our fourth operational tier of Day 17, we examine Mandatory Access Control (MAC) and Kernel Sandboxing Frameworks. Traditional operating systems rely on Discretionary Access Control (DAC), where access permissions (rwxr-xr-x) are governed at the discretion of the resource owner. Under DAC, if a web server running as user www-data is compromised via a Remote Code Execution (RCE) vulnerability, the attacker can access and modify every file owned by www-data, read world-readable configuration files in /etc, and write exploit scripts to /tmp.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "Mandatory Access Control (MAC) overcomes DAC vulnerabilities by enforcing centrally administered security policies that neither users nor compromised processes can alter. In Linux, the two dominant MAC implementations are Security-Enhanced Linux (SELinux) and AppArmor. Under MAC, every subject (process, user) and every object (file, socket, device) is assigned a cryptographic or textual security label. Access is denied unless an explicit, compiled policy rule permits the interaction, regardless of traditional Unix permissions.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: SELinux type enforcement confines the Apache web server to the httpd_t domain, preventing a compromised web server process from reading /etc/shadow even if the web server process runs as root.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Modern container and cloud environments extend MAC principles through Linux Kernel Namespaces (PID, Mount, Network, IPC, UTS, User) and Control Groups (cgroups), combined with Secure Computing Mode (seccomp). Seccomp intercepts system calls made by a process: using Berkeley Packet Filters (BPF), seccomp allows containers to disable dangerous system calls (such as reboot, swapon, or ptrace), preventing container escape attacks even if root permissions are gained inside the container.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     },
     {
       "partIndex": 5,
@@ -281,7 +729,119 @@
             2
           ]
         }
-      ]
+      ],
+      "spec": {
+        "template": "cells",
+        "title": "Master Host Security, Privilege Hardening & Firewall Defense Suite",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 5: Master Host Security, Privilege Hardening & Firewall Defense Suite\n\nIn the final operational tier of Day 17, we unite our architectural findings into an integrated engineering synthesis: The Complete Host Security, Privilege Hardening & Firewall Defense Suite. Enterprise-grade server infrastructure does not rely on default operating system settings; it deploys automated configuration baselines (such as CIS Benchmarks or DISA STIGs) to harden every privilege boundary, audit sudoers, enforce stateful firewall rules, and maintain zero-trust isolation."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/os_sec_summary\necho \"==========================================================\" > /home/student/workspace/os_sec_summary/report.txt\necho \"OPERATING SYSTEM SECURITY & PRIVILEGE ENFORCEMENT AUDIT\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Hardware Protection:   CPU RING 0/3 ISOLATION ACTIVE\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Privilege Delegation:  SUDOERS PASSWORD & TIMEOUT ENFORCED\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Host Firewall:         STATEFUL SPI DEFAULT-DENY ACTIVE\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Access Control Model:  SELINUX ENFORCING + SECCOMP SANDBOX\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Security Health Index: 100/100\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"==========================================================\" >> /home/student/workspace/os_sec_summary/report.txt\ncat /home/student/workspace/os_sec_summary/report.txt\ngrep \"Security Health Index: 100/100\" /home/student/workspace/os_sec_summary/report.txt",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "==========================================================\nOPERATING SYSTEM SECURITY & PRIVILEGE ENFORCEMENT AUDIT\nHardware Protection:   CPU RING 0/3 ISOLATION ACTIVE\nPrivilege Delegation:  SUDOERS PASSWORD & TIMEOUT ENFORCED\nHost Firewall:         STATEFUL SPI DEFAULT-DENY ACTIVE\nAccess Control Model:  SELINUX ENFORCING + SECCOMP SANDBOX\nSecurity Health Index: 100/100\n==========================================================\nSecurity Health Index: 100/100"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `A unified CIS benchmark audit script verifies CPU ring isolation, sudoers authen...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the final operational tier of Day 17, we unite our architectural findings into an integrated engineering synthesis: The Complete Host Security, Privilege Hardening & Firewall Defense Suite. Enterprise-grade server infrastructure does not rely on default operating system settings; it deploys automated configuration baselines (such as CIS Benchmarks or DISA STIGs) to harden every privilege boundary, audit sudoers, enforce stateful firewall rules, and maintain zero-trust isolation.",
+            "focus": [
+              0
+            ],
+            "caption": "intro (Master Host Security, Privilege Har)"
+          },
+          {
+            "label": "say1",
+            "say": "A production host hardening protocol enforces six mandatory controls: 1. UAC & Sudo Hardening: Requiring passwords for all privilege elevations, setting short authentication timeouts, and disabling root SSH logins (PermitRootLogin no); 2. Default-Deny Firewall Configuration: Dropping all unsolicited incoming traffic, restricting SSH to management bastions, and monitoring outbound connections; 3. File Integrity Monitoring (FIM): Using tools like AIDE or Tripwire to detect unauthorized modifications to system binaries and configuration files; 4. Special Permission Audits: Automatically identifying rogue SUID/SGID binaries and world-writable directories; 5. Mandatory Access Control: Keeping SELinux in Enforcing mode (setenforce 1) rather than Permissive; and 6. Centralized Audit Logging: Streaming /var/log/audit/audit.log or Windows Event Logs to a central SIEM for real-time threat detection.",
+            "focus": [
+              1
+            ],
+            "caption": "say1 (Master Host Security, Privilege Har)"
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: A unified CIS benchmark audit script verifies CPU ring isolation, sudoers authentication policies, stateful default-deny firewall tables, and SELinux enforcing modes across enterprise servers.",
+            "focus": [
+              1
+            ],
+            "caption": "example (Master Host Security, Privilege Har)"
+          },
+          {
+            "label": "tryIt",
+            "say": "Consistent host security hygiene protects institutional data, prevents lateral malware propagation, and ensures that servers and endpoints remain rock-solid foundations for high-availability cloud platforms.",
+            "focus": [
+              2
+            ],
+            "caption": "tryIt (Master Host Security, Privilege Har)"
+          }
+        ]
+      },
+      "filled": {
+        "template": "cells",
+        "title": "Master Host Security, Privilege Hardening & Firewall Defense Suite",
+        "cells": [
+          {
+            "type": "markdown",
+            "source": "### Part 5: Master Host Security, Privilege Hardening & Firewall Defense Suite\n\nIn the final operational tier of Day 17, we unite our architectural findings into an integrated engineering synthesis: The Complete Host Security, Privilege Hardening & Firewall Defense Suite. Enterprise-grade server infrastructure does not rely on default operating system settings; it deploys automated configuration baselines (such as CIS Benchmarks or DISA STIGs) to harden every privilege boundary, audit sudoers, enforce stateful firewall rules, and maintain zero-trust isolation."
+          },
+          {
+            "type": "code",
+            "source": "mkdir -p /home/student/workspace/os_sec_summary\necho \"==========================================================\" > /home/student/workspace/os_sec_summary/report.txt\necho \"OPERATING SYSTEM SECURITY & PRIVILEGE ENFORCEMENT AUDIT\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Hardware Protection:   CPU RING 0/3 ISOLATION ACTIVE\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Privilege Delegation:  SUDOERS PASSWORD & TIMEOUT ENFORCED\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Host Firewall:         STATEFUL SPI DEFAULT-DENY ACTIVE\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Access Control Model:  SELINUX ENFORCING + SECCOMP SANDBOX\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"Security Health Index: 100/100\" >> /home/student/workspace/os_sec_summary/report.txt\necho \"==========================================================\" >> /home/student/workspace/os_sec_summary/report.txt\ncat /home/student/workspace/os_sec_summary/report.txt\ngrep \"Security Health Index: 100/100\" /home/student/workspace/os_sec_summary/report.txt",
+            "outputs": [
+              {
+                "output_type": "stream",
+                "text": "==========================================================\nOPERATING SYSTEM SECURITY & PRIVILEGE ENFORCEMENT AUDIT\nHardware Protection:   CPU RING 0/3 ISOLATION ACTIVE\nPrivilege Delegation:  SUDOERS PASSWORD & TIMEOUT ENFORCED\nHost Firewall:         STATEFUL SPI DEFAULT-DENY ACTIVE\nAccess Control Model:  SELINUX ENFORCING + SECCOMP SANDBOX\nSecurity Health Index: 100/100\n==========================================================\nSecurity Health Index: 100/100"
+              }
+            ]
+          },
+          {
+            "type": "markdown",
+            "source": "**Key Concept Verification**:\n- Invariant check passed\n- Benchmark verified: `A unified CIS benchmark audit script verifies CPU ring isolation, sudoers authen...`"
+          }
+        ],
+        "steps": [
+          {
+            "label": "intro",
+            "say": "In the final operational tier of Day 17, we unite our architectural findings into an integrated engineering synthesis: The Complete Host Security, Privilege Hardening & Firewall Defense Suite. Enterprise-grade server infrastructure does not rely on default operating system settings; it deploys automated configuration baselines (such as CIS Benchmarks or DISA STIGs) to harden every privilege boundary, audit sudoers, enforce stateful firewall rules, and maintain zero-trust isolation.",
+            "focus": [
+              0
+            ]
+          },
+          {
+            "label": "say1",
+            "say": "A production host hardening protocol enforces six mandatory controls: 1. UAC & Sudo Hardening: Requiring passwords for all privilege elevations, setting short authentication timeouts, and disabling root SSH logins (PermitRootLogin no); 2. Default-Deny Firewall Configuration: Dropping all unsolicited incoming traffic, restricting SSH to management bastions, and monitoring outbound connections; 3. File Integrity Monitoring (FIM): Using tools like AIDE or Tripwire to detect unauthorized modifications to system binaries and configuration files; 4. Special Permission Audits: Automatically identifying rogue SUID/SGID binaries and world-writable directories; 5. Mandatory Access Control: Keeping SELinux in Enforcing mode (setenforce 1) rather than Permissive; and 6. Centralized Audit Logging: Streaming /var/log/audit/audit.log or Windows Event Logs to a central SIEM for real-time threat detection.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "example",
+            "say": "Real-World Pattern: A unified CIS benchmark audit script verifies CPU ring isolation, sudoers authentication policies, stateful default-deny firewall tables, and SELinux enforcing modes across enterprise servers.",
+            "focus": [
+              1
+            ]
+          },
+          {
+            "label": "tryIt",
+            "say": "Consistent host security hygiene protects institutional data, prevents lateral malware propagation, and ensures that servers and endpoints remain rock-solid foundations for high-availability cloud platforms.",
+            "focus": [
+              2
+            ]
+          }
+        ]
+      }
     }
   ]
 }

@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Foreign Trade Policy Architecture",
+        "template": "ledger-sheet",
+        "title": "Foreign Trade Policy (FTP 2023) Architecture,... — General Ledger Verification",
         "steps": [
           {
-            "label": "Statutory Authority",
-            "caption": "Commerce ministry formulates foreign trade policy under trade statute."
+            "at": "intro",
+            "caption": "Open primary debit entry for Foreign Trade Policy F (Delta Alpha).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9100,
+            "totalCredit": 9100,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Dynamic Policy",
-            "caption": "Policy establishes dynamic framework supporting digital trade."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Foreign Trade Policy F (Alpha).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Input Output Norms",
-            "caption": "Standard norms establish allowable duty-free input consumption ratios."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy F (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Actual User Mandate",
-            "caption": "Imported duty-free raw materials must be consumed in own facility."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Foreign Trade Policy F (Alpha).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "a8b55930b1d5bd334df4e303a37e990cf49266af9a319d678378c1b1125cecc8",
+      "partTitle": "Foreign Trade Policy (FTP 2023) Architecture, DGFT & SION Framework",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Foreign Trade Policy (FTP 2023) Architecture,... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Foreign Trade Policy F (Delta Alpha).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9100,
+            "totalCredit": 9100,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9100,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Foreign Trade Policy F (Alpha).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy F (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Foreign Trade Policy F (Alpha).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 10920,
+            "totalCredit": 10920,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9100,
+                "balance": 9100,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1820,
+                "balance": 10920,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 10920,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Advance Authorization & Transferable DFIA",
+        "template": "ledger-sheet",
+        "title": "Advance Authorization & Duty Free Import Auth... — General Ledger Verification",
         "steps": [
           {
-            "label": "Duty Free Entitlement",
-            "caption": "Advance authorization permits duty-free import of physical inputs."
+            "at": "intro",
+            "caption": "Open primary debit entry for Advance Authorization (Delta Beta).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9300,
+            "totalCredit": 9300,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Minimum Value Addition",
-            "caption": "Exporter must achieve minimum fifteen percent value addition on inputs."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Advance Authorization (Beta).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Export Obligation",
-            "caption": "Mandatory export obligation must be fulfilled within eighteen months."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Advance Authorization (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Transferable Scrip",
-            "caption": "Duty free import authorization scrip becomes transferable post export."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Advance Authorization (Beta).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "ec192db316bdc4965066333bdda8c6de674c1628c7f2ef9622c38bdb0a414d98",
+      "partTitle": "Advance Authorization & Duty Free Import Authorisation (DFIA) Mechanics",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Advance Authorization & Duty Free Import Auth... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Advance Authorization (Delta Beta).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9300,
+            "totalCredit": 9300,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9300,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Advance Authorization (Beta).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Advance Authorization (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Advance Authorization (Beta).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11160,
+            "totalCredit": 11160,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9300,
+                "balance": 9300,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1860,
+                "balance": 11160,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11160,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Export Promotion Capital Goods Scheme",
+        "template": "ledger-sheet",
+        "title": "Export Promotion Capital Goods (EPCG) Scheme:... — General Ledger Verification",
         "steps": [
           {
-            "label": "Zero Duty Capital",
-            "caption": "Manufacturers import production machinery at zero customs duty rate."
+            "at": "intro",
+            "caption": "Open primary debit entry for Export Promotion Capit (Delta Gamma).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9500,
+            "totalCredit": 9500,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Specific Obligation",
-            "caption": "Exporter must fulfill export obligation equal to six times duty saved."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Export Promotion Capit (Gamma).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Block Milestones",
-            "caption": "Half of export obligation must be fulfilled within first four years."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Export Promotion Capit (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Average Maintenance",
-            "caption": "Company must maintain historical average export turnover alongside."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Export Promotion Capit (Gamma).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "9121c3cbf2cfd22f36b05c41b283f14039df4a046b115e983e8674d8fc9af7ef",
+      "partTitle": "Export Promotion Capital Goods (EPCG) Scheme: Concessional Import & Export Obligation Architecture",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Export Promotion Capital Goods (EPCG) Scheme:... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Export Promotion Capit (Delta Gamma).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9500,
+            "totalCredit": 9500,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9500,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Export Promotion Capit (Gamma).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Export Promotion Capit (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Export Promotion Capit (Gamma).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11400,
+            "totalCredit": 11400,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9500,
+                "balance": 9500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1900,
+                "balance": 11400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11400,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "WTO Compliant Remission Framework",
+        "template": "ledger-sheet",
+        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate... — General Ledger Verification",
         "steps": [
           {
-            "label": "Embedded Tax Rebate",
-            "caption": "Scheme reimburses embedded uncredited taxes incurred on production."
+            "at": "intro",
+            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes (Delta Delta).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9700,
+            "totalCredit": 9700,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Fuel and Power Taxes",
-            "caption": "Rebate covers non-credited fuel excise and electricity duty costs."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Electronic Ledger",
-            "caption": "Rebates are credited to electronic customs duty ledger on portal."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Scrip Transferability",
-            "caption": "Duty credit scrips are freely transferable in commercial market."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "be8fcefa2fb19bb20abc80ef7892ad1eef5ede4a88679d9af21498568a38dae3",
+      "partTitle": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate Framework & Electronic Scrips",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes (Delta Delta).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9700,
+            "totalCredit": 9700,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9700,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes (Delta).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11640,
+            "totalCredit": 11640,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9700,
+                "balance": 9700,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1940,
+                "balance": 11640,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11640,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Export Incentive Monitoring Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
         "steps": [
           {
-            "label": "Value Addition Check",
-            "caption": "Engine validates statutory value addition before approving imports."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Delta Epsilon).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9900,
+            "totalCredit": 9900,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Obligation Ledger",
-            "caption": "System allocates export turnover to baseline average obligation first."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Block Deadline Tracker",
-            "caption": "Automated tracker alerts corporate treasury to milestone deadlines."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Redemption Package",
-            "caption": "Engine produces electronic redemption exhibits for license discharge."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "1b72cd8b8979efe51d175d6b2a36943595fbf61ad5761acd3c5ebf6a502ff89a",
+      "partTitle": "Production Python Architecture: Deterministic Export Incentive & EPCG Monitoring Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Delta Epsilon).",
+            "title": "Day 44 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 9900,
+            "totalCredit": 9900,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Clearing & Settlement Control",
+                "credit": 9900,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 44 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Primary Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Clearing & Settlement Control",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Delta).",
+            "title": "Day 44 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Verified Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "General Ledger Control Account",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 44 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 11880,
+            "totalCredit": 11880,
+            "entries": [
+              {
+                "id": "JNL-4401",
+                "account": "Audited Operating Asset",
+                "debit": 9900,
+                "balance": 9900,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4402",
+                "account": "Audited Compliance Reserve",
+                "debit": 1980,
+                "balance": 11880,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-4403",
+                "account": "Audited Treasury Settlement",
+                "credit": 11880,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

@@ -18,25 +18,29 @@
             "stepNumber": 1,
             "label": "Semantic Role Division",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined semantic role division validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous semantic role division standards."
+            "rightCaption": "Sovereign design systems enforce rigorous semantic role division standards.",
+            "caption": "Semantic Role Division (Popovers vs Tooltips vs Context Men)"
           },
           {
             "stepNumber": 2,
             "label": "Trigger Modality Rules",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined trigger modality rules validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous trigger modality rules standards."
+            "rightCaption": "Sovereign design systems enforce rigorous trigger modality rules standards.",
+            "caption": "Trigger Modality Rules (Popovers vs Tooltips vs Context Men)"
           },
           {
             "stepNumber": 3,
             "label": "Interactive Content Policy",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined interactive content policy validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous interactive content policy standards."
+            "rightCaption": "Sovereign design systems enforce rigorous interactive content policy standards.",
+            "caption": "Interactive Content Policy (Popovers vs Tooltips vs Context Men)"
           },
           {
             "stepNumber": 4,
             "label": "Accessibility Bindings",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined accessibility bindings validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous accessibility bindings standards."
+            "rightCaption": "Sovereign design systems enforce rigorous accessibility bindings standards.",
+            "caption": "Accessibility Bindings (Popovers vs Tooltips vs Context Men)"
           }
         ]
       }
@@ -54,25 +58,29 @@
             "stepNumber": 1,
             "label": "Cursor Exit Telemetry",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined cursor exit telemetry validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous cursor exit telemetry standards."
+            "rightCaption": "Sovereign design systems enforce rigorous cursor exit telemetry standards.",
+            "caption": "Cursor Exit Telemetry (The Safe Triangle & Hover Bridge Pr)"
           },
           {
             "stepNumber": 2,
             "label": "Vector Cross Product",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined vector cross product validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous vector cross product standards."
+            "rightCaption": "Sovereign design systems enforce rigorous vector cross product standards.",
+            "caption": "Vector Cross Product (The Safe Triangle & Hover Bridge Pr)"
           },
           {
             "stepNumber": 3,
             "label": "Safe Trajectory Corridor",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined safe trajectory corridor validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous safe trajectory corridor standards."
+            "rightCaption": "Sovereign design systems enforce rigorous safe trajectory corridor standards.",
+            "caption": "Safe Trajectory Corridor (The Safe Triangle & Hover Bridge Pr)"
           },
           {
             "stepNumber": 4,
             "label": "Intentional Exit Dismissal",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined intentional exit dismissal validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous intentional exit dismissal standards."
+            "rightCaption": "Sovereign design systems enforce rigorous intentional exit dismissal standards.",
+            "caption": "Intentional Exit Dismissal (The Safe Triangle & Hover Bridge Pr)"
           }
         ]
       }
@@ -90,25 +98,29 @@
             "stepNumber": 1,
             "label": "Abstract Rect Contract",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined abstract rect contract validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous abstract rect contract standards."
+            "rightCaption": "Sovereign design systems enforce rigorous abstract rect contract standards.",
+            "caption": "Abstract Rect Contract (Virtual Anchoring: Tracking Text Se)"
           },
           {
             "stepNumber": 2,
             "label": "Coordinate Extraction",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined coordinate extraction validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous coordinate extraction standards."
+            "rightCaption": "Sovereign design systems enforce rigorous coordinate extraction standards.",
+            "caption": "Coordinate Extraction (Virtual Anchoring: Tracking Text Se)"
           },
           {
             "stepNumber": 3,
             "label": "Non Element Positioning",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined non element positioning validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous non element positioning standards."
+            "rightCaption": "Sovereign design systems enforce rigorous non element positioning standards.",
+            "caption": "Non Element Positioning (Virtual Anchoring: Tracking Text Se)"
           },
           {
             "stepNumber": 4,
             "label": "Reactive Stream Binding",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined reactive stream binding validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous reactive stream binding standards."
+            "rightCaption": "Sovereign design systems enforce rigorous reactive stream binding standards.",
+            "caption": "Reactive Stream Binding (Virtual Anchoring: Tracking Text Se)"
           }
         ]
       }
@@ -126,25 +138,29 @@
             "stepNumber": 1,
             "label": "Arrow Alignment Math",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined arrow alignment math validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous arrow alignment math standards."
+            "rightCaption": "Sovereign design systems enforce rigorous arrow alignment math standards.",
+            "caption": "Arrow Alignment Math (Floating UI Arrow Positioning & Tri)"
           },
           {
             "stepNumber": 2,
             "label": "Center Coincidence Check",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined center coincidence check validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous center coincidence check standards."
+            "rightCaption": "Sovereign design systems enforce rigorous center coincidence check standards.",
+            "caption": "Center Coincidence Check (Floating UI Arrow Positioning & Tri)"
           },
           {
             "stepNumber": 3,
             "label": "Border Radius Clamping",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined border radius clamping validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous border radius clamping standards."
+            "rightCaption": "Sovereign design systems enforce rigorous border radius clamping standards.",
+            "caption": "Border Radius Clamping (Floating UI Arrow Positioning & Tri)"
           },
           {
             "stepNumber": 4,
             "label": "Optical Border Blending",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined optical border blending validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous optical border blending standards."
+            "rightCaption": "Sovereign design systems enforce rigorous optical border blending standards.",
+            "caption": "Optical Border Blending (Floating UI Arrow Positioning & Tri)"
           }
         ]
       }
@@ -162,25 +178,29 @@
             "stepNumber": 1,
             "label": "Canvas Spatial Query",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined canvas spatial query validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous canvas spatial query standards."
+            "rightCaption": "Sovereign design systems enforce rigorous canvas spatial query standards.",
+            "caption": "Canvas Spatial Query (Enterprise Application: Sovereign F)"
           },
           {
             "stepNumber": 2,
             "label": "Virtual Anchor Generation",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined virtual anchor generation validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous virtual anchor generation standards."
+            "rightCaption": "Sovereign design systems enforce rigorous virtual anchor generation standards.",
+            "caption": "Virtual Anchor Generation (Enterprise Application: Sovereign F)"
           },
           {
             "stepNumber": 3,
             "label": "Collision Detection Check",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined collision detection check validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous collision detection check standards."
+            "rightCaption": "Sovereign design systems enforce rigorous collision detection check standards.",
+            "caption": "Collision Detection Check (Enterprise Application: Sovereign F)"
           },
           {
             "stepNumber": 4,
             "label": "Monospace Tooltip Render",
             "leftCaption": "Legacy uncoordinated architecture lacks disciplined monospace tooltip render validation.",
-            "rightCaption": "Sovereign design systems enforce rigorous monospace tooltip render standards."
+            "rightCaption": "Sovereign design systems enforce rigorous monospace tooltip render standards.",
+            "caption": "Monospace Tooltip Render (Enterprise Application: Sovereign F)"
           }
         ]
       }

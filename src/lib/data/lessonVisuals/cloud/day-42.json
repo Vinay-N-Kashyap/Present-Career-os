@@ -54,22 +54,26 @@
           {
             "at": "say1",
             "focus": "principal",
-            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys.",
+            "caption": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys. (IAM Permission Boundaries: Delegate)"
           },
           {
             "at": "say2",
             "focus": "sts_gateway",
-            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge.",
+            "caption": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge. (IAM Permission Boundaries: Delegate)"
           },
           {
             "at": "example",
             "focus": "boundary_abac",
-            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags.",
+            "caption": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags. (IAM Permission Boundaries: Delegate)"
           },
           {
             "at": "tryIt",
             "focus": "target_resource",
-            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied.",
+            "caption": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied. (IAM Permission Boundaries: Delegate)"
           }
         ]
       }
@@ -125,22 +129,26 @@
           {
             "at": "say1",
             "focus": "principal",
-            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys.",
+            "caption": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys. (Attribute-Based Access Control (ABA)"
           },
           {
             "at": "say2",
             "focus": "sts_gateway",
-            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge.",
+            "caption": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge. (Attribute-Based Access Control (ABA)"
           },
           {
             "at": "example",
             "focus": "boundary_abac",
-            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags.",
+            "caption": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags. (Attribute-Based Access Control (ABA)"
           },
           {
             "at": "tryIt",
             "focus": "target_resource",
-            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied.",
+            "caption": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied. (Attribute-Based Access Control (ABA)"
           }
         ]
       }
@@ -196,22 +204,26 @@
           {
             "at": "say1",
             "focus": "principal",
-            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys.",
+            "caption": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys. (Eliminating Static Credentials: OID)"
           },
           {
             "at": "say2",
             "focus": "sts_gateway",
-            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge.",
+            "caption": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge. (Eliminating Static Credentials: OID)"
           },
           {
             "at": "example",
             "focus": "boundary_abac",
-            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags.",
+            "caption": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags. (Eliminating Static Credentials: OID)"
           },
           {
             "at": "tryIt",
             "focus": "target_resource",
-            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied.",
+            "caption": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied. (Eliminating Static Credentials: OID)"
           }
         ]
       }
@@ -267,22 +279,26 @@
           {
             "at": "say1",
             "focus": "principal",
-            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys.",
+            "caption": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys. (Enterprise Identity Federation: IAM)"
           },
           {
             "at": "say2",
             "focus": "sts_gateway",
-            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge.",
+            "caption": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge. (Enterprise Identity Federation: IAM)"
           },
           {
             "at": "example",
             "focus": "boundary_abac",
-            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags.",
+            "caption": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags. (Enterprise Identity Federation: IAM)"
           },
           {
             "at": "tryIt",
             "focus": "target_resource",
-            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied.",
+            "caption": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied. (Enterprise Identity Federation: IAM)"
           }
         ]
       }
@@ -338,22 +354,26 @@
           {
             "at": "say1",
             "focus": "principal",
-            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys."
+            "annotation": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys.",
+            "caption": "Principals and CI/CD runners request dynamic access using short-lived tokens without static keys. (Masterclass Synthesis: Zero-Trust I)"
           },
           {
             "at": "say2",
             "focus": "sts_gateway",
-            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge."
+            "annotation": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge.",
+            "caption": "AWS STS and IAM Identity Center validate cryptographic claims and trust policies at the edge. (Masterclass Synthesis: Zero-Trust I)"
           },
           {
             "at": "example",
             "focus": "boundary_abac",
-            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags."
+            "annotation": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags.",
+            "caption": "Permission boundaries block privilege escalation while ABAC matches principal and resource tags. (Masterclass Synthesis: Zero-Trust I)"
           },
           {
             "at": "tryIt",
             "focus": "target_resource",
-            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied."
+            "annotation": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied.",
+            "caption": "Target AWS resources allow access only when boundary and tag conditions are mathematically satisfied. (Masterclass Synthesis: Zero-Trust I)"
           }
         ]
       }

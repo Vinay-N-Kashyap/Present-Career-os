@@ -46,7 +46,9 @@
             "caption": "Arm's length percentile ranges establish statutory tolerance bands."
           }
         ]
-      }
+      },
+      "codeHash": "70693fab32cbfc84926cad1c71b18db252ec919d2c4209ae2f3d9c27337ea7f7",
+      "partTitle": "Determination of Arm's Length Price (ALP) under Section 92C: Selection of Most Appropriate Method"
     },
     {
       "partIndex": 1,
@@ -91,7 +93,9 @@
             "caption": "Annual compliance audits verify adherence to agreed operational terms."
           }
         ]
-      }
+      },
+      "codeHash": "bf1150d228e6ec09b0e859216a8e3c3a8061636c8a1c523f91b1334ae0a3c1ca",
+      "partTitle": "Advance Pricing Agreements (APA): Unilateral, Bilateral & Rollback Provisions (Section 92CC)"
     },
     {
       "partIndex": 2,
@@ -136,7 +140,9 @@
             "caption": "Formal electronic elections secure immunity from transfer adjustments."
           }
         ]
-      }
+      },
+      "codeHash": "19b8d5fd12c286a5ddb1a60eb61cb3f39dd23c9ef49a79cc49e02783bb773fd6",
+      "partTitle": "Safe Harbour Rules (Rule 10TD) for IT/ITeS, R&D Services & Auto Components"
     },
     {
       "partIndex": 3,
@@ -181,7 +187,9 @@
             "caption": "Banking and insurance corporations enjoy statutory carve out relief."
           }
         ]
-      }
+      },
+      "codeHash": "a05d9730e11dc25782558a162b03042de0acc78cce11720c8e038fbb32dad040",
+      "partTitle": "Thin Capitalisation Rules under Section 94B: 30% EBITDA Interest Caps & Disallowance"
     },
     {
       "partIndex": 4,
@@ -226,7 +234,9 @@
             "caption": "Country by country reporting details profits and taxes paid globally."
           }
         ]
-      }
+      },
+      "codeHash": "53decdd2c2208f7925b97d0c38745985b86fb664d1d4a3410a23547fd088e2db",
+      "partTitle": "Three-Tier Transfer Pricing Documentation: Master File, Local File & Country-by-Country (CbCR)"
     }
   ]
 }

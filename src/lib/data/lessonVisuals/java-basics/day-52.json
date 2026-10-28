@@ -10,7 +10,7 @@
       "codeHash": "195e3efb5216c41ef189b8829c9888a1584a709c423d6def9ff09ac53797c18a",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 52 Part 1 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 52 Part 1 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -93,7 +93,7 @@
       "codeHash": "3166c39c24c8b4adf9232cdca1a916dc23436c08f34b1970fce3a86c407ee181",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 52 Part 2 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 52 Part 2 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
@@ -176,12 +176,12 @@
       "codeHash": "5b8a1b09d8c7dbd3bc6a908909edc8bf64c5fd5df1381d7488d0d8784cc60bdf",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 52 Part 3 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 52 Part 3 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Mastery Assignment: Check.",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Ma [D52P3].",
             "mode": "stack",
             "items": [
               "main() Frame",
@@ -259,12 +259,12 @@
       "codeHash": "f3d2e56dbc3d777345c936b48fef9248dc0cfae407fa6b2c1ca848ce7ece5882",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 52 Part 4 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 52 Part 4 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Production Incident Lab: .",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Pr [D52P4].",
             "mode": "stack",
             "items": [
               "main() Frame",
@@ -342,7 +342,7 @@
       "codeHash": "e1d88d1027b71c421539bb9b2b61f607c68ded606b406037720eee3745917dee",
       "spec": {
         "template": "stack-queue",
-        "title": "Day 52 Part 5 \u2014 JVM Call Stack & Heap State",
+        "title": "Day 52 Part 5 — JVM Call Stack & Heap State",
         "mode": "stack",
         "steps": [
           {

@@ -268,7 +268,7 @@ export function getLongLesson(prefix: string, dayNum: number): LongLesson | null
 /** Speaking time estimate, at a calm teaching pace of about 120 words a minute. */
 export function estimateSpokenMinutes(lesson: LongLesson): number {
   const words = lesson.parts
-    .flatMap((p) => [...p.say, p.example ?? '', p.tryIt ?? '', p.check.why])
+    .flatMap((p) => [...(p.say || []), p.example ?? '', p.tryIt ?? '', p.check?.why || (p.check as any)?.explanation || ''])
     .join(' ')
     .split(/\s+/)
     .filter(Boolean).length;

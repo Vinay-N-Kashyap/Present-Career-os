@@ -767,8 +767,12 @@ export function useLessonEngine({
           speech: speechPieces.map(p => p.text).join(' '),
           mcq: {
             question: part.check?.question || `Concept check for Part ${i + 1}`,
-            ...withAnswerAt(part.check?.options || ['Optimal approach', 'Suboptimal approach'], part.check?.answer ?? 0, dayNum * 7 + i),
-            explanation: part.check?.why || (part.check as any)?.explanation || 'Optimal architectural invariant verified.',
+            ...withAnswerAt(
+              part.check?.options || ['Follow the verified lesson method', 'Skip verification steps'],
+              part.check?.answer ?? (part.check as any)?.answerIndex ?? (part.check as any)?.correctIndex ?? 0,
+              dayNum * 7 + i
+            ),
+            explanation: part.check?.why || (part.check as any)?.explanation || 'Review the lesson explanation above to confirm why this answer is correct.',
           },
         };
       }));

@@ -1,592 +1,1167 @@
-[
-  {
-    "partTitle": "Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
-    "codeHash": "92c53a76aafc647e7bf919ef0663eacc1346e29e6c689088632a31b1a0ddf2ac",
-    "spec": {
-      "template": "bars",
-      "title": "Milestone 4 Enterprise Architecture & Core Model Invariant Audit — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
+{
+  "schemaVersion": 1,
+  "prefix": "excel_viz",
+  "day": 35,
+  "entries": [
+    {
+      "partTitle": "Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+      "codeHash": "92c53a76aafc647e7bf919ef0663eacc1346e29e6c689088632a31b1a0ddf2ac",
+      "spec": {
+        "template": "bars",
+        "title": "Milestone 4 Enterprise Architecture & Core Model Invariant Audit — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Milestone 4 Enterprise Architecture & Core Model Invariant Audit — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Milestone 4 Enterprise Architecture & Core Model Invariant Audit",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+      "codeHash": "24cbe5b6296f3808890dd41ca8af753bf4899769e2afc11235494e8a17ab7c66",
+      "spec": {
+        "template": "bars",
+        "title": "Multi-Year Integrated LBO Acquisition & Capital Structure Engine — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Multi-Year Integrated LBO Acquisition & Capital Structure Engine — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+      "codeHash": "72c68fc1304b09b5892179a659b30806a1b82fc4cff6aa145788ae1b3dc93ee3",
+      "spec": {
+        "template": "bars",
+        "title": "Extreme Macro Stress-Testing & Liquidity Crunch Simulation — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Extreme Macro Stress-Testing & Liquidity Crunch Simulation — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Executive Boardroom Valuation Pitch & Football Field Generator",
+      "codeHash": "158b9734e28a09ce054dba9d9b10109b23d79f66bb33938366b0666d4513385d",
+      "spec": {
+        "template": "bars",
+        "title": "Executive Boardroom Valuation Pitch & Football Field Generator — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Executive Boardroom Valuation Pitch & Football Field Generator — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Executive Boardroom Valuation Pitch & Football Field Generator",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+      "codeHash": "d79f2c07e1624074ae3579c3d505121fab28f267901e4b72f74cf7d733563d80",
+      "spec": {
+        "template": "bars",
+        "title": "Master ApexValuation Financial Engineering & Monte Carlo DCF Platform — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      },
+      "filled": {
+        "template": "bars",
+        "title": "Master ApexValuation Financial Engineering & Monte Carlo DCF Platform — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Step 1: Ledger ingestion and statutory framework for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 25,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 20,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 15,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 10,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Step 2: Processing recursive linkages and calculations for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 65,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 60,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 55,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 45,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Step 3: Real-world stress testing and scenarios for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 85,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 80,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 75,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 70,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Step 4: Active experimentation and parameter tuning for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
+            "max": 100,
+            "bars": [
+              {
+                "label": "Three-Statement Core",
+                "value": 100,
+                "tone": "accent"
+              },
+              {
+                "label": "LBO Capital Structure",
+                "value": 95,
+                "tone": "data"
+              },
+              {
+                "label": "Macro Stress Test",
+                "value": 90,
+                "tone": "data"
+              },
+              {
+                "label": "Boardroom Valuation",
+                "value": 85,
+                "tone": "data"
+              }
+            ]
+          }
+        ]
+      }
     }
-  },
-  {
-    "partTitle": "Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
-    "codeHash": "24cbe5b6296f3808890dd41ca8af753bf4899769e2afc11235494e8a17ab7c66",
-    "spec": {
-      "template": "bars",
-      "title": "Multi-Year Integrated LBO Acquisition & Capital Structure Engine — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Multi-Year Integrated LBO Acquisition & Capital Structure Engine",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
-    "codeHash": "72c68fc1304b09b5892179a659b30806a1b82fc4cff6aa145788ae1b3dc93ee3",
-    "spec": {
-      "template": "bars",
-      "title": "Extreme Macro Stress-Testing & Liquidity Crunch Simulation — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Extreme Macro Stress-Testing & Liquidity Crunch Simulation",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Executive Boardroom Valuation Pitch & Football Field Generator",
-    "codeHash": "158b9734e28a09ce054dba9d9b10109b23d79f66bb33938366b0666d4513385d",
-    "spec": {
-      "template": "bars",
-      "title": "Executive Boardroom Valuation Pitch & Football Field Generator — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Executive Boardroom Valuation Pitch & Football Field Generator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Executive Boardroom Valuation Pitch & Football Field Generator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Executive Boardroom Valuation Pitch & Football Field Generator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Executive Boardroom Valuation Pitch & Football Field Generator",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "partTitle": "Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
-    "codeHash": "d79f2c07e1624074ae3579c3d505121fab28f267901e4b72f74cf7d733563d80",
-    "spec": {
-      "template": "bars",
-      "title": "Master ApexValuation Financial Engineering & Monte Carlo DCF Platform — Milestone 4: ApexValuation Three-Statement Financial Modeling & Monte Carlo DCF Engine Suite",
-      "steps": [
-        {
-          "at": "intro",
-          "caption": "Step 1: Ledger ingestion and statutory framework for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 25,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 20,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 15,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 10,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "say1",
-          "caption": "Step 2: Processing recursive linkages and calculations for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 65,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 60,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 55,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 45,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "example",
-          "caption": "Step 3: Real-world stress testing and scenarios for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 85,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 80,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 75,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 70,
-              "tone": "data"
-            }
-          ]
-        },
-        {
-          "at": "tryIt",
-          "caption": "Step 4: Active experimentation and parameter tuning for Master ApexValuation Financial Engineering & Monte Carlo DCF Platform",
-          "max": 100,
-          "bars": [
-            {
-              "label": "Three-Statement Core",
-              "value": 100,
-              "tone": "accent"
-            },
-            {
-              "label": "LBO Capital Structure",
-              "value": 95,
-              "tone": "data"
-            },
-            {
-              "label": "Macro Stress Test",
-              "value": 90,
-              "tone": "data"
-            },
-            {
-              "label": "Boardroom Valuation",
-              "value": 85,
-              "tone": "data"
-            }
-          ]
-        }
-      ]
-    }
-  }
-]
+  ]
+}

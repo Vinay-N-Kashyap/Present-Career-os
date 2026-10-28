@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P2].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P2].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P3].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P3].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P4].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P4].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P5].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI via <BleAdvertisingScanner />",
+            "caption": "Step 1: Discover peripheral advertising packets and filter RSSI vi [D22P5].",
             "activeId": "DiscoveryScanner",
             "tone": "primary",
             "nodes": [

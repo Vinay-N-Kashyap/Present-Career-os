@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Tribunal Hierarchy",
+        "template": "ledger-sheet",
+        "title": "Institutional Hierarchy & The Final Fact-Find... — General Ledger Verification",
         "steps": [
           {
-            "label": "Judicial Composition",
-            "caption": "Division bench combines judicial member and accountant member."
+            "at": "intro",
+            "caption": "Open primary debit entry for Institutional Hierarch (Nu Alpha).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10450,
+            "totalCredit": 10450,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Fact Finding Finality",
-            "caption": "Findings of fact recorded by tribunal are conclusive and binding."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Institutional Hierarch (Alpha).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Special Bench Power",
-            "caption": "President constitutes larger bench to resolve coordinate conflicts."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Institutional Hierarch (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Independent Forum",
-            "caption": "Tribunal functions under ministry of law guaranteeing judicial neutrality."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Institutional Hierarch (Alpha).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "82e097e88f97788e936a073f57188a6712545433e1eac4b9fe449ec1e0607f4f",
+      "partTitle": "Institutional Hierarchy & The Final Fact-Finding Authority Doctrine under Section 252 & 253",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Institutional Hierarchy & The Final Fact-Find... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Institutional Hierarch (Nu Alpha).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10450,
+            "totalCredit": 10450,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10450,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Institutional Hierarch (Alpha).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Institutional Hierarch (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Institutional Hierarch (Alpha).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12540,
+            "totalCredit": 12540,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10450,
+                "balance": 10450,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2090,
+                "balance": 12540,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 12540,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Tribunal Appeal Mechanics",
+        "template": "ledger-sheet",
+        "title": "Form 36 Mechanics, Timelines & Cross-Objectio... — General Ledger Verification",
         "steps": [
           {
-            "label": "Form Thirty Six",
-            "caption": "Appellant files electronic memorandum of appeal within sixty days."
+            "at": "intro",
+            "caption": "Open primary debit entry for Form Mechanics Timelin (Nu Beta).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10650,
+            "totalCredit": 10650,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Graduated Filing Fee",
-            "caption": "Fee scales with assessed income subject to statutory maximum cap."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Form Mechanics Timelin (Beta).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Grounds Formulation",
-            "caption": "Counsel drafts distinct grounds challenging specific legal additions."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Form Mechanics Timelin (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Cross Objections",
-            "caption": "Respondent files cross objections in form thirty six A within thirty days."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Form Mechanics Timelin (Beta).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "8aeb43cabbf7eb18fcc84839171126b92aadaf6852e2bb0066fd75898afdfed1",
+      "partTitle": "Form 36 Mechanics, Timelines & Cross-Objections Architecture under Section 253(4)",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Form 36 Mechanics, Timelines & Cross-Objectio... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Form Mechanics Timelin (Nu Beta).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10650,
+            "totalCredit": 10650,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10650,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Form Mechanics Timelin (Beta).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Form Mechanics Timelin (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Form Mechanics Timelin (Beta).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12780,
+            "totalCredit": 12780,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10650,
+                "balance": 10650,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2130,
+                "balance": 12780,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 12780,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Stay of Demand Regime",
+        "template": "ledger-sheet",
+        "title": "Stay of Demand Jurisprudence under Section 25... — General Ledger Verification",
         "steps": [
           {
-            "label": "Disputed Liability",
-            "caption": "Assessee faces coercive recovery under statutory demand notice."
+            "at": "intro",
+            "caption": "Open primary debit entry for Stay of Demand Jurispr (Nu Gamma).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10850,
+            "totalCredit": 10850,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Twenty Percent Deposit",
-            "caption": "Assessee deposits statutory twenty percent into central tax treasury."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Stay of Demand Jurispr (Gamma).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Stay Application",
-            "caption": "Counsel presents prima facie case and balance of convenience."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Stay of Demand Jurispr (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Constitutional Shield",
-            "caption": "Stay continues beyond statutory period if delay is not from assessee."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Stay of Demand Jurispr (Gamma).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "ccef3d0728da83f136aaa8f857bd0f95645247cc008b0f1333711302b1134b68",
+      "partTitle": "Stay of Demand Jurisprudence under Section 254(2A) & The 20% Mandatory Deposit Regime",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Stay of Demand Jurisprudence under Section 25... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Stay of Demand Jurispr (Nu Gamma).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10850,
+            "totalCredit": 10850,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 10850,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Stay of Demand Jurispr (Gamma).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Stay of Demand Jurispr (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Stay of Demand Jurispr (Gamma).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13020,
+            "totalCredit": 13020,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 10850,
+                "balance": 10850,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2170,
+                "balance": 13020,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13020,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Rectification Architecture",
+        "template": "ledger-sheet",
+        "title": "Rectification of Mistake Apparent from the Re... — General Ledger Verification",
         "steps": [
           {
-            "label": "Patent Mistake Discovery",
-            "caption": "Counsel identifies obvious error apparent from the judicial record."
+            "at": "intro",
+            "caption": "Open primary debit entry for Rectification of Mista (Nu Delta).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11050,
+            "totalCredit": 11050,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 11050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Six Month Limitation",
-            "caption": "Application must be submitted within six months from order month end."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Rectification of Mista (Delta).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Bench Listing",
-            "caption": "Specific division bench that passed order considers rectification memo."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Rectification of Mista (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Operative Amendment",
-            "caption": "Tribunal corrects computational error or recalls order for rehearing."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Rectification of Mista (Delta).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "20859dc75210e7cfd04808a427d8552cc8cee51463aba13a4ceca1cb9d78e1b9",
+      "partTitle": "Rectification of Mistake Apparent from the Record under Section 254(2) & Miscellaneous Applications",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Rectification of Mistake Apparent from the Re... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Rectification of Mista (Nu Delta).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11050,
+            "totalCredit": 11050,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 11050,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Rectification of Mista (Delta).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Rectification of Mista (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Rectification of Mista (Delta).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13260,
+            "totalCredit": 13260,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 11050,
+                "balance": 11050,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2210,
+                "balance": 13260,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13260,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Tribunal Portfolio Engine",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: ITAT Appeal &... — General Ledger Verification",
         "steps": [
           {
-            "label": "Limitation Tracking",
-            "caption": "System alerts counsel to sixty day deadline from order communication."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Nu Epsilon).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11250,
+            "totalCredit": 11250,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 11250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Fee Calculation",
-            "caption": "Engine computes graduated tribunal fee based on assessed corporate income."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Stay Monitor",
-            "caption": "Module tracks elapsed stay duration and flags constitutional extension."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Precedent Indexing",
-            "caption": "Knowledge base organizes jurisdictional high court binding authorities."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "4717edcf6e4892f92a092ba0ec9e44b414cc461597147908d87bb6052ea7b1e1",
+      "partTitle": "Production Python Architecture: ITAT Appeal & Stay of Demand Litigation Engine",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: ITAT Appeal &... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Nu Epsilon).",
+            "title": "Day 53 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 11250,
+            "totalCredit": 11250,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Clearing & Settlement Control",
+                "credit": 11250,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 53 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Primary Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Clearing & Settlement Control",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Nu).",
+            "title": "Day 53 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Verified Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "General Ledger Control Account",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 53 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 13500,
+            "totalCredit": 13500,
+            "entries": [
+              {
+                "id": "JNL-5301",
+                "account": "Audited Operating Asset",
+                "debit": 11250,
+                "balance": 11250,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5302",
+                "account": "Audited Compliance Reserve",
+                "debit": 2250,
+                "balance": 13500,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5303",
+                "account": "Audited Treasury Settlement",
+                "credit": 13500,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

@@ -362,5 +362,698 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Evolution of Modern Portfolio Theory: Capital Asset Pricing Model to Fama-French Five-Factor Model",
+      "codeHash": "1d4e77c5fb6aaaab0707db5760bd191514abda7f7668a3e74ba0924699cefe27",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — SecundusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — SecundusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — SecundusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — SecundusBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — SecundusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — SecundusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — SecundusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — SecundusBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Factor Anomalies: Value, Size, Quality, Investment, and Carhart Momentum Mechanics",
+      "codeHash": "fb8441df45ad3a1cfefb436685389682b0296f6477501f30b9951313a0f68552",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — SecundusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — SecundusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — SecundusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — SecundusBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — SecundusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — SecundusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — SecundusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — SecundusBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Smart Beta ETF Structuring, Multi-Factor Tilting & Factor Crowding Risk",
+      "codeHash": "feb424aaf463711a6d37420e428be8c329d28f180dcde199329332ac736310b5",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — SecundusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — SecundusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — SecundusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — SecundusBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — SecundusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — SecundusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — SecundusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — SecundusBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Statistical Arbitrage & Cointegration: Pairs Trading, Ornstein-Uhlenbeck Mean Reversion & Execution Limits",
+      "codeHash": "0b93e0133d5dcfcf551e85eb63fbd7af7e55cc57495e9dde656418de5ff27a98",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — SecundusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — SecundusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — SecundusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — SecundusBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — SecundusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — SecundusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — SecundusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — SecundusBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Fama-French Five-Factor Regression & Cointegrated Pairs Trading Engine",
+      "codeHash": "68079e18ec36d1c3ca4b3ac1aa6897c8da9c4052e9530389dec39794ee53721a",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — SecundusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — SecundusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — SecundusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — SecundusBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 56 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Long Cointegrated Equity Trading Portfolio",
+            "$100,000,000.00",
+            ""
+          ],
+          [
+            "Factor Hedging Derivative Margin Deposit",
+            "$15,000,000.00",
+            ""
+          ],
+          [
+            "Short Cointegrated Equity Hedge Portfolio",
+            "",
+            "$100,000,000.00"
+          ],
+          [
+            "Quantitative Fund Partner Capital Account",
+            "",
+            "$15,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$115,000,000.00",
+          "$115,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 56 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — SecundusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — SecundusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — SecundusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 3,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — SecundusBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

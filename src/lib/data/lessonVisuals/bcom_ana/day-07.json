@@ -49,7 +49,101 @@
           "attachedTo": "tryIt",
           "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
         }
-      ]
+      ],
+      "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199",
+      "partTitle": "Correlation vs Causation & The Formal Calculus of Interventions",
+      "spec": {
+        "template": "compare",
+        "title": "Correlation vs Causation & The Formal Calculus of Interventions",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core correlatio mechanisms and causation concepts.",
+            "attachedTo": "say1",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal correlatio bounds across causation systems.",
+            "attachedTo": "say2",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical correlatio rules and causation cases.",
+            "attachedTo": "example",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying correlatio calculations and causation outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Correlation vs Causation & The Formal Calculus of Interventions",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core correlatio mechanisms and causation concepts.",
+            "attachedTo": "say1",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal correlatio bounds across causation systems.",
+            "attachedTo": "say2",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical correlatio rules and causation cases.",
+            "attachedTo": "example",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying correlatio calculations and causation outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "39effbc9ef35a42016cdb57b719c46b791ff0be9f043e5ea2fc4c5c0d09d7199"
+          }
+        ]
+      }
     },
     {
       "partIndex": 1,
@@ -98,7 +192,101 @@
           "attachedTo": "tryIt",
           "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
         }
-      ]
+      ],
+      "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0",
+      "partTitle": "Simpson's Paradox & The Mechanics of Subgroup Inversion",
+      "spec": {
+        "template": "compare",
+        "title": "Simpson's Paradox & The Mechanics of Subgroup Inversion",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core simpsons mechanisms and paradox concepts.",
+            "attachedTo": "say1",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal simpsons bounds across paradox systems.",
+            "attachedTo": "say2",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical simpsons rules and paradox cases.",
+            "attachedTo": "example",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying simpsons calculations and paradox outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Simpson's Paradox & The Mechanics of Subgroup Inversion",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core simpsons mechanisms and paradox concepts.",
+            "attachedTo": "say1",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal simpsons bounds across paradox systems.",
+            "attachedTo": "say2",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical simpsons rules and paradox cases.",
+            "attachedTo": "example",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying simpsons calculations and paradox outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "087f8c4557f7b047bde273511ef172b2db9fd80f1279edfc4c55ece614069aa0"
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -147,7 +335,101 @@
           "attachedTo": "tryIt",
           "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
         }
-      ]
+      ],
+      "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2",
+      "partTitle": "Judea Pearl's Causal DAGs & The Backdoor Criterion Invariant",
+      "spec": {
+        "template": "compare",
+        "title": "Judea Pearl's Causal DAGs & The Backdoor Criterion Invariant",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core judea mechanisms and pearls concepts.",
+            "attachedTo": "say1",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal judea bounds across pearls systems.",
+            "attachedTo": "say2",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical judea rules and pearls cases.",
+            "attachedTo": "example",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying judea calculations and pearls outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Judea Pearl's Causal DAGs & The Backdoor Criterion Invariant",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core judea mechanisms and pearls concepts.",
+            "attachedTo": "say1",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal judea bounds across pearls systems.",
+            "attachedTo": "say2",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical judea rules and pearls cases.",
+            "attachedTo": "example",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying judea calculations and pearls outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "491018e22bb55b463c20b43e198ddd5a49792a235115bc4bcbaf73bcf38b53a2"
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -196,7 +478,101 @@
           "attachedTo": "tryIt",
           "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
         }
-      ]
+      ],
+      "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33",
+      "partTitle": "Frontdoor Adjustment & Natural Experiments in Corporate Strategy",
+      "spec": {
+        "template": "compare",
+        "title": "Frontdoor Adjustment & Natural Experiments in Corporate Strategy",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core frontdoor mechanisms and adjustment concepts.",
+            "attachedTo": "say1",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal frontdoor bounds across adjustment systems.",
+            "attachedTo": "say2",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical frontdoor rules and adjustment cases.",
+            "attachedTo": "example",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying frontdoor calculations and adjustment outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Frontdoor Adjustment & Natural Experiments in Corporate Strategy",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core frontdoor mechanisms and adjustment concepts.",
+            "attachedTo": "say1",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal frontdoor bounds across adjustment systems.",
+            "attachedTo": "say2",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical frontdoor rules and adjustment cases.",
+            "attachedTo": "example",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying frontdoor calculations and adjustment outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "a626b3527a98b68fd43de358cccdc7af22fb119d35e08e43be66d85dc67fdf33"
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -245,7 +621,101 @@
           "attachedTo": "tryIt",
           "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
         }
-      ]
+      ],
+      "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b",
+      "partTitle": "Milestone 3 Capstone: Enterprise Causal Inference & Boardroom Attribution Tower",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 3 Capstone: Enterprise Causal Inference & Boardroom Attribution Tower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D7P5].",
+            "attachedTo": "say1",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 3 Capstone: Enterprise Causal Inference & Boardroom Attribution Tower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D7P5].",
+            "attachedTo": "say1",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "1291dd4ee076c0a0eedb86795c33d1678292761c31e54e535f953510f30f909b"
+          }
+        ]
+      }
     }
   ]
 }

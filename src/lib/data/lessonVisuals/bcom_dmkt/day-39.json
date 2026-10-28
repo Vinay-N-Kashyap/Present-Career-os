@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Non-Contractual Commerce Dilemma: Latent Churn & Transactional Stochasticity",
-      "codeHash": "0b05d706e0b6b91dc370d309b192fe7414ae50637af48e80cdce482fe15883ab",
+      "codeHash": "558f357ce5ac954360f9c23e915a6a21ea40a571b20dbb792b6462ebdeb49521",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "The Pareto/NBD Model: Continuous Poisson Purchasing & Exponential Dropout Mechanics",
-      "codeHash": "84c731f6bcab1a65affbaea07bde0deb1423a5c1efc203a63942f38553318b12",
+      "codeHash": "ac7a071e12784818cef29f6ad73eea8420170d802b5eecf38b95fcbe5a4a7f14",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "The BG/NBD Model: Fader-Hardie-Lee Simplification & Maximum Likelihood Estimation",
-      "codeHash": "12f03b1e474280531351b4ef30af934c54d053ae40b45b80f37129c313751057",
+      "codeHash": "46b6324ff4dce959613bf9f3ab48fbf2d1f9363052824e0ffee5c4ada55438af",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Gamma-Gamma Monetary Spend Sub-Model: Regressing Value & Bayesian Shrinkage",
-      "codeHash": "009cc5d671601fa24b7f56e71a6564bbf8d94016992ddc419d1d7e67ac55527a",
+      "codeHash": "c8f9ae49edd079930e69728792cac8e5400c53f06f3db8bcf10a3bcbcc25c35b",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Customer Equity Orchestration: CRM Activation & Programmatic CAC Valuation",
-      "codeHash": "479e82d1abbe3fc84fe005aa8381c9c088e125d31abd104667d85c14fe1d0937",
+      "codeHash": "acc378c7d10bc29e2539d2fbec09ddcf15b496721d5f92b09cc172621687fc8a",
       "spec": {
         "template": "funnel",
         "steps": [

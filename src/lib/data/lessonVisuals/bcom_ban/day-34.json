@@ -5,10 +5,10 @@
   "entries": [
     {
       "partTitle": "The Architecture of Project Finance: Non-Recourse Debt, SPV Ring-Fencing & The Project Contract Web",
-      "codeHash": "d4f6f0f8627244ff68f0ae1a522e3f2c667ecf256046a5da59363a05e0e3224f",
+      "codeHash": "36e1c50e9c3aa6dcd03ce1cbcb27ad4fa5f41b261fac4d24fe23b16448106b9c",
       "spec": {
         "template": "funnel",
-        "title": "The Architecture of Project Finance: N... \u2014 Credit Underwriting Review",
+        "title": "The Architecture of Project Finance: N... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -107,10 +107,10 @@
     },
     {
       "partTitle": "Concession Models & Revenue Risk Allocation: BOT, BOOT, Annuity & Hybrid Annuity Model (HAM)",
-      "codeHash": "bc259db3f0d59d7fc08d4c5c5480f1aa484b372f6fff9d9595c916d860de4559",
+      "codeHash": "959a78346ccfe2de1612445c1ac1d10ac0d6eeaaf9b9982c2dad1ddf45b29f4a",
       "spec": {
         "template": "funnel",
-        "title": "Concession Models & Revenue Risk Alloc... \u2014 Credit Underwriting Review",
+        "title": "Concession Models & Revenue Risk Alloc... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -209,10 +209,10 @@
     },
     {
       "partTitle": "Quantitative Debt Sizing Metrics: DSCR, LLCR, PLCR & Debt Sculpting Mechanics",
-      "codeHash": "c3647372d777dd2c7a9b76f6017bd32fc5e6598bbb8ca5095d579edd08b648d8",
+      "codeHash": "ab7a70522124fa7d661f307c16dcc8570acd775aa411b9e59b57793b5e63063f",
       "spec": {
         "template": "funnel",
-        "title": "Quantitative Debt Sizing Metrics: DSCR... \u2014 Credit Underwriting Review",
+        "title": "Quantitative Debt Sizing Metrics: DSCR... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -311,10 +311,10 @@
     },
     {
       "partTitle": "Managing Construction Risks: COD Delays, Cost Overrun Undertakings & EPC Liquidated Damages",
-      "codeHash": "7239b65e7a8dbf6ba3648eb6576bfa1a7cef9752af08c4f93871551130f03eaa",
+      "codeHash": "a2dc9cb8dd1c3e418561abcc02637ea7ca41c50cb6e3825bfae3a8e07ec68779",
       "spec": {
         "template": "funnel",
-        "title": "Managing Construction Risks: COD Delay... \u2014 Credit Underwriting Review",
+        "title": "Managing Construction Risks: COD Delay... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -413,10 +413,10 @@
     },
     {
       "partTitle": "Comprehensive Enterprise Project Finance & Infrastructure Debt Sizing Simulator",
-      "codeHash": "7b7bc964c52b6688c4c79392cd8025d48ceec36b532e58948893a9491e555f6d",
+      "codeHash": "03737d6abd5b70b792abb11ed802518c454ee5544a51fc89c7aa4a232b06697b",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Project Finan... \u2014 Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Project Finan... — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

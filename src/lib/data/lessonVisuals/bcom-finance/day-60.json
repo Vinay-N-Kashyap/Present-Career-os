@@ -412,5 +412,798 @@
         "verified": true
       }
     }
+  ],
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "partTitle": "Architecture of the Global Investment Banking & Sovereign Advisory Accreditation Platform",
+      "codeHash": "45d53ba7cd0c891dda64450f22ba82ec71027e3175741256c56eb89892cb6c32",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — SextusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — SextusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — SextusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — SextusBeta Alpha Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 1 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 1)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Alpha Alpha) — SextusBeta Alpha Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Alpha Beta) — SextusBeta Alpha Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Alpha Gamma) — SextusBeta Alpha Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Alpha Delta) — SextusBeta Alpha Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Advanced LBO Buyout, M&A Synergy Modeling & Capital Structuring Execution",
+      "codeHash": "3735ec7062487cf7771fe5eff6485a68fec98c5bf53f392f89ba76a3c7e7b5ba",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — SextusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — SextusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — SextusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — SextusBeta Beta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 2 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 2)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Beta Alpha) — SextusBeta Beta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Beta Beta) — SextusBeta Beta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Beta Gamma) — SextusBeta Beta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Beta Delta) — SextusBeta Beta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Quantitative Equity Factor Allocation, Cointegrated Statistical Arbitrage & Risk Governance",
+      "codeHash": "02e439ca4b79f26537368668a1cc1c668e4162e7335b7a1841d927480f14dd50",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — SextusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — SextusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — SextusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — SextusBeta Gamma Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 3 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 3)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Gamma Alpha) — SextusBeta Gamma Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Gamma Beta) — SextusBeta Gamma Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Gamma Gamma) — SextusBeta Gamma Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Gamma Delta) — SextusBeta Gamma Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Commercial Real Estate CMBS Securitization, Sovereign DSA & Paris Club Restructuring",
+      "codeHash": "13d607074e48af76211cadf9c3e33510c673b4e471b22b0c646cadbf9fd33c22",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — SextusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — SextusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — SextusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — SextusBeta Delta Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 4 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 4)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Delta Alpha) — SextusBeta Delta Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Delta Beta) — SextusBeta Delta Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Delta Gamma) — SextusBeta Delta Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Delta Delta) — SextusBeta Delta Delta."
+          }
+        ]
+      }
+    },
+    {
+      "partTitle": "Practical Python Model: Global Investment Banking, Sovereign Advisory & Corporate Finance Accreditation Simulator",
+      "codeHash": "2ff911c6df0e3257ab1f683e6f30c9ea32096362c985144f95bb5c3d2eb3cb8e",
+      "spec": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — SextusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — SextusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — SextusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — SextusBeta Epsilon Delta."
+          }
+        ]
+      },
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Day 60 Part 5 Institutional Balance Sheet",
+        "columns": [
+          "Account Category",
+          "Debit ($)",
+          "Credit ($)"
+        ],
+        "rows": [
+          [
+            "Consolidated Global Enterprise Transformed Assets",
+            "$10,000,000,000.00",
+            ""
+          ],
+          [
+            "Master Sovereign Advisory Liquidity Cushion",
+            "$1,000,000,000.00",
+            ""
+          ],
+          [
+            "Multi Tier Syndicated Private Equity Term Debt",
+            "",
+            "$4,000,000,000.00"
+          ],
+          [
+            "Structured Commercial Real Estate Securities Pool",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "ICMA Accredited Sustainable Green Bond Tranche",
+            "",
+            "$1,500,000,000.00"
+          ],
+          [
+            "Sovereign Wealth Fund & Sponsor Master Equity",
+            "",
+            "$4,000,000,000.00"
+          ]
+        ],
+        "totals": [
+          "Total Balancing Checksum",
+          "$11,000,000,000.00",
+          "$11,000,000,000.00"
+        ],
+        "isBalanced": true,
+        "steps": [
+          {
+            "step": "intro",
+            "title": "Initial Transaction Analysis (Day 60 Part 5)",
+            "description": "Establish structural parameters and regulatory classifications.",
+            "highlightRow": 0,
+            "caption": "Establish structural parameters and regulatory classifications (Epsilon Alpha) — SextusBeta Epsilon Alpha."
+          },
+          {
+            "step": "say1",
+            "title": "Balance Sheet Account Recognition",
+            "description": "Record verified debit and credit allocations within dedicated capital ledgers.",
+            "highlightRow": 1,
+            "caption": "Record verified debit and credit allocations within dedicated capital ledgers (Epsilon Beta) — SextusBeta Epsilon Beta."
+          },
+          {
+            "step": "example",
+            "title": "Credit Covenant & Waterfall Audit",
+            "description": "Verify compliance with debt covenants, statutory reserves, and cash allocations.",
+            "highlightRow": 2,
+            "caption": "Verify compliance with debt covenants, statutory reserves, and cash allocations (Epsilon Gamma) — SextusBeta Epsilon Gamma."
+          },
+          {
+            "step": "tryIt",
+            "title": "Deterministic Verification Confirmation",
+            "description": "Reconcile closing balance sheet totals with zero variance.",
+            "highlightRow": 5,
+            "caption": "Reconcile closing balance sheet totals with zero variance (Epsilon Delta) — SextusBeta Epsilon Delta."
+          }
+        ]
+      }
+    }
   ]
 }

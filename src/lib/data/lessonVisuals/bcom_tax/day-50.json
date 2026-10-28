@@ -6,23 +6,254 @@
     {
       "partIndex": 0,
       "spec": {
-        "title": "Enterprise Dispute Portfolio",
+        "template": "ledger-sheet",
+        "title": "Enterprise Case Architecture: Apex Industrial... — General Ledger Verification",
         "steps": [
           {
-            "label": "Corporate Profile",
-            "caption": "Aerospace conglomerate manages multi year tax enforcement actions."
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Case Archit (Kappa Alpha).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10000,
+            "totalCredit": 10000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Concurrent Challenges",
-            "caption": "Tax directorate faces scrutiny, reassessment, and survey orders."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Case Archit (Alpha).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Governance Protocol",
-            "caption": "Audit committee establishes rigorous statutory defense strategy."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Case Archit (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Value Preservation",
-            "caption": "Strategy defends shareholder capital and eliminates unjust claims."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Case Archit (Alpha).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "bcb757ae91dc37f7c464e2795411182c09309cab20dc7d4415dec695f11c9a06",
+      "partTitle": "Enterprise Case Architecture: Apex Industrial Technologies Ltd. Multi-Year Tax Dispute",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Enterprise Case Architecture: Apex Industrial... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Enterprise Case Archit (Kappa Alpha).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10000,
+            "totalCredit": 10000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10000,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Enterprise Case Archit (Alpha).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Enterprise Case Archit (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Enterprise Case Archit (Alpha).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12000,
+            "totalCredit": 12000,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10000,
+                "balance": 10000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2000,
+                "balance": 12000,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12000,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -30,23 +261,254 @@
     {
       "partIndex": 1,
       "spec": {
-        "title": "Faceless Scrutiny Resolution",
+        "template": "ledger-sheet",
+        "title": "Faceless Scrutiny Defense & Transfer Pricing ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Research Defense",
-            "caption": "Consumables expenditure is substantiated through approval records."
+            "at": "intro",
+            "caption": "Open primary debit entry for Faceless Scrutiny Defe (Kappa Beta).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10200,
+            "totalCredit": 10200,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Benchmark Defense",
-            "caption": "Transfer pricing study establishes arm length economic terms."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defe (Beta).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Video Presentation",
-            "caption": "Counsel presents technical three dimensional models in hearing."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defe (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Variation Deletion",
-            "caption": "NeFAC drops major additions and reduces transfer pricing adjustment."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defe (Beta).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "d172ef518958154f14fceef29121920e0b8819c8bf3bb3184a54145bc5fdfb40",
+      "partTitle": "Faceless Scrutiny Defense & Transfer Pricing Safe Harbour Demonstration",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Faceless Scrutiny Defense & Transfer Pricing ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Faceless Scrutiny Defe (Kappa Beta).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10200,
+            "totalCredit": 10200,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10200,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Faceless Scrutiny Defe (Beta).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Faceless Scrutiny Defe (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Faceless Scrutiny Defe (Beta).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12240,
+            "totalCredit": 12240,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10200,
+                "balance": 10200,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2040,
+                "balance": 12240,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12240,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -54,23 +516,254 @@
     {
       "partIndex": 2,
       "spec": {
-        "title": "Reassessment & Survey Victory",
+        "template": "ledger-sheet",
+        "title": "Reassessment Quashing under Ashish Agarwal & ... — General Ledger Verification",
         "steps": [
           {
-            "label": "Sanction Defect",
-            "caption": "Reassessment notice is challenged for incompetent approval rank."
+            "at": "intro",
+            "caption": "Open primary debit entry for Reassessment Quashing (Kappa Gamma).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10400,
+            "totalCredit": 10400,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Physical Proof",
-            "caption": "Weighbridge receipts confirm physical movement of raw materials."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Reassessment Quashing (Gamma).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Survey Retraction",
-            "caption": "Forced survey admission is retracted under Supreme Court doctrine."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Reassessment Quashing (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Asset Reconciliation",
-            "caption": "Factory spares are reconciled with audited fixed asset register."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Reassessment Quashing (Gamma).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "725998638d2477d9bfaa981f02f7d66829d2af6c041665fd1dd51d3df6e3217e",
+      "partTitle": "Reassessment Quashing under Ashish Agarwal & Section 133A Survey Retraction under Khader Khan",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Reassessment Quashing under Ashish Agarwal & ... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Reassessment Quashing (Kappa Gamma).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10400,
+            "totalCredit": 10400,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10400,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Reassessment Quashing (Gamma).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Reassessment Quashing (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Reassessment Quashing (Gamma).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12480,
+            "totalCredit": 12480,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10400,
+                "balance": 10400,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2080,
+                "balance": 12480,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12480,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -78,23 +771,254 @@
     {
       "partIndex": 3,
       "spec": {
-        "title": "Statutory Immunity Closure",
+        "template": "ledger-sheet",
+        "title": "Dispute Resolution Committee (DRC) under Sect... — General Ledger Verification",
         "steps": [
           {
-            "label": "Settlement Choice",
-            "caption": "Directorate resolves warranty dispute via statutory settlement."
+            "at": "intro",
+            "caption": "Open primary debit entry for Dispute Resolution Com (Kappa Delta).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10600,
+            "totalCredit": 10600,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Demand Discharge",
-            "caption": "Corporate treasury deposits assessed tax demand in full."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Dispute Resolution Com (Delta).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Form Submission",
-            "caption": "Application in Form Sixty Eight is electronically filed on portal."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Dispute Resolution Com (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Immunity Order",
-            "caption": "Officer passes speaking order granting complete immunity."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Dispute Resolution Com (Delta).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "566924c310ce5babb0ef5131a3903e4c0a5c7c8c26660313c8b16003ea24ead6",
+      "partTitle": "Dispute Resolution Committee (DRC) under Section 245MA & Section 270AA Immunity Execution",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Dispute Resolution Committee (DRC) under Sect... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Dispute Resolution Com (Kappa Delta).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10600,
+            "totalCredit": 10600,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10600,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Dispute Resolution Com (Delta).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Dispute Resolution Com (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Dispute Resolution Com (Delta).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12720,
+            "totalCredit": 12720,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10600,
+                "balance": 10600,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2120,
+                "balance": 12720,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12720,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }
@@ -102,23 +1026,254 @@
     {
       "partIndex": 4,
       "spec": {
-        "title": "Master Dispute Simulator",
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise Ta... — General Ledger Verification",
         "steps": [
           {
-            "label": "Portfolio Ingestion",
-            "caption": "Simulator ingests dispute portfolio across all fiscal years."
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Kappa Epsilon).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10800,
+            "totalCredit": 10800,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
           },
           {
-            "label": "Algorithmic Defense",
-            "caption": "Engine evaluates statutory limitation and evidentiary rules."
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           },
           {
-            "label": "Savings Quantification",
-            "caption": "Platform calculates total tax savings exceeding crores."
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
           },
           {
-            "label": "Master Accreditation",
-            "caption": "System awards enterprise tax dispute master pass credential."
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          }
+        ]
+      },
+      "codeHash": "092f7f1966ff8c1c3b473525dadb8a9c598c6fbc7841305cc692dad625aaa87d",
+      "partTitle": "Production Python Architecture: Enterprise Tax Dispute Defense Simulator",
+      "filled": {
+        "template": "ledger-sheet",
+        "title": "Production Python Architecture: Enterprise Ta... — General Ledger Verification",
+        "steps": [
+          {
+            "at": "intro",
+            "caption": "Open primary debit entry for Production Python Arch (Kappa Epsilon).",
+            "title": "Day 50 Journal — Initial Posting",
+            "isBalanced": true,
+            "totalDebit": 10800,
+            "totalCredit": 10800,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "data",
+                "memo": "Initial recognition"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Clearing & Settlement Control",
+                "credit": 10800,
+                "balance": 0,
+                "tone": "ok",
+                "memo": "Offset control"
+              }
+            ]
+          },
+          {
+            "at": "say1",
+            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "title": "Day 50 Journal — Accrual Adjustment",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Primary Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Accrued Provision / Tax Control",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "data"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Clearing & Settlement Control",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
+          },
+          {
+            "at": "example",
+            "caption": "Reconcile sub-ledger balances for Production Python Arch (Kappa).",
+            "title": "Day 50 Journal — Reconciliation Check",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Verified Asset Sub-Ledger",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Verified Compliance Reserve",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "General Ledger Control Account",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "data"
+              }
+            ]
+          },
+          {
+            "at": "tryIt",
+            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "title": "Day 50 Journal — Audited Trial Balance",
+            "isBalanced": true,
+            "totalDebit": 12960,
+            "totalCredit": 12960,
+            "entries": [
+              {
+                "id": "JNL-5001",
+                "account": "Audited Operating Asset",
+                "debit": 10800,
+                "balance": 10800,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5002",
+                "account": "Audited Compliance Reserve",
+                "debit": 2160,
+                "balance": 12960,
+                "tone": "ok"
+              },
+              {
+                "id": "JNL-5003",
+                "account": "Audited Treasury Settlement",
+                "credit": 12960,
+                "balance": 0,
+                "tone": "ok"
+              }
+            ]
           }
         ]
       }

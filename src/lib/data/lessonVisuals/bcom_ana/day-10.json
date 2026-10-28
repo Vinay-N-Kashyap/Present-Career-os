@@ -49,7 +49,101 @@
           "attachedTo": "tryIt",
           "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
         }
-      ]
+      ],
+      "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7",
+      "partTitle": "Logarithmic Transformations & The Four Functional Econometric Forms",
+      "spec": {
+        "template": "compare",
+        "title": "Logarithmic Transformations & The Four Functional Econometric Forms",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core logarithmi mechanisms and transforma concepts.",
+            "attachedTo": "say1",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal logarithmi bounds across transforma systems.",
+            "attachedTo": "say2",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical logarithmi rules and transforma cases.",
+            "attachedTo": "example",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying logarithmi calculations and transforma outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Logarithmic Transformations & The Four Functional Econometric Forms",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core logarithmi mechanisms and transforma concepts.",
+            "attachedTo": "say1",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal logarithmi bounds across transforma systems.",
+            "attachedTo": "say2",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical logarithmi rules and transforma cases.",
+            "attachedTo": "example",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying logarithmi calculations and transforma outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "cd14acf8fd3abae0c9d41a539cf72d7f7ab7761443b6bc1af6c17e21f0b5f3d7"
+          }
+        ]
+      }
     },
     {
       "partIndex": 1,
@@ -98,7 +192,101 @@
           "attachedTo": "tryIt",
           "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
         }
-      ]
+      ],
+      "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed",
+      "partTitle": "Ramsey RESET Test for Functional Misspecification",
+      "spec": {
+        "template": "compare",
+        "title": "Ramsey RESET Test for Functional Misspecification",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core ramsey mechanisms and reset concepts.",
+            "attachedTo": "say1",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal ramsey bounds across reset systems.",
+            "attachedTo": "say2",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical ramsey rules and reset cases.",
+            "attachedTo": "example",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying ramsey calculations and reset outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Ramsey RESET Test for Functional Misspecification",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core ramsey mechanisms and reset concepts.",
+            "attachedTo": "say1",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal ramsey bounds across reset systems.",
+            "attachedTo": "say2",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical ramsey rules and reset cases.",
+            "attachedTo": "example",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying ramsey calculations and reset outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "b8fc33a09eaa219092aff9631f0f655df9f48244293fbf8d9c2b8667a76a92ed"
+          }
+        ]
+      }
     },
     {
       "partIndex": 2,
@@ -147,7 +335,101 @@
           "attachedTo": "tryIt",
           "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
         }
-      ]
+      ],
+      "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5",
+      "partTitle": "Polynomial Regressions & The Optimum Peak Invariant",
+      "spec": {
+        "template": "compare",
+        "title": "Polynomial Regressions & The Optimum Peak Invariant",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core polynomial mechanisms and regression concepts.",
+            "attachedTo": "say1",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal polynomial bounds across regression systems.",
+            "attachedTo": "say2",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical polynomial rules and regression cases.",
+            "attachedTo": "example",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying polynomial calculations and regression outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Polynomial Regressions & The Optimum Peak Invariant",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core polynomial mechanisms and regression concepts.",
+            "attachedTo": "say1",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal polynomial bounds across regression systems.",
+            "attachedTo": "say2",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical polynomial rules and regression cases.",
+            "attachedTo": "example",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying polynomial calculations and regression outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "7458c9697d695ba96a6f683b9e5aca8728aedeb29065a3cf481a47eb47d487d5"
+          }
+        ]
+      }
     },
     {
       "partIndex": 3,
@@ -196,7 +478,101 @@
           "attachedTo": "tryIt",
           "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
         }
-      ]
+      ],
+      "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a",
+      "partTitle": "Interaction Terms & Moderation Mechanics in Business Strategy",
+      "spec": {
+        "template": "compare",
+        "title": "Interaction Terms & Moderation Mechanics in Business Strategy",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core interactio mechanisms and terms concepts.",
+            "attachedTo": "say1",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal interactio bounds across terms systems.",
+            "attachedTo": "say2",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical interactio rules and terms cases.",
+            "attachedTo": "example",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying interactio calculations and terms outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Interaction Terms & Moderation Mechanics in Business Strategy",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core interactio mechanisms and terms concepts.",
+            "attachedTo": "say1",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal interactio bounds across terms systems.",
+            "attachedTo": "say2",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical interactio rules and terms cases.",
+            "attachedTo": "example",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying interactio calculations and terms outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "fbe8dcacb2ab7f5cf157872d65220eb0d587b3313c7f112f285585c65f62f96a"
+          }
+        ]
+      }
     },
     {
       "partIndex": 4,
@@ -245,7 +621,101 @@
           "attachedTo": "tryIt",
           "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
         }
-      ]
+      ],
+      "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb",
+      "partTitle": "Milestone 6 Capstone: ApexNonLinearOptimizationControlTower",
+      "spec": {
+        "template": "compare",
+        "title": "Milestone 6 Capstone: ApexNonLinearOptimizationControlTower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D10P5].",
+            "attachedTo": "say1",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          }
+        ]
+      },
+      "filled": {
+        "template": "compare",
+        "title": "Milestone 6 Capstone: ApexNonLinearOptimizationControlTower",
+        "before": {
+          "title": "Baseline Structure",
+          "items": [
+            "Classical framework",
+            "Naive heuristic approach",
+            "Standard statistical view"
+          ]
+        },
+        "after": {
+          "title": "Optimized Invariant",
+          "items": [
+            "Engineered formulation",
+            "Robust empirical bounds",
+            "Verified corporate governance"
+          ]
+        },
+        "steps": [
+          {
+            "action": "Highlight conceptual foundation",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts [D10P5].",
+            "attachedTo": "say1",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Examine mathematical boundaries",
+            "caption": "Analyzing formal milestone bounds across capstone systems.",
+            "attachedTo": "say2",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Inspect empirical demonstration",
+            "caption": "Demonstrating practical milestone rules and capstone cases.",
+            "attachedTo": "example",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          },
+          {
+            "action": "Verify execution output",
+            "caption": "Verifying milestone calculations and capstone outputs.",
+            "attachedTo": "tryIt",
+            "codeHash": "4ab4e644559c82670ec3f7744521a18f589290a8dbb5163cd084413f4d034dcb"
+          }
+        ]
+      }
     }
   ]
 }

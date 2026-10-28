@@ -5,7 +5,7 @@
   "entries": [
     {
       "partTitle": "The Retail Media 3.0 Revolution: First-Party SKU Point-of-Sale Data & Margin Economics",
-      "codeHash": "16340f910b697b1fe8eb26e6306010feee7ba774606d4e74ac06f66a214f96a9",
+      "codeHash": "0edc7aa9c9b0c8119aaa4f6454355ff9bff7451f9ebd342ff88e0e8c2627de1e",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -102,7 +102,7 @@
     },
     {
       "partTitle": "Amazon Sponsored Products Auction Architecture: GSP, Buy Box Ownership & Placement Multipliers",
-      "codeHash": "c67bb967f795b22eeec5784c4306ce708f06bb90e5a79451413b0607ab04c7d0",
+      "codeHash": "b6ba2fbdbe739b828ff92bc25b91c88a82d6d56716934b991b4157697965df25",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -199,7 +199,7 @@
     },
     {
       "partTitle": "Algorithmic Dynamic Bidding Models: Dynamic Shading & Target ACoS Bidding Algebra",
-      "codeHash": "965b34df0a845254e2c43b8cd15fb4636e8a55f0e92c83687b75fa622b434e05",
+      "codeHash": "294cd8f08634a5f67d2acb0a20a506bf74e3c2288e9cc3aed4e90db548ffa890",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -296,7 +296,7 @@
     },
     {
       "partTitle": "Off-the-Shelf RMN Platforms: Criteo Retail Media, CitrusAd & Kevel Ad Server Microservices",
-      "codeHash": "5e4cc6e41da16eaa07068c7aa58807d7f92957ea6ca52c4a1aa695811437cdeb",
+      "codeHash": "90cfea744c09d377d5fb16f11960457a055763d09a49ed538e9affd48099fa72",
       "spec": {
         "template": "funnel",
         "steps": [
@@ -393,7 +393,7 @@
     },
     {
       "partTitle": "Enterprise Sponsored Product Bidding Engine & Target ACoS Optimizer in Python",
-      "codeHash": "2047ce95a69d5fbe03bc60c066593887af8882d5f370240d25faec7893af2105",
+      "codeHash": "3ee7f094b0f162ad6bf701f8dbc08de3e5b6afde04ea73a9cb47eb338a2fce11",
       "spec": {
         "template": "funnel",
         "steps": [
