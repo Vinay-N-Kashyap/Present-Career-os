@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and comprehens concepts [D26P5].",
+            "caption": "Reviewing core building mechanisms and comprehens concepts.",
             "max": 100,
             "bars": [
               {

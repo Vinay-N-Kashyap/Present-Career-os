@@ -130,7 +130,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core simplex mechanisms and algorithm concepts [D43P2].",
+            "caption": "Reviewing core simplex mechanisms and algorithm concepts.",
             "max": 100,
             "bars": [
               {
@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core duality mechanisms and theory concepts [D43P3].",
+            "caption": "Reviewing core duality mechanisms and theory concepts.",
             "max": 100,
             "bars": [
               {

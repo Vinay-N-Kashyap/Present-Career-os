@@ -110,8 +110,25 @@ export default function BatchAnalyticsView() {
             <h3 style={{ margin: 0, fontSize: 20, fontWeight: 700 }}>{selectedBatch.batchName} - Deep Dive</h3>
             <span style={{ fontSize: 14.5, color: 'var(--t3, #64748b)' }}>Academic Semester 2026 • Top Student: {selectedBatch.topPerformer}</span>
           </div>
-          <button style={{ padding: '8px 16px', background: '#3b82f6', color: '#fff', borderRadius: 8, border: 'none', fontWeight: 600, cursor: 'pointer' }}>
-            📥 Export Report (PDF)
+          <button
+            onClick={() => {
+              const csvRows = [
+                ['Batch ID', 'Batch Name', 'Department', 'Total Students', 'Avg Attendance (%)', 'Avg Grade (%)', 'Top Performer', 'At Risk Count'].join(','),
+                ...batches.map(b =>
+                  [b.id, `"${b.batchName}"`, `"${b.department}"`, b.totalStudents, b.avgAttendance, b.avgGrade, `"${b.topPerformer}"`, b.atRiskCount].join(',')
+                ),
+              ].join('\n');
+              const blob = new Blob([csvRows], { type: 'text/csv;charset=utf-8;' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = `batch_analytics_${selectedBatch.id}_${new Date().toISOString().slice(0, 10)}.csv`;
+              a.click();
+              URL.revokeObjectURL(url);
+            }}
+            style={{ padding: '8px 16px', background: '#3b82f6', color: '#fff', borderRadius: 8, border: 'none', fontWeight: 600, cursor: 'pointer' }}
+          >
+            📥 Export CSV Report
           </button>
         </div>
 

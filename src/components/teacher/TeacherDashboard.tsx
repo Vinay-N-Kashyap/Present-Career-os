@@ -269,6 +269,69 @@ export const ALL_FACULTY_STUDIOS: FacultyStudioItem[] = [
     icon: '⚠️',
     badge: 'Early Warning',
     description: 'Predictive algorithm flagging students with attendance < 75% and test scores below threshold.'
+  },
+  {
+    id: 'assignments',
+    title: 'Course Assignments & Rubric Evaluation Studio',
+    path: '/teacher/assignments',
+    category: 'academic',
+    icon: '📑',
+    badge: 'OBE Rubrics',
+    description: 'Create problem sets, automated code evaluation rubrics, plagiarism checks and late-submission policies.'
+  },
+  {
+    id: 'attendance',
+    title: 'Biometric & Smart Classroom Attendance Studio',
+    path: '/teacher/attendance',
+    category: 'operations',
+    icon: '🕒',
+    badge: '75% Statutory',
+    description: 'Session-wise attendance logs, medical condonation workflows and automated shortage alerts.'
+  },
+  {
+    id: 'exams',
+    title: 'Continuous Internal Evaluation (CIE) & Exam Controller',
+    path: '/teacher/exams',
+    category: 'academic',
+    icon: '✍️',
+    badge: 'CIE / SEE',
+    description: 'Mid-semester moderation, answer-script barcoding, grade moderation and CO attainment mapping.'
+  },
+  {
+    id: 'book-publication',
+    title: 'Monograph & ISBN Chapter Publication Registry',
+    path: '/teacher/book-publication',
+    category: 'research',
+    icon: '📖',
+    badge: 'ISBN / Scopus',
+    description: 'Track edited volume chapters, ISBN verification, textbook grants and API score weightages.'
+  },
+  {
+    id: 'consultancy',
+    title: 'Corporate R&D Advisory & Retainer Desk',
+    path: '/teacher/consultancy',
+    category: 'research',
+    icon: '🤝',
+    badge: 'R&D Advisory',
+    description: 'Manage technical advisory retainers, deliverable sign-offs and departmental revenue sharing.'
+  },
+  {
+    id: 'fdp',
+    title: 'Faculty Development Program (FDP) & QIP Tracker',
+    path: '/teacher/fdp',
+    category: 'career',
+    icon: '🎓',
+    badge: 'UGC-HRDC / QIP',
+    description: 'Refresher courses, orientation programs, NPTEL-AICTE FDP certificates and CAS credit logs.'
+  },
+  {
+    id: 'incubation',
+    title: 'Deep-Tech Spin-Off & Pre-Incubation Cell',
+    path: '/teacher/incubation',
+    category: 'research',
+    icon: '🧪',
+    badge: 'TRL 1-9 Lab',
+    description: 'Technology Readiness Level (TRL) progression, student founder mentoring and DSIR SIRO compliance.'
   }
 ];
 
@@ -305,7 +368,7 @@ export default function TeacherDashboard({ teacher, onLogout }: TeacherDashboard
         setMaterialsCount(Array.isArray(mats) ? mats.length : 0);
         setEnrolledStudentsCount(Array.isArray(students) ? students.length : 0);
         const pending = Array.isArray(tickets) ? tickets.filter(t => t.status === 'pending').length : 0;
-        setPendingGradesCount(pending > 0 ? pending : 2);
+        setPendingGradesCount(pending);
       } catch (err) {
         console.error('Failed to load teacher stats:', err);
       }
@@ -417,6 +480,39 @@ export default function TeacherDashboard({ teacher, onLogout }: TeacherDashboard
               <span>{item.label}</span>
             </button>
           ))}
+
+          <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid var(--border, #e2e8f0)' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase', padding: '0 12px 8px' }}>
+              Academic Mentoring Tools
+            </div>
+            {[
+              { href: '/quests/teacher-select', icon: '🗺️', label: 'Quest Mentor Selector' },
+              { href: '/learning', icon: '📖', label: 'Learning Roadmaps' },
+              { href: '/advisor', icon: '🧠', label: 'AI Advisor Logs' },
+              { href: '/portfolio', icon: '👤', label: 'Student Portfolios' },
+              { href: '/internships', icon: '🏢', label: 'Internships Review' },
+              { href: '/projects', icon: '💼', label: 'Projects & Squads' },
+            ].map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  padding: '8px 14px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  color: 'var(--t2, #475569)',
+                  fontSize: 13,
+                  fontWeight: 500,
+                }}
+              >
+                <span>{link.icon}</span>
+                <span>{link.label}</span>
+              </Link>
+            ))}
+          </div>
         </aside>
 
         {/* Content View */}

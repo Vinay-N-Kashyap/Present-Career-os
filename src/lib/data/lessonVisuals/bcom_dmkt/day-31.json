@@ -176,7 +176,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase [D31P2].",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
             "activeStageId": "top",
             "stages": [
               {
@@ -338,7 +338,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase [D31P3].",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
             "activeStageId": "top",
             "stages": [
               {
@@ -500,7 +500,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase [D31P4].",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
             "activeStageId": "top",
             "stages": [
               {
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Initial audience discovery and traffic acquisition phase [D31P5].",
+            "caption": "Initial audience discovery and traffic acquisition phase.",
             "activeStageId": "top",
             "stages": [
               {

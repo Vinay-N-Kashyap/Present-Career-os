@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core expected mechanisms and value concepts [D35P3].",
+            "caption": "Reviewing core expected mechanisms and value concepts.",
             "max": 100,
             "bars": [
               {
@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core building mechanisms and enterprise concepts [D35P5].",
+            "caption": "Reviewing core building mechanisms and enterprise concepts.",
             "max": 100,
             "bars": [
               {

@@ -8,8 +8,9 @@ import { isOnboardingComplete, onboardingSignalsOf, readLocalOnboardingSignals }
 import { useAuth } from '@/lib/context/AuthContext';
 import { isDemoAuthEnabled } from '@/lib/demoAuth';
 
-function getSafeRedirect(raw: string | null): string {
-  if (!raw) return '/dashboard';
+function getSafeRedirect(rawRedirect: string | null): string {
+  const raw = rawRedirect;
+  if (!raw || !(rawRedirect.startsWith('/') && !rawRedirect.startsWith('//'))) return '/dashboard';
   try {
     // Relative path must strictly start with / and not //, /\, or \
     if (!raw.startsWith('/') || raw.startsWith('//') || raw.startsWith('/\\') || raw.startsWith('\\')) {

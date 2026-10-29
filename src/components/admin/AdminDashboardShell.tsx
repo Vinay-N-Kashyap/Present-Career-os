@@ -5,10 +5,37 @@ import AdminOverview from './AdminOverview';
 import UserManagement from './UserManagement';
 import AuditLogView from './AuditLogView';
 import FraudInspector from './FraudInspector';
+import {
+  AdmissionsTab,
+  FinanceTab,
+  LibraryTab,
+  HostelTab,
+  TransportTab,
+  DocumentsTab,
+  ServicesTab,
+} from './tabs/OperationsTabs';
+import {
+  GrievancesTab,
+  EventsTab,
+  ResearchTab,
+  BroadcastTab,
+  MaintenanceTab,
+  AdvisorTab,
+} from './tabs/ManagementTabs';
 import { portalService, EnrolledStudent } from '@/lib/services/portalService';
 
-export default function AdminDashboardShell() {
-  const [activeTab, setActiveTab] = useState<'overview' | 'users' | 'fraud' | 'audit' | 'settings'>('overview');
+export interface AdminDashboardShellProps {
+  activeTab?: string;
+  onTabChange?: (tab: string) => void;
+}
+
+export default function AdminDashboardShell({ activeTab: controlledTab, onTabChange }: AdminDashboardShellProps = {}) {
+  const [internalTab, setInternalTab] = useState<string>('overview');
+  const activeTab = controlledTab === 'dashboard' ? 'overview' : (controlledTab || internalTab);
+  const setActiveTab = (next: string) => {
+    setInternalTab(next);
+    if (onTabChange) onTabChange(next);
+  };
 
   return (
     <div style={{
@@ -139,10 +166,23 @@ export default function AdminDashboardShell() {
 
         {/* Dynamic Tab Body */}
         <main style={{ flex: 1, padding: 32, maxWidth: 1200 }}>
-          {activeTab === 'overview' && <AdminOverview />}
+          {(activeTab === 'overview' || activeTab === 'dashboard') && <AdminOverview />}
           {activeTab === 'users' && <UserManagement />}
           {activeTab === 'fraud' && <FraudInspector />}
           {activeTab === 'audit' && <AuditLogView />}
+          {activeTab === 'admissions' && <AdmissionsTab />}
+          {activeTab === 'finance' && <FinanceTab />}
+          {activeTab === 'library' && <LibraryTab />}
+          {activeTab === 'hostel' && <HostelTab />}
+          {activeTab === 'transport' && <TransportTab />}
+          {activeTab === 'documents' && <DocumentsTab />}
+          {activeTab === 'services' && <ServicesTab />}
+          {activeTab === 'grievances' && <GrievancesTab />}
+          {activeTab === 'events' && <EventsTab />}
+          {activeTab === 'research' && <ResearchTab />}
+          {activeTab === 'broadcast' && <BroadcastTab />}
+          {activeTab === 'maintenance' && <MaintenanceTab />}
+          {activeTab === 'advisor' && <AdvisorTab />}
           {activeTab === 'settings' && (
             <div style={{ background: 'var(--bg1, #fff)', border: '1px solid var(--border, var(--border))', borderRadius: 12, padding: 24 }}>
               <h2 style={{ margin: '0 0 8px' }}>⚙️ System Settings & Policy Controls</h2>

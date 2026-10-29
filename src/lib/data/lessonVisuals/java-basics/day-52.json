@@ -181,7 +181,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Ma [D52P3].",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Ma.",
             "mode": "stack",
             "items": [
               "main() Frame",
@@ -264,7 +264,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Pr [D52P4].",
+            "caption": "Step 1: Allocate stack frame and inspect reference pointers for Pr.",
             "mode": "stack",
             "items": [
               "main() Frame",

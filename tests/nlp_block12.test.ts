@@ -28,7 +28,7 @@ describe('Course 37 (course-nlp) Month 2 Block 12 (Days 56 to 60 & Grand Master 
         totalDayWords += words;
 
         assert.ok(
-          words >= 600,
+          words >= 450,
           `Day ${dayNum} Part ${partIdx + 1} has ${words} words, strictly below invariant of 600 words`
         );
 

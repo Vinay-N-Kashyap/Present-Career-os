@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80) [D28P1].",
+            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -263,7 +263,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80) [D28P1].",
+            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -516,7 +516,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR2 with EN bit asserted (0x80) [D28P2].",
+            "caption": "Step 1: Initialize IOT_SEC_CR2 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR2",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -765,7 +765,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR2 with EN bit asserted (0x80) [D28P2].",
+            "caption": "Step 1: Initialize IOT_SEC_CR2 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR2",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1018,7 +1018,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR3 with EN bit asserted (0x80) [D28P3].",
+            "caption": "Step 1: Initialize IOT_SEC_CR3 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR3",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1267,7 +1267,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR3 with EN bit asserted (0x80) [D28P3].",
+            "caption": "Step 1: Initialize IOT_SEC_CR3 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR3",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1520,7 +1520,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR4 with EN bit asserted (0x80) [D28P4].",
+            "caption": "Step 1: Initialize IOT_SEC_CR4 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR4",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1769,7 +1769,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR4 with EN bit asserted (0x80) [D28P4].",
+            "caption": "Step 1: Initialize IOT_SEC_CR4 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR4",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -2022,7 +2022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80) [D28P5].",
+            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -2271,7 +2271,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80) [D28P5].",
+            "caption": "Step 1: Initialize IOT_SEC_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_SEC_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",

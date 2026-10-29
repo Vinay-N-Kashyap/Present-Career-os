@@ -334,7 +334,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P2].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -492,7 +492,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P2].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -654,7 +654,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P3].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -812,7 +812,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P3].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -974,7 +974,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P4].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -1132,7 +1132,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P4].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -1294,7 +1294,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P5].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {
@@ -1452,7 +1452,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (11,000 prospects) [D4P5].",
+            "caption": "Top-of-funnel acquisition baseline (11,000 prospects).",
             "activeStageId": "top",
             "stages": [
               {

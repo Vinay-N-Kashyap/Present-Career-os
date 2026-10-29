@@ -1222,16 +1222,14 @@ export function useOnboardingWizard() {
     } catch {}
   };
 
-  // After onboarding: go to the dashboard cleanly and immediately without getting stuck
+  // Frontend role disambiguation: goalLower.includes('front') || goalLower.includes('react') || goalLower.includes('web dev') -> Frontend Engineer
   const goToDashboard = () => {
     setSyncing(false);
     markOnboardingLocallyComplete(user?.id);
-    if (typeof window === 'undefined') {
-      router.replace('/dashboard');
-      return;
-    }
-    // Hard navigate to /dashboard so that fresh local state is loaded and no promise can freeze the user
-    window.location.replace('/dashboard');
+    router.replace('/dashboard');
+    if (typeof window === 'undefined') return;
+    setTimeout(() => { if (window.location.pathname === '/onboarding') router.replace('/dashboard'); }, 1500);
+    setTimeout(() => { if (window.location.pathname === '/onboarding') window.location.href = '/dashboard'; }, 6000);
   };
 
   // Complete Onboarding: Sync to database & generate dynamic quest roadmap
@@ -1540,7 +1538,7 @@ export function useOnboardingWizard() {
         markOnboardingLocallyComplete(user?.id);
         cOS.setOnboardingStep(3);
         markOnboardingStoryPending(user?.id);
-        goToDashboard();
+        router.replace('/dashboard');
       }
     }, 300);
   };

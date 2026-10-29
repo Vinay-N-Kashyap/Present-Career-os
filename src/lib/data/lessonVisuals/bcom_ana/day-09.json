@@ -646,7 +646,7 @@
         "steps": [
           {
             "action": "Highlight conceptual foundation",
-            "caption": "Reviewing core milestone mechanisms and capstone concepts [D9P5].",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts.",
             "attachedTo": "say1",
             "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
           },
@@ -692,7 +692,7 @@
         "steps": [
           {
             "action": "Highlight conceptual foundation",
-            "caption": "Reviewing core milestone mechanisms and capstone concepts [D9P5].",
+            "caption": "Reviewing core milestone mechanisms and capstone concepts.",
             "attachedTo": "say1",
             "codeHash": "0de54fc3661b57b4e6e62913f8fa2392d7fe87b0ceb0163fc330c824447ffaa0"
           },

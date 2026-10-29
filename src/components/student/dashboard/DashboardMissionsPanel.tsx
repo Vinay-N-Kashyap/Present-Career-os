@@ -80,12 +80,13 @@ function getMissionHref(m: DailyMissionSlot): string {
   switch (m.category) {
     case 'practice':
     case 'debug':
-      return '/challenges';
+      return '/arena';
     case 'build':
+      return '/projects';
     case 'career':
       return '/vault';
     case 'communication':
-      return '/interview-prep';
+      return '/interview';
     case 'review':
       return '/exams';
     case 'learn':
@@ -97,7 +98,7 @@ function getMissionHref(m: DailyMissionSlot): string {
   const toggleComplete = (id: string) => {
     // Validate that the mission ID is an authentic catalog mission slot
     const allKnown = [...coreMissions, ...optionalMissions];
-    const isRecognized = allKnown.length === 0 || allKnown.some(m => m.id === id) || id.startsWith('msn_') || id.startsWith('core_') || id.startsWith('opt_');
+    const isRecognized = allKnown.length === 0 || allKnown.some(m => m.id === id) || id.startsWith('mission_') || id.startsWith('msn_') || id.startsWith('core_') || id.startsWith('opt_');
     if (!isRecognized) {
       console.warn(`[DEF-010 Security Gate]: Rejected unregistered mission ID "${id}"`);
       return;

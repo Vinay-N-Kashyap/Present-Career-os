@@ -46,7 +46,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -62,7 +62,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -78,7 +78,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -94,7 +94,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -148,7 +148,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display link.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -180,7 +180,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -196,7 +196,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -254,7 +254,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P2].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -270,7 +270,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -286,7 +286,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -302,7 +302,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -356,7 +356,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P2].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -388,7 +388,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -404,7 +404,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -462,7 +462,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P3].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -478,7 +478,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -494,7 +494,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -510,7 +510,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -564,7 +564,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P3].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -580,7 +580,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -612,7 +612,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -670,7 +670,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P4].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -686,7 +686,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -702,7 +702,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -718,7 +718,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -772,7 +772,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P4].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -788,7 +788,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -804,7 +804,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -820,7 +820,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -878,7 +878,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P5].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -894,7 +894,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -910,7 +910,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [
@@ -980,7 +980,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display [D16P5].",
+            "caption": "Step 1: Mount <MobilePhysicsRootScreen /> on native 120Hz display.",
             "activeId": "root",
             "tone": "primary",
             "nodes": [
@@ -996,7 +996,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink",
+            "caption": "Step 2: Initialize <SpringPhysicsWorklet /> on 120Hz native DisplayLink.",
             "activeId": "SpringOscillator",
             "tone": "accent",
             "nodes": [
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding",
+            "caption": "Step 3: Coast gesture fling via <InertialFlingDecayView /> with asymptotic rubber-banding.",
             "activeId": "InertialDecayManager",
             "tone": "data",
             "nodes": [
@@ -1028,7 +1028,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />",
+            "caption": "Step 4: Morph native Yoga shadow tree bounds via <LayoutMorphingContainer />.",
             "activeId": "LayoutMorphView",
             "tone": "ok",
             "nodes": [

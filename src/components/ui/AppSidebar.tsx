@@ -49,6 +49,7 @@ export const RIGHT_NAV: { id: string; href?: string; icon: string; label: string
 export const ADMIN_NAV: NavSection[] = [
   { section: 'PinIT Career OS', items: [
     { href: '/admin', icon: '🏠', label: 'Dashboard' },
+    { href: '/campus-admin', icon: '🏛️', label: 'Campus Governance (All 34)' },
     { label: 'Campus Core', icon: '🎓', children: [
       { href: '/admin/cohorts', icon: '📊', label: 'Cohort Placement Funnel' },
       { href: '/admissions', icon: '🎟️', label: 'Admissions' },
@@ -89,13 +90,13 @@ export const ADMIN_NAV: NavSection[] = [
     ]},
     { label: 'Intelligence Center', icon: '📊', children: [
       { href: '/analytics', icon: '📊', label: 'Analytics' },
-      { href: '/university', icon: '📋', label: 'Annual Reports' },
+      { href: '/university?tab=reports', icon: '📋', label: 'Annual Reports' },
       { href: '/admin?tab=advisor', icon: '🧠', label: 'AI Advisor Logs' }
     ]},
     { label: 'Enterprise', icon: '🌐', children: [
       { href: '/integrations', icon: '🔌', label: 'API Integrations' },
-      { href: '/admin/settings', icon: '⚡', label: 'Migration Wizard' },
-      { href: '/admin/settings', icon: '🔑', label: 'API Gateway keys' }
+      { href: '/admin/settings?tab=migration', icon: '⚡', label: 'Migration Wizard' },
+      { href: '/admin/settings?tab=erp', icon: '🔑', label: 'API Gateway keys' }
     ]}
   ]}
 ];
@@ -243,7 +244,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
     if (collapsed) {
       return (
         <>
-          {group.children.map(c => <NavLink key={c.href} {...c} />)}
+          {group.children.map(c => <NavLink key={`${c.href}_${c.label}`} {...c} />)}
         </>
       );
     }
@@ -260,7 +261,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
           <span style={{ flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{group.label}</span>
           <span style={{ fontSize: 11, color: 'var(--t4)', transition: 'transform 0.2s', transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}>▸</span>
         </button>
-        {open && group.children.map(c => <NavLink key={c.href} {...c} indent />)}
+        {open && group.children.map(c => <NavLink key={`${c.href}_${c.label}`} {...c} indent />)}
       </>
     );
   }

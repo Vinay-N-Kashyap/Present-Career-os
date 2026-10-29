@@ -68,20 +68,11 @@ export default function TeacherSelectPage() {
 function TeacherSelectPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const questId = searchParams.get('questId') || '';
+  const questId = searchParams.get('questId') || 'python';
 
   const { onboardingAnswers, setOnboarding } = useCareerOS();
   const [selected, setSelected] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-
-  // Guard: redirect back if questId is missing from URL
-  useEffect(() => {
-    if (!questId) {
-      router.replace('/quests');
-    }
-  }, [questId, router]);
-
-  if (!questId) return null;
 
   const handleChooseTeacher = async (teacherId: string) => {
     setSelected(teacherId);

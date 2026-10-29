@@ -48,7 +48,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -64,7 +64,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -80,7 +80,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -96,7 +96,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -152,7 +152,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant role labels via <AccessibilityTreeBuilder />.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -168,7 +168,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -184,7 +184,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -200,7 +200,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -260,7 +260,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P2].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -276,7 +276,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -292,7 +292,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -308,7 +308,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -364,7 +364,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P2].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -380,7 +380,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -396,7 +396,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -412,7 +412,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -472,7 +472,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P3].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -488,7 +488,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -504,7 +504,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -520,7 +520,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -576,7 +576,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P3].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -592,7 +592,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -608,7 +608,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -624,7 +624,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -684,7 +684,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P4].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -700,7 +700,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -716,7 +716,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -732,7 +732,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -788,7 +788,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P4].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -804,7 +804,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -820,7 +820,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -836,7 +836,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -896,7 +896,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P5].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -912,7 +912,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -928,7 +928,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -944,7 +944,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [
@@ -1000,7 +1000,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro [D26P5].",
+            "caption": "Step 1: Construct accessible semantic nodes and strip redundant ro.",
             "activeId": "A11yTreeBuilder",
             "tone": "primary",
             "nodes": [
@@ -1016,7 +1016,7 @@
           },
           {
             "at": "say1",
-            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />",
+            "caption": "Step 2: Declare dynamic control roles, expanded/selected states & adjustable gestures via <ControlStateEngine />.",
             "activeId": "StateEngine",
             "tone": "accent",
             "nodes": [
@@ -1032,7 +1032,7 @@
           },
           {
             "at": "example",
-            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />",
+            "caption": "Step 3: Dispatch live speech announcements and trap modal dialog focus via <LiveAnnouncementCoordinator />.",
             "activeId": "FocusCoordinator",
             "tone": "data",
             "nodes": [
@@ -1048,7 +1048,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit",
+            "caption": "Step 4: Execute comprehensive Tier-1 Mobile Accessibility Master Certification audit.",
             "activeId": "root",
             "tone": "ok",
             "nodes": [

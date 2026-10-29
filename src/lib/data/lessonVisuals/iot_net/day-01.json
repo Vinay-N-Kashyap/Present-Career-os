@@ -2022,7 +2022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_NET_CR1 with EN bit asserted (0x80) [D1P5].",
+            "caption": "Step 1: Initialize IOT_NET_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_NET_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -2271,7 +2271,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Initialize IOT_NET_CR1 with EN bit asserted (0x80) [D1P5].",
+            "caption": "Step 1: Initialize IOT_NET_CR1 with EN bit asserted (0x80).",
             "registerName": "IOT_NET_CR1",
             "bitWidth": 8,
             "hexValue": "0x80",

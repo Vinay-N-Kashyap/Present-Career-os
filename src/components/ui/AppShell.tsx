@@ -276,10 +276,13 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
-      const qId = params.get('questId') || window.location.pathname.split('/').pop() || null;
+      const courseParam = params.get('course') || params.get('prefix');
+      const dayParam = params.get('day');
+      const lessonKey = courseParam ? `${courseParam}_day_${dayParam || '1'}` : null;
+      const qId = params.get('questId') || lessonKey || window.location.pathname.split('/').pop() || null;
       setQuestId(qId);
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -387,13 +390,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         || isOnboardingComplete(onboardingSignalsOf(user));
 
       if (!onboardingDone && pathname !== '/onboarding') {
-        // If already on /dashboard and any completion signal exists locally, do not bounce back
-        if (pathname === '/dashboard' && (localSignals?.hasCompleted || localSignals?.roadmapGenerated || onboardingStep >= 3)) {
-          return;
-        }
         if (isRedirectingRef.current) return;
         isRedirectingRef.current = true;
-        console.warn("[AppShell] Redirecting to /onboarding because onboardingStep is:", onboardingStep);
         router.push('/onboarding');
         return;
       }
@@ -421,14 +419,15 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   // Signed out on a private page: immediately replace history state with /login
   useEffect(() => {
     if (!loading && user === null && !isPublic) {
+      const search = typeof window !== 'undefined' ? window.location.search : '';
       if (typeof window !== 'undefined') {
         window.history.replaceState(null, '', '/login');
         window.location.replace('/login');
       } else {
-        router.replace('/login');
+        router.push(`/login?redirect=${encodeURIComponent(`${pathname}${search}`)}`);
       }
     }
-  }, [user, loading, isPublic, router]);
+  }, [user, loading, isPublic, router, pathname]);
 
   // Defeat Back-Forward Cache (BFCache): if a protected page is restored from memory cache
   // after the user has logged out, immediately replace with /login.

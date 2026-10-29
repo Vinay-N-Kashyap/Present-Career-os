@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts [D35P1].",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
             "activeStageId": "top",
             "stages": [
               {
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts [D35P2].",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
             "activeStageId": "top",
             "stages": [
               {
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts [D35P3].",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
             "activeStageId": "top",
             "stages": [
               {
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts [D35P4].",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
             "activeStageId": "top",
             "stages": [
               {
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing inbound lead volume across target enterprise accounts [D35P5].",
+            "caption": "Analyzing inbound lead volume across target enterprise accounts.",
             "activeStageId": "top",
             "stages": [
               {

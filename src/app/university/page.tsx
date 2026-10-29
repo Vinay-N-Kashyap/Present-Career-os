@@ -5,9 +5,9 @@
 // Backend endpoints: /api/university/dashboard, /api/university/employability-report,
 //                   /api/university/skill-gaps
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useAuth } from '@/lib/context/AuthContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { api } from '@/lib/api/client';
 import UniversityPlacementRoster from '@/components/university/UniversityPlacementRoster';
 
@@ -73,9 +73,24 @@ function Skeleton({ h = 48 }: { h?: number }) {
 
 // ── Main page ─────────────────────────────────────────────────────────────────
 export default function UniversityPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: 32 }}>Loading Institution Dashboard...</div>}>
+      <UniversityPageContent />
+    </Suspense>
+  );
+}
+
+function UniversityPageContent() {
   const { user }  = useAuth();
   const router    = useRouter();
+  const searchParams = useSearchParams();
   const [tab,     setTab]      = useState<Tab>('overview');
+
+  useEffect(() => {
+    const qTab = searchParams.get('tab');
+    if (qTab === 'reports' || qTab === 'report') setTab('report');
+    else if (qTab === 'students' || qTab === 'skills' || qTab === 'roster' || qTab === 'overview') setTab(qTab);
+  }, [searchParams]);
   const [stats,   setStats]    = useState<PlacementStats | null>(null);
   const [topStudents, setTop]  = useState<TopStudent[]>([]);
   const [deptStats,   setDept] = useState<DeptStat[]>([]);

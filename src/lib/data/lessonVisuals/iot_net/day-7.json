@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register MAC_FCF_REG for IEEE 802.15.4 General [D7P1].",
+            "caption": "Step 1: Arm hardware register MAC_FCF_REG for IEEE 802.15.4 General.",
             "registerName": "MAC_FCF_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -266,7 +266,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register DEV_ROLE_REG for Operating Topologies [D7P2].",
+            "caption": "Step 1: Arm hardware register DEV_ROLE_REG for Operating Topologies.",
             "registerName": "DEV_ROLE_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -518,7 +518,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register SUPERFRAME_REG for Superframe Archite [D7P3].",
+            "caption": "Step 1: Arm hardware register SUPERFRAME_REG for Superframe Archite.",
             "registerName": "SUPERFRAME_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -770,7 +770,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register GTS_ALLOC_REG for Contention Access P [D7P4].",
+            "caption": "Step 1: Arm hardware register GTS_ALLOC_REG for Contention Access P.",
             "registerName": "GTS_ALLOC_REG",
             "bitWidth": 8,
             "hexValue": "0x80",
@@ -1022,7 +1022,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Arm hardware register CRC16_FCS_REG for Full IEEE 802.15.4 [D7P5].",
+            "caption": "Step 1: Arm hardware register CRC16_FCS_REG for Full IEEE 802.15.4.",
             "registerName": "CRC16_FCS_REG",
             "bitWidth": 8,
             "hexValue": "0x80",

@@ -146,5 +146,58 @@ export default function CampusAdminRoleGate({ children }: { children: React.Reac
     );
   }
 
+  const userRole = String(user?.role || '').toLowerCase();
+  if (user && !ALLOWED_ADMIN_ROLES.includes(userRole)) {
+    return (
+      <div
+        style={{
+          minHeight: '80vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: '#090d16',
+          padding: 24,
+          color: '#f8fafc',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 460,
+            width: '100%',
+            padding: 32,
+            background: '#0f172a',
+            border: '1px solid rgba(239, 68, 68, 0.3)',
+            borderRadius: 12,
+            textAlign: 'center',
+          }}
+        >
+          <div style={{ fontSize: 40, marginBottom: 12 }}>🚫</div>
+          <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 8px 0' }}>
+            403 — Institutional Administrator Access Required
+          </h2>
+          <p style={{ fontSize: 13.5, color: '#94a3b8', lineHeight: 1.5, marginBottom: 24 }}>
+            Your current account role (<code>{userRole || 'student'}</code>) is not authorized to modify statutory campus governance consoles.
+          </p>
+          <button
+            onClick={() => (window.location.href = '/dashboard')}
+            style={{
+              width: '100%',
+              padding: '12px',
+              background: '#2563eb',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 8,
+              fontWeight: 600,
+              cursor: 'pointer',
+              fontSize: 14,
+            }}
+          >
+            Return to Student Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return <>{children}</>;
 }

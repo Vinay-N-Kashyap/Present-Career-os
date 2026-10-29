@@ -248,7 +248,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core uplift mechanisms and modeling concepts [D52P3].",
+            "caption": "Reviewing core uplift mechanisms and modeling concepts.",
             "max": 100,
             "bars": [
               {

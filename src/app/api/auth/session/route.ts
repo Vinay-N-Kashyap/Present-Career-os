@@ -117,12 +117,14 @@ export async function GET(req: NextRequest) {
   const uidCookie = req.cookies.get('pinit_uid')?.value;
 
   if (!sessionCookie || sessionCookie !== 'active') {
-    return NextResponse.json({ active: false, role: null, userId: null });
+    return NextResponse.json({ active: false, authenticated: false, role: null, userId: null, uid: null });
   }
 
   return NextResponse.json({
     active: true,
+    authenticated: true,
     role: roleCookie || 'student',
-    userId: uidCookie || null
+    userId: uidCookie || null,
+    uid: uidCookie || null
   });
 }

@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D42P1].",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp.",
             "activeStageId": "top",
             "stages": [
               {
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D42P2].",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp.",
             "activeStageId": "top",
             "stages": [
               {
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D42P3].",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp.",
             "activeStageId": "top",
             "stages": [
               {
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D42P4].",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp.",
             "activeStageId": "top",
             "stages": [
               {
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingesting continuous telemetry and applying exponential decay damp [D42P5].",
+            "caption": "Ingesting continuous telemetry and applying exponential decay damp.",
             "activeStageId": "top",
             "stages": [
               {

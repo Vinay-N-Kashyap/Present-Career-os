@@ -43,9 +43,9 @@ export function onboardingSignalsOf(profile: unknown): OnboardingSignals | null 
 
 /** This device's saved onboarding progress for the user (written by the onboarding wizard). */
 export function readLocalOnboardingSignals(userId: string | null | undefined): OnboardingSignals | null {
-  if (typeof window === 'undefined') return null;
+  if (!userId || typeof window === 'undefined') return null;
   try {
-    const effectiveId = userId || 'guest';
+    const effectiveId = userId;
     const rawAnswers = window.localStorage.getItem(`pinit_${effectiveId}_onboarding_answers`)
       || window.localStorage.getItem('pinit_onboarding_answers')
       || '{}';

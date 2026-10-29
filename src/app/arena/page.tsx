@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
 import { useAuth } from '@/lib/context/AuthContext';
+import { toast } from '@/lib/store/useAppStore';
 import {
   CodeWarsApiService,
   CodeWarsProblem,
@@ -394,7 +395,7 @@ function ArenaContent() {
         }
       }
     } catch (err: any) {
-      alert('Submission error: ' + err.message);
+      toast.error('Submission Error', err.message || 'Could not submit solution.');
     } finally {
       setIsSubmitting(false);
     }
@@ -608,9 +609,10 @@ function ArenaContent() {
       </div>
 
       {/* ── Tab Content ─────────────────────────────────────────── */}
-      {activeTab === 'all' && (
+      {(activeTab === 'all' || activeTab === 'hackathons' || activeTab === 'viva') && (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
           {/* Card 1: 1v1 Code Wars */}
+          {activeTab === 'all' && (
           <div style={{
             padding: 24,
             borderRadius: 16,
@@ -665,8 +667,10 @@ function ArenaContent() {
               <span>⚔️</span> Open 1v1 Code Wars Arena →
             </button>
           </div>
+          )}
 
           {/* Card 2: Hackathon Squads */}
+          {(activeTab === 'all' || activeTab === 'hackathons') && (
           <div style={{
             padding: 24,
             borderRadius: 16,
@@ -719,8 +723,10 @@ function ArenaContent() {
               <span>👥</span> Enter Squads & Projects →
             </Link>
           </div>
+          )}
 
           {/* Card 3: AI STAR Viva */}
+          {(activeTab === 'all' || activeTab === 'viva') && (
           <div style={{
             padding: 24,
             borderRadius: 16,
@@ -773,6 +779,7 @@ function ArenaContent() {
               <span>🎤</span> Start AI Mock Interview →
             </Link>
           </div>
+          )}
         </div>
       )}
 

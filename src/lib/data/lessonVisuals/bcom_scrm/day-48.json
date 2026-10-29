@@ -12,7 +12,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing enterprise integration fabrics and canonical event broke [D48P1].",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broke.",
             "activeStageId": "top",
             "stages": [
               {
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing enterprise integration fabrics and canonical event broke [D48P2].",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broke.",
             "activeStageId": "top",
             "stages": [
               {
@@ -336,7 +336,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing enterprise integration fabrics and canonical event broke [D48P3].",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broke.",
             "activeStageId": "top",
             "stages": [
               {
@@ -498,7 +498,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing enterprise integration fabrics and canonical event broke [D48P4].",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broke.",
             "activeStageId": "top",
             "stages": [
               {
@@ -660,7 +660,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Analyzing enterprise integration fabrics and canonical event broke [D48P5].",
+            "caption": "Analyzing enterprise integration fabrics and canonical event broke.",
             "activeStageId": "top",
             "stages": [
               {

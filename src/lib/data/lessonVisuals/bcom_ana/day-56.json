@@ -484,7 +484,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Reviewing core production mechanisms and algorithmi concepts [D56P5].",
+            "caption": "Reviewing core production mechanisms and algorithmi concepts.",
             "max": 100,
             "bars": [
               {

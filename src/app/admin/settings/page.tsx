@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/context/AuthContext';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { api } from '@/lib/api/client';
 
 type PortalRole = 'admin' | 'recruiter' | 'consultant';
@@ -196,8 +196,18 @@ function AdminSettingsContent() {
     }
   }, [user, authLoading, router]);
 
+  const searchParams = useSearchParams();
   const [settingsTab, setSettingsTab] = useState<SettingsTab>('requirements');
   const [activeTab, setActiveTab] = useState<PortalRole>('admin');
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab === 'migration' || tab === 'erp' || tab === 'rollout' || tab === 'training' || tab === 'requirements') {
+      setSettingsTab(tab);
+    } else if (tab === 'apikeys') {
+      setSettingsTab('erp');
+    }
+  }, [searchParams]);
 
   // --- Pilot Rollout States ---
   const [cohorts, setCohorts] = useState([

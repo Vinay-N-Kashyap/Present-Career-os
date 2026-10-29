@@ -151,7 +151,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Establish horizontal flex-row container for Semantic Versi [D58P1].",
+            "caption": "Step 1: Establish horizontal flex-row container for Semantic Versi.",
             "layoutMode": "flex-row",
             "justifyContent": "space-between",
             "alignItems": "center",
@@ -291,7 +291,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Establish horizontal flex-row container for Semantic Versi [D58P1].",
+            "caption": "Step 1: Establish horizontal flex-row container for Semantic Versi.",
             "layoutMode": "flex-row",
             "justifyContent": "space-between",
             "alignItems": "center",

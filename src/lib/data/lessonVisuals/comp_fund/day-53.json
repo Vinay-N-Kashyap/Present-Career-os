@@ -885,7 +885,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Production Inci [D53P4].",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Production Inci.",
             "items": [
               "0x00: OPCODE",
               "0x04: REG_A",
@@ -1004,7 +1004,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Production Inci [D53P4].",
+            "caption": "Step 1: Fetch instruction cell at 0x00: OPCODE for Production Inci.",
             "items": [
               "0x00: OPCODE",
               "0x04: REG_A",
