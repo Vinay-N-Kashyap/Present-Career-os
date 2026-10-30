@@ -110,8 +110,10 @@ const nextConfig = {
     outputFileTracingIncludes: {
       '/api/visuals': ['./src/lib/data/lessonVisuals/**/*'],
     },
-    webpackBuildWorker: true,
-    cpus: 2,
+    // webpackBuildWorker spawns a SECOND Node process that also inherits
+    // NODE_OPTIONS, consuming 2x the heap on Vercel's 8 GB container → SIGKILL.
+    // Single-process build stays well within the 6 GB limit below.
+    webpackBuildWorker: false,
   },
 
   webpack: (config, { isServer, webpack }) => {
