@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Marketing Strategy, Brand Equity & Consumer Psychology (Course: bcom-marketing / course-marketing-branding)

@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Forensic Auditing, Statutory Audit & Fraud Analytics (Course: bcom_aud)

@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Commercial Banking, Treasury Operations & Risk Management (Course: bcom_ban)

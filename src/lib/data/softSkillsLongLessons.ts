@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const SOFT_SKILLS_LONG_LESSONS: LongLesson[] = [
   {

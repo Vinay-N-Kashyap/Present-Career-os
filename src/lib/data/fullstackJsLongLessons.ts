@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Modern Full-Stack JavaScript & Next.js App Router Architecture (Course: fullstack-js)

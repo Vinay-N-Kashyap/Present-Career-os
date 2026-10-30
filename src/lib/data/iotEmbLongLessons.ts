@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const IOT_EMB_LONG_LESSONS: LongLesson[] = [
   {

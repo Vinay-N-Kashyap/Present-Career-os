@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * IoT Radio Protocols, LPWAN & Constrained Networks (Course: iot_net)

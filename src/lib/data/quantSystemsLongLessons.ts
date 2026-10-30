@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const QUANT_SYSTEMS_LONG_LESSONS: LongLesson[] = [
   {

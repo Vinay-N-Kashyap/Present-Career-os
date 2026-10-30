@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Operations, Supply Chain & Business Compliance (Course: bcom_ops)

@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/build-sql-worker.cjs && node scripts/utils/copy-esbuild.cjs && node scripts/utils/build-react-runtime.cjs && node scripts/utils/build-web-runtime.cjs && NODE_OPTIONS=--max-old-space-size=8192 next build",
+  "buildCommand": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/build-sql-worker.cjs && node scripts/utils/copy-esbuild.cjs && node scripts/utils/build-react-runtime.cjs && node scripts/utils/build-web-runtime.cjs && NODE_OPTIONS=--max-old-space-size=4096 next build",
   "crons": [
     {
       "path": "/api/cron/daily-pin-reset",

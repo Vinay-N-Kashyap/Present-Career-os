@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Entrepreneurship, Venture Capital & Business Management (Course: bcom_ent)

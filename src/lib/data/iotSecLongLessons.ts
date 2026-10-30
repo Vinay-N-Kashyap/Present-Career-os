@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * IoT Hardware Security, Root of Trust & Secure Boot (Course: iot_sec)

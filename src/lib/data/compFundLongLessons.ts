@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const COMP_FUND_LONG_LESSONS: LongLesson[] = [
   {

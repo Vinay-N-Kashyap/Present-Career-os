@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
-import { getLongLesson, type LongLesson, type LongLessonPart } from '@/lib/data/longLessons';
+import { getLongLesson } from '@/lib/data/longLessons';
+import type { LongLesson, LongLessonPart } from '@/lib/data/longLessonTypes';
 import { getTappableLabelsForVisual } from '@/lib/visuals/visualRules';
 
 export interface GateResult {

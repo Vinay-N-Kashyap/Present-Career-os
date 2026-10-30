@@ -1,6 +1,6 @@
 import React from 'react';
 import { parseQuestId } from '@/lib/data/curriculumEnricher';
-import { getLongLessonLanguage } from '@/lib/data/longLessons';
+import { getLongLessonLanguage } from '@/lib/data/longLessonTypes';
 
 interface LessonCodeEditorProps {
   questId: string;

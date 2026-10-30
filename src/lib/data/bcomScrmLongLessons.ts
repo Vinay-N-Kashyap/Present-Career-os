@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Sales, Customer Success & CRM Operations (Course: bcom_scrm)

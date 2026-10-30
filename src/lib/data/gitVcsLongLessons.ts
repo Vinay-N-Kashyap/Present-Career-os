@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const GIT_VCS_LONG_LESSONS: LongLesson[] = [
   {

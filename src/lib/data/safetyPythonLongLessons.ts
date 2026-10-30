@@ -4,7 +4,7 @@
  * its `output`; tests/python_track_long_lessons.test.ts checks this and each lesson's length.
  * Days without a long lesson here still use the shorter lesson plan.
  */
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const SAFETY_PYTHON_LONG_LESSONS: LongLesson[] = [
   {

@@ -6,7 +6,7 @@ import { api } from '@/lib/api/client';
 import { supabase } from '@/lib/supabaseClient';
 import { getAuthoritativeTestSuite } from '@/lib/quests/questRegistry';
 import { parseQuestId } from '@/lib/data/curriculumEnricher';
-import { getLongLessonLanguage } from '@/lib/data/longLessons';
+import { getLongLessonLanguage } from '@/lib/data/longLessonTypes';
 import type { CodeLanguage } from '@/lib/code/types';
 
 export interface Teacher {

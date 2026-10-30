@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * 3D Computer Graphics, WebGL2 & GPU Shader Architecture (Course: g3d)

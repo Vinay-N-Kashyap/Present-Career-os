@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const JAVA_BASICS_LONG_LESSONS: LongLesson[] = [
   {

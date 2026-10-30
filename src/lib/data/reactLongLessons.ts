@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Long-format lessons for the 1-Month React course (quest prefix `react-basics`).

@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Edge AI & TinyML Embedded Machine Learning Architecture (Course: iot_edge)

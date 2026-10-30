@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const DISTRIBUTED_WEB_LONG_LESSONS: LongLesson[] = [
   {

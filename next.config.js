@@ -108,8 +108,10 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node', 'pyodide'],
     outputFileTracingIncludes: {
-      '/api/**/*': ['./src/lib/data/lessonVisuals/**/*'],
+      '/api/visuals': ['./src/lib/data/lessonVisuals/**/*'],
     },
+    webpackBuildWorker: true,
+    cpus: 2,
   },
 
   webpack: (config, { isServer, webpack }) => {

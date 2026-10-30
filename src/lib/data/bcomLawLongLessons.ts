@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Corporate & Commercial Law, Contracts & Governance (Course: bcom_law)

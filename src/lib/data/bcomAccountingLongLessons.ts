@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Digital Accounting, ERP Systems & Financial Reporting (Course: bcom-accounting)

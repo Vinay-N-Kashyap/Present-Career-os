@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Corporate Taxation, Direct Taxes & Tax Shield Strategy (Course: bcom_tax)

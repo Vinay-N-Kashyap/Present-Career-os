@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Digital Marketing Analytics & Performance Attribution (Course: bcom_dmkt / bcom-marketing)

@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Long-format lessons for the 1-Month SQL course (quest prefix `sql-mastery`), taught on PostgreSQL.

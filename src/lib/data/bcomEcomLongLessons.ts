@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * E-Commerce Strategy & Marketplace Economics (Course: bcom_ecom)

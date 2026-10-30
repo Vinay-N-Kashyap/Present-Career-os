@@ -1,4 +1,4 @@
-import type { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 /**
  * Corporate Financial Management & Enterprise Valuation (Course: bcom-finance)

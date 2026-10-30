@@ -235,13 +235,13 @@ export function addBlockTests(quests: CourseQuest[]): CourseQuest[] {
     if (!lastQuestOfDay || (day % DAYS_PER_TEST !== 0 && day !== lastDay)) return;
 
     const start = Math.floor((day - 1) / DAYS_PER_TEST) * DAYS_PER_TEST + 1;
-    const questions = getTestQuestions(prefix, start, day);
-    if (questions.length < MIN_QUESTIONS) return;
+    const questionCount = (day - start + 1) * QUESTIONS_PER_DAY;
+    if (questionCount < MIN_QUESTIONS) return;
     const range = start === day ? `Day ${day}` : `Days ${start}–${day}`;
     out.push({
       id: testQuestId(prefix, start, day),
       title: `Test: ${range}`,
-      desc: `${questions.length} questions about ${range}. You need 70% to pass, and you can try again.`,
+      desc: `${questionCount} questions about ${range}. You need 70% to pass, and you can try again.`,
       type: 'lecture',
       category: 'exam',
       requiresAvatar: true,

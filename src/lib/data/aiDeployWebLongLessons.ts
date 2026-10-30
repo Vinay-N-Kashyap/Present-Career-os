@@ -1,4 +1,4 @@
-import { LongLesson } from './longLessons';
+import type { LongLesson } from './longLessonTypes';
 
 export const AI_DEPLOY_WEB_LONG_LESSONS: LongLesson[] = [
   {
