@@ -1,5 +1,5 @@
 import type { LessonVisual, NoneVisual, VisualSpec } from '@/lib/types/lessonVisual';
-import type { LongLessonPart } from '@/lib/data/longLessonTypes';
+import type { LongLessonPart } from '@/lib/data/longLessons';
 import { getTemplateRegistryEntry } from '../registry';
 import { createFillRunContext } from './runContext';
 import type { FillOptions } from './types';
