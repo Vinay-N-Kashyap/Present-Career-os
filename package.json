@@ -7,6 +7,7 @@
     "dev": "next dev -p 3000",
     "prebuild": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/build-sql-worker.cjs && node scripts/utils/copy-esbuild.cjs && node scripts/utils/build-react-runtime.cjs && node scripts/utils/build-web-runtime.cjs",
     "build": "node scripts/utils/copy-pyodide.cjs && node scripts/utils/build-sql-worker.cjs && node scripts/utils/copy-esbuild.cjs && node scripts/utils/build-react-runtime.cjs && node scripts/utils/build-web-runtime.cjs && next build",
+    "build:vercel": "npm run build",
     "start": "next start",
     "export": "next build",
     "// build:static": "Legacy Firebase Hosting only. build.js copies .next/server/app into out/ so the app can be served as files, which disables every /api/* route and makes the browser shim the backend. Server hosts (Vercel, App Hosting, Render) must use `build`.",
