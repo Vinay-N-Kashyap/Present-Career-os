@@ -4,7 +4,8 @@ import { CONCEPT_ANALOGIES_REGISTRY } from '@/lib/data/conceptAnalogies';
 import { speakWithAvatar, stopSpeaking, preloadTTS, preloadNextSpeech } from '@/lib/tts';
 import { startArchetypeSoundscape, stopArchetypeSoundscape, setSoundscapeDucking, getUserSoundscapeVolume, setUserSoundscapeVolume } from '@/lib/audio/soundscapes';
 import { resolvePilotDay, parseQuestId } from '@/lib/data/curriculumEnricher';
-import { getLongLesson, getLongLessonLanguage } from '@/lib/data/longLessons';
+import { getLongLessonAsync } from '@/lib/data/longLessonClient';
+import { getLongLessonLanguage } from '@/lib/data/longLessonTypes';
 import { runPythonInBrowser } from '@/lib/code/python/pythonRunner';
 import { runSqlInBrowser } from '@/lib/code/sql/sqlRunner';
 import { executeBashSuite } from '@/lib/code/runners/bashRunner';
@@ -450,10 +451,17 @@ export function useLessonEngine({
     [testInfo]
   );
 
-  // Written long-format lesson for this course day, if there is one.
-  const longLesson = useMemo(() => {
+  // Written long-format lesson for this course day, loaded async so the
+  // 131 MB curriculum barrel is never bundled into the client chunk.
+  const [longLesson, setLongLesson] = useState<import('@/lib/data/longLessonTypes').LongLesson | null>(null);
+  useEffect(() => {
+    let cancelled = false;
     const parsed = parseQuestId(questId || '');
-    return parsed ? getLongLesson(parsed.prefix, parsed.dayNum) : null;
+    if (!parsed) { setLongLesson(null); return; }
+    getLongLessonAsync(parsed.prefix, parsed.dayNum).then(lesson => {
+      if (!cancelled) setLongLesson(lesson);
+    });
+    return () => { cancelled = true; };
   }, [questId]);
 
   const startVoiceInput = useCallback(() => {

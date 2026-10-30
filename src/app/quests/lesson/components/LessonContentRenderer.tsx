@@ -9,7 +9,7 @@ import { LessonPuzzleStage } from '@/components/quests/puzzle/LessonPuzzleStage'
 import { RapidFireBattleStage } from '@/components/quests/battle/RapidFireBattleStage';
 import { generateLessonPuzzle, generateRapidFireBattle } from '@/lib/puzzles/lessonPuzzleEngine';
 import { parseQuestId } from '@/lib/data/curriculumEnricher';
-import { getLongLesson } from '@/lib/data/longLessons';
+import { getLongLessonAsync } from '@/lib/data/longLessonClient';
 import { VisualStage } from './visuals';
 import type { LessonVisual } from '@/lib/types/lessonVisual';
 import {
@@ -210,8 +210,14 @@ export function LessonContentRenderer({
 
   // Parse quest identity for 2.5D puzzle & rapid-fire battle synthesis
   const parsedQuest = useMemo(() => parseQuestId(questId || ''), [questId]);
-  const longLesson = useMemo(() => {
-    return parsedQuest ? getLongLesson(parsedQuest.prefix, parsedQuest.dayNum) : null;
+  const [longLesson, setLongLesson] = useState<import('@/lib/data/longLessonTypes').LongLesson | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    if (!parsedQuest) { setLongLesson(null); return; }
+    getLongLessonAsync(parsedQuest.prefix, parsedQuest.dayNum).then(lesson => {
+      if (!cancelled) setLongLesson(lesson);
+    });
+    return () => { cancelled = true; };
   }, [parsedQuest]);
 
   const puzzleSpec = useMemo(() => {

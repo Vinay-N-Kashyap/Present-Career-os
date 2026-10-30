@@ -130,6 +130,7 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.alias = {
         ...config.resolve.alias,
+        '@/lib/data/longLessons$': path.resolve(__dirname, 'src/lib/data/longLessonTypes.ts'),
         'sharp$':             false,
         'onnxruntime-node$':  false,
         'esbuild$':           false,

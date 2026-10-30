@@ -49,7 +49,7 @@ import { SOFT_SKILLS_30_DAYS_QUESTS } from './softSkills30DayData';
 import { SRE_WEB_30_DAYS_QUESTS } from './sreWeb30DayData';
 import { STREAM_WEB_30_DAYS_QUESTS } from './streamWeb30DayData';
 import { AI_DEPLOY_WEB_30_DAYS_QUESTS } from './aiDeployWeb30DayData';
-import { addBlockTests } from './courseTests';
+import { addBlockTests } from './blockTests';
 
 
 import type { CodeLanguage } from '../code/types';

@@ -1,13 +1,31 @@
 /**
  * Long-format lessons: a full class for one course day, written in plain words.
  *
- * A day is about one hour: a ~30 minute lesson (5–7 parts), then practice and a project step.
- * Each part is taught the same way: the teacher explains in simple words, gives an everyday
- * example, shows code with a note for the important lines, asks the student to try a change,
- * and ends with one check question. The lesson page speaks `say` aloud and shows everything.
- *
- * When a course day has a long lesson, it replaces that day's older short lesson plan.
+ * SERVER-ONLY BARREL: The static imports below pull all 131 MB of curriculum data
+ * into the server bundle. Client components must use getLongLessonAsync() instead,
+ * which dynamically imports only the single course file requested.
  */
+
+export {
+  type LongLessonCheck,
+  type LongLessonPart,
+  type LongLesson,
+  type LongLessonLanguage,
+  LONG_LESSON_LANGUAGE,
+  getLongLessonLanguage,
+  estimateSpokenMinutes,
+  estimateActivityMinutes,
+  estimateLessonMinutes,
+} from './longLessonTypes';
+import type { LongLesson } from './longLessonTypes';
+
+// ---------------------------------------------------------------------------
+export { getLongLessonAsync } from './longLessonClient';
+
+// ---------------------------------------------------------------------------
+// SYNC barrel — SERVER-ONLY (API routes, gate.ts, visuals pipeline).
+// Importing this on the client side pulls all 131 MB into the bundle.
+// ---------------------------------------------------------------------------
 import { REACT_LONG_LESSONS } from './reactLongLessons';
 import { PYTHON_LONG_LESSONS } from './pythonLongLessons';
 import { SQL_LONG_LESSONS } from './sqlLongLessons';
@@ -61,19 +79,6 @@ import { BCOM_LAW_LONG_LESSONS } from './bcomLawLongLessons';
 import { BCOM_TAX_LONG_LESSONS } from './bcomTaxLongLessons';
 import { BCOM_AUD_LONG_LESSONS } from './bcomAudLongLessons';
 import { BCOM_MKT_LONG_LESSONS } from './bcomMktLongLessons';
-
-export {
-  type LongLessonCheck,
-  type LongLessonPart,
-  type LongLesson,
-  type LongLessonLanguage,
-  LONG_LESSON_LANGUAGE,
-  getLongLessonLanguage,
-  estimateSpokenMinutes,
-  estimateActivityMinutes,
-  estimateLessonMinutes,
-} from './longLessonTypes';
-import type { LongLesson } from './longLessonTypes';
 
 const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'react-basics': REACT_LONG_LESSONS,
@@ -137,7 +142,7 @@ const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   bcom_aud: BCOM_AUD_LONG_LESSONS,
 };
 
-
+/** Synchronous lookup — SERVER-ONLY (API routes, gate.ts). */
 export function getLongLesson(prefix: string, dayNum: number): LongLesson | null {
   const days = LONG_LESSON_SOURCES[prefix];
   if (!days) return null;

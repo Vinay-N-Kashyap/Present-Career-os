@@ -24,7 +24,6 @@ export interface DayConfig {
 
 export type { CourseQuest } from './coursesData';
 import { CourseQuest } from './coursesData';
-import { getLongLesson } from './longLessons';
 import { JAVA_PILOT_DAYS } from './javaPilotDays';
 import { PYTHON_PILOT_DAYS } from './pythonPilotDays';
 import { DATABASE_PILOT_DAYS } from './databasePilotDays';
@@ -163,24 +162,21 @@ function practiceTitle(title: string | undefined): string {
 }
 
 export function buildEnrichedDayQuests(prefix: string, dayNum: number, cfg: DayConfig): CourseQuest[] {
-  const longLesson = getLongLesson(prefix, dayNum);
-  const pilotDay: any = longLesson ? null : resolvePilotDay(prefix, dayNum);
+  const pilotDay: any = resolvePilotDay(prefix, dayNum);
 
-  // ── 1. Unified Socratic Adaptive Lesson ──────────────────────────────────
+  // ── 1. Unified Socratic Adaptive Lesson ──────────────────────────
   const lessonTask: CourseQuest = {
     id: `${prefix}-lecture1-day-${dayNum}`,
-    title: longLesson
-      ? `Day ${dayNum}: ${longLesson.title}`
-      : pilotDay ? `Day ${dayNum}: ${pilotDay.title}` : `Day ${dayNum}: ${cfg.title}`,
-    desc: longLesson ? longLesson.goal : pilotDay ? pilotDay.overviewMetaphor : cfg.desc,
+    title: `Day ${dayNum}: ${cfg.title || pilotDay?.title || 'Lesson'}`,
+    desc: cfg.desc || pilotDay?.overviewMetaphor || '',
     type: 'lecture',
     category: 'learning',
     requiresAvatar: true,
-    syllabus: longLesson
-      ? longLesson.parts.map((p) => p.title)
+    syllabus: (cfg.syllabus && cfg.syllabus.length > 0)
+      ? cfg.syllabus
       : pilotDay
       ? pilotDay.blocks.map((b: any) => `${b.title}: ${b.conceptBudget.primaryConcept}`)
-      : cfg.syllabus,
+      : [],
     skillCategory: 'theory',
     xp: 150,
     pins: 5
