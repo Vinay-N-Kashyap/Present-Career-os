@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { isCourseVisualsEnabled } from '@/lib/visuals/enabledCourses';
-import { getLongLesson } from '@/lib/data/longLessons';
+import { getLongLessonServer } from '@/lib/data/longLessonServer';
 import { synthesizeLongLessonVisual } from '@/lib/visuals/loadVisuals';
 
 export async function GET(req: NextRequest) {
@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
     );
 
     if (!fs.existsSync(filePath)) {
-      const longLesson = getLongLesson(prefix, day);
+      const longLesson = getLongLessonServer(prefix, day);
       if (longLesson && Array.isArray(longLesson.parts) && longLesson.parts.length > 0) {
         const entries = longLesson.parts.map((part, idx) => {
           const sayList = Array.isArray(part.say) ? part.say : (part.say ? [part.say] : []);

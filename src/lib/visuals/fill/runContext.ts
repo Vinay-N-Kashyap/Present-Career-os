@@ -1,7 +1,7 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide';
 import type { SqlDatabase } from '@/lib/code/sql/sqlCore';
 import type { Binding, StepBaseSpec } from '@/lib/types/lessonVisual';
-import type { LongLessonPart } from '@/lib/data/longLessons';
+import type { LongLessonPart } from '@/lib/data/longLessonTypes';
 import { runPythonTrace } from '../trace/runPythonTrace';
 import { runSqlCapture, getSharedSqlDb } from '../trace/runSqlCapture';
 import { applyEdit } from './applyEdit';

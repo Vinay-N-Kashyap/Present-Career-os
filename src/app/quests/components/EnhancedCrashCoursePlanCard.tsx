@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { CrashPlan } from '@/lib/data/crashPlansData';
 
@@ -14,174 +16,400 @@ export interface EnhancedCrashCoursePlanCardProps {
 const TAB_LABELS = ['📚 Curriculum', '🛠️ Capstone Spec', '📜 Credentials'] as const;
 const tabs = ['curriculum', 'capstone', 'credentials'] as const;
 
-const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = ({
-  plan, activeTrack, isSelected, onSelectPlan, onPreviewCredentials, onOpenDiagnosticReport,
+export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardProps> = ({
+  plan,
+  activeTrack,
+  isSelected,
+  onSelectPlan,
+  onPreviewCredentials,
+  onOpenDiagnosticReport,
 }) => {
   const [activeTab, setActiveTab] = useState<'curriculum' | 'capstone' | 'credentials'>('curriculum');
 
   const modules = plan.modulesByTrack[activeTrack] || [];
-  const flagship = plan.flagshipBuildByTrack[activeTrack];
-  const steps = plan.journeySteps;
-  const hc = plan.highlightColor;
-
-  const wrap: React.CSSProperties = {
-    borderRadius: 18, padding: '22px 20px',
-    background: isSelected ? 'linear-gradient(180deg, rgba(20,29,50,0.92), rgba(13,20,36,0.98))' : 'rgba(15,23,42,0.85)',
-    border: isSelected ? `2px solid ${hc}` : '1px solid rgba(255,255,255,0.08)',
-    boxShadow: isSelected ? `0 10px 30px -5px ${hc}33` : '0 4px 16px rgba(0,0,0,0.25)',
-    display: 'flex', flexDirection: 'column', gap: 14, position: 'relative',
-    fontFamily: 'var(--font-display,"Inter",system-ui,sans-serif)', color: 'var(--t1,#f8fafc)',
+  const flagship = plan.flagshipBuildByTrack[activeTrack] || {
+    title: 'Production Engineering Project',
+    desc: 'End-to-end full lifecycle architecture deployment.',
+    tech: ['TypeScript', 'Next.js', 'PostgreSQL'],
   };
-
-  const badgeLabel: React.CSSProperties = { fontSize: 12, fontWeight: 900, letterSpacing: '0.06em', color: hc as string };
-  const rolePill: React.CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 4, padding: '4px 10px',
-    borderRadius: 999, background: `${hc}18`, border: `1px solid ${hc}33`, fontSize: 12, fontWeight: 700, color: 'var(--t1)' };
-  const pillBtn = (active: boolean): React.CSSProperties => ({ flex: 1, padding: '7px 10px', borderRadius: 9,
-    border: 'none', background: active ? `${hc}25` : 'transparent', color: active ? 'var(--t1)' : 'var(--t3,#94a3b8)',
-    fontSize: 12, fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s', textAlign: 'center' as const });
-  const ctaBtn: React.CSSProperties = { padding: '10px 18px', borderRadius: 10, border: 'none',
-    background: isSelected ? 'rgba(16,185,129,0.15)' : `linear-gradient(135deg, ${hc}, #6366f1)`,
-    color: isSelected ? '#10b981' : '#fff', fontSize: 14, fontWeight: 800,
-    cursor: isSelected ? 'default' : 'pointer', boxShadow: isSelected ? 'none' : `0 4px 14px ${hc}44`,
-    transition: 'all 0.2s ease', letterSpacing: '0.01em' };
-
-  const tabContentStyle: React.CSSProperties = { display: 'flex', flexDirection: 'column' as const, gap: 4, maxHeight: 180, overflow: 'auto' };
-  const modRowStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 8,
-    padding: '6px 8px', background: 'rgba(255,255,255,0.03)', borderRadius: 8, fontSize: 12.5, color: 'var(--t2,#cbd5e1)' };
-  const skillPillStyle = (c: string): React.CSSProperties => ({ display: 'inline-block' as const, padding: '1px 6px',
-    borderRadius: 4, background: `${c}18`, fontSize: 10.5, fontWeight: 600, color: c, marginRight: 3 });
-
-  const renderTab = () => {
-    if (activeTab === 'curriculum') {
-      return (
-        <div style={tabContentStyle}>
-          {modules.map((m) => (
-            <div key={m.month} style={modRowStyle}>
-              <span>{m.icon}</span>
-              <span style={{ fontWeight: 700, flex: 1 }}>{m.title}</span>
-              {m.skills.slice(0, 2).map((s) => <span key={s} style={skillPillStyle(hc)}>{s}</span>)}
-            </div>
-          ))}
-          {onOpenDiagnosticReport && (
-            <span style={{ color: 'var(--accent,#6366f1)', textDecoration: 'none', fontWeight: 700,
-              fontSize: 12, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 3 }}
-              onClick={() => onOpenDiagnosticReport(`${plan.title} Diagnostic Assessment`)}>
-              📊 View Diagnostic Assessment Report ➔
-            </span>
-          )}
-        </div>
-      );
-    }
-    if (activeTab === 'capstone') {
-      return (
-        <div style={tabContentStyle}>
-          {[{ s: 'Sprint 1', d: 'Requirements & Architecture Design' }, { s: 'Sprint 2', d: 'Core Feature Implementation & Auth' },
-            { s: 'Sprint 3', d: 'Integration, Testing & CI/CD Pipeline' }, { s: 'Sprint 4', d: 'Deploy & Oral Defense Review' }]
-            .map((sp) => (
-              <div key={sp.s} style={{ ...modRowStyle, fontSize: 12 }}>
-                <span style={{ fontWeight: 900, color: hc }}>{sp.s}</span><span style={{ color: 'var(--t3,#94a3b8)' }}>{sp.d}</span>
-              </div>
-            ))}
-          <p style={{ fontSize: 11.5, color: 'var(--t3,#94a3b8)', marginTop: 4 }}>
-            <strong>Architecture:</strong> Microservices • <strong>DB:</strong> PostgreSQL/Supabase • <strong>CI/CD:</strong> GitHub Actions + Docker
-          </p>
-        </div>
-      );
-    }
-    return (
-      <div style={tabContentStyle}>
-        {['✓ Industrial Project Certificate (ISO-Aligned, Cryptographically Signed)', '✓ PinIT Tech Labs Experience Letter (Engineering Fellow)',
-          '✓ SHA-256 Tamper-Proof Hash & QR Verifiable', '✓ Live Verification at pinitcareer.vercel.app/verify/[id]']
-          .map((c, i) => <div key={i} style={{ fontSize: 12, color: 'var(--t2,#cbd5e1)' }}>{c}</div>)}
-        <button data-testid="btn-preview-credentials" onClick={() => onPreviewCredentials(plan)} style={{
-          marginTop: 6, padding: '8px 14px', borderRadius: 10, background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-          border: 'none', color: '#000', fontSize: 12.5, fontWeight: 800, cursor: 'pointer',
-          boxShadow: '0 4px 14px rgba(245,158,11,0.35)' }}>
-          🏆 Preview Sample Credentials ➔
-        </button>
-      </div>
-    );
-  };
+  const steps = plan.journeySteps || [];
+  const hc = plan.highlightColor || 'var(--accent)';
 
   return (
-    <div data-testid={`crash-plan-card-${plan.id}`} style={wrap}>
+    <div
+      data-testid={`crash-plan-card-${plan.id}`}
+      style={{
+        borderRadius: 'var(--radius-xl)',
+        padding: '22px 20px',
+        background: 'var(--card)',
+        border: isSelected ? `2px solid ${hc}` : '1px solid var(--border)',
+        boxShadow: isSelected
+          ? `0 10px 28px -4px color-mix(in srgb, ${hc} 28%, transparent)`
+          : 'var(--shadow-sm)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 14,
+        position: 'relative',
+        transition: 'transform 0.18s ease, box-shadow 0.18s ease',
+        minHeight: 520,
+      }}
+    >
+      {/* Featured Badge */}
       {plan.badge && (
-        <div style={{ position: 'absolute' as const, top: -11, right: 16, padding: '3px 10px', borderRadius: 20,
-          fontSize: 10.5, fontWeight: 900, letterSpacing: '0.04em', background: `linear-gradient(135deg, ${hc}, #6366f1)`,
-          color: '#fff', boxShadow: `0 4px 12px ${hc}66` }}>{plan.badge}</div>
+        <div
+          style={{
+            position: 'absolute',
+            top: -11,
+            right: 18,
+            padding: '3px 12px',
+            borderRadius: 999,
+            fontSize: 11,
+            fontWeight: 800,
+            letterSpacing: '0.04em',
+            background: `linear-gradient(135deg, ${hc}, var(--accent))`,
+            color: '#ffffff',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+          }}
+        >
+          {plan.badge}
+        </div>
       )}
 
-      {/* Top Row */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-        <span style={badgeLabel}>{plan.tier.toUpperCase()} INTENSIVE</span>
-        <span style={rolePill}><span>{plan.targetRole}</span><span style={{ color: hc }}> • {plan.hireabilityBoost}</span></span>
+      {/* Top Header Row */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap' }}>
+        <span
+          style={{
+            fontSize: 11.5,
+            fontWeight: 800,
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+            color: hc,
+            fontFamily: 'var(--font-mono)',
+          }}
+        >
+          {plan.tier.toUpperCase()} INTENSIVE
+        </span>
+        <span
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 5,
+            padding: '3px 9px',
+            borderRadius: 999,
+            background: 'var(--bg3)',
+            border: '1px solid var(--border)',
+            fontSize: 11.5,
+            fontWeight: 700,
+            color: 'var(--t2)',
+          }}
+        >
+          <span>{plan.targetRole}</span>
+          <span style={{ color: hc, fontWeight: 800 }}>• {plan.hireabilityBoost}</span>
+        </span>
       </div>
 
-      {/* Title & Duration */}
+      {/* Title & Subtitle */}
       <div>
-        <h3 style={{ fontSize: 17.5, fontWeight: 900, color: '#fff', margin: 0 }}>{plan.title}</h3>
-        <p style={{ fontSize: 13, color: 'var(--t3,#94a3b8)', margin: '3px 0 0', lineHeight: 1.4 }}>{plan.subtitle}</p>
-        <span style={{ fontSize: 12, color: 'var(--t3,#94a3b8)', margin: '4px 0 0', fontWeight: 700 }}>{plan.totalProgramDuration}</span>
+        <h3
+          style={{
+            fontSize: 18,
+            fontWeight: 900,
+            color: 'var(--t1)',
+            margin: '0 0 3px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}
+        >
+          {plan.title}
+        </h3>
+        <p style={{ fontSize: 13, color: 'var(--t3)', margin: '0 0 4px 0', lineHeight: 1.4 }}>
+          {plan.subtitle}
+        </p>
+        <span style={{ fontSize: 12, color: 'var(--t2)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+          ⏱️ {plan.totalProgramDuration}
+        </span>
       </div>
 
-      {/* Journey Pipeline */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexWrap: 'wrap', padding: '10px 12px',
-        background: 'rgba(0,0,0,0.3)', borderRadius: 12, border: '1px solid rgba(255,255,255,0.05)' }}>
-        {steps.map((step, i) => (
-          <React.Fragment key={step.step}>
-            {i > 0 && <span key="a" style={{ color: 'var(--t3,#94a3b8)', fontSize: 12, flexShrink: 0 }}>➔</span>}
-            <span key={step.step} style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '5px 10px',
-              borderRadius: 999, background: `${hc}15`, border: `1px solid ${hc}25`, fontSize: 11.5, fontWeight: 700, color: 'var(--t2,#cbd5e1)' }}>
-              <span>{step.icon}</span><span>{step.title}</span>
-            </span>
-          </React.Fragment>
-        ))}
-      </div>
-
-      {/* Flagship Build */}
-      <div style={{ padding: '14px 16px', borderRadius: 14, background: `linear-gradient(135deg, ${hc}15, ${hc}08)`,
-        border: `1px solid ${hc}25`, position: 'relative', overflow: 'hidden' }}>
-        <div style={{ fontSize: 12, fontWeight: 800, color: hc, marginBottom: 4 }}>🚀 Flagship Build: {flagship.title}</div>
-        <p style={{ fontSize: 12, color: 'var(--t3,#94a3b8)', lineHeight: 1.5, margin: '0 0 8px 0' }}>{flagship.desc}</p>
-        <div>{flagship.tech.map((t) => (
-          <span key={t} style={{ display: 'inline-block' as const, padding: '2px 8px', borderRadius: 6,
-            background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)',
-            fontSize: 11.5, fontWeight: 600, color: hc, marginRight: 4, marginBottom: 4 }}>{t}</span>
-        ))}</div>
-      </div>
-
-      {/* 3-Tab Switcher */}
-      <div style={{ display: 'flex', gap: 4, padding: 4, borderRadius: 12, background: 'rgba(0,0,0,0.25)',
-        border: '1px solid rgba(255,255,255,0.05)' }}>
-        {tabs.map((tab, idx) => (
-          <button key={tab} data-testid={`plan-tab-${tab}`} onClick={() => setActiveTab(tabs[idx])} style={pillBtn(activeTab === tabs[idx])}>
-            {TAB_LABELS[idx]}
-          </button>
-        ))}
-      </div>
-      {renderTab()}
-
-      {/* Cashback & Savings */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderRadius: 12,
-        background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)',
-        fontSize: 12.5, fontWeight: 700, color: 'var(--t1)' }}>📦 +{plan.scholarCashbackPins || 350} Scholar Reward Coins included</div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', borderRadius: 12,
-        background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)',
-        fontSize: 12.5, fontWeight: 700, color: 'var(--t2,#cbd5e1)' }}>💡 {plan.competitorSavings}</div>
-
-      {/* Pricing & CTA */}
-      <div style={{ paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-            <span style={{ fontSize: 20, fontWeight: 900, color: '#fff' }}>⚡ {plan.pinsPrice}</span>
-            <span style={{ fontSize: 13, color: 'var(--t3,#94a3b8)' }}>Pins · ₹{plan.inrPrice.toLocaleString('en-IN')}</span>
-          </div>
-          <span style={{ padding: '2px 8px', borderRadius: 6, background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-            fontSize: 10.5, fontWeight: 900, color: '#000' }}>PINIT2026 (-₹1,000)</span>
+      {/* Flagship Project Highlight Box */}
+      <div
+        style={{
+          padding: '12px 14px',
+          borderRadius: 12,
+          background: 'var(--bg2)',
+          border: '1px solid var(--border)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+        }}
+      >
+        <div style={{ fontSize: 12, fontWeight: 800, color: hc, display: 'flex', alignItems: 'center', gap: 5 }}>
+          <span>🚀</span> Flagship Build: {flagship.title}
         </div>
-        <button data-testid={`btn-select-plan-${plan.id}`} onClick={() => onSelectPlan(plan)} disabled={isSelected} style={ctaBtn}
-          onMouseOver={(e) => { if (!isSelected) { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = `0 6px 20px ${hc}55`; } }}
-          onMouseOut={(e) => { if (!isSelected) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = `0 4px 14px ${hc}44`; } }}>
+        <p style={{ fontSize: 12, color: 'var(--t3)', lineHeight: 1.4, margin: 0 }}>
+          {flagship.desc}
+        </p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 2 }}>
+          {flagship.tech.map((t) => (
+            <span
+              key={t}
+              style={{
+                fontSize: 10.5,
+                padding: '2px 7px',
+                borderRadius: 5,
+                background: 'var(--bg3)',
+                border: '1px solid var(--border)',
+                fontWeight: 600,
+                color: 'var(--t2)',
+                fontFamily: 'var(--font-mono)',
+              }}
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* 3-Tab Curriculum / Capstone / Credentials Switcher */}
+      <div
+        style={{
+          display: 'flex',
+          gap: 4,
+          padding: 3,
+          borderRadius: 10,
+          background: 'var(--bg3)',
+          border: '1px solid var(--border)',
+        }}
+      >
+        {tabs.map((tKey, idx) => {
+          const active = activeTab === tKey;
+          return (
+            <button
+              key={tKey}
+              type="button"
+              data-testid={`plan-tab-${tKey}`}
+              onClick={() => setActiveTab(tKey)}
+              style={{
+                flex: 1,
+                padding: '6px 8px',
+                borderRadius: 8,
+                border: 'none',
+                background: active ? 'var(--card)' : 'transparent',
+                color: active ? 'var(--t1)' : 'var(--t3)',
+                fontSize: 11.5,
+                fontWeight: active ? 800 : 600,
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                boxShadow: active ? 'var(--shadow-sm)' : 'none',
+              }}
+            >
+              {TAB_LABELS[idx]}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Tab Content Box */}
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+          minHeight: 120,
+        }}
+      >
+        {activeTab === 'curriculum' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {modules.map((m) => (
+              <div
+                key={m.month}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '7px 10px',
+                  background: 'var(--bg3)',
+                  borderRadius: 8,
+                  fontSize: 12,
+                  color: 'var(--t2)',
+                }}
+              >
+                <span>{m.icon}</span>
+                <span style={{ fontWeight: 700, flex: 1, color: 'var(--t1)' }}>{m.title}</span>
+                {m.skills.slice(0, 2).map((s) => (
+                  <span
+                    key={s}
+                    style={{
+                      fontSize: 10.5,
+                      padding: '1px 6px',
+                      borderRadius: 4,
+                      background: 'var(--accent-light)',
+                      color: 'var(--accent)',
+                      fontWeight: 700,
+                    }}
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            ))}
+            {onOpenDiagnosticReport && (
+              <button
+                type="button"
+                onClick={() => onOpenDiagnosticReport(`${plan.title} Diagnostic Assessment`)}
+                style={{
+                  alignSelf: 'flex-start',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  color: 'var(--accent)',
+                  fontWeight: 700,
+                  fontSize: 12,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 4,
+                  marginTop: 2,
+                }}
+              >
+                📊 View Diagnostic Assessment Report ➔
+              </button>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'capstone' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {[
+              { s: 'Sprint 1', d: 'Requirements & Architecture Design' },
+              { s: 'Sprint 2', d: 'Core Feature Implementation & Auth' },
+              { s: 'Sprint 3', d: 'Integration, Testing & CI/CD Pipeline' },
+              { s: 'Sprint 4', d: 'Deploy & Oral Defense Review' },
+            ].map((sp) => (
+              <div
+                key={sp.s}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '6px 10px',
+                  background: 'var(--bg3)',
+                  borderRadius: 8,
+                  fontSize: 12,
+                }}
+              >
+                <span style={{ fontWeight: 800, color: hc }}>{sp.s}</span>
+                <span style={{ color: 'var(--t2)' }}>{sp.d}</span>
+              </div>
+            ))}
+            <p style={{ fontSize: 11, color: 'var(--t3)', margin: '4px 0 0 0' }}>
+              <strong>Stack:</strong> Microservices • PostgreSQL/Supabase • GitHub Actions + Docker
+            </p>
+          </div>
+        )}
+
+        {activeTab === 'credentials' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {[
+              '✓ Industrial Project Certificate (ISO-Aligned, Cryptographically Signed)',
+              '✓ PinIT Tech Labs Experience Letter (Engineering Fellow)',
+              '✓ SHA-256 Tamper-Proof Hash & QR Verifiable',
+              '✓ Live Public Verification at /verify/[id]',
+            ].map((c, i) => (
+              <div key={i} style={{ fontSize: 12, color: 'var(--t2)', lineHeight: 1.4 }}>
+                {c}
+              </div>
+            ))}
+            <button
+              type="button"
+              data-testid="btn-preview-credentials"
+              onClick={() => onPreviewCredentials(plan)}
+              style={{
+                alignSelf: 'flex-start',
+                marginTop: 6,
+                padding: '6px 12px',
+                borderRadius: 8,
+                background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+                border: 'none',
+                color: '#000000',
+                fontSize: 12,
+                fontWeight: 800,
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(245,158,11,0.25)',
+              }}
+            >
+              🏆 Preview Sample Credentials ➔
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Rewards & Savings Footnote */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '8px 12px',
+          borderRadius: 10,
+          background: 'var(--accent-light)',
+          border: '1px solid color-mix(in srgb, var(--accent) 25%, transparent)',
+          fontSize: 12,
+          fontWeight: 700,
+          color: 'var(--accent)',
+        }}
+      >
+        <span>📦 +{plan.scholarCashbackPins || 350} Scholar Reward Coins</span>
+        <span style={{ color: 'var(--green)', fontWeight: 800 }}>💡 {plan.competitorSavings}</span>
+      </div>
+
+      {/* Pricing & CTA Button */}
+      <div style={{ paddingTop: 10, borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <span style={{ fontSize: 21, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)' }}>
+              ⚡ {plan.pinsPrice}
+            </span>
+            <span style={{ fontSize: 12.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+              Pins · ₹{plan.inrPrice.toLocaleString('en-IN')}
+            </span>
+          </div>
+          <span
+            style={{
+              padding: '2px 8px',
+              borderRadius: 6,
+              background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+              fontSize: 10.5,
+              fontWeight: 900,
+              color: '#000000',
+            }}
+          >
+            PINIT2026 (-₹1,000)
+          </span>
+        </div>
+
+        <button
+          type="button"
+          data-testid={`btn-select-plan-${plan.id}`}
+          onClick={() => onSelectPlan(plan)}
+          disabled={isSelected}
+          style={{
+            padding: '11px 18px',
+            borderRadius: 10,
+            border: 'none',
+            background: isSelected
+              ? 'var(--bg3)'
+              : `linear-gradient(135deg, ${hc}, var(--accent))`,
+            color: isSelected ? 'var(--t3)' : '#ffffff',
+            fontSize: 14,
+            fontWeight: 800,
+            cursor: isSelected ? 'default' : 'pointer',
+            boxShadow: isSelected ? 'none' : `0 4px 14px color-mix(in srgb, ${hc} 40%, transparent)`,
+            transition: 'all 0.15s ease',
+            letterSpacing: '0.01em',
+            width: '100%',
+          }}
+        >
           {isSelected ? '✓ Currently Active Plan' : 'Select & Unlock Program ➔'}
         </button>
       </div>

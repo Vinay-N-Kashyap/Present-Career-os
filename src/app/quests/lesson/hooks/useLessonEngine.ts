@@ -10,7 +10,7 @@ import { runPythonInBrowser } from '@/lib/code/python/pythonRunner';
 import { runSqlInBrowser } from '@/lib/code/sql/sqlRunner';
 import { executeBashSuite } from '@/lib/code/runners/bashRunner';
 import { executeCppSuite } from '@/lib/code/runners/cppRunner';
-import { getLessonCheck, getTestQuestions, parseTestQuestId, withAnswerAt } from '@/lib/data/courseTests';
+import { getLessonCheck, getTestQuestionsAsync, parseTestQuestId, withAnswerAt, type TestQuestion } from '@/lib/data/courseTestsClient';
 import { api } from '@/lib/api/client';
 import { toast } from '@/lib/store/useAppStore';
 import { executeSandboxScript } from '@/lib/code/sandbox/sandboxedIframeRunner';
@@ -446,8 +446,18 @@ export function useLessonEngine({
 
   // A test after every 5 days: no teaching slides, only questions from those days' lessons.
   const testInfo = useMemo(() => parseTestQuestId(questId || ''), [questId]);
-  const quizQuestions = useMemo(
-    () => (testInfo ? getTestQuestions(testInfo.prefix, testInfo.start, testInfo.end) : null),
+  const [quizQuestions, setQuizQuestions] = useState<TestQuestion[] | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    if (!testInfo) { setQuizQuestions(null); return; }
+    setQuizQuestions(null);
+    getTestQuestionsAsync(testInfo.prefix, testInfo.start, testInfo.end).then((qs) => {
+      if (!cancelled) setQuizQuestions(qs);
+    });
+    return () => { cancelled = true; };
+  }, [testInfo]);
+  const _unusedQuizSync = useMemo(
+    () => null,
     [testInfo]
   );
 
@@ -738,7 +748,7 @@ export function useLessonEngine({
 
     if (testInfo) {
       setSlides([]);
-      setSlidesLoading(false);
+      setSlidesLoading(testInfo ? quizQuestions === null : false);
       return;
     }
 
@@ -784,7 +794,7 @@ export function useLessonEngine({
           },
         };
       }));
-      setSlidesLoading(false);
+      setSlidesLoading(testInfo ? quizQuestions === null : false);
       return;
     }
 
@@ -865,7 +875,7 @@ export function useLessonEngine({
       });
 
       setSlides(pilotSlides);
-      setSlidesLoading(false);
+      setSlidesLoading(testInfo ? quizQuestions === null : false);
       return;
     }
 
@@ -1041,7 +1051,7 @@ export function useLessonEngine({
 
     setSlides(staticSlides);
     setSlidesLoading(false);
-  }, [questId, questData, syllabus, longLesson, testInfo, setSlides, setSlidesLoading]);
+  }, [questId, questData, syllabus, longLesson, testInfo, quizQuestions, setSlides, setSlidesLoading]);
 
   // Client-side visual hydrator: dynamically load day file if not yet loaded in browser cache
   useEffect(() => {

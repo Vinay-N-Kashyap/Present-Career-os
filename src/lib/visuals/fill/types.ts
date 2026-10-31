@@ -3,7 +3,7 @@ import type { SqlDatabase } from '@/lib/code/sql/sqlCore';
 import type { TraceEvent } from '../trace/runPythonTrace';
 import type { SqlCapturedTable } from '../trace/runSqlCapture';
 import type { Binding, StepBaseSpec } from '@/lib/types/lessonVisual';
-import type { LongLessonPart } from '@/lib/data/longLessons';
+import type { LongLessonPart } from '@/lib/data/longLessonTypes';
 
 export interface RunResult {
   language: 'python' | 'sql';

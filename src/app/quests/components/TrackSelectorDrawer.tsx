@@ -705,7 +705,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
             <>
               {/* 6 Crash Course Plan Cards (1M, 3M, 6M, 9M, 12M, 24M) with Domain Switcher */}
               <CrashCoursePlanCards
-                currentPlanId={activeCrashPlanId}
+                currentPlanId={activeEnrollment ? activeCrashPlanId : undefined}
                 onSelectPlan={handleSelectCrashPlan}
                 onOpenStandaloneCatalog={() => handleSubTabChange('standalone')}
                 onOpenPracticeReport={handleOpenPracticeQuiz}

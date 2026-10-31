@@ -80,7 +80,7 @@ import { BCOM_TAX_LONG_LESSONS } from './bcomTaxLongLessons';
 import { BCOM_AUD_LONG_LESSONS } from './bcomAudLongLessons';
 import { BCOM_MKT_LONG_LESSONS } from './bcomMktLongLessons';
 
-const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
+export const LONG_LESSON_SOURCES: Record<string, ReadonlyArray<LongLesson>> = {
   'react-basics': REACT_LONG_LESSONS,
   python: PYTHON_LONG_LESSONS,
   'sql-mastery': SQL_LONG_LESSONS,

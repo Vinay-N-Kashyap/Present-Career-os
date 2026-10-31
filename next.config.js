@@ -108,7 +108,9 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node', 'pyodide'],
     outputFileTracingIncludes: {
-      '/api/visuals': ['./src/lib/data/lessonVisuals/**/*'],
+      '/api/visuals': ['./src/lib/data/lessonVisuals/**/*', './src/generated/longLessons/**/*'],
+      '/api/lesson': ['./src/generated/longLessons/**/*'],
+      '/api/quests/grade-test': ['./src/generated/longLessons/**/*'],
     },
     // webpackBuildWorker spawns a SECOND Node process that also inherits
     // NODE_OPTIONS, consuming 2x the heap on Vercel's 8 GB container → SIGKILL.
@@ -128,9 +130,16 @@ const nextConfig = {
       })
     );
     if (!isServer) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /[/\\]lib[/\\]data[/\\]longLessons(\.ts)?$/,
+          path.resolve(__dirname, 'src/lib/data/longLessonTypes.ts')
+        )
+      );
       config.resolve.alias = {
         ...config.resolve.alias,
         '@/lib/data/longLessons$': path.resolve(__dirname, 'src/lib/data/longLessonTypes.ts'),
+        '@/lib/data/longLessonServer$': false,
         'sharp$':             false,
         'onnxruntime-node$':  false,
         'esbuild$':           false,

@@ -3,7 +3,7 @@ import { recommendCareerTrajectory } from './careerTrajectories';
 import { mapQuestToCompetencyEvidence } from '../pathway/competencyMatrix';
 import { MasteryState } from '../pathway/competencySchema';
 import { parseQuestId } from './curriculumEnricher';
-import { parseTestQuestId } from './courseTests';
+import { parseTestQuestId } from './blockTests';
 import { getRoadmapCourseIds } from '../roadmap/roadmapCourses';
 import {
   CompleteDiagnosticProfile,

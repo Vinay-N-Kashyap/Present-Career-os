@@ -36,6 +36,12 @@ const PAGE_TITLES: Record<string, string> = {
   '/career-assets': 'Career Assets', '/career-dna':   'Career DNA',    '/trust':         'Trust Score',
   '/career-twin':   'Career Twin',   '/missions':      'Daily Missions',
   '/learn':         'Learn',         '/exam':          'Exams',
+  '/learning':      'Learning & Career Twin',
+  '/group-discussion': 'GD Practice',
+  '/friends':       'Friends & Network',
+  '/internships':   'Internships',   '/portfolio':     'Portfolio',
+  '/passport':      'Skill Passport', '/code-wars':    'Code Wars',
+  '/teams':         'Squads & Teams', '/placement':    'Placement',
   '/interview':     'Interview AI',  '/personality':   'Personality',
   '/vault':         'Vault',         '/opportunities': 'Opportunities',
   '/analytics':     'Analytics',     '/sentinel':      'Sentinel',
@@ -46,7 +52,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/pricing':       'Pins & Plans',  '/profile':       'Profile',
   '/notifications': 'Notifications', '/leaderboard':   'Leaderboard & Leagues',
   '/applications':  'My Applications',
-  '/pins':          'Pins Wallet',
+  '/pins':          'Pins & Wallet',
   '/quests':        'Quests & Courses',
   '/arena':         'Challenging Arena',
   '/projects':      'Projects & Squads',
@@ -349,7 +355,15 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isPublic    = pathname === '/' || PUBLIC_PATHS.filter(p => p !== '/').some(p => pathname.startsWith(p));
   const unread      = Array.isArray(notifData) ? notifData.filter((n: any) => !n.is_read).length : 0;
   const isStudent   = !['admin','superadmin','teacher','recruiter','parent','consultant'].includes(user?.role || '');
-  const pageTitle   = PAGE_TITLES[pathname] || 'PinIT';
+  const pageTitle   = (() => {
+    const clean = (pathname || '').replace(/\/$/, '') || '/';
+    if (PAGE_TITLES[clean]) return PAGE_TITLES[clean];
+    // Longest-prefix fallback so sub-routes (e.g. /projects/123) inherit their section title
+    const match = Object.keys(PAGE_TITLES)
+      .filter(k => clean.startsWith(k + '/'))
+      .sort((a, b) => b.length - a.length)[0];
+    return match ? PAGE_TITLES[match] : 'PinIT';
+  })();
 
   const ob = ((user as any)?.onboardingAnswers || (user as any)?.onboarding_answers || {}) as Record<string, any>;
   const institutionName = (user as any)?.institutionName || (user as any)?.collegeName || ob.college || ob.university || ob.institution || 'Campus Academic';
@@ -497,6 +511,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         toggleLeftSidebar={toggleLeftSidebar}
         activeTourRoute={activeTourRoute}
         setActiveAcademicTab={setActiveAcademicTab}
+        activeAcademicTab={activeAcademicTab}
+        currentSearch={searchParams?.toString() || ''}
+        forceShowCareerBuilder={Boolean((cOS as any).forceShowCareerBuilder)}
         user={user}
         isStudent={isStudent}
         pins={pins}
@@ -587,7 +604,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <aside
           className={`sidebar right-sidebar${rightCollapsed ? ' collapsed' : ''}`}
           style={{
-            width: rightCollapsed ? 'var(--sidebar-collapsed-w, 5vw)' : 'var(--sidebar-w, 15vw)',
+            width: rightCollapsed ? 'var(--sidebar-collapsed-w, 68px)' : 'var(--sidebar-w, 240px)',
             background: 'var(--bg-sidebar)',
             borderLeft: '1px solid var(--border)',
             transition: 'width 0.25s cubic-bezier(0.4, 0, 0.2, 1), border 0.25s',

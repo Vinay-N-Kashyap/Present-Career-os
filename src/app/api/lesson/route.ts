@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getLongLesson } from '@/lib/data/longLessons';
+import { getLongLessonServer } from '@/lib/data/longLessonServer';
 
 export async function GET(req: NextRequest) {
   try {
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Day must be an integer between 1 and 360' }, { status: 400 });
     }
 
-    const lesson = getLongLesson(prefix, day);
+    const lesson = getLongLessonServer(prefix, day);
     if (!lesson) {
       return NextResponse.json(null, { status: 404 });
     }

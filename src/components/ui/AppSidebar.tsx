@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useQueryClient } from '@tanstack/react-query';
+import { executeSecureLogout } from '@/lib/auth/secureLogout';
 
 export type NavLeaf  = { href: string; icon: string; label: string; badge?: boolean };
 export type NavGroup = { label: string; icon: string; children: NavLeaf[] };
@@ -153,9 +155,37 @@ export function getNav(role: string): NavSection[] {
   return STUDENT_NAV;
 }
 
-export function isPathActive(pathname: string, href: string) {
-  if (href === '/') return pathname === href;
-  return pathname === href || pathname.startsWith(href + '/');
+export function isPathActive(pathname: string, href: string, currentSearch = ''): boolean {
+  const cleanPathname = (pathname || '').split('?')[0].replace(/\/$/, '') || '/';
+  const [rawHrefPath, hrefQuery] = (href || '').split('?');
+  const hrefPath = rawHrefPath.replace(/\/$/, '') || '/';
+
+  if (hrefPath === '/') return cleanPathname === '/';
+
+  const searchStr = currentSearch.startsWith('?') ? currentSearch.slice(1) : currentSearch;
+
+  if (hrefQuery) {
+    if (cleanPathname !== hrefPath) return false;
+    const expected = new URLSearchParams(hrefQuery);
+    const actual = new URLSearchParams(searchStr);
+    for (const [k, v] of Array.from(expected.entries())) {
+      if (actual.get(k) !== v) return false;
+    }
+    return true;
+  }
+
+  // Exact hub roots that have sibling sub-routes or query-tab children in the same menu
+  if (hrefPath === '/admin' || hrefPath === '/dashboard' || hrefPath === '/university') {
+    if (cleanPathname !== hrefPath) return false;
+    const actualTab = new URLSearchParams(searchStr).get('tab');
+    if ((hrefPath === '/admin' || hrefPath === '/university') && actualTab) return false;
+    return true;
+  }
+
+  // `/quests/teacher-select` has its own menu item; don't double-highlight `/quests`
+  if (hrefPath === '/quests' && cleanPathname === '/quests/teacher-select') return false;
+
+  return cleanPathname === hrefPath || cleanPathname.startsWith(hrefPath + '/');
 }
 
 export interface AppSidebarProps {
@@ -169,6 +199,9 @@ export interface AppSidebarProps {
   toggleLeftSidebar: (val?: boolean) => void;
   activeTourRoute: string | null;
   setActiveAcademicTab: (tab: string | null) => void;
+  activeAcademicTab?: string | null;
+  currentSearch?: string;
+  forceShowCareerBuilder?: boolean;
   user: any;
   isStudent: boolean;
   pins: number;
@@ -179,72 +212,178 @@ export interface AppSidebarProps {
 
 export const AppSidebar: React.FC<AppSidebarProps> = ({
   collapsed,
-  setCollapsed,
   effectiveFocusMode,
   focusMode,
   pathname,
   mobileOpen,
+  setMobileOpen,
   toggleLeftSidebar,
   activeTourRoute,
   setActiveAcademicTab,
+  activeAcademicTab = null,
+  currentSearch = '',
+  forceShowCareerBuilder = false,
   user,
   isStudent,
   pins,
   unread,
   logout,
-  router,
 }) => {
+  const qc = useQueryClient();
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
+  const [loggingOut, setLoggingOut] = useState(false);
 
-  const nav = getNav(user?.role || 'student');
-  const toggleGroup = (label: string) => setOpenGroups(prev => ({ ...prev, [label]: !prev[label] }));
+  // On mobile overlay drawer, always show expanded labels & footer regardless of desktop collapsed state
+  const isCompact = collapsed && !mobileOpen;
+  const isHiddenByRoute = effectiveFocusMode || pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher');
+
+  const safePins = Number.isFinite(Number(pins)) ? Math.max(0, Number(pins)) : 0;
+  const safeUnread = Number.isFinite(Number(unread)) ? Math.max(0, Number(unread)) : 0;
+
+  const displayName =
+    user?.displayName ||
+    user?.name ||
+    user?.username ||
+    (typeof user?.email === 'string' ? user.email.split('@')[0] : '') ||
+    (isStudent ? 'Student' : 'Member');
+  const avatarInitial = (displayName.trim()[0] || 'S').toUpperCase();
+  const roleLabel = user?.role || (isStudent ? 'student' : 'member');
+
+  const nav = useMemo<NavSection[]>(() => {
+    const base = getNav(user?.role || 'student');
+    if (!isStudent || !forceShowCareerBuilder) return base;
+    return base.map((sec, idx) => {
+      if (idx !== 0) return sec;
+      const alreadyHas = sec.items.some((it) => !isGroup(it) && it.href === '/career-builder');
+      if (alreadyHas) return sec;
+      return {
+        ...sec,
+        items: [
+          ...sec.items,
+          { href: '/career-builder', icon: '🛠️', label: 'Career Builder' },
+        ],
+      };
+    });
+  }, [user?.role, isStudent, forceShowCareerBuilder]);
+
+  const toggleGroup = (label: string) => setOpenGroups((prev) => ({ ...prev, [label]: !prev[label] }));
+
+  const handleNavSelect = (targetHref: string) => {
+    setActiveAcademicTab(null);
+    setMobileOpen(false);
+    if (typeof window !== 'undefined' && !targetHref.includes('?')) {
+      try {
+        const url = new URL(window.location.href);
+        const targetPath = targetHref.split('?')[0];
+        if (url.pathname === targetPath && url.searchParams.has('tab') && activeAcademicTab) {
+          url.searchParams.delete('tab');
+          window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+        }
+      } catch {
+        // Ignore URL parsing errors in non-standard environments
+      }
+    }
+  };
+
+  const isNavActive = (href: string): boolean => {
+    // When an academic right-sidebar overlay tab is overriding <main>, left-sidebar routes are not active
+    if (isStudent && activeAcademicTab && pathname !== '/profile') return false;
+    // In teacher nav, `/quests` should not highlight when `/quests?tab=passport` is active
+    if (!isStudent && href === '/quests' && currentSearch.includes('tab=passport')) return false;
+    return isPathActive(pathname, href, currentSearch);
+  };
 
   function NavLink({ href, icon, label, badge, indent = false }: NavLeaf & { indent?: boolean }) {
-    const active = isPathActive(pathname, href);
-    const isTourSpotlight = activeTourRoute && (href === activeTourRoute || (activeTourRoute !== '/dashboard' && href.startsWith(activeTourRoute)));
+    const active = isNavActive(href);
+    const isTourSpotlight = Boolean(
+      activeTourRoute && (href === activeTourRoute || (activeTourRoute !== '/dashboard' && href.startsWith(activeTourRoute)))
+    );
+
     return (
       <Link
         href={href}
-        title={collapsed ? label : undefined}
-        onClick={() => {
-          setActiveAcademicTab(null);
-        }}
+        title={isCompact ? label : undefined}
+        onClick={() => handleNavSelect(href)}
         className={`nav-item${active ? ' active' : ''}${isTourSpotlight ? ' pinit-tour-spotlight' : ''}`}
         style={{
-          ...(indent && !collapsed ? { paddingLeft: 32 } : {}),
+          ...(indent && !isCompact ? { paddingLeft: 32 } : {}),
           ...(isTourSpotlight ? {
-            background: 'rgba(var(--brand-rgb), 0.22)',
+            background: 'var(--accent-light)',
             border: '1.5px solid var(--accent)',
-            boxShadow: '0 0 18px rgba(var(--brand-rgb), 0.6)',
-            transform: 'scale(1.02)',
-            transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            boxShadow: '0 0 16px rgba(99, 102, 241, 0.35)',
+            transform: 'scale(1.01)',
+            transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
             zIndex: 5,
           } : {})
         }}
       >
-        <span className="nav-icon" style={isTourSpotlight ? { transform: 'scale(1.2)', filter: 'drop-shadow(0 0 6px rgba(var(--brand-rgb), 0.8))', transition: 'transform 0.3s' } : undefined}>{icon}</span>
-        {!collapsed && <span style={{ flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap', fontWeight: isTourSpotlight ? 800 : undefined, color: isTourSpotlight ? '#fff' : undefined }}>{label}</span>}
-        {!collapsed && isTourSpotlight && (
-          <span style={{ fontSize: 10, fontWeight: 900, background: 'var(--accent)', color: 'var(--text)', padding: '2px 6px', borderRadius: 10, letterSpacing: '0.4px', animation: 'bounce 0.8s infinite alternate' }}>
+        <span
+          className="nav-icon"
+          style={isTourSpotlight ? { transform: 'scale(1.16)', color: 'var(--accent)', transition: 'transform 0.25s' } : undefined}
+        >
+          {icon}
+        </span>
+        {!isCompact && (
+          <span
+            style={{
+              flex: 1,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              fontWeight: isTourSpotlight ? 800 : undefined,
+              color: isTourSpotlight ? 'var(--accent)' : undefined,
+            }}
+          >
+            {label}
+          </span>
+        )}
+        {!isCompact && isTourSpotlight && (
+          <span
+            style={{
+              fontSize: 10,
+              fontWeight: 900,
+              background: 'var(--accent)',
+              color: '#ffffff',
+              padding: '2px 6px',
+              borderRadius: 10,
+              letterSpacing: '0.4px',
+              flexShrink: 0,
+            }}
+          >
             👈 HERE
           </span>
         )}
-        {!collapsed && badge && unread > 0 && !isTourSpotlight && <span className="nav-badge">{unread > 9 ? '9+' : unread}</span>}
-        {collapsed && badge && unread > 0 && (
-          <span style={{ position:'absolute', top:5, right:5, width:7, height:7, borderRadius:'50%', background:'var(--coral)', border:'2px solid var(--bg2)' }} />
+        {!isCompact && badge && safeUnread > 0 && !isTourSpotlight && (
+          <span className="nav-badge">{safeUnread > 9 ? '9+' : safeUnread}</span>
+        )}
+        {isCompact && badge && safeUnread > 0 && (
+          <span
+            style={{
+              position: 'absolute',
+              top: 5,
+              right: 8,
+              width: 8,
+              height: 8,
+              borderRadius: '50%',
+              background: 'var(--coral)',
+              border: '2px solid var(--bg2)',
+            }}
+          />
         )}
       </Link>
     );
   }
 
   function NavGroupHeader({ group }: { group: NavGroup }) {
-    const open = !!openGroups[group.label];
-    const hasActiveChild = group.children.some(c => isPathActive(pathname, c.href));
+    const hasActiveChild = group.children.some((c) => isNavActive(c.href));
+    const open = openGroups[group.label] ?? hasActiveChild;
 
-    if (collapsed) {
+    if (isCompact) {
       return (
         <>
-          {group.children.map(c => <NavLink key={`${c.href}_${c.label}`} {...c} />)}
+          {group.children.map((c) => (
+            <NavLink key={`${c.href}_${c.label}`} {...c} />
+          ))}
         </>
       );
     }
@@ -254,163 +393,301 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
         <button
           type="button"
           onClick={() => toggleGroup(group.label)}
+          aria-expanded={open}
           className={`nav-item${hasActiveChild ? ' active' : ''}`}
           style={{ width: '100%', background: 'transparent', border: 'none', cursor: 'pointer', textAlign: 'left' }}
         >
           <span className="nav-icon">{group.icon}</span>
-          <span style={{ flex:1, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{group.label}</span>
-          <span style={{ fontSize: 11, color: 'var(--t4)', transition: 'transform 0.2s', transform: open ? 'rotate(90deg)' : 'rotate(0deg)' }}>▸</span>
+          <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{group.label}</span>
+          <span
+            style={{
+              fontSize: 11,
+              color: 'var(--t3)',
+              transition: 'transform 0.2s',
+              transform: open ? 'rotate(90deg)' : 'rotate(0deg)',
+            }}
+          >
+            ▸
+          </span>
         </button>
-        {open && group.children.map(c => <NavLink key={`${c.href}_${c.label}`} {...c} indent />)}
+        {open && group.children.map((c) => <NavLink key={`${c.href}_${c.label}`} {...c} indent />)}
       </>
     );
   }
 
+  const pinsActive = isNavActive('/pins');
+  const profileActive = isNavActive('/profile');
+  const homeHref = isStudent
+    ? '/dashboard'
+    : roleLabel === 'recruiter'
+      ? '/recruiter'
+      : roleLabel === 'parent'
+        ? '/parent'
+        : roleLabel === 'consultant'
+          ? '/consultant'
+          : '/admin';
+
   return (
-    <aside 
-      className={`sidebar${collapsed || effectiveFocusMode || (pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher')) ? ' collapsed' : ''}${mobileOpen ? ' open' : ''}`}
+    <aside
+      aria-label="Primary navigation"
+      className={`sidebar${isCompact || isHiddenByRoute ? ' collapsed' : ''}${mobileOpen ? ' open' : ''}`}
       style={{
-        display: (effectiveFocusMode || pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher')) ? 'none' : 'flex',
-        width: effectiveFocusMode || (pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher')) ? 0 : (collapsed ? 'var(--sidebar-collapsed-w, 5vw)' : 'var(--sidebar-w, 15vw)'),
-        borderRight: effectiveFocusMode || (pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher')) ? 'none' : '1px solid var(--border)',
-        transition: 'width 0.25s cubic-bezier(0.4, 0, 0.2, 1), border 0.25s',
-        overflow: 'hidden'
+        display: isHiddenByRoute ? 'none' : 'flex',
+        width: isHiddenByRoute
+          ? 0
+          : mobileOpen
+            ? 272
+            : isCompact
+              ? 'var(--sidebar-collapsed-w, 68px)'
+              : 'var(--sidebar-w, clamp(232px, 16.5vw, 260px))',
+        borderRight: isHiddenByRoute ? 'none' : '1px solid var(--border)',
+        transition: 'width 0.22s cubic-bezier(0.4, 0, 0.2, 1), border 0.22s',
+        overflow: 'hidden',
       }}
     >
-      {/* Logo */}
-      <div className="sidebar-logo">
+      {/* Logo & Collapse/Expand Header */}
+      <div className="sidebar-logo" style={isCompact ? { flexDirection: 'column', gap: 6, padding: '10px 6px' } : undefined}>
         <Link
-          href="/dashboard"
-          onClick={() => setActiveAcademicTab(null)}
-          style={{ textDecoration:'none', display:'flex', alignItems:'center', gap:10 }}
+          href={homeHref}
+          onClick={() => handleNavSelect(homeHref)}
+          style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}
+          title={isCompact ? 'PinIT Career OS — Home' : undefined}
         >
-          {collapsed || effectiveFocusMode ? (
+          {isCompact || effectiveFocusMode ? (
             <span className="logo-mark logo-mark-img">
               <Image src="/brand/pinit-career-logo.png" alt="PINIT CAREER" width={32} height={32} priority />
             </span>
           ) : (
             <span className="lp-brand-lockup" style={{ height: 40, padding: '2px 6px' }}>
-              <Image src="/brand/pinit-career-logo.png" alt="PINIT CAREER" width={148} height={34} className="lp-brand-logo" style={{ height: 34, maxWidth: 148, width: 'auto', objectFit: 'contain' }} priority />
+              <Image
+                src="/brand/pinit-career-logo.png"
+                alt="PINIT CAREER"
+                width={148}
+                height={34}
+                className="lp-brand-logo"
+                style={{ height: 34, maxWidth: 148, width: 'auto', objectFit: 'contain' }}
+                priority
+              />
             </span>
           )}
         </Link>
-        {!collapsed && !focusMode && (
-          <button onClick={() => toggleLeftSidebar(true)} title="Collapse (⌘[)"
-            style={{ marginLeft:'auto', background:'none', border:'none', cursor:'pointer', color:'var(--t4)', fontSize:20, padding:'2px 6px', borderRadius:6, lineHeight:1 }}>
-            ‹
-          </button>
-        )}
-      </div>
 
-      {/* Nav */}
-      <nav className="sidebar-nav">
-        {nav.map(sec => {
-          return (
-            <div key={sec.section}>
-              {!collapsed && !effectiveFocusMode && <div className="nav-section-label">{sec.section}</div>}
-              {sec.items.map(item =>
-                isGroup(item)
-                  ? <NavGroupHeader key={item.label} group={item} />
-                  : <NavLink key={item.href} {...item} />
-              )}
-            </div>
-          );
-        })}
-      </nav>
-
-      {/* Sidebar Footer - Merged Navigation */}
-      <div className="sidebar-footer">
-        {/* 1. Friends */}
-        <NavLink href="/friends" icon="👥" label="Friends" />
-
-        {/* 2. Pins & Wallet (Merged Concept with Live Balance) */}
-        {collapsed ? (
-          <Link
-            href="/pins"
-            title={`Pins & Wallet (${pins.toLocaleString()} pins)`}
-            onClick={() => setActiveAcademicTab(null)}
-            className={`nav-item${isPathActive(pathname, '/pins') ? ' active' : ''}`}
-            style={{ position: 'relative' }}
-          >
-            <span className="nav-icon">⚡</span>
-            {pins < 20 && (
-              <span style={{ position: 'absolute', top: 5, right: 5, width: 7, height: 7, borderRadius: '50%', background: 'var(--coral)' }} />
-            )}
-          </Link>
-        ) : (
-          <Link
-            href="/pins"
-            onClick={() => setActiveAcademicTab(null)}
-            className={`nav-item${isPathActive(pathname, '/pins') ? ' active' : ''}`}
+        {mobileOpen ? (
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close navigation menu"
+            title="Close menu"
             style={{
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: 8,
-              padding: '7px 10px',
-              borderRadius: 9,
-              background: isPathActive(pathname, '/pins') ? 'rgba(99, 102, 241, 0.18)' : (pins < 20 ? 'rgba(220,38,38,0.08)' : 'rgba(255,255,255,0.03)'),
-              border: `1px solid ${isPathActive(pathname, '/pins') ? 'var(--accent)' : (pins < 20 ? 'rgba(220,38,38,0.25)' : 'rgba(255,255,255,0.07)')}`,
-              transition: 'all 0.2s ease',
-              marginBottom: 4,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
-              <span className="nav-icon" style={{ fontSize: 16.5 }}>⚡</span>
-              <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--t1)', whiteSpace: 'nowrap' }}>Pins & Wallet</span>
-            </div>
-            <div style={{
+              marginLeft: 'auto',
+              background: 'var(--bg3)',
+              border: '1px solid var(--border)',
+              cursor: 'pointer',
+              color: 'var(--t2)',
+              fontSize: 14,
+              width: 28,
+              height: 28,
+              borderRadius: 7,
               display: 'inline-flex',
               alignItems: 'center',
-              gap: 3,
-              padding: '2px 7px',
-              borderRadius: 10,
-              background: pins < 20 ? 'rgba(220,38,38,0.2)' : 'rgba(99, 102, 241, 0.2)',
-              border: `1px solid ${pins < 20 ? 'var(--coral)' : 'rgba(99, 102, 241, 0.4)'}`,
-              fontSize: 12,
-              fontWeight: 800,
-              color: pins < 20 ? 'var(--coral)' : 'var(--accent)',
-              fontFamily: 'var(--font-mono)',
-              lineHeight: 1.2
-            }}>
-              <span>{pins.toLocaleString()}</span>
-              <span style={{ fontSize: 11, opacity: 0.85 }}>+</span>
-            </div>
-          </Link>
+              justifyContent: 'center',
+              lineHeight: 1,
+            }}
+          >
+            ✕
+          </button>
+        ) : !isCompact && !focusMode ? (
+          <button
+            type="button"
+            onClick={() => toggleLeftSidebar(true)}
+            aria-label="Collapse sidebar"
+            title="Collapse sidebar (⌘[)"
+            style={{
+              marginLeft: 'auto',
+              background: 'var(--bg3)',
+              border: '1px solid var(--border)',
+              cursor: 'pointer',
+              color: 'var(--t2)',
+              fontSize: 16,
+              width: 26,
+              height: 26,
+              borderRadius: 6,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              lineHeight: 1,
+              flexShrink: 0,
+            }}
+          >
+            ‹
+          </button>
+        ) : isCompact && !effectiveFocusMode ? (
+          <button
+            type="button"
+            onClick={() => toggleLeftSidebar(false)}
+            aria-label="Expand sidebar"
+            title="Expand sidebar (⌘[)"
+            style={{
+              background: 'var(--bg3)',
+              border: '1px solid var(--border)',
+              cursor: 'pointer',
+              color: 'var(--t2)',
+              fontSize: 14,
+              width: 34,
+              height: 22,
+              borderRadius: 6,
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              lineHeight: 1,
+            }}
+          >
+            ›
+          </button>
+        ) : null}
+      </div>
+
+      {/* Primary Navigation */}
+      <nav className="sidebar-nav">
+        {nav.map((sec) => (
+          <div key={sec.section}>
+            {!isCompact && !effectiveFocusMode && <div className="nav-section-label">{sec.section}</div>}
+            {sec.items.map((item) =>
+              isGroup(item) ? <NavGroupHeader key={item.label} group={item} /> : <NavLink key={item.href} {...item} />
+            )}
+          </div>
+        ))}
+      </nav>
+
+      {/* Sidebar Footer */}
+      <div className="sidebar-footer">
+        {/* 1. Friends (Student Workspace) */}
+        {isStudent && <NavLink href="/friends" icon="👥" label="Friends" />}
+
+        {/* 2. Pins & Wallet (Student Workspace with Live Balance) */}
+        {isStudent && (
+          isCompact ? (
+            <Link
+              href="/pins"
+              title={`Pins & Wallet (${safePins.toLocaleString()} pins)`}
+              onClick={() => handleNavSelect('/pins')}
+              className={`nav-item${pinsActive ? ' active' : ''}`}
+              style={{ position: 'relative' }}
+            >
+              <span className="nav-icon">⚡</span>
+              {safePins < 20 && (
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: 5,
+                    right: 8,
+                    width: 7,
+                    height: 7,
+                    borderRadius: '50%',
+                    background: 'var(--coral)',
+                  }}
+                />
+              )}
+            </Link>
+          ) : (
+            <Link
+              href="/pins"
+              onClick={() => handleNavSelect('/pins')}
+              className={`nav-item${pinsActive ? ' active' : ''}`}
+              style={{
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 8,
+                padding: '7px 10px',
+                borderRadius: 9,
+                background: pinsActive
+                  ? 'var(--accent-light)'
+                  : safePins < 20
+                    ? 'var(--coral-light)'
+                    : 'var(--bg3)',
+                border: `1px solid ${
+                  pinsActive ? 'var(--accent)' : safePins < 20 ? 'var(--coral)' : 'var(--border)'
+                }`,
+                transition: 'all 0.18s ease',
+                marginBottom: 3,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 9, minWidth: 0 }}>
+                <span className="nav-icon" style={{ fontSize: 16.5, color: pinsActive ? 'var(--accent)' : undefined }}>
+                  ⚡
+                </span>
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: pinsActive ? 'var(--accent)' : 'var(--t1)',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                >
+                  Pins &amp; Wallet
+                </span>
+              </div>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 3,
+                  padding: '2px 7px',
+                  borderRadius: 10,
+                  background: safePins < 20 ? 'var(--coral-light)' : 'var(--accent-light)',
+                  border: `1px solid ${safePins < 20 ? 'var(--coral)' : 'color-mix(in srgb, var(--accent) 40%, transparent)'}`,
+                  fontSize: 11.5,
+                  fontWeight: 800,
+                  color: safePins < 20 ? 'var(--coral)' : 'var(--accent)',
+                  fontFamily: 'var(--font-mono)',
+                  lineHeight: 1.2,
+                  flexShrink: 0,
+                }}
+              >
+                <span>{safePins.toLocaleString()}</span>
+                <span style={{ fontSize: 10.5, opacity: 0.85 }}>+</span>
+              </div>
+            </Link>
+          )
         )}
 
         {/* 3. Notifications */}
         <NavLink href="/notifications" icon="🔔" label="Notifications" badge={true} />
 
-        {/* 4. Profile (Merged with User Card) */}
-        {collapsed ? (
+        {/* 4. Profile & Session Card */}
+        {isCompact ? (
           <Link
             href="/profile"
-            title={`${user?.displayName || 'Profile'} (${user?.role || 'Guest'})`}
-            onClick={() => setActiveAcademicTab(null)}
-            className={`nav-item${isPathActive(pathname, '/profile') ? ' active' : ''}`}
-            style={{ justifyContent: 'center', marginTop: 4, padding: 0 }}
+            title={`${displayName} (${roleLabel})`}
+            onClick={() => handleNavSelect('/profile')}
+            className={`nav-item${profileActive ? ' active' : ''}`}
+            style={{ justifyContent: 'center', marginTop: 4, padding: '6px 0' }}
           >
-            <div style={{
-              width: 32,
-              height: 32,
-              borderRadius: '50%',
-              background: isPathActive(pathname, '/profile') ? 'linear-gradient(135deg, var(--accent), var(--purple))' : 'rgba(255,255,255,0.1)',
-              border: `1.5px solid ${isPathActive(pathname, '/profile') ? 'var(--accent)' : 'var(--border)'}`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 14.5,
-              fontWeight: 800,
-              color: 'var(--text)'
-            }}>
-              {user?.displayName?.[0]?.toUpperCase() || 'U'}
+            <div
+              style={{
+                width: 32,
+                height: 32,
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, var(--accent), var(--purple))',
+                border: `2px solid ${profileActive ? 'var(--accent)' : 'var(--border)'}`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 13.5,
+                fontWeight: 800,
+                color: '#ffffff',
+              }}
+            >
+              {avatarInitial}
             </div>
           </Link>
         ) : (
           <div
-            className={`nav-item${isPathActive(pathname, '/profile') ? ' active' : ''}`}
+            className={`nav-item${profileActive ? ' active' : ''}`}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -418,14 +695,14 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
               padding: '7px 9px',
               marginTop: 4,
               borderRadius: 9,
-              border: `1px solid ${isPathActive(pathname, '/profile') ? 'var(--accent)' : 'var(--border)'}`,
-              background: isPathActive(pathname, '/profile') ? 'rgba(99, 102, 241, 0.15)' : 'var(--bg3)',
-              transition: 'all 0.2s ease',
+              border: `1px solid ${profileActive ? 'var(--accent)' : 'var(--border)'}`,
+              background: profileActive ? 'var(--accent-light)' : 'var(--bg3)',
+              transition: 'all 0.18s ease',
             }}
           >
             <Link
               href="/profile"
-              onClick={() => setActiveAcademicTab(null)}
+              onClick={() => handleNavSelect('/profile')}
               style={{
                 textDecoration: 'none',
                 display: 'flex',
@@ -433,60 +710,81 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
                 gap: 8,
                 flex: 1,
                 minWidth: 0,
-                color: 'inherit'
+                color: 'inherit',
               }}
-              title="View Profile"
+              title="Open Profile & Settings"
             >
-              <div style={{
-                width: 30,
-                height: 30,
-                borderRadius: '50%',
-                flexShrink: 0,
-                background: 'linear-gradient(135deg,var(--accent),var(--purple))',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: 13,
-                fontWeight: 800,
-                color: 'var(--text)',
-                boxShadow: '0 0 10px rgba(99, 102, 241, 0.3)'
-              }}>
-                {user?.displayName?.[0]?.toUpperCase() || 'U'}
+              <div
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: '50%',
+                  flexShrink: 0,
+                  background: 'linear-gradient(135deg, var(--accent), var(--purple))',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 13,
+                  fontWeight: 800,
+                  color: '#ffffff',
+                  boxShadow: '0 2px 8px rgba(99, 102, 241, 0.28)',
+                }}
+              >
+                {avatarInitial}
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {user?.displayName || 'Faculty / Visitor'}
+                <div
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: 'var(--t1)',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {displayName}
                 </div>
-                <div style={{ fontSize: 10.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)', textTransform: 'capitalize' }}>
-                  {user?.role || 'Guest'} • Profile
+                <div
+                  style={{
+                    fontSize: 10.5,
+                    color: 'var(--t3)',
+                    fontFamily: 'var(--font-mono)',
+                    textTransform: 'capitalize',
+                  }}
+                >
+                  {roleLabel} • Profile
                 </div>
               </div>
             </Link>
             <button
+              type="button"
+              disabled={loggingOut}
               onClick={() => {
-                logout().then(() => {
-                  if (typeof window !== 'undefined') {
-                    window.history.replaceState(null, '', '/login');
-                    window.location.replace('/login');
-                  } else {
-                    router.replace('/login');
-                  }
+                if (loggingOut) return;
+                setLoggingOut(true);
+                setMobileOpen(false);
+                executeSecureLogout({
+                  queryClient: qc,
+                  authLogout: logout,
+                  redirectTo: '/login',
                 });
               }}
-              title="Logout"
+              aria-label="Sign out"
+              title="Sign out"
               style={{
                 background: 'none',
                 border: 'none',
-                cursor: 'pointer',
-                color: 'var(--t4)',
+                cursor: loggingOut ? 'not-allowed' : 'pointer',
+                color: 'var(--t3)',
                 fontSize: 15.5,
                 padding: '4px 6px',
                 borderRadius: 6,
                 flexShrink: 0,
-                transition: 'color 0.2s'
+                transition: 'color 0.18s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--coral)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--t4)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--t3)')}
             >
               ⏻
             </button>
@@ -494,8 +792,15 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
         )}
 
         {/* Expand toggle when collapsed */}
-        {collapsed && !effectiveFocusMode && (
-          <button onClick={() => setCollapsed(false)} className="nav-item" style={{ justifyContent:'center', marginTop:6 }} title="Expand (⌘[)">
+        {isCompact && !effectiveFocusMode && (
+          <button
+            type="button"
+            onClick={() => toggleLeftSidebar(false)}
+            className="nav-item"
+            style={{ justifyContent: 'center', marginTop: 4 }}
+            aria-label="Expand sidebar"
+            title="Expand sidebar (⌘[)"
+          >
             <span className="nav-icon">›</span>
           </button>
         )}

@@ -62,3 +62,4 @@ test-results/
 playwright-report/
 screenshots/
 docs/visuals/PINIT_MASTER_DEBUG.html
+src/generated/

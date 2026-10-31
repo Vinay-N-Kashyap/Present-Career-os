@@ -1,5 +1,5 @@
 import { parseQuestId } from '@/lib/data/curriculumEnricher';
-import { parseTestQuestId } from '@/lib/data/courseTests';
+import { parseTestQuestId } from '@/lib/data/blockTests';
 import type { CrashCourseProgress } from '@/lib/courses/crashCourseProgress';
 
 /**

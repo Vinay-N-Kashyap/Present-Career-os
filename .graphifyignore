@@ -1,0 +1,39 @@
+# Graphify ignore patterns for PinIT Career OS
+# Keep graph focused on real application architecture and core libraries
+
+# Scratch scripts and temporary generation tools
+scripts/
+temp_snippets/
+scratch/
+scratch_java_test/
+claude_sandbox/
+raw_avatars_source/
+
+# Massive static data assets and prebuilt curriculum archives
+src/lib/data/lessonVisuals/
+src/lib/data/*LongLessons.ts
+src/generated/
+public/data/
+public/pyodide/
+public/esbuild/
+public/sql/
+public/sandbox/
+
+# Presentations and generated HTML reports
+*.pptx
+*.docx
+*.pdf
+*.log
+executive_report.html
+master_executive_plan.html
+shareholder_*.html
+CampusOS_*.html
+PINIT_*.html
+docs/visuals/PINIT_MASTER_DEBUG.html
+
+# Test output artifacts
+test-results/
+playwright-report/
+screenshots/
+dist-test/
+attic/

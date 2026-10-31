@@ -7,18 +7,22 @@ import { updateUserProfile } from '@/lib/supabaseService';
 import { PathwayApiService } from '@/lib/api/pathwayApi';
 import { StudentSkillProfile } from '@/lib/pathway/competencySchema';
 import { CS } from './types';
+import CareerDnaTab from './CareerDnaTab';
 
 const CareerPathwayTimeline = dynamic(() => import('@/components/pathway/CareerPathwayTimeline'), { ssr: false });
 const CompetencyRadarView = dynamic(() => import('@/components/pathway/CompetencyRadarView'), { ssr: false });
 
+export type PassportView = 'skills' | 'dna' | 'pathway' | 'history' | 'endorse';
+
 interface PassportTabProps {
   user: any;
   cOS?: any;
+  initialView?: PassportView;
 }
 
-export default function PassportTab({ user, cOS }: PassportTabProps) {
-  const [activePassportRole, setActivePassportRole] = useState<'student' | 'recruiter' | 'faculty'>('student');
-  const [activePassportTab, setActivePassportTab] = useState<string>('Overview');
+export default function PassportTab({ user, cOS, initialView = 'skills' }: PassportTabProps) {
+  const [view, setView] = useState<PassportView>(initialView);
+  useEffect(() => { setView(initialView); }, [initialView]);
   const [skillProfile, setSkillProfile] = useState<StudentSkillProfile | null>(null);
   const [passportSkills, setPassportSkills] = useState<Array<{ id: string; name: string; level: 1|2|3; evidence: string; recency: string; verified: boolean; category: string }>>([]);
   const [assessmentHistory, setAssessmentHistory] = useState<Array<{ date: string; type: string; score: string; result: string }>>([]);
@@ -157,238 +161,206 @@ export default function PassportTab({ user, cOS }: PassportTabProps) {
     toast.success('Skill Endorsement updated', 'Student skill passport credentials updated and synced.');
   };
 
+  const isStaff = ['admin', 'superadmin', 'teacher'].includes(user?.role);
+  const verifiedList = skillProfile?.verified || [];
+  const demonstratedList = skillProfile?.demonstrated || [];
+  const claimedList = skillProfile?.claimed || [];
+
+  const views: Array<{ id: PassportView; label: string }> = [
+    { id: 'skills', label: 'Skills' },
+    { id: 'dna', label: 'Career DNA' },
+    { id: 'pathway', label: 'Pathway & Radar' },
+    { id: 'history', label: 'Assessments' },
+    ...(isStaff ? [{ id: 'endorse' as PassportView, label: 'Endorse (Faculty)' }] : []),
+  ];
+
+  const emptyBox = (text: string) => (
+    <div style={{ padding: 18, textAlign: 'center', color: 'var(--t3)', fontSize: 13.5, background: 'var(--bg3)', borderRadius: 10, border: '1px dashed var(--border)' }}>
+      {text}
+    </div>
+  );
+
+  const sectionTitle = (text: string) => (
+    <h3 style={{ margin: '0 0 12px 0', fontSize: 15.5, fontWeight: 800, color: 'var(--t1)' }}>{text}</h3>
+  );
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }} className="animate-fade-in">
-      <div style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '10px 20px', borderRadius: 14, border: '1px solid var(--border)' }}>
-        <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)' }}>🎫 PASSPORT PERSPECTIVE SWITCH:</span>
-        <div style={{ display: 'flex', gap: 6 }}>
-          {['student', 'recruiter', 'faculty'].map(role => (
-            <button key={role} onClick={() => setActivePassportRole(role as any)} style={{ padding: '6px 12px', borderRadius: 6, border: 'none', background: activePassportRole === role ? 'var(--accent)' : 'transparent', color: activePassportRole === role ? '#fff' : 'var(--t3)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
-              {role === 'student' ? '🧑‍🎓 Student' : role === 'recruiter' ? '🔍 Recruiter' : '👩‍🏫 Faculty'}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }} className="animate-fade-in">
+      <div role="tablist" aria-label="Skill passport sections" style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+        {views.map((v) => {
+          const active = view === v.id;
+          return (
+            <button
+              key={v.id}
+              role="tab"
+              aria-selected={active}
+              type="button"
+              onClick={() => setView(v.id)}
+              style={{
+                padding: '7px 14px',
+                borderRadius: 999,
+                border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
+                background: active ? 'var(--accent-light)' : 'var(--bg2)',
+                color: active ? 'var(--accent)' : 'var(--t2)',
+                fontSize: 13.5,
+                fontWeight: active ? 700 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s',
+              }}
+            >
+              {v.label}
             </button>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
-      {activePassportRole === 'student' && (
-        <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: 20, alignItems: 'start' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 4, background: 'var(--bg2)', padding: 8, borderRadius: 14, border: '1px solid var(--border)' }}>
-            {['Career Pathway', 'Competency Matrix', 'Overview', 'Verified Skills', 'Demonstrated Skills', 'Claimed Skills', 'Assessment History', 'Verification Levels'].map(t => (
-              <button key={t} onClick={() => setActivePassportTab(t)} style={{ textAlign: 'left', padding: '8px 12px', border: 'none', borderRadius: 8, background: activePassportTab === t ? 'var(--accent-light)' : 'transparent', color: activePassportTab === t ? 'var(--accent)' : 'var(--t2)', fontSize: 14, fontWeight: activePassportTab === t ? 800 : 500, cursor: 'pointer' }}>{t}</button>
+      {view === 'skills' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
+            {[
+              { label: 'Verified', count: verifiedList.length || passportSkills.filter((s) => s.verified).length, color: 'var(--green)', hint: 'Passed evidence gates & oral defense' },
+              { label: 'Demonstrated', count: demonstratedList.length, color: 'var(--blue)', hint: 'Practical coding tasks completed' },
+              { label: 'Claimed', count: claimedList.length, color: 'var(--t3)', hint: 'Self-reported interests' },
+            ].map((t) => (
+              <div key={t.label} style={{ ...CS.card, padding: 16, borderTop: `3px solid ${t.color}` }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>{t.label}</div>
+                <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--t1)', fontFamily: 'var(--font-display)', lineHeight: 1.2, marginTop: 4 }}>{t.count}</div>
+                <div style={{ fontSize: 12, color: 'var(--t3)' }}>{t.hint}</div>
+              </div>
             ))}
           </div>
 
           <div style={CS.card}>
-            {activePassportTab === 'Career Pathway' && (
-              <CareerPathwayTimeline activeProgramId="prog_software_engineering" />
-            )}
-
-            {activePassportTab === 'Competency Matrix' && (
-              <CompetencyRadarView />
-            )}
-
-            {activePassportTab === 'Overview' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div style={{ background: 'var(--accent-light)', border: '1.5px solid var(--accent)', borderRadius: 16, padding: 20, display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: 26.5 }}>🧠</span>
-                  <div>
-                    <div style={{ fontWeight: 800, fontSize: 15, color: 'var(--accent)', marginBottom: 4 }}>PinIT 3-Tier Skill Validation Architecture</div>
-                    <p style={{ fontSize: 14, color: 'var(--t2)', lineHeight: 1.5, margin: 0 }}>
-                      Skill credentials update automatically from validated evidence records:<br />
-                      • 🟢 <strong>Verified ({skillProfile?.verified.length || 0})</strong>: Passed multi-class evidence gates & oral defense.<br />
-                      • 🔵 <strong>Demonstrated ({skillProfile?.demonstrated.length || 0})</strong>: Practical coding tasks completed.<br />
-                      • ⚪ <strong>Claimed ({skillProfile?.claimed.length || 17})</strong>: Self-reported & baseline target interests.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Verified Credentials Summary</h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {(() => {
-                      const items = (skillProfile?.verified && skillProfile.verified.length > 0 ? skillProfile.verified : passportSkills.filter(s => s.verified));
-                      if (items.length === 0) {
-                        return (
-                          <div style={{ padding: 14, textAlign: 'center', color: 'var(--t3)', fontSize: 13, background: 'var(--bg3)', borderRadius: 8 }}>
-                            No verified credentials yet. Pass Socratic Quests and Coding Labs to earn credentials.
-                          </div>
-                        );
-                      }
-                      return items.map(s => (
-                        <div key={s.id} style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--border)' }}>
-                          <span style={{ fontSize: 14.5, fontWeight: 700 }}>{s.name}</span>
-                          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                            <span style={{ fontSize: 12, background: 'rgba(var(--success-rgb),  0.15)', color: 'var(--success)', padding: '3px 8px', borderRadius: 6, fontWeight: 800 }}>
-                              {'score' in s ? `${Math.round(s.score)} Pts` : `Level ${s.level}`}
-                            </span>
-                            <span style={{ fontSize: 12, background: 'var(--accent-light)', padding: '3px 8px', borderRadius: 6, color: 'var(--accent)', fontWeight: 800 }}>{s.level}</span>
-                          </div>
-                        </div>
-                      ));
-                    })()}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activePassportTab === 'Verified Skills' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Verified Credentials Directory (SHA-256 Sealed)</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {skillProfile?.verified && skillProfile.verified.length > 0 ? (
-                    skillProfile.verified.map(s => (
-                      <div key={s.id} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
-                        <div style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-                          <span style={{ fontSize: 15, fontWeight: 800 }}>{s.name}</span>
-                          <span style={{ fontSize: 12, background: 'rgba(var(--success-rgb),  0.15)', color: 'var(--success)', padding: '3px 8px', borderRadius: 6, fontWeight: 800 }}>{s.level} Verified ✓</span>
-                        </div>
-                        <p style={{ fontSize: 13, color: 'var(--t2)', margin: '0 0 8px 0', lineHeight: 1.4 }}>
-                          <strong>Evaluation Score:</strong> {Math.round(s.score)}/100 &middot; <strong>Credential ID:</strong> <code style={{ fontSize: 11, color: 'var(--accent)' }}>{s.credentialId}</code>
-                        </p>
-                        <div style={{ fontSize: 12, color: 'var(--t3)' }}>Verified: <strong>{new Date(s.verifiedAt).toLocaleDateString()}</strong></div>
+            {sectionTitle('✅ Verified skills')}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {verifiedList.length > 0
+                ? verifiedList.map((s) => (
+                    <div key={s.id} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                        <span style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--t1)' }}>{s.name}</span>
+                        <span style={{ fontSize: 12, background: 'var(--green-light)', color: 'var(--green)', padding: '3px 8px', borderRadius: 6, fontWeight: 800 }}>{s.level} · {Math.round(s.score)}/100</span>
+                      </div>
+                      <div style={{ fontSize: 12, color: 'var(--t3)' }}>
+                        Credential <code style={{ fontSize: 11, color: 'var(--accent)' }}>{s.credentialId}</code> · verified {new Date(s.verifiedAt).toLocaleDateString()}
+                      </div>
+                    </div>
+                  ))
+                : passportSkills.filter((s) => s.verified).length > 0
+                  ? passportSkills.filter((s) => s.verified).map((s) => (
+                      <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 12px', background: 'var(--bg3)', borderRadius: 10, border: '1px solid var(--border)' }}>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--t1)' }}>{s.name}</span>
+                        <span style={{ fontSize: 12, background: 'var(--green-light)', color: 'var(--green)', padding: '3px 8px', borderRadius: 6, fontWeight: 800 }}>Level {s.level}</span>
                       </div>
                     ))
-                  ) : (
-                    <div style={{ padding: 20, textAlign: 'center', color: 'var(--t3)', fontSize: 14, background: 'var(--bg3)', borderRadius: 12 }}>
-                      No verified skills yet. Complete your P1-P5 projects and pass the oral defense gate to earn verified credentials!
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
+                  : emptyBox('No verified skills yet. Finish course projects and pass the oral defense to earn verified credentials.')}
+            </div>
+          </div>
 
-            {activePassportTab === 'Demonstrated Skills' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Demonstrated Practical Targets</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {skillProfile?.demonstrated && skillProfile.demonstrated.length > 0 ? (
-                    skillProfile.demonstrated.map(s => (
-                      <div key={s.id} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
-                        <div style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-                          <span style={{ fontSize: 14.5, fontWeight: 700 }}>{s.name}</span>
-                          <span style={{ fontSize: 12.5, color: 'var(--info)', fontWeight: 700 }}>{Math.round(s.score)} Pts Demonstrated</span>
-                        </div>
-                        <div style={{ height: 6, background: 'var(--bg2)', borderRadius: 3, overflow: 'hidden', marginBottom: 8 }}>
-                          <div style={{ width: `${Math.min(100, s.score)}%`, height: '100%', background: 'var(--info)' }} />
-                        </div>
-                        <div style={{ fontSize: 12, color: 'var(--t3)' }}>Target: Complete production project & defense to verify.</div>
-                      </div>
-                    ))
-                  ) : (
-                    <div style={{ padding: 20, textAlign: 'center', color: 'var(--t3)', fontSize: 14, background: 'var(--bg3)', borderRadius: 12 }}>
-                      No demonstrated skills yet. Complete daily coding missions to generate practical evidence!
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {activePassportTab === 'Claimed Skills' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Claimed Baseline Skills</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10 }}>
-                  {(skillProfile?.claimed || []).map(s => (
+          <div style={CS.card}>
+            {sectionTitle('🔵 Demonstrated skills')}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {demonstratedList.length > 0
+                ? demonstratedList.map((s) => (
                     <div key={s.id} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 12, borderRadius: 10 }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t1)' }}>{s.name}</div>
-                      <div style={{ fontSize: 11.5, color: 'var(--t3)', textTransform: 'capitalize', marginTop: 2 }}>{s.category || 'General'}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {activePassportTab === 'Assessment History' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>AI Audit Transcripts</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  {assessmentHistory.length > 0 ? (
-                    assessmentHistory.map((h, i) => (
-                      <div key={i} style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)' }}>
-                        <div>
-                          <div style={{ fontSize: 14.5, fontWeight: 700 }}>{h.type}</div>
-                          <div style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 2 }}>Demonstrated {h.date}</div>
-                        </div>
-                        <div style={{ textAlign: 'right' }}>
-                          <div style={{ fontSize: 14.5, fontWeight: 800, color: 'var(--green)' }}>{h.score} Score</div>
-                          <div style={{ fontSize: 11.5, color: 'var(--t3)', marginTop: 2 }}>{h.result}</div>
-                        </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--t1)' }}>{s.name}</span>
+                        <span style={{ fontSize: 12.5, color: 'var(--blue)', fontWeight: 700 }}>{Math.round(s.score)} pts</span>
                       </div>
-                    ))
-                  ) : (
-                    <div style={{ padding: 20, textAlign: 'center', color: 'var(--t3)', fontSize: 14, background: 'var(--bg3)', borderRadius: 12 }}>
-                      No AI audit transcripts recorded yet. Complete coding quests, oral defenses, or AI mock interviews to generate audit records.
+                      <div style={{ height: 6, background: 'var(--bg2)', borderRadius: 3, overflow: 'hidden' }}>
+                        <div style={{ width: `${Math.min(100, s.score)}%`, height: '100%', background: 'var(--blue)' }} />
+                      </div>
                     </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {activePassportTab === 'Verification Levels' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Skill Credential Hierarchy</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {[
-                    { lvl: 1, title: 'Quest Approved', desc: 'Syntax and basic algorithm constructs verified via automated Next.js IDE test runs.' },
-                    { lvl: 2, title: 'Faculty Endorsed', desc: 'Mentorship and code audit approval completed by academic institution staff.' },
-                    { lvl: 3, title: 'Industry Verified', desc: 'Practical deployment experience verified during company internships or client projects.' }
-                  ].map(h => (
-                    <div key={h.lvl} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
-                      <div style={{ fontWeight: 800, fontSize: 14.5, color: 'var(--accent)', marginBottom: 4 }}>Level {h.lvl} — {h.title}</div>
-                      <p style={{ fontSize: 13, color: 'var(--t2)', margin: 0, lineHeight: 1.5 }}>{h.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  ))
+                : emptyBox('No demonstrated skills yet. Complete daily coding missions to generate practical evidence.')}
+            </div>
           </div>
-        </div>
-      )}
 
-      {activePassportRole === 'recruiter' && (
-        <div style={CS.card}>
-          <div style={CS.cardLabel}>Candidate Skill Passport Dossier</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {passportSkills.length > 0 ? (
-              passportSkills.map(s => (
-                <div key={s.id} style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg3)', padding: 14, borderRadius: 12, border: '1px solid var(--border)' }}>
-                  <div>
-                    <h4 style={{ margin: 0, fontSize: 15 }}>{s.name}</h4>
-                    <p style={{ fontSize: 13, color: 'var(--t3)', margin: '4px 0 0' }}>{s.evidence}</p>
-                  </div>
-                  <span style={{ fontSize: 12, background: s.verified ? 'var(--green-light)' : 'var(--border)', color: s.verified ? 'var(--green)' : 'var(--t3)', padding: '3px 8px', borderRadius: 6, fontWeight: 800 }}>
-                    {s.verified ? `Level ${s.level} Verified` : 'Pending Validation'}
+          {claimedList.length > 0 && (
+            <div style={CS.card}>
+              {sectionTitle('⚪ Claimed skills')}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                {claimedList.map((s) => (
+                  <span key={s.id} style={{ fontSize: 12.5, padding: '4px 10px', borderRadius: 999, background: 'var(--bg3)', border: '1px solid var(--border)', color: 'var(--t2)' }}>
+                    {s.name}
                   </span>
-                </div>
-              ))
-            ) : (
-              <div style={{ padding: 18, textAlign: 'center', color: 'var(--t3)', fontSize: 14, background: 'var(--bg3)', borderRadius: 10 }}>
-                No skill passport records yet. Demonstrated competencies will appear here once verified.
+                ))}
               </div>
-            )}
+            </div>
+          )}
+        </div>
+      )}
+
+      {view === 'dna' && <CareerDnaTab user={user} cOS={cOS} />}
+
+      {view === 'pathway' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={CS.card}>
+            {sectionTitle('🧭 Career pathway')}
+            <CareerPathwayTimeline activeProgramId="prog_software_engineering" />
+          </div>
+          <div style={CS.card}>
+            {sectionTitle('📡 Competency radar')}
+            <CompetencyRadarView />
           </div>
         </div>
       )}
 
-      {activePassportRole === 'faculty' && (
-        <div style={CS.card}>
-          <div style={CS.cardLabel}>Skill Endorsement Panel</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {passportSkills.length > 0 ? (
-              passportSkills.map(s => (
-                <div key={s.id} style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg3)', padding: 14, borderRadius: 12 }}>
-                  <div>
-                    <strong style={{ fontSize: 15 }}>{s.name} (Level {s.level})</strong>
-                    <div style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 2 }}>{s.evidence}</div>
-                  </div>
-                  <button onClick={() => toggleEndorsement(s.id)} style={{ padding: '6px 12px', fontSize: 11.5, fontWeight: 800, background: s.verified ? 'var(--coral)' : 'var(--accent)', color: 'var(--text)', border: 'none', borderRadius: 6, cursor: 'pointer' }}>
-                    {s.verified ? 'Revoke Endorse' : 'Endorse Skill'}
-                  </button>
+      {view === 'history' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={CS.card}>
+            {sectionTitle('📝 Assessment history')}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {assessmentHistory.length > 0
+                ? assessmentHistory.map((h, i) => (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)' }}>
+                      <div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--t1)' }}>{h.type}</div>
+                        <div style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 2 }}>{h.date}</div>
+                      </div>
+                      <div style={{ textAlign: 'right' }}>
+                        <div style={{ fontSize: 14, fontWeight: 800, color: 'var(--green)' }}>{h.score}</div>
+                        <div style={{ fontSize: 11.5, color: 'var(--t3)', marginTop: 2 }}>{h.result}</div>
+                      </div>
+                    </div>
+                  ))
+                : emptyBox('No assessments recorded yet. Course tests, oral defenses and AI mock interviews appear here.')}
+            </div>
+          </div>
+          <div style={CS.card}>
+            {sectionTitle('🏅 How verification levels work')}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 10 }}>
+              {[
+                { lvl: 1, title: 'Quest Approved', desc: 'Automated tests in the course IDE confirm the fundamentals.' },
+                { lvl: 2, title: 'Faculty Endorsed', desc: 'A mentor reviews your code and endorses the skill.' },
+                { lvl: 3, title: 'Industry Verified', desc: 'Proven in an internship or a real client project.' },
+              ].map((h) => (
+                <div key={h.lvl} style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
+                  <div style={{ fontWeight: 800, fontSize: 14, color: 'var(--accent)', marginBottom: 4 }}>Level {h.lvl} · {h.title}</div>
+                  <p style={{ fontSize: 13, color: 'var(--t2)', margin: 0, lineHeight: 1.5 }}>{h.desc}</p>
                 </div>
-              ))
-            ) : (
-              <div style={{ padding: 18, textAlign: 'center', color: 'var(--t3)', fontSize: 14, background: 'var(--bg3)', borderRadius: 10 }}>
-                No skills submitted for faculty endorsement yet.
-              </div>
-            )}
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {view === 'endorse' && isStaff && (
+        <div style={CS.card}>
+          {sectionTitle('Skill endorsement panel')}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {passportSkills.length > 0
+              ? passportSkills.map((s) => (
+                  <div key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)' }}>
+                    <div style={{ minWidth: 0 }}>
+                      <strong style={{ fontSize: 14.5, color: 'var(--t1)' }}>{s.name} (Level {s.level})</strong>
+                      <div style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 2 }}>{s.evidence}</div>
+                    </div>
+                    <button type="button" onClick={() => toggleEndorsement(s.id)} style={{ padding: '6px 12px', fontSize: 11.5, fontWeight: 800, background: s.verified ? 'var(--coral)' : 'var(--accent)', color: '#ffffff', border: 'none', borderRadius: 6, cursor: 'pointer', flexShrink: 0 }}>
+                      {s.verified ? 'Revoke' : 'Endorse'}
+                    </button>
+                  </div>
+                ))
+              : emptyBox('No skills submitted for endorsement yet.')}
           </div>
         </div>
       )}

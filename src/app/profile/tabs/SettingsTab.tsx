@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { toast } from '@/lib/store/useAppStore';
 import { CS } from './types';
-import { setUserSoundscapeVolume } from '@/lib/audio/soundscapes';
 
 interface SettingsTabProps {
   soundscapeVol: number;
@@ -12,7 +11,8 @@ interface SettingsTabProps {
   loggingOut?: boolean;
 }
 
-export default function SettingsTab({ soundscapeVol, setSoundscapeVol, onLogout, loggingOut }: SettingsTabProps) {
+// Ambient volume is controlled once, in PreferencesTab (0–100%). Props kept for API compatibility.
+export default function SettingsTab({ onLogout, loggingOut }: SettingsTabProps) {
   const [calibratedRms, setCalibratedRms] = useState<number | null>(null);
 
   return (
@@ -159,33 +159,6 @@ export default function SettingsTab({ soundscapeVol, setSoundscapeVol, onLogout,
           </div>
         </div>
       )}
-
-      {/* Card 4: Soundscape & Background Audio Volume */}
-      <div style={CS.card}>
-        <div style={CS.cardTitle}>🔊 Audio & Ambient Soundscapes</div>
-        <div style={{ fontSize: 13, color: 'var(--t3)', marginBottom: 14, lineHeight: 1.5 }}>
-          Adjust the ambient background focus audio and mentor sound effects.
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, background: 'var(--bg3)', padding: '16px', borderRadius: 12, border: '1px solid var(--border)' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, fontWeight: 700, color: 'var(--t1)' }}>
-            <span>Ambient Volume</span>
-            <span>{Math.round(soundscapeVol * 100)}%</span>
-          </div>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.05"
-            value={soundscapeVol}
-            onChange={(e) => {
-              const val = parseFloat(e.target.value);
-              setSoundscapeVol(val);
-              setUserSoundscapeVolume(val);
-            }}
-            style={{ width: '100%', accentColor: 'var(--accent)', cursor: 'pointer' }}
-          />
-        </div>
-      </div>
 
       {/* Card 5: Session & Sign Out */}
       {onLogout && (

@@ -18,6 +18,19 @@ interface PortfolioTabProps {
   passportSkills?: Array<{ id: string; name: string; level: number }>;
 }
 
+type PortfolioView = 'overview' | 'projects' | 'credentials' | 'resume' | 'verify';
+
+const STAFF_ROLES = ['admin', 'superadmin', 'teacher'];
+
+const sectionCard: React.CSSProperties = {
+  background: 'var(--card)',
+  border: '1px solid var(--border)',
+  borderRadius: 14,
+  padding: 20,
+};
+
+const divider = <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: 0 }} />;
+
 export default function PortfolioTab({ user, cOS, passportSkills: propPassportSkills }: PortfolioTabProps) {
   const passportSkills = propPassportSkills || (cOS?.skills || []).map((s: any) => ({
     id: s.id || s.name,
@@ -25,8 +38,9 @@ export default function PortfolioTab({ user, cOS, passportSkills: propPassportSk
     level: s.level || 1
   }));
 
-  const [activePortfolioRole, setActivePortfolioRole] = useState<'student' | 'recruiter' | 'faculty' | 'parent'>('student');
-  const [activePortfolioTab, setActivePortfolioTab] = useState<string>('Profile');
+  const isStaff = STAFF_ROLES.includes(user?.role);
+  const [view, setView] = useState<PortfolioView>('overview');
+  const [recruiterPreview, setRecruiterPreview] = useState(false);
 
   const {
     pitch,
@@ -36,7 +50,6 @@ export default function PortfolioTab({ user, cOS, passportSkills: propPassportSk
     setEditingPitch,
     savePitch,
     projects,
-    saveProjects,
     addProject,
     certificates,
     saveCertificates,
@@ -57,214 +70,51 @@ export default function PortfolioTab({ user, cOS, passportSkills: propPassportSk
   if (loading) {
     return (
       <div style={{ padding: 40, textAlign: 'center', color: 'var(--t3)', fontSize: 14.5 }}>
-        Loading portfolio from cloud...
+        Loading portfolio…
       </div>
     );
   }
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }} className="animate-fade-in">
-      {/* Role Perspective Switcher */}
-      <div style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.02)', padding: '10px 20px', borderRadius: 14, border: '1px solid var(--border)' }}>
-        <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)' }}>🔧 PORTFOLIO PERSPECTIVE SWITCH:</span>
-        <div style={{ display: 'flex', gap: 6 }}>
-          {[
-            { id: 'student', label: '🧑‍🎓 Student Portal' },
-            { id: 'recruiter', label: '🏢 Recruiter View' },
-            { id: 'faculty', label: '👩‍🏫 Faculty Desk' },
-            { id: 'parent', label: '👪 Parent Portal' }
-          ].map(role => (
-            <button
-              key={role.id}
-              onClick={() => setActivePortfolioRole(role.id as any)}
-              style={{
-                padding: '6px 12px',
-                borderRadius: 6,
-                border: 'none',
-                background: activePortfolioRole === role.id ? 'var(--accent)' : 'transparent',
-                color: activePortfolioRole === role.id ? '#fff' : 'var(--t3)',
-                fontSize: 12,
-                fontWeight: 700,
-                cursor: 'pointer'
-              }}
-            >
-              {role.label}
-            </button>
-          ))}
+  const verifiedProjects = projects.filter((p) => p.verified);
+  const verifiedCerts = certificates.filter((c) => c.verified);
+  const lastAccomplishment = (() => {
+    const verifiedVaultItem = cOS?.vaultItems?.find((v: any) => v.verified)?.title;
+    const lastQuest = cOS?.completedQuests?.length ? `Quest: ${cOS.completedQuests[cOS.completedQuests.length - 1]}` : null;
+    return verifiedVaultItem || lastQuest || 'Nothing verified yet — finish a quest to get started.';
+  })();
+
+  const views: Array<{ id: PortfolioView; label: string }> = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'projects', label: 'Projects & GitHub' },
+    { id: 'credentials', label: 'Credentials' },
+    { id: 'resume', label: 'Resume' },
+    ...(isStaff ? [{ id: 'verify' as PortfolioView, label: 'Verify (Faculty)' }] : []),
+  ];
+
+  // ── Recruiter preview: exactly what an employer sees ──
+  if (recruiterPreview) {
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }} className="animate-fade-in">
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', padding: '10px 16px', borderRadius: 12, background: 'var(--accent-light)', border: '1px solid var(--accent)' }}>
+          <span style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--accent)' }}>👁️ You are previewing your portfolio as a recruiter sees it</span>
+          <button type="button" className="btn-ghost btn-sm" onClick={() => setRecruiterPreview(false)}>← Back to editing</button>
         </div>
-      </div>
-
-      {/* 1. Student Portal View */}
-      {activePortfolioRole === 'student' && (
-        <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: 20, alignItems: 'start' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 4, background: 'var(--bg2)', padding: 8, borderRadius: 14, border: '1px solid var(--border)' }}>
-            {['Profile', 'Resume', 'Projects', 'Certificates', 'Internships', 'Achievements', 'GitHub', 'Research', 'Recommendations', 'Timeline'].map(t => (
-              <button
-                key={t}
-                onClick={() => setActivePortfolioTab(t)}
-                style={{
-                  textAlign: 'left',
-                  padding: '8px 12px',
-                  border: 'none',
-                  borderRadius: 8,
-                  background: activePortfolioTab === t ? 'var(--accent-light)' : 'transparent',
-                  color: activePortfolioTab === t ? 'var(--accent)' : 'var(--t2)',
-                  fontSize: 14,
-                  fontWeight: activePortfolioTab === t ? 800 : 500,
-                  cursor: 'pointer'
-                }}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
-
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: 20 }}>
-            {activePortfolioTab === 'Profile' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <PitchSection
-                  pitch={pitch}
-                  tempPitch={tempPitch}
-                  setTempPitch={setTempPitch}
-                  editingPitch={editingPitch}
-                  setEditingPitch={setEditingPitch}
-                  savePitch={savePitch}
-                />
-                <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: 0 }} />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-                  <div>
-                    <h3 style={{ margin: '0 0 10px 0', fontSize: 15.5, fontWeight: 800 }}>🧬 Career DNA Snapshot</h3>
-                    <div style={{ background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)', fontSize: 13 }}>
-                      Verified ATS rating: <strong>85/100</strong>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 style={{ margin: '0 0 10px 0', fontSize: 15.5, fontWeight: 800 }}>🏆 Last Verified Accomplishment</h3>
-                    <div style={{ background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)', fontSize: 13 }}>
-                      {(() => {
-                        const verifiedVaultItem = cOS?.vaultItems?.find((v: any) => v.verified)?.title;
-                        const lastQuest = cOS?.completedQuests?.length ? `Quest: ${cOS.completedQuests[cOS.completedQuests.length - 1]}` : null;
-                        return verifiedVaultItem || lastQuest || 'None yet';
-                      })()}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activePortfolioTab === 'Resume' && (
-              <div style={{ padding: '24px', background: 'var(--bg3)', borderRadius: 12, border: '1px solid var(--border)', maxWidth: 640, margin: '0 auto' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
-                  <div>
-                    <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--t1)', margin: '0 0 4px 0' }}>{user?.displayName || 'Student Candidate'}</h3>
-                    <p style={{ fontSize: 13, color: 'var(--t3)', margin: 0, fontFamily: 'var(--font-mono)' }}>{user?.email || 'verified@career-os.internal'}</p>
-                  </div>
-                  <span style={{ fontSize: 11, padding: '3px 8px', borderRadius: 6, background: 'rgba(var(--brand-rgb), 0.12)', color: 'var(--accent)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-                    LIVE PORTFOLIO SYNC
-                  </span>
-                </div>
-                <div style={{ borderTop: '1px solid var(--border)', paddingTop: 14, marginBottom: 16 }}>
-                  <h4 style={{ fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--t2)', marginBottom: 8, fontFamily: 'var(--font-mono)' }}>
-                    Verified Skills ({passportSkills.length})
-                  </h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                    {passportSkills.map((s: any) => (
-                      <span key={s.id} style={{ fontSize: 12, background: 'var(--bg2)', border: '1px solid var(--border)', padding: '2px 8px', borderRadius: 4, color: 'var(--t1)' }}>
-                        {s.name} (L{s.level})
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div style={{ borderTop: '1px solid var(--border)', paddingTop: 14, marginBottom: 20 }}>
-                  <h4 style={{ fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--t2)', marginBottom: 8, fontFamily: 'var(--font-mono)' }}>
-                    Active Projects ({projects.length})
-                  </h4>
-                  <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'var(--t2)', display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    {projects.map(p => (
-                      <li key={p.id}><strong>{p.title}</strong> &mdash; {p.description}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div style={{ display: 'flex', gap: 12, justifyContent: 'center', alignItems: 'center', borderTop: '1px solid var(--border)', paddingTop: 16 }}>
-                  <button onClick={() => window.print()} className="btn-primary" style={{ padding: '8px 20px', fontSize: 13, fontWeight: 800 }}>
-                    🖨️ Print / Save as PDF
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {activePortfolioTab === 'Projects' && (
-              <ProjectsSection projects={projects} addProject={addProject} toggleVerification={toggleVerification} />
-            )}
-
-            {activePortfolioTab === 'Certificates' && (
-              <CertificatesSection
-                certificates={certificates}
-                saveCertificates={saveCertificates}
-                timeline={timeline}
-                saveTimeline={saveTimeline}
-                cOS={cOS}
-                user={user}
-              />
-            )}
-
-            {activePortfolioTab === 'Internships' && (
-              <div>
-                <h3 style={{ margin: '0 0 12px 0', fontSize: 16.5, fontWeight: 800 }}>Verified Internships</h3>
-                <div style={{ background: 'var(--bg3)', border: '1px solid var(--border)', padding: 14, borderRadius: 12 }}>
-                  <h4 style={{ margin: '0 0 4px 0', fontSize: 15, fontWeight: 800 }}>Stripe Security</h4>
-                  <div style={{ fontSize: 12.5, color: 'var(--t3)', marginBottom: 8 }}>Software Engineering Intern · 2026</div>
-                  <p style={{ fontSize: 14, color: 'var(--t2)', margin: 0 }}>Worked on transaction queue billing ledger systems.</p>
-                </div>
-              </div>
-            )}
-
-            {activePortfolioTab === 'Achievements' && (
-              <AchievementsSection achievements={achievements} addAchievement={addAchievement} cOS={cOS} />
-            )}
-
-            {activePortfolioTab === 'GitHub' && (
-              <GithubReposSection linkedRepos={linkedRepos} saveLinkedRepos={saveLinkedRepos} />
-            )}
-
-            {activePortfolioTab === 'Research' && (
-              <ResearchSection researchPapers={researchPapers} toggleVerification={toggleVerification} />
-            )}
-
-            {activePortfolioTab === 'Recommendations' && (
-              <RecommendationsSection recommendations={recommendations} addRecommendation={addRecommendation} />
-            )}
-
-            {activePortfolioTab === 'Timeline' && (
-              <TimelineSection
-                timeline={timeline}
-                addTimelineEvent={addTimelineEvent}
-                projects={projects}
-                certificates={certificates}
-                cOS={cOS}
-              />
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* 2. Recruiter View */}
-      {activePortfolioRole === 'recruiter' && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: 20 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, gridColumn: 'span 2' }}>
             <div style={CS.card}>
-              <div style={CS.cardLabel}>Dossier Core Professional Pitch</div>
-              <p style={{ fontSize: 15.5, color: 'var(--t2)', lineHeight: 1.6, margin: 0 }}>"{pitch}"</p>
+              <div style={CS.cardLabel}>Professional Pitch</div>
+              <p style={{ fontSize: 15.5, color: 'var(--t2)', lineHeight: 1.6, margin: 0 }}>{pitch ? `"${pitch}"` : 'No pitch written yet.'}</p>
             </div>
             <div style={CS.card}>
-              <div style={CS.cardLabel}>Verified Projects Portfolio</div>
+              <div style={CS.cardLabel}>Verified Projects ({verifiedProjects.length})</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {projects.filter(p => p.verified).map(p => (
+                {verifiedProjects.length === 0 && <div style={{ fontSize: 13.5, color: 'var(--t3)' }}>No verified projects yet.</div>}
+                {verifiedProjects.map((p) => (
                   <div key={p.id} style={{ background: 'var(--bg3)', padding: 14, borderRadius: 12, border: '1px solid var(--border)' }}>
-                    <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800 }}>{p.title}</h4>
+                    <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800, color: 'var(--t1)' }}>{p.title}</h4>
                     <p style={{ fontSize: 14, color: 'var(--t2)', margin: '6px 0 10px' }}>{p.description}</p>
-                    <div style={{ display: 'flex', gap: 6 }}>
-                      {p.tech.map(t => <span key={t} style={{ fontSize: 11, padding: '2px 6px', borderRadius: 4, background: 'var(--bg2)' }}>{t}</span>)}
+                    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                      {p.tech.map((t) => <span key={t} style={{ fontSize: 11, padding: '2px 6px', borderRadius: 4, background: 'var(--bg2)', border: '1px solid var(--border)', color: 'var(--t2)' }}>{t}</span>)}
                     </div>
                   </div>
                 ))}
@@ -272,57 +122,223 @@ export default function PortfolioTab({ user, cOS, passportSkills: propPassportSk
             </div>
           </div>
           <div style={CS.card}>
-            <div style={CS.cardLabel}>Verified Accreditations</div>
+            <div style={CS.cardLabel}>Verified Credentials ({verifiedCerts.length})</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {certificates.filter(c => c.verified).map(c => (
+              {verifiedCerts.length === 0 && <div style={{ fontSize: 13.5, color: 'var(--t3)' }}>No verified credentials yet.</div>}
+              {verifiedCerts.map((c) => (
                 <div key={c.id} style={{ background: 'var(--bg3)', padding: 10, borderRadius: 8, border: '1px solid var(--border)', fontSize: 13 }}>
-                  <strong>{c.title}</strong>
+                  <strong style={{ color: 'var(--t1)' }}>{c.title}</strong>
                   <div style={{ fontSize: 12, color: 'var(--t3)' }}>{c.issuer}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      )}
+      </div>
+    );
+  }
 
-      {/* 3. Faculty Desk View */}
-      {activePortfolioRole === 'faculty' && (
-        <div style={CS.card}>
-          <div style={CS.cardLabel}>Student Portfolio Verifications Board</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <div>
-              <h4 style={{ fontSize: 13, textTransform: 'uppercase', color: 'var(--t3)', margin: '0 0 10px' }}>Projects pending validation:</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {projects.map(p => (
-                  <div key={p.id} style={{ display: 'flex', justifySelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', background: 'var(--bg3)', padding: 12, borderRadius: 10 }}>
-                    <div>
-                      <strong style={{ fontSize: 14.5 }}>{p.title}</strong>
-                      <div style={{ fontSize: 12.5, color: 'var(--t3)' }}>{p.tech.join(', ')}</div>
-                    </div>
-                    <button
-                      onClick={() => toggleVerification('project', p.id)}
-                      style={{ padding: '6px 12px', fontSize: 11.5, fontWeight: 800, background: p.verified ? 'var(--coral)' : 'var(--green)', color: 'var(--text)', border: 'none', borderRadius: 6, cursor: 'pointer' }}
-                    >
-                      {p.verified ? 'Revoke Verify' : 'Verify Project'}
-                    </button>
-                  </div>
-                ))}
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }} className="animate-fade-in">
+      {/* Sub-view pills + recruiter preview */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+        <div role="tablist" aria-label="Portfolio sections" style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {views.map((v) => {
+            const active = view === v.id;
+            return (
+              <button
+                key={v.id}
+                role="tab"
+                aria-selected={active}
+                type="button"
+                onClick={() => setView(v.id)}
+                style={{
+                  padding: '7px 14px',
+                  borderRadius: 999,
+                  border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
+                  background: active ? 'var(--accent-light)' : 'var(--bg2)',
+                  color: active ? 'var(--accent)' : 'var(--t2)',
+                  fontSize: 13.5,
+                  fontWeight: active ? 700 : 500,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s',
+                }}
+              >
+                {v.label}
+              </button>
+            );
+          })}
+        </div>
+        <button type="button" className="btn-ghost btn-sm" onClick={() => setRecruiterPreview(true)}>
+          👁️ Preview as recruiter
+        </button>
+      </div>
+
+      {view === 'overview' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={sectionCard}>
+            <PitchSection
+              pitch={pitch}
+              tempPitch={tempPitch}
+              setTempPitch={setTempPitch}
+              editingPitch={editingPitch}
+              setEditingPitch={setEditingPitch}
+              savePitch={savePitch}
+            />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
+            {[
+              { label: 'Career Score', value: Number(cOS?.careerScore) || 0, hint: 'out of 100' },
+              { label: 'Verified Projects', value: verifiedProjects.length, hint: `${projects.length} total` },
+              { label: 'Verified Credentials', value: verifiedCerts.length, hint: `${certificates.length} total` },
+              { label: 'Skills on Passport', value: passportSkills.length, hint: 'tracked skills' },
+            ].map((s) => (
+              <div key={s.label} style={{ ...sectionCard, padding: 16 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>{s.label}</div>
+                <div style={{ fontSize: 26, fontWeight: 800, color: 'var(--t1)', fontFamily: 'var(--font-display)', lineHeight: 1.2, marginTop: 4 }}>{s.value}</div>
+                <div style={{ fontSize: 12, color: 'var(--t3)' }}>{s.hint}</div>
               </div>
-            </div>
+            ))}
+          </div>
+          <div style={{ ...sectionCard, padding: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'var(--t3)', fontFamily: 'var(--font-mono)', marginBottom: 6 }}>🏆 Latest verified accomplishment</div>
+            <div style={{ fontSize: 14, color: 'var(--t1)' }}>{lastAccomplishment}</div>
+          </div>
+          <div style={sectionCard}>
+            <TimelineSection
+              timeline={timeline}
+              addTimelineEvent={addTimelineEvent}
+              projects={projects}
+              certificates={certificates}
+              cOS={cOS}
+            />
           </div>
         </div>
       )}
 
-      {/* 4. Parent Portal View */}
-      {activePortfolioRole === 'parent' && (
+      {view === 'projects' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={sectionCard}>
+            <ProjectsSection projects={projects} addProject={addProject} toggleVerification={toggleVerification} />
+          </div>
+          <div style={sectionCard}>
+            <GithubReposSection linkedRepos={linkedRepos} saveLinkedRepos={saveLinkedRepos} />
+          </div>
+          {researchPapers.length > 0 && (
+            <div style={sectionCard}>
+              <ResearchSection researchPapers={researchPapers} toggleVerification={toggleVerification} />
+            </div>
+          )}
+        </div>
+      )}
+
+      {view === 'credentials' && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <div style={sectionCard}>
+            <CertificatesSection
+              certificates={certificates}
+              saveCertificates={saveCertificates}
+              timeline={timeline}
+              saveTimeline={saveTimeline}
+              cOS={cOS}
+              user={user}
+            />
+          </div>
+          <div style={sectionCard}>
+            <AchievementsSection achievements={achievements} addAchievement={addAchievement} cOS={cOS} />
+          </div>
+          <div style={sectionCard}>
+            <RecommendationsSection recommendations={recommendations} addRecommendation={addRecommendation} />
+          </div>
+        </div>
+      )}
+
+      {view === 'resume' && (
+        <div style={{ ...sectionCard, maxWidth: 720, margin: '0 auto', width: '100%', padding: 28 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 16 }}>
+            <div>
+              <h3 style={{ fontSize: 22, fontWeight: 800, color: 'var(--t1)', margin: '0 0 4px 0' }}>{user?.displayName || 'Student Candidate'}</h3>
+              <p style={{ fontSize: 13, color: 'var(--t3)', margin: 0, fontFamily: 'var(--font-mono)' }}>{user?.email || ''}</p>
+            </div>
+            <span style={{ fontSize: 11, padding: '3px 8px', borderRadius: 6, background: 'var(--accent-light)', color: 'var(--accent)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
+              LIVE FROM PORTFOLIO
+            </span>
+          </div>
+          {pitch && (
+            <>
+              {divider}
+              <p style={{ fontSize: 14, color: 'var(--t2)', lineHeight: 1.6, margin: '14px 0' }}>{pitch}</p>
+            </>
+          )}
+          {divider}
+          <div style={{ padding: '14px 0' }}>
+            <h4 style={{ fontSize: 12.5, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--t3)', margin: '0 0 8px', fontFamily: 'var(--font-mono)' }}>
+              Skills ({passportSkills.length})
+            </h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+              {passportSkills.length === 0 && <span style={{ fontSize: 13, color: 'var(--t3)' }}>Complete quests to add verified skills.</span>}
+              {passportSkills.map((s: any) => (
+                <span key={s.id} style={{ fontSize: 12, background: 'var(--bg3)', border: '1px solid var(--border)', padding: '2px 8px', borderRadius: 4, color: 'var(--t1)' }}>
+                  {s.name} · L{s.level}
+                </span>
+              ))}
+            </div>
+          </div>
+          {divider}
+          <div style={{ padding: '14px 0' }}>
+            <h4 style={{ fontSize: 12.5, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--t3)', margin: '0 0 8px', fontFamily: 'var(--font-mono)' }}>
+              Projects ({projects.length})
+            </h4>
+            {projects.length === 0 ? (
+              <span style={{ fontSize: 13, color: 'var(--t3)' }}>No projects added yet.</span>
+            ) : (
+              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13.5, color: 'var(--t2)', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                {projects.map((p) => (
+                  <li key={p.id}><strong style={{ color: 'var(--t1)' }}>{p.title}</strong> — {p.description}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+          {verifiedCerts.length > 0 && (
+            <>
+              {divider}
+              <div style={{ padding: '14px 0' }}>
+                <h4 style={{ fontSize: 12.5, textTransform: 'uppercase', letterSpacing: '0.5px', color: 'var(--t3)', margin: '0 0 8px', fontFamily: 'var(--font-mono)' }}>
+                  Certifications
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13.5, color: 'var(--t2)', display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  {verifiedCerts.map((c) => <li key={c.id}><strong style={{ color: 'var(--t1)' }}>{c.title}</strong> — {c.issuer}</li>)}
+                </ul>
+              </div>
+            </>
+          )}
+          {divider}
+          <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 16 }}>
+            <button type="button" onClick={() => window.print()} className="btn-primary" style={{ padding: '8px 20px', fontSize: 13, fontWeight: 800 }}>
+              🖨️ Print / Save as PDF
+            </button>
+          </div>
+        </div>
+      )}
+
+      {view === 'verify' && isStaff && (
         <div style={CS.card}>
-          <div style={CS.cardLabel}>Verified Academic Progress Timeline</div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {timeline.filter(t => t.verified).map(evt => (
-              <div key={evt.id} style={{ borderBottom: '1px solid var(--border)', paddingBottom: 10 }}>
-                <span style={{ fontSize: 12, color: 'var(--accent)', fontWeight: 800 }}>{evt.year} &middot; {evt.category}</span>
-                <h4 style={{ margin: '2px 0', fontSize: 14.5 }}>{evt.title}</h4>
-                <p style={{ fontSize: 12.5, color: 'var(--t3)', margin: 0 }}>{evt.detail}</p>
+          <div style={CS.cardLabel}>Project Verification Board</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {projects.length === 0 && <div style={{ fontSize: 13.5, color: 'var(--t3)' }}>No projects to review.</div>}
+            {projects.map((p) => (
+              <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, background: 'var(--bg3)', padding: 12, borderRadius: 10, border: '1px solid var(--border)' }}>
+                <div style={{ minWidth: 0 }}>
+                  <strong style={{ fontSize: 14.5, color: 'var(--t1)' }}>{p.title}</strong>
+                  <div style={{ fontSize: 12.5, color: 'var(--t3)' }}>{p.tech.join(', ')}</div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => toggleVerification('project', p.id)}
+                  style={{ padding: '6px 12px', fontSize: 11.5, fontWeight: 800, background: p.verified ? 'var(--coral)' : 'var(--green)', color: '#ffffff', border: 'none', borderRadius: 6, cursor: 'pointer', flexShrink: 0 }}
+                >
+                  {p.verified ? 'Revoke' : 'Verify'}
+                </button>
               </div>
             ))}
           </div>
