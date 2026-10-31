@@ -501,7 +501,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                   progress={courseProgress}
                   onOpenPracticeTest={handleOpenPracticeQuiz}
                   onOpenCapstoneDesk={() => setShowCapstonePortal(true)}
-                  onOpenQrModal={() => setShowCapstonePortal(true)}
+                  onOpenQrModal={() => setShowQrModal(true)}
                   onGetCertificate={() => setShowCapstonePortal(true)}
                   onOpenInternshipDesk={() => setShowInternshipPanel(true)}
                   onOpenPreviewCredentials={() => {

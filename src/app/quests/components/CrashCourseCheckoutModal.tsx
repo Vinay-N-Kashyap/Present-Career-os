@@ -38,10 +38,10 @@ const TRACK_LABELS: Record<'web_fullstack' | 'python_ai', string> = {
 };
 
 const ALL_DELIVERABLES = [
-  { icon: '🎓', label: 'Project-Based Certificate', sub: 'SHA-256 verifiable credential' },
-  { icon: '🏢', label: 'Real-Time Internship Certificate', sub: 'QR + verifiable hash' },
-  { icon: '💼', label: 'Placement-Ready Prep', sub: 'Interview & resume coaching' },
-  { icon: '🌐', label: '4 Language Trainings', sub: 'English, German, French, Spanish' },
+  { icon: '🎓', label: 'Verifiable Certificate', sub: 'SHA-256 signed credential' },
+  { icon: '🏢', label: 'Industry Internship', sub: 'Live real-time supervisor grading' },
+  { icon: '💼', label: 'Campus Placement Prep', sub: '1-on-1 AI mock interviews' },
+  { icon: '🌐', label: 'Corporate Languages', sub: 'Technical English & documentation' },
 ];
 const DELIVERABLES = ALL_DELIVERABLES.filter((d) => INTERNSHIP_AVAILABLE || !/internship/i.test(d.label));
 
@@ -49,43 +49,31 @@ const PAYMENT_METHODS = [
   {
     id: 'razorpay',
     icon: '💳',
-    title: 'Razorpay Live',
-    subtitle: 'UPI • Cards • NetBanking',
-    description: 'Secure instant payment via Razorpay gateway',
+    title: 'Razorpay Live UPI',
+    subtitle: 'Google Pay • PhonePe • Cards',
+    description: 'Instant secure checkout via UPI or NetBanking',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
   },
   {
     id: 'pins',
     icon: '🪙',
     title: 'PinIT Vault Coins',
-    subtitle: 'Spend your earned Pins',
-    description: 'Pay directly from your PinIT wallet balance',
+    subtitle: 'Pay with earned Pins',
+    description: 'Debit directly from your PinIT student wallet',
     gradient: 'linear-gradient(135deg, #f59e0b, #f97316)',
   },
   {
     id: 'sandbox',
     icon: '🧪',
-    title: 'Instant Demo Checkout',
-    subtitle: 'Sandbox / Offline Testing',
-    description: 'Simulated verified transaction for development',
+    title: 'Instant Sandbox Demo',
+    subtitle: 'Offline Verification Testing',
+    description: 'Simulate verified enrollment without live payment keys',
     gradient: 'linear-gradient(135deg, #10b981, #059669)',
   },
 ];
 
 // ─────────────────────────────────────────────────────────────────────
-// Helper: generate mock transaction ID
-// ─────────────────────────────────────────────────────────────────────
-function generateMockTransactionId(): string {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let id = 'TXN-';
-  for (let i = 0; i < 12; i++) {
-    id += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return id;
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// Helper: format INR currency
+// Helpers
 // ─────────────────────────────────────────────────────────────────────
 export function formatINR(amount: number): string {
   return new Intl.NumberFormat('en-IN', {
@@ -110,7 +98,7 @@ export function calculateCheckoutPricing(baseTuition: number, promoApplied: bool
 }
 
 // ─────────────────────────────────────────────────────────────────────
-// Component
+// Main Component
 // ─────────────────────────────────────────────────────────────────────
 export default function CrashCourseCheckoutModal({
   isOpen,
@@ -151,7 +139,6 @@ export default function CrashCourseCheckoutModal({
 
   const { baseTuition, gstAmount, finalPayable } = calculateCheckoutPricing(plan.inrPrice, promoApplied);
   const canPayWithPins = userPins >= plan.pinsPrice;
-  // What the server actually charged (the order summary above is an estimate).
   const amountPaidLabel = confirmedEnrollment
     ? confirmedEnrollment.paymentMethod === 'pins'
       ? `${confirmedEnrollment.pinsDeducted ?? confirmedEnrollment.amountPaid} Pins`
@@ -196,7 +183,6 @@ Thank you for enrolling with PinIT Career OS!
     toast.success('Receipt Downloaded', 'Your enrollment receipt has been saved.');
   };
 
-  // The server creates the enrollment when payment is confirmed; launching only opens it.
   const handleLaunchWorkspace = () => {
     if (!confirmedEnrollment) return;
     setIsLaunchingWorkspace(true);
@@ -205,7 +191,6 @@ Thank you for enrolling with PinIT Career OS!
     setTimeout(() => setIsLaunchingWorkspace(false), 1200);
   };
 
-  // Closing after a successful payment still activates the enrollment in the page.
   const handleClose = () => {
     if (confirmedEnrollment) {
       onSuccessEnrollment(confirmedEnrollment, walletInfo?.newBalance ?? null);
@@ -246,8 +231,6 @@ Thank you for enrolling with PinIT Career OS!
 
   type VerifyResponse = { ok: boolean; enrollment?: CrashCourseEnrollment; paymentId?: string; rewardPinsCredited?: number };
 
-  // Verification enrolls the student server-side. If enrollment hiccups after a
-  // confirmed payment, retrying is safe: the server returns the same enrollment.
   const verifyAndEnroll = async (verifyBody: Record<string, string>): Promise<VerifyResponse> => {
     for (let attempt = 1; ; attempt++) {
       try {
@@ -276,7 +259,7 @@ Thank you for enrolling with PinIT Career OS!
   const handleRazorpayPayment = async () => {
     try {
       setPaymentState('processing');
-      setProcessingMessage('Creating your secure payment order...');
+      setProcessingMessage('Creating secure order...');
 
       const orderData = await api.post<{ orderId?: string; order_id?: string; amount: number; keyId?: string; key?: string; isMock?: boolean }>(
         '/api/payment/create-order',
@@ -284,9 +267,8 @@ Thank you for enrolling with PinIT Career OS!
       );
       const razorpayOrderId = orderData.orderId || orderData.order_id || '';
 
-      // Development without Razorpay keys: the server issues a mock order (never in production).
       if (orderData.isMock) {
-        setProcessingMessage('Verifying your payment...');
+        setProcessingMessage('Verifying sandbox payment...');
         const mockPaymentId = `pay_mock_${Date.now()}`;
         const verifyData = await verifyAndEnroll({
           razorpay_order_id: razorpayOrderId,
@@ -308,11 +290,11 @@ Thank you for enrolling with PinIT Career OS!
         order_id: razorpayOrderId,
         handler: async (response) => {
           try {
-            setProcessingMessage('Verifying your payment...');
+            setProcessingMessage('Verifying payment & issuing credential...');
             const verifyData = await verifyAndEnroll({ ...response, planId: plan.id, track: activeTrack });
             finishCardEnrollment(verifyData, response.razorpay_payment_id, razorpayOrderId);
           } catch (err) {
-            failPayment('Enrollment Not Completed', err);
+            failPayment('Enrollment Failed', err);
           }
         },
         prefill: {
@@ -326,9 +308,9 @@ Thank you for enrolling with PinIT Career OS!
         },
       });
 
-      if (!razorpaySuccess) throw new Error('Razorpay SDK failed to load');
+      if (!razorpaySuccess) throw new Error('Razorpay checkout initialization failed.');
     } catch (error) {
-      failPayment('Payment Failed', error);
+      failPayment('Payment Error', error);
     }
   };
 
@@ -431,7 +413,7 @@ Thank you for enrolling with PinIT Career OS!
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
-        padding: 24,
+        padding: 16,
       }}
       aria-modal="true"
       role="dialog"
@@ -441,242 +423,211 @@ Thank you for enrolling with PinIT Career OS!
         style={{
           position: 'relative',
           width: '100%',
-          maxWidth: 620,
-          maxHeight: '92vh',
-          overflow: 'auto',
-          background: 'rgba(15, 23, 42, 0.92)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-          borderRadius: 24,
-          boxShadow: '0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.15)',
+          maxWidth: 820,
+          maxHeight: 'min(92vh, 620px)',
+          display: 'flex',
+          flexDirection: 'column',
+          background: 'rgba(15, 23, 42, 0.96)',
+          border: '1.5px solid rgba(99, 102, 241, 0.25)',
+          borderRadius: 20,
+          boxShadow: '0 24px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08)',
           color: 'var(--text)',
+          overflow: 'hidden',
         }}
       >
         {paymentState === 'success' && renderConfetti()}
 
-        {/* ── Header ───────────────────────────────────────────────── */}
+        {/* ── Compact Header (Zero Scroll Header) ────────────────── */}
         <div style={{
-          padding: '22px 28px',
+          padding: '14px 22px',
           borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'flex-start',
-          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(16, 185, 129, 0.08))',
+          alignItems: 'center',
+          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.14), rgba(16, 185, 129, 0.08))',
+          flexShrink: 0,
         }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-              <span style={{ fontSize: 28.5 }}>🚀</span>
-              <h2 style={{ fontSize: 23, fontWeight: 900, margin: 0, fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
-                {paymentState === 'success' ? 'Welcome Aboard!' : 'Secure Checkout'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: 22 }}>🚀</span>
+            <div>
+              <h2 style={{ fontSize: 18, fontWeight: 900, margin: 0, fontFamily: 'var(--font-display)', color: 'var(--t1)', lineHeight: 1.2 }}>
+                {paymentState === 'success' ? 'Enrollment Confirmed!' : `Enroll in ${plan.title}`}
               </h2>
+              <div style={{ fontSize: 12, color: 'var(--t3)', marginTop: 2 }}>
+                {paymentState === 'success' ? 'Your curriculum workspace is ready.' : 'Instant verified activation • Zero hidden charges'}
+              </div>
             </div>
-            <p style={{ margin: 0, fontSize: 14.5, color: 'var(--t3)' }}>
-              {paymentState === 'success' ? 'Your enrollment is confirmed. Let\'s build your future.' : 'Complete your enrollment in under 2 minutes.'}
-            </p>
           </div>
-          <button
-            data-testid="btn-close-checkout"
-            onClick={handleClose}
-            aria-label="Close checkout"
-            style={{
-              padding: '6px 12px',
-              borderRadius: 8,
-              background: 'rgba(255, 255, 255, 0.06)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              color: 'var(--t2)',
-              fontSize: 14.5,
-              fontWeight: 700,
-              cursor: 'pointer',
-            }}
-          >
-            ✕
-          </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{
+              padding: '4px 10px', borderRadius: 20,
+              background: plan.highlightColor + '22',
+              border: `1px solid ${plan.highlightColor}55`,
+              color: plan.highlightColor,
+              fontSize: 11, fontWeight: 800,
+            }}>
+              {TRACK_LABELS[activeTrack]}
+            </span>
+            <button
+              data-testid="btn-close-checkout"
+              onClick={handleClose}
+              aria-label="Close checkout"
+              style={{
+                width: 32, height: 32, borderRadius: 8,
+                background: 'rgba(255, 255, 255, 0.06)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                color: 'var(--t2)', fontSize: 14, fontWeight: 700,
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
-        {/* ── Success State ────────────────────────────────────────── */}
+        {/* ── Success State View ─────────────────────────────────── */}
         {paymentState === 'success' ? (
-          <div data-testid="checkout-success-view" style={{ padding: '32px 28px', textAlign: 'center' }}>
+          <div data-testid="checkout-success-view" style={{ padding: '32px 28px', textAlign: 'center', overflowY: 'auto' }}>
             <div style={{
-              width: 88,
-              height: 88,
-              margin: '0 auto 18px',
-              borderRadius: '50%',
+              width: 76, height: 76, margin: '0 auto 16px', borderRadius: '50%',
               background: 'linear-gradient(135deg, #10b981, #059669)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 44,
-              boxShadow: '0 12px 32px rgba(16, 185, 129, 0.4)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: 38, boxShadow: '0 12px 32px rgba(16, 185, 129, 0.4)',
             }}>
               ✓
             </div>
-            <h3 style={{ fontSize: 24, fontWeight: 900, margin: '0 0 6px', fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
-              Enrollment Confirmed!
+            <h3 style={{ fontSize: 22, fontWeight: 900, margin: '0 0 6px', fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
+              Welcome to {plan.title}!
             </h3>
-            <p style={{ fontSize: 15, color: 'var(--t3)', marginBottom: 22 }}>
-              You're now enrolled in <strong style={{ color: 'var(--accent)' }}>{plan.title}</strong>.
+            <p style={{ fontSize: 14, color: 'var(--t3)', marginBottom: 20 }}>
+              Your seat is confirmed with verified SHA-256 credentials tracking.
             </p>
 
             <div style={{
-              padding: 16,
-              borderRadius: 14,
-              background: 'var(--bg3)',
-              border: '1px solid var(--border)',
-              marginBottom: 20,
-              textAlign: 'left',
+              padding: 14, borderRadius: 12, background: 'var(--bg3)',
+              border: '1px solid var(--border)', marginBottom: 18, textAlign: 'left', maxWidth: 440, margin: '0 auto 18px',
             }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                <span style={{ fontSize: 13, color: 'var(--t3)' }}>Transaction ID</span>
-                <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--accent)', fontFamily: 'monospace' }}>{transactionId}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12.5 }}>
+                <span style={{ color: 'var(--t3)' }}>Transaction ID</span>
+                <span style={{ fontWeight: 800, color: 'var(--accent)', fontFamily: 'monospace' }}>{transactionId}</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                <span style={{ fontSize: 13, color: 'var(--t3)' }}>Order ID</span>
-                <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)', fontFamily: 'monospace' }}>{orderId}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12.5 }}>
+                <span style={{ color: 'var(--t3)' }}>Order Reference</span>
+                <span style={{ fontWeight: 800, color: 'var(--t1)', fontFamily: 'monospace' }}>{orderId}</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ fontSize: 13, color: 'var(--t3)' }}>Program Start Date</span>
-                <span style={{ fontSize: 13, fontWeight: 800, color: '#10b981' }}>{new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-IN')}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12.5 }}>
+                <span style={{ color: 'var(--t3)' }}>Curriculum Access</span>
+                <span style={{ fontWeight: 800, color: '#10b981' }}>Instant 24/7 Access</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
               <button
                 data-testid="btn-download-receipt"
                 onClick={handleDownloadReceipt}
                 style={{
-                  padding: '13px 20px',
-                  borderRadius: 12,
-                  background: 'var(--bg3)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--t1)',
-                  fontSize: 15,
-                  fontWeight: 800,
-                  cursor: 'pointer',
+                  padding: '11px 18px', borderRadius: 10,
+                  background: 'var(--bg3)', border: '1px solid var(--border)',
+                  color: 'var(--t1)', fontSize: 13.5, fontWeight: 700, cursor: 'pointer',
                 }}
               >
-                📄 Download Enrollment Receipt
+                📄 Download Receipt
               </button>
               <button
                 data-testid="btn-launch-workspace"
                 onClick={handleLaunchWorkspace}
                 disabled={isLaunchingWorkspace}
                 style={{
-                  padding: '14px 20px',
-                  borderRadius: 12,
+                  padding: '11px 22px', borderRadius: 10,
                   background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                  border: 'none',
-                  color: '#fff',
-                  fontSize: 15.5,
-                  fontWeight: 900,
-                  cursor: 'pointer',
-                  boxShadow: '0 6px 20px rgba(99, 102, 241, 0.35)',
+                  border: 'none', color: '#fff', fontSize: 14, fontWeight: 800,
+                  cursor: 'pointer', boxShadow: '0 4px 16px rgba(99, 102, 241, 0.35)',
                   opacity: isLaunchingWorkspace ? 0.6 : 1,
                 }}
               >
-                {isLaunchingWorkspace ? '⏳ Launching...' : '🚀 Launch Program Workspace'}
+                {isLaunchingWorkspace ? '⏳ Launching...' : '🚀 Launch Program Workspace →'}
               </button>
             </div>
           </div>
         ) : (
-          <>
-            {/* ── Plan Summary ─────────────────────────────────────── */}
-            <div style={{ padding: '20px 28px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 14 }}>
-                <div>
-                  <h3 style={{ fontSize: 18.5, fontWeight: 900, margin: '0 0 4px', fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
-                    {plan.title}
-                  </h3>
-                  <p style={{ margin: 0, fontSize: 13, color: 'var(--t3)' }}>{plan.subtitle}</p>
-                </div>
-                <span style={{
-                  padding: '5px 12px',
-                  borderRadius: 8,
-                  background: plan.highlightColor + '22',
-                  border: `1px solid ${plan.highlightColor}55`,
-                  color: plan.highlightColor,
-                  fontSize: 12,
-                  fontWeight: 800,
-                  whiteSpace: 'nowrap',
-                }}>
-                  {TRACK_LABELS[activeTrack]}
-                </span>
-              </div>
+          /* ── 2-Column Side-by-Side Split Body (Zero Vertical Scrolling Needed) ── */
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', flex: 1, minHeight: 0, overflow: 'hidden' }}>
 
-              <div style={{
-                padding: '10px 14px',
-                borderRadius: 10,
-                background: 'rgba(56, 189, 248, 0.08)',
-                border: '1px solid rgba(56, 189, 248, 0.2)',
-                marginBottom: 16,
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontWeight: 700, color: '#38bdf8' }}>
-                  <span>⏱️</span>
-                  <span>{plan.totalProgramDuration} (Course + 1M Project{INTERNSHIP_AVAILABLE ? ` + ${plan.internshipDurationMonths} Real-time Internship` : ''})</span>
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 8 }}>
-                {DELIVERABLES.map((item) => (
-                  <div key={item.label} style={{
-                    padding: 10,
-                    borderRadius: 10,
-                    background: 'var(--bg3)',
-                    border: '1px solid var(--border)',
-                  }}>
-                    <div style={{ fontSize: 20, marginBottom: 4 }}>{item.icon}</div>
-                    <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--t1)', marginBottom: 2 }}>{item.label}</div>
-                    <div style={{ fontSize: 10.5, color: 'var(--t4)' }}>{item.sub}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* ── Pricing Breakdown ───────────────────────────────── */}
-            <div style={{ padding: '20px 28px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <h4 style={{ fontSize: 15.5, fontWeight: 900, margin: '0 0 14px', fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
-                💰 Pricing Breakdown
-              </h4>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
-                  <span style={{ color: 'var(--t2)' }}>Base Tuition Fee</span>
-                  <span data-testid="checkout-base-tuition" style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(baseTuition)}</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
-                  <span style={{ color: 'var(--t2)' }}>Scholar Scholarship / Early Bird Promo</span>
-                  <span data-testid="checkout-promo-discount" style={{ fontWeight: 800, color: '#10b981' }}>
-                    {promoApplied ? `− ${formatINR(PROMO_DISCOUNT)}` : 'Not applied'}
+            {/* ── LEFT COLUMN: Plan & Pricing Summary ── */}
+            <div style={{
+              padding: '18px 22px',
+              borderRight: '1px solid rgba(255, 255, 255, 0.08)',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              background: 'rgba(255, 255, 255, 0.01)',
+              overflowY: 'auto',
+            }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: '#38bdf8', background: 'rgba(56, 189, 248, 0.1)', padding: '3px 8px', borderRadius: 6 }}>
+                    ⏱️ {plan.totalProgramDuration}
+                  </span>
+                  <span style={{ fontSize: 12, color: 'var(--t3)' }}>
+                    ({plan.durationWeeks} Weeks + Capstone)
                   </span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14.5 }}>
-                  <span style={{ color: 'var(--t2)' }}>18% GST</span>
-                  <span data-testid="checkout-gst-amount" style={{ fontWeight: 800, color: 'var(--t1)' }}>{formatINR(gstAmount)}</span>
-                </div>
-              </div>
 
-              <div style={{
-                padding: '12px 14px',
-                borderRadius: 10,
-                background: 'var(--bg3)',
-                border: '1px dashed rgba(245, 158, 11, 0.3)',
-                marginBottom: 12,
-              }}>
-                <div style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
+                {/* Deliverables Pills */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6, marginBottom: 14 }}>
+                  {DELIVERABLES.map((item) => (
+                    <div key={item.label} style={{
+                      padding: '7px 9px', borderRadius: 8,
+                      background: 'rgba(255, 255, 255, 0.03)',
+                      border: '1px solid var(--border)',
+                      display: 'flex', alignItems: 'center', gap: 8,
+                    }}>
+                      <span style={{ fontSize: 16 }}>{item.icon}</span>
+                      <div style={{ minWidth: 0 }}>
+                        <div style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--t1)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          {item.label}
+                        </div>
+                        <div style={{ fontSize: 10, color: 'var(--t4)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          {item.sub}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Pricing Calculation */}
+                <div style={{
+                  padding: '12px 14px', borderRadius: 12,
+                  background: 'var(--bg3)', border: '1px solid var(--border)',
+                  display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12,
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13 }}>
+                    <span style={{ color: 'var(--t2)' }}>Base Tuition Fee</span>
+                    <span data-testid="checkout-base-tuition" style={{ fontWeight: 700, color: 'var(--t1)' }}>{formatINR(baseTuition)}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13 }}>
+                    <span style={{ color: 'var(--t2)' }}>Scholarship Promo</span>
+                    <span data-testid="checkout-promo-discount" style={{ fontWeight: 800, color: '#10b981' }}>
+                      {promoApplied ? `− ${formatINR(PROMO_DISCOUNT)}` : 'Available'}
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13 }}>
+                    <span style={{ color: 'var(--t2)' }}>Statutory GST (18%)</span>
+                    <span data-testid="checkout-gst-amount" style={{ fontWeight: 700, color: 'var(--t1)' }}>{formatINR(gstAmount)}</span>
+                  </div>
+                </div>
+
+                {/* Promo Code Input */}
+                <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
                   <input
                     data-testid="input-promo-code"
                     type="text"
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
-                    placeholder="Enter promo code (e.g. PINIT2026)"
+                    placeholder="Promo code (PINIT2026)"
                     style={{
-                      flex: 1,
-                      padding: '9px 12px',
-                      borderRadius: 8,
-                      border: '1px solid var(--border)',
-                      background: 'var(--bg2)',
-                      color: 'var(--text)',
-                      fontSize: 14,
-                      fontWeight: 600,
-                      outline: 'none',
+                      flex: 1, padding: '7px 10px', borderRadius: 8,
+                      border: '1px solid var(--border)', background: 'var(--bg2)',
+                      color: 'var(--text)', fontSize: 12.5, fontWeight: 600, outline: 'none',
                     }}
                     aria-label="Promo code"
                   />
@@ -684,182 +635,146 @@ Thank you for enrolling with PinIT Career OS!
                     data-testid="btn-apply-promo"
                     onClick={handleApplyPromo}
                     style={{
-                      padding: '9px 16px',
-                      borderRadius: 8,
+                      padding: '7px 12px', borderRadius: 8,
                       background: 'linear-gradient(135deg, #f59e0b, #f97316)',
-                      border: 'none',
-                      color: '#fff',
-                      fontSize: 13,
-                      fontWeight: 800,
-                      cursor: 'pointer',
+                      border: 'none', color: '#fff', fontSize: 12, fontWeight: 800, cursor: 'pointer',
                     }}
                   >
                     Apply
                   </button>
                 </div>
-                <div style={{ fontSize: 12, color: 'var(--t4)' }}>
-                  💡 Use code <strong style={{ color: '#f59e0b', fontFamily: 'monospace' }}>PINIT2026</strong> to save ₹1,000 instantly
-                </div>
               </div>
 
+              {/* Final Payable Total Banner */}
               <div style={{
-                padding: '14px 16px',
-                borderRadius: 12,
+                padding: '10px 14px', borderRadius: 10,
                 background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1))',
                 border: '1px solid rgba(139, 92, 246, 0.3)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               }}>
-                <span style={{ fontSize: 15.5, fontWeight: 800, color: 'var(--t1)' }}>Final Payable</span>
-                <span data-testid="checkout-final-payable" style={{ fontSize: 26.5, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-display)' }}>
+                <span style={{ fontSize: 13.5, fontWeight: 800, color: 'var(--t1)' }}>Final Payable</span>
+                <span data-testid="checkout-final-payable" style={{ fontSize: 22, fontWeight: 900, color: '#fff', fontFamily: 'var(--font-display)' }}>
                   {formatINR(finalPayable)}
                 </span>
               </div>
             </div>
 
-            {/* ── Payment Methods ─────────────────────────────────── */}
-            <div style={{ padding: '20px 28px', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <h4 style={{ fontSize: 15.5, fontWeight: 900, margin: '0 0 12px', fontFamily: 'var(--font-display)', color: 'var(--t1)' }}>
-                🛡️ Choose Payment Method
-              </h4>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {PAYMENT_METHODS.map((method) => {
-                  const isDisabled = method.id === 'pins' && !canPayWithPins;
-                  const isSelected = selectedMethod === method.id;
-                  return (
-                    <button
-                      key={method.id}
-                      data-testid={`btn-payment-method-${method.id}`}
-                      onClick={() => setSelectedMethod(method.id as PaymentMethod)}
-                      disabled={isDisabled}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 14,
-                        padding: '14px 16px',
-                        borderRadius: 14,
-                        border: isSelected ? '1.5px solid var(--accent)' : '1px solid var(--border)',
-                        background: isSelected
-                          ? 'rgba(99, 102, 241, 0.1)'
-                          : isDisabled
-                            ? 'rgba(255, 255, 255, 0.02)'
-                            : 'var(--bg3)',
-                        cursor: isDisabled ? 'not-allowed' : 'pointer',
-                        opacity: isDisabled ? 0.5 : 1,
-                        transition: 'all 0.2s ease',
-                        textAlign: 'left',
-                      }}
-                    >
-                      <span style={{
-                        width: 42,
-                        height: 42,
-                        borderRadius: 12,
-                        background: method.gradient,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: 21,
-                        flexShrink: 0,
-                      }}>
-                        {method.icon}
-                      </span>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 15, fontWeight: 900, color: 'var(--t1)', marginBottom: 2 }}>
-                          {method.title}
-                        </div>
-                        <div style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--t3)', marginBottom: 3 }}>
-                          {method.subtitle}
-                        </div>
-                        <div style={{ fontSize: 12, color: 'var(--t4)' }}>{method.description}</div>
-                        {method.id === 'pins' && (
-                          <div style={{ fontSize: 12, fontWeight: 700, color: canPayWithPins ? '#f59e0b' : '#ef4444', marginTop: 3 }}>
-                            {canPayWithPins ? `Balance: ${userPins} Pins • Price: ${plan.pinsPrice} Pins` : `Need ${plan.pinsPrice} Pins • You have ${userPins}`}
-                          </div>
-                        )}
-                      </div>
-                      <span style={{
-                        width: 20,
-                        height: 20,
-                        borderRadius: '50%',
-                        border: `2px solid ${isSelected ? 'var(--accent)' : 'var(--border)'}`,
-                        background: isSelected ? 'var(--accent)' : 'transparent',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: 12,
-                        fontWeight: 900,
-                        color: isSelected ? '#fff' : 'transparent',
-                        flexShrink: 0,
-                      }}>
-                        {isSelected ? '✓' : ''}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* ── Processing State ────────────────────────────────── */}
-            {paymentState === 'processing' && (
-              <div style={{
-                padding: '28px',
-                textAlign: 'center',
-                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.06), rgba(16, 185, 129, 0.04))',
-              }}>
-                <div style={{
-                  width: 64,
-                  height: 64,
-                  margin: '0 auto 16px',
-                  borderRadius: '50%',
-                  border: '4px solid rgba(99, 102, 241, 0.15)',
-                  borderTopColor: '#6366f1',
-                  borderRightColor: '#8b5cf6',
-                  animation: 'spin 1s linear infinite',
-                }} />
-                <div style={{ fontSize: 15.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 6 }}>
-                  {processingMessage}
-                </div>
-                <div style={{ fontSize: 13, color: 'var(--t3)' }}>
-                  Please do not close this window...
-                </div>
-              </div>
-            )}
-
-            {/* ── Footer / CTA ───────────────────────────────────── */}
+            {/* ── RIGHT COLUMN: Payment Methods & Instant Sticky Action ── */}
             <div style={{
-              padding: '18px 28px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 10,
-              background: 'var(--bg3)',
+              padding: '18px 22px',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+              background: 'rgba(255, 255, 255, 0.02)',
+              overflowY: 'auto',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: 'var(--t4)' }}>
-                <span>🔒</span>
-                <span>Payments are encrypted and secure. By enrolling, you agree to the program terms.</span>
+              <div>
+                <div style={{ fontSize: 13.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 10 }}>
+                  🛡️ Select Payment Method
+                </div>
+
+                {/* Method Options */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 14 }}>
+                  {PAYMENT_METHODS.map((method) => {
+                    const isDisabled = method.id === 'pins' && !canPayWithPins;
+                    const isSelected = selectedMethod === method.id;
+                    return (
+                      <button
+                        key={method.id}
+                        data-testid={`btn-payment-method-${method.id}`}
+                        onClick={() => setSelectedMethod(method.id as PaymentMethod)}
+                        disabled={isDisabled}
+                        style={{
+                          display: 'flex', alignItems: 'center', gap: 10,
+                          padding: '10px 12px', borderRadius: 10,
+                          border: isSelected ? '1.5px solid var(--accent)' : '1px solid var(--border)',
+                          background: isSelected ? 'rgba(99, 102, 241, 0.12)' : isDisabled ? 'rgba(255, 255, 255, 0.02)' : 'var(--bg3)',
+                          cursor: isDisabled ? 'not-allowed' : 'pointer',
+                          opacity: isDisabled ? 0.45 : 1,
+                          textAlign: 'left',
+                          transition: 'border-color 0.15s, background 0.15s',
+                        }}
+                      >
+                        <span style={{
+                          width: 34, height: 34, borderRadius: 8,
+                          background: method.gradient, display: 'flex',
+                          alignItems: 'center', justifyContent: 'center',
+                          fontSize: 17, flexShrink: 0,
+                        }}>
+                          {method.icon}
+                        </span>
+
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>
+                            {method.title}
+                          </div>
+                          <div style={{ fontSize: 11, color: 'var(--t3)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            {method.subtitle}
+                          </div>
+                          {method.id === 'pins' && (
+                            <div style={{ fontSize: 10.5, fontWeight: 700, color: canPayWithPins ? '#f59e0b' : '#ef4444', marginTop: 2 }}>
+                              {canPayWithPins ? `Balance: ${userPins} Pins • Cost: ${plan.pinsPrice} Pins` : `Need ${plan.pinsPrice} Pins (You have ${userPins})`}
+                            </div>
+                          )}
+                        </div>
+
+                        <span style={{
+                          width: 18, height: 18, borderRadius: '50%',
+                          border: `2px solid ${isSelected ? 'var(--accent)' : 'var(--border)'}`,
+                          background: isSelected ? 'var(--accent)' : 'transparent',
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: 10, fontWeight: 900, color: isSelected ? '#fff' : 'transparent',
+                          flexShrink: 0,
+                        }}>
+                          ✓
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-              <button
-                data-testid="btn-submit-checkout"
-                onClick={handlePayment}
-                disabled={paymentState === 'processing'}
-                style={{
-                  padding: '15px 20px',
-                  borderRadius: 12,
-                  background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                  border: 'none',
-                  color: '#fff',
-                  fontSize: 16,
-                  fontWeight: 900,
-                  cursor: paymentState === 'processing' ? 'not-allowed' : 'pointer',
-                  boxShadow: '0 6px 20px rgba(99, 102, 241, 0.35)',
-                  opacity: paymentState === 'processing' ? 0.6 : 1,
-                }}
-              >
-                {paymentState === 'processing' ? '⏳ Processing...' : `Enroll Now — ${formatINR(finalPayable)}`}
-              </button>
+
+              {/* Bottom Sticky Action Area */}
+              <div>
+                {paymentState === 'processing' ? (
+                  <div style={{ padding: '12px', textAlign: 'center', background: 'rgba(99, 102, 241, 0.08)', borderRadius: 10, marginBottom: 8 }}>
+                    <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--accent)' }}>
+                      ⏳ {processingMessage || 'Authorizing enrollment...'}
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: 'var(--t4)', marginBottom: 8 }}>
+                      <span>🔒</span>
+                      <span>256-bit encrypted checkout. Instant enrollment confirmation.</span>
+                    </div>
+
+                    <button
+                      data-testid="btn-submit-checkout"
+                      onClick={handlePayment}
+                      disabled={paymentState === 'processing'}
+                      style={{
+                        width: '100%', padding: '12px 0', borderRadius: 10,
+                        background: selectedMethod === 'sandbox'
+                          ? 'linear-gradient(135deg, #10b981, #059669)'
+                          : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                        border: 'none', color: '#fff', fontSize: 15, fontWeight: 900,
+                        cursor: paymentState === 'processing' ? 'not-allowed' : 'pointer',
+                        boxShadow: '0 4px 16px rgba(99, 102, 241, 0.35)',
+                        transition: 'transform 0.15s',
+                      }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-1px)'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)'; }}
+                    >
+                      {selectedMethod === 'sandbox'
+                        ? '🧪 Instant Demo Enroll (Free Sandbox)'
+                        : selectedMethod === 'pins'
+                        ? `Pay with ${plan.pinsPrice} Pins →`
+                        : `Pay & Enroll — ${formatINR(finalPayable)} →`}
+                    </button>
+                  </>
+                )}
+              </div>
             </div>
-          </>
+          </div>
         )}
       </div>
 
@@ -867,9 +782,6 @@ Thank you for enrolling with PinIT Career OS!
         @keyframes confetti-fall {
           0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
           100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-        }
-        @keyframes spin {
-          to { transform: rotate(360deg); }
         }
       `}</style>
     </div>

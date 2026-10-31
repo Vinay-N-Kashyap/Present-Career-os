@@ -270,7 +270,8 @@ export async function GET(
     }
 
     // 3. Evidence Record & Certificate Verification (IDs starting with 'ev_', 'PIN-', or containing '_' or '-')
-    if (credentialId.startsWith('ev_') || credentialId.startsWith('PIN-') || credentialId.includes('_') || credentialId.includes('-')) {
+    const isUserIdentifier = credentialId.startsWith('usr_') || credentialId.startsWith('user_') || credentialId.startsWith('stu_') || credentialId === 'demo_student_user' || credentialId === 'student';
+    if (!isUserIdentifier && (credentialId.startsWith('ev_') || credentialId.startsWith('PIN-EV-') || credentialId.startsWith('EVID-'))) {
       let foundRecord: CompetencyEvidenceRecord | null = null;
 
       // Query Supabase competency_evidence_records table by id or attempt_id / certificate hash
