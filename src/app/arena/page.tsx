@@ -468,7 +468,7 @@ function ArenaContent() {
   const didIWin = activeRoom ? activeRoom.winnerId === studentId : soloMatch?.status === 'victory';
 
   return (
-    <div style={{ padding: '24px', maxWidth: 1400, margin: '0 auto', minHeight: '85vh' }}>
+    <div style={{ maxWidth: 1380, margin: '0 auto', minHeight: '85vh', paddingBottom: 40 }}>
       
       {/* ── Combat Header ────────────────────────────────────────── */}
       <div style={{

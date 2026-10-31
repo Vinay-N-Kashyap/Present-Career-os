@@ -1120,7 +1120,7 @@ export default function InterviewPage() {
   };
 
   return (
-    <div style={{ padding: isInterviewActive ? '6px 16px' : '24px 36px', maxWidth: 1400, margin: '0 auto', color: 'var(--t1)', fontFamily: 'var(--font-sans)' }}>
+    <div style={{ padding: isInterviewActive ? '0 4px' : '0 0 32px', maxWidth: 1380, margin: '0 auto', color: 'var(--t1)', fontFamily: 'var(--font-sans)' }}>
       {!isInterviewActive ? (
         <InterviewSetupView
           activeSessionDraft={activeSessionDraft} resumeActiveSession={resumeActiveSession}

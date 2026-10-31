@@ -141,7 +141,7 @@ function LeaderboardContent() {
   const userLeagueMeta = LEAGUE_CONFIGS[currentUserLeague];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-primary, #090d16)', color: 'var(--text)', padding: '24px 32px 80px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <div style={{ background: 'transparent', color: 'var(--text)', maxWidth: 1340, margin: '0 auto', padding: '0 0 40px', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
 
       {/* ── Header Bar ─────────────────────────────────────────────────── */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 16, flexWrap: 'wrap', gap: 14 }}>

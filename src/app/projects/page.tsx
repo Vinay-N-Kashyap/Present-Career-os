@@ -715,7 +715,7 @@ function ProjectsPageContent() {
   };
 
   return (
-    <div style={{ maxWidth: 1240, margin: '0 auto', padding: '24px 20px 80px' }} className="fade-in">
+    <div style={{ maxWidth: 1340, margin: '0 auto', padding: '0 0 40px' }} className="fade-in">
       
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>

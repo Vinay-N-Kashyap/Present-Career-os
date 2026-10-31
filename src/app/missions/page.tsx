@@ -136,7 +136,7 @@ function MissionsPageInner() {
         margin: '0 auto',
         background: theme.bg,
         color: theme.tPrimary,
-        padding: '20px',
+        padding: '4px 0 24px',
         borderRadius: '24px',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
       }}

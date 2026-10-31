@@ -553,7 +553,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <main 
           className="page-content animate-fade-in"
           style={{
-            padding: (isGroupDiscussionCall || isRoleplayActive) ? '20px' : (isLessonOrDetail ? '0px' : (effectiveFocusMode ? '40px 60px' : '20px 24px')),
+            padding: isLessonOrDetail ? '0px' : ((isGroupDiscussionCall || isRoleplayActive) ? '16px' : (effectiveFocusMode ? '32px 48px' : undefined)),
             maxWidth: (isGroupDiscussionCall || isRoleplayActive) ? '95%' : (isLessonOrDetail ? '100%' : (effectiveFocusMode ? 960 : '100%')),
             margin: (isLessonOrDetail || isGroupDiscussionCall || isRoleplayActive) ? '0 auto' : (effectiveFocusMode ? '0 auto' : '0'),
             width: '100%',

@@ -299,7 +299,7 @@ export default function PinsWalletPage() {
   );
 
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '28px 20px 60px', display: 'flex', flexDirection: 'column', gap: 22 }}>
+    <div style={{ maxWidth: 1040, margin: '0 auto', padding: '4px 0 40px', display: 'flex', flexDirection: 'column', gap: 22 }}>
 
       {/* ── 2-Section Header: Active Daily Pins + Bonus Pins Vault ──────────────── */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14 }}>
