@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { requireParentUserFromRequest } from '@/lib/server/requireAuth';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';

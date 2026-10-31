@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import DashboardAttendanceMarker from './DashboardAttendanceMarker';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
 
 const EVO_STAGES = [
@@ -114,6 +115,9 @@ export default function DashboardBentoGrid({
         </p>
       </div>
 
+      {/* Row 1.5: Campus Attendance Marker & 75% Eligibility HUD */}
+      <DashboardAttendanceMarker />
+
       {/* Row 2: Radar + Heatmap */}
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:16 }}>
 
@@ -172,7 +176,14 @@ export default function DashboardBentoGrid({
         {/* Heatmap */}
         <div className="db-glass" style={{ padding:20 }}>
           <span className="db-label">🔥 SOCRATIC CONTRIBUTION TRACKER</span>
-          <h3 style={{ fontSize:14.5, fontWeight:800, color:'var(--t1)', margin:'2px 0 14px' }}>Learning Activity Heatmap</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8, margin: '2px 0 14px' }}>
+            <h3 style={{ fontSize: 15, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
+              Learning Activity &amp; Attendance Heatmap
+            </h3>
+            <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', padding: '2px 8px', borderRadius: 6, background: 'rgba(16,185,129,0.12)', color: '#10b981', border: '1px solid rgba(16,185,129,0.25)' }}>
+              84-Day Consistency Grid
+            </span>
+          </div>
           <style>{`
             .db-hcell { position: relative; }
             .db-hcell:hover::after, .db-hcell:focus-visible::after { content: attr(data-tip); position:absolute; bottom:140%; left:50%; transform:translateX(-50%); background:#111827; color:#f3f4f6; border:1px solid rgba(255,255,255,0.08); padding:3px 7px; border-radius:4px; font-size:10px; font-family:var(--font-mono); white-space:nowrap; z-index:9999; pointer-events:none; }

@@ -139,6 +139,15 @@ export default function DashboardPage() {
   const [isGeneratingRoadmap,  setIsGeneratingRoadmap]  = useState(false);
   const [skillProfile,         setSkillProfile]         = useState<StudentSkillProfile | null>(null);
   const [roleReadiness,        setRoleReadiness]        = useState<DynamicRoleReadiness | null>(null);
+  const [attendanceRefresh,    setAttendanceRefresh]    = useState<number>(0);
+
+  useEffect(() => {
+    const handleAttendanceChange = () => setAttendanceRefresh((v) => v + 1);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('pinit:attendance_checked_in', handleAttendanceChange);
+      return () => window.removeEventListener('pinit:attendance_checked_in', handleAttendanceChange);
+    }
+  }, []);
 
   // ── Mount guard ────────────────────────────────────────────────────────────
   useEffect(() => { setMounted(true); }, []);
@@ -233,7 +242,7 @@ export default function DashboardPage() {
     const qTs: string[] = (onboardingAnswers as any)?.completedQuestsTimestamps || [];
     const mTs: string[] = (onboardingAnswers as any)?.completedMissionsTimestamps || [];
 
-    // Parse ISO timestamp safely, stripping any "|courseId" suffix so Date is valid
+    // 1. Parse quest completion timestamps safely
     qTs.forEach(ts => {
       if (!ts) return;
       const iso = ts.includes('|') ? ts.split('|')[0] : ts;
@@ -241,6 +250,7 @@ export default function DashboardPage() {
       if (!isNaN(d.getTime()) && d.toDateString() === str) count++;
     });
 
+    // 2. Parse daily missions timestamps safely
     mTs.forEach(ts => {
       if (!ts) return;
       const iso = ts.includes('|') ? ts.split('|')[0] : ts;
@@ -248,8 +258,25 @@ export default function DashboardPage() {
       if (!isNaN(d.getTime()) && d.toDateString() === str) count++;
     });
 
+    // 3. Check official campus attendance records for this date
+    if (typeof window !== 'undefined' && user?.id) {
+      try {
+        const raw = localStorage.getItem(`pinit_attendance_v2_${user.id}`);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const y = date.getFullYear();
+          const m = String(date.getMonth() + 1).padStart(2, '0');
+          const dy = String(date.getDate()).padStart(2, '0');
+          const ymd = `${y}-${m}-${dy}`;
+          if (Array.isArray(parsed.attended_days) && parsed.attended_days.includes(ymd)) {
+            count++;
+          }
+        }
+      } catch {}
+    }
+
     return count;
-  }, [onboardingAnswers]);
+  }, [onboardingAnswers, user?.id, attendanceRefresh]);
 
   // ── Unverified credentials tracking ───────────────────────────────────────
   const unverifiedItems = (vaultItems || []).filter(v => !v.verified);

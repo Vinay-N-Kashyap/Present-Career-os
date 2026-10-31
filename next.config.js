@@ -75,6 +75,15 @@ try {
   // Graceful fallback to Pyodide CDN in python-worker.js
 }
 
+try {
+  const manifestTarget = path.join(__dirname, 'src', 'generated', 'longLessons', '_manifest.json');
+  if (!fs.existsSync(manifestTarget)) {
+    execSync('node scripts/utils/build-long-lessons-json.cjs', { stdio: 'inherit' });
+  }
+} catch (_e) {
+  console.warn('[next.config.js] Failed to prebundle long lessons:', _e?.message);
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
