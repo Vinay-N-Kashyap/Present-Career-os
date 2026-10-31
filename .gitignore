@@ -63,3 +63,8 @@ playwright-report/
 screenshots/
 docs/visuals/PINIT_MASTER_DEBUG.html
 src/generated/
+
+demo_screenshots/
+temp_snippets/
+tests/*.txt
+audit/*.txt

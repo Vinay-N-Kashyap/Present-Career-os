@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PinIT Career OS — Shareholder Presentation (37 Courses & Pedagogy)</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #18212f;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-blue: #38bdf8;
+      --accent-indigo: #818cf8;
+      --green: #10b981;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
+    
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      z-index: 100;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--accent-blue);
+      letter-spacing: 0.5px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      background: #1e293b;
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: #334155;
+      border-color: var(--accent-blue);
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #0b0f19;
+      border-color: var(--accent-blue);
+    }
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .slide {
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 40px;
+      min-height: 720px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .slide-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .slide-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 20px;
+      border-bottom: 2px solid #1e293b;
+      padding-bottom: 12px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card.complete {
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+    }
+
+    .card-meta {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .card-meta strong {
+      color: var(--text-muted);
+    }
+
+    .topics-box {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .topics-box strong {
+      color: var(--accent-indigo);
+    }
+
+    .build-status {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+    }
+
+    .status-done {
+      color: var(--green);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .status-progress {
+      color: var(--amber);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .banner {
+      background: #1e293b;
+      border: 1px solid var(--accent-blue);
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .col-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    ul.clean-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    ul.clean-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      color: #e2e8f0;
+    }
+
+    ul.clean-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+      font-weight: bold;
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      .nav-bar { display: none; }
+      .slide { page-break-after: always; min-height: 100vh; box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="deck-container">
+  <div class="nav-bar">
+    <div class="brand">PINIT CAREER OS • SHAREHOLDER DECK</div>
+    <div class="controls">
+      <button class="btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Top</button>
+      <button class="btn" onclick="window.print()">Print / Save PDF</button>
+      <a href="PinIT_Career_OS_Shareholder_Presentation.pptx" download class="btn btn-primary">Download .PPTX File</a>
+    </div>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <section class="slide" id="slide1">
+    <div class="slide-badge">Portfolio Architecture & Scale</div>
+    <h1 class="slide-title">The Master Course Catalog: 37 Career Programs</h1>
+    <div class="banner">🎯 37 Distinct Mastercourses • 1,110 Days of Structured Training • Spanning Software, AI, Cloud, Hardware & Commerce</div>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1;">
+      <div class="card">
+        <h3 class="card-title">Software Engineering (9)</h3>
+        <ul style="font-size: 0.8rem; line-height: 1.5; color: #e2e8f0; list-style: none;">
+          <li>1. Python Programming & Backend</li>
+          <li>2. Full-Stack React Web Development</li>
+          <li>3. Node.js & TypeScript Backend</li>
+          <li>4. Java Fundamentals & Core Logic</li>
+          <li>5. Data Structures & Algorithms</li>
+          <li>6. Database Engineering (SQL)</li>
+          <li>7. High-Scale Distributed Systems</li>
+          <li>8. UI/UX Design Systems</li>
+          <li>9. Mobile App Development</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Cloud & Cyber Defense (5)</h3>
+        <ul style="font-size: 0.8rem; line-height: 1.5; color: #e2e8f0; list-style: none;">
+          <li>10. Cloud Native Architectures (AWS)</li>
+          <li>11. DevOps & CI/CD Pipelines</li>
+          <li>12. Full-Stack JavaScript Engineering</li>
+          <li>13. Cybersecurity Principles</li>
+          <li>14. Quantitative Trading Systems</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">AI, Hardware & Future (9)</h3>
+        <ul style="font-size: 0.8rem; line-height: 1.5; color: #e2e8f0; list-style: none;">
+          <li>15. AI Engineering & LLM Integration</li>
+          <li>16. Natural Language Processing (NLP)</li>
+          <li>17. 3D Graphics & Avatar Animation</li>
+          <li>18. Blockchain & Smart Contracts</li>
+          <li>19. IoT, Firmware & Embedded</li>
+          <li>20. IoT Wireless Networks</li>
+          <li>21. Edge AI & TinyML Systems</li>
+          <li>22. Industrial IoT Security</li>
+          <li>23. Everyday AI & Prompting</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">Commerce & Literacy (14)</h3>
+        <ul style="font-size: 0.8rem; line-height: 1.5; color: #e2e8f0; list-style: none;">
+          <li>24. Digital Accounting & Taxation</li>
+          <li>25. Business Finance & Investments</li>
+          <li>26. Business Analytics & Intelligence</li>
+          <li>27. Marketing & Brand Management</li>
+          <li>28. Digital Marketing & Growth</li>
+          <li>29. E-Commerce & Digital Business</li>
+          <li>30. Entrepreneurship & Management</li>
+          <li>31. Sales, Customer Success & CRM</li>
+          <li>32. Operations & Supply Chain</li>
+          <li>33. AI & Digital Transformation</li>
+          <li>34. Computer Literacy & OS</li>
+          <li>35. Excel & Data Analysis</li>
+          <li>36. Git & Version Control</li>
+          <li>37. Tech Communication & Interviews</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide" id="slide2">
+    <div class="slide-badge">Flagship Curriculum Architecture</div>
+    <h1 class="slide-title">Flagship Track 1: Python Full-Stack & AI Engineering</h1>
+    <div class="col-split">
+      <div class="card">
+        <h3 class="card-title" style="font-size: 1.2rem;">The Business & Non-Technical Concept</h3>
+        <p class="card-meta" style="font-size: 0.95rem;">Python is the undisputed global backbone for Artificial Intelligence, financial systems, and web data. We take learners with zero background and transform them into enterprise-ready software architects through 30 intensive daily modules.</p>
+        <h4 style="color: var(--accent-indigo); margin: 12px 0 6px;">Topics We Cover:</h4>
+        <ul class="clean-list">
+          <li><strong>Core Logic:</strong> Execution order, data types, math operators, and rule engines.</li>
+          <li><strong>Data Structures:</strong> Lists, Hash Maps (Dictionaries), sets, and O(1) database ledger lookups.</li>
+          <li><strong>Object-Oriented Design:</strong> Classes, state encapsulation, and polymorphic payment gateways.</li>
+          <li><strong>Web APIs (FastAPI):</strong> Connecting user frontends to backends with lightning speed.</li>
+          <li><strong>Enterprise Databases:</strong> SQL queries, relational modeling, and atomic financial rollbacks.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title" style="font-size: 1.2rem; color: var(--green);">The Zero-Setup Interactive Browser Lab</h3>
+        <ul class="clean-list">
+          <li><strong>Zero Installation Friction:</strong> Students write real code inside any browser in a secure cloud sandbox.</li>
+          <li><strong>Flight Simulator Learning:</strong> Automated proctored assertion engines test code against edge cases in real-time.</li>
+          <li><strong>AI Socratic Debugging Tutor:</strong> When code breaks, the AI asks guiding questions to help students fix their own bugs.</li>
+          <li><strong>Instant Cloud Deployment:</strong> Live APIs with shareable preview links prove skills to employers.</li>
+        </ul>
+        <div class="build-status status-done" style="margin-top: 20px;">
+          ⚡ Build Status: Coded: 30 / 30 Days (100% Complete & Live) | Remaining to Code: 0 Days
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide" id="slide3">
+    <div class="slide-badge">The Competitive Moat</div>
+    <h1 class="slide-title">The Virtual Workplace: Real Enterprise Internship Experience</h1>
+    <div class="banner">Solving the "No Experience = No Job" Dilemma with a Simulated Enterprise Company</div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1;">
+      <div class="card">
+        <h3 class="card-title">1. Virtual Tech Desk</h3>
+        <p class="card-meta">Students join a simulated engineering squad with an AI Tech Lead and Product Manager. They participate in automated standups and review sprint backlogs.</p>
+        <div style="color: var(--accent-blue); font-weight: bold; font-size: 0.85rem; margin-top: auto;">Agile Scrum & Standups</div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">2. Real Bug Tickets</h3>
+        <p class="card-meta">Tasks are dynamically generated business problems (e.g., payment checkout timeout, database crashes). Unique tasks prevent answer plagiarism.</p>
+        <div style="color: var(--accent-indigo); font-weight: bold; font-size: 0.85rem; margin-top: auto;">Hidden Test Verification</div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">3. Code Reviews & PRs</h3>
+        <p class="card-meta">Students write code, create Git branches, and submit Pull Requests. Our automated AI Senior Architect conducts line-by-line security and efficiency reviews.</p>
+        <div style="color: var(--amber); font-weight: bold; font-size: 0.85rem; margin-top: auto;">OWASP Security Auditing</div>
+      </div>
+      <div class="card">
+        <h3 class="card-title">4. Verifiable QR Proof</h3>
+        <p class="card-meta">Upon passing 4 sprints and an oral defense, students receive an employer-verifiable digital credential backed by a public audit link and code proof.</p>
+        <div style="color: var(--green); font-weight: bold; font-size: 0.85rem; margin-top: auto;">Permanent QR Link</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide" id="slide4">
+    <div class="slide-badge">Flagship Curriculum Architecture</div>
+    <h1 class="slide-title">Flagship Track 2: Enterprise Web Full-Stack Engineering</h1>
+    <div class="col-split">
+      <div class="card">
+        <h3 class="card-title" style="font-size: 1.2rem;">The Modern Consumer Web Experience</h3>
+        <p class="card-meta" style="font-size: 0.95rem;">Every digital interaction—from booking a ride on Uber to shopping on Amazon—relies on Full-Stack Web engineering. We train students to build lightning-fast web applications with clean visual screens and bulletproof backends.</p>
+        <h4 style="color: var(--accent-indigo); margin: 12px 0 6px;">Topics We Cover:</h4>
+        <ul class="clean-list">
+          <li><strong>Frontend (React & Next.js):</strong> Dynamic UI components, state management, and Server-Side Rendering (SSR).</li>
+          <li><strong>Backend Services (Node.js):</strong> Event loops, REST APIs, JSON data pipelines, and request routing.</li>
+          <li><strong>Database Modeling (Prisma ORM):</strong> Relational schemas, user authentication tables, and caching.</li>
+          <li><strong>Real-Time Data (WebSockets):</strong> Live bidirectional event streaming for chats and order tracking notifications.</li>
+          <li><strong>Security & Payments (Stripe):</strong> Encrypted session tokens, cookie security, and automated credit card billing.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title" style="font-size: 1.2rem; color: var(--green);">Real-World Capstone Deliverables</h3>
+        <ul class="clean-list">
+          <li><strong>High-Throughput API Gateway:</strong> Rate limiting algorithms protecting servers from DDoS attacks during flash sales.</li>
+          <li><strong>Multi-Tenant Auth Hub:</strong> Enterprise role-based security protecting patient and client records.</li>
+          <li><strong>Live Collaborative Canvas:</strong> Interactive live canvas and chat engine supporting simultaneous users.</li>
+          <li><strong>Enterprise E-Commerce Engine:</strong> Complete 30-Day capstone featuring inventory locking, shopping carts, and Stripe payments.</li>
+        </ul>
+        <div class="build-status status-done" style="margin-top: 20px;">
+          ⚡ Build Status: Coded: 30 / 30 Days (100% Complete & Live) | Remaining to Code: 0 Days
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide" id="slide5">
+    <div class="slide-badge">Course Portfolio • Block 1 of 9</div>
+    <h1 class="slide-title">Core Systems, Databases & Cloud Infrastructure</h1>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">4. Java Fundamentals & Core Logic</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The industrial workhorse language running global banking, Android devices, and large corporate IT infrastructure.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Conditional logic, OOP design, garbage collection, collections framework, exception handling, and multithreading.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 17 / 30 Days (56% Complete) | Remaining to Code: 13 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">6. Database Engineering & Query Performance</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The secure digital vault where all customer profiles, bank balances, and order histories are stored with instant retrieval.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Relational SQL schemas, index B-trees, ACID transactions, connection pools, and query execution plans.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">10. Cloud Native Architectures (AWS)</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Renting infinite supercomputing power from Amazon Web Services instead of buying expensive physical office hardware.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Virtual servers (EC2), serverless Lambda functions, S3 storage buckets, VPC networking, and API gateways.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">11. DevOps & CI/CD Pipeline Automation</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The automated factory assembly line that tests, packages, and deploys software to users with zero human error.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Docker containerization, GitHub Actions workflows, Kubernetes cluster orchestration, and zero-downtime canary rollouts.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide" id="slide6">
+    <div class="slide-badge">Course Portfolio • Block 2 of 9</div>
+    <h1 class="slide-title">Software Performance, Algorithms & Interfaces</h1>
+    <div class="grid-4">
+      <div class="card complete">
+        <h3 class="card-title">5. Data Structures & Algorithmic Optimizations</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The mathematical science of organizing information so apps run in split-seconds rather than freezing when millions log in.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Big-O space-time complexity, binary search trees, hash tables, graph traversals, and dynamic programming.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">8. UI/UX Design Systems & Visual Frontend</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Creating the visual standards, color palettes, and component blueprints that make software beautiful and intuitive to anyone.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Atomic component hierarchies, WCAG accessibility, typography grids, responsive CSS flexbox, and design tokens.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">9. Mobile Application Development</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Building sleek, high-performance apps for iPhone and Android devices from one single unified codebase.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> React Native components, touch gesture handlers, camera/GPS device APIs, local device storage, and app store deployment.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 6 / 30 Days (20% Complete) | Remaining to Code: 24 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">7. High-Scale Distributed System Design</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Architecting software that never crashes even when millions of people transact at the exact same second (like Uber or Amazon).</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Load balancing algorithms, Redis in-memory caches, message queues, database sharding, and partition tolerance.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide" id="slide7">
+    <div class="slide-badge">Course Portfolio • Block 3 of 9</div>
+    <h1 class="slide-title">Artificial Intelligence, NLP & 3D Interactive Graphics</h1>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">15. AI Engineering & LLM Integration</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Embedding smart generative AI models (like ChatGPT or Claude) directly into company products to automate human tasks.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Prompt engineering, Retrieval-Augmented Generation (RAG), vector embeddings, autonomous agent loops, and token budgets.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">16. Natural Language Processing (NLP)</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Teaching computer software how to read, understand, summarize, and translate human language and emotion.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Text tokenization, sentiment classification, transformer models, attention mechanisms, and custom model fine-tuning.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">17. 3D Interactive Graphics & Avatar Animation</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Rendering 3D visual environments and animated digital humans inside browsers without downloading heavy game software.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> WebGL canvas setup, perspective projection math, bone rigging skinning weights, and facial blendshape animations.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">12. Full-Stack JavaScript Engineering</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The unified programming standard enabling engineers to build both user screens and server databases with one language.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Client-server separation, RESTful APIs, ORM migrations, JSON Web Tokens (JWT), and automated cloud pipelines.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 9 / 30 Days (30% Complete) | Remaining to Code: 21 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="slide" id="slide8">
+    <div class="slide-badge">Course Portfolio • Block 4 of 9</div>
+    <h1 class="slide-title">Hardware Systems, Edge AI & Cyber Defense</h1>
+    <div class="grid-4">
+      <div class="card complete">
+        <h3 class="card-title">13. Cybersecurity Principles & Secure Systems</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The digital defense shield that protects company networks and customer data from hostile hackers and breaches.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Defeating OWASP Top 10 vulnerabilities, AES encryption, SQL injection defense, CSRF mitigation, and security audits.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">19. IoT, Firmware & Embedded Systems</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Writing the tiny computer code that brings physical hardware to life (smart home devices, medical sensors, auto electronics).</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Microcontroller programming (C/C++), analog sensor ADC conversions, real-time operating systems (RTOS), and MQTT telemetry.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">20. IoT Wireless Networks & Protocols</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The invisible wireless communication lines that connect smart sensors across long distances on tiny battery power.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Long-range wireless (LoRaWAN), cellular NB-IoT frequencies, Bluetooth Low Energy (BLE), and lightweight CoAP UDP packets.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">21. Edge AI, DSP & TinyML Systems</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Running intelligent machine learning models directly on small battery chips without requiring internet access.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Digital signal processing (DSP), neural network quantization, accelerometer gesture recognition, and TinyML runtimes.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="slide" id="slide9">
+    <div class="slide-badge">Course Portfolio • Block 5 of 9</div>
+    <h1 class="slide-title">Industrial Security, Financial Tech & Web3 Systems</h1>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">22. Industrial IoT Security & Device Lifecycle</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Protecting critical physical factories, energy grids, and robotics from unauthorized firmware tampering and digital sabotage.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Cryptographic hardware root-of-trust, secure boot public keys, anti-rollback protection, and over-the-air (OTA) updates.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">14. Quantitative Engineering & Low-Latency Trading</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Building the hyper-speed financial software used by Wall Street where stock trades execute in microseconds.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Electronic Limit Order Books (LOB), trade matching engines, VWAP algorithms, market slippage, and network latency physics.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">18. Blockchain, Web3 & Smart Contracts</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Creating permanent, tamper-proof digital contracts and automated agreements that execute safely without intermediary banks.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Cryptographic ledgers, Solidity smart contracts, Merkle trees, MetaMask JSON-RPC wallets, and decentralized protocols.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">3. Node.js & TypeScript Backend Engineering</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The enterprise server technology powering high-concurrency modern apps (Netflix, PayPal, Uber) with strict type safety.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Asynchronous event loops, Express middleware, REST APIs, TypeScript compilation, and high-throughput reliability.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <section class="slide" id="slide10">
+    <div class="slide-badge">Course Portfolio • Block 6 of 9</div>
+    <h1 class="slide-title">Universal Digital Literacy & Workforce Essentials</h1>
+    <div class="grid-4">
+      <div class="card complete">
+        <h3 class="card-title">34. Computer Literacy, Digital Productivity & OS</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The universal level-0 starting point ensuring any student can navigate operating systems and computer files effortlessly.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Operating system navigation, command-line terminal (CLI), file systems, cloud storage sync, and cybersecurity hygiene.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">23. Everyday AI Literacy & Prompt Engineering</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Teaching working professionals how to use modern AI assistants to accomplish 8 hours of routine office tasks in 1 hour.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Structured prompt engineering, AI web research, automated document summarization, generative graphics, and task automation.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">35. Excel & Data Analysis Fundamentals</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The universal numbers language of corporate business, finance departments, and executive board reporting.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Mathematical formulas, VLOOKUP/XLOOKUP, Pivot Tables, data cleaning, and interactive visual management dashboards.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">36. Git, GitHub & Version Control Basics</h3>
+        <div class="card-meta"><strong>What It Is:</strong> The digital time machine and collaboration tool that lets engineering teams build code together without overwriting work.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Repository creation, tracking commits, branch isolation, resolving merge conflicts, and team pull request reviews.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <section class="slide" id="slide11">
+    <div class="slide-badge">Course Portfolio • Block 7 of 9</div>
+    <h1 class="slide-title">Business Commerce, Accounting & Investment Systems</h1>
+    <div class="grid-4">
+      <div class="card complete">
+        <h3 class="card-title">24. Digital Accounting & Taxation (B.Com/BBA)</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Modernizing accounting by replacing manual ledgers with computerized ERP software, automated GST, and cloud workflows.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Double-entry accounting, Tally Prime ERP, Goods and Services Tax (GST), automated payroll runs, and statutory compliance.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">25. Business Finance & Investment Management</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Teaching students how company CFOs manage capital, evaluate project returns, and maximize shareholder value.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Financial statements, time value of money, cash budgeting, corporate cost of capital, and equity valuation models.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">26. Business Analytics & Decision Intelligence</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Translating company operational data into executive visual charts that uncover hidden revenue opportunities.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Commercial data literacy, Power BI dashboards, business SQL queries, KPI performance tracking, and forecasting.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">29. E-Commerce & Digital Business</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Everything required to launch, run, and scale an online consumer storefront from checkout UX to doorstep fulfillment.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Online storefront design, payment gateway checkout, catalog management, shipping logistics, and customer retention.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <section class="slide" id="slide12">
+    <div class="slide-badge">Course Portfolio • Block 8 of 9</div>
+    <h1 class="slide-title">Customer Growth, Enterprise Sales & Supply Chain</h1>
+    <div class="grid-4">
+      <div class="card">
+        <h3 class="card-title">27. Marketing & Brand Management</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Creating memorable brand identities and marketing campaigns that persuade target customers to buy our product.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Customer research, market segmentation, brand positioning, pricing psychology, and promotional distribution channels.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">28. Digital Marketing & Growth Strategy</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Attracting customers and driving online sales through search engines, viral social channels, and targeted digital ads.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Search Engine Optimization (SEO), Google/Meta paid ads, email marketing funnels, and Conversion Rate Optimization (CRO).</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">31. Sales, Customer Success & CRM</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Finding enterprise buyers, pitching deals, negotiating win-win contracts, and maintaining long-term customer relationships.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> B2B prospecting, lead qualification (BANT), objection handling, negotiation, CRM software, and account management.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card complete">
+        <h3 class="card-title">32. Operations, Supply Chain & Compliance</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Managing the physical movement of materials and manufacturing products on time with zero waste and full legal compliance.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Business process mapping, inventory control (EOQ/ROP), supplier procurement, Lean Six Sigma quality, and statutory audits.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 13 -->
+  <section class="slide" id="slide13">
+    <div class="slide-badge">Course Portfolio • Block 9 of 9</div>
+    <h1 class="slide-title">Business Leadership, Digital Transformation & Career Mastery</h1>
+    <div class="grid-3">
+      <div class="card complete">
+        <h3 class="card-title">30. Entrepreneurship & Business Management</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Guiding founders through conceiving, testing, launching, and financing a successful, sustainable business venture.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Business Model Canvas (BMC), financial break-even analysis, market validation, leadership, and investor pitch decks.</div>
+        <div class="build-status status-done">⚡ Build Status: Coded: 30 / 30 Days (100% Complete) | Remaining to Code: 0 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">33. AI & Digital Transformation for Business</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Upgrading traditional brick-and-mortar operations by automating manual office tasks with enterprise AI systems.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Robotic Process Automation (RPA), AI-driven enterprise CRM/ERP workflows, predictive analytics, and AI governance.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">37. Professional Tech Communication & Interviews</h3>
+        <div class="card-meta"><strong>What It Is:</strong> Transforming students into confident, articulate professionals who communicate effectively and ace job interviews.</div>
+        <div class="topics-box"><strong>Topics We Teach:</strong> Executive business emails, technical presentations, resume optimization, salary negotiation, and behavioral interviews.</div>
+        <div class="build-status status-progress">⚡ Build Status: Coded: 5 / 30 Days (16% Complete) | Remaining to Code: 25 Days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <section class="slide" id="slide14">
+    <div class="slide-badge">Executive Financial & Delivery Metrics</div>
+    <h1 class="slide-title">Portfolio Summary & Engineering Velocity</h1>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+      <div class="card complete">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--green);">12 COURSES</div>
+        <div style="font-weight: 700; margin-bottom: 6px;">100% Coded & Live</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">360 production-grade days with tests & sandboxes ready for market launch today.</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-blue);">25 COURSES</div>
+        <div style="font-weight: 700; margin-bottom: 6px;">Architecture & Pilots Live</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Core Day 1-5 foundations, visual suites & full 30-day syllabi completed.</div>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-indigo);">ZERO RE-ARCHITECT</div>
+        <div style="font-weight: 700; margin-bottom: 6px;">High Capital Efficiency</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">Standardized lesson & visual templates enable rapid, low-cost expansion.</div>
+      </div>
+    </div>
+
+    <div class="card" style="flex: 1;">
+      <h3 class="card-title" style="font-size: 1.2rem;">Shareholder Takeaway: Immediate Commercial Monetization</h3>
+      <ul class="clean-list">
+        <li><strong>Immediate Go-to-Market Readiness:</strong> We can immediately market and monetize complete 1-Month, 3-Month, and 6-Month career accelerator bundles using our 12 fully-finished courses (Full-Stack Python, Full-Stack React, Node.js Backend, Database Engineering, SRE/DevOps, Excel, Accounting, and Business Operations).</li>
+        <li><strong>Predictable Engineering Velocity:</strong> All 37 mastercourses have their complete 30-day curriculum blueprints, real-world metaphors, and test criteria formalized in master specification files. Expanding remaining days uses our automated testing pipeline with deterministic quality.</li>
+        <li><strong>No Content Debt or Redundancy:</strong> Unlike other bootcamps that license third-party content, PinIT owns 100% of its curriculum intellectual property (IP), software engines, and automated assessment code.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 15 -->
+  <section class="slide" id="slide15">
+    <div class="slide-badge">Our Technology Moat</div>
+    <h1 class="slide-title">How We Teach: The Proprietary AI Pedagogy Engine</h1>
+    <div class="banner">💡 The Active Learning Cycle: Replacing Passive Video Watching with Interactive Mastery</div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1;">
+      <div class="card">
+        <h3 class="card-title">1. 20-Min AI Avatar Mentor</h3>
+        <div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 8px;">[CONVERSATIONAL AUDIO]</div>
+        <p class="card-meta">A photorealistic AI instructor explains concepts conversationally in plain words. Uses everyday metaphors (e.g. databases as bank vaults) with zero confusing jargon.</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--card-border); padding-top: 8px;">
+          <div style="font-size: 0.75rem; color: var(--accent-blue); font-weight: bold;">Shareholder Advantage:</div>
+          <div style="font-size: 0.82rem; color: var(--text);">Zero expensive human instructor scaling costs.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">2. Synchronized Visual Stage</h3>
+        <div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 8px;">[LIVE DYNAMIC GRAPHICS]</div>
+        <p class="card-meta">As the avatar speaks, the interactive screen dynamically animates architectural flows, memory registers, state machines, and data pipelines in real-time.</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--card-border); padding-top: 8px;">
+          <div style="font-size: 0.75rem; color: var(--accent-indigo); font-weight: bold;">Shareholder Advantage:</div>
+          <div style="font-size: 0.82rem; color: var(--text);">5x higher student completion rates vs videos.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">3. Socratic Knowledge Checks</h3>
+        <div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 8px;">[INSTANT FORMATIVE FEEDBACK]</div>
+        <p class="card-meta">Every single concept concludes with an interactive MCQ. If students choose wrong, the system explains WHY that mental model failed and guides them back.</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--card-border); padding-top: 8px;">
+          <div style="font-size: 0.75rem; color: var(--amber); font-weight: bold;">Shareholder Advantage:</div>
+          <div style="font-size: 0.82rem; color: var(--text);">Guaranteed conceptual understanding.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title">4. Interactive Sandbox Lab</h3>
+        <div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 8px;">[PROCTORED CODE EXECUTION]</div>
+        <p class="card-meta">Students write real code in our browser terminal. Automated test runners verify code assertions on the fly, locking in skills before the next day.</p>
+        <div style="margin-top: auto; border-top: 1px solid var(--card-border); padding-top: 8px;">
+          <div style="font-size: 0.75rem; color: var(--green); font-weight: bold;">Shareholder Advantage:</div>
+          <div style="font-size: 0.82rem; color: var(--text);">Zero cheating; 100% genuine code verification.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
