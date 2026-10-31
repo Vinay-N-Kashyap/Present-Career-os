@@ -75,7 +75,7 @@
   --border:  rgba(255, 255, 255, 0.08);
   --border2: rgba(255, 255, 255, 0.16);
   --border3: rgba(255, 255, 255, 0.24);
-  --t1: #f0f2f8;  --t2: #8b93b0;  --t3: #555e80;  --t4: #363d58;
+  --t1: #f0f2f8;  --t2: #9da6c5;  --t3: #7b85ad;  --t4: #4e5777;
   --accent-light:  rgba(99, 102, 241, 0.15);  --teal-light: rgba(8, 145, 178, 0.15);
   --purple-light:  rgba(124, 58, 237, 0.15);  --green-light: rgba(5, 150, 105, 0.15);
   --amber-light:   rgba(217, 119, 6, 0.15);  --coral-light: rgba(220, 38, 38, 0.15);
@@ -91,7 +91,7 @@
   --bg:    #f8f9fc;  --bg2:   #ffffff;
   --bg3:   #f1f3f8;  --card:  #ffffff;
   --border:  #e4e7ef;  --border2: #cdd2e1;  --border3: #b8bfcf;
-  --t1: #0f1117;  --t2: #5a6075;  --t3: #9097b0;  --t4: #c2c7d8;
+  --t1: #0f1117;  --t2: #43495d;  --t3: #525b77;  --t4: #7b849e;
   --accent-light:  #eef2ff;  --teal-light: #e0f7fa;
   --purple-light:  #f3eeff;  --green-light: #ecfdf5;
   --amber-light:   #fffbeb;  --coral-light: #fef2f2;
@@ -120,6 +120,10 @@ body {
 }
 
 /* == SCROLLBAR == */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: color-mix(in srgb, var(--bg) 80%, transparent); }
 :root.light ::-webkit-scrollbar-track,
@@ -1580,3 +1584,10 @@ body[data-interview-active="true"] .main-content-area {
 
 
 
+
+/* Fallback for devices without backdrop-filter support */
+@supports not (backdrop-filter: blur(1px)) {
+  .card, .score-card, .metric-card, .portal-hero, .dashboard-cockpit-hero {
+    background: var(--bg3) !important;
+  }
+}
