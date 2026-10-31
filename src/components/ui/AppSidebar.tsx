@@ -175,10 +175,10 @@ export function isPathActive(pathname: string, href: string, currentSearch = '')
   }
 
   // Exact hub roots that have sibling sub-routes or query-tab children in the same menu
-  if (hrefPath === '/admin' || hrefPath === '/dashboard' || hrefPath === '/university') {
+  if (hrefPath === '/admin' || hrefPath === '/university') {
     if (cleanPathname !== hrefPath) return false;
     const actualTab = new URLSearchParams(searchStr).get('tab');
-    if ((hrefPath === '/admin' || hrefPath === '/university') && actualTab) return false;
+    if (actualTab) return false;
     return true;
   }
 

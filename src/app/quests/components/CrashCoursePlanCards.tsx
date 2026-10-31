@@ -28,22 +28,32 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
   const [previewPlan, setPreviewPlan] = useState<CrashPlan | null>(null);
 
   const handleEnroll = (plan: CrashPlan) => {
-    const modules = plan.modulesByTrack[activeTrack] || [];
-    const firstCourseId = modules[0]?.courseId || (activeTrack === 'web_fullstack' ? 'course-react-web' : 'course-python');
+    // Option 1: Module-specific entry course -> Option 2 (Fallback): Default track entry course
+    const modules = plan?.modulesByTrack?.[activeTrack] || [];
+    const firstCourseId =
+      modules[0]?.courseId ||
+      (activeTrack === 'web_fullstack' ? 'course-react-web' : 'course-python');
 
-    onSelectPlan(plan.id, activeTrack, firstCourseId);
-    if (onOpenCheckout) {
-      onOpenCheckout(plan, activeTrack);
-    } else {
-      toast.success(
-        'Plan Selected!',
-        `Enrolled in ${plan.title} (${activeTrack === 'web_fullstack' ? 'Full-Stack Web' : 'Python & AI'}). All roadmap nodes and internship timeline unlocked!`
-      );
+    try {
+      onSelectPlan(plan.id, activeTrack, firstCourseId);
+      if (onOpenCheckout) {
+        // Option 1 (Primary): Interactive checkout modal
+        onOpenCheckout(plan, activeTrack);
+      } else {
+        // Option 2 (Fallback): Direct state activation with toast
+        toast.success(
+          'Plan Selected!',
+          `Enrolled in ${plan.title} (${activeTrack === 'web_fullstack' ? 'Full-Stack Web' : 'Python & AI'}). All curriculum roadmap nodes unlocked!`
+        );
+      }
+    } catch {
+      // Option 2 (Safe emergency fallback)
+      toast.info('Plan Selected', `Enrolled in ${plan?.title || 'Program'}.`);
     }
   };
 
   return (
-    <div data-testid="crash-plan-cards-root" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div data-testid="crash-plan-cards-root" style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
       {/* ── Top Header & Domain Switcher ── */}
       <div
         style={{
@@ -51,20 +61,20 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: 16,
-          padding: '18px 22px',
+          gap: 14,
+          padding: '16px 20px',
           background: 'var(--card)',
           border: '1px solid var(--border)',
           borderRadius: 'var(--radius-xl)',
           boxShadow: 'var(--shadow-sm)',
         }}
       >
-        <div style={{ maxWidth: 620 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 24 }}>⚡</span>
+        <div style={{ maxWidth: 640 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{ fontSize: 22 }}>⚡</span>
             <h3
               style={{
-                fontSize: 19,
+                fontSize: 18,
                 fontWeight: 900,
                 color: 'var(--t1)',
                 margin: 0,
@@ -77,7 +87,7 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
                 : 'Industry Crash Certification Programs'}
             </h3>
           </div>
-          <p style={{ fontSize: 13.5, color: 'var(--t3)', margin: '4px 0 0 0', lineHeight: 1.5 }}>
+          <p style={{ fontSize: 13, color: 'var(--t3)', margin: '4px 0 0 0', lineHeight: 1.45 }}>
             {INTERNSHIP_AVAILABLE
               ? 'Daily 1-Hour micro-learning, production capstone sprint, PinIT Tech Labs fellowship, and dual tamper-proof credentials.'
               : 'Daily 1-Hour micro-learning, production capstone sprint, and a cryptographically verified certificate.'}
@@ -89,8 +99,8 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            padding: 4,
-            borderRadius: 12,
+            padding: 3,
+            borderRadius: 10,
             background: 'var(--bg3)',
             border: '1px solid var(--border)',
             gap: 4,
@@ -105,9 +115,9 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              padding: '8px 14px',
-              borderRadius: 8,
-              fontSize: 13,
+              padding: '7px 12px',
+              borderRadius: 7,
+              fontSize: 12.5,
               fontWeight: 700,
               cursor: 'pointer',
               border: `1px solid ${activeTrack === 'web_fullstack' ? 'var(--accent)' : 'transparent'}`,
@@ -127,9 +137,9 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              padding: '8px 14px',
-              borderRadius: 8,
-              fontSize: 13,
+              padding: '7px 12px',
+              borderRadius: 7,
+              fontSize: 12.5,
               fontWeight: 700,
               cursor: 'pointer',
               border: `1px solid ${activeTrack === 'python_ai' ? 'var(--green)' : 'transparent'}`,
@@ -149,9 +159,9 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              padding: '8px 12px',
-              borderRadius: 8,
-              fontSize: 12.5,
+              padding: '7px 12px',
+              borderRadius: 7,
+              fontSize: 12,
               fontWeight: 600,
               cursor: 'pointer',
               border: '1px solid var(--border)',
@@ -170,8 +180,8 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: 18,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
+          gap: 16,
           alignItems: 'stretch',
         }}
       >
@@ -214,3 +224,5 @@ export const CrashCoursePlanCards: React.FC<CrashCoursePlanCardsProps> = ({
     </div>
   );
 };
+
+export default CrashCoursePlanCards;

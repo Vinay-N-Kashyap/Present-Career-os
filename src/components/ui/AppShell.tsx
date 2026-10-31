@@ -387,10 +387,11 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const fn = (e: KeyboardEvent) => {
       if (e.key === '[' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); toggleLeftSidebar(); }
+      if (e.key === 'Escape' && mobileOpen) { setMobileOpen(false); }
     };
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
-  }, [toggleLeftSidebar]);
+  }, [toggleLeftSidebar, mobileOpen]);
 
   useEffect(() => {
     isRedirectingRef.current = false;

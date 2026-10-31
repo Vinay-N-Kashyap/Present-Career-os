@@ -10,7 +10,7 @@ import { runPythonInBrowser } from '@/lib/code/python/pythonRunner';
 import { runSqlInBrowser } from '@/lib/code/sql/sqlRunner';
 import { executeBashSuite } from '@/lib/code/runners/bashRunner';
 import { executeCppSuite } from '@/lib/code/runners/cppRunner';
-import { getLessonCheck, getTestQuestionsAsync, parseTestQuestId, withAnswerAt, type TestQuestion } from '@/lib/data/courseTestsClient';
+import { getLessonCheck, getTestQuestionsAsync, buildTestQuestions, parseTestQuestId, withAnswerAt, type TestQuestion } from '@/lib/data/courseTestsClient';
 import { api } from '@/lib/api/client';
 import { toast } from '@/lib/store/useAppStore';
 import { executeSandboxScript } from '@/lib/code/sandbox/sandboxedIframeRunner';
@@ -451,9 +451,43 @@ export function useLessonEngine({
     let cancelled = false;
     if (!testInfo) { setQuizQuestions(null); return; }
     setQuizQuestions(null);
-    getTestQuestionsAsync(testInfo.prefix, testInfo.start, testInfo.end).then((qs) => {
-      if (!cancelled) setQuizQuestions(qs);
-    });
+
+    const makeEmergencyFallback = (): TestQuestion[] => {
+      const fallback = buildTestQuestions(testInfo.prefix, testInfo.start, testInfo.end, () => null);
+      if (fallback.length > 0) return fallback;
+      const res: TestQuestion[] = [];
+      for (let day = testInfo.start; day <= testInfo.end; day++) {
+        res.push({
+          question: `Diagnostic Assessment Day ${day}: What is the core requirement for Day ${day} in the ${testInfo.prefix} syllabus?`,
+          options: [
+            'Implement the required functionality according to specification and verify with tests',
+            'Skip test verification and push incomplete code directly to production',
+            'Bypass input validation checks in the pipeline',
+            'Hardcode mock credentials in production source code',
+          ],
+          answer: 'Implement the required functionality according to specification and verify with tests',
+          explanation: `Engineering standard for Day ${day} demands verified implementation matching the curriculum rubric.`,
+        });
+      }
+      return res;
+    };
+
+    // Option 1 (Primary): Asynchronous fetch from API route
+    getTestQuestionsAsync(testInfo.prefix, testInfo.start, testInfo.end)
+      .then((qs) => {
+        if (cancelled) return;
+        if (qs && qs.length > 0) {
+          setQuizQuestions(qs);
+        } else {
+          // Option 2 (Fallback): Client-side deterministic test question builder
+          setQuizQuestions(makeEmergencyFallback());
+        }
+      })
+      .catch(() => {
+        if (cancelled) return;
+        // Option 2 (Network / error fallback): Generate questions locally so student is never blocked
+        setQuizQuestions(makeEmergencyFallback());
+      });
     return () => { cancelled = true; };
   }, [testInfo]);
   const _unusedQuizSync = useMemo(

@@ -63,17 +63,25 @@ function loadCourseArchive(fileKey: string): ReadonlyArray<LongLesson> | null {
 }
 
 export function getLongLessonServer(prefix: string, dayNum: number): LongLesson | null {
-  const manifest = loadManifest();
-  if (manifest) {
-    const fileKey = manifest.prefixes[prefix];
-    if (!fileKey) return null;
-    const days = loadCourseArchive(fileKey);
-    if (!days) return null;
-    return days.find((d) => d.day === dayNum) ?? null;
+  // Option 1 (Primary): Fast on-demand read from precompiled gzip archive
+  try {
+    const manifest = loadManifest();
+    if (manifest) {
+      const fileKey = manifest.prefixes[prefix];
+      if (fileKey) {
+        const days = loadCourseArchive(fileKey);
+        if (days) {
+          const match = days.find((d) => d.day === dayNum);
+          if (match) return match;
+        }
+      }
+    }
+  } catch {
+    // Silently fall through to Option 2 fallback
   }
 
-  // Fallback for direct CLI/tsx test invocations when prebuild/pretest was skipped.
-  // Opaque to Webpack so Next.js never traces ./longLessons.ts.
+  // Option 2 (Fallback): Direct dynamic require from longLessons.ts if archive was missing, corrupt, or unbuilt
+  // Opaque to Webpack so Next.js build-time bundling never bundles the 131 MB TypeScript file.
   if (typeof (globalThis as Record<string, unknown>).__webpack_require__ === 'undefined') {
     try {
       const dynamicRequire = eval('require') as NodeRequire;
