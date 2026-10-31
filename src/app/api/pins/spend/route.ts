@@ -8,11 +8,12 @@ import { createClient } from '@supabase/supabase-js';
 const SERVER_PIN_COSTS: Record<string, number> = {
   quest:                20,
   mission:              20,
-  group_discussion:     35,
-  gd:                   35,
-  ai:                   35, // unlocks /api/llm and general AI features
-  ai_interview:         35,
-  interview:            35,
+  group_discussion:     25,
+  gd:                   25,
+  ai:                   25, // unlocks /api/llm and general AI features
+  ai_interview:         25,
+  interview:            25,
+  ai_tutor:              5, // AI Code Tutor & Doubt Resolution
   code_arena:           10,
   arena:                10,
   project:              10,

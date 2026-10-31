@@ -9,6 +9,10 @@ export const PLAN_PRICES_PAISE: Record<string, number> = {
   basic_student: 9900,            // ₹99 Basic Student Plan (120 pins daily refreshed at 1:00 AM)
   student_99: 9900,               // Alias for basic_student
   pro: 49900,                     // ₹499 Pro Career Accelerator
+  // Tier-3 Student Sachet Micro-Packs (Indian Market Optimized - Zero Loss)
+  pack_chota_9: 900,              // ₹9 = 100 Pins (Chota AI Booster - UPI Sachet)
+  pack_sprint_29: 2900,           // ₹29 = 350 Pins (Placement Sprint - 35 AI Sessions)
+  pack_power_59: 5900,            // ₹59 = 750 Pins (Exam Week Mastery)
   // Top-Up Pin Packs (1 Rs = 10 Pins)
   pack_100: 1000,                 // ₹10 = 100 Pins
   pack_300: 3000,                 // ₹30 = 300 Pins

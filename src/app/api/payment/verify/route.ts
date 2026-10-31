@@ -84,7 +84,10 @@ export async function POST(req: Request) {
       const planId = clientPlanId || 'pack_100';
       let pinsGranted = 0;
       const isSubscriptionPlan = planId === 'pro' || planId === 'basic_student' || planId === 'student_99';
-      if (planId === 'pack_100') pinsGranted = 100;
+      if (planId === 'pack_chota_9') pinsGranted = 100;
+      else if (planId === 'pack_sprint_29') pinsGranted = 350;
+      else if (planId === 'pack_power_59') pinsGranted = 750;
+      else if (planId === 'pack_100') pinsGranted = 100;
       else if (planId === 'pack_300') pinsGranted = 300;
       else if (planId === 'pack_500') pinsGranted = 500;
       else if (planId === 'pack_1000') pinsGranted = 1000;
@@ -299,7 +302,10 @@ export async function POST(req: Request) {
 
     let pinsGranted = 0;
     const isSubscriptionPlan = notesPlanId === 'pro' || notesPlanId === 'basic_student' || notesPlanId === 'student_99';
-    if (notesPlanId === 'pack_100') pinsGranted = 100;
+    if (notesPlanId === 'pack_chota_9') pinsGranted = 100;
+    else if (notesPlanId === 'pack_sprint_29') pinsGranted = 350;
+    else if (notesPlanId === 'pack_power_59') pinsGranted = 750;
+    else if (notesPlanId === 'pack_100') pinsGranted = 100;
     else if (notesPlanId === 'pack_300') pinsGranted = 300;
     else if (notesPlanId === 'pack_500') pinsGranted = 500;
     else if (notesPlanId === 'pack_1000') pinsGranted = 1000;
