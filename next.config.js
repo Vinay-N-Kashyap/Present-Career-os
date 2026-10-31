@@ -29,6 +29,10 @@ const CSP = [
   [
     "connect-src 'self'",
     'blob:',
+    'http://127.0.0.1:*',
+    'ws://127.0.0.1:*',
+    'http://localhost:*',
+    'ws://localhost:*',
     'https://*.supabase.co',
     'wss://*.supabase.co',
     'https://api.razorpay.com',
