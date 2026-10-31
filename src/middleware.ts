@@ -225,7 +225,7 @@ export async function middleware(request: NextRequest) {
         }
       } else {
         try {
-          const { jwtVerify } = await import('jose');
+          const { jwtVerify } = await import('jose/jwt/verify');
           const secretKey = new TextEncoder().encode(jwtSecret);
           await jwtVerify(token, secretKey, { algorithms: ['HS256'] });
           isVerified = true;

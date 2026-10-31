@@ -6,12 +6,90 @@ import Image from 'next/image';
 import { useQueryClient } from '@tanstack/react-query';
 import { executeSecureLogout } from '@/lib/auth/secureLogout';
 
-export type NavLeaf  = { href: string; icon: string; label: string; badge?: boolean };
+export type NavLeaf  = { href: string; icon: string; label: string; badge?: boolean; tooltip?: string; description?: string };
 export type NavGroup = { label: string; icon: string; children: NavLeaf[] };
 export type NavNode  = NavLeaf | NavGroup;
 export type NavSection = { section: string; items: NavNode[] };
 
 export const isGroup = (n: NavNode): n is NavGroup => 'children' in n;
+
+export const ROUTE_TOOLTIPS: Record<string, { label: string; tooltip: string; description: string }> = {
+  '/dashboard': {
+    label: 'Dashboard',
+    tooltip: 'Student Command Center & Academic Overview',
+    description: 'Real-time overview of current quests, learning streak, attendance, and weekly milestones.'
+  },
+  '/quests': {
+    label: 'Quests & Courses',
+    tooltip: 'Industrial Certification & Learning Roadmaps',
+    description: 'Guided 60-day industrial curriculum, hands-on lessons, and verified certification tracks.'
+  },
+  '/missions': {
+    label: 'Daily Missions',
+    tooltip: 'Hands-On Daily Coding Missions & Drills',
+    description: 'Bite-sized algorithmic challenges, speed drills, and daily streak rewards.'
+  },
+  '/arena': {
+    label: 'Challenging Arena',
+    tooltip: 'Competitive Coding Battles & Peer Arena',
+    description: '1v1 coding duels, timed hackathons, and algorithmic skill matchmaking.'
+  },
+  '/projects': {
+    label: 'Projects & Squads',
+    tooltip: 'Industry Capstone Projects & Peer Squads',
+    description: 'Collaborative real-world repositories, squad work, and production deploy pipelines.'
+  },
+  '/leaderboard': {
+    label: 'Leaderboard & Leagues',
+    tooltip: 'Global Student Rankings & League Standings',
+    description: 'Campus, regional, and global leaderboards with weekly promotion leagues.'
+  },
+  '/interview': {
+    label: 'AI Interview',
+    tooltip: 'Interview Prep: AI Technical & Behavioral Mock Simulator',
+    description: 'Simulated voice and code screening interviews with instant rubric evaluation and feedback.'
+  },
+  '/group-discussion': {
+    label: 'GD Practice',
+    tooltip: 'Group Discussion: Real-Time AI Peer Discussion Rooms',
+    description: 'Collaborative discussion rounds with AI peers evaluating articulation, leadership, and logic.'
+  },
+  '/learning': {
+    label: 'Learning & Twin',
+    tooltip: 'Adaptive Learning Pathways & Career Digital Twin',
+    description: 'AI-driven personalized skill trees, knowledge gap analysis, and competency modeling.'
+  },
+  '/attention-span': {
+    label: 'Attention Span',
+    tooltip: 'Focus & Attention: Cognitive Focus Tracking & Calibration',
+    description: 'Cognitive load assessments, pomodoro focus calibration, and attention span analytics.'
+  },
+  '/friends': {
+    label: 'Friends',
+    tooltip: 'Campus Network: Peer Directory, Study Groups & Network',
+    description: 'Connect with classmates, form study squads, and follow peers across courses.'
+  },
+  '/pins': {
+    label: 'Pins & Wallet',
+    tooltip: 'Pins & Rewards: Vault Balance, Transactions & Grants',
+    description: 'Track earned PinIT tokens, redeem course upgrades, and inspect ledger transactions.'
+  },
+  '/notifications': {
+    label: 'Notifications',
+    tooltip: 'Activity Alerts & Unread Notifications',
+    description: 'Live updates on code reviews, mentor feedbacks, quest deadlines, and squad invites.'
+  },
+  '/profile': {
+    label: 'Profile',
+    tooltip: 'Student Identity, Verified Credentials & Preferences',
+    description: 'Personal portfolio, cryptographically signed credentials, resume sync, and account settings.'
+  },
+  '/career-builder': {
+    label: 'Career Builder',
+    tooltip: 'Career Architect & ATS Resume Intelligence Studio',
+    description: 'AI resume tailoring, ATS keyword optimization, and targeted role alignment scoring.'
+  },
+};
 
 export const STUDENT_NAV: NavSection[] = [
   { section: 'PinIT Career OS', items: [
@@ -251,7 +329,8 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
 
   const nav = useMemo<NavSection[]>(() => {
     const base = getNav(user?.role || 'student');
-    if (!isStudent || !forceShowCareerBuilder) return base;
+    const shouldShowCareer = isStudent && (forceShowCareerBuilder || (typeof pathname === 'string' && pathname.startsWith('/career-builder')));
+    if (!shouldShowCareer) return base;
     return base.map((sec, idx) => {
       if (idx !== 0) return sec;
       const alreadyHas = sec.items.some((it) => !isGroup(it) && it.href === '/career-builder');
@@ -264,7 +343,7 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
         ],
       };
     });
-  }, [user?.role, isStudent, forceShowCareerBuilder]);
+  }, [user?.role, isStudent, forceShowCareerBuilder, pathname]);
 
   const toggleGroup = (label: string) => setOpenGroups((prev) => ({ ...prev, [label]: !prev[label] }));
 
@@ -299,10 +378,18 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
       activeTourRoute && (href === activeTourRoute || (activeTourRoute !== '/dashboard' && href.startsWith(activeTourRoute)))
     );
 
+    const tooltipInfo = ROUTE_TOOLTIPS[href];
+    const tooltipText = isCompact
+      ? label
+      : tooltipInfo
+        ? `${label} — ${tooltipInfo.tooltip}`
+        : label;
+
     return (
       <Link
         href={href}
-        title={isCompact ? label : undefined}
+        title={tooltipText}
+        aria-label={tooltipInfo ? `${label} (${tooltipInfo.tooltip})` : label}
         onClick={() => handleNavSelect(href)}
         className={`nav-item${active ? ' active' : ''}${isTourSpotlight ? ' pinit-tour-spotlight' : ''}`}
         style={{

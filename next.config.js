@@ -116,6 +116,16 @@ const nextConfig = {
       '/api/lesson': ['./src/generated/longLessons/**/*'],
       '/api/quests/grade-test': ['./src/generated/longLessons/**/*'],
     },
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/@swc/core-linux-x64-gnu',
+        'node_modules/@swc/core-linux-x64-musl',
+        'node_modules/@esbuild/**/*',
+        'scripts/**/*',
+        'audit/**/*',
+        'tests/**/*',
+      ],
+    },
     // webpackBuildWorker spawns a SECOND Node process that also inherits
     // NODE_OPTIONS, consuming 2x the heap on Vercel's 8 GB container → SIGKILL.
     // Single-process build stays well within the 6 GB limit below.

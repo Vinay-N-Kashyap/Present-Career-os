@@ -76,17 +76,17 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       data-testid={`crash-plan-card-${plan.id}`}
       style={{
         borderRadius: 'var(--radius-xl)',
-        padding: '20px 18px',
-        background: 'var(--card)',
-        border: isSelected ? `2px solid ${hc}` : '1px solid var(--border)',
+        padding: '22px 20px',
+        background: 'linear-gradient(180deg, color-mix(in srgb, var(--card) 96%, ' + hc + ' 4%) 0%, var(--card) 100%)',
+        border: isSelected ? `2px solid ${hc}` : '1px solid color-mix(in srgb, var(--border) 80%, ' + hc + ' 20%)',
         boxShadow: isSelected
-          ? `0 10px 28px -4px color-mix(in srgb, ${hc} 28%, transparent)`
+          ? `0 12px 32px -4px color-mix(in srgb, ${hc} 30%, transparent), 0 0 0 1px ${hc} inset`
           : 'var(--shadow-sm)',
         display: 'flex',
         flexDirection: 'column',
-        gap: 12,
+        gap: 14,
         position: 'relative',
-        transition: 'transform 0.18s ease, box-shadow 0.18s ease',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
       }}
     >
       {/* Featured Tier Badge */}
@@ -94,16 +94,17 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
         <div
           style={{
             position: 'absolute',
-            top: -10,
-            right: 16,
-            padding: '3px 11px',
+            top: -11,
+            right: 18,
+            padding: '3px 12px',
             borderRadius: 999,
             fontSize: 10.5,
             fontWeight: 800,
-            letterSpacing: '0.04em',
+            letterSpacing: '0.05em',
             background: `linear-gradient(135deg, ${hc}, var(--accent))`,
             color: '#ffffff',
-            boxShadow: '0 3px 10px rgba(0,0,0,0.18)',
+            boxShadow: `0 4px 14px color-mix(in srgb, ${hc} 40%, transparent)`,
+            border: '1px solid rgba(255,255,255,0.25)',
           }}
         >
           {plan.badge}
@@ -114,9 +115,9 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6, flexWrap: 'wrap' }}>
         <span
           style={{
-            fontSize: 11,
+            fontSize: 11.5,
             fontWeight: 800,
-            letterSpacing: '0.05em',
+            letterSpacing: '0.06em',
             textTransform: 'uppercase',
             color: hc,
             fontFamily: 'var(--font-mono)',
@@ -128,18 +129,18 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: 4,
-            padding: '2px 8px',
+            gap: 5,
+            padding: '3px 10px',
             borderRadius: 999,
             background: 'var(--bg3)',
             border: '1px solid var(--border)',
-            fontSize: 11,
+            fontSize: 11.5,
             fontWeight: 700,
-            color: 'var(--t2)',
+            color: 'var(--t1)',
           }}
         >
           <span>{plan?.targetRole || 'Software Engineer'}</span>
-          <span style={{ color: hc, fontWeight: 800 }}>• {plan?.hireabilityBoost || '+35%'}</span>
+          <span style={{ color: 'var(--green)', fontWeight: 800 }}>• {plan?.hireabilityBoost || '+35%'}</span>
         </span>
       </div>
 
@@ -147,54 +148,59 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       <div>
         <h3
           style={{
-            fontSize: 17,
+            fontSize: 18,
             fontWeight: 900,
             color: 'var(--t1)',
-            margin: '0 0 2px 0',
+            margin: '0 0 3px 0',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}
         >
           {plan?.title || 'Certification Track'}
         </h3>
-        <p style={{ fontSize: 12.5, color: 'var(--t3)', margin: '0 0 4px 0', lineHeight: 1.35 }}>
+        <p style={{ fontSize: 13, color: 'var(--t2)', margin: '0 0 6px 0', lineHeight: 1.4 }}>
           {plan?.subtitle || 'Full-cycle engineering curriculum with verified credentials.'}
         </p>
-        <span style={{ fontSize: 11.5, color: 'var(--t2)', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>
-          ⏱️ {plan?.totalProgramDuration || '3-4 Months Total'}
-        </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+          <span style={{ fontSize: 11.5, color: 'var(--t2)', fontWeight: 700, fontFamily: 'var(--font-mono)', background: 'var(--bg3)', padding: '2px 8px', borderRadius: 6, border: '1px solid var(--border)' }}>
+            ⏱️ {plan?.totalProgramDuration || '3-4 Months Total'}
+          </span>
+          <span style={{ fontSize: 11.5, color: 'var(--accent)', fontWeight: 700, fontFamily: 'var(--font-mono)', background: 'var(--accent-light)', padding: '2px 8px', borderRadius: 6, border: '1px solid color-mix(in srgb, var(--accent) 30%, transparent)' }}>
+            ⚡ {plan?.dailyCommitment || 'Daily 1-Hr Micro-Learning'}
+          </span>
+        </div>
       </div>
 
       {/* Flagship Build Card */}
       <div
         style={{
-          padding: '10px 12px',
-          borderRadius: 10,
+          padding: '12px 14px',
+          borderRadius: 12,
           background: 'var(--bg2)',
-          border: '1px solid var(--border)',
+          border: `1px solid color-mix(in srgb, var(--border) 70%, ${hc} 30%)`,
           display: 'flex',
           flexDirection: 'column',
-          gap: 5,
+          gap: 6,
         }}
       >
-        <div style={{ fontSize: 11.5, fontWeight: 800, color: hc, display: 'flex', alignItems: 'center', gap: 5 }}>
+        <div style={{ fontSize: 12, fontWeight: 800, color: hc, display: 'flex', alignItems: 'center', gap: 6 }}>
           <span>🚀</span> Flagship Project: {flagship.title}
         </div>
-        <p style={{ fontSize: 11.5, color: 'var(--t3)', lineHeight: 1.35, margin: 0 }}>
+        <p style={{ fontSize: 12, color: 'var(--t2)', lineHeight: 1.4, margin: 0 }}>
           {flagship.desc}
         </p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, marginTop: 2 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 2 }}>
           {flagshipTech.map((t) => (
             <span
               key={t}
               style={{
-                fontSize: 10,
-                padding: '2px 6px',
-                borderRadius: 4,
+                fontSize: 10.5,
+                padding: '2px 7px',
+                borderRadius: 5,
                 background: 'var(--bg3)',
                 border: '1px solid var(--border)',
-                fontWeight: 600,
-                color: 'var(--t2)',
+                fontWeight: 700,
+                color: 'var(--t1)',
                 fontFamily: 'var(--font-mono)',
               }}
             >
@@ -208,9 +214,9 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       <div
         style={{
           display: 'flex',
-          gap: 3,
-          padding: 3,
-          borderRadius: 8,
+          gap: 4,
+          padding: 4,
+          borderRadius: 10,
           background: 'var(--bg3)',
           border: '1px solid var(--border)',
         }}
@@ -225,12 +231,12 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
               onClick={() => setActiveTab(t.key)}
               style={{
                 flex: 1,
-                padding: '5px 6px',
-                borderRadius: 6,
+                padding: '6px 8px',
+                borderRadius: 7,
                 border: 'none',
                 background: active ? 'var(--card)' : 'transparent',
                 color: active ? 'var(--t1)' : 'var(--t3)',
-                fontSize: 11,
+                fontSize: 11.5,
                 fontWeight: active ? 800 : 600,
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
@@ -244,41 +250,51 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       </div>
 
       {/* Tab Panels */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 6, minHeight: 115 }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 6, minHeight: 125 }}>
         {activeTab === 'curriculum' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             {modules.map((m) => (
               <div
                 key={m.month}
                 style={{
                   display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  padding: '6px 9px',
+                  flexDirection: 'column',
+                  gap: 3,
+                  padding: '8px 10px',
                   background: 'var(--bg3)',
-                  borderRadius: 6,
-                  fontSize: 11.5,
-                  color: 'var(--t2)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 8,
                 }}
               >
-                <span>{m.icon || '📘'}</span>
-                <span style={{ fontWeight: 700, flex: 1, color: 'var(--t1)' }}>{m.title}</span>
-                {Array.isArray(m.skills) &&
-                  m.skills.slice(0, 2).map((s) => (
-                    <span
-                      key={s}
-                      style={{
-                        fontSize: 10,
-                        padding: '1px 5px',
-                        borderRadius: 4,
-                        background: 'var(--accent-light)',
-                        color: 'var(--accent)',
-                        fontWeight: 700,
-                      }}
-                    >
-                      {s}
-                    </span>
-                  ))}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 13 }}>{m.icon || '📘'}</span>
+                  <span style={{ fontWeight: 800, flex: 1, color: 'var(--t1)', fontSize: 12 }}>{m.title}</span>
+                  {Array.isArray(m.skills) && (
+                    <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap' }}>
+                      {m.skills.slice(0, 2).map((s) => (
+                        <span
+                          key={s}
+                          style={{
+                            fontSize: 10,
+                            padding: '1px 6px',
+                            borderRadius: 4,
+                            background: 'var(--accent-light)',
+                            color: 'var(--accent)',
+                            fontWeight: 700,
+                            fontFamily: 'var(--font-mono)',
+                          }}
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {m.desc && (
+                  <p style={{ fontSize: 11, color: 'var(--t3)', margin: 0, lineHeight: 1.35 }}>
+                    {m.desc}
+                  </p>
+                )}
               </div>
             ))}
             {onOpenDiagnosticReport && (
@@ -289,7 +305,7 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
                   alignSelf: 'flex-start',
                   background: 'none',
                   border: 'none',
-                  padding: 0,
+                  padding: '2px 0',
                   color: 'var(--accent)',
                   fontWeight: 700,
                   fontSize: 11.5,
@@ -319,33 +335,44 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 6,
-                  padding: '5px 8px',
+                  gap: 8,
+                  padding: '6px 10px',
                   background: 'var(--bg3)',
-                  borderRadius: 6,
+                  border: '1px solid var(--border)',
+                  borderRadius: 7,
                   fontSize: 11.5,
                 }}
               >
-                <span style={{ fontWeight: 800, color: hc }}>{sp.s}</span>
+                <span style={{ fontWeight: 800, color: hc, minWidth: 54 }}>{sp.s}</span>
                 <span style={{ color: 'var(--t2)' }}>{sp.d}</span>
               </div>
             ))}
-            <p style={{ fontSize: 10.5, color: 'var(--t3)', margin: '2px 0 0 0' }}>
-              <strong>Stack:</strong> Microservices • PostgreSQL/Supabase • GitHub Actions + Docker
+            <p style={{ fontSize: 11, color: 'var(--t3)', margin: '4px 0 0 0' }}>
+              <strong>Production Tech Stack:</strong> Microservices • PostgreSQL/Supabase • GitHub Actions + Docker
             </p>
           </div>
         )}
 
         {activeTab === 'credentials' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             {[
               '✓ Industrial Project Certificate (ISO-Aligned, Signed)',
               '✓ PinIT Tech Labs Experience Letter (Engineering Fellow)',
               '✓ SHA-256 Tamper-Proof Cryptographic Hash',
               '✓ Live Public Verification at /verify/[id]',
             ].map((c, i) => (
-              <div key={i} style={{ fontSize: 11.5, color: 'var(--t2)', lineHeight: 1.35 }}>
-                {c}
+              <div
+                key={i}
+                style={{
+                  fontSize: 11.5,
+                  color: 'var(--t2)',
+                  lineHeight: 1.35,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                }}
+              >
+                <span>{c}</span>
               </div>
             ))}
             <button
@@ -355,15 +382,16 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
               style={{
                 alignSelf: 'flex-start',
                 marginTop: 4,
-                padding: '5px 10px',
-                borderRadius: 6,
+                padding: '6px 12px',
+                borderRadius: 7,
                 background: 'linear-gradient(135deg, #f59e0b, #d97706)',
                 border: 'none',
                 color: '#000000',
-                fontSize: 11.5,
+                fontSize: 12,
                 fontWeight: 800,
                 cursor: 'pointer',
-                boxShadow: '0 2px 6px rgba(245,158,11,0.25)',
+                boxShadow: '0 2px 8px rgba(245,158,11,0.3)',
+                transition: 'transform 0.15s ease',
               }}
             >
               🏆 Preview Sample Credentials ➔
@@ -378,7 +406,7 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '6px 10px',
+          padding: '7px 12px',
           borderRadius: 8,
           background: 'var(--accent-light)',
           border: '1px solid color-mix(in srgb, var(--accent) 25%, transparent)',
@@ -392,24 +420,25 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
       </div>
 
       {/* Pricing & CTA */}
-      <div style={{ paddingTop: 8, borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 8 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 4 }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-            <span style={{ fontSize: 19, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)' }}>
+      <div style={{ paddingTop: 10, borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+            <span style={{ fontSize: 20, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)' }}>
               ⚡ {pins}
             </span>
-            <span style={{ fontSize: 12, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+            <span style={{ fontSize: 13, color: 'var(--t2)', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>
               Pins · ₹{inr}
             </span>
           </div>
           <span
             style={{
-              padding: '2px 7px',
-              borderRadius: 5,
+              padding: '3px 8px',
+              borderRadius: 6,
               background: 'linear-gradient(135deg, #f59e0b, #d97706)',
-              fontSize: 10,
+              fontSize: 10.5,
               fontWeight: 900,
               color: '#000000',
+              boxShadow: '0 2px 6px rgba(245,158,11,0.25)',
             }}
           >
             PINIT2026 (-₹1,000)
@@ -422,17 +451,18 @@ export const EnhancedCrashCoursePlanCard: React.FC<EnhancedCrashCoursePlanCardPr
           onClick={() => onSelectPlan(plan)}
           disabled={isSelected}
           style={{
-            padding: '10px 16px',
-            borderRadius: 8,
+            padding: '11px 18px',
+            borderRadius: 9,
             border: 'none',
             background: isSelected ? 'var(--bg3)' : `linear-gradient(135deg, ${hc}, var(--accent))`,
             color: isSelected ? 'var(--t3)' : '#ffffff',
-            fontSize: 13,
+            fontSize: 13.5,
             fontWeight: 800,
             cursor: isSelected ? 'default' : 'pointer',
-            boxShadow: isSelected ? 'none' : `0 4px 12px color-mix(in srgb, ${hc} 35%, transparent)`,
-            transition: 'all 0.15s ease',
+            boxShadow: isSelected ? 'none' : `0 4px 14px color-mix(in srgb, ${hc} 40%, transparent)`,
+            transition: 'all 0.18s ease',
             width: '100%',
+            letterSpacing: '0.01em',
           }}
         >
           {isSelected ? '✓ Currently Active Plan' : 'Select & Unlock Program ➔'}
