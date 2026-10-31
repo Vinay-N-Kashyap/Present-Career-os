@@ -1,11 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import ActivityFeed from '@/components/ui/ActivityFeed';
 import { DailyMissionSlot, WorkloadBand } from '@/lib/pathway/competencySchema';
 import { PathwayApiService } from '@/lib/api/pathwayApi';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
-import { api } from '@/lib/api/client';
+import { computePlacementReadiness } from '@/lib/pathway/placementPredictor';
 
 interface NextStep {
   title: string;
@@ -37,8 +37,16 @@ export default function DashboardMissionsPanel({ nextStep, userId }: Props) {
   const [optionalMissions, setOptionalMissions] = useState<DailyMissionSlot[]>([]);
   const [completedIds, setCompletedIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
+  const [rightTab, setRightTab] = useState<'placement' | 'activity'>('placement');
 
-  // Hydrate completed missions from user-scoped localStorage and CareerOSContext
+  const careerScore = cOS?.careerScore || 0;
+  const verifiedCount = (cOS?.vaultItems || []).filter(v => v.verified).length;
+  const completedQuestsCount = cOS?.completedQuests?.length || 0;
+
+  const placementTiers = useMemo(() => {
+    return computePlacementReadiness(careerScore, verifiedCount, completedQuestsCount);
+  }, [careerScore, verifiedCount, completedQuestsCount]);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const key = `pinit_${userId || 'anon'}_daily_missions_completed`;
@@ -75,275 +83,332 @@ export default function DashboardMissionsPanel({ nextStep, userId }: Props) {
     return () => { isMounted = false; };
   }, [userId, workloadBand]);
 
-function getMissionHref(m: DailyMissionSlot): string {
-  if (m.sourceId && m.sourceId.startsWith('/')) return m.sourceId;
-  switch (m.category) {
-    case 'practice':
-    case 'debug':
-      return '/arena';
-    case 'build':
-      return '/projects';
-    case 'career':
-      return '/vault';
-    case 'communication':
-      return '/interview';
-    case 'review':
-      return '/exams';
-    case 'learn':
-    default:
-      return '/quests';
+  function getMissionHref(m: DailyMissionSlot): string {
+    if (m.sourceId && m.sourceId.startsWith('/')) return m.sourceId;
+    switch (m.category) {
+      case 'practice':
+      case 'debug':
+        return '/arena';
+      case 'build':
+        return '/projects';
+      case 'career':
+        return '/vault';
+      case 'communication':
+        return '/interview';
+      case 'review':
+        return '/exams';
+      case 'learn':
+      default:
+        return '/quests';
+    }
   }
-}
 
   const toggleComplete = (id: string) => {
-    // Validate that the mission ID is an authentic catalog mission slot
-    const allKnown = [...coreMissions, ...optionalMissions];
-    const isRecognized = allKnown.length === 0 || allKnown.some(m => m.id === id) || id.startsWith('mission_') || id.startsWith('msn_') || id.startsWith('core_') || id.startsWith('opt_');
-    if (!isRecognized) {
-      console.warn(`[DEF-010 Security Gate]: Rejected unregistered mission ID "${id}"`);
-      return;
-    }
-
-    const isCurrentlyDone = completedIds.has(id);
     const next = new Set(completedIds);
-    if (isCurrentlyDone) {
-      next.delete(id);
-    } else {
-      next.add(id);
-    }
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
     setCompletedIds(next);
 
-    const arr = Array.from(next);
-    // Persist to user-scoped localStorage as student's personal daily checklist
     if (typeof window !== 'undefined') {
       try {
+        const arr = Array.from(next);
         localStorage.setItem(`pinit_${userId || 'anon'}_daily_missions_completed`, JSON.stringify(arr));
       } catch {}
     }
-    // Security & Integrity: Personal checklist marks do NOT grant unearned XP or streak bonuses.
-    // Official XP & rewards are authoritatively verified when completing the action via "Start ➔".
   };
 
   return (
-    <div className="db-missions-grid" style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:16 }}>
+    <div className="db-missions-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
 
-      {/* Col 1: Next Step Card */}
-      <div className="db-glass" style={{ padding:20, display:'flex', flexDirection:'column', gap:12 }}>
+      {/* Col 1: Actionable Next Priority */}
+      <div className="db-glass" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 14 }}>
         <div>
-          <span style={{ fontSize:9.5, fontFamily:'var(--font-mono)', fontWeight:800, color:'var(--accent)', textTransform:'uppercase', letterSpacing:'1.5px', display:'block' }}>🚦 NEXT PRIORITY</span>
-          <h3 style={{ fontSize:15, fontWeight:800, color:'var(--t1)', margin:'4px 0 0' }}>Your Best Next Move</h3>
+          <span style={{ fontSize: 9.5, fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '1.5px', display: 'block' }}>
+            🚦 NEXT PRIORITY
+          </span>
+          <h3 style={{ fontSize: 16, fontWeight: 900, color: 'var(--t1)', margin: '4px 0 0', fontFamily: 'var(--font-display)' }}>
+            Your Best Next Move
+          </h3>
         </div>
-        <Link href={nextStep.href} style={{ textDecoration:'none', flex:1 }}>
-          <div style={{ padding:16, borderRadius:12, background:`${nextStep.color}14`, border:`1.5px solid ${nextStep.color}30`, display:'flex', flexDirection:'column', gap:10, height:'100%', transition:'all 0.15s', cursor:'pointer' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform='translateY(-2px)'; (e.currentTarget as HTMLDivElement).style.boxShadow=`0 6px 16px ${nextStep.color}30`; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform='translateY(0)'; (e.currentTarget as HTMLDivElement).style.boxShadow='none'; }}
+
+        <Link href={nextStep.href} style={{ textDecoration: 'none', flex: 1, display: 'flex' }}>
+          <div style={{
+            padding: 18,
+            borderRadius: 14,
+            background: `${nextStep.color}12`,
+            border: `1.5px solid ${nextStep.color}35`,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
+            width: '100%',
+            transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+            cursor: 'pointer'
+          }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)';
+              (e.currentTarget as HTMLDivElement).style.boxShadow = `0 8px 24px ${nextStep.color}25`;
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+              (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+            }}
           >
-            <span style={{ fontSize:31 }}>{nextStep.icon}</span>
-            <div style={{ fontSize:14.5, fontWeight:800, color:'var(--t1)', lineHeight:1.35 }}>{nextStep.title}</div>
-            <div style={{ fontSize:12.5, color:'var(--t2)', lineHeight:1.5, flex:1 }}>{nextStep.desc}</div>
-            <span style={{ fontSize:12.5, fontWeight:700, color:nextStep.color, fontFamily:'var(--font-mono)' }}>Take Action ➔</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: 32 }}>{nextStep.icon}</span>
+              <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', padding: '2px 8px', borderRadius: 6, background: `${nextStep.color}20`, color: nextStep.color, fontWeight: 800 }}>
+                High ROI
+              </span>
+            </div>
+            <div style={{ fontSize: 15, fontWeight: 800, color: 'var(--t1)', lineHeight: 1.35 }}>
+              {nextStep.title}
+            </div>
+            <div style={{ fontSize: 13, color: 'var(--t2)', lineHeight: 1.5, flex: 1 }}>
+              {nextStep.desc}
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: `1px solid ${nextStep.color}25`, paddingTop: 10, marginTop: 4 }}>
+              <span style={{ fontSize: 11.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>Est. 15-20 mins</span>
+              <span style={{ fontSize: 13, fontWeight: 800, color: nextStep.color, fontFamily: 'var(--font-mono)' }}>
+                Take Action ➔
+              </span>
+            </div>
           </div>
         </Link>
       </div>
 
-      {/* Col 2: Dynamic Daily Missions (3 Core + 0-2 Optional) */}
-      <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:20, overflow:'hidden', boxShadow:'var(--shadow-sm)' }}>
-        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'12px 18px', borderBottom:'1px solid var(--border)', flexWrap:'wrap', gap:8 }}>
+      {/* Col 2: Dynamic Daily Workload Missions */}
+      <div className="db-glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 18px', borderBottom: '1px solid var(--border)', flexWrap: 'wrap', gap: 8 }}>
           <div>
-            <h3 style={{ fontFamily:'var(--font-display)', fontSize:15.5, fontWeight:800, color:'var(--t1)', margin:0, display:'flex', alignItems:'center', gap:8 }}>
+            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 15.5, fontWeight: 900, color: 'var(--t1)', margin: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
               ⚡ Today&apos;s Workload Missions
             </h3>
-            <span style={{ fontSize:11.5, color:'var(--t3)', fontFamily:'var(--font-mono)' }}>
+            <span style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
               {workloadBand === 'exam_pause' ? '1 Maintenance Task' : `${coreMissions.length} Core ${optionalMissions.length > 0 ? `+ ${optionalMissions.length} Optional` : ''}`}
             </span>
           </div>
 
-          {/* Workload Band Mode Switcher */}
-          <div style={{ display:'flex', background:'var(--bg3)', borderRadius:8, padding:2, border:'1px solid var(--border)' }}>
+          {/* Workload Band Switcher */}
+          <div style={{ display: 'flex', background: 'var(--bg3)', borderRadius: 8, padding: 2, border: '1px solid var(--border)' }}>
             {(['standard', 'light', 'exam_pause'] as WorkloadBand[]).map(band => (
               <button
                 key={band}
                 onClick={() => setWorkloadBand(band)}
                 style={{
-                  padding:'3px 8px',
-                  fontSize:11,
-                  fontFamily:'var(--font-mono)',
-                  fontWeight: workloadBand === band ? 800 : 500,
-                  color: workloadBand === band ? '#fff' : 'var(--t3)',
+                  padding: '4px 9px',
+                  borderRadius: 6,
+                  border: 'none',
                   background: workloadBand === band ? 'var(--accent)' : 'transparent',
-                  border:'none',
-                  borderRadius:6,
-                  cursor:'pointer',
-                  transition:'all 0.15s ease',
-                  textTransform:'capitalize',
+                  color: workloadBand === band ? '#fff' : 'var(--t3)',
+                  fontSize: 10.5,
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  fontFamily: 'var(--font-mono)',
+                  transition: 'all 0.15s ease',
                 }}
               >
-                {band === 'exam_pause' ? 'Exam ⏸️' : band}
+                {band === 'standard' ? 'Standard' : band === 'light' ? 'Light' : 'Exam ⏸'}
               </button>
             ))}
           </div>
         </div>
 
-        <div style={{ padding:14, display:'flex', flexDirection:'column', gap:10 }}>
+        <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
           {loading ? (
-            <div style={{ textAlign:'center', padding:20, color:'var(--t3)', fontSize:13 }}>Loading dynamic workload...</div>
+            <div style={{ padding: '30px 0', textAlign: 'center', color: 'var(--t3)', fontSize: 13, fontFamily: 'var(--font-mono)' }}>
+              Calibrating today&apos;s curriculum missions...
+            </div>
+          ) : coreMissions.length === 0 ? (
+            <div style={{ padding: '24px 0', textAlign: 'center', color: 'var(--t3)', fontSize: 13 }}>
+              All daily missions completed! Great job.
+            </div>
           ) : (
-            <>
-              {/* 3 Core Slots */}
-              {coreMissions.map((m) => {
-                const meta = CATEGORY_META[m.category] || { icon: '⚡', color: '#6366f1', label: 'CORE' };
-                const done = completedIds.has(m.id);
-                return (
-                  <div
-                    key={m.id}
+            coreMissions.map((m) => {
+              const meta = CATEGORY_META[m.category] || { icon: '📘', color: '#3b82f6', label: 'TASK' };
+              const done = completedIds.has(m.id);
+              return (
+                <div
+                  key={m.id}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 12,
+                    padding: '10px 14px',
+                    borderRadius: 12,
+                    background: done ? 'rgba(16, 185, 129, 0.08)' : 'var(--bg3)',
+                    border: `1px solid ${done ? '#10b98140' : 'var(--border)'}`,
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  <button
+                    onClick={() => toggleComplete(m.id)}
                     style={{
-                      display:'flex',
-                      alignItems:'center',
-                      gap:12,
-                      padding:'10px 14px',
-                      borderRadius:12,
-                      background: done ? 'rgba(16, 185, 129, 0.08)' : 'var(--bg3)',
-                      border: `1px solid ${done ? '#10b98140' : 'var(--border)'}`,
-                      transition:'all 0.15s ease',
+                      width: 22,
+                      height: 22,
+                      borderRadius: 6,
+                      border: `1.5px solid ${done ? '#10b981' : 'var(--border2)'}`,
+                      background: done ? '#10b981' : 'transparent',
+                      color: '#fff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 12,
+                      fontWeight: 800,
+                      cursor: 'pointer',
+                      flexShrink: 0
                     }}
                   >
-                    <button
-                      onClick={() => toggleComplete(m.id)}
-                      style={{
-                        width:24,
-                        height:24,
-                        borderRadius:6,
-                        border: `1.5px solid ${done ? '#10b981' : 'var(--border2)'}`,
-                        background: done ? '#10b981' : 'transparent',
-                        color:'#fff',
-                        display:'flex',
-                        alignItems:'center',
-                        justifyContent:'center',
-                        fontSize:13,
-                        fontWeight:800,
-                        cursor:'pointer',
-                      }}
-                    >
-                      {done ? '✓' : ''}
-                    </button>
-                    <span style={{ fontSize:20 }}>{meta.icon}</span>
-                    <div style={{ flex:1, minWidth:0 }}>
-                      <div style={{ display:'flex', alignItems:'center', gap:6 }}>
-                        <span style={{ fontSize:10, fontFamily:'var(--font-mono)', fontWeight:800, color: meta.color, background:`${meta.color}15`, padding:'1px 5px', borderRadius:4 }}>
-                          {meta.label}
-                        </span>
-                        <span style={{ fontSize:11, color:'var(--t3)', fontFamily:'var(--font-mono)' }}>⏱️ {m.estDurationMinutes}m</span>
-                        <span style={{ fontSize:11, color:'var(--accent)', fontFamily:'var(--font-mono)', fontWeight:700 }}>+{m.xpReward} XP</span>
-                      </div>
-                      <div style={{ fontSize:14, fontWeight:700, color:'var(--t1)', textDecoration: done ? 'line-through' : 'none', marginTop:2 }}>
-                        {m.title}
-                      </div>
+                    {done ? '✓' : ''}
+                  </button>
+                  <span style={{ fontSize: 18 }}>{meta.icon}</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span style={{ fontSize: 9.5, fontFamily: 'var(--font-mono)', fontWeight: 800, color: meta.color, background: `${meta.color}15`, padding: '1px 5px', borderRadius: 4 }}>
+                        {meta.label}
+                      </span>
+                      <span style={{ fontSize: 10.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>⏱️ {m.estDurationMinutes}m</span>
+                      <span style={{ fontSize: 10.5, color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontWeight: 700 }}>+{m.xpReward} XP</span>
                     </div>
-                    <Link
-                      href={getMissionHref(m)}
-                      style={{
-                        fontSize:11.5,
-                        fontFamily:'var(--font-mono)',
-                        fontWeight:700,
-                        color: meta.color,
-                        textDecoration:'none',
-                        padding:'4px 8px',
-                        borderRadius:6,
-                        background:`${meta.color}15`,
-                        border:`1px solid ${meta.color}30`,
-                      }}
-                    >
-                      Start ➔
-                    </Link>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--t1)', textDecoration: done ? 'line-through' : 'none', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {m.title}
+                    </div>
                   </div>
-                );
-              })}
-
-              {/* Optional Missions Section (if present) */}
-              {optionalMissions.length > 0 && (
-                <div style={{ marginTop:6, borderTop:'1px dashed var(--border)', paddingTop:8 }}>
-                  <div style={{ fontSize:10.5, fontFamily:'var(--font-mono)', color:'var(--t3)', fontWeight:700, marginBottom:6, textTransform:'uppercase' }}>
-                    💡 Optional Habit Boosters (No Penalty)
-                  </div>
-                  <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
-                    {optionalMissions.map((m) => {
-                      const meta = CATEGORY_META[m.category] || { icon: '✨', color: '#f59e0b', label: 'OPTIONAL' };
-                      const done = completedIds.has(m.id);
-                      return (
-                        <div
-                          key={m.id}
-                          style={{
-                            display:'flex',
-                            alignItems:'center',
-                            gap:10,
-                            padding:'8px 12px',
-                            borderRadius:10,
-                            background: done ? 'rgba(16, 185, 129, 0.05)' : 'rgba(255,255,255,0.02)',
-                            border: `1px solid ${done ? '#10b98130' : 'var(--border)'}`,
-                            opacity: done ? 0.6 : 0.9,
-                          }}
-                        >
-                          <button
-                            onClick={() => toggleComplete(m.id)}
-                            style={{
-                              width:20,
-                              height:20,
-                              borderRadius:5,
-                              border: `1.5px solid ${done ? '#10b981' : 'var(--border2)'}`,
-                              background: done ? '#10b981' : 'transparent',
-                              color:'#fff',
-                              display:'flex',
-                              alignItems:'center',
-                              justifyContent:'center',
-                              fontSize:11,
-                              cursor:'pointer',
-                            }}
-                          >
-                            {done ? '✓' : ''}
-                          </button>
-                          <span style={{ fontSize:16.5 }}>{meta.icon}</span>
-                          <div style={{ flex:1, minWidth:0 }}>
-                            <div style={{ fontSize:12.5, fontWeight:600, color:'var(--t1)', textDecoration: done ? 'line-through' : 'none' }}>
-                              {m.title}
-                            </div>
-                          </div>
-                          <span style={{ fontSize:10.5, color:'var(--accent)', fontFamily:'var(--font-mono)' }}>+{m.xpReward} XP</span>
-                          <Link
-                            href={getMissionHref(m)}
-                            style={{
-                              fontSize:10.5,
-                              fontFamily:'var(--font-mono)',
-                              fontWeight:700,
-                              color: meta.color,
-                              textDecoration:'none',
-                              padding:'3px 6px',
-                              borderRadius:4,
-                              background:`${meta.color}15`,
-                              border:`1px solid ${meta.color}30`,
-                            }}
-                          >
-                            Start ➔
-                          </Link>
-                        </div>
-                      );
-                    })}
-                  </div>
+                  <Link
+                    href={getMissionHref(m)}
+                    style={{
+                      fontSize: 11,
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 700,
+                      color: meta.color,
+                      textDecoration: 'none',
+                      padding: '4px 8px',
+                      borderRadius: 6,
+                      background: `${meta.color}15`,
+                      border: `1px solid ${meta.color}30`,
+                      flexShrink: 0
+                    }}
+                  >
+                    Start ➔
+                  </Link>
                 </div>
-              )}
-            </>
+              );
+            })
           )}
         </div>
       </div>
 
-      {/* Col 3: Live Activity Feed */}
-      <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:20, padding:16, boxShadow:'var(--shadow-sm)' }}>
-        <span style={{ fontSize:14, fontWeight:800, color:'var(--t1)', fontFamily:'var(--font-display)', marginBottom:10, display:'flex', alignItems:'center', gap:6 }}>
-          <span style={{ width:7, height:7, borderRadius:'50%', background:'var(--green)', display:'inline-block', boxShadow:'0 0 6px var(--green)', animation:'hud-pulse 2s infinite ease-in-out' }} />
-          Live Activity
-        </span>
-        <ActivityFeed userId={userId} />
+      {/* Col 3: Tier 3 Placement Readiness & Salary Predictor (Replaced Empty Dead Space) */}
+      <div className="db-glass" style={{ padding: 18, display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <span className="db-label">💼 CAMPUS PLACEMENT BENCHMARK</span>
+            <h3 style={{ fontSize: 15, fontWeight: 900, color: 'var(--t1)', margin: '2px 0 0', fontFamily: 'var(--font-display)' }}>
+              Campus Placement Predictor
+            </h3>
+          </div>
+          <div style={{ display: 'flex', background: 'var(--bg3)', borderRadius: 6, padding: 2, border: '1px solid var(--border)' }}>
+            <button
+              onClick={() => setRightTab('placement')}
+              style={{
+                fontSize: 10,
+                padding: '3px 8px',
+                borderRadius: 4,
+                border: 'none',
+                background: rightTab === 'placement' ? 'var(--accent)' : 'transparent',
+                color: rightTab === 'placement' ? '#fff' : 'var(--t3)',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 700
+              }}
+            >
+              Drives
+            </button>
+            <button
+              onClick={() => setRightTab('activity')}
+              style={{
+                fontSize: 10,
+                padding: '3px 8px',
+                borderRadius: 4,
+                border: 'none',
+                background: rightTab === 'activity' ? 'var(--accent)' : 'transparent',
+                color: rightTab === 'activity' ? '#fff' : 'var(--t3)',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 700
+              }}
+            >
+              Activity
+            </button>
+          </div>
+        </div>
+
+        {rightTab === 'placement' ? (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
+            {placementTiers.map((tier, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: '10px 12px',
+                  borderRadius: 10,
+                  background: 'var(--bg3)',
+                  border: '1px solid var(--border)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--t1)' }}>{tier.tierName}</span>
+                    <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', color: tier.color, background: `${tier.color}15`, padding: '1px 5px', borderRadius: 4, fontWeight: 700 }}>
+                      {tier.targetCtc}
+                    </span>
+                  </div>
+                  <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 800, color: tier.color }}>
+                    {tier.readinessPct}%
+                  </span>
+                </div>
+
+                {/* Progress Bar */}
+                <div style={{ height: 4, background: 'rgba(255,255,255,0.05)', borderRadius: 2, overflow: 'hidden' }}>
+                  <div style={{ height: '100%', width: `${tier.readinessPct}%`, background: tier.color, borderRadius: 2, transition: 'width 0.8s ease' }} />
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 10.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+                  <span>{tier.companies.slice(0, 3).join(', ')}</span>
+                  <span style={{ color: tier.readinessPct >= 75 ? '#10b981' : 'var(--t3)', fontWeight: 600 }}>{tier.status}</span>
+                </div>
+              </div>
+            ))}
+
+            <Link
+              href="/interview"
+              style={{
+                marginTop: 2,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 6,
+                padding: '8px',
+                borderRadius: 8,
+                background: 'rgba(99,102,241,0.12)',
+                border: '1px solid rgba(99,102,241,0.25)',
+                color: 'var(--accent)',
+                textDecoration: 'none',
+                fontSize: 12,
+                fontWeight: 800,
+                fontFamily: 'var(--font-mono)'
+              }}
+            >
+              Practice AI Campus Mock Drive ➔
+            </Link>
+          </div>
+        ) : (
+          <div style={{ flex: 1, minHeight: 200 }}>
+            <ActivityFeed userId={userId} />
+          </div>
+        )}
       </div>
+
     </div>
   );
 }
-

@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
+import { DynamicRoleReadiness, StudentSkillProfile } from '@/lib/pathway/competencySchema';
 
 // ── Dynamic job match companies with authentic required skills ───────────────
 const COMPANY_SEEDS = [
   { company: 'Swiggy',   role: 'Backend SDE',        path: '/vault',   requiredSkills: ['Go', 'Java', 'SQL', 'Distributed Systems', 'Redis'] },
   { company: 'Razorpay', role: 'Frontend Developer',   path: '/quests', requiredSkills: ['React', 'TypeScript', 'Next.js', 'WebSockets', 'Tailwind'] },
+  { company: 'Zoho',     role: 'Product Engineer',     path: '/arena',  requiredSkills: ['Java', 'C++', 'Data Structures', 'OOP', 'DBMS'] },
   { company: 'Zomato',   role: 'DevOps Engineer',      path: '/vault',  requiredSkills: ['Docker', 'Kubernetes', 'CI/CD', 'AWS', 'Linux'] },
   { company: 'Flipkart', role: 'Software Engineer',    path: '/quests', requiredSkills: ['Data Structures', 'Algorithms', 'Java', 'System Design', 'OOP'] },
 ];
@@ -24,7 +27,6 @@ function CareerTwinHologram({ track }: { track: 'sde' | 'iot' }) {
     let time = 0;
     let isDestroyed = false;
 
-    // Bug 4 Fix: debounce resize via requestAnimationFrame — no layout thrashing
     let resizeRafId: number;
     const resizeCanvas = () => {
       if (!canvas || isDestroyed) return;
@@ -43,15 +45,10 @@ function CareerTwinHologram({ track }: { track: 'sde' | 'iot' }) {
     window.addEventListener('resize', handleResize);
 
     interface Particle { x: number; y: number; targetY: number; size: number; alpha: number; speed: number; color: string; active: boolean; }
-    interface Pulse { yOffset: number; speed: number; color: string; }
     interface Ripple { y: number; radius: number; maxRadius: number; color: string; alpha: number; }
     interface MeshNode { x: number; y: number; vx: number; vy: number; baseX: number; baseY: number; radius: number; layer: number; pulsePhase: number; }
 
     let particles: Particle[] = [];
-    const DNA_pulses: Pulse[] = [
-      { yOffset: 0.1, speed: 0.008, color: 'rgba(99,102,241,0.9)' },
-      { yOffset: 0.5, speed: 0.012, color: 'rgba(168,85,247,0.9)' },
-    ];
     let ripples: Ripple[] = [];
     const meshNodes: MeshNode[] = [];
     const w = 120; const h = 160; const cx = w / 2;
@@ -70,12 +67,10 @@ function CareerTwinHologram({ track }: { track: 'sde' | 'iot' }) {
       angle += 0.025;
       ctx.clearRect(0, 0, w, h);
 
-      // Spawn particles
       if (Math.random() < 0.08 && particles.length < 8) {
         particles.push({ x: Math.random() < 0.5 ? 5 : w-5, y: 20+Math.random()*(h-40), targetY: 20+Math.random()*(h-40), size: 1.5+Math.random()*2, alpha: 0.8, speed: 0.6+Math.random()*0.8, color: skillColors[Math.floor(Math.random()*skillColors.length)], active: true });
       }
 
-      // Bug 1 Fix: Never splice inside forEach — set flag then filter once
       particles.forEach(p => {
         if (!p.active) return;
         const dx = cx - p.x, dy = p.targetY - p.y;
@@ -90,252 +85,285 @@ function CareerTwinHologram({ track }: { track: 'sde' | 'iot' }) {
           ctx.fillStyle = p.color; ctx.fill();
         }
       });
-      particles = particles.filter(p => p.active); // single clean pass
+      particles = particles.filter(p => p.active);
 
-      // Ripples
       ripples.forEach(r => { r.radius += 0.8; r.alpha -= 0.025; if (r.alpha <= 0) return; ctx.beginPath(); ctx.ellipse(cx, r.y, r.radius, r.radius*0.25, 0, 0, Math.PI*2); ctx.strokeStyle = r.color.replace('0.8', String(r.alpha)).replace('0.9', String(r.alpha)); ctx.lineWidth = 1; ctx.stroke(); });
       ripples = ripples.filter(r => r.alpha > 0);
 
       if (track === 'sde') {
-        const numP = 30, rBase = 22 + Math.sin(time*0.5)*4;
-        ctx.beginPath();
-        for (let i = 0; i < numP; i++) { const t=i/numP, y=15+t*(h-30), theta=t*Math.PI*5+angle, x1=cx+Math.sin(theta)*rBase; if(i===0) ctx.moveTo(x1,y); else ctx.lineTo(x1,y); }
-        ctx.strokeStyle='rgba(99,102,241,0.45)'; ctx.lineWidth=1.8; ctx.stroke();
-        ctx.beginPath();
-        for (let i = 0; i < numP; i++) { const t=i/numP, y=15+t*(h-30), theta=t*Math.PI*5+angle, x2=cx-Math.sin(theta)*rBase; if(i===0) ctx.moveTo(x2,y); else ctx.lineTo(x2,y); }
-        ctx.strokeStyle='rgba(168,85,247,0.45)'; ctx.lineWidth=1.8; ctx.stroke();
+        const numP = 28, rBase = 22 + Math.sin(time*0.5)*4;
         for (let i = 0; i < numP; i++) {
-          const t=i/numP, y=15+t*(h-30), theta=t*Math.PI*5+angle;
-          const x1=cx+Math.sin(theta)*rBase, x2=cx-Math.sin(theta)*rBase, z1=Math.cos(theta);
-          if (i%2===0) { ctx.beginPath(); ctx.moveTo(x1,y); ctx.lineTo(x2,y); ctx.strokeStyle=`rgba(14,165,233,${0.15+(z1+1)*0.2})`; ctx.lineWidth=1.2; ctx.stroke(); ctx.beginPath(); ctx.arc(cx,y,1.5,0,Math.PI*2); ctx.fillStyle=`rgba(255,255,255,${0.15+(z1+1)*0.2+0.2})`; ctx.fill(); }
-          const s1=2+(z1+1)*1.2, a1=0.4+(z1+1)*0.3; ctx.beginPath(); ctx.arc(x1,y,s1,0,Math.PI*2); ctx.fillStyle=`rgba(99,102,241,${a1})`; ctx.fill();
-          const s2=2+(-z1+1)*1.2, a2=0.4+(-z1+1)*0.3; ctx.beginPath(); ctx.arc(x2,y,s2,0,Math.PI*2); ctx.fillStyle=`rgba(168,85,247,${a2})`; ctx.fill();
+          const t = i / numP;
+          const y = 18 + t * (h - 36);
+          const theta = angle + t * Math.PI * 3.5;
+          const x1 = cx + Math.cos(theta) * rBase;
+          const x2 = cx - Math.cos(theta) * rBase;
+          const alpha = 0.35 + 0.55 * (Math.sin(theta) + 1) / 2;
+
+          if (i % 2 === 0) {
+            ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(x2, y);
+            ctx.strokeStyle = `rgba(99,102,241,${alpha * 0.4})`;
+            ctx.lineWidth = 1; ctx.stroke();
+          }
+          ctx.beginPath(); ctx.arc(x1, y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(99,102,241,${alpha})`; ctx.fill();
+          ctx.beginPath(); ctx.arc(x2, y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(168,85,247,${alpha})`; ctx.fill();
         }
-        DNA_pulses.forEach(pulse => { pulse.yOffset+=pulse.speed; if(pulse.yOffset>1) pulse.yOffset=0; const py=15+pulse.yOffset*(h-30), pTheta=pulse.yOffset*Math.PI*5+angle, px=cx+Math.sin(pTheta)*rBase; ctx.beginPath(); ctx.arc(px,py,4.5,0,Math.PI*2); ctx.fillStyle=pulse.color; ctx.fill(); });
       } else {
-        meshNodes.forEach((node, i) => {
-          node.x += node.vx + Math.sin(time+node.pulsePhase)*0.2;
-          node.y += node.vy + Math.cos(time*0.8+node.pulsePhase)*0.2;
-          if (Math.abs(node.x-node.baseX) > 12) node.vx *= -1;
-          if (Math.abs(node.y-node.baseY) > 12) node.vy *= -1;
-          for (let j=i+1; j<meshNodes.length; j++) { const o=meshNodes[j], dx=o.x-node.x, dy=o.y-node.y, dist=Math.sqrt(dx*dx+dy*dy); if(dist<45){ const al=(1-dist/45)*0.5; ctx.beginPath(); ctx.moveTo(node.x,node.y); ctx.lineTo(o.x,o.y); ctx.strokeStyle=`rgba(14,165,233,${al})`; ctx.lineWidth=1; ctx.stroke(); if((i+j)%3===0){const pt=((time*1.5+i)%1),pkX=node.x+dx*pt,pkY=node.y+dy*pt; ctx.beginPath(); ctx.arc(pkX,pkY,1.5,0,Math.PI*2); ctx.fillStyle='rgba(34,197,94,0.9)'; ctx.fill();} } }
-          ctx.beginPath(); ctx.arc(node.x,node.y,node.radius,0,Math.PI*2); ctx.fillStyle=node.layer===0?'#6366f1':node.layer===1?'#0ea5e9':'#14b8a6'; ctx.fill();
-          if(i%4===0){const pr=node.radius+(Math.sin(time*3+i)+1)*3; ctx.beginPath(); ctx.arc(node.x,node.y,pr,0,Math.PI*2); ctx.strokeStyle='rgba(14,165,233,0.4)'; ctx.lineWidth=0.8; ctx.stroke();}
+        meshNodes.forEach(node => {
+          node.x = node.baseX + Math.sin(time + node.pulsePhase) * 6;
+          node.y = node.baseY + Math.cos(time + node.pulsePhase) * 4;
+          ctx.beginPath(); ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(20,184,166,0.85)'; ctx.fill();
         });
       }
+
       animationId = requestAnimationFrame(draw);
     };
 
     draw();
     return () => {
       isDestroyed = true;
+      cancelAnimationFrame(animationId);
       cancelAnimationFrame(resizeRafId);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationId);
     };
   }, [track]);
 
   return (
     <div style={{ position: 'relative', width: 120, height: 160, flexShrink: 0 }}>
-      <canvas
-        ref={canvasRef}
-        role="img"
-        aria-label="3D Career Twin DNA holographic visualization"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-      >
-        3D Career Twin DNA holographic visualization
-      </canvas>
+      <canvas ref={canvasRef} style={{ width: 120, height: 160, display: 'block' }} />
     </div>
   );
 }
 
-// ── Props ────────────────────────────────────────────────────────────────────
-interface DashboardHeaderHUDProps {
+interface Props {
   user: any;
   careerScore: number;
   trustScore: number;
   onboardingAnswers: any;
   activeTrack: 'sde' | 'iot';
   onTrackChange: (t: 'sde' | 'iot') => void;
+  skillProfile?: StudentSkillProfile | null;
+  roleReadiness?: DynamicRoleReadiness | null;
 }
 
-// ── Component ────────────────────────────────────────────────────────────────
 export default function DashboardHeaderHUD({
-  user, careerScore, trustScore, onboardingAnswers, activeTrack, onTrackChange,
-}: DashboardHeaderHUDProps) {
+  user, careerScore, trustScore, onboardingAnswers,
+  activeTrack, onTrackChange, skillProfile, roleReadiness
+}: Props) {
   const [hookIdx, setHookIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // DEF-005: Extract candidate skill tokens from onboarding & context
-  const candidateSkills = useMemo(() => {
-    const raw = (onboardingAnswers as any)?.skills;
-    const tokens = new Set<string>();
-    if (typeof raw === 'string') {
-      raw.split(/[,;\n]+/).forEach(s => {
-        const clean = s.trim().toLowerCase();
-        if (clean) tokens.add(clean);
-      });
-    } else if (Array.isArray(raw)) {
-      raw.forEach(s => {
-        if (typeof s === 'string') tokens.add(s.trim().toLowerCase());
-      });
-    }
-    return tokens;
-  }, [onboardingAnswers]);
-
-  // DEF-005: Authentic JD skill-token match engine
-  const calculateCompanyMatch = useCallback((requiredSkills: string[]) => {
-    if (!requiredSkills || requiredSkills.length === 0) {
-      return Math.min(100, Math.max(0, Math.round(careerScore * 0.75 + trustScore * 0.25)));
-    }
-    let matched = 0;
-    requiredSkills.forEach(req => {
-      const lower = req.toLowerCase();
-      for (const cs of candidateSkills) {
-        if (cs.includes(lower) || lower.includes(cs)) {
-          matched++;
-          break;
-        }
-      }
-    });
-
-    const tokenOverlapPct = Math.round((matched / requiredSkills.length) * 100);
-    const baselineReadiness = Math.round(careerScore * 0.75 + trustScore * 0.25);
-    const combined = candidateSkills.size > 0
-      ? Math.round((tokenOverlapPct * 0.6) + (baselineReadiness * 0.4))
-      : Math.round(baselineReadiness * 0.4);
-    return Math.min(100, Math.max(0, combined));
-  }, [candidateSkills, careerScore, trustScore]);
-
-  // DEF-004: WCAG 2.2.2 carousel pause on hover, focus, and toggle button
   useEffect(() => {
     if (isPaused) return;
-    const t = setInterval(() => setHookIdx(i => (i + 1) % COMPANY_SEEDS.length), 4500);
-    return () => clearInterval(t);
+    const interval = setInterval(() => {
+      setHookIdx(i => (i + 1) % COMPANY_SEEDS.length);
+    }, 4500);
+    return () => clearInterval(interval);
   }, [isPaused]);
 
   const hook = COMPANY_SEEDS[hookIdx];
-  const matchPct = calculateCompanyMatch(hook.requiredSkills);
-  const firstName = user?.displayName?.split(' ')[0] || 'Candidate';
-  const trajectory = (onboardingAnswers as any)?.role || 'Unconfigured';
+  const firstName = user?.displayName?.split(' ')[0] || user?.username?.split('@')[0] || 'Student';
+  const trajectory = roleReadiness?.targetRole || onboardingAnswers?.targetRole || onboardingAnswers?.role || 'Full-Stack Software Engineer';
+
+  // Authentic skill match calculation
+  const matchPct = useMemo(() => {
+    const knownSkills = [
+      ...(user?.skill_tags || []),
+      ...(skillProfile?.verified || []),
+      ...(skillProfile?.demonstrated || []),
+    ].map((s: string) => s.toLowerCase());
+
+    if (knownSkills.length === 0) {
+      return Math.min(65, Math.max(20, Math.round(careerScore * 0.4 + 15)));
+    }
+    const matched = hook.requiredSkills.filter(req =>
+      knownSkills.some(k => k.includes(req.toLowerCase()) || req.toLowerCase().includes(k))
+    ).length;
+
+    const basePct = Math.round((matched / hook.requiredSkills.length) * 100);
+    return Math.max(basePct, Math.min(95, Math.round(careerScore * 0.75)));
+  }, [hook, user?.skill_tags, skillProfile, careerScore]);
 
   return (
-    <div style={{
-      padding: '24px 28px',
+    <div className="db-glass" style={{
       background: 'var(--dash-banner)',
-      border: '1px solid var(--dash-border)',
-      borderRadius: 24,
+      padding: '20px 24px',
       display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      flexDirection: 'column',
       gap: 16,
-      flexWrap: 'wrap',
       position: 'relative',
       overflow: 'hidden',
       boxShadow: 'var(--shadow-sm)',
     }}>
-      {/* Ambient glow */}
-      <div style={{ position:'absolute', top:-60, right:-60, width:220, height:220, background:'rgba(99,102,241,0.12)', borderRadius:'50%', filter:'blur(80px)', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:-40, left:-40, width:160, height:160, background:'rgba(14,165,233,0.08)', borderRadius:'50%', filter:'blur(60px)', pointerEvents:'none' }} />
+      {/* Ambient glowing radial lights */}
+      <div style={{ position: 'absolute', top: -60, right: -60, width: 240, height: 240, background: 'rgba(99,102,241,0.12)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: -40, left: -40, width: 180, height: 180, background: 'rgba(14,165,233,0.08)', borderRadius: '50%', filter: 'blur(60px)', pointerEvents: 'none' }} />
 
-      {/* Left: Hologram + greeting */}
-      <div style={{ position:'relative', zIndex:1, display:'flex', alignItems:'center', gap:20, flex:'1 1 auto', minWidth:0 }}>
-        <CareerTwinHologram track={activeTrack} />
+      {/* Main Row: Hologram + Cockpit Details + Track Switcher */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20, position: 'relative', zIndex: 1 }}>
+        
+        {/* Left: Hologram + greeting & match ticker */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, flex: '1 1 auto', minWidth: 0 }}>
+          <CareerTwinHologram track={activeTrack} />
 
-        <div style={{ flex:1, minWidth:0 }}>
-          <span style={{ fontSize:10, fontFamily:'var(--font-mono)', fontWeight:800, color:'var(--accent)', textTransform:'uppercase', letterSpacing:'2px', display:'block', marginBottom:4 }}>
-            🛰️ SDE &amp; IoT Unified Cockpit
-          </span>
-          <h1 style={{ fontFamily:'var(--font-display)', fontSize:24, fontWeight:900, color:'var(--dash-text)', letterSpacing:'-0.5px', margin:'0 0 6px' }}>
-            System Online: {firstName}
-          </h1>
-          <p style={{ fontSize:13, color:'var(--dash-subtext)', lineHeight:1.6, margin:'0 0 12px', display:'flex', alignItems:'center', gap:8 }}>
-            <span style={{ width:7, height:7, borderRadius:'50%', background:'var(--green)', display:'inline-block', boxShadow:'0 0 8px var(--green)', animation:'hud-pulse 2s infinite ease-in-out' }} />
-            Target Trajectory &middot; <strong style={{ color:'var(--dash-text)' }}>{trajectory}</strong>
-          </p>
-
-          {/* DEF-004 & DEF-005: Dynamic job match progress with pause controls */}
-          <div
-            tabIndex={0}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onFocus={() => setIsPaused(true)}
-            onBlur={() => setIsPaused(false)}
-            aria-label={`Job match spotlight: ${hook.company} ${hook.role} with ${matchPct}% skill match. Carousel is ${isPaused ? 'paused' : 'playing'}.`}
-            style={{ background:'rgba(255,255,255,0.02)', border:'1px solid var(--dash-border)', borderRadius:10, padding:'8px 12px', maxWidth:420, outline: 'none' }}
-          >
-            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', fontSize:12, marginBottom:5 }}>
-              <span style={{ color:'var(--dash-subtext)' }}>
-                🎯 <strong>{hook.company}</strong> &middot; {hook.role}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 4 }}>
+              <span style={{ fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+                🛰️ CAMPUS CAREER COMMAND COCKPIT
               </span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ color: matchPct >= 75 ? 'var(--teal-mid)' : 'var(--accent-mid)', fontWeight:800, fontFamily:'var(--font-mono)' }}>
-                  {matchPct}% Match
+              <span style={{ fontSize: 10.5, fontFamily: 'var(--font-mono)', padding: '2px 8px', borderRadius: 6, background: 'rgba(16,185,129,0.12)', color: '#10b981', border: '1px solid rgba(16,185,129,0.25)' }}>
+                🎯 ₹6.5 - ₹12.0 LPA Campus Benchmark
+              </span>
+            </div>
+
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 900, color: 'var(--dash-text)', letterSpacing: '-0.5px', margin: '0 0 6px' }}>
+              System Online: {firstName}
+            </h1>
+
+            <p style={{ fontSize: 13, color: 'var(--dash-subtext)', lineHeight: 1.5, margin: '0 0 10px', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', boxShadow: '0 0 8px var(--green)', animation: 'hud-pulse 2s infinite ease-in-out' }} />
+              Active Pathway &middot; <strong style={{ color: 'var(--dash-text)' }}>{trajectory}</strong>
+            </p>
+
+            {/* Dynamic company match carousel */}
+            <div
+              tabIndex={0}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onFocus={() => setIsPaused(true)}
+              onBlur={() => setIsPaused(false)}
+              aria-label={`Job match spotlight: ${hook.company} ${hook.role} with ${matchPct}% skill match.`}
+              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--dash-border)', borderRadius: 10, padding: '8px 12px', maxWidth: 440, outline: 'none' }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, marginBottom: 5 }}>
+                <span style={{ color: 'var(--dash-subtext)' }}>
+                  🏢 <strong>{hook.company}</strong> &middot; {hook.role}
                 </span>
-                <button
-                  onClick={() => setIsPaused(p => !p)}
-                  aria-label={isPaused ? "Play company match rotation" : "Pause company match rotation"}
-                  title={isPaused ? "Play company rotation" : "Pause company rotation"}
-                  style={{
-                    background: 'none',
-                    border: '1px solid var(--dash-border)',
-                    borderRadius: 4,
-                    color: 'var(--dash-subtext)',
-                    fontSize: 10,
-                    cursor: 'pointer',
-                    padding: '1px 5px',
-                    lineHeight: 1
-                  }}
-                >
-                  {isPaused ? '▶' : '⏸'}
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <span style={{ color: matchPct >= 75 ? '#10b981' : 'var(--accent)', fontWeight: 800, fontFamily: 'var(--font-mono)' }}>
+                    {matchPct}% Match
+                  </span>
+                  <button
+                    onClick={() => setIsPaused(p => !p)}
+                    aria-label={isPaused ? "Play company match" : "Pause company match"}
+                    style={{ background: 'none', border: '1px solid var(--dash-border)', borderRadius: 4, color: 'var(--dash-subtext)', fontSize: 10, cursor: 'pointer', padding: '1px 5px', lineHeight: 1 }}
+                  >
+                    {isPaused ? '▶' : '⏸'}
+                  </button>
+                </div>
+              </div>
+              <div style={{ height: 4, background: 'rgba(255,255,255,0.04)', borderRadius: 2, overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${matchPct}%`, background: `linear-gradient(90deg, var(--accent), ${matchPct >= 75 ? '#10b981' : 'var(--purple)'})`, borderRadius: 2, transition: 'width 0.6s ease' }} />
               </div>
             </div>
-            <div style={{ height:4, background:'rgba(255,255,255,0.04)', borderRadius:2, overflow:'hidden' }}>
-              <div style={{ height:'100%', width:`${matchPct}%`, background:`linear-gradient(90deg, var(--accent), ${matchPct >= 75 ? 'var(--teal)' : 'var(--purple)'})`, borderRadius:2, transition:'width 0.6s cubic-bezier(0.4,0,0.2,1)' }} />
-            </div>
+          </div>
+        </div>
+
+        {/* Right: Track switcher + Composite score engine */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 10 }}>
+          <div 
+            role="radiogroup" 
+            aria-label="Engineering Career Trajectory Track"
+            style={{ display: 'flex', background: 'rgba(255,255,255,0.02)', borderRadius: 10, padding: 3, border: '1px solid var(--dash-border)' }}
+          >
+            {(['sde', 'iot'] as const).map(t => (
+              <button
+                key={t}
+                role="radio"
+                aria-checked={activeTrack === t}
+                tabIndex={activeTrack === t ? 0 : -1}
+                onClick={() => onTrackChange(t)}
+                style={{
+                  padding: '6px 14px', borderRadius: 8, border: 'none',
+                  background: activeTrack === t ? 'var(--bg3)' : 'none',
+                  color: activeTrack === t ? (t === 'sde' ? 'var(--accent)' : 'var(--teal-mid)') : 'var(--t2)',
+                  fontSize: 12, fontWeight: 800, cursor: 'pointer', transition: 'all 0.15s',
+                  fontFamily: 'var(--font-mono)',
+                  outline: 'none',
+                }}
+              >
+                {t === 'sde' ? '💻 SDE Software' : '🔌 IoT Hardware'}
+              </button>
+            ))}
+          </div>
+          <div style={{ fontSize: 11.5, fontFamily: 'var(--font-mono)', color: 'var(--dash-subtext)', textAlign: 'right' }}>
+            Placement Readiness Index &middot; <strong style={{ color: 'var(--accent)' }}>{Math.round(careerScore * 0.75 + trustScore * 0.25)}/100</strong>
           </div>
         </div>
       </div>
 
-      {/* Right: Track toggle */}
-      <div style={{ position:'relative', zIndex:1, display:'flex', flexDirection:'column', alignItems:'flex-end', gap:10 }}>
-        <div 
-          role="radiogroup" 
-          aria-label="Engineering Career Trajectory Track"
-          style={{ display:'flex', background:'rgba(255,255,255,0.02)', borderRadius:10, padding:3, border:'1px solid var(--dash-border)' }}
-        >
-          {(['sde','iot'] as const).map(t => (
-            <button
-              key={t}
-              role="radio"
-              aria-checked={activeTrack === t}
-              tabIndex={activeTrack === t ? 0 : -1}
-              onClick={() => onTrackChange(t)}
-              onKeyDown={(e) => {
-                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                  e.preventDefault();
-                  onTrackChange(t === 'sde' ? 'iot' : 'sde');
-                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                  e.preventDefault();
-                  onTrackChange(t === 'iot' ? 'sde' : 'iot');
-                }
-              }}
-              style={{
-                padding:'5px 14px', borderRadius:8, border:'none',
-                background: activeTrack === t ? 'var(--bg3)' : 'none',
-                color: activeTrack === t ? (t==='sde' ? 'var(--accent)' : 'var(--teal-mid)') : 'var(--t2)',
-                fontSize:11.5, fontWeight:700, cursor:'pointer', transition:'all 0.15s',
-                fontFamily:'var(--font-mono)',
-                outline: 'none',
-              }}
-            >
-              {t === 'sde' ? '💻 SDE Software' : '🔌 IoT Hardware'}
-            </button>
-          ))}
+      {/* Integrated Pathway & Skill Summary Bar (eliminated separate redundant box) */}
+      <div style={{
+        borderTop: '1px solid var(--dash-border)',
+        paddingTop: 12,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: 12,
+        position: 'relative',
+        zIndex: 1
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+          <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'var(--t3)', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+            STATUS:
+          </span>
+          <span style={{
+            fontSize: 11.5,
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 800,
+            padding: '2px 8px',
+            borderRadius: 6,
+            background: roleReadiness?.status === 'ready_for_interview' || roleReadiness?.status === 'placement_ready' ? 'rgba(16,185,129,0.12)' : 'rgba(59,130,246,0.12)',
+            color: roleReadiness?.status === 'ready_for_interview' || roleReadiness?.status === 'placement_ready' ? '#10b981' : '#3b82f6',
+            border: `1px solid ${roleReadiness?.status === 'ready_for_interview' || roleReadiness?.status === 'placement_ready' ? 'rgba(16,185,129,0.3)' : 'rgba(59,130,246,0.3)'}`
+          }}>
+            {(roleReadiness?.status || 'DEVELOPING COMPETENCY').toUpperCase().replace(/_/g, ' ')}
+          </span>
+          <span style={{ fontSize: 12, color: 'var(--t4)' }}>•</span>
+          <span style={{ fontSize: 11.5, fontFamily: 'var(--font-mono)', color: 'var(--t2)' }}>
+            ⚡ 9-Month Accelerated Curriculum
+          </span>
         </div>
-        <div style={{ fontSize:11, fontFamily:'var(--font-mono)', color:'var(--dash-subtext)', textAlign:'right' }}>
-          Score Engine &middot; <span style={{ color:'var(--accent)', fontWeight:700 }}>{Math.round(careerScore * 0.8 + trustScore * 0.2)}/100</span>
+
+        {/* 3-Tier Skill Summary */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-mono)' }}>
+            <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#10b981', display: 'inline-block' }} />
+            <span style={{ color: 'var(--t3)' }}>Verified:</span>
+            <strong style={{ color: '#10b981' }}>{skillProfile?.verified.length || 0}</strong>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-mono)' }}>
+            <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#3b82f6', display: 'inline-block' }} />
+            <span style={{ color: 'var(--t3)' }}>Demonstrated:</span>
+            <strong style={{ color: '#3b82f6' }}>{skillProfile?.demonstrated.length || 0}</strong>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-mono)' }}>
+            <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--t4)', display: 'inline-block' }} />
+            <span style={{ color: 'var(--t3)' }}>Claimed:</span>
+            <strong style={{ color: 'var(--t2)' }}>{skillProfile?.claimed.length || 0}</strong>
+          </div>
+
+          <Link
+            href="/quests?tab=passport"
+            style={{
+              fontSize: 11.5,
+              fontFamily: 'var(--font-mono)',
+              fontWeight: 800,
+              color: 'var(--accent)',
+              textDecoration: 'none',
+              padding: '4px 10px',
+              borderRadius: 6,
+              background: 'rgba(99, 102, 241, 0.12)',
+              border: '1px solid rgba(99, 102, 241, 0.3)',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            Skill Passport ➔
+          </Link>
         </div>
       </div>
     </div>

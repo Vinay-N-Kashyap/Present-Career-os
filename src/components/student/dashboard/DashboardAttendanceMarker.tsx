@@ -51,7 +51,7 @@ export default function DashboardAttendanceMarker({ onCheckInSuccess }: Props) {
         // Grant rewards via CareerOS Context
         try {
           if (typeof cOS.earnPins === 'function') {
-            cOS.earnPins(10, 'daily_attendance');
+            cOS.earnPins('daily_login', 10, 'Daily Campus Attendance');
           }
           if (typeof cOS.addXp === 'function') {
             cOS.addXp(25, 'Daily Attendance Check-In');

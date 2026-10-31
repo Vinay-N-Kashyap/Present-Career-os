@@ -18,8 +18,8 @@ function AnimatedNum({ value }: { value: number }) {
   useEffect(() => {
     const start = performance.now(), dur = 900;
     const tick = (now: number) => {
-      const t = Math.min(1, (now-start)/dur);
-      const e = 1 - Math.pow(1-t, 3);
+      const t = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
       setDisplay(value * e);
       if (t < 1) raf.current = requestAnimationFrame(tick);
     };
@@ -27,6 +27,19 @@ function AnimatedNum({ value }: { value: number }) {
     return () => { if (raf.current) cancelAnimationFrame(raf.current); };
   }, [value]);
   return <>{Math.round(display)}</>;
+}
+
+export function getTrustBadge(trustScore: number) {
+  if (trustScore >= 75) {
+    return { label: 'High Trust', color: '#10b981', bg: 'rgba(16,185,129,0.12)', border: 'rgba(16,185,129,0.25)' };
+  }
+  if (trustScore >= 40) {
+    return { label: 'Moderate', color: '#3b82f6', bg: 'rgba(59,130,246,0.12)', border: 'rgba(59,130,246,0.25)' };
+  }
+  if (trustScore > 0) {
+    return { label: 'Initial Trust', color: '#f59e0b', bg: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.25)' };
+  }
+  return { label: 'Unverified', color: '#ef4444', bg: 'rgba(239,68,68,0.12)', border: 'rgba(239,68,68,0.25)' };
 }
 
 interface Props {
@@ -45,127 +58,129 @@ export default function DashboardStatsRow({
   unverifiedCount,
   vaultItemsCount, userRole, onSeedDemo,
 }: Props) {
-  const trustLevel = Math.floor(trustScore / 20);
+  const trustLevel = Math.min(5, Math.floor(trustScore / 20));
+  const trustBadge = getTrustBadge(trustScore);
 
   return (
-    <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(280px,1fr))', gap:16 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
 
       {/* Card 1: XP & Reputation Tier */}
-      <div className="db-glass" style={{ padding:20, display:'flex', alignItems:'center', gap:16 }}>
-        <div style={{ position:'absolute', top:-30, left:-30, width:120, height:120, background:`rgba(${level.color === 'var(--accent)' ? '99,102,241' : '124,58,237'},0.12)`, borderRadius:'50%', filter:'blur(40px)', pointerEvents:'none' }} />
-        <div style={{ position:'relative', zIndex:1, width:72, height:72, flexShrink:0 }}>
+      <div className="db-glass" style={{ padding: 20, display: 'flex', alignItems: 'center', gap: 16 }}>
+        <div style={{ position: 'absolute', top: -30, left: -30, width: 120, height: 120, background: `rgba(${level.color === 'var(--accent)' ? '99,102,241' : '124,58,237'},0.12)`, borderRadius: '50%', filter: 'blur(40px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'relative', zIndex: 1, width: 72, height: 72, flexShrink: 0 }}>
           <svg
             role="progressbar"
             aria-label={`Reputation tier progress: ${Math.round(level.pct)}% to ${level.next || 'Max Tier'}`}
             aria-valuenow={level.pct}
             aria-valuemin={0}
             aria-valuemax={100}
-            width="72" height="72" viewBox="0 0 36 36" style={{ transform:'rotate(-90deg)' }}
+            width="72" height="72" viewBox="0 0 36 36" style={{ transform: 'rotate(-90deg)' }}
           >
             <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="2.5" />
-            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke={level.color} strokeDasharray={`${level.pct}, 100`} strokeWidth="2.5" strokeLinecap="round" style={{ transition:'stroke-dasharray 1s ease' }} />
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke={level.color} strokeDasharray={`${level.pct}, 100`} strokeWidth="2.5" strokeLinecap="round" style={{ transition: 'stroke-dasharray 1s ease' }} />
           </svg>
-          <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', fontSize:22, lineHeight:1 }}>{level.emoji}</div>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontSize: 22, lineHeight: 1 }}>{level.emoji}</div>
         </div>
-        <div style={{ flex:1, zIndex:1, minWidth:0 }}>
-          <div style={{ fontSize:10, fontFamily:'var(--font-mono)', fontWeight:800, color:'var(--dash-subtext)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:4 }}>🎓 Reputation Tier</div>
-          <div style={{ fontFamily:'var(--font-display)', fontSize:22, fontWeight:900, color:level.color, marginBottom:2 }}>{level.label}</div>
-          <div style={{ fontSize:11, color:'var(--t3)', fontFamily:'var(--font-mono)', marginBottom:6 }}>Tier {level.index} · <AnimatedNum value={xp} /> XP</div>
-          <div style={{ height:3, background:'var(--bg3)', borderRadius:2, overflow:'hidden' }}>
-            <div style={{ height:'100%', width:`${level.pct}%`, background:`linear-gradient(90deg, var(--accent), ${level.color})`, borderRadius:2, transition:'width 0.8s ease' }} />
+        <div style={{ flex: 1, zIndex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--dash-subtext)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 4 }}>🎓 Reputation Tier</div>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 900, color: level.color, marginBottom: 2 }}>{level.label}</div>
+          <div style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)', marginBottom: 6 }}>Tier {level.index} · <AnimatedNum value={xp} /> XP</div>
+          <div style={{ height: 4, background: 'var(--bg3)', borderRadius: 2, overflow: 'hidden' }}>
+            <div style={{ height: '100%', width: `${level.pct}%`, background: `linear-gradient(90deg, var(--accent), ${level.color})`, borderRadius: 2, transition: 'width 0.8s ease' }} />
           </div>
-          <div style={{ fontSize:10.5, color:'var(--t4)', fontFamily:'var(--font-mono)', marginTop:4 }}>{level.pct}% to {level.next || 'Max Tier'}</div>
+          <div style={{ fontSize: 10.5, color: 'var(--t4)', fontFamily: 'var(--font-mono)', marginTop: 4 }}>{level.pct}% to {level.next || 'Max Tier'}</div>
         </div>
       </div>
 
       {/* Card 2: Career Score circular gauge */}
-      <div className="db-glass" style={{ padding:20, display:'flex', alignItems:'center', gap:16, overflow:'hidden' }}>
-        <div style={{ position:'absolute', top:-30, right:-30, width:120, height:120, background:'rgba(99,102,241,0.15)', borderRadius:'50%', filter:'blur(40px)', pointerEvents:'none' }} />
-        <div style={{ flex:1, zIndex:1, minWidth:0 }}>
-          <div style={{ fontSize:10, fontFamily:'var(--font-mono)', fontWeight:800, color:'var(--dash-subtext)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:4 }}>💻 Career Score</div>
-          <div style={{ fontFamily:'var(--font-display)', fontSize:31, fontWeight:900, color:'var(--t1)', marginBottom:2 }}>
-            <span style={{ color:'var(--accent)' }}><AnimatedNum value={careerScore} /></span>
-            <span style={{ fontSize:14.5, color:'var(--dash-subtext)' }}>/100</span>
+      <div className="db-glass" style={{ padding: 20, display: 'flex', alignItems: 'center', gap: 16, overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -30, right: -30, width: 120, height: 120, background: 'rgba(99,102,241,0.15)', borderRadius: '50%', filter: 'blur(40px)', pointerEvents: 'none' }} />
+        <div style={{ flex: 1, zIndex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--dash-subtext)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 4 }}>💻 Career Score</div>
+          <div style={{ fontFamily: 'var(--font-display)', fontSize: 31, fontWeight: 900, color: 'var(--t1)', marginBottom: 2 }}>
+            <span style={{ color: 'var(--accent)' }}><AnimatedNum value={careerScore} /></span>
+            <span style={{ fontSize: 14.5, color: 'var(--dash-subtext)' }}>/100</span>
           </div>
-          <div style={{ fontSize:12, color:'var(--dash-subtext)', display:'flex', flexDirection:'column', gap:3 }}>
-            <div>🛡️ Verified Records: <strong style={{ color:'var(--green-mid)' }}>{vaultItemsCount > 0 ? `${Math.max(0, vaultItemsCount - unverifiedCount)} / ${vaultItemsCount} Verified` : 'No Credentials in Vault'}</strong></div>
-            <div>📊 Industry Readiness: <strong style={{ color:'var(--accent)' }}>{careerScore >= 75 ? 'Industry Benchmark Ready' : careerScore >= 40 ? 'Developing Competency' : 'Foundational Progress'}</strong></div>
+          <div style={{ fontSize: 12, color: 'var(--dash-subtext)', display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <div>🛡️ Verified Records: <strong style={{ color: 'var(--green-mid)' }}>{vaultItemsCount > 0 ? `${Math.max(0, vaultItemsCount - unverifiedCount)} / ${vaultItemsCount} Verified` : 'No Credentials in Vault'}</strong></div>
+            <div>📊 Industry Readiness: <strong style={{ color: 'var(--accent)' }}>{careerScore >= 75 ? 'Industry Benchmark Ready' : careerScore >= 40 ? 'Developing Competency' : 'Foundational Progress'}</strong></div>
           </div>
         </div>
-        <div style={{ position:'relative', width:80, height:80, flexShrink:0, zIndex:1 }}>
+        <div style={{ position: 'relative', width: 80, height: 80, flexShrink: 0, zIndex: 1 }}>
           <svg
             role="progressbar"
             aria-label={`Career score gauge: ${Math.round(careerScore)} out of 100`}
             aria-valuenow={Math.round(careerScore)}
             aria-valuemin={0}
             aria-valuemax={100}
-            width="80" height="80" viewBox="0 0 36 36" style={{ transform:'rotate(-90deg)' }}
+            width="80" height="80" viewBox="0 0 36 36" style={{ transform: 'rotate(-90deg)' }}
           >
             <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="2.5" />
-            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent)" strokeDasharray={`${careerScore}, 100`} strokeWidth="2.5" strokeLinecap="round" style={{ transition:'stroke-dasharray 1s ease' }} />
+            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="var(--accent)" strokeDasharray={`${careerScore}, 100`} strokeWidth="2.5" strokeLinecap="round" style={{ transition: 'stroke-dasharray 1s ease' }} />
           </svg>
-          <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', fontFamily:'var(--font-display)', fontSize:17.5, fontWeight:900, color:'var(--t1)' }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', fontFamily: 'var(--font-display)', fontSize: 17.5, fontWeight: 900, color: 'var(--t1)' }}>
             {Math.round(careerScore)}
           </div>
         </div>
       </div>
 
-      {/* Card 3: Trust Quotient */}
-      <div className="db-glass" style={{ padding:20, display:'flex', flexDirection:'column', gap:10, overflow:'hidden', position:'relative' }}>
-        <div style={{ position:'absolute', bottom:-30, right:-30, width:120, height:120, background:'rgba(5,150,105,0.1)', borderRadius:'50%', filter:'blur(40px)', pointerEvents:'none' }} />
-        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', zIndex:1 }}>
+      {/* Card 3: Trust Quotient (fixed classification: 0% is Unverified, never 'Moderate') */}
+      <div className="db-glass" style={{ padding: 20, display: 'flex', flexDirection: 'column', gap: 10, overflow: 'hidden', position: 'relative' }}>
+        <div style={{ position: 'absolute', bottom: -30, right: -30, width: 120, height: 120, background: trustBadge.bg, borderRadius: '50%', filter: 'blur(40px)', pointerEvents: 'none' }} />
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', zIndex: 1 }}>
           <div>
-            <div style={{ fontSize:10, fontFamily:'var(--font-mono)', fontWeight:800, color:'var(--dash-subtext)', textTransform:'uppercase', letterSpacing:'1px' }}>🔐 Trust Quotient</div>
-            <div style={{ fontFamily:'var(--font-display)', fontSize:31, fontWeight:900, color:'var(--green-mid)', marginTop:2 }}>
+            <div style={{ fontSize: 10, fontFamily: 'var(--font-mono)', fontWeight: 800, color: 'var(--dash-subtext)', textTransform: 'uppercase', letterSpacing: '1px' }}>🔐 Trust Quotient</div>
+            <div style={{ fontFamily: 'var(--font-display)', fontSize: 31, fontWeight: 900, color: trustBadge.color, marginTop: 2 }}>
               <AnimatedNum value={trustScore} />%
             </div>
           </div>
-          <span style={{ fontSize:11, fontWeight:700, color:'var(--green-mid)', background:'var(--green-light)', padding:'2px 9px', borderRadius:8, border:'1px solid rgba(5,150,105,0.2)', marginTop:2 }}>
-            {trustScore >= 70 ? 'High Trust' : 'Moderate'}
+          <span style={{ fontSize: 11, fontWeight: 800, color: trustBadge.color, background: trustBadge.bg, padding: '3px 10px', borderRadius: 8, border: `1px solid ${trustBadge.border}`, marginTop: 2, fontFamily: 'var(--font-mono)' }}>
+            {trustBadge.label}
           </span>
         </div>
-        <div style={{ display:'flex', gap:3, height:5, zIndex:1 }}>
-          {[1,2,3,4,5].map(seg => {
+        <div style={{ display: 'flex', gap: 4, height: 5, zIndex: 1 }}>
+          {[1, 2, 3, 4, 5].map(seg => {
             const filled = trustLevel >= seg;
             return (
-              <div key={seg} style={{ flex:1, height:'100%', borderRadius:3, background: filled ? 'var(--green-mid)' : 'rgba(255,255,255,0.04)', boxShadow: filled ? '0 0 6px var(--green)' : 'none', transition:'all 0.5s ease' }} />
+              <div key={seg} style={{ flex: 1, height: '100%', borderRadius: 3, background: filled ? trustBadge.color : 'rgba(255,255,255,0.04)', boxShadow: filled ? `0 0 6px ${trustBadge.color}` : 'none', transition: 'all 0.5s ease' }} />
             );
           })}
         </div>
-        <div style={{ zIndex:1 }}>
+        <div style={{ zIndex: 1, marginTop: 2 }}>
           {unverifiedCount > 0 ? (
             <Link
               href="/vault"
               style={{
-                width:'100%',
-                background:'var(--bg3)',
-                border:'1px solid var(--border)',
-                borderRadius:8,
-                padding:'8px',
-                fontSize:12.5,
-                fontWeight:700,
-                color:'var(--t1)',
-                textDecoration:'none',
-                display:'flex',
-                alignItems:'center',
-                justifyContent:'center',
-                gap:6
+                width: '100%',
+                background: 'var(--bg3)',
+                border: '1px solid var(--border)',
+                borderRadius: 8,
+                padding: '8px',
+                fontSize: 12,
+                fontWeight: 700,
+                color: 'var(--t1)',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 6,
+                transition: 'all 0.15s ease'
               }}
             >
               📋 Review {unverifiedCount} Unverified in Vault ↗
             </Link>
           ) : vaultItemsCount === 0 ? (
-            <div style={{ fontSize:12.5, color:'var(--dash-subtext)' }}>
-              No credentials in Vault.{' '}
-              <Link href="/vault" style={{ color:'var(--accent)', textDecoration:'none', fontWeight:600 }}>
+            <div style={{ fontSize: 12, color: 'var(--dash-subtext)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 6 }}>
+              <span>No credentials in Vault.</span>
+              <Link href="/vault" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 700, fontFamily: 'var(--font-mono)', fontSize: 11.5 }}>
                 Upload to Vault ↗
               </Link>
             </div>
           ) : (
-            <div style={{ fontSize:12.5, color:'var(--dash-subtext)' }}>
+            <div style={{ fontSize: 12, color: 'var(--dash-subtext)' }}>
               ✓ All {vaultItemsCount} credentials verified.
               {userRole === 'admin' && onSeedDemo && (
-                <button onClick={onSeedDemo} style={{ marginLeft:8, background:'none', border:'1px solid var(--border)', borderRadius:6, color:'var(--accent)', fontSize:11, padding:'2px 8px', cursor:'pointer' }}>+ Seed Demo</button>
+                <button onClick={onSeedDemo} style={{ marginLeft: 8, background: 'none', border: '1px solid var(--border)', borderRadius: 6, color: 'var(--accent)', fontSize: 11, padding: '2px 8px', cursor: 'pointer' }}>+ Seed Demo</button>
               )}
             </div>
           )}

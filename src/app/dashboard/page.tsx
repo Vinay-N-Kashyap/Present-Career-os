@@ -397,7 +397,7 @@ export default function DashboardPage() {
     <div className="db-page animate-fade-in">
       <style>{DB_STYLES}</style>
 
-      {/* 1. Hero HUD — hologram + greeting + dynamic job match + track toggle */}
+      {/* 1. Hero HUD — unified mission cockpit (hologram + greeting + live pathway & skills + dynamic job match + track toggle) */}
       <DashboardHeaderHUD
         user={user}
         careerScore={careerScore}
@@ -405,67 +405,9 @@ export default function DashboardPage() {
         onboardingAnswers={onboardingAnswers}
         activeTrack={activeTrack}
         onTrackChange={setActiveTrack}
+        skillProfile={skillProfile}
+        roleReadiness={roleReadiness}
       />
-
-      {/* 1.5. Live Placement Readiness & 3-Tier Skills HUD */}
-      <div className="db-glass" style={{ padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
-          <div>
-            <span className="db-label">🎯 ACTIVE CAREER PATHWAY</span>
-            <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--t1)', marginTop: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
-              {roleReadiness?.targetRole || 'Full-Stack Software Engineer'}
-              <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', padding: '2px 8px', borderRadius: 6, background: 'rgba(59, 130, 246, 0.15)', color: '#3b82f6', border: '1px solid rgba(59, 130, 246, 0.3)' }}>
-                ⚡ 9M Accelerated
-              </span>
-            </div>
-          </div>
-
-          {/* Readiness Stage Badge */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 8, background: 'var(--bg3)', border: '1px solid var(--border)' }}>
-            <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'var(--t3)' }}>STATUS:</span>
-            <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', fontWeight: 800, color: roleReadiness?.status === 'ready_for_interview' || roleReadiness?.status === 'placement_ready' ? '#10b981' : roleReadiness?.status === 'ready_for_internship' ? '#3b82f6' : '#f59e0b' }}>
-              {(roleReadiness?.status || 'DEVELOPING').toUpperCase().replace(/_/g, ' ')}
-            </span>
-          </div>
-        </div>
-
-        {/* 3-Tier Skill Summary */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'var(--font-mono)' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#10b981', display: 'inline-block' }} />
-            <span style={{ color: 'var(--t2)' }}>Verified:</span>
-            <strong style={{ color: '#10b981' }}>{skillProfile?.verified.length || 0}</strong>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'var(--font-mono)' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#3b82f6', display: 'inline-block' }} />
-            <span style={{ color: 'var(--t2)' }}>Demonstrated:</span>
-            <strong style={{ color: '#3b82f6' }}>{skillProfile?.demonstrated.length || 0}</strong>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontFamily: 'var(--font-mono)' }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--t4)', display: 'inline-block' }} />
-            <span style={{ color: 'var(--t3)' }}>Claimed:</span>
-            <strong style={{ color: 'var(--t2)' }}>{skillProfile?.claimed.length || 0}</strong>
-          </div>
-
-          <Link
-            href="/quests?tab=passport"
-            style={{
-              fontSize: 12,
-              fontFamily: 'var(--font-mono)',
-              fontWeight: 800,
-              color: 'var(--accent)',
-              textDecoration: 'none',
-              padding: '5px 10px',
-              borderRadius: 8,
-              background: 'rgba(99, 102, 241, 0.12)',
-              border: '1px solid rgba(99, 102, 241, 0.3)',
-              transition: 'all 0.15s ease',
-            }}
-          >
-            Skill Passport ➔
-          </Link>
-        </div>
-      </div>
 
       {/* 2. Stats Row — XP tier, Career Score ring, Trust Quotient */}
       <DashboardStatsRow
